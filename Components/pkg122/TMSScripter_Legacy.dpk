@@ -1,0 +1,48 @@
+package TMSScripter_Legacy;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS Scripter - Legacy Package'}
+{$LIBSUFFIX '270'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  TMSScripter_Memo,
+  TMSScripter,
+  inet;
+
+contains
+  ATSCRIPTDEBUG in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\legacy\ATSCRIPTDEBUG.pas',
+  atscriptdebugform in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\legacy\atscriptdebugform.pas' {DebugForm},
+  FormScript in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\legacy\FormScript.pas',
+  fWatchViewer in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\legacy\fWatchViewer.pas' {fmWatchViewer},
+  ScriptCtrls in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\legacy\ScriptCtrls.pas',
+  atWebScriptPP in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\legacy\atWebScriptPP.pas',
+  fWatchPropertiesLegacy in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\legacy\fWatchPropertiesLegacy.pas' {fmWatchPropertiesLegacy};
+
+end.

@@ -26,7 +26,7 @@ type
     grpTestMessage: TGroupBox;
     edRecipient: TLabeledEdit;
     edDate: TDateTimePicker;
-    Label2: TLabel;
+    lbDate: TLabel;
     edAddress: TLabeledEdit;
     lbTestMessageID: TLabel;
     edTestMessageID: TEdit;
@@ -40,6 +40,8 @@ type
     tabLog: TTabSheet;
     AdvMemo1: TAdvMemo;
     AdvJSONMemoStyler1: TAdvJSONMemoStyler;
+    GroupBox1: TGroupBox;
+    edMessageID: TLabeledEdit;
     procedure btnSendTestClick(Sender: TObject);
     procedure btnTestCustomClick(Sender: TObject);
     procedure btnTestDefaultClick(Sender: TObject);
@@ -126,8 +128,12 @@ begin
     if aTwilioSender.SendMessage then
       JShowMessage('Messaggio ' + aTwilioSender.MessageSID + ' Inviato')
     else
+    begin
       JShowError('Errore invio Messaggio, consultare log');
+      AdvMemo1.Lines.Text := aTwilioSender.ResponseString;
 
+    end;
+    edMessageID.Text := aTwilioSender.MessageID;
   finally
     aTwilioSender.Free;
     aTwilioSender := nil;
@@ -168,11 +174,11 @@ begin
     else
       raise Exception.Create('Error sending Message' + sLineBreak + AdvTwilio.LastError);
   finally
+    AdvMemo1.Lines.Text := AdvTwilio.LastError + sLineBreak + AdvTwilio.Response + sLineBreak +
+      AdvTwilio.RequestParams.ToString;
     AdvTwilio.Free;
     AdvTwilio := nil;
   end;
-
-
 
 end;
 

@@ -399,7 +399,7 @@ begin
   Item.Location := aRecEvent.Location;
   Item.Color := TGItemColor.icBoldRed; // TGItemColor(aRecEvent.Color);
   Item.StartTime := aRecEvent.StartTime;
-  Item.EndTime := aRecEvent.StartTime;
+  Item.EndTime := aRecEvent.EndTime;
   Item.Visibility := CloudCustomGCalendar.TVisibility.viDefault;
   Item.IsAllDay := False;
   Item.CalendarID := aRecEvent.CalendarID;

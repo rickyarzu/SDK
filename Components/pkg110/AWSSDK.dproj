@@ -103,7 +103,7 @@
         <DllSuffix>$(Auto)</DllSuffix>
         <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
         <DCC_Description>Appercept AWS SDK for Delphi 11</DCC_Description>
-        <CfgDependentOn>..\..\prj\DXE14\JanuaLibDXE14.optset</CfgDependentOn>
+		<CfgDependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>

@@ -1,0 +1,73 @@
+﻿package JanuaUniGUI;
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$DEFINE JANUASERVER}
+{$DEFINE JANUAUNIGUI}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Janua UniGUI Library'}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  dac290,
+  unidac290,
+  pgprovider290,
+  oraprovider290,
+  JanuaCore,
+  JanuaCoreComponents,
+  JanuaMVVM,
+  JanuaUnidacComponentsD,
+  JanuaUnidac,
+  VCL,
+  UniTools29,
+  uniGUI29,
+  Spring.Base,
+  TUniFalcon;
+
+contains
+  Janua.UniGUI.Interposers in '..\..\src\UniGUI\Common\Janua.UniGUI.Interposers.pas',
+  Janua.UniGUI.UniDacApplication in '..\..\src\UniGUI\Common\Janua.UniGUI.UniDacApplication.pas',
+  Janua.UniGUI.NavBar in '..\..\src\UniGUI\Common\Janua.UniGUI.NavBar.pas',
+  Janua.UniGUI.Controller in '..\..\src\UniGUI\Common\Janua.UniGUI.Controller.pas',
+  Janua.Carservice.BookingController in '..\..\src\UniGUI\CarService\Janua.Carservice.BookingController.pas' {dmUniGUICarServiceBookingController: TDataModule},
+  Janua.CarService.UniGUI.CalendarSelectController in '..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.CalendarSelectController.pas',
+  Janua.CarService.UniGUI.dlgTimetableCheck in '..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgTimetableCheck.pas' {dlgUniGUICarserviceTimetableCheck: TUniForm},
+  Janua.CarService.UniGUI.TimeSlotController in '..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.TimeSlotController.pas',
+  Janua.CarService.UniGUI.SlotSelectionController in '..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.SlotSelectionController.pas',
+  Janua.Carservice.UniGUI.CarBookingClientController in '..\..\src\UniGUI\CarService\Janua.Carservice.UniGUI.CarBookingClientController.pas',
+  Janua.UniGUI.dlgGoogleMap in '..\..\src\UniGUI\Common\Janua.UniGUI.dlgGoogleMap.pas' {dlgUniGUIGoogleMap: TUniForm},
+  Janua.CarService.UniGUI.SimpleAnagraphController in '..\..\src\UniGUI\Anagraph\Janua.CarService.UniGUI.SimpleAnagraphController.pas',
+  Janua.UniGUI.dlgSearchGoogleAddress in '..\..\src\UniGUI\Common\Janua.UniGUI.dlgSearchGoogleAddress.pas' {dlgUniGUISearchGoogleAddress: TUniForm},
+  Janua.CarService.UniGUI.TimeTableSelectController in '..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.TimeTableSelectController.pas',
+  Janua.CarService.UniGUI.AddressSelectController in '..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.AddressSelectController.pas',
+  Janua.CarService.UniGUI.frameCarBookingClient in '..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.frameCarBookingClient.pas' {frameUniGuiCarBookingClient},
+  Janua.CarService.UniGUI.BookingSummaryController in '..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.BookingSummaryController.pas',
+  Janua.Anagraph.UniGUI.dlgSimpleAnagraph in '..\..\src\UniGUI\Anagraph\Janua.Anagraph.UniGUI.dlgSimpleAnagraph.pas' {dlgUniGUISimpleAnagraph: TUniForm},
+  Janua.UniGUI.dlgHTMLDisclaimer in '..\..\src\UniGUI\Common\Janua.UniGUI.dlgHTMLDisclaimer.pas' {frmUniGUIHtmlDisclaimer: TUniForm},
+  Janua.UniGUI.dlgHTMLMessage in '..\..\src\UniGUI\Common\Janua.UniGUI.dlgHTMLMessage.pas' {frmUniGUIHtmlMessage: TUniForm},
+  Janua.CarService.UniGUI.dlgCustomerVehicles in '..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgCustomerVehicles.pas' {dlgUniGUICarServiceCustomerVehicles: TUniForm};
+
+end.

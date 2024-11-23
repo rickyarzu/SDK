@@ -182,8 +182,8 @@ type
   private
     FPlanner: TPlanner;
     FDBPlanner: TDBPlanner;
-    FJanuaAdvTwilio: Janua.TMS.SMS.TJanuaAdvTwilio;
   protected
+    FJanuaAdvTwilio: TJanuaAdvTwilio;
     procedure SetDBPlanner(const Value: TDBPlanner);
     procedure SetPlanner(const Value: TPlanner);
     procedure PostEvent; Virtual; Abstract;
@@ -380,6 +380,7 @@ type
     procedure SetPlannerPDFIO2(const Value: TAdvPlannerPDFIO);
     procedure SetSelectedItem(const Value: TPlannerItem);
     procedure SetWhatsAppSettings(const Value: TJanuaWhatsAppConf);
+    procedure SetJanuaAdvTwilio(const Value: TJanuaAdvTwilio);
   protected
     FGConnected: Boolean;
     Fgcal: TGCalendar;
@@ -496,6 +497,7 @@ type
     /// <summary> Prevents updating Calendar Color while inserting/updating data from DB </summary>
     property UpdatingFromDB: Boolean read FUpdatingFromDB write SetUpdatingFromDB;
     property OnAfterConnect: TNotifyEvent read FOnAfterConnect write SetOnAfterConnect;
+    property JanuaAdvTwilio: TJanuaAdvTwilio read FJanuaAdvTwilio write SetJanuaAdvTwilio;
   public
     procedure SendTestMessage(const aRecipients, aMessage: string);
     property WhatsAppSettings: TJanuaWhatsAppConf read FWhatsAppSettings write SetWhatsAppSettings;
@@ -1052,7 +1054,6 @@ begin
     GetLiveCalendarList;
 end;
 
-
 procedure TdmVCLPlannerCustomController.SendCustomTwilioMessage(aTo: string; aMessageID: string;
   aParams: TJanuaArray<string>);
 var
@@ -1603,10 +1604,13 @@ begin
   if cMessageType = jmtWhatsApp then
     lRecipient := 'whatsapp:' + lRecipient;
 
-  if aTest then
-    FJanuaAdvTwilio.contentSID := FWhatsAppSettings.TestMessageID
-  else
-    FJanuaAdvTwilio.contentSID := FWhatsAppSettings.DefaultMessageID;
+  if aMessage = '' then
+  begin
+    if aTest then
+      FJanuaAdvTwilio.contentSID := FWhatsAppSettings.TestMessageID
+    else
+      FJanuaAdvTwilio.contentSID := FWhatsAppSettings.DefaultMessageID;
+  end;
 
   FJanuaAdvTwilio.ContentVariables.Text := aVariables;
 
@@ -1989,6 +1993,11 @@ end;
 procedure TdmVCLPlannerCustomController.SetItemVisibilityList(const Value: TStrings);
 begin
   FItemVisibilityList := Value;
+end;
+
+procedure TdmVCLPlannerCustomController.SetJanuaAdvTwilio(const Value: TJanuaAdvTwilio);
+begin
+  FJanuaAdvTwilio := Value;
 end;
 
 procedure TdmVCLPlannerCustomController.SetOnAfterConnect(const Value: TNotifyEvent);

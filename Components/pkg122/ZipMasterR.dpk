@@ -1,0 +1,85 @@
+package ZipMasterR;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  vclx;
+
+contains
+  ZipMstr in '..\..\..\lib\DelphiZip\ZipMstr.pas',
+  ZMArgSplit in '..\..\..\lib\DelphiZip\ZMArgSplit.pas',
+  ZMBaseOpr in '..\..\..\lib\DelphiZip\ZMBaseOpr.pas',
+  ZMBody in '..\..\..\lib\DelphiZip\ZMBody.pas',
+  ZMCoDec in '..\..\..\lib\DelphiZip\ZMCoDec.pas',
+  ZMCommand in '..\..\..\lib\DelphiZip\ZMCommand.pas',
+  ZMCompat in '..\..\..\lib\DelphiZip\ZMCompat.pas',
+  ZMCore in '..\..\..\lib\DelphiZip\ZMCore.pas',
+  ZMCRC in '..\..\..\lib\DelphiZip\ZMCRC.pas',
+  ZMCtx in '..\..\..\lib\DelphiZip\ZMCtx.pas',
+  ZMDelZip in '..\..\..\lib\DelphiZip\ZMDelZip.pas',
+  ZMDlg in '..\..\..\lib\DelphiZip\ZMDlg.pas',
+  ZMDllLoad in '..\..\..\lib\DelphiZip\ZMDllLoad.pas',
+  ZMDrv in '..\..\..\lib\DelphiZip\ZMDrv.pas',
+  ZMEngine in '..\..\..\lib\DelphiZip\ZMEngine.pas',
+  ZMEntryReader in '..\..\..\lib\DelphiZip\ZMEntryReader.pas',
+  ZMFileOpr in '..\..\..\lib\DelphiZip\ZMFileOpr.pas',
+  ZMFStream in '..\..\..\lib\DelphiZip\ZMFStream.pas',
+  ZMHandler in '..\..\..\lib\DelphiZip\ZMHandler.pas',
+  ZMLister in '..\..\..\lib\DelphiZip\ZMLister.pas',
+  ZMMatch in '..\..\..\lib\DelphiZip\ZMMatch.pas',
+  ZMMFStream in '..\..\..\lib\DelphiZip\ZMMFStream.pas',
+  ZMMisc in '..\..\..\lib\DelphiZip\ZMMisc.pas',
+  ZMMsg in '..\..\..\lib\DelphiZip\ZMMsg.pas',
+  ZMOprCore in '..\..\..\lib\DelphiZip\ZMOprCore.pas',
+  ZMOprDeflate in '..\..\..\lib\DelphiZip\ZMOprDeflate.pas',
+  ZMOprDel in '..\..\..\lib\DelphiZip\ZMOprDel.pas',
+  ZMOprDll in '..\..\..\lib\DelphiZip\ZMOprDll.pas',
+  ZMOprFile in '..\..\..\lib\DelphiZip\ZMOprFile.pas',
+  ZMOprMerge in '..\..\..\lib\DelphiZip\ZMOprMerge.pas',
+  ZMOprMod in '..\..\..\lib\DelphiZip\ZMOprMod.pas',
+  ZMOprMsgStr in '..\..\..\lib\DelphiZip\ZMOprMsgStr.pas',
+  ZMOprUnzip in '..\..\..\lib\DelphiZip\ZMOprUnzip.pas',
+  ZMSFXInt in '..\..\..\lib\DelphiZip\ZMSFXInt.pas',
+  ZMStructs in '..\..\..\lib\DelphiZip\ZMStructs.pas',
+  ZMUnzipOpr in '..\..\..\lib\DelphiZip\ZMUnzipOpr.pas',
+  ZMUTF8 in '..\..\..\lib\DelphiZip\ZMUTF8.pas',
+  ZMUtils in '..\..\..\lib\DelphiZip\ZMUtils.pas',
+  ZMWinFuncs in '..\..\..\lib\DelphiZip\ZMWinFuncs.pas',
+  ZMXcpt in '..\..\..\lib\DelphiZip\ZMXcpt.pas',
+  ZMZipBase in '..\..\..\lib\DelphiZip\ZMZipBase.pas',
+  ZMZipDirectory in '..\..\..\lib\DelphiZip\ZMZipDirectory.pas',
+  ZMZipEOC in '..\..\..\lib\DelphiZip\ZMZipEOC.pas',
+  ZMZipMulti in '..\..\..\lib\DelphiZip\ZMZipMulti.pas',
+  ZMZipReader in '..\..\..\lib\DelphiZip\ZMZipReader.pas',
+  ZMZipWriter in '..\..\..\lib\DelphiZip\ZMZipWriter.pas',
+  ZMZLibExApi in '..\..\..\lib\DelphiZip\ZMZLibExApi.pas';
+
+end.

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="hwq1mrfs0zj_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+  </view>
+  <link uin="kx7t17v79gh9z0mjk_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link1" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel" role="Client" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule" role="Supplier" />
+  </link>
+</nodeSet>

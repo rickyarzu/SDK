@@ -120,7 +120,7 @@ var
   s: string;
 begin
   a := TJanuaApplication.JanuaServerConf;
-  E := Self.PgErgoConnection;
+  E := PgErgoConnection;
   try
     E.SchemaID := TJanuaApplication.DBSchemaID;
     E.Server := TJanuaApplication.ServerAddress;

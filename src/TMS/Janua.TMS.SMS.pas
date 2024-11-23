@@ -12,8 +12,14 @@ type
   private
     FContentSid: string;
     FContentVariables: TStrings;
+    FResponse: string;
+    FMessageSid: string;
+    FMessageBody: string;
     procedure SetContentSid(const Value: string);
     procedure SetContentVariables(const Value: TStrings);
+    procedure SetResponse(const Value: string);
+    procedure SetMessageBody(const Value: string);
+    procedure SetMessageSid(const Value: string);
     // function ReceiveSMS: boolean;
   public
     constructor Create(AOwner: TComponent); override;
@@ -21,6 +27,9 @@ type
   public
     property ContentSid: string read FContentSid write SetContentSid;
     property ContentVariables: TStrings read FContentVariables write SetContentVariables;
+    property Response: string read FResponse write SetResponse;
+    property MessageSid: string read FMessageSid write SetMessageSid;
+    property MessageBody: string read FMessageBody write SetMessageBody;
   public
     function SendSMS(PhoneNr, Body: string): boolean; override;
   end;
@@ -29,9 +38,13 @@ type
   TSMSTwilioSender = class(TCustomSMSSender, IJanuaSMSSender, IJanuaSMSTwilio)
   public
     procedure SendSMS(aUpdateProc: TUpdateProc; aErrorProc: TExceptionProc; aFinishProc: TProc); override;
+  private
+    FResponse: string;
+    procedure SetResponse(const Value: string);
   public
     constructor Create; override;
     destructor Destroy; override;
+    property Response: string read FResponse write SetResponse;
   end;
 
 implementation
@@ -124,6 +137,11 @@ begin
   end;
 end;
 
+procedure TSMSTwilioSender.SetResponse(const Value: string);
+begin
+  FResponse := Value;
+end;
+
 { TJanuaAdvTwilio }
 
 constructor TJanuaAdvTwilio.Create(AOwner: TComponent);
@@ -155,7 +173,6 @@ begin
     -u $TWILIO_ACCOUNT_SID:$TWILIO_AUTH_TOKEN
   *)
 
-
   Result := False;
 
   url := 'https://api.twilio.com/2010-04-01/Accounts/' + App.Key + '/Messages.json';
@@ -183,12 +200,23 @@ begin
     RequestParams.Values['ContentVariables'] := lContentVariables;
   end;
 
-  postdata := ansistring(EncodeParams(RequestParams, '&', false));
+  postdata := ansistring(EncodeParams(RequestParams, '&', False));
 
   I := HttpsPost(Extractserver(url), Removeserver(url), App.Key, App.Secret, headers, postdata, res);
 
   FLastError := 'HTTP result ' + inttostr(I) + ':' + string(res);
+  FResponse := string(res);
   Result := I in [200, 201];
+
+  if Result and (res <> '') then
+  begin
+    var
+    aObject := JsonParse(res);
+    JsonValue(aObject, 'body', FMessageBody);
+    JsonValue(aObject, 'sid', FMessageSid);
+    aObject.Free;
+  end;
+
 end;
 
 procedure TJanuaAdvTwilio.SetContentSid(const Value: string);
@@ -199,6 +227,21 @@ end;
 procedure TJanuaAdvTwilio.SetContentVariables(const Value: TStrings);
 begin
   FContentVariables := Value;
+end;
+
+procedure TJanuaAdvTwilio.SetMessageBody(const Value: string);
+begin
+  FMessageBody := Value;
+end;
+
+procedure TJanuaAdvTwilio.SetMessageSid(const Value: string);
+begin
+  FMessageSid := Value;
+end;
+
+procedure TJanuaAdvTwilio.SetResponse(const Value: string);
+begin
+  FResponse := Value;
 end;
 
 initialization

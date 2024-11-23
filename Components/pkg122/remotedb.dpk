@@ -1,0 +1,50 @@
+package remotedb;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS RemoteDB - Core Package'}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  sparkle,
+  dbrtl,
+  aurelius;
+
+contains
+  RemoteDB.Client.Database in '..\..\..\tmssoftware\TMS RemoteDB\source\core\RemoteDB.Client.Database.pas',
+  RemoteDB.Client.Dataset in '..\..\..\tmssoftware\TMS RemoteDB\source\core\RemoteDB.Client.Dataset.pas',
+  RemoteDB.Client.GenericDatabase in '..\..\..\tmssoftware\TMS RemoteDB\source\core\RemoteDB.Client.GenericDatabase.pas',
+  RemoteDB.Comp.Server in '..\..\..\tmssoftware\TMS RemoteDB\source\core\RemoteDB.Comp.Server.pas',
+  RemoteDB.Drivers.Base in '..\..\..\tmssoftware\TMS RemoteDB\source\core\RemoteDB.Drivers.Base.pas',
+  RemoteDB.Drivers.Interfaces in '..\..\..\tmssoftware\TMS RemoteDB\source\core\RemoteDB.Drivers.Interfaces.pas',
+  RemoteDB.Server.Interfaces in '..\..\..\tmssoftware\TMS RemoteDB\source\core\RemoteDB.Server.Interfaces.pas',
+  RemoteDB.Server.Module in '..\..\..\tmssoftware\TMS RemoteDB\source\core\RemoteDB.Server.Module.pas',
+  RemoteDB.Server.Wrappers in '..\..\..\tmssoftware\TMS RemoteDB\source\core\RemoteDB.Server.Wrappers.pas';
+
+end.

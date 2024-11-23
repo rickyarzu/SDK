@@ -1,6 +1,6 @@
 object MainWebModule: TMainWebModule
   Actions = <>
-  Height = 361
+  Height = 257
   Width = 429
   object WebStencilsEngine: TWebStencilsEngine
     Dispatcher = WebFileDispatcher

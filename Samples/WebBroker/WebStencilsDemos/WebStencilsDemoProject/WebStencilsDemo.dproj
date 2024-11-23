@@ -51,9 +51,8 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
+    <Import Project="..\..\..\..\prj\DXE15\JanuaDemoDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\..\..\prj\DXE15\JanuaDemoDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
-        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
         <DCC_S>false</DCC_S>
@@ -64,6 +63,7 @@
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
         <SanitizedProjectName>WebStencilsDemo</SanitizedProjectName>
         <BRCC_IncludePath>.\src\;$(BRCC_IncludePath)</BRCC_IncludePath>
+        <CfgDependentOn>..\..\..\..\prj\DXE15\JanuaDemoDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Linux64)'!=''">
         <DCC_UsePackage>inetrzr;DataSnapServer;fmx;emshosting;DbxCommonDriver;bindengine;FireDACCommonODBC;emsclient;FireDACCommonDriver;IndyProtocols;dbxcds;emsedge;inetdb;FireDACSqliteDriver;DbxClientDriver;FireDACASADriver;soapmidas;dbexpress;FireDACInfxDriver;inet;DataSnapCommon;dbrtl;FireDACOracleDriver;CustomIPTransport;FireDACMSSQLDriver;DataSnapIndy10ServerTransport;DataSnapConnectors;FireDACMongoDBDriver;IndySystem;FireDACTDataDriver;bindcomp;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;IndyCore;RESTBackendComponents;rtl;FireDACMySQLDriver;FireDACADSDriver;RESTComponents;dsnapxml;DataSnapClient;DataSnapFireDAC;emsclientfiredac;FireDACPgDriver;FireDAC;xmlrtl;dsnap;CloudService;FireDACDb2Driver;DataSnapNativeClient;DatasnapConnectorsFreePascal;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -76,6 +76,7 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>(None)</Manifest_File>
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <DCC_UsePackage>inetrzr;vclwinx;DataSnapServer;fmx;emshosting;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;FireDACCommonDriver;appanalytics;IndyProtocols;vclx;IndyIPClient;dbxcds;vcledge;bindcompvclwinx;emsedge;bindcompfmx;DBXFirebirdDriver;inetdb;FireDACSqliteDriver;DbxClientDriver;FireDACASADriver;soapmidas;vclactnband;fmxFireDAC;dbexpress;FireDACInfxDriver;DBXMySQLDriver;VclSmp;inet;DataSnapCommon;vcltouch;fmxase;DBXOdbcDriver;dbrtl;FireDACDBXDriver;FireDACOracleDriver;fmxdae;FireDACMSAccDriver;CustomIPTransport;FireDACMSSQLDriver;DataSnapIndy10ServerTransport;DataSnapConnectors;vcldsnap;DBXInterBaseDriver;FireDACMongoDBDriver;IndySystem;FireDACTDataDriver;Skia.Package.VCL;vcldb;vclFireDAC;bindcomp;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;IndyCore;RESTBackendComponents;bindcompdbx;rtl;FireDACMySQLDriver;FireDACADSDriver;RESTComponents;DBXSqliteDriver;vcl;IndyIPServer;dsnapxml;dsnapcon;DataSnapClient;DataSnapProviderClient;adortl;DBXSybaseASEDriver;DBXDb2Driver;vclimg;DataSnapFireDAC;emsclientfiredac;FireDACPgDriver;FireDAC;FireDACDSDriver;inetdbxpress;xmlrtl;tethering;bindcompvcl;dsnap;CloudService;DBXSybaseASADriver;DBXOracleDriver;FireDACDb2Driver;DBXInformixDriver;fmxobj;bindcompvclsmp;DataSnapNativeClient;DatasnapConnectorsFreePascal;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -128,6 +129,7 @@
         <None Include="README.md"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
+            <DependentOn>..\..\..\..\prj\DXE15\JanuaDemoDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
@@ -148,10 +150,10 @@
                 </Source>
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclbcbsmp290.bpl">C++Builder Sample Components Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp290.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp290.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
                 <WelcomePageFile Path="README.md"/>
                 <WelcomePageFolder/>
@@ -179,6 +181,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="Linux64\Debug\WebStencilsDemo" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteName>WebStencilsDemo</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -196,12 +201,27 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="README.md" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="README.md" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="README.md" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\</RemoteDir>
                         <Enabled>false</Enabled>
@@ -209,36 +229,63 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="README.md" Configuration="Release" Class="ProjectFile">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="Win32\Debug\WebStencilsDemo.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Win32">
                         <RemoteName>WebStencilsDemo.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="Win32\Release\WebStencilsDemo.exe" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Win32">
                         <RemoteName>WebStencilsDemo.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="Win64\Debug\WebStencilsDemo.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Win64">
                         <RemoteName>WebStencilsDemo.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="Win64\Debug\WebStencilsDemo.rsm" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteName>WebStencilsDemo.rsm</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Win64\Release\WebStencilsDemo.exe" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Win64">
                         <RemoteName>WebStencilsDemo.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\basics.html" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html</RemoteDir>
                         <RemoteName>basics.html</RemoteName>
@@ -246,6 +293,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\components.html" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html</RemoteDir>
                         <RemoteName>components.html</RemoteName>
@@ -253,6 +303,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\examples\customers.html" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html\examples</RemoteDir>
                         <RemoteName>customers.html</RemoteName>
@@ -260,6 +313,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\examples\tasks.html" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html\examples</RemoteDir>
                         <RemoteName>tasks.html</RemoteName>
@@ -267,6 +323,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\home.html" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html</RemoteDir>
                         <RemoteName>home.html</RemoteName>
@@ -274,6 +333,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\keywords.html" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html</RemoteDir>
                         <RemoteName>keywords.html</RemoteName>
@@ -281,6 +343,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\layouts\footer.html" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html\layouts</RemoteDir>
                         <RemoteName>footer.html</RemoteName>
@@ -288,6 +353,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\layouts\mainLayout.html" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html\layouts</RemoteDir>
                         <RemoteName>mainLayout.html</RemoteName>
@@ -295,6 +363,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\layouts\navbar.html" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html\layouts</RemoteDir>
                         <RemoteName>navbar.html</RemoteName>
@@ -302,6 +373,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\partials\codeBlock.html" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html\partials</RemoteDir>
                         <RemoteName>codeBlock.html</RemoteName>
@@ -309,6 +383,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\partials\hero.html" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html\partials</RemoteDir>
                         <RemoteName>hero.html</RemoteName>
@@ -316,6 +393,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\partials\pageInfo.html" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html\partials</RemoteDir>
                         <RemoteName>pageInfo.html</RemoteName>
@@ -323,6 +403,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\partials\tasks\card.html" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html\partials\tasks</RemoteDir>
                         <RemoteName>card.html</RemoteName>
@@ -330,6 +413,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\partials\tasks\item.html" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html\partials\tasks</RemoteDir>
                         <RemoteName>item.html</RemoteName>
@@ -337,6 +423,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\partials\tasks\itemEdit.html" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html\partials\tasks</RemoteDir>
                         <RemoteName>itemEdit.html</RemoteName>
@@ -344,6 +433,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\partials\tasks\list.html" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html\partials\tasks</RemoteDir>
                         <RemoteName>list.html</RemoteName>
@@ -351,6 +443,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\static\css\custom.css" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html\static\css</RemoteDir>
                         <RemoteName>custom.css</RemoteName>
@@ -358,6 +453,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\static\img\favicon.ico" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html\static\img</RemoteDir>
                         <RemoteName>favicon.ico</RemoteName>
@@ -365,6 +463,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\static\img\logo.png" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html\static\img</RemoteDir>
                         <RemoteName>logo.png</RemoteName>
@@ -372,6 +473,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\static\js\custom.js" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html\static\js</RemoteDir>
                         <RemoteName>custom.js</RemoteName>
@@ -379,6 +483,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\static\js\modeToggle.js" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html\static\js</RemoteDir>
                         <RemoteName>modeToggle.js</RemoteName>
@@ -386,6 +493,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="html\templates.html" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\html</RemoteDir>
                         <RemoteName>templates.html</RemoteName>
@@ -393,6 +503,9 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="resources\data\customersFireDac.json" Configuration="Release" Class="File">
+                    <Platform Name="All Platforms">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
                     <Platform Name="Linux64">
                         <RemoteDir>.\resources\data</RemoteDir>
                         <RemoteName>customersFireDac.json</RemoteName>

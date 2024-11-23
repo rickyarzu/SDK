@@ -445,6 +445,10 @@ type
     lkpTecniciGBACKCOLOR: TIntegerField;
     spUpdateStatini: TUniStoredProc;
     spUpdateWhatsApp: TUniStoredProc;
+    qryMessageCount: TUniQuery;
+    qryMessageCountMESSAGES: TLargeintField;
+    spInsertWhatsAppMsg: TUniStoredProc;
+    qryElencoEventiWhatsAppSTATINO: TIntegerField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -634,15 +638,15 @@ uses Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Core.Functions, Janua.Core.
   udlgPhoenixVCLWhatsAppSMSMessage, udlgPhoenixVCLMemoBox, udlgPhoenixWAMessageList;
 
 {$IFDEF WIN32}
-function InitializeDLL: string; stdcall; external 'PhoenixLib32_r9.dll' index 1;
-function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r9.dll' index 2;
-function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.dll' index 3;
-function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.dll' index 4;
-function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.dll' index 5;
-function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r9.dll' index 6;
-function WhatsAppSentDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.dll' index 7;
-procedure GoogleRestore; stdcall; external 'PhoenixLib32_r9.dll' index 8;
-procedure TestDLL; stdcall; external 'PhoenixLib32_r9.dll' index 9;
+function InitializeDLL: string; stdcall; external 'PhoenixLib32_r10.dll' index 1;
+function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r10.dll' index 2;
+function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r10.dll' index 3;
+function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r10.dll' index 4;
+function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r10.dll' index 5;
+function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r10.dll' index 6;
+function WhatsAppSentDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r10.dll' index 7;
+procedure GoogleRestore; stdcall; external 'PhoenixLib32_r10.dll' index 8;
+procedure TestDLL; stdcall; external 'PhoenixLib32_r10.dll' index 9;
 {$ENDIF}
 {$IFDEF WIN64}
 function InitializeDLL: string; stdcall; external 'PhoenixLib32_r9.64.dll' index 1;
@@ -653,7 +657,7 @@ function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'Phoeni
 function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r9.64.dll' index 6;
 function WhatsAppSentMessage(aJson: string): string; stdcall; external 'PhoenixLib32_r9.64.dll' index 7;
 procedure GoogleRestore; stdcall; external 'PhoenixLib32_r9.64.dll' index 8;
-procedure TestDLL; stdcall; external 'PhoenixLib32_r9.dll' index 9;
+procedure TestDLL; stdcall; external 'PhoenixLib32_r10.dll' index 9;
 {$ENDIF}
 
 var
@@ -875,12 +879,15 @@ begin
   // qryElencoEventiWhatsAppcalcMessage.AsString;
   var
   lPhone := IfThen(FWATest, FWATestPhone, Trim(qryElencoEventiWhatsAppWANUMBER.AsString));
+  lPhone := StringReplace(lPhone, ' ', '', [rfIgnoreCase, rfReplaceAll]);
 
   if lPhone = '' then
     JShowError('Non è presente un numero WhatsApp Valido')
   else
   begin
-    lPhone := '+39' + StringReplace(lPhone, ' ', '', [rfIgnoreCase, rfReplaceAll]);
+    var
+    lWaNumber := lPhone;
+    lPhone := '+39' + lWaNumber;
     var
     vTest := True;
     try
@@ -889,11 +896,12 @@ begin
       try
         aStrings.Add(DateToStr(qryElencoEventiWhatsAppDALLE_ORE.AsDateTime));
         aStrings.Add(qryElencoEventiWhatsAppLOCATION.AsString);
-        SendMSSWhatsAppMessage('', lPhone, True, aStrings.Text);
+        vTest := SendMSSWhatsAppMessage('', lPhone, True, aStrings.Text);
       finally
         aStrings.Free;
       end;
-      WhatsAppSentDLL(sGUID);
+      if vTest then
+        WhatsAppSentDLL(sGUID);
     except
       on e: exception do
       begin
@@ -906,6 +914,14 @@ begin
       qryElencoEventiWhatsApp.Edit;
       qryElencoEventiWhatsAppWA.AsString := 'F';
       qryElencoEventiWhatsApp.Post;
+
+      spInsertWhatsAppMsg.ParamByName('wanumber').Value := lWaNumber;
+      spInsertWhatsAppMsg.ParamByName('wamessage').Value := FJanuaAdvTwilio.MessageBody;
+      spInsertWhatsAppMsg.ParamByName('in_out').Value := 0;
+      spInsertWhatsAppMsg.ParamByName('wa_id').Value := FJanuaAdvTwilio.MessageSid;
+      if qryElencoEventiWhatsAppSTATINO.AsInteger <> 0 then
+        spInsertWhatsAppMsg.ParamByName('report_id').Value := qryElencoEventiWhatsAppSTATINO.AsInteger;
+      spInsertWhatsAppMsg.ExecProc;
     end;
 
   end;
@@ -931,6 +947,8 @@ begin
   else
   begin
     lPhone := StringReplace(lPhone, ' ', '', [rfIgnoreCase, rfReplaceAll]);
+    var
+    lWaNumber := lPhone;
     if Pos('+39', lPhone) = 0 then
       lPhone := '+39' + lPhone;
 
@@ -941,12 +959,21 @@ begin
       aStrings.Add(qryElencoEventiWhatsAppLOCATION.AsString);
       var
       lSent := SendMSSWhatsAppMessage('', lPhone, True, aStrings.Text);
+
       if lSent then
       begin
         WhatsAppSentDLL(sGUID);
         qryElencoEventiWhatsApp.Edit;
         qryElencoEventiWhatsAppWA.AsString := 'F';
         qryElencoEventiWhatsApp.Post;
+
+        spInsertWhatsAppMsg.ParamByName('wanumber').Value := lWaNumber;
+        spInsertWhatsAppMsg.ParamByName('wamessage').Value := FJanuaAdvTwilio.MessageBody;
+        spInsertWhatsAppMsg.ParamByName('in_out').Value := 0;
+        spInsertWhatsAppMsg.ParamByName('wa_id').Value := FJanuaAdvTwilio.MessageSid;
+        if qryElencoEventiWhatsAppSTATINO.AsInteger <> 0 then
+          spInsertWhatsAppMsg.ParamByName('report_id').Value := qryElencoEventiWhatsAppSTATINO.AsInteger;
+        spInsertWhatsAppMsg.ExecProc;
       end;
     finally
       aStrings.Free;
@@ -2684,12 +2711,16 @@ begin
   sGUID := StringReplace(aMeeting.JGUID, '{', '', []);
   sGUID := StringReplace(sGUID, '}', '', []);
 
+  var
+  vStatino := 0;
+
   if qryPersonalPlannerEvents.Locate('JGUID', aMeeting.JGUID, []) or qryPersonalPlannerEvents.Locate('JGUID',
     sGUID, []) then
   begin
     qryCellulariStatino.Close;
     qryCellulariStatino.Params[0].AsInteger := qryPersonalPlannerEventsSTATINO.AsInteger;
     qryCellulariStatino.Open;
+    vStatino := qryPersonalPlannerEventsSTATINO.AsInteger;
 {$IFDEF DEBUG}
     var
     lTest := qryCellulariStatino.RecordCount;
@@ -2710,25 +2741,37 @@ begin
       if WATest then
         lPhone := JanuaInputText('Inserire cellulare test', 'Numero di Cellulare', WATestPhone)
       else
-        lPhone :=  StringReplace(Trim(lDlg.edWAPhone.Text), ' ', '', [rfIgnoreCase, rfReplaceAll]);
+        lPhone := StringReplace(Trim(lDlg.edWAPhone.Text), ' ', '', [rfIgnoreCase, rfReplaceAll]);
+      var
+      lWaNumber := lPhone;
+      Result := (Length(lPhone) > 7) and (Length(lPhone) <= 13);
 
-      if lPhone = '' then
+      if not Result then
         JShowError('Non è presente un numero WhatsApp Valido')
       else
       begin
         lPhone := StringReplace(lPhone, ' ', '', [rfIgnoreCase, rfReplaceAll]);
         if Pos('+39', lPhone) = 0 then
           lPhone := '+39' + lPhone;
+
+        Result := SendMSSWhatsAppMessage('', lPhone, WATest, aVariables);
       end;
 
-      Result := SendMSSWhatsAppMessage('', lPhone, WATest, aVariables);
-
+      { wa_id type of column whatsapp_messages.wa_id,
+        report_id type of column whatsapp_messages.report_id }
       if Result then
         try
           WhatsAppSentDLL(sGUID);
           qryPersonalPlannerEvents.Edit;
           qryPersonalPlannerEventsCOLORE.AsInteger := 7911679;
           qryPersonalPlannerEvents.Post;
+          spInsertWhatsAppMsg.ParamByName('wanumber').Value := lWaNumber;
+          spInsertWhatsAppMsg.ParamByName('wamessage').Value := FJanuaAdvTwilio.MessageBody;
+          spInsertWhatsAppMsg.ParamByName('in_out').Value := 0;
+          spInsertWhatsAppMsg.ParamByName('wa_id').Value := FJanuaAdvTwilio.MessageSid;
+          if vStatino <> 0 then
+            spInsertWhatsAppMsg.ParamByName('report_id').Value := vStatino;
+          spInsertWhatsAppMsg.ExecProc;
         except
           on e: exception do
             raise exception.Create('Messaggio a ' + lDlg.edWAPhone.Text + ' non inviato causa Errore: ' +

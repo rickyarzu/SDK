@@ -1,0 +1,45 @@
+package TMSVCLSecuritySystemPkgUI;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS Security System components'}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl,
+  TMSVCLSecuritySystemPkgCore;
+
+contains
+  uChangePasswordForm in '..\..\..\tmssoftware\TMS VCL Security System\uChangePasswordForm.pas',
+  uLoginDlg in '..\..\..\tmssoftware\TMS VCL Security System\uLoginDlg.pas',
+  uLoginForm in '..\..\..\tmssoftware\TMS VCL Security System\uLoginForm.pas',
+  uChangePasswordDlg in '..\..\..\tmssoftware\TMS VCL Security System\uChangePasswordDlg.pas',
+  uFormPolicyDlg in '..\..\..\tmssoftware\TMS VCL Security System\uFormPolicyDlg.pas',
+  uSecDlg in '..\..\..\tmssoftware\TMS VCL Security System\uSecDlg.pas';
+
+end.
+

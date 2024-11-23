@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="un7dovmv5gl_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::0tp1408e7yo_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="design:view:::oia9k4wiitg_v" />
+    </reference>
+  </view>
+</nodeSet>

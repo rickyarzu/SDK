@@ -1,0 +1,62 @@
+package TMSCloudPkgDE;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS VCL Cloud Pack design time support'}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  designide,
+  vclie,
+  vclimg,
+  soaprtl,
+  inet,
+  dsnap,
+  dbrtl,
+  DbxCommonDriver,
+  vcldb,
+  IndyCore,
+  IndySystem,
+  IndyProtocols,
+  TMSCloudPkg,
+  VclSmp;
+
+contains
+  CloudWebDavRegDE in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudWebDavRegDE.pas',
+  CloudStorageFieldMappingEdit in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudStorageFieldMappingEdit.pas' {SFieldMappingEdit},
+  CloudSplash in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudSplash.pas',
+  CloudRegDE in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudRegDE.pas',
+  CloudAppSettings in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudAppSettings.pas' {CloudSettings},
+  CloudImageRegDE in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudImageRegDE.pas',
+  CloudmyCloudDataDE in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudmyCloudDataDE.pas',
+  CloudmyCloudDataRegDE in '..\..\..\tmssoftware\TMS VCL Cloud Pack\CloudmyCloudDataRegDE.pas';
+
+end.
+
+
+

@@ -1,0 +1,180 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{32441860-D9EE-4D3D-B209-256943797916}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\components\pkg110\TMSCloudPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\components\pkg110\TMSCloudPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\components\pkg110\eInvoice4D.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\components\pkg110\eMiniInvoice4D.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\VCL\EInvoice4D\EInvoiceDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\VCL\Mobyt\MobytVCLSample.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\lib\RESTRequest4Delphi\samples\client\delphi\RestLibDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\tmssoftware\TMS VCL Cloud Pack\Demos\FacebookDemo\FacebookDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\tmssoftware\TMS VCL Cloud Pack\Demos\CloudAdvStorageDemo\CloudAdvStorageDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\VCL\SMS\prjVCLSmsTest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\CData\Paypal\ConsoleSample.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\VCL\CData\prjVCLCDataTestPaypal.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TMSCloudPkg">
+        <MSBuild Projects="..\..\components\pkg110\TMSCloudPkg.dproj"/>
+    </Target>
+    <Target Name="TMSCloudPkg:Clean">
+        <MSBuild Projects="..\..\components\pkg110\TMSCloudPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSCloudPkg:Make">
+        <MSBuild Projects="..\..\components\pkg110\TMSCloudPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSCloudPkgDE">
+        <MSBuild Projects="..\..\components\pkg110\TMSCloudPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSCloudPkgDE:Clean">
+        <MSBuild Projects="..\..\components\pkg110\TMSCloudPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSCloudPkgDE:Make">
+        <MSBuild Projects="..\..\components\pkg110\TMSCloudPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="eInvoice4D">
+        <MSBuild Projects="..\..\components\pkg110\eInvoice4D.dproj"/>
+    </Target>
+    <Target Name="eInvoice4D:Clean">
+        <MSBuild Projects="..\..\components\pkg110\eInvoice4D.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="eInvoice4D:Make">
+        <MSBuild Projects="..\..\components\pkg110\eInvoice4D.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="eMiniInvoice4D">
+        <MSBuild Projects="..\..\components\pkg110\eMiniInvoice4D.dproj"/>
+    </Target>
+    <Target Name="eMiniInvoice4D:Clean">
+        <MSBuild Projects="..\..\components\pkg110\eMiniInvoice4D.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="eMiniInvoice4D:Make">
+        <MSBuild Projects="..\..\components\pkg110\eMiniInvoice4D.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCore">
+        <MSBuild Projects="JanuaCore.dproj"/>
+    </Target>
+    <Target Name="JanuaCore:Clean">
+        <MSBuild Projects="JanuaCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCore:Make">
+        <MSBuild Projects="JanuaCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="EInvoiceDemo">
+        <MSBuild Projects="..\..\Samples\VCL\EInvoice4D\EInvoiceDemo.dproj"/>
+    </Target>
+    <Target Name="EInvoiceDemo:Clean">
+        <MSBuild Projects="..\..\Samples\VCL\EInvoice4D\EInvoiceDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EInvoiceDemo:Make">
+        <MSBuild Projects="..\..\Samples\VCL\EInvoice4D\EInvoiceDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MobytVCLSample">
+        <MSBuild Projects="..\..\Samples\VCL\Mobyt\MobytVCLSample.dproj"/>
+    </Target>
+    <Target Name="MobytVCLSample:Clean">
+        <MSBuild Projects="..\..\Samples\VCL\Mobyt\MobytVCLSample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MobytVCLSample:Make">
+        <MSBuild Projects="..\..\Samples\VCL\Mobyt\MobytVCLSample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RestLibDemo">
+        <MSBuild Projects="..\..\..\lib\RESTRequest4Delphi\samples\client\delphi\RestLibDemo.dproj"/>
+    </Target>
+    <Target Name="RestLibDemo:Clean">
+        <MSBuild Projects="..\..\..\lib\RESTRequest4Delphi\samples\client\delphi\RestLibDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RestLibDemo:Make">
+        <MSBuild Projects="..\..\..\lib\RESTRequest4Delphi\samples\client\delphi\RestLibDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FacebookDemo">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS VCL Cloud Pack\Demos\FacebookDemo\FacebookDemo.dproj"/>
+    </Target>
+    <Target Name="FacebookDemo:Clean">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS VCL Cloud Pack\Demos\FacebookDemo\FacebookDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FacebookDemo:Make">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS VCL Cloud Pack\Demos\FacebookDemo\FacebookDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CloudAdvStorageDemo">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS VCL Cloud Pack\Demos\CloudAdvStorageDemo\CloudAdvStorageDemo.dproj"/>
+    </Target>
+    <Target Name="CloudAdvStorageDemo:Clean">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS VCL Cloud Pack\Demos\CloudAdvStorageDemo\CloudAdvStorageDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CloudAdvStorageDemo:Make">
+        <MSBuild Projects="..\..\..\tmssoftware\TMS VCL Cloud Pack\Demos\CloudAdvStorageDemo\CloudAdvStorageDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="prjVCLSmsTest">
+        <MSBuild Projects="..\..\Samples\VCL\SMS\prjVCLSmsTest.dproj"/>
+    </Target>
+    <Target Name="prjVCLSmsTest:Clean">
+        <MSBuild Projects="..\..\Samples\VCL\SMS\prjVCLSmsTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="prjVCLSmsTest:Make">
+        <MSBuild Projects="..\..\Samples\VCL\SMS\prjVCLSmsTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ConsoleSample">
+        <MSBuild Projects="..\..\Samples\CData\Paypal\ConsoleSample.dproj"/>
+    </Target>
+    <Target Name="ConsoleSample:Clean">
+        <MSBuild Projects="..\..\Samples\CData\Paypal\ConsoleSample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ConsoleSample:Make">
+        <MSBuild Projects="..\..\Samples\CData\Paypal\ConsoleSample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="prjVCLCDataTestPaypal">
+        <MSBuild Projects="..\..\Samples\VCL\CData\prjVCLCDataTestPaypal.dproj"/>
+    </Target>
+    <Target Name="prjVCLCDataTestPaypal:Clean">
+        <MSBuild Projects="..\..\Samples\VCL\CData\prjVCLCDataTestPaypal.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="prjVCLCDataTestPaypal:Make">
+        <MSBuild Projects="..\..\Samples\VCL\CData\prjVCLCDataTestPaypal.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TMSCloudPkg;TMSCloudPkgDE;eInvoice4D;eMiniInvoice4D;JanuaCore;EInvoiceDemo;MobytVCLSample;RestLibDemo;FacebookDemo;CloudAdvStorageDemo;prjVCLSmsTest;ConsoleSample;prjVCLCDataTestPaypal"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TMSCloudPkg:Clean;TMSCloudPkgDE:Clean;eInvoice4D:Clean;eMiniInvoice4D:Clean;JanuaCore:Clean;EInvoiceDemo:Clean;MobytVCLSample:Clean;RestLibDemo:Clean;FacebookDemo:Clean;CloudAdvStorageDemo:Clean;prjVCLSmsTest:Clean;ConsoleSample:Clean;prjVCLCDataTestPaypal:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TMSCloudPkg:Make;TMSCloudPkgDE:Make;eInvoice4D:Make;eMiniInvoice4D:Make;JanuaCore:Make;EInvoiceDemo:Make;MobytVCLSample:Make;RestLibDemo:Make;FacebookDemo:Make;CloudAdvStorageDemo:Make;prjVCLSmsTest:Make;ConsoleSample:Make;prjVCLCDataTestPaypal:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

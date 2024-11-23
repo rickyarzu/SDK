@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="pn9b1izegth_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+  </view>
+  <link uin="1jkikywk78k_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link1" />
+    <participant referencedUin="delphi:e_class:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer" role="Client" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.Http.WebServer.TJanuaWebServer" role="Supplier" />
+  </link>
+  <link uin="v0oj3yin9eo_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link2" />
+    <participant referencedUin="delphi:e_class:src:JanuaRestWeb:Janua.WebBroker.Server.TJanuaWebBrokerServer" role="Client" />
+    <participant referencedUin="delphi:e_class:src:JanuaRestWeb:Janua.DMVC.CustomWebModule.TJanuaDMVCCustomWebModule" role="Supplier" />
+  </link>
+</nodeSet>

@@ -36,6 +36,8 @@ object WebModule1: TWebModule1
     ProviderName = 'PostgreSQL'
     Port = 5432
     Database = 'ergomercator'
+    SpecificOptions.Strings = (
+      'PostgreSQL.UseUnicode=True')
     Options.DisconnectedMode = True
     Options.LocalFailover = True
     Pooling = True

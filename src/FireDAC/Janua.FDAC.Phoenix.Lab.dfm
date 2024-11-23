@@ -1,9 +1,10 @@
 inherited dmFDACPhoenixLab: TdmFDACPhoenixLab
   OnCreate = DataModuleCreate
   OnDestroy = DataModuleDestroy
-  Height = 410
+  Height = 476
   Width = 542
   inherited FDConnectionPhoenix: TFDConnection
+    Connected = True
     LoginDialog = nil
     LoginPrompt = False
   end
@@ -748,8 +749,18 @@ inherited dmFDACPhoenixLab: TdmFDACPhoenixLab
   end
   object spSetStatoStatini: TFDStoredProc
     Connection = FDConnectionPhoenix
-    StoredProcName = 'SET_STATO_STATINI'
+    StoredProcName = 'SET_STATINI_STATO'
     Left = 240
     Top = 344
+  end
+  object sqlDataStatini: TFDCommand
+    Connection = FDConnectionPhoenix
+    CommandText.Strings = (
+      
+        '     UPDATE STATINI SET APPUNTAMENTO_DATA = NULL, APPUNTAMENTO_O' +
+        'RA = NULL'
+      '        WHERE APPUNTAMENTO_DATA < CURRENT_DATE;')
+    Left = 424
+    Top = 392
   end
 end

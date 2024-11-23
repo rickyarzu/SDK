@@ -1,0 +1,95 @@
+package VCLTMSFNCWXPackPkg;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS FNC WX Pack for VCL'}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vclimg,
+  vcl,
+  xmlrtl,
+  VCLTMSFNCCorePkg;
+
+contains
+  VCL.TMSFNCCommonJSFiles in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCCommonJSFiles.pas',
+  VCL.TMSFNCCustomList in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCCustomList.pas',
+  VCL.TMSFNCWXHTMLMemo.Common in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXHTMLMemo.Common.pas',
+  VCL.TMSFNCWXHTMLMemo in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXHTMLMemo.pas',
+  VCL.TMSFNCWXHTMLMemoReg in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXHTMLMemoReg.pas',
+  VCL.TMSFNCWXBarcode.Consts in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXBarcode.Consts.pas',
+  VCL.TMSFNCWXBarcode in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXBarcode.pas',
+  VCL.TMSFNCWXBarcodeReg in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXBarcodeReg.pas',
+  VCL.TMSFNCWXCamera.Consts in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXCamera.Consts.pas',
+  VCL.TMSFNCWXCamera in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXCamera.pas',
+  VCL.TMSFNCWXCameraReg in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXCameraReg.pas',
+  VCL.TMSFNCWXCommon in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXCommon.pas',
+  VCL.TMSFNCWXQRCode.Consts in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXQRCode.Consts.pas',
+  VCL.TMSFNCWXQRCode in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXQRCode.pas',
+  VCL.TMSFNCWXQRCodeReg in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXQRCodeReg.pas',
+  VCL.TMSFNCWXPDFViewer.Common in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXPDFViewer.Common.pas',
+  VCL.TMSFNCWXPDFViewer in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXPDFViewer.pas',
+  VCL.TMSFNCWXPDFViewerReg in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXPDFViewerReg.pas',
+  VCL.TMSFNCWXPDFThumbnailList in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXPDFThumbnailList.pas',
+  VCL.TMSFNCWXPDFThumbnailListReg in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXPDFThumbnailListReg.pas',
+  VCL.TMSFNCWXPDFToolbar in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXPDFToolbar.pas',
+  VCL.TMSFNCWXPDFToolbarReg in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXPDFToolbarReg.pas',
+  VCL.TMSFNCWXJSONFormatter in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXJSONFormatter.pas',
+  VCL.TMSFNCWXJSONFormatterReg in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXJSONFormatterReg.pas',
+  VCL.TMSFNCWXJSONFormatter.Consts in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXJSONFormatter.Consts.pas',
+  VCL.TMSFNCWXSpeechSynthesis in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXSpeechSynthesis.pas',
+  VCL.TMSFNCWXSpeechSynthesisEditor in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXSpeechSynthesisEditor.pas',
+  VCL.TMSFNCWXSpeechSynthesisReg in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXSpeechSynthesisReg.pas',
+  VCL.TMSFNCWXSpeechSynthesis.Consts in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXSpeechSynthesis.Consts.pas',
+  VCL.TMSFNCWXMediaPlayer in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXMediaPlayer.pas',
+  VCL.TMSFNCWXMediaPlayer.Consts in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXMediaPlayer.Consts.pas',
+  VCL.TMSFNCWXVideoPlayer in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXVideoPlayer.pas',
+  VCL.TMSFNCWXVideoPlayerReg in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXVideoPlayerReg.pas',
+  VCL.TMSFNCWXVideoPlayer.Consts in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXVideoPlayer.Consts.pas',
+  VCL.TMSFNCWXOCR.Consts in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXOCR.Consts.pas',
+  VCL.TMSFNCWXOCR in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXOCR.pas',
+  VCL.TMSFNCWXOCRReg in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXOCRReg.pas',
+  VCL.TMSFNCWXOCRHelper in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXOCRHelper.pas',
+  VCL.TMSFNCWXOCRHelperReg in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXOCRHelperReg.pas',
+  VCL.TMSFNCWXAudioPlayer in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXAudioPlayer.pas',
+  VCL.TMSFNCWXAudioPlayerReg in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXAudioPlayerReg.pas',
+  VCL.TMSFNCWXBarcodeDecoder.Consts in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXBarcodeDecoder.Consts.pas',
+  VCL.TMSFNCWXBarcodeDecoder in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXBarcodeDecoder.pas',
+  VCL.TMSFNCWXBarcodeDecoderReg in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXBarcodeDecoderReg.pas',
+  VCL.TMSFNCWXQRDecoder.Consts in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXQRDecoder.Consts.pas',
+  VCL.TMSFNCWXQRDecoder in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXQRDecoder.pas',
+  VCL.TMSFNCWXQRDecoderReg in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXQRDecoderReg.pas',
+  VCL.TMSFNCWXDocX.Consts in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXDocX.Consts.pas',
+  VCL.TMSFNCWXDocx.Models in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXDocx.Models.pas',
+  VCL.TMSFNCWXDocX in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXDocX.pas',
+  VCL.TMSFNCWXDocXReg in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXDocXReg.pas',
+  VCL.TMSFNCWXContainer.Consts in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXContainer.Consts.pas',
+  VCL.TMSFNCWXContainer in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXContainer.pas',
+  VCL.TMSFNCWXContainerReg in '..\..\..\tmssoftware\TMS FNC WX Pack\VCL.TMSFNCWXContainerReg.pas';
+
+end.
