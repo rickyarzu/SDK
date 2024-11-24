@@ -1,0 +1,116 @@
+﻿package JanuaVCLMVVM;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Janua Model View View Model Library Sidney'}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD OFF}
+
+requires
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  bindengine,
+  inet,
+  soaprtl,
+  xmlrtl,
+  bindcomp,
+  VCL,
+  vclactnband,
+  vclx,
+  vclie,
+  vcldb,
+  dac290,
+  crcontrols290,
+  jcl,
+  unidac290,
+  QRWRunDXE12_W64,
+  officeXPrt,
+  JvStdCtrls,
+  JvDB,
+  JvSystem,
+  JvCore,
+  gtDocEng,
+  vclwinx,
+  dsnap,
+  FlexCel_Core,
+  VCL_FlexCel_Core,
+  FlexCel_XlsAdapter,
+  VCLThemeSelector,
+  SVGIconImageList,
+  VclSmp,
+  TMSVCLUIPackPkgDXE15,
+  ipstudiowin,
+  JanuaCore,
+  JanuaUniDAC,
+  JanuaMVVM,
+  JanuaUniDACComponents,
+  JanuaCoreComponents,
+  JanuaVCLControls,
+  JanuaVCLComponents,
+  JanuaTmsControls;
+
+contains
+  Janua.VCL.ViewModels.Register in '..\..\src\VCL\ViewModels\Janua.VCL.ViewModels.Register.pas',
+  Janua.VCL.Actions in '..\..\src\VCL\Commons\Janua.VCL.Actions.pas',
+  Janua.VCL.Interposers in '..\..\src\VCL\Commons\Janua.VCL.Interposers.pas',
+  Janua.VCL.ViewModel in '..\..\src\VCL\Commons\Janua.VCL.ViewModel.pas',
+  Janua.VCL.ViewModel.Search in '..\..\src\VCL\Commons\Janua.VCL.ViewModel.Search.pas',
+  Janua.VCL.MVVM.Framework in '..\..\src\VCL\ViewModels\Janua.VCL.MVVM.Framework.pas',
+  uframeVCLDBReceiptRows in '..\..\src\VCL\Logistic\uframeVCLDBReceiptRows.pas' {frameVCLDBReceiptRows: TFrame},
+  Janua.VCL.dlgViewModelSearch in '..\..\src\VCL\Commons\Janua.VCL.dlgViewModelSearch.pas' {dlgViewModelSearch},
+  Janua.VCL.dlgCustomLogin in '..\..\src\VCL\Commons\Janua.VCL.dlgCustomLogin.pas' {dlgVCLCustomLogin},
+  Janua.VCL.Lookup in '..\..\src\VCL\Commons\Janua.VCL.Lookup.pas',
+  Janua.VCL.frameCloudFileNavigation in '..\..\src\VCL\Cloud\Janua.VCL.frameCloudFileNavigation.pas' {frameVCLCloudFileNavigation: TFrame},
+  Janua.VCL.FormController in '..\..\src\VCL\Commons\Janua.VCL.FormController.pas',
+  Janua.VCL.Controls.DateSpinSelect in '..\..\src\VCL\Controls\Janua.VCL.Controls.DateSpinSelect.pas' {JanuaVCLFrameDateSpinSelect: TFrame},
+  Janua.VCL.Controls.CustomSelect in '..\..\src\VCL\Controls\Janua.VCL.Controls.CustomSelect.pas' {frameVCLLookupSelect: TFrame},
+  Janua.VCL.Controls.FrameSelectModel in '..\..\src\VCL\Controls\Janua.VCL.Controls.FrameSelectModel.pas' {framSelectModel: TFrame},
+  Janua.VCL.Controls.ComboSelect in '..\..\src\VCL\Controls\Janua.VCL.Controls.ComboSelect.pas' {frameComboSelect: TFrame},
+  Janua.VCL.Controls.RadioGroup in '..\..\src\VCL\Controls\Janua.VCL.Controls.RadioGroup.pas' {framSelectRadioGroup: TFrame},
+  Janua.VCL.Controls.DateSelect in '..\..\src\VCL\Controls\Janua.VCL.Controls.DateSelect.pas' {JanuaVCLFrameDateSelect: TFrame},
+  Janua.VCL.Controls.IntegerSelect in '..\..\src\VCL\Controls\Janua.VCL.Controls.IntegerSelect.pas' {frameSelectInteger: TFrame},
+  Janua.VCL.Controls.SearchSelect in '..\..\src\VCL\Controls\Janua.VCL.Controls.SearchSelect.pas' {frameSearchSelect: TFrame},
+  Janua.VCL.Controls.FloatSelect in '..\..\src\VCL\Controls\Janua.VCL.Controls.FloatSelect.pas' {frameSelectFloat: TFrame},
+  Janua.VCL.Controls.BoolSelect in '..\..\src\VCL\Controls\Janua.VCL.Controls.BoolSelect.pas' {frameSelectBool: TFrame},
+  Janua.VCL.Controls.StringSelect in '..\..\src\VCL\Controls\Janua.VCL.Controls.StringSelect.pas' {frameSelectString: TFrame},
+  Janua.Documents.dlgVCLAttachments in '..\..\src\VCL\Documents\Janua.Documents.dlgVCLAttachments.pas' {dlgVCLDocAttachments},
+  Janua.VCL.LookupLabel in '..\..\src\VCL\Controls\Janua.VCL.LookupLabel.pas',
+  Janua.VCL.Application in '..\..\src\VCL\Commons\Janua.VCL.Application.pas',
+  Janua.Documents.dlgVCLDocCharges in '..\..\src\VCL\Documents\Janua.Documents.dlgVCLDocCharges.pas' {dlgVCLDocChargesRow},
+  Janua.Documents.frameVCLDocRows in '..\..\src\VCL\Documents\Janua.Documents.frameVCLDocRows.pas' {frameVCLDocRow: TFrame},
+  Janua.Documents.dlgVCLDocRows in '..\..\src\VCL\Documents\Janua.Documents.dlgVCLDocRows.pas' {dlgVCLDocumentRow},
+  Janua.Anagraph.VCL.frameBankAccount in '..\..\src\VCL\Anagraph\Janua.Anagraph.VCL.frameBankAccount.pas',
+  Janua.VCL.frameCountrySearch in '..\..\src\VCL\Commons\Janua.VCL.frameCountrySearch.pas' {frameVCLCountrySearch: TFrame},
+  Janua.VCL.frameAddressVAT in '..\..\src\VCL\Commons\Janua.VCL.frameAddressVAT.pas',
+  Janua.Anagraph.VCL.frameAddress in '..\..\src\VCL\Anagraph\Janua.Anagraph.VCL.frameAddress.pas' {frameVCLAanagraphAddress: TFrame},
+  Janua.Anagraph.VCL.frameCompanyPayments in '..\..\src\VCL\Anagraph\Janua.Anagraph.VCL.frameCompanyPayments.pas' {frameAnagraphCompanyPayments: TFrame},
+  Janua.Anagraph.VCL.frameCompanyInformations in '..\..\src\VCL\Anagraph\Janua.Anagraph.VCL.frameCompanyInformations.pas' {FrameVCLCompanyAnagraph: TFrame},
+  Janua.VCL.frameAddress in '..\..\src\VCL\Commons\Janua.VCL.frameAddress.pas' {frameVCLAddress: TFrame},
+  Janua.Anagraph.VCL.dlgEditAnagraph in '..\..\src\VCL\Anagraph\Janua.Anagraph.VCL.dlgEditAnagraph.pas' {dlgVCLEditAnagraph};
+
+end.
+

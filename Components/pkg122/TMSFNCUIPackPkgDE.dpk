@@ -1,0 +1,115 @@
+package TMSFNCUIPackPkgDE;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS FNC UI Pack for FMX/VCL Designtime'}
+{$LIBSUFFIX AUTO}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  designide,
+  FMXTMSFNCUIPackPkg,
+  VCLTMSFNCUIPackPkg,
+  TMSFNCCorePkgDE;
+
+contains
+  FMX.TMSFNCToolBarDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCToolBarDE.pas',
+  FMX.TMSFNCToolBarRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCToolBarRegDE.pas',
+  FMX.TMSFNCTreeViewDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCTreeViewDE.pas',
+  FMX.TMSFNCPageControlDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCPageControlDE.pas',
+  FMX.TMSFNCPageControlRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCPageControlRegDE.pas',
+  FMX.TMSFNCPlannerDatabaseAdapterDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCPlannerDatabaseAdapterDE.pas',
+  FMX.TMSFNCPlannerDatabaseAdapterRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCPlannerDatabaseAdapterRegDE.pas',
+  FMX.TMSFNCNavigationPanelDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCNavigationPanelDE.pas',
+  FMX.TMSFNCNavigationPanelRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCNavigationPanelRegDE.pas',
+  FMX.TMSFNCGridDatabaseAdapterDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCGridDatabaseAdapterDE.pas',
+  FMX.TMSFNCGridDatabaseAdapterRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCGridDatabaseAdapterRegDE.pas',
+  FMX.TMSFNCResponsiveListDesigner in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCResponsiveListDesigner.pas',
+  VCL.TMSFNCResponsiveListDesigner in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCResponsiveListDesigner.pas',
+  FMX.TMSFNCTreeViewRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCTreeViewRegDE.pas',
+  FMX.TMSFNCResponsiveListDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCResponsiveListDE.pas',
+  FMX.TMSFNCResponsiveListRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCResponsiveListRegDE.pas',
+  FMX.TMSFNCUIRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCUIRegDE.pas',
+  FMX.TMSFNCGridDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCGridDE.pas',
+  FMX.TMSFNCGridRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCGridRegDE.pas',
+  FMX.TMSFNCRibbonDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCRibbonDE.pas',
+  FMX.TMSFNCRibbonRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCRibbonRegDE.pas',
+  FMX.TMSFNCHTMLTextDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCHTMLTextDE.pas',
+  FMX.TMSFNCHTMLTextRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCHTMLTextRegDE.pas',
+  FMX.TMSFNCButtonRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCButtonRegDE.pas',
+  FMX.TMSFNCListBoxDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCListBoxDE.pas',
+  FMX.TMSFNCListBoxRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCListBoxRegDE.pas',
+  FMX.TMSFNCTabSetDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCTabSetDE.pas',
+  FMX.TMSFNCTabSetRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCTabSetRegDE.pas',
+  FMX.TMSFNCPlannerDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCPlannerDE.pas',
+  FMX.TMSFNCPlannerRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCPlannerRegDE.pas',
+  FMX.TMSFNCPanelDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCPanelDE.pas',
+  FMX.TMSFNCPanelRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCPanelRegDE.pas',
+  VCL.TMSFNCTreeViewRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCTreeViewRegDE.pas',
+  VCL.TMSFNCTreeViewDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCTreeViewDE.pas',
+  VCL.TMSFNCToolBarRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCToolBarRegDE.pas',
+  VCL.TMSFNCToolBarDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCToolBarDE.pas',
+  VCL.TMSFNCTabSetDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCTabSetDE.pas',
+  VCL.TMSFNCTabSetRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCTabSetRegDE.pas',
+  VCL.TMSFNCPlannerRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPlannerRegDE.pas',
+  VCL.TMSFNCPlannerDatabaseAdapterRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPlannerDatabaseAdapterRegDE.pas',
+  VCL.TMSFNCPlannerDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPlannerDE.pas',
+  VCL.TMSFNCPlannerDatabaseAdapterDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPlannerDatabaseAdapterDE.pas',
+  VCL.TMSFNCPanelDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPanelDE.pas',
+  VCL.TMSFNCPanelRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPanelRegDE.pas',
+  VCL.TMSFNCPageControlDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPageControlDE.pas',
+  VCL.TMSFNCPageControlRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPageControlRegDE.pas',
+  VCL.TMSFNCNavigationPanelRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCNavigationPanelRegDE.pas',
+  VCL.TMSFNCNavigationPanelDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCNavigationPanelDE.pas',
+  VCL.TMSFNCListBoxDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCListBoxDE.pas',
+  VCL.TMSFNCListBoxRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCListBoxRegDE.pas',
+  VCL.TMSFNCHTMLTextDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCHTMLTextDE.pas',
+  VCL.TMSFNCHTMLTextRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCHTMLTextRegDE.pas',
+  VCL.TMSFNCGridDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCGridDE.pas',
+  VCL.TMSFNCGridRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCGridRegDE.pas',
+  VCL.TMSFNCRibbonDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRibbonDE.pas',
+  VCL.TMSFNCRibbonRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRibbonRegDE.pas',
+  VCL.TMSFNCGridDatabaseAdapterDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCGridDatabaseAdapterDE.pas',
+  VCL.TMSFNCGridDatabaseAdapterRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCGridDatabaseAdapterRegDE.pas',
+  VCL.TMSFNCUIRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCUIRegDE.pas',
+  VCL.TMSFNCButtonRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCButtonRegDE.pas',
+  VCL.TMSFNCResponsiveListRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCResponsiveListRegDE.pas',
+  VCL.TMSFNCResponsiveListDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCResponsiveListDE.pas',
+  FMX.TMSFNCHotSpotImageRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCHotSpotImageRegDE.pas',
+  FMX.TMSFNCHotSpotImageDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCHotSpotImageDE.pas',
+  FMX.TMSFNCHotSpotImageEditorDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCHotSpotImageEditorDE.pas',
+  FMX.TMSFNCHotSpotImageEditorRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCHotSpotImageEditorRegDE.pas',
+  VCL.TMSFNCHotSpotImageRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCHotSpotImageRegDE.pas',
+  VCL.TMSFNCHotSpotImageDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCHotSpotImageDE.pas',
+  VCL.TMSFNCHotSpotImageEditorDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCHotSpotImageEditorDE.pas',
+  VCL.TMSFNCHotSpotImageEditorRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCHotSpotImageEditorRegDE.pas',
+  FMX.TMSFNCKanbanBoardDatabaseAdapterDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCKanbanBoardDatabaseAdapterDE.pas',
+  FMX.TMSFNCKanbanBoardDatabaseAdapterRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\FMX.TMSFNCKanbanBoardDatabaseAdapterRegDE.pas',
+  VCL.TMSFNCKanbanBoardDatabaseAdapterDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCKanbanBoardDatabaseAdapterDE.pas',
+  VCL.TMSFNCKanbanBoardDatabaseAdapterRegDE in '..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCKanbanBoardDatabaseAdapterRegDE.pas';
+end.

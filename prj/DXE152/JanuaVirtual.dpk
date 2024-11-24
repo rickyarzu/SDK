@@ -1,0 +1,82 @@
+﻿package JanuaVirtual;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Janua Virtual Firedac'}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+rrequires
+  JanuaCore,
+  JanuaMVVM,
+  JanuaCoreComponents,
+  rtl,
+  xmlrtl,
+  dbrtl,
+  soaprtl,
+  inet,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  bindengine,
+  CustomIPTransport,
+  DbxCommonDriver,
+  RESTComponents,
+  FireDAC,
+  FireDACCommonDriver,
+  FireDACCommon,
+  dac280,
+  Spring.Base;
+
+ocontains
+  Janua.System.FDacDM in '..\..\src\januacore\datamodule\Janua.System.FDacDM.pas' {dmFDacMemSystemServer: TDataModule},
+  Janua.Virtual.Anagraph in '..\..\src\januacore\datamodule\Janua.Virtual.Anagraph.pas',
+  Janua.Virtual.Cloud in '..\..\src\januacore\datamodule\Janua.Virtual.Cloud.pas',
+  Janua.Virtual.Cms in '..\..\src\januacore\datamodule\Janua.Virtual.Cms.pas',
+  Janua.Virtual.Football in '..\..\src\januacore\datamodule\Janua.Virtual.Football.pas',
+  Janua.Virtual.Functions in '..\..\src\januacore\datamodule\Janua.Virtual.Functions.pas',
+  Janua.Virtual.System in '..\..\src\januacore\datamodule\Janua.Virtual.System.pas',
+  udmVirtualAnagraph in '..\..\src\januacore\datamodule\udmVirtualAnagraph.pas' {dmVirtualAnagraph: TDataModule},
+  udmVirtualCloudServer in '..\..\src\januacore\datamodule\udmVirtualCloudServer.pas' {dmVirtualCloudServer: TDataModule},
+  udmVirtualCmsServer in '..\..\src\januacore\datamodule\udmVirtualCmsServer.pas' {dmVirtualCmsServer: TDataModule},
+  udmVirtualServerModel in '..\..\src\januacore\datamodule\udmVirtualServerModel.pas' {dmVirtualServerModel: TDataModule},
+  udmVirtualSystemServer in '..\..\src\januacore\datamodule\udmVirtualSystemServer.pas' {dmVirtualSystemServer: TDataModule},
+  udmVirtualFootballServer in '..\..\src\januacore\datamodule\udmVirtualFootballServer.pas' {dmVirtualFootballServer: TDataModule},
+  udmVirtualFootballStorage in '..\..\src\januacore\datamodule\udmVirtualFootballStorage.pas' {dmVirtualFootballStorage: TDataModule},
+  Janua.Orm.Firedac in '..\..\src\januacore\Janua.Orm.Firedac.pas',
+  Janua.Test.FireDac.dmVirtual in '..\..\src\januacore\Test\Janua.Test.FireDac.dmVirtual.pas' {dmFDacVirtualTest: TDataModule},
+  Janua.Documents.FdacDM.Virtual in '..\..\src\januacore\datamodule\Janua.Documents.FdacDM.Virtual.pas' {dmVirtualDocuments: TDataModule},
+  Janua.WHReceipts.FdacDM.Virtual in '..\..\src\januacore\datamodule\Janua.WHReceipts.FdacDM.Virtual.pas' {dmVirtualWHReceipts: TDataModule},
+  Janua.Logistic.AWB.FDacDM.Virtual in '..\..\src\januacore\datamodule\Janua.Logistic.AWB.FDacDM.Virtual.pas' {dmVirtualAWB: TDataModule},
+  Janua.Workflow.FDacDM.Virtual in '..\..\src\januacore\datamodule\Janua.Workflow.FDacDM.Virtual.pas' {dmWorkFlowFiredac: TDataModule},
+  Janua.Logistic.Shipments.FDacDM.Virtual in '..\..\src\januacore\datamodule\Janua.Logistic.Shipments.FDacDM.Virtual.pas' {dmVirtualShipments: TDataModule},
+  Janua.Lookups.Firedac.Virtual in '..\..\src\januacore\datamodule\Janua.Lookups.Firedac.Virtual.pas' {dmFDACMemLookups: TDataModule},
+  Janua.Items.Firedac.Virtual in '..\..\src\januacore\datamodule\Janua.Items.Firedac.Virtual.pas' {dmFiredacVirtualItems: TDataModule},
+  Janua.Shipping.Vessels.Firedac.Virtual in '..\..\src\januacore\datamodule\Janua.Shipping.Vessels.Firedac.Virtual.pas' {dmFDMockShippingVessels: TDataModule},
+  Janua.Mock.Firedac.Framework in '..\..\src\januacore\datamodule\Janua.Mock.Firedac.Framework.pas';
+
+d.

@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="10o1quf2o5r_v">
+    <property name="$metaclass" value="Class Diagram" />
+    <property name="$name" value="SystemMVVM" />
+    <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="480,40,365,350" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="hideProperty" value="False" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.FjdsUserSession" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.FjdsUser" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.FjdsUserProfile" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.FjdsLogin" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.FjspLogin" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.FjspLoginSocial" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.FjdsAnagraphProfile" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.FjspAddAnagraphProfile" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.FjdsGetUserByKey" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.FjdsSearchUserProfile" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.FjspCreatePersonalSchema" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.FjspSetUserDefaultSchema" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.FjspUserAdd" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.FjspUserTest" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.FjspUserDel" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.FjspUpdateUserAnID" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.SetjspUpdateUserAnID(Janua.Orm.Intf.IJanuaDBStoredProcedure)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.SetjdsAnagraphProfile(Janua.Orm.Intf.IJanuaDBDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.SetjspAddAnagraphProfile(Janua.Orm.Intf.IJanuaDBStoredProcedure)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.SetjdsGetUserByKey(Janua.Orm.Intf.IJanuaDBDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.SetjdsUserSession(Janua.Orm.Intf.IJanuaDBDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.SetjdsUser(Janua.Orm.Intf.IJanuaDBDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.SetjdsLogin(Janua.Orm.Intf.IJanuaDBDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.SetjdsSearchUserProfile(Janua.Orm.Intf.IJanuaDBDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.SetjdsUserProfile(Janua.Orm.Intf.IJanuaDBDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.SetjspCreatePersonalSchema(Janua.Orm.Intf.IJanuaDBStoredProcedure)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.SetjspLogin(Janua.Orm.Intf.IJanuaDBStoredProcedure)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.SetjspLoginSocial(Janua.Orm.Intf.IJanuaDBStoredProcedure)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.SetjspSetUserDefaultSchema(Janua.Orm.Intf.IJanuaDBStoredProcedure)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.SetjspUserAdd(Janua.Orm.Intf.IJanuaDBStoredProcedure)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.SetjspUserTest(Janua.Orm.Intf.IJanuaDBStoredProcedure)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.SetjspUserDel(Janua.Orm.Intf.IJanuaDBStoredProcedure)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.GetjdsUser()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.GetjdsUserSession()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.GetjdsUserProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.GetjspLogin()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.GetjspLoginSocial()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.GetjdsLogin()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.GetjspUserAdd()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.GetjspUserTest()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.GetjspCreatePersonalSchema()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.GetjdsGetUserByKey()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.GetjdsSearchUserProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.GetjspSetUserDefaultSchema()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.GetjdsAnagraphProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.GetjspAddAnagraphProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.GetjspUserDel()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.GetjspUpdateUserAnID()" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.jdsAnagraphProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.jdsUserSession" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.jdsUser" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.jdsUserProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.jdsLogin" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.jspLogin" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.jspLoginSocial" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.jspUserAdd" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.jspUserTest" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.jspCreatePersonalSchema" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.jdsGetUserByKey" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.jdsSearchUserProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.jspSetUserDefaultSchema" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.jspAddAnagraphProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.jspUserDel" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.jspUpdateUserAnID" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.Destroy()" />
+      <reference referencedUin="design:link:::2cwhagoszu0gve1fj_l">
+        <property name="sourceAnchor" value="480,225" />
+        <property name="targetAnchor" value="398,225" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.FjdsNewAnagraphProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.SetjdsNewAnagraphProfile(Janua.Orm.Intf.IJanuaDBDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.GetjdsNewAnagraphProfile()" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaCustomSystemDataModule.jdsNewAnagraphProfile" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="60,60,338,335" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjdsUser()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jdsUser" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjdsUserSession()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jdsUserSession" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjdsUserProfile()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jdsUserProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjspLogin()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jspLogin" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjspUserAdd()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jspUserAdd" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjspLoginSocial()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jspLoginSocial" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjdsLogin()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jdsLogin" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjspUserTest()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jspUserTest" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjspCreatePersonalSchema()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjdsGetUserByKey()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjdsSearchUserProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjspSetUserDefaultSchema()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjspUserDel()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jspCreatePersonalSchema" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jdsGetUserByKey" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jdsSearchUserProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jspSetUserDefaultSchema" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jspUserDel" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjdsAnagraphProfile()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jdsAnagraphProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjspAddAnagraphProfile()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jspAddAnagraphProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjdsNewAnagraphProfile()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jdsNewAnagraphProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.GetjspUpdateUserAnID()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemDataModule.jspUpdateUserAnID" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="60,440,377,245" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.SetSelectedSchema(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.SaveProfile(JOrm.System.UserProfile.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.OpenUserProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.SetProfileFromQuery()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.FindUserByKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.FindUserByID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.CheckUser(JOrm.System.UserProfile.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.AddUser(JOrm.System.UserProfile.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.AdminAddUser(JOrm.System.UserProfile.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.DelUser(JOrm.System.UserProfile.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.DelUser()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.DelUser(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.DelUser(Janua.ViewModels.Intf.TGUID)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.DelUser(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.searchuserbyGUID(Janua.ViewModels.Intf.TGUID)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.GetUserSessionRecord()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.UserSessionRecord" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.GetSessionID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.SetSessionID(System.Int64)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.SessionID" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.login(JOrm.System.Users.Intf.IUser)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.login()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.LoginByKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.GetUserLogin()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.UserLogin" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.GetLastErrorMessage()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.LastErrorMessage" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.GetUser()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.GetSessionKey()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.SetSessionKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.vtUserSessionAfterScroll(Janua.System.ViewModel.Intf.TDataSet)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.GetUserProfile()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.UserProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.User" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.SessionKey" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.GetLoggedIn()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.LoggedIn" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.GetRememberSession()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.SetRememberSession(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.RememberSession" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.GetRememberLocalPassword()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.SetRememberLocalPassword(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.RememberLocalPassword" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.CreateNewAnagraph(JOrm.System.Users.Intf.IUser,JOrm.Anagraph.Anagraphs.Intf.IAnagraphView)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.CreateNewAnagraph(JOrm.Anagraph.Anagraphs.Intf.IAnagraphView)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.GetAnagraphProfile()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel.AnagraphProfile" />
+      <reference referencedUin="design:link:::kx7t17v79gh9z0mjk_l">
+        <property name="sourceAnchor" value="229,440" />
+        <property name="targetAnchor" value="229,395" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="480,420,377,359" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="hideProperty" value="False" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.FAnagraphProfile" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.FRememberSession" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.FSessionKey" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.FUserLogin" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.FUserSessionRecord" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.GetUserLogin()" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.FLastErrorMessage" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.GetLastErrorMessage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.SetLastErrorMessage(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.GetjdsAnagraphProfile()" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.FDM" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.SetLoggedIn(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.SetupLogin(JOrm.System.Users.Intf.IUser,ref@System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.GetUserProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.InternalLogin()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.InternalLoginSocial()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.CloseProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.InternalAddUser(JOrm.System.UserProfile.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.InternalAddUserSocial(JOrm.System.UserProfile.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.InternalCheckUserSocial(JOrm.System.UserProfile.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.InternalCheckUser(ref@System.Integer,JOrm.System.UserProfile.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.OpenProfile(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.GetjspUserAdd()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.GetjdsUserProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.GetjdsUser()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.GetUserSessionRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.GetSessionID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.SetSessionID(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.GetUser()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.GetSessionKey()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.SetSessionKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.GetjdsUserSession()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.GetLoggedIn()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.GetRememberSession()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.SetRememberSession(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.GetRememberLocalPassword()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.SetRememberLocalPassword(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.GetAnagraphProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.SetSelectedSchema(System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.SaveProfile(JOrm.System.UserProfile.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.OpenUserProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.SetProfileFromQuery()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.FindUserByKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.FindUserByID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.CheckUser(JOrm.System.UserProfile.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.AddUser(JOrm.System.UserProfile.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.AdminAddUser(JOrm.System.UserProfile.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.login(JOrm.System.Users.Intf.IUser)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.login()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.LoginByKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.DelUser(JOrm.System.UserProfile.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.DelUser()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.DelUser(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.DelUser(Janua.System.Model.Impl.TGUID)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.DelUser(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.searchuserbyGUID(Janua.System.Model.Impl.TGUID)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.CreateNewAnagraph(JOrm.System.Users.Intf.IUser,JOrm.Anagraph.Anagraphs.Intf.IAnagraphView)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.CreateNewAnagraph(JOrm.Anagraph.Anagraphs.Intf.IAnagraphView)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.DelCurrentUser()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.vtUserSessionAfterScroll(Janua.System.Model.Impl.TDataSet)" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.AnagraphProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.jspUserAdd" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.UserSessionRecord" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.jdsUser" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.jdsUserProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.jdsAnagraphProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.jdsUserSession" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.LastErrorMessage" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.SessionID" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.UserProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.User" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.SessionKey" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.UserLogin" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.LoggedIn" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.RememberSession" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.RememberLocalPassword" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.InternalActivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.Create()" />
+      <reference referencedUin="design:link:::uooqcz79rzs48f82p_l">
+        <property name="sourceAnchor" value="480,562" />
+        <property name="targetAnchor" value="437,562" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="design:link:::v9neumo85us_l">
+        <property name="sourceAnchor" value="662,420" />
+        <property name="targetAnchor" value="662,390" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.Model.Impl.TJanuaDBSystemUserSessionModel.LoadSessionUserProfile()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="960,420,459,212" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.FSystemUserSessionModel" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.FLoginDialog" />
+      <reference referencedUin="delphi:e_field:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.FCount" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.InternalActivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.GetSystemUserSessionModel()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.SetSystemUserSessionModel(Janua.System.ViewModel.Intf.IJanuaSystemUserSessionModel)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.GetCurrentRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.SetCurrentRecord(JOrm.System.UserSession.Intf.IUserSession)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.GetSessionID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.SetSessionID(System.Int64)" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.SessionID" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.GetSchemaID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.SetSchemaID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.LoginWithDialog()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.SilentLogin(System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.SilentLogin(JOrm.System.Users.Intf.IUser)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.RegisterUser(JOrm.System.UserProfile.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.RegisterUser(JOrm.System.Users.Intf.IUser)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.DelUser(JOrm.System.UserProfile.Intf.IUserProfile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.DelUser()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.DelUser(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.DelUser(Janua.System.ViewModel.Impl.TGUID)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.DelUser(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.RegisterUser(System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.GetRememberSession()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.SetRememberSession(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.SetRememberLocalPassword(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.GetAnagraphProfile()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.CreateNewAnagraph(JOrm.System.Users.Intf.IUser,JOrm.Anagraph.Anagraphs.Intf.IAnagraphView)" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.CreateNewAnagraph(JOrm.Anagraph.Anagraphs.Intf.IAnagraphView)" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.AnagraphProfile" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.CurrentRecord" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.SystemUserSessionModel" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.SchemaID" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.RememberSession" />
+      <reference referencedUin="delphi:e_method:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.GetRememberLocalPassword()" />
+      <reference referencedUin="delphi:e_property:src:JanuaMVVM:Janua.System.ViewModel.Impl.TJanuaCustomSystemUserSessionViewModel.RememberLocalPassword" />
+    </reference>
+  </view>
+</nodeSet>

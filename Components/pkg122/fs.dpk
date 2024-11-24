@@ -1,0 +1,63 @@
+// Package file for Delphi 11 Seattle
+
+package fs;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  VCL,
+  VCLX;
+
+contains
+  fs_ipascal in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_ipascal.pas',
+  fs_icpp in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_icpp.pas',
+  fs_ijs in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_ijs.pas',
+  fs_ibasic in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_ibasic.pas',
+  fs_iclassesrtti in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_iclassesrtti.pas',
+  fs_iconst in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_iconst.pas',
+  fs_idialogsrtti in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_idialogsrtti.pas',
+  fs_ievents in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_ievents.pas',
+  fs_iexpression in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_iexpression.pas',
+  fs_iextctrlsrtti in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_iextctrlsrtti.pas',
+  fs_iformsrtti in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_iformsrtti.pas',
+  fs_igraphicsrtti in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_igraphicsrtti.pas',
+  fs_iilparser in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_iilparser.pas',
+  fs_iinirtti in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_iinirtti.pas',
+  fs_iinterpreter in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_iinterpreter.pas',
+  fs_iparser in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_iparser.pas',
+  fs_isysrtti in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_isysrtti.pas',
+  fs_imenusrtti in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_imenusrtti.pas',
+  fs_itools in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_itools.pas',
+  fs_xml in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_xml.pas',
+  fs_synmemo in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_synmemo.pas',
+  fs_tree in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_tree.pas',
+  fs_idisp in '..\..\..\Libraries\FastReport VCL Enterprise\FastScript\fs_idisp.pas';
+
+end.

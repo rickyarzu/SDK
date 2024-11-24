@@ -1,0 +1,56 @@
+package TMSScripter_Imports_VCL;
+
+
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS Scripter - VCL Import Package'}
+{$LIBSUFFIX '270'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  TMSScripter_Imports_RTL;
+
+contains
+  ap_ActnList in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\vcl\ap_ActnList.pas',
+  ap_Buttons in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\vcl\ap_Buttons.pas',
+  ap_ComCtrls in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\vcl\ap_ComCtrls.pas',
+  ap_CommDlg in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\vcl\ap_CommDlg.pas',
+  ap_Controls in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\vcl\ap_Controls.pas',
+  ap_Dialogs in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\vcl\ap_Dialogs.pas',
+  ap_ExtCtrls in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\vcl\ap_ExtCtrls.pas',
+  ap_Forms in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\vcl\ap_Forms.pas',
+  ap_Graphics in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\vcl\ap_Graphics.pas',
+  ap_Grids in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\vcl\ap_Grids.pas',
+  ap_ImgList in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\vcl\ap_ImgList.pas',
+  ap_Mask in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\vcl\ap_Mask.pas',
+  ap_Menus in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\vcl\ap_Menus.pas',
+  ap_StdActns in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\vcl\ap_StdActns.pas',
+  ap_StdCtrls in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\vcl\ap_StdCtrls.pas',
+  ap_Messages in '..\..\..\tmssoftware\TMS Scripter Studio v7.21.0.1\source\imports\vcl\ap_Messages.pas';
+
+end.

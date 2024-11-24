@@ -1,0 +1,48 @@
+package ipstudiowindataset;
+
+{$R *.res}
+{$R *.otares}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Woll2Woll InfoPower Studio BDE Datasets'}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+rrequires
+  ipstudiowin,
+  vcl,
+  vcldb,
+  rtl,
+  dbrtl;
+
+ocontains
+  vcl.wwtable in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwtable.pas',
+  vcl.wwfilter in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwfilter.pas',
+  vcl.wwqbe in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwqbe.pas',
+  vcl.wwquery in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwquery.pas',
+  vcl.wwstorep in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwstorep.pas';
+
+d.

@@ -1,0 +1,49 @@
+package uniTools28;
+
+{$R *.res}
+{$R *.otares}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'FMSoft uniTools Library'}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+rrequires
+  rtl;
+
+ocontains
+  InstDecode,
+  CPUID in 'C:\Program Files (x86)\FMSoft\Framework\uniTools\CPUID.pas',
+  DDetours in 'C:\Program Files (x86)\FMSoft\Framework\uniTools\DDetours.pas',
+  uniStrUtils in 'C:\Program Files (x86)\FMSoft\Framework\uniTools\uniStrUtils.pas',
+  uniWinUtils in 'C:\Program Files (x86)\FMSoft\Framework\uniTools\uniWinUtils.pas',
+  uniLogger in 'C:\Program Files (x86)\FMSoft\Framework\uniTools\uniLogger.pas',
+  uniStreamer in 'C:\Program Files (x86)\FMSoft\Framework\uniTools\uniStreamer.pas',
+  uniSimpleEnc in 'C:\Program Files (x86)\FMSoft\Framework\uniTools\uniSimpleEnc.pas',
+  uniDateUtils in 'C:\Program Files (x86)\FMSoft\Framework\uniTools\uniDateUtils.pas',
+  uniZLibExApi in 'C:\Program Files (x86)\FMSoft\Framework\uniTools\uniZLibExApi.pas',
+  uniZLibEx in 'C:\Program Files (x86)\FMSoft\Framework\uniTools\uniZLibEx.pas';
+
+d.

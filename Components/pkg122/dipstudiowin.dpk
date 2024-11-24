@@ -1,0 +1,64 @@
+package dipstudiowin;
+{$R *.res}
+{$R *.otares}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Woll2Woll InfoPower Studio Sydney VCL'}
+{$LIBSUFFIX AUTO}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+rrequires
+  designide,
+  VCL,
+  VCLDB,
+  VCLACTNBAND,
+  VCLX,
+  ipstudiowin;
+
+ocontains
+  vcl.wwDesign in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwDesign.pas',
+  vcl.infopowr in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.infopowr.pas',
+  vcl.wwdbnavedt in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwdbnavedt.pas',
+  vcl.wwprpedt in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwprpedt.pas',
+  vcl.wwpiced2 in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwpiced2.pas',
+  vcl.wwprppic in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwprppic.pas',
+  vcl.ipdsgn in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.ipdsgn.pas',
+  vcl.wwedtpic in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwedtpic.pas',
+  vcl.Wwpicdb in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.Wwpicdb.pas',
+  vcl.wwprpcom in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwprpcom.pas',
+  vcl.wwrgxed2 in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwrgxed2.pas',
+  vcl.wwprprx in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwprprx.pas',
+  vcl.ipabout in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.ipabout.pas',
+  vcl.wwfltfld in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwfltfld.pas',
+  vcl.wwprpfld in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwprpfld.pas',
+  vcl.wwselfld in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwselfld.pas',
+  vcl.wwcollectioneditor in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwcollectioneditor.pas',
+  vcl.wwInspectorPrpEdt in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwInspectorPrpEdt.pas',
+  vcl.wwinspectorprop in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwinspectorprop.pas',
+  vcl.wwprpds in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwprpds.pas',
+  vcl.wwImageNamePropEditor in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\source\windows\vcl.wwImageNamePropEditor.pas';
+
+d.

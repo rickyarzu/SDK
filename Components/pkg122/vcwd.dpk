@@ -1,0 +1,113 @@
+package vcwd;
+
+{$R *.res}
+{$R *.otares}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS Instrumentation Workshop'}
+{$IMPLICITBUILD ON}
+
+rrequires
+  vcl;
+
+ocontains
+  VrBlotter in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrBlotter.pas',
+  VrClasses in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrClasses.pas',
+  VrSpectrum in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrSpectrum.pas',
+  VrGradient in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrGradient.pas',
+  VrRaster in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrRaster.pas',
+  VrMatrix in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrMatrix.pas',
+  VrGauge in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrGauge.pas',
+  VrArrow in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrArrow.pas',
+  VrLeds in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrLeds.pas',
+  VrLights in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrLights.pas',
+  VrSysUtils in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrSysUtils.pas',
+  VrCheckLed in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrCheckLed.pas',
+  VrJoypad in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrJoypad.pas',
+  VrLcd in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrLcd.pas',
+  VrAnalog in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrAnalog.pas',
+  VrDigit in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrDigit.pas',
+  VrImageLed in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrImageLed.pas',
+  VrLabel in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrLabel.pas',
+  VrMeter in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrMeter.pas',
+  VrNavigator in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrNavigator.pas',
+  VrSpinner in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrSpinner.pas',
+  VrTrayGauge in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrTrayGauge.pas',
+  VrPaletteDlg in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrPaletteDlg.pas' {VrPaletteDlg},
+  VrScale in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrScale.pas',
+  VrBorder in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrBorder.pas',
+  VrCalendar in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrCalendar.pas',
+  VrProgressBar in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrProgressBar.pas',
+  VrHyperCtrls in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrHyperCtrls.pas',
+  VrBanner in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrBanner.pas',
+  VrControls in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrControls.pas',
+  VrDeskTop in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrDeskTop.pas',
+  VrTrackBar in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrTrackBar.pas',
+  VrSwitch in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrSwitch.pas',
+  VrSystem in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrSystem.pas',
+  VrBitmapsDlg in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrBitmapsDlg.pas' {VrBitmapListDialog},
+  VrLevelBar in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrLevelBar.pas',
+  VrDesign in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrDesign.pas',
+  VrAnimate in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrAnimate.pas',
+  VrUpDown in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrUpDown.pas',
+  VrThreads in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrThreads.pas',
+  VrSlideShow in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrSlideShow.pas',
+  VrFormShape in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrFormShape.pas',
+  VrCompass in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrCompass.pas',
+  VrSlider in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrSlider.pas',
+  VrButtons in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrButtons.pas',
+  VrAudio in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrAudio.pas',
+  VrWaveDlg in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrWaveDlg.pas' {VrWaveSoundDialog},
+  VrDisplay in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrDisplay.pas',
+  VrEdit in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrEdit.pas',
+  VrBitmapDial in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrBitmapDial.pas',
+  VrCounter in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrCounter.pas',
+  VrPowerMeter in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrPowerMeter.pas',
+  VrScope in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrScope.pas',
+  VrRocker in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrRocker.pas',
+  VrPieGraph in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrPieGraph.pas',
+  VrGraphs in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrGraphs.pas',
+  VrAngularMeter in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrAngularMeter.pas',
+  VrScanner in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrScanner.pas',
+  VrWheel in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrWheel.pas',
+  VrInterface in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrInterface.pas',
+  VrKeyPad in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrKeyPad.pas',
+  VrJogMeter in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrJogMeter.pas',
+  vrLineMeter in '..\..\..\tmssoftware\TMS Instrumentation Workshop\vrLineMeter.pas',
+  VrThermoMeter in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrThermoMeter.pas',
+  vrTypemeter in '..\..\..\tmssoftware\TMS Instrumentation Workshop\vrTypemeter.pas',
+  VrBlinkLed in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrBlinkLed.pas',
+  VrRotarySwitch in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrRotarySwitch.pas',
+  VrTank in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrTank.pas',
+  VrHPTimerFunc in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrHPTimerFunc.pas',
+  VrHPTimer in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrHPTimer.pas',
+  vrLedClock in '..\..\..\tmssoftware\TMS Instrumentation Workshop\vrLedClock.pas',
+  VrMatrixLabel in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrMatrixLabel.pas',
+  VrScrollText in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrScrollText.pas',
+  VrLogAnalyzer in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrLogAnalyzer.pas',
+  VrReg in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrReg.pas',
+  VrTubeMeter in '..\..\..\tmssoftware\TMS Instrumentation Workshop\VrTubeMeter.pas';
+
+d.

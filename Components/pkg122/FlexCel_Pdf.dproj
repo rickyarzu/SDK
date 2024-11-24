@@ -1,0 +1,402 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{D370A6AE-CF50-46AD-9403-C29EA0456F66}</ProjectGuid>
+        <MainSource>FlexCel_Pdf.dpk</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <ProjectName Condition="'$(ProjectName)'==''">FlexCel_Pdf</ProjectName>
+        <TargetedPlatforms>1741953</TargetedPlatforms>
+        <AppType>Package</AppType>
+        <FrameworkType>None</FrameworkType>
+        <ProjectVersion>20.2</ProjectVersion>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android' and '$(Base)'=='true') or '$(Base_Android)'!=''">
+        <Base_Android>true</Base_Android>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Base)'=='true') or '$(Base_Android64)'!=''">
+        <Base_Android64>true</Base_Android64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Base)'=='true') or '$(Base_iOSDevice64)'!=''">
+        <Base_iOSDevice64>true</Base_iOSDevice64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Android64)'!=''">
+        <Cfg_2_Android64>true</Cfg_2_Android64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Cfg_2)'=='true') or '$(Cfg_2_iOSDevice64)'!=''">
+        <Cfg_2_iOSDevice64>true</Cfg_2_iOSDevice64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX64' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSX64)'!=''">
+        <Cfg_2_OSX64>true</Cfg_2_OSX64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSXARM64' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSXARM64)'!=''">
+        <Cfg_2_OSXARM64>true</Cfg_2_OSXARM64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_E>false</DCC_E>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <GenDll>true</GenDll>
+        <GenPackage>true</GenPackage>
+        <SanitizedProjectName>FlexCel_Pdf</SanitizedProjectName>
+        <DCC_Description>FlexCel PDF Engine</DCC_Description>
+        <DllSuffix>$(Auto)</DllSuffix>
+        <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
+        <VerInfo_Locale>1040</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Neon.Core.Serializers;Winapi;$(DCC_Namespace)</DCC_Namespace>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android)'!=''">
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
+        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+        <EnabledSysJars>activity-1.7.2.dex.jar;annotation-experimental-1.3.0.dex.jar;annotation-jvm-1.6.0.dex.jar;annotations-13.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;billing-6.0.1.dex.jar;biometric-1.1.0.dex.jar;browser-1.4.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;concurrent-futures-1.1.0.dex.jar;core-1.10.1.dex.jar;core-common-2.2.0.dex.jar;core-ktx-1.10.1.dex.jar;core-runtime-2.2.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;error_prone_annotations-2.9.0.dex.jar;exifinterface-1.3.6.dex.jar;firebase-annotations-16.2.0.dex.jar;firebase-common-20.3.1.dex.jar;firebase-components-17.1.0.dex.jar;firebase-datatransport-18.1.7.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-encoders-proto-16.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.1.3.dex.jar;firebase-installations-interop-17.1.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-23.1.2.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;kotlin-stdlib-1.8.22.dex.jar;kotlin-stdlib-common-1.8.22.dex.jar;kotlin-stdlib-jdk7-1.8.22.dex.jar;kotlin-stdlib-jdk8-1.8.22.dex.jar;kotlinx-coroutines-android-1.6.4.dex.jar;kotlinx-coroutines-core-jvm-1.6.4.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.6.1.dex.jar;lifecycle-livedata-2.6.1.dex.jar;lifecycle-livedata-core-2.6.1.dex.jar;lifecycle-runtime-2.6.1.dex.jar;lifecycle-service-2.6.1.dex.jar;lifecycle-viewmodel-2.6.1.dex.jar;lifecycle-viewmodel-savedstate-2.6.1.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;okio-jvm-3.4.0.dex.jar;play-services-ads-22.2.0.dex.jar;play-services-ads-base-22.2.0.dex.jar;play-services-ads-identifier-18.0.0.dex.jar;play-services-ads-lite-22.2.0.dex.jar;play-services-appset-16.0.1.dex.jar;play-services-base-18.1.0.dex.jar;play-services-basement-18.1.0.dex.jar;play-services-cloud-messaging-17.0.1.dex.jar;play-services-location-21.0.1.dex.jar;play-services-maps-18.1.0.dex.jar;play-services-measurement-base-20.1.2.dex.jar;play-services-measurement-sdk-api-20.1.2.dex.jar;play-services-stats-17.0.2.dex.jar;play-services-tasks-18.0.2.dex.jar;print-1.0.0.dex.jar;profileinstaller-1.3.0.dex.jar;room-common-2.2.5.dex.jar;room-runtime-2.2.5.dex.jar;savedstate-1.2.1.dex.jar;sqlite-2.1.0.dex.jar;sqlite-framework-2.1.0.dex.jar;startup-runtime-1.1.1.dex.jar;tracing-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.1.8.dex.jar;transport-runtime-3.1.8.dex.jar;user-messaging-platform-2.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.7.0.dex.jar</EnabledSysJars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android64)'!=''">
+        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+        <EnabledSysJars>activity-1.7.2.dex.jar;annotation-experimental-1.3.0.dex.jar;annotation-jvm-1.6.0.dex.jar;annotations-13.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;billing-6.0.1.dex.jar;biometric-1.1.0.dex.jar;browser-1.4.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;concurrent-futures-1.1.0.dex.jar;core-1.10.1.dex.jar;core-common-2.2.0.dex.jar;core-ktx-1.10.1.dex.jar;core-runtime-2.2.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;error_prone_annotations-2.9.0.dex.jar;exifinterface-1.3.6.dex.jar;firebase-annotations-16.2.0.dex.jar;firebase-common-20.3.1.dex.jar;firebase-components-17.1.0.dex.jar;firebase-datatransport-18.1.7.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-encoders-proto-16.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.1.3.dex.jar;firebase-installations-interop-17.1.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-23.1.2.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;kotlin-stdlib-1.8.22.dex.jar;kotlin-stdlib-common-1.8.22.dex.jar;kotlin-stdlib-jdk7-1.8.22.dex.jar;kotlin-stdlib-jdk8-1.8.22.dex.jar;kotlinx-coroutines-android-1.6.4.dex.jar;kotlinx-coroutines-core-jvm-1.6.4.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.6.1.dex.jar;lifecycle-livedata-2.6.1.dex.jar;lifecycle-livedata-core-2.6.1.dex.jar;lifecycle-runtime-2.6.1.dex.jar;lifecycle-service-2.6.1.dex.jar;lifecycle-viewmodel-2.6.1.dex.jar;lifecycle-viewmodel-savedstate-2.6.1.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;okio-jvm-3.4.0.dex.jar;play-services-ads-22.2.0.dex.jar;play-services-ads-base-22.2.0.dex.jar;play-services-ads-identifier-18.0.0.dex.jar;play-services-ads-lite-22.2.0.dex.jar;play-services-appset-16.0.1.dex.jar;play-services-base-18.1.0.dex.jar;play-services-basement-18.1.0.dex.jar;play-services-cloud-messaging-17.0.1.dex.jar;play-services-location-21.0.1.dex.jar;play-services-maps-18.1.0.dex.jar;play-services-measurement-base-20.1.2.dex.jar;play-services-measurement-sdk-api-20.1.2.dex.jar;play-services-stats-17.0.2.dex.jar;play-services-tasks-18.0.2.dex.jar;print-1.0.0.dex.jar;profileinstaller-1.3.0.dex.jar;room-common-2.2.5.dex.jar;room-runtime-2.2.5.dex.jar;savedstate-1.2.1.dex.jar;sqlite-2.1.0.dex.jar;sqlite-framework-2.1.0.dex.jar;startup-runtime-1.1.1.dex.jar;tracing-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.1.8.dex.jar;transport-runtime-3.1.8.dex.jar;user-messaging-platform-2.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.7.0.dex.jar</EnabledSysJars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSDevice64)'!=''">
+        <iOS_AppStore1024>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_1024x1024.png</iOS_AppStore1024>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
+        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Android64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_iOSDevice64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_OSX64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_OSXARM64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="FlexCel_Core.dcp"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_Bookmarks.TBookmark.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_Bookmarks.TBookmarkStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_Bookmarks.TPdfDestination.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_Bookmarks.TZoomOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_DocumentRecords.TDocumentCatalogRecord.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_DocumentRecords.TInfoRecord.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_DocumentRecords.TPageContents.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_DocumentRecords.TPageInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_DocumentRecords.TPageRecord.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_DocumentRecords.TPageTreeRecord.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_DocumentRecords.TPermsRecord.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfAnnots.TAnnot.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfAnnots.TAnnotList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfAnnots.TCommentAnnot.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfAnnots.TLinkAnnot.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfConsts.PdfConv.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfConsts.TFontEmbed.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfConsts.TFontMapping.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfConsts.TFontSubset.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfConsts.TPageLayout.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfConsts.TPdfCommentIcon.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfConsts.TPdfCommentProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfConsts.TPdfCommentType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfConsts.TPdfProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfConsts.TTracedFonts.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfFontFactory.PdfFontFactory.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfFontFactory.StringHash.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfFontFactory.TPsFontList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfFonts.TFontType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfFonts.TPdfBaseTrueTypeFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfFonts.TPdfEmbeddedFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfFonts.TPdfEmbeddedFontList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfFonts.TPdfFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfFonts.TPdfInternalFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfFonts.TPdfUnicodeTrueTypeFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfFonts.TPdfWinAnsiTrueTypeFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfForms.TAcroField.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfForms.TAcroFormFieldList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfForms.TAcroFormRecord.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfForms.TAcroSigField.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfGetFontData.FontEmbedEventArgs.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfGetFontData.FontEmbedEventHandler.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfGetFontData.GetFontDataEventArgs.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfGetFontData.GetFontDataEventHandler.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfGetFontData.GetFontFolderEventArgs.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfGetFontData.GetFontFolderEventHandler.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfGetFontData.TFontEvents.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfGradient.TGradientType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfGradient.TPdfFunction.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfGradient.TPdfGradient.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfGradient.TPdfType0Function.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfGradient.TPdfType2Function.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfGradient.TPdfType3Function.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfImages.TPdfImage.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfMeasures.FontMeasures.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfMessages.FlexCelPdfException.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfMessages.PdfErr.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfMessages.PdfMessages.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfMsg.Map.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfMsg.Resources.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfPattern.TPdfHatch.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfPattern.TPdfImageTexture.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfPattern.TPdfPattern.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfPattern.TPdfTexture.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfPng.TChunkType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfPng.TPdfPng.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfPng.TPdfPngData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfPng.TPngInformation.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfRecords.TDateRecord.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfRecords.TDictionaryRecord.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfRecords.TIndirectRecord.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfRecords.TPdfBaseRecord.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfRecords.TPdfHeaderRecord.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfRecords.TPdfStringRecord.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfRecords.TStreamRecord.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfSections.TBodySection.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfSections.THeaderSection.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfSections.TPdfBaseSection.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfSections.TTrailerSection.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfSections.TXRefSection.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfStandardFontInfo.TInternalFontMetrics.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfStream.THelperStream.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfStream.TPdfStream.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfStream.TSignedStream.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTokens.Map.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTokens.Resources.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTokens.TPdfToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTokens.TPdfTokens.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfToUnicode.TToUnicode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTransparency.TPdfTransparency.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.PdfRectangle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TCharAndGlyph.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TCMap.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.THeadTable.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.THeadTableList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TKerningTable.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TPdfTrueType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTableInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTableList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTrueTypeInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfUsedChars.TGlyphMap.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfWriter.PdfWriter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfWriter.TBrushStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfWriter.TGState.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_Signatures.TBuiltInSigner.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_Signatures.TBuiltInSignerFactory.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_Signatures.TPdfAllowedChanges.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_Signatures.TPdfSignature.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_Signatures.TPdfSigner.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_Signatures.TPdfSignerFactory.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_Signatures.TPdfVisibleSignature.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_UCoreAcroFormRecord.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\FlexCel.Pdf.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfStandardFontInfo.TWidthsAndKerns.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfGetFontData.TFontEventGroup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfAnnots.TLocalLinkAnnot.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfConsts.TUnlicensedFontAction.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfConsts.TUnlicensedFontData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.IPdfPageTagger.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.IPdfRoleTag.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.TObjIdRange.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.IPdfTagger.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.IPdfTagActions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.IPdfTeardownTagger.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.TPdfRoleTag.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.TTaggedImage.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.TPdfPageTagger.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.TPdfType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.TPdfTeardownTagger.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.TPdfVersion.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.TPdfTag.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.TPdfStructureTreeRoot.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.TPdfTagger.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTransparency.TPdfMask.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.TTaggedPage.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.TTagsInRow.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.TTaggedWorksheet.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.TTaggedTable.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_XMP.XMP.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_UCorePdfPageResources.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfAttachments.TPdfAttachment.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfAttachments.TPdfAttachmentDataProviderDelegate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfAttachments.TPdfAttachments.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfAttachments.TPdfAttachmentWriter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfSections.TPdfByteName.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfSections.TPdfByteNameLexicalComparer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfAttachments.TPdfAttachmentKind.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfSections.TXRefEntry.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfStream.TObjStreamEntry.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfStream.TObjStream.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_UCorePdfStream.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTags.TTagMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfConsts.TPageLayoutDisplay.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TCFFFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFAnchorFormat.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFClassDefRangeEntry.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupSubTablePosSingle1.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupSubTableSubstChainContextual1_2.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLigature.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupSubTableSubstLigature.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupSubTablePosPair1_2.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupSubTablePosMarkToBaseOrMark.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFCoverageRangeComparer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupSubTableWithCoverage.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupSubTablePosSingle2.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupSubTablePosMarkToLigature.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupSubTableSubstSingle2.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupSubTablePosCursive.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFFeatureList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFFeatureTable.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFAnchor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupSubTableSubstReverseChainContextual1.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFClassDef.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupSubTable.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupSubTableSubstMultiple.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupContextualSubRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFCoverageRangeEntry.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFMarkRecord.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupSubTableSubstSingle1.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TGPos.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFCoverageRange.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFClassDef2.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFValueRecordType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFClassDefRangeComparer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFClassDef1.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFEntryExitRecord.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupSubTableChainContextual3.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TGSubGPos.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFSubstPosLookupRecord.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFCoverage.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFPairValue.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TGSub.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFCoverageGlyph.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFScriptList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFScriptTable.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupTable.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFValueRecord.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TFontDataReader.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_KhmerShaper.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfFonts.TPdfLigatureComponent.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfFonts.TPdfEncodedString.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfFonts.TPdfEncodedStringSegment.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfFonts.TPdfShapeBuffer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfStringInfo.PdfCharInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfStringInfo.PdfStringFlags.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfStringInfo.PdfStringInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfToUnicode.UnicodeList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.PdfOffset.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TChunkByteArray.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TGDef.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TGlyphClassDef.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFFeatures.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupFlags.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFLookupSubTableSubstChainContextual.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfTrueType.TTFPairValueComparer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfUsedChars.TUsedGlyphList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_UTFCoreLookupList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfFonts.TPdfLastFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfFonts.TFauxItalicsState.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfResources.TFallbackFontList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Pdf\_PdfConsts.TPdfFontFolderNotFoundAction.pas"/>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Package</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">FlexCel_Pdf.dpk</Source>
+                </Source>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Android">False</Platform>
+                <Platform value="Android64">True</Platform>
+                <Platform value="iOSDevice32">False</Platform>
+                <Platform value="iOSDevice64">True</Platform>
+                <Platform value="iOSSimARM64">True</Platform>
+                <Platform value="iOSSimulator">False</Platform>
+                <Platform value="Linux64">True</Platform>
+                <Platform value="OSX32">False</Platform>
+                <Platform value="OSX64">True</Platform>
+                <Platform value="OSXARM64">True</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+                <Platform value="Win64x">True</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

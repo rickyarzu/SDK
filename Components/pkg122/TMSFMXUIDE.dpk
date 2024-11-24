@@ -1,0 +1,150 @@
+package TMSFMXUIDE;
+
+
+{$R '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Package\UI.dcr'}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS FMX UI Pack Design Time'}
+{$LIBSUFFIX '270'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  designide,
+  fmx,
+  TMSFMXUI,
+  vcl;
+
+contains
+  FMX.TMSCheckGroupPickerReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSCheckGroupPickerReg.pas',
+  FMX.TMSRadioGroupPickerReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRadioGroupPickerReg.pas',
+  FMX.TMSIPEditReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSIPEditReg.pas',
+  FMX.TMSGraphicCheckLabelReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGraphicCheckLabelReg.pas',
+  FMX.TMSLabelEditReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSLabelEditReg.pas',
+  FMX.TMSToolBarReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSToolBarReg.pas',
+  FMX.TMS7segledreg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMS7segledreg.pas',
+  FMX.TMSBarButtonReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSBarButtonReg.pas',
+  FMX.TMSBitmapContainerReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSBitmapContainerReg.pas',
+  FMX.TMSBitmapReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSBitmapReg.pas',
+  FMX.TMSGaugereg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGaugereg.pas',
+  FMX.TMSHTMLTextReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSHTMLTextReg.pas',
+  FMX.TMSLedmeterreg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSLedmeterreg.pas',
+  FMX.TMSLedreg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSLedreg.pas',
+  FMX.TMSMatrixlabelreg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSMatrixlabelreg.pas',
+  FMX.TMSPopupReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPopupReg.pas',
+  FMX.TMSRatingReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRatingReg.pas',
+  FMX.TMSScopereg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSScopereg.pas',
+  FMX.TMSSearchEditReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSearchEditReg.pas',
+  FMX.TMSSliderreg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSliderreg.pas',
+  FMX.TMSTableViewBindingReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTableViewBindingReg.pas',
+  FMX.TMSPageSliderReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPageSliderReg.pas',
+  FMX.TMSBadgeReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSBadgeReg.pas',
+  FMX.TMSTreeViewReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTreeViewReg.pas',
+  FMX.TMSScrollMenuReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSScrollMenuReg.pas',
+  FMX.TMSTouchKeyboardReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTouchKeyboardReg.pas',
+  FMX.TMSHotSpotImageReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSHotSpotImageReg.pas',
+  FMX.TMSTableViewExReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTableViewExReg.pas',
+  FMX.TMSPlannervCalAdapterReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPlannervCalAdapterReg.pas',
+  FMX.TMSTileListBindingReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTileListBindingReg.pas',
+  FMX.TMSPageControlReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPageControlReg.pas',
+  FMX.TMSTabSetReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTabSetReg.pas',
+  FMX.TMSSpeedButtonReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSpeedButtonReg.pas',
+  FMX.TMSGridReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGridReg.pas',
+  FMX.TMSEditReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSEditReg.pas',
+  FMX.TMSNavBarReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSNavBarReg.pas',
+  FMX.TMSFindDialogReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSFindDialogReg.pas',
+  FMX.TMSReplaceDialogReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSReplaceDialogReg.pas',
+  FMX.TMSPanelReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPanelReg.pas',
+  FMX.GridExcelIOReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\XlsAdapter\FMX.GridExcelIOReg.pas',
+  FMX.TMSProgressBarReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSProgressBarReg.pas',
+  FMX.TMSGridRtfReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGridRtfReg.pas',
+  FMX.TMSGridPDFIOReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGridPDFIOReg.pas',
+  FMX.TMSPrintPreviewReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPrintPreviewReg.pas',
+  FMX.TMSSpinnerReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSpinnerReg.pas',
+  FMX.TMSTileListReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTileListReg.pas',
+  FMX.TMSTableViewReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTableViewReg.pas',
+  FMX.TMSCalendarReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSCalendarReg.pas',
+  FMX.TMSMemoReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSMemoReg.pas',
+  FMX.TMSButtonReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSButtonReg.pas',
+  FMX.TMSBitmapPickerReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSBitmapPickerReg.pas',
+  FMX.TMSBitmapSelectorReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSBitmapSelectorReg.pas',
+  FMX.TMSColorPickerReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSColorPickerReg.pas',
+  FMX.TMSColorSelectorReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSColorSelectorReg.pas',
+  FMX.TMSWebBrowserReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSWebBrowserReg.pas',
+  FMX.TMSSignatureCaptureReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSignatureCaptureReg.pas',
+  FMX.TMSTrackBarReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTrackBarReg.pas',
+  FMX.TMSListEditorReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSListEditorReg.pas',
+  FMX.TMSCheckGroupReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSCheckGroupReg.pas',
+  FMX.TMSRadioGroupReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRadioGroupReg.pas',
+  FMX.TMSTaskDialogReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTaskDialogReg.pas',
+  FMX.TMSFontNamePickerReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSFontNamePickerReg.pas',
+  FMX.TMSFontSizePickerReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSFontSizePickerReg.pas',
+  FMX.TMSRichEditorReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRichEditorReg.pas',
+  FMX.TMSPassLockReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPassLockReg.pas',
+  FMX.TMSRatingGridReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRatingGridReg.pas',
+  FMX.TMSPlannerReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPlannerReg.pas',
+  FMX.TMSLiveGridReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSLiveGridReg.pas',
+  FMX.TMSDateTimeEditReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSDateTimeEditReg.pas',
+  FMX.TMSPlannerDatabaseAdapterReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPlannerDatabaseAdapterReg.pas',
+  FMX.TMSPlannerItemEditorRecurrencyReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPlannerItemEditorRecurrencyReg.pas',
+  FMX.TMSGridFilterPanelReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGridFilterPanelReg.pas',
+  FMX.TMSSpellCheckReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSpellCheckReg.pas',
+  FMX.TMSListViewReg in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSListViewReg.pas',
+  FMX.TMSToolBarDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSToolBarDE.pas',
+  FMX.TMSToolBarRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSToolBarRegDE.pas',
+  FMX.TMSPageSliderDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPageSliderDE.pas',
+  FMX.TMSPageSliderRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPageSliderRegDE.pas',
+  FMX.TMSBitmapContainerDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSBitmapContainerDE.pas',
+  FMX.TMSBitmapContainerRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSBitmapContainerRegDE.pas',
+  FMX.TMSTileListDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTileListDE.pas',
+  FMX.TMSTileListRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTileListRegDE.pas',
+  FMX.TMSHotSpotImageDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSHotSpotImageDE.pas',
+  FMX.TMSHotSpotImageRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSHotSpotImageRegDE.pas',
+  FMX.TMSNavBarDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSNavBarDE.pas',
+  FMX.TMSPageControlDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPageControlDE.pas',
+  FMX.TMSPageControlRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPageControlRegDE.pas',
+  FMX.TMSGridRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGridRegDE.pas',
+  FMX.TMSNavBarRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSNavBarRegDE.pas',
+  FMX.TMSSpinnerRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSpinnerRegDE.pas',
+  FMX.TMSTableViewRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTableViewRegDE.pas',
+  FMX.TMSSplash in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSplash.pas',
+  FMX.TMSTreeViewDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTreeViewDE.pas',
+  FMX.TMSTreeViewRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSTreeViewRegDE.pas',
+  FMX.TMSScrollMenuRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSScrollMenuRegDE.pas',
+  FMX.TMSListEditorRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSListEditorRegDE.pas',
+  FMX.TMSPlannerDatabaseAdapterDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPlannerDatabaseAdapterDE.pas',
+  FMX.TMSPlannerDatabaseAdapterRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPlannerDatabaseAdapterRegDE.pas',
+  FMX.TMSMemoRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSMemoRegDE.pas',
+  FMX.TMSSpellCheckRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSSpellCheckRegDE.pas',
+  FMX.TMSRichEditorAC in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRichEditorAC.pas' {TMSFMXRichEditorAC},
+  FMX.TMSRichEditorDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRichEditorDE.pas',
+  FMX.TMSRichEditorRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSRichEditorRegDE.pas',
+  FMX.TMSPlannerDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPlannerDE.pas',
+  FMX.TMSPlannerRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSPlannerRegDE.pas',
+  FMX.TMSGeneralDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGeneralDE.pas',
+  FMX.TMSGeneralRegDE in '..\..\..\tmssoftware\TMS FMX UI Pack Sydney\FMXUI_v3732_fixed\Source\FMX.TMSGeneralRegDE.pas';
+
+end.

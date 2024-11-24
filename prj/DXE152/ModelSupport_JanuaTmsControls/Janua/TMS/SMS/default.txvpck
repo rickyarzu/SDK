@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="0t7emwy2wig_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+  </view>
+  <link uin="9h24wvo3ykr_l">
+    <property name="$metaclass" value="Dependency Link" />
+    <property name="$name" value="Dependency Link1" />
+    <participant referencedUin="delphi:e_class:src:JanuaTmsControls:Janua.TMS.SMS.TSMSTwilioSender" role="Client" />
+    <participant referencedUin="delphi:e_class:src:JanuaCore:Janua.Cloud.Sms.Impl.TCustomSMSSender" role="Supplier" />
+  </link>
+</nodeSet>

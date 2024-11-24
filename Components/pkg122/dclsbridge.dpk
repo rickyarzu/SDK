@@ -1,0 +1,56 @@
+package dclsbridge;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$DEFINE sbridge}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Devart SecureBridge Components'}
+{$LIBSUFFIX '280'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  sbridge,
+  rtl,
+  vcl,
+  designide;
+
+contains
+  ScCertificatesFrame in '..\..\..\Libraries\Devart SecureBridge\Source\Design\ScCertificatesFrame.pas',
+  ScColFrame in '..\..\..\Libraries\Devart SecureBridge\Source\Design\ScColFrame.pas',
+  ScCollectionEditor in '..\..\..\Libraries\Devart SecureBridge\Source\Design\ScCollectionEditor.pas',
+  ScDesign in '..\..\..\Libraries\Devart SecureBridge\Source\Design\ScDesign.pas',
+  ScDesignUtils in '..\..\..\Libraries\Devart SecureBridge\Source\Design\ScDesignUtils.pas',
+  ScDualListEditor in '..\..\..\Libraries\Devart SecureBridge\Source\Design\ScDualListEditor.pas',
+  ScStringMapEditor in '..\..\..\Libraries\Devart SecureBridge\Source\Design\ScStringMapEditor.pas',
+  ScEditor in '..\..\..\Libraries\Devart SecureBridge\Source\Design\ScEditor.pas',
+  ScFrame in '..\..\..\Libraries\Devart SecureBridge\Source\Design\ScFrame.pas',
+  ScKeysFrame in '..\..\..\Libraries\Devart SecureBridge\Source\Design\ScKeysFrame.pas',
+  ScReg in '..\..\..\Libraries\Devart SecureBridge\Source\Design\ScReg.pas',
+  ScStorageEditor in '..\..\..\Libraries\Devart SecureBridge\Source\Design\ScStorageEditor.pas',
+  ScTabEditor in '..\..\..\Libraries\Devart SecureBridge\Source\Design\ScTabEditor.pas',
+  ScUsersFrame in '..\..\..\Libraries\Devart SecureBridge\Source\Design\ScUsersFrame.pas';
+
+end.

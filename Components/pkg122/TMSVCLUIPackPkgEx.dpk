@@ -1,0 +1,507 @@
+package TMSVCLUIPackPkgEx;
+
+{$R *.res}
+{$R *.otares}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSyskeyboardHookReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothWin8MarqueeReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\calpreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\calcreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\exeinforeg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\ellipslblreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\fsreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\frmsreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\hotspotimagereg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\lfreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\macrorecorderreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\sysmreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothbuttonreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothcalendarreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothdatepickerreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothlabelreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothlistboxreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothcomboboxreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothimagelistboxreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothimagelistboxpickerreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothmenureg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothpanelreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothspinnerreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothtrackbarreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothtogglebuttonreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothpagesliderreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothstatusindicatorreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothtabpagerreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothprogressbarreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothledlabelreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothjogwheelreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothgaugereg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothexpandergroupreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothdockreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothsplashscreenreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothmessagedialogreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothMegaMenuReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothscrollbarreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothtimelinereg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothsliderreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\gdippicturecontainerreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advfocushelperreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advsmoothcalculatorreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvPolyPagerReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvHorizontalPolyListReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvPolyBoxReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvPolyListReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvVerticalPolyListReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSlideShowReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\SPBEPCReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCapacityBarReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothPopupReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothStepControlReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\W7Bars.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\W7Buttons.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\W7Images.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\W7Labels.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\W7ListViewItems.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\W7NaviButtons.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\W7Panels.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\W7ProgressBars.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTileListReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvDataLabelReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\advduallistboxreg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvWordCloudReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCircularProgressReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvCurveReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothRotaryMenuReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\ADVGAUGEREG.DCR'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\ADVHTMLPICTUREBROWSERREG.DCR'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\ADVPICTUREPANEREG.DCR'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\ADVRANGECIRCLESREG.DCR'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\WEBPICTURECONTAINERREG.DCR'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\ADVSIGNATURECAPTUREREG.DCR'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\ADVGRAPHICCHECKLABELREG.DCR'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\ADVGAUGECIRCLEREG.DCR'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroCategoryListReg.DCR'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroPanelReg.DCR'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvScrollMenu.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvHighLightLabelReg.dcr'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\AdvTableView.DCR'}
+{$R '..\..\..\tmssoftware\TMS VCL UI Pack\HotspotEditor.dcr'}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'TMS VCL UI Pack Extra'}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD OFF}
+
+rrequires
+  rtl,
+  vcl,
+  TMSVCLUIPackPkg,
+  dsnap,
+  DbxCommonDriver;
+
+ocontains
+  AdvSyskeyboardHookReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSyskeyboardHookReg.pas',
+  AdvSyskeyboardHook in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSyskeyboardHook.pas',
+  AdvTouchKeyboardReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvTouchKeyboardReg.pas',
+  AdvTouchKeyboard in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvTouchKeyboard.pas',
+  CurvyControls in '..\..\..\tmssoftware\TMS VCL UI Pack\CurvyControls.pas',
+  CurvyControlsReg in '..\..\..\tmssoftware\TMS VCL UI Pack\CurvyControlsReg.pas',
+  AdvLockAppReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvLockAppReg.pas',
+  AdvLockApp in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvLockApp.pas',
+  AdvLockAppDlg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvLockAppDlg.pas' {AdvUnLockForm},
+  AeroButtons in '..\..\..\tmssoftware\TMS VCL UI Pack\AeroButtons.pas',
+  AeroButtonsReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AeroButtonsReg.pas',
+  AeroLabel in '..\..\..\tmssoftware\TMS VCL UI Pack\AeroLabel.pas',
+  AeroLabelReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AeroLabelReg.pas',
+  AeroRes in '..\..\..\tmssoftware\TMS VCL UI Pack\AeroRes.pas',
+  AeroWizardButton in '..\..\..\tmssoftware\TMS VCL UI Pack\AeroWizardButton.pas',
+  AeroWizardButtonReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AeroWizardButtonReg.pas',
+  calpreg in '..\..\..\tmssoftware\TMS VCL UI Pack\calpreg.pas',
+  calcomp in '..\..\..\tmssoftware\TMS VCL UI Pack\calcomp.pas',
+  calcreg in '..\..\..\tmssoftware\TMS VCL UI Pack\calcreg.pas',
+  calpanel in '..\..\..\tmssoftware\TMS VCL UI Pack\calpanel.pas',
+  exeinforeg in '..\..\..\tmssoftware\TMS VCL UI Pack\exeinforeg.pas',
+  ellipslabel in '..\..\..\tmssoftware\TMS VCL UI Pack\ellipslabel.pas',
+  ellipslblreg in '..\..\..\tmssoftware\TMS VCL UI Pack\ellipslblreg.pas',
+  exeinfo in '..\..\..\tmssoftware\TMS VCL UI Pack\exeinfo.pas',
+  fsreg in '..\..\..\tmssoftware\TMS VCL UI Pack\fsreg.pas',
+  formsize in '..\..\..\tmssoftware\TMS VCL UI Pack\formsize.pas',
+  frmshape in '..\..\..\tmssoftware\TMS VCL UI Pack\frmshape.pas',
+  frmsreg in '..\..\..\tmssoftware\TMS VCL UI Pack\frmsreg.pas',
+  hotspotimagereg in '..\..\..\tmssoftware\TMS VCL UI Pack\hotspotimagereg.pas',
+  hotspotimage in '..\..\..\tmssoftware\TMS VCL UI Pack\hotspotimage.pas',
+  hotspoteditorcomp in '..\..\..\tmssoftware\TMS VCL UI Pack\hotspoteditorcomp.pas',
+  hotspoteditor in '..\..\..\tmssoftware\TMS VCL UI Pack\hotspoteditor.pas' {frmHSIEditor},
+  lfreg in '..\..\..\tmssoftware\TMS VCL UI Pack\lfreg.pas',
+  linelibrary in '..\..\..\tmssoftware\TMS VCL UI Pack\linelibrary.pas',
+  macrorecorder in '..\..\..\tmssoftware\TMS VCL UI Pack\macrorecorder.pas',
+  macrorecorderreg in '..\..\..\tmssoftware\TMS VCL UI Pack\macrorecorderreg.pas',
+  layeredform in '..\..\..\tmssoftware\TMS VCL UI Pack\layeredform.pas',
+  sysmreg in '..\..\..\tmssoftware\TMS VCL UI Pack\sysmreg.pas',
+  sysmon in '..\..\..\tmssoftware\TMS VCL UI Pack\sysmon.pas',
+  moneycal in '..\..\..\tmssoftware\TMS VCL UI Pack\moneycal.pas',
+  AdvFocusHelper in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvFocusHelper.pas',
+  AdvFocusHelperReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvFocusHelperReg.pas',
+  AdvSmoothButton in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothButton.pas',
+  AdvSmoothButtonReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothButtonReg.pas',
+  AdvSmoothCalendar in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCalendar.pas',
+  AdvSmoothCalendarReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCalendarReg.pas',
+  AdvSmoothDatePicker in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothDatePicker.pas',
+  AdvSmoothDatePickerReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothDatePickerReg.pas',
+  AdvSmoothLabel in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothLabel.pas',
+  AdvSmoothLabelReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothLabelReg.pas',
+  DBAdvSmoothLabel in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothLabel.pas',
+  DBAdvSmoothLabelReg in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothLabelReg.pas',
+  AdvSmoothListBox in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothListBox.pas',
+  AdvSmoothListBoxDragDrop in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothListBoxDragDrop.pas',
+  AdvSmoothListBoxReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothListBoxReg.pas',
+  AdvSmoothComboBox in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothComboBox.pas',
+  AdvSmoothComboBoxReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothComboBoxReg.pas',
+  AdvSmoothImageListBox in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothImageListBox.pas',
+  AdvSmoothImageListBoxReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothImageListBoxReg.pas',
+  AdvSmoothImageListBoxPicker in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothImageListBoxPicker.pas',
+  AdvSmoothImageListBoxPickerReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothImageListBoxPickerReg.pas',
+  AdvSmoothPanel in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothPanel.pas',
+  AdvSmoothPanelReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothPanelReg.pas',
+  AdvSmoothMenu in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothMenu.pas',
+  AdvSmoothMenuReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothMenuReg.pas',
+  AdvSmoothStyles in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothStyles.pas' {AdvSmoothStyleForm},
+  AdvSmoothFillEditor in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothFillEditor.pas' {AdvSmoothFillEditorForm},
+  AdvSmoothHTMLEditor in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothHTMLEditor.pas' {AdvSmoothHTMLEditorForm},
+  AdvSmoothFillPreview in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothFillPreview.pas',
+  AdvSmoothFillPreviewReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothFillPreviewReg.pas',
+  AdvSmoothSelectors in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSelectors.pas',
+  AdvSmoothSelectorsReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSelectorsReg.pas',
+  AdvSmoothSpin in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSpin.pas',
+  AdvSmoothSpinReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSpinReg.pas',
+  AdvSmoothXPVS in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothXPVS.pas',
+  AdvSmoothEddd in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothEddd.pas',
+  AdvSmoothEdit in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothEdit.pas',
+  AdvSmoothTheme in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTheme.pas',
+  AdvSmoothEditButton in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothEditButton.pas',
+  AdvSmoothSpinner in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSpinner.pas',
+  AdvSmoothSpinnerReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSpinnerReg.pas',
+  AdvSmoothJogWheel in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothJogWheel.pas',
+  AdvSmoothJogWheelReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothJogWheelReg.pas',
+  AdvSmoothGauge in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothGauge.pas',
+  AdvSmoothGaugeReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothGaugeReg.pas',
+  AdvSmoothTrackbar in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTrackbar.pas',
+  AdvSmoothTrackbarReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTrackbarReg.pas',
+  AdvSmoothStatusIndicator in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothStatusIndicator.pas',
+  AdvSmoothStatusIndicatorReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothStatusIndicatorReg.pas',
+  AdvSmoothProgressBar in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothProgressBar.pas',
+  AdvSmoothProgressBarReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothProgressBarReg.pas',
+  AdvSmoothTabPager in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTabPager.pas',
+  AdvSmoothTabPagerReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTabPagerReg.pas',
+  AdvSmoothToggleButton in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothToggleButton.pas',
+  AdvSmoothToggleButtonReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothToggleButtonReg.pas',
+  AdvSmoothLEDLabel in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothLEDLabel.pas',
+  AdvSmoothLEDLabelReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothLEDLabelReg.pas',
+  DBAdvSmoothLedLabel in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothLedLabel.pas',
+  DBAdvSmoothLEDLabelReg in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothLEDLabelReg.pas',
+  AdvSmoothDock in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothDock.pas',
+  AdvSmoothDockReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothDockReg.pas',
+  AdvSmoothDockDragDrop in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothDockDragDrop.pas',
+  AdvSmoothExpanderPanel in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothExpanderPanel.pas',
+  AdvSmoothExpanderPanelReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothExpanderPanelReg.pas',
+  AdvSmoothExpanderButtonPanel in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothExpanderButtonPanel.pas',
+  AdvSmoothExpanderButtonPanelReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothExpanderButtonPanelReg.pas',
+  AdvSmoothExpanderGroup in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothExpanderGroup.pas',
+  AdvSmoothExpanderGroupReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothExpanderGroupReg.pas',
+  AdvSmoothTimeLine in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTimeLine.pas',
+  AdvSmoothTimeLineReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTimeLineReg.pas',
+  AdvSmoothMessageDialog in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothMessageDialog.pas',
+  AdvSmoothMessageDialogReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothMessageDialogReg.pas',
+  AdvSmoothSplashScreen in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSplashScreen.pas',
+  AdvSmoothSplashScreenReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSplashScreenReg.pas',
+  AdvSmoothScrollBar in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothScrollBar.pas',
+  AdvSmoothScrollBarReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothScrollBarReg.pas',
+  AdvSmoothSlider in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSlider.pas',
+  AdvSmoothSliderReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSliderReg.pas',
+  AdvSmoothTouchKeyBoard in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTouchKeyBoard.pas',
+  AdvSmoothTouchKeyBoardReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTouchKeyBoardReg.pas',
+  AdvSmoothDropDownList in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothDropDownList.pas',
+  AdvSmoothMegaMenu in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothMegaMenu.pas',
+  AdvSmoothMegaMenuReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothMegaMenuReg.pas',
+  AdvSmoothCalculator in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCalculator.pas',
+  AdvSmoothCalculatorDropDown in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCalculatorDropDown.pas',
+  AdvSmoothCalculatorReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCalculatorReg.pas',
+  AdvExplorerTreeview in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvExplorerTreeview.pas',
+  AdvExplorerTreeviewReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvExplorerTreeviewReg.pas',
+  AdvGDIPicture in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvGDIPicture.pas',
+  AdvGDIPicReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvGDIPicReg.pas',
+  DBAdvGDIPPicture in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvGDIPPicture.pas',
+  DBAdvGDIPPictureReg in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvGDIPPictureReg.pas',
+  GDIPPictureContainer in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPPictureContainer.pas',
+  GDIPPictureContainerReg in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPPictureContainerReg.pas',
+  GDIPFill in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPFill.pas',
+  gdipmenu in '..\..\..\tmssoftware\TMS VCL UI Pack\gdipmenu.pas',
+  AdvSmoothImageListBoxDragDrop in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothImageListBoxDragDrop.pas',
+  DBAdvSmoothTimeLineReg in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothTimeLineReg.pas',
+  DBAdvSmoothComboBox in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothComboBox.pas',
+  DBAdvSmoothComboBoxReg in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothComboBoxReg.pas',
+  DBAdvSmoothImageListBox in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothImageListBox.pas',
+  DBAdvSmoothImageListBoxReg in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothImageListBoxReg.pas',
+  DBAdvSmoothDatePicker in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothDatePicker.pas',
+  DBAdvSmoothDatePickerReg in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothDatePickerReg.pas',
+  DBAdvSmoothListBox in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothListBox.pas',
+  DBAdvSmoothListBoxReg in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothListBoxReg.pas',
+  DBAdvSmoothTimeLine in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothTimeLine.pas',
+  AdvHorizontalPolyList in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvHorizontalPolyList.pas',
+  AdvHorizontalPolyListReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvHorizontalPolyListReg.pas',
+  AdvPolyBox in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvPolyBox.pas',
+  AdvPolyBoxReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvPolyBoxReg.pas',
+  AdvPolyList in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvPolyList.pas',
+  AdvPolyListReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvPolyListReg.pas',
+  AdvPolyPager in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvPolyPager.pas',
+  AdvPolyPagerReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvPolyPagerReg.pas',
+  AdvVerticalPolyList in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvVerticalPolyList.pas',
+  AdvVerticalPolyListReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvVerticalPolyListReg.pas',
+  CustomItemsContainer in '..\..\..\tmssoftware\TMS VCL UI Pack\CustomItemsContainer.pas',
+  GDIPBase in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPBase.pas',
+  GDIPButtonItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPButtonItem.pas',
+  GDIPCheckItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPCheckItem.pas',
+  GDIPCustomItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPCustomItem.pas',
+  GDIPDropDownItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPDropDownItem.pas',
+  GDIPExpandableImageSectionItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPExpandableImageSectionItem.pas',
+  GDIPGraphicItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPGraphicItem.pas',
+  GDIPGroupItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPGroupItem.pas',
+  GDIPHTMLItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPHTMLItem.pas',
+  GDIPHTMLSectionItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPHTMLSectionItem.pas',
+  GDIPImageItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPImageItem.pas',
+  GDIPImageSectionItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPImageSectionItem.pas',
+  GDIPImageTextButtonItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPImageTextButtonItem.pas',
+  GDIPImageTextButtonSectionItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPImageTextButtonSectionItem.pas',
+  GDIPImageTextItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPImageTextItem.pas',
+  GDIPLargeButtonedItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPLargeButtonedItem.pas',
+  GDIPRadioItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPRadioItem.pas',
+  GDIPSectionItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPSectionItem.pas',
+  GDIPTextItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPTextItem.pas',
+  GDIPWedgeItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPWedgeItem.pas',
+  GDIPButtonBarItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPButtonBarItem.pas',
+  GDIPFullDropDownItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPFullDropDownItem.pas',
+  GDIPHeaderItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPHeaderItem.pas',
+  GDIPLargeButtonedHTMLItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPLargeButtonedHTMLItem.pas',
+  GDIPSplitterItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPSplitterItem.pas',
+  GDIPPreviewItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPPreviewItem.pas',
+  GDIPHTMLEngine in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPHTMLEngine.PAS',
+  AdvSmoothSlideShow in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSlideShow.pas',
+  AdvSmoothSlideShowReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothSlideShowReg.pas',
+  GDIPProgressItem in '..\..\..\tmssoftware\TMS VCL UI Pack\GDIPProgressItem.pas',
+  AdvSmoothCapacityBar in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCapacityBar.pas',
+  AdvSmoothCapacityBarReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCapacityBarReg.pas',
+  SPBEPC in '..\..\..\tmssoftware\TMS VCL UI Pack\SPBEPC.pas',
+  SPBEPCReg in '..\..\..\tmssoftware\TMS VCL UI Pack\SPBEPCReg.pas',
+  AdvSmoothPopup in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothPopup.pas',
+  AdvSmoothPopupReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothPopupReg.pas',
+  AdvsmoothStepControl in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvsmoothStepControl.pas',
+  AdvsmoothStepControlReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvsmoothStepControlReg.pas',
+  TMSW7Reg in '..\..\..\tmssoftware\TMS VCL UI Pack\TMSW7Reg.pas',
+  W7Bars in '..\..\..\tmssoftware\TMS VCL UI Pack\W7Bars.pas',
+  W7Buttons in '..\..\..\tmssoftware\TMS VCL UI Pack\W7Buttons.pas',
+  W7Classes in '..\..\..\tmssoftware\TMS VCL UI Pack\W7Classes.pas',
+  W7Common in '..\..\..\tmssoftware\TMS VCL UI Pack\W7Common.pas',
+  W7Graphics in '..\..\..\tmssoftware\TMS VCL UI Pack\W7Graphics.pas',
+  W7Images in '..\..\..\tmssoftware\TMS VCL UI Pack\W7Images.pas',
+  W7Labels in '..\..\..\tmssoftware\TMS VCL UI Pack\W7Labels.pas',
+  W7ListViewItems in '..\..\..\tmssoftware\TMS VCL UI Pack\W7ListViewItems.pas',
+  W7NaviButtons in '..\..\..\tmssoftware\TMS VCL UI Pack\W7NaviButtons.pas',
+  W7Panels in '..\..\..\tmssoftware\TMS VCL UI Pack\W7Panels.pas',
+  W7ProgressBars in '..\..\..\tmssoftware\TMS VCL UI Pack\W7ProgressBars.pas',
+  AdvSmoothTileList in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTileList.pas',
+  AdvSmoothTileListEx in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTileListEx.pas',
+  AdvSmoothTileListHTMLVisualizer in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTileListHTMLVisualizer.pas',
+  AdvSmoothTileListImageVisualizer in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTileListImageVisualizer.pas',
+  AdvSmoothTileListReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothTileListReg.pas',
+  AdvSmoothPageSlider in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothPageSlider.pas',
+  AdvSmoothPageSliderReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothPageSliderReg.pas',
+  AdvMetroButton in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroButton.pas',
+  AdvMetroButtonReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroButtonReg.pas',
+  AdvMetroDlgs in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroDlgs.pas',
+  AdvMetroFindDialog in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroFindDialog.pas',
+  AdvMetroFindDialogReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroFindDialogReg.pas',
+  AdvMetroForm in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroForm.pas',
+  AdvMetroHint in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroHint.pas',
+  AdvMetroHintReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroHintReg.pas',
+  AdvMetroProgressBar in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroProgressBar.pas',
+  AdvMetroProgressBarReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroProgressBarReg.pas',
+  AdvMetroReplaceDialog in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroReplaceDialog.pas',
+  AdvMetroReplaceDialogReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroReplaceDialogReg.pas',
+  AdvMetroRes in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroRes.pas',
+  AdvMetroScrollBox in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroScrollBox.pas',
+  AdvMetroScrollBoxReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroScrollBoxReg.pas',
+  AdvMetroTaskDialog in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroTaskDialog.pas',
+  AdvMetroTaskDialogReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroTaskDialogReg.pas',
+  AdvMetroTile in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroTile.pas',
+  AdvMetroPanel in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroPanel.pas',
+  AdvMetroPanelReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroPanelReg.pas',
+  AdvSmoothCalendarGroup in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCalendarGroup.pas',
+  AdvSmoothCalendarGroupReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCalendarGroupReg.pas',
+  AdvDataLabel in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvDataLabel.pas',
+  AdvDataLabelReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvDataLabelReg.pas',
+  AdvListEditor in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvListEditor.pas',
+  AdvListEditorReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvListEditorReg.pas',
+  advduallistbox in '..\..\..\tmssoftware\TMS VCL UI Pack\advduallistbox.pas',
+  advduallistboxreg in '..\..\..\tmssoftware\TMS VCL UI Pack\advduallistboxreg.pas',
+  advwordcloud in '..\..\..\tmssoftware\TMS VCL UI Pack\advwordcloud.pas',
+  advwordcloudreg in '..\..\..\tmssoftware\TMS VCL UI Pack\advwordcloudreg.pas',
+  AdvWordCloudDropDownReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvWordCloudDropDownReg.pas',
+  AdvWordCloudDropDown in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvWordCloudDropDown.pas',
+  AdvSmoothCircularProgress in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCircularProgress.pas',
+  AdvSmoothCircularProgressReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothCircularProgressReg.pas',
+  AdvFancyLabel in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvFancyLabel.pas',
+  AdvFancyLabelReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvFancyLabelReg.pas',
+  AdvCurve in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvCurve.pas',
+  AdvCurveReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvCurveReg.pas',
+  AdvSmoothRotaryMenu in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothRotaryMenu.pas',
+  AdvSmoothRotaryMenuReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothRotaryMenuReg.pas',
+  AdvSmoothWin8Marquee in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothWin8Marquee.pas',
+  AdvSmoothWin8MarqueeReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSmoothWin8MarqueeReg.pas',
+  AdvDBFormLayouter in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvDBFormLayouter.pas',
+  AdvDBFormPanel in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvDBFormPanel.pas',
+  AdvDBFormPanelReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvDBFormPanelReg.pas',
+  AdvLabelReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvLabelReg.pas',
+  advlabel in '..\..\..\tmssoftware\TMS VCL UI Pack\advlabel.pas',
+  DBAdvLabel in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvLabel.pas',
+  DBAdvLabelReg in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvLabelReg.pas',
+  AdvGraphicCheckLabel in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvGraphicCheckLabel.pas',
+  AdvGraphicCheckLabelReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvGraphicCheckLabelReg.pas',
+  DBAdvGraphicCheckLabel in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvGraphicCheckLabel.pas',
+  DBAdvGraphicCheckLabelReg in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvGraphicCheckLabelReg.pas',
+  DBAdvSmoothSlider in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothSlider.pas',
+  DBAdvSmoothSliderReg in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSmoothSliderReg.pas',
+  ADVGAUGE in '..\..\..\tmssoftware\TMS VCL UI Pack\ADVGAUGE.PAS',
+  ADVGAUGEREG in '..\..\..\tmssoftware\TMS VCL UI Pack\ADVGAUGEREG.PAS',
+  ADVGAUGECIRCLE in '..\..\..\tmssoftware\TMS VCL UI Pack\ADVGAUGECIRCLE.PAS',
+  ADVGAUGECIRCLEREG in '..\..\..\tmssoftware\TMS VCL UI Pack\ADVGAUGECIRCLEREG.PAS',
+  ADVGAUGECONTROL in '..\..\..\tmssoftware\TMS VCL UI Pack\ADVGAUGECONTROL.PAS',
+  ADVHTMLPICTUREBROWSER in '..\..\..\tmssoftware\TMS VCL UI Pack\ADVHTMLPICTUREBROWSER.PAS',
+  ADVHTMLPICTUREBROWSERREG in '..\..\..\tmssoftware\TMS VCL UI Pack\ADVHTMLPICTUREBROWSERREG.PAS',
+  ADVRANGECIRCLES in '..\..\..\tmssoftware\TMS VCL UI Pack\ADVRANGECIRCLES.PAS',
+  ADVRANGECIRCLESREG in '..\..\..\tmssoftware\TMS VCL UI Pack\ADVRANGECIRCLESREG.PAS',
+  WebPictureContainer in '..\..\..\tmssoftware\TMS VCL UI Pack\WebPictureContainer.pas',
+  WebPictureContainerreg in '..\..\..\tmssoftware\TMS VCL UI Pack\WebPictureContainerreg.pas',
+  AdvSignatureCapture in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSignatureCapture.pas',
+  AdvSignatureCaptureReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSignatureCaptureReg.pas',
+  AdvRichEditor in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditor.pas',
+  AdvRichEditorBase in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorBase.pas',
+  AdvRichEditorIO in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorIO.pas',
+  AdvRichEditorReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorReg.pas',
+  AdvRichEditorRTF in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorRTF.pas',
+  AdvRichEditorToolBar in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorToolBar.pas',
+  AdvScrollControl in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvScrollControl.pas',
+  AdvMetroCategoryList in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroCategoryList.pas',
+  AdvMetroCategoryListReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMetroCategoryListReg.pas',
+  AdvRichEditorEditButtonBarReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorEditButtonBarReg.pas',
+  AdvRichEditorEditButtonBar in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorEditButtonBar.pas',
+  AdvRichEditorFormatButtonBarReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorFormatButtonBarReg.pas',
+  AdvRichEditorFormatButtonBar in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorFormatButtonBar.pas',
+  TMSSpellCheck in '..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellCheck.pas',
+  TMSSpellCheckConfForm in '..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellCheckConfForm.pas',
+  TMSSpellCheckCorrectForm in '..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellCheckCorrectForm.pas',
+  TMSSpellCheckCorrectLinesForm in '..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellCheckCorrectLinesForm.pas',
+  TMSSpellCheckReg in '..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellCheckReg.pas',
+  TMSSpellCheckUtil in '..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellCheckUtil.pas',
+  TMSSpellInfos in '..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellInfos.pas',
+  TMSSpellParser in '..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellParser.pas',
+  TMSSpellSoundEX in '..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellSoundEX.pas',
+  TMSSpellUpdateDictProgForm in '..\..\..\tmssoftware\TMS VCL UI Pack\TMSSpellUpdateDictProgForm.pas' {TMSSpellUpdateDictProgForm},
+  advricheditorpdfio in '..\..\..\tmssoftware\TMS VCL UI Pack\advricheditorpdfio.pas',
+  advricheditordd in '..\..\..\tmssoftware\TMS VCL UI Pack\advricheditordd.pas',
+  advricheditoremoticons in '..\..\..\tmssoftware\TMS VCL UI Pack\advricheditoremoticons.pas',
+  advricheditorMinihtmlio in '..\..\..\tmssoftware\TMS VCL UI Pack\advricheditorMinihtmlio.pas',
+  advricheditorspellcheck in '..\..\..\tmssoftware\TMS VCL UI Pack\advricheditorspellcheck.pas',
+  asgspellcheck in '..\..\..\tmssoftware\TMS VCL UI Pack\asgspellcheck.pas',
+  AdvMemoSpellCheck in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMemoSpellCheck.pas',
+  DBAdvRichEditor in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvRichEditor.pas',
+  AdvRichEditorPopupToolBar in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorPopupToolBar.pas',
+  advricheditoreditlink in '..\..\..\tmssoftware\TMS VCL UI Pack\advricheditoreditlink.pas',
+  DBAdvRichEditorReg in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvRichEditorReg.pas',
+  AdvRatingGrid in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvRatingGrid.pas',
+  AdvToolBarRes in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvToolBarRes.pas',
+  AdvRatingGridReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvRatingGridReg.pas',
+  AdvGridToolBarReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvGridToolBarReg.pas',
+  AdvGridToolBar in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvGridToolBar.pas',
+  AdvBadge in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvBadge.pas',
+  AdvCustomTreeView in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvCustomTreeView.pas',
+  AdvTreeView in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvTreeView.pas',
+  AdvTreeViewBase in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvTreeViewBase.pas',
+  AdvTreeViewReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvTreeViewReg.pas',
+  AdvDirectoryTreeView in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvDirectoryTreeView.pas',
+  AdvCheckedTreeView in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvCheckedTreeView.pas',
+  AdvMultiInputQueryDialog in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMultiInputQueryDialog.pas',
+  AdvMultiInputQueryDialogReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvMultiInputQueryDialogReg.pas',
+  AdvScrollMenu in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvScrollMenu.pas',
+  AdvScrollMenuReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvScrollMenuReg.pas',
+  AdvBadgeReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvBadgeReg.pas',
+  AdvTreeViewData in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvTreeViewData.pas',
+  AdvRichEditorPic in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorPic.pas',
+  AdvSearchList in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSearchList.pas',
+  AdvSearchListReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSearchListReg.pas',
+  AdvResponsiveList in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvResponsiveList.pas',
+  AdvResponsiveListReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvResponsiveListReg.pas',
+  AdvSearchEdit in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSearchEdit.pas',
+  AdvPopupEx in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvPopupEx.pas',
+  AdvSearchEditEditLink in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvSearchEditEditLink.pas',
+  AdvResponsiveListEx in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvResponsiveListEx.pas',
+  AdvPicturePane in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvPicturePane.pas',
+  AdvPicturePaneReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvPicturePaneReg.pas',
+  AdvResponsiveListTypes in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvResponsiveListTypes.pas',
+  AdvDBFormComboBox in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvDBFormComboBox.pas',
+  AdvDBDataLabel in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvDBDataLabel.pas',
+  AdvDBDataLabelReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvDBDataLabelReg.pas',
+  DBAdvSearchEdit in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSearchEdit.pas',
+  DBAdvSearchList in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvSearchList.pas',
+  DBAdvResponsiveList in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvResponsiveList.pas',
+  DBAdvRichEditorRTFIO in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvRichEditorRTFIO.pas',
+  DBAdvResponsiveListReg in '..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvResponsiveListReg.pas',
+  AdvHighlightLabel in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvHighlightLabel.pas',
+  AdvKanbanBoard in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvKanbanBoard.pas',
+  AdvKanbanBoardDatabaseAdapter in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvKanbanBoardDatabaseAdapter.pas',
+  AdvTableView in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvTableView.pas',
+  AdvKanbanBoardReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvKanbanBoardReg.pas',
+  AdvKanbanBoardDatabaseAdapterReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvKanbanBoardDatabaseAdapterReg.pas',
+  AdvTableViewReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvTableViewReg.pas',
+  AdvCustomScrollControl in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvCustomScrollControl.pas',
+  AdvCustomControl in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvCustomControl.pas',
+  AdvUndo in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvUndo.pas',
+  AdvImageEx in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvImageEx.pas',
+  AdvBitmapSelectorEx in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvBitmapSelectorEx.pas',
+  AdvColorSelectorEx in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvColorSelectorEx.pas',
+  AdvColorWheel in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvColorWheel.pas',
+  AdvColorWheelResources in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvColorWheelResources.pas',
+  AdvCustomSelectorEx in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvCustomSelectorEx.pas',
+  AdvScrollBar in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvScrollBar.pas',
+  AdvToolBarEx in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvToolBarEx.pas',
+  AdvToolBarResEx in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvToolBarResEx.pas',
+  AdvHighlightLabelReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvHighlightLabelReg.pas',
+  AdvWebBrowser in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvWebBrowser.pas',
+  AdvWebBrowserReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvWebBrowserReg.pas',
+  AdvWebBrowser.Win in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvWebBrowser.Win.pas',
+  AdvRichEditorRuler in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorRuler.pas',
+  AdvRichEditorRulerReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvRichEditorRulerReg.pas',
+  AdvBadgeCalendar in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvBadgeCalendar.pas',
+  AdvBadgeCalendarReg in '..\..\..\tmssoftware\TMS VCL UI Pack\AdvBadgeCalendarReg.pas';
+
+d.
+

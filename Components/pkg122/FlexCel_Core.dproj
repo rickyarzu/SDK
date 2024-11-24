@@ -1,0 +1,1359 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{E10C0F87-F04D-4B29-917C-2AB2964E68AC}</ProjectGuid>
+        <MainSource>FlexCel_Core.dpk</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <ProjectName Condition="'$(ProjectName)'==''">FlexCel_Core</ProjectName>
+        <TargetedPlatforms>1741953</TargetedPlatforms>
+        <AppType>Package</AppType>
+        <FrameworkType>None</FrameworkType>
+        <ProjectVersion>20.2</ProjectVersion>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android' and '$(Base)'=='true') or '$(Base_Android)'!=''">
+        <Base_Android>true</Base_Android>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Base)'=='true') or '$(Base_Android64)'!=''">
+        <Base_Android64>true</Base_Android64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Base)'=='true') or '$(Base_iOSDevice64)'!=''">
+        <Base_iOSDevice64>true</Base_iOSDevice64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Android64)'!=''">
+        <Cfg_2_Android64>true</Cfg_2_Android64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Cfg_2)'=='true') or '$(Cfg_2_iOSDevice64)'!=''">
+        <Cfg_2_iOSDevice64>true</Cfg_2_iOSDevice64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX64' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSX64)'!=''">
+        <Cfg_2_OSX64>true</Cfg_2_OSX64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSXARM64' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSXARM64)'!=''">
+        <Cfg_2_OSXARM64>true</Cfg_2_OSXARM64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_E>false</DCC_E>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <GenDll>true</GenDll>
+        <GenPackage>true</GenPackage>
+        <SanitizedProjectName>FlexCel_Core</SanitizedProjectName>
+        <DCC_Description>FlexCel Core Library</DCC_Description>
+        <DllSuffix>$(Auto)</DllSuffix>
+        <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
+        <VerInfo_Locale>1040</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Neon.Core.Serializers;$(DCC_Namespace)</DCC_Namespace>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android)'!=''">
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
+        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+        <EnabledSysJars>activity-1.7.2.dex.jar;annotation-experimental-1.3.0.dex.jar;annotation-jvm-1.6.0.dex.jar;annotations-13.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;billing-6.0.1.dex.jar;biometric-1.1.0.dex.jar;browser-1.4.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;concurrent-futures-1.1.0.dex.jar;core-1.10.1.dex.jar;core-common-2.2.0.dex.jar;core-ktx-1.10.1.dex.jar;core-runtime-2.2.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;error_prone_annotations-2.9.0.dex.jar;exifinterface-1.3.6.dex.jar;firebase-annotations-16.2.0.dex.jar;firebase-common-20.3.1.dex.jar;firebase-components-17.1.0.dex.jar;firebase-datatransport-18.1.7.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-encoders-proto-16.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.1.3.dex.jar;firebase-installations-interop-17.1.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-23.1.2.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;kotlin-stdlib-1.8.22.dex.jar;kotlin-stdlib-common-1.8.22.dex.jar;kotlin-stdlib-jdk7-1.8.22.dex.jar;kotlin-stdlib-jdk8-1.8.22.dex.jar;kotlinx-coroutines-android-1.6.4.dex.jar;kotlinx-coroutines-core-jvm-1.6.4.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.6.1.dex.jar;lifecycle-livedata-2.6.1.dex.jar;lifecycle-livedata-core-2.6.1.dex.jar;lifecycle-runtime-2.6.1.dex.jar;lifecycle-service-2.6.1.dex.jar;lifecycle-viewmodel-2.6.1.dex.jar;lifecycle-viewmodel-savedstate-2.6.1.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;okio-jvm-3.4.0.dex.jar;play-services-ads-22.2.0.dex.jar;play-services-ads-base-22.2.0.dex.jar;play-services-ads-identifier-18.0.0.dex.jar;play-services-ads-lite-22.2.0.dex.jar;play-services-appset-16.0.1.dex.jar;play-services-base-18.1.0.dex.jar;play-services-basement-18.1.0.dex.jar;play-services-cloud-messaging-17.0.1.dex.jar;play-services-location-21.0.1.dex.jar;play-services-maps-18.1.0.dex.jar;play-services-measurement-base-20.1.2.dex.jar;play-services-measurement-sdk-api-20.1.2.dex.jar;play-services-stats-17.0.2.dex.jar;play-services-tasks-18.0.2.dex.jar;print-1.0.0.dex.jar;profileinstaller-1.3.0.dex.jar;room-common-2.2.5.dex.jar;room-runtime-2.2.5.dex.jar;savedstate-1.2.1.dex.jar;sqlite-2.1.0.dex.jar;sqlite-framework-2.1.0.dex.jar;startup-runtime-1.1.1.dex.jar;tracing-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.1.8.dex.jar;transport-runtime-3.1.8.dex.jar;user-messaging-platform-2.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.7.0.dex.jar</EnabledSysJars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android64)'!=''">
+        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+        <EnabledSysJars>activity-1.7.2.dex.jar;annotation-experimental-1.3.0.dex.jar;annotation-jvm-1.6.0.dex.jar;annotations-13.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;billing-6.0.1.dex.jar;biometric-1.1.0.dex.jar;browser-1.4.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;concurrent-futures-1.1.0.dex.jar;core-1.10.1.dex.jar;core-common-2.2.0.dex.jar;core-ktx-1.10.1.dex.jar;core-runtime-2.2.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;error_prone_annotations-2.9.0.dex.jar;exifinterface-1.3.6.dex.jar;firebase-annotations-16.2.0.dex.jar;firebase-common-20.3.1.dex.jar;firebase-components-17.1.0.dex.jar;firebase-datatransport-18.1.7.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-encoders-proto-16.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.1.3.dex.jar;firebase-installations-interop-17.1.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-23.1.2.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;kotlin-stdlib-1.8.22.dex.jar;kotlin-stdlib-common-1.8.22.dex.jar;kotlin-stdlib-jdk7-1.8.22.dex.jar;kotlin-stdlib-jdk8-1.8.22.dex.jar;kotlinx-coroutines-android-1.6.4.dex.jar;kotlinx-coroutines-core-jvm-1.6.4.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.6.1.dex.jar;lifecycle-livedata-2.6.1.dex.jar;lifecycle-livedata-core-2.6.1.dex.jar;lifecycle-runtime-2.6.1.dex.jar;lifecycle-service-2.6.1.dex.jar;lifecycle-viewmodel-2.6.1.dex.jar;lifecycle-viewmodel-savedstate-2.6.1.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;okio-jvm-3.4.0.dex.jar;play-services-ads-22.2.0.dex.jar;play-services-ads-base-22.2.0.dex.jar;play-services-ads-identifier-18.0.0.dex.jar;play-services-ads-lite-22.2.0.dex.jar;play-services-appset-16.0.1.dex.jar;play-services-base-18.1.0.dex.jar;play-services-basement-18.1.0.dex.jar;play-services-cloud-messaging-17.0.1.dex.jar;play-services-location-21.0.1.dex.jar;play-services-maps-18.1.0.dex.jar;play-services-measurement-base-20.1.2.dex.jar;play-services-measurement-sdk-api-20.1.2.dex.jar;play-services-stats-17.0.2.dex.jar;play-services-tasks-18.0.2.dex.jar;print-1.0.0.dex.jar;profileinstaller-1.3.0.dex.jar;room-common-2.2.5.dex.jar;room-runtime-2.2.5.dex.jar;savedstate-1.2.1.dex.jar;sqlite-2.1.0.dex.jar;sqlite-framework-2.1.0.dex.jar;startup-runtime-1.1.1.dex.jar;tracing-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.1.8.dex.jar;transport-runtime-3.1.8.dex.jar;user-messaging-platform-2.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.7.0.dex.jar</EnabledSysJars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSDevice64)'!=''">
+        <iOS_AppStore1024>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_1024x1024.png</iOS_AppStore1024>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
+        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Android64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_iOSDevice64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_OSX64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_OSXARM64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__BaseCrypto.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCelHash.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlxPackageBase.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlxPackageReader.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlxPackageWriter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlxXmlBase.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlxXmlReader.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlxXmlWriter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__UBufferedStream.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__UCellValue.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__UCoreExcelFile.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__UFormulaValue.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__UMiscUtils.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__UNumberFormat.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__UStringComparerIgnoreCase.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalFormatDef.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalFormatDefStandard.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalFormatRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_CoreSwitch.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelAdapter.ExcelFile.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.ChartFillOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.ChartLineOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.ChartSeries.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.ChartSeriesFillOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.ChartSeriesLineOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.ChartSeriesMarkerOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.ChartSeriesMiscOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.ChartSeriesOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.ChartSeriesPieOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.ExcelChart.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.IStackedOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TAreaChartOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TAreaLineChartOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TAxisLabelPosition.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TAxisLineOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TAxisRangeOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TAxisTickOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TAxisType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TBackgroundMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TBarChartOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TBaseAxis.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TBubbleSizeType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TCategoryAxis.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TCategoryAxisOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartAxis.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartDropBars.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartFrameOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartLabelPositionMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartLegend.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartLineStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartLineWeight.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartMarkerType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartOneDropBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartPlotArea.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartTextOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TDataLabel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TDataLabelOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TDataLabelPosition.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TFlxChartFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TLabelDataValue.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TLegendEntryOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TLegendOptionsList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TLineChartOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TLinkOption.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TPieChartOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TPlotEmptyCells.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TScatterChartOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TSeriesOptionsList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TStackedMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TTickType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TUnknownChartOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TValueAxis.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TValueAxisOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_FlxMsg.Map.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_FlxMsg.Resources.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_FormulaMsg.Map.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_FormulaMsg.Resources.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_FunctionNames.Resources.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TArrowLen.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TArrowStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TArrowWidth.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TBwMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TCheckboxState.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TFillType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TLineArrow.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TLineDashing.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TLineJoin.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TObjectType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TSgFormula.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TShapeEffects.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TShapeFill.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TShapeFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TShapeLine.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TShapeOption.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TShapeOptionList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TShapeProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TShapeType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UColorSpaces.THSLColor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UColorSpaces.TLabColor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UColorSpaces.TScRGBColor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCompress20.TCompressor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UConvertTextToInternal.TFormulaConvertTextToInternal.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UConvertTextToInternal.TRowAndCols.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.CharUtils.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.FlxDateTime.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.FlxUtils.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.HashCoder.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.IntStringHashtable.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.IUserDefinedFunctionAggregator.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.StringIntHashtable.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.StringStringHashtable.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TCaseInsensitiveHashtableStrInt.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TDataValidationConditionType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TDataValidationDataType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TDataValidationIcon.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TDataValidationImeMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TDataValidationInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TDoubleList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TExcelFileErrorActions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TExcelObjectList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TExcelTypes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.THeaderAndFooter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.THyperLink.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TIdAndShapeId.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TUnsupportedFormula.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TUnsupportedFormulaList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TUserDefinedFunctionLocation.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TUserDefinedFunctionScope.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreConstants.FlxConsts.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.ColumnImportType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.FlxParam.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.InternalNameRange.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TAutofitMerged.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TCollapseChildrenMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TExcelFileFormat.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TExcelVersion.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TExcludedRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TFileFormats.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TFlxAnchorType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TFlxFormulaErrorValue.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TFlxInsertMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TFunctionGroup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.THeaderAndFooterKind.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.THeaderAndFooterPos.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.THidePrintObjects.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.THyperLinkType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TListBoxSelectionType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TPanePosition.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TPaperSize.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TPrintOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TRangeCopyMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TRecalcMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TReferenceStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TSheetCalcMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TSheetOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TSheetType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TSheetWindowOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TSortOrder.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TStyleCategory.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TTextRotation.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TUnsupportedFormulaErrorType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TXlsBiffVersion.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TXlsImgType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TXlsSheetVisible.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreInterfaces.IEmbeddedObjects.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreInterfaces.IRowColSize.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDocumentProperties.TDocumentProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDocumentProperties.TOlePropertyName.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDocumentProperties.TPropertyId.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingColors.TColorTransform.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingColors.TColorTransformType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingColors.TDrawingColor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingColors.TDrawingColorType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingColors.TPresetColor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingColors.TSystemColor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingColors.TThemeColorScheme.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingML.TDrawingCoordinate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingML.TDrawingGradientStop.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingML.TDrawingPattern.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingML.TDrawingPoint.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingML.TDrawingPresetGeom.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingML.TDrawingRectAlign.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingML.TDrawingRelativeRect.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingML.TDrawingUnit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingML.TFlipMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingRichText.TDrawingAlignment.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingRichText.TDrawingFontAlign.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingRichText.TDrawingHyperlink.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingRichText.TDrawingParagraphProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingRichText.TDrawingRichString.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingRichText.TDrawingTextAttributes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingRichText.TDrawingTextCapitalization.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingRichText.TDrawingTextParagraph.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingRichText.TDrawingTextProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingRichText.TDrawingTextRun.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingRichText.TDrawingTextStrike.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingRichText.TDrawingUnderline.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingRichText.TDrawingUnderlineStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingRichText.TMutableDrawingTextProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingSupport.ImageUtils.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExcelColors.TAutomaticColor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExcelColors.TColorType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExcelColors.TExcelColor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExcelColors.TExcelGradient.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExcelColors.TExcelLinearGradient.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExcelColors.TExcelRectangularGradient.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExcelColors.TGradientStop.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExcelColors.TGradientType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExcelColors.TThemeColor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExcelFont.ExcelFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExcelFont.TFontCache.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExcelFont.TFontDesc.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExcelFont.TFontInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExcelFont.TFontList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExcelMetrics.ExcelMetrics.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.HtmlFontEventArgs.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.HtmlFontEventHandler.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.IHtmlFontEvent.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.TEnterStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.THtmlColors.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.THtmlEntities.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.THtmlFileFormat.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.THtmlFixes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.THtmlParsedString.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.THtmlStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.THtmlTag.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.THtmlTagCreator.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.THtmlVersion.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.TImageNaming.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.TPositionTags.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.FlexCelError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.FlexCelErrorEventHandler.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.FlexCelTrace.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.TFlexCelErrorInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.THtmlSaveSharingViolationError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.TMalformedUrlError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.TPdfCorruptFontInFontFolderError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.TPdfFauxBoldOrItalicsError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.TPdfFontNotFoundError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.TPdfGlyphNotInFontError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.TPdfUsedFallbackFontError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.TRenderCorruptImageError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.TRenderErrorDrawingImageError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.TRenderMetafileError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.TXlsTooManyPageBreaksError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.TXlsxInvalidNameError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.TXlsxMissingPartError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TBuiltInStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TFlxApplyBorders.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TFlxApplyFillPattern.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TFlxApplyFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TFlxApplyFormat.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TFlxBorders.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TFlxBorderStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TFlxDiagonalBorder.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TFlxFillPattern.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TFlxFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TFlxFontStyles.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TFlxFormat.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TFlxOneBorder.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TFlxPatternStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TFlxUnderline.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TFontScheme.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.THFlxAlignment.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TLinkedStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TVFlxAlignment.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxMessages.FlexCelCoreException.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxMessages.FlexCelException.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxMessages.FlxErr.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxMessages.FlxMessage.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxMessages.FlxMessages.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxNumberFormat.TAdaptativeFormats.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxNumberFormat.TCharAndPos.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxNumberFormat.TDigitCollection.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxNumberFormat.TFlxNumberFormat.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxNumberFormat.TLocalDateTime.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxNumberFormat.TResultCondition.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxStack.TFormulaStack.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxStack.TStringStack.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxStack.TWhiteSpace.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxStack.TWhiteSpaceStack.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAbsToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAcoshToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAcosToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAddress.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAddressList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAddressToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAddToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAggregateToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAndAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAndToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TArea3dNToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TArea3dToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAreaNToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAreasToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAreaToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TArgType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TArrayAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TArrayDataToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAscToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAsinhToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAsinToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAtan2Token.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAtanhToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAtanToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAttrGotoToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAttrOptChooseToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAttrOptIfToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAttrSpaceToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAttrSumToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAttrToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAttrVolatileToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAveDevToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAverageAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAverageAToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAverageIfsToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAverageIfToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAverageToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAverageValue.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBaseAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBaseAggregateToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBaseArithOpToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBaseErrAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBaseFunctionToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBaseLookupToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBaseOddEvenToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBaseParsedToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBasePermutCombinToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBaseRangeIfToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBaseRefOpToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBaseRefToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBaseRoundToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBaseStDevToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBaseSumProductToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBaseXYStatToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBinomDistToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBoolCriteria.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBoolDataToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCalcStack.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCalcState.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCeilingPreciseToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCeilingToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCellToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCharToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TChiDistToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TChiInvToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TChiTestToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TChooseToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCleanToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCodeToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TColToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TColumnsToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCombinToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TConcatenateToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TConcatToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TConfidenceToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCorrelToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCoshToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCosToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCountAAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCountAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCountAToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCountBlankToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCountIfsToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCountIfToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCountToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCoVarToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCriteria.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCriteriaAndAddress.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCriteriaType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDatabaseBaseToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDataToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDateToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDateValueToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDAverageToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDays360Token.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDayToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDbState.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDbStDevState.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDBToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDCountAToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDCountToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDDBToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDebugItem.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDebugStack.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDegreesToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDeprBaseToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDevSqToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDGetToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDivToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDMaxToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDMinToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDollarToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDoubleCriteria.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDoubleInt.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDProductToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDStDevToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDSumToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDVarStDevToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDVarToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TEQToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TEqualityToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TErr2Aggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TErrDataToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TErrorTypeToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TEvenToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TExactToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TExp_Token.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TExponDistToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TExpToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TFactToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TFalseCriteria.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TFalseToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TFindToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TFisherInvToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TFisherToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TFixedToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TFloorPreciseToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TFloorToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TFormulaCriteria.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TFrequencyAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TFrequencyToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TFVToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TGammaDistToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TGammaInvToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TGammaLnToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TGeoMeanAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TGeoMeanToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TGEToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TGridSize.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TGTToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.THarMeanAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.THarMeanToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.THLookupToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.THourToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.THyperlinkToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.THypGeomDistToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIfErrorToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIFToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIgnoreInCalcToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TImplementedFunction.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TImplementedFunctionList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIndexToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIndirectToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIntDataToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TInterceptToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIntToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIPMTToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIRRToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIsBlankToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TISectToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIsErrorToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIsErrToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIsLogicalToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIsNAToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIsNonTextToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIsNumberToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIsRefToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIsTextToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TKurtToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLargeToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLeftRightToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLeftToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLengthToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLEToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLnToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLog10Token.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLogicalToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLogInvToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLogNormDistToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLogToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLookupToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLowerToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLTToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMatchToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMaxAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMaxAToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMaxMinKAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMaxToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMedianAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMedianToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMemAreaNToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMemAreaToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMemErrToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMemFuncToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMemNoMemNToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMemNoMemToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMidToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMinAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMinAToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMinToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMinuteToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMIRRToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMissingArgDataToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMMultToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TModDiffAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TModeToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TModToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMonthToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMulToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNameToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNameXToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNaToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNDoubleArgToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNegBinomDistToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNegToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNEToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNormDistToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNormInvToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNormsDistToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNormsInvToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNotToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNowToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNPerToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNPVToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNSquaredDiffAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNullCriteria.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNumDataToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TOddToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TOffsetToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TOneCellRef.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TOneDoubleArgToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TOneStringArgToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TOrAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TOrToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TParenToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TParsedTokenListBuilder.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TPearsonToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TPercentileToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TPercentRankAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TPercentRankToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TPercentRankValue.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TPercentToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TPermutToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TPiToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TPMTToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TPoissonToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TPowerFuncToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TPowerToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TPPMTToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TProductAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TProductToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TProperToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TPVBaseToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TPVToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRadiansToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRandToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRangeIfsToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRangeIfToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRangeParsedToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRangeToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRankToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRateToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRef3dNToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRef3dToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRefNToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRefRange.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRefToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TReplaceToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TReptToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRightToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRomanToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRoundDownToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRoundToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRoundUpToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRowsToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRowToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRsqToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSearchToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSecondToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSignToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSimpleMemToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSinhToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSinToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSkewToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSlnToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSlopeToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSmallLargeToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSmallToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSqrtToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSquaredDiffAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TStandardizeToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TStatDistToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TStaticToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TStatToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TStDevAToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TStDevPAToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TStDevPToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TStDevToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSteyxToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TStrDataToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TStringCriteria.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TStringWithWildcardsCriteria.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSubstituteToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSubToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSubTotalToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSumAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSumIfsToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSumIfToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSumProductToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSumSqAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSumSqToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSumToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSumX2mY2Token.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSumX2pY2Token.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSumXmY2Token.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSydToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TTableObjToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TTableToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TTanhToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TTanToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TTextToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TTimeToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TTimeValueToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TTodayToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TTransposeToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TTrimToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TTrueToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TTruncToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TTToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TTypeToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TUdfAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TUnionToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TUnsupportedFunction.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TUnsupportedToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TUPlusToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TUpperToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TUserDefinedToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TValueCriteria.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TValueSign.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TValueToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TVarToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TVLookupToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TWeekDayToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TWeibullToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TWorkbookInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TYearToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TZTestToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFunctionCache.TFunctionKey.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMime.TContentTransferEncoding.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMime.TMimeWriter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMime.TMultipartType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMime.TQEncodeMetaInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.FlexCelDataFormats.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.FlxConvert.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.FlxHash.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TAbsoluteAnchorRect.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TBaseImageProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TBodyPr.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TCellAddress.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TCellAddressRange.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TCellAnchorType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TChildAnchor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TClientAnchor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TComboBoxProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TCommentProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TCropArea.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TFontState.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TFormula.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TFormulaSpan.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.THeaderOrFooterAnchor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.THeaderOrFooterImageProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TImageProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TObjectProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TObjectTextProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TPaperDimensions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TPrinterDriverSettings.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TRichString.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TRTFRun.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TSpinProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TXls3DRange.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TXlsCellRange.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TXlsMargins.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TXlsNamedRange.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UProtect.OnPasswordEventArgs.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UProtect.OnPasswordEventHandler.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UProtect.TEncryptionAlgorithm.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UProtect.TEncryptionType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UProtect.TProtectedRange.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UProtect.TProtectedRangeList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UProtect.TProtection.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UProtect.TProtectionType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UProtect.TSharedWorkbookProtectionOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UProtect.TSheetProtectionOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UProtect.TWorkbookProtectionOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UShapeDef.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UStreamHelper.Sh.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TBlip.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TBlipCompression.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TBlipFill.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TBlipFillMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TBlipFillStretch.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TBlipFillTile.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TCompoundLineType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TDrawingGradientDef.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TDrawingLinearGradient.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TDrawingPathGradient.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TEffectProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TEffectStyleList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TFillStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TFillStyleList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TFillStyleType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TFontCharSet.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TFontScriptDef.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TFormattingType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TGradientFill.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TGroupFill.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TLineCap.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TLineStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TLineStyleList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TNoFill.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TPathShadeType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TPatternFill.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TPenAlignment.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TPitchFamily.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TSolidFill.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TTheme.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TThemeElements.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TThemeFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TThemeFontScheme.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TThemeFormatScheme.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TThemeTextFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UUInt32List.Int32List.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UUInt32List.UInt32List.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UVirtualCells.CellValue.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UVirtualCells.VirtualCellEndReadingEventArgs.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UVirtualCells.VirtualCellEndReadingEventHandler.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UVirtualCells.VirtualCellReadEventArgs.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UVirtualCells.VirtualCellReadEventHandler.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UVirtualCells.VirtualCellStartReadingEventArgs.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UVirtualCells.VirtualCellStartReadingEventHandler.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UWildcardMatching.TWildcardMatch.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UXlsBaseEncodeFormula.INameRecordList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UXlsBaseEncodeFormula.ptg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UXlsBaseEncodeFormula.TBaseFormulaParser.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UXlsBaseEncodeFormula.TMissingArg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UXlsBaseEncodeFormula.TOperator.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UXlsBaseEncodeFormula.TParseNumState.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UXlsBaseEncodeFormula.TParseState.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UXlsFormulaFunctions.TCellFunctionDataDictionary.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UXlsFormulaFunctions.TFutureFunctions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UXlsFormulaFunctions.TXlsFunction.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UXlsFormulaMessages.FormulaAttr.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UXlsFormulaMessages.TCellFunctionData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UXlsFormulaMessages.TFmReturnType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UXlsFormulaMessages.TFormulaMessages.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UXlsFormulaMessages.TFormulaToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\Zippy.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCelTypes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCelVersionSpecific.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\ZLib\flxZLibEx_XE.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\ZLib\flxZLibExApi_XE.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\ZLib\flxZLibExGZ_XE.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFunctionCache.TFunctionCache.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreFunctionCache.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TFunctionParams.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__ULocales.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__URenderEngine.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExcelMetrics.TCachedFontWidth.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCalcStateAndStack.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__UStr2DateTime.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__MicroCollections.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TFlxFormulaNoError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.TRecoveryInvalidFormulaTokens.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.TRecoveryInvalidNameError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__STH.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TCellMergedState.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.Colors.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TInterpolationMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TPoint.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TPointF.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TSmoothingMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIBrush.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIColor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIColorBlend.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIDashStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIFontStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIGradientStop.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIGraphics.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIGraphicsCreator.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIHatchBrush.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIHatchStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIImage.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIImageAttributes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIInterpolationMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUILinearGradientBrush.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIPathGradientBrush.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIPen.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIRectangle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUISize.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUISmoothingMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUISolidBrush.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUISystemColors.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUITextureBrush.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_FlexCel.GraphicsFactory.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Draw\_FlxGraphics.IFlxGraphics.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Draw\_FlxGraphics.TClippingStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Gdiplus\flxGDIPAPI_XE.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TShapeOptionValue.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TShapeOptionValueType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__CryptoAPIEncryptionFactory.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIPrinter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TWState.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__MicroDictionary.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.OnSheetNameEventArgs.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.OnSheetNameEventHandler.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TColumnBlock.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDateDifToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxNumberFormat.TFormatSection.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxNumberFormat.TFormatSections.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_FlexCel.HLinkFactory.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCelFormatSettings.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIMultiPageParameters.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIMultiPageSaver.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.ImageColorDepth.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.ImageExportType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.TRenderGenericPreviewError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TIgnoredErrors.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLookupCacheValueComparer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLookupCacheKey.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLookupCache.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLookupCacheValue.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCompactFramework.EncodingHelper.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.THtmlDataUri.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Draw\__VirtualPrinter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TSVGExportType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TSVGAttribute.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDocumentProperties.TDocumentCustomPropertyType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDocumentProperties.TDocumentCustomProperty.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCompactFramework.LazyEncoding.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.MergeSort.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelConfig.FlexCelConfig.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxNumberFormat.TFraction.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.MathUtils.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.TPdfFontLicenseDoesntAllowEmbeddingError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreConstants.StandardMimeType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TReplaceAction.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Draw\_FlxGraphics.TTagType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TFlxReadingOrder.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\FlexCel.Core.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreThemeFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TRecalcVersion.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TACothToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TACotToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TArabicToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TXORToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBaseBitOpToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBitAndToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBaseToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBitLShiftToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBitOrToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCscToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCotToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBitXorToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCombinaToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCscHToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDaysToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCothToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBitRShiftToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSecToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSheetsToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIsoWeekNumToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMUnitToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSecHToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TXorAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIsFormulaToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDecimalToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSheetToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIfNAToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRRIToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TFormulaTextToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TPDurationToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TPermutationaToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TUnicodeToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TUnicharToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TSortFormulaMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartErrorBarDirection.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartErrorBarBarType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartErrorBars.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartErrorBarErrorType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TSheetViewType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TSheetView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TOne3DCellRef.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TTableDefinition.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TStructRefToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TCustomXmlPart.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.XmlDeclUtil.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TFormulaConverterInternalToToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TFormulaConverterTokenToInternal.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TRangeOp.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenCellAddress.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenCellRange.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenDataArray.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenFunction.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenMissingArgument.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenName.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenOperator.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenParenthesis.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenRangeOp.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenStructuredReference.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenUnsupported.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenWhitespace.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenWhitespaceCharacter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenWhitespacePosition.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenRelativeCellAddress.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenRelativeCellRange.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenReferenceError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalBeginsWithTextRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalBaseTextRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TCondFmtIconSet.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalCellIsRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalColorScaleRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalContainsTextRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalFormatDefDataBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalExpressionRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalDataBarRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalContainsErrorsRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalFormatDefColorScale.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalNotContainsBlanksRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalDuplicateValuesRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalEndsWithTextRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalContainsBlanksRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalFormatValueAndColorList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalTopNRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalFormatDefIconSet.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalFormatKind.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalIconSetRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalUniqueValuesRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalFormatValueList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalFormatValueObject.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalTimePeriodRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalAboveAverageRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalNotContainsTextRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalNotContainsErrorsRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TTimePeriod.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.FlexCelClipboardFormat.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TExtensionType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.FontCreationEventArgs.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.FontCreatedEventArgs.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.FontCreatedEventHandler.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.FontCreatingEventHandler.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.FontCreatingEventArgs.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TIfsToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TTextJoinAndConcatToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TTextJoinAggregate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMaxIfsToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TMinIfsToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSwitchToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_FlxPackaging.TRelationshipComparer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TPartsAndRelationships.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TControlDefinition.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TLegacyInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TCommentLocator.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TControlProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TFormControlProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelTrace.TRecoveryInvalidFormat.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TObjPropLoader.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TCondFmtApplyBorders.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalFormatColorList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TDataBarColors.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TCfvoType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TCondFmtApplyFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalFormatStandardDefRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TCondFmtBorders.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalFormatCustomIconDef.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TDataBarDirection.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TCondFmtApplyFill.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalFormat.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxMessages.CondFmtError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TCondFmtFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TConditionalFormatValuesRule.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TDataBarAxisPosition.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TDrawingConditionalFormatDataBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TDrawingConditionalFormat.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ConditionalFormats.TDrawingConditionalFormatIconSet.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TCellRowAndCol.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAggregateFunctionDbl.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAggregateCache.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCacheRange.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAggregateFunctionAvg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TCellType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFunctionCache.TAttrSpaceCache.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TFullRecalcOnLoadMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TTableStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UnicodeInfo.T3StateBoolean.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UnicodeInfo.TTextAndUnicodeInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Draw\_FlxGraphics.TUIInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCompactFramework.CompressionLevel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TShapeOptionType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDrawingSupport.TJpegOrientation.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TFlexCelImageHorizAlign.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TFlexCelImageVertAlign.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TXlsxObjectExtension.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TXlsxWebExtension.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_BidiReference.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TFloorMathToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCeilingMathToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCeilingFloorPresToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIUnderline.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIStrikeout.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUITextDecoration.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.ByteArrayComparer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxFormats.TFlxPartialFormat.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TTableColumnDefinition.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TPendingStructRef.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TPendingStructRefList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TStructRefArgs.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TStructRefSection.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCorePendingStructRef.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UTableStyles.TCustomTableStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UTableStyles.TTableApplyFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UTableStyles.TTableApplyBorders.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UTableStyles.TTableFormat.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UTableStyles.TTableFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TTableStyleType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UTableStyles.TTableApplyFill.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UTableStyles.TCustomTableStyleSection.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UTableStyles.TTableBorders.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TXlsxCommentInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TLegacyShapeType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAddressOrError.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCriteriaAndAddressList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TAddressOrErrorMatrix.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIClasses.TUIColorBlendPositionComparer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TDataBindingLoadMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TXmlMap.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TXmlMapDataBinding.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TXmlMapMap.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TXmlMapSchema.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TEscherConnectorType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TShapeConnector.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.BitOps.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UBlipTransforms.TBlipTransform.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UBlipTransforms.TBlipTransformType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UBlipTransforms.TColorChangeBlipTransform.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UBlipTransforms.TBlipTransformList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UBlipTransforms.TUnknownBlipTransform.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChart3DOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCumIPMTToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCumBaseToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TCumPrincToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnection.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnectionParameters.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnectionFieldType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnectionParameter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnectionFileType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnections.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnectionHtmlFormat.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnectionTextField.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnectionCredentialMethod.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnectionTextFields.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnectionTable.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnectionDbProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnectionOlapProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnectionParameterType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnectionQualifier.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnectionTextImportProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnectionReconnectionMethod.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnectionType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnectionTables.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UDataConnections.TDataConnectionWebQueryProperties.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TCellAddressHelper.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TCellAddressWithFileName.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreClasses.TDropoutStack_1.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.ChartStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UBlipTransforms.TAlphaModFixBlipTransform.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TTxPr.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TThemeDefaultInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreEnums.TCellIndentationRendering.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UMiscClasses.TTextVerticalType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.ChartWallOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartWallType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExcelColors.TPrimaryThemeColor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TDateUnits.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIHatch.TUIHatchCommand.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIHatch.TUIHatchAction.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIHatch.TUIHatchDef.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UIHatch.TUIHatchFactory.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_BidiPBAReference.BidiMap.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_BidiPBAReference.BracketPair.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_BidiPBAReference.BidiPBAReference.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_BidiPBAReference.BidiMapper.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TBlurEffect.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TDrawingEffect.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TEffectContainer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TEffectList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TEffectStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TFillOverlayEffect.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TGlowEffect.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TInnerShadowEffect.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TOuterShadowEffect.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TSoftEdgesEffect.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TOverlayBlendMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TPresetShadowEffectType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TPresetShadowEffect.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TReflectionEffect.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartTitle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartPlotAreaPosition.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartLayoutTarget.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartLayoutMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartRelativeRectangle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartLegendPlacement.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TXlsChartLabelPosition.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBahtTextToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Draw\_BaseGraphics.TBaseGraphics.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Draw\_BaseGraphics.DashCalculator.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Draw\_BaseGraphics.BezierUtil.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Draw\_BaseGraphics.ArrowUtil.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Draw\_BaseGraphics.PointOutside.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TBlipPhotoLayer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.THtmlBulletType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.THtmlBulletInfoList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlexCelHtml.THtmlBulletInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TChartAxisPos.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.TNull.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TXMatchToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSequenceToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TRandArrayToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TXLookupToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TDoubleAndInt.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TStringAndInt.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLookupMatchMode.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableBoolean.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableInt32.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTCompoundLineType.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTPenAlignment.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTDrawingTextCapitalization.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableRealNumber.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTDrawingUnderlineStyle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTLineDashing.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTDrawingAlignment.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTDrawingTextStrike.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTDateUnits.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTLineCap.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTLineJoin.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableInt64.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableUInt32.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTDrawingRelativeRect.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTDrawingPoint.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTChartRelativeRectangle.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTDrawingColor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTUISize.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTLineArrow.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTDrawingCoordinate.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTThemeTextFont.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTRichString.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTPlotEmptyCells.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__FlexCel.NullableTUIPointF.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UXlsBaseEncodeFormula.TLambdaParameterParseStack.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TVirtualModeStructRefToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLambdaParameterStack.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TSingleToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TValueToTextToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFlxNumberFormat.TGeneralDigits.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLambdaParamReferenceToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenLambdaParameterReference.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UExpressions.TTokenLambdaParameterDefinition.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLambdaFunction.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLambdaParameterDefinition.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_ExcelChart.TDataLabelsRange.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TArrayToTextToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLambdaParamDefinitionToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLetToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLambdaToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TBaseLambdaParamReferenceToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TLambdaParamRefCapturedToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UCoreLambdaFunction.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\__UDrawingCellValue.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UAutoshapes.TDefaultShapeOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UFormulaTokens.TNumberValueToken.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\FlexCelVCLNT\Source\Core\_UThemes.TSVGBlip.pas"/>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Package</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">FlexCel_Core.dpk</Source>
+                </Source>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Android">False</Platform>
+                <Platform value="Android64">True</Platform>
+                <Platform value="iOSDevice32">False</Platform>
+                <Platform value="iOSDevice64">True</Platform>
+                <Platform value="iOSSimARM64">True</Platform>
+                <Platform value="iOSSimulator">False</Platform>
+                <Platform value="Linux64">True</Platform>
+                <Platform value="OSX32">False</Platform>
+                <Platform value="OSX64">True</Platform>
+                <Platform value="OSXARM64">True</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+                <Platform value="Win64x">True</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

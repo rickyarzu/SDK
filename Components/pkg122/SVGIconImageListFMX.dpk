@@ -1,0 +1,45 @@
+package SVGIconImageListFMX;
+
+{$R *.res}
+{$R *.otares}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Ethea SVGIconImageList FMX components'}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+rrequires
+  fmx,
+  SVGImage32Package;
+
+ocontains
+  Img32.FMX in '..\..\..\Lib\SVGIconImageList\Image32\Source\Img32.FMX.pas',
+  FMX.ImageSVG in '..\..\..\Lib\SVGIconImageList\Source\FMX.ImageSVG.pas',
+  FMX.Image32SVG in '..\..\..\Lib\SVGIconImageList\Source\FMX.Image32SVG.pas',
+  FMX.SVGIconImageList in '..\..\..\Lib\SVGIconImageList\Source\FMX.SVGIconImageList.pas',
+  FMX.SVGIconImage in '..\..\..\Lib\SVGIconImageList\Source\FMX.SVGIconImage.pas';
+
+d.

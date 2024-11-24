@@ -1,0 +1,428 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{A106F705-C202-401D-ACB6-9C6480C6B571}</ProjectGuid>
+        <MainSource>VCLTMSFNCUIPackPkg.dpk</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <ProjectName Condition="'$(ProjectName)'==''">VCLTMSFNCUIPackPkg</ProjectName>
+        <TargetedPlatforms>1741953</TargetedPlatforms>
+        <AppType>Package</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <ProjectVersion>20.2</ProjectVersion>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android' and '$(Base)'=='true') or '$(Base_Android)'!=''">
+        <Base_Android>true</Base_Android>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Base)'=='true') or '$(Base_Android64)'!=''">
+        <Base_Android64>true</Base_Android64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Base)'=='true') or '$(Base_iOSDevice64)'!=''">
+        <Base_iOSDevice64>true</Base_iOSDevice64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Android64)'!=''">
+        <Cfg_2_Android64>true</Cfg_2_Android64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Cfg_2)'=='true') or '$(Cfg_2_iOSDevice64)'!=''">
+        <Cfg_2_iOSDevice64>true</Cfg_2_iOSDevice64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX64' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSX64)'!=''">
+        <Cfg_2_OSX64>true</Cfg_2_OSX64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSXARM64' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSXARM64)'!=''">
+        <Cfg_2_OSXARM64>true</Cfg_2_OSXARM64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_E>false</DCC_E>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <GenDll>true</GenDll>
+        <GenPackage>true</GenPackage>
+        <SanitizedProjectName>VCLTMSFNCUIPackPkg</SanitizedProjectName>
+        <DCC_Description>TMS FNC UI Pack for VCL</DCC_Description>
+        <DllSuffix>$(Auto)</DllSuffix>
+        <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Neon.Core.Serializers;Winapi;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1040</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android)'!=''">
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
+        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+        <EnabledSysJars>activity-1.7.2.dex.jar;annotation-experimental-1.3.0.dex.jar;annotation-jvm-1.6.0.dex.jar;annotations-13.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;billing-6.0.1.dex.jar;biometric-1.1.0.dex.jar;browser-1.4.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;concurrent-futures-1.1.0.dex.jar;core-1.10.1.dex.jar;core-common-2.2.0.dex.jar;core-ktx-1.10.1.dex.jar;core-runtime-2.2.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;error_prone_annotations-2.9.0.dex.jar;exifinterface-1.3.6.dex.jar;firebase-annotations-16.2.0.dex.jar;firebase-common-20.3.1.dex.jar;firebase-components-17.1.0.dex.jar;firebase-datatransport-18.1.7.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-encoders-proto-16.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.1.3.dex.jar;firebase-installations-interop-17.1.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-23.1.2.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;kotlin-stdlib-1.8.22.dex.jar;kotlin-stdlib-common-1.8.22.dex.jar;kotlin-stdlib-jdk7-1.8.22.dex.jar;kotlin-stdlib-jdk8-1.8.22.dex.jar;kotlinx-coroutines-android-1.6.4.dex.jar;kotlinx-coroutines-core-jvm-1.6.4.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.6.1.dex.jar;lifecycle-livedata-2.6.1.dex.jar;lifecycle-livedata-core-2.6.1.dex.jar;lifecycle-runtime-2.6.1.dex.jar;lifecycle-service-2.6.1.dex.jar;lifecycle-viewmodel-2.6.1.dex.jar;lifecycle-viewmodel-savedstate-2.6.1.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;okio-jvm-3.4.0.dex.jar;play-services-ads-22.2.0.dex.jar;play-services-ads-base-22.2.0.dex.jar;play-services-ads-identifier-18.0.0.dex.jar;play-services-ads-lite-22.2.0.dex.jar;play-services-appset-16.0.1.dex.jar;play-services-base-18.1.0.dex.jar;play-services-basement-18.1.0.dex.jar;play-services-cloud-messaging-17.0.1.dex.jar;play-services-location-21.0.1.dex.jar;play-services-maps-18.1.0.dex.jar;play-services-measurement-base-20.1.2.dex.jar;play-services-measurement-sdk-api-20.1.2.dex.jar;play-services-stats-17.0.2.dex.jar;play-services-tasks-18.0.2.dex.jar;print-1.0.0.dex.jar;profileinstaller-1.3.0.dex.jar;room-common-2.2.5.dex.jar;room-runtime-2.2.5.dex.jar;savedstate-1.2.1.dex.jar;sqlite-2.1.0.dex.jar;sqlite-framework-2.1.0.dex.jar;startup-runtime-1.1.1.dex.jar;tracing-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.1.8.dex.jar;transport-runtime-3.1.8.dex.jar;user-messaging-platform-2.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.7.0.dex.jar</EnabledSysJars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android64)'!=''">
+        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+        <EnabledSysJars>activity-1.7.2.dex.jar;annotation-experimental-1.3.0.dex.jar;annotation-jvm-1.6.0.dex.jar;annotations-13.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;billing-6.0.1.dex.jar;biometric-1.1.0.dex.jar;browser-1.4.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;concurrent-futures-1.1.0.dex.jar;core-1.10.1.dex.jar;core-common-2.2.0.dex.jar;core-ktx-1.10.1.dex.jar;core-runtime-2.2.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;error_prone_annotations-2.9.0.dex.jar;exifinterface-1.3.6.dex.jar;firebase-annotations-16.2.0.dex.jar;firebase-common-20.3.1.dex.jar;firebase-components-17.1.0.dex.jar;firebase-datatransport-18.1.7.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-encoders-proto-16.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.1.3.dex.jar;firebase-installations-interop-17.1.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-23.1.2.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;kotlin-stdlib-1.8.22.dex.jar;kotlin-stdlib-common-1.8.22.dex.jar;kotlin-stdlib-jdk7-1.8.22.dex.jar;kotlin-stdlib-jdk8-1.8.22.dex.jar;kotlinx-coroutines-android-1.6.4.dex.jar;kotlinx-coroutines-core-jvm-1.6.4.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.6.1.dex.jar;lifecycle-livedata-2.6.1.dex.jar;lifecycle-livedata-core-2.6.1.dex.jar;lifecycle-runtime-2.6.1.dex.jar;lifecycle-service-2.6.1.dex.jar;lifecycle-viewmodel-2.6.1.dex.jar;lifecycle-viewmodel-savedstate-2.6.1.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;okio-jvm-3.4.0.dex.jar;play-services-ads-22.2.0.dex.jar;play-services-ads-base-22.2.0.dex.jar;play-services-ads-identifier-18.0.0.dex.jar;play-services-ads-lite-22.2.0.dex.jar;play-services-appset-16.0.1.dex.jar;play-services-base-18.1.0.dex.jar;play-services-basement-18.1.0.dex.jar;play-services-cloud-messaging-17.0.1.dex.jar;play-services-location-21.0.1.dex.jar;play-services-maps-18.1.0.dex.jar;play-services-measurement-base-20.1.2.dex.jar;play-services-measurement-sdk-api-20.1.2.dex.jar;play-services-stats-17.0.2.dex.jar;play-services-tasks-18.0.2.dex.jar;print-1.0.0.dex.jar;profileinstaller-1.3.0.dex.jar;room-common-2.2.5.dex.jar;room-runtime-2.2.5.dex.jar;savedstate-1.2.1.dex.jar;sqlite-2.1.0.dex.jar;sqlite-framework-2.1.0.dex.jar;startup-runtime-1.1.1.dex.jar;tracing-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.1.8.dex.jar;transport-runtime-3.1.8.dex.jar;user-messaging-platform-2.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.7.0.dex.jar</EnabledSysJars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSDevice64)'!=''">
+        <iOS_AppStore1024>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_1024x1024.png</iOS_AppStore1024>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
+        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Android64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_iOSDevice64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_OSX64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_OSXARM64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="vcl.dcp"/>
+        <DCCReference Include="vclimg.dcp"/>
+        <DCCReference Include="VclSmp.dcp"/>
+        <DCCReference Include="dbrtl.dcp"/>
+        <DCCReference Include="bindengine.dcp"/>
+        <DCCReference Include="bindcomp.dcp"/>
+        <DCCReference Include="VCLTMSFNCCorePkg.dcp"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRichEditorBase.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCBitmapPicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCBitmapPickerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCBitmapSelector.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCBitmapSelectorReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCCheckedListBox.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCCheckedTreeView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCCheckGroup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCCheckGroupPicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCCheckGroupPickerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCCheckGroupReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCColorPicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCColorPickerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCColorSelector.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCColorSelectorReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCCustomGrid.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCCustomGroup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCCustomPicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCCustomSelector.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCCustomTreeView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCDirectoryTreeView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCEditReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCFontNamePicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCFontNamePickerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCFontSizePicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCFontSizePickerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCGrid.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCGridCell.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCGridData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCGridDatabaseAdapter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCGridDatabaseAdapterReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCGridDataUtil.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCGridOptions.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCGridReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCHTMLText.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCHTMLTextReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCImage.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCImageReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCListBox.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCListBoxReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCListEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCListEditorReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCNavigationPanel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCNavigationPanelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPageControl.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPageControlReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPanel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPanelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPlanner.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPlannerBase.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPlannerData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPlannerDatabaseAdapter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPlannerDatabaseAdapterReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPlannerItemEditorRecurrency.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPlannerItemEditorRecurrencyReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPlannerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRadioGroup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRadioGroupPicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRadioGroupPickerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRadioGroupReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRecurrencyHandler.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCResponsiveList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCResponsiveListReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCResponsiveListTypes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRichEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRichEditorDD.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRichEditorIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRichEditorIOReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRichEditorPic.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRichEditorReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRichEditorRTF.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRichEditorToolBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRichEditorToolBarPopup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRichEditorToolBarPopupReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRichEditorToolBarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCScrollControl.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCSearchEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCSearchEditReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCSearchList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCSearchListReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCTabSet.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCTabSetReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCToolBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCToolBarPopup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCToolBarPopupReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCToolBarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCToolBarRes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCTreeView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCTreeViewBase.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCTreeViewData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCTreeViewReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCGridExcelIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCGridExcelIOReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUBreakList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUEscherGraphToBSE.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUEscherOtherRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUEscherRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUExcelAdapter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUExcelRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUFlxFormats.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUFlxMessages.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUFlxNumberFormat.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUFlxRowComments.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUFlxStack.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUFlxUtils.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUOle2Impl.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUSheetNameList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUTextDelim.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsBaseClientData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsBaseList.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsBaseRecordLists.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsBaseRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsCellRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsChart.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsClientData.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsColInfo.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsCondFmt.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsEncodeFormula.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsEscher.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsFormula.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsFormulaParser.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsHyperLink.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsMD5.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsNotes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsOtherRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsPageBreaks.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsPalette.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsPictures.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsProtect.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsRangeRecords.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsReferences.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsRowColEntries.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsSections.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsSheet.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsSST.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsStrings.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsTokenArray.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsWorkbookGlobals.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCUXlsXF.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCXLSAdapter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCXlsBaseTemplateStore.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCXlsFormulaMessages.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\XlsAdapter\VCL.TMSFNCXlsMessages.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCHTMLEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCHTMLEditorReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCButton.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCButtonReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPlannerItemEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPlannerModeEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCTreeViewEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCGridToolBarPopup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCGridToolBarPopupReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPlannerToolBarPopup.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPlannerToolBarPopupReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRichEditorPDFIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCGridPDFIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCFormulaParser.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCSpreadGrid.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCSpreadGridLibs.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCSpreadGridReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCGridIOReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCSpreadGridTypes.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPDFImageBook.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCTableView.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCTableViewReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRibbon.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRibbonReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCKanbanBoard.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCKanbanBoardDatabaseAdapter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCKanbanBoardDatabaseAdapterReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCKanbanBoardReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCAnalogTimePicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCAnalogTimeReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCAnalogTimeSelector.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCCalendar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCCalendarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCDatePicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCDigitalTimePicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCDigitalTimeReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCDigitalTimeSelector.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCFillKindPicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCFillKindReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCFillKindSelector.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCStrokeKindPicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCStrokeKindReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCStrokeKindSelector.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCColorWheel.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCColorWheelReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCColorWheelResources.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCSignatureCapture.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCSignatureCaptureReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCTaskDialog.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCTaskDialogReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCObjectInspector.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCObjectInspectorReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCStatusBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCStatusBarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCDateTimePicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCDateTimePickerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCFontDialog.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCFontDialogReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCIPEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCIPEditReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCCheckBox.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCCheckBoxReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCHTMLImageContainer.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRadioButton.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRadioButtonReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCTrackBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCTrackBarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRangeSlider.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRangeSliderReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCSpinEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCSpinEditReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCComboBox.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCComboBoxReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCSwitch.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCSwitchReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCLabelEdit.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCLabelEditReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCSplitter.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCSplitterReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRichEditorRuler.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRichEditorRulerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCProgressBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCProgressBarReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCHotSpotImageReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCHotSpotImage.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCHotSpotImageEditor.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCHotSpotImageEditorReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCWaitingIndicator.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCWaitingIndicatorReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPassLock.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCPassLockReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCControlPicker.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCControlPickerReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCGridPrintIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCGridPrintIOReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRichEditorPrintIO.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCRichEditorPrintIOReg.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCEditorToolBar.pas"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS FNC UI Pack\VCL.TMSFNCEditorsToolsUI.pas"/>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Package</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">VCLTMSFNCUIPackPkg.dpk</Source>
+                </Source>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Android">False</Platform>
+                <Platform value="Android64">True</Platform>
+                <Platform value="iOSDevice32">False</Platform>
+                <Platform value="iOSDevice64">True</Platform>
+                <Platform value="iOSSimARM64">True</Platform>
+                <Platform value="iOSSimulator">False</Platform>
+                <Platform value="Linux64">True</Platform>
+                <Platform value="OSX64">True</Platform>
+                <Platform value="OSXARM64">True</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+                <Platform value="Win64x">True</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

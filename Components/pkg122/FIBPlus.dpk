@@ -1,0 +1,93 @@
+package FIBPlus;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'FibPlus Access Components'}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  dbrtl,
+  dsnap;
+
+contains
+  StdFuncs in '..\..\..\lib\fibplus\StdFuncs.pas',
+  IB_Services in '..\..\..\lib\fibplus\IB_Services.pas',
+  ibase in '..\..\..\lib\fibplus\ibase.pas',
+  FIBDatabase in '..\..\..\lib\fibplus\FIBDatabase.pas',
+  IB_Install in '..\..\..\lib\fibplus\IB_Install.pas',
+  pFIBDatabase in '..\..\..\lib\fibplus\pFIBDatabase.pas',
+  FIBPlatforms in '..\..\..\lib\fibplus\FIBPlatforms.pas',
+  IB_Intf in '..\..\..\lib\fibplus\IB_Intf.pas',
+  IB_InstallHeader in '..\..\..\lib\fibplus\IB_InstallHeader.pas',
+  FIBSafeTimer in '..\..\..\lib\fibplus\FIBSafeTimer.pas',
+  IBBlobFilter in '..\..\..\lib\fibplus\IBBlobFilter.pas',
+  IB_Externals in '..\..\..\lib\fibplus\IB_Externals.pas',
+  pFIBDataInfo in '..\..\..\lib\fibplus\pFIBDataInfo.pas',
+  pFIBEventLists in '..\..\..\lib\fibplus\pFIBEventLists.pas',
+  FIBMiscellaneous in '..\..\..\lib\fibplus\FIBMiscellaneous.pas',
+  pFIBCacheQueries in '..\..\..\lib\fibplus\pFIBCacheQueries.pas',
+  fib in '..\..\..\lib\fibplus\fib.pas',
+  SIBEABase in '..\..\..\lib\fibplus\SIBEABase.pas',
+  pFIBDataSet in '..\..\..\lib\fibplus\pFIBDataSet.pas',
+  DSContainer in '..\..\..\lib\fibplus\DSContainer.pas',
+  pFIBExports in '..\..\..\lib\fibplus\pFIBExports.pas',
+  VariantRtn in '..\..\..\lib\fibplus\VariantRtn.pas',
+  FIBSQLMonitor in '..\..\..\lib\fibplus\FIBSQLMonitor.pas',
+  pFIBInterfaces in '..\..\..\lib\fibplus\pFIBInterfaces.pas',
+  pFIBSQLLog in '..\..\..\lib\fibplus\pFIBSQLLog.pas',
+  RegUtils in '..\..\..\lib\fibplus\RegUtils.pas',
+  StrUtil in '..\..\..\lib\fibplus\StrUtil.pas',
+  FIBQuery in '..\..\..\lib\fibplus\FIBQuery.pas',
+  FIBDataSet in '..\..\..\lib\fibplus\FIBDataSet.pas',
+  FIBCacheManage in '..\..\..\lib\fibplus\FIBCacheManage.pas',
+  pTestInfo in '..\..\..\lib\fibplus\pTestInfo.pas',
+  SqlTxtRtns in '..\..\..\lib\fibplus\SqlTxtRtns.pas',
+  DBParsers in '..\..\..\lib\fibplus\DBParsers.pas',
+  pFIBMetaData in '..\..\..\lib\fibplus\pFIBMetaData.pas',
+  pFIBQuery in '..\..\..\lib\fibplus\pFIBQuery.pas',
+  FIBConsts in '..\..\..\lib\fibplus\FIBConsts.pas',
+  pFIBScripter in '..\..\..\lib\fibplus\pFIBScripter.pas',
+  pFIBProps in '..\..\..\lib\fibplus\pFIBProps.pas',
+  pFIBClientDataSet in '..\..\..\lib\fibplus\pFIBClientDataSet.pas',
+  pFIBErrorHandler in '..\..\..\lib\fibplus\pFIBErrorHandler.pas',
+  pFIBDataRefresh in '..\..\..\lib\fibplus\pFIBDataRefresh.pas',
+  pFIBArray in '..\..\..\lib\fibplus\pFIBArray.pas',
+  pFIBLists in '..\..\..\lib\fibplus\pFIBLists.pas',
+  pFIBStoredProc in '..\..\..\lib\fibplus\pFIBStoredProc.pas',
+  IB_ErrorCodes in '..\..\..\lib\fibplus\IB_ErrorCodes.pas',
+  FIBCloneComponents in '..\..\..\lib\fibplus\FIBCloneComponents.pas',
+  pFIBFieldsDescr in '..\..\..\lib\fibplus\pFIBFieldsDescr.pas',
+  SIBAPI in '..\..\..\lib\fibplus\SIBAPI.pas',
+  SIBFIBEA in '..\..\..\lib\fibplus\SIBFIBEA.PAS',
+  SIBGlobals in '..\..\..\lib\fibplus\SIBGlobals.pas';
+
+end.
+
+
+

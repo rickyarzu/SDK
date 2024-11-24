@@ -1,0 +1,324 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{19B57D63-F4FF-4D98-94DC-98C243983F6B}</ProjectGuid>
+        <MainSource>TMSVCLUIPackPkg.dpk</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <ProjectName Condition="'$(ProjectName)'==''">TMSVCLUIPackPkg</ProjectName>
+        <TargetedPlatforms>1741953</TargetedPlatforms>
+        <AppType>Package</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <ProjectVersion>20.2</ProjectVersion>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android' and '$(Base)'=='true') or '$(Base_Android)'!=''">
+        <Base_Android>true</Base_Android>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Base)'=='true') or '$(Base_Android64)'!=''">
+        <Base_Android64>true</Base_Android64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Base)'=='true') or '$(Base_iOSDevice64)'!=''">
+        <Base_iOSDevice64>true</Base_iOSDevice64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Android64)'!=''">
+        <Cfg_2_Android64>true</Cfg_2_Android64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Cfg_2)'=='true') or '$(Cfg_2_iOSDevice64)'!=''">
+        <Cfg_2_iOSDevice64>true</Cfg_2_iOSDevice64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX64' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSX64)'!=''">
+        <Cfg_2_OSX64>true</Cfg_2_OSX64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSXARM64' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSXARM64)'!=''">
+        <Cfg_2_OSXARM64>true</Cfg_2_OSXARM64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_E>false</DCC_E>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <GenDll>true</GenDll>
+        <GenPackage>true</GenPackage>
+        <SanitizedProjectName>TMSVCLUIPackPkg</SanitizedProjectName>
+        <DCC_Description>TMS VCL UI Pack</DCC_Description>
+        <DllSuffix>$(Auto)</DllSuffix>
+        <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1040</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android)'!=''">
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
+        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+        <EnabledSysJars>activity-1.7.2.dex.jar;annotation-experimental-1.3.0.dex.jar;annotation-jvm-1.6.0.dex.jar;annotations-13.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;billing-6.0.1.dex.jar;biometric-1.1.0.dex.jar;browser-1.4.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;concurrent-futures-1.1.0.dex.jar;core-1.10.1.dex.jar;core-common-2.2.0.dex.jar;core-ktx-1.10.1.dex.jar;core-runtime-2.2.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;error_prone_annotations-2.9.0.dex.jar;exifinterface-1.3.6.dex.jar;firebase-annotations-16.2.0.dex.jar;firebase-common-20.3.1.dex.jar;firebase-components-17.1.0.dex.jar;firebase-datatransport-18.1.7.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-encoders-proto-16.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.1.3.dex.jar;firebase-installations-interop-17.1.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-23.1.2.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;kotlin-stdlib-1.8.22.dex.jar;kotlin-stdlib-common-1.8.22.dex.jar;kotlin-stdlib-jdk7-1.8.22.dex.jar;kotlin-stdlib-jdk8-1.8.22.dex.jar;kotlinx-coroutines-android-1.6.4.dex.jar;kotlinx-coroutines-core-jvm-1.6.4.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.6.1.dex.jar;lifecycle-livedata-2.6.1.dex.jar;lifecycle-livedata-core-2.6.1.dex.jar;lifecycle-runtime-2.6.1.dex.jar;lifecycle-service-2.6.1.dex.jar;lifecycle-viewmodel-2.6.1.dex.jar;lifecycle-viewmodel-savedstate-2.6.1.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;okio-jvm-3.4.0.dex.jar;play-services-ads-22.2.0.dex.jar;play-services-ads-base-22.2.0.dex.jar;play-services-ads-identifier-18.0.0.dex.jar;play-services-ads-lite-22.2.0.dex.jar;play-services-appset-16.0.1.dex.jar;play-services-base-18.1.0.dex.jar;play-services-basement-18.1.0.dex.jar;play-services-cloud-messaging-17.0.1.dex.jar;play-services-location-21.0.1.dex.jar;play-services-maps-18.1.0.dex.jar;play-services-measurement-base-20.1.2.dex.jar;play-services-measurement-sdk-api-20.1.2.dex.jar;play-services-stats-17.0.2.dex.jar;play-services-tasks-18.0.2.dex.jar;print-1.0.0.dex.jar;profileinstaller-1.3.0.dex.jar;room-common-2.2.5.dex.jar;room-runtime-2.2.5.dex.jar;savedstate-1.2.1.dex.jar;sqlite-2.1.0.dex.jar;sqlite-framework-2.1.0.dex.jar;startup-runtime-1.1.1.dex.jar;tracing-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.1.8.dex.jar;transport-runtime-3.1.8.dex.jar;user-messaging-platform-2.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.7.0.dex.jar</EnabledSysJars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android64)'!=''">
+        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+        <EnabledSysJars>activity-1.7.2.dex.jar;annotation-experimental-1.3.0.dex.jar;annotation-jvm-1.6.0.dex.jar;annotations-13.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;billing-6.0.1.dex.jar;biometric-1.1.0.dex.jar;browser-1.4.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;concurrent-futures-1.1.0.dex.jar;core-1.10.1.dex.jar;core-common-2.2.0.dex.jar;core-ktx-1.10.1.dex.jar;core-runtime-2.2.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;error_prone_annotations-2.9.0.dex.jar;exifinterface-1.3.6.dex.jar;firebase-annotations-16.2.0.dex.jar;firebase-common-20.3.1.dex.jar;firebase-components-17.1.0.dex.jar;firebase-datatransport-18.1.7.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-encoders-proto-16.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.1.3.dex.jar;firebase-installations-interop-17.1.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-23.1.2.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;kotlin-stdlib-1.8.22.dex.jar;kotlin-stdlib-common-1.8.22.dex.jar;kotlin-stdlib-jdk7-1.8.22.dex.jar;kotlin-stdlib-jdk8-1.8.22.dex.jar;kotlinx-coroutines-android-1.6.4.dex.jar;kotlinx-coroutines-core-jvm-1.6.4.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.6.1.dex.jar;lifecycle-livedata-2.6.1.dex.jar;lifecycle-livedata-core-2.6.1.dex.jar;lifecycle-runtime-2.6.1.dex.jar;lifecycle-service-2.6.1.dex.jar;lifecycle-viewmodel-2.6.1.dex.jar;lifecycle-viewmodel-savedstate-2.6.1.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;okio-jvm-3.4.0.dex.jar;play-services-ads-22.2.0.dex.jar;play-services-ads-base-22.2.0.dex.jar;play-services-ads-identifier-18.0.0.dex.jar;play-services-ads-lite-22.2.0.dex.jar;play-services-appset-16.0.1.dex.jar;play-services-base-18.1.0.dex.jar;play-services-basement-18.1.0.dex.jar;play-services-cloud-messaging-17.0.1.dex.jar;play-services-location-21.0.1.dex.jar;play-services-maps-18.1.0.dex.jar;play-services-measurement-base-20.1.2.dex.jar;play-services-measurement-sdk-api-20.1.2.dex.jar;play-services-stats-17.0.2.dex.jar;play-services-tasks-18.0.2.dex.jar;print-1.0.0.dex.jar;profileinstaller-1.3.0.dex.jar;room-common-2.2.5.dex.jar;room-runtime-2.2.5.dex.jar;savedstate-1.2.1.dex.jar;sqlite-2.1.0.dex.jar;sqlite-framework-2.1.0.dex.jar;startup-runtime-1.1.1.dex.jar;tracing-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.1.8.dex.jar;transport-runtime-3.1.8.dex.jar;user-messaging-platform-2.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.7.0.dex.jar</EnabledSysJars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSDevice64)'!=''">
+        <iOS_AppStore1024>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_1024x1024.png</iOS_AppStore1024>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
+        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Android64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_iOSDevice64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_OSX64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_OSXARM64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\planreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\rtflreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\slstreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\sysmreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\Wdatreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\Wupdreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\Webcreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\anireg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\shelldlg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\htmhireg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\htmbureg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\htmltvr.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\htmcoreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\Hilireg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\htmlareg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\htmlireg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\alvreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\clistedr.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\edtbreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\fsreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\pdlgreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\llreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\wheelreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\olnkreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\cabr.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\tlreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\asreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\dbasreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\dbaereg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\htmstbr.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\lfreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\htmstreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\dbhtmlar.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\dblucmbr.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\colcoreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\paramlstreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\paramchklreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\paramlabreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advluedr.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advedbr.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\dbadvler.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\wallpreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\collireg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advpnlreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\MoneyEdr.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\WebImgR.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\dbmereg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\datelbl.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\frmsreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advpicr.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\WebPostr.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advqryr.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\htmldlgr.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\dbplanreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\edtlstreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\thumbreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\PlannerCalReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBPlannerCalReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\PictureContainerReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advdropdownreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\acreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\aereg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\calcreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\calpreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\lureg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\parlreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\SHADER.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\paramtreeviewreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\dbslstreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AstaPatchUtil.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBTodoListReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\TodoListReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\WinXP.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvEdBtnReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\HTMLPopupReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\EllipsLblReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\INIInspectorBarReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\InspectorBarReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBInspectorBarReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\RTTIInspectorBarReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\btnlireg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\atbreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\dbanreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvDirectoryEdit.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvFileNameEdit.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBHTMLBtnsReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\WebConnectReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\HotSpotImageReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\uhtmcoreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\uhtmlareg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\uhtmlireg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMemoReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvShaperReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMoneyEditReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvDBLookupComboBoxReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\GradientLblReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\HTMLTLREG.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\HTMLCreditReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\vCalReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ToolPanelsReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvProgressBarReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvPageControlreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\MacroRecorderReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ExeInfoReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvTabSetReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\htmlchklireg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvAlertWindowReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvNavBarReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\PlannerMonthViewReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\imgpickr.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\TMSGraphicsReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMenuRegister.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\Tilebmp.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advoutlooklistreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advglowbuttonreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advappstyler.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvOfficeStatusBarReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvOfficeTabSetReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\TMSOfficeGraphicsReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\advofficeimagereg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\piclistreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\folderdialogreg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvSplitterReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvWiiProgressBarReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvCircularProgressReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvGroupBoxReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvOfficeButtonsReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvScrollBoxReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvReflectionImageReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvRefLabelReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvGlassButtonReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvShapeReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvDateTimePickerReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\DBAdvGlowNavigatorReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\HTMLFormReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvDBComboBoxReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\vCardReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\CALCEREG.DCR"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\ESBMATHSLIB.DCR"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvIPEditReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\PlannerRangeSelectorReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvGridFilterPanelReg.DCR"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvDBFilterPanelReg.DCR"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvFilterPanelButtonReg.DCR"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvLabelEditReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvMultiButtonEditReg.dcr"/>
+        <DCCReference Include="..\..\..\tmssoftware\TMS VCL UI Pack\AdvColumnSetter.dcr"/>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Package</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">TMSVCLUIPackPkg.dpk</Source>
+                </Source>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Android">False</Platform>
+                <Platform value="Android64">True</Platform>
+                <Platform value="iOSDevice32">False</Platform>
+                <Platform value="iOSDevice64">True</Platform>
+                <Platform value="iOSSimARM64">True</Platform>
+                <Platform value="iOSSimulator">False</Platform>
+                <Platform value="Linux64">True</Platform>
+                <Platform value="OSX64">True</Platform>
+                <Platform value="OSXARM64">True</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+                <Platform value="Win64x">True</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

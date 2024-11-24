@@ -1,0 +1,46 @@
+package xhCntrlsDsgn;
+
+{$R *.res}
+{$R '..\..\..\Libraries\HierCube VCL\source\xhCntrlsReg.dcr'}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS OFF}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'HierCube Controls'}
+{$LIBSUFFIX '270'}
+{$DESIGNONLY}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl,
+  vcldb,
+  rtl,
+  dclstd,
+  dcldb,
+  xhCntrlsRtl;
+
+contains
+  xhDataSetDsgn in '..\..\..\Libraries\HierCube VCL\source\xhDataSetDsgn.pas',
+  xhCntrlsReg in '..\..\..\Libraries\HierCube VCL\source\xhCntrlsReg.pas';
+
+end.
