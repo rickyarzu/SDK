@@ -1,5 +1,6 @@
 package vclgtxDocumentStudioControls;
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -8,28 +9,28 @@ package vclgtxDocumentStudioControls;
 {$EXTENDEDSYNTAX ON}
 {$IMPORTEDDATA ON}
 {$IOCHECKS ON}
-{$LOCALSYMBOLS OFF}
+{$LOCALSYMBOLS ON}
 {$LONGSTRINGS ON}
 {$OPENSTRINGS ON}
-{$OPTIMIZATION ON}
+{$OPTIMIZATION OFF}
 {$OVERFLOWCHECKS ON}
 {$RANGECHECKS ON}
-{$REFERENCEINFO OFF}
+{$REFERENCEINFO ON}
 {$SAFEDIVIDE OFF}
-{$STACKFRAMES OFF}
+{$STACKFRAMES ON}
 {$TYPEDADDRESS OFF}
 {$VARSTRINGCHECKS ON}
 {$WRITEABLECONST OFF}
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
-{$DEFINE RELEASE}
+{$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'Gnostice Document Studio Delphi'}
 {$LIBSUFFIX AUTO}
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   vcl,
   vclgtxDocumentEngines,
@@ -40,7 +41,7 @@ requires
   dbrtl,
   vcldb;
 
-contains
+ocontains
   vclgtAceXport in '..\..\..\Libraries\Gnostice Document Studio\source\Controls\vclgtAceXport.pas',
   vclgtDocumentViews in '..\..\..\Libraries\Gnostice Document Studio\Source\Controls\vclgtDocumentViews.pas',
   vclgtFRXport in '..\..\..\Libraries\Gnostice Document Studio\source\Controls\vclgtFRXport.pas',
@@ -56,7 +57,6 @@ contains
   vclgtxXport in '..\..\..\Libraries\Gnostice Document Studio\source\Controls\vclgtxXport.pas',
   vclgtxIndyEmailProvider in '..\..\..\Libraries\Gnostice Document Studio\source\Controls\vclgtxIndyEmailProvider.pas';
 
-  {
 / files not used
   vclgtRaveXport in '..\..\..\Libraries\Gnostice Document Studio\source\Controls\vclgtRaveXport.pas',
   vclgtRBXport in '..\..\..\Libraries\Gnostice Document Studio\source\Controls\vclgtRBXport.pas',

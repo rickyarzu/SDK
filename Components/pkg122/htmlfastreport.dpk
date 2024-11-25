@@ -1,6 +1,7 @@
 package htmlfastreport;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -29,7 +30,7 @@ package htmlfastreport;
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   soaprtl,
   hclcore,
@@ -41,8 +42,8 @@ requires
   fs28,
   frxe28;
 
-contains
+ocontains
   htFastReport in '..\..\..\Libraries\HTML Component Library 4.2\XE11\source\reports\htFastReport.pas',
   htFastReportEditor in '..\..\..\Libraries\HTML Component Library 4.2\XE11\source\reports\htFastReportEditor.pas' {HtFastReportEditorForm};
 
-end.
+d.

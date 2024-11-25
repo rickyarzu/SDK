@@ -1,6 +1,7 @@
 ﻿package DCLgtDocEng;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -29,12 +30,13 @@
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   designide,
   vcl,
   gtDocEng;
 
-contains
+ocontains
   gtDocReg in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtDocReg.pas';
-end.
+
+d.

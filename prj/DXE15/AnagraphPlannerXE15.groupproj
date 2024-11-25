@@ -3,10 +3,10 @@
         <ProjectGuid>{AD98D90C-FDE2-4AF5-84B5-7A2DCB20AED8}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\..\Components\pkg120\sbridge.dproj">
+        <Projects Include="..\..\components\pkg110\dipstudiowin.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
+        <Projects Include="..\..\Components\pkg120\sbridge.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Components\pkg120\PlanAddons.dproj">
@@ -81,9 +81,6 @@
         <Projects Include="..\..\components\pkg110\ipstudiowinclient.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg110\dipstudiowin.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="..\..\Samples\Planner\DBPlannerCalendar\dbplancaldemo.dproj">
             <Dependencies/>
         </Projects>
@@ -108,6 +105,9 @@
         <Projects Include="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="VCL\PhoenixVCLMobileJson.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -116,6 +116,15 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
+    <Target Name="dipstudiowin">
+        <MSBuild Projects="..\..\components\pkg110\dipstudiowin.dproj"/>
+    </Target>
+    <Target Name="dipstudiowin:Clean">
+        <MSBuild Projects="..\..\components\pkg110\dipstudiowin.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dipstudiowin:Make">
+        <MSBuild Projects="..\..\components\pkg110\dipstudiowin.dproj" Targets="Make"/>
+    </Target>
     <Target Name="sbridge">
         <MSBuild Projects="..\..\Components\pkg120\sbridge.dproj"/>
     </Target>
@@ -124,15 +133,6 @@
     </Target>
     <Target Name="sbridge:Make">
         <MSBuild Projects="..\..\Components\pkg120\sbridge.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="TMSCloudPkg">
-        <MSBuild Projects="..\..\Components\pkg120\TMSCloudPkg.dproj"/>
-    </Target>
-    <Target Name="TMSCloudPkg:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\TMSCloudPkg.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="TMSCloudPkg:Make">
-        <MSBuild Projects="..\..\Components\pkg120\TMSCloudPkg.dproj" Targets="Make"/>
     </Target>
     <Target Name="PlanAddons">
         <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj"/>
@@ -350,15 +350,6 @@
     <Target Name="ipstudiowinclient:Make">
         <MSBuild Projects="..\..\components\pkg110\ipstudiowinclient.dproj" Targets="Make"/>
     </Target>
-    <Target Name="dipstudiowin">
-        <MSBuild Projects="..\..\components\pkg110\dipstudiowin.dproj"/>
-    </Target>
-    <Target Name="dipstudiowin:Clean">
-        <MSBuild Projects="..\..\components\pkg110\dipstudiowin.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="dipstudiowin:Make">
-        <MSBuild Projects="..\..\components\pkg110\dipstudiowin.dproj" Targets="Make"/>
-    </Target>
     <Target Name="dbplancaldemo">
         <MSBuild Projects="..\..\Samples\Planner\DBPlannerCalendar\dbplancaldemo.dproj"/>
     </Target>
@@ -431,14 +422,23 @@
     <Target Name="GContactsDemo:Make">
         <MSBuild Projects="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj" Targets="Make"/>
     </Target>
+    <Target Name="PhoenixVCLMobileJson">
+        <MSBuild Projects="VCL\PhoenixVCLMobileJson.dproj"/>
+    </Target>
+    <Target Name="PhoenixVCLMobileJson:Clean">
+        <MSBuild Projects="VCL\PhoenixVCLMobileJson.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PhoenixVCLMobileJson:Make">
+        <MSBuild Projects="VCL\PhoenixVCLMobileJson.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="sbridge;TMSCloudPkg;PlanAddons;dclsbridge;sgcWebSockets;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaVirtual;JanuaUnidac;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaUniGUI;JanuaFMXControls;JanuaVCLMVVM;JanuaVCLForms;JanuaTmsForms;JanuaVCLUITestIDEXE15;AnagraphPlannerXE15;JanuaGridsTestingProject;SFTPClient;hcdemo;ipstudiowin;ipstudiowinclient;dipstudiowin;dbplancaldemo;PlannerRangeSelectorDemo;PPlannerDemo;dbperformance_XE12;planforms;CloudCalendarImportExport;JanuaGoogleCalendarDemo;GContactsDemo"/>
+        <CallTarget Targets="dipstudiowin;sbridge;PlanAddons;dclsbridge;sgcWebSockets;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaVirtual;JanuaUnidac;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaUniGUI;JanuaFMXControls;JanuaVCLMVVM;JanuaVCLForms;JanuaTmsForms;JanuaVCLUITestIDEXE15;AnagraphPlannerXE15;JanuaGridsTestingProject;SFTPClient;hcdemo;ipstudiowin;ipstudiowinclient;dbplancaldemo;PlannerRangeSelectorDemo;PPlannerDemo;dbperformance_XE12;planforms;CloudCalendarImportExport;JanuaGoogleCalendarDemo;GContactsDemo;PhoenixVCLMobileJson"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="sbridge:Clean;TMSCloudPkg:Clean;PlanAddons:Clean;dclsbridge:Clean;sgcWebSockets:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaVirtual:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaUniGUI:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;JanuaVCLUITestIDEXE15:Clean;AnagraphPlannerXE15:Clean;JanuaGridsTestingProject:Clean;SFTPClient:Clean;hcdemo:Clean;ipstudiowin:Clean;ipstudiowinclient:Clean;dipstudiowin:Clean;dbplancaldemo:Clean;PlannerRangeSelectorDemo:Clean;PPlannerDemo:Clean;dbperformance_XE12:Clean;planforms:Clean;CloudCalendarImportExport:Clean;JanuaGoogleCalendarDemo:Clean;GContactsDemo:Clean"/>
+        <CallTarget Targets="dipstudiowin:Clean;sbridge:Clean;PlanAddons:Clean;dclsbridge:Clean;sgcWebSockets:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaVirtual:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaUniGUI:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;JanuaVCLUITestIDEXE15:Clean;AnagraphPlannerXE15:Clean;JanuaGridsTestingProject:Clean;SFTPClient:Clean;hcdemo:Clean;ipstudiowin:Clean;ipstudiowinclient:Clean;dbplancaldemo:Clean;PlannerRangeSelectorDemo:Clean;PPlannerDemo:Clean;dbperformance_XE12:Clean;planforms:Clean;CloudCalendarImportExport:Clean;JanuaGoogleCalendarDemo:Clean;GContactsDemo:Clean;PhoenixVCLMobileJson:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="sbridge:Make;TMSCloudPkg:Make;PlanAddons:Make;dclsbridge:Make;sgcWebSockets:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaVirtual:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaUniGUI:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;JanuaVCLUITestIDEXE15:Make;AnagraphPlannerXE15:Make;JanuaGridsTestingProject:Make;SFTPClient:Make;hcdemo:Make;ipstudiowin:Make;ipstudiowinclient:Make;dipstudiowin:Make;dbplancaldemo:Make;PlannerRangeSelectorDemo:Make;PPlannerDemo:Make;dbperformance_XE12:Make;planforms:Make;CloudCalendarImportExport:Make;JanuaGoogleCalendarDemo:Make;GContactsDemo:Make"/>
+        <CallTarget Targets="dipstudiowin:Make;sbridge:Make;PlanAddons:Make;dclsbridge:Make;sgcWebSockets:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaVirtual:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaUniGUI:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;JanuaVCLUITestIDEXE15:Make;AnagraphPlannerXE15:Make;JanuaGridsTestingProject:Make;SFTPClient:Make;hcdemo:Make;ipstudiowin:Make;ipstudiowinclient:Make;dbplancaldemo:Make;PlannerRangeSelectorDemo:Make;PPlannerDemo:Make;dbperformance_XE12:Make;planforms:Make;CloudCalendarImportExport:Make;JanuaGoogleCalendarDemo:Make;GContactsDemo:Make;PhoenixVCLMobileJson:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='JanuaLibs'">
@@ -532,6 +532,12 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="VCL\PhoenixVCLMobileJson.dproj">
+            <ProjectGuid>{F2450892-929B-4FCA-8FFB-93242E1F1331}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
             <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -555,12 +561,6 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="VCL\AnagraphPlannerXE15.dproj">
-            <ProjectGuid>{E7F5F877-8D46-4B02-981B-26DF0BB7E265}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
@@ -594,12 +594,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj">
             <ProjectGuid>{E2952832-90A5-4554-94C1-04CB5D365B23}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
-            <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -638,6 +632,12 @@
             <ProjectGuid>{6BDE1A65-1767-4F1E-9CC4-9AC7434A8F76}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\AnagraphPlannerXE15.dproj">
+            <ProjectGuid>{1935A556-31E9-41C4-9939-2740E98916EE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsForms.dproj">
@@ -744,6 +744,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="VCL\PhoenixVCLMobileJson.dproj">
+            <ProjectGuid>{F2450892-929B-4FCA-8FFB-93242E1F1331}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
             <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -766,12 +772,6 @@
             <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="VCL\AnagraphPlannerXE15.dproj">
-            <ProjectGuid>{E7F5F877-8D46-4B02-981B-26DF0BB7E265}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
@@ -810,12 +810,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
-            <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
             <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
             <Configurations/>
@@ -850,6 +844,12 @@
             <ProjectGuid>{6BDE1A65-1767-4F1E-9CC4-9AC7434A8F76}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\AnagraphPlannerXE15.dproj">
+            <ProjectGuid>{1935A556-31E9-41C4-9939-2740E98916EE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsForms.dproj">
@@ -956,6 +956,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="VCL\PhoenixVCLMobileJson.dproj">
+            <ProjectGuid>{F2450892-929B-4FCA-8FFB-93242E1F1331}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
             <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -978,12 +984,6 @@
             <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="VCL\AnagraphPlannerXE15.dproj">
-            <ProjectGuid>{E7F5F877-8D46-4B02-981B-26DF0BB7E265}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
@@ -1022,12 +1022,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
-            <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
             <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
             <Configurations/>
@@ -1062,6 +1056,12 @@
             <ProjectGuid>{6BDE1A65-1767-4F1E-9CC4-9AC7434A8F76}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\AnagraphPlannerXE15.dproj">
+            <ProjectGuid>{1935A556-31E9-41C4-9939-2740E98916EE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsForms.dproj">
@@ -1168,6 +1168,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="VCL\PhoenixVCLMobileJson.dproj">
+            <ProjectGuid>{F2450892-929B-4FCA-8FFB-93242E1F1331}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
             <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1191,12 +1197,6 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="VCL\AnagraphPlannerXE15.dproj">
-            <ProjectGuid>{E7F5F877-8D46-4B02-981B-26DF0BB7E265}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
@@ -1230,12 +1230,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\TMS\VCL Cloud Pack\GContactsDemo\GContactsDemo.dproj">
             <ProjectGuid>{E2952832-90A5-4554-94C1-04CB5D365B23}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
-            <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1274,6 +1268,12 @@
             <ProjectGuid>{6BDE1A65-1767-4F1E-9CC4-9AC7434A8F76}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\AnagraphPlannerXE15.dproj">
+            <ProjectGuid>{1935A556-31E9-41C4-9939-2740E98916EE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsForms.dproj">
@@ -1380,6 +1380,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="VCL\PhoenixVCLMobileJson.dproj">
+            <ProjectGuid>{F2450892-929B-4FCA-8FFB-93242E1F1331}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
             <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1402,12 +1408,6 @@
             <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="VCL\AnagraphPlannerXE15.dproj">
-            <ProjectGuid>{E7F5F877-8D46-4B02-981B-26DF0BB7E265}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
@@ -1446,12 +1446,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
-            <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
             <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
             <Configurations/>
@@ -1486,6 +1480,12 @@
             <ProjectGuid>{6BDE1A65-1767-4F1E-9CC4-9AC7434A8F76}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="VCL\AnagraphPlannerXE15.dproj">
+            <ProjectGuid>{1935A556-31E9-41C4-9939-2740E98916EE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsForms.dproj">

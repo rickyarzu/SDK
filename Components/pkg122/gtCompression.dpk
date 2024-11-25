@@ -31,13 +31,13 @@ package gtCompression;
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl;
 
-contains
+ocontains
   gtDZLIB3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\Compression\gtDZLIB3.pas';
 
-end.
+d.
 
 
 

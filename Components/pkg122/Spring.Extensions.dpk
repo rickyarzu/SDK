@@ -1,6 +1,7 @@
 package Spring.Extensions;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -30,11 +31,11 @@ package Spring.Extensions;
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   Spring.Base;
 
-contains
+ocontains
   Spring.Cryptography.Base in '..\..\..\lib\spring4d\Source\Extensions\Cryptography\Spring.Cryptography.Base.pas',
   Spring.Cryptography.CRC in '..\..\..\lib\spring4d\Source\Extensions\Cryptography\Spring.Cryptography.CRC.pas',
   Spring.Cryptography.DES in '..\..\..\lib\spring4d\Source\Extensions\Cryptography\Spring.Cryptography.DES.pas',
@@ -46,4 +47,4 @@ contains
   Spring.Utils.WinApi in '..\..\..\lib\spring4d\Source\Extensions\Utils\Spring.Utils.WinApi.pas',
   Spring.Utils in '..\..\..\lib\spring4d\Source\Extensions\Utils\Spring.Utils.pas';
 
-end.
+d.

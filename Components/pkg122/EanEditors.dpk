@@ -1,6 +1,7 @@
 package EanEditors;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -30,12 +31,12 @@ package EanEditors;
 {$DESIGNONLY}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   designide,
   Ean;
 
-contains
+ocontains
   EanRegEditors in '..\..\..\Libraries\Ean50XE10\EanRegEditors.pas';
 
-end.
+d.

@@ -250,7 +250,6 @@ object frameVCLAnagraphPlanner: TframeVCLAnagraphPlanner
       88887CC822222CC088887C822224642088887C888422C220888877CF8CCCC227
       888887F8F8222208888888776888208888888887777778888888}
     Version = '3.4.6.0'
-    OnItemDelete = DBPlanner1ItemDelete
     OnItemPopupPrepare = DBPlanner1ItemPopupPrepare
     OnPlannerNext = DBPlanner1PlannerNext
     OnPlannerPrev = DBPlanner1PlannerPrev
@@ -498,5 +497,16 @@ object frameVCLAnagraphPlanner: TframeVCLAnagraphPlanner
     object MenuItem2: TMenuItem
       Caption = 'Caption'
     end
+  end
+  object DBDaySource1: TDBDaySource
+    AutoIncKey = False
+    DataSource = dmVCLPlannerCustomController.dsCalendarEvents
+    ResourceMap = <>
+    ReadOnly = False
+    UpdateByQuery = False
+    DateFormat = 'mm/dd/yyyy'
+    Mode = dmMultiDay
+    Left = 472
+    Top = 344
   end
 end

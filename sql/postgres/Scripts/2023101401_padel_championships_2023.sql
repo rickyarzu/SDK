@@ -387,6 +387,8 @@ SET SESSION "system.db_schema_id" = 39;
 select match_date AS DATA, match_day_number AS Giornata, home_team_id AS HID, home_team_name, visitors_team_name   
 from sports.matches_view where season_id = 3 and league_id = 10 ORDER BY match_day_number, match_date, insert_date; 
 
+select * from sports.matches
+
 
 
 

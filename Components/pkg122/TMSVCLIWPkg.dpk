@@ -1,6 +1,7 @@
 package TMSVCLIWPkg;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -12,26 +13,27 @@ package TMSVCLIWPkg;
 {$LOCALSYMBOLS ON}
 {$LONGSTRINGS ON}
 {$OPENSTRINGS ON}
-{$OPTIMIZATION ON}
+{$OPTIMIZATION OFF}
 {$OVERFLOWCHECKS ON}
 {$RANGECHECKS ON}
 {$REFERENCEINFO ON}
 {$SAFEDIVIDE OFF}
-{$STACKFRAMES OFF}
+{$STACKFRAMES ON}
 {$TYPEDADDRESS OFF}
 {$VARSTRINGCHECKS ON}
-{$WRITEABLECONST ON}
+{$WRITEABLECONST OFF}
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
+{$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'TMS Instrumentation Workshop'}
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD ON}
 
-requires
+rrequires
   vcl;
 
-contains
+ocontains
   VrBlotter in '..\..\..\tmssoftware\TMS VCL Instrumentation Workshop\Source Code\VrBlotter.pas',
   VrClasses in '..\..\..\tmssoftware\TMS VCL Instrumentation Workshop\Source Code\VrClasses.pas',
   VrSpectrum in '..\..\..\tmssoftware\TMS VCL Instrumentation Workshop\Source Code\VrSpectrum.pas',
@@ -109,4 +111,4 @@ contains
   VrReg in '..\..\..\tmssoftware\TMS VCL Instrumentation Workshop\Source Code\VrReg.pas',
   VrTubeMeter in '..\..\..\tmssoftware\TMS VCL Instrumentation Workshop\Source Code\VrTubeMeter.pas';
 
-end.
+d.

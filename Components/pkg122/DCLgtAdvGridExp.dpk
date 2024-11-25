@@ -2,6 +2,7 @@
 
 
 {$R *.res}
+{$R *.otares}
 {$R '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\TMS\gtAdvGridExpReg.dcr'}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
@@ -32,10 +33,11 @@
 {$DESIGNONLY}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   gtDocEng;
 
-contains
+ocontains
   gtAdvGridExpReg in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\TMS\gtAdvGridExpReg.pas';
-end.
+
+d.

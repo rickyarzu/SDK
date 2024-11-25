@@ -22,6 +22,7 @@
 package NeonCrossPlatform;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -51,11 +52,11 @@ package NeonCrossPlatform;
 {$RUNONLY}
 {$IMPLICITBUILD ON}
 
-requires
+rrequires
   rtl,
   dbrtl;
 
-contains
+ocontains
   Neon.Core.Attributes in '..\..\..\lib\delphi-neon\Source\Neon.Core.Attributes.pas',
   Neon.Core.DynamicTypes in '..\..\..\lib\delphi-neon\Source\Neon.Core.DynamicTypes.pas',
   Neon.Core.Nullables in '..\..\..\lib\delphi-neon\Source\Neon.Core.Nullables.pas',
@@ -68,4 +69,4 @@ contains
   Neon.Core.Utils in '..\..\..\lib\delphi-neon\Source\Neon.Core.Utils.pas',
   Neon.Core.Persistence.JSON.Schema in '..\..\..\lib\delphi-neon\Source\Neon.Core.Persistence.JSON.Schema.pas';
 
-end.
+d.

@@ -1,5 +1,6 @@
 package dipstudiowin;
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -8,28 +9,28 @@ package dipstudiowin;
 {$EXTENDEDSYNTAX ON}
 {$IMPORTEDDATA ON}
 {$IOCHECKS ON}
-{$LOCALSYMBOLS OFF}
+{$LOCALSYMBOLS ON}
 {$LONGSTRINGS ON}
 {$OPENSTRINGS ON}
-{$OPTIMIZATION ON}
+{$OPTIMIZATION OFF}
 {$OVERFLOWCHECKS ON}
 {$RANGECHECKS ON}
-{$REFERENCEINFO OFF}
+{$REFERENCEINFO ON}
 {$SAFEDIVIDE OFF}
-{$STACKFRAMES OFF}
+{$STACKFRAMES ON}
 {$TYPEDADDRESS OFF}
 {$VARSTRINGCHECKS ON}
 {$WRITEABLECONST OFF}
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
-{$DEFINE RELEASE}
+{$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'Woll2Woll InfoPower Studio Sydney VCL'}
 {$LIBSUFFIX AUTO}
 {$DESIGNONLY}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   designide,
   VCL,
   VCLDB,
@@ -37,7 +38,7 @@ requires
   VCLX,
   ipstudiowin;
 
-contains
+ocontains
   vcl.wwDesign in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwDesign.pas',
   vcl.infopowr in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.infopowr.pas',
   vcl.wwdbnavedt in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwdbnavedt.pas',
@@ -60,4 +61,4 @@ contains
   vcl.wwprpds in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwprpds.pas',
   vcl.wwImageNamePropEditor in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\source\windows\vcl.wwImageNamePropEditor.pas';
 
-end.
+d.

@@ -1,6 +1,7 @@
 package VCLThemeSelector;
 
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -9,36 +10,36 @@ package VCLThemeSelector;
 {$EXTENDEDSYNTAX ON}
 {$IMPORTEDDATA ON}
 {$IOCHECKS ON}
-{$LOCALSYMBOLS OFF}
+{$LOCALSYMBOLS ON}
 {$LONGSTRINGS ON}
 {$OPENSTRINGS ON}
-{$OPTIMIZATION ON}
+{$OPTIMIZATION OFF}
 {$OVERFLOWCHECKS ON}
 {$RANGECHECKS ON}
-{$REFERENCEINFO OFF}
+{$REFERENCEINFO ON}
 {$SAFEDIVIDE OFF}
-{$STACKFRAMES OFF}
+{$STACKFRAMES ON}
 {$TYPEDADDRESS OFF}
 {$VARSTRINGCHECKS ON}
 {$WRITEABLECONST OFF}
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
-{$DEFINE RELEASE}
+{$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
 {$LIBSUFFIX AUTO}
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   vcldb,
   vclwinx,
   dbrtl,
   vcl;
 
-contains
+ocontains
   CBVCLStylePreview in '..\..\..\lib\VCLThemeSelector\Source\CBVCLStylePreview.pas',
   CBVCLStylePreviewForm in '..\..\..\lib\VCLThemeSelector\Source\CBVCLStylePreviewForm.pas' {CBVCLPreviewForm},
   FVCLThemeSelector in '..\..\..\lib\VCLThemeSelector\Source\FVCLThemeSelector.pas' {VCLThemeSelectorForm};
 
-end.
+d.

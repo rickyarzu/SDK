@@ -1,5 +1,6 @@
 ﻿package DCLgtQRExp;
 {$R *.res}
+{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -28,11 +29,11 @@
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-requires
+rrequires
   rtl,
   gtDocEng;
 
-contains
+ocontains
   gtQRExpReg in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\QR\gtQRExpReg.pas';
 
-end.
+d.
