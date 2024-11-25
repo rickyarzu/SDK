@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{CD010ED7-7D50-4208-A624-148DB054289A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="FiremonkeyModel.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TabbedwithNavigation.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="FiremonkeyModel">
+        <MSBuild Projects="FiremonkeyModel.dproj"/>
+    </Target>
+    <Target Name="FiremonkeyModel:Clean">
+        <MSBuild Projects="FiremonkeyModel.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FiremonkeyModel:Make">
+        <MSBuild Projects="FiremonkeyModel.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TabbedwithNavigation">
+        <MSBuild Projects="TabbedwithNavigation.dproj"/>
+    </Target>
+    <Target Name="TabbedwithNavigation:Clean">
+        <MSBuild Projects="TabbedwithNavigation.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TabbedwithNavigation:Make">
+        <MSBuild Projects="TabbedwithNavigation.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="FiremonkeyModel;TabbedwithNavigation"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="FiremonkeyModel:Clean;TabbedwithNavigation:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="FiremonkeyModel:Make;TabbedwithNavigation:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
