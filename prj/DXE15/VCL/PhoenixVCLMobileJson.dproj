@@ -129,9 +129,36 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="..\..\..\src\januacore\Phoenix.Json.Statini.pas"/>
-        <DCCReference Include="..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.JsonAnalyzer.pas">
+        <DCCReference Include="..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.frmJsonAnalyzer.pas">
             <Form>frmPhoenixVCLJsonAnalyzer</Form>
             <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\januacore\Z.Json.Statini.Legacy.pas"/>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Phoenix.FbJsonReport.pas">
+            <Form>dmFbPhoenixJsonReport</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Phoenix.dmIBModel.pas">
+            <Form>dmPhoenixIBModel</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Phoenix.dmIBReportPlanner.pas">
+            <Form>dmPhoenixIBPlanner</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\..\Phoenix\Phoenix\SW\PhoenixMain\Globale.pas"/>
+        <DCCReference Include="..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.rpStatino.pas">
+            <Form>frmRpStatino</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="\\tsclient\RDP Connect\IDRANTI.pas"/>
+        <DCCReference Include="..\..\..\..\Phoenix\Phoenix\SW\PhoenixMain\QrStampaStatino.pas">
+            <Form>QR_STAMPA_STATINO</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TQuickRep</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

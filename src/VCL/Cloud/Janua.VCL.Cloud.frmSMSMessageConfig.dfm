@@ -36,6 +36,8 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
     inherited Panel2: TPanel
       Width = 995
       Height = 776
+      ExplicitLeft = 217
+      ExplicitTop = 0
       ExplicitWidth = 995
       ExplicitHeight = 776
       inherited lblMsgTo: TLabel
@@ -45,12 +47,16 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
       inherited lbContentVariables: TLabel
         Left = 695
         Top = 112
+        Anchors = [akTop, akRight]
         ExplicitLeft = 695
         ExplicitTop = 112
       end
       inherited grpURL: TGroupBox
         Width = 987
         ExplicitWidth = 987
+        inherited lblMobileCustomerUrl: TLabel
+          Height = 27
+        end
         inherited edtMobileUrl: TEdit
           Width = 314
           ExplicitWidth = 314
@@ -82,28 +88,30 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
         ExplicitWidth = 685
       end
       inherited edPhoneCustomerTo: TEdit
-        Width = 0
-        ExplicitWidth = 0
+        Left = 894
+        Width = 89
+        ExplicitLeft = 894
+        ExplicitWidth = 89
       end
       inherited rgEngine: TRadioGroup
         Width = 167
         ExplicitWidth = 167
       end
       inherited pnlSmsTestConfig: TPanel
-        Width = 958
+        Width = 981
         Height = 453
-        ExplicitWidth = 958
+        ExplicitWidth = 981
         ExplicitHeight = 453
         inherited dbgrdParams: TDBGrid
           Width = 421
           Height = 445
         end
         inherited edTestSMSTo: TEdit
-          Width = 500
+          Width = 523
           ExplicitWidth = 500
         end
         inherited advmSMSTest: TAdvMemo
-          Width = 500
+          Width = 523
           BorderColor = clGray
           Gutter.BorderColor = clGray
           Gutter.GutterColor = clBtnFace
@@ -111,29 +119,35 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
           ExplicitWidth = 500
         end
         inherited advmJson: TAdvMemo
-          Width = 500
-          Height = 164
+          Width = 523
+          Height = 258
           BorderColor = clGray
           Gutter.BorderColor = clGray
           Gutter.GutterColor = clBtnFace
-          ExplicitWidth = 500
-          ExplicitHeight = 164
+          ExplicitWidth = 523
+          ExplicitHeight = 258
         end
         inherited lbEdtTemplateSID: TLabeledEdit
-          Width = 500
-          ExplicitWidth = 500
+          Width = 522
+          EditLabel.ExplicitLeft = 439
+          EditLabel.ExplicitTop = 4
+          EditLabel.ExplicitWidth = 68
+          ExplicitWidth = 522
         end
       end
       inherited DBGrid1: TDBGrid
-        Top = 695
+        Top = 714
         Width = 993
+        Height = 61
       end
       inherited Memo1: TMemo
         Left = 695
         Top = 133
+        Width = 290
         Height = 116
         ExplicitLeft = 695
         ExplicitTop = 133
+        ExplicitWidth = 290
         ExplicitHeight = 116
       end
     end

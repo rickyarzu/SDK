@@ -4,11 +4,12 @@ interface
 
 uses
   System.NetEncoding, System.Classes, System.SysUtils, System.Math, System.Strutils, System.Variants,
-  System.Types, System.Rtti,
+  System.Types, System.Rtti, System.Generics.Collections,
   // Neon Serializers Support
   Neon.Core.Types, Neon.Core.Persistence, System.TypInfo {needed by Neon} ,
   // JsonSupport
-  System.Json, Rest.Json, System.Json.Readers, System.Json.Types, System.Json.Writers, System.Json.BSON;
+  System.Json, Rest.Json, Rest.JsonReflect, System.Json.Readers, System.Json.Types, System.Json.Writers,
+  System.Json.BSON;
 
 function EscapeString(const AValue: string): string;
 function StringToJsonString(const aString: string): string; inline;
@@ -32,10 +33,10 @@ type
   public
     class function BuildSerializerConfig(ASerializers: TNSSet = [TNSType.CustomNeon]): INeonConfiguration;
     class function SerializeSimple<T>(const AValue: T): string;
-    class function SerializeJson(const AValue: TValue): TJSONValue;
-    class function SerializeJsonObject<T>(const AValue: T): TJSONValue;
+    class function SerializeJson(const AValue: TValue): TJsonValue;
+    class function SerializeJsonObject<T>(const AValue: T): TJsonValue;
     class function DeserializeSimple<T>(const AValue: string): T; overload;
-    class function DeserializeSimple<T>(const AValue: TJSONValue): T; overload;
+    class function DeserializeSimple<T>(const AValue: TJsonValue): T; overload;
     class function ExtractJWT(const aJWT: string): string;
   public
     class property JsonJWT: string read FJsonJWT;
@@ -43,17 +44,17 @@ type
   end;
 
 function JsonPretty(aJson: string): string; overload;
-function JsonPretty(aJson: TJSONValue): string; overload;
+function JsonPretty(aJson: TJsonValue): string; overload;
 
 function ToJsonFree(aJson: TJsonObject): string; overload;
-function ToJsonFree(aJson: TJSONValue): string; overload;
-function ToJsonPrettyFree(aJson: TJSONValue): string; overload;
+function ToJsonFree(aJson: TJsonValue): string; overload;
+function ToJsonPrettyFree(aJson: TJsonValue): string; overload;
 function ToJsonPrettyFree(aJson: TJsonObject): string; overload;
 
 // Function to pretty format JsonObjects or Json Strings.
-function JsonPrettyOld(aJsonObject: TJsonObject; vEscape: boolean = true): string; overload; inline;
-function JsonPrettyOld(aJsonString: string; vEscape: boolean = true): string; overload; inline;
-function JsonPrettyRaw(aJsonObject: TJsonObject; vEscape: boolean = true): string; inline;
+function JsonPrettyOld(aJsonObject: TJsonObject; vEscape: Boolean = true): string; overload; inline;
+function JsonPrettyOld(aJsonString: string; vEscape: Boolean = true): string; overload; inline;
+function JsonPrettyRaw(aJsonObject: TJsonObject; vEscape: Boolean = true): string; inline;
 
 function JsonObjectError(aError: string): TJsonObject;
 function JsonParse(aJson: string): TJsonObject;
@@ -61,17 +62,17 @@ function JsonParse(aJson: string): TJsonObject;
 function JsonLogString(aProc, aLog: string; aObject: TObject): string;
 
 // Json Functions .............................................................................
-function JsonReformat(const aJson: string; Indented: boolean = true): string;
+function JsonReformat(const aJson: string; Indented: Boolean = true): string;
 
 /// This function converts a Float Number to a String to be exported in Xml Json English format
-function JsonFloatToStr(const aFloat: Double; digits: integer): string;
+function JsonFloatToStr(const aFloat: Double; digits: Integer): string;
 function JsonStringToFloatLegacy(const aString: string): Double;
 function JsonStringToFloat(const aString: string): Double;
 
 function JsonError(aError: string): string;
 // This procedure converts a Json String to Boolean Value and Back
-function JanuaJsonBool(aBool: boolean): string;
-function JanuaBoolJson(aBool: string): boolean;
+function JanuaJsonBool(aBool: Boolean): string;
+function JanuaBoolJson(aBool: string): Boolean;
 
 // This procedure Encode and Decodes a Date - DateTime to String in Janua Std Format.
 function JsonEncodeDate(aDate: TDateTime): string; overload;
@@ -86,7 +87,7 @@ function JsonDecodeDateTimeISO(const aDateTime: string): TDateTime;
 function JsonObjectToString(const aObject: TJsonObject): string;
 function JsonObjectToJSON(const aObject: TJsonObject): string;
 function JsonObjectToPretty(const aObject: TJsonObject): string;
-function JsonObjectParse(var aObject: TJsonObject; const aJson: string): boolean;
+function JsonObjectParse(var aObject: TJsonObject; const aJson: string): Boolean;
 
 // This function makes easy to add pairs to a Json Object
 procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: string); overload; inline;
@@ -94,32 +95,32 @@ procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: TDateTime); ove
 procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: Int64); overload; inline;
 procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: Extended); overload; inline;
 procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: Double); overload; inline;
-procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: boolean); overload; inline;
-procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: TJsonArray); overload; inline;
+procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: Boolean); overload; inline;
+procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: TJSONArray); overload; inline;
 procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: TJsonObject); overload; inline;
 procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: System.TDate); overload; inline;
-procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: TJSONValue); overload; inline;
+procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: TJsonValue); overload; inline;
 {$IFNDEF FPC}
-function JsonPair(aParam: string; AValue: string): TJsonPair; overload; inline;
-function JsonPair(aParam: string; AValue: TDateTime): TJsonPair; overload; inline;
-function JsonPair(aParam: string; AValue: Int64): TJsonPair; overload; inline;
-function JsonPair(aParam: string; AValue: Extended): TJsonPair; overload; inline;
-function JsonPair(aParam: string; AValue: Double): TJsonPair; overload; inline;
-function JsonPair(aParam: string; AValue: Currency): TJsonPair; overload; inline;
-function JsonPair(aParam: string; AValue: boolean): TJsonPair; overload; inline;
-function JsonPair(aParam: string; AValue: TJsonArray): TJsonPair; overload; inline;
-function JsonPair(aParam: string; AValue: TJsonObject): TJsonPair; overload; inline;
-function JsonPair(aParam: string; AValue: TJSONValue): TJsonPair; overload; inline;
-function JsonPair(aParam: string; AValue: System.TDate): TJsonPair; overload; inline;
+function JsonPair(aParam: string; AValue: string): TJSONPair; overload; inline;
+function JsonPair(aParam: string; AValue: TDateTime): TJSONPair; overload; inline;
+function JsonPair(aParam: string; AValue: Int64): TJSONPair; overload; inline;
+function JsonPair(aParam: string; AValue: Extended): TJSONPair; overload; inline;
+function JsonPair(aParam: string; AValue: Double): TJSONPair; overload; inline;
+function JsonPair(aParam: string; AValue: Currency): TJSONPair; overload; inline;
+function JsonPair(aParam: string; AValue: Boolean): TJSONPair; overload; inline;
+function JsonPair(aParam: string; AValue: TJSONArray): TJSONPair; overload; inline;
+function JsonPair(aParam: string; AValue: TJsonObject): TJSONPair; overload; inline;
+function JsonPair(aParam: string; AValue: TJsonValue): TJSONPair; overload; inline;
+function JsonPair(aParam: string; AValue: System.TDate): TJSONPair; overload; inline;
 {$ENDIF FPC}
 // This function Stores a Value into a Json Variable ......................................
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: string;
-  const aDefault: string = ''; const aCheck: boolean = False); overload;
+  const aDefault: string = ''; const aCheck: Boolean = False); overload;
 /// <summary>Extracts a Value with name aParam from a Json Object and convert it to String </summary>
 procedure JsonExtract(aObject: TJsonObject; const aParam: string; var AValue: string);
 {$IFNDEF DEBUG} inline; {$ENDIF}
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TDateTime;
-  vCheck: boolean = False); overload; {$IFNDEF DEBUG} inline; {$ENDIF}
+  vCheck: Boolean = False); overload; {$IFNDEF DEBUG} inline; {$ENDIF}
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TDate); overload;
 {$IFNDEF DEBUG} inline; {$ENDIF}
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: Int64;
@@ -127,7 +128,7 @@ procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: Int6
 {$IFNDEF DEBUG} inline; {$ENDIF}
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: Cardinal); overload;
 {$IFNDEF DEBUG} inline; {$ENDIF}
-procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: integer); overload;
+procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: Integer); overload;
 {$IFNDEF DEBUG} inline; {$ENDIF}
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: smallint); overload;
 {$IFNDEF DEBUG} inline; {$ENDIF}
@@ -147,10 +148,10 @@ procedure JsonValueDouble(aObject: TJsonObject; const aParam: string; var AValue
 procedure JsonValueCurrency(aObject: TJsonObject; const aParam: string; var AValue: Currency);
 {$IFNDEF DEBUG} inline; {$ENDIF}
 /// <summary> Find a Value with name aParam from a Json Object and convert it to boolean </summary>
-procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: boolean); overload;
+procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: Boolean); overload;
 {$IFNDEF DEBUG} inline; {$ENDIF}
 /// <summary> Find a Value with name aParam from a Json Object and convert it to TJsonArray </summary>
-procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TJsonArray); overload;
+procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TJSONArray); overload;
 {$IFNDEF DEBUG} inline; {$ENDIF}
 /// <summary>Find a Value with name aParam from a Json Object and convert it to TJsonObject</summary>
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TJsonObject); overload;
@@ -160,31 +161,31 @@ procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TGUI
 {$IFNDEF DEBUG} inline; {$ENDIF}
 {$IFNDEF FPC}
 /// <summary>Extracts a Value with name aParam from a Json Object</summary>
-procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TJSONValue); overload;
+procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TJsonValue); overload;
 {$IFNDEF DEBUG} inline; {$ENDIF}
 {$ENDIF FPC}
 // This create a Json Object with Result Values
 function JsonResultString(AValue: string): string; inline;
 function JsonResult(AValue: string): TJsonObject; inline;
 function JsonString(aTitle, AValue: String): TJsonObject; inline;
-function JsonResultArray(aTitle: string; AValue: TJsonArray): TJsonObject; inline;
+function JsonResultArray(aTitle: string; AValue: TJSONArray): TJsonObject; inline;
 function JsonObject(aTitle: string; AValue: TJsonObject): TJsonObject; inline;
 
-function GetJsonString(const AValue: TJSONValue): string; inline;
-function GetJsonDateTime(const AValue: TJSONValue): TDateTime; inline;
+function GetJsonString(const AValue: TJsonValue): string; inline;
+function GetJsonDateTime(const AValue: TJsonValue): TDateTime; inline;
 
 implementation
 
-uses Soap.EncdDecd, System.DateUtils, Writers,
+uses System.JSONConsts, Soap.EncdDecd, System.DateUtils, Writers,
   // Neon Json Serializer
   Neon.Core.Persistence.Json, Neon.Core.Utils;
 
-function GetJsonString(const AValue: TJSONValue): string;
+function GetJsonString(const AValue: TJsonValue): string;
 begin
   Result := AValue.Value
 end;
 
-function GetJsonDateTime(const AValue: TJSONValue): TDateTime;
+function GetJsonDateTime(const AValue: TJsonValue): TDateTime;
 begin
 
 end;
@@ -225,8 +226,8 @@ begin
         Result := Result + ESCAPE + 't';
     else
       begin
-        if (integer(AChar) < 32) or (integer(AChar) > 126) then
-          Result := Result + ESCAPE + 'u' + IntToHex(integer(AChar), 4)
+        if (Integer(AChar) < 32) or (Integer(AChar) > 126) then
+          Result := Result + ESCAPE + 'u' + IntToHex(Integer(AChar), 4)
         else
           Result := Result + AChar;
       end;
@@ -244,9 +245,9 @@ begin
   Result := StringToJsonString(aString);
 end;
 
-function IsNumber(const AValue: string): boolean;
+function IsNumber(const AValue: string): Boolean;
 var
-  iValue, iCode: integer;
+  iValue, iCode: Integer;
 begin
   val(AValue, iValue, iCode);
   Result := iCode = 0;
@@ -261,7 +262,7 @@ begin
   end;
 end;
 
-function ToJsonFree(aJson: TJSONValue): string; overload;
+function ToJsonFree(aJson: TJsonValue): string; overload;
 begin
   try
     Result := aJson.ToJSON
@@ -270,7 +271,7 @@ begin
   end;
 end;
 
-function ToJsonPrettyFree(aJson: TJSONValue): string; overload;
+function ToJsonPrettyFree(aJson: TJsonValue): string; overload;
 begin
   try
     Result := aJson.Format(2);
@@ -288,7 +289,7 @@ begin
   end;
 end;
 
-function JsonPretty(aJson: TJSONValue): string;
+function JsonPretty(aJson: TJsonValue): string;
 begin
   // {$IFDEF DELPHIRIO}
   Result := aJson.Format; //
@@ -345,7 +346,7 @@ end;
 {$REGION 'Json'}
 {$IFNDEF FPC}
 
-procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TJSONValue); overload; inline;
+procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TJsonValue); overload; inline;
 begin
   AValue := nil;
   if Assigned(aObject) then
@@ -365,8 +366,8 @@ end;
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TGUID);
 var
 {$IFNDEF FPC}
-  LV: TJSONValue;
-  LT: TJsonPair;
+  LV: TJsonValue;
+  LT: TJSONPair;
 {$ENDIF FPC}
   tmp: string;
 begin
@@ -411,11 +412,11 @@ begin
 end;
 
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TDateTime;
-  vCheck: boolean); overload;
+  vCheck: Boolean); overload;
 {$IFNDEF FPC}
 var
-  LV: TJSONValue;
-  LT: TJsonPair;
+  LV: TJsonValue;
+  LT: TJSONPair;
 {$ENDIF FPC}
 begin
 {$IFNDEF FPC}
@@ -465,11 +466,11 @@ begin
 end;
 
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: string;
-  const aDefault: string = ''; const aCheck: boolean = False);
+  const aDefault: string = ''; const aCheck: Boolean = False);
 {$IFNDEF FPC}
 var
-  LV: TJSONValue;
-  LT: TJsonPair;
+  LV: TJsonValue;
+  LT: TJSONPair;
 {$ENDIF FPC}
 begin
 {$IFNDEF FPC}
@@ -501,8 +502,8 @@ end;
 procedure JsonExtract(aObject: TJsonObject; const aParam: string; var AValue: string);
 {$IFNDEF FPC}
 var
-  LV: TJSONValue;
-  LT: TJsonPair;
+  LV: TJsonValue;
+  LT: TJSONPair;
 {$ENDIF FPC}
 begin
 {$IFNDEF FPC}
@@ -532,8 +533,8 @@ end;
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TDate);
 var
 {$IFNDEF FPC}
-  V: TJSONValue;
-  p: TJsonPair;
+  V: TJsonValue;
+  p: TJSONPair;
 {$ENDIF FPC}
   S: TJSONString;
 begin
@@ -567,8 +568,8 @@ end;
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: Cardinal); overload;
 var
 {$IFNDEF FPC}
-  p: TJsonPair;
-  V: TJSONValue;
+  p: TJSONPair;
+  V: TJsonValue;
 {$ENDIF FPC}
   S: TJsonNumber;
 begin
@@ -609,8 +610,8 @@ procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: Int6
   const aDefault: Int64); overload;
 var
 {$IFNDEF FPC}
-  p: TJsonPair;
-  V: TJSONValue;
+  p: TJSONPair;
+  V: TJsonValue;
 {$ENDIF FPC}
   S: TJsonNumber;
 begin
@@ -652,11 +653,11 @@ procedure JsonValue(aObject: TJsonObject;
 
   const aParam: string;
 
-  var AValue: integer);
+  var AValue: Integer);
 var
 {$IFNDEF FPC}
-  p: TJsonPair;
-  V: TJSONValue;
+  p: TJSONPair;
+  V: TJsonValue;
 {$ENDIF FPC}
   S: TJsonNumber;
 begin
@@ -691,8 +692,8 @@ end;
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: byte); overload;
 var
 {$IFNDEF FPC}
-  p: TJsonPair;
-  V: TJSONValue;
+  p: TJSONPair;
+  V: TJsonValue;
 {$ENDIF FPC}
   S: TJsonNumber;
 begin
@@ -726,8 +727,8 @@ end;
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: word); overload;
 var
 {$IFNDEF FPC}
-  p: TJsonPair;
-  V: TJSONValue;
+  p: TJSONPair;
+  V: TJsonValue;
 {$ENDIF FPC}
   S: TJsonNumber;
 begin
@@ -753,8 +754,8 @@ end;
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: smallint);
 var
 {$IFNDEF FPC}
-  p: TJsonPair;
-  V: TJSONValue;
+  p: TJSONPair;
+  V: TJsonValue;
 {$ENDIF FPC}
   S: TJsonNumber;
 begin
@@ -783,7 +784,7 @@ end;
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: Extended);
 var
 {$IFNDEF FPC}
-  V: TJSONValue;
+  V: TJsonValue;
 {$ENDIF FPC}
   S: TJsonNumber;
 begin
@@ -805,7 +806,7 @@ end;
 procedure JsonValueCurrency(aObject: TJsonObject; const aParam: string; var AValue: Currency); inline;
 var
 {$IFNDEF FPC}
-  V: TJSONValue;
+  V: TJsonValue;
 {$ENDIF FPC}
   S: TJsonNumber;
 begin
@@ -829,7 +830,7 @@ end;
 procedure JsonValueDouble(aObject: TJsonObject; const aParam: string; var AValue: Double);
 var
 {$IFNDEF FPC}
-  V: TJSONValue;
+  V: TJsonValue;
 {$ENDIF FPC}
   S: TJsonNumber;
 begin
@@ -853,7 +854,7 @@ end;
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: Currency);
 var
 {$IFNDEF FPC}
-  V: TJSONValue;
+  V: TJsonValue;
 {$ENDIF FPC}
   S: TJsonNumber;
   // formatSettings: TFormatSettings;
@@ -878,7 +879,7 @@ end;
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: Double);
 var
 {$IFNDEF FPC}
-  V: TJSONValue;
+  V: TJsonValue;
 {$ENDIF FPC}
   S: TJsonNumber;
 begin
@@ -899,11 +900,11 @@ begin
 
 end;
 
-procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: boolean);
+procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: Boolean);
 {$IFNDEF FPC}
 var
   S: TJsonBool;
-  aPair: TJsonPair;
+  aPair: TJSONPair;
 {$ENDIF FPC}
 begin
   AValue := False;
@@ -923,23 +924,23 @@ begin
   }
 end;
 
-procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TJsonArray);
+procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TJSONArray);
 {$IFNDEF FPC}
 var
-  aPair: TJsonPair;
+  aPair: TJSONPair;
 {$ENDIF FPC}
 begin
 {$IFNDEF FPC}
   aPair := aObject.Get(aParam);
   if Assigned(aPair) then
-    AValue := (aPair.JsonValue as TJsonArray)
+    AValue := (aPair.JsonValue as TJSONArray)
 {$ENDIF FPC}
 end;
 
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: TJsonObject);
 {$IFNDEF FPC}
 var
-  aPair: TJsonPair;
+  aPair: TJSONPair;
 {$ENDIF FPC}
 begin
 {$IFNDEF FPC}
@@ -952,73 +953,73 @@ begin
 end;
 {$IFNDEF FPC}
 
-function JsonPair(aParam: string; AValue: string): TJsonPair; overload;
+function JsonPair(aParam: string; AValue: string): TJSONPair; overload;
 begin
-  Result := TJsonPair.Create(TJSONString.Create(aParam.ToLower), TJSONString.Create(AValue))
+  Result := TJSONPair.Create(TJSONString.Create(aParam.ToLower), TJSONString.Create(AValue))
 end;
 
-function JsonPair(aParam: string; AValue: TDateTime): TJsonPair; overload;
+function JsonPair(aParam: string; AValue: TDateTime): TJSONPair; overload;
 begin
-  Result := TJsonPair.Create(TJSONString.Create(aParam.ToLower), TJSONString.Create(DateToISO8601(AValue)))
+  Result := TJSONPair.Create(TJSONString.Create(aParam.ToLower), TJSONString.Create(DateToISO8601(AValue)))
 end;
 
-function JsonPair(aParam: string; AValue: Int64): TJsonPair; overload;
+function JsonPair(aParam: string; AValue: Int64): TJSONPair; overload;
 begin
-  Result := TJsonPair.Create(TJSONString.Create(aParam.ToLower), TJsonNumber.Create(AValue))
+  Result := TJSONPair.Create(TJSONString.Create(aParam.ToLower), TJsonNumber.Create(AValue))
 end;
 
-function JsonPair(aParam: string; AValue: Extended): TJsonPair; overload;
+function JsonPair(aParam: string; AValue: Extended): TJSONPair; overload;
 begin
-  Result := TJsonPair.Create(TJSONString.Create(aParam.ToLower), TJsonNumber.Create(AValue))
+  Result := TJSONPair.Create(TJSONString.Create(aParam.ToLower), TJsonNumber.Create(AValue))
 end;
 
-function JsonPair(aParam: string; AValue: Double): TJsonPair; overload;
+function JsonPair(aParam: string; AValue: Double): TJSONPair; overload;
 begin
-  Result := TJsonPair.Create(TJSONString.Create(aParam.ToLower), TJsonNumber.Create(AValue))
+  Result := TJSONPair.Create(TJSONString.Create(aParam.ToLower), TJsonNumber.Create(AValue))
 end;
 
-function JsonPair(aParam: string; AValue: Currency): TJsonPair; overload; inline;
+function JsonPair(aParam: string; AValue: Currency): TJSONPair; overload; inline;
 begin
-  Result := TJsonPair.Create(TJSONString.Create(aParam.ToLower), TJsonNumber.Create(AValue))
+  Result := TJSONPair.Create(TJSONString.Create(aParam.ToLower), TJsonNumber.Create(AValue))
 end;
 
-function JsonPair(aParam: string; AValue: boolean): TJsonPair; overload;
+function JsonPair(aParam: string; AValue: Boolean): TJSONPair; overload;
 begin
-  Result := TJsonPair.Create(TJSONString.Create(aParam.ToLower), TJsonBool.Create(AValue))
+  Result := TJSONPair.Create(TJSONString.Create(aParam.ToLower), TJsonBool.Create(AValue))
 end;
 
-function JsonPair(aParam: string; AValue: TJsonArray): TJsonPair; overload;
+function JsonPair(aParam: string; AValue: TJSONArray): TJSONPair; overload;
 begin
-  Result := TJsonPair.Create(TJSONString.Create(aParam.ToLower), AValue)
+  Result := TJSONPair.Create(TJSONString.Create(aParam.ToLower), AValue)
 end;
 
-function JsonPair(aParam: string; AValue: TJsonObject): TJsonPair; overload;
+function JsonPair(aParam: string; AValue: TJsonObject): TJSONPair; overload;
 begin
-  Result := TJsonPair.Create(TJSONString.Create(aParam.ToLower), AValue)
+  Result := TJSONPair.Create(TJSONString.Create(aParam.ToLower), AValue)
 end;
 
-function JsonPair(aParam: string; AValue: TJSONValue): TJsonPair; overload;
+function JsonPair(aParam: string; AValue: TJsonValue): TJSONPair; overload;
 begin
-  Result := TJsonPair.Create(TJSONString.Create(aParam.ToLower), AValue)
+  Result := TJSONPair.Create(TJSONString.Create(aParam.ToLower), AValue)
 end;
 
-function JsonPair(aParam: string; AValue: System.TDate): TJsonPair; overload;
+function JsonPair(aParam: string; AValue: System.TDate): TJSONPair; overload;
 begin
-  Result := TJsonPair.Create(TJSONString.Create(aParam.ToLower), TJSONString.Create(DateToISO8601(AValue)))
+  Result := TJSONPair.Create(TJSONString.Create(aParam.ToLower), TJSONString.Create(DateToISO8601(AValue)))
 end;
 {$ENDIF FPC}
 
 procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: string);
 begin
 {$IFNDEF FPC}
-  aObject.AddPair(TJsonPair.Create(TJSONString.Create(aParam.ToLower), TJSONString.Create(AValue)));
+  aObject.AddPair(TJSONPair.Create(TJSONString.Create(aParam.ToLower), TJSONString.Create(AValue)));
 {$ENDIF FPC}
 end;
 
 procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: TDateTime);
 begin
 {$IFNDEF FPC}
-  aObject.AddPair(TJsonPair.Create(TJSONString.Create(aParam.ToLower),
+  aObject.AddPair(TJSONPair.Create(TJSONString.Create(aParam.ToLower),
     TJSONString.Create(JsonEncodeDate(AValue))))
 {$ENDIF FPC}
 end;
@@ -1026,7 +1027,7 @@ end;
 procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: System.TDate);
 begin
 {$IFNDEF FPC}
-  aObject.AddPair(TJsonPair.Create(TJSONString.Create(aParam.ToLower),
+  aObject.AddPair(TJSONPair.Create(TJSONString.Create(aParam.ToLower),
     TJSONString.Create(JsonEncodeDate(AValue))))
 {$ENDIF FPC}
 end;
@@ -1034,32 +1035,32 @@ end;
 procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: Int64);
 begin
 {$IFNDEF FPC}
-  aObject.AddPair(TJsonPair.Create(TJSONString.Create(aParam.ToLower), TJsonNumber.Create(AValue)))
+  aObject.AddPair(TJSONPair.Create(TJSONString.Create(aParam.ToLower), TJsonNumber.Create(AValue)))
 {$ENDIF FPC}
 end;
 
 procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: Double);
 begin
 {$IFNDEF FPC}
-  aObject.AddPair(TJsonPair.Create(TJSONString.Create(aParam.ToLower), TJsonNumber.Create(AValue)))
+  aObject.AddPair(TJSONPair.Create(TJSONString.Create(aParam.ToLower), TJsonNumber.Create(AValue)))
 {$ENDIF FPC}
 end;
 
 procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: Extended);
 begin
 {$IFNDEF FPC}
-  aObject.AddPair(TJsonPair.Create(TJSONString.Create(aParam.ToLower), TJsonNumber.Create(AValue)))
+  aObject.AddPair(TJSONPair.Create(TJSONString.Create(aParam.ToLower), TJsonNumber.Create(AValue)))
 {$ENDIF FPC}
 end;
 
-procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: boolean);
+procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: Boolean);
 begin
 {$IFNDEF FPC}
-  aObject.AddPair(TJsonPair.Create(TJSONString.Create(aParam), TJsonBool.Create(AValue)))
+  aObject.AddPair(TJSONPair.Create(TJSONString.Create(aParam), TJsonBool.Create(AValue)))
 {$ENDIF FPC}
 end;
 
-procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: TJsonArray); overload;
+procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: TJSONArray); overload;
 begin
 {$IFNDEF FPC}
   aObject.AddPair(aParam, AValue);
@@ -1069,15 +1070,15 @@ end;
 procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: TJsonObject); overload;
 begin
 {$IFNDEF FPC}
-  aObject.AddPair(TJsonPair.Create(aParam, AValue));
+  aObject.AddPair(TJSONPair.Create(aParam, AValue));
 {$ENDIF FPC}
 end;
 
 {$IFNDEF FPC}
 
-procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: TJSONValue); overload;
+procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: TJsonValue); overload;
 begin
-  aObject.AddPair(TJsonPair.Create(aParam, AValue));
+  aObject.AddPair(TJSONPair.Create(aParam, AValue));
 end;
 {$ENDIF FPC}
 
@@ -1101,7 +1102,7 @@ end;
 
 {$ENDREGION 'Json'}
 
-function JsonReformat(const aJson: string; Indented: boolean = true): string;
+function JsonReformat(const aJson: string; Indented: Boolean = true): string;
 {$IFNDEF FPC}
 var
   JsonWriter: TJsonStringWriter;
@@ -1127,9 +1128,9 @@ begin
 {$ENDIF FPC}
 end;
 
-function JsonPrettyOld(aJsonObject: TJsonObject; vEscape: boolean = true): string;
+function JsonPrettyOld(aJsonObject: TJsonObject; vEscape: Boolean = true): string;
 var
-{$IFNDEF FPC} vJSONScenario: TJSONValue; {$ENDIF FPC}
+{$IFNDEF FPC} vJSONScenario: TJsonValue; {$ENDIF FPC}
   sJson: string;
 begin
 {$IFNDEF FPC}
@@ -1148,15 +1149,15 @@ begin
   end;
 end;
 
-function JsonPrettyRaw(aJsonObject: TJsonObject; vEscape: boolean = true): string;
+function JsonPrettyRaw(aJsonObject: TJsonObject; vEscape: Boolean = true): string;
 begin
   Result := JsonPrettyOld(aJsonObject.ToString, vEscape);
 end;
 
-function JsonPrettyOld(aJsonString: string; vEscape: boolean = true): string;
+function JsonPrettyOld(aJsonString: string; vEscape: Boolean = true): string;
 {$IFNDEF FPC}
 var
-  vJSONScenario: TJSONValue;
+  vJSONScenario: TJsonValue;
 begin
   vJSONScenario := TJsonObject.ParseJSONValue(aJsonString, False);
   if vJSONScenario <> nil then
@@ -1177,7 +1178,7 @@ end;
 function JsonObject(aTitle: string; AValue: TJsonObject): TJsonObject;
 {$IFNDEF FPC}
 var
-  aPair: TJsonPair;
+  aPair: TJSONPair;
 begin
   aPair := AValue.Get(aTitle);
   if Assigned(aPair) then
@@ -1191,7 +1192,7 @@ begin
 {$ENDIF FPC}
 end;
 
-function JsonResultArray(aTitle: string; AValue: TJsonArray): TJsonObject;
+function JsonResultArray(aTitle: string; AValue: TJSONArray): TJsonObject;
 begin
   Result := TJsonObject.Create;
 {$IFNDEF FPC} Result.AddPair(IfThen(aTitle = '', 'Result', aTitle), AValue); {$ENDIF FPC}
@@ -1243,7 +1244,7 @@ begin
   Result := ISO8601ToDate(aDateTime);
 end;
 
-function JsonFloatToStr(const aFloat: Double; digits: integer): string;
+function JsonFloatToStr(const aFloat: Double; digits: Integer): string;
 var
   FS_ENUS: TFormatSettings;
 begin
@@ -1254,7 +1255,7 @@ end;
 
 function JsonStringToFloatLegacy(const aString: string): Double;
 var
-  Position, l, S: integer;
+  Position, l, S: Integer;
   r: Double;
   sLeft, sRight: string;
 begin
@@ -1322,7 +1323,7 @@ begin
   Result := DateToISO8601(aDateTime);
 end;
 
-function JanuaBoolJson(aBool: string): boolean;
+function JanuaBoolJson(aBool: string): Boolean;
 begin
   if LowerCase(aBool) = 'true' then
     Result := true
@@ -1348,9 +1349,9 @@ begin
 
 end;
 
-function JsonObjectParse(var aObject: TJsonObject; const aJson: string): boolean;
+function JsonObjectParse(var aObject: TJsonObject; const aJson: string): Boolean;
 var
-  tmpValue: TJSONValue;
+  tmpValue: TJsonValue;
 begin
   Result := False;
   if Assigned(aObject) then
@@ -1366,7 +1367,7 @@ begin
 {$ENDIF}
 end;
 
-function JanuaJsonBool(aBool: boolean): string;
+function JanuaJsonBool(aBool: Boolean): string;
 begin
   if aBool then
     Result := 'True'
@@ -1399,7 +1400,7 @@ function JsonParse(aJson: string): TJsonObject;
 // Specifiche 2018-0001 JsonParse sostituito il Parser con parser soprastante per test UTF8
 {$IFNDEF fpc}
 var
-  tmp: TJSONValue;
+  tmp: TJsonValue;
 {$ENDIF fpc}
 begin
   Result := nil;
@@ -1485,7 +1486,7 @@ end;
 
 class function TJanuaJson.DeserializeSimple<T>(const AValue: string): T;
 var
-  LJSON: TJSONValue;
+  LJSON: TJsonValue;
 begin
   LJSON := TJsonObject.ParseJSONValue(AValue);
   if not Assigned(LJSON) then
@@ -1497,7 +1498,7 @@ begin
   end;
 end;
 
-class function TJanuaJson.DeserializeSimple<T>(const AValue: TJSONValue): T;
+class function TJanuaJson.DeserializeSimple<T>(const AValue: TJsonValue): T;
 var
   LValue: TValue;
   LReader: TNeonDeserializerJSON;
@@ -1533,7 +1534,7 @@ begin
   FJsonJWT := System.NetEncoding.TNetEncoding.Base64URL.Decode(aJWTStrings[1]);
 end;
 
-class function TJanuaJson.SerializeJsonObject<T>(const AValue: T): TJSONValue;
+class function TJanuaJson.SerializeJsonObject<T>(const AValue: T): TJsonValue;
 var
   LWriter: TNeonSerializerJSON;
 begin
@@ -1545,7 +1546,7 @@ begin
   end;
 end;
 
-class function TJanuaJson.SerializeJson(const AValue: TValue): TJSONValue;
+class function TJanuaJson.SerializeJson(const AValue: TValue): TJsonValue;
 var
   LWriter: TNeonSerializerJSON;
 begin
@@ -1560,7 +1561,7 @@ end;
 
 class function TJanuaJson.SerializeSimple<T>(const AValue: T): string;
 var
-  LJSON: TJSONValue;
+  LJSON: TJsonValue;
 begin
   LJSON := SerializeJson(TValue.From<T>(AValue));
   try
@@ -1576,5 +1577,6 @@ constructor TDMCJWT.Create(const aJsonJWT: string);
 begin
 
 end;
+
 
 end.

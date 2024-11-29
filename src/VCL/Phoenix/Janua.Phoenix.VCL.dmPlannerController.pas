@@ -63,8 +63,6 @@ type
     qryReportPlannerDATA_INTERVENTO: TDateField;
     qryReportPlannerGENERAZIONE_AUTOMATICA: TIntegerField;
     qryReportPlannerTECNICO_INTERVENTO: TIntegerField;
-    qryReportPlannerSCANSIONE: TWideStringField;
-    qryReportPlannerREGISTRO: TWideStringField;
     qryReportPlannerNOTE_PER_IL_TECNICO: TWideStringField;
     qryReportPlannerSOSPESO: TStringField;
     qryReportPlannerDA_ESPORTARE_SUL_WEB: TStringField;
@@ -83,7 +81,6 @@ type
     qryReportPlannerSTATO_LAVORAZIONE: TStringField;
     qryReportPlannerDATA_CHIUSURA_DA_SERVER: TDateField;
     qryReportPlannerCHIUSURA_EXT: TStringField;
-    qryReportPlannerCHIUSURA_STATINO: TWideStringField;
     qryReportPlannerMOBILEWARN_NON_ESEGUITI: TStringField;
     qryReportPlannerPRESA_IN_CARICO: TStringField;
     qryReportPlannerFORNITURA: TStringField;
@@ -449,6 +446,9 @@ type
     qryMessageCountMESSAGES: TLargeintField;
     spInsertWhatsAppMsg: TUniStoredProc;
     qryElencoEventiWhatsAppSTATINO: TIntegerField;
+    dsReportsPlanner: TUniDataSource;
+    qryReportPlannercalcStato: TStringField;
+    qryReportPlannerSTATO_IMMAGINE: TBlobField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -655,7 +655,7 @@ function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'Phoenix
 function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.64.dll' index 4;
 function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.64.dll' index 5;
 function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r9.64.dll' index 6;
-function WhatsAppSentMessage(aJson: string): string; stdcall; external 'PhoenixLib32_r9.64.dll' index 7;
+function WhatsAppSentDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.64.dll' index 7;
 procedure GoogleRestore; stdcall; external 'PhoenixLib32_r9.64.dll' index 8;
 procedure TestDLL; stdcall; external 'PhoenixLib32_r10.dll' index 9;
 {$ENDIF}
@@ -768,14 +768,7 @@ begin
     dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.Close;
     dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.Open;
 
-    vtReportPlannerDS.Enabled := False;
-    Screen.Cursor := crHourGlass;
-    try
-      UpdateReportPlanner;
-    finally
-      vtReportPlannerDS.Enabled := True;
-      Screen.Cursor := crDefault;
-    end;
+    UpdateReportPlanner;
 
   end;
 end;
@@ -1283,91 +1276,102 @@ end;
 
 procedure TdmVCLPhoenixPlannerController.UpdateReportPlanner;
 begin
-  vtReportPlanner.Filtered := False;
-  qryReportPlanner.Close;
-  spUpdateStatini.ExecProc;
-  qryReportPlanner.Open;
-  qryReportPlanner.Last;
-  qryReportPlanner.First;
+  dsReportsPlanner.Enabled := False;
+  Screen.Cursor := crHourGlass;
+  try
+    vtReportPlanner.Filtered := False;
+    vtReportPlanner.Clear;
+    qryReportPlanner.Close;
+    spUpdateStatini.ExecProc;
+    qryReportPlanner.Open;
+    qryReportPlanner.Last;
+    qryReportPlanner.First;
 
-  While not qryReportPlanner.Eof do
-  begin
-    var
-    vTest := False;
-    if not vtReportPlanner.Locate('CHIAVE', qryReportPlannerCHIAVE.Value, []) then
+    While not qryReportPlanner.Eof do
     begin
+      var
+      vTest := False;
+
+      // if not vtReportPlanner.Locate('CHIAVE', qryReportPlannerCHIAVE.Value, []) then
+      // begin
       vtReportPlanner.Append;
       vtReportPlannerCHIAVE.Value := qryReportPlannerCHIAVE.Value;
       vTest := True;
-    end
-    else
-    begin
-      vTest := (vtReportPlannerDATA_INTERVENTO.Value <> qryReportPlannerDATA_INTERVENTO.Value) or
+      // end
+      {
+        else
+        begin
+        vTest := (vtReportPlannerDATA_INTERVENTO.Value <> qryReportPlannerDATA_INTERVENTO.Value) or
         (vtReportPlannerAPPUNTAMENTO_DATA.Value <> qryReportPlannerAPPUNTAMENTO_DATA.Value) or
         (vtReportPlannerAPPUNTAMENTO_ORA.Value <> qryReportPlannerAPPUNTAMENTO_ORA.Value) or
         (vtReportPlannerSTATO.Value <> qryReportPlannerSTATO.Value) or
         (vtReportPlannerAPPUNTAMENTO_DATA.IsNull <> qryReportPlannerAPPUNTAMENTO_DATA.IsNull) or
         (vtReportPlannerAPPUNTAMENTO_ORA.IsNull <> qryReportPlannerAPPUNTAMENTO_ORA.IsNull);
-      if vTest then
-      begin
+        if vTest then
+        begin
         vtReportPlanner.Edit;
         vtReportPlanner.FieldByName('calcReportID').IsNull;
+        end;
+        end;
+
+        if vTest then
+      }
+      begin
+        var
+        vFiliale := qryReportPlannerNOME.Value;
+        // qryReportPlannerFILIALE.AsString;                                            ))))
+        var
+        vSede := qryReportPlannerDESCRIZIONE_SCHEDA.Value;
+
+        vtReportPlannerDESCRIZIONE_SCHEDA.Value := vSede + IfThen((vFiliale = 'SEDE') or (vFiliale = vSede),
+          '', ' ' + vFiliale);
+        vtReportPlannerCLIENTE.Value := qryReportPlannerCLIENTE.Value;
+        vtReportPlannerNOME.Value := qryReportPlannerNOME.Value;
+        vtReportPlannerPROVINCIA.Value := qryReportPlannerPROVINCIA.Value;
+        vtReportPlannerCAP.Value := qryReportPlannerCAP.Value;
+        vtReportPlannerINDIRIZZO.Value := qryReportPlannerINDIRIZZO.Value;
+        vtReportPlannerDATA_INTERVENTO.Value := qryReportPlannerDATA_INTERVENTO.Value;
+        vtReportPlannerTECNICO_INTERVENTO.Value := qryReportPlannerTECNICO_INTERVENTO.Value;
+        vtReportPlannerNOTE_PER_IL_TECNICO.Value := qryReportPlannerNOTE_PER_IL_TECNICO.Value;
+        vtReportPlannerRESPONSABILE.Value := qryReportPlannerRESPONSABILE.Value;
+        vtReportPlannerSTATO_LAVORAZIONE.Value := qryReportPlannerSTATO_LAVORAZIONE.Value;
+        vtReportPlannerPRESA_IN_CARICO.Value := qryReportPlannerPRESA_IN_CARICO.Value;
+        vtReportPlannerFORNITURA.Value := qryReportPlannerFORNITURA.Value;
+        vtReportPlannerORDINARI.Value := qryReportPlannerORDINARI.Value;
+        vtReportPlannerSTRAORDINARI.Value := qryReportPlannerSTRAORDINARI.Value;
+        vtReportPlannerINTERVENTI.Value := qryReportPlannerINTERVENTI.Value;
+        vtReportPlannerNOME_TECNICO.Value := qryReportPlannerNOME_TECNICO.Value;
+
+        if not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
+          vtReportPlannerAPPUNTAMENTO_DATA.Value := qryReportPlannerAPPUNTAMENTO_DATA.Value
+        else
+          vtReportPlannerAPPUNTAMENTO_DATA.Clear;
+
+        if not qryReportPlannerAPPUNTAMENTO_ORA.IsNull then
+          vtReportPlannerAPPUNTAMENTO_ORA.Value := qryReportPlannerAPPUNTAMENTO_ORA.Value
+        else
+          vtReportPlannerAPPUNTAMENTO_ORA.Clear;
+
+        vtReportPlannerSTATO.Value := qryReportPlannerSTATO.Value;
+        vtReportPlannerSTATINO.Value := qryReportPlannerSTATINO.Value;
+        vtReportPlannerESTINTORI_ORDINARIO.Value := qryReportPlannerESTINTORI_ORDINARIO.Value;
+        vtReportPlannerESTINTORI_STRAORDINARIO.Value := qryReportPlannerESTINTORI_STRAORDINARIO.Value;
+        vtReportPlannerGRUPPI_ELETTR.Value := qryReportPlannerGRUPPI_ELETTR.Value;
+        vtReportPlannerFUMI.Value := qryReportPlannerFUMI.Value;
+        vtReportPlannerLUCI.Value := qryReportPlannerLUCI.Value;
+        vtReportPlannerIDRANTI.Value := qryReportPlannerIDRANTI.Value;
+        vtReportPlannerSPRINKLER.Value := qryReportPlannerSPRINKLER.Value;
+        vtReportPlannerIMPIANTI_EL.Value := qryReportPlannerIMPIANTI_EL.Value;
+        vtReportPlannerAMMINISTRATORE.Value := qryReportPlannerAMMINISTRATORE.Value;
+        vtReportPlanner.Post;
       end;
+      qryReportPlanner.Next;
     end;
-
-    if vTest then
-    begin
-      var
-      vFiliale := qryReportPlannerNOME.Value;
-      // qryReportPlannerFILIALE.AsString;                                            ))))
-      var
-      vSede := qryReportPlannerDESCRIZIONE_SCHEDA.Value;
-
-      vtReportPlannerDESCRIZIONE_SCHEDA.Value := vSede + IfThen((vFiliale = 'SEDE') or (vFiliale = vSede), '',
-        ' ' + vFiliale);
-      vtReportPlannerCLIENTE.Value := qryReportPlannerCLIENTE.Value;
-      vtReportPlannerNOME.Value := qryReportPlannerNOME.Value;
-      vtReportPlannerPROVINCIA.Value := qryReportPlannerPROVINCIA.Value;
-      vtReportPlannerCAP.Value := qryReportPlannerCAP.Value;
-      vtReportPlannerINDIRIZZO.Value := qryReportPlannerINDIRIZZO.Value;
-      vtReportPlannerDATA_INTERVENTO.Value := qryReportPlannerDATA_INTERVENTO.Value;
-      vtReportPlannerTECNICO_INTERVENTO.Value := qryReportPlannerTECNICO_INTERVENTO.Value;
-      vtReportPlannerNOTE_PER_IL_TECNICO.Value := qryReportPlannerNOTE_PER_IL_TECNICO.Value;
-      vtReportPlannerRESPONSABILE.Value := qryReportPlannerRESPONSABILE.Value;
-      vtReportPlannerSTATO_LAVORAZIONE.Value := qryReportPlannerSTATO_LAVORAZIONE.Value;
-      vtReportPlannerPRESA_IN_CARICO.Value := qryReportPlannerPRESA_IN_CARICO.Value;
-      vtReportPlannerFORNITURA.Value := qryReportPlannerFORNITURA.Value;
-      vtReportPlannerORDINARI.Value := qryReportPlannerORDINARI.Value;
-      vtReportPlannerSTRAORDINARI.Value := qryReportPlannerSTRAORDINARI.Value;
-      vtReportPlannerINTERVENTI.Value := qryReportPlannerINTERVENTI.Value;
-      vtReportPlannerNOME_TECNICO.Value := qryReportPlannerNOME_TECNICO.Value;
-
-      if not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
-        vtReportPlannerAPPUNTAMENTO_DATA.Value := qryReportPlannerAPPUNTAMENTO_DATA.Value
-      else
-        vtReportPlannerAPPUNTAMENTO_DATA.Clear;
-
-      if not qryReportPlannerAPPUNTAMENTO_ORA.IsNull then
-        vtReportPlannerAPPUNTAMENTO_ORA.Value := qryReportPlannerAPPUNTAMENTO_ORA.Value
-      else
-        vtReportPlannerAPPUNTAMENTO_ORA.Clear;
-
-      vtReportPlannerSTATO.Value := qryReportPlannerSTATO.Value;
-      vtReportPlannerSTATINO.Value := qryReportPlannerSTATINO.Value;
-      vtReportPlannerESTINTORI_ORDINARIO.Value := qryReportPlannerESTINTORI_ORDINARIO.Value;
-      vtReportPlannerESTINTORI_STRAORDINARIO.Value := qryReportPlannerESTINTORI_STRAORDINARIO.Value;
-      vtReportPlannerGRUPPI_ELETTR.Value := qryReportPlannerGRUPPI_ELETTR.Value;
-      vtReportPlannerFUMI.Value := qryReportPlannerFUMI.Value;
-      vtReportPlannerLUCI.Value := qryReportPlannerLUCI.Value;
-      vtReportPlannerIDRANTI.Value := qryReportPlannerIDRANTI.Value;
-      vtReportPlannerSPRINKLER.Value := qryReportPlannerSPRINKLER.Value;
-      vtReportPlannerIMPIANTI_EL.Value := qryReportPlannerIMPIANTI_EL.Value;
-      vtReportPlannerAMMINISTRATORE.Value := qryReportPlannerAMMINISTRATORE.Value;
-      vtReportPlanner.Post;
-    end;
-    qryReportPlanner.Next;
+    vtReportPlanner.Filtered := True;
+  finally
+    dsReportsPlanner.Enabled := True;
+    Screen.Cursor := crDefault;
   end;
-  vtReportPlanner.Filtered := True;
 end;
 
 procedure TdmVCLPhoenixPlannerController.CloneReportPlanner;
@@ -2534,9 +2538,35 @@ begin
 end;
 
 procedure TdmVCLPhoenixPlannerController.qryReportPlannerBeforePost(DataSet: TDataSet);
+  procedure LoadImageFromImageList(Index: Integer);
+  var
+    Bitmap: TBitmap;
+  begin
+    if (Index >= 0) and (Index < SVGIconImageListIt.Count) then
+    begin
+      Bitmap := TBitmap.Create;
+      try
+        // SVGIconImageListIt
+        JvImageList1.GetBitmap(Index, Bitmap);
+        qryReportPlannerSTATO_IMMAGINE.Assign(Bitmap);
+        // Copia l'immagine dal Bitmap al TImage
+      finally
+        Bitmap.Free;
+      end;
+    end
+    else
+      ShowMessage('Indice fuori intervallo!');
+  end;
+
+const
+  green = 0;
+  red = 1;
+  orange = 2;
+  blue = 3;
+  white = 4;
 begin
   inherited;
-  if qryReportPlannerSTATO.AsInteger = 0 then
+  if (qryReportPlannerSTATO.AsInteger = 0) and not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
   begin
     qryReportPlannerSTATO.AsInteger := 1;
   end
@@ -2557,9 +2587,9 @@ begin
       qryReportPlannerSTATO.AsInteger := 6;
     end;
   end
-  else if (qryReportPlannerSTATO.AsInteger = 6) or (qryReportPlannerAPPUNTAMENTO_DATA.Value = 0) then
+  else if (qryReportPlannerSTATO.AsInteger = 6) then
   begin
-    if qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
+    if qryReportPlannerAPPUNTAMENTO_DATA.IsNull or (qryReportPlannerAPPUNTAMENTO_DATA.Value = 0) then
     begin
       qryReportPlannerSTATO.AsInteger := 5;
     end;
@@ -2570,7 +2600,89 @@ begin
     begin
       qryReportPlannerSTATO.AsInteger := 0;
     end;
-  end
+  end;
+
+  with DataSet do
+    try
+      var
+      Image := white;
+
+      var
+      sStato := 'Generato';
+
+      var
+      aStato := qryReportPlannerSTATO.AsInteger;
+
+      case aStato of
+        - 1:
+          begin
+            Image := red;
+            sStato := 'Ritardo';
+          end;
+        0:
+          begin
+            Image := white;
+            sStato := 'Generato';
+          end;
+        1:
+          begin
+            Image := blue;
+            sStato := 'Programmato';
+          end;
+        4:
+          begin
+            Image := orange;
+            if vtReportPlannerAPPUNTAMENTO_DATA.IsNull then
+              sStato := 'In Lavorazione'
+            else
+              sStato := 'Lavor. Progr.';
+          end;
+        5:
+          begin
+            Image := green;
+            sStato := 'Pronti da Rest.';
+          end;
+        6:
+          begin
+            Image := blue;
+            sStato := 'Rest. Program.';
+          end;
+      end;
+
+      FieldByName('calcStato').AsString := sStato;
+
+      if not (qryReportPlannerAPPUNTAMENTO_DATA.IsNull or (qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime = 0.0))
+        and (qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime < Date) then
+      begin
+        Image := red;
+        sStato := 'Ritardo';
+      end;
+
+      LoadImageFromImageList(Image);
+
+      if qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
+      begin
+        qryReportPlannercalcAppuntamentoDataOra.Clear;
+      end
+      else
+      begin
+        if vtReportPlannerAPPUNTAMENTO_ORA.IsNull then
+          qryReportPlannercalcAppuntamentoDataOra.AsDateTime := qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime
+        else
+          qryReportPlannercalcAppuntamentoDataOra.AsDateTime :=
+            SumDateTime(qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime,
+            qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime);
+      end;
+
+      qryReportPlannercalcIndirizzo.AsString := qryReportPlannerINDIRIZZO.AsString + ', ' +
+        qryReportPlannerCAP.AsString + qryReportPlannerCOMUNE.AsString;
+    except
+      on e: exception do
+      begin
+        Raise exception.Create('qryReportPlanner.Post: ' + e.Message);
+      end;
+    end;
+
 end;
 
 procedure TdmVCLPhoenixPlannerController.qryReportPlannerCalcFields(DataSet: TDataSet);

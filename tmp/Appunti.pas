@@ -27,22 +27,17 @@
           JShowError(Ex.Message);
         end);
 
-
-      if Result then
-        try
-          WhatsAppSentDLL(sGUID);
-          qryPersonalPlannerEvents.Edit;
-          qryPersonalPlannerEventsCOLORE.AsInteger := 7911679;
-          qryPersonalPlannerEvents.Post;
-          spInsertWhatsAppMsg.ParamByName('wanumber').Value := lWaNumber;
-          spInsertWhatsAppMsg.ParamByName('wamessage').Value := FJanuaAdvTwilio.MessageBody;
-          spInsertWhatsAppMsg.ParamByName('in_out').Value := 0;
-          spInsertWhatsAppMsg.ParamByName('wa_id').Value := FJanuaAdvTwilio.MessageSid;
-          if vStatino <> 0 then
-            spInsertWhatsAppMsg.ParamByName('report_id').Value := vStatino;
-          spInsertWhatsAppMsg.ExecProc;
-        except
-          on e: exception do
-            raise exception.Create('Messaggio a ' + lDlg.edWAPhone.Text + ' non inviato causa Errore: ' +
-              sLineBreak + e.Message);
-        end;
+procedure TfrmPhoenixVCLReportPlanner.btnUpdateImageClick(Sender: TObject);
+begin
+  with dmVCLPhoenixPlannerController do
+  begin
+    qryReportPlanner.First;
+    while not qryReportPlanner.Eof do
+    begin
+      qryReportPlanner.Edit;
+      qryReportPlannerSTATO.AsInteger := qryReportPlannerSTATO.AsInteger;
+      dmVCLPhoenixPlannerController.qryReportPlanner.Post;
+      qryReportPlanner.Next;
+    end;
+  end;
+end;
