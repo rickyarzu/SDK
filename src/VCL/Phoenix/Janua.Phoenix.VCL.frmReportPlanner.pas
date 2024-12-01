@@ -24,7 +24,7 @@ uses
   Janua.TMS.Planner.frameCustomCalendar, Janua.VCL.Planner.frameCustomGoogleCalendar,
   Janua.VCL.Planner.framePhoenixGoogleCalendar, Janua.TMS.Phoenix.framePlannerCalendar2,
   Janua.Phoenix.VCL.framePlannerEvent, Janua.Core.Types, Janua.TMS.WebView, Winapi.WebView2, Winapi.ActiveX,
-  VCL.Edge;
+  VCL.Edge, Vcl.DBCtrls;
 
 type
   TfrmPhoenixVCLReportPlanner = class(TForm)
@@ -77,6 +77,8 @@ type
     Timer2: TTimer;
     pnlWebBrowser: TPanel;
     EdgeBrowser1: TEdgeBrowser;
+    btnUpdateImage: TBitBtn;
+    btnImage: TDBImage;
     procedure FormCreate(Sender: TObject);
     procedure frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);
@@ -96,6 +98,7 @@ type
     procedure frameVCLPhoenixPlannerEventbtnSincroClick(Sender: TObject);
     procedure frameVCLPhoenixPlannerEventWATimerTimer(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure btnUpdateImageClick(Sender: TObject);
   private
     { Private declarations }
     FCookies: TJanuaTmsCookies;
@@ -213,6 +216,21 @@ begin
   { FdmVCLPhoenixIBPlanner.Setup; }
 end;
 
+procedure TfrmPhoenixVCLReportPlanner.btnUpdateImageClick(Sender: TObject);
+begin
+  with dmVCLPhoenixPlannerController do
+  begin
+    qryReportPlanner.First;
+    while not qryReportPlanner.Eof do
+    begin
+      qryReportPlanner.Edit;
+      qryReportPlannerSTATO.AsInteger := qryReportPlannerSTATO.AsInteger;
+      dmVCLPhoenixPlannerController.qryReportPlanner.Post;
+      qryReportPlanner.Next;
+    end;
+  end;
+end;
+
 procedure TfrmPhoenixVCLReportPlanner.UpdateLab;
 begin
   Async.Run<Boolean>(
@@ -279,7 +297,7 @@ begin
   frameTMSPhoenixPlannerTecnici.PlannerController := FdmVCLPhoenixIBPlanner;
   PageControl1.ActivePage := tabCalendariTecnici;
 
-  FdmVCLPhoenixIBPlanner.vtReportPlannerDS := frameVCLPhoenixPlannerEvent.dsReportsPlanner;
+  {FdmVCLPhoenixIBPlanner.vtReportPlannerDS := frameVCLPhoenixPlannerEvent.dsReportsPlanner;}
   // UpdateLab;
 end;
 

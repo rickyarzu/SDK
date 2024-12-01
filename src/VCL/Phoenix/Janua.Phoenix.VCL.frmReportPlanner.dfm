@@ -22,7 +22,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     Top = 0
     Width = 1448
     Height = 845
-    ActivePage = tabCalendariTecnici
+    ActivePage = tabTicketsList
     Align = alClient
     TabOrder = 0
     object tabTicketsList: TTabSheet
@@ -171,6 +171,39 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             LookupDisplay = 'CAP'
             LookupSource = dsCAP
             TabOrder = 9
+          end
+          object btnUpdateImage: TBitBtn
+            Left = 1152
+            Top = 0
+            Width = 150
+            Height = 70
+            Align = alRight
+            Caption = 'Aggiorna Immagini'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clTeal
+            Font.Height = -12
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ImageIndex = 95
+            ImageName = '037-search'
+            Images = dmSVGImageList.SVGIconImageList
+            ParentFont = False
+            TabOrder = 10
+            StyleElements = [seClient, seBorder]
+            OnClick = btnUpdateImageClick
+          end
+          object btnImage: TDBImage
+            Left = 1075
+            Top = 0
+            Width = 77
+            Height = 70
+            Align = alRight
+            DataField = 'STATO_IMMAGINE'
+            DataSource = frameVCLCRDBGrid.UniDataSource
+            TabOrder = 11
+            ExplicitLeft = 1
+            ExplicitTop = 1
+            ExplicitHeight = 94
           end
         end
       end
@@ -497,6 +530,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             ExplicitWidth = 416
             inherited Label3: TLabel
               Width = 13
+              Height = 20
               Caption = 'Lc'
               ExplicitWidth = 13
             end
@@ -507,6 +541,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             inherited lbIdranti: TLabel
               Left = 42
               Width = 22
+              Height = 20
               Caption = 'Idr:'
               ExplicitLeft = 42
               ExplicitWidth = 22
@@ -518,6 +553,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             inherited Label4: TLabel
               Left = 90
               Width = 38
+              Height = 20
               Caption = 'E.Ord:'
               ExplicitLeft = 90
               ExplicitWidth = 38
@@ -529,6 +565,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             inherited Label5: TLabel
               Left = 154
               Width = 39
+              Height = 20
               Caption = 'E.Stra:'
               ExplicitLeft = 154
               ExplicitWidth = 39
@@ -547,6 +584,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             end
             inherited Label6: TLabel
               Left = 219
+              Height = 20
               ExplicitLeft = 219
             end
             inherited DBText10: TDBText
@@ -555,6 +593,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             end
             inherited Label7: TLabel
               Left = 280
+              Height = 20
               ExplicitLeft = 280
             end
             inherited DBText11: TDBText
@@ -749,11 +788,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           Top = 704
           ExplicitTop = 704
         end
-        inherited Panel2: TPanel
-          inherited ckbCalendarList: TCheckListBox
-            ItemHeight = 16
-          end
-        end
         inherited Panel3: TPanel
           inherited lbSearch: TLabel
             Width = 250
@@ -819,7 +853,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitWidth = 1440
           inherited ckbCalendarList: TCheckListBox
             Width = 1381
-            ItemHeight = 16
             ExplicitWidth = 1381
           end
         end

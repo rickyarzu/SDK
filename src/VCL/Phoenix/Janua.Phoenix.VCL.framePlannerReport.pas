@@ -10,22 +10,19 @@ uses
   // VCL
   VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.Graphics, VCL.ImgList, JvExControls, JvDBLookup, VCL.StdCtrls,
   VCL.ComCtrls, VCL.DBCGrids, VCL.DBCtrls, VCL.ExtCtrls, JvSpeedButton, VCL.Buttons, VCL.Grids, VCL.DBGrids,
-  CRGrid, VCL.Menus,
+  CRGrid, VCL.Menus, AdvBadge, VCL.Mask, JvExMask, JvToolEdit, JvMaskEdit, JvCheckedMaskEdit, JvDatePickerEdit
   // ZLibraries
-  Globale, ZFIBPlusNodoGenerico2,
+    , Globale, ZFIBPlusNodoGenerico2,
   // Janua
+  Janua.Phoenix.VCL.dmPlannerController,
   Janua.Core.Types, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Forms.Types, Janua.Bindings.Intf,
-  Janua.Controls.Intf, Janua.Controls.Forms.Intf, uJanuaVCLFrame, Janua.Cloud.Types, AdvBadge;
+  Janua.Controls.Intf, Janua.Controls.Forms.Intf, uJanuaVCLFrame, Janua.Cloud.Types;
 
 type
   TframeVCLPhoenixPlanneReport = class(TJanuaVCLFrameModel, IJanuaFrame, IJanuaContainer, IJanuaBindable)
     lkpCAP: TJvDBLookupCombo;
     lbCap: TLabel;
-    lbData: TLabel;
     grdReportList: TDBCtrlGrid;
-    DBPlanner1: TDBPlanner;
-    btnEditMeeting: TButton;
-    btnDeleteMeeting: TButton;
     pnlInterventi: TPanel;
     Label3: TLabel;
     DBText4: TDBText;
@@ -43,32 +40,12 @@ type
     Panel2: TPanel;
     DBText1: TDBText;
     DBText3: TDBText;
-    DBDaySource1: TDBDaySource;
-    CalendarDate: TDateTimePicker;
     Area: TLabel;
     cboTecnici: TJvDBLookupCombo;
     lbActivity: TLabel;
     cboCustomers: TJvDBLookupCombo;
-    Memo1: TMemo;
-    grdDateTime: TGroupBox;
-    lbDateFrom: TLabel;
-    lbDateTo: TLabel;
-    lbStartHours: TLabel;
-    Label1: TLabel;
-    lbMin: TLabel;
-    Label2: TLabel;
-    cboHourFrom: TComboBox;
-    cboHourTo: TComboBox;
-    cboMinsFrom: TComboBox;
-    cboMinsTo: TComboBox;
-    edEventDateFrom: TDateTimePicker;
-    edEventDateTo: TDateTimePicker;
-    btnSearch: TBitBtn;
-    dsCalendar: TUniDataSource;
     btnImage: TDBImage;
     DBText2: TDBText;
-    btnPrevDay: TButton;
-    btnNextDay: TButton;
     Timer1: TTimer;
     PopupItems: TPopupMenu;
     Colore1: TMenuItem;
@@ -83,23 +60,17 @@ type
     Label7: TLabel;
     DBText11: TDBText;
     InviaMsgWhatsApp1: TMenuItem;
-    Button1: TButton;
-    btnWhatsApp: TButton;
     ConfermaAppuntmento1: TMenuItem;
-    btnSincro: TButton;
-    Button2: TButton;
     TimerEventUpdate: TTimer;
     btnWhatsAppMessages: TAdvBadgeButton;
     WATimer: TTimer;
+    edDateFilter: TJvDatePickerEdit;
+    ckbFilterDate: TCheckBox;
     procedure ChangeFilter(Sender: TObject);
     procedure btnSearchClick(Sender: TObject);
-    procedure CalendarDateChange(Sender: TObject);
     procedure DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);
     procedure DBDaySource1ItemToFields(Sender: TObject; Fields: TFields; Item: TPlannerItem);
-    procedure btnPrevDayClick(Sender: TObject);
-    procedure btnNextDayClick(Sender: TObject);
     procedure btnAddClick(Sender: TObject);
-    procedure Timer1Timer(Sender: TObject);
     procedure cboTecniciChange(Sender: TObject);
     procedure btnImageMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure DBPlanner1DragOver(Sender, Source: TObject; X, Y: Integer; State: TDragState;
@@ -114,10 +85,6 @@ type
       FromBegin, FromEnd, FromPos, ToBegin, ToEnd, ToPos: Integer);
     procedure DBPlanner1ItemSize(Sender: TObject; Item: TPlannerItem;
       Position, FromBegin, FromEnd, ToBegin, ToEnd: Integer);
-    procedure DBPlanner1DragOverCell(Sender, Source: TObject; X, Y: Integer; State: TDragState;
-      var Accept: Boolean);
-    procedure DBPlanner1DragDropCell(Sender, Source: TObject; X, Y: Integer);
-    procedure ModificaAppuntamento2Click(Sender: TObject);
     procedure btnSincroClick(Sender: TObject);
     procedure TimerEventUpdateTimer(Sender: TObject);
     procedure btnWhatsAppMessagesClick(Sender: TObject);
@@ -138,10 +105,12 @@ type
     FreportID: Integer;
     FSelectedItem: TPlannerItem;
     FAfterPlannerEvent: TNotifyEvent;
+    FdmVCLPhoenixIBPlanner: TdmVCLPhoenixPlannerController;
     function GetTecnicoID: Integer;
     procedure SetTecnicoID(const Value: Integer);
     procedure SetSelectedItem(const Value: TPlannerItem);
     procedure SetAfterPlannerEvent(const Value: TNotifyEvent);
+    procedure SetdmVCLPhoenixIBPlanner(const Value: TdmVCLPhoenixPlannerController);
 
     { Private declarations }
   protected
@@ -154,6 +123,8 @@ type
     procedure Filter;
     property TecnicoID: Integer read GetTecnicoID write SetTecnicoID;
     property AfterPlannerEvent: TNotifyEvent read FAfterPlannerEvent write SetAfterPlannerEvent;
+    property dmVCLPhoenixIBPlanner: TdmVCLPhoenixPlannerController read FdmVCLPhoenixIBPlanner
+      write SetdmVCLPhoenixIBPlanner;
   end;
 
 var
@@ -163,21 +134,9 @@ implementation
 
 uses System.Math, System.StrUtils, DlgNuovoStatino,
   // Janua
-  Janua.Core.Functions, Janua.Phoenix.VCL.dmPlannerController, udmSVGImageList, udlgWhatsAppMessage;
+  Janua.Core.Functions, udmSVGImageList, udlgWhatsAppMessage;
 
 {$R *.dfm}
-
-procedure TframeVCLPhoenixPlanneReport.btnPrevDayClick(Sender: TObject);
-begin
-  var
-  aDay := DayOfWeek(CalendarDate.Date - 1);
-  var
-  aDate := CalendarDate.Date;
-  aDay := 1 + IfThen(aDay = 1, 1, 0);
-  // aDay := 1;
-  CalendarDate.Date := aDate - aDay;
-  CalendarDateChange(Self);
-end;
 
 procedure TframeVCLPhoenixPlanneReport.AfterConstruction;
 begin
@@ -190,10 +149,6 @@ begin
   // Fields.FieldByName('CAPTION')
   ItemCaptionField := nil;
   ItemIDField := dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.FieldByName('CHIAVE');
-
-  dmVCLPhoenixPlannerController.PlannerDlg := DBPlanner1;
-  CalendarDate.Date := dmVCLPhoenixPlannerController.SelectedDate;
-  Timer1.Enabled := True;
   WATimer.Enabled := True;
 end;
 
@@ -245,29 +200,8 @@ begin
     UpdateMessagesBadge;
   end;
 
-  dmVCLPhoenixPlannerController.PlannerDlg := DBPlanner1;
-  CalendarDate.Date := dmVCLPhoenixPlannerController.SelectedDate;
-  Timer1.Enabled := True;
   WATimer.Enabled := True;
 
-end;
-
-procedure TframeVCLPhoenixPlanneReport.btnNextDayClick(Sender: TObject);
-begin
-  var
-  aDate := (CalendarDate.Date);
-  var
-  aDay := DayOfWeek(CalendarDate.Date + 1);
-  aDay := +1 + IfThen(aDay = 1, 1, 0);
-  CalendarDate.Date := aDate + aDay;
-  CalendarDateChange(Self);
-end;
-
-procedure TframeVCLPhoenixPlanneReport.CalendarDateChange(Sender: TObject);
-begin
-  inherited;
-  dmVCLPhoenixPlannerController.SelectedDate := CalendarDate.Date;
-  DBDaySource1.Day := CalendarDate.Date;
 end;
 
 procedure TframeVCLPhoenixPlanneReport.cbkFilterReportClick(Sender: TObject);
@@ -280,9 +214,6 @@ procedure TframeVCLPhoenixPlanneReport.cboTecniciChange(Sender: TObject);
 begin
   if dmVCLPhoenixPlannerController.SelectedCalendarTec <> cboTecnici.Value.ToInteger then
   begin
-    DBDaySource1.DataSource.DataSet.Close;
-    DBDaySource1.ClearDBItems;
-    DBPlanner1.Items.ClearAll;
     dmVCLPhoenixPlannerController.SelectedCalendarTec := cboTecnici.Value.ToInteger;
   end;
 
@@ -344,58 +275,10 @@ begin
     btnAddClick(Sender);
 end;
 
-procedure TframeVCLPhoenixPlanneReport.DBPlanner1DragDropCell(Sender, Source: TObject; X, Y: Integer);
-begin
-  inherited;
-  // Create new item only when no items are in the cell
-  { if DBPlanner1.CellToItemNum(X, Y) = 0 then }
-  begin
-    var
-    dbp := DBPlanner1.CreateItem;
-    dbp.ItemBegin := Y;
-    dbp.ItemEnd := Y + 1;
-    dbp.itemPos := X;
-    if dbp.DBKey = '' then
-      dbp.DBKey := TGUID.NewGuid.ToString;
-    if dbp.CaptionText = '' then
-      dbp.CaptionText := dmVCLPhoenixPlannerController.vtReportPlannerDESCRIZIONE_SCHEDA.AsString;
-
-    var
-    vIndex := dbp.Index;
-    var
-    vNote := dmVCLPhoenixPlannerController.vtReportPlannerNOTE_PER_IL_TECNICO.AsString;
-
-    dbp.CaptionType := TCaptionType.ctTimeText;
-
-    if dbp.Text.Text = '' then
-      dbp.Text.Text := vNote;
-
-    dbp.Color := dmVCLPhoenixPlannerController.qryTecniciCalendardefaultcolor.AsInteger;
-
-    var
-    vTest := dbp.ItemStartTime;
-    var
-    vTest2 := IncMinute(vTest, 30);
-    var
-    vReport := dmVCLPhoenixPlannerController.vtReportPlannerCHIAVE.AsInteger;
-
-    FRecordItem := dmVCLPhoenixPlannerController.InsertEvent(vTest, vTest2, dbp.CaptionText, vReport);
-    TimerEventUpdate.Enabled := True;
-  end;
-end;
-
 procedure TframeVCLPhoenixPlanneReport.DBPlanner1DragOver(Sender, Source: TObject; X, Y: Integer;
   State: TDragState; var Accept: Boolean);
 begin
   Accept := (Source is TDBImage);
-end;
-
-procedure TframeVCLPhoenixPlanneReport.DBPlanner1DragOverCell(Sender, Source: TObject; X, Y: Integer;
-  State: TDragState; var Accept: Boolean);
-begin
-  inherited;
-  // Accept this only when no items are in this cell
-  Accept := True; // DBPlanner1.CellToItemNum(X, Y) = 0;
 end;
 
 procedure TframeVCLPhoenixPlanneReport.DBPlanner1ItemDrag(Sender: TObject; Item: TPlannerItem;
@@ -502,30 +385,14 @@ begin
   Result := cboTecnici.Value.ToInteger;
 end;
 
-procedure TframeVCLPhoenixPlanneReport.ModificaAppuntamento2Click(Sender: TObject);
-begin
-  // inherited;
-  if JMessageDlg('Elimino l''appuntamento ?') then
-  begin
-    try
-      DBDaySource1.DeleteDBItem(DBPlanner1);
-      DBDaySource1.DataSource.DataSet.Close;
-      DBDaySource1.DataSource.DataSet.Open;
-      if Assigned(FAfterPlannerEvent) then
-        FAfterPlannerEvent(Self);
-    except
-      on e: exception do
-      begin
-        DBDaySource1.DataSource.DataSet.Close;
-        DBDaySource1.DataSource.DataSet.Open;
-      end;
-    end;
-  end;
-end;
-
 procedure TframeVCLPhoenixPlanneReport.SetAfterPlannerEvent(const Value: TNotifyEvent);
 begin
   FAfterPlannerEvent := Value;
+end;
+
+procedure TframeVCLPhoenixPlanneReport.SetdmVCLPhoenixIBPlanner(const Value: TdmVCLPhoenixPlannerController);
+begin
+  FdmVCLPhoenixIBPlanner := Value;
 end;
 
 procedure TframeVCLPhoenixPlanneReport.SetSelectedItem(const Value: TPlannerItem);
@@ -539,20 +406,10 @@ begin
   cboTecnici.Value := Value.ToString;
 end;
 
-procedure TframeVCLPhoenixPlanneReport.Timer1Timer(Sender: TObject);
-begin
-  Timer1.Enabled := False;
-  btnPrevDayClick(Self);
-  btnNextDayClick(Self);
-  UpdateMessagesBadge;
-end;
-
 procedure TframeVCLPhoenixPlanneReport.TimerEventUpdateTimer(Sender: TObject);
 begin
   inherited;
   TimerEventUpdate.Enabled := False;
-  if Assigned(FAfterPlannerEvent) then
-    FAfterPlannerEvent(Self);
 end;
 
 procedure TframeVCLPhoenixPlanneReport.UpdateMessagesBadge;
