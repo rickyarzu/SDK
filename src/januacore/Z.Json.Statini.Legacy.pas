@@ -1,4 +1,4 @@
-unit Z.Json.Statini;
+unit Z.Json.Statini.Legacy;
 
 interface
 

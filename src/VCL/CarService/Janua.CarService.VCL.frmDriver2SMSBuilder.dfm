@@ -4,45 +4,65 @@ inherited frmVCLCSDriver2SMSBuilder: TfrmVCLCSDriver2SMSBuilder
   TextHeight = 15
   inherited frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
     inherited Panel2: TPanel
+      inherited lbContentVariables: TLabel
+        Left = 721
+        ExplicitLeft = 721
+      end
       inherited grpURL: TGroupBox
-        inherited lblMobileCustomerUrl: TLabel
-          Height = 15
-        end
         inherited edtMobileUrl: TEdit
           Width = 371
-          ExplicitWidth = 357
-        end
-        inherited btnTestUrl: TButton
-          Left = 617
-          Top = 14
-          ExplicitLeft = 603
-          ExplicitTop = 14
+          ExplicitWidth = 371
         end
         inherited edtCustomerMobileUrl1: TEdit
-          Left = 461
-          Width = 150
-          ExplicitLeft = 461
-          ExplicitWidth = 150
-        end
-        inherited edtTestTinyUrl: TEdit
-          Left = 704
-          ExplicitLeft = 690
+          Left = 449
+          Width = 175
+          ExplicitLeft = 449
+          ExplicitWidth = 175
         end
       end
       inherited advmSMSTemplate: TAdvMemo
-        Width = 967
-        ExplicitWidth = 967
+        Width = 711
+        ExplicitWidth = 711
       end
       inherited edPhoneCustomerTo: TEdit
-        Width = 14
-        ExplicitWidth = 14
+        Left = 894
+        Width = 91
+        ExplicitLeft = 894
+        ExplicitWidth = 91
       end
       inherited pnlSmsTestConfig: TPanel
-        inherited lbEdtTemplateSID: TLabeledEdit
-          EditLabel.ExplicitLeft = 0
-          EditLabel.ExplicitTop = -18
-          EditLabel.ExplicitWidth = 92
+        Width = 981
+        ExplicitWidth = 981
+        inherited edTestSMSTo: TEdit
+          Width = 523
         end
+        inherited advmSMSTest: TAdvMemo
+          Width = 523
+        end
+        inherited advmJson: TAdvMemo
+          Width = 523
+          Height = 258
+          ExplicitWidth = 523
+          ExplicitHeight = 258
+        end
+        inherited lbEdtTemplateSID: TLabeledEdit
+          Width = 522
+          Anchors = [akLeft, akTop, akRight]
+          EditLabel.ExplicitLeft = 439
+          EditLabel.ExplicitTop = 4
+          EditLabel.ExplicitWidth = 68
+          ExplicitWidth = 522
+        end
+      end
+      inherited DBGrid1: TDBGrid
+        Top = 714
+        Height = 61
+      end
+      inherited Memo1: TMemo
+        Left = 721
+        Width = 264
+        ExplicitLeft = 721
+        ExplicitWidth = 264
       end
     end
   end

@@ -1,0 +1,25 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{60B1D55E-E9E0-48E4-8063-EAC09A6EEE86}</ProjectGuid>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="QBBDEDemoC28">
+        <MSBuild Projects="BDEDemo\QBBDEDemoC28.cbproj" Targets=""/>
+    </Target>
+    <Target Name="QBDBXDemoC28">
+        <MSBuild Projects="DBXDemo\QBDBXDemoC28.cbproj" Targets=""/>
+    </Target>
+    <Target Name="QBIBXDemoC28">
+        <MSBuild Projects="IBXDemo\QBIBXDemoC28.cbproj" Targets=""/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="QBBDEDemoC28;QBDBXDemoC28;QBIBXDemoC28"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

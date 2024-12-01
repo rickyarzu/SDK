@@ -1,0 +1,97 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{CFB937F3-521B-4C1A-942B-B35F6B535C22}</ProjectGuid>
+        <ProjectVersion>13.4</ProjectVersion>
+        <FrameworkType>VCL</FrameworkType>
+        <AppType>Application</AppType>
+        <MainSource>QBIBXDemo.cpp</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <_TCHARMapping>wchar_t</_TCHARMapping>
+        <AllPackageLibs>dbrtl.lib;rtl.lib;vcl.lib;vcldb.lib;ibxpress.lib;QBuilderRT.lib</AllPackageLibs>
+        <FinalOutputDir>$(Platform)\$(Config)</FinalOutputDir>
+        <IntermediateOutputDir>$(Platform)\$(Config)</IntermediateOutputDir>
+        <LinkPackageImports>dbrtl.bpi;rtl.bpi;vcl.bpi;vcldb.bpi;ibxpress.bpi;QBuilderRT.bpi</LinkPackageImports>
+        <PackageImports>dbrtl.bpi;rtl.bpi;vcl.bpi;vcldb.bpi;ibxpress.bpi;QBuilderRT.bpi;$(PackageImports)</PackageImports>
+        <ProjectType>CppVCLApplication</ProjectType>
+        <UsePackages>true</UsePackages>
+    </PropertyGroup>
+    <ItemGroup>
+        <CppCompile Include="AboutForm.cpp">
+            <Form>fmAbout</Form>
+            <DependentOn>AboutForm.h</DependentOn>
+            <BuildOrder>3</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="ConnectForm.cpp">
+            <Form>fmConnect</Form>
+            <DependentOn>ConnectForm.h</DependentOn>
+            <BuildOrder>4</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="MainForm.cpp">
+            <Form>fmMain</Form>
+            <DependentOn>MainForm.h</DependentOn>
+            <BuildOrder>1</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="QBIBXDemo.cpp">
+            <BuildOrder>2</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="QBOptionsForm.cpp">
+            <Form>fmQBOptions</Form>
+            <DependentOn>QBOptionsForm.h</DependentOn>
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
+        <FormResources Include="MainForm.dfm"/>
+        <FormResources Include="QBOptionsForm.dfm"/>
+        <FormResources Include="AboutForm.dfm"/>
+        <FormResources Include="ConnectForm.dfm"/>
+        <ResFiles Include="QBIBXDemo.res">
+            <BuildOrder>0</BuildOrder>
+        </ResFiles>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+        <Borland.ProjectType>CppVCLApplication</Borland.ProjectType>
+        <BorlandProject>
+            <CPlusPlusBuilder.Personality>
+                <Source>
+                    <Source Name="MainSource">QBIBXDemo.cpp</Source>
+                </Source>
+            </CPlusPlusBuilder.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

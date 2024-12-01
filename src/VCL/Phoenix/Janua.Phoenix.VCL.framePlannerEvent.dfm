@@ -51,7 +51,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     Width = 441
     Height = 812
     Anchors = [akLeft, akTop, akBottom]
-    DataSource = dsReportsPlanner
+    DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
     PanelHeight = 116
     PanelWidth = 424
     TabOrder = 3
@@ -90,7 +90,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         Height = 20
         Align = alLeft
         DataField = 'LUCI'
-        DataSource = dsReportsPlanner
+        DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
       end
       object lbIdranti: TLabel
         AlignWithMargins = True
@@ -117,7 +117,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         Height = 20
         Align = alLeft
         DataField = 'IDRANTI'
-        DataSource = dsReportsPlanner
+        DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
       end
       object Label4: TLabel
         AlignWithMargins = True
@@ -144,7 +144,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         Height = 20
         Align = alLeft
         DataField = 'ESTINTORI_ORDINARIO'
-        DataSource = dsReportsPlanner
+        DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
       end
       object Label5: TLabel
         AlignWithMargins = True
@@ -171,7 +171,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         Height = 20
         Align = alLeft
         DataField = 'ESTINTORI_STRAORDINARIO'
-        DataSource = dsReportsPlanner
+        DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
         ExplicitLeft = 219
         ExplicitTop = 2
       end
@@ -187,7 +187,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         Margins.Bottom = 0
         Align = alRight
         DataField = 'calcStato'
-        DataSource = dsReportsPlanner
+        DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clMediumblue
         Font.Height = -12
@@ -222,7 +222,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         Height = 20
         Align = alLeft
         DataField = 'FUMI'
-        DataSource = dsReportsPlanner
+        DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
         ExplicitLeft = 306
         ExplicitTop = 5
       end
@@ -251,7 +251,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         Height = 20
         Align = alLeft
         DataField = 'GRUPPI_ELETTR'
-        DataSource = dsReportsPlanner
+        DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
         ExplicitLeft = 358
         ExplicitTop = 2
       end
@@ -280,7 +280,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
           Height = 17
           Align = alTop
           DataField = 'DESCRIZIONE_SCHEDA'
-          DataSource = dsReportsPlanner
+          DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
           OnDblClick = DBText1DblClick
           ExplicitLeft = 6
           ExplicitWidth = 291
@@ -293,7 +293,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
           Height = 15
           Align = alTop
           DataField = 'calcIndirizzo'
-          DataSource = dsReportsPlanner
+          DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
           OnDblClick = DBText1DblClick
           ExplicitLeft = 6
           ExplicitTop = 15
@@ -315,7 +315,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
             Height = 16
             Align = alLeft
             DataField = 'calcAppuntamentoDataOra'
-            DataSource = dsReportsPlanner
+            DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
             OnDblClick = DBText1DblClick
           end
           object DBText9: TDBText
@@ -326,7 +326,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
             Height = 16
             Align = alClient
             DataField = 'NOME_TECNICO'
-            DataSource = dsReportsPlanner
+            DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
             OnDblClick = DBText1DblClick
             ExplicitLeft = 153
             ExplicitTop = 1
@@ -341,7 +341,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         Height = 94
         Align = alLeft
         DataField = 'calcImage'
-        DataSource = dsReportsPlanner
+        DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
         TabOrder = 1
         OnDblClick = DBText1DblClick
         OnMouseDown = btnImageMouseDown
@@ -1019,11 +1019,6 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
     NumberOfDays = 1
     Left = 608
     Top = 259
-  end
-  object dsReportsPlanner: TUniDataSource
-    DataSet = dmVCLPhoenixPlannerController.vtReportPlanner
-    Left = 88
-    Top = 344
   end
   object dsCalendar: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryPersonalPlannerEvents

@@ -14,7 +14,9 @@ uses
   // JanuaProject
   {Janua.Phoenix.dmIBModel, Janua.Interbase.dmModel,}
   // Janua
-  Janua.Vcl.Planner.dmCustomController, Janua.Phoenix.dmIBModel;
+  Janua.Vcl.Planner.dmCustomController, Janua.Phoenix.dmIBModel, CloudSMS, VirtualTable, DBPlanner,
+  PostgreSQLUniProvider, PictureContainer, CloudvCal, CloudWebDav, CloudCustomLive, CloudLiveWin,
+  CloudCustomLiveCalendar, CloudLiveCalendar, Janua.Core.Commons, Janua.Core.Classes, Janua.Components.Planner;
 
 type
   TdmPhoenixIBPlanner = class(TdmVCLPlannerCustomController) // ()

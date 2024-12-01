@@ -235,7 +235,11 @@ end;
 destructor TJanuaMailMessageBuilder.Destroy;
 begin
   try
-    FMailConf.Free;
+    if Assigned(FMailConf) then
+    begin
+      FMailConf.Free;
+      FMailConf := nil;
+    end;
   finally
     inherited;
   end;

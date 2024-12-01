@@ -1,0 +1,25 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{A3D7FCD9-23EC-4E17-9D5F-82F3F9D68902}</ProjectGuid>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <BorlandProject><Default.Personality/></BorlandProject>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="QBBDEDemoD11">
+        <MSBuild Projects="BDEDemo\QBBDEDemoD11.dproj"/>
+    </Target>
+    <Target Name="QBDBXDemoD11">
+        <MSBuild Projects="DBXDemo\QBDBXDemoD11.dproj"/>
+    </Target>
+    <Target Name="QBIBXDemoD11">
+        <MSBuild Projects="IBXDemo\QBIBXDemoD11.dproj"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="QBBDEDemoD11;QBDBXDemoD11;QBIBXDemoD11"/>
+    </Target>
+    <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>

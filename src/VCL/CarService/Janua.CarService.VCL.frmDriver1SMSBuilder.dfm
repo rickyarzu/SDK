@@ -1,6 +1,7 @@
 inherited frmVCLCSDriver1SMSBuilder: TfrmVCLCSDriver1SMSBuilder
   Caption = 'Pickup SMS Builder'
   OnDestroy = FormDestroy
+  ExplicitTop = -197
   TextHeight = 15
   inherited frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
     inherited Panel2: TPanel
@@ -8,10 +9,11 @@ inherited frmVCLCSDriver1SMSBuilder: TfrmVCLCSDriver1SMSBuilder
         Left = 879
         ExplicitLeft = 879
       end
+      inherited lbContentVariables: TLabel
+        Left = 745
+        ExplicitLeft = 745
+      end
       inherited grpURL: TGroupBox
-        inherited lblMobileCustomerUrl: TLabel
-          Height = 15
-        end
         inherited edtMobileUrl: TEdit
           Width = 406
           ExplicitWidth = 406
@@ -34,14 +36,14 @@ inherited frmVCLCSDriver1SMSBuilder: TfrmVCLCSDriver1SMSBuilder
         end
       end
       inherited advmSMSTemplate: TAdvMemo
-        Width = 967
-        ExplicitWidth = 967
+        Width = 735
+        ExplicitWidth = 735
       end
       inherited edPhoneCustomerTo: TEdit
-        Left = 944
-        Width = 23
-        ExplicitLeft = 944
-        ExplicitWidth = 23
+        Left = 926
+        Width = 59
+        ExplicitLeft = 926
+        ExplicitWidth = 59
       end
       inherited rgEngine: TRadioGroup
         Left = 677
@@ -50,11 +52,23 @@ inherited frmVCLCSDriver1SMSBuilder: TfrmVCLCSDriver1SMSBuilder
         ExplicitWidth = 196
       end
       inherited pnlSmsTestConfig: TPanel
-        inherited lbEdtTemplateSID: TLabeledEdit
-          EditLabel.ExplicitLeft = 0
-          EditLabel.ExplicitTop = -18
-          EditLabel.ExplicitWidth = 92
+        inherited advmJson: TAdvMemo
+          Height = 258
+          ExplicitHeight = 258
         end
+        inherited lbEdtTemplateSID: TLabeledEdit
+          Anchors = [akLeft, akTop, akRight]
+        end
+      end
+      inherited DBGrid1: TDBGrid
+        Top = 714
+        Height = 61
+      end
+      inherited Memo1: TMemo
+        Left = 745
+        Width = 240
+        ExplicitLeft = 745
+        ExplicitWidth = 240
       end
     end
   end
