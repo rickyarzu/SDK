@@ -67,8 +67,6 @@ object frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
     Height = 651
     Align = alClient
     TabOrder = 1
-    ExplicitLeft = 273
-    ExplicitTop = 3
     DesignSize = (
       1036
       651)
@@ -329,23 +327,24 @@ object frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
     object edPhoneCustomerTo: TEdit
       Left = 983
       Top = 72
-      Width = 28
+      Width = 42
       Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 6
       TextHint = 'recipient@mail.com'
     end
     object rgEngine: TRadioGroup
-      Left = 674
+      Left = 664
       Top = 57
-      Width = 247
+      Width = 257
       Height = 49
       Caption = 'Engine'
-      Columns = 2
+      Columns = 3
       ItemIndex = 1
       Items.Strings = (
         'SMS'
-        'WhatsApp')
+        'WhatsApp'
+        'Telegram')
       TabOrder = 7
       OnClick = rgEngineClick
     end
@@ -400,7 +399,7 @@ object frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
       object advmSMSTest: TAdvMemo
         Left = 439
         Top = 80
-        Width = 578
+        Width = 322
         Height = 90
         Cursor = crIBeam
         ActiveLineSettings.ShowActiveLine = False
@@ -520,7 +519,7 @@ object frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
         AlignWithMargins = True
         Left = 439
         Top = 176
-        Width = 584
+        Width = 578
         Height = 129
         Cursor = crIBeam
         ActiveLineSettings.ShowActiveLine = False
@@ -649,6 +648,14 @@ object frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
         TabOrder = 4
         Text = ''
       end
+      object memParamsDestination: TMemo
+        Left = 767
+        Top = 80
+        Width = 250
+        Height = 90
+        Anchors = [akTop, akRight]
+        TabOrder = 5
+      end
     end
     object DBGrid1: TDBGrid
       Left = 1
@@ -673,14 +680,12 @@ object frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
       TabOrder = 10
       OnClick = btnSendSmsTemplateClick
     end
-    object Memo1: TMemo
+    object memTemplateParams: TMemo
       Left = 759
       Top = 144
       Width = 274
       Height = 105
       Anchors = [akTop, akRight]
-      Lines.Strings = (
-        'Memo1')
       TabOrder = 11
     end
   end

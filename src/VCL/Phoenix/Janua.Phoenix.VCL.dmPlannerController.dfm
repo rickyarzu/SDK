@@ -30255,7 +30255,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     CommandStoredProcName = 'INSERT_WHATSAPP_MESSAGES'
   end
   object dsReportsPlanner: TUniDataSource
-    DataSet = vtReportPlanner
+    DataSet = qryReportPlanner
     Left = 816
     Top = 624
   end

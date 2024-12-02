@@ -22,7 +22,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     Top = 0
     Width = 1448
     Height = 845
-    ActivePage = tabTicketsList
+    ActivePage = tabGoogleCalendarReport
     Align = alClient
     TabOrder = 0
     object tabTicketsList: TTabSheet
@@ -201,9 +201,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             DataField = 'STATO_IMMAGINE'
             DataSource = frameVCLCRDBGrid.UniDataSource
             TabOrder = 11
-            ExplicitLeft = 1
-            ExplicitTop = 1
-            ExplicitHeight = 94
           end
         end
       end
@@ -479,6 +476,108 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         end
       end
     end
+    object tabGoogleCalendarReport: TTabSheet
+      Caption = 'Calendario Google'
+      ImageIndex = 4
+      inline frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
+        Left = 0
+        Top = 0
+        Width = 683
+        Height = 815
+        Align = alLeft
+        TabOrder = 0
+        ExplicitWidth = 683
+        ExplicitHeight = 815
+        inherited grdReportList: TDBCtrlGrid
+          inherited Panel1: TPanel
+            ExplicitWidth = 642
+            ExplicitHeight = 102
+            inherited Panel2: TPanel
+              ExplicitWidth = 563
+              ExplicitHeight = 100
+              inherited pnlStatino: TPanel
+                ExplicitHeight = 100
+                inherited pnlInterventi: TPanel
+                  ExplicitLeft = 1
+                  ExplicitTop = 70
+                  ExplicitWidth = 439
+                end
+              end
+              inherited Panel4: TPanel
+                ExplicitLeft = 441
+                ExplicitTop = 0
+                ExplicitWidth = 122
+                ExplicitHeight = 100
+                inherited Panel3: TPanel
+                  ExplicitHeight = 98
+                  inherited Label1: TLabel
+                    Height = 17
+                    ExplicitWidth = 29
+                    ExplicitHeight = 17
+                  end
+                  inherited Label2: TLabel
+                    Top = 17
+                    Height = 17
+                    ExplicitTop = 17
+                    ExplicitWidth = 45
+                    ExplicitHeight = 17
+                  end
+                  inherited Label4: TLabel
+                    Top = 34
+                    Height = 17
+                    ExplicitTop = 34
+                    ExplicitWidth = 42
+                    ExplicitHeight = 17
+                  end
+                  inherited Label3: TLabel
+                    Top = 51
+                    Height = 17
+                    ExplicitTop = 51
+                    ExplicitWidth = 43
+                    ExplicitHeight = 17
+                  end
+                  inherited Label5: TLabel
+                    Top = 68
+                    Height = 17
+                    ExplicitTop = 68
+                    ExplicitWidth = 35
+                    ExplicitHeight = 17
+                  end
+                  inherited Label7: TLabel
+                    Top = 85
+                    Height = 17
+                    ExplicitTop = 85
+                    ExplicitWidth = 26
+                    ExplicitHeight = 17
+                  end
+                end
+                inherited Panel5: TPanel
+                  ExplicitLeft = 73
+                  ExplicitWidth = 48
+                  ExplicitHeight = 98
+                end
+              end
+            end
+            inherited btnImage: TDBImage
+              ExplicitHeight = 100
+            end
+          end
+        end
+      end
+      object EdgeBrowser2: TEdgeBrowser
+        Left = 683
+        Top = 0
+        Width = 757
+        Height = 815
+        Align = alClient
+        TabOrder = 1
+        AllowSingleSignOnUsingOSPrimaryAccount = False
+        TargetCompatibleBrowserVersion = '117.0.2045.28'
+        UserDataFolder = '%LOCALAPPDATA%\bds.exe.WebView2'
+        ExplicitLeft = 0
+        ExplicitWidth = 599
+      end
+    end
     object tabCalendariTecnici: TTabSheet
       Caption = 'Calendari Tecnici'
       ImageIndex = 3
@@ -632,6 +731,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             end
             inherited btnImage: TDBImage
               Height = 77
+              DataField = 'STATO_IMMAGINE'
               ExplicitHeight = 77
             end
           end
@@ -788,6 +888,11 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           Top = 704
           ExplicitTop = 704
         end
+        inherited Panel2: TPanel
+          inherited ckbCalendarList: TCheckListBox
+            ItemHeight = 16
+          end
+        end
         inherited Panel3: TPanel
           inherited lbSearch: TLabel
             Width = 250
@@ -853,6 +958,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitWidth = 1440
           inherited ckbCalendarList: TCheckListBox
             Width = 1381
+            ItemHeight = 16
             ExplicitWidth = 1381
           end
         end

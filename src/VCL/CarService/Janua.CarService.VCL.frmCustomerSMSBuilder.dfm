@@ -20,12 +20,15 @@ inherited frmVCLCSCustomerSMSBuilder: TfrmVCLCSCustomerSMSBuilder
         ExplicitLeft = 863
       end
       inherited lbContentVariables: TLabel
-        Left = 747
-        ExplicitLeft = 747
+        Left = 759
+        ExplicitLeft = 759
       end
       inherited grpURL: TGroupBox
         Width = 1005
         ExplicitWidth = 1005
+        inherited lblMobileCustomerUrl: TLabel
+          Height = 27
+        end
         inherited edtMobileUrl: TEdit
           Width = 408
           ExplicitWidth = 408
@@ -60,8 +63,8 @@ inherited frmVCLCSCustomerSMSBuilder: TfrmVCLCSCustomerSMSBuilder
         ExplicitWidth = 91
       end
       inherited rgEngine: TRadioGroup
-        Width = 183
-        ExplicitWidth = 183
+        Width = 242
+        ExplicitWidth = 242
       end
       inherited pnlSmsTestConfig: TPanel
         Width = 997
@@ -89,11 +92,13 @@ inherited frmVCLCSCustomerSMSBuilder: TfrmVCLCSCustomerSMSBuilder
       inherited DBGrid1: TDBGrid
         Width = 1011
       end
-      inherited Memo1: TMemo
-        Left = 747
-        Width = 254
-        ExplicitLeft = 747
-        ExplicitWidth = 254
+      inherited memTemplateParams: TMemo
+        Top = 133
+        Width = 240
+        Height = 116
+        ExplicitTop = 133
+        ExplicitWidth = 240
+        ExplicitHeight = 116
       end
     end
   end

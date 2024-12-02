@@ -14,7 +14,7 @@ uses
   Janua.Cloud.Types, Janua.Cloud.Intf, Janua.Cloud.Sms.Intf, Janua.Orm.Intf, Janua.Core.System.Types,
   // Januaproject  Classes
   Janua.VCL.Interposers, Janua.TMS.Interposers, Janua.Cloud.Conf, Janua.Core.Classes, Janua.Cloud.Impl,
-  Vcl.Mask;
+  VCL.Mask;
 
 type
   TframeVCLSMSMessageConfig = class(TFrame, IJanuaSMSBuilderForm)
@@ -54,8 +54,9 @@ type
     advmjson: TAdvMemo;
     lbEdtTemplateSID: TLabeledEdit;
     btnSendSmsTemplate: TButton;
-    Memo1: TMemo;
+    memTemplateParams: TMemo;
     lbContentVariables: TLabel;
+    memParamsDestination: TMemo;
     procedure btnLoadSMSConfigClick(Sender: TObject);
     procedure btnSaveConfigClick(Sender: TObject);
     procedure btnGenerateSMSClick(Sender: TObject);
@@ -114,15 +115,20 @@ end;
 procedure TframeVCLSMSMessageConfig.btnSaveConfigClick(Sender: TObject);
 begin
   FSMSConf.SMSMessageConf.CustomFields.LoadFromDataset(fdmParams);
-  FSMSConf.MsgTo := edPhoneCustomerTo.Text;
+
   { FSMSConf.Bind('msgTo', edPhoneCustomerTo, 'Text'); }
-  FSMSConf.Body := advmSMSTemplate.Text;
+  FSMSConf.MsgTo := edPhoneCustomerTo.Text;
   { FSMSConf.Bind('Body', advmSMSTemplate, 'Text'); }
-  FSMSConf.Url := edtMobileUrl.Text;
+  FSMSConf.Body := advmSMSTemplate.Text;
   { FSMSConf.Bind('Url', advmSMSTemplate, 'Text'); }
-  advmjson.Text := FSMSConf.AsJson;
+  FSMSConf.Url := edtMobileUrl.Text;
+
   { FSMSConf.Bind('TemplateMessageID', lbEdtTemplateSID, 'Text'); }
-  lbEdtTemplateSID.Text := FSMSConf.TemplateMessageID;
+  FSMSConf.TemplateMessageID := lbEdtTemplateSID.Text;
+  { FSMSConf.Bind('TemplateMessageID', lbEdtTemplateSID, 'Text'); }
+  FSMSConf.TemplateParams := memTemplateParams.Text;
+
+  advmjson.Text := FSMSConf.AsJson;
   FSMSConf.SaveConfig;
   UpdatedFrame;
 
@@ -243,6 +249,8 @@ begin
     FSMSConf.Bind('Body', advmSMSTemplate, 'Text');
     FSMSConf.Bind('Url', advmSMSTemplate, 'Text');
     FSMSConf.Bind('AsJson', advmSMSTemplate, 'Text');
+    FSMSConf.Bind('TemplateMessageID', lbEdtTemplateSID, 'Text');
+    FSMSConf.Bind('TemplateParams', memTemplateParams, 'Text');
   end;
 end;
 
@@ -292,6 +300,9 @@ begin
   edPhoneCustomerTo.Text := FSMSConf.MsgTo;
   advmSMSTemplate.Text := FSMSConf.Body;
   edtMobileUrl.Text := FSMSConf.Url;
+  lbEdtTemplateSID.Text := FSMSConf.TemplateMessageID;
+  memTemplateParams.Text := FSMSConf.TemplateParams;
+
   advmjson.Text := FSMSConf.AsJson;
   fdmParams.EmptyDataSet;
   if FSMSConf.SMSMessageConf.CustomFields.HasCustomFields then

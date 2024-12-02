@@ -36,13 +36,11 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
     inherited Panel2: TPanel
       Width = 995
       Height = 776
-      ExplicitLeft = 217
-      ExplicitTop = 0
       ExplicitWidth = 995
       ExplicitHeight = 776
       inherited lblMsgTo: TLabel
-        Left = 847
-        ExplicitLeft = 847
+        Left = 864
+        ExplicitLeft = 864
       end
       inherited lbContentVariables: TLabel
         Left = 695
@@ -54,30 +52,28 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
       inherited grpURL: TGroupBox
         Width = 987
         ExplicitWidth = 987
-        inherited lblMobileCustomerUrl: TLabel
-          Height = 27
-        end
         inherited edtMobileUrl: TEdit
           Width = 314
           ExplicitWidth = 314
         end
         inherited btnTestUrl: TButton
-          Left = 630
+          Left = 640
           Width = 81
           ExplicitLeft = 630
           ExplicitWidth = 81
         end
         inherited edtCustomerMobileUrl1: TEdit
           Left = 392
-          Width = 232
+          Width = 242
           ExplicitLeft = 392
           ExplicitWidth = 232
         end
         inherited edtTestTinyUrl: TEdit
-          Left = 717
-          Width = 265
-          ExplicitLeft = 717
-          ExplicitWidth = 265
+          Left = 727
+          Width = 255
+          ExplicitLeft = 730
+          ExplicitWidth = 255
+          ExplicitHeight = 27
         end
       end
       inherited advmSMSTemplate: TAdvMemo
@@ -88,14 +84,16 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
         ExplicitWidth = 685
       end
       inherited edPhoneCustomerTo: TEdit
-        Left = 894
-        Width = 89
-        ExplicitLeft = 894
-        ExplicitWidth = 89
+        Left = 912
+        Width = 71
+        ExplicitLeft = 912
+        ExplicitWidth = 71
       end
       inherited rgEngine: TRadioGroup
-        Width = 167
-        ExplicitWidth = 167
+        Left = 615
+        Width = 243
+        ExplicitLeft = 615
+        ExplicitWidth = 243
       end
       inherited pnlSmsTestConfig: TPanel
         Width = 981
@@ -108,7 +106,7 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
         end
         inherited edTestSMSTo: TEdit
           Width = 523
-          ExplicitWidth = 500
+          ExplicitWidth = 523
         end
         inherited advmSMSTest: TAdvMemo
           Width = 523
@@ -116,7 +114,7 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
           Gutter.BorderColor = clGray
           Gutter.GutterColor = clBtnFace
           Gutter.GutterColorTo = clBtnFace
-          ExplicitWidth = 500
+          ExplicitWidth = 523
         end
         inherited advmJson: TAdvMemo
           Width = 523
@@ -140,15 +138,9 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
         Width = 993
         Height = 61
       end
-      inherited Memo1: TMemo
-        Left = 695
-        Top = 133
-        Width = 290
-        Height = 116
-        ExplicitLeft = 695
-        ExplicitTop = 133
-        ExplicitWidth = 290
-        ExplicitHeight = 116
+      inherited btnSendSmsTemplate: TButton
+        Width = 145
+        ExplicitWidth = 145
       end
     end
   end

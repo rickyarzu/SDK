@@ -41,3 +41,40 @@ begin
     end;
   end;
 end;
+
+
+          object btnUpdateImage: TBitBtn
+            Left = 1152
+            Top = 0
+            Width = 150
+            Height = 70
+            Align = alRight
+            Caption = 'Aggiorna Immagini'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clTeal
+            Font.Height = -12
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ImageIndex = 95
+            ImageName = '037-search'
+            Images = dmSVGImageList.SVGIconImageList
+            ParentFont = False
+            TabOrder = 10
+            StyleElements = [seClient, seBorder]
+            OnClick = btnUpdateImageClick
+          end
+          object btnImage: TDBImage
+            Left = 1075
+            Top = 0
+            Width = 77
+            Height = 70
+            Align = alRight
+            DataField = 'STATO_IMMAGINE'
+            DataSource = frameVCLCRDBGrid.UniDataSource
+            TabOrder = 11
+            ExplicitLeft = 1
+            ExplicitTop = 1
+            ExplicitHeight = 94
+          end
+		  
+		  

@@ -24,7 +24,7 @@ uses
   Janua.TMS.Planner.frameCustomCalendar, Janua.VCL.Planner.frameCustomGoogleCalendar,
   Janua.VCL.Planner.framePhoenixGoogleCalendar, Janua.TMS.Phoenix.framePlannerCalendar2,
   Janua.Phoenix.VCL.framePlannerEvent, Janua.Core.Types, Janua.TMS.WebView, Winapi.WebView2, Winapi.ActiveX,
-  VCL.Edge, Vcl.DBCtrls;
+  VCL.Edge, Vcl.DBCtrls, Janua.Phoenix.VCL.framePlannerReport;
 
 type
   TfrmPhoenixVCLReportPlanner = class(TForm)
@@ -79,6 +79,9 @@ type
     EdgeBrowser1: TEdgeBrowser;
     btnUpdateImage: TBitBtn;
     btnImage: TDBImage;
+    tabGoogleCalendarReport: TTabSheet;
+    frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport;
+    EdgeBrowser2: TEdgeBrowser;
     procedure FormCreate(Sender: TObject);
     procedure frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);

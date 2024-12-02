@@ -2,7 +2,7 @@ unit Janua.Cloud.Conf;
 
 interface
 
-uses Data.DB, System.StrUtils, System.UITypes, System.JSON,
+uses Data.DB, System.StrUtils, System.UITypes, System.JSON, System.Classes,
   // Janua
   Janua.Core.Types, Janua.Core.Classes, Janua.Cloud.Types, Janua.Orm.Intf, Janua.Core.Http.Intf,
   Janua.REST.Types, Janua.Core.System.Types, Janua.Http.Types, Janua.Core.DB.Types, Janua.Core.Commons;
@@ -88,7 +88,7 @@ type
     property RestSecret: string read FRecordConf.Secret write SetSecret;
     property RestAppName: string read FRecordConf.AppName write SetAppName;
     property DefaultMessageID: string read FRecordConf.DefaultMessageID write SetDefaultMessageID;
-    property TestMessageID: string  read FRecordConf.TestMessageID write SetTestMessageID;
+    property TestMessageID: string read FRecordConf.TestMessageID write SetTestMessageID;
   end;
 
 type
@@ -135,6 +135,7 @@ type
     procedure SetUrlGenEngine(const Value: TUrlGeneratorEngine);
     procedure SetSMSSendingEngine(const Value: TJanuaSendingEngine);
     procedure SetTemplateMessageID(const Value: string);
+    procedure SetTemplateParams(const Value: string);
   protected
     function GetAsJson: String; override;
     procedure SetAsJson(const Value: String); override;
@@ -160,8 +161,9 @@ type
     property Body: string read FSMSMessageConf.Body write SetBody;
     /// <summary> Message To can contain a default value or be set for every message sending </summary>
     property msgTo: string read FSMSMessageConf.msgTo write SetmsgTo;
-   /// <summary> Template message Id should be used for some serices that user templates and params </summary>
+    /// <summary> Template message Id should be used for some serices that user templates and params </summary>
     property TemplateMessageID: string read FSMSMessageConf.TemplateID write SetTemplateMessageID;
+    property TemplateParams: string read FSMSMessageConf.TemplateParams write SetTemplateParams;
     property AsJson: String read GetAsJson write SetAsJson;
     property Text: string read GetText write SetText;
     property SMSMessageConf: TJanuaSMSMessageConf read FSMSMessageConf write SetSMSMessageConf;
@@ -379,6 +381,28 @@ begin
   Result.Title := TDatasetStringWriter.ElaborateRecord(aDataset, FSMSMessageConf.Title);
   Result.msgTo := TDatasetStringWriter.ElaborateRecord(aDataset, FSMSMessageConf.msgTo);
   Result.msgTo := StringReplace(Result.msgTo, ' ', '', [rfReplaceAll]);
+
+  { /// <summary> used on some platforms like twilio refers to a parametrized body remotely store </summary>
+    TemplateID: string;
+    /// <summary> Params to be Replaced by Fields Data for platform like Twilio for Template with Params </summary>
+    TemplateParams: string;
+  }
+
+  if FSMSMessageConf.TemplateParams <> '' then
+  begin
+    var
+    lList := TStringList.Create;
+    try
+      lList.Text := FSMSMessageConf.TemplateParams;
+      for var aString in lList do
+        Result.AddContentVariable(aString);
+    finally
+      lList.Free;
+    end;
+  end;
+
+  Result.ContentSid := FSMSMessageConf.TemplateID;
+
   case Result.SMSSendingEngine of
     jseWhatsApp:
       if Pos('whatsapp', Result.msgTo) <= 0 then
@@ -463,6 +487,11 @@ end;
 procedure TSMSMessageConf.SetTemplateMessageID(const Value: string);
 begin
   FSMSMessageConf.TemplateID := Value;
+end;
+
+procedure TSMSMessageConf.SetTemplateParams(const Value: string);
+begin
+  FSMSMessageConf.TemplateParams := Value;
 end;
 
 procedure TSMSMessageConf.SetText(const Value: string);

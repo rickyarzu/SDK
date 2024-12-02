@@ -9,15 +9,25 @@ inherited frmVCLCSDriver2SMSBuilder: TfrmVCLCSDriver2SMSBuilder
         ExplicitLeft = 721
       end
       inherited grpURL: TGroupBox
+        inherited lblMobileCustomerUrl: TLabel
+          Height = 27
+        end
         inherited edtMobileUrl: TEdit
           Width = 371
           ExplicitWidth = 371
         end
+        inherited btnTestUrl: TButton
+          ExplicitLeft = 640
+        end
         inherited edtCustomerMobileUrl1: TEdit
           Left = 449
-          Width = 175
+          Width = 185
           ExplicitLeft = 449
-          ExplicitWidth = 175
+          ExplicitWidth = 185
+        end
+        inherited edtTestTinyUrl: TEdit
+          ExplicitLeft = 727
+          ExplicitHeight = 23
         end
       end
       inherited advmSMSTemplate: TAdvMemo
@@ -25,44 +35,25 @@ inherited frmVCLCSDriver2SMSBuilder: TfrmVCLCSDriver2SMSBuilder
         ExplicitWidth = 711
       end
       inherited edPhoneCustomerTo: TEdit
-        Left = 894
-        Width = 91
-        ExplicitLeft = 894
-        ExplicitWidth = 91
+        Left = 911
+        Width = 74
+        ExplicitLeft = 911
+        ExplicitWidth = 74
       end
       inherited pnlSmsTestConfig: TPanel
-        Width = 981
-        ExplicitWidth = 981
-        inherited edTestSMSTo: TEdit
-          Width = 523
-        end
-        inherited advmSMSTest: TAdvMemo
-          Width = 523
-        end
-        inherited advmJson: TAdvMemo
-          Width = 523
-          Height = 258
-          ExplicitWidth = 523
-          ExplicitHeight = 258
-        end
         inherited lbEdtTemplateSID: TLabeledEdit
-          Width = 522
           Anchors = [akLeft, akTop, akRight]
-          EditLabel.ExplicitLeft = 439
-          EditLabel.ExplicitTop = 4
-          EditLabel.ExplicitWidth = 68
-          ExplicitWidth = 522
         end
       end
-      inherited DBGrid1: TDBGrid
-        Top = 714
-        Height = 61
-      end
-      inherited Memo1: TMemo
+      inherited memTemplateParams: TMemo
         Left = 721
+        Top = 133
         Width = 264
+        Height = 116
         ExplicitLeft = 721
+        ExplicitTop = 133
         ExplicitWidth = 264
+        ExplicitHeight = 116
       end
     end
   end
