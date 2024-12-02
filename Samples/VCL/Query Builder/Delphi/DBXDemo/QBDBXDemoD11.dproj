@@ -1,0 +1,50 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{E7E00119-76BD-4246-A694-51FA716FB9D3}</ProjectGuid>
+        <MainSource>QBDBXDemo.dpr</MainSource>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <DCC_EnabledPackages>true</DCC_EnabledPackages>
+        <DCC_UsePackage>dbrtl;rtl;vcl;vcldb;QBuilderRT</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DCC_ExeOutput>Release</DCC_ExeOutput>
+        <DCC_DcuOutput>Release</DCC_DcuOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DCC_ExeOutput>Debug</DCC_ExeOutput>
+        <DCC_DcuOutput>Debug</DCC_DcuOutput>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="QBDBXDemo.dpr">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="MainForm.pas">
+            <Form>fmMain</Form>
+        </DCCReference>
+        <DCCReference Include="ConnectForm.pas">
+            <Form>fmConnect</Form>
+        </DCCReference>
+        <DCCReference Include="QBOptionsForm.pas">
+            <Form>fmQBOptions</Form>
+        </DCCReference>
+        <DCCReference Include="AboutForm.pas">
+            <Form>fmAbout</Form>
+        </DCCReference>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality</Borland.Personality>
+        <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+        <BorlandProject>
+            <BorlandProject>
+                <Delphi.Personality>
+                    <Source>
+                        <Source Name="MainSource">QBDBXDemo.dpr</Source>
+                    </Source>
+                </Delphi.Personality>
+            </BorlandProject>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+</Project>

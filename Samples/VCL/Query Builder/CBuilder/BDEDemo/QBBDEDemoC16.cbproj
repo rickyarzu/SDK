@@ -1,0 +1,91 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{4C5916D1-D537-4A49-AF75-2559725035B0}</ProjectGuid>
+        <ProjectVersion>13.4</ProjectVersion>
+        <FrameworkType>VCL</FrameworkType>
+        <AppType>Application</AppType>
+        <MainSource>QBBDEDemo.cpp</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <_TCHARMapping>wchar_t</_TCHARMapping>
+        <AllPackageLibs>bdertl.lib;dbrtl.lib;rtl.lib;vcl.lib;vcldb.lib;QBuilderRT.lib</AllPackageLibs>
+        <FinalOutputDir>$(Platform)\$(Config)</FinalOutputDir>
+        <IntermediateOutputDir>$(Platform)\$(Config)</IntermediateOutputDir>
+        <LinkPackageImports>bdertl.bpi;dbrtl.bpi;rtl.bpi;vcl.bpi;vcldb.bpi;QBuilderRT.bpi</LinkPackageImports>
+        <PackageImports>bdertl.bpi;dbrtl.bpi;rtl.bpi;vcl.bpi;vcldb.bpi;QBuilderRT.bpi;$(PackageImports)</PackageImports>
+        <ProjectType>CppVCLApplication</ProjectType>
+        <UsePackages>true</UsePackages>
+    </PropertyGroup>
+    <ItemGroup>
+        <CppCompile Include="AboutForm.cpp">
+            <Form>fmAbout</Form>
+            <DependentOn>AboutForm.h</DependentOn>
+            <BuildOrder>3</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="MainForm.cpp">
+            <Form>fmMain</Form>
+            <DependentOn>MainForm.h</DependentOn>
+            <BuildOrder>1</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="QBBDEDemo.cpp">
+            <BuildOrder>2</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="QBOptionsForm.cpp">
+            <Form>fmQBOptions</Form>
+            <DependentOn>QBOptionsForm.h</DependentOn>
+            <BuildOrder>4</BuildOrder>
+        </CppCompile>
+        <FormResources Include="QBOptionsForm.dfm"/>
+        <FormResources Include="AboutForm.dfm"/>
+        <FormResources Include="MainForm.dfm"/>
+        <ResFiles Include="QBBDEDemo.res">
+            <BuildOrder>4</BuildOrder>
+        </ResFiles>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+        <Borland.ProjectType>CppVCLApplication</Borland.ProjectType>
+        <BorlandProject>
+            <CPlusPlusBuilder.Personality>
+                <Source>
+                    <Source Name="MainSource">QBBDEDemo.cpp</Source>
+                </Source>
+            </CPlusPlusBuilder.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Cpp.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>
