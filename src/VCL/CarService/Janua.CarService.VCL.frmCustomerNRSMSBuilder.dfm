@@ -19,15 +19,12 @@ inherited frmVCLCSCustomerNRSMSBuilder: TfrmVCLCSCustomerNRSMSBuilder
         ExplicitLeft = 887
       end
       inherited lbContentVariables: TLabel
-        Left = 759
-        ExplicitLeft = 759
+        Left = 735
+        ExplicitLeft = 735
       end
       inherited grpURL: TGroupBox
         Width = 1009
         ExplicitWidth = 1009
-        inherited lblMobileCustomerUrl: TLabel
-          Height = 27
-        end
         inherited edtMobileUrl: TEdit
           Width = 424
           ExplicitWidth = 424
@@ -45,7 +42,6 @@ inherited frmVCLCSCustomerNRSMSBuilder: TfrmVCLCSCustomerNRSMSBuilder
         inherited edtTestTinyUrl: TEdit
           Left = 749
           ExplicitLeft = 749
-          ExplicitHeight = 23
         end
       end
       inherited advmSMSTemplate: TAdvMemo
@@ -66,12 +62,10 @@ inherited frmVCLCSCustomerNRSMSBuilder: TfrmVCLCSCustomerNRSMSBuilder
         Width = 1015
       end
       inherited memTemplateParams: TMemo
-        Top = 133
+        Left = 735
         Width = 226
-        Height = 116
-        ExplicitTop = 133
+        ExplicitLeft = 735
         ExplicitWidth = 226
-        ExplicitHeight = 116
       end
     end
   end

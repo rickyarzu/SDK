@@ -16,7 +16,7 @@ uses
   // Janua
   Janua.Phoenix.VCL.dmPlannerController,
   Janua.Core.Types, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Forms.Types, Janua.Bindings.Intf,
-  Janua.Controls.Intf, Janua.Controls.Forms.Intf, uJanuaVCLFrame, Janua.Cloud.Types;
+  Janua.Controls.Intf, Janua.Controls.Forms.Intf, uJanuaVCLFrame, Janua.Cloud.Types, Vcl.WinXCtrls;
 
 type
   TframeVCLPhoenixPlanneReport = class(TJanuaVCLFrameModel, IJanuaFrame, IJanuaContainer, IJanuaBindable)
@@ -50,7 +50,6 @@ type
     pnlStatino: TPanel;
     DBText3: TDBText;
     DBText1: TDBText;
-    DBText12: TDBText;
     Panel4: TPanel;
     Panel3: TPanel;
     Panel5: TPanel;
@@ -69,6 +68,12 @@ type
     Label7: TLabel;
     DBText11: TDBText;
     DBText8: TDBText;
+    DBText12: TDBText;
+    btnNewMeeting: TJvSpeedButton;
+    btnUndoMeeting: TJvSpeedButton;
+    btnContract: TJvSpeedButton;
+    SearchBox1: TSearchBox;
+    btnWhatsApp: TJvSpeedButton;
     procedure ChangeFilter(Sender: TObject);
     procedure btnSearchClick(Sender: TObject);
     procedure DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);

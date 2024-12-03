@@ -276,6 +276,7 @@ type
     procedure ClearContentVariables;
     procedure AddContentVariable(const aVariable: string);
     function Text: string;
+    function ContentVariablesAsString: string;
   end;
 
   TRestAuthentication = (raNone, raToken, raBasic);
@@ -788,7 +789,21 @@ end;
 
 procedure TSMSMessage.ClearContentVariables;
 begin
+ SetLength(ContentVariables, 0;
+end;
 
+function TSMSMessage.ContentVariablesAsString: string;
+begin
+  var
+  lList := TStringList.Create;
+  try
+    for var aString in ContentVariables do
+      lList.Add(aString);
+    Result := lList.Text;
+  finally
+    lList.Free;
+    lList := nil;
+  end;
 end;
 
 function TSMSMessage.GetAsJson: String;
@@ -1299,7 +1314,7 @@ begin
   MsgTo := aList.Values['To'];
   MsgTo := StringReplace(MsgTo, 'whatsapp:', '', []);
   MsgTo := StringReplace(MsgTo, '+39', '', []);
-  From :=  aList.Values['From'];
+  From := aList.Values['From'];
   From := StringReplace(From, 'whatsapp:', '', []);
   From := StringReplace(From, '+39', '', []);
   NumSegments := aList.Values['NumSegments'];

@@ -16,6 +16,8 @@ uses
   CloudBase, CloudBaseWin, CloudCustomGoogle, CloudGoogleWin, CloudCustomGCalendar, CloudGCalendar,
   DBPlanner, Planner, CloudvCal, CloudWebDav, CloudCustomLive,
   CloudLiveWin, CloudCustomLiveCalendar, CloudLiveCalendar,
+  // ZLibraries
+  Globale, ZFIBPlusNodoGenerico2,
   // JanuaProject
   {Janua.Phoenix.dmIBModel, Janua.Interbase.dmModel,}
   // Janua
@@ -449,6 +451,10 @@ type
     dsReportsPlanner: TUniDataSource;
     qryReportPlannercalcStato: TStringField;
     qryReportPlannerSTATO_IMMAGINE: TBlobField;
+    actNewMeeting: TAction;
+    actUndoMeeting: TAction;
+    actContract: TAction;
+    actWhatsAppMsg: TAction;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -480,6 +486,11 @@ type
     procedure actGridConfirmEventExecute(Sender: TObject);
     procedure qryPersonalPlannerEventsAfterPost(DataSet: TDataSet);
     procedure qryPersonalPlannerEventsBeforeInsert(DataSet: TDataSet);
+    procedure actNewMeetingExecute(Sender: TObject);
+    procedure MenuButtonActionsExecute(Action: TBasicAction; var Handled: Boolean);
+    procedure actContractExecute(Sender: TObject);
+    procedure actWhatsAppMsgExecute(Sender: TObject);
+    procedure actUndoMeetingExecute(Sender: TObject);
   private
     Stopwatch: TStopwatch;
     FInsertingEvent: Boolean;
@@ -586,7 +597,8 @@ type
     procedure DeleteGoogleMeeting(const aGUID: string);
     function LocateGoogleMeeting(const aGUID: string): TJanuaRecEvent;
     function UpdateGoogleMeeting(const aMeeting: TJanuaRecEvent): Boolean;
-    function SendWhatsAppMessage(const aMeeting: TJanuaRecEvent): Boolean;
+    function SendWhatsAppMessage(const aMeeting: TJanuaRecEvent): Boolean; overload;
+    function SendWhatsAppMessage: Boolean; overload;
   public
     function AddTechEvent(const aShow: Boolean = True): TJanuaRecEvent;
     function GoogleSync: string;
@@ -635,7 +647,9 @@ implementation
 
 uses Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Core.Functions, Janua.Core.AsyncTask,
   Janua.Phoenix.VCL.dlgPlannerEvent, Janua.Phoenix.VCL.dlgGoogleSync, Janua.Application.Framework,
-  udlgPhoenixVCLWhatsAppSMSMessage, udlgPhoenixVCLMemoBox, udlgPhoenixWAMessageList;
+  udlgPhoenixVCLWhatsAppSMSMessage, udlgPhoenixVCLMemoBox, udlgPhoenixWAMessageList,
+  // Phoenix
+  DlgShowContratto, DlgNuovoStatino;
 
 {$IFDEF WIN32}
 function InitializeDLL: string; stdcall; external 'PhoenixLib32_r10.dll' index 1;
@@ -811,6 +825,20 @@ begin
   end;
 end;
 
+procedure TdmVCLPhoenixPlannerController.actContractExecute(Sender: TObject);
+var
+  lDlg: TDLG_SHOW_CONTRATTO;
+begin
+  lDlg := TDLG_SHOW_CONTRATTO.Create(Nil);
+  try
+    lDlg.Init(TFiBConfig.QRY_GENERIC, qryReportPlannerCLIENTE.AsInteger);
+    lDlg.ShowModal;
+    TFiBConfig.QRY_GENERIC.Sql.Clear;
+  finally
+    lDlg.Free;
+  end;
+end;
+
 procedure TdmVCLPhoenixPlannerController.ActionCalendarSync2Execute(Sender: TObject);
 begin
   inherited;
@@ -829,6 +857,50 @@ procedure TdmVCLPhoenixPlannerController.ActivateCalendar2;
 begin
   if not qryPlannerEvents2.Active then
     qryPlannerEvents2.Open;
+end;
+
+procedure TdmVCLPhoenixPlannerController.actNewMeetingExecute(Sender: TObject);
+var
+  lDlg: TdlgPhoenixVCLEditReportTimetable;
+begin
+  lDlg := TdlgPhoenixVCLEditReportTimetable.Create(self);
+  try
+    if not self.qryReportPlannerAPPUNTAMENTO_ORA.IsNull then
+    begin
+      lDlg.edTime.Time := self.qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime;
+      lDlg.edDate.DateTime := self.qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime;
+    end
+    else
+    begin
+      lDlg.edDate.DateTime := Date();
+    end;
+
+    lDlg.edNote.Text := self.qryReportPlannerNOTE_PER_IL_TECNICO.Text;
+
+    lDlg.ShowModal;
+
+    if lDlg.ModalResult = mrOK then
+      try
+        qryReportPlanner.Edit;
+        qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime := lDlg.edTime.Time;
+        qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime := lDlg.edDate.DateTime;
+        qryReportPlannerNOTE_PER_IL_TECNICO.Text := lDlg.edNote.Text;
+        if qryReportPlannerSTATO.AsInteger = 0 then
+          qryReportPlannerSTATO.AsInteger := 1
+        else if qryReportPlannerSTATO.AsInteger = 5 then
+          qryReportPlannerSTATO.AsInteger := 6;
+        qryReportPlanner.Post;
+      except
+        on e: exception do
+        begin
+          self.qryReportPlanner.Cancel;
+          raise
+        end;
+      end;
+  finally
+    lDlg.Free;
+  end;
+
 end;
 
 procedure TdmVCLPhoenixPlannerController.actSelectAllExecute(Sender: TObject);
@@ -857,6 +929,27 @@ begin
     qryElencoEventiWhatsAppWA.AsString := 'F';
     qryElencoEventiWhatsApp.Post;
   }
+end;
+
+procedure TdmVCLPhoenixPlannerController.actUndoMeetingExecute(Sender: TObject);
+begin
+  if JMessageDlg('Volete annullare appuntamento?') then
+    try
+      qryReportPlanner.Edit;
+      qryReportPlannerAPPUNTAMENTO_ORA.Clear;
+      qryReportPlannerAPPUNTAMENTO_DATA.Clear;
+      if qryReportPlannerSTATO.AsInteger = 1 then
+        qryReportPlannerSTATO.AsInteger := 0
+      else if qryReportPlannerSTATO.AsInteger = 6 then
+        qryReportPlannerSTATO.AsInteger := 5;
+      qryReportPlanner.Post;
+    except
+      on e: exception do
+      begin
+        self.qryReportPlanner.Cancel;
+        raise
+      end;
+    end;
 end;
 
 procedure TdmVCLPhoenixPlannerController.actWASendMessageExecute(Sender: TObject);
@@ -1036,6 +1129,12 @@ begin
     dlgVCLPhoenixWAMessageList := nil;
   end;
 
+end;
+
+procedure TdmVCLPhoenixPlannerController.actWhatsAppMsgExecute(Sender: TObject);
+begin
+  inherited;
+  SendWhatsAppMessage
 end;
 
 procedure TdmVCLPhoenixPlannerController.WAFilter(aWADateFrom: TDateTime; aWADateTo: TDateTime;
@@ -1809,14 +1908,14 @@ end;
 procedure TdmVCLPhoenixPlannerController.FilterDialog;
   procedure CheckFilter;
   begin
-    if vtReportPlanner.Filter > '' then
-      vtReportPlanner.Filter := vtReportPlanner.Filter + ' AND ';
+    if qryReportPlanner.Filter > '' then
+      qryReportPlanner.Filter := qryReportPlanner.Filter + ' AND ';
   end;
 
 begin
   try
-    vtReportPlanner.Filter := '';
-    vtReportPlanner.Filtered := False;
+    qryReportPlanner.Filter := '';
+    qryReportPlanner.Filtered := False;
 
     var
     vFilter := ReportDateFilter or CustomerFilter or TechFilter or CAPFilter or (FStateFilter > 0);
@@ -1826,63 +1925,63 @@ begin
       if ReportDateFilter then
       begin
         CheckFilter;
-        vtReportPlanner.Filter := vtReportPlanner.Filter + ' APPUNTAMENTO_DATA = ' +
+        qryReportPlanner.Filter := qryReportPlanner.Filter + ' APPUNTAMENTO_DATA = ' +
           QuotedStr(FormatDateTime('dd/mm/yyyy', FReportDate));
       end;
 
       if TechFilter then
       begin
         CheckFilter;
-        vtReportPlanner.Filter := vtReportPlanner.Filter + ' RESPONSABILE = ' + TechID.ToString;
+        qryReportPlanner.Filter := qryReportPlanner.Filter + ' RESPONSABILE = ' + TechID.ToString;
       end;
 
       if CustomerFilter then
       begin
         CheckFilter;
-        vtReportPlanner.Filter := vtReportPlanner.Filter + ' CLIENTE = ' + CustomerID.ToString;
+        qryReportPlanner.Filter := qryReportPlanner.Filter + ' CLIENTE = ' + CustomerID.ToString;
       end;
 
       if CAPFilter then
       begin
         CheckFilter;
-        vtReportPlanner.Filter := vtReportPlanner.Filter + ' CAP = ' + QuotedStr(FCAP);
+        qryReportPlanner.Filter := qryReportPlanner.Filter + ' CAP = ' + QuotedStr(FCAP);
       end;
 
       case FStateFilter of
         1:
           begin
             CheckFilter;
-            vtReportPlanner.Filter := vtReportPlanner.Filter + ' (STATO = 1 OR STATO = 6)';
+            qryReportPlanner.Filter := qryReportPlanner.Filter + ' (STATO = 1 OR STATO = 6)';
           end;
         2:
           begin
             CheckFilter;
-            vtReportPlanner.Filter := vtReportPlanner.Filter + ' STATO = 4 ';
+            qryReportPlanner.Filter := qryReportPlanner.Filter + ' STATO = 4 ';
           end;
         3:
           begin
             CheckFilter;
-            vtReportPlanner.Filter := vtReportPlanner.Filter + ' STATO = 5 ';
+            qryReportPlanner.Filter := qryReportPlanner.Filter + ' STATO = 5 ';
           end;
         4:
           begin
             CheckFilter;
-            vtReportPlanner.Filter := vtReportPlanner.Filter + ' STATO = 0 ';
+            qryReportPlanner.Filter := qryReportPlanner.Filter + ' STATO = 0 ';
           end;
         5:
           begin
             CheckFilter;
-            vtReportPlanner.Filter := vtReportPlanner.Filter + ' (STATO = 0 OR STATO = 5 OR STATO = 4) ';
-            vtReportPlanner.Filter := vtReportPlanner.Filter + 'AND APPUNTAMENTO_DATA IS NULL ';
+            qryReportPlanner.Filter := qryReportPlanner.Filter + ' (STATO = 0 OR STATO = 5 OR STATO = 4) ';
+            qryReportPlanner.Filter := qryReportPlanner.Filter + 'AND APPUNTAMENTO_DATA IS NULL ';
           end;
       end;
 
-      vtReportPlanner.Filtered := ReportDateFilter or CustomerFilter or TechFilter or CAPFilter or
+      qryReportPlanner.Filtered := ReportDateFilter or CustomerFilter or TechFilter or CAPFilter or
         (FStateFilter > 0);
     end;
   except
     on e: exception do
-      raise exception.Create('Error Filtering ' + vtReportPlanner.Filter + sLineBreak + e.Message);
+      raise exception.Create('Error Filtering ' + qryReportPlanner.Filter + sLineBreak + e.Message);
   end;
 
 end;
@@ -2159,6 +2258,12 @@ begin
   PlannerEvent := Result;
 end;
 
+procedure TdmVCLPhoenixPlannerController.MenuButtonActionsExecute(Action: TBasicAction; var Handled: Boolean);
+begin
+  inherited;
+  UndoMeeting
+end;
+
 function TdmVCLPhoenixPlannerController.OpenCalendar(const aDateFrom, aDateTo: TDateTime): Integer;
 begin
   PopulateCalendars;
@@ -2251,7 +2356,7 @@ end;
 
 procedure TdmVCLPhoenixPlannerController.PhoenixUpdateGoogleCalendars;
 begin
-
+  // codice
 end;
 
 procedure TdmVCLPhoenixPlannerController.PhoenixUpdateGoogleEvents;
@@ -2651,7 +2756,7 @@ begin
 
       FieldByName('calcStato').AsString := sStato;
 
-      if not (qryReportPlannerAPPUNTAMENTO_DATA.IsNull or (qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime = 0.0))
+      if not(qryReportPlannerAPPUNTAMENTO_DATA.IsNull or (qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime = 0.0))
         and (qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime < Date) then
       begin
         Image := red;
@@ -2687,11 +2792,61 @@ end;
 
 procedure TdmVCLPhoenixPlannerController.qryReportPlannerCalcFields(DataSet: TDataSet);
 begin
-  qryReportPlannercalcAppuntamentoDataOra.AsDateTime := qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime +
-    qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime;
+  if qryReportPlannerAPPUNTAMENTO_DATA.IsNull or (qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime = 0) then
+  begin
+    qryReportPlannercalcAppuntamentoDataOra.Clear;
+  end
+  else
+  begin
+    if qryReportPlannerAPPUNTAMENTO_ORA.IsNull then
+      qryReportPlannercalcAppuntamentoDataOra.AsDateTime := qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime
+    else
+      qryReportPlannercalcAppuntamentoDataOra.AsDateTime :=
+        SumDateTime(qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime,
+        qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime);
+  end;
 
   qryReportPlannercalcIndirizzo.AsString := qryReportPlannerINDIRIZZO.AsString + ', ' +
     qryReportPlannerCAP.AsString + ', ' + qryReportPlannerCOMUNE.AsString;
+
+  var
+  sStato := 'Generato';
+
+  var
+  aStato := qryReportPlannerSTATO.AsInteger;
+
+  case aStato of
+    - 1:
+      begin
+        sStato := 'Ritardo';
+      end;
+    0:
+      begin
+        sStato := 'Generato';
+      end;
+    1:
+      begin
+        sStato := 'Programmato';
+      end;
+    4:
+      begin
+        if qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
+          sStato := 'In Lavorazione'
+        else
+          sStato := 'Lavor. Progr.';
+      end;
+    5:
+      begin
+        sStato := 'Pronti da Rest.';
+      end;
+    6:
+      begin
+        sStato := 'Rest. Program.';
+      end;
+  end;
+
+  qryReportPlannercalcStato.AsString := sStato;
+
 end;
 
 procedure TdmVCLPhoenixPlannerController.qryTechPlannedAfterScroll(DataSet: TDataSet);
@@ -2793,6 +2948,99 @@ end;
 procedure TdmVCLPhoenixPlannerController.SelectCalendars2;
 begin
   { TODO : Adeguare la lista Calendars2 a FCalendarsFilter2 }
+end;
+
+function TdmVCLPhoenixPlannerController.SendWhatsAppMessage: Boolean;
+var
+  // lSender: IJanuaSMSTwilio;
+  lDlg: TdlgPhoenixVCLWhatsAppSMSMessage;
+  lMeeting: TJanuaRecEvent;
+begin
+  // ---------------------------------------------------------------------------------------------------------
+  // By Default it uses Twilio Sender (note whene more senders will be supported this should be a case choice)
+  var
+  lData := DateToStr(qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime);
+  var
+  lMessage := StringReplace(cMessage, '$$date$$', lData, [rfIgnoreCase, rfReplaceAll]);
+  lMessage := StringReplace(lMessage, '$$address$$', qryReportPlannercalcIndirizzo.AsString,
+    [rfIgnoreCase, rfReplaceAll]);
+
+  var
+  aList := TStringList.Create;
+  var
+  aVariables := '';
+  try
+    aList.Add(lData);
+    aList.Add(qryReportPlannercalcIndirizzo.AsString);
+    aVariables := aList.Text;
+  finally
+    aList.Free;
+  end;
+
+  qryCellulariStatino.Close;
+  qryCellulariStatino.Params[0].AsInteger := qryReportPlannerCHIAVE.AsInteger;
+  qryCellulariStatino.Open;
+  var
+  vStatino := qryReportPlannerCHIAVE.AsInteger;
+{$IFDEF DEBUG}
+  var
+  lTest := qryCellulariStatino.RecordCount;
+{$ENDIF}
+  lDlg := TdlgPhoenixVCLWhatsAppSMSMessage.Create(nil);
+  try
+    lDlg.WATemplate := cMessage;
+    lMeeting.Summary := qryReportPlannerDESCRIZIONE_SCHEDA.AsString;
+    lMeeting.Description := qryReportPlannerNOTE_PER_IL_TECNICO.AsString;
+    lMeeting.StartTime := qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime;
+    lMeeting.EndTime := qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime +
+      qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime;
+    lDlg.Meeting := lMeeting;
+    lDlg.ShowModal;
+    if lDlg.ModalResult = mrOK then
+    begin
+      lMessage := lDlg.Memo1.Lines.Text;
+      var
+      lPhone := '';
+      if WATest then
+        lPhone := JanuaInputText('Inserire cellulare test', 'Numero di Cellulare', WATestPhone)
+      else
+        lPhone := StringReplace(Trim(lDlg.edWAPhone.Text), ' ', '', [rfIgnoreCase, rfReplaceAll]);
+      var
+      lWaNumber := lPhone;
+      Result := (Length(lPhone) > 7) and (Length(lPhone) <= 13);
+
+      if not Result then
+        JShowError('Non è presente un numero WhatsApp Valido')
+      else
+      begin
+        lPhone := StringReplace(lPhone, ' ', '', [rfIgnoreCase, rfReplaceAll]);
+        if Pos('+39', lPhone) = 0 then
+          lPhone := '+39' + lPhone;
+
+        Result := SendMSSWhatsAppMessage('', lPhone, WATest, aVariables);
+      end;
+
+      { wa_id type of column whatsapp_messages.wa_id,
+        report_id type of column whatsapp_messages.report_id }
+      if Result then
+        try
+          spInsertWhatsAppMsg.ParamByName('wanumber').Value := lWaNumber;
+          spInsertWhatsAppMsg.ParamByName('wamessage').Value := FJanuaAdvTwilio.MessageBody;
+          spInsertWhatsAppMsg.ParamByName('in_out').Value := 0;
+          spInsertWhatsAppMsg.ParamByName('wa_id').Value := FJanuaAdvTwilio.MessageSid;
+          if vStatino <> 0 then
+            spInsertWhatsAppMsg.ParamByName('report_id').Value := vStatino;
+          spInsertWhatsAppMsg.ExecProc;
+        except
+          on e: exception do
+            raise exception.Create('Messaggio a ' + lDlg.edWAPhone.Text + ' non inviato causa Errore: ' +
+              sLineBreak + e.Message);
+        end;
+    end;
+
+  finally
+    lDlg.Free;
+  end;
 end;
 
 function TdmVCLPhoenixPlannerController.SendWhatsAppMessage(const aMeeting: TJanuaRecEvent): Boolean;

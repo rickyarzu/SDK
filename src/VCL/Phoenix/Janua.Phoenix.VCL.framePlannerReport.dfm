@@ -1,11 +1,11 @@
 inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
   Width = 670
-  Height = 927
+  Height = 1080
   ExplicitWidth = 670
-  ExplicitHeight = 927
+  ExplicitHeight = 1080
   DesignSize = (
     670
-    927)
+    1080)
   object lbCap: TLabel
     Left = 438
     Top = 58
@@ -40,44 +40,42 @@ inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
   end
   object grdReportList: TDBCtrlGrid
     Left = 8
-    Top = 103
+    Top = 128
     Width = 659
-    Height = 816
+    Height = 937
     Anchors = [akLeft, akTop, akRight, akBottom]
     DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
-    PanelHeight = 102
+    PanelHeight = 104
     PanelWidth = 642
     TabOrder = 2
-    RowCount = 8
+    RowCount = 9
     SelectedColor = clAntiquewhite
     object Panel1: TPanel
       Left = 0
       Top = 0
       Width = 642
-      Height = 102
+      Height = 104
       Align = alClient
       TabOrder = 0
-      ExplicitWidth = 809
-      ExplicitHeight = 96
+      ExplicitHeight = 102
       object Panel2: TPanel
         Left = 78
         Top = 1
         Width = 563
-        Height = 100
+        Height = 102
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 0
         OnDblClick = DBText1DblClick
-        ExplicitWidth = 730
-        ExplicitHeight = 94
+        ExplicitHeight = 100
         object pnlStatino: TPanel
           Left = 0
           Top = 0
           Width = 441
-          Height = 100
+          Height = 102
           Align = alLeft
           TabOrder = 0
-          ExplicitHeight = 72
+          ExplicitHeight = 100
           object DBText3: TDBText
             AlignWithMargins = True
             Left = 4
@@ -103,33 +101,67 @@ inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
             ExplicitTop = 3
             ExplicitWidth = 291
           end
-          object DBText12: TDBText
+          object btnNewMeeting: TJvSpeedButton
             AlignWithMargins = True
             Left = 4
-            Top = 50
-            Width = 433
-            Height = 17
-            Align = alTop
-            DataField = 'calcAppuntamentoDataOra'
-            DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
-            OnDblClick = DBText1DblClick
+            Top = 70
+            Width = 110
+            Height = 28
+            Action = dmVCLPhoenixPlannerController.actNewMeeting
+            Align = alLeft
+            Layout = blGlyphLeft
+            MenuPosition = dmpRight
+            ExplicitHeight = 25
+          end
+          object btnUndoMeeting: TJvSpeedButton
+            AlignWithMargins = True
+            Left = 120
+            Top = 70
+            Width = 80
+            Height = 28
+            Action = dmVCLPhoenixPlannerController.actUndoMeeting
+            Align = alLeft
+            Caption = ' Annulla'
+            Layout = blGlyphLeft
+            ExplicitHeight = 25
+          end
+          object btnContract: TJvSpeedButton
+            AlignWithMargins = True
+            Left = 206
+            Top = 70
+            Width = 120
+            Height = 28
+            Action = dmVCLPhoenixPlannerController.actContract
+            Align = alLeft
+            Layout = blGlyphLeft
+            ExplicitLeft = 256
+            ExplicitHeight = 26
+          end
+          object btnWhatsApp: TJvSpeedButton
+            AlignWithMargins = True
+            Left = 332
+            Top = 70
+            Width = 104
+            Height = 28
+            Action = dmVCLPhoenixPlannerController.actWhatsAppMsg
+            Align = alLeft
+            Layout = blGlyphLeft
+            ExplicitHeight = 25
           end
           object pnlInterventi: TPanel
             Left = 1
-            Top = 70
+            Top = 47
             Width = 439
             Height = 20
             Align = alTop
             BevelOuter = bvNone
             TabOrder = 0
-            ExplicitLeft = 0
-            ExplicitTop = 96
-            ExplicitWidth = 809
+            ExplicitTop = 70
             object DBText2: TDBText
               AlignWithMargins = True
-              Left = 374
+              Left = 320
               Top = 0
-              Width = 63
+              Width = 117
               Height = 20
               Margins.Left = 0
               Margins.Top = 0
@@ -145,20 +177,31 @@ inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
               Font.Style = [fsBold]
               ParentFont = False
               StyleElements = [seClient, seBorder]
-              ExplicitLeft = 361
             end
             object DBText8: TDBText
               AlignWithMargins = True
-              Left = 3
+              Left = 114
               Top = 3
-              Width = 368
+              Width = 203
               Height = 14
-              Align = alClient
+              Align = alRight
               DataField = 'NOME_TECNICO'
               DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
               OnDblClick = DBText1DblClick
+              ExplicitLeft = 168
+            end
+            object DBText12: TDBText
+              AlignWithMargins = True
+              Left = 3
+              Top = 3
+              Width = 105
+              Height = 14
+              Align = alClient
+              DataField = 'calcAppuntamentoDataOra'
+              DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
+              OnDblClick = DBText1DblClick
               ExplicitLeft = 4
-              ExplicitTop = 73
+              ExplicitTop = 50
               ExplicitWidth = 433
               ExplicitHeight = 17
             end
@@ -168,22 +211,19 @@ inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
           Left = 441
           Top = 0
           Width = 122
-          Height = 100
+          Height = 102
           Align = alClient
           TabOrder = 1
-          ExplicitLeft = 528
-          ExplicitTop = 8
-          ExplicitWidth = 185
-          ExplicitHeight = 41
+          ExplicitHeight = 100
           object Panel3: TPanel
             Left = 1
             Top = 1
             Width = 72
-            Height = 98
+            Height = 100
             Align = alLeft
             BevelOuter = bvNone
             TabOrder = 0
-            ExplicitHeight = 92
+            ExplicitHeight = 98
             object Label1: TLabel
               AlignWithMargins = True
               Left = 3
@@ -193,14 +233,15 @@ inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
               Margins.Top = 0
               Margins.Bottom = 0
               Align = alTop
+              AutoSize = False
               Caption = 'Luci:'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -13
+              Font.Height = -12
               Font.Name = 'Segoe UI'
               Font.Style = [fsBold]
               ParentFont = False
-              ExplicitWidth = 48
+              StyleElements = [seClient, seBorder]
             end
             object Label2: TLabel
               AlignWithMargins = True
@@ -211,13 +252,15 @@ inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
               Margins.Top = 0
               Margins.Bottom = 0
               Align = alTop
+              AutoSize = False
               Caption = 'Idranti:'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -13
+              Font.Height = -12
               Font.Name = 'Segoe UI'
               Font.Style = [fsBold]
               ParentFont = False
+              StyleElements = [seClient, seBorder]
             end
             object Label4: TLabel
               AlignWithMargins = True
@@ -228,14 +271,15 @@ inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
               Margins.Top = 0
               Margins.Bottom = 0
               Align = alTop
+              AutoSize = False
               Caption = 'E.Ord.:'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -13
+              Font.Height = -12
               Font.Name = 'Segoe UI'
               Font.Style = [fsBold]
               ParentFont = False
-              ExplicitTop = 33
+              StyleElements = [seClient, seBorder]
             end
             object Label3: TLabel
               AlignWithMargins = True
@@ -246,13 +290,15 @@ inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
               Margins.Top = 0
               Margins.Bottom = 0
               Align = alTop
+              AutoSize = False
               Caption = 'E.Stra.:'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -13
+              Font.Height = -12
               Font.Name = 'Segoe UI'
               Font.Style = [fsBold]
               ParentFont = False
+              StyleElements = [seClient, seBorder]
             end
             object Label5: TLabel
               AlignWithMargins = True
@@ -263,13 +309,15 @@ inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
               Margins.Top = 0
               Margins.Bottom = 0
               Align = alTop
-              Caption = 'Fumi:'
+              AutoSize = False
+              Caption = 'Irai:'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -13
+              Font.Height = -12
               Font.Name = 'Segoe UI'
               Font.Style = [fsBold]
               ParentFont = False
+              StyleElements = [seClient, seBorder]
             end
             object Label7: TLabel
               AlignWithMargins = True
@@ -280,82 +328,152 @@ inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
               Margins.Top = 0
               Margins.Bottom = 0
               Align = alTop
-              Caption = 'Grp:'
+              AutoSize = False
+              Caption = 'G.p.a.:'
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -13
+              Font.Height = -12
               Font.Name = 'Segoe UI'
               Font.Style = [fsBold]
               ParentFont = False
+              StyleElements = [seClient, seBorder]
             end
           end
           object Panel5: TPanel
             Left = 73
             Top = 1
             Width = 48
-            Height = 98
+            Height = 100
             Align = alClient
             BevelOuter = bvNone
             TabOrder = 1
-            ExplicitLeft = 55
-            ExplicitWidth = 66
-            ExplicitHeight = 92
+            ExplicitHeight = 98
             object DBText9: TDBText
-              Left = 0
+              AlignWithMargins = True
+              Left = 3
               Top = 0
-              Width = 48
+              Width = 42
               Height = 16
+              Margins.Top = 0
+              Margins.Bottom = 0
               Align = alTop
               DataField = 'LUCI'
               DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlue
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              StyleElements = [seClient, seBorder]
+              ExplicitLeft = 0
               ExplicitWidth = 66
             end
             object DBText5: TDBText
-              Left = 0
+              AlignWithMargins = True
+              Left = 3
               Top = 16
-              Width = 48
+              Width = 42
               Height = 16
+              Margins.Top = 0
+              Margins.Bottom = 0
               Align = alTop
               DataField = 'IDRANTI'
               DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlue
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              StyleElements = [seClient, seBorder]
+              ExplicitLeft = 0
+              ExplicitWidth = 48
             end
             object DBText6: TDBText
-              Left = 0
+              AlignWithMargins = True
+              Left = 3
               Top = 32
-              Width = 48
+              Width = 42
               Height = 16
+              Margins.Top = 0
+              Margins.Bottom = 0
               Align = alTop
               DataField = 'ESTINTORI_ORDINARIO'
               DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlue
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              StyleElements = [seClient, seBorder]
+              ExplicitLeft = 0
               ExplicitTop = 36
+              ExplicitWidth = 48
             end
             object DBText7: TDBText
-              Left = 0
+              AlignWithMargins = True
+              Left = 3
               Top = 48
-              Width = 48
+              Width = 42
               Height = 16
+              Margins.Top = 0
+              Margins.Bottom = 0
               Align = alTop
               DataField = 'ESTINTORI_STRAORDINARIO'
               DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlue
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              StyleElements = [seClient, seBorder]
+              ExplicitLeft = 0
+              ExplicitWidth = 48
             end
             object DBText10: TDBText
-              Left = 0
+              AlignWithMargins = True
+              Left = 3
               Top = 64
-              Width = 48
+              Width = 42
               Height = 16
+              Margins.Top = 0
+              Margins.Bottom = 0
               Align = alTop
               DataField = 'FUMI'
               DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlue
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              StyleElements = [seClient, seBorder]
+              ExplicitLeft = 0
+              ExplicitWidth = 48
             end
             object DBText11: TDBText
-              Left = 0
+              AlignWithMargins = True
+              Left = 3
               Top = 80
-              Width = 48
-              Height = 20
+              Width = 42
+              Height = 16
+              Margins.Top = 0
+              Margins.Bottom = 0
               Align = alTop
               DataField = 'GRUPPI_ELETTR'
               DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
-              ExplicitWidth = 32
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlue
+              Font.Height = -12
+              Font.Name = 'Segoe UI'
+              Font.Style = [fsBold]
+              ParentFont = False
+              StyleElements = [seClient, seBorder]
+              ExplicitLeft = 0
+              ExplicitWidth = 48
             end
           end
         end
@@ -364,14 +482,14 @@ inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
         Left = 1
         Top = 1
         Width = 77
-        Height = 100
+        Height = 102
         Align = alLeft
         DataField = 'STATO_IMMAGINE'
         DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
         TabOrder = 1
         OnDblClick = DBText1DblClick
         OnMouseDown = btnImageMouseDown
-        ExplicitHeight = 94
+        ExplicitHeight = 100
       end
     end
   end
@@ -429,12 +547,19 @@ inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
   object btnWhatsAppMessages: TAdvBadgeButton
     Left = 510
     Top = 72
-    Width = 155
-    Height = 25
+    Width = 146
+    Height = 50
     Caption = 'Messaggi'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
     ImageIndex = 12
     ImageName = '013-alarm'
-    Images = dmVCLPhoenixPlannerController.SVGIconImageList16
+    ImageMargins.Left = 8
+    Images = dmVCLPhoenixPlannerController.SVGIconImageList48
+    ParentFont = False
     TabOrder = 6
     OnClick = btnWhatsAppMessagesClick
   end
@@ -458,6 +583,14 @@ inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
     Caption = 'Filtra Data'
     TabOrder = 8
   end
+  object SearchBox1: TSearchBox
+    Left = 9
+    Top = 100
+    Width = 495
+    Height = 24
+    TabOrder = 9
+    Text = 'SearchBox1'
+  end
   object dsCustomers: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryCustomers
     Left = 88
@@ -476,8 +609,8 @@ inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
   object Timer1: TTimer
     Enabled = False
     Interval = 200
-    Left = 432
-    Top = 176
+    Left = 480
+    Top = 264
   end
   object PopupItems: TPopupMenu
     Images = dmVCLPhoenixPlannerController.SVGIconImageList16

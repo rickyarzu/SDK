@@ -26,9 +26,6 @@ inherited frmVCLCSCustomerSMSBuilder: TfrmVCLCSCustomerSMSBuilder
       inherited grpURL: TGroupBox
         Width = 1005
         ExplicitWidth = 1005
-        inherited lblMobileCustomerUrl: TLabel
-          Height = 27
-        end
         inherited edtMobileUrl: TEdit
           Width = 408
           ExplicitWidth = 408
@@ -74,8 +71,8 @@ inherited frmVCLCSCustomerSMSBuilder: TfrmVCLCSCustomerSMSBuilder
           ExplicitWidth = 546
         end
         inherited advmSMSTest: TAdvMemo
-          Width = 546
-          ExplicitWidth = 546
+          Width = 315
+          ExplicitWidth = 315
         end
         inherited advmJson: TAdvMemo
           Width = 546
@@ -88,17 +85,19 @@ inherited frmVCLCSCustomerSMSBuilder: TfrmVCLCSCustomerSMSBuilder
           Anchors = [akLeft, akTop, akRight]
           ExplicitWidth = 546
         end
+        inherited memParamsDestination: TMemo
+          Width = 225
+          ExplicitWidth = 225
+        end
       end
       inherited DBGrid1: TDBGrid
         Width = 1011
       end
       inherited memTemplateParams: TMemo
-        Top = 133
-        Width = 240
-        Height = 116
-        ExplicitTop = 133
-        ExplicitWidth = 240
-        ExplicitHeight = 116
+        Left = 759
+        Width = 226
+        ExplicitLeft = 759
+        ExplicitWidth = 226
       end
     end
   end

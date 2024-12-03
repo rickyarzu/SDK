@@ -340,7 +340,7 @@ inherited frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
         Width = 77
         Height = 94
         Align = alLeft
-        DataField = 'calcImage'
+        DataField = 'STATO_IMMAGINE'
         DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
         TabOrder = 1
         OnDblClick = DBText1DblClick

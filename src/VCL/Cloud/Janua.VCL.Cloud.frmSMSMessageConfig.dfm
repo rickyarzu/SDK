@@ -3,6 +3,7 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
   ClientHeight = 795
   ClientWidth = 1212
   Font.Height = -12
+  ExplicitLeft = -48
   ExplicitWidth = 1228
   ExplicitHeight = 834
   TextHeight = 15
@@ -59,21 +60,20 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
         inherited btnTestUrl: TButton
           Left = 640
           Width = 81
-          ExplicitLeft = 630
+          ExplicitLeft = 640
           ExplicitWidth = 81
         end
         inherited edtCustomerMobileUrl1: TEdit
           Left = 392
           Width = 242
           ExplicitLeft = 392
-          ExplicitWidth = 232
+          ExplicitWidth = 242
         end
         inherited edtTestTinyUrl: TEdit
           Left = 727
           Width = 255
-          ExplicitLeft = 730
+          ExplicitLeft = 727
           ExplicitWidth = 255
-          ExplicitHeight = 27
         end
       end
       inherited advmSMSTemplate: TAdvMemo
@@ -109,12 +109,12 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
           ExplicitWidth = 523
         end
         inherited advmSMSTest: TAdvMemo
-          Width = 523
+          Width = 306
           BorderColor = clGray
           Gutter.BorderColor = clGray
           Gutter.GutterColor = clBtnFace
           Gutter.GutterColorTo = clBtnFace
-          ExplicitWidth = 523
+          ExplicitWidth = 306
         end
         inherited advmJson: TAdvMemo
           Width = 523
@@ -132,6 +132,12 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
           EditLabel.ExplicitWidth = 68
           ExplicitWidth = 522
         end
+        inherited memParamsDestination: TMemo
+          Left = 760
+          Width = 201
+          ExplicitLeft = 760
+          ExplicitWidth = 201
+        end
       end
       inherited DBGrid1: TDBGrid
         Top = 714
@@ -141,6 +147,16 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
       inherited btnSendSmsTemplate: TButton
         Width = 145
         ExplicitWidth = 145
+      end
+      inherited memTemplateParams: TMemo
+        Left = 695
+        Top = 133
+        Width = 290
+        Height = 116
+        ExplicitLeft = 695
+        ExplicitTop = 133
+        ExplicitWidth = 290
+        ExplicitHeight = 116
       end
     end
   end

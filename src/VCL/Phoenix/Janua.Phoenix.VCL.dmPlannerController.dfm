@@ -6215,6 +6215,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       end>
   end
   inherited MenuButtonActions: TActionList
+    OnExecute = MenuButtonActionsExecute
     object actGlobalGoogleSync: TAction
       Caption = 'G. Sync'
       ImageIndex = 16
@@ -6244,6 +6245,30 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       ImageIndex = 64
       ImageName = 'deadline'
       OnExecute = actSelectAllExecute
+    end
+    object actNewMeeting: TAction
+      Caption = 'Appuntamento'
+      ImageIndex = 9
+      ImageName = '010-clock'
+      OnExecute = actNewMeetingExecute
+    end
+    object actUndoMeeting: TAction
+      Caption = '  Annulla'
+      ImageIndex = 64
+      ImageName = 'deadline'
+      OnExecute = actUndoMeetingExecute
+    end
+    object actContract: TAction
+      Caption = 'Vedi Contratto'
+      ImageIndex = 18
+      ImageName = '019-document'
+      OnExecute = actContractExecute
+    end
+    object actWhatsAppMsg: TAction
+      Caption = '  WhatsApp'
+      ImageIndex = 66
+      ImageName = 'whatsapp'
+      OnExecute = actWhatsAppMsgExecute
     end
   end
   inherited GCalendarButtons: TActionList

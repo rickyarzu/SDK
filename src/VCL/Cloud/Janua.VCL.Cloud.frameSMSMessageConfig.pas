@@ -95,15 +95,15 @@ uses Spring, Janua.Core.Functions, Clipbrd, Janua.VCL.dlgMobilePreview;
 { TframeVCLSMSMessageConfig }
 
 procedure TframeVCLSMSMessageConfig.btnGenerateSMSClick(Sender: TObject);
-var
-  aMessage: TSMSMessage;
 begin
   FSMSMessageBuilder.LoadSettings;
   FSMSMessageBuilder.DataSet := FTemplateDataset;
-  aMessage := FSMSMessageBuilder.GenerateSMSMessage;
+  var
+  lMessage := FSMSMessageBuilder.GenerateSMSMessage;
 
-  edTestSMSTo.Text := aMessage.MsgTo;
-  advmSMSTest.Text := aMessage.Body;
+  edTestSMSTo.Text := lMessage.MsgTo;
+  advmSMSTest.Text := lMessage.Body;
+  memTemplateParams.Text := lMessage.
 end;
 
 procedure TframeVCLSMSMessageConfig.btnLoadSMSConfigClick(Sender: TObject);
