@@ -16,7 +16,7 @@ uses
   // Janua
   Janua.Phoenix.VCL.dmPlannerController,
   Janua.Core.Types, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Forms.Types, Janua.Bindings.Intf,
-  Janua.Controls.Intf, Janua.Controls.Forms.Intf, uJanuaVCLFrame, Janua.Cloud.Types, Vcl.WinXCtrls;
+  Janua.Controls.Intf, Janua.Controls.Forms.Intf, uJanuaVCLFrame, Janua.Cloud.Types, VCL.WinXCtrls;
 
 type
   TframeVCLPhoenixPlanneReport = class(TJanuaVCLFrameModel, IJanuaFrame, IJanuaContainer, IJanuaBindable)
@@ -97,6 +97,11 @@ type
     procedure TimerEventUpdateTimer(Sender: TObject);
     procedure btnWhatsAppMessagesClick(Sender: TObject);
     procedure WATimerTimer(Sender: TObject);
+    procedure ckbFilterDateClick(Sender: TObject);
+    procedure edDateFilterChange(Sender: TObject);
+    procedure btnWhatsAppClick(Sender: TObject);
+    procedure btnContractClick(Sender: TObject);
+    procedure btnUndoMeetingClick(Sender: TObject);
   private
     // Fields.FieldByName('COLOR')
     ItemColorField: TField;
@@ -166,6 +171,12 @@ begin
   TimerEventUpdate.Enabled := True;
 end;
 
+procedure TframeVCLPhoenixPlanneReport.btnContractClick(Sender: TObject);
+begin
+  inherited;
+  dmVCLPhoenixPlannerController.actContractExecute(Self);
+end;
+
 procedure TframeVCLPhoenixPlanneReport.btnImageMouseDown(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
 begin
@@ -193,6 +204,16 @@ begin
     grdReportList.DataSource.Enabled := True;
     Screen.Cursor := crDefault;
   end;
+end;
+
+procedure TframeVCLPhoenixPlanneReport.btnUndoMeetingClick(Sender: TObject);
+begin
+  dmVCLPhoenixPlannerController.actUndoMeetingExecute(Self);
+end;
+
+procedure TframeVCLPhoenixPlanneReport.btnWhatsAppClick(Sender: TObject);
+begin
+  dmVCLPhoenixPlannerController.actWhatsAppMsgExecute(Self);
 end;
 
 procedure TframeVCLPhoenixPlanneReport.btnWhatsAppMessagesClick(Sender: TObject);
@@ -230,6 +251,12 @@ end;
 
 procedure TframeVCLPhoenixPlanneReport.ChangeFilter(Sender: TObject);
 begin
+  Filter
+end;
+
+procedure TframeVCLPhoenixPlanneReport.ckbFilterDateClick(Sender: TObject);
+begin
+  inherited;
   Filter
 end;
 
@@ -361,6 +388,13 @@ begin
   end;
 end;
 
+procedure TframeVCLPhoenixPlanneReport.edDateFilterChange(Sender: TObject);
+begin
+  inherited;
+  if ckbFilterDate.Checked then
+    Filter
+end;
+
 procedure TframeVCLPhoenixPlanneReport.Filter;
 var
   lFilter: TRecordFilter;
@@ -385,7 +419,11 @@ begin
 
   lFilter.Status := grpStato.ItemIndex;
 
+  lFilter.Date := edDateFilter.Date;
+  lFilter.FilterDate := ckbFilterDate.Checked;
+
   dmVCLPhoenixPlannerController.FilterMeetingDialog(lFilter);
+
 end;
 
 function TframeVCLPhoenixPlanneReport.GetTecnicoID: Integer;

@@ -34,6 +34,8 @@ type
     ClienteID: Integer;
     ClienteCk: Boolean;
     Status: Integer;
+    FilterDate: Boolean;
+    Date: TDateTime;
   end;
 
   TdmVCLPhoenixPlannerController = class(TdmVCLPlannerCustomController) // ()
@@ -1133,7 +1135,6 @@ end;
 
 procedure TdmVCLPhoenixPlannerController.actWhatsAppMsgExecute(Sender: TObject);
 begin
-  inherited;
   SendWhatsAppMessage
 end;
 
@@ -2031,8 +2032,8 @@ end;
 
 procedure TdmVCLPhoenixPlannerController.FilterMeetingDialog(const aFilter: TRecordFilter);
 begin
-  ReportDateFilter := False;
-
+  ReportDateFilter := aFilter.FilterDate;
+  FReportDate := aFilter.Date;
   CustomerFilter := aFilter.ClienteCk;
   TechFilter := aFilter.TecnicoCk;
   CAPFilter := aFilter.CAPCk;
@@ -2670,7 +2671,6 @@ const
   blue = 3;
   white = 4;
 begin
-  inherited;
   if (qryReportPlannerSTATO.AsInteger = 0) and not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
   begin
     qryReportPlannerSTATO.AsInteger := 1;

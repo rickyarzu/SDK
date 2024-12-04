@@ -3,7 +3,7 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
   ClientHeight = 795
   ClientWidth = 1212
   Font.Height = -12
-  ExplicitLeft = -48
+  ExplicitLeft = -31
   ExplicitWidth = 1228
   ExplicitHeight = 834
   TextHeight = 15
@@ -81,6 +81,7 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
         BorderColor = clGray
         Gutter.BorderColor = clGray
         Gutter.GutterColor = clBtnFace
+        WordWrap = wwClientWidth
         ExplicitWidth = 685
       end
       inherited edPhoneCustomerTo: TEdit

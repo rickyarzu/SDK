@@ -58,14 +58,73 @@ inherited frmVCLCSCustomerNRSMSBuilder: TfrmVCLCSCustomerNRSMSBuilder
         Width = 266
         ExplicitWidth = 266
       end
+      inherited pnlSmsTestConfig: TPanel
+        inherited AdvPageControl1: TAdvPageControl
+          AlignWithMargins = True
+          Left = 431
+          Width = 546
+          Height = 445
+          Align = alClient
+          DoubleBuffered = True
+          ExplicitLeft = 431
+          ExplicitWidth = 546
+          ExplicitHeight = 449
+          inherited tabPreview: TAdvTabSheet
+            inherited lbEdtTemplateSID: TLabeledEdit
+              Left = 3
+              Width = 532
+              Anchors = [akLeft, akTop, akRight]
+              EditLabel.ExplicitLeft = 3
+              EditLabel.ExplicitTop = 4
+              EditLabel.ExplicitWidth = 68
+              ExplicitLeft = 3
+              ExplicitWidth = 532
+            end
+            inherited edTestSMSTo: TEdit
+              Left = 3
+              Width = 532
+              ExplicitLeft = 3
+              ExplicitWidth = 532
+            end
+            inherited advmSMSTest: TAdvMemo
+              Left = 3
+              Width = 282
+              ExplicitLeft = 3
+              ExplicitWidth = 282
+            end
+            inherited memParamsDestination: TMemo
+              Left = 288
+              Width = 249
+              ExplicitLeft = 288
+              ExplicitWidth = 249
+            end
+            inherited advmTemplateJson: TAdvMemo
+              Left = 3
+              Width = 532
+              Height = 236
+              Align = alBottom
+              ExplicitLeft = 3
+              ExplicitTop = 7
+              ExplicitWidth = 532
+              ExplicitHeight = 236
+            end
+          end
+          inherited tabJsonMessage: TAdvTabSheet
+            inherited memJsonMessage: TAdvMemo
+              Width = 524
+              Height = 413
+            end
+          end
+        end
+      end
       inherited DBGrid1: TDBGrid
         Width = 1015
       end
       inherited memTemplateParams: TMemo
         Left = 735
-        Width = 226
+        Width = 250
         ExplicitLeft = 735
-        ExplicitWidth = 226
+        ExplicitWidth = 250
       end
     end
   end

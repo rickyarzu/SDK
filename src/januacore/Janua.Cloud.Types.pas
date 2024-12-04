@@ -243,6 +243,7 @@ type
     function GetAsJson: String;
     procedure SetAsJson(const aJson: string);
     function GetGenerateCustomSMS: string;
+    function GetGenerateCustomParams: string;
   end;
 
   TSMSMessage = record
@@ -417,6 +418,8 @@ type
     ErrorCode: string; // 63013
     procedure SetFromString(const aString: string);
     procedure SetFromStrings(const aList: TStringList);
+    function GetAsJson: string;
+    procedure SetAsJson(const aJson: string);
   end;
 
   TTwilioWebHook = record
@@ -437,6 +440,8 @@ type
     ApiVersion: string; // 2010-04-01
     procedure SetFromString(const aString: string);
     procedure SetFromStrings(const aList: TStringList);
+    function GetAsJson: string;
+    procedure SetAsJson(const aJson: string);
   end;
 
   TJanuaCloudMailSendErrorEvent = procedure(Sender: TObject; AErrorMessage: String;
@@ -789,7 +794,7 @@ end;
 
 procedure TSMSMessage.ClearContentVariables;
 begin
- SetLength(ContentVariables, 0;
+  SetLength(ContentVariables, 0);
 end;
 
 function TSMSMessage.ContentVariablesAsString: string;
@@ -858,6 +863,11 @@ end;
 function TJanuaSMSMessageConf.GetAsJson: String;
 begin
   Result := TJanuaJson.SerializeSimple<TJanuaSMSMessageConf>(Self);
+end;
+
+function TJanuaSMSMessageConf.GetGenerateCustomParams: string;
+begin
+  Result := CustomFields.ApplyParams(TemplateParams);
 end;
 
 function TJanuaSMSMessageConf.GetGenerateCustomSMS: string;
@@ -1257,6 +1267,17 @@ end;
 
 { TTWilioStatus }
 
+function TTWilioStatus.GetAsJson: string;
+begin
+  Result := TJanuaJson.SerializeSimple<TTWilioStatus>(Self);
+end;
+
+procedure TTWilioStatus.SetAsJson(const aJson: string);
+begin
+  if not((aJson = '') or (aJson = '{}')) then
+    Self := TJanuaJson.DeserializeSimple<TTWilioStatus>(aJson);
+end;
+
 procedure TTWilioStatus.SetFromString(const aString: string);
 begin
   var
@@ -1288,6 +1309,17 @@ begin
 end;
 
 { TTwilioWebHook }
+
+function TTwilioWebHook.GetAsJson: string;
+begin
+  Result := TJanuaJson.SerializeSimple<TTwilioWebHook>(Self);
+end;
+
+procedure TTwilioWebHook.SetAsJson(const aJson: string);
+begin
+  if not((aJson = '') or (aJson = '{}')) then
+    Self := TJanuaJson.DeserializeSimple<TTwilioWebHook>(aJson);
+end;
 
 procedure TTwilioWebHook.SetFromString(const aString: string);
 begin

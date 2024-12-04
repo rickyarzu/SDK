@@ -305,6 +305,8 @@ begin
   // frameVCLPhoenixPlannerCalendari.DBPlanner1.Refresh;
   Timer1.Enabled := True; // not JanuaVCLWebView1.Active;
   frameVCLPhoenixPlannerEvent.WATimer.Enabled := True;
+  self.frameVCLPhoenixPlanneReport.WATimer.Enabled := True;
+  self.frameVCLPhoenixPlanneReport.UpdateMessagesBadge;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject;

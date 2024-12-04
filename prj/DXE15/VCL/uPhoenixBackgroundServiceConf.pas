@@ -37,10 +37,9 @@ end;
 
 class procedure TPhoenixBackgroundServiceApp.ConnectionSetup;
 begin
-  TJanuaApplication.ServerAddress := { 'localhost' } 'pg.januaservers.com';
-  // 'testdb.januaservers.com';
+  TJanuaApplication.ServerAddress := 'pg.januaservers.com';
   TJanuaApplication.ServerPort := 5432;
-  TJanuaApplication.ServerDatabaseName := { 'ergoedb' } 'ergomercator';
+  TJanuaApplication.ServerDatabaseName := 'ergomercator';
   TJanuaApplication.DBSchemaID := 33;
   inherited;
 end;

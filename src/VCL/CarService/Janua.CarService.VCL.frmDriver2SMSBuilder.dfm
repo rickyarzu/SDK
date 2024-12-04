@@ -1,4 +1,5 @@
 inherited frmVCLCSDriver2SMSBuilder: TfrmVCLCSDriver2SMSBuilder
+  Align = alTop
   Caption = 'Customer SMS Builder'
   OnDestroy = FormDestroy
   TextHeight = 15
@@ -9,25 +10,15 @@ inherited frmVCLCSDriver2SMSBuilder: TfrmVCLCSDriver2SMSBuilder
         ExplicitLeft = 721
       end
       inherited grpURL: TGroupBox
-        inherited lblMobileCustomerUrl: TLabel
-          Height = 27
-        end
         inherited edtMobileUrl: TEdit
           Width = 371
           ExplicitWidth = 371
-        end
-        inherited btnTestUrl: TButton
-          ExplicitLeft = 640
         end
         inherited edtCustomerMobileUrl1: TEdit
           Left = 449
           Width = 185
           ExplicitLeft = 449
           ExplicitWidth = 185
-        end
-        inherited edtTestTinyUrl: TEdit
-          ExplicitLeft = 727
-          ExplicitHeight = 23
         end
       end
       inherited advmSMSTemplate: TAdvMemo
@@ -41,19 +32,48 @@ inherited frmVCLCSDriver2SMSBuilder: TfrmVCLCSDriver2SMSBuilder
         ExplicitWidth = 74
       end
       inherited pnlSmsTestConfig: TPanel
-        inherited lbEdtTemplateSID: TLabeledEdit
-          Anchors = [akLeft, akTop, akRight]
+        inherited AdvPageControl1: TAdvPageControl
+          Left = 428
+          Top = 1
+          Width = 552
+          Height = 451
+          Align = alClient
+          DoubleBuffered = True
+          inherited tabPreview: TAdvTabSheet
+            inherited edTestSMSTo: TEdit [0]
+              Width = 538
+              ExplicitLeft = 3
+              ExplicitWidth = 538
+            end
+            inherited advmTemplateJson: TAdvMemo [1]
+              Width = 538
+              Height = 206
+            end
+            inherited lbEdtTemplateSID: TLabeledEdit [2]
+              Width = 538
+              ExplicitLeft = 3
+              ExplicitWidth = 538
+            end
+            inherited grpMessage: TAdvGroupBox
+              Width = 544
+              inherited advmSMSTest: TAdvMemo
+                Width = 270
+              end
+              inherited memParamsDestination: TMemo
+                Left = 288
+                ExplicitLeft = 288
+                ExplicitTop = 21
+                ExplicitHeight = 103
+              end
+            end
+          end
         end
       end
       inherited memTemplateParams: TMemo
         Left = 721
-        Top = 133
         Width = 264
-        Height = 116
         ExplicitLeft = 721
-        ExplicitTop = 133
         ExplicitWidth = 264
-        ExplicitHeight = 116
       end
     end
   end

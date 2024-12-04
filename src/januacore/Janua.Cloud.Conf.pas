@@ -377,10 +377,11 @@ function TSMSMessageConf.GenerateSMSMessage(const aDataset: TDataset; aProc: TMe
 begin
   Result.Url := GenerateUrl(aDataset);
   Result.TinyUrl := GenerateTinyUrl(Result.Url);
-  Result.Body := (TDatasetStringWriter.ElaborateRecord(aDataset, FSMSMessageConf.GetGenerateCustomSMS));
+  Result.Body := TDatasetStringWriter.ElaborateRecord(aDataset, FSMSMessageConf.GetGenerateCustomSMS);
   Result.Title := TDatasetStringWriter.ElaborateRecord(aDataset, FSMSMessageConf.Title);
   Result.msgTo := TDatasetStringWriter.ElaborateRecord(aDataset, FSMSMessageConf.msgTo);
   Result.msgTo := StringReplace(Result.msgTo, ' ', '', [rfReplaceAll]);
+  Result.SMSSendingEngine := SMSSendingEngine;
 
   { /// <summary> used on some platforms like twilio refers to a parametrized body remotely store </summary>
     TemplateID: string;
@@ -393,7 +394,7 @@ begin
     var
     lList := TStringList.Create;
     try
-      lList.Text := FSMSMessageConf.TemplateParams;
+      lList.Text := TDatasetStringWriter.ElaborateRecord(aDataset, FSMSMessageConf.GetGenerateCustomParams);
       for var aString in lList do
         Result.AddContentVariable(aString);
     finally

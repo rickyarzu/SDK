@@ -14,7 +14,7 @@ uses
   Janua.Cloud.Types, Janua.Cloud.Intf, Janua.Cloud.Sms.Intf, Janua.Orm.Intf, Janua.Core.System.Types,
   // Januaproject  Classes
   Janua.VCL.Interposers, Janua.TMS.Interposers, Janua.Cloud.Conf, Janua.Core.Classes, Janua.Cloud.Impl,
-  VCL.Mask;
+  VCL.Mask, AdvPageControl, AdvGroupBox;
 
 type
   TframeVCLSMSMessageConfig = class(TFrame, IJanuaSMSBuilderForm)
@@ -49,13 +49,18 @@ type
     dbgrdParams: TDBGrid;
     DBGrid1: TDBGrid;
     dsMaster: TDataSource;
-    edTestSMSTo: TEdit;
-    advmSMSTest: TAdvMemo;
-    advmjson: TAdvMemo;
-    lbEdtTemplateSID: TLabeledEdit;
     btnSendSmsTemplate: TButton;
     memTemplateParams: TMemo;
     lbContentVariables: TLabel;
+    AdvPageControl1: TAdvPageControl;
+    tabPreview: TAdvTabSheet;
+    lbEdtTemplateSID: TLabeledEdit;
+    edTestSMSTo: TEdit;
+    advmTemplateJson: TAdvMemo;
+    tabJsonMessage: TAdvTabSheet;
+    memJsonMessage: TAdvMemo;
+    grpMessage: TAdvGroupBox;
+    advmSMSTest: TAdvMemo;
     memParamsDestination: TMemo;
     procedure btnLoadSMSConfigClick(Sender: TObject);
     procedure btnSaveConfigClick(Sender: TObject);
@@ -97,13 +102,16 @@ uses Spring, Janua.Core.Functions, Clipbrd, Janua.VCL.dlgMobilePreview;
 procedure TframeVCLSMSMessageConfig.btnGenerateSMSClick(Sender: TObject);
 begin
   FSMSMessageBuilder.LoadSettings;
+  advmTemplatejson.Text := FSMSMessageBuilder.SMSMessageConf.AsJson;
+
   FSMSMessageBuilder.DataSet := FTemplateDataset;
   var
   lMessage := FSMSMessageBuilder.GenerateSMSMessage;
 
   edTestSMSTo.Text := lMessage.MsgTo;
   advmSMSTest.Text := lMessage.Body;
-  memTemplateParams.Text := lMessage.
+  memParamsDestination.Text := lMessage.ContentVariablesAsString;
+  memJsonMessage.Lines.Text := lMessage.GetAsJson;
 end;
 
 procedure TframeVCLSMSMessageConfig.btnLoadSMSConfigClick(Sender: TObject);
@@ -128,7 +136,7 @@ begin
   { FSMSConf.Bind('TemplateMessageID', lbEdtTemplateSID, 'Text'); }
   FSMSConf.TemplateParams := memTemplateParams.Text;
 
-  advmjson.Text := FSMSConf.AsJson;
+  advmTemplatejson.Text := FSMSConf.AsJson;
   FSMSConf.SaveConfig;
   UpdatedFrame;
 
@@ -303,7 +311,7 @@ begin
   lbEdtTemplateSID.Text := FSMSConf.TemplateMessageID;
   memTemplateParams.Text := FSMSConf.TemplateParams;
 
-  advmjson.Text := FSMSConf.AsJson;
+  advmTemplatejson.Text := FSMSConf.AsJson;
   fdmParams.EmptyDataSet;
   if FSMSConf.SMSMessageConf.CustomFields.HasCustomFields then
     FSMSConf.SMSMessageConf.CustomFields.SaveToDataset(fdmParams);
