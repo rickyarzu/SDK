@@ -78,6 +78,8 @@ type
     FSenderConf: TSMSSenderConf;
     FSMSMessage: string;
     FContentVariables: TStrings;
+    FContentSID: String;
+    FMessageRecord: TSMSMessage;
     function GetLogProc: TMessageLogProc;
   protected
     FConfName: string;
@@ -102,6 +104,8 @@ type
     function GetContentVariables: TStrings;
     procedure SetContentSid(const Value: string);
     procedure SetContentVariables(const Value: TStrings);
+    function GetMessageRecord: TSMSMessage;
+    procedure SetMessageRecord(const Value: TSMSMessage);
   public
     property SMSMessage: string read GetSMSMessage write SetSMSMessage;
     property Recipients: TStrings read GetRecipients write SetRecipients;
@@ -126,6 +130,7 @@ type
       aFinishProc: TProc); overload;
     property LogProc: TMessageLogProc read GetLogProc write SetLogProc;
     property MessageType: TJanuaMessageType read GetMessageType write SetMessageType;
+    property MessageRecord: TSMSMessage read GetMessageRecord write SetMessageRecord;
   end;
 
 implementation
@@ -190,7 +195,7 @@ end;
 
 function TCustomSMSSender.GetContentSid: string;
 begin
-  Result := FSenderConf.DefaultMessageID
+  Result := IfThen(FContentSID = '', FMessageRecord.ContentSid, FContentSID);
 end;
 
 function TCustomSMSSender.GetContentVariables: TStrings;
@@ -206,6 +211,11 @@ end;
 function TCustomSMSSender.GetLogProc: TMessageLogProc;
 begin
   Result := FLogProc;
+end;
+
+function TCustomSMSSender.GetMessageRecord: TSMSMessage;
+begin
+  Result := FMessageRecord
 end;
 
 function TCustomSMSSender.GetMessageType: TJanuaMessageType;
@@ -242,23 +252,22 @@ procedure TCustomSMSSender.SendSMS(aMesage: TSMSMessage; aUpdateProc: TUpdatePro
   aFinishProc: TProc);
 begin
   FSMSMessage := aMesage.Text;
+  FMessageRecord := aMesage;
   FContentVariables.Clear;
   if Length(aMesage.ContentVariables) > 0 then
     for var I := 0 to Length(aMesage.ContentVariables) - 1 do
-       FContentVariables.Add(aMesage.ContentVariables[I]);
-
+      FContentVariables.Add(aMesage.ContentVariables[I]);
+  FContentSID := aMesage.ContentSid;
   AddRecipient(aMesage.MsgTo);
   SendSMS(aUpdateProc, aErrorProc, aFinishProc);
 end;
 
 procedure TCustomSMSSender.SendSMS(aBuilder: IJanuaSMSBuilder; aUpdateProc: TUpdateProc;
   aErrorProc: TExceptionProc; aFinishProc: TProc);
-var
-  aMesage: TSMSMessage;
 begin
   aBuilder.LoadSettings;
-  aMesage := aBuilder.GenerateSMSMessage;
-  SendSMS(aMesage, aUpdateProc, aErrorProc, aFinishProc);
+  FMessageRecord := aBuilder.GenerateSMSMessage;
+  SendSMS(FMessageRecord, aUpdateProc, aErrorProc, aFinishProc);
 end;
 
 procedure TCustomSMSSender.SetAppName(const Value: string);
@@ -274,12 +283,12 @@ end;
 
 procedure TCustomSMSSender.SetContentSid(const Value: string);
 begin
-
+  FContentSID := Value
 end;
 
 procedure TCustomSMSSender.SetContentVariables(const Value: TStrings);
 begin
-
+  FContentVariables.Assign(Value);
 end;
 
 procedure TCustomSMSSender.SetKey(const Value: string);
@@ -291,6 +300,11 @@ procedure TCustomSMSSender.SetLogProc(const Value: TMessageLogProc);
 begin
   inherited;
   FSenderConf.LogProc := FLogProc;
+end;
+
+procedure TCustomSMSSender.SetMessageRecord(const Value: TSMSMessage);
+begin
+  FMessageRecord := Value;
 end;
 
 procedure TCustomSMSSender.SetMessageType(const Value: TJanuaMessageType);
@@ -458,6 +472,8 @@ begin
     FLogProc('SendSMS', '{"sending" : "' + FSMSMessage.MsgTo + ' "}', self);
   FSMSSender.LogProc := FLogProc;
   FSMSSender.LoadSystemConf;
+  if FMessageConf.TemplateMessageID <> '' then
+    FSMSSender.ContentSid := self.FMessageConf.TemplateMessageID;
   FSMSSender.SendSMS(FSMSMessage, aUpdateProc, aErrorProc, aFinishProc);
   if Assigned(FAfterMessageSent) then
     FAfterMessageSent(FSMSMessage.Text, FSMSMessage.GetAsJson);
