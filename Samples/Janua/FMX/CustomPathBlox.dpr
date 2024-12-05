@@ -1,9 +1,9 @@
-program CustomSVGBlox;
+program CustomPathBlox;
 
 uses
   System.StartUpCopy,
   FMX.Forms,
-  UCustomSVGBlox in 'UCustomSVGBlox.pas' {Form1};
+  UCustomPathBlox in 'C:\Januaproject\Components\TMS FNC Blox\Demos\FMX\Draw Custom Block\UCustomPathBlox.pas' {Form1};
 
 {$R *.res}
 
