@@ -83,6 +83,10 @@ end;
 procedure TfrmVCLJanuaTestTwilioLog.btnSyncClick(Sender: TObject);
 begin
   dmPgTWilioSync.SyncDBTwilio;
+  dmPgTWilioSync.qryMessageStatus.Close;
+  dmPgTWilioSync.qryMessageStatus.Open;
+  dmPgTWilioSync.qryWebHook.Close;
+  dmPgTWilioSync.qryWebHook.Open;
 end;
 
 procedure TfrmVCLJanuaTestTwilioLog.btnSyncMessagesClick(Sender: TObject);

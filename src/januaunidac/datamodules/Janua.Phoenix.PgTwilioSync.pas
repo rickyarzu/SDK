@@ -114,6 +114,7 @@ begin
   qryPhoenixLogClone.Connection := FbPhoenixConnection;
   spInsertMessage.Connection := FbPhoenixConnection;
   qryMessageList.Connection := FbPhoenixConnection;
+  qryMessageStatus.Connection := FbPhoenixConnection;
 end;
 
 function TdmPgTWilioSync.GetLastSync: Integer;
@@ -167,7 +168,6 @@ var
 begin
   lStatus.SetFromString(qryMessageStatusBODY_RECEIVED.AsString);
   qryMessageStatusmemTwilioJson.AsString := lStatus.GetAsJson;
-
 end;
 
 procedure TdmPgTWilioSync.qryPhoenixLogCloneCalcFields(DataSet: TDataSet);

@@ -19,7 +19,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
     Height = 57
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 624
     DesignSize = (
       1346
       57)
@@ -42,7 +41,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       DataField = 'MAX_ID'
       DataSource = dsMax
       TabOrder = 1
-      ExplicitLeft = 490
     end
     object btnOpenDatasets: TButton
       Left = 137
@@ -53,7 +51,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       Caption = 'Open Data'
       TabOrder = 2
       OnClick = btnOpenDatasetsClick
-      ExplicitLeft = 279
     end
     object btnSync: TButton
       Left = 273
@@ -64,8 +61,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       Caption = 'Sync'
       TabOrder = 3
       OnClick = btnSyncClick
-      ExplicitLeft = 409
-      ExplicitTop = 17
     end
     object btnWebNook: TButton
       Left = 409
@@ -76,7 +71,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       Caption = 'WebNook'
       TabOrder = 4
       OnClick = btnWebNookClick
-      ExplicitLeft = 513
     end
     object btnSyncMessages: TButton
       Left = 545
@@ -87,8 +81,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       Caption = 'Sync Status'
       TabOrder = 5
       OnClick = btnSyncMessagesClick
-      ExplicitLeft = 649
-      ExplicitTop = 17
     end
   end
   object Panel1: TPanel
@@ -99,7 +91,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
     Align = alLeft
     Caption = 'Panel1'
     TabOrder = 1
-    ExplicitHeight = 544
     object DBNavigator1: TDBNavigator
       Left = 1
       Top = 1
@@ -107,7 +98,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       Height = 40
       Align = alTop
       TabOrder = 0
-      ExplicitWidth = 575
     end
     object DBMemo1: TDBMemo
       Left = 1
@@ -118,7 +108,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       DataField = 'body_received'
       DataSource = dsTwilioLog
       TabOrder = 1
-      ExplicitTop = 600
     end
     object CRDBGrid1: TCRDBGrid
       Left = 1
@@ -206,6 +195,7 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       AutoCompletion.StartToken = '(.'
       AutoCorrect.Active = True
       AutoHintParameterPosition = hpBelowCode
+      BkColor = clWindow
       BookmarkGlyph.Data = {
         36050000424D3605000000000000360400002800000010000000100000000100
         0800000000000001000000000000000000000001000000000000000000000000
@@ -249,7 +239,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
         BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
         BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
         25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-      BorderColor = 10724259
       BorderStyle = bsSingle
       ClipboardFormats = [cfText]
       CodeFolding.Enabled = False
@@ -262,9 +251,8 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       Gutter.Font.Height = -13
       Gutter.Font.Name = 'Courier New'
       Gutter.Font.Style = []
-      Gutter.BorderColor = 10724259
-      Gutter.GutterColor = clWhite
-      Gutter.LineNumberTextColor = 3881787
+      Gutter.GutterColorTo = clBtnFace
+      Gutter.LineNumberTextColor = clWindowText
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13
@@ -286,8 +274,8 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       ReadOnly = False
       RightMarginColor = 14869218
       ScrollHint = False
-      SelColor = clWhite
-      SelBkColor = clNavy
+      SelColor = clHighlightText
+      SelBkColor = clHighlight
       ShowRightMargin = True
       SmartTabs = False
       SyntaxStyles = AdvJSONMemoStyler1
@@ -310,7 +298,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       WordWrap = wwNone
       DataField = 'memTwilioJson'
       DataSource = dsTwilioClone
-      ExplicitTop = 344
     end
     object grdTwilioClone: TCRDBGrid
       Left = 1
@@ -366,8 +353,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
     Align = alLeft
     Caption = 'Panel1'
     TabOrder = 2
-    ExplicitLeft = 8
-    ExplicitHeight = 544
     object DBNavigator2: TDBNavigator
       Left = 1
       Top = 1
@@ -386,8 +371,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       DataField = 'body_received'
       DataSource = dsWebHook
       TabOrder = 1
-      ExplicitLeft = 2
-      ExplicitTop = 719
     end
     object DBAdvMemo1: TDBAdvMemo
       Left = 1
@@ -406,6 +389,7 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       AutoCompletion.StartToken = '(.'
       AutoCorrect.Active = True
       AutoHintParameterPosition = hpBelowCode
+      BkColor = clWindow
       BookmarkGlyph.Data = {
         36050000424D3605000000000000360400002800000010000000100000000100
         0800000000000001000000000000000000000001000000000000000000000000
@@ -449,7 +433,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
         BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
         BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
         25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-      BorderColor = 10724259
       BorderStyle = bsSingle
       ClipboardFormats = [cfText]
       CodeFolding.Enabled = False
@@ -462,9 +445,8 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       Gutter.Font.Height = -13
       Gutter.Font.Name = 'Courier New'
       Gutter.Font.Style = []
-      Gutter.BorderColor = 10724259
-      Gutter.GutterColor = clWhite
-      Gutter.LineNumberTextColor = 3881787
+      Gutter.GutterColorTo = clBtnFace
+      Gutter.LineNumberTextColor = clWindowText
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13
@@ -486,8 +468,8 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       ReadOnly = False
       RightMarginColor = 14869218
       ScrollHint = False
-      SelColor = clWhite
-      SelBkColor = clNavy
+      SelColor = clHighlightText
+      SelBkColor = clHighlight
       ShowRightMargin = True
       SmartTabs = False
       SyntaxStyles = AdvJSONMemoStyler1
@@ -510,8 +492,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       WordWrap = wwNone
       DataField = 'memTwilioJson'
       DataSource = dsWebHook
-      ExplicitLeft = 2
-      ExplicitTop = 470
     end
     object CRDBGrid3: TCRDBGrid
       Left = 1
@@ -567,8 +547,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
     Align = alLeft
     Caption = 'Panel1'
     TabOrder = 3
-    ExplicitLeft = 353
-    ExplicitHeight = 544
     object DBHTMLabel1: TDBHTMLabel
       Left = 1
       Top = 640
@@ -600,7 +578,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       DataField = 'WAMESSAGE'
       DataSource = dsWhatsAppMessage
       TabOrder = 1
-      ExplicitTop = 304
     end
     object CRDBGrid2: TCRDBGrid
       Left = 1
@@ -637,7 +614,7 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
         item
           Expanded = False
           FieldName = 'WA_STATE'
-          Width = 60
+          Width = 64
           Visible = True
         end
         item
@@ -674,7 +651,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
     Align = alLeft
     Caption = 'Panel1'
     TabOrder = 4
-    ExplicitLeft = 353
     object DBNavigator4: TDBNavigator
       Left = 1
       Top = 1
@@ -711,6 +687,7 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       AutoCompletion.StartToken = '(.'
       AutoCorrect.Active = True
       AutoHintParameterPosition = hpBelowCode
+      BkColor = clWindow
       BookmarkGlyph.Data = {
         36050000424D3605000000000000360400002800000010000000100000000100
         0800000000000001000000000000000000000001000000000000000000000000
@@ -754,7 +731,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
         BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
         BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
         25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-      BorderColor = 10724259
       BorderStyle = bsSingle
       ClipboardFormats = [cfText]
       CodeFolding.Enabled = False
@@ -767,9 +743,8 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       Gutter.Font.Height = -13
       Gutter.Font.Name = 'Courier New'
       Gutter.Font.Style = []
-      Gutter.BorderColor = 10724259
-      Gutter.GutterColor = clWhite
-      Gutter.LineNumberTextColor = 3881787
+      Gutter.GutterColorTo = clBtnFace
+      Gutter.LineNumberTextColor = clWindowText
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -13
@@ -791,8 +766,8 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       ReadOnly = False
       RightMarginColor = 14869218
       ScrollHint = False
-      SelColor = clWhite
-      SelBkColor = clNavy
+      SelColor = clHighlightText
+      SelBkColor = clHighlight
       ShowRightMargin = True
       SmartTabs = False
       SyntaxStyles = AdvJSONMemoStyler1
@@ -815,8 +790,6 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       WordWrap = wwNone
       DataField = 'memTwilioJson'
       DataSource = dsTwilioStatus
-      ExplicitLeft = 2
-      ExplicitTop = 470
     end
     object CRDBGrid4: TCRDBGrid
       Left = 1
