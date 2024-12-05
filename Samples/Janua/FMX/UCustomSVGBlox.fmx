@@ -11,7 +11,7 @@ object Form1: TForm1
   DesignerMasterStyle = 0
   object TMSFNCBloxControl1: TTMSFNCBloxControl
     Anchors = [akLeft, akTop, akRight, akBottom]
-    Color = claCoral
+    Color = xFFDCE9F6
     Position.X = 8.000000000000000000
     Position.Y = 8.000000000000000000
     Size.Width = 689.000000000000000000
@@ -19,8 +19,8 @@ object Form1: TForm1
     Size.PlatformDefault = False
     TabOrder = 0
     Fill.Kind = gfkTexture
-    Fill.Color = claCoral
-    Fill.ColorTo = claCoral
+    Fill.Color = xFFDCE9F6
+    Fill.ColorTo = xFF67A2EA
     Fill.Texture.PNG = {
       89504E470D0A1A0A0000000D4948445200000280000001AB0806000000504E26
       4B0000000473424954080808087C0864880000200049444154789CECBD5B8F24

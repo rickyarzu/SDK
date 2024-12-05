@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{2D1DACC2-0E17-4974-9411-6DB77DD1EEFC}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="CustomSVGBlox.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\Januaproject\Components\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CustomSVGBlox">
+        <MSBuild Projects="CustomSVGBlox.dproj"/>
+    </Target>
+    <Target Name="CustomSVGBlox:Clean">
+        <MSBuild Projects="CustomSVGBlox.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CustomSVGBlox:Make">
+        <MSBuild Projects="CustomSVGBlox.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CustomPathBlox">
+        <MSBuild Projects="C:\Januaproject\Components\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj"/>
+    </Target>
+    <Target Name="CustomPathBlox:Clean">
+        <MSBuild Projects="C:\Januaproject\Components\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CustomPathBlox:Make">
+        <MSBuild Projects="C:\Januaproject\Components\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CustomSVGBlox;CustomPathBlox"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CustomSVGBlox:Clean;CustomPathBlox:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CustomSVGBlox:Make;CustomPathBlox:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
