@@ -115,6 +115,7 @@ begin
   spInsertMessage.Connection := FbPhoenixConnection;
   qryMessageList.Connection := FbPhoenixConnection;
   qryMessageStatus.Connection := FbPhoenixConnection;
+  qryWebHook.Connection := FbPhoenixConnection;
 end;
 
 function TdmPgTWilioSync.GetLastSync: Integer;

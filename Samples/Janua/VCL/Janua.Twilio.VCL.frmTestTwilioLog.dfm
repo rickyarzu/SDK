@@ -542,15 +542,16 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
   object Panel3: TPanel
     Left = 1035
     Top = 57
-    Width = 345
+    Width = 311
     Height = 904
-    Align = alLeft
+    Align = alClient
     Caption = 'Panel1'
     TabOrder = 3
+    ExplicitWidth = 345
     object DBHTMLabel1: TDBHTMLabel
       Left = 1
       Top = 640
-      Width = 343
+      Width = 309
       Height = 24
       Align = alBottom
       HTMLText.Strings = (
@@ -560,29 +561,32 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
       Version = '1.4.1.0'
       Datasource = dsWhatsAppMessage
       SelectFontColor = clBlack
+      ExplicitWidth = 343
     end
     object DBNavigator3: TDBNavigator
       Left = 1
       Top = 1
-      Width = 343
+      Width = 309
       Height = 40
       Align = alTop
       TabOrder = 0
+      ExplicitWidth = 343
     end
     object DBMemo3: TDBMemo
       Left = 1
       Top = 664
-      Width = 343
+      Width = 309
       Height = 239
       Align = alBottom
       DataField = 'WAMESSAGE'
       DataSource = dsWhatsAppMessage
       TabOrder = 1
+      ExplicitWidth = 343
     end
     object CRDBGrid2: TCRDBGrid
       Left = 1
       Top = 41
-      Width = 343
+      Width = 309
       Height = 599
       Align = alClient
       DataSource = dsWhatsAppMessage
@@ -602,7 +606,7 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
         item
           Expanded = False
           FieldName = 'WANUMBER'
-          Width = 100
+          Width = 80
           Visible = True
         end
         item
@@ -613,32 +617,49 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
         end
         item
           Expanded = False
-          FieldName = 'WA_STATE'
-          Width = 64
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'STATE'
-          Width = 60
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'WAREAD'
-          Width = 60
+          FieldName = 'REPORT_ID'
+          Title.Caption = 'Rep. ID.'
+          Width = 50
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'IN_OUT'
-          Width = 60
+          Title.Caption = 'I/O'
+          Width = 30
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'WA_STATE'
+          Title.Caption = 'W.St.'
+          Width = 40
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'STATE'
+          Title.Caption = ' St.'
+          Width = 40
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'WAREAD'
+          Title.Caption = 'Read'
+          Width = 40
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'READ_DATE'
           Width = 60
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'WA_ID'
+          Width = 120
           Visible = True
         end>
     end
@@ -951,7 +972,7 @@ object frmVCLJanuaTestTwilioLog: TfrmVCLJanuaTestTwilioLog
     Top = 200
   end
   object dsTwilioStatus: TDataSource
-    DataSet = dmPgTWilioSync.qryWebHook
+    DataSet = dmPgTWilioSync.qryMessageStatus
     Left = 824
     Top = 256
   end

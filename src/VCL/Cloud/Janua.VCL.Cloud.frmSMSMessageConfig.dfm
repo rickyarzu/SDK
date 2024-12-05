@@ -3,7 +3,6 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
   ClientHeight = 795
   ClientWidth = 1212
   Font.Height = -12
-  ExplicitLeft = -31
   ExplicitWidth = 1228
   ExplicitHeight = 834
   TextHeight = 15
@@ -84,6 +83,9 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
         WordWrap = wwClientWidth
         ExplicitWidth = 685
       end
+      inherited btnSendMailTo: TButton
+        OnClick = frameVCLSMSMessageConfigbtnSendMailToClick
+      end
       inherited edPhoneCustomerTo: TEdit
         Left = 912
         Width = 71
@@ -105,39 +107,68 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
           Width = 421
           Height = 445
         end
-        inherited edTestSMSTo: TEdit
-          Width = 523
-          ExplicitWidth = 523
-        end
-        inherited advmSMSTest: TAdvMemo
-          Width = 306
-          BorderColor = clGray
-          Gutter.BorderColor = clGray
-          Gutter.GutterColor = clBtnFace
-          Gutter.GutterColorTo = clBtnFace
-          ExplicitWidth = 306
-        end
-        inherited advmJson: TAdvMemo
-          Width = 523
-          Height = 258
-          BorderColor = clGray
-          Gutter.BorderColor = clGray
-          Gutter.GutterColor = clBtnFace
-          ExplicitWidth = 523
-          ExplicitHeight = 258
-        end
-        inherited lbEdtTemplateSID: TLabeledEdit
-          Width = 522
-          EditLabel.ExplicitLeft = 439
-          EditLabel.ExplicitTop = 4
-          EditLabel.ExplicitWidth = 68
-          ExplicitWidth = 522
-        end
-        inherited memParamsDestination: TMemo
-          Left = 760
-          Width = 201
-          ExplicitLeft = 760
-          ExplicitWidth = 201
+        inherited AdvPageControl1: TAdvPageControl
+          AlignWithMargins = True
+          Left = 431
+          Width = 546
+          Height = 445
+          Align = alClient
+          DoubleBuffered = True
+          ExplicitLeft = 431
+          ExplicitWidth = 546
+          ExplicitHeight = 445
+          inherited tabPreview: TAdvTabSheet
+            inherited lbEdtTemplateSID: TLabeledEdit
+              Width = 532
+              EditLabel.ExplicitLeft = 439
+              EditLabel.ExplicitTop = 4
+              EditLabel.ExplicitWidth = 68
+            end
+            inherited edTestSMSTo: TEdit
+              Width = 532
+            end
+            inherited advmTemplateJson: TAdvMemo
+              Width = 532
+              Height = 200
+              BorderColor = clGray
+              Gutter.BorderColor = clGray
+              Gutter.GutterColor = clBtnFace
+            end
+            inherited grpMessage: TAdvGroupBox
+              Width = 538
+              inherited advmSMSTest: TAdvMemo
+                Width = 313
+                BorderColor = clGray
+                Gutter.BorderColor = clGray
+                Gutter.GutterColor = clBtnFace
+                Gutter.GutterColorTo = clBtnFace
+                ExplicitWidth = 353
+              end
+              inherited memParamsDestination: TMemo
+                Left = 331
+                Width = 201
+                ExplicitLeft = 371
+                ExplicitWidth = 201
+              end
+            end
+          end
+          inherited tabJsonMessage: TAdvTabSheet
+            ExplicitLeft = 4
+            ExplicitTop = 26
+            ExplicitWidth = 578
+            ExplicitHeight = 268
+            inherited memJsonMessage: TAdvMemo
+              Width = 532
+              Height = 409
+              BorderColor = clGray
+              Gutter.BorderColor = clGray
+              Gutter.GutterColor = clBtnFace
+              ExplicitLeft = 3
+              ExplicitTop = 3
+              ExplicitWidth = 572
+              ExplicitHeight = 262
+            end
+          end
         end
       end
       inherited DBGrid1: TDBGrid

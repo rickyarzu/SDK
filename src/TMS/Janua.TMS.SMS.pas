@@ -77,9 +77,9 @@ end;
 
 procedure TSMSTwilioSender.SendSMS(aUpdateProc: TUpdateProc; aErrorProc: TExceptionProc; aFinishProc: TProc);
 var
-  AdvTwilio: TAdvTwilio;
+  AdvTwilio: TJanuaAdvTwilio;
 begin
-  AdvTwilio := TAdvTwilio.Create(nil);
+  AdvTwilio := TJanuaAdvTwilio.Create(nil);
   try
     var
     lLogProc := Assigned(FLogProc);
@@ -92,6 +92,9 @@ begin
     // '+15302036772';
     var
     lSMS := GetSMSMessage;
+
+    AdvTwilio.ContentSid := ContentSid;
+    AdvTwilio.ContentVariables.Assign(ContentVariables);
 
     if GetRecipients.Count = 0 then
       if lLogProc then

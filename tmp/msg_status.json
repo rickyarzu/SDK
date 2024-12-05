@@ -1,0 +1,17 @@
+{
+  "channelprefix": "whatsapp",
+  "apiversion": "2010-04-01",
+  "messagestatus": "sent",
+  "smssid": "SM01daea63271ce0d7abb6e7cc3f58af10",
+  "smsstatus": "",
+  "channelinstallsid": "XE59539e1d21b0c112b13009b146d827f7",
+  "msgto": "whatsapp:+393409111351",
+  "msgfrom": "whatsapp:+393513535778",
+  "messagesid": "SM01daea63271ce0d7abb6e7cc3f58af10",
+  "structuredmessage": "false",
+  "accountsid": "AC221a150df22723daef8d097a7f76cfcf",
+  "channeltoaddress": "+39340911XXXX",
+  "channelstatusmessage": "",
+  "channelstatuscode": "",
+  "errorcode": ""
+} 
