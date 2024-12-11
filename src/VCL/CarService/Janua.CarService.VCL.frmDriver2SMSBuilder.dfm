@@ -33,38 +33,13 @@ inherited frmVCLCSDriver2SMSBuilder: TfrmVCLCSDriver2SMSBuilder
       end
       inherited pnlSmsTestConfig: TPanel
         inherited AdvPageControl1: TAdvPageControl
-          Left = 428
-          Top = 1
-          Width = 552
-          Height = 451
-          Align = alClient
           DoubleBuffered = True
           inherited tabPreview: TAdvTabSheet
-            inherited edTestSMSTo: TEdit [0]
-              Width = 538
-              ExplicitLeft = 3
-              ExplicitWidth = 538
+            inherited advmTemplateJson: TAdvMemo [0]
             end
-            inherited advmTemplateJson: TAdvMemo [1]
-              Width = 538
-              Height = 206
+            inherited lbEdtTemplateSID: TLabeledEdit [1]
             end
-            inherited lbEdtTemplateSID: TLabeledEdit [2]
-              Width = 538
-              ExplicitLeft = 3
-              ExplicitWidth = 538
-            end
-            inherited grpMessage: TAdvGroupBox
-              Width = 544
-              inherited advmSMSTest: TAdvMemo
-                Width = 270
-              end
-              inherited memParamsDestination: TMemo
-                Left = 288
-                ExplicitLeft = 288
-                ExplicitTop = 21
-                ExplicitHeight = 103
-              end
+            inherited edTestSMSTo: TEdit [2]
             end
           end
         end

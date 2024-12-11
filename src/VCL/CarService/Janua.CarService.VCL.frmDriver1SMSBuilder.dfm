@@ -50,60 +50,39 @@ inherited frmVCLCSDriver1SMSBuilder: TfrmVCLCSDriver1SMSBuilder
       end
       inherited pnlSmsTestConfig: TPanel
         inherited AdvPageControl1: TAdvPageControl
-          Left = 428
-          Top = 1
-          Width = 552
-          Height = 451
-          Align = alClient
           DoubleBuffered = True
-          ExplicitLeft = 428
-          ExplicitTop = 1
-          ExplicitWidth = 552
-          ExplicitHeight = 451
           inherited tabPreview: TAdvTabSheet
-            inherited edTestSMSTo: TEdit [0]
-              Top = 133
-              Width = 538
-              Height = 285
-              Align = alClient
-              ExplicitLeft = 3
-              ExplicitWidth = 527
+            inherited advmTemplateJson: TAdvMemo [0]
+              Top = 223
+              Height = 189
+              ExplicitTop = 133
+              ExplicitWidth = 318
+              ExplicitHeight = 141
             end
-            inherited advmTemplateJson: TAdvMemo [1]
-              Top = 133
-              Width = 538
-              Height = 285
-              ExplicitLeft = 3
-              ExplicitWidth = 538
-              ExplicitHeight = 242
+            inherited lbEdtTemplateSID: TLabeledEdit [1]
+              Height = 29
+              EditLabel.ExplicitLeft = 3
+              EditLabel.ExplicitTop = 6
+              ExplicitLeft = -4
+              ExplicitTop = -9
+              ExplicitHeight = 29
             end
-            inherited lbEdtTemplateSID: TLabeledEdit [2]
-              Top = 154
-              Width = 538
-              Height = 264
-              Align = alClient
-              EditLabel.ExplicitTop = 136
-              ExplicitLeft = 3
-              ExplicitWidth = 538
+            inherited edTestSMSTo: TEdit [2]
+              Top = 59
+              Height = 28
+              ExplicitLeft = 11
+              ExplicitTop = -13
+              ExplicitHeight = 28
             end
             inherited grpMessage: TAdvGroupBox
-              Top = 0
-              Width = 544
-              inherited advmSMSTest: TAdvMemo
-                Width = 270
-              end
-              inherited memParamsDestination: TMemo
-                Left = 288
-                ExplicitLeft = 288
-                ExplicitTop = 21
-                ExplicitHeight = 103
-              end
+              Top = 90
+              ExplicitTop = 0
             end
           end
           inherited tabJsonMessage: TAdvTabSheet
             inherited memJsonMessage: TAdvMemo
-              Width = 538
-              Height = 415
+              Width = 532
+              Height = 409
             end
           end
         end

@@ -104,7 +104,7 @@ begin
       try
         var
         lRecipient := Recipients[I];
-        if FMessageType = jmtWhatsApp then
+        if (FMessageType = jmtWhatsApp) and (Pos('whatsapp:', lRecipient) = 0) then
           lRecipient := 'whatsapp:' + lRecipient;
 
         if AdvTwilio.SendSMS(lRecipient, lSMS) then
