@@ -265,6 +265,7 @@ type
     UniImage8: TUniImage;
     UniContainerPanel27: TUniContainerPanel;
     UniImage9: TUniImage;
+    lbVersione: TUniLabel;
 
     // Procedures
     procedure btnNextClick(Sender: TObject);

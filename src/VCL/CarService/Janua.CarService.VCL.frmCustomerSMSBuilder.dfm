@@ -67,48 +67,33 @@ inherited frmVCLCSCustomerSMSBuilder: TfrmVCLCSCustomerSMSBuilder
         Width = 997
         ExplicitWidth = 997
         inherited AdvPageControl1: TAdvPageControl
-          AlignWithMargins = True
-          Left = 431
           Width = 562
-          Height = 445
-          Align = alClient
           DoubleBuffered = True
-          ExplicitLeft = 428
-          ExplicitTop = 1
-          ExplicitWidth = 568
-          ExplicitHeight = 451
+          ExplicitWidth = 562
           inherited tabPreview: TAdvTabSheet
-            inherited edTestSMSTo: TEdit [0]
+            inherited advmTemplateJson: TAdvMemo [0]
               Width = 548
-            end
-            inherited advmTemplateJson: TAdvMemo [1]
-              Width = 548
-              Height = 200
-              ExplicitLeft = 3
               ExplicitWidth = 548
-              ExplicitHeight = 236
             end
-            inherited lbEdtTemplateSID: TLabeledEdit [2]
+            inherited lbEdtTemplateSID: TLabeledEdit [1]
+              Width = 548
+              ExplicitWidth = 548
+            end
+            inherited edTestSMSTo: TEdit [2]
               Width = 548
               ExplicitWidth = 548
             end
             inherited grpMessage: TAdvGroupBox
               Width = 554
+              ExplicitWidth = 554
               inherited advmSMSTest: TAdvMemo
-                Width = 280
+                Width = 329
+                ExplicitWidth = 329
               end
               inherited memParamsDestination: TMemo
-                Left = 298
-                ExplicitLeft = 298
-                ExplicitTop = 21
-                ExplicitHeight = 103
+                Left = 347
+                ExplicitLeft = 347
               end
-            end
-          end
-          inherited tabJsonMessage: TAdvTabSheet
-            inherited memJsonMessage: TAdvMemo
-              Width = 554
-              Height = 415
             end
           end
         end

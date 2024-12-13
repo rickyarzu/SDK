@@ -256,13 +256,13 @@ end;
 
 procedure TfrmUNIMainForm.spbNewBookingClick(Sender: TObject);
 var
-  lDlgBooking: TdlgUniGUIBookingWizard; { TdlgUniGUIBookingFrameWizard }
+  lDlgBooking: {TdlgUniGUIBookingWizard;}  TdlgUniGUIBookingFrameWizard;
 begin
-  FCarServiceBookingDM := TdmPgCarServiceBookingStorage.Create(self);
+  FCarServiceBookingDM := TdmPgCarServiceBookingStorage.Create(self); {}
   FCarServiceBookingDM.UserProfile := UniMainModule.UserSessionVM.CurrentRecord.UserProfile;
   FCarServiceBookingDM.OfficeID := UniMainModule.UserSessionVM.CurrentRecord.UserProfile.AnagraphID.asinteger;
   FCarServiceBookingDM.UserSession := UniMainModule.UserSessionVM.CurrentRecord;
-  lDlgBooking := TdlgUniGUIBookingWizard.Create(UniApplication);
+  lDlgBooking := TdlgUniGUIBookingFrameWizard.Create(UniApplication);
   FCarServiceBookingDM.AppendRecord;
   lDlgBooking.dmPgCarServiceBooking := FCarServiceBookingDM;
 

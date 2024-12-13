@@ -189,10 +189,6 @@
             <Form>frameCarServiceUniGUIBooking</Form>
             <DesignClass>TUniFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgBookingWizard.pas">
-            <Form>dlgUniGUIBookingWizard</Form>
-            <DesignClass>TUniForm</DesignClass>
-        </DCCReference>
         <DCCReference Include="..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.frameCarBookingClient.pas">
             <Form>frameUniGuiCarBookingClient</Form>
             <DesignClass>TUniFrame</DesignClass>
@@ -321,6 +317,11 @@
             <Form>dmJanuaPgAnagraphStorage</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgBookingFrameWizard.pas">
+            <Form>dlgUniGUIBookingFrameWizard</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TUniForm</DesignClass>
         </DCCReference>
         <None Include="..\..\..\History\CarServiceUsersUniGUI.txt"/>
         <None Include="..\..\..\Components\include\Dac.inc"/>

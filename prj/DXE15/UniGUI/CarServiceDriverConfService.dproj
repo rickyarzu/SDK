@@ -9,6 +9,7 @@
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>CarServiceDriverConfService.dpr</MainSource>
+        <ProjectName Condition="'$(ProjectName)'==''">CarServiceDriverConfService</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>

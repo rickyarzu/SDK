@@ -118,14 +118,18 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
           ExplicitWidth = 546
           ExplicitHeight = 445
           inherited tabPreview: TAdvTabSheet
+            ExplicitWidth = 538
+            ExplicitHeight = 415
             inherited lbEdtTemplateSID: TLabeledEdit
               Width = 532
               EditLabel.ExplicitLeft = 439
               EditLabel.ExplicitTop = 4
               EditLabel.ExplicitWidth = 68
+              ExplicitWidth = 532
             end
             inherited edTestSMSTo: TEdit
               Width = 532
+              ExplicitWidth = 532
             end
             inherited advmTemplateJson: TAdvMemo
               Width = 532
@@ -133,40 +137,33 @@ inherited frmVCLSMSMessageConfig: TfrmVCLSMSMessageConfig
               BorderColor = clGray
               Gutter.BorderColor = clGray
               Gutter.GutterColor = clBtnFace
+              ExplicitWidth = 532
+              ExplicitHeight = 200
             end
             inherited grpMessage: TAdvGroupBox
               Width = 538
+              ExplicitWidth = 538
               inherited advmSMSTest: TAdvMemo
                 Width = 313
                 BorderColor = clGray
                 Gutter.BorderColor = clGray
                 Gutter.GutterColor = clBtnFace
                 Gutter.GutterColorTo = clBtnFace
-                ExplicitWidth = 353
+                ExplicitWidth = 313
               end
               inherited memParamsDestination: TMemo
                 Left = 331
                 Width = 201
-                ExplicitLeft = 371
+                ExplicitLeft = 331
                 ExplicitWidth = 201
               end
             end
           end
           inherited tabJsonMessage: TAdvTabSheet
-            ExplicitLeft = 4
-            ExplicitTop = 26
-            ExplicitWidth = 578
-            ExplicitHeight = 268
             inherited memJsonMessage: TAdvMemo
-              Width = 532
-              Height = 409
               BorderColor = clGray
               Gutter.BorderColor = clGray
               Gutter.GutterColor = clBtnFace
-              ExplicitLeft = 3
-              ExplicitTop = 3
-              ExplicitWidth = 572
-              ExplicitHeight = 262
             end
           end
         end
