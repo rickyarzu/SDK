@@ -59,6 +59,17 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
       TabOrder = 2
       OnClick = btnBackClick
     end
+    object lbVersione: TUniLabel
+      Left = 3
+      Top = 23
+      Width = 67
+      Height = 13
+      Hint = ''
+      Caption = 'Booking Std.'
+      ParentColor = False
+      Color = clBtnFace
+      TabOrder = 3
+    end
   end
   object PgCBookingSteps: TUniPageControl
     Left = 0
@@ -1425,7 +1436,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             ParentColor = False
             Color = clBtnFace
             TabOrder = 1
-            ExplicitTop = -1
           end
           object PickupDate: TUniDateTimePicker
             Left = 101
@@ -4020,7 +4030,6 @@ object dlgUniGUIBookingWizard: TdlgUniGUIBookingWizard
             ParentColor = False
             Color = clBtnFace
             TabOrder = 4
-            ExplicitTop = 86
           end
           object pnlTimeTablePickup: TUniSimplePanel
             AlignWithMargins = True
