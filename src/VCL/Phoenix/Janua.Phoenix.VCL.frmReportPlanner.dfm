@@ -10,7 +10,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  Menu = mmuPlanner
   WindowState = wsMaximized
   StyleElements = [seClient, seBorder]
   OnClose = FormClose
@@ -386,9 +385,11 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         end
         inherited Panel1: TPanel
           Width = 1440
+          StyleElements = [seFont, seClient, seBorder]
           ExplicitWidth = 1440
           inherited Panel2: TPanel
             Width = 369
+            StyleElements = [seFont, seClient, seBorder]
             ExplicitWidth = 369
             inherited btClose: TSpeedButton
               Left = 49
@@ -416,6 +417,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           inherited Panel3: TPanel
             Left = 369
             Width = 1071
+            StyleElements = [seFont, seClient, seBorder]
             ExplicitLeft = 369
             ExplicitWidth = 1071
             inherited chkFiltered: TCheckBox
@@ -478,544 +480,855 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     object tabGoogleCalendarReport: TTabSheet
       Caption = 'Calendario Google'
       ImageIndex = 4
-      inline frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
-        Left = 0
-        Top = 0
-        Width = 683
-        Height = 971
-        Align = alLeft
-        TabOrder = 0
-        ExplicitWidth = 683
-        ExplicitHeight = 971
-        inherited lbCap: TLabel
-          Left = 390
-          ExplicitLeft = 390
-        end
-        inherited lbActivity: TLabel
-          Width = 30
-          Caption = 'Filiale'
-          ExplicitWidth = 30
-        end
-        inherited lkpCAP: TJvDBLookupCombo
-          Top = 52
-          ExplicitTop = 52
-        end
-        inherited grdReportList: TDBCtrlGrid
-          Top = 100
-          Height = 880
-          PanelHeight = 97
-          ExplicitTop = 100
-          ExplicitHeight = 880
-          inherited Panel1: TPanel
-            Height = 97
-            ExplicitHeight = 97
-            inherited Panel2: TPanel
-              Height = 95
-              ExplicitHeight = 95
-              inherited pnlStatino: TPanel
-                Height = 95
-                ExplicitHeight = 95
-                inherited btnNewMeeting: TJvSpeedButton
-                  Height = 21
-                  ExplicitHeight = 21
-                end
-                inherited btnUndoMeeting: TJvSpeedButton
-                  Height = 21
-                  Caption = '  Annulla'
-                  ExplicitHeight = 21
-                end
-                inherited btnContract: TJvSpeedButton
-                  Height = 21
-                  ExplicitHeight = 21
-                end
-                inherited btnWhatsApp: TJvSpeedButton
-                  Height = 21
-                  ExplicitHeight = 21
-                end
-                inherited pnlInterventi: TPanel
-                  inherited DBText2: TDBText
-                    Left = 304
-                    Width = 133
-                    ExplicitLeft = 304
-                    ExplicitWidth = 133
-                  end
-                  inherited DBText8: TDBText
-                    Left = 144
-                    Width = 157
-                    ExplicitLeft = 144
-                    ExplicitWidth = 157
-                  end
-                  inherited DBText12: TDBText
-                    Width = 135
-                    ExplicitLeft = 3
-                    ExplicitTop = 3
-                    ExplicitWidth = 150
-                    ExplicitHeight = 14
-                  end
-                end
-              end
-              inherited Panel4: TPanel
-                Height = 95
-                ExplicitHeight = 95
-                inherited Panel3: TPanel
-                  Height = 93
-                  ExplicitHeight = 93
-                  inherited Label1: TLabel
-                    Height = 15
-                    ExplicitWidth = 25
-                    ExplicitHeight = 15
-                  end
-                  inherited Label2: TLabel
-                    Top = 15
-                    Height = 15
-                    ExplicitTop = 15
-                    ExplicitWidth = 40
-                    ExplicitHeight = 15
-                  end
-                  inherited Label4: TLabel
-                    Top = 30
-                    Height = 15
-                    ExplicitTop = 31
-                    ExplicitWidth = 36
-                    ExplicitHeight = 15
-                  end
-                  inherited Label3: TLabel
-                    Top = 45
-                    Height = 15
-                    ExplicitTop = 47
-                    ExplicitWidth = 38
-                    ExplicitHeight = 15
-                  end
-                  inherited Label5: TLabel
-                    Top = 60
-                    Height = 15
-                    ExplicitTop = 60
-                    ExplicitWidth = 21
-                    ExplicitHeight = 15
-                  end
-                  inherited Label7: TLabel
-                    Top = 75
-                    Height = 15
-                    ExplicitTop = 79
-                    ExplicitWidth = 34
-                    ExplicitHeight = 15
-                  end
-                end
-                inherited Panel5: TPanel
-                  Height = 93
-                  ExplicitHeight = 93
-                  inherited DBText9: TDBText
-                    Width = 35
-                    Height = 15
-                    Margins.Right = 10
-                    Alignment = taRightJustify
-                    ExplicitLeft = 3
-                    ExplicitWidth = 35
-                    ExplicitHeight = 15
-                  end
-                  inherited DBText5: TDBText
-                    Top = 15
-                    Width = 35
-                    Height = 15
-                    Margins.Right = 10
-                    Alignment = taRightJustify
-                    ExplicitLeft = 3
-                    ExplicitTop = 15
-                    ExplicitWidth = 35
-                    ExplicitHeight = 15
-                  end
-                  inherited DBText6: TDBText
-                    Top = 30
-                    Width = 35
-                    Height = 15
-                    Margins.Right = 10
-                    Alignment = taRightJustify
-                    ExplicitLeft = 3
-                    ExplicitTop = 30
-                    ExplicitWidth = 35
-                    ExplicitHeight = 15
-                  end
-                  inherited DBText7: TDBText
-                    Top = 45
-                    Width = 35
-                    Height = 15
-                    Margins.Right = 10
-                    Alignment = taRightJustify
-                    ExplicitLeft = 3
-                    ExplicitTop = 45
-                    ExplicitWidth = 35
-                    ExplicitHeight = 15
-                  end
-                  inherited DBText10: TDBText
-                    Top = 60
-                    Width = 35
-                    Height = 15
-                    Margins.Right = 10
-                    Alignment = taRightJustify
-                    ExplicitLeft = 3
-                    ExplicitTop = 60
-                    ExplicitWidth = 35
-                    ExplicitHeight = 15
-                  end
-                  inherited DBText11: TDBText
-                    Top = 75
-                    Width = 35
-                    Height = 15
-                    Margins.Right = 10
-                    Alignment = taRightJustify
-                    ExplicitLeft = 3
-                    ExplicitTop = 75
-                    ExplicitWidth = 35
-                    ExplicitHeight = 15
-                  end
-                end
-              end
-            end
-            inherited btnImage: TDBImage
-              Height = 95
-              ExplicitHeight = 95
-            end
-          end
-        end
-        inherited grpStato: TRadioGroup
-          Height = 50
-          ExplicitHeight = 50
-        end
-        inherited cboTecnici: TJvDBLookupCombo
-          Top = 24
-          ExplicitTop = 24
-        end
-        inherited cboCustomers: TJvDBLookupCombo
-          Left = 44
-          Top = 52
-          Width = 340
-          ExplicitLeft = 44
-          ExplicitTop = 52
-          ExplicitWidth = 340
-        end
-        inherited btnWhatsAppMessages: TAdvBadgeButton
-          Top = 52
-          Height = 45
-          Images = dmVCLPhoenixPlannerController.SVGIconImageList16
-          ExplicitTop = 52
-          ExplicitHeight = 45
-        end
-        inherited edDateFilter: TJvDatePickerEdit
-          Top = 24
-          ExplicitTop = 24
-        end
-        inherited SearchBox1: TSearchBox
-          Top = 77
-          Visible = False
-          ExplicitTop = 77
-        end
-      end
       object EdgeBrowser2: TEdgeBrowser
-        Left = 683
+        Left = 668
         Top = 0
-        Width = 757
+        Width = 772
         Height = 971
         Align = alClient
-        TabOrder = 1
+        TabOrder = 0
         AllowSingleSignOnUsingOSPrimaryAccount = False
         TargetCompatibleBrowserVersion = '117.0.2045.28'
         UserDataFolder = '%LOCALAPPDATA%\bds.exe.WebView2'
+      end
+      object pgCalendars: TPageControl
+        Left = 0
+        Top = 0
+        Width = 668
+        Height = 971
+        ActivePage = tabReportCalendar
+        Align = alLeft
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 1
+        object tabReportCalendar: TTabSheet
+          Caption = 'Calendario Apputamenti'
+          inline frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
+            Left = 0
+            Top = 0
+            Width = 660
+            Height = 941
+            Align = alClient
+            TabOrder = 0
+            ExplicitWidth = 660
+            ExplicitHeight = 941
+            inherited lbCap: TLabel
+              Left = 390
+              Top = 52
+              StyleElements = [seFont, seClient, seBorder]
+              ExplicitLeft = 390
+              ExplicitTop = 52
+            end
+            inherited Area: TLabel
+              Top = 2
+              StyleElements = [seFont, seClient, seBorder]
+              ExplicitTop = 2
+            end
+            inherited lbActivity: TLabel
+              Top = 52
+              Width = 30
+              Caption = 'Filiale'
+              StyleElements = [seFont, seClient, seBorder]
+              ExplicitTop = 52
+              ExplicitWidth = 30
+            end
+            inherited lkpCAP: TJvDBLookupCombo
+              Top = 47
+              ExplicitTop = 47
+            end
+            inherited grdReportList: TDBCtrlGrid
+              Top = 94
+              Width = 649
+              Height = 844
+              PanelHeight = 93
+              PanelWidth = 632
+              ExplicitTop = 94
+              ExplicitWidth = 649
+              ExplicitHeight = 844
+              inherited Panel1: TPanel
+                Width = 632
+                Height = 93
+                StyleElements = [seFont, seClient, seBorder]
+                ExplicitWidth = 632
+                ExplicitHeight = 93
+                inherited Panel2: TPanel
+                  Width = 555
+                  Height = 93
+                  StyleElements = [seFont, seClient, seBorder]
+                  ExplicitWidth = 555
+                  ExplicitHeight = 93
+                  inherited pnlStatino: TPanel
+                    Height = 93
+                    StyleElements = [seFont, seClient, seBorder]
+                    ExplicitHeight = 93
+                    inherited DBText1: TDBText
+                      StyleElements = [seFont, seClient, seBorder]
+                    end
+                    inherited btnNewMeeting: TJvSpeedButton
+                      Height = 29
+                      ExplicitHeight = 48
+                    end
+                    inherited btnUndoMeeting: TJvSpeedButton
+                      Height = 29
+                      Caption = '  Annulla'
+                      ExplicitHeight = 48
+                    end
+                    inherited btnContract: TJvSpeedButton
+                      Height = 29
+                      ExplicitHeight = 48
+                    end
+                    inherited btnWhatsApp: TJvSpeedButton
+                      Height = 29
+                      ExplicitHeight = 48
+                    end
+                    inherited pnlInterventi: TPanel
+                      StyleElements = [seFont, seClient, seBorder]
+                      inherited DBText2: TDBText
+                        Left = 306
+                        Width = 133
+                        ExplicitLeft = 304
+                        ExplicitWidth = 133
+                      end
+                      inherited DBText8: TDBText
+                        Left = 146
+                        Width = 157
+                        StyleElements = [seFont, seClient, seBorder]
+                        ExplicitLeft = 144
+                        ExplicitWidth = 157
+                      end
+                      inherited DBText12: TDBText
+                        Width = 137
+                        StyleElements = [seFont, seClient, seBorder]
+                        ExplicitLeft = 3
+                        ExplicitTop = 3
+                        ExplicitWidth = 150
+                        ExplicitHeight = 14
+                      end
+                    end
+                    inherited Panel6: TPanel
+                      StyleElements = [seFont, seClient, seBorder]
+                      inherited DBText3: TDBText
+                        StyleElements = [seFont, seClient, seBorder]
+                        ExplicitWidth = 395
+                      end
+                    end
+                  end
+                  inherited Panel4: TPanel
+                    Width = 114
+                    Height = 93
+                    StyleElements = [seFont, seClient, seBorder]
+                    ExplicitWidth = 114
+                    ExplicitHeight = 93
+                    inherited Panel3: TPanel
+                      Height = 93
+                      StyleElements = [seFont, seClient, seBorder]
+                      ExplicitHeight = 93
+                      inherited Label1: TLabel
+                        Height = 15
+                        ExplicitWidth = 25
+                        ExplicitHeight = 15
+                      end
+                      inherited Label2: TLabel
+                        Top = 15
+                        Height = 15
+                        ExplicitTop = 15
+                        ExplicitWidth = 40
+                        ExplicitHeight = 15
+                      end
+                      inherited Label4: TLabel
+                        Top = 30
+                        Height = 15
+                        ExplicitTop = 31
+                        ExplicitWidth = 36
+                        ExplicitHeight = 15
+                      end
+                      inherited Label3: TLabel
+                        Top = 45
+                        Height = 15
+                        ExplicitTop = 47
+                        ExplicitWidth = 38
+                        ExplicitHeight = 15
+                      end
+                      inherited Label5: TLabel
+                        Top = 60
+                        Height = 15
+                        ExplicitTop = 60
+                        ExplicitWidth = 21
+                        ExplicitHeight = 15
+                      end
+                      inherited Label7: TLabel
+                        Top = 75
+                        Height = 15
+                        ExplicitTop = 79
+                        ExplicitWidth = 34
+                        ExplicitHeight = 15
+                      end
+                    end
+                    inherited Panel5: TPanel
+                      Width = 42
+                      Height = 93
+                      StyleElements = [seFont, seClient, seBorder]
+                      ExplicitWidth = 42
+                      ExplicitHeight = 93
+                      inherited DBText9: TDBText
+                        Width = 29
+                        Height = 15
+                        Margins.Right = 10
+                        Alignment = taRightJustify
+                        ExplicitLeft = 3
+                        ExplicitWidth = 35
+                        ExplicitHeight = 15
+                      end
+                      inherited DBText5: TDBText
+                        Top = 15
+                        Width = 29
+                        Height = 15
+                        Margins.Right = 10
+                        Alignment = taRightJustify
+                        ExplicitLeft = 3
+                        ExplicitTop = 15
+                        ExplicitWidth = 35
+                        ExplicitHeight = 15
+                      end
+                      inherited DBText6: TDBText
+                        Top = 30
+                        Width = 29
+                        Height = 15
+                        Margins.Right = 10
+                        Alignment = taRightJustify
+                        ExplicitLeft = 3
+                        ExplicitTop = 30
+                        ExplicitWidth = 35
+                        ExplicitHeight = 15
+                      end
+                      inherited DBText7: TDBText
+                        Top = 45
+                        Width = 29
+                        Height = 15
+                        Margins.Right = 10
+                        Alignment = taRightJustify
+                        ExplicitLeft = 3
+                        ExplicitTop = 45
+                        ExplicitWidth = 35
+                        ExplicitHeight = 15
+                      end
+                      inherited DBText10: TDBText
+                        Top = 60
+                        Width = 29
+                        Height = 15
+                        Margins.Right = 10
+                        Alignment = taRightJustify
+                        ExplicitLeft = 3
+                        ExplicitTop = 60
+                        ExplicitWidth = 35
+                        ExplicitHeight = 15
+                      end
+                      inherited DBText11: TDBText
+                        Top = 75
+                        Width = 29
+                        Height = 15
+                        Margins.Right = 10
+                        Alignment = taRightJustify
+                        ExplicitLeft = 3
+                        ExplicitTop = 75
+                        ExplicitWidth = 35
+                        ExplicitHeight = 15
+                      end
+                    end
+                  end
+                end
+                inherited btnImage: TDBImage
+                  Height = 93
+                  ExplicitHeight = 93
+                end
+              end
+            end
+            inherited grpStato: TRadioGroup
+              Top = 0
+              Height = 46
+              ParentCtl3D = False
+              ExplicitTop = 0
+              ExplicitHeight = 46
+            end
+            inherited cboTecnici: TJvDBLookupCombo
+              Top = 20
+              ExplicitTop = 20
+            end
+            inherited cboCustomers: TJvDBLookupCombo
+              Left = 44
+              Top = 47
+              Width = 340
+              ExplicitLeft = 44
+              ExplicitTop = 47
+              ExplicitWidth = 340
+            end
+            inherited cbkFilterReport: TCheckBox
+              Top = 2
+              ExplicitTop = 2
+            end
+            inherited btnWhatsAppMessages: TAdvBadgeButton
+              Top = 47
+              Height = 45
+              Images = dmVCLPhoenixPlannerController.SVGIconImageList16
+              OnClick = frameVCLPhoenixPlanneReportbtnWhatsAppMessagesClick
+              ExplicitTop = 47
+              ExplicitHeight = 45
+            end
+            inherited edDateFilter: TJvDatePickerEdit
+              Top = 20
+              StyleElements = [seFont, seClient, seBorder]
+              ExplicitTop = 20
+            end
+            inherited ckbFilterDate: TCheckBox
+              Top = 2
+              ExplicitTop = 2
+            end
+            inherited SearchBox1: TSearchBox
+              Top = 71
+              StyleElements = [seFont, seClient, seBorder]
+              ExplicitTop = 71
+            end
+            inherited WATimer: TTimer
+              Interval = 60000
+              OnTimer = frameVCLPhoenixPlanneReportWATimerTimer
+            end
+          end
+        end
+        object tabMessaggi: TTabSheet
+          Caption = 'Messaggi WA'
+          ImageIndex = 1
+          OnShow = tabMessaggiShow
+          inline frameVCLWhatsAppMessages1: TframeVCLWhatsAppMessages
+            Left = 0
+            Top = 0
+            Width = 660
+            Height = 941
+            Align = alClient
+            TabOrder = 0
+            ExplicitWidth = 660
+            ExplicitHeight = 941
+            inherited DBCtrlGrid1: TDBCtrlGrid
+              Width = 260
+              Height = 941
+              PanelHeight = 85
+              PanelWidth = 243
+              ExplicitWidth = 260
+              ExplicitHeight = 941
+              inherited pnlHeader: TPanel
+                Width = 237
+                Height = 79
+                ExplicitWidth = 237
+                ExplicitHeight = 79
+                inherited DBText1: TDBText
+                  Left = 208
+                  Height = 55
+                  ExplicitLeft = 208
+                  ExplicitHeight = 55
+                end
+                inherited pnlInfo: TPanel
+                  Height = 79
+                  StyleElements = [seFont, seClient, seBorder]
+                  ExplicitHeight = 79
+                  inherited DBText2: TDBText
+                    StyleElements = [seFont, seClient, seBorder]
+                  end
+                  inherited DBText3: TDBText
+                    StyleElements = [seFont, seClient, seBorder]
+                  end
+                  inherited DBText4: TDBText
+                    StyleElements = [seFont, seClient, seBorder]
+                  end
+                end
+              end
+            end
+            inherited pnlEvents: TPanel
+              Left = 260
+              Width = 400
+              Height = 941
+              StyleElements = [seFont, seClient, seBorder]
+              ExplicitLeft = 260
+              ExplicitWidth = 400
+              ExplicitHeight = 941
+              inherited pnlReport: TPanel
+                Width = 400
+                StyleElements = [seFont, seClient, seBorder]
+                ExplicitWidth = 400
+                inherited DBNavigator1: TDBNavigator
+                  Width = 398
+                  Hints.Strings = ()
+                  ExplicitWidth = 398
+                end
+                inherited Panel1: TPanel
+                  Width = 398
+                  StyleElements = [seFont, seClient, seBorder]
+                  ExplicitWidth = 398
+                  inherited Panel2: TPanel
+                    Width = 321
+                    StyleElements = [seFont, seClient, seBorder]
+                    ExplicitWidth = 321
+                    inherited pnlStatino: TPanel
+                      StyleElements = [seFont, seClient, seBorder]
+                      inherited DBText5: TDBText
+                        StyleElements = [seFont, seClient, seBorder]
+                      end
+                      inherited DBText6: TDBText
+                        StyleElements = [seFont, seClient, seBorder]
+                      end
+                      inherited btnNewMeeting: TJvSpeedButton
+                        Caption = 'Appuntam.'
+                      end
+                      inherited pnlInterventi: TPanel
+                        StyleElements = [seFont, seClient, seBorder]
+                        inherited DBText8: TDBText
+                          StyleElements = [seFont, seClient, seBorder]
+                        end
+                        inherited DBText12: TDBText
+                          StyleElements = [seFont, seClient, seBorder]
+                        end
+                      end
+                    end
+                    inherited Panel4: TPanel
+                      Width = 61
+                      StyleElements = [seFont, seClient, seBorder]
+                      ExplicitWidth = 61
+                      inherited Panel3: TPanel
+                        StyleElements = [seFont, seClient, seBorder]
+                      end
+                      inherited Panel5: TPanel
+                        Width = 21
+                        StyleElements = [seFont, seClient, seBorder]
+                        ExplicitWidth = 21
+                        inherited DBText9: TDBText
+                          Width = 15
+                          ExplicitWidth = 15
+                        end
+                        inherited DBText10: TDBText
+                          Width = 15
+                          ExplicitWidth = 15
+                        end
+                        inherited DBText11: TDBText
+                          Width = 15
+                          ExplicitWidth = 15
+                        end
+                        inherited DBText13: TDBText
+                          Width = 15
+                          ExplicitWidth = 15
+                        end
+                        inherited DBText14: TDBText
+                          Width = 15
+                          ExplicitWidth = 15
+                        end
+                        inherited DBText15: TDBText
+                          Width = 15
+                          ExplicitWidth = 15
+                        end
+                      end
+                    end
+                  end
+                end
+              end
+              inherited TMSFNCChat1: TTMSFNCChat
+                Width = 400
+                Height = 817
+                DoubleBuffered = True
+                ExplicitWidth = 400
+                ExplicitHeight = 817
+              end
+            end
+            inherited spInsertWhatsAppMsg: TUniStoredProc
+              CommandStoredProcName = 'INSERT_WHATSAPP_MESSAGES'
+            end
+          end
+        end
       end
     end
     object tabCalendariTecnici: TTabSheet
       Caption = 'Calendari Tecnici'
       ImageIndex = 3
-      inline frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
+      object pnlWebBrowser: TPanel
         Left = 0
         Top = 0
-        Width = 841
-        Height = 971
-        Align = alLeft
-        TabOrder = 0
-        ExplicitWidth = 841
-        ExplicitHeight = 971
-        inherited lbCap: TLabel
-          Left = 582
-          Top = 60
-          ExplicitLeft = 582
-          ExplicitTop = 60
-        end
-        inherited lbData: TLabel
-          Top = 61
-          ExplicitTop = 61
-        end
-        inherited lbActivity: TLabel
-          Left = 11
-          Top = 60
-          ExplicitLeft = 11
-          ExplicitTop = 60
-        end
-        inherited lkpCAP: TJvDBLookupCombo
-          Left = 580
-          Top = 75
-          Width = 72
-          ExplicitLeft = 580
-          ExplicitTop = 75
-          ExplicitWidth = 72
-        end
-        inherited grdReportList: TDBCtrlGrid
-          Width = 433
-          Height = 850
-          PanelBorder = gbNone
-          PanelHeight = 121
-          PanelWidth = 416
-          ExplicitWidth = 433
-          ExplicitHeight = 850
-          inherited pnlInterventi: TPanel
-            Top = 101
-            Width = 416
-            ExplicitTop = 101
-            ExplicitWidth = 416
-            inherited Label3: TLabel
-              Width = 13
-              Height = 20
-              Caption = 'Lc'
-              ExplicitWidth = 13
-            end
-            inherited DBText4: TDBText
-              Left = 19
-              ExplicitLeft = 19
-            end
-            inherited lbIdranti: TLabel
-              Left = 42
-              Width = 22
-              Height = 20
-              Caption = 'Idr:'
-              ExplicitLeft = 42
-              ExplicitWidth = 22
-            end
-            inherited DBText5: TDBText
-              Left = 67
-              ExplicitLeft = 67
-            end
-            inherited Label4: TLabel
-              Left = 90
-              Width = 38
-              Height = 20
-              Caption = 'E.Ord:'
-              ExplicitLeft = 90
-              ExplicitWidth = 38
-            end
-            inherited DBText6: TDBText
-              Left = 131
-              ExplicitLeft = 131
-            end
-            inherited Label5: TLabel
-              Left = 154
-              Width = 39
-              Height = 20
-              Caption = 'E.Stra:'
-              ExplicitLeft = 154
-              ExplicitWidth = 39
-            end
-            inherited DBText7: TDBText
-              Left = 196
-              ExplicitLeft = 196
-            end
-            inherited DBText2: TDBText
-              Left = 333
-              Width = 81
-              Alignment = taRightJustify
-              ExplicitLeft = 333
-              ExplicitTop = 3
-              ExplicitWidth = 81
-            end
-            inherited Label6: TLabel
-              Left = 219
-              Height = 20
-              ExplicitLeft = 219
-            end
-            inherited DBText10: TDBText
-              Left = 257
-              ExplicitLeft = 257
-            end
-            inherited Label7: TLabel
-              Left = 280
-              Height = 20
-              ExplicitLeft = 280
-            end
-            inherited DBText11: TDBText
-              Left = 309
-              ExplicitLeft = 309
-            end
-          end
-          inherited Panel1: TPanel
-            Width = 416
-            Height = 101
-            ExplicitWidth = 416
-            ExplicitHeight = 101
-            inherited Panel2: TPanel
-              Width = 337
-              Height = 99
-              ExplicitWidth = 337
-              ExplicitHeight = 99
-              inherited DBText1: TDBText
-                Width = 331
-                ExplicitWidth = 331
-              end
-              inherited DBText3: TDBText
-                Width = 331
-                ExplicitWidth = 331
-              end
-              inherited Panel3: TPanel
-                Top = 77
-                Width = 337
-                ExplicitTop = 77
-                ExplicitWidth = 337
-                inherited DBText9: TDBText
-                  Width = 190
-                  ExplicitWidth = 241
-                end
-              end
-            end
-            inherited btnImage: TDBImage
-              Height = 99
-              ExplicitHeight = 99
-            end
-          end
-        end
-        inherited DBPlanner1: TDBPlanner
-          Left = 447
-          Top = 106
-          Height = 862
-          ExplicitLeft = 447
-          ExplicitTop = 106
-          ExplicitHeight = 862
-          TMSStyle = 0
-        end
-        inherited btnEditMeeting: TButton
-          Left = 667
-          Top = 896
-          ExplicitLeft = 667
-          ExplicitTop = 896
-        end
-        inherited btnDeleteMeeting: TButton
-          Left = 666
-          Top = 866
-          ExplicitLeft = 666
-          ExplicitTop = 866
-        end
-        inherited grpStato: TRadioGroup
-          Left = 341
-          Width = 404
-          ExplicitLeft = 341
-          ExplicitWidth = 404
-        end
-        inherited CalendarDate: TDateTimePicker
-          Top = 75
-          ExplicitTop = 75
-        end
-        inherited cboTecnici: TJvDBLookupCombo
-          OnChange = frameVCLPhoenixPlannerEventcboTecniciChange
-        end
-        inherited cboCustomers: TJvDBLookupCombo
-          Top = 76
-          ExplicitTop = 76
-        end
-        inherited Memo1: TMemo
-          Top = 856
-          ExplicitTop = 856
-        end
-        inherited grdDateTime: TGroupBox
-          Top = 856
-          Height = 112
-          ExplicitTop = 856
-          ExplicitHeight = 112
-        end
-        inherited btnSearch: TBitBtn
-          Left = 667
-          Top = 926
-          DoubleBuffered = True
-          ImageIndex = 16
-          ImageName = '017-clock'
-          ExplicitLeft = 667
-          ExplicitTop = 926
-        end
-        inherited btnPrevDay: TButton
-          Left = 530
-          Top = 75
-          Width = 23
-          ExplicitLeft = 530
-          ExplicitTop = 75
-          ExplicitWidth = 23
-        end
-        inherited btnNextDay: TButton
-          Left = 552
-          Top = 75
-          Width = 25
-          ExplicitLeft = 552
-          ExplicitTop = 75
-          ExplicitWidth = 25
-        end
-        inherited cbkFilterReport: TCheckBox
-          Width = 98
-          ExplicitWidth = 98
-        end
-        inherited Button1: TButton
-          Left = 750
-          Top = 75
-          ExplicitLeft = 750
-          ExplicitTop = 75
-        end
-        inherited btnWhatsApp: TButton
-          Left = 652
-          Top = 75
-          ExplicitLeft = 652
-          ExplicitTop = 75
-        end
-        inherited btnSincro: TButton
-          Left = 750
-          Top = 44
-          OnClick = frameVCLPhoenixPlannerEventbtnSincroClick
-          ExplicitLeft = 750
-          ExplicitTop = 44
-        end
-        inherited Button2: TButton
-          Left = 239
-          Width = 96
-          ExplicitLeft = 239
-          ExplicitWidth = 96
-        end
-        inherited btnWhatsAppMessages: TAdvBadgeButton
-          Left = 750
-          Top = 13
-          ExplicitLeft = 750
-          ExplicitTop = 13
-        end
-        inherited dsCAP: TUniDataSource
-          Left = 184
-          Top = 344
-        end
-        inherited WATimer: TTimer
-          Interval = 60000
-          OnTimer = frameVCLPhoenixPlannerEventWATimerTimer
-          Left = 648
-        end
-      end
-      object pnlWebBrowser: TPanel
-        Left = 841
-        Top = 0
-        Width = 599
+        Width = 1440
         Height = 971
         Align = alClient
         BevelOuter = bvNone
         Caption = 'Panel1'
-        TabOrder = 1
+        TabOrder = 0
         object EdgeBrowser1: TEdgeBrowser
-          Left = 0
+          Left = 849
           Top = 0
-          Width = 599
+          Width = 591
           Height = 971
           Align = alClient
           TabOrder = 0
           AllowSingleSignOnUsingOSPrimaryAccount = False
           TargetCompatibleBrowserVersion = '117.0.2045.28'
           UserDataFolder = '%LOCALAPPDATA%\bds.exe.WebView2'
+        end
+        object AdvPageControl1: TAdvPageControl
+          Left = 0
+          Top = 0
+          Width = 849
+          Height = 971
+          ActivePage = AdvTabSheet1
+          ActiveFont.Charset = DEFAULT_CHARSET
+          ActiveFont.Color = clWindowText
+          ActiveFont.Height = -11
+          ActiveFont.Name = 'Segoe UI'
+          ActiveFont.Style = []
+          Align = alLeft
+          DoubleBuffered = True
+          TabBackGroundColor = clBtnFace
+          TabMargin.RightMargin = 0
+          TabOverlap = 0
+          Version = '2.0.5.0'
+          PersistPagesState.Location = plRegistry
+          PersistPagesState.Enabled = False
+          TabOrder = 1
+          object AdvTabSheet1: TAdvTabSheet
+            Caption = 'AdvTabSheet1'
+            Color = clBtnFace
+            ColorTo = clNone
+            TabColor = clBtnFace
+            TabColorTo = clNone
+            inline frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent
+              Left = 0
+              Top = 0
+              Width = 841
+              Height = 941
+              Align = alLeft
+              TabOrder = 0
+              ExplicitWidth = 841
+              ExplicitHeight = 941
+              inherited lbCap: TLabel
+                Left = 582
+                Top = 60
+                StyleElements = [seFont, seClient, seBorder]
+                ExplicitLeft = 582
+                ExplicitTop = 60
+              end
+              inherited lbData: TLabel
+                Top = 61
+                StyleElements = [seFont, seClient, seBorder]
+                ExplicitTop = 61
+              end
+              inherited Area: TLabel
+                StyleElements = [seFont, seClient, seBorder]
+              end
+              inherited lbActivity: TLabel
+                Left = 11
+                Top = 60
+                StyleElements = [seFont, seClient, seBorder]
+                ExplicitLeft = 11
+                ExplicitTop = 60
+              end
+              inherited lkpCAP: TJvDBLookupCombo
+                Left = 580
+                Top = 75
+                Width = 72
+                ExplicitLeft = 580
+                ExplicitTop = 75
+                ExplicitWidth = 72
+              end
+              inherited grdReportList: TDBCtrlGrid
+                Width = 433
+                Height = 826
+                PanelBorder = gbNone
+                PanelHeight = 118
+                PanelWidth = 416
+                ExplicitWidth = 433
+                ExplicitHeight = 826
+                inherited pnlInterventi: TPanel
+                  Top = 98
+                  Width = 416
+                  StyleElements = [seFont, seClient, seBorder]
+                  ExplicitTop = 98
+                  ExplicitWidth = 416
+                  inherited Label3: TLabel
+                    Width = 13
+                    Height = 20
+                    Caption = 'Lc'
+                    StyleElements = [seFont, seClient, seBorder]
+                    ExplicitWidth = 13
+                  end
+                  inherited DBText4: TDBText
+                    Left = 19
+                    StyleElements = [seFont, seClient, seBorder]
+                    ExplicitLeft = 19
+                  end
+                  inherited lbIdranti: TLabel
+                    Left = 42
+                    Width = 22
+                    Height = 20
+                    Caption = 'Idr:'
+                    StyleElements = [seFont, seClient, seBorder]
+                    ExplicitLeft = 42
+                    ExplicitWidth = 22
+                  end
+                  inherited DBText5: TDBText
+                    Left = 67
+                    StyleElements = [seFont, seClient, seBorder]
+                    ExplicitLeft = 67
+                  end
+                  inherited Label4: TLabel
+                    Left = 90
+                    Width = 38
+                    Height = 20
+                    Caption = 'E.Ord:'
+                    StyleElements = [seFont, seClient, seBorder]
+                    ExplicitLeft = 90
+                    ExplicitWidth = 38
+                  end
+                  inherited DBText6: TDBText
+                    Left = 131
+                    StyleElements = [seFont, seClient, seBorder]
+                    ExplicitLeft = 131
+                  end
+                  inherited Label5: TLabel
+                    Left = 154
+                    Width = 39
+                    Height = 20
+                    Caption = 'E.Stra:'
+                    StyleElements = [seFont, seClient, seBorder]
+                    ExplicitLeft = 154
+                    ExplicitWidth = 39
+                  end
+                  inherited DBText7: TDBText
+                    Left = 196
+                    StyleElements = [seFont, seClient, seBorder]
+                    ExplicitLeft = 196
+                  end
+                  inherited DBText2: TDBText
+                    Left = 333
+                    Width = 81
+                    Alignment = taRightJustify
+                    ExplicitLeft = 333
+                    ExplicitTop = 3
+                    ExplicitWidth = 81
+                  end
+                  inherited Label6: TLabel
+                    Left = 219
+                    Height = 20
+                    StyleElements = [seFont, seClient, seBorder]
+                    ExplicitLeft = 219
+                  end
+                  inherited DBText10: TDBText
+                    Left = 257
+                    StyleElements = [seFont, seClient, seBorder]
+                    ExplicitLeft = 257
+                  end
+                  inherited Label7: TLabel
+                    Left = 280
+                    Height = 20
+                    StyleElements = [seFont, seClient, seBorder]
+                    ExplicitLeft = 280
+                  end
+                  inherited DBText11: TDBText
+                    Left = 309
+                    StyleElements = [seFont, seClient, seBorder]
+                    ExplicitLeft = 309
+                  end
+                end
+                inherited Panel1: TPanel
+                  Width = 416
+                  Height = 98
+                  StyleElements = [seFont, seClient, seBorder]
+                  ExplicitWidth = 416
+                  ExplicitHeight = 98
+                  inherited Panel2: TPanel
+                    Width = 337
+                    Height = 96
+                    StyleElements = [seFont, seClient, seBorder]
+                    ExplicitWidth = 337
+                    ExplicitHeight = 96
+                    inherited DBText1: TDBText
+                      Width = 331
+                      StyleElements = [seFont, seClient, seBorder]
+                      ExplicitWidth = 331
+                    end
+                    inherited DBText3: TDBText
+                      Width = 331
+                      StyleElements = [seFont, seClient, seBorder]
+                      ExplicitWidth = 331
+                    end
+                    inherited Panel3: TPanel
+                      Top = 74
+                      Width = 337
+                      StyleElements = [seFont, seClient, seBorder]
+                      ExplicitTop = 74
+                      ExplicitWidth = 337
+                      inherited DBText8: TDBText
+                        StyleElements = [seFont, seClient, seBorder]
+                      end
+                      inherited DBText9: TDBText
+                        Width = 190
+                        StyleElements = [seFont, seClient, seBorder]
+                        ExplicitWidth = 241
+                      end
+                    end
+                  end
+                  inherited btnImage: TDBImage
+                    Height = 96
+                    ExplicitHeight = 96
+                  end
+                end
+              end
+              inherited DBPlanner1: TDBPlanner
+                Left = 447
+                Top = 106
+                Height = 835
+                ExplicitLeft = 447
+                ExplicitTop = 106
+                ExplicitHeight = 835
+                TMSStyle = 0
+              end
+              inherited btnEditMeeting: TButton
+                Left = 667
+                Top = 860
+                ExplicitLeft = 667
+                ExplicitTop = 860
+              end
+              inherited btnDeleteMeeting: TButton
+                Left = 666
+                Top = 830
+                ExplicitLeft = 666
+                ExplicitTop = 830
+              end
+              inherited grpStato: TRadioGroup
+                Left = 341
+                Width = 404
+                ExplicitLeft = 341
+                ExplicitWidth = 404
+              end
+              inherited CalendarDate: TDateTimePicker
+                Top = 75
+                ExplicitTop = 75
+              end
+              inherited cboCustomers: TJvDBLookupCombo
+                Top = 76
+                ExplicitTop = 76
+              end
+              inherited Memo1: TMemo
+                Top = 824
+                StyleElements = [seFont, seClient, seBorder]
+                ExplicitTop = 824
+              end
+              inherited grdDateTime: TGroupBox
+                Top = 821
+                Height = 112
+                ExplicitTop = 821
+                ExplicitHeight = 112
+                inherited lbDateFrom: TLabel
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+                inherited lbDateTo: TLabel
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+                inherited lbStartHours: TLabel
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+                inherited Label1: TLabel
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+                inherited lbMin: TLabel
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+                inherited Label2: TLabel
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+                inherited cboHourFrom: TComboBox
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+                inherited cboHourTo: TComboBox
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+                inherited cboMinsFrom: TComboBox
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+                inherited cboMinsTo: TComboBox
+                  StyleElements = [seFont, seClient, seBorder]
+                end
+              end
+              inherited btnSearch: TBitBtn
+                Left = 667
+                Top = 890
+                DoubleBuffered = True
+                ImageIndex = 16
+                ImageName = '017-clock'
+                ExplicitLeft = 667
+                ExplicitTop = 890
+              end
+              inherited btnPrevDay: TButton
+                Left = 530
+                Top = 75
+                Width = 23
+                ExplicitLeft = 530
+                ExplicitTop = 75
+                ExplicitWidth = 23
+              end
+              inherited btnNextDay: TButton
+                Left = 552
+                Top = 75
+                Width = 25
+                ExplicitLeft = 552
+                ExplicitTop = 75
+                ExplicitWidth = 25
+              end
+              inherited cbkFilterReport: TCheckBox
+                Width = 98
+                ExplicitWidth = 98
+              end
+              inherited Button1: TButton
+                Left = 750
+                Top = 75
+                ExplicitLeft = 750
+                ExplicitTop = 75
+              end
+              inherited btnWhatsApp: TButton
+                Left = 652
+                Top = 75
+                ExplicitLeft = 652
+                ExplicitTop = 75
+              end
+              inherited btnSincro: TButton
+                Left = 750
+                Top = 44
+                ExplicitLeft = 750
+                ExplicitTop = 44
+              end
+              inherited Button2: TButton
+                Left = 239
+                Width = 96
+                ExplicitLeft = 239
+                ExplicitWidth = 96
+              end
+              inherited btnWhatsAppMessages: TAdvBadgeButton
+                Left = 750
+                Top = 13
+                ExplicitLeft = 750
+                ExplicitTop = 13
+              end
+              inherited dsCAP: TUniDataSource
+                Left = 184
+                Top = 344
+              end
+              inherited WATimer: TTimer
+                Interval = 60000
+                Left = 648
+              end
+            end
+          end
+          object AdvTabSheet2: TAdvTabSheet
+            Caption = 'AdvTabSheet2'
+            Color = clBtnFace
+            ColorTo = clNone
+            TabColor = clBtnFace
+            TabColorTo = clNone
+          end
         end
       end
     end
@@ -1030,16 +1343,47 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         Align = alClient
         TabOrder = 0
         ExplicitHeight = 971
+        inherited lbGiorni: TLabel
+          StyleElements = [seFont, seClient, seBorder]
+        end
+        inherited lbCalendarList: TLabel
+          StyleElements = [seFont, seClient, seBorder]
+        end
+        inherited Area: TLabel
+          StyleElements = [seFont, seClient, seBorder]
+        end
+        inherited edDays: TSpinEdit
+          StyleElements = [seFont, seClient, seBorder]
+        end
+        inherited Panel1: TPanel
+          StyleElements = [seFont, seClient, seBorder]
+        end
         inherited grpMeeting: TGroupBox
           Top = 860
           ExplicitTop = 860
         end
+        inherited Panel2: TPanel
+          StyleElements = [seFont, seClient, seBorder]
+          inherited ckbCalendarList: TCheckListBox
+            ItemHeight = 16
+            StyleElements = [seFont, seClient, seBorder]
+          end
+        end
         inherited Panel3: TPanel
+          StyleElements = [seFont, seClient, seBorder]
           inherited lbSearch: TLabel
             Width = 250
+            StyleElements = [seFont, seClient, seBorder]
           end
           inherited lbDateSelector: TLabel
             Width = 256
+            StyleElements = [seFont, seClient, seBorder]
+          end
+          inherited edMeeting: TEdit
+            StyleElements = [seFont, seClient, seBorder]
+          end
+          inherited Panel4: TPanel
+            StyleElements = [seFont, seClient, seBorder]
           end
         end
         inherited PageControl1: TPageControl
@@ -1080,13 +1424,24 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         TabOrder = 0
         ExplicitWidth = 1440
         ExplicitHeight = 971
+        inherited lbGiorni: TLabel
+          StyleElements = [seFont, seClient, seBorder]
+        end
         inherited lbCalendarList: TLabel
           Width = 1434
+          StyleElements = [seFont, seClient, seBorder]
         end
         inherited Area: TLabel
           Width = 57
           Caption = 'Calendario'
+          StyleElements = [seFont, seClient, seBorder]
           ExplicitWidth = 57
+        end
+        inherited edDays: TSpinEdit
+          StyleElements = [seFont, seClient, seBorder]
+        end
+        inherited Panel1: TPanel
+          StyleElements = [seFont, seClient, seBorder]
         end
         inherited grpMeeting: TGroupBox
           Top = 860
@@ -1096,18 +1451,30 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         end
         inherited Panel2: TPanel
           Width = 1440
+          StyleElements = [seFont, seClient, seBorder]
           ExplicitWidth = 1440
           inherited ckbCalendarList: TCheckListBox
             Width = 1381
+            ItemHeight = 16
+            StyleElements = [seFont, seClient, seBorder]
             ExplicitWidth = 1381
           end
         end
         inherited Panel3: TPanel
+          StyleElements = [seFont, seClient, seBorder]
           inherited lbSearch: TLabel
             Width = 250
+            StyleElements = [seFont, seClient, seBorder]
           end
           inherited lbDateSelector: TLabel
             Width = 256
+            StyleElements = [seFont, seClient, seBorder]
+          end
+          inherited edMeeting: TEdit
+            StyleElements = [seFont, seClient, seBorder]
+          end
+          inherited Panel4: TPanel
+            StyleElements = [seFont, seClient, seBorder]
           end
         end
         inherited PageControl1: TPageControl
@@ -1509,14 +1876,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     OnTimer = Timer1Timer
     Left = 908
     Top = 154
-  end
-  object mmuPlanner: TMainMenu
-    Images = dmVCLPhoenixPlannerController.SVGIconImageList16
-    Left = 456
-    Top = 312
-    object Colore1: TMenuItem
-      Action = dmVCLPhoenixPlannerController.actCalendarColor
-    end
   end
   object Timer2: TTimer
     Interval = 600000

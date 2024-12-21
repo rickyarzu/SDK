@@ -59,8 +59,11 @@ end;
 
 class procedure TJanuaPhoenixVCLApplication.ConnectionSetup;
 begin
+  TJanuaApplication.ServerAddress := 'pg.januaservers.com';
+  TJanuaApplication.ServerPort := 5432;
+  TJanuaApplication.ServerDatabaseName := 'ergomercator';
+  TJanuaApplication.DBSchemaID := 33;
   inherited;
-
 end;
 
 class procedure TJanuaPhoenixVCLApplication.LoadMenu;

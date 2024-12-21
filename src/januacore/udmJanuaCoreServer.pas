@@ -4,7 +4,6 @@ interface
 
 uses
   System.SysUtils, System.Classes,
-  // Datasnap
   // Januaproject
   Janua.Core.Entities, Janua.Core.Types, Janua.Core.DB.Types, Janua.Core.Legacy, Janua.Core.Classes,
   Janua.Core.DB;

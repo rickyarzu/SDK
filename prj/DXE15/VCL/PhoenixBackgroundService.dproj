@@ -190,17 +190,7 @@
             <FormType>dfm</FormType>
             <DesignClass>TService</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.BackgroundThread.pas"/>
-        <DCCReference Include="..\..\..\src\FireDAC\Janua.FDAC.Phoenix.Lab.pas">
-            <Form>dmFDACPhoenixLab</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\..\src\FireDAC\Janua.FDAC.Phoenix.Model.pas">
-            <Form>dmFDACPhoenixModel</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.TWilioBackgroundThread.pas"/>
         <DCCReference Include="uPhoenixBackgroundServiceConf.pas"/>
         <DCCReference Include="..\..\..\src\januaunidac\datamodules\udmPgStorage.pas">
             <Form>dmPgStorage</Form>

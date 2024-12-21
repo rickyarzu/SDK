@@ -20,15 +20,14 @@ uses
   Globale, ZFIBPlusNodoGenerico2,
   // Janua
   Janua.TMS.Phoenix.framePlannerCalendar, Janua.Phoenix.VCL.dmPlannerController,
-  Janua.VCL.EnhCRDBGrid, Janua.VCL.frameCRDBGrid, uJanuaVCLFrame, Janua.FDAC.Phoenix.Lab,
+  Janua.VCL.EnhCRDBGrid, Janua.VCL.frameCRDBGrid, uJanuaVCLFrame,
   Janua.TMS.Planner.frameCustomCalendar, Janua.VCL.Planner.frameCustomGoogleCalendar,
   Janua.VCL.Planner.framePhoenixGoogleCalendar, Janua.TMS.Phoenix.framePlannerCalendar2,
   Janua.Phoenix.VCL.framePlannerEvent, Janua.Core.Types, Janua.TMS.WebView, Winapi.WebView2, Winapi.ActiveX,
-  VCL.Edge, VCL.DBCtrls, Janua.Phoenix.VCL.framePlannerReport;
+  VCL.Edge, VCL.DBCtrls, Janua.Phoenix.VCL.framePlannerReport, AdvPageControl, uframeWhatsAppMessage;
 
 type
   TfrmPhoenixVCLReportPlanner = class(TForm)
-    mmuPlanner: TMainMenu;
     PageControl1: TPageControl;
     tabTicketsList: TTabSheet;
     tabPlannerCalendar: TTabSheet;
@@ -68,7 +67,6 @@ type
     N1: TMenuItem;
     frameTMSPhoenixPlannerTecnici: TframeTMSPhoenixPlannerCalendar;
     frameVCLPhoenixPlannerCalendari: TframeVCLPhoenixPlannerCalendar2;
-    frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent;
     N3: TMenuItem;
     GoogleSync1: TMenuItem;
     tabPlannerEvents: TTabSheet;
@@ -80,8 +78,16 @@ type
     btnUpdateImage: TBitBtn;
     btnImage: TDBImage;
     tabGoogleCalendarReport: TTabSheet;
-    frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport;
     EdgeBrowser2: TEdgeBrowser;
+    AdvPageControl1: TAdvPageControl;
+    AdvTabSheet1: TAdvTabSheet;
+    AdvTabSheet2: TAdvTabSheet;
+    frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent;
+    pgCalendars: TPageControl;
+    tabReportCalendar: TTabSheet;
+    frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport;
+    tabMessaggi: TTabSheet;
+    frameVCLWhatsAppMessages1: TframeVCLWhatsAppMessages;
     procedure FormCreate(Sender: TObject);
     procedure frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);
@@ -100,10 +106,12 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnUpdateImageClick(Sender: TObject);
     procedure frameVCLPhoenixPlannerEventcboTecniciChange(Sender: TObject);
+    procedure frameVCLPhoenixPlanneReportbtnWhatsAppMessagesClick(Sender: TObject);
+    procedure tabMessaggiShow(Sender: TObject);
+    procedure frameVCLPhoenixPlanneReportWATimerTimer(Sender: TObject);
   private
     { Private declarations }
     FCookies: TJanuaTmsCookies;
-    FdmFDACPhoenixLab: TdmFDACPhoenixLab;
     FdmVCLPhoenixIBPlanner: TdmVCLPhoenixPlannerController;
   public
     { Public declarations }
@@ -231,24 +239,7 @@ end;
 
 procedure TfrmPhoenixVCLReportPlanner.UpdateLab;
 begin
-  Async.Run<Boolean>(
-    function: Boolean
-    begin
-      FdmFDACPhoenixLab.StatoLavorazioni;
-      FdmFDACPhoenixLab.ElaborateJson;
-      FdmFDACPhoenixLab.UpdateData;
-      Result := True;
-    end,
-    procedure(const aResult: Boolean)
-    begin
-      { ShowMessage('Terminato Aggiornamento'); }
-      FdmVCLPhoenixIBPlanner.Setup;
-    end,
-    procedure(const Ex: Exception)
-    begin
-      ShowMessage(Ex.Message);
-      FdmVCLPhoenixIBPlanner.Setup;
-    end);
+
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields;
@@ -291,7 +282,6 @@ procedure TfrmPhoenixVCLReportPlanner.FormCreate(Sender: TObject);
 begin
   FdmVCLPhoenixIBPlanner := dmVCLPhoenixPlannerController { .Create(self) };
   FdmVCLPhoenixIBPlanner.Setup;
-  FdmFDACPhoenixLab := TdmFDACPhoenixLab.Create(self);
   frameTMSPhoenixPlannerTecnici.PlannerController := FdmVCLPhoenixIBPlanner;
   PageControl1.ActivePage := self.tabGoogleCalendarReport;
 
@@ -356,6 +346,18 @@ begin
 
 end;
 
+procedure TfrmPhoenixVCLReportPlanner.frameVCLPhoenixPlanneReportbtnWhatsAppMessagesClick(Sender: TObject);
+begin
+  pgCalendars.ActivePage := tabMessaggi;
+
+end;
+
+procedure TfrmPhoenixVCLReportPlanner.frameVCLPhoenixPlanneReportWATimerTimer(Sender: TObject);
+begin
+  frameVCLPhoenixPlanneReport.WATimerTimer(Sender);
+
+end;
+
 procedure TfrmPhoenixVCLReportPlanner.frameVCLPhoenixPlannerEventbtnSincroClick(Sender: TObject);
 begin
   frameVCLPhoenixPlannerEvent.btnSincroClick(Sender);
@@ -394,6 +396,11 @@ begin
   finally
     ADialog.Free;
   end;
+end;
+
+procedure TfrmPhoenixVCLReportPlanner.tabMessaggiShow(Sender: TObject);
+begin
+  frameVCLWhatsAppMessages1.Setup;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.Timer1Timer(Sender: TObject);

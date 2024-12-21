@@ -101,7 +101,7 @@ object WebModule1: TWebModule1
       'ORDER BY id ASC ')
     Left = 136
     Top = 144
-    object qryTwilioLogid: TIntegerField
+    object qryTwilioLogid: TLargeintField
       FieldName = 'id'
     end
     object qryTwilioLogdb_schema_id: TIntegerField
@@ -120,23 +120,23 @@ object WebModule1: TWebModule1
     object qryTwilioLogupdate_date: TDateTimeField
       FieldName = 'update_date'
     end
-    object qryTwilioLoguser_insert: TStringField
+    object qryTwilioLoguser_insert: TWideStringField
       FieldName = 'user_insert'
       Size = 128
     end
-    object qryTwilioLoguser_update: TStringField
+    object qryTwilioLoguser_update: TWideStringField
       FieldName = 'user_update'
       Size = 128
     end
-    object qryTwilioLogjson_content: TMemoField
+    object qryTwilioLogjson_content: TWideMemoField
       FieldName = 'json_content'
-      BlobType = ftMemo
+      BlobType = ftWideMemo
     end
-    object qryTwilioLogbody_received: TMemoField
+    object qryTwilioLogbody_received: TWideMemoField
       FieldName = 'body_received'
-      BlobType = ftMemo
+      BlobType = ftWideMemo
     end
-    object qryTwilioLogaction: TStringField
+    object qryTwilioLogaction: TWideStringField
       FieldName = 'action'
       Size = 128
     end

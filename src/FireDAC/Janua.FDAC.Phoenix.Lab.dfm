@@ -408,8 +408,8 @@ inherited dmFDACPhoenixLab: TdmFDACPhoenixLab
   end
   object FDTransaction1: TFDTransaction
     Connection = FDConnectionPhoenix
-    Left = 72
-    Top = 224
+    Left = 80
+    Top = 216
   end
   object sqlDeleteErrori: TFDCommand
     Connection = FDConnectionPhoenix

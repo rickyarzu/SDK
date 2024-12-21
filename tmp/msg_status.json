@@ -15,3 +15,20 @@
   "channelstatuscode": "",
   "errorcode": ""
 } 
+
+
+  "smssid":     "SM01daea63271ce0d7abb6e7cc3f58af10",
+  "messagesid": "SM01daea63271ce0d7abb6e7cc3f58af10",
+  "accountsid": "AC221a150df22723daef8d097a7f76cfcf",
+  "messagestatus": "sent",
+  
+  
+ 0  "messagestatus": "sent",  		'F'
+ -1 "messagestatus": "undelivered", 'F'
+ 1  "messagestatus": "delivered", 	'F'
+ 2  "messagestatus": "read", 		'T'
+  
+  
+  ZUGHEMMO S.R.L.
+  Attenzione quando apro la 'chat' devo stare attento ad una cosa: devo mettere come 'letti' solo i rapportini che abbiano valore in/out = 1 e non in/out = 0
+  Attenzione la query dei messaggi non letti deve prendere i messaggi in stato in/out = 1 stesso criterio di cui sopra; 

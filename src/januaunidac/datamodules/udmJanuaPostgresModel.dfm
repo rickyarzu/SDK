@@ -15,7 +15,7 @@ object dmJanuaPostgresModel: TdmJanuaPostgresModel
         FieldType = ftTimeStamp
       end>
     ProviderName = 'PostgreSQL'
-    Port = 5444
+    Port = 5432
     Database = 'ergomercator'
     SpecificOptions.Strings = (
       'PostgreSQL.Schema=public'
@@ -26,7 +26,7 @@ object dmJanuaPostgresModel: TdmJanuaPostgresModel
     PoolingOptions.ConnectionLifetime = 300000
     Pooling = True
     Username = 'ergo'
-    Server = 'local.januaservers.com'
+    Server = 'pg.januaservers.com'
     LoginPrompt = False
     AfterDisconnect = PgErgoConnectionAfterDisconnect
     SchemaID = 39

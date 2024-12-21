@@ -1,5 +1,5 @@
 inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
-  Height = 757
+  Height = 721
   Width = 1047
   inherited SVGIconImageList48: TSVGIconImageList
     SVGIconItems = <
@@ -12602,6 +12602,8 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       end>
   end
   inherited JanuaUniConnection1: TJanuaUniConnection
+    SpecificOptions.Strings = (
+      'InterBase.UseUnicode=True')
     Options.DisconnectedMode = True
     Pooling = True
     EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
@@ -18875,6 +18877,8 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     end
   end
   inherited vtGoogleEvents: TVirtualTable
+    Left = 480
+    Top = 8
     Data = {
       04001A0002004944010080000000000004004554414701008000000000000700
       53554D4D41525901000001000000000B004445534352495054494F4E27000000
@@ -18897,27 +18901,15 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     Top = 560
   end
   object qryReportPlanner: TUniQuery
-    SQLInsert.Strings = (
-      'INSERT INTO STATINI'
-      
-        '  (TECNICO_INTERVENTO, NOTE_PER_IL_TECNICO, APPUNTAMENTO_DATA, A' +
-        'PPUNTAMENTO_ORA, STATO, GCAL, STATO_IMMAGINE)'
-      'VALUES'
-      
-        '  (:TECNICO_INTERVENTO, :NOTE_PER_IL_TECNICO, :APPUNTAMENTO_DATA' +
-        ', :APPUNTAMENTO_ORA, :STATO, :GCAL, :STATO_IMMAGINE)')
-    SQLDelete.Strings = (
-      'DELETE FROM STATINI'
-      'WHERE'
-      '  CHIAVE = :Old_CHIAVE')
     SQLUpdate.Strings = (
       'UPDATE STATINI'
       'SET'
       
         '  TECNICO_INTERVENTO = :TECNICO_INTERVENTO, NOTE_PER_IL_TECNICO ' +
-        '= :NOTE_PER_IL_TECNICO, APPUNTAMENTO_DATA = :APPUNTAMENTO_DATA, ' +
-        'APPUNTAMENTO_ORA = :APPUNTAMENTO_ORA, STATO = :STATO, GCAL = :GC' +
-        'AL, STATO_IMMAGINE = :STATO_IMMAGINE'
+        '= :NOTE_PER_IL_TECNICO, APPUNTAMENTO_DATA = :APPUNTAMENTO_DATA, '
+      
+        '  APPUNTAMENTO_ORA = :APPUNTAMENTO_ORA, STATO = :STATO, GCAL = :' +
+        'GCAL, STATO_IMMAGINE = :STATO_IMMAGINE, WA_ID = :WA_ID'
       'WHERE'
       '  CHIAVE = :Old_CHIAVE')
     SQLLock.Strings = (
@@ -18990,6 +18982,8 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       '       T.EMAIL AS EMAIL_TECNICO,'
       '       S.GCAL, '
       '       S.STATO_IMMAGINE, '
+      '       S.WA_ID,'
+      '       s.wa_state, s.wa_image,'
       
         '       CAST(SUBSTRING(generazione_automatica FROM 5 FOR 2) AS IN' +
         'TEGER) AS mese_calcolato,  -- Estrae il mese'
@@ -19025,44 +19019,60 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       ';')
     FetchRows = 100
     BeforePost = qryReportPlannerBeforePost
+    AfterScroll = qryReportPlannerAfterScroll
     OnCalcFields = qryReportPlannerCalcFields
     Left = 584
-    Top = 216
+    Top = 144
+    object qryReportPlannercalcStato: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'calcStato'
+      Calculated = True
+    end
+    object qryReportPlannercalcIndirizzo: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'calcIndirizzo'
+      Size = 128
+      Calculated = True
+    end
     object qryReportPlannerCHIAVE: TIntegerField
       FieldName = 'CHIAVE'
       Required = True
     end
-    object qryReportPlannerDESCRIZIONE_SCHEDA: TStringField
+    object qryReportPlannerDESCRIZIONE_SCHEDA: TWideStringField
       FieldName = 'DESCRIZIONE_SCHEDA'
       ReadOnly = True
       Size = 255
     end
+    object qryReportPlannerAMMINISTRATORE: TIntegerField
+      FieldName = 'AMMINISTRATORE'
+      ReadOnly = True
+    end
     object qryReportPlannerCLIENTE: TIntegerField
       FieldName = 'CLIENTE'
     end
-    object qryReportPlannerNOME: TStringField
+    object qryReportPlannerNOME: TWideStringField
       FieldName = 'NOME'
       ReadOnly = True
       Required = True
       Size = 100
     end
-    object qryReportPlannerPROVINCIA: TStringField
+    object qryReportPlannerPROVINCIA: TWideStringField
       FieldName = 'PROVINCIA'
       ReadOnly = True
       FixedChar = True
       Size = 2
     end
-    object qryReportPlannerCAP: TStringField
+    object qryReportPlannerCAP: TWideStringField
       FieldName = 'CAP'
       ReadOnly = True
       Size = 10
     end
-    object qryReportPlannerINDIRIZZO: TStringField
+    object qryReportPlannerINDIRIZZO: TWideStringField
       FieldName = 'INDIRIZZO'
       ReadOnly = True
       Size = 255
     end
-    object qryReportPlannerTELEFONO: TStringField
+    object qryReportPlannerTELEFONO: TWideStringField
       FieldName = 'TELEFONO'
       ReadOnly = True
       Size = 255
@@ -19087,49 +19097,49 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FieldName = 'ORARIO_APERTURA_AL2'
       ReadOnly = True
     end
-    object qryReportPlannerCHIUSURA: TStringField
+    object qryReportPlannerCHIUSURA: TWideStringField
       FieldName = 'CHIUSURA'
       ReadOnly = True
       Size = 255
     end
-    object qryReportPlannerCELLULARE: TStringField
+    object qryReportPlannerCELLULARE: TWideStringField
       FieldName = 'CELLULARE'
       ReadOnly = True
       Size = 255
     end
-    object qryReportPlannerEMAIL: TStringField
+    object qryReportPlannerEMAIL: TWideStringField
       FieldName = 'EMAIL'
       ReadOnly = True
       Size = 255
     end
-    object qryReportPlannerESCLUDI_DA_GENERAZIONE: TStringField
+    object qryReportPlannerESCLUDI_DA_GENERAZIONE: TWideStringField
       FieldName = 'ESCLUDI_DA_GENERAZIONE'
       ReadOnly = True
       FixedChar = True
       Size = 1
     end
-    object qryReportPlannerSEDE: TStringField
+    object qryReportPlannerSEDE: TWideStringField
       FieldName = 'SEDE'
       ReadOnly = True
       FixedChar = True
       Size = 1
     end
-    object qryReportPlannerID: TStringField
+    object qryReportPlannerID: TWideStringField
       FieldName = 'ID'
       ReadOnly = True
       Size = 255
     end
-    object qryReportPlannerREF_TELEFONO: TStringField
+    object qryReportPlannerREF_TELEFONO: TWideStringField
       FieldName = 'REF_TELEFONO'
       ReadOnly = True
       Size = 255
     end
-    object qryReportPlannerREF_CELLULARE: TStringField
+    object qryReportPlannerREF_CELLULARE: TWideStringField
       FieldName = 'REF_CELLULARE'
       ReadOnly = True
       Size = 255
     end
-    object qryReportPlannerCOMUNE: TStringField
+    object qryReportPlannerCOMUNE: TWideStringField
       FieldName = 'COMUNE'
       ReadOnly = True
       Size = 255
@@ -19150,12 +19160,12 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FieldName = 'NOTE_PER_IL_TECNICO'
       Size = 1024
     end
-    object qryReportPlannerSOSPESO: TStringField
+    object qryReportPlannerSOSPESO: TWideStringField
       FieldName = 'SOSPESO'
       FixedChar = True
       Size = 1
     end
-    object qryReportPlannerDA_ESPORTARE_SUL_WEB: TStringField
+    object qryReportPlannerDA_ESPORTARE_SUL_WEB: TWideStringField
       FieldName = 'DA_ESPORTARE_SUL_WEB'
       FixedChar = True
       Size = 1
@@ -19163,7 +19173,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryReportPlannerRESPONSABILE: TIntegerField
       FieldName = 'RESPONSABILE'
     end
-    object qryReportPlannerESPORTATO_SU_MOBILE: TStringField
+    object qryReportPlannerESPORTATO_SU_MOBILE: TWideStringField
       FieldName = 'ESPORTATO_SU_MOBILE'
       FixedChar = True
       Size = 1
@@ -19180,37 +19190,37 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryReportPlannerPREVENTIVO: TIntegerField
       FieldName = 'PREVENTIVO'
     end
-    object qryReportPlannerIGNORA_EVIDENZIAZIONE: TStringField
+    object qryReportPlannerIGNORA_EVIDENZIAZIONE: TWideStringField
       FieldName = 'IGNORA_EVIDENZIAZIONE'
       FixedChar = True
       Size = 1
     end
-    object qryReportPlannerANNULLATO_DA_TABLET: TStringField
+    object qryReportPlannerANNULLATO_DA_TABLET: TWideStringField
       FieldName = 'ANNULLATO_DA_TABLET'
       FixedChar = True
       Size = 1
     end
-    object qryReportPlannerMOBILEWARN_NUOVA_ATTREZZATURA: TStringField
+    object qryReportPlannerMOBILEWARN_NUOVA_ATTREZZATURA: TWideStringField
       FieldName = 'MOBILEWARN_NUOVA_ATTREZZATURA'
       FixedChar = True
       Size = 1
     end
-    object qryReportPlannerMOBILEWARN_ORDINARIA_RITIRATA: TStringField
+    object qryReportPlannerMOBILEWARN_ORDINARIA_RITIRATA: TWideStringField
       FieldName = 'MOBILEWARN_ORDINARIA_RITIRATA'
       FixedChar = True
       Size = 1
     end
-    object qryReportPlannerMOBILEWARN_N_ORDIN_CONTROLLATA: TStringField
+    object qryReportPlannerMOBILEWARN_N_ORDIN_CONTROLLATA: TWideStringField
       FieldName = 'MOBILEWARN_N_ORDIN_CONTROLLATA'
       FixedChar = True
       Size = 1
     end
-    object qryReportPlannerMOBILEWARN_SMALTIMENTO: TStringField
+    object qryReportPlannerMOBILEWARN_SMALTIMENTO: TWideStringField
       FieldName = 'MOBILEWARN_SMALTIMENTO'
       FixedChar = True
       Size = 1
     end
-    object qryReportPlannerSTATO_LAVORAZIONE: TStringField
+    object qryReportPlannerSTATO_LAVORAZIONE: TWideStringField
       FieldName = 'STATO_LAVORAZIONE'
       FixedChar = True
       Size = 1
@@ -19218,21 +19228,24 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryReportPlannerDATA_CHIUSURA_DA_SERVER: TDateField
       FieldName = 'DATA_CHIUSURA_DA_SERVER'
     end
-    object qryReportPlannerCHIUSURA_EXT: TStringField
+    object qryReportPlannerCHIUSURA_EXT: TWideStringField
       FieldName = 'CHIUSURA_EXT'
       Size = 50
     end
-    object qryReportPlannerMOBILEWARN_NON_ESEGUITI: TStringField
+    object qryReportPlannerCHIUSURA_STATINO: TBlobField
+      FieldName = 'CHIUSURA_STATINO'
+    end
+    object qryReportPlannerMOBILEWARN_NON_ESEGUITI: TWideStringField
       FieldName = 'MOBILEWARN_NON_ESEGUITI'
       FixedChar = True
       Size = 1
     end
-    object qryReportPlannerPRESA_IN_CARICO: TStringField
+    object qryReportPlannerPRESA_IN_CARICO: TWideStringField
       FieldName = 'PRESA_IN_CARICO'
       FixedChar = True
       Size = 1
     end
-    object qryReportPlannerFORNITURA: TStringField
+    object qryReportPlannerFORNITURA: TWideStringField
       FieldName = 'FORNITURA'
       FixedChar = True
       Size = 1
@@ -19249,7 +19262,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FieldName = 'INTERVENTI'
       ReadOnly = True
     end
-    object qryReportPlannerNOME_TECNICO: TStringField
+    object qryReportPlannerNOME_TECNICO: TWideStringField
       FieldName = 'NOME_TECNICO'
       ReadOnly = True
       Size = 255
@@ -19299,30 +19312,18 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FieldName = 'IMPIANTI_EL'
       ReadOnly = True
     end
-    object qryReportPlannerAMMINISTRATORE: TIntegerField
-      FieldName = 'AMMINISTRATORE'
-      ReadOnly = True
-    end
-    object qryReportPlannercalcAppuntamentoDataOra: TDateTimeField
-      FieldKind = fkCalculated
-      FieldName = 'calcAppuntamentoDataOra'
-      Calculated = True
-    end
-    object qryReportPlannerEMAIL_TECNICO: TStringField
+    object qryReportPlannerEMAIL_TECNICO: TWideStringField
       FieldName = 'EMAIL_TECNICO'
       ReadOnly = True
       Size = 255
     end
-    object qryReportPlannerGCAL: TStringField
+    object qryReportPlannerGCAL: TWideStringField
       FieldName = 'GCAL'
       FixedChar = True
       Size = 1
     end
-    object qryReportPlannercalcIndirizzo: TStringField
-      FieldKind = fkCalculated
-      FieldName = 'calcIndirizzo'
-      Size = 128
-      Calculated = True
+    object qryReportPlannerSTATO_IMMAGINE: TBlobField
+      FieldName = 'STATO_IMMAGINE'
     end
     object qryReportPlannerMESE_CALCOLATO: TIntegerField
       FieldName = 'MESE_CALCOLATO'
@@ -19340,13 +19341,20 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FieldName = 'RITARDO'
       ReadOnly = True
     end
-    object qryReportPlannercalcStato: TStringField
+    object qryReportPlannerWA_ID: TWideStringField
+      FieldName = 'WA_ID'
+      Size = 128
+    end
+    object qryReportPlannercalcAppuntamentoDataOra: TDateTimeField
       FieldKind = fkCalculated
-      FieldName = 'calcStato'
+      FieldName = 'calcAppuntamentoDataOra'
       Calculated = True
     end
-    object qryReportPlannerSTATO_IMMAGINE: TBlobField
-      FieldName = 'STATO_IMMAGINE'
+    object qryReportPlannerWA_STATE: TSmallintField
+      FieldName = 'WA_STATE'
+    end
+    object qryReportPlannerWA_IMAGE: TBlobField
+      FieldName = 'WA_IMAGE'
     end
   end
   object spSetStatinoStato: TUniStoredProc
@@ -19380,8 +19388,9 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FieldName = 'CHIAVE'
       Required = True
     end
-    object qryCustomersDESCRIZIONE_SCHEDA: TStringField
+    object qryCustomersDESCRIZIONE_SCHEDA: TWideStringField
       FieldName = 'DESCRIZIONE_SCHEDA'
+      ReadOnly = True
       Size = 255
     end
   end
@@ -19398,7 +19407,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryTechRESPONSABILE: TIntegerField
       FieldName = 'RESPONSABILE'
     end
-    object qryTechNOME_TECNICO: TStringField
+    object qryTechNOME_TECNICO: TWideStringField
       FieldName = 'NOME_TECNICO'
       ReadOnly = True
       Size = 255
@@ -19419,8 +19428,9 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       ';')
     Left = 688
     Top = 312
-    object qryCAPCAP: TStringField
+    object qryCAPCAP: TWideStringField
       FieldName = 'CAP'
+      ReadOnly = True
       Size = 10
     end
   end
@@ -19522,7 +19532,6 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     end
     object qryPlannerEventsTECNICO: TIntegerField
       FieldName = 'TECNICO'
-      Required = True
     end
     object qryPlannerEventsDALLE_ORE: TDateTimeField
       FieldName = 'DALLE_ORE'
@@ -19532,20 +19541,26 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FieldName = 'ALLE_ORE'
       Required = True
     end
-    object qryPlannerEventsSUBJECT: TStringField
-      FieldName = 'SUBJECT'
-      Size = 256
-    end
     object qryPlannerEventsNOTE: TWideMemoField
       FieldName = 'NOTE'
       BlobType = ftWideMemo
     end
-    object qryPlannerEventsTECNICO_SIGLA: TStringField
+    object qryPlannerEventsSUBJECT: TWideStringField
+      FieldName = 'SUBJECT'
+      Size = 512
+    end
+    object qryPlannerEventsTECNICO_SIGLA: TWideStringField
       FieldName = 'TECNICO_SIGLA'
       Size = 12
     end
     object qryPlannerEventsCOLORE: TIntegerField
       FieldName = 'COLORE'
+    end
+    object qryPlannerEventsJGUID: TGuidField
+      FieldName = 'JGUID'
+      Required = True
+      FixedChar = True
+      Size = 38
     end
     object qryPlannerEventsICONA: TSmallintField
       FieldName = 'ICONA'
@@ -19562,14 +19577,21 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryPlannerEventsCALENDARIO: TIntegerField
       FieldName = 'CALENDARIO'
     end
-    object qryPlannerEventsGOOGLEID: TStringField
+    object qryPlannerEventsGOOGLEID: TWideStringField
       FieldName = 'GOOGLEID'
       Size = 128
     end
-    object qryPlannerEventsJGUID: TGuidField
-      FieldName = 'JGUID'
+    object qryPlannerEventsWANUMBER: TWideStringField
+      FieldName = 'WANUMBER'
+    end
+    object qryPlannerEventsWA_SENT: TWideStringField
+      FieldName = 'WA_SENT'
       FixedChar = True
-      Size = 38
+      Size = 1
+    end
+    object qryPlannerEventsWA_MESSAGE: TWideStringField
+      FieldName = 'WA_MESSAGE'
+      Size = 512
     end
     object qryPlannerEventslkpMailTecnico: TStringField
       FieldKind = fkLookup
@@ -19614,12 +19636,12 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryTechPlannedRESPONSABILE: TIntegerField
       FieldName = 'RESPONSABILE'
     end
-    object qryTechPlannedNOME_TECNICO: TStringField
+    object qryTechPlannedNOME_TECNICO: TWideStringField
       FieldName = 'NOME_TECNICO'
       ReadOnly = True
       Size = 255
     end
-    object qryTechPlannedSIGLA: TStringField
+    object qryTechPlannedSIGLA: TWideStringField
       FieldName = 'SIGLA'
       ReadOnly = True
       Size = 12
@@ -19640,48 +19662,48 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     Connection = JanuaUniConnection1
     Left = 688
     Top = 40
-    object tabGoogleCalendarsID: TStringField
+    object tabGoogleCalendarsID: TWideStringField
       FieldName = 'ID'
       Required = True
       Size = 128
     end
-    object tabGoogleCalendarsLOCATION: TStringField
+    object tabGoogleCalendarsDESCRIPTION: TWideStringField
+      FieldName = 'DESCRIPTION'
+      Size = 1024
+    end
+    object tabGoogleCalendarsLOCATION: TWideStringField
       FieldName = 'LOCATION'
       Size = 128
     end
-    object tabGoogleCalendarsSUMMARY: TStringField
+    object tabGoogleCalendarsSUMMARY: TWideStringField
       FieldName = 'SUMMARY'
       Size = 256
     end
-    object tabGoogleCalendarsTIMEZONE: TStringField
+    object tabGoogleCalendarsTIMEZONE: TWideStringField
       FieldName = 'TIMEZONE'
       Size = 60
     end
     object tabGoogleCalendarsCOLOR: TSmallintField
       FieldName = 'COLOR'
     end
-    object tabGoogleCalendarsBACK_COLOR: TIntegerField
-      FieldName = 'BACK_COLOR'
-    end
-    object tabGoogleCalendarsFORE_COLOR: TIntegerField
-      FieldName = 'FORE_COLOR'
-    end
-    object tabGoogleCalendarsISPRIMARY: TStringField
+    object tabGoogleCalendarsISPRIMARY: TWideStringField
       FieldName = 'ISPRIMARY'
       FixedChar = True
       Size = 1
-    end
-    object tabGoogleCalendarsALIAS: TStringField
-      FieldName = 'ALIAS'
-    end
-    object tabGoogleCalendarsDESCRIPTION: TWideStringField
-      FieldName = 'DESCRIPTION'
-      Size = 1024
     end
     object tabGoogleCalendarsJGUID: TGuidField
       FieldName = 'JGUID'
       FixedChar = True
       Size = 38
+    end
+    object tabGoogleCalendarsALIAS: TWideStringField
+      FieldName = 'ALIAS'
+    end
+    object tabGoogleCalendarsBACK_COLOR: TIntegerField
+      FieldName = 'BACK_COLOR'
+    end
+    object tabGoogleCalendarsFORE_COLOR: TIntegerField
+      FieldName = 'FORE_COLOR'
     end
   end
   object tabGoogleEvents: TUniTable
@@ -19707,18 +19729,18 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     IndexFieldNames = 'ID'
     Left = 688
     Top = 104
-    object tabGoogleEventsID: TStringField
+    object tabGoogleEventsID: TWideStringField
       FieldName = 'ID'
       Required = True
       Size = 128
     end
-    object tabGoogleEventsETAG: TStringField
+    object tabGoogleEventsETAG: TWideStringField
       FieldName = 'ETAG'
       Size = 128
     end
-    object tabGoogleEventsSUMMARY: TStringField
+    object tabGoogleEventsSUMMARY: TWideStringField
       FieldName = 'SUMMARY'
-      Size = 256
+      Size = 512
     end
     object tabGoogleEventsDESCRIPTION: TWideMemoField
       FieldName = 'DESCRIPTION'
@@ -19736,26 +19758,21 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object tabGoogleEventsUPDATED: TDateTimeField
       FieldName = 'UPDATED'
     end
-    object tabGoogleEventsLOCATION: TStringField
+    object tabGoogleEventsLOCATION: TWideStringField
       FieldName = 'LOCATION'
       Size = 128
     end
     object tabGoogleEventsSTATUS: TSmallintField
       FieldName = 'STATUS'
     end
-    object tabGoogleEventsSENDNOTIFICATIONS: TStringField
-      FieldName = 'SENDNOTIFICATIONS'
-      FixedChar = True
-      Size = 1
-    end
     object tabGoogleEventsVISIBILITY: TIntegerField
       FieldName = 'VISIBILITY'
     end
-    object tabGoogleEventsRECURRENCE: TStringField
+    object tabGoogleEventsRECURRENCE: TWideStringField
       FieldName = 'RECURRENCE'
       Size = 60
     end
-    object tabGoogleEventsRECURRINGID: TStringField
+    object tabGoogleEventsRECURRINGID: TWideStringField
       FieldName = 'RECURRINGID'
       Size = 60
     end
@@ -19765,10 +19782,25 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object tabGoogleEventsCOLOR: TSmallintField
       FieldName = 'COLOR'
     end
-    object tabGoogleEventsCALENDARID: TStringField
+    object tabGoogleEventsCALENDARID: TWideStringField
       FieldName = 'CALENDARID'
       Required = True
       Size = 128
+    end
+    object tabGoogleEventsUSEDEFAULTREMINDERS: TWideStringField
+      FieldName = 'USEDEFAULTREMINDERS'
+      FixedChar = True
+      Size = 1
+    end
+    object tabGoogleEventsSENDNOTIFICATIONS: TWideStringField
+      FieldName = 'SENDNOTIFICATIONS'
+      FixedChar = True
+      Size = 1
+    end
+    object tabGoogleEventsISALLDAY: TWideStringField
+      FieldName = 'ISALLDAY'
+      FixedChar = True
+      Size = 1
     end
     object tabGoogleEventsATTENDEES: TWideMemoField
       FieldName = 'ATTENDEES'
@@ -19778,18 +19810,9 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FieldName = 'REMINDERS'
       BlobType = ftWideMemo
     end
-    object tabGoogleEventsUSEDEFAULTREMINDERS: TStringField
-      FieldName = 'USEDEFAULTREMINDERS'
-      FixedChar = True
-      Size = 1
-    end
-    object tabGoogleEventsISALLDAY: TStringField
-      FieldName = 'ISALLDAY'
-      FixedChar = True
-      Size = 1
-    end
     object tabGoogleEventsJGUID: TGuidField
       FieldName = 'JGUID'
+      Required = True
       FixedChar = True
       Size = 38
     end
@@ -19799,7 +19822,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object tabGoogleEventsFOREGROUNDCOLOR: TIntegerField
       FieldName = 'FOREGROUNDCOLOR'
     end
-    object tabGoogleEventsSYNC: TStringField
+    object tabGoogleEventsSYNC: TWideStringField
       FieldName = 'SYNC'
       FixedChar = True
       Size = 1
@@ -19834,16 +19857,15 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     end
     object qryPlannerCalendarsTECNICO: TIntegerField
       FieldName = 'TECNICO'
-      Required = True
     end
     object qryPlannerCalendarsSUMMARY: TBlobField
       FieldName = 'SUMMARY'
     end
-    object qryPlannerCalendarsDESCRIPTION: TStringField
+    object qryPlannerCalendarsDESCRIPTION: TWideStringField
       FieldName = 'DESCRIPTION'
       Size = 128
     end
-    object qryPlannerCalendarsTECNICO_SIGLA: TStringField
+    object qryPlannerCalendarsTECNICO_SIGLA: TWideStringField
       FieldName = 'TECNICO_SIGLA'
       Size = 12
     end
@@ -19867,13 +19889,23 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryPlannerCalendarsDEFAULTCOLOR: TIntegerField
       FieldName = 'DEFAULTCOLOR'
     end
-    object qryPlannerCalendarsGOOGLEID: TStringField
+    object qryPlannerCalendarsGOOGLEID: TWideStringField
       FieldName = 'GOOGLEID'
       Size = 128
     end
-    object qryPlannerCalendarsGOOGLE_SUMMARY: TStringField
+    object qryPlannerCalendarsGOOGLE_SUMMARY: TWideStringField
       FieldName = 'GOOGLE_SUMMARY'
       Size = 128
+    end
+    object qryPlannerCalendarsGRUPPO_ID: TWideStringField
+      FieldName = 'GRUPPO_ID'
+      FixedChar = True
+      Size = 1
+    end
+    object qryPlannerCalendarsACTIVE: TWideStringField
+      FieldName = 'ACTIVE'
+      FixedChar = True
+      Size = 1
     end
   end
   object vtReportPlanner: TVirtualTable
@@ -20526,39 +20558,40 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'FROM  TECNICI T JOIN calendario on calendario.tecnico = t.chiave'
       'where T.EMAIL IS NOT NULL '
       'AND T.ATTIVO = '#39'T'#39)
+    Active = True
     Left = 576
     Top = 416
     object lkpTecniciCHIAVE: TIntegerField
       FieldName = 'CHIAVE'
       Required = True
     end
-    object lkpTecniciDESCRIZIONE: TStringField
+    object lkpTecniciDESCRIZIONE: TWideStringField
       FieldName = 'DESCRIZIONE'
       Size = 255
     end
-    object lkpTecniciSOSPESO: TStringField
+    object lkpTecniciSOSPESO: TWideStringField
       FieldName = 'SOSPESO'
       FixedChar = True
       Size = 1
     end
-    object lkpTecniciATTIVO: TStringField
+    object lkpTecniciATTIVO: TWideStringField
       FieldName = 'ATTIVO'
       FixedChar = True
       Size = 1
     end
-    object lkpTecniciACCOUNT_MOBILE: TStringField
+    object lkpTecniciACCOUNT_MOBILE: TWideStringField
       FieldName = 'ACCOUNT_MOBILE'
       Size = 255
     end
-    object lkpTecniciEMAIL: TStringField
+    object lkpTecniciEMAIL: TWideStringField
       FieldName = 'EMAIL'
       Size = 255
     end
-    object lkpTecniciTELEFONO: TStringField
+    object lkpTecniciTELEFONO: TWideStringField
       FieldName = 'TELEFONO'
       Size = 255
     end
-    object lkpTecniciSIGLA: TStringField
+    object lkpTecniciSIGLA: TWideStringField
       FieldName = 'SIGLA'
       Size = 12
     end
@@ -20656,7 +20689,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   end
   object vtPlannerEvents: TVirtualTable
     Left = 584
-    Top = 144
+    Top = 80
     Data = {04000000000000000000}
   end
   object qryCAPTecnici: TUniQuery
@@ -20672,7 +20705,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     MasterSource = dsLkpTecnici
     Left = 688
     Top = 456
-    object StringField1: TStringField
+    object qryCAPTecniciCAP: TWideStringField
       FieldName = 'CAP'
       Size = 10
     end
@@ -20714,11 +20747,11 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FieldName = 'SUMMARY'
       Size = 2048
     end
-    object qryPlannerCalendars2DESCRIPTION: TStringField
+    object qryPlannerCalendars2DESCRIPTION: TWideStringField
       FieldName = 'DESCRIPTION'
       Size = 128
     end
-    object qryPlannerCalendars2TECNICO_SIGLA: TStringField
+    object qryPlannerCalendars2TECNICO_SIGLA: TWideStringField
       FieldName = 'TECNICO_SIGLA'
       Size = 12
     end
@@ -20743,20 +20776,20 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryPlannerCalendars2DEFAULTCOLOR: TIntegerField
       FieldName = 'DEFAULTCOLOR'
     end
-    object qryPlannerCalendars2GOOGLEID: TStringField
+    object qryPlannerCalendars2GOOGLEID: TWideStringField
       FieldName = 'GOOGLEID'
       Size = 128
     end
-    object qryPlannerCalendars2GOOGLE_SUMMARY: TStringField
+    object qryPlannerCalendars2GOOGLE_SUMMARY: TWideStringField
       FieldName = 'GOOGLE_SUMMARY'
       Size = 128
     end
-    object qryPlannerCalendars2GRUPPO_ID: TStringField
+    object qryPlannerCalendars2GRUPPO_ID: TWideStringField
       FieldName = 'GRUPPO_ID'
       FixedChar = True
       Size = 1
     end
-    object qryPlannerCalendars2ACTIVE: TStringField
+    object qryPlannerCalendars2ACTIVE: TWideStringField
       FieldName = 'ACTIVE'
       FixedChar = True
       Size = 1
@@ -20910,11 +20943,11 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FieldName = 'NOTE'
       BlobType = ftWideMemo
     end
-    object qryPlannerEvents2SUBJECT: TStringField
+    object qryPlannerEvents2SUBJECT: TWideStringField
       FieldName = 'SUBJECT'
-      Size = 256
+      Size = 512
     end
-    object qryPlannerEvents2TECNICO_SIGLA: TStringField
+    object qryPlannerEvents2TECNICO_SIGLA: TWideStringField
       FieldName = 'TECNICO_SIGLA'
       Size = 12
     end
@@ -20923,6 +20956,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     end
     object qryPlannerEvents2JGUID: TGuidField
       FieldName = 'JGUID'
+      Required = True
       FixedChar = True
       Size = 38
     end
@@ -20941,9 +20975,21 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryPlannerEvents2CALENDARIO: TIntegerField
       FieldName = 'CALENDARIO'
     end
-    object qryPlannerEvents2GOOGLEID: TStringField
+    object qryPlannerEvents2GOOGLEID: TWideStringField
       FieldName = 'GOOGLEID'
       Size = 128
+    end
+    object qryPlannerEvents2WANUMBER: TWideStringField
+      FieldName = 'WANUMBER'
+    end
+    object qryPlannerEvents2WA_SENT: TWideStringField
+      FieldName = 'WA_SENT'
+      FixedChar = True
+      Size = 1
+    end
+    object qryPlannerEvents2WA_MESSAGE: TWideStringField
+      FieldName = 'WA_MESSAGE'
+      Size = 512
     end
   end
   object MainToolBarActions2: TActionList
@@ -21123,11 +21169,15 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       FieldName = 'ALLE_ORE'
       Required = True
     end
-    object qryPersonalPlannerEventsSUBJECT: TStringField
-      FieldName = 'SUBJECT'
-      Size = 256
+    object qryPersonalPlannerEventsNOTE: TWideMemoField
+      FieldName = 'NOTE'
+      BlobType = ftWideMemo
     end
-    object qryPersonalPlannerEventsTECNICO_SIGLA: TStringField
+    object qryPersonalPlannerEventsSUBJECT: TWideStringField
+      FieldName = 'SUBJECT'
+      Size = 512
+    end
+    object qryPersonalPlannerEventsTECNICO_SIGLA: TWideStringField
       FieldName = 'TECNICO_SIGLA'
       Size = 12
     end
@@ -21136,6 +21186,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     end
     object qryPersonalPlannerEventsJGUID: TGuidField
       FieldName = 'JGUID'
+      Required = True
       FixedChar = True
       Size = 38
     end
@@ -21154,21 +21205,21 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryPersonalPlannerEventsCALENDARIO: TIntegerField
       FieldName = 'CALENDARIO'
     end
-    object qryPersonalPlannerEventsGOOGLEID: TStringField
+    object qryPersonalPlannerEventsGOOGLEID: TWideStringField
       FieldName = 'GOOGLEID'
       Size = 128
     end
-    object qryPersonalPlannerEventsNOTE: TWideMemoField
-      FieldName = 'NOTE'
-      BlobType = ftWideMemo
-    end
-    object qryPersonalPlannerEventsWANUMBER: TStringField
+    object qryPersonalPlannerEventsWANUMBER: TWideStringField
       FieldName = 'WANUMBER'
     end
-    object qryPersonalPlannerEventsWA_SENT: TStringField
+    object qryPersonalPlannerEventsWA_SENT: TWideStringField
       FieldName = 'WA_SENT'
       FixedChar = True
       Size = 1
+    end
+    object qryPersonalPlannerEventsWA_MESSAGE: TWideStringField
+      FieldName = 'WA_MESSAGE'
+      Size = 512
     end
   end
   object qryTecniciCalendar: TUniQuery
@@ -21191,22 +21242,22 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryTecniciCalendarRESPONSABILE: TIntegerField
       FieldName = 'RESPONSABILE'
     end
-    object qryTecniciCalendarNOME_TECNICO: TStringField
+    object qryTecniciCalendarNOME_TECNICO: TWideStringField
       FieldName = 'NOME_TECNICO'
       ReadOnly = True
       Size = 255
     end
-    object qryTecniciCalendarEMAIL: TStringField
+    object qryTecniciCalendarEMAIL: TWideStringField
       FieldName = 'EMAIL'
       ReadOnly = True
       Size = 255
     end
-    object qryTecniciCalendarSIGLA: TStringField
+    object qryTecniciCalendarSIGLA: TWideStringField
       FieldName = 'SIGLA'
       ReadOnly = True
       Size = 12
     end
-    object qryTecniciCalendarGOOGLEID: TStringField
+    object qryTecniciCalendarGOOGLEID: TWideStringField
       FieldName = 'GOOGLEID'
       ReadOnly = True
       Size = 128
@@ -29837,53 +29888,60 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
         ParamType = ptInput
         Value = 2183750
       end>
-    object qryCellulariStatinoTELEFONO: TStringField
+    object qryCellulariStatinoCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
+    end
+    object qryCellulariStatinoTELEFONO: TWideStringField
       FieldName = 'TELEFONO'
       ReadOnly = True
       Size = 255
     end
-    object qryCellulariStatinoCELLULARE: TStringField
+    object qryCellulariStatinoCELLULARE: TWideStringField
       FieldName = 'CELLULARE'
       ReadOnly = True
       Size = 255
     end
-    object qryCellulariStatinoSTELEFONO: TStringField
+    object qryCellulariStatinoSTELEFONO: TWideStringField
       FieldName = 'STELEFONO'
       Size = 255
     end
-    object qryCellulariStatinoSCELLULARE: TStringField
+    object qryCellulariStatinoSCELLULARE: TWideStringField
       FieldName = 'SCELLULARE'
       Size = 255
     end
-    object qryCellulariStatinoCTEL1: TStringField
+    object qryCellulariStatinoCTEL1: TWideStringField
       FieldName = 'CTEL1'
       ReadOnly = True
       Size = 255
     end
-    object qryCellulariStatinoCCELL: TStringField
+    object qryCellulariStatinoCCELL: TWideStringField
       FieldName = 'CCELL'
       ReadOnly = True
       Size = 255
     end
-    object qryCellulariStatinoCTEL2: TStringField
+    object qryCellulariStatinoCTEL2: TWideStringField
       FieldName = 'CTEL2'
       ReadOnly = True
       Size = 255
     end
-    object qryCellulariStatinoFCEL: TStringField
+    object qryCellulariStatinoFCEL: TWideStringField
       FieldName = 'FCEL'
       ReadOnly = True
       Size = 255
     end
-    object qryCellulariStatinoFTEL: TStringField
+    object qryCellulariStatinoFTEL: TWideStringField
       FieldName = 'FTEL'
       ReadOnly = True
       Size = 255
     end
-    object qryCellulariStatinoRISULTATO: TStringField
+    object qryCellulariStatinoRISULTATO: TWideStringField
       FieldName = 'RISULTATO'
       ReadOnly = True
       Size = 255
+    end
+    object qryCellulariStatinoWANUMBER: TWideStringField
+      FieldName = 'WANUMBER'
     end
   end
   object qryElencoEventiWhatsApp: TUniQuery
@@ -29983,94 +30041,18 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
         ParamType = ptInput
         Value = 0
       end>
-    object qryElencoEventiWhatsAppID: TStringField
+    object qryElencoEventiWhatsAppID: TWideStringField
       FieldName = 'ID'
       Required = True
       Size = 128
     end
-    object qryElencoEventiWhatsAppETAG: TStringField
+    object qryElencoEventiWhatsAppETAG: TWideStringField
       FieldName = 'ETAG'
       Size = 128
     end
-    object qryElencoEventiWhatsAppSUMMARY: TStringField
+    object qryElencoEventiWhatsAppSUMMARY: TWideStringField
       FieldName = 'SUMMARY'
-      Size = 256
-    end
-    object qryElencoEventiWhatsAppCREATED: TDateTimeField
-      FieldName = 'CREATED'
-    end
-    object qryElencoEventiWhatsAppUPDATED: TDateTimeField
-      FieldName = 'UPDATED'
-    end
-    object qryElencoEventiWhatsAppLOCATION: TStringField
-      FieldName = 'LOCATION'
-      Size = 128
-    end
-    object qryElencoEventiWhatsAppSTATUS: TSmallintField
-      FieldName = 'STATUS'
-    end
-    object qryElencoEventiWhatsAppVISIBILITY: TIntegerField
-      FieldName = 'VISIBILITY'
-    end
-    object qryElencoEventiWhatsAppRECURRENCE: TStringField
-      FieldName = 'RECURRENCE'
-      Size = 60
-    end
-    object qryElencoEventiWhatsAppJGUID: TGuidField
-      FieldName = 'JGUID'
-      ReadOnly = True
-      FixedChar = True
-      Size = 38
-    end
-    object qryElencoEventiWhatsAppGJGUID: TBytesField
-      FieldName = 'GJGUID'
-    end
-    object qryElencoEventiWhatsAppSTELEFONO: TStringField
-      FieldName = 'STELEFONO'
-      Size = 255
-    end
-    object qryElencoEventiWhatsAppSCELLULARE: TStringField
-      FieldName = 'SCELLULARE'
-      Size = 255
-    end
-    object qryElencoEventiWhatsAppCTEL1: TStringField
-      FieldName = 'CTEL1'
-      Size = 255
-    end
-    object qryElencoEventiWhatsAppCCELL: TStringField
-      FieldName = 'CCELL'
-      Size = 255
-    end
-    object qryElencoEventiWhatsAppCTEL2: TStringField
-      FieldName = 'CTEL2'
-      Size = 255
-    end
-    object qryElencoEventiWhatsAppFCEL: TStringField
-      FieldName = 'FCEL'
-      Size = 255
-    end
-    object qryElencoEventiWhatsAppFTEL: TStringField
-      FieldName = 'FTEL'
-      Size = 255
-    end
-    object qryElencoEventiWhatsAppWANUMBER: TStringField
-      FieldName = 'WANUMBER'
-    end
-    object qryElencoEventiWhatsAppWA: TStringField
-      FieldName = 'WA'
-      FixedChar = True
-      Size = 1
-    end
-    object qryElencoEventiWhatsAppcalcMessage: TStringField
-      FieldKind = fkCalculated
-      FieldName = 'calcMessage'
-      Size = 1024
-      Calculated = True
-    end
-    object qryElencoEventiWhatsAppTECNICO: TStringField
-      FieldName = 'TECNICO'
-      ReadOnly = True
-      Size = 12
+      Size = 512
     end
     object qryElencoEventiWhatsAppDESCRIPTION: TBlobField
       FieldName = 'DESCRIPTION'
@@ -30081,7 +30063,27 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryElencoEventiWhatsAppENDTIME: TDateTimeField
       FieldName = 'ENDTIME'
     end
-    object qryElencoEventiWhatsAppRECURRINGID: TStringField
+    object qryElencoEventiWhatsAppCREATED: TDateTimeField
+      FieldName = 'CREATED'
+    end
+    object qryElencoEventiWhatsAppUPDATED: TDateTimeField
+      FieldName = 'UPDATED'
+    end
+    object qryElencoEventiWhatsAppLOCATION: TWideStringField
+      FieldName = 'LOCATION'
+      Size = 128
+    end
+    object qryElencoEventiWhatsAppSTATUS: TSmallintField
+      FieldName = 'STATUS'
+    end
+    object qryElencoEventiWhatsAppVISIBILITY: TIntegerField
+      FieldName = 'VISIBILITY'
+    end
+    object qryElencoEventiWhatsAppRECURRENCE: TWideStringField
+      FieldName = 'RECURRENCE'
+      Size = 60
+    end
+    object qryElencoEventiWhatsAppRECURRINGID: TWideStringField
       FieldName = 'RECURRINGID'
       Size = 60
     end
@@ -30091,22 +30093,22 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryElencoEventiWhatsAppCOLOR: TSmallintField
       FieldName = 'COLOR'
     end
-    object qryElencoEventiWhatsAppCALENDARID: TStringField
+    object qryElencoEventiWhatsAppCALENDARID: TWideStringField
       FieldName = 'CALENDARID'
       Required = True
       Size = 128
     end
-    object qryElencoEventiWhatsAppUSEDEFAULTREMINDERS: TStringField
+    object qryElencoEventiWhatsAppUSEDEFAULTREMINDERS: TWideStringField
       FieldName = 'USEDEFAULTREMINDERS'
       FixedChar = True
       Size = 1
     end
-    object qryElencoEventiWhatsAppSENDNOTIFICATIONS: TStringField
+    object qryElencoEventiWhatsAppSENDNOTIFICATIONS: TWideStringField
       FieldName = 'SENDNOTIFICATIONS'
       FixedChar = True
       Size = 1
     end
-    object qryElencoEventiWhatsAppISALLDAY: TStringField
+    object qryElencoEventiWhatsAppISALLDAY: TWideStringField
       FieldName = 'ISALLDAY'
       FixedChar = True
       Size = 1
@@ -30117,13 +30119,19 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryElencoEventiWhatsAppREMINDERS: TBlobField
       FieldName = 'REMINDERS'
     end
+    object qryElencoEventiWhatsAppJGUID: TGuidField
+      FieldName = 'JGUID'
+      Required = True
+      FixedChar = True
+      Size = 38
+    end
     object qryElencoEventiWhatsAppBACKGROUNDCOLOR: TIntegerField
       FieldName = 'BACKGROUNDCOLOR'
     end
     object qryElencoEventiWhatsAppFOREGROUNDCOLOR: TIntegerField
       FieldName = 'FOREGROUNDCOLOR'
     end
-    object qryElencoEventiWhatsAppSYNC: TStringField
+    object qryElencoEventiWhatsAppSYNC: TWideStringField
       FieldName = 'SYNC'
       FixedChar = True
       Size = 1
@@ -30138,9 +30146,17 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       ReadOnly = True
       Required = True
     end
+    object qryElencoEventiWhatsAppSTATINO: TIntegerField
+      FieldName = 'STATINO'
+      ReadOnly = True
+    end
     object qryElencoEventiWhatsAppCEJGUID: TBytesField
       FieldName = 'CEJGUID'
       ReadOnly = True
+      Required = True
+    end
+    object qryElencoEventiWhatsAppGJGUID: TBytesField
+      FieldName = 'GJGUID'
       Required = True
     end
     object qryElencoEventiWhatsAppCHIAVE: TIntegerField
@@ -30148,12 +30164,69 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       ReadOnly = True
       Required = True
     end
-    object qryElencoEventiWhatsAppSTATINO: TIntegerField
-      FieldName = 'STATINO'
+    object qryElencoEventiWhatsAppSTELEFONO: TWideStringField
+      FieldName = 'STELEFONO'
       ReadOnly = True
+      Size = 255
+    end
+    object qryElencoEventiWhatsAppSCELLULARE: TWideStringField
+      FieldName = 'SCELLULARE'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryElencoEventiWhatsAppCTEL1: TWideStringField
+      FieldName = 'CTEL1'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryElencoEventiWhatsAppCCELL: TWideStringField
+      FieldName = 'CCELL'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryElencoEventiWhatsAppCTEL2: TWideStringField
+      FieldName = 'CTEL2'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryElencoEventiWhatsAppFCEL: TWideStringField
+      FieldName = 'FCEL'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryElencoEventiWhatsAppFTEL: TWideStringField
+      FieldName = 'FTEL'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryElencoEventiWhatsAppWANUMBER: TWideStringField
+      FieldName = 'WANUMBER'
+      ReadOnly = True
+    end
+    object qryElencoEventiWhatsAppWA: TWideStringField
+      FieldName = 'WA'
+      ReadOnly = True
+      FixedChar = True
+      Size = 1
+    end
+    object qryElencoEventiWhatsAppTECNICO: TWideStringField
+      FieldName = 'TECNICO'
+      ReadOnly = True
+      Size = 12
+    end
+    object qryElencoEventiWhatsAppcalcMessage: TWideStringField
+      FieldKind = fkCalculated
+      FieldName = 'calcMessage'
+      Size = 2048
+      Calculated = True
     end
   end
   object UniQuery1: TUniQuery
+    DataTypeMap = <
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
+      end>
     Connection = JanuaUniConnection1
     SQL.Strings = (
       
@@ -30281,7 +30354,69 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
   end
   object dsReportsPlanner: TUniDataSource
     DataSet = qryReportPlanner
-    Left = 816
-    Top = 624
+    Left = 808
+    Top = 632
+  end
+  object qryLkpMessageStatus: TUniQuery
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'select wa_id, s.*, wa_state'
+      
+        'from whatsapp_messages w join WHATSAPP_STATES s on s.id = w.wa_s' +
+        'tate  '
+      'where wa_id = :wa_id and wa_id is not null'
+      'order by wa_id')
+    MasterSource = dsStatini
+    MasterFields = 'WA_ID'
+    DetailFields = 'WA_ID'
+    Left = 576
+    Top = 640
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'wa_id'
+        Value = nil
+      end>
+    object qryLkpMessageStatusWA_ID: TWideStringField
+      FieldName = 'WA_ID'
+      Size = 128
+    end
+    object qryLkpMessageStatusID: TSmallintField
+      FieldName = 'ID'
+      ReadOnly = True
+      Required = True
+    end
+    object qryLkpMessageStatusDESCRIPTION: TWideStringField
+      FieldName = 'DESCRIPTION'
+      ReadOnly = True
+    end
+    object qryLkpMessageStatusIMAGE: TBlobField
+      FieldName = 'IMAGE'
+      ReadOnly = True
+    end
+    object qryLkpMessageStatusWA_STATE: TSmallintField
+      FieldName = 'WA_STATE'
+    end
+  end
+  object tbWhatsAppStates: TUniTable
+    TableName = 'WHATSAPP_STATES'
+    Connection = JanuaUniConnection1
+    Left = 512
+    Top = 584
+    object tbWhatsAppStatesID: TSmallintField
+      FieldName = 'ID'
+      Required = True
+    end
+    object tbWhatsAppStatesDESCRIPTION: TWideStringField
+      FieldName = 'DESCRIPTION'
+    end
+    object tbWhatsAppStatesIMAGE: TBlobField
+      FieldName = 'IMAGE'
+    end
+  end
+  object dsStatini: TUniDataSource
+    DataSet = qryReportPlanner
+    Left = 584
+    Top = 216
   end
 end
