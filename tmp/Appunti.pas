@@ -27,22 +27,54 @@
           JShowError(Ex.Message);
         end);
 
+procedure TfrmPhoenixVCLReportPlanner.btnUpdateImageClick(Sender: TObject);
+begin
+  with dmVCLPhoenixPlannerController do
+  begin
+    qryReportPlanner.First;
+    while not qryReportPlanner.Eof do
+    begin
+      qryReportPlanner.Edit;
+      qryReportPlannerSTATO.AsInteger := qryReportPlannerSTATO.AsInteger;
+      dmVCLPhoenixPlannerController.qryReportPlanner.Post;
+      qryReportPlanner.Next;
+    end;
+  end;
+end;
 
-      if Result then
-        try
-          WhatsAppSentDLL(sGUID);
-          qryPersonalPlannerEvents.Edit;
-          qryPersonalPlannerEventsCOLORE.AsInteger := 7911679;
-          qryPersonalPlannerEvents.Post;
-          spInsertWhatsAppMsg.ParamByName('wanumber').Value := lWaNumber;
-          spInsertWhatsAppMsg.ParamByName('wamessage').Value := FJanuaAdvTwilio.MessageBody;
-          spInsertWhatsAppMsg.ParamByName('in_out').Value := 0;
-          spInsertWhatsAppMsg.ParamByName('wa_id').Value := FJanuaAdvTwilio.MessageSid;
-          if vStatino <> 0 then
-            spInsertWhatsAppMsg.ParamByName('report_id').Value := vStatino;
-          spInsertWhatsAppMsg.ExecProc;
-        except
-          on e: exception do
-            raise exception.Create('Messaggio a ' + lDlg.edWAPhone.Text + ' non inviato causa Errore: ' +
-              sLineBreak + e.Message);
-        end;
+
+          object btnUpdateImage: TBitBtn
+            Left = 1152
+            Top = 0
+            Width = 150
+            Height = 70
+            Align = alRight
+            Caption = 'Aggiorna Immagini'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clTeal
+            Font.Height = -12
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ImageIndex = 95
+            ImageName = '037-search'
+            Images = dmSVGImageList.SVGIconImageList
+            ParentFont = False
+            TabOrder = 10
+            StyleElements = [seClient, seBorder]
+            OnClick = btnUpdateImageClick
+          end
+          object btnImage: TDBImage
+            Left = 1075
+            Top = 0
+            Width = 77
+            Height = 70
+            Align = alRight
+            DataField = 'STATO_IMMAGINE'
+            DataSource = frameVCLCRDBGrid.UniDataSource
+            TabOrder = 11
+            ExplicitLeft = 1
+            ExplicitTop = 1
+            ExplicitHeight = 94
+          end
+		  
+		  

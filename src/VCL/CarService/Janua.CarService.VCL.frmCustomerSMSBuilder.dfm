@@ -7,6 +7,7 @@ inherited frmVCLCSCustomerSMSBuilder: TfrmVCLCSCustomerSMSBuilder
   TextHeight = 15
   inherited StatusBar: TStatusBar
     Width = 1230
+    ExplicitWidth = 1230
   end
   inherited frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
     Width = 1230
@@ -18,60 +19,93 @@ inherited frmVCLCSCustomerSMSBuilder: TfrmVCLCSCustomerSMSBuilder
         Left = 863
         ExplicitLeft = 863
       end
+      inherited lbContentVariables: TLabel
+        Left = 759
+        ExplicitLeft = 759
+      end
       inherited grpURL: TGroupBox
         Width = 1005
-        ExplicitWidth = 991
-        inherited lblMobileCustomerUrl: TLabel
-          Height = 15
-        end
+        ExplicitWidth = 1005
         inherited edtMobileUrl: TEdit
           Width = 408
           ExplicitWidth = 408
         end
         inherited btnTestUrl: TButton
-          Left = 636
-          Top = 14
+          Left = 663
           Width = 74
-          ExplicitLeft = 622
-          ExplicitTop = 14
+          ExplicitLeft = 663
           ExplicitWidth = 74
         end
         inherited edtCustomerMobileUrl1: TEdit
-          Left = 496
-          Width = 121
-          ExplicitLeft = 496
-          ExplicitWidth = 121
+          Left = 486
+          Width = 171
+          ExplicitLeft = 486
+          ExplicitWidth = 171
         end
         inherited edtTestTinyUrl: TEdit
-          Left = 736
+          Left = 743
           Width = 257
-          ExplicitLeft = 736
+          ExplicitLeft = 743
           ExplicitWidth = 257
         end
       end
       inherited advmSMSTemplate: TAdvMemo
-        Width = 985
-        ExplicitWidth = 985
+        Width = 737
+        ExplicitWidth = 737
       end
       inherited edPhoneCustomerTo: TEdit
-        Left = 919
-        Width = 70
-        ExplicitLeft = 919
-        ExplicitWidth = 56
+        Left = 910
+        Width = 91
+        ExplicitLeft = 910
+        ExplicitWidth = 91
       end
       inherited rgEngine: TRadioGroup
-        Width = 183
-        ExplicitWidth = 183
+        Width = 242
+        ExplicitWidth = 242
       end
       inherited pnlSmsTestConfig: TPanel
-        inherited lbEdtTemplateSID: TLabeledEdit
-          EditLabel.ExplicitLeft = 0
-          EditLabel.ExplicitTop = -18
-          EditLabel.ExplicitWidth = 92
+        Width = 997
+        ExplicitWidth = 997
+        inherited AdvPageControl1: TAdvPageControl
+          Width = 562
+          DoubleBuffered = True
+          ExplicitWidth = 562
+          inherited tabPreview: TAdvTabSheet
+            inherited advmTemplateJson: TAdvMemo [0]
+              Width = 548
+              ExplicitWidth = 548
+            end
+            inherited lbEdtTemplateSID: TLabeledEdit [1]
+              Width = 548
+              ExplicitWidth = 548
+            end
+            inherited edTestSMSTo: TEdit [2]
+              Width = 548
+              ExplicitWidth = 548
+            end
+            inherited grpMessage: TAdvGroupBox
+              Width = 554
+              ExplicitWidth = 554
+              inherited advmSMSTest: TAdvMemo
+                Width = 329
+                ExplicitWidth = 329
+              end
+              inherited memParamsDestination: TMemo
+                Left = 347
+                ExplicitLeft = 347
+              end
+            end
+          end
         end
       end
       inherited DBGrid1: TDBGrid
         Width = 1011
+      end
+      inherited memTemplateParams: TMemo
+        Left = 759
+        Width = 242
+        ExplicitLeft = 759
+        ExplicitWidth = 242
       end
     end
   end

@@ -6,7 +6,7 @@
     <PropertyGroup>
         <DeviceId Condition="'$(Platform)'=='Android'"/>
         <DeviceId Condition="'$(Platform)'=='Android64'"/>
-        <DeviceId Condition="'$(Platform)'=='iOSDevice64'"/>
+        <DeviceId Condition="'$(Platform)'=='iOSDevice64'">00008110-000111A82644401E</DeviceId>
         <DeviceId Condition="'$(Platform)'=='iOSSimARM64'"/>
     </PropertyGroup>
     <ItemGroup Condition="'$(Platform)'=='OSX64'">
@@ -38,19 +38,19 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="OSX64\Debug\FiremonkeyModel.info.plist" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>FiremonkeyModel.app\Contents\</RemoteDir>
-            <RemoteName>Info.plist</RemoteName>
-            <DeployClass>ProjectOSXInfoPList</DeployClass>
+        <DeployFile Include="OSX64\Debug\FiremonkeyModel.entitlements" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FiremonkeyModel.app\..\</RemoteDir>
+            <RemoteName>FiremonkeyModel.entitlements</RemoteName>
+            <DeployClass>ProjectOSXEntitlements</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="OSX64\Debug\FiremonkeyModel.entitlements" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>FiremonkeyModel.app\..\</RemoteDir>
-            <RemoteName>FiremonkeyModel.entitlements</RemoteName>
-            <DeployClass>ProjectOSXEntitlements</DeployClass>
+        <DeployFile Include="OSX64\Debug\FiremonkeyModel.info.plist" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>FiremonkeyModel.app\Contents\</RemoteDir>
+            <RemoteName>Info.plist</RemoteName>
+            <DeployClass>ProjectOSXInfoPList</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>

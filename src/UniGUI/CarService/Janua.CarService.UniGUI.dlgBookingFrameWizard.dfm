@@ -1386,6 +1386,41 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
               ExplicitHeight = 217
               inherited frameCarServiceSlotSelection1: TframeCarServiceSlotSelection
                 Height = 217
+                ExplicitHeight = 217
+                inherited pnlTimeSelect1: TUniSimplePanel
+                  inherited frameTimeSelect1: TframeTimeSelect
+                    Width = 314
+                    ExplicitWidth = 314
+                  end
+                end
+                inherited pnlTimeSelect5: TUniSimplePanel
+                  ExplicitTop = 128
+                end
+                inherited pnlTimeSelect4: TUniSimplePanel
+                  inherited frameTimeSelect4: TframeTimeSelect
+                    Width = 314
+                    ExplicitWidth = 314
+                  end
+                end
+                inherited pnlTimeSelect3: TUniSimplePanel
+                  inherited frameTimeSelect3: TframeTimeSelect
+                    Width = 314
+                    ExplicitWidth = 314
+                  end
+                end
+                inherited pnlTimeSelect2: TUniSimplePanel
+                  inherited frameTimeSelect2: TframeTimeSelect
+                    Width = 314
+                    ExplicitWidth = 314
+                  end
+                end
+                inherited pnlTimeSelect6: TUniSimplePanel
+                  ExplicitTop = 153
+                  inherited frameTimeSelect6: TframeTimeSelect
+                    Width = 314
+                    ExplicitWidth = 314
+                  end
+                end
               end
             end
           end
@@ -1423,12 +1458,43 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
               ExplicitHeight = 217
               inherited frameCarServiceSlotSelection1: TframeCarServiceSlotSelection
                 Height = 217
+                ExplicitHeight = 217
                 inherited pnlTimeSelect1: TUniSimplePanel
                   inherited frameTimeSelect1: TframeTimeSelect
+                    Width = 314
+                    ExplicitWidth = 314
                     inherited ulbDeliveryTime: TUniLabel
                       Top = 13
                       ExplicitTop = 13
                     end
+                  end
+                end
+                inherited pnlTimeSelect5: TUniSimplePanel
+                  ExplicitTop = 128
+                end
+                inherited pnlTimeSelect4: TUniSimplePanel
+                  inherited frameTimeSelect4: TframeTimeSelect
+                    Width = 314
+                    ExplicitWidth = 314
+                  end
+                end
+                inherited pnlTimeSelect3: TUniSimplePanel
+                  inherited frameTimeSelect3: TframeTimeSelect
+                    Width = 314
+                    ExplicitWidth = 314
+                  end
+                end
+                inherited pnlTimeSelect2: TUniSimplePanel
+                  inherited frameTimeSelect2: TframeTimeSelect
+                    Width = 314
+                    ExplicitWidth = 314
+                  end
+                end
+                inherited pnlTimeSelect6: TUniSimplePanel
+                  ExplicitTop = 153
+                  inherited frameTimeSelect6: TframeTimeSelect
+                    Width = 314
+                    ExplicitWidth = 314
                   end
                 end
               end

@@ -28,8 +28,6 @@ type
     unhtmlfrm1: TUniHTMLFrame;
     imgltop: TUniNativeImageList;
     imgTop: TUniImage;
-    tabList: TUniTabSheet;
-    tabTravel: TUniTabSheet;
     // Frames
 
     { frameCSUniGuiCalendarList1: TframeCSUniGuiCalendarList;
@@ -39,10 +37,6 @@ type
     htmlFrameConfirmed: TUniHTMLFrame;
     tabNotFound: TUniTabSheet;
     UniHTMLFrame1: TUniHTMLFrame;
-    cntPickup: TUniContainerPanel;
-    lbPickupDAte: TUniLabel;
-    lbPickupTime: TUniLabel;
-    tgPickupSelected: TUnimFSToggle;
     procedure UniFormCreate(Sender: TObject);
     procedure UniFormShow(Sender: TObject);
     procedure btnConfirmationClick(Sender: TObject);

@@ -37,16 +37,6 @@ type
     qryPhoenixLogCloneJGUID: TGuidField;
     qryWebHook: TUniQuery;
     qryMessageStatus: TUniQuery;
-    IntegerField2: TIntegerField;
-    SmallintField2: TSmallintField;
-    WideStringField4: TWideStringField;
-    WideStringField5: TWideStringField;
-    DateTimeField3: TDateTimeField;
-    DateTimeField4: TDateTimeField;
-    BlobField3: TBlobField;
-    BlobField4: TBlobField;
-    WideStringField6: TWideStringField;
-    GuidField2: TGuidField;
     qryWebHookID: TIntegerField;
     qryWebHookSTATO: TSmallintField;
     qryWebHookJGUID: TGuidField;
@@ -58,16 +48,51 @@ type
     qryWebHookBODY_RECEIVED: TBlobField;
     qryWebHookACTION: TWideStringField;
     spInsertMessage: TUniStoredProc;
+    qryMessageList: TUniQuery;
+    qryPhoenixLogClonememTwilioJson: TStringField;
+    qryWebHookmemTwilioJson: TStringField;
+    qryMessageListWA_NAME: TWideStringField;
+    qryMessageListWANUMBER: TWideStringField;
+    qryMessageListWAMESSAGE: TWideStringField;
+    qryMessageListID: TIntegerField;
+    qryMessageListWAREAD: TWideStringField;
+    qryMessageListIN_OUT: TSmallintField;
+    qryMessageListSTATE: TSmallintField;
+    qryMessageListINSERT_DATE: TDateTimeField;
+    qryMessageListREAD_DATE: TDateTimeField;
+    qryMessageListWA_STATE: TSmallintField;
+    qryMessageListWA_ID: TWideStringField;
+    qryMessageListREPORT_ID: TIntegerField;
+    qryMessageStatusID: TIntegerField;
+    qryMessageStatusSTATO: TSmallintField;
+    qryMessageStatusJGUID: TGuidField;
+    qryMessageStatusWANUMBER: TWideStringField;
+    qryMessageStatusMANAGED: TWideStringField;
+    qryMessageStatusINSERT_DATE: TDateTimeField;
+    qryMessageStatusUPDATE_DATE: TDateTimeField;
+    qryMessageStatusJSON_CONTENT: TBlobField;
+    qryMessageStatusBODY_RECEIVED: TWideMemoField;
+    qryMessageStatusACTION: TWideStringField;
+    qryMessageStatusmemTwilioJson: TStringField;
+    qryMessageListcalcLabel: TStringField;
     procedure PgErgoConnectionBeforeConnect(Sender: TObject);
+    procedure DataModuleCreate(Sender: TObject);
+    procedure qryPhoenixLogCloneCalcFields(DataSet: TDataSet);
+    procedure qryWebHookCalcFields(DataSet: TDataSet);
+    procedure qryMessageStatusCalcFields(DataSet: TDataSet);
+    procedure qryMessageListCalcFields(DataSet: TDataSet);
   private
     FRecordFound: Integer;
     procedure SetRecordFound(const Value: Integer);
   protected
     function GetLastSync: Integer;
+
   public
     { Public declarations }
     procedure SyncDBTwilio;
     procedure SyncMessages;
+    procedure OpenTwilio;
+    procedure SyncStatus;
   public
     property RecordFound: Integer read FRecordFound write SetRecordFound;
   end;
@@ -82,19 +107,84 @@ uses Janua.Core.Functions, Janua.Cloud.Types;
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
 
+procedure TdmPgTWilioSync.DataModuleCreate(Sender: TObject);
+begin
+  inherited;
+  qryMaxTwilioLog.Connection := FbPhoenixConnection;
+  qryPhoenixLogClone.Connection := FbPhoenixConnection;
+  spInsertMessage.Connection := FbPhoenixConnection;
+  qryMessageList.Connection := FbPhoenixConnection;
+  qryMessageStatus.Connection := FbPhoenixConnection;
+  qryWebHook.Connection := FbPhoenixConnection;
+end;
+
 function TdmPgTWilioSync.GetLastSync: Integer;
 begin
-  qryMaxTwilioLog.Connection := self.FbPhoenixConnection;
   qryMaxTwilioLog.Close;
   qryMaxTwilioLog.Open;
   Result := qryMaxTwilioLogMAX_ID.AsInteger;
   qryMaxTwilioLog.Close;
 end;
 
+procedure TdmPgTWilioSync.OpenTwilio;
+begin
+  var
+  vTest := GetLastSync;
+  qryTwilioLog.Close;
+  qryTwilioLog.Params[0].AsInteger := vTest;
+  qryTwilioLog.Open;
+
+  qryPhoenixLogClone.Close;
+  qryPhoenixLogClone.Params[0].AsInteger := vTest;
+  qryPhoenixLogClone.Open;
+end;
+
 procedure TdmPgTWilioSync.PgErgoConnectionBeforeConnect(Sender: TObject);
 begin
   // Before Connect Test
   inherited;
+
+end;
+
+procedure TdmPgTWilioSync.qryMessageListCalcFields(DataSet: TDataSet);
+begin
+  inherited;
+  var
+  lHtml := '';
+  if qryMessageListWA_STATE.AsInteger = -1 then
+    lHtml := '<IMG src="idx:0">'
+  else if qryMessageListWA_STATE.AsInteger = 0 then
+    lHtml := '<IMG src="idx:1">'
+  else if qryMessageListWA_STATE.AsInteger = 1 then
+    lHtml := '<IMG src="idx:2">'
+  else if qryMessageListWA_STATE.AsInteger = 2 then
+    lHtml := '<IMG src="idx:3">';
+
+  qryMessageListcalcLabel.AsString := lHtml;
+end;
+
+procedure TdmPgTWilioSync.qryMessageStatusCalcFields(DataSet: TDataSet);
+var
+  lStatus: TTWilioStatus;
+begin
+  lStatus.SetFromString(qryMessageStatusBODY_RECEIVED.AsString);
+  qryMessageStatusmemTwilioJson.AsString := lStatus.GetAsJson;
+end;
+
+procedure TdmPgTWilioSync.qryPhoenixLogCloneCalcFields(DataSet: TDataSet);
+var
+  lWebHook: TTwilioWebHook;
+begin
+  lWebHook.SetFromString(qryPhoenixLogCloneBODY_RECEIVED.AsString);
+  qryPhoenixLogClonememTwilioJson.AsString := lWebHook.GetAsJson;
+end;
+
+procedure TdmPgTWilioSync.qryWebHookCalcFields(DataSet: TDataSet);
+var
+  lWebHook: TTwilioWebHook;
+begin
+  lWebHook.SetFromString(qryWebHookBODY_RECEIVED.AsString);
+  qryWebHookmemTwilioJson.AsString := lWebHook.GetAsJson;
 
 end;
 
@@ -105,16 +195,7 @@ end;
 
 procedure TdmPgTWilioSync.SyncDBTwilio;
 begin
-  var
-  vTest := GetLastSync;
-  qryTwilioLog.Close;
-  qryTwilioLog.Params[0].AsInteger := vTest;
-  qryTwilioLog.Open;
-  qryPhoenixLogClone.Connection := self.FbPhoenixConnection;
-  qryPhoenixLogClone.Close;
-  qryPhoenixLogClone.Params[0].AsInteger := vTest;
-  qryPhoenixLogClone.Open;
-
+  OpenTwilio;
   if qryTwilioLog.RecordCount > 0 then
     CloneDataset(qryTwilioLog, qryPhoenixLogClone);
 end;
@@ -133,7 +214,6 @@ begin
       lWebHook.SetFromString(qryWebHookBODY_RECEIVED.AsString);
       // :WANUMBER, :WAMESSAGE, :ID, :WAREAD, :IN_OUT, :STATE, :INSERT_DATE,
       // :READ_DATE, :WA_STATE, :WA_ID, :REPORT_ID
-      spInsertMessage.Connection := FbPhoenixConnection;
       spInsertMessage.ParamByName('WANUMBER').AsString := lWebHook.From;
       spInsertMessage.ParamByName('WAMESSAGE').AsString := lWebHook.Body;
       spInsertMessage.ParamByName('INSERT_DATE').AsDateTime := qryWebHookINSERT_DATE.AsDateTime;
@@ -142,11 +222,17 @@ begin
       spInsertMessage.ParamByName('IN_OUT').AsInteger := 1;
       spInsertMessage.ExecProc;
       qryWebHook.Edit;
-      qryWebHookMANAGED.AsSTring := 'T';
+      qryWebHookMANAGED.AsString := 'T';
       qryWebHook.Post;
       qryWebHook.Next;
     end;
   end;
+end;
+
+procedure TdmPgTWilioSync.SyncStatus;
+begin
+  qryMessageStatus.Close;
+  qryMessageStatus.Open;
 end;
 
 end.

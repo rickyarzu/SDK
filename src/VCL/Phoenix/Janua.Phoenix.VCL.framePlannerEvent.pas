@@ -64,7 +64,6 @@ type
     edEventDateFrom: TDateTimePicker;
     edEventDateTo: TDateTimePicker;
     btnSearch: TBitBtn;
-    dsReportsPlanner: TUniDataSource;
     dsCalendar: TUniDataSource;
     btnImage: TDBImage;
     DBText2: TDBText;

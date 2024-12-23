@@ -1,0 +1,47 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{27CC284E-3B5F-41D3-BD74-918FF59AD11A}</ProjectGuid>
+        <MainSource>QBBDEDemo.dpr</MainSource>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <DCC_EnabledPackages>true</DCC_EnabledPackages>
+        <DCC_UsePackage>bdertl;dbrtl;rtl;vcl;vcldb;QBuilderRT</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DCC_ExeOutput>Release</DCC_ExeOutput>
+        <DCC_DcuOutput>Release</DCC_DcuOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DCC_ExeOutput>Debug</DCC_ExeOutput>
+        <DCC_DcuOutput>Debug</DCC_DcuOutput>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="QBBDEDemo.dpr">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="MainForm.pas">
+            <Form>fmMain</Form>
+        </DCCReference>
+        <DCCReference Include="QBOptionsForm.pas">
+            <Form>fmQBOptions</Form>
+        </DCCReference>
+        <DCCReference Include="AboutForm.pas">
+            <Form>fmAbout</Form>
+        </DCCReference>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality</Borland.Personality>
+        <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+        <BorlandProject>
+            <BorlandProject>
+                <Delphi.Personality>
+                    <Source>
+                        <Source Name="MainSource">QBBDEDemo.dpr</Source>
+                    </Source>
+                </Delphi.Personality>
+            </BorlandProject>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+</Project>

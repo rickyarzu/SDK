@@ -29,7 +29,7 @@ object MainForm: TMainForm
       object btnConfirmation: TUniFSButton
         AlignWithMargins = True
         Left = 3
-        Top = 279
+        Top = 245
         Width = 302
         Height = 28
         Hint = ''
@@ -43,12 +43,12 @@ object MainForm: TMainForm
         Align = alTop
         TabOrder = 0
         OnClick = btnConfirmationClick
-        ExplicitTop = 245
+        ExplicitTop = 279
       end
       object btnUndoConfirmation: TUniFSButton
         AlignWithMargins = True
         Left = 3
-        Top = 313
+        Top = 279
         Width = 302
         Height = 28
         Hint = ''
@@ -61,7 +61,7 @@ object MainForm: TMainForm
         Caption = 'Annulla Conferma'
         Align = alTop
         TabOrder = 1
-        ExplicitTop = 279
+        ExplicitTop = 313
       end
       object ulbTitle: TUniLabel
         AlignWithMargins = True
@@ -110,57 +110,6 @@ object MainForm: TMainForm
         Hint = ''
         Align = alTop
       end
-      object cntPickup: TUniContainerPanel
-        AlignWithMargins = True
-        Left = 3
-        Top = 245
-        Width = 302
-        Height = 28
-        Hint = ''
-        ParentColor = False
-        Align = alTop
-        TabOrder = 5
-        ExplicitTop = 230
-        object lbPickupDAte: TUniLabel
-          Left = 56
-          Top = 4
-          Width = 81
-          Height = 15
-          Hint = ''
-          AutoSize = False
-          Caption = 'ulbDate'
-          ParentFont = False
-          Font.Height = -13
-          ParentColor = False
-          Color = clBtnFace
-          TabOrder = 1
-        end
-        object lbPickupTime: TUniLabel
-          Left = 160
-          Top = 4
-          Width = 46
-          Height = 17
-          Hint = ''
-          Caption = 'ulbTime'
-          ParentFont = False
-          Font.Height = -13
-          ParentColor = False
-          Color = clBtnFace
-          TabOrder = 2
-        end
-        object tgPickupSelected: TUnimFSToggle
-          Left = 232
-          Top = 0
-          Width = 70
-          Height = 28
-          Hint = ''
-          ThemeOn = Success
-          ThemeOff = Gray
-          TitleOn = 'ON'
-          TitleOff = 'OFF'
-          Align = alRight
-        end
-      end
     end
     object pgConfirmatioin: TUniTabSheet
       Hint = ''
@@ -193,14 +142,6 @@ object MainForm: TMainForm
         Hint = ''
         Align = alTop
       end
-    end
-    object tabList: TUniTabSheet
-      Hint = ''
-      Caption = 'Calendar List'
-    end
-    object tabTravel: TUniTabSheet
-      Hint = ''
-      Caption = 'Travel'
     end
     object tabNotFound: TUniTabSheet
       Hint = ''

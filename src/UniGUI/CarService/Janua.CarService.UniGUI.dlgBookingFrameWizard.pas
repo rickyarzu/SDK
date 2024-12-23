@@ -12,16 +12,17 @@ uses
   // Januaproject
   Janua.Core.Commons, JOrm.CarService.Booking.Intf, Janua.Core.Types, Janua.UniGUI.Controller,
   // Frames
-  {Janua.CarService.UniGUI.frameTimeSlotPickup,  ->} Janua.CarService.UniGUI.TimeSlotController,
-  {Janua.CarService.UniGUI.frameCalendarSelect,  ->} Janua.CarService.UniGUI.CalendarSelectController,
-  {Janua.CarService.UniGUI.frameCarBookingClient ->} Janua.CarService.UniGUI.CarBookingClientController,
-  {Janua.CarService.UniGUI.frameAddressesSelect  ->} Janua.CarService.UniGUI.AddressSelectController,
-  {Janua.CarService.UniGUI.frameBookingSummary   ->} Janua.CarService.UniGUI.BookingSummaryController,
-  {Janua.CarService.UniGUI.frameTimeTable        ->} Janua.CarService.UniGUI.TimeTableSelectController,
+  {Janua.CarService.UniGUI.frameTimeSlotPickup,  ->} // Janua.CarService.UniGUI.TimeSlotController,
+  {Janua.CarService.UniGUI.frameCalendarSelect,  ->} // Janua.CarService.UniGUI.CalendarSelectController,
+  {Janua.CarService.UniGUI.frameCarBookingClient ->} // Janua.CarService.UniGUI.CarBookingClientController,
+  {Janua.CarService.UniGUI.frameAddressesSelect  ->} // Janua.CarService.UniGUI.AddressSelectController,
+  {Janua.CarService.UniGUI.frameBookingSummary   ->} // Janua.CarService.UniGUI.BookingSummaryController,
+  {Janua.CarService.UniGUI.frameTimeTable        ->} // Janua.CarService.UniGUI.TimeTableSelectController,
   Janua.CarService.UniGUI.SlotSelectionController,
   Janua.CarService.PgBooking, Janua.UniGUI.Interposers, uniMemo,
   Janua.CarService.UniGUI.frameCalendarSelect, Janua.CarService.UniGUI.frameTimeSlotPickup,
-  Janua.CarService.UniGUI.frameCarBookingClient, Janua.CarService.UniGUI.frameAddressesSelect;
+  Janua.CarService.UniGUI.frameCarBookingClient, Janua.CarService.UniGUI.frameAddressesSelect,
+  Janua.CarService.UniGUI.BookingSummaryController;
 
 type
   TBookingPageEnum = (pgSelectDate, pgSelectSlot, pgCustomer, pgLocations, pgSummary, pgPayment);

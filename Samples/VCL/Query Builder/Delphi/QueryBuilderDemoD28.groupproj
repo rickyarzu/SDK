@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{A3D7FCD9-23EC-4E17-9D5F-82F3F9D68902}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\..\..\Components\pkg120\QBuilderRT.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="BDEDemo\QBUniDacDemoDXE15.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DBXDemo\QBDBXDemoD28.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="IBXDemo\QBIBXDemoD28.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="QBuilderRT">
+        <MSBuild Projects="..\..\..\..\Components\pkg120\QBuilderRT.dproj"/>
+    </Target>
+    <Target Name="QBuilderRT:Clean">
+        <MSBuild Projects="..\..\..\..\Components\pkg120\QBuilderRT.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QBuilderRT:Make">
+        <MSBuild Projects="..\..\..\..\Components\pkg120\QBuilderRT.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="QBUniDacDemoDXE15">
+        <MSBuild Projects="BDEDemo\QBUniDacDemoDXE15.dproj"/>
+    </Target>
+    <Target Name="QBUniDacDemoDXE15:Clean">
+        <MSBuild Projects="BDEDemo\QBUniDacDemoDXE15.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QBUniDacDemoDXE15:Make">
+        <MSBuild Projects="BDEDemo\QBUniDacDemoDXE15.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="QBDBXDemoD28">
+        <MSBuild Projects="DBXDemo\QBDBXDemoD28.dproj"/>
+    </Target>
+    <Target Name="QBDBXDemoD28:Clean">
+        <MSBuild Projects="DBXDemo\QBDBXDemoD28.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QBDBXDemoD28:Make">
+        <MSBuild Projects="DBXDemo\QBDBXDemoD28.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="QBIBXDemoD28">
+        <MSBuild Projects="IBXDemo\QBIBXDemoD28.dproj"/>
+    </Target>
+    <Target Name="QBIBXDemoD28:Clean">
+        <MSBuild Projects="IBXDemo\QBIBXDemoD28.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QBIBXDemoD28:Make">
+        <MSBuild Projects="IBXDemo\QBIBXDemoD28.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="QBuilderRT;QBUniDacDemoDXE15;QBDBXDemoD28;QBIBXDemoD28"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="QBuilderRT:Clean;QBUniDacDemoDXE15:Clean;QBDBXDemoD28:Clean;QBIBXDemoD28:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="QBuilderRT:Make;QBUniDacDemoDXE15:Make;QBDBXDemoD28:Make;QBIBXDemoD28:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

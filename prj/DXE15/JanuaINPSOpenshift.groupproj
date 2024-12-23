@@ -9,22 +9,31 @@
         <Projects Include="..\..\Components\pkg120\Spring.Core.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Components\pkg120\RestRequestLib.dproj">
+        <Projects Include="..\..\Components\pkg120\StyleControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\StyleControlsD.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Components\pkg120\Neon.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="JanuaCoreThirdParty.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\RestRequestLib.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaCore.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="JanuaCoreComponents.dproj">
+        <Projects Include="JanuaMVVM.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="JanuaMVVM.dproj">
+        <Projects Include="JanuaCoreComponents.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaUnidacComponentsD.dproj">
@@ -34,6 +43,9 @@
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaUnidacComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaRestWeb.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaVCLControls.dproj">
@@ -83,14 +95,23 @@
     <Target Name="Spring_Core:Make">
         <MSBuild Projects="..\..\Components\pkg120\Spring.Core.dproj" Targets="Make"/>
     </Target>
-    <Target Name="RestRequestLib">
-        <MSBuild Projects="..\..\Components\pkg120\RestRequestLib.dproj"/>
+    <Target Name="StyleControls">
+        <MSBuild Projects="..\..\Components\pkg120\StyleControls.dproj"/>
     </Target>
-    <Target Name="RestRequestLib:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\RestRequestLib.dproj" Targets="Clean"/>
+    <Target Name="StyleControls:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\StyleControls.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="RestRequestLib:Make">
-        <MSBuild Projects="..\..\Components\pkg120\RestRequestLib.dproj" Targets="Make"/>
+    <Target Name="StyleControls:Make">
+        <MSBuild Projects="..\..\Components\pkg120\StyleControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="StyleControlsD">
+        <MSBuild Projects="..\..\Components\pkg120\StyleControlsD.dproj"/>
+    </Target>
+    <Target Name="StyleControlsD:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\StyleControlsD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StyleControlsD:Make">
+        <MSBuild Projects="..\..\Components\pkg120\StyleControlsD.dproj" Targets="Make"/>
     </Target>
     <Target Name="Neon">
         <MSBuild Projects="..\..\Components\pkg120\Neon.dproj"/>
@@ -101,6 +122,15 @@
     <Target Name="Neon:Make">
         <MSBuild Projects="..\..\Components\pkg120\Neon.dproj" Targets="Make"/>
     </Target>
+    <Target Name="OpenAIPackage">
+        <MSBuild Projects="..\..\Components\pkg120\OpenAIPackage.dproj"/>
+    </Target>
+    <Target Name="OpenAIPackage:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\OpenAIPackage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OpenAIPackage:Make">
+        <MSBuild Projects="..\..\Components\pkg120\OpenAIPackage.dproj" Targets="Make"/>
+    </Target>
     <Target Name="JanuaCoreThirdParty">
         <MSBuild Projects="JanuaCoreThirdParty.dproj"/>
     </Target>
@@ -109,6 +139,15 @@
     </Target>
     <Target Name="JanuaCoreThirdParty:Make">
         <MSBuild Projects="JanuaCoreThirdParty.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RestRequestLib">
+        <MSBuild Projects="..\..\Components\pkg120\RestRequestLib.dproj"/>
+    </Target>
+    <Target Name="RestRequestLib:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\RestRequestLib.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RestRequestLib:Make">
+        <MSBuild Projects="..\..\Components\pkg120\RestRequestLib.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaCore">
         <MSBuild Projects="JanuaCore.dproj"/>
@@ -119,15 +158,6 @@
     <Target Name="JanuaCore:Make">
         <MSBuild Projects="JanuaCore.dproj" Targets="Make"/>
     </Target>
-    <Target Name="JanuaCoreComponents">
-        <MSBuild Projects="JanuaCoreComponents.dproj"/>
-    </Target>
-    <Target Name="JanuaCoreComponents:Clean">
-        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="JanuaCoreComponents:Make">
-        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Make"/>
-    </Target>
     <Target Name="JanuaMVVM">
         <MSBuild Projects="JanuaMVVM.dproj"/>
     </Target>
@@ -136,6 +166,15 @@
     </Target>
     <Target Name="JanuaMVVM:Make">
         <MSBuild Projects="JanuaMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreComponents">
+        <MSBuild Projects="JanuaCoreComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Clean">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Make">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaUnidacComponentsD">
         <MSBuild Projects="JanuaUnidacComponentsD.dproj"/>
@@ -163,6 +202,15 @@
     </Target>
     <Target Name="JanuaUnidacComponents:Make">
         <MSBuild Projects="JanuaUnidacComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaRestWeb">
+        <MSBuild Projects="JanuaRestWeb.dproj"/>
+    </Target>
+    <Target Name="JanuaRestWeb:Clean">
+        <MSBuild Projects="JanuaRestWeb.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaRestWeb:Make">
+        <MSBuild Projects="JanuaRestWeb.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaVCLControls">
         <MSBuild Projects="JanuaVCLControls.dproj"/>
@@ -228,13 +276,13 @@
         <MSBuild Projects="..\..\..\tmssoftware\TMS VCL UI Pack\Demos\AdvMemo\Multi File with one TAdvMemo\AdvMemoMultiFileDemo.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="Spring_Base;Spring_Core;RestRequestLib;Neon;JanuaCoreThirdParty;JanuaCore;JanuaCoreComponents;JanuaMVVM;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaVCLMVVM;OpenshiftPodRedisXE15;AdvMemoMainDemo;AdvMemoMultiFileDemo"/>
+        <CallTarget Targets="Spring_Base;Spring_Core;StyleControls;StyleControlsD;Neon;OpenAIPackage;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaRestWeb;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaVCLMVVM;OpenshiftPodRedisXE15;AdvMemoMainDemo;AdvMemoMultiFileDemo"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Spring_Base:Clean;Spring_Core:Clean;RestRequestLib:Clean;Neon:Clean;JanuaCoreThirdParty:Clean;JanuaCore:Clean;JanuaCoreComponents:Clean;JanuaMVVM:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;OpenshiftPodRedisXE15:Clean;AdvMemoMainDemo:Clean;AdvMemoMultiFileDemo:Clean"/>
+        <CallTarget Targets="Spring_Base:Clean;Spring_Core:Clean;StyleControls:Clean;StyleControlsD:Clean;Neon:Clean;OpenAIPackage:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaRestWeb:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;OpenshiftPodRedisXE15:Clean;AdvMemoMainDemo:Clean;AdvMemoMultiFileDemo:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Spring_Base:Make;Spring_Core:Make;RestRequestLib:Make;Neon:Make;JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaCoreComponents:Make;JanuaMVVM:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;OpenshiftPodRedisXE15:Make;AdvMemoMainDemo:Make;AdvMemoMultiFileDemo:Make"/>
+        <CallTarget Targets="Spring_Base:Make;Spring_Core:Make;StyleControls:Make;StyleControlsD:Make;Neon:Make;OpenAIPackage:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaRestWeb:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;OpenshiftPodRedisXE15:Make;AdvMemoMainDemo:Make;AdvMemoMultiFileDemo:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='Lib'">
@@ -246,6 +294,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLControls.dproj">
             <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaRestWeb.dproj">
+            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
@@ -272,16 +326,10 @@
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\Neon.dproj">
             <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaCoreComponents.dproj">
-            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
@@ -292,8 +340,26 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
+            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
@@ -308,7 +374,7 @@
             <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCore.dproj">
             <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
@@ -320,7 +386,7 @@
             <ProjectGuid>{F31484A8-0E00-438D-8279-7D5571911456}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\tmssoftware\TMS VCL UI Pack\Demos\AdvMemo\Multi File with one TAdvMemo\AdvMemoMultiFileDemo.dproj">
             <ProjectGuid>{A13BE805-5D2C-43FB-9682-5ABDD10509A2}</ProjectGuid>
@@ -344,6 +410,12 @@
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
+            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
     </ItemGroup>

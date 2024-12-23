@@ -1,0 +1,30 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<ProjectGuid>{03C9712C-30EB-4B28-97C4-F3B965D5BF59}</ProjectGuid>
+		<MainSource>QBMyZeosDemo.dpr</MainSource>
+		<Config Condition="'$(Config)'==''">Base</Config>
+		<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+		<ProjectVersion>16.1</ProjectVersion>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+		<Base>true</Base>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Base)'!=''">
+		<UsePackages>true</UsePackages>
+		<DCC_Namespace>Data;System;System.Win;Vcl;Winapi</DCC_Namespace>
+		<DCC_UsePackage>dbrtl;rtl;vcl;vcldb;ZComponent;QBuilderRT_D21</DCC_UsePackage>
+	</PropertyGroup>
+	<Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+	<ProjectExtensions>
+		<Borland.Personality>Delphi.Personality</Borland.Personality>
+		<Borland.ProjectType>VCLApplication</Borland.ProjectType>
+		<BorlandProject>
+			<Delphi.Personality>
+				<Source>
+					<Source Name="MainSource">QBMyZeosDemo.dpr</Source>
+				</Source>
+			</Delphi.Personality>
+		</BorlandProject>
+		<ProjectFileVersion>12</ProjectFileVersion>
+	</ProjectExtensions>
+</Project>

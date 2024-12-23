@@ -24,7 +24,7 @@ uses
   Janua.TMS.Planner.frameCustomCalendar, Janua.VCL.Planner.frameCustomGoogleCalendar,
   Janua.VCL.Planner.framePhoenixGoogleCalendar, Janua.TMS.Phoenix.framePlannerCalendar2,
   Janua.Phoenix.VCL.framePlannerEvent, Janua.Core.Types, Janua.TMS.WebView, Winapi.WebView2, Winapi.ActiveX,
-  VCL.Edge;
+  VCL.Edge, VCL.DBCtrls, Janua.Phoenix.VCL.framePlannerReport;
 
 type
   TfrmPhoenixVCLReportPlanner = class(TForm)
@@ -77,15 +77,17 @@ type
     Timer2: TTimer;
     pnlWebBrowser: TPanel;
     EdgeBrowser1: TEdgeBrowser;
+    btnUpdateImage: TBitBtn;
+    btnImage: TDBImage;
+    tabGoogleCalendarReport: TTabSheet;
+    frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport;
+    EdgeBrowser2: TEdgeBrowser;
     procedure FormCreate(Sender: TObject);
     procedure frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);
     procedure btnUpdateClick(Sender: TObject);
     procedure btnSearchClick(Sender: TObject);
-    procedure frameVCLCRDBGridCRDBGridDblClick(Sender: TObject);
-    procedure AnnullaAppuntamento1Click(Sender: TObject);
     procedure ModificaStatino1Click(Sender: TObject);
-    procedure VisualizzaContratto1Click(Sender: TObject);
     procedure DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);
     procedure DBDaySource1ItemToFields(Sender: TObject; Fields: TFields; Item: TPlannerItem);
     procedure GoogleSync1Click(Sender: TObject);
@@ -96,6 +98,8 @@ type
     procedure frameVCLPhoenixPlannerEventbtnSincroClick(Sender: TObject);
     procedure frameVCLPhoenixPlannerEventWATimerTimer(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure btnUpdateImageClick(Sender: TObject);
+    procedure frameVCLPhoenixPlannerEventcboTecniciChange(Sender: TObject);
   private
     { Private declarations }
     FCookies: TJanuaTmsCookies;
@@ -120,7 +124,9 @@ uses
   udmSVGImageList, Janua.Phoenix.dmIBReportPlanner, Janua.VCL.Functions, Janua.Core.AsyncTask,
   Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Phoenix.VCL.dlgModificaStatino,
   // Phoenix
-  DlgShowContratto, DlgNuovoStatino, udlgPhoenixVCLGoogleSync, Janua.Application.Framework;
+  DlgShowContratto, DlgNuovoStatino, udlgPhoenixVCLGoogleSync,
+  // Application
+  Janua.Application.Framework;
 
 procedure TfrmPhoenixVCLReportPlanner.AdvWebBrowser1GetCookies(Sender: TObject;
   ACookies: array of TAdvWebBrowserCookie);
@@ -167,11 +173,6 @@ begin
 
 end;
 
-procedure TfrmPhoenixVCLReportPlanner.AnnullaAppuntamento1Click(Sender: TObject);
-begin
-  FdmVCLPhoenixIBPlanner.UndoMeeting
-end;
-
 procedure TfrmPhoenixVCLReportPlanner.btnSearchClick(Sender: TObject);
 begin
   FdmVCLPhoenixIBPlanner.CustomerFilter := ckbFilterCustomer.Checked;
@@ -211,6 +212,21 @@ begin
   UpdateLab;
 
   { FdmVCLPhoenixIBPlanner.Setup; }
+end;
+
+procedure TfrmPhoenixVCLReportPlanner.btnUpdateImageClick(Sender: TObject);
+begin
+  with dmVCLPhoenixPlannerController do
+  begin
+    qryReportPlanner.First;
+    while not qryReportPlanner.Eof do
+    begin
+      qryReportPlanner.Edit;
+      qryReportPlannerSTATO.AsInteger := qryReportPlannerSTATO.AsInteger;
+      dmVCLPhoenixPlannerController.qryReportPlanner.Post;
+      qryReportPlanner.Next;
+    end;
+  end;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.UpdateLab;
@@ -277,9 +293,9 @@ begin
   FdmVCLPhoenixIBPlanner.Setup;
   FdmFDACPhoenixLab := TdmFDACPhoenixLab.Create(self);
   frameTMSPhoenixPlannerTecnici.PlannerController := FdmVCLPhoenixIBPlanner;
-  PageControl1.ActivePage := tabCalendariTecnici;
+  PageControl1.ActivePage := self.tabGoogleCalendarReport;
 
-  FdmVCLPhoenixIBPlanner.vtReportPlannerDS := frameVCLPhoenixPlannerEvent.dsReportsPlanner;
+  { FdmVCLPhoenixIBPlanner.vtReportPlannerDS := frameVCLPhoenixPlannerEvent.dsReportsPlanner; }
   // UpdateLab;
 end;
 
@@ -289,45 +305,8 @@ begin
   // frameVCLPhoenixPlannerCalendari.DBPlanner1.Refresh;
   Timer1.Enabled := True; // not JanuaVCLWebView1.Active;
   frameVCLPhoenixPlannerEvent.WATimer.Enabled := True;
-end;
-
-procedure TfrmPhoenixVCLReportPlanner.frameVCLCRDBGridCRDBGridDblClick(Sender: TObject);
-var
-  lDlg: TdlgPhoenixVCLEditReportTimetable;
-begin
-  lDlg := TdlgPhoenixVCLEditReportTimetable.Create(self);
-  try
-    if not FdmVCLPhoenixIBPlanner.qryReportPlannerAPPUNTAMENTO_ORA.IsNull then
-    begin
-      lDlg.edTime.Time := FdmVCLPhoenixIBPlanner.qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime;
-      lDlg.edDate.DateTime := FdmVCLPhoenixIBPlanner.qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime;
-    end
-    else
-    begin
-      lDlg.edDate.DateTime := Date();
-    end;
-
-    lDlg.edNote.Text := FdmVCLPhoenixIBPlanner.qryReportPlannerNOTE_PER_IL_TECNICO.Text;
-
-    lDlg.ShowModal;
-
-    if lDlg.ModalResult = mrOK then
-      try
-        FdmVCLPhoenixIBPlanner.qryReportPlanner.Edit;
-        FdmVCLPhoenixIBPlanner.qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime := lDlg.edTime.Time;
-        FdmVCLPhoenixIBPlanner.qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime := lDlg.edDate.DateTime;
-        FdmVCLPhoenixIBPlanner.qryReportPlannerNOTE_PER_IL_TECNICO.Text := lDlg.edNote.Text;
-        FdmVCLPhoenixIBPlanner.qryReportPlanner.Post;
-      except
-        on e: Exception do
-        begin
-          FdmVCLPhoenixIBPlanner.qryReportPlanner.Cancel;
-          raise
-        end;
-      end;
-  finally
-    lDlg.Free;
-  end;
+  self.frameVCLPhoenixPlanneReport.WATimer.Enabled := True;
+  self.frameVCLPhoenixPlanneReport.UpdateMessagesBadge;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject;
@@ -383,6 +362,12 @@ begin
 
 end;
 
+procedure TfrmPhoenixVCLReportPlanner.frameVCLPhoenixPlannerEventcboTecniciChange(Sender: TObject);
+begin
+  frameVCLPhoenixPlannerEvent.cboTecniciChange(Sender);
+
+end;
+
 procedure TfrmPhoenixVCLReportPlanner.frameVCLPhoenixPlannerEventWATimerTimer(Sender: TObject);
 begin
   frameVCLPhoenixPlannerEvent.WATimerTimer(Sender);
@@ -432,26 +417,13 @@ begin
     JanuaVCLWebView1.Url := 'https://calendar.google.com/calendar';
   *)
   EdgeBrowser1.Navigate('https://calendar.google.com/calendar/u/0/r');
+  EdgeBrowser2.Navigate('https://calendar.google.com/calendar/u/0/r');
   frameVCLPhoenixPlannerEvent.AfterPlannerEvent := AfterPlannerEvent;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.Timer2Timer(Sender: TObject);
 begin
   // UpdateLab;
-end;
-
-procedure TfrmPhoenixVCLReportPlanner.VisualizzaContratto1Click(Sender: TObject);
-var
-  lDlg: TDLG_SHOW_CONTRATTO;
-begin
-  lDlg := TDLG_SHOW_CONTRATTO.Create(Nil);
-  try
-    lDlg.Init(TFiBConfig.QRY_GENERIC, FdmVCLPhoenixIBPlanner.qryReportPlannerCLIENTE.AsInteger);
-    lDlg.ShowModal;
-    TFiBConfig.QRY_GENERIC.Sql.Clear;
-  finally
-    lDlg.Free;
-  end;
 end;
 
 end.

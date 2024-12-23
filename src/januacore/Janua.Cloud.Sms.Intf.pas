@@ -55,6 +55,10 @@ type
     property ContentSid: string read GetContentSid write SetContentSid;
     // <summary> Twilio Platform asks for a Content Template SID and Content Variables </summary>
     property ContentVariables: TStrings read GetContentVariables write SetContentVariables;
+
+    function GetMessageRecord: TSMSMessage;
+    procedure SetMessageRecord(const Value: TSMSMessage);
+    property MessageRecord: TSMSMessage read GetMessageRecord write SetMessageRecord;
   end;
 
   IJanuaWASender = interface

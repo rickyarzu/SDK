@@ -17,6 +17,7 @@ uses
 type
   TfrmVCLSMSMessageConfig = class(TJanuaVCLFormModel, IJanuaForm, IJanuaContainer, IJanuaBindable)
     frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig;
+    procedure frameVCLSMSMessageConfigbtnSendMailToClick(Sender: TObject);
   private
     FSMSBuilder: IJanuaSMSBuilder;
     procedure SetSMSBuilder(const Value: IJanuaSMSBuilder);
@@ -33,6 +34,13 @@ implementation
 
 {$R *.dfm}
 { TfrmVCLSMSMessageConfig }
+
+procedure TfrmVCLSMSMessageConfig.frameVCLSMSMessageConfigbtnSendMailToClick(Sender: TObject);
+begin
+  inherited;
+  frameVCLSMSMessageConfig.btnSendMailToClick(Sender);
+
+end;
 
 procedure TfrmVCLSMSMessageConfig.SetSMSBuilder(const Value: IJanuaSMSBuilder);
 begin

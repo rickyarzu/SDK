@@ -228,6 +228,8 @@ type
     CustomFields: TRecParams;
     /// <summary> used on some platforms like twilio refers to a parametrized body remotely store </summary>
     TemplateID: string;
+    /// <summary> Params to be Replaced by Fields Data for platform like Twilio for Template with Params </summary>
+    TemplateParams: string;
     /// <summary> URL model for sending Message with tinyUrl </summary>
     Url: string;
     /// <summary> Default Engine Generator  tinyUrl </summary>
@@ -241,6 +243,7 @@ type
     function GetAsJson: String;
     procedure SetAsJson(const aJson: string);
     function GetGenerateCustomSMS: string;
+    function GetGenerateCustomParams: string;
   end;
 
   TSMSMessage = record
@@ -274,6 +277,7 @@ type
     procedure ClearContentVariables;
     procedure AddContentVariable(const aVariable: string);
     function Text: string;
+    function ContentVariablesAsString: string;
   end;
 
   TRestAuthentication = (raNone, raToken, raBasic);
@@ -414,6 +418,8 @@ type
     ErrorCode: string; // 63013
     procedure SetFromString(const aString: string);
     procedure SetFromStrings(const aList: TStringList);
+    function GetAsJson: string;
+    procedure SetAsJson(const aJson: string);
   end;
 
   TTwilioWebHook = record
@@ -434,6 +440,8 @@ type
     ApiVersion: string; // 2010-04-01
     procedure SetFromString(const aString: string);
     procedure SetFromStrings(const aList: TStringList);
+    function GetAsJson: string;
+    procedure SetAsJson(const aJson: string);
   end;
 
   TJanuaCloudMailSendErrorEvent = procedure(Sender: TObject; AErrorMessage: String;
@@ -786,7 +794,21 @@ end;
 
 procedure TSMSMessage.ClearContentVariables;
 begin
+  SetLength(ContentVariables, 0);
+end;
 
+function TSMSMessage.ContentVariablesAsString: string;
+begin
+  var
+  lList := TStringList.Create;
+  try
+    for var aString in ContentVariables do
+      lList.Add(aString);
+    Result := lList.Text;
+  finally
+    lList.Free;
+    lList := nil;
+  end;
 end;
 
 function TSMSMessage.GetAsJson: String;
@@ -841,6 +863,11 @@ end;
 function TJanuaSMSMessageConf.GetAsJson: String;
 begin
   Result := TJanuaJson.SerializeSimple<TJanuaSMSMessageConf>(Self);
+end;
+
+function TJanuaSMSMessageConf.GetGenerateCustomParams: string;
+begin
+  Result := CustomFields.ApplyParams(TemplateParams);
 end;
 
 function TJanuaSMSMessageConf.GetGenerateCustomSMS: string;
@@ -1240,6 +1267,17 @@ end;
 
 { TTWilioStatus }
 
+function TTWilioStatus.GetAsJson: string;
+begin
+  Result := TJanuaJson.SerializeSimple<TTWilioStatus>(Self);
+end;
+
+procedure TTWilioStatus.SetAsJson(const aJson: string);
+begin
+  if not((aJson = '') or (aJson = '{}')) then
+    Self := TJanuaJson.DeserializeSimple<TTWilioStatus>(aJson);
+end;
+
 procedure TTWilioStatus.SetFromString(const aString: string);
 begin
   var
@@ -1272,6 +1310,17 @@ end;
 
 { TTwilioWebHook }
 
+function TTwilioWebHook.GetAsJson: string;
+begin
+  Result := TJanuaJson.SerializeSimple<TTwilioWebHook>(Self);
+end;
+
+procedure TTwilioWebHook.SetAsJson(const aJson: string);
+begin
+  if not((aJson = '') or (aJson = '{}')) then
+    Self := TJanuaJson.DeserializeSimple<TTwilioWebHook>(aJson);
+end;
+
 procedure TTwilioWebHook.SetFromString(const aString: string);
 begin
   var
@@ -1297,7 +1346,7 @@ begin
   MsgTo := aList.Values['To'];
   MsgTo := StringReplace(MsgTo, 'whatsapp:', '', []);
   MsgTo := StringReplace(MsgTo, '+39', '', []);
-  From :=  aList.Values['From'];
+  From := aList.Values['From'];
   From := StringReplace(From, 'whatsapp:', '', []);
   From := StringReplace(From, '+39', '', []);
   NumSegments := aList.Values['NumSegments'];

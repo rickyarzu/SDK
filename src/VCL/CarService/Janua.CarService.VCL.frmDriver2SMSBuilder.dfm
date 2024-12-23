@@ -1,48 +1,54 @@
 inherited frmVCLCSDriver2SMSBuilder: TfrmVCLCSDriver2SMSBuilder
+  Align = alTop
   Caption = 'Customer SMS Builder'
   OnDestroy = FormDestroy
   TextHeight = 15
   inherited frameVCLSMSMessageConfig: TframeVCLSMSMessageConfig
     inherited Panel2: TPanel
+      inherited lbContentVariables: TLabel
+        Left = 721
+        ExplicitLeft = 721
+      end
       inherited grpURL: TGroupBox
-        inherited lblMobileCustomerUrl: TLabel
-          Height = 15
-        end
         inherited edtMobileUrl: TEdit
           Width = 371
-          ExplicitWidth = 357
-        end
-        inherited btnTestUrl: TButton
-          Left = 617
-          Top = 14
-          ExplicitLeft = 603
-          ExplicitTop = 14
+          ExplicitWidth = 371
         end
         inherited edtCustomerMobileUrl1: TEdit
-          Left = 461
-          Width = 150
-          ExplicitLeft = 461
-          ExplicitWidth = 150
-        end
-        inherited edtTestTinyUrl: TEdit
-          Left = 704
-          ExplicitLeft = 690
+          Left = 449
+          Width = 185
+          ExplicitLeft = 449
+          ExplicitWidth = 185
         end
       end
       inherited advmSMSTemplate: TAdvMemo
-        Width = 967
-        ExplicitWidth = 967
+        Width = 711
+        ExplicitWidth = 711
       end
       inherited edPhoneCustomerTo: TEdit
-        Width = 14
-        ExplicitWidth = 14
+        Left = 911
+        Width = 74
+        ExplicitLeft = 911
+        ExplicitWidth = 74
       end
       inherited pnlSmsTestConfig: TPanel
-        inherited lbEdtTemplateSID: TLabeledEdit
-          EditLabel.ExplicitLeft = 0
-          EditLabel.ExplicitTop = -18
-          EditLabel.ExplicitWidth = 92
+        inherited AdvPageControl1: TAdvPageControl
+          DoubleBuffered = True
+          inherited tabPreview: TAdvTabSheet
+            inherited advmTemplateJson: TAdvMemo [0]
+            end
+            inherited lbEdtTemplateSID: TLabeledEdit [1]
+            end
+            inherited edTestSMSTo: TEdit [2]
+            end
+          end
         end
+      end
+      inherited memTemplateParams: TMemo
+        Left = 721
+        Width = 264
+        ExplicitLeft = 721
+        ExplicitWidth = 264
       end
     end
   end

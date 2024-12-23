@@ -74,9 +74,10 @@ inherited dmPgTWilioSync: TdmPgTWilioSync
     Top = 144
     ParamData = <
       item
-        DataType = ftUnknown
+        DataType = ftInteger
         Name = 'max_id'
-        Value = nil
+        ParamType = ptInput
+        Value = 44
       end>
     object qryTwilioLogid: TIntegerField
       FieldName = 'id'
@@ -170,6 +171,7 @@ inherited dmPgTWilioSync: TdmPgTWilioSync
       'SELECT * FROM twilio_log'
       'where id > :max_id'
       'ORDER BY id ASC ')
+    OnCalcFields = qryPhoenixLogCloneCalcFields
     Left = 168
     Top = 176
     ParamData = <
@@ -214,6 +216,12 @@ inherited dmPgTWilioSync: TdmPgTWilioSync
       FieldName = 'JGUID'
       FixedChar = True
       Size = 38
+    end
+    object qryPhoenixLogClonememTwilioJson: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'memTwilioJson'
+      Size = 2048
+      Calculated = True
     end
   end
   object qryMaxTwilioLog: TUniQuery
@@ -322,6 +330,7 @@ inherited dmPgTWilioSync: TdmPgTWilioSync
       '( managed is null or managed = '#39'F'#39')'
       'AND ACTION = '#39'webhook'#39
       'ORDER BY id ASC ')
+    OnCalcFields = qryWebHookCalcFields
     Left = 352
     Top = 56
     object qryWebHookID: TIntegerField
@@ -355,6 +364,12 @@ inherited dmPgTWilioSync: TdmPgTWilioSync
     end
     object qryWebHookBODY_RECEIVED: TBlobField
       FieldName = 'BODY_RECEIVED'
+    end
+    object qryWebHookmemTwilioJson: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'memTwilioJson'
+      Size = 2048
+      Calculated = True
     end
     object qryWebHookACTION: TWideStringField
       FieldName = 'ACTION'
@@ -405,56 +420,62 @@ inherited dmPgTWilioSync: TdmPgTWilioSync
       item
         FieldName = 'JGUID'
         FieldType = ftGuid
+      end
+      item
+        FieldName = 'BODY_RECEIVED'
+        FieldType = ftWideMemo
       end>
     Connection = FbPhoenixConnection
     SQL.Strings = (
       'SELECT * FROM twilio_log'
-      'where id > :max_id'
+      'WHERE ( managed is null or managed = '#39'F'#39')'
+      'AND ACTION = '#39'status_callback'#39
       'ORDER BY id ASC ')
+    OnCalcFields = qryMessageStatusCalcFields
     Left = 352
     Top = 128
-    ParamData = <
-      item
-        DataType = ftInteger
-        Name = 'max_id'
-        ParamType = ptInput
-        Value = 0
-      end>
-    object IntegerField2: TIntegerField
+    object qryMessageStatusID: TIntegerField
       FieldName = 'ID'
       Required = True
     end
-    object SmallintField2: TSmallintField
+    object qryMessageStatusSTATO: TSmallintField
       FieldName = 'STATO'
     end
-    object WideStringField4: TWideStringField
+    object qryMessageStatusJGUID: TGuidField
+      FieldName = 'JGUID'
+      FixedChar = True
+      Size = 38
+    end
+    object qryMessageStatusWANUMBER: TWideStringField
       FieldName = 'WANUMBER'
     end
-    object WideStringField5: TWideStringField
+    object qryMessageStatusMANAGED: TWideStringField
       FieldName = 'MANAGED'
       FixedChar = True
       Size = 1
     end
-    object DateTimeField3: TDateTimeField
+    object qryMessageStatusINSERT_DATE: TDateTimeField
       FieldName = 'INSERT_DATE'
     end
-    object DateTimeField4: TDateTimeField
+    object qryMessageStatusUPDATE_DATE: TDateTimeField
       FieldName = 'UPDATE_DATE'
     end
-    object BlobField3: TBlobField
+    object qryMessageStatusJSON_CONTENT: TBlobField
       FieldName = 'JSON_CONTENT'
     end
-    object BlobField4: TBlobField
+    object qryMessageStatusBODY_RECEIVED: TWideMemoField
       FieldName = 'BODY_RECEIVED'
+      BlobType = ftWideMemo
     end
-    object WideStringField6: TWideStringField
+    object qryMessageStatusACTION: TWideStringField
       FieldName = 'ACTION'
       Size = 128
     end
-    object GuidField2: TGuidField
-      FieldName = 'JGUID'
-      FixedChar = True
-      Size = 38
+    object qryMessageStatusmemTwilioJson: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'memTwilioJson'
+      Size = 2048
+      Calculated = True
     end
   end
   object spInsertMessage: TUniStoredProc
@@ -539,5 +560,109 @@ inherited dmPgTWilioSync: TdmPgTWilioSync
         Value = nil
       end>
     CommandStoredProcName = 'INSERT_WHATSAPP_MESSAGES'
+  end
+  object qryMessageList: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO WHATSAPP_MESSAGES'
+      '  (WAREAD, STATE, INSERT_DATE, READ_DATE)'
+      'VALUES'
+      '  (:WAREAD, :STATE, :INSERT_DATE, :READ_DATE)')
+    SQLDelete.Strings = (
+      'DELETE FROM WHATSAPP_MESSAGES'
+      'WHERE'
+      '  ID = :Old_ID')
+    SQLUpdate.Strings = (
+      'UPDATE WHATSAPP_MESSAGES'
+      'SET'
+      
+        '  WAREAD = :WAREAD, STATE = :STATE, INSERT_DATE = :INSERT_DATE, ' +
+        'READ_DATE = :READ_DATE'
+      'WHERE'
+      '  ID = :Old_ID')
+    SQLLock.Strings = (
+      'SELECT NULL FROM WHATSAPP_MESSAGES'
+      'WHERE'
+      'ID = :Old_ID AND ID = :Old_ID'
+      'FOR UPDATE WITH LOCK')
+    SQLRefresh.Strings = (
+      
+        'SELECT WAREAD, STATE, INSERT_DATE, READ_DATE FROM WHATSAPP_MESSA' +
+        'GES'
+      'WHERE'
+      '  ID = :ID')
+    SQLRecCount.Strings = (
+      'SELECT COUNT(*) FROM ('
+      'SELECT 1 AS C  FROM WHATSAPP_MESSAGES'
+      ''
+      ') q')
+    Connection = FbPhoenixConnection
+    SQL.Strings = (
+      'SELECT N.wa_name,  M.*'
+      
+        'FROM whatsapp_numbers N JOIN whatsapp_messages M ON N.wanumber =' +
+        ' M.wanumber'
+      'ORDER BY M.insert_date desc')
+    OnCalcFields = qryMessageListCalcFields
+    Left = 353
+    Top = 193
+    object qryMessageListWA_NAME: TWideStringField
+      FieldName = 'WA_NAME'
+      Required = True
+      Size = 256
+    end
+    object qryMessageListWANUMBER: TWideStringField
+      FieldName = 'WANUMBER'
+      ReadOnly = True
+    end
+    object qryMessageListWAMESSAGE: TWideStringField
+      FieldName = 'WAMESSAGE'
+      ReadOnly = True
+      Size = 512
+    end
+    object qryMessageListID: TIntegerField
+      FieldName = 'ID'
+      ReadOnly = True
+    end
+    object qryMessageListWAREAD: TWideStringField
+      FieldName = 'WAREAD'
+      ReadOnly = True
+      FixedChar = True
+      Size = 1
+    end
+    object qryMessageListIN_OUT: TSmallintField
+      FieldName = 'IN_OUT'
+      ReadOnly = True
+    end
+    object qryMessageListSTATE: TSmallintField
+      FieldName = 'STATE'
+      ReadOnly = True
+    end
+    object qryMessageListINSERT_DATE: TDateTimeField
+      FieldName = 'INSERT_DATE'
+      ReadOnly = True
+    end
+    object qryMessageListREAD_DATE: TDateTimeField
+      FieldName = 'READ_DATE'
+      ReadOnly = True
+    end
+    object qryMessageListWA_STATE: TSmallintField
+      FieldName = 'WA_STATE'
+      ReadOnly = True
+    end
+    object qryMessageListWA_ID: TWideStringField
+      FieldName = 'WA_ID'
+      ReadOnly = True
+      Size = 128
+    end
+    object qryMessageListREPORT_ID: TIntegerField
+      FieldName = 'REPORT_ID'
+      ReadOnly = True
+    end
+    object qryMessageListcalcLabel: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'calcLabel'
+      Size = 128
+      Calculated = True
+    end
   end
 end

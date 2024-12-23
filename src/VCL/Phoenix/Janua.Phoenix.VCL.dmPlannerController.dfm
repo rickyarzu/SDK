@@ -6215,6 +6215,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       end>
   end
   inherited MenuButtonActions: TActionList
+    OnExecute = MenuButtonActionsExecute
     object actGlobalGoogleSync: TAction
       Caption = 'G. Sync'
       ImageIndex = 16
@@ -6244,6 +6245,30 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       ImageIndex = 64
       ImageName = 'deadline'
       OnExecute = actSelectAllExecute
+    end
+    object actNewMeeting: TAction
+      Caption = 'Appuntamento'
+      ImageIndex = 9
+      ImageName = '010-clock'
+      OnExecute = actNewMeetingExecute
+    end
+    object actUndoMeeting: TAction
+      Caption = '  Annulla'
+      ImageIndex = 64
+      ImageName = 'deadline'
+      OnExecute = actUndoMeetingExecute
+    end
+    object actContract: TAction
+      Caption = 'Vedi Contratto'
+      ImageIndex = 18
+      ImageName = '019-document'
+      OnExecute = actContractExecute
+    end
+    object actWhatsAppMsg: TAction
+      Caption = '  WhatsApp'
+      ImageIndex = 66
+      ImageName = 'whatsapp'
+      OnExecute = actWhatsAppMsgExecute
     end
   end
   inherited GCalendarButtons: TActionList
@@ -18875,29 +18900,12 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     SQLInsert.Strings = (
       'INSERT INTO STATINI'
       
-        '  (CHIAVE, CLIENTE, FATTURA, DATA_INTERVENTO, GENERAZIONE_AUTOMA' +
-        'TICA, TECNICO_INTERVENTO, SCANSIONE, REGISTRO, NOTE_PER_IL_TECNI' +
-        'CO, SOSPESO, DA_ESPORTARE_SUL_WEB, RESPONSABILE, ESPORTATO_SU_MO' +
-        'BILE, NOTE_DAL_TECNICO, VERBALE_PROVA_DINAMICA, VERBALE_MANICHET' +
-        'TE, PREVENTIVO, IGNORA_EVIDENZIAZIONE, ANNULLATO_DA_TABLET, MOBI' +
-        'LEWARN_NUOVA_ATTREZZATURA, MOBILEWARN_ORDINARIA_RITIRATA, MOBILE' +
-        'WARN_N_ORDIN_CONTROLLATA, MOBILEWARN_SMALTIMENTO, STATO_LAVORAZI' +
-        'ONE, DATA_CHIUSURA_DA_SERVER, CHIUSURA_EXT, CHIUSURA_STATINO, MO' +
-        'BILEWARN_NON_ESEGUITI, PRESA_IN_CARICO, FORNITURA, APPUNTAMENTO_' +
-        'DATA, APPUNTAMENTO_ORA, STATO, GCAL)'
+        '  (TECNICO_INTERVENTO, NOTE_PER_IL_TECNICO, APPUNTAMENTO_DATA, A' +
+        'PPUNTAMENTO_ORA, STATO, GCAL, STATO_IMMAGINE)'
       'VALUES'
       
-        '  (:CHIAVE, :CLIENTE, :FATTURA, :DATA_INTERVENTO, :GENERAZIONE_A' +
-        'UTOMATICA, :TECNICO_INTERVENTO, :SCANSIONE, :REGISTRO, :NOTE_PER' +
-        '_IL_TECNICO, :SOSPESO, :DA_ESPORTARE_SUL_WEB, :RESPONSABILE, :ES' +
-        'PORTATO_SU_MOBILE, :NOTE_DAL_TECNICO, :VERBALE_PROVA_DINAMICA, :' +
-        'VERBALE_MANICHETTE, :PREVENTIVO, :IGNORA_EVIDENZIAZIONE, :ANNULL' +
-        'ATO_DA_TABLET, :MOBILEWARN_NUOVA_ATTREZZATURA, :MOBILEWARN_ORDIN' +
-        'ARIA_RITIRATA, :MOBILEWARN_N_ORDIN_CONTROLLATA, :MOBILEWARN_SMAL' +
-        'TIMENTO, :STATO_LAVORAZIONE, :DATA_CHIUSURA_DA_SERVER, :CHIUSURA' +
-        '_EXT, :CHIUSURA_STATINO, :MOBILEWARN_NON_ESEGUITI, :PRESA_IN_CAR' +
-        'ICO, :FORNITURA, :APPUNTAMENTO_DATA, :APPUNTAMENTO_ORA, :STATO, ' +
-        ':GCAL)')
+        '  (:TECNICO_INTERVENTO, :NOTE_PER_IL_TECNICO, :APPUNTAMENTO_DATA' +
+        ', :APPUNTAMENTO_ORA, :STATO, :GCAL, :STATO_IMMAGINE)')
     SQLDelete.Strings = (
       'DELETE FROM STATINI'
       'WHERE'
@@ -18906,27 +18914,10 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'UPDATE STATINI'
       'SET'
       
-        '  CHIAVE = :CHIAVE, CLIENTE = :CLIENTE, FATTURA = :FATTURA, DATA' +
-        '_INTERVENTO = :DATA_INTERVENTO, GENERAZIONE_AUTOMATICA = :GENERA' +
-        'ZIONE_AUTOMATICA, TECNICO_INTERVENTO = :TECNICO_INTERVENTO, SCAN' +
-        'SIONE = :SCANSIONE, REGISTRO = :REGISTRO, NOTE_PER_IL_TECNICO = ' +
-        ':NOTE_PER_IL_TECNICO, SOSPESO = :SOSPESO, DA_ESPORTARE_SUL_WEB =' +
-        ' :DA_ESPORTARE_SUL_WEB, RESPONSABILE = :RESPONSABILE, ESPORTATO_' +
-        'SU_MOBILE = :ESPORTATO_SU_MOBILE, NOTE_DAL_TECNICO = :NOTE_DAL_T' +
-        'ECNICO, VERBALE_PROVA_DINAMICA = :VERBALE_PROVA_DINAMICA, VERBAL' +
-        'E_MANICHETTE = :VERBALE_MANICHETTE, PREVENTIVO = :PREVENTIVO, IG' +
-        'NORA_EVIDENZIAZIONE = :IGNORA_EVIDENZIAZIONE, ANNULLATO_DA_TABLE' +
-        'T = :ANNULLATO_DA_TABLET, MOBILEWARN_NUOVA_ATTREZZATURA = :MOBIL' +
-        'EWARN_NUOVA_ATTREZZATURA, MOBILEWARN_ORDINARIA_RITIRATA = :MOBIL' +
-        'EWARN_ORDINARIA_RITIRATA, MOBILEWARN_N_ORDIN_CONTROLLATA = :MOBI' +
-        'LEWARN_N_ORDIN_CONTROLLATA, MOBILEWARN_SMALTIMENTO = :MOBILEWARN' +
-        '_SMALTIMENTO, STATO_LAVORAZIONE = :STATO_LAVORAZIONE, DATA_CHIUS' +
-        'URA_DA_SERVER = :DATA_CHIUSURA_DA_SERVER, CHIUSURA_EXT = :CHIUSU' +
-        'RA_EXT, CHIUSURA_STATINO = :CHIUSURA_STATINO, MOBILEWARN_NON_ESE' +
-        'GUITI = :MOBILEWARN_NON_ESEGUITI, PRESA_IN_CARICO = :PRESA_IN_CA' +
-        'RICO, FORNITURA = :FORNITURA, APPUNTAMENTO_DATA = :APPUNTAMENTO_' +
-        'DATA, APPUNTAMENTO_ORA = :APPUNTAMENTO_ORA, STATO = :STATO, GCAL' +
-        ' = :GCAL'
+        '  TECNICO_INTERVENTO = :TECNICO_INTERVENTO, NOTE_PER_IL_TECNICO ' +
+        '= :NOTE_PER_IL_TECNICO, APPUNTAMENTO_DATA = :APPUNTAMENTO_DATA, ' +
+        'APPUNTAMENTO_ORA = :APPUNTAMENTO_ORA, STATO = :STATO, GCAL = :GC' +
+        'AL, STATO_IMMAGINE = :STATO_IMMAGINE'
       'WHERE'
       '  CHIAVE = :Old_CHIAVE')
     SQLLock.Strings = (
@@ -18936,16 +18927,8 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'FOR UPDATE WITH LOCK')
     SQLRefresh.Strings = (
       
-        'SELECT CHIAVE, CLIENTE, FATTURA, DATA_INTERVENTO, GENERAZIONE_AU' +
-        'TOMATICA, TECNICO_INTERVENTO, SCANSIONE, REGISTRO, NOTE_PER_IL_T' +
-        'ECNICO, SOSPESO, DA_ESPORTARE_SUL_WEB, RESPONSABILE, ESPORTATO_S' +
-        'U_MOBILE, NOTE_DAL_TECNICO, VERBALE_PROVA_DINAMICA, VERBALE_MANI' +
-        'CHETTE, PREVENTIVO, IGNORA_EVIDENZIAZIONE, ANNULLATO_DA_TABLET, ' +
-        'MOBILEWARN_NUOVA_ATTREZZATURA, MOBILEWARN_ORDINARIA_RITIRATA, MO' +
-        'BILEWARN_N_ORDIN_CONTROLLATA, MOBILEWARN_SMALTIMENTO, STATO_LAVO' +
-        'RAZIONE, DATA_CHIUSURA_DA_SERVER, CHIUSURA_EXT, CHIUSURA_STATINO' +
-        ', MOBILEWARN_NON_ESEGUITI, PRESA_IN_CARICO, FORNITURA, APPUNTAME' +
-        'NTO_DATA, APPUNTAMENTO_ORA, STATO, GCAL FROM STATINI'
+        'SELECT TECNICO_INTERVENTO, NOTE_PER_IL_TECNICO, APPUNTAMENTO_DAT' +
+        'A, APPUNTAMENTO_ORA, STATO, GCAL, STATO_IMMAGINE FROM STATINI'
       'WHERE'
       '  CHIAVE = :CHIAVE')
     SQLRecCount.Strings = (
@@ -18954,11 +18937,6 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       ''
       ') q')
     DataTypeMap = <
-      item
-        DBType = 416
-        FieldType = ftWideString
-        FieldLength = 2048
-      end
       item
         FieldName = 'NOTE_PER_IL_TECNICO'
         FieldType = ftWideString
@@ -18976,8 +18954,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       '       F.REF_TELEFONO, F.REF_CELLULARE, F.COMUNE, S.FATTURA,'
       
         '       S.DATA_INTERVENTO , S.GENERAZIONE_AUTOMATICA , S.TECNICO_' +
-        'INTERVENTO , S.SCANSIONE , S.REGISTRO , S.NOTE_PER_IL_TECNICO , ' +
-        'S.SOSPESO,'
+        'INTERVENTO , S.NOTE_PER_IL_TECNICO , S.SOSPESO,'
       
         '       S.DA_ESPORTARE_SUL_WEB , S.RESPONSABILE , S.ESPORTATO_SU_' +
         'MOBILE , S.NOTE_DAL_TECNICO ,'
@@ -19012,6 +18989,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       '       COALESCE(I.IMPIANTI_EL, 0) IMPIANTI_EL, '
       '       T.EMAIL AS EMAIL_TECNICO,'
       '       S.GCAL, '
+      '       S.STATO_IMMAGINE, '
       
         '       CAST(SUBSTRING(generazione_automatica FROM 5 FOR 2) AS IN' +
         'TEGER) AS mese_calcolato,  -- Estrae il mese'
@@ -19168,14 +19146,6 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryReportPlannerTECNICO_INTERVENTO: TIntegerField
       FieldName = 'TECNICO_INTERVENTO'
     end
-    object qryReportPlannerSCANSIONE: TWideStringField
-      FieldName = 'SCANSIONE'
-      Size = 2048
-    end
-    object qryReportPlannerREGISTRO: TWideStringField
-      FieldName = 'REGISTRO'
-      Size = 2048
-    end
     object qryReportPlannerNOTE_PER_IL_TECNICO: TWideStringField
       FieldName = 'NOTE_PER_IL_TECNICO'
       Size = 1024
@@ -19251,10 +19221,6 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryReportPlannerCHIUSURA_EXT: TStringField
       FieldName = 'CHIUSURA_EXT'
       Size = 50
-    end
-    object qryReportPlannerCHIUSURA_STATINO: TWideStringField
-      FieldName = 'CHIUSURA_STATINO'
-      Size = 2048
     end
     object qryReportPlannerMOBILEWARN_NON_ESEGUITI: TStringField
       FieldName = 'MOBILEWARN_NON_ESEGUITI'
@@ -19373,6 +19339,14 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     object qryReportPlannerRITARDO: TLargeintField
       FieldName = 'RITARDO'
       ReadOnly = True
+    end
+    object qryReportPlannercalcStato: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'calcStato'
+      Calculated = True
+    end
+    object qryReportPlannerSTATO_IMMAGINE: TBlobField
+      FieldName = 'STATO_IMMAGINE'
     end
   end
   object spSetStatinoStato: TUniStoredProc
@@ -30304,5 +30278,10 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
         Value = nil
       end>
     CommandStoredProcName = 'INSERT_WHATSAPP_MESSAGES'
+  end
+  object dsReportsPlanner: TUniDataSource
+    DataSet = qryReportPlanner
+    Left = 816
+    Top = 624
   end
 end

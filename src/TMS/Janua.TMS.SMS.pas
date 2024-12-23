@@ -77,9 +77,9 @@ end;
 
 procedure TSMSTwilioSender.SendSMS(aUpdateProc: TUpdateProc; aErrorProc: TExceptionProc; aFinishProc: TProc);
 var
-  AdvTwilio: TAdvTwilio;
+  AdvTwilio: TJanuaAdvTwilio;
 begin
-  AdvTwilio := TAdvTwilio.Create(nil);
+  AdvTwilio := TJanuaAdvTwilio.Create(nil);
   try
     var
     lLogProc := Assigned(FLogProc);
@@ -93,6 +93,9 @@ begin
     var
     lSMS := GetSMSMessage;
 
+    AdvTwilio.ContentSid := ContentSid;
+    AdvTwilio.ContentVariables.Assign(ContentVariables);
+
     if GetRecipients.Count = 0 then
       if lLogProc then
         FLogProc('SendSMS', '{"level" : "ERROR", "message" : "no recipients for Message ' + lSMS + '"', self);
@@ -101,7 +104,7 @@ begin
       try
         var
         lRecipient := Recipients[I];
-        if FMessageType = jmtWhatsApp then
+        if (FMessageType = jmtWhatsApp) and (Pos('whatsapp:', lRecipient) = 0) then
           lRecipient := 'whatsapp:' + lRecipient;
 
         if AdvTwilio.SendSMS(lRecipient, lSMS) then

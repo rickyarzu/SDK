@@ -14,7 +14,7 @@ uses
   Janua.Cloud.Types, Janua.Cloud.Intf, Janua.Cloud.Sms.Intf, Janua.Orm.Intf, Janua.Core.System.Types,
   // Januaproject  Classes
   Janua.VCL.Interposers, Janua.TMS.Interposers, Janua.Cloud.Conf, Janua.Core.Classes, Janua.Cloud.Impl,
-  Vcl.Mask;
+  VCL.Mask, AdvPageControl, AdvGroupBox;
 
 type
   TframeVCLSMSMessageConfig = class(TFrame, IJanuaSMSBuilderForm)
@@ -49,13 +49,19 @@ type
     dbgrdParams: TDBGrid;
     DBGrid1: TDBGrid;
     dsMaster: TDataSource;
-    edTestSMSTo: TEdit;
-    advmSMSTest: TAdvMemo;
-    advmjson: TAdvMemo;
-    lbEdtTemplateSID: TLabeledEdit;
     btnSendSmsTemplate: TButton;
-    Memo1: TMemo;
+    memTemplateParams: TMemo;
     lbContentVariables: TLabel;
+    AdvPageControl1: TAdvPageControl;
+    tabPreview: TAdvTabSheet;
+    lbEdtTemplateSID: TLabeledEdit;
+    edTestSMSTo: TEdit;
+    advmTemplateJson: TAdvMemo;
+    tabJsonMessage: TAdvTabSheet;
+    memJsonMessage: TAdvMemo;
+    grpMessage: TAdvGroupBox;
+    advmSMSTest: TAdvMemo;
+    memParamsDestination: TMemo;
     procedure btnLoadSMSConfigClick(Sender: TObject);
     procedure btnSaveConfigClick(Sender: TObject);
     procedure btnGenerateSMSClick(Sender: TObject);
@@ -94,15 +100,18 @@ uses Spring, Janua.Core.Functions, Clipbrd, Janua.VCL.dlgMobilePreview;
 { TframeVCLSMSMessageConfig }
 
 procedure TframeVCLSMSMessageConfig.btnGenerateSMSClick(Sender: TObject);
-var
-  aMessage: TSMSMessage;
 begin
   FSMSMessageBuilder.LoadSettings;
-  FSMSMessageBuilder.DataSet := FTemplateDataset;
-  aMessage := FSMSMessageBuilder.GenerateSMSMessage;
+  advmTemplatejson.Text := FSMSMessageBuilder.SMSMessageConf.AsJson;
 
-  edTestSMSTo.Text := aMessage.MsgTo;
-  advmSMSTest.Text := aMessage.Body;
+  FSMSMessageBuilder.DataSet := FTemplateDataset;
+  var
+  lMessage := FSMSMessageBuilder.GenerateSMSMessage;
+
+  edTestSMSTo.Text := lMessage.MsgTo;
+  advmSMSTest.Text := lMessage.Body;
+  memParamsDestination.Text := lMessage.ContentVariablesAsString;
+  memJsonMessage.Lines.Text := lMessage.GetAsJson;
 end;
 
 procedure TframeVCLSMSMessageConfig.btnLoadSMSConfigClick(Sender: TObject);
@@ -114,15 +123,20 @@ end;
 procedure TframeVCLSMSMessageConfig.btnSaveConfigClick(Sender: TObject);
 begin
   FSMSConf.SMSMessageConf.CustomFields.LoadFromDataset(fdmParams);
-  FSMSConf.MsgTo := edPhoneCustomerTo.Text;
+
   { FSMSConf.Bind('msgTo', edPhoneCustomerTo, 'Text'); }
-  FSMSConf.Body := advmSMSTemplate.Text;
+  FSMSConf.MsgTo := edPhoneCustomerTo.Text;
   { FSMSConf.Bind('Body', advmSMSTemplate, 'Text'); }
-  FSMSConf.Url := edtMobileUrl.Text;
+  FSMSConf.Body := advmSMSTemplate.Text;
   { FSMSConf.Bind('Url', advmSMSTemplate, 'Text'); }
-  advmjson.Text := FSMSConf.AsJson;
+  FSMSConf.Url := edtMobileUrl.Text;
+
   { FSMSConf.Bind('TemplateMessageID', lbEdtTemplateSID, 'Text'); }
-  lbEdtTemplateSID.Text := FSMSConf.TemplateMessageID;
+  FSMSConf.TemplateMessageID := lbEdtTemplateSID.Text;
+  { FSMSConf.Bind('TemplateMessageID', lbEdtTemplateSID, 'Text'); }
+  FSMSConf.TemplateParams := memTemplateParams.Text;
+
+  advmTemplatejson.Text := FSMSConf.AsJson;
   FSMSConf.SaveConfig;
   UpdatedFrame;
 
@@ -243,6 +257,8 @@ begin
     FSMSConf.Bind('Body', advmSMSTemplate, 'Text');
     FSMSConf.Bind('Url', advmSMSTemplate, 'Text');
     FSMSConf.Bind('AsJson', advmSMSTemplate, 'Text');
+    FSMSConf.Bind('TemplateMessageID', lbEdtTemplateSID, 'Text');
+    FSMSConf.Bind('TemplateParams', memTemplateParams, 'Text');
   end;
 end;
 
@@ -292,7 +308,10 @@ begin
   edPhoneCustomerTo.Text := FSMSConf.MsgTo;
   advmSMSTemplate.Text := FSMSConf.Body;
   edtMobileUrl.Text := FSMSConf.Url;
-  advmjson.Text := FSMSConf.AsJson;
+  lbEdtTemplateSID.Text := FSMSConf.TemplateMessageID;
+  memTemplateParams.Text := FSMSConf.TemplateParams;
+
+  advmTemplatejson.Text := FSMSConf.AsJson;
   fdmParams.EmptyDataSet;
   if FSMSConf.SMSMessageConf.CustomFields.HasCustomFields then
     FSMSConf.SMSMessageConf.CustomFields.SaveToDataset(fdmParams);

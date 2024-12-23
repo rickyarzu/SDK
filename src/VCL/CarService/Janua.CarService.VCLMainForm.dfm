@@ -22,6 +22,7 @@ inherited frmCarserviceMain: TfrmCarserviceMain
   end
   inherited SplitViewLeft: TSplitView
     Height = 513
+    DoubleBuffered = True
     ExplicitHeight = 513
   end
   inherited pgcApplicationArea: TPageControl
@@ -31,7 +32,6 @@ inherited frmCarserviceMain: TfrmCarserviceMain
     ExplicitHeight = 513
   end
   inherited MainMenu1: TMainMenu
-    Left = 360
     Top = 264
   end
   inherited AdvPopupMenu1: TAdvPopupMenu
