@@ -144,7 +144,6 @@ constructor TRequestController.Create;
 var
   rtype: TRTTIType;
   fields: TArray<TRttiField>;
-  i: Integer;
 begin
   inherited;
   FHeadFields := TStringList.Create;
@@ -152,13 +151,15 @@ begin
 
   rtype := TRTTIContext.Create.GetType(TypeInfo(TRequestControllerRecord));
   fields := rtype.GetFields;
-  for i := 0 to High(fields) do
-    FHeadFields.Add('$$' + (fields[i].Name) + '$$');
+
+  for var aField in fields do
+    FHeadFields.Add('$$' + (aField.Name) + '$$');
 
   rtype := TRTTIContext.Create.GetType(TypeInfo(TRequestRecord));
   fields := rtype.GetFields;
-  for i := 0 to High(fields) do
-    FACLFields.Add('$$' + (fields[i].Name) + '$$');
+
+  for var aField in fields do
+    FACLFields.Add('$$' + (aField.Name) + '$$');
 
 end;
 
