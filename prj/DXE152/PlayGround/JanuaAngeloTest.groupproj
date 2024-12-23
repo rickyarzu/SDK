@@ -3,49 +3,49 @@
         <ProjectGuid>{8CA1D8D8-742B-4D70-827A-9E136DF67D92}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\..\..\Components\pkg110\AWSSDK.dproj">
+        <Projects Include="..\..\..\Components\pkg122\AWSSDK.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\..\Components\pkg110\AWSSDKVCL.dproj">
+        <Projects Include="..\..\..\Components\pkg122\AWSSDKVCL.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\..\Components\pkg110\AWSSDKFMX.dproj">
+        <Projects Include="..\..\..\Components\pkg122\AWSSDKFMX.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\..\Components\pkg120\OpenAIPackage.dproj">
+        <Projects Include="..\..\..\Components\pkg122\OpenAIPackage.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\..\Components\pkg110\SwagDoc.dproj">
+        <Projects Include="..\..\..\Components\pkg122\SwagDoc.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\..\Components\pkg110\sgcWebSockets.dproj">
+        <Projects Include="..\..\..\Components\pkg122\sgcWebSockets.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\..\Components\pkg110\DECCipher.dproj">
+        <Projects Include="..\..\..\Components\pkg122\DECCipher.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\..\Components\pkg110\loggerproRT.dproj">
+        <Projects Include="..\..\..\Components\pkg122\loggerproRT.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\..\Components\pkg110\JOSE.dproj">
+        <Projects Include="..\..\..\Components\pkg122\JOSE.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\..\Components\pkg110\Neon.dproj">
+        <Projects Include="..\..\..\Components\pkg122\Neon.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\..\Components\pkg110\Spring.Base.dproj">
+        <Projects Include="..\..\..\Components\pkg122\Spring.Base.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\..\Components\pkg120\StyleControls.dproj">
+        <Projects Include="..\..\..\Components\pkg122\StyleControls.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\..\Components\pkg110\Spring.Core.dproj">
+        <Projects Include="..\..\..\Components\pkg122\Spring.Core.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\..\Components\pkg110\dmvcframeworkRT.dproj">
+        <Projects Include="..\..\..\Components\pkg122\dmvcframeworkRT.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\JanuaThirdPartyVCL.dproj">
@@ -54,7 +54,7 @@
         <Projects Include="..\JanuaCoreThirdParty.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\..\Components\pkg110\RestRequestLib.dproj">
+        <Projects Include="..\..\..\Components\pkg122\RestRequestLib.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\JanuaCore.dproj">
@@ -132,40 +132,40 @@
         </BorlandProject>
     </ProjectExtensions>
     <Target Name="AWSSDK">
-        <MSBuild Projects="..\..\..\Components\pkg110\AWSSDK.dproj"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\AWSSDK.dproj"/>
     </Target>
     <Target Name="AWSSDK:Clean">
-        <MSBuild Projects="..\..\..\Components\pkg110\AWSSDK.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\AWSSDK.dproj" Targets="Clean"/>
     </Target>
     <Target Name="AWSSDK:Make">
-        <MSBuild Projects="..\..\..\Components\pkg110\AWSSDK.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\AWSSDK.dproj" Targets="Make"/>
     </Target>
     <Target Name="AWSSDKVCL">
-        <MSBuild Projects="..\..\..\Components\pkg110\AWSSDKVCL.dproj"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\AWSSDKVCL.dproj"/>
     </Target>
     <Target Name="AWSSDKVCL:Clean">
-        <MSBuild Projects="..\..\..\Components\pkg110\AWSSDKVCL.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\AWSSDKVCL.dproj" Targets="Clean"/>
     </Target>
     <Target Name="AWSSDKVCL:Make">
-        <MSBuild Projects="..\..\..\Components\pkg110\AWSSDKVCL.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\AWSSDKVCL.dproj" Targets="Make"/>
     </Target>
     <Target Name="AWSSDKFMX">
-        <MSBuild Projects="..\..\..\Components\pkg110\AWSSDKFMX.dproj"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\AWSSDKFMX.dproj"/>
     </Target>
     <Target Name="AWSSDKFMX:Clean">
-        <MSBuild Projects="..\..\..\Components\pkg110\AWSSDKFMX.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\AWSSDKFMX.dproj" Targets="Clean"/>
     </Target>
     <Target Name="AWSSDKFMX:Make">
-        <MSBuild Projects="..\..\..\Components\pkg110\AWSSDKFMX.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\AWSSDKFMX.dproj" Targets="Make"/>
     </Target>
     <Target Name="OpenAIPackage">
-        <MSBuild Projects="..\..\..\Components\pkg120\OpenAIPackage.dproj"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\OpenAIPackage.dproj"/>
     </Target>
     <Target Name="OpenAIPackage:Clean">
-        <MSBuild Projects="..\..\..\Components\pkg120\OpenAIPackage.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\OpenAIPackage.dproj" Targets="Clean"/>
     </Target>
     <Target Name="OpenAIPackage:Make">
-        <MSBuild Projects="..\..\..\Components\pkg120\OpenAIPackage.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\OpenAIPackage.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaOpenAIQuickChat">
         <MSBuild Projects="..\..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj"/>
@@ -177,94 +177,94 @@
         <MSBuild Projects="..\..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj" Targets="Make"/>
     </Target>
     <Target Name="SwagDoc">
-        <MSBuild Projects="..\..\..\Components\pkg110\SwagDoc.dproj"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\SwagDoc.dproj"/>
     </Target>
     <Target Name="SwagDoc:Clean">
-        <MSBuild Projects="..\..\..\Components\pkg110\SwagDoc.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\SwagDoc.dproj" Targets="Clean"/>
     </Target>
     <Target Name="SwagDoc:Make">
-        <MSBuild Projects="..\..\..\Components\pkg110\SwagDoc.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\SwagDoc.dproj" Targets="Make"/>
     </Target>
     <Target Name="sgcWebSockets">
-        <MSBuild Projects="..\..\..\Components\pkg110\sgcWebSockets.dproj"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\sgcWebSockets.dproj"/>
     </Target>
     <Target Name="sgcWebSockets:Clean">
-        <MSBuild Projects="..\..\..\Components\pkg110\sgcWebSockets.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\sgcWebSockets.dproj" Targets="Clean"/>
     </Target>
     <Target Name="sgcWebSockets:Make">
-        <MSBuild Projects="..\..\..\Components\pkg110\sgcWebSockets.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\sgcWebSockets.dproj" Targets="Make"/>
     </Target>
     <Target Name="DECCipher">
-        <MSBuild Projects="..\..\..\Components\pkg110\DECCipher.dproj"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\DECCipher.dproj"/>
     </Target>
     <Target Name="DECCipher:Clean">
-        <MSBuild Projects="..\..\..\Components\pkg110\DECCipher.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\DECCipher.dproj" Targets="Clean"/>
     </Target>
     <Target Name="DECCipher:Make">
-        <MSBuild Projects="..\..\..\Components\pkg110\DECCipher.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\DECCipher.dproj" Targets="Make"/>
     </Target>
     <Target Name="loggerproRT">
-        <MSBuild Projects="..\..\..\Components\pkg110\loggerproRT.dproj"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\loggerproRT.dproj"/>
     </Target>
     <Target Name="loggerproRT:Clean">
-        <MSBuild Projects="..\..\..\Components\pkg110\loggerproRT.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\loggerproRT.dproj" Targets="Clean"/>
     </Target>
     <Target Name="loggerproRT:Make">
-        <MSBuild Projects="..\..\..\Components\pkg110\loggerproRT.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\loggerproRT.dproj" Targets="Make"/>
     </Target>
     <Target Name="JOSE">
-        <MSBuild Projects="..\..\..\Components\pkg110\JOSE.dproj"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\JOSE.dproj"/>
     </Target>
     <Target Name="JOSE:Clean">
-        <MSBuild Projects="..\..\..\Components\pkg110\JOSE.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\JOSE.dproj" Targets="Clean"/>
     </Target>
     <Target Name="JOSE:Make">
-        <MSBuild Projects="..\..\..\Components\pkg110\JOSE.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\JOSE.dproj" Targets="Make"/>
     </Target>
     <Target Name="Neon">
-        <MSBuild Projects="..\..\..\Components\pkg110\Neon.dproj"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\Neon.dproj"/>
     </Target>
     <Target Name="Neon:Clean">
-        <MSBuild Projects="..\..\..\Components\pkg110\Neon.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\Neon.dproj" Targets="Clean"/>
     </Target>
     <Target Name="Neon:Make">
-        <MSBuild Projects="..\..\..\Components\pkg110\Neon.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\Neon.dproj" Targets="Make"/>
     </Target>
     <Target Name="Spring_Base">
-        <MSBuild Projects="..\..\..\Components\pkg110\Spring.Base.dproj"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\Spring.Base.dproj"/>
     </Target>
     <Target Name="Spring_Base:Clean">
-        <MSBuild Projects="..\..\..\Components\pkg110\Spring.Base.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\Spring.Base.dproj" Targets="Clean"/>
     </Target>
     <Target Name="Spring_Base:Make">
-        <MSBuild Projects="..\..\..\Components\pkg110\Spring.Base.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\Spring.Base.dproj" Targets="Make"/>
     </Target>
     <Target Name="StyleControls">
-        <MSBuild Projects="..\..\..\Components\pkg120\StyleControls.dproj"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\StyleControls.dproj"/>
     </Target>
     <Target Name="StyleControls:Clean">
-        <MSBuild Projects="..\..\..\Components\pkg120\StyleControls.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\StyleControls.dproj" Targets="Clean"/>
     </Target>
     <Target Name="StyleControls:Make">
-        <MSBuild Projects="..\..\..\Components\pkg120\StyleControls.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\StyleControls.dproj" Targets="Make"/>
     </Target>
     <Target Name="Spring_Core">
-        <MSBuild Projects="..\..\..\Components\pkg110\Spring.Core.dproj"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\Spring.Core.dproj"/>
     </Target>
     <Target Name="Spring_Core:Clean">
-        <MSBuild Projects="..\..\..\Components\pkg110\Spring.Core.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\Spring.Core.dproj" Targets="Clean"/>
     </Target>
     <Target Name="Spring_Core:Make">
-        <MSBuild Projects="..\..\..\Components\pkg110\Spring.Core.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\Spring.Core.dproj" Targets="Make"/>
     </Target>
     <Target Name="dmvcframeworkRT">
-        <MSBuild Projects="..\..\..\Components\pkg110\dmvcframeworkRT.dproj"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\dmvcframeworkRT.dproj"/>
     </Target>
     <Target Name="dmvcframeworkRT:Clean">
-        <MSBuild Projects="..\..\..\Components\pkg110\dmvcframeworkRT.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\dmvcframeworkRT.dproj" Targets="Clean"/>
     </Target>
     <Target Name="dmvcframeworkRT:Make">
-        <MSBuild Projects="..\..\..\Components\pkg110\dmvcframeworkRT.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\dmvcframeworkRT.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaThirdPartyVCL">
         <MSBuild Projects="..\JanuaThirdPartyVCL.dproj"/>
@@ -285,13 +285,13 @@
         <MSBuild Projects="..\JanuaCoreThirdParty.dproj" Targets="Make"/>
     </Target>
     <Target Name="RestRequestLib">
-        <MSBuild Projects="..\..\..\Components\pkg110\RestRequestLib.dproj"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\RestRequestLib.dproj"/>
     </Target>
     <Target Name="RestRequestLib:Clean">
-        <MSBuild Projects="..\..\..\Components\pkg110\RestRequestLib.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\RestRequestLib.dproj" Targets="Clean"/>
     </Target>
     <Target Name="RestRequestLib:Make">
-        <MSBuild Projects="..\..\..\Components\pkg110\RestRequestLib.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\..\Components\pkg122\RestRequestLib.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaCore">
         <MSBuild Projects="..\JanuaCore.dproj"/>
@@ -502,7 +502,7 @@
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='ThirdParty'">
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDKFMX.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDKFMX.dproj">
             <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -514,7 +514,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\sgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -562,7 +562,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg120\StyleControls.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\StyleControls.dproj">
             <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -574,7 +574,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg120\OpenAIPackage.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\OpenAIPackage.dproj">
             <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -592,13 +592,13 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDKVCL.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDKVCL.dproj">
             <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\dmvcframeworkRT.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Linux64</Platforms>
@@ -622,7 +622,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Spring.Base.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Spring.Base.dproj">
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -640,13 +640,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\DECCipher.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Neon.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Neon.dproj">
             <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -676,19 +676,19 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\SwagDoc.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\SwagDoc.dproj">
             <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Linux64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Spring.Core.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDK.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDK.dproj">
             <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -718,7 +718,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\loggerproRT.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -730,13 +730,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\RestRequestLib.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\RestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\JOSE.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\JOSE.dproj">
             <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -744,7 +744,7 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Libs'">
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDKFMX.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDKFMX.dproj">
             <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
@@ -756,7 +756,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\sgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
@@ -804,7 +804,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg120\StyleControls.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\StyleControls.dproj">
             <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -816,7 +816,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg120\OpenAIPackage.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\OpenAIPackage.dproj">
             <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
@@ -834,13 +834,13 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDKVCL.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDKVCL.dproj">
             <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\dmvcframeworkRT.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
@@ -864,7 +864,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Spring.Base.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Spring.Base.dproj">
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
@@ -882,13 +882,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\DECCipher.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Neon.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Neon.dproj">
             <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
@@ -918,19 +918,19 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\SwagDoc.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\SwagDoc.dproj">
             <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Spring.Core.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDK.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDK.dproj">
             <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
@@ -960,7 +960,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\loggerproRT.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
@@ -972,13 +972,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\RestRequestLib.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\RestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\JOSE.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\JOSE.dproj">
             <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
@@ -986,7 +986,7 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Android64'">
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDKFMX.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDKFMX.dproj">
             <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -998,7 +998,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\sgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1046,7 +1046,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg120\StyleControls.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\StyleControls.dproj">
             <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1058,7 +1058,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg120\OpenAIPackage.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\OpenAIPackage.dproj">
             <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1076,13 +1076,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDKVCL.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDKVCL.dproj">
             <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\dmvcframeworkRT.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Linux64</Platforms>
@@ -1106,7 +1106,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Spring.Base.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Spring.Base.dproj">
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1124,13 +1124,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\DECCipher.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Neon.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Neon.dproj">
             <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1160,19 +1160,19 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\SwagDoc.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\SwagDoc.dproj">
             <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Linux64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Spring.Core.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDK.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDK.dproj">
             <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1202,7 +1202,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\loggerproRT.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1214,13 +1214,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\RestRequestLib.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\RestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\JOSE.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\JOSE.dproj">
             <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1228,7 +1228,7 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='MacOS'">
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDKFMX.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDKFMX.dproj">
             <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1240,7 +1240,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\sgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1288,7 +1288,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg120\StyleControls.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\StyleControls.dproj">
             <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1300,7 +1300,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg120\OpenAIPackage.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\OpenAIPackage.dproj">
             <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1318,13 +1318,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDKVCL.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDKVCL.dproj">
             <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\dmvcframeworkRT.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Linux64</Platforms>
@@ -1348,7 +1348,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Spring.Base.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Spring.Base.dproj">
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1366,13 +1366,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\DECCipher.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Neon.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Neon.dproj">
             <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1402,19 +1402,19 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\SwagDoc.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\SwagDoc.dproj">
             <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Linux64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Spring.Core.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDK.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDK.dproj">
             <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1444,7 +1444,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\loggerproRT.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1456,13 +1456,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\RestRequestLib.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\RestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\JOSE.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\JOSE.dproj">
             <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1470,7 +1470,7 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='iOS'">
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDKFMX.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDKFMX.dproj">
             <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1482,7 +1482,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\sgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1530,7 +1530,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg120\StyleControls.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\StyleControls.dproj">
             <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1542,7 +1542,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg120\OpenAIPackage.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\OpenAIPackage.dproj">
             <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1560,13 +1560,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDKVCL.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDKVCL.dproj">
             <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\dmvcframeworkRT.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Linux64</Platforms>
@@ -1590,7 +1590,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Spring.Base.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Spring.Base.dproj">
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1608,13 +1608,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\DECCipher.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Neon.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Neon.dproj">
             <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1644,19 +1644,19 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\SwagDoc.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\SwagDoc.dproj">
             <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Linux64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Spring.Core.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDK.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDK.dproj">
             <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1686,7 +1686,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\loggerproRT.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1698,13 +1698,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\RestRequestLib.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\RestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\JOSE.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\JOSE.dproj">
             <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1712,7 +1712,7 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Libs 64bit'">
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDKFMX.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDKFMX.dproj">
             <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1724,7 +1724,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\sgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1772,7 +1772,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg120\StyleControls.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\StyleControls.dproj">
             <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1784,7 +1784,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg120\OpenAIPackage.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\OpenAIPackage.dproj">
             <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1802,13 +1802,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDKVCL.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDKVCL.dproj">
             <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\dmvcframeworkRT.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Linux64</Platforms>
@@ -1832,7 +1832,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Spring.Base.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Spring.Base.dproj">
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1850,13 +1850,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\DECCipher.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Neon.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Neon.dproj">
             <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1886,19 +1886,19 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\SwagDoc.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\SwagDoc.dproj">
             <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Linux64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Spring.Core.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDK.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDK.dproj">
             <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1928,7 +1928,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\loggerproRT.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1940,13 +1940,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\RestRequestLib.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\RestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\JOSE.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\JOSE.dproj">
             <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1954,7 +1954,7 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='All Apps'">
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDKFMX.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDKFMX.dproj">
             <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1966,7 +1966,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\sgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -2014,7 +2014,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg120\StyleControls.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\StyleControls.dproj">
             <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -2026,7 +2026,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg120\OpenAIPackage.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\OpenAIPackage.dproj">
             <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -2044,13 +2044,13 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDKVCL.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDKVCL.dproj">
             <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\dmvcframeworkRT.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Linux64</Platforms>
@@ -2074,7 +2074,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Spring.Base.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Spring.Base.dproj">
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -2092,13 +2092,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\DECCipher.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Neon.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Neon.dproj">
             <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -2128,19 +2128,19 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\SwagDoc.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\SwagDoc.dproj">
             <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Linux64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\Spring.Core.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\AWSSDK.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\AWSSDK.dproj">
             <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -2170,7 +2170,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\loggerproRT.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\loggerproRT.dproj">
             <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -2182,13 +2182,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\RestRequestLib.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\RestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Components\pkg110\JOSE.dproj">
+        <BuildGroupProject Include="..\..\..\Components\pkg122\JOSE.dproj">
             <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>

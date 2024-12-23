@@ -75,13 +75,13 @@
         <Projects Include="..\..\Samples\CleverComponents\Delphi\SmtpClientSSL\SmtpClientSSL_11.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg110\clinetsuite.dproj">
+        <Projects Include="..\..\Components\pkg122\clinetsuite.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg110\dcl_clinetsuite.dproj">
+        <Projects Include="..\..\Components\pkg122\dcl_clinetsuite.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg110\VCLTMSFNCCloudPackPkg.dproj">
+        <Projects Include="..\..\Components\pkg122\VCLTMSFNCCloudPackPkg.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -309,31 +309,31 @@
         <MSBuild Projects="..\..\Samples\CleverComponents\Delphi\SmtpClientSSL\SmtpClientSSL_11.dproj" Targets="Make"/>
     </Target>
     <Target Name="clinetsuite">
-        <MSBuild Projects="..\..\components\pkg110\clinetsuite.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\clinetsuite.dproj"/>
     </Target>
     <Target Name="clinetsuite:Clean">
-        <MSBuild Projects="..\..\components\pkg110\clinetsuite.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\clinetsuite.dproj" Targets="Clean"/>
     </Target>
     <Target Name="clinetsuite:Make">
-        <MSBuild Projects="..\..\components\pkg110\clinetsuite.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\clinetsuite.dproj" Targets="Make"/>
     </Target>
     <Target Name="dcl_clinetsuite">
-        <MSBuild Projects="..\..\components\pkg110\dcl_clinetsuite.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\dcl_clinetsuite.dproj"/>
     </Target>
     <Target Name="dcl_clinetsuite:Clean">
-        <MSBuild Projects="..\..\components\pkg110\dcl_clinetsuite.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\dcl_clinetsuite.dproj" Targets="Clean"/>
     </Target>
     <Target Name="dcl_clinetsuite:Make">
-        <MSBuild Projects="..\..\components\pkg110\dcl_clinetsuite.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\dcl_clinetsuite.dproj" Targets="Make"/>
     </Target>
     <Target Name="VCLTMSFNCCloudPackPkg">
-        <MSBuild Projects="..\..\components\pkg110\VCLTMSFNCCloudPackPkg.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCCloudPackPkg.dproj"/>
     </Target>
     <Target Name="VCLTMSFNCCloudPackPkg:Clean">
-        <MSBuild Projects="..\..\components\pkg110\VCLTMSFNCCloudPackPkg.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCCloudPackPkg.dproj" Targets="Clean"/>
     </Target>
     <Target Name="VCLTMSFNCCloudPackPkg:Make">
-        <MSBuild Projects="..\..\components\pkg110\VCLTMSFNCCloudPackPkg.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\VCLTMSFNCCloudPackPkg.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
         <CallTarget Targets="JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUniDACUnitTesting;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaVCLForms;CarServiceConfigMsgTester;Archive;Review;TmsTwilio;NeonMainDemo;JanuaAllDemos;TTMSFNCCloudSendGridVCLDemo;ServerSideViewsCustomEngine;SmtpClientSSL_11;clinetsuite;dcl_clinetsuite;VCLTMSFNCCloudPackPkg"/>
@@ -352,7 +352,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\clinetsuite.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\clinetsuite.dproj">
             <ProjectGuid>{59FE6CE4-EDD6-4218-94AB-AB64A111D8FB}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
@@ -406,7 +406,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\VCLTMSFNCCloudPackPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\VCLTMSFNCCloudPackPkg.dproj">
             <ProjectGuid>{F3281257-D751-44DE-9F34-32D8EA6BAF6B}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -418,7 +418,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\dcl_clinetsuite.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dcl_clinetsuite.dproj">
             <ProjectGuid>{2E698F98-FBBD-4B07-A7A1-D2CE548AAA3E}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -516,7 +516,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\clinetsuite.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\clinetsuite.dproj">
             <ProjectGuid>{59FE6CE4-EDD6-4218-94AB-AB64A111D8FB}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -570,7 +570,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\VCLTMSFNCCloudPackPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\VCLTMSFNCCloudPackPkg.dproj">
             <ProjectGuid>{F3281257-D751-44DE-9F34-32D8EA6BAF6B}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -582,7 +582,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\dcl_clinetsuite.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dcl_clinetsuite.dproj">
             <ProjectGuid>{2E698F98-FBBD-4B07-A7A1-D2CE548AAA3E}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -680,7 +680,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\clinetsuite.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\clinetsuite.dproj">
             <ProjectGuid>{59FE6CE4-EDD6-4218-94AB-AB64A111D8FB}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -734,7 +734,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\VCLTMSFNCCloudPackPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\VCLTMSFNCCloudPackPkg.dproj">
             <ProjectGuid>{F3281257-D751-44DE-9F34-32D8EA6BAF6B}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -746,7 +746,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\dcl_clinetsuite.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dcl_clinetsuite.dproj">
             <ProjectGuid>{2E698F98-FBBD-4B07-A7A1-D2CE548AAA3E}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -844,7 +844,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\clinetsuite.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\clinetsuite.dproj">
             <ProjectGuid>{59FE6CE4-EDD6-4218-94AB-AB64A111D8FB}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -898,7 +898,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\VCLTMSFNCCloudPackPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\VCLTMSFNCCloudPackPkg.dproj">
             <ProjectGuid>{F3281257-D751-44DE-9F34-32D8EA6BAF6B}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -910,7 +910,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\dcl_clinetsuite.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dcl_clinetsuite.dproj">
             <ProjectGuid>{2E698F98-FBBD-4B07-A7A1-D2CE548AAA3E}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1008,7 +1008,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\clinetsuite.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\clinetsuite.dproj">
             <ProjectGuid>{59FE6CE4-EDD6-4218-94AB-AB64A111D8FB}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1062,7 +1062,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\VCLTMSFNCCloudPackPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\VCLTMSFNCCloudPackPkg.dproj">
             <ProjectGuid>{F3281257-D751-44DE-9F34-32D8EA6BAF6B}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1074,7 +1074,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\dcl_clinetsuite.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dcl_clinetsuite.dproj">
             <ProjectGuid>{2E698F98-FBBD-4B07-A7A1-D2CE548AAA3E}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>

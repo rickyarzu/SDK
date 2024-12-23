@@ -87,13 +87,13 @@
         <Projects Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg110\ipstudiowin.dproj">
+        <Projects Include="..\..\Components\pkg122\ipstudiowin.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg110\ipstudiowinclient.dproj">
+        <Projects Include="..\..\Components\pkg122\ipstudiowinclient.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg110\dipstudiowin.dproj">
+        <Projects Include="..\..\Components\pkg122\dipstudiowin.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="FMX\TMLogisticDesktop.dproj">
@@ -360,31 +360,31 @@
         <MSBuild Projects="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj" Targets="Make"/>
     </Target>
     <Target Name="ipstudiowin">
-        <MSBuild Projects="..\..\components\pkg110\ipstudiowin.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowin.dproj"/>
     </Target>
     <Target Name="ipstudiowin:Clean">
-        <MSBuild Projects="..\..\components\pkg110\ipstudiowin.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowin.dproj" Targets="Clean"/>
     </Target>
     <Target Name="ipstudiowin:Make">
-        <MSBuild Projects="..\..\components\pkg110\ipstudiowin.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowin.dproj" Targets="Make"/>
     </Target>
     <Target Name="ipstudiowinclient">
-        <MSBuild Projects="..\..\components\pkg110\ipstudiowinclient.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowinclient.dproj"/>
     </Target>
     <Target Name="ipstudiowinclient:Clean">
-        <MSBuild Projects="..\..\components\pkg110\ipstudiowinclient.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowinclient.dproj" Targets="Clean"/>
     </Target>
     <Target Name="ipstudiowinclient:Make">
-        <MSBuild Projects="..\..\components\pkg110\ipstudiowinclient.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowinclient.dproj" Targets="Make"/>
     </Target>
     <Target Name="dipstudiowin">
-        <MSBuild Projects="..\..\components\pkg110\dipstudiowin.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\dipstudiowin.dproj"/>
     </Target>
     <Target Name="dipstudiowin:Clean">
-        <MSBuild Projects="..\..\components\pkg110\dipstudiowin.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\dipstudiowin.dproj" Targets="Clean"/>
     </Target>
     <Target Name="dipstudiowin:Make">
-        <MSBuild Projects="..\..\components\pkg110\dipstudiowin.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\dipstudiowin.dproj" Targets="Make"/>
     </Target>
     <Target Name="TMLogisticDesktop">
         <MSBuild Projects="FMX\TMLogisticDesktop.dproj"/>
@@ -406,7 +406,7 @@
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='JanuaLibs'">
-        <BuildGroupProject Include="..\..\components\pkg110\dipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dipstudiowin.dproj">
             <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -460,7 +460,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -484,7 +484,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowin.dproj">
             <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -600,7 +600,7 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='TM Libs'">
-        <BuildGroupProject Include="..\..\components\pkg110\dipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dipstudiowin.dproj">
             <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -654,7 +654,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -678,7 +678,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowin.dproj">
             <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -794,7 +794,7 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='TM Libs FMX'">
-        <BuildGroupProject Include="..\..\components\pkg110\dipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dipstudiowin.dproj">
             <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -848,7 +848,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -872,7 +872,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowin.dproj">
             <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -988,7 +988,7 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Janua Lib W32'">
-        <BuildGroupProject Include="..\..\components\pkg110\dipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dipstudiowin.dproj">
             <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1042,7 +1042,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1066,7 +1066,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowin.dproj">
             <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1182,7 +1182,7 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='TM Apps'">
-        <BuildGroupProject Include="..\..\components\pkg110\dipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dipstudiowin.dproj">
             <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1236,7 +1236,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1260,7 +1260,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowin.dproj">
             <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
