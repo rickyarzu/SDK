@@ -1,4 +1,4 @@
-object WebModule1: TWebModule1
+object JanuaWhatSappWebBrokerModule: TJanuaWhatSappWebBrokerModule
   OnCreate = WebModuleCreate
   Actions = <
     item

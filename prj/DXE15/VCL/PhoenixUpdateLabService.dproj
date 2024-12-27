@@ -200,6 +200,7 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="uPhoenixBackgroundServiceConf.pas"/>
+        <DCCReference Include="..\..\..\..\Phoenix\Phoenix\SW\PhoenixMain\Globale.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaeExeDXE15.optset</DependentOn>

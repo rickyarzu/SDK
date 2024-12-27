@@ -1,7 +1,7 @@
-object Form1: TForm1
+object frmVCLWebBrokerWhatsApp: TfrmVCLWebBrokerWhatsApp
   Left = 271
   Top = 114
-  Caption = 'Form1'
+  Caption = 'WhatsApp Web Form'
   ClientHeight = 194
   ClientWidth = 389
   Color = clBtnFace

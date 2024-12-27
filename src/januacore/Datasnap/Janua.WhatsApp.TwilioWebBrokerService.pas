@@ -1,4 +1,4 @@
-unit Janua.CarService.CustConfWebBrokerService;
+unit Janua.WhatsApp.TwilioWebBrokerService;
 
 interface
 
@@ -15,7 +15,7 @@ uses
   Janua.CarService.WebModuleCustomerConfirmation;
 
 type
-  TJanuaCarServiceCustConfWebBrokerService = class(TService)
+  TJanuaWhatsAppTwilioWebBrokerService = class(TService)
     procedure ServiceCreate(Sender: TObject);
     procedure ServiceDestroy(Sender: TObject);
     procedure ServiceStart(Sender: TService; var Started: Boolean);
@@ -29,7 +29,7 @@ type
   end;
 
 var
-  JanuaCarServiceCustConfWebBrokerService: TJanuaCarServiceCustConfWebBrokerService;
+  JanuaWhatsAppTwilioWebBrokerService: TJanuaWhatsAppTwilioWebBrokerService;
 
 implementation
 
@@ -37,33 +37,33 @@ implementation
 
 procedure ServiceController(CtrlCode: DWord); stdcall;
 begin
-  JanuaCarServiceCustConfWebBrokerService.Controller(CtrlCode);
+  JanuaWhatsAppTwilioWebBrokerService.Controller(CtrlCode);
 end;
 
-function TJanuaCarServiceCustConfWebBrokerService.GetServiceController: TServiceController;
+function TJanuaWhatsAppTwilioWebBrokerService.GetServiceController: TServiceController;
 begin
   Result := ServiceController;
 end;
 
-procedure TJanuaCarServiceCustConfWebBrokerService.ServiceCreate(Sender: TObject);
+procedure TJanuaWhatsAppTwilioWebBrokerService.ServiceCreate(Sender: TObject);
 begin
   if WebRequestHandler <> nil then
     WebRequestHandler.WebModuleClass := WebModuleClass;
   FServer := TJanuaWebServerFactory.CreateWebServer;
 end;
 
-procedure TJanuaCarServiceCustConfWebBrokerService.ServiceDestroy(Sender: TObject);
+procedure TJanuaWhatsAppTwilioWebBrokerService.ServiceDestroy(Sender: TObject);
 begin
   FServer.Free;
 end;
 
-procedure TJanuaCarServiceCustConfWebBrokerService.ServiceStart(Sender: TService; var Started: Boolean);
+procedure TJanuaWhatsAppTwilioWebBrokerService.ServiceStart(Sender: TService; var Started: Boolean);
 begin
   FServer.Port := TJanuaWebServer.GetPort(8084);
   FServer.StartServer;
 end;
 
-procedure TJanuaCarServiceCustConfWebBrokerService.ServiceStop(Sender: TService; var Stopped: Boolean);
+procedure TJanuaWhatsAppTwilioWebBrokerService.ServiceStop(Sender: TService; var Stopped: Boolean);
 begin
   FServer.StopServer
 end;

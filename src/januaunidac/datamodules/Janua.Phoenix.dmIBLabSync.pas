@@ -6,9 +6,12 @@ uses
   System.SysUtils, System.Classes, System.JSON,
   // DB
   UniProvider, InterBaseUniProvider, Data.DB, DBAccess, Uni,
+  //
+  Vcl.Graphics,
   // Janua
   Janua.Core.Classes, Janua.REST.Types, Janua.Core.Types, Janua.Http.Types, Janua.REST.Intf,
-  Janua.Unidac.Connection, Janua.Interbase.dmModel, Janua.Phoenix.dmIBModel, MemDS;
+  Janua.Unidac.Connection, Janua.Interbase.dmModel, Janua.Phoenix.dmIBModel, MemDS, System.ImageList,
+  Vcl.ImgList, JvImageList;
 
 type
   TdmPhoenixIBLab = class(TdmPhoenixIBModel)
@@ -98,8 +101,19 @@ type
     dsMasterStatini: TUniDataSource;
     qryDetailLabEstintori: TUniQuery;
     sqlWaNumber: TUniSQL;
+    qryReportPlanner: TUniQuery;
+    qryReportPlannerCHIAVE: TIntegerField;
+    qryReportPlannerSTATO_IMMAGINE: TBlobField;
+    qryReportPlannerWA_ID: TWideStringField;
+    qryReportPlannerSTATO: TSmallintField;
+    qryReportPlannerWA_STATE: TSmallintField;
+    qryReportPlannerWA_IMAGE: TBlobField;
+    qryReportPlannerAPPUNTAMENTO_DATA: TDateField;
+    qryReportPlannerAPPUNTAMENTO_ORA: TTimeField;
+    JvImageList1: TJvImageList;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
+    procedure qryReportPlannerBeforePost(DataSet: TDataSet);
   private
     FReports: integer;
     FActual: integer;
@@ -396,6 +410,120 @@ begin
 
 end;
 
+procedure TdmPhoenixIBLab.qryReportPlannerBeforePost(DataSet: TDataSet);
+  procedure LoadImageFromImageList(Index: integer);
+  var
+    Bitmap: TBitmap;
+  begin
+    if (Index >= 0) and (Index < JvImageList1.Count) then
+    begin
+      Bitmap := TBitmap.Create;
+      try
+        // SVGIconImageListIt
+        JvImageList1.GetBitmap(Index, Bitmap);
+        qryReportPlannerSTATO_IMMAGINE.Assign(Bitmap);
+        // Copia l'immagine dal Bitmap al TImage
+      finally
+        Bitmap.Free;
+      end;
+    end
+  end;
+
+const
+  green = 0;
+  red = 1;
+  orange = 2;
+  blue = 3;
+  white = 4;
+begin
+  if (qryReportPlannerSTATO.AsInteger = 0) and not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
+  begin
+    qryReportPlannerSTATO.AsInteger := 1;
+  end
+  else if qryReportPlannerSTATO.AsInteger = 4 then
+  begin
+    {
+      if not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
+      begin
+      if not JMessageDlg('Rapportino non pronto, volete comunque prenotare appuntamento?') then
+      qryReportPlanner.Cancel;
+      end;
+    }
+  end
+  else if qryReportPlannerSTATO.AsInteger = 5 then
+  begin
+    if not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
+    begin
+      qryReportPlannerSTATO.AsInteger := 6;
+    end;
+  end
+  else if (qryReportPlannerSTATO.AsInteger = 6) then
+  begin
+    if qryReportPlannerAPPUNTAMENTO_DATA.IsNull or (qryReportPlannerAPPUNTAMENTO_DATA.Value = 0) then
+    begin
+      qryReportPlannerSTATO.AsInteger := 5;
+    end;
+  end
+  else if qryReportPlannerSTATO.AsInteger = 1 then
+  begin
+    if qryReportPlannerAPPUNTAMENTO_DATA.IsNull or (qryReportPlannerAPPUNTAMENTO_DATA.Value = 0) then
+    begin
+      qryReportPlannerSTATO.AsInteger := 0;
+    end;
+  end;
+
+  with DataSet do
+    try
+      var
+      Image := white;
+
+      var
+      aStato := qryReportPlannerSTATO.AsInteger;
+
+      case aStato of
+        - 1:
+          begin
+            Image := red;
+          end;
+        0:
+          begin
+            Image := white;
+          end;
+        1:
+          begin
+            Image := blue;
+          end;
+        4:
+          begin
+            Image := orange;
+          end;
+        5:
+          begin
+            Image := green;
+          end;
+        6:
+          begin
+            Image := blue;
+          end;
+      end;
+
+      if not(qryReportPlannerAPPUNTAMENTO_DATA.IsNull or (qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime = 0.0))
+        and (qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime < Date) then
+      begin
+        Image := red;
+      end;
+
+      LoadImageFromImageList(Image);
+
+    except
+      on e: exception do
+      begin
+        Raise exception.Create('qryReportPlanner.Post: ' + e.Message);
+      end;
+    end;
+
+end;
+
 procedure TdmPhoenixIBLab.Refresh;
 begin
   qryMasterStatini.Close;
@@ -633,6 +761,21 @@ begin
   spSetStatoStatini.ExecProc;
   sqlWhatsApp.Execute;
   sqlWaNumber.Execute;
+
+  qryReportPlanner.Open;
+  try
+    qryReportPlanner.First;
+    while not qryReportPlanner.Eof do
+    begin
+      qryReportPlanner.Edit;
+      qryReportPlannerSTATO.AsInteger := qryReportPlannerSTATO.AsInteger;
+      qryReportPlanner.Post;
+      qryReportPlanner.Next;
+    end;
+  finally
+    qryReportPlanner.Close;
+  end;
+
 end;
 
 

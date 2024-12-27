@@ -21,7 +21,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     Top = 0
     Width = 1448
     Height = 1001
-    ActivePage = tabGoogleCalendarReport
+    ActivePage = tabTicketsList
     Align = alClient
     TabOrder = 0
     object tabTicketsList: TTabSheet
@@ -565,24 +565,21 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
                     Height = 93
                     StyleElements = [seFont, seClient, seBorder]
                     ExplicitHeight = 93
-                    inherited DBText1: TDBText
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                     inherited btnNewMeeting: TJvSpeedButton
-                      Height = 29
+                      Height = 28
                       ExplicitHeight = 48
                     end
                     inherited btnUndoMeeting: TJvSpeedButton
-                      Height = 29
+                      Height = 28
                       Caption = '  Annulla'
                       ExplicitHeight = 48
                     end
                     inherited btnContract: TJvSpeedButton
-                      Height = 29
+                      Height = 28
                       ExplicitHeight = 48
                     end
                     inherited btnWhatsApp: TJvSpeedButton
-                      Height = 29
+                      Height = 28
                       ExplicitHeight = 48
                     end
                     inherited pnlInterventi: TPanel
@@ -611,9 +608,15 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
                     end
                     inherited Panel6: TPanel
                       StyleElements = [seFont, seClient, seBorder]
-                      inherited DBText3: TDBText
+                      inherited Panel7: TPanel
                         StyleElements = [seFont, seClient, seBorder]
-                        ExplicitWidth = 395
+                        inherited DBText1: TDBText
+                          StyleElements = [seFont, seClient, seBorder]
+                        end
+                        inherited DBText3: TDBText
+                          StyleElements = [seFont, seClient, seBorder]
+                          ExplicitWidth = 395
+                        end
                       end
                     end
                   end
@@ -830,16 +833,21 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
                   ExplicitHeight = 55
                 end
                 inherited pnlInfo: TPanel
+                  Width = 204
                   Height = 79
                   StyleElements = [seFont, seClient, seBorder]
+                  ExplicitWidth = 204
                   ExplicitHeight = 79
                   inherited DBText2: TDBText
+                    Width = 196
                     StyleElements = [seFont, seClient, seBorder]
                   end
                   inherited DBText3: TDBText
+                    Width = 196
                     StyleElements = [seFont, seClient, seBorder]
                   end
                   inherited DBText4: TDBText
+                    Width = 196
                     StyleElements = [seFont, seClient, seBorder]
                   end
                 end
@@ -1365,7 +1373,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
         inherited Panel2: TPanel
           StyleElements = [seFont, seClient, seBorder]
           inherited ckbCalendarList: TCheckListBox
-            ItemHeight = 16
             StyleElements = [seFont, seClient, seBorder]
           end
         end
@@ -1455,7 +1462,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           ExplicitWidth = 1440
           inherited ckbCalendarList: TCheckListBox
             Width = 1381
-            ItemHeight = 16
             StyleElements = [seFont, seClient, seBorder]
             ExplicitWidth = 1381
           end

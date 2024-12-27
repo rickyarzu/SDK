@@ -12,7 +12,7 @@ uses
   Janua.Unidac.Connection, Janua.Cloud.Types;
 
 type
-  TWebModule1 = class(TWebModule)
+  TJanuaWhatSappWebBrokerModule = class(TWebModule)
     PostgreSQLUniProvider1: TPostgreSQLUniProvider;
     JanuaUniConnection1: TJanuaUniConnection;
     qryTwilioLog: TUniQuery;
@@ -43,21 +43,21 @@ type
   end;
 
 var
-  WebModuleClass: TComponentClass = TWebModule1;
+  WebModuleClass: TComponentClass = TJanuaWhatSappWebBrokerModule;
 
 implementation
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
 
-procedure TWebModule1.WebModule1DefaultHandlerAction(Sender: TObject; Request: TWebRequest;
+procedure TJanuaWhatSappWebBrokerModule.WebModule1DefaultHandlerAction(Sender: TObject; Request: TWebRequest;
   Response: TWebResponse; var Handled: Boolean);
 begin
   Response.Content := '<html>' + '<head><title>Web Server Application</title></head>' +
     '<body>Web Server Application</body>' + '</html>';
 end;
 
-procedure TWebModule1.WebModule1WactFallbackAction(Sender: TObject; Request: TWebRequest;
+procedure TJanuaWhatSappWebBrokerModule.WebModule1WactFallbackAction(Sender: TObject; Request: TWebRequest;
   Response: TWebResponse; var Handled: Boolean);
 var
   vText: string;
@@ -76,7 +76,7 @@ begin
   qryTwilioLog.Post;
 end;
 
-procedure TWebModule1.WebModule1WactStatusCallbackAction(Sender: TObject; Request: TWebRequest;
+procedure TJanuaWhatSappWebBrokerModule.WebModule1WactStatusCallbackAction(Sender: TObject; Request: TWebRequest;
   Response: TWebResponse; var Handled: Boolean);
 var
   lText: string;
@@ -97,7 +97,7 @@ begin
   qryTwilioLog.Post;
 end;
 
-procedure TWebModule1.WebModule1WactWebhookAction(Sender: TObject; Request: TWebRequest;
+procedure TJanuaWhatSappWebBrokerModule.WebModule1WactWebhookAction(Sender: TObject; Request: TWebRequest;
   Response: TWebResponse; var Handled: Boolean);
 var
   lText: string;
@@ -118,7 +118,7 @@ begin
   qryTwilioLog.Post;
 end;
 
-procedure TWebModule1.WebModuleCreate(Sender: TObject);
+procedure TJanuaWhatSappWebBrokerModule.WebModuleCreate(Sender: TObject);
 begin
   self.qryTwilioLog.Open;
 

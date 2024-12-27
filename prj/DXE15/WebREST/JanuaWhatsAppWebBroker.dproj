@@ -127,18 +127,13 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="..\..\..\src\VCL\Cloud\Janua.VCL.Cloud.frmWhatsAppWebForm.pas">
-            <Form>Form1</Form>
+            <Form>frmVCLWebBrokerWhatsApp</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.WhatsApp.WebbrokerModule.pas">
-            <Form>WebModule1</Form>
+            <Form>JanuaWhatSappWebBrokerModule</Form>
             <FormType>dfm</FormType>
             <DesignClass>TWebModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.LabBackgroundService.pas">
-            <Form>srvPhoenixVCLLabBackgroundService</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TService</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

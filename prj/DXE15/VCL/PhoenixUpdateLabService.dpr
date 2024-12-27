@@ -2,15 +2,12 @@
 
 uses
   Vcl.SvcMgr,
-  Janua.Phoenix.Vcl.LabBackgroundService
-    in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.LabBackgroundService.pas' {srvPhoenixVCLLabBackgroundService: TService} ,
-  Janua.Phoenix.Vcl.LabBackgroundThread
-    in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.LabBackgroundThread.pas',
-  Janua.Phoenix.dmIBLabSync
-    in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.dmIBLabSync.pas' {dmPhoenixIBLab: TDataModule} ,
-  Janua.Phoenix.dmIBModel
-    in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.dmIBModel.pas' {dmPhoenixIBModel: TDataModule} ,
-  uPhoenixBackgroundServiceConf in 'uPhoenixBackgroundServiceConf.pas';
+  Janua.Phoenix.VCL.LabBackgroundService in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.LabBackgroundService.pas' {srvPhoenixVCLLabBackgroundService: TService},
+  Janua.Phoenix.VCL.LabBackgroundThread in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.LabBackgroundThread.pas',
+  Janua.Phoenix.dmIBLabSync in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.dmIBLabSync.pas' {dmPhoenixIBLab: TDataModule},
+  Janua.Phoenix.dmIBModel in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.dmIBModel.pas' {dmPhoenixIBModel: TDataModule},
+  uPhoenixBackgroundServiceConf in 'uPhoenixBackgroundServiceConf.pas',
+  Globale in '..\..\..\..\Phoenix\Phoenix\SW\PhoenixMain\Globale.pas';
 
 {$R *.RES}
 
@@ -33,6 +30,8 @@ begin
   if not Application.DelayInitialize or Application.Installing then
     Application.Initialize;
   TPhoenixBackgroundServiceApp.ApplicationSetup('service.assoantincendio.com');
+  DIRECTORY_APPLICATION_DATA := 'C:\Phoenix\Config';
+  SystemInformation.LoadIni;
   Application.CreateForm(TsrvPhoenixVCLLabBackgroundService, srvPhoenixVCLLabBackgroundService);
   Application.Run;
 

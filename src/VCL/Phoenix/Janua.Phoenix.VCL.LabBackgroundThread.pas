@@ -23,7 +23,7 @@ type
 implementation
 
 uses
-  System.IOUtils, System.Math, Janua.Core.Functions, Janua.Phoenix.dmIBLabSync;
+  System.IOUtils, System.Math, Janua.Core.Functions, Janua.Phoenix.dmIBLabSync, Globale;
 
 procedure TPhoenixLabBackgroundThread.Continue;
 begin
@@ -47,7 +47,9 @@ begin
   try
     FPaused := False;
     OpenFile;
-    WriteLn(LogFile, '   0 - Background Thread Started: ' + DateTimeToStr(Now));
+    WriteLn(LogFile, '   0 - Background Thread Started: ' + DateTimeToStr(Now) + 'Dir: ' +
+      DIRECTORY_APPLICATION_DATA);
+    // DIRECTORY_APPLICATION_DATA
     var
     i := 0;
     var
