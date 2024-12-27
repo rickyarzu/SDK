@@ -3,7 +3,7 @@
         <ProjectGuid>{A9EFF701-6E4C-4EC3-AB28-6F2F40F5E38C}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\..\components\pkg110\AWSSDK.dproj">
+        <Projects Include="..\..\Components\pkg122\AWSSDK.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Samples\RESTCloudAPI\field-report-delphi\FieldReport\FieldReport.dproj">
@@ -24,13 +24,13 @@
         </BorlandProject>
     </ProjectExtensions>
     <Target Name="AWSSDK">
-        <MSBuild Projects="..\..\components\pkg110\AWSSDK.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\AWSSDK.dproj"/>
     </Target>
     <Target Name="AWSSDK:Clean">
-        <MSBuild Projects="..\..\components\pkg110\AWSSDK.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\AWSSDK.dproj" Targets="Clean"/>
     </Target>
     <Target Name="AWSSDK:Make">
-        <MSBuild Projects="..\..\components\pkg110\AWSSDK.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\AWSSDK.dproj" Targets="Make"/>
     </Target>
     <Target Name="FieldReport">
         <MSBuild Projects="..\..\Samples\RESTCloudAPI\field-report-delphi\FieldReport\FieldReport.dproj"/>

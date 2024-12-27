@@ -3,16 +3,16 @@
         <ProjectGuid>{7E60AD61-6B0B-4A83-8ED7-932AD2541FA6}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\..\Components\pkg120\Spring.Base.dproj">
+        <Projects Include="..\..\Components\pkg122\Spring.Base.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Components\pkg120\Spring.Core.dproj">
+        <Projects Include="..\..\Components\pkg122\Spring.Core.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Components\pkg120\RestRequestLib.dproj">
+        <Projects Include="..\..\Components\pkg122\RestRequestLib.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Components\pkg120\Neon.dproj">
+        <Projects Include="..\..\Components\pkg122\Neon.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaCoreThirdParty.dproj">
@@ -69,40 +69,40 @@
         </BorlandProject>
     </ProjectExtensions>
     <Target Name="Spring_Base">
-        <MSBuild Projects="..\..\Components\pkg120\Spring.Base.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Base.dproj"/>
     </Target>
     <Target Name="Spring_Base:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\Spring.Base.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Base.dproj" Targets="Clean"/>
     </Target>
     <Target Name="Spring_Base:Make">
-        <MSBuild Projects="..\..\Components\pkg120\Spring.Base.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Base.dproj" Targets="Make"/>
     </Target>
     <Target Name="Spring_Core">
-        <MSBuild Projects="..\..\Components\pkg120\Spring.Core.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Core.dproj"/>
     </Target>
     <Target Name="Spring_Core:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\Spring.Core.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Core.dproj" Targets="Clean"/>
     </Target>
     <Target Name="Spring_Core:Make">
-        <MSBuild Projects="..\..\Components\pkg120\Spring.Core.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\Spring.Core.dproj" Targets="Make"/>
     </Target>
     <Target Name="RestRequestLib">
-        <MSBuild Projects="..\..\Components\pkg120\RestRequestLib.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\RestRequestLib.dproj"/>
     </Target>
     <Target Name="RestRequestLib:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\RestRequestLib.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\RestRequestLib.dproj" Targets="Clean"/>
     </Target>
     <Target Name="RestRequestLib:Make">
-        <MSBuild Projects="..\..\Components\pkg120\RestRequestLib.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\RestRequestLib.dproj" Targets="Make"/>
     </Target>
     <Target Name="Neon">
-        <MSBuild Projects="..\..\Components\pkg120\Neon.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\Neon.dproj"/>
     </Target>
     <Target Name="Neon:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\Neon.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\Neon.dproj" Targets="Clean"/>
     </Target>
     <Target Name="Neon:Make">
-        <MSBuild Projects="..\..\Components\pkg120\Neon.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\Neon.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaCoreThirdParty">
         <MSBuild Projects="JanuaCoreThirdParty.dproj"/>
@@ -268,7 +268,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Base.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\Spring.Base.dproj">
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
@@ -292,7 +292,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\Neon.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\Neon.dproj">
             <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
@@ -322,7 +322,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Core.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
@@ -358,7 +358,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\RestRequestLib.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\RestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>

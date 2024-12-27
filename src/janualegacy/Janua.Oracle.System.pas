@@ -43,7 +43,8 @@ end;
 
 procedure TJanuaOracleSystem.Refresh;
 begin
-  FServerList := TJanuaCoreOS.ReadParam('ORACLE', 'SERVERLIST', TJanuaServerRecordConfs.Create(0));
+  FServerList := TJanuaCoreOS.ReadParam('ORACLE', 'SERVERLIST',
+    TJanuaServerRecordConfs.Create(TJanuaApplication.JanuaServerConf));
   FNet := TJanuaCoreOS.ReadParam('ORACLE', 'NET', true);
   FPooling := TJanuaCoreOS.ReadParam('ORACLE', 'Pooling', true);
 end;
