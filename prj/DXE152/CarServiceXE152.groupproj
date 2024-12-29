@@ -12,19 +12,19 @@
         <Projects Include="JanuaThirdPartyVCL.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg110\TMSWebGMapsPkg.dproj">
+        <Projects Include="..\..\Components\pkg122\TMSWebGMapsPkg.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg110\TMSWebOSMapsPkg.dproj">
+        <Projects Include="..\..\Components\pkg122\TMSWebOSMapsPkg.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg110\sgcWebSockets.dproj">
+        <Projects Include="..\..\Components\pkg122\sgcWebSockets.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaCoreThirdParty.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Components\pkg120\RestRequestLib.dproj">
+        <Projects Include="..\..\Components\pkg122\RestRequestLib.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaCore.dproj">
@@ -81,10 +81,10 @@
         <Projects Include="JanuaTmsForms.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="VCL\CarServiceAdminXE15.dproj">
+        <Projects Include="VCL\CarServiceBackOffice.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="VCL\CarServiceBackOffice.dproj">
+        <Projects Include="VCL\CarServiceAdminXE15.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="UniGUI\CarServiceUsersUniGUI.dproj">
@@ -103,6 +103,15 @@
             <Dependencies/>
         </Projects>
         <Projects Include="UniGUI\CarServiceCustConfService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="WebREST\CarServiceWebBrokerCustConfVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="UniGUI\mod_cscustomersmobile.dproj">
@@ -162,7 +171,7 @@
         <Projects Include="..\..\..\Libraries\HTML Component Library 4.2\Sample Projects\Editor XE-XE11\EditorDemo.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg110\dclsgcWebSockets.dproj">
+        <Projects Include="..\..\Components\pkg122\dclsgcWebSockets.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Samples\UniGUI\FSPopup.dproj">
@@ -174,19 +183,10 @@
         <Projects Include="..\..\Samples\Janua\WebBroker\TestPostGet.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="WebREST\CarServiceWebBrokerCustConfVCL.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="WebREST\CarServiceDMVCService.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
+        <Projects Include="..\..\Components\pkg122\dmvcframeworkRT.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -225,31 +225,31 @@
         <MSBuild Projects="JanuaThirdPartyVCL.dproj" Targets="Make"/>
     </Target>
     <Target Name="TMSWebGMapsPkg">
-        <MSBuild Projects="..\..\components\pkg110\TMSWebGMapsPkg.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebGMapsPkg.dproj"/>
     </Target>
     <Target Name="TMSWebGMapsPkg:Clean">
-        <MSBuild Projects="..\..\components\pkg110\TMSWebGMapsPkg.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebGMapsPkg.dproj" Targets="Clean"/>
     </Target>
     <Target Name="TMSWebGMapsPkg:Make">
-        <MSBuild Projects="..\..\components\pkg110\TMSWebGMapsPkg.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebGMapsPkg.dproj" Targets="Make"/>
     </Target>
     <Target Name="TMSWebOSMapsPkg">
-        <MSBuild Projects="..\..\components\pkg110\TMSWebOSMapsPkg.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebOSMapsPkg.dproj"/>
     </Target>
     <Target Name="TMSWebOSMapsPkg:Clean">
-        <MSBuild Projects="..\..\components\pkg110\TMSWebOSMapsPkg.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebOSMapsPkg.dproj" Targets="Clean"/>
     </Target>
     <Target Name="TMSWebOSMapsPkg:Make">
-        <MSBuild Projects="..\..\components\pkg110\TMSWebOSMapsPkg.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\TMSWebOSMapsPkg.dproj" Targets="Make"/>
     </Target>
     <Target Name="sgcWebSockets">
-        <MSBuild Projects="..\..\components\pkg110\sgcWebSockets.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\sgcWebSockets.dproj"/>
     </Target>
     <Target Name="sgcWebSockets:Clean">
-        <MSBuild Projects="..\..\components\pkg110\sgcWebSockets.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\sgcWebSockets.dproj" Targets="Clean"/>
     </Target>
     <Target Name="sgcWebSockets:Make">
-        <MSBuild Projects="..\..\components\pkg110\sgcWebSockets.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\sgcWebSockets.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaCoreThirdParty">
         <MSBuild Projects="JanuaCoreThirdParty.dproj"/>
@@ -261,13 +261,13 @@
         <MSBuild Projects="JanuaCoreThirdParty.dproj" Targets="Make"/>
     </Target>
     <Target Name="RestRequestLib">
-        <MSBuild Projects="..\..\Components\pkg120\RestRequestLib.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\RestRequestLib.dproj"/>
     </Target>
     <Target Name="RestRequestLib:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\RestRequestLib.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\RestRequestLib.dproj" Targets="Clean"/>
     </Target>
     <Target Name="RestRequestLib:Make">
-        <MSBuild Projects="..\..\Components\pkg120\RestRequestLib.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\RestRequestLib.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaCore">
         <MSBuild Projects="JanuaCore.dproj"/>
@@ -431,15 +431,6 @@
     <Target Name="JanuaTmsForms:Make">
         <MSBuild Projects="JanuaTmsForms.dproj" Targets="Make"/>
     </Target>
-    <Target Name="CarServiceAdminXE15">
-        <MSBuild Projects="VCL\CarServiceAdminXE15.dproj"/>
-    </Target>
-    <Target Name="CarServiceAdminXE15:Clean">
-        <MSBuild Projects="VCL\CarServiceAdminXE15.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CarServiceAdminXE15:Make">
-        <MSBuild Projects="VCL\CarServiceAdminXE15.dproj" Targets="Make"/>
-    </Target>
     <Target Name="CarServiceBackOffice">
         <MSBuild Projects="VCL\CarServiceBackOffice.dproj"/>
     </Target>
@@ -448,6 +439,15 @@
     </Target>
     <Target Name="CarServiceBackOffice:Make">
         <MSBuild Projects="VCL\CarServiceBackOffice.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceAdminXE15">
+        <MSBuild Projects="VCL\CarServiceAdminXE15.dproj"/>
+    </Target>
+    <Target Name="CarServiceAdminXE15:Clean">
+        <MSBuild Projects="VCL\CarServiceAdminXE15.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceAdminXE15:Make">
+        <MSBuild Projects="VCL\CarServiceAdminXE15.dproj" Targets="Make"/>
     </Target>
     <Target Name="CarServiceUsersUniGUI">
         <MSBuild Projects="UniGUI\CarServiceUsersUniGUI.dproj"/>
@@ -502,6 +502,33 @@
     </Target>
     <Target Name="CarServiceCustConfService:Make">
         <MSBuild Projects="UniGUI\CarServiceCustConfService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfConsole">
+        <MSBuild Projects="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfConsole:Clean">
+        <MSBuild Projects="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfConsole:Make">
+        <MSBuild Projects="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfVCL">
+        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfVCL.dproj"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfVCL:Clean">
+        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfVCL:Make">
+        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfService">
+        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfService.dproj"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfService:Clean">
+        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CarServiceWebBrokerCustConfService:Make">
+        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfService.dproj" Targets="Make"/>
     </Target>
     <Target Name="mod_cscustomersmobile">
         <MSBuild Projects="UniGUI\mod_cscustomersmobile.dproj"/>
@@ -675,13 +702,13 @@
         <MSBuild Projects="..\..\..\Libraries\HTML Component Library 4.2\Sample Projects\Editor XE-XE11\EditorDemo.dproj" Targets="Make"/>
     </Target>
     <Target Name="dclsgcWebSockets">
-        <MSBuild Projects="..\..\components\pkg110\dclsgcWebSockets.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\dclsgcWebSockets.dproj"/>
     </Target>
     <Target Name="dclsgcWebSockets:Clean">
-        <MSBuild Projects="..\..\components\pkg110\dclsgcWebSockets.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\dclsgcWebSockets.dproj" Targets="Clean"/>
     </Target>
     <Target Name="dclsgcWebSockets:Make">
-        <MSBuild Projects="..\..\components\pkg110\dclsgcWebSockets.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\dclsgcWebSockets.dproj" Targets="Make"/>
     </Target>
     <Target Name="FSPopup">
         <MSBuild Projects="..\..\Samples\UniGUI\FSPopup.dproj"/>
@@ -710,33 +737,6 @@
     <Target Name="TestPostGet:Make">
         <MSBuild Projects="..\..\Samples\Janua\WebBroker\TestPostGet.dproj" Targets="Make"/>
     </Target>
-    <Target Name="CarServiceWebBrokerCustConfConsole">
-        <MSBuild Projects="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj"/>
-    </Target>
-    <Target Name="CarServiceWebBrokerCustConfConsole:Clean">
-        <MSBuild Projects="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CarServiceWebBrokerCustConfConsole:Make">
-        <MSBuild Projects="..\..\Samples\Janua\WebBroker\CarServiceWebBrokerCustConfConsole.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="CarServiceWebBrokerCustConfVCL">
-        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfVCL.dproj"/>
-    </Target>
-    <Target Name="CarServiceWebBrokerCustConfVCL:Clean">
-        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfVCL.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CarServiceWebBrokerCustConfVCL:Make">
-        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfVCL.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="CarServiceWebBrokerCustConfService">
-        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfService.dproj"/>
-    </Target>
-    <Target Name="CarServiceWebBrokerCustConfService:Clean">
-        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfService.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="CarServiceWebBrokerCustConfService:Make">
-        <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfService.dproj" Targets="Make"/>
-    </Target>
     <Target Name="CarServiceDMVCService">
         <MSBuild Projects="WebREST\CarServiceDMVCService.dproj"/>
     </Target>
@@ -747,22 +747,22 @@
         <MSBuild Projects="WebREST\CarServiceDMVCService.dproj" Targets="Make"/>
     </Target>
     <Target Name="dmvcframeworkRT">
-        <MSBuild Projects="..\..\Components\pkg120\dmvcframeworkRT.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\dmvcframeworkRT.dproj"/>
     </Target>
     <Target Name="dmvcframeworkRT:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\dmvcframeworkRT.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\dmvcframeworkRT.dproj" Targets="Clean"/>
     </Target>
     <Target Name="dmvcframeworkRT:Make">
-        <MSBuild Projects="..\..\Components\pkg120\dmvcframeworkRT.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\dmvcframeworkRT.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="TUniFalcon;dclUniFalcon;JanuaThirdPartyVCL;TMSWebGMapsPkg;TMSWebOSMapsPkg;sgcWebSockets;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaRestWeb;JanuaTmsCore;JanuaUnidacComponentsD;JanuaUnidac;JanuaCoreUnitTesting;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaVCLMVVM;JanuaUniGUI;UniGuiFramework;JanuaFMXControls;JanuaVCLForms;JanuaTmsForms;CarServiceAdminXE15;CarServiceBackOffice;CarServiceUsersUniGUI;CarServiceUsersUniGUIService;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;mod_cscustomersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;mod_csdriversmersmobile;CarServiceUnitTesting;CarServiceConfigMsgTester;Archive;Review;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;TGooglePlacesTest;JanuaAllDemos;TTMSFNCCloudSendGridVCLDemo;EditorDemo;dclsgcWebSockets;FSPopup;FSConfirm;TestPostGet;CarServiceWebBrokerCustConfConsole;CarServiceWebBrokerCustConfVCL;CarServiceWebBrokerCustConfService;CarServiceDMVCService;dmvcframeworkRT"/>
+        <CallTarget Targets="TUniFalcon;dclUniFalcon;JanuaThirdPartyVCL;TMSWebGMapsPkg;TMSWebOSMapsPkg;sgcWebSockets;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaRestWeb;JanuaTmsCore;JanuaUnidacComponentsD;JanuaUnidac;JanuaCoreUnitTesting;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaVCLMVVM;JanuaUniGUI;UniGuiFramework;JanuaFMXControls;JanuaVCLForms;JanuaTmsForms;CarServiceBackOffice;CarServiceAdminXE15;CarServiceUsersUniGUI;CarServiceUsersUniGUIService;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;CarServiceWebBrokerCustConfConsole;CarServiceWebBrokerCustConfVCL;CarServiceWebBrokerCustConfService;mod_cscustomersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;mod_csdriversmersmobile;CarServiceUnitTesting;CarServiceConfigMsgTester;Archive;Review;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;TGooglePlacesTest;JanuaAllDemos;TTMSFNCCloudSendGridVCLDemo;EditorDemo;dclsgcWebSockets;FSPopup;FSConfirm;TestPostGet;CarServiceDMVCService;dmvcframeworkRT"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="TUniFalcon:Clean;dclUniFalcon:Clean;JanuaThirdPartyVCL:Clean;TMSWebGMapsPkg:Clean;TMSWebOSMapsPkg:Clean;sgcWebSockets:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaRestWeb:Clean;JanuaTmsCore:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaCoreUnitTesting:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;JanuaUniGUI:Clean;UniGuiFramework:Clean;JanuaFMXControls:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;CarServiceAdminXE15:Clean;CarServiceBackOffice:Clean;CarServiceUsersUniGUI:Clean;CarServiceUsersUniGUIService:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;mod_cscustomersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;mod_csdriversmersmobile:Clean;CarServiceUnitTesting:Clean;CarServiceConfigMsgTester:Clean;Archive:Clean;Review:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;TGooglePlacesTest:Clean;JanuaAllDemos:Clean;TTMSFNCCloudSendGridVCLDemo:Clean;EditorDemo:Clean;dclsgcWebSockets:Clean;FSPopup:Clean;FSConfirm:Clean;TestPostGet:Clean;CarServiceWebBrokerCustConfConsole:Clean;CarServiceWebBrokerCustConfVCL:Clean;CarServiceWebBrokerCustConfService:Clean;CarServiceDMVCService:Clean;dmvcframeworkRT:Clean"/>
+        <CallTarget Targets="TUniFalcon:Clean;dclUniFalcon:Clean;JanuaThirdPartyVCL:Clean;TMSWebGMapsPkg:Clean;TMSWebOSMapsPkg:Clean;sgcWebSockets:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaRestWeb:Clean;JanuaTmsCore:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaCoreUnitTesting:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;JanuaUniGUI:Clean;UniGuiFramework:Clean;JanuaFMXControls:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;CarServiceBackOffice:Clean;CarServiceAdminXE15:Clean;CarServiceUsersUniGUI:Clean;CarServiceUsersUniGUIService:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;CarServiceWebBrokerCustConfConsole:Clean;CarServiceWebBrokerCustConfVCL:Clean;CarServiceWebBrokerCustConfService:Clean;mod_cscustomersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;mod_csdriversmersmobile:Clean;CarServiceUnitTesting:Clean;CarServiceConfigMsgTester:Clean;Archive:Clean;Review:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;TGooglePlacesTest:Clean;JanuaAllDemos:Clean;TTMSFNCCloudSendGridVCLDemo:Clean;EditorDemo:Clean;dclsgcWebSockets:Clean;FSPopup:Clean;FSConfirm:Clean;TestPostGet:Clean;CarServiceDMVCService:Clean;dmvcframeworkRT:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="TUniFalcon:Make;dclUniFalcon:Make;JanuaThirdPartyVCL:Make;TMSWebGMapsPkg:Make;TMSWebOSMapsPkg:Make;sgcWebSockets:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaRestWeb:Make;JanuaTmsCore:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaCoreUnitTesting:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;JanuaUniGUI:Make;UniGuiFramework:Make;JanuaFMXControls:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;CarServiceAdminXE15:Make;CarServiceBackOffice:Make;CarServiceUsersUniGUI:Make;CarServiceUsersUniGUIService:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;mod_cscustomersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;mod_csdriversmersmobile:Make;CarServiceUnitTesting:Make;CarServiceConfigMsgTester:Make;Archive:Make;Review:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;TGooglePlacesTest:Make;JanuaAllDemos:Make;TTMSFNCCloudSendGridVCLDemo:Make;EditorDemo:Make;dclsgcWebSockets:Make;FSPopup:Make;FSConfirm:Make;TestPostGet:Make;CarServiceWebBrokerCustConfConsole:Make;CarServiceWebBrokerCustConfVCL:Make;CarServiceWebBrokerCustConfService:Make;CarServiceDMVCService:Make;dmvcframeworkRT:Make"/>
+        <CallTarget Targets="TUniFalcon:Make;dclUniFalcon:Make;JanuaThirdPartyVCL:Make;TMSWebGMapsPkg:Make;TMSWebOSMapsPkg:Make;sgcWebSockets:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaRestWeb:Make;JanuaTmsCore:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaCoreUnitTesting:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;JanuaUniGUI:Make;UniGuiFramework:Make;JanuaFMXControls:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;CarServiceBackOffice:Make;CarServiceAdminXE15:Make;CarServiceUsersUniGUI:Make;CarServiceUsersUniGUIService:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;CarServiceWebBrokerCustConfConsole:Make;CarServiceWebBrokerCustConfVCL:Make;CarServiceWebBrokerCustConfService:Make;mod_cscustomersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;mod_csdriversmersmobile:Make;CarServiceUnitTesting:Make;CarServiceConfigMsgTester:Make;Archive:Make;Review:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;TGooglePlacesTest:Make;JanuaAllDemos:Make;TTMSFNCCloudSendGridVCLDemo:Make;EditorDemo:Make;dclsgcWebSockets:Make;FSPopup:Make;FSConfirm:Make;TestPostGet:Make;CarServiceDMVCService:Make;dmvcframeworkRT:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='ThirdParty'">
@@ -790,13 +790,13 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\dclsgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dclsgcWebSockets.dproj">
             <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\sgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations/>
             <Platforms/>
@@ -964,7 +964,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\TMSWebOSMapsPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -976,7 +976,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\TMSWebGMapsPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -988,7 +988,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1044,8 +1044,8 @@
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\CarServiceAdminXE15.dproj">
             <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\FSPopup.dproj">
@@ -1132,7 +1132,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\RestRequestLib.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\RestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1164,13 +1164,13 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\dclsgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dclsgcWebSockets.dproj">
             <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\sgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations/>
             <Platforms/>
@@ -1186,7 +1186,7 @@
             <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj">
             <ProjectGuid>{744013CA-7E82-4E66-8C1F-8801EB0D5C46}</ProjectGuid>
@@ -1204,7 +1204,7 @@
             <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLForms.dproj">
             <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
@@ -1228,7 +1228,7 @@
             <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\CarServiceApache.dproj">
             <ProjectGuid>{A36BDC08-0FEA-4266-A902-7217A0CF857E}</ProjectGuid>
@@ -1264,13 +1264,13 @@
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\HTML Component Library 4.2\Sample Projects\Editor XE-XE11\EditorDemo.dproj">
             <ProjectGuid>{470CACE7-3809-4415-811F-B07CF0B60656}</ProjectGuid>
@@ -1294,7 +1294,7 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
             <ProjectGuid>{DD619250-0298-4A11-96EF-FFDEBA724392}</ProjectGuid>
@@ -1312,7 +1312,7 @@
             <ProjectGuid>{9B72041D-F056-48B5-91E0-37BF89038E6C}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\CarServiceDriverConfirmation.dproj">
             <ProjectGuid>{5E7F878B-04D3-4B1F-A9D5-BB898BFACCB7}</ProjectGuid>
@@ -1324,7 +1324,7 @@
             <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_csdriversmersmobile.dproj">
             <ProjectGuid>{38A438E1-8A3F-443A-8D6F-48F12B93C655}</ProjectGuid>
@@ -1338,7 +1338,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\TMSWebOSMapsPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1350,7 +1350,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\TMSWebGMapsPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1362,7 +1362,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1370,15 +1370,15 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaThirdPartyVCL.dproj">
             <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsCore.dproj">
             <ProjectGuid>{04E8FDAF-DAE1-4C87-BCE3-2AE45E6E5A04}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations/>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\WebBroker\TestPostGet.dproj">
             <ProjectGuid>{A460A382-8C0D-45D1-AA73-AE5AB041414E}</ProjectGuid>
@@ -1402,13 +1402,13 @@
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLControls.dproj">
             <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\CarServiceUsersUniGUIService.dproj">
             <ProjectGuid>{F8693131-D419-4E78-9D0B-BBD2C7A6F566}</ProjectGuid>
@@ -1418,8 +1418,8 @@
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\CarServiceAdminXE15.dproj">
             <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\FSPopup.dproj">
@@ -1444,13 +1444,13 @@
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\CarServiceBackOfficeUniGUI.dproj">
             <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
@@ -1460,21 +1460,21 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
             <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
             <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCore.dproj">
             <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCoreUnitTesting.dproj">
             <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
@@ -1506,11 +1506,11 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\RestRequestLib.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\RestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Android64'">
@@ -1538,13 +1538,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\dclsgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dclsgcWebSockets.dproj">
             <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\sgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations/>
             <Platforms/>
@@ -1712,7 +1712,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\TMSWebOSMapsPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1724,7 +1724,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\TMSWebGMapsPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1736,7 +1736,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1792,8 +1792,8 @@
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\CarServiceAdminXE15.dproj">
             <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\FSPopup.dproj">
@@ -1880,7 +1880,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\RestRequestLib.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\RestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1912,13 +1912,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\dclsgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dclsgcWebSockets.dproj">
             <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\sgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations/>
             <Platforms/>
@@ -2086,7 +2086,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\TMSWebOSMapsPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -2098,7 +2098,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\TMSWebGMapsPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -2110,7 +2110,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -2166,8 +2166,8 @@
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\CarServiceAdminXE15.dproj">
             <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\FSPopup.dproj">
@@ -2254,7 +2254,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\RestRequestLib.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\RestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -2286,13 +2286,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\dclsgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dclsgcWebSockets.dproj">
             <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\sgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations/>
             <Platforms/>
@@ -2460,7 +2460,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\TMSWebOSMapsPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -2472,7 +2472,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\TMSWebGMapsPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -2484,7 +2484,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -2540,8 +2540,8 @@
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\CarServiceAdminXE15.dproj">
             <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\FSPopup.dproj">
@@ -2628,7 +2628,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\RestRequestLib.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\RestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -2660,13 +2660,13 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\dclsgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dclsgcWebSockets.dproj">
             <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\sgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations/>
             <Platforms/>
@@ -2834,7 +2834,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\TMSWebOSMapsPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -2846,7 +2846,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\TMSWebGMapsPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -2858,7 +2858,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -2914,8 +2914,8 @@
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\CarServiceAdminXE15.dproj">
             <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\FSPopup.dproj">
@@ -3002,7 +3002,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\RestRequestLib.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\RestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -3034,13 +3034,13 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\dclsgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dclsgcWebSockets.dproj">
             <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\sgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations/>
             <Platforms/>
@@ -3208,7 +3208,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\TMSWebOSMapsPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
             <Configurations/>
             <Platforms>Win32</Platforms>
@@ -3220,7 +3220,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\TMSWebGMapsPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\TMSWebGMapsPkg.dproj">
             <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
             <Configurations/>
             <Platforms>Win32</Platforms>
@@ -3232,7 +3232,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -3288,8 +3288,8 @@
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\CarServiceAdminXE15.dproj">
             <ProjectGuid>{E2B49294-D3AD-49CD-A7A1-0143EFD2AC38}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\FSPopup.dproj">
@@ -3376,7 +3376,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\RestRequestLib.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\RestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>

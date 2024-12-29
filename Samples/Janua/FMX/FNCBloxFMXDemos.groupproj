@@ -6,7 +6,7 @@
         <Projects Include="CustomSVGBlox.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="C:\Januaproject\Components\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj">
+        <Projects Include="CustomPathBlox.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -27,13 +27,13 @@
         <MSBuild Projects="CustomSVGBlox.dproj" Targets="Make"/>
     </Target>
     <Target Name="CustomPathBlox">
-        <MSBuild Projects="C:\Januaproject\Components\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj"/>
+        <MSBuild Projects="CustomPathBlox.dproj"/>
     </Target>
     <Target Name="CustomPathBlox:Clean">
-        <MSBuild Projects="C:\Januaproject\Components\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj" Targets="Clean"/>
+        <MSBuild Projects="CustomPathBlox.dproj" Targets="Clean"/>
     </Target>
     <Target Name="CustomPathBlox:Make">
-        <MSBuild Projects="C:\Januaproject\Components\TMS FNC Blox\Demos\FMX\Draw Custom Block\CustomPathBlox.dproj" Targets="Make"/>
+        <MSBuild Projects="CustomPathBlox.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
         <CallTarget Targets="CustomSVGBlox;CustomPathBlox"/>

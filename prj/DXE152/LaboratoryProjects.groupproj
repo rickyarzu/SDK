@@ -3,16 +3,16 @@
         <ProjectGuid>{32441860-D9EE-4D3D-B209-256943797916}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\..\components\pkg110\TMSCloudPkg.dproj">
+        <Projects Include="..\..\Components\pkg122\TMSCloudPkg.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg110\TMSCloudPkgDE.dproj">
+        <Projects Include="..\..\Components\pkg122\TMSCloudPkgDE.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg110\eInvoice4D.dproj">
+        <Projects Include="..\..\Components\pkg122\eInvoice4D.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg110\eMiniInvoice4D.dproj">
+        <Projects Include="..\..\Components\pkg122\eMiniInvoice4D.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaCore.dproj">
@@ -51,40 +51,40 @@
         </BorlandProject>
     </ProjectExtensions>
     <Target Name="TMSCloudPkg">
-        <MSBuild Projects="..\..\components\pkg110\TMSCloudPkg.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\TMSCloudPkg.dproj"/>
     </Target>
     <Target Name="TMSCloudPkg:Clean">
-        <MSBuild Projects="..\..\components\pkg110\TMSCloudPkg.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\TMSCloudPkg.dproj" Targets="Clean"/>
     </Target>
     <Target Name="TMSCloudPkg:Make">
-        <MSBuild Projects="..\..\components\pkg110\TMSCloudPkg.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\TMSCloudPkg.dproj" Targets="Make"/>
     </Target>
     <Target Name="TMSCloudPkgDE">
-        <MSBuild Projects="..\..\components\pkg110\TMSCloudPkgDE.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\TMSCloudPkgDE.dproj"/>
     </Target>
     <Target Name="TMSCloudPkgDE:Clean">
-        <MSBuild Projects="..\..\components\pkg110\TMSCloudPkgDE.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\TMSCloudPkgDE.dproj" Targets="Clean"/>
     </Target>
     <Target Name="TMSCloudPkgDE:Make">
-        <MSBuild Projects="..\..\components\pkg110\TMSCloudPkgDE.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\TMSCloudPkgDE.dproj" Targets="Make"/>
     </Target>
     <Target Name="eInvoice4D">
-        <MSBuild Projects="..\..\components\pkg110\eInvoice4D.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\eInvoice4D.dproj"/>
     </Target>
     <Target Name="eInvoice4D:Clean">
-        <MSBuild Projects="..\..\components\pkg110\eInvoice4D.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\eInvoice4D.dproj" Targets="Clean"/>
     </Target>
     <Target Name="eInvoice4D:Make">
-        <MSBuild Projects="..\..\components\pkg110\eInvoice4D.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\eInvoice4D.dproj" Targets="Make"/>
     </Target>
     <Target Name="eMiniInvoice4D">
-        <MSBuild Projects="..\..\components\pkg110\eMiniInvoice4D.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\eMiniInvoice4D.dproj"/>
     </Target>
     <Target Name="eMiniInvoice4D:Clean">
-        <MSBuild Projects="..\..\components\pkg110\eMiniInvoice4D.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\eMiniInvoice4D.dproj" Targets="Clean"/>
     </Target>
     <Target Name="eMiniInvoice4D:Make">
-        <MSBuild Projects="..\..\components\pkg110\eMiniInvoice4D.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\eMiniInvoice4D.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaCore">
         <MSBuild Projects="JanuaCore.dproj"/>

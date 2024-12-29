@@ -3,19 +3,19 @@
         <ProjectGuid>{AD98D90C-FDE2-4AF5-84B5-7A2DCB20AED8}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\..\Components\pkg120\sbridge.dproj">
+        <Projects Include="..\..\Components\pkg122\sbridge.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
+        <Projects Include="..\..\Components\pkg122\TMSCloudPkg.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Components\pkg120\PlanAddons.dproj">
+        <Projects Include="..\..\Components\pkg122\PlanAddons.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Components\pkg120\dclsbridge.dproj">
+        <Projects Include="..\..\Components\pkg122\dclsbridge.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Components\pkg120\sgcWebSockets.dproj">
+        <Projects Include="..\..\Components\pkg122\sgcWebSockets.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaCore.dproj">
@@ -75,13 +75,13 @@
         <Projects Include="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg110\ipstudiowin.dproj">
+        <Projects Include="..\..\Components\pkg122\ipstudiowin.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg110\ipstudiowinclient.dproj">
+        <Projects Include="..\..\Components\pkg122\ipstudiowinclient.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg110\dipstudiowin.dproj">
+        <Projects Include="..\..\Components\pkg122\dipstudiowin.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Samples\Planner\DBPlannerCalendar\dbplancaldemo.dproj">
@@ -117,49 +117,49 @@
         </BorlandProject>
     </ProjectExtensions>
     <Target Name="sbridge">
-        <MSBuild Projects="..\..\Components\pkg120\sbridge.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\sbridge.dproj"/>
     </Target>
     <Target Name="sbridge:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\sbridge.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\sbridge.dproj" Targets="Clean"/>
     </Target>
     <Target Name="sbridge:Make">
-        <MSBuild Projects="..\..\Components\pkg120\sbridge.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\sbridge.dproj" Targets="Make"/>
     </Target>
     <Target Name="TMSCloudPkg">
-        <MSBuild Projects="..\..\Components\pkg120\TMSCloudPkg.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\TMSCloudPkg.dproj"/>
     </Target>
     <Target Name="TMSCloudPkg:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\TMSCloudPkg.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\TMSCloudPkg.dproj" Targets="Clean"/>
     </Target>
     <Target Name="TMSCloudPkg:Make">
-        <MSBuild Projects="..\..\Components\pkg120\TMSCloudPkg.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\TMSCloudPkg.dproj" Targets="Make"/>
     </Target>
     <Target Name="PlanAddons">
-        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\PlanAddons.dproj"/>
     </Target>
     <Target Name="PlanAddons:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\PlanAddons.dproj" Targets="Clean"/>
     </Target>
     <Target Name="PlanAddons:Make">
-        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\PlanAddons.dproj" Targets="Make"/>
     </Target>
     <Target Name="dclsbridge">
-        <MSBuild Projects="..\..\Components\pkg120\dclsbridge.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\dclsbridge.dproj"/>
     </Target>
     <Target Name="dclsbridge:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\dclsbridge.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\dclsbridge.dproj" Targets="Clean"/>
     </Target>
     <Target Name="dclsbridge:Make">
-        <MSBuild Projects="..\..\Components\pkg120\dclsbridge.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\dclsbridge.dproj" Targets="Make"/>
     </Target>
     <Target Name="sgcWebSockets">
-        <MSBuild Projects="..\..\Components\pkg120\sgcWebSockets.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\sgcWebSockets.dproj"/>
     </Target>
     <Target Name="sgcWebSockets:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\sgcWebSockets.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\sgcWebSockets.dproj" Targets="Clean"/>
     </Target>
     <Target Name="sgcWebSockets:Make">
-        <MSBuild Projects="..\..\Components\pkg120\sgcWebSockets.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\sgcWebSockets.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaCore">
         <MSBuild Projects="JanuaCore.dproj"/>
@@ -333,31 +333,31 @@
         <MSBuild Projects="..\..\..\Libraries\HierCube VCL\Demo\hcdemo.dproj" Targets="Make"/>
     </Target>
     <Target Name="ipstudiowin">
-        <MSBuild Projects="..\..\components\pkg110\ipstudiowin.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowin.dproj"/>
     </Target>
     <Target Name="ipstudiowin:Clean">
-        <MSBuild Projects="..\..\components\pkg110\ipstudiowin.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowin.dproj" Targets="Clean"/>
     </Target>
     <Target Name="ipstudiowin:Make">
-        <MSBuild Projects="..\..\components\pkg110\ipstudiowin.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowin.dproj" Targets="Make"/>
     </Target>
     <Target Name="ipstudiowinclient">
-        <MSBuild Projects="..\..\components\pkg110\ipstudiowinclient.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowinclient.dproj"/>
     </Target>
     <Target Name="ipstudiowinclient:Clean">
-        <MSBuild Projects="..\..\components\pkg110\ipstudiowinclient.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowinclient.dproj" Targets="Clean"/>
     </Target>
     <Target Name="ipstudiowinclient:Make">
-        <MSBuild Projects="..\..\components\pkg110\ipstudiowinclient.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\ipstudiowinclient.dproj" Targets="Make"/>
     </Target>
     <Target Name="dipstudiowin">
-        <MSBuild Projects="..\..\components\pkg110\dipstudiowin.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\dipstudiowin.dproj"/>
     </Target>
     <Target Name="dipstudiowin:Clean">
-        <MSBuild Projects="..\..\components\pkg110\dipstudiowin.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\dipstudiowin.dproj" Targets="Clean"/>
     </Target>
     <Target Name="dipstudiowin:Make">
-        <MSBuild Projects="..\..\components\pkg110\dipstudiowin.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\dipstudiowin.dproj" Targets="Make"/>
     </Target>
     <Target Name="dbplancaldemo">
         <MSBuild Projects="..\..\Samples\Planner\DBPlannerCalendar\dbplancaldemo.dproj"/>
@@ -442,7 +442,7 @@
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='JanuaLibs'">
-        <BuildGroupProject Include="..\..\components\pkg110\dipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dipstudiowin.dproj">
             <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -454,7 +454,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -490,7 +490,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowin.dproj">
             <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -514,7 +514,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -532,7 +532,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dclsbridge.dproj">
             <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -562,7 +562,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -598,7 +598,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\TMSCloudPkg.dproj">
             <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -622,7 +622,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\sbridge.dproj">
             <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -654,7 +654,7 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='TM Libs'">
-        <BuildGroupProject Include="..\..\components\pkg110\dipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dipstudiowin.dproj">
             <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -666,7 +666,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
@@ -702,7 +702,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowin.dproj">
             <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -726,7 +726,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -744,7 +744,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dclsbridge.dproj">
             <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -774,7 +774,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -810,7 +810,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\TMSCloudPkg.dproj">
             <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -834,7 +834,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\sbridge.dproj">
             <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
@@ -866,7 +866,7 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='TM Libs FMX'">
-        <BuildGroupProject Include="..\..\components\pkg110\dipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dipstudiowin.dproj">
             <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -878,7 +878,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -914,7 +914,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowin.dproj">
             <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -938,7 +938,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -956,7 +956,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dclsbridge.dproj">
             <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -986,7 +986,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1022,7 +1022,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\TMSCloudPkg.dproj">
             <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1046,7 +1046,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\sbridge.dproj">
             <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1078,7 +1078,7 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Janua Lib W32'">
-        <BuildGroupProject Include="..\..\components\pkg110\dipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dipstudiowin.dproj">
             <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1090,7 +1090,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1126,7 +1126,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowin.dproj">
             <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1150,7 +1150,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1168,7 +1168,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dclsbridge.dproj">
             <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1198,7 +1198,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1234,7 +1234,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\TMSCloudPkg.dproj">
             <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1258,7 +1258,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\sbridge.dproj">
             <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1290,7 +1290,7 @@
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='TM Apps'">
-        <BuildGroupProject Include="..\..\components\pkg110\dipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dipstudiowin.dproj">
             <ProjectGuid>{62078692-4135-466D-90DF-4A06ECC5C2F2}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1302,7 +1302,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sgcWebSockets.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1338,7 +1338,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowin.dproj">
             <ProjectGuid>{6313FC3A-64B8-4F77-B8AF-1524596E2DF4}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1362,7 +1362,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1380,7 +1380,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\dclsbridge.dproj">
             <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1410,7 +1410,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\ipstudiowinclient.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\ipstudiowinclient.dproj">
             <ProjectGuid>{4F558426-9EB9-4EFA-8C48-E81278D35709}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -1446,7 +1446,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSCloudPkg.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\TMSCloudPkg.dproj">
             <ProjectGuid>{8AA52AA9-130E-4420-A9AB-7D6D862DCA98}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -1470,7 +1470,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\sbridge.dproj">
             <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>

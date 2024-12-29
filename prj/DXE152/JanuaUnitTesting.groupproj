@@ -3,7 +3,7 @@
         <ProjectGuid>{FBA15554-3723-4052-A983-65D37047C065}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\..\components\pkg110\DUnitX_IDE_Expert_D11Alexandria.dproj">
+        <Projects Include="..\..\Components\pkg122\DUnitX_IDE_Expert_D11Alexandria.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Samples\DUnitX\SimpleTest.dproj">
@@ -18,13 +18,13 @@
         </BorlandProject>
     </ProjectExtensions>
     <Target Name="DUnitX_IDE_Expert_D11Alexandria">
-        <MSBuild Projects="..\..\components\pkg110\DUnitX_IDE_Expert_D11Alexandria.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\DUnitX_IDE_Expert_D11Alexandria.dproj"/>
     </Target>
     <Target Name="DUnitX_IDE_Expert_D11Alexandria:Clean">
-        <MSBuild Projects="..\..\components\pkg110\DUnitX_IDE_Expert_D11Alexandria.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\DUnitX_IDE_Expert_D11Alexandria.dproj" Targets="Clean"/>
     </Target>
     <Target Name="DUnitX_IDE_Expert_D11Alexandria:Make">
-        <MSBuild Projects="..\..\components\pkg110\DUnitX_IDE_Expert_D11Alexandria.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\DUnitX_IDE_Expert_D11Alexandria.dproj" Targets="Make"/>
     </Target>
     <Target Name="SimpleTest">
         <MSBuild Projects="..\..\Samples\DUnitX\SimpleTest.dproj"/>

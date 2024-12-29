@@ -3,7 +3,7 @@
         <ProjectGuid>{19915DFD-2FC0-413E-A457-BE502620357C}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\..\Components\pkg120\AWSSDK.dproj">
+        <Projects Include="..\..\Components\pkg122\AWSSDK.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Components\pkg122\Alcinoe.dproj">
@@ -924,13 +924,13 @@
         </BorlandProject>
     </ProjectExtensions>
     <Target Name="AWSSDK">
-        <MSBuild Projects="..\..\Components\pkg120\AWSSDK.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\AWSSDK.dproj"/>
     </Target>
     <Target Name="AWSSDK:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\AWSSDK.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\AWSSDK.dproj" Targets="Clean"/>
     </Target>
     <Target Name="AWSSDK:Make">
-        <MSBuild Projects="..\..\Components\pkg120\AWSSDK.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\AWSSDK.dproj" Targets="Make"/>
     </Target>
     <Target Name="Alcinoe">
         <MSBuild Projects="..\..\Components\pkg122\Alcinoe.dproj"/>

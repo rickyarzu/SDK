@@ -3,13 +3,13 @@
         <ProjectGuid>{8CA1D8D8-742B-4D70-827A-9E136DF67D92}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\..\components\pkg120\CoolTrayIconWin.dproj">
+        <Projects Include="..\..\Components\pkg122\CoolTrayIconWin.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg120\VCLThemeSelector.dproj">
+        <Projects Include="..\..\Components\pkg122\VCLThemeSelector.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg120\WinsoftVCL.dproj">
+        <Projects Include="..\..\Components\pkg122\WinsoftVCL.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaCoreThirdParty.dproj">
@@ -69,31 +69,31 @@
         </BorlandProject>
     </ProjectExtensions>
     <Target Name="CoolTrayIconWin">
-        <MSBuild Projects="..\..\components\pkg120\CoolTrayIconWin.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\CoolTrayIconWin.dproj"/>
     </Target>
     <Target Name="CoolTrayIconWin:Clean">
-        <MSBuild Projects="..\..\components\pkg120\CoolTrayIconWin.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\CoolTrayIconWin.dproj" Targets="Clean"/>
     </Target>
     <Target Name="CoolTrayIconWin:Make">
-        <MSBuild Projects="..\..\components\pkg120\CoolTrayIconWin.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\CoolTrayIconWin.dproj" Targets="Make"/>
     </Target>
     <Target Name="VCLThemeSelector">
-        <MSBuild Projects="..\..\components\pkg120\VCLThemeSelector.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\VCLThemeSelector.dproj"/>
     </Target>
     <Target Name="VCLThemeSelector:Clean">
-        <MSBuild Projects="..\..\components\pkg120\VCLThemeSelector.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\VCLThemeSelector.dproj" Targets="Clean"/>
     </Target>
     <Target Name="VCLThemeSelector:Make">
-        <MSBuild Projects="..\..\components\pkg120\VCLThemeSelector.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\VCLThemeSelector.dproj" Targets="Make"/>
     </Target>
     <Target Name="WinsoftVCL">
-        <MSBuild Projects="..\..\components\pkg120\WinsoftVCL.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\WinsoftVCL.dproj"/>
     </Target>
     <Target Name="WinsoftVCL:Clean">
-        <MSBuild Projects="..\..\components\pkg120\WinsoftVCL.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\WinsoftVCL.dproj" Targets="Clean"/>
     </Target>
     <Target Name="WinsoftVCL:Make">
-        <MSBuild Projects="..\..\components\pkg120\WinsoftVCL.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\WinsoftVCL.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaCoreThirdParty">
         <MSBuild Projects="JanuaCoreThirdParty.dproj"/>
@@ -274,7 +274,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\CoolTrayIconWin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\CoolTrayIconWin.dproj">
             <ProjectGuid>{58D06162-E151-4422-BB7C-87BBAD4906DB}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -286,7 +286,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\VCLThemeSelector.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\VCLThemeSelector.dproj">
             <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -352,7 +352,7 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\WinsoftVCL.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\WinsoftVCL.dproj">
             <ProjectGuid>{A87F2353-E229-4014-9D59-76CC9C52C407}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -390,7 +390,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\CoolTrayIconWin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\CoolTrayIconWin.dproj">
             <ProjectGuid>{58D06162-E151-4422-BB7C-87BBAD4906DB}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -402,7 +402,7 @@
             <Platforms>Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\VCLThemeSelector.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\VCLThemeSelector.dproj">
             <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -468,7 +468,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\WinsoftVCL.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\WinsoftVCL.dproj">
             <ProjectGuid>{A87F2353-E229-4014-9D59-76CC9C52C407}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
@@ -506,7 +506,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\CoolTrayIconWin.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\CoolTrayIconWin.dproj">
             <ProjectGuid>{58D06162-E151-4422-BB7C-87BBAD4906DB}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
@@ -518,7 +518,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\VCLThemeSelector.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\VCLThemeSelector.dproj">
             <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
@@ -584,7 +584,7 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\WinsoftVCL.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\WinsoftVCL.dproj">
             <ProjectGuid>{A87F2353-E229-4014-9D59-76CC9C52C407}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
