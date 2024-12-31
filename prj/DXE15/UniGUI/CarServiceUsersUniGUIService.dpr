@@ -9,7 +9,6 @@ uses
   Janua.CarService.UniGUI.dlgLoginRegister in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgLoginRegister.pas' {frmCarServiceUniGUILoginRegister: TUniLoginForm},
   Janua.UniGUI.UniDacApplication in '..\..\..\src\UniGUI\Common\Janua.UniGUI.UniDacApplication.pas',
   Janua.CarService.UniGUI.frameCarBooking in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.frameCarBooking.pas' {frameCarServiceUniGUIBooking: TUniFrame},
-  Janua.CarService.UniGUI.dlgBookingWizard in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgBookingWizard.pas' {dlgUniGUIBookingWizard: TUniForm},
   Janua.CarService.UniGUI.frameCarBookingClient in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.frameCarBookingClient.pas' {frameUniGuiCarBookingClient: TUniFrame},
   Janua.CarService.UniGUI.frameCalendarSelect in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.frameCalendarSelect.pas' {frameUNICalendarSelect: TUniFrame},
   Janua.CarService.UniGUI.frameTimeCalendarSelect in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.frameTimeCalendarSelect.pas' {frameTimeCalendarSelect: TUniFrame},
@@ -37,7 +36,8 @@ uses
   Janua.Anagraph.UniGUI.frameAddressList in '..\..\..\src\UniGUI\Anagraph\Janua.Anagraph.UniGUI.frameAddressList.pas' {frameUniGUIAddressList: TUniFrame},
   Janua.Anagraph.UniGUI.frameAnagraphHorizontal in '..\..\..\src\UniGUI\Anagraph\Janua.Anagraph.UniGUI.frameAnagraphHorizontal.pas' {frameUniGUIAnagraphHorizontal: TUniFrame},
   Janua.UniGUI.frameDBUser in '..\..\..\src\UniGUI\Common\Janua.UniGUI.frameDBUser.pas' {frameUniGUIDBUser: TUniFrame},
-  Janua.UniGUI.ServiceModule in '..\..\..\src\UniGUI\Common\Janua.UniGUI.ServiceModule.pas' {UniServiceModule: TUniGUIService};
+  Janua.UniGUI.ServiceModule in '..\..\..\src\UniGUI\Common\Janua.UniGUI.ServiceModule.pas' {UniServiceModule: TUniGUIService},
+  Janua.CarService.UniGUI.dlgBookingFrameWizard in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgBookingFrameWizard.pas' {dlgUniGUIBookingFrameWizard: TUniForm};
 
 {$R *.res}
 

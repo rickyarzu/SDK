@@ -9,6 +9,7 @@
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>CarServiceUsersUniGUIService.dpr</MainSource>
+        <ProjectName Condition="'$(ProjectName)'==''">CarServiceUsersUniGUIService</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -157,10 +158,6 @@
             <Form>frameCarServiceUniGUIBooking</Form>
             <DesignClass>TUniFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgBookingWizard.pas">
-            <Form>dlgUniGUIBookingWizard</Form>
-            <DesignClass>TUniForm</DesignClass>
-        </DCCReference>
         <DCCReference Include="..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.frameCarBookingClient.pas">
             <Form>frameUniGuiCarBookingClient</Form>
             <DesignClass>TUniFrame</DesignClass>
@@ -270,6 +267,10 @@
             <Form>UniServiceModule</Form>
             <DesignClass>TUniGUIService</DesignClass>
         </DCCReference>
+        <DCCReference Include="..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgBookingFrameWizard.pas">
+            <Form>dlgUniGUIBookingFrameWizard</Form>
+            <DesignClass>TUniForm</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaUNIGUIXE15.optset</DependentOn>
@@ -291,7 +292,11 @@
                 <Source>
                     <Source Name="MainSource">CarServiceUsersUniGUIService.dpr</Source>
                 </Source>
-                <Excluded_Packages/>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\dmvcframeworkDT290.bpl">DelphiMVCFramework 3.x - Design Time Support</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp290.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="4">
                 <DeployFile LocalName="..\..\..\res\CarService\pikapp_logo_mono_150.png" Configuration="Release" Class="UWP_DelphiLogo150">
