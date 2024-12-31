@@ -7,26 +7,12 @@ uses
   // Http
   Web.HTTPApp,
   // DB
-  MemDS, UniProvider, PostgreSQLUniProvider, Data.DB, DBAccess, Uni,
+  Janua.Twilio.dmPgWhatsApp,
   // Janua
   Janua.Unidac.Connection, Janua.Cloud.Types;
 
 type
   TJanuaWhatSappWebBrokerModule = class(TWebModule)
-    PostgreSQLUniProvider1: TPostgreSQLUniProvider;
-    JanuaUniConnection1: TJanuaUniConnection;
-    qryTwilioLog: TUniQuery;
-    qryTwilioLogid: TLargeintField;
-    qryTwilioLogdb_schema_id: TIntegerField;
-    qryTwilioLogjguid: TGuidField;
-    qryTwilioLogdeleted: TBooleanField;
-    qryTwilioLoginsert_date: TDateTimeField;
-    qryTwilioLogupdate_date: TDateTimeField;
-    qryTwilioLoguser_insert: TWideStringField;
-    qryTwilioLoguser_update: TWideStringField;
-    qryTwilioLogjson_content: TWideMemoField;
-    qryTwilioLogbody_received: TWideMemoField;
-    qryTwilioLogaction: TWideStringField;
     procedure WebModule1DefaultHandlerAction(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
       var Handled: Boolean);
     procedure WebModule1WactWebhookAction(Sender: TObject; Request: TWebRequest; Response: TWebResponse;
@@ -43,11 +29,13 @@ type
   end;
 
 var
-  WebModuleClass: TComponentClass = TJanuaWhatSappWebBrokerModule;
+  WhatsAppWebModuleClass: TComponentClass = TJanuaWhatSappWebBrokerModule;
 
 implementation
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
+
+
 {$R *.dfm}
 
 procedure TJanuaWhatSappWebBrokerModule.WebModule1DefaultHandlerAction(Sender: TObject; Request: TWebRequest;
@@ -66,18 +54,15 @@ begin
   lLines := TStringList.Create;
   try
     Request.ExtractContentFields(lLines);
-    vText := lLines.Text;
+    dmPgTwilioWhatsApp.FallBack(lLines.Text);
   finally
     lLines.Free;
   end;
-  qryTwilioLog.Append;
-  qryTwilioLogbody_received.AsString := vText;
-  qryTwilioLogaction.AsString := 'fallback';
-  qryTwilioLog.Post;
+
 end;
 
-procedure TJanuaWhatSappWebBrokerModule.WebModule1WactStatusCallbackAction(Sender: TObject; Request: TWebRequest;
-  Response: TWebResponse; var Handled: Boolean);
+procedure TJanuaWhatSappWebBrokerModule.WebModule1WactStatusCallbackAction(Sender: TObject;
+  Request: TWebRequest; Response: TWebResponse; var Handled: Boolean);
 var
   lText: string;
   lStatus: TTWilioStatus;
@@ -86,15 +71,12 @@ begin
   lLines := TStringList.Create;
   try
     Request.ExtractContentFields(lLines);
-    lText := lLines.Text;
     lStatus.SetFromStrings(lLines);
+    dmPgTwilioWhatsApp.StatusCallback(lLines.Text, lStatus);
   finally
     lLines.Free;
   end;
-  qryTwilioLog.Append;
-  qryTwilioLogbody_received.AsString := lText;
-  qryTwilioLogaction.AsString := 'status_callback';
-  qryTwilioLog.Post;
+
 end;
 
 procedure TJanuaWhatSappWebBrokerModule.WebModule1WactWebhookAction(Sender: TObject; Request: TWebRequest;
@@ -120,8 +102,7 @@ end;
 
 procedure TJanuaWhatSappWebBrokerModule.WebModuleCreate(Sender: TObject);
 begin
-  self.qryTwilioLog.Open;
-
+  qryTwilioLog.Open;
 end;
 
 end.

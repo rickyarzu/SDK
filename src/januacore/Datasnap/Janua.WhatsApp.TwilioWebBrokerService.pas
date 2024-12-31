@@ -11,8 +11,7 @@ uses
   Janua.Application.Framework,
   Janua.Core.Types,
   Janua.WebBroker.ServerConst,
-  Janua.Http.WebServer,
-  Janua.CarService.WebModuleCustomerConfirmation;
+  Janua.Http.WebServer, Janua.WhatsApp.WebbrokerModule;
 
 type
   TJanuaWhatsAppTwilioWebBrokerService = class(TService)
@@ -48,7 +47,7 @@ end;
 procedure TJanuaWhatsAppTwilioWebBrokerService.ServiceCreate(Sender: TObject);
 begin
   if WebRequestHandler <> nil then
-    WebRequestHandler.WebModuleClass := WebModuleClass;
+    WebRequestHandler.WebModuleClass := WhatsAppWebModuleClass;
   FServer := TJanuaWebServerFactory.CreateWebServer;
 end;
 

@@ -6,8 +6,11 @@ uses
   Janua.Application.Framework,
   Janua.WebBroker.UniDACApplication in '..\..\..\src\januacore\Datasnap\Janua.WebBroker.UniDACApplication.pas',
   Janua.WhatsApp.WebBroker.UniDACApplication in '..\..\..\src\januacore\Datasnap\Janua.WhatsApp.WebBroker.UniDACApplication.pas',
-  Janua.WhatsApp.TwilioWebBrokerService in '..\..\..\src\januacore\Datasnap\Janua.WhatsApp.TwilioWebBrokerService.pas' {JanuaCarServiceCustConfWebBrokerService: TService},
-  Janua.WhatsApp.WebbrokerModule in '..\..\..\src\januacore\dmvc\Janua.WhatsApp.WebbrokerModule.pas' {JanuaWhatSappWebBrokerModule: TWebModule};
+  Janua.WhatsApp.TwilioWebBrokerService in '..\..\..\src\januacore\Datasnap\Janua.WhatsApp.TwilioWebBrokerService.pas' {JanuaWhatsAppTwilioWebBrokerService: TService},
+  Janua.WhatsApp.WebbrokerModule in '..\..\..\src\januacore\dmvc\Janua.WhatsApp.WebbrokerModule.pas' {JanuaWhatSappWebBrokerModule: TWebModule},
+  Janua.Twilio.dmPgWhatsApp in '..\..\..\src\januaunidac\datamodules\Janua.Twilio.dmPgWhatsApp.pas' {dmPgTwilioWhatsApp: TDataModule},
+  udmPgStorage in '..\..\..\src\januaunidac\datamodules\udmPgStorage.pas',
+  Janua.Core.DataModule in '..\..\..\src\januacore\datamodule\Janua.Core.DataModule.pas' {JanuaCoreDataModule: TDataModule};
 
 {$R *.RES}
 
@@ -34,6 +37,8 @@ begin
   TJanuaApplication.ApplicationType := TJanuaApplicationType.jatWinService;
   TJanuaWhatsAppWebBrokerUniDACApplication.ApplicationSetup('whatsapp.januservers.com');
 
-  Application.CreateForm(TJanuaCarServiceCustConfWebBrokerService, JanuaCarServiceCustConfWebBrokerService);
+  Application.CreateForm(TJanuaWhatsAppTwilioWebBrokerService, JanuaWhatsAppTwilioWebBrokerService);
+  Application.CreateForm(TdmPgTwilioWhatsApp, dmPgTwilioWhatsApp);
+  Application.CreateForm(TJanuaCoreDataModule, JanuaCoreDataModule);
   Application.Run;
 end.

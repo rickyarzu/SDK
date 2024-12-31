@@ -10,8 +10,11 @@ Type
   TJanuaWebServer = class
   public
     constructor Create; overload; virtual;
+    constructor Create(aPort: Integer); overload;
   private
     FLogProc: TMessageLogProc;
+    FServerName: string;
+    FPort: Integer;
   protected
     /// <summary> GetIsActive va impostata nella classe figlia in quanto connessa al WebServer sottostante </summary>
     function GetIsActive: Boolean; virtual;
@@ -21,17 +24,17 @@ Type
     procedure SetLogProc(const Value: TMessageLogProc);
     procedure InternalLogProc(aProcName: string; aLogMessage: string; aObject: TObject);
     // Class Functions
-    class function GetPort: Integer; overload; static;
-    class procedure SetPort(const Value: Integer); static;
+    function GetPort: Integer; overload;
+    procedure SetPort(const Value: Integer);
   public
-    class function GetPort(aDefault: Integer): Integer; overload;
+    function GetPort(aDefault: Integer): Integer; overload;
     procedure StartServer; overload; virtual; abstract;
     procedure StopServer; overload; virtual; abstract;
     procedure WriteStatus; virtual; abstract;
   public
     property IsActive: Boolean read GetIsActive write SetIsActive;
     property LogProc: TMessageLogProc read FLogProc write SetLogProc;
-    class property Port: Integer read GetPort write SetPort;
+    property Port: Integer read GetPort write SetPort;
   end;
 
   TJanuaWebServerClass = class of TJanuaWebServer;
@@ -45,6 +48,15 @@ uses Janua.Application.Framework;
 constructor TJanuaWebServer.Create;
 begin
   FLogProc := InternalLogProc;
+  FPort := -1;
+  FServerName := 'WebBroker';
+end;
+
+constructor TJanuaWebServer.Create(aPort: Integer);
+begin
+  Create;
+  if aPort > 0 then
+    SetPort(aPort);
 end;
 
 function TJanuaWebServer.GetIsActive: Boolean;
@@ -52,23 +64,23 @@ begin
   Result := False;
 end;
 
-class function TJanuaWebServer.GetPort(aDefault: Integer): Integer;
+function TJanuaWebServer.GetPort(aDefault: Integer): Integer;
 begin
-  if TJanuaApplication.RestServerConf.Port = 0 then
-    TJanuaApplication.RestServerConf.Port := TJanuacoreOS.ReadParam('RestServer', 'Port', aDefault);
-  Result := TJanuaApplication.RestServerConf.Port;
+  if FPort = -1 then
+    FPort := TJanuacoreOS.ReadParam(FServerName, 'Port', aDefault);
+  Result := FPort;
   var
-  lLogMessage := 'Default port: ' + IntToStr(TJanuaApplication.RestServerConf.Port);
+  lLogMessage := 'Default port: ' + FPort.ToString;
   if TJanuaApplication.ApplicationType in [jatConsoleSrv] then
     Writeln(lLogMessage);
   TJanuaLogger.LogMessage('GetPort', lLogMessage, nil);
 end;
 
-class function TJanuaWebServer.GetPort: Integer;
+function TJanuaWebServer.GetPort: Integer;
 begin
-  if TJanuaApplication.RestServerConf.Port = 0 then
-    TJanuaApplication.RestServerConf.Port := TJanuacoreOS.ReadParam('RestServer', 'Port', 8084);
-  Result := TJanuaApplication.RestServerConf.Port;
+  if FPort = -1 then
+    FPort := TJanuacoreOS.ReadParam(FServerName, 'Port', FPort);
+  Result := FPort;
 end;
 
 procedure TJanuaWebServer.InternalLogProc(aProcName, aLogMessage: string; aObject: TObject);
@@ -83,12 +95,12 @@ begin
   FLogProc := Value;
 end;
 
-class procedure TJanuaWebServer.SetPort(const Value: Integer);
+procedure TJanuaWebServer.SetPort(const Value: Integer);
 begin
-  if TJanuaApplication.RestServerConf.Port <> Value then
+  if FPort <> Value then
   begin
-    TJanuaApplication.RestServerConf.Port := Value;
-    TJanuacoreOS.WriteParam('WebBroker', 'Port', Value);
+    FPort := Value;
+    TJanuacoreOS.WriteParam(FServerName, 'Port', FPort);
   end;
 end;
 

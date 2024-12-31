@@ -1,4 +1,4 @@
-object JanuaCarServiceCustConfWebBrokerService: TJanuaCarServiceCustConfWebBrokerService
+object JanuaWhatsAppTwilioWebBrokerService: TJanuaWhatsAppTwilioWebBrokerService
   OnCreate = ServiceCreate
   OnDestroy = ServiceDestroy
   AllowPause = False
