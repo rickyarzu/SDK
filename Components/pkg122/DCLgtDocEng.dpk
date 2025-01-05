@@ -30,13 +30,13 @@
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl,
   designide,
   vcl,
   gtDocEng;
 
-ocontains
+contains
   gtDocReg in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtDocReg.pas';
 
-d.
+end.

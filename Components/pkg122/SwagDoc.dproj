@@ -135,6 +135,37 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Json.Common.Helpers.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Json.Schema.Common.Types.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Json.Schema.Field.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Json.Schema.Field.Booleans.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Json.Schema.Field.Numbers.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Json.Schema.Field.DateTimes.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Json.Schema.Field.Arrays.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Json.Schema.Field.Objects.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Json.Schema.Field.Enums.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Json.Schema.Field.Strings.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Json.Schema.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Swag.Common.Consts.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Swag.Common.Types.Helpers.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Swag.Common.Types.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Swag.Doc.Definition.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Swag.Doc.Info.Contact.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Swag.Doc.Info.License.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Swag.Doc.Info.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Swag.Doc.Path.Operation.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Swag.Doc.Path.Operation.RequestParameter.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Swag.Doc.Path.Operation.Response.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Swag.Doc.Path.Operation.ResponseHeaders.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Swag.Doc.Path.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Swag.Doc.SecurityDefinition.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Swag.Doc.SecurityDefinitionApiKey.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Swag.Doc.SecurityDefinitionBasic.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Swag.Doc.SecurityDefinitionOAuth2.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Swag.Doc.Tags.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Swag.Doc.pas"/>
+        <DCCReference Include="..\..\..\Libraries\SwagDoc\Source\Swag.Doc.FileLoader.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -159,12 +190,9 @@
             <Platforms>
                 <Platform value="Android">False</Platform>
                 <Platform value="Android64">True</Platform>
-                <Platform value="iOSDevice32">False</Platform>
                 <Platform value="iOSDevice64">True</Platform>
                 <Platform value="iOSSimARM64">True</Platform>
-                <Platform value="iOSSimulator">False</Platform>
                 <Platform value="Linux64">True</Platform>
-                <Platform value="OSX32">False</Platform>
                 <Platform value="OSX64">True</Platform>
                 <Platform value="OSXARM64">True</Platform>
                 <Platform value="Win32">True</Platform>

@@ -33,11 +33,11 @@
 {$DESIGNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl,
   gtDocEng;
 
-ocontains
+contains
   gtDocProdReg in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\Producer\gtDocProdReg.pas';
 
-d.
+end.

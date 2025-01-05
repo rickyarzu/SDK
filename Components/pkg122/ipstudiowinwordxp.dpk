@@ -30,11 +30,11 @@ package ipstudiowinwordxp;
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   OfficeXPRt,
   ipstudiowin;
 
-ocontains
+contains
   vcl.wwrichedspellxp in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwrichedspellxp.pas';
 
-d.
+end.

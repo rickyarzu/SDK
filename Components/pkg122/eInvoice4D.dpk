@@ -29,7 +29,7 @@ package eInvoice4D;
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD ON}
 
-rrequires
+requires
   rtl,
   xmlrtl,
   soaprtl,
@@ -45,7 +45,7 @@ rrequires
   bindcomp,
   RESTComponents;
 
-ocontains
+contains
   DForce.ei.Response.Factory in '..\..\..\lib\FeInvoice4D\source\DForce.ei.Response.Factory.pas',
   DForce.ei.Response.Interfaces in '..\..\..\lib\FeInvoice4D\source\DForce.ei.Response.Interfaces.pas',
   DForce.ei.Response in '..\..\..\lib\FeInvoice4D\source\DForce.ei.Response.pas',
@@ -72,4 +72,4 @@ ocontains
   DForce.ei.Validation.Validator.Values in '..\..\..\lib\FeInvoice4D\source\DForce.ei.Validation.Validator.Values.pas',
   DForce.ei.Validation.Validator.Custom in '..\..\..\lib\FeInvoice4D\source\DForce.ei.Validation.Validator.Custom.pas';
 
-d.
+end.

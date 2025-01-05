@@ -1,7 +1,6 @@
 ﻿package Ean;
 
 {$R *.res}
-{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -30,7 +29,7 @@
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl,
   vclx,
   vcl,
@@ -39,7 +38,7 @@ rrequires
   vcldb,
   QRWRunDXE12_W64;
 
-ocontains
+contains
   EanReg in '..\..\..\Libraries\Ean50XE10\EanReg.pas',
   EanQR in '..\..\..\Libraries\Ean50XE10\EanQR.pas',
   EanDBQr in '..\..\..\Libraries\Ean50XE10\EanDBQr.pas',
@@ -49,4 +48,4 @@ ocontains
   EanRead in '..\..\..\Libraries\Ean50XE10\EanRead.pas',
   EanFmt5 in '..\..\..\Libraries\Ean50XE10\EanFmt5.pas' {EANSetupFmt};
 
-d.
+end.

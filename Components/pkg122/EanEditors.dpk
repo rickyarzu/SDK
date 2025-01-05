@@ -31,12 +31,12 @@ package EanEditors;
 {$DESIGNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl,
   designide,
   Ean;
 
-ocontains
+contains
   EanRegEditors in '..\..\..\Libraries\Ean50XE10\EanRegEditors.pas';
 
-d.
+end.

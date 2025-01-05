@@ -3,13 +3,13 @@
         <ProjectGuid>{2B040D80-4124-49A2-BA62-32B2BEBC756F}</ProjectGuid>
         <MainSource>Spring.Base.dpk</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <ProjectName Condition="'$(ProjectName)'==''">Spring.Base</ProjectName>
-        <TargetedPlatforms>1741953</TargetedPlatforms>
+        <TargetedPlatforms>1741955</TargetedPlatforms>
         <AppType>Package</AppType>
         <FrameworkType>None</FrameworkType>
         <ProjectVersion>20.2</ProjectVersion>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -31,6 +31,11 @@
     </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
         <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
@@ -68,6 +73,7 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
+    <Import Project="..\..\prj\DXE15\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE15\JanuaLibDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_E>false</DCC_E>
         <DCC_F>false</DCC_F>
@@ -85,6 +91,7 @@
         <VerInfo_Locale>1040</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+        <CfgDependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
@@ -104,6 +111,13 @@
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
@@ -135,8 +149,56 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="..\..\..\Lib\spring4d\Source\Base\Patches\Spring.Patches.GetInvokeInfo.pas"/>
+        <DCCReference Include="..\..\..\Lib\spring4d\Source\Base\Patches\Spring.Patches.RSP13589.pas"/>
+        <DCCReference Include="..\..\..\Lib\spring4d\Source\Base\Patches\Spring.Patches.RSP13163.pas"/>
+        <DCCReference Include="..\..\..\Lib\spring4d\Source\Base\Patches\Spring.Patches.QC107219.pas"/>
+        <DCCReference Include="..\..\..\Lib\spring4d\Source\Base\Patches\Spring.Patches.QC98671.pas"/>
+        <DCCReference Include="..\..\..\Lib\spring4d\Source\Base\Patches\Spring.Patches.QC93646.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Spring.pas"/>
+        <DCCReference Include="..\..\..\Lib\spring4d\Source\Base\Spring.DesignPatterns.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Base.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Dictionaries.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Events.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Extensions.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Lists.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.LinkedLists.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.MultiMaps.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Queues.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Sets.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Stacks.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Collections\Spring.Collections.Trees.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Spring.Events.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Spring.Events.Base.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Spring.Helpers.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Logging\Spring.Logging.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Logging\Spring.Logging.Appenders.Base.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Logging\Spring.Logging.Controller.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Logging\Spring.Logging.Extensions.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Logging\Spring.Logging.Loggers.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Logging\Spring.Logging.NullLogger.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Logging\Spring.Logging.ResourceStrings.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Logging\Spring.Logging.Serializers.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Spring.MethodIntercept.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Spring.Reflection.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Spring.ResourceStrings.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Spring.SystemUtils.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Spring.Times.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Spring.ValueConverters.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Spring.VirtualClass.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Spring.VirtualInterface.pas"/>
+        <DCCReference Include="..\..\..\Lib\spring4d\Source\Base\Spring.Comparers.pas"/>
+        <DCCReference Include="..\..\..\Lib\spring4d\Source\Base\Spring.Hash.pas"/>
+        <DCCReference Include="..\..\..\Lib\spring4d\Source\Base\Spring.HashTable.pas"/>
+        <DCCReference Include="..\..\..\Lib\spring4d\Source\Base\Spring.HazardEra.pas"/>
+        <DCCReference Include="..\..\..\Lib\spring4d\Source\Base\Collections\Spring.Collections.MultiSets.pas"/>
+        <DCCReference Include="..\..\..\Lib\spring4d\Source\Base\Patterns\Spring.Patterns.Specification.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Base\Logging\Spring.Logging.Appenders.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
+            <DependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Release">
             <Key>Cfg_1</Key>
@@ -159,16 +221,13 @@
             <Platforms>
                 <Platform value="Android">False</Platform>
                 <Platform value="Android64">True</Platform>
-                <Platform value="iOSDevice32">False</Platform>
                 <Platform value="iOSDevice64">True</Platform>
                 <Platform value="iOSSimARM64">True</Platform>
-                <Platform value="iOSSimulator">False</Platform>
                 <Platform value="Linux64">True</Platform>
-                <Platform value="OSX32">False</Platform>
                 <Platform value="OSX64">True</Platform>
                 <Platform value="OSXARM64">True</Platform>
                 <Platform value="Win32">True</Platform>
-                <Platform value="Win64">False</Platform>
+                <Platform value="Win64">True</Platform>
                 <Platform value="Win64x">True</Platform>
             </Platforms>
         </BorlandProject>

@@ -1,7 +1,6 @@
 ﻿package gtCrypt;
 
 {$R *.res}
-{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -30,12 +29,12 @@
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl,
   vcl,
   gtRtl;
 
-ocontains
+contains
   gtPDFCrypt3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\PDFCrypt\gtPDFCrypt3.pas',
   gtEnvelope3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\PDFCrypt\gtEnvelope3.pas',
   gtJwaNtStatus3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\PDFCrypt\gtJwaNtStatus3.pas',
@@ -46,4 +45,4 @@ ocontains
   gtWinCrypt3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\PDFCrypt\gtWinCrypt3.pas',
   gtJwaWinDLLNames3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\PDFCrypt\gtJwaWinDLLNames3.pas';
 
-d.
+end.

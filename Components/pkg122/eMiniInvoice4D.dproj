@@ -132,6 +132,13 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="xmlrtl.dcp"/>
+        <DCCReference Include="eInvoice4D.dcp"/>
+        <DCCReference Include="..\..\..\lib\FeInvoice4D\source\DForce.Mini.ei.pas"/>
+        <DCCReference Include="..\..\..\lib\FeInvoice4D\source\DForce.Mini.ei.Invoice.pas"/>
+        <DCCReference Include="..\..\..\lib\FeInvoice4D\source\DForce.Mini.ei.Invoice.Interfaces.pas"/>
+        <DCCReference Include="..\..\..\lib\FeInvoice4D\source\DForce.Mini.ei.Invoice.Factory.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -156,12 +163,9 @@
             <Platforms>
                 <Platform value="Android">False</Platform>
                 <Platform value="Android64">True</Platform>
-                <Platform value="iOSDevice32">False</Platform>
                 <Platform value="iOSDevice64">True</Platform>
                 <Platform value="iOSSimARM64">True</Platform>
-                <Platform value="iOSSimulator">False</Platform>
                 <Platform value="Linux64">True</Platform>
-                <Platform value="OSX32">False</Platform>
                 <Platform value="OSX64">True</Platform>
                 <Platform value="OSXARM64">True</Platform>
                 <Platform value="Win32">True</Platform>

@@ -68,6 +68,7 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
+    <Import Project="..\..\prj\DXE15\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE15\JanuaLibDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_E>false</DCC_E>
         <DCC_F>false</DCC_F>
@@ -85,6 +86,7 @@
         <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <VerInfo_Locale>1040</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
+        <CfgDependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
@@ -135,8 +137,73 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="dbrtl.dcp"/>
+        <DCCReference Include="vcl.dcp"/>
+        <DCCReference Include="vclimg.dcp"/>
+        <DCCReference Include="Spring.Base.dcp"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Adapters\Spring.Persistence.Adapters.FieldCache.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.AbstractSession.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.Base.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.ConnectionFactory.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.DatabaseManager.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.EmbeddedEntity.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.EntityCache.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.EntityMap.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.EntityWrapper.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.Exceptions.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.Graphics.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.Interfaces.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.ListSession.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.Repository.Proxy.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.Repository.Simple.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.ResourceStrings.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.Session.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.ValueConverters.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Criteria\Spring.Persistence.Criteria.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Criteria\Spring.Persistence.Criteria.Criterion.Abstract.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Criteria\Spring.Persistence.Criteria.Criterion.BetweenExpression.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Criteria\Spring.Persistence.Criteria.Criterion.Conjunction.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Criteria\Spring.Persistence.Criteria.Criterion.Disjunction.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Criteria\Spring.Persistence.Criteria.Criterion.InExpression.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Criteria\Spring.Persistence.Criteria.Criterion.Junction.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Criteria\Spring.Persistence.Criteria.Criterion.LikeExpression.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Criteria\Spring.Persistence.Criteria.Criterion.LogicalExpression.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Criteria\Spring.Persistence.Criteria.Criterion.NullExpression.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Criteria\Spring.Persistence.Criteria.Criterion.PropertyExpression.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Criteria\Spring.Persistence.Criteria.Criterion.SimpleExpression.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Criteria\Spring.Persistence.Criteria.Interfaces.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Criteria\Spring.Persistence.Criteria.OrderBy.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Criteria\Spring.Persistence.Criteria.Properties.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Criteria\Spring.Persistence.Criteria.Restrictions.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\Mapping\Spring.Persistence.Mapping.Attributes.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Commands.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Commands.Abstract.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Commands.CreateForeignKey.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Commands.CreateSequence.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Commands.CreateTable.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Commands.Delete.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Commands.Insert.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Commands.Page.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Commands.Select.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Commands.Update.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Generators.Abstract.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Generators.Ansi.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Generators.ASA.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Generators.Firebird.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Generators.MSSQL.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Generators.MySQL.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Generators.NoSQL.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Generators.Oracle.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Generators.PostgreSQL.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Generators.SQLite3.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Generators.Register.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Interfaces.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Params.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Register.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Types.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
+            <DependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Release">
             <Key>Cfg_1</Key>
@@ -159,10 +226,8 @@
             <Platforms>
                 <Platform value="Android">False</Platform>
                 <Platform value="Android64">True</Platform>
-                <Platform value="iOSDevice32">False</Platform>
                 <Platform value="iOSDevice64">True</Platform>
                 <Platform value="iOSSimARM64">True</Platform>
-                <Platform value="iOSSimulator">False</Platform>
                 <Platform value="Linux64">True</Platform>
                 <Platform value="OSX64">True</Platform>
                 <Platform value="OSXARM64">True</Platform>

@@ -29,11 +29,11 @@
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl,
   gtDocEng;
 
-ocontains
+contains
   gtQRExpReg in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\QR\gtQRExpReg.pas';
 
-d.
+end.
