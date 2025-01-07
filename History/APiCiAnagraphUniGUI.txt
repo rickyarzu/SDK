@@ -1,0 +1,52 @@
+***********************************************************
+* Janua APiCi Anagraph UniGUI v0.9.0.0 : Gen 07, 2024     *
+*                                                         *
+* Copyright © 1996-2024 by Januaproject - Ergomercator    *
+* E-mail: info@januaproject.it                            *
+* Web : http://www.januaproject.it                        *
+***********************************************************
+
+Car Service Users UniGUI Delphi 12.2 Athens - Windows 64
+        APiCiAnagraphUniGUI 64bit - Windows Exe
+        APiCiAnagraphUniGUI 64bit - Windows Service
+
+Features:
+---------
+Janua Car Service Users is the Frontend for Car Service Office to book a Pickup and Delivery
+Service from Pikapp Company
+
+History:
+--------
+May 23, 2024 : - v0.9.9. Added procedure to change
+Dec 16, 2023 : - v0.9.8 Introduced Controllers over Frames
+                 Mapped Frames to Controllers
+                 TSimpleAnagraphController -> TframeUniGUISimpleAnagraph
+                 TAccountingInfoController -> TframeAccountingInfo
+                 TUNIControllerCalendarSelect -> TframeUNICalendarSelect
+                 TframeCarServiceUniGUITimeTable -> TframeCarServiceUniGUITimeTable
+
+Dec 06, 2023 : - v0.9.7 Updated Source code to D12. Frames are 'no longer' Frames but 'Forms' so
+                        I changed the code using this pattern an a Simple Panel as Container
+
+                        procedure TdlgUniGUISimpleAnagraph.UniFormCreate(Sender: TObject);
+                        begin
+                          frameUniGUISimpleAnagraph := TframeUniGUISimpleAnagraph.Create(self);
+                          frameUniGUISimpleAnagraph.Parent := self.uniPanelAnagraphSimple;
+                          frameUniGUISimpleAnagraph.Align := TAlign.alClient;
+                        end;
+
+Jul 01, 2023 : - v0.9.6 Added Frame Anagraph/Address Horizontal to Manage an Address List
+
+Jun 30, 2023 : - v0.9.5 Updated Frame Accounting Info and Frame Anagraph Settings (System)
+
+Apr 16, 2023 : - v0.9.1 Release With Pikup and No Return
+			- v0.9.0.4	Added check for Booking contract check conditions. 
+                	- v0.9.0.3	Bug Fix dmPgCarServiceBooking
+			-		Corrected mispelled keyword Notifiy into Notify
+			-		FHasReturn set in TBookingHeadView
+			-		Added Pickup <= Delivery Date check
+			-		Added Back function on dlgBooking
+			-		Added Html dlgMessage to Car Service
+			-		Added btnBack Visible
+			-		Added default group 31 to Car Service Branches
+

@@ -108,6 +108,9 @@
         <Projects Include="VCL\PhoenixVCLMobileJson.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="UniGUI\APiCiAnagraphUniGUI.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -431,14 +434,23 @@
     <Target Name="PhoenixVCLMobileJson:Make">
         <MSBuild Projects="VCL\PhoenixVCLMobileJson.dproj" Targets="Make"/>
     </Target>
+    <Target Name="APiCiAnagraphUniGUI">
+        <MSBuild Projects="UniGUI\APiCiAnagraphUniGUI.dproj"/>
+    </Target>
+    <Target Name="APiCiAnagraphUniGUI:Clean">
+        <MSBuild Projects="UniGUI\APiCiAnagraphUniGUI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="APiCiAnagraphUniGUI:Make">
+        <MSBuild Projects="UniGUI\APiCiAnagraphUniGUI.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="dipstudiowin;sbridge;PlanAddons;dclsbridge;sgcWebSockets;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaVirtual;JanuaUnidac;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaUniGUI;JanuaFMXControls;JanuaVCLMVVM;JanuaVCLForms;JanuaTmsForms;JanuaVCLUITestIDEXE15;AnagraphPlannerXE15;JanuaGridsTestingProject;SFTPClient;hcdemo;ipstudiowin;ipstudiowinclient;dbplancaldemo;PlannerRangeSelectorDemo;PPlannerDemo;dbperformance_XE12;planforms;CloudCalendarImportExport;JanuaGoogleCalendarDemo;GContactsDemo;PhoenixVCLMobileJson"/>
+        <CallTarget Targets="dipstudiowin;sbridge;PlanAddons;dclsbridge;sgcWebSockets;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaVirtual;JanuaUnidac;JanuaUnidacComponents;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaUniGUI;JanuaFMXControls;JanuaVCLMVVM;JanuaVCLForms;JanuaTmsForms;JanuaVCLUITestIDEXE15;AnagraphPlannerXE15;JanuaGridsTestingProject;SFTPClient;hcdemo;ipstudiowin;ipstudiowinclient;dbplancaldemo;PlannerRangeSelectorDemo;PPlannerDemo;dbperformance_XE12;planforms;CloudCalendarImportExport;JanuaGoogleCalendarDemo;GContactsDemo;PhoenixVCLMobileJson;APiCiAnagraphUniGUI"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="dipstudiowin:Clean;sbridge:Clean;PlanAddons:Clean;dclsbridge:Clean;sgcWebSockets:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaVirtual:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaUniGUI:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;JanuaVCLUITestIDEXE15:Clean;AnagraphPlannerXE15:Clean;JanuaGridsTestingProject:Clean;SFTPClient:Clean;hcdemo:Clean;ipstudiowin:Clean;ipstudiowinclient:Clean;dbplancaldemo:Clean;PlannerRangeSelectorDemo:Clean;PPlannerDemo:Clean;dbperformance_XE12:Clean;planforms:Clean;CloudCalendarImportExport:Clean;JanuaGoogleCalendarDemo:Clean;GContactsDemo:Clean;PhoenixVCLMobileJson:Clean"/>
+        <CallTarget Targets="dipstudiowin:Clean;sbridge:Clean;PlanAddons:Clean;dclsbridge:Clean;sgcWebSockets:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaVirtual:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaUniGUI:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaVCLForms:Clean;JanuaTmsForms:Clean;JanuaVCLUITestIDEXE15:Clean;AnagraphPlannerXE15:Clean;JanuaGridsTestingProject:Clean;SFTPClient:Clean;hcdemo:Clean;ipstudiowin:Clean;ipstudiowinclient:Clean;dbplancaldemo:Clean;PlannerRangeSelectorDemo:Clean;PPlannerDemo:Clean;dbperformance_XE12:Clean;planforms:Clean;CloudCalendarImportExport:Clean;JanuaGoogleCalendarDemo:Clean;GContactsDemo:Clean;PhoenixVCLMobileJson:Clean;APiCiAnagraphUniGUI:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="dipstudiowin:Make;sbridge:Make;PlanAddons:Make;dclsbridge:Make;sgcWebSockets:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaVirtual:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaUniGUI:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;JanuaVCLUITestIDEXE15:Make;AnagraphPlannerXE15:Make;JanuaGridsTestingProject:Make;SFTPClient:Make;hcdemo:Make;ipstudiowin:Make;ipstudiowinclient:Make;dbplancaldemo:Make;PlannerRangeSelectorDemo:Make;PPlannerDemo:Make;dbperformance_XE12:Make;planforms:Make;CloudCalendarImportExport:Make;JanuaGoogleCalendarDemo:Make;GContactsDemo:Make;PhoenixVCLMobileJson:Make"/>
+        <CallTarget Targets="dipstudiowin:Make;sbridge:Make;PlanAddons:Make;dclsbridge:Make;sgcWebSockets:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaVirtual:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaUniGUI:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaVCLForms:Make;JanuaTmsForms:Make;JanuaVCLUITestIDEXE15:Make;AnagraphPlannerXE15:Make;JanuaGridsTestingProject:Make;SFTPClient:Make;hcdemo:Make;ipstudiowin:Make;ipstudiowinclient:Make;dbplancaldemo:Make;PlannerRangeSelectorDemo:Make;PPlannerDemo:Make;dbperformance_XE12:Make;planforms:Make;CloudCalendarImportExport:Make;JanuaGoogleCalendarDemo:Make;GContactsDemo:Make;PhoenixVCLMobileJson:Make;APiCiAnagraphUniGUI:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='JanuaLibs'">
@@ -458,6 +470,12 @@
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\APiCiAnagraphUniGUI.dproj">
+            <ProjectGuid>{F198315A-F0C9-4784-80B3-C8DFA9C9EDA5}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\JanuaVCLUITestIDEXE15.dproj">
@@ -672,6 +690,12 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\APiCiAnagraphUniGUI.dproj">
+            <ProjectGuid>{F198315A-F0C9-4784-80B3-C8DFA9C9EDA5}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="VCL\JanuaVCLUITestIDEXE15.dproj">
             <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -882,6 +906,12 @@
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\APiCiAnagraphUniGUI.dproj">
+            <ProjectGuid>{F198315A-F0C9-4784-80B3-C8DFA9C9EDA5}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\JanuaVCLUITestIDEXE15.dproj">
@@ -1096,6 +1126,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\APiCiAnagraphUniGUI.dproj">
+            <ProjectGuid>{F198315A-F0C9-4784-80B3-C8DFA9C9EDA5}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="VCL\JanuaVCLUITestIDEXE15.dproj">
             <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1306,6 +1342,12 @@
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="UniGUI\APiCiAnagraphUniGUI.dproj">
+            <ProjectGuid>{F198315A-F0C9-4784-80B3-C8DFA9C9EDA5}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\JanuaVCLUITestIDEXE15.dproj">

@@ -1,9 +1,6 @@
 ﻿program AnagraphPlannerXE15;
 
 uses
-  {$IFDEF EurekaLog}
-  EMemLeaks,
-  {$ENDIF EurekaLog}
   System.SysUtils,
   System.Threading,
   Vcl.Forms,
@@ -131,3 +128,4 @@ begin
 {$ENDIF}
 
 end.
+
