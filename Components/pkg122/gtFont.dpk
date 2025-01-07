@@ -30,15 +30,15 @@
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl,
   vcl,
   gtRtl;
 
-ocontains
+contains
   gtPDFFont3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\PDFFontProcessor\gtPDFFont3.pas',
   gtGlyphInfo in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\PDFFontProcessor\gtGlyphInfo.pas',
   gtDocUsp10 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\PDFFontProcessor\gtDocUsp10.pas',
   gtMLang in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\PDFFontProcessor\gtMLang.pas';
 
-d.
+end.

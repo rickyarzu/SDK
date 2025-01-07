@@ -135,6 +135,25 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="IndySystem.dcp"/>
+        <DCCReference Include="IndyProtocols.dcp"/>
+        <DCCReference Include="IndyCore.dcp"/>
+        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.ElasticSearchAppender.pas"/>
+        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.EMailAppender.pas"/>
+        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.FileAppender.pas"/>
+        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.GlobalLogger.pas"/>
+        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.MemoryAppender.pas"/>
+        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.NSQAppender.pas"/>
+        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.pas"/>
+        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.Proxy.pas"/>
+        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.RESTAppender.pas"/>
+        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.UDPSyslogAppender.pas"/>
+        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.Utils.pas"/>
+        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\ThreadSafeQueueU.pas"/>
+        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.OutputDebugStringAppender.pas"/>
+        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.Renderers.pas"/>
+        <DCCReference Include="..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.ConsoleAppender.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -159,12 +178,9 @@
             <Platforms>
                 <Platform value="Android">False</Platform>
                 <Platform value="Android64">True</Platform>
-                <Platform value="iOSDevice32">False</Platform>
                 <Platform value="iOSDevice64">True</Platform>
                 <Platform value="iOSSimARM64">True</Platform>
-                <Platform value="iOSSimulator">False</Platform>
                 <Platform value="Linux64">True</Platform>
-                <Platform value="OSX32">False</Platform>
                 <Platform value="OSX64">True</Platform>
                 <Platform value="OSXARM64">True</Platform>
                 <Platform value="Win32">True</Platform>

@@ -66,7 +66,7 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
     Width = 748
     Height = 578
     Hint = ''
-    ActivePage = pgTimeSelection
+    ActivePage = pgDateSelectionPage
     TabBarVisible = False
     Align = alClient
     TabOrder = 1

@@ -1,7 +1,6 @@
 package dmvcframeworkRT;
 
 {$R *.res}
-{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -31,7 +30,7 @@ package dmvcframeworkRT;
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl,
   inet,
   FireDAC,
@@ -44,11 +43,10 @@ rrequires
   FireDACSqliteDriver,
   SwagDoc;
 
-ocontains
+contains
   MVCFramework in '..\..\..\lib\delphimvcframework\sources\MVCFramework.pas',
   MVCFramework.ActiveRecord in '..\..\..\lib\delphimvcframework\sources\MVCFramework.ActiveRecord.pas',
   MVCFramework.ActiveRecordController in '..\..\..\lib\delphimvcframework\sources\MVCFramework.ActiveRecordController.pas',
-  MVCFramework.ApplicationSession in '..\..\..\lib\delphimvcframework\sources\MVCFramework.ApplicationSession.pas',
   MVCFramework.Cache in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Cache.pas',
   MVCFramework.Commons in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Commons.pas',
   MVCFramework.Console in '..\..\..\lib\delphimvcframework\sources\MVCFramework.Console.pas',
@@ -118,7 +116,7 @@ ocontains
   MVCFramework.Container in '..\..\..\Lib\delphimvcframework\sources\MVCFramework.Container.pas',
   sqids in '..\..\..\Lib\delphimvcframework\sources\sqids.pas';
 
-d.
+end.
 
 
 

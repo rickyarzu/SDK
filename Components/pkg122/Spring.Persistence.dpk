@@ -31,13 +31,13 @@ package Spring.Persistence;
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   dbrtl,
   vcl,
   vclimg,
   Spring.Base;
 
-ocontains
+contains
   Spring.Persistence.Adapters.FieldCache in '..\..\..\lib\spring4d\Source\Persistence\Adapters\Spring.Persistence.Adapters.FieldCache.pas',
   Spring.Persistence.Core.AbstractSession in '..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.AbstractSession.pas',
   Spring.Persistence.Core.Base in '..\..\..\lib\spring4d\Source\Persistence\Core\Spring.Persistence.Core.Base.pas',
@@ -99,4 +99,4 @@ ocontains
   Spring.Persistence.SQL.Register in '..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Register.pas',
   Spring.Persistence.SQL.Types in '..\..\..\lib\spring4d\Source\Persistence\SQL\Spring.Persistence.SQL.Types.pas';
 
-d.
+end.

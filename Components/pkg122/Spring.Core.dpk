@@ -1,7 +1,6 @@
 package Spring.Core;
 
 {$R *.res}
-{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -31,11 +30,11 @@ package Spring.Core;
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl,
   Spring.Base;
 
-ocontains
+contains
   Spring.Services in '..\..\..\lib\spring4d\Source\Core\Services\Spring.Services.pas',
   Spring.Container in '..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.pas',
   Spring.Container.ActivatorExtension in '..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.ActivatorExtension.pas',
@@ -67,4 +66,4 @@ ocontains
   Spring.Mocking.Interceptor in '..\..\..\lib\spring4d\Source\Core\Mocking\Spring.Mocking.Interceptor.pas',
   Spring.Mocking.Matching in '..\..\..\lib\spring4d\Source\Core\Mocking\Spring.Mocking.Matching.pas';
 
-d.
+end.

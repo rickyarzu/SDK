@@ -2,7 +2,6 @@ package gtCompression;
 
 
 {$R *.res}
-{$R *.otares}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
 {$ALIGN 8}
 {$ASSERTIONS ON}
@@ -31,13 +30,13 @@ package gtCompression;
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl;
 
-ocontains
+contains
   gtDZLIB3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\Compression\gtDZLIB3.pas';
 
-d.
+end.
 
 
 

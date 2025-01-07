@@ -30,7 +30,7 @@
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl,
   vclimg,
   vcl,
@@ -45,7 +45,7 @@ rrequires
   dbrtl,
   DbxCommonDriver;
 
-ocontains
+contains
   UWebGMaps in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMaps.pas',
   UWebGMapsAutomation in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsAutomation.pas',
   UWebGMapsBrowser in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsBrowser.pas',
@@ -68,5 +68,5 @@ ocontains
   UWebGMapsDialogForm in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsDialogForm.pas' {WebGMapsDialogForm},
   UWebGMapsExif in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsExif.pas';
 
-d.
+end.
 

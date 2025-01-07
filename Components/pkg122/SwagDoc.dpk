@@ -29,10 +29,10 @@ package SwagDoc;
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl;
 
-ocontains
+contains
   Json.Common.Helpers in '..\..\..\Libraries\SwagDoc\Source\Json.Common.Helpers.pas',
   Json.Schema.Common.Types in '..\..\..\Libraries\SwagDoc\Source\Json.Schema.Common.Types.pas',
   Json.Schema.Field in '..\..\..\Libraries\SwagDoc\Source\Json.Schema.Field.pas',
@@ -64,4 +64,4 @@ ocontains
   Swag.Doc in '..\..\..\Libraries\SwagDoc\Source\Swag.Doc.pas',
   Swag.Doc.FileLoader in '..\..\..\Libraries\SwagDoc\Source\Swag.Doc.FileLoader.pas';
 
-d.
+end.

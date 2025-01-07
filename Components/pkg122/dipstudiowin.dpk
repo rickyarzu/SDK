@@ -30,7 +30,7 @@ package dipstudiowin;
 {$DESIGNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   designide,
   VCL,
   VCLDB,
@@ -38,7 +38,7 @@ rrequires
   VCLX,
   ipstudiowin;
 
-ocontains
+contains
   vcl.wwDesign in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwDesign.pas',
   vcl.infopowr in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.infopowr.pas',
   vcl.wwdbnavedt in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwdbnavedt.pas',
@@ -61,4 +61,4 @@ ocontains
   vcl.wwprpds in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwprpds.pas',
   vcl.wwImageNamePropEditor in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\source\windows\vcl.wwImageNamePropEditor.pas';
 
-d.
+end.

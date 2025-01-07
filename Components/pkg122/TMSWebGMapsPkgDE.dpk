@@ -31,7 +31,7 @@
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl,
   vclimg,
   vcl,
@@ -48,8 +48,8 @@ rrequires
   designide,
   TMSWebGMapsPkg;
 
-ocontains
+contains
   UWebGMapsRegDE in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsRegDE.pas',
   UWebGMapsSplash in '..\..\..\tmssoftware\TMS WebGMaps\UWebGMapsSplash.pas';
 
-d.
+end.

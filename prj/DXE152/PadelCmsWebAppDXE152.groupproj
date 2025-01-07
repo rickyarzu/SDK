@@ -3,7 +3,7 @@
         <ProjectGuid>{2F71F398-AC87-493C-BC72-FC7A57AB54FF}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\..\components\pkg110\Neon.dproj">
+        <Projects Include="..\..\Components\pkg122\Neon.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\..\Libraries\Devart UniDAC Pro v8.4.2\Source\Delphi28\unidac280.dproj">
@@ -177,13 +177,13 @@
         </BorlandProject>
     </ProjectExtensions>
     <Target Name="Neon">
-        <MSBuild Projects="..\..\components\pkg110\Neon.dproj"/>
+        <MSBuild Projects="..\..\Components\pkg122\Neon.dproj"/>
     </Target>
     <Target Name="Neon:Clean">
-        <MSBuild Projects="..\..\components\pkg110\Neon.dproj" Targets="Clean"/>
+        <MSBuild Projects="..\..\Components\pkg122\Neon.dproj" Targets="Clean"/>
     </Target>
     <Target Name="Neon:Make">
-        <MSBuild Projects="..\..\components\pkg110\Neon.dproj" Targets="Make"/>
+        <MSBuild Projects="..\..\Components\pkg122\Neon.dproj" Targets="Make"/>
     </Target>
     <Target Name="unidac280">
         <MSBuild Projects="..\..\..\Libraries\Devart UniDAC Pro v8.4.2\Source\Delphi28\unidac280.dproj"/>
@@ -946,7 +946,7 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg110\Neon.dproj">
+        <BuildGroupProject Include="..\..\Components\pkg122\Neon.dproj">
             <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms/>
