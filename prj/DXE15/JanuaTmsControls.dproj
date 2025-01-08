@@ -134,6 +134,93 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="TMSCloudPkgDXE15.dcp"/>
+        <DCCReference Include="JanuaVCLComponents.dcp"/>
+        <DCCReference Include="VCLTMSFNCCloudPackPkgDXE15.dcp"/>
+        <DCCReference Include="TMSVCLUIPackPkgExDXE15.dcp"/>
+        <DCCReference Include="TMSWebGMapsPkg.dcp"/>
+        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.SelectPrinter.pas"/>
+        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.ReadOnly.pas"/>
+        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.InputNumber.pas"/>
+        <DCCReference Include="..\..\src\JanuaLegacy\uJanuaFrameNavigator.pas">
+            <Form>JanuaFrameNavigator</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\src\JanuaLegacy\udlgSelectPrinter.pas">
+            <Form>dlgSelectPrinter</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.Functions.pas"/>
+        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.Error.pas"/>
+        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.frmMDCModel.pas">
+            <Form>frmMDCModel</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Commons\uJanuaVCLFormMDIModel.pas">
+            <Form>JanuaVCLFormMDIModel</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Controls\Janua.VCL.TMSStyles.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.dlgLogin.pas">
+            <Form>dlgTMSLogin</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.dlgServer.pas">
+            <Form>dlgTMSSelectServer</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.Dialogs.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.dlgInputDate.pas">
+            <Form>dlgTMSInputDate</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.dlgInputFloat.pas">
+            <Form>dlgInputFloat</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.dlgInputNumber.pas">
+            <Form>dlgInputNumber</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.dlgInputText.pas">
+            <Form>dlgTMSInputText</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.Functions.pas"/>
+        <DCCReference Include="..\..\src\TMS\udmJanuaTmsSystem.pas">
+            <Form>dmJanuaTmsSystem</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Controls\Janua.Tms.Controls.Impl.pas"/>
+        <DCCReference Include="..\..\src\VCL\Commons\udlgJanuaWizardModel.pas">
+            <Form>dlgJanuaWizardModel</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.Cloud.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.Statistics.MainFormController.pas"/>
+        <DCCReference Include="..\..\src\VCL\System\Janua.VCL.dlgRegisterUser.pas">
+            <Form>dlgRegisterUser</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Cloud\Janua.VCL.Geocoding.pas">
+            <Form>dmGeoCoding</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\System\Janua.VCL.Users.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.RegisterUnit.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.Error.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.NavBar.pas">
+            <Form>JanuaTMSNavBarFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.FrameNavBar.pas">
+            <Form>frameJanuaTmsNavBar</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Forms.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.Interposers.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.Framework.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.dmComponents.pas">
+            <Form>dmTmsComponents</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.Cloud.Mail.VCL.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.MyMonthPlanner.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.SMS.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.WebView.pas">
+            <Form>JanuaVCLWebView</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <None Include="ModelSupport_JanuaTmsControls\default.txaPackage"/>
         <None Include="ModelSupport_JanuaTmsControls\default.txvpck"/>
         <None Include="ModelSupport_JanuaTmsControls\Janua\default.txvpck"/>

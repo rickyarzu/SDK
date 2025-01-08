@@ -24,6 +24,7 @@ type
       Response: TWebResponse; var Handled: Boolean);
   private
     { Private declarations }
+    FdmPgTwilioWhatsApp: TdmPgTwilioWhatsApp;
   public
     { Public declarations }
   end;
@@ -89,20 +90,17 @@ begin
   lLines := TStringList.Create;
   try
     Request.ExtractContentFields(lLines);
-    lText := lLines.Text;
     lHook.SetFromStrings(lLines);
+     dmPgTwilioWhatsApp.WebHook(lLines.Text, lHook);
   finally
     lLines.Free;
   end;
-  qryTwilioLog.Append;
-  qryTwilioLogbody_received.AsString := lText;
-  qryTwilioLogaction.AsString := 'webhook';
-  qryTwilioLog.Post;
+
 end;
 
 procedure TJanuaWhatSappWebBrokerModule.WebModuleCreate(Sender: TObject);
 begin
-  qryTwilioLog.Open;
+
 end;
 
 end.

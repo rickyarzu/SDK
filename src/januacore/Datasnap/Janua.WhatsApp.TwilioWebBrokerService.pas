@@ -58,7 +58,6 @@ end;
 
 procedure TJanuaWhatsAppTwilioWebBrokerService.ServiceStart(Sender: TService; var Started: Boolean);
 begin
-  FServer.Port := TJanuaWebServer.GetPort(8084);
   FServer.StartServer;
 end;
 

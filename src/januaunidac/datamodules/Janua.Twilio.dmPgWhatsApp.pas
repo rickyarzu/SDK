@@ -25,12 +25,14 @@ type
     qryTwilioLogjson_content: TWideMemoField;
     qryTwilioLogbody_received: TWideMemoField;
     qryTwilioLogaction: TWideStringField;
+    procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
     procedure FallBack(const aFallback: string);
     procedure StatusCallback(const aText: string; aStatus: TTWilioStatus);
+    procedure WebHook(const aText: string; aHook: TTwilioWebHook);
   end;
 
 var
@@ -42,6 +44,12 @@ implementation
 {$R *.dfm}
 { TDataModule1 }
 
+procedure TdmPgTwilioWhatsApp.DataModuleCreate(Sender: TObject);
+begin
+  inherited;
+  qryTwilioLog.Open;
+end;
+
 procedure TdmPgTwilioWhatsApp.FallBack(const aFallback: string);
 begin
   qryTwilioLog.Append;
@@ -51,13 +59,20 @@ begin
 end;
 
 procedure TdmPgTwilioWhatsApp.StatusCallback(const aText: string; aStatus: TTWilioStatus);
-var
-  lStatus: TTWilioStatus;
 begin
   qryTwilioLog.Append;
   qryTwilioLogbody_received.AsString := aText;
   qryTwilioLogaction.AsString := 'status_callback';
   qryTwilioLogjson_content.AsString := aStatus.GetAsJson;
+  qryTwilioLog.Post;
+end;
+
+procedure TdmPgTwilioWhatsApp.WebHook(const aText: string; aHook: TTwilioWebHook);
+begin
+  qryTwilioLog.Append;
+  qryTwilioLogbody_received.AsString := aText;
+  qryTwilioLogaction.AsString := 'webhook';
+  qryTwilioLogjson_content.AsString := aHook.GetAsJson;
   qryTwilioLog.Post;
 end;
 

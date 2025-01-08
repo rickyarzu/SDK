@@ -1320,18 +1320,18 @@ begin
   var
   sNumMedia := aList.Values['ChannelStatusMessage'];
   NumMedia := IfThen(sNumMedia = '', '0', sNumMedia).ToInteger(); // =0
-MessageType:= aList.Values['MessageType'];
-ProfileName:= aList.Values['ProfileName'];
-SmsMessageSid:= aList.Values['SmsMessageSid'];
-var sNumSegments := aList.Values['NumSegments'];
-NumSegments:= IfThen(sNumMedia = '', '0', sNumMedia).ToInteger(); // =0
+  MessageType := aList.Values['MessageType'];
+  ProfileName := aList.Values['ProfileName'];
+  SmsMessageSid := aList.Values['SmsMessageSid'];
+  var
+  sNumSegments := aList.Values['NumSegments'];
+  NumSegments := IfThen(sNumSegments = '', '0', sNumSegments).ToInteger(); // =0
+  var
+  sReferralNumMedia := aList.Values['ReferralNumMedia'];
+  ReferralNumMedia := IfThen(sReferralNumMedia = '', '0', sReferralNumMedia).ToInteger(); // =0
+  WaId := aList.Values['WaId'];
+  Body := aList.Values['Body'];
 
-ReferralNumMedia:
-  integer; // =0
-WaId:
-  string; // =393409111351
-Body:
-  string; // =Ricevuto
 end;
 
 { TTwilioWebHook }

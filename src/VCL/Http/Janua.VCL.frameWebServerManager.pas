@@ -71,8 +71,8 @@ begin
   // here goes the AfterConstruction Code
   if Assigned(FOnCreate) then
     FOnCreate(Self);
-  if not Assigned(FWebBrokerClass) then
-    sedPort.Value := TJanuaWebBrokerServer.Port;
+  if not Assigned(FWebServer) then
+    sedPort.Value := FWebServer.Port;
 end;
 
 procedure TJanuaframeWebServerManager.BeforeDestruction;
@@ -99,8 +99,8 @@ end;
 
 procedure TJanuaframeWebServerManager.sedPortChange(Sender: TObject);
 begin
-  if Assigned(FWebBrokerClass) and (sedPort.Value <> FWebBrokerClass.Port) then
-    sedPort.Value := FWebBrokerClass.Port
+  if Assigned(FWebServer) and (sedPort.Value <> FWebServer.Port) then
+    sedPort.Value := FWebServer.Port
 end;
 
 procedure TJanuaframeWebServerManager.SetOnAfterStartServer(const Value: TNotifyEvent);
@@ -132,22 +132,27 @@ procedure TJanuaframeWebServerManager.SetWebBrokerClass(const Value: TJanuaWebBr
 begin
   FWebBrokerClass := Value;
   if Assigned(FWebBrokerClass) then
-    sedPort.Value := FWebBrokerClass.Port
+  begin
+    TJanuaWebServerFactory.WebServerClass := FWebBrokerClass;
+    FWebServer := TJanuaWebServerFactory.CreateWebServer(sedPort.ValueAsInt) as TJanuaWebBrokerServer;
+    sedPort.Value := FWebServer.Port;
+  end;
 end;
 
 procedure TJanuaframeWebServerManager.StartServer;
 begin
   if Assigned(OnBeforeStartServer) then
     OnBeforeStartServer(Self);
-  if Assigned(FWebBrokerClass) then
-  begin
-    FWebBrokerClass.WebModuleClass := FWebModuleClass;
-    TJanuaWebServerFactory.WebServerClass := FWebBrokerClass;
-  end;
+
+  Assert(Assigned(FWebBrokerClass), 'Web Broker Class not Assigned');
+  Assert(Assigned(FWebModuleClass), 'Web Module Class not Assigned');
+
+  FWebBrokerClass.WebModuleClass := FWebModuleClass;
+
   FUrl := Format('http://localhost:%d', [sedPort.ValueAsInt]);
-  FWebServer := TJanuaWebServerFactory.CreateWebServer as TJanuaWebBrokerServer;
   Assert(Assigned(FWebServer), 'WebServer Not Assigned');
   FWebServer.StartServer;
+
   if Assigned(OnAfterStartServer) then
     OnAfterStartServer(Self);
 end;

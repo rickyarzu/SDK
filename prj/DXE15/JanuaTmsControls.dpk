@@ -29,7 +29,7 @@
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl,
   TMSCloudPkgDXE15,
   JanuaVCLComponents,
@@ -37,7 +37,7 @@ rrequires
   TMSVCLUIPackPkgExDXE15,
   TMSWebGMapsPkg;
 
-ocontains
+contains
   Janua.Legacy.SelectPrinter in '..\..\src\JanuaLegacy\Janua.Legacy.SelectPrinter.pas',
   Janua.Legacy.ReadOnly in '..\..\src\JanuaLegacy\Janua.Legacy.ReadOnly.pas',
   Janua.Legacy.InputNumber in '..\..\src\JanuaLegacy\Janua.Legacy.InputNumber.pas',
@@ -77,4 +77,4 @@ ocontains
   Janua.TMS.SMS in '..\..\src\TMS\Janua.TMS.SMS.pas',
   Janua.TMS.WebView in '..\..\src\TMS\Janua.TMS.WebView.pas' {JanuaVCLWebView: TFrame};
 
-d.
+end.

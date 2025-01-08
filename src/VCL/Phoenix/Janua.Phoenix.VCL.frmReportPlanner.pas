@@ -243,7 +243,7 @@ begin
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields;
-Item: TPlannerItem);
+  Item: TPlannerItem);
 begin
   { The FieldsToItem event is called when records are read from the database
     and extra properties are set from database fields. With this code, any
@@ -260,7 +260,7 @@ begin
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.DBDaySource1ItemToFields(Sender: TObject; Fields: TFields;
-Item: TPlannerItem);
+  Item: TPlannerItem);
 begin
   { The ItemToFields event is called when items are written to the database
     and extra properties are stored in database fields. With this code, any
@@ -300,7 +300,7 @@ begin
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject;
-const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
+  const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
 var
   backgroundColor: TColor;
   FontColor: TColor;
@@ -315,29 +315,46 @@ begin
     if not FieldByName('APPUNTAMENTO_DATA').IsNull then
       backgroundColor := clWebBeige;
 
-    if (FieldByName('STATO').AsInteger < 0) then
-      FontColor := clRed;
-    if (FieldByName('STATO').AsInteger in [1, 6]) then
-    begin
-      FontColor := clBlue;
-      FontStyles := [fsBold];
-    end;
-    if (FieldByName('STATO').AsInteger = 4) then
-    begin
-      if FieldByName('APPUNTAMENTO_DATA').IsNull then
-        FontColor := clWebTomato
-      else
-      begin
-        FontColor := clBlue;
-        FontStyles := [fsBold];
-      end;
-    end;
-    if (FieldByName('STATO').AsInteger in [5, 6]) then
-      FontColor := clGreen;
+    var
+    iStato := FieldByName('STATO').AsInteger;
 
-    if (FieldByName('RITARDO').AsInteger < 0) and
-      (FieldByName('APPUNTAMENTO_DATA').IsNull or (FieldByName('APPUNTAMENTO_DATA').AsDateTime < Date)) then
+    if (iStato < 0) then
       FontColor := clRed;
+
+    case iStato of
+      0:
+        begin
+          if (FieldByName('RITARDO').AsInteger < 0) and
+            (FieldByName('APPUNTAMENTO_DATA').IsNull or (FieldByName('APPUNTAMENTO_DATA').AsDateTime < Date))
+          then
+            FontColor := clRed;
+        end;
+      1:
+        begin
+          FontColor := clBlue;
+          FontStyles := [fsBold];
+        end;
+      4:
+        begin
+          FontColor := clWebTomato;
+          FontStyles := [];
+        end;
+      5:
+        begin
+          FontColor := clWebTomato;
+          FontStyles := [fsBold];
+        end;
+      6:
+        begin
+          FontColor := clGreen;
+          FontStyles := [];
+        end;
+      7:
+        begin
+          FontColor := clGreen;
+          FontStyles := [fsBold];
+        end;
+    end;
 
     // if (FieldByName('AN_INVOICE').AsInteger  = 2)  then backgroundColor := clYellow;
     DrawField(Column.Field.DisplayText, Rect, Canvas, Column.Font, Column.Alignment,

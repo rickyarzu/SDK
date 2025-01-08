@@ -30261,7 +30261,10 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'SELECT'
       'COUNT(1) AS MESSAGES'
       'FROM'
-      'whatsapp_messages M WHERE M.state = 0 and in_out = 1')
+      
+        'whatsapp_numbers N JOIN whatsapp_messages M ON N.wanumber = M.wa' +
+        'number'
+      'WHERE M.state = 0 and in_out = 1')
     Left = 808
     Top = 8
     object qryMessageCountMESSAGES: TLargeintField

@@ -2732,40 +2732,31 @@ const
   blue = 3;
   white = 4;
 begin
+  // passaggio da stato da 0 ad 1 se è presente un appuntamento
   if (qryReportPlannerSTATO.AsInteger = 0) and not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
   begin
     qryReportPlannerSTATO.AsInteger := 1;
   end
-  else if qryReportPlannerSTATO.AsInteger = 4 then
+  // passaggio da stato da 1 ad 0 se non è presente un appuntamento
+  else if (qryReportPlannerSTATO.AsInteger = 1) and qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
   begin
-    {
-      if not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
-      begin
-      if not JMessageDlg('Rapportino non pronto, volete comunque prenotare appuntamento?') then
-      qryReportPlanner.Cancel;
-      end;
-    }
+    qryReportPlannerSTATO.AsInteger := 0;
   end
-  else if qryReportPlannerSTATO.AsInteger = 5 then
+  else if (qryReportPlannerSTATO.AsInteger = 4) and not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
   begin
-    if not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
-    begin
-      qryReportPlannerSTATO.AsInteger := 6;
-    end;
+    qryReportPlannerSTATO.AsInteger := 5;
   end
-  else if (qryReportPlannerSTATO.AsInteger = 6) then
+  else if (qryReportPlannerSTATO.AsInteger = 5) and qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
   begin
-    if qryReportPlannerAPPUNTAMENTO_DATA.IsNull or (qryReportPlannerAPPUNTAMENTO_DATA.Value = 0) then
-    begin
-      qryReportPlannerSTATO.AsInteger := 5;
-    end;
+    qryReportPlannerSTATO.AsInteger := 4;
   end
-  else if qryReportPlannerSTATO.AsInteger = 1 then
+  else if (qryReportPlannerSTATO.AsInteger = 6) and not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
   begin
-    if qryReportPlannerAPPUNTAMENTO_DATA.IsNull or (qryReportPlannerAPPUNTAMENTO_DATA.Value = 0) then
-    begin
-      qryReportPlannerSTATO.AsInteger := 0;
-    end;
+    qryReportPlannerSTATO.AsInteger := 7;
+  end
+  else if (qryReportPlannerSTATO.AsInteger = 7) and qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
+  begin
+    qryReportPlannerSTATO.AsInteger := 6;
   end;
 
   with DataSet do
@@ -2798,17 +2789,19 @@ begin
         4:
           begin
             Image := orange;
-            if vtReportPlannerAPPUNTAMENTO_DATA.IsNull then
-              sStato := 'In Lavorazione'
-            else
-              sStato := 'Lavor. Progr.';
+            sStato := 'In Lavorazione'
           end;
         5:
+          begin
+            Image := orange;
+            sStato := 'Lavor. Progr.';
+          end;
+        6:
           begin
             Image := green;
             sStato := 'Pronti da Rest.';
           end;
-        6:
+        7:
           begin
             Image := blue;
             sStato := 'Rest. Program.';
@@ -2817,12 +2810,14 @@ begin
 
       FieldByName('calcStato').AsString := sStato;
 
-      if not(qryReportPlannerAPPUNTAMENTO_DATA.IsNull or (qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime = 0.0))
+      {
+        if not(qryReportPlannerAPPUNTAMENTO_DATA.IsNull or (qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime = 0.0))
         and (qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime < Date) then
-      begin
+        begin
         Image := red;
         sStato := 'Ritardo';
-      end;
+        end;
+      }
 
       LoadImageFromImageList(Image);
 

@@ -841,8 +841,8 @@ inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
   object btnWhatsAppMessages: TAdvBadgeButton
     Left = 510
     Top = 72
-    Width = 146
-    Height = 50
+    Width = 137
+    Height = 25
     Caption = 'Messaggi'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -852,7 +852,7 @@ inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
     ImageIndex = 12
     ImageName = '013-alarm'
     ImageMargins.Left = 8
-    Images = dmVCLPhoenixPlannerController.SVGIconImageList48
+    Images = dmVCLPhoenixPlannerController.SVGIconImageList16
     ParentFont = False
     TabOrder = 6
     OnClick = btnWhatsAppMessagesClick

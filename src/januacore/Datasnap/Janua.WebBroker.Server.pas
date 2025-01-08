@@ -16,7 +16,7 @@ uses
 type
   TJanuaWebBrokerServer = class(TJanuaWebServer)
   strict protected
-    class var FWebModuleClass: TComponentClass;
+    FWebModuleClass: TComponentClass;
   private
     FServer: TIdHTTPWebBrokerBridge;
     FOnParseAuthentication: TIdHTTPParseAuthenticationEvent;
@@ -36,7 +36,7 @@ type
     procedure StopServer; override;
     procedure WriteStatus; override;
   public
-    class property WebModuleClass: TComponentClass read FWebModuleClass write FWebModuleClass;
+    property WebModuleClass: TComponentClass read FWebModuleClass write FWebModuleClass;
   end;
 
   TJanuaWebBrokerServerClass = class of TJanuaWebBrokerServer;
@@ -137,7 +137,7 @@ procedure TJanuaWebBrokerServer.StartServer(const AServer: TIdHTTPWebBrokerBridg
 begin
   if Assigned(AServer) and not AServer.Active then
   begin
-    AServer.DefaultPort := TJanuaWebBrokerServer.GetPort;
+    AServer.DefaultPort := GetPort;
     if CheckPort(AServer.DefaultPort) > 0 then
     begin
       LogProc('StartServer', Format(sStartingServer, [AServer.DefaultPort]), self);

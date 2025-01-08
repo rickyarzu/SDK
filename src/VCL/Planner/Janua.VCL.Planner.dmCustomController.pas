@@ -411,6 +411,7 @@ type
     { procedure GetGCalendarList; }
     function SendMSSWhatsAppMessage(const aMessage: string; aRecipient: string; const aTest: Boolean = false;
       aVariables: string = ''): Boolean;
+    function SendSimpleWhatsAppMessage(const aMessage: string; aRecipient: string): Boolean;
     procedure GetLiveCalendarList;
     procedure ConnectLiveCalendar;
     procedure ConnectGCalendar;
@@ -1604,7 +1605,9 @@ begin
   if cMessageType = jmtWhatsApp then
     lRecipient := 'whatsapp:' + lRecipient;
 
-  if aMessage = '' then
+  FJanuaAdvTwilio.contentSID := '';
+
+  if lSMS = '' then
   begin
     if aTest then
       FJanuaAdvTwilio.contentSID := FWhatsAppSettings.TestMessageID
@@ -1615,12 +1618,36 @@ begin
   FJanuaAdvTwilio.ContentVariables.Text := aVariables;
 
   Result := FJanuaAdvTwilio.SendSMS(lRecipient, lSMS);
-  (*
-    if Result then
-    ShowMessage('Messaggio inviato correttamente')
-    else
-    raise Exception.Create('Error sending Message' + sLineBreak + AdvTwilio.LastError);
-  *)
+end;
+
+function TdmVCLPlannerCustomController.SendSimpleWhatsAppMessage(const aMessage: string;
+aRecipient: string): Boolean;
+begin
+  FJanuaAdvTwilio.App.Key := FWhatsAppSettings.Key;
+  // 'AC221a150df22723daef8d097a7f76cfcf';
+  FJanuaAdvTwilio.App.Secret := FWhatsAppSettings.Secret;
+  // 'f3c90112efdccd931b81dea46f74f1da';
+  FJanuaAdvTwilio.App.Name := IfThen(cMessageType = jmtWhatsApp, 'whatsapp:', '') + FWhatsAppSettings.AppName;
+  // +39 351 353 5778
+  // '+15302036772';
+
+  var
+  lRecipient := aRecipient;
+
+  if cMessageType = jmtWhatsApp then
+    lRecipient := 'whatsapp:' + lRecipient;
+
+  FJanuaAdvTwilio.contentSID := '';
+
+  FJanuaAdvTwilio.ContentVariables.Text := '';
+
+  if aMessage = '' then
+    raise Exception.Create('SendSimpleWhatsAppMessage message without text');
+
+  if lRecipient = '' then
+    raise Exception.Create('SendSimpleWhatsAppMessage No valid Recipient provided');
+
+  Result := FJanuaAdvTwilio.SendSMS(lRecipient, aMessage);
 end;
 
 procedure TdmVCLPlannerCustomController.SendTestMessage(const aRecipients, aMessage: string);

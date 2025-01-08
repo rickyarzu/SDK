@@ -456,7 +456,8 @@ type
   private
     class var FWebServerClass: TJanuaWebServerClass;
   public
-    class function CreateWebServer: TJanuaWebServer;
+    class function CreateWebServer: TJanuaWebServer; overload;
+    class function CreateWebServer(const aPort: Integer): TJanuaWebServer; overload;
   public
     class property WebServerClass: TJanuaWebServerClass read FWebServerClass write FWebServerClass;
   end;
@@ -4234,6 +4235,13 @@ begin
   Result := nil;
   if Assigned(FWebServerClass) then
     Result := FWebServerClass.Create;
+end;
+
+class function TJanuaWebServerFactory.CreateWebServer(const aPort: Integer): TJanuaWebServer;
+begin
+  Result := nil;
+  if Assigned(FWebServerClass) then
+    Result := FWebServerClass.Create(aPort);
 end;
 
 initialization
