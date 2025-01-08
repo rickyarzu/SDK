@@ -31,11 +31,11 @@ package Spring.Extensions;
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl,
   Spring.Base;
 
-ocontains
+contains
   Spring.Cryptography.Base in '..\..\..\lib\spring4d\Source\Extensions\Cryptography\Spring.Cryptography.Base.pas',
   Spring.Cryptography.CRC in '..\..\..\lib\spring4d\Source\Extensions\Cryptography\Spring.Cryptography.CRC.pas',
   Spring.Cryptography.DES in '..\..\..\lib\spring4d\Source\Extensions\Cryptography\Spring.Cryptography.DES.pas',
@@ -47,4 +47,4 @@ ocontains
   Spring.Utils.WinApi in '..\..\..\lib\spring4d\Source\Extensions\Utils\Spring.Utils.WinApi.pas',
   Spring.Utils in '..\..\..\lib\spring4d\Source\Extensions\Utils\Spring.Utils.pas';
 
-d.
+end.

@@ -30,7 +30,7 @@ package dmvcframeworkDT;
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD ON}
 
-rrequires
+requires
   rtl,
   designide,
   ExpertsCreators,
@@ -40,7 +40,7 @@ rrequires
   dbrtl,
   dmvcframeworkRT;
 
-ocontains
+contains
   DMVC.Expert.CodeGen.NewControllerUnit in '..\..\..\lib\delphimvcframework\ideexpert\DMVC.Expert.CodeGen.NewControllerUnit.pas',
   DMVC.Expert.CodeGen.NewDMVCProject in '..\..\..\lib\delphimvcframework\ideexpert\DMVC.Expert.CodeGen.NewDMVCProject.pas',
   DMVC.Expert.CodeGen.NewProject in '..\..\..\lib\delphimvcframework\ideexpert\DMVC.Expert.CodeGen.NewProject.pas',
@@ -58,4 +58,4 @@ ocontains
   DMVC.Expert.Commands.Templates in '..\..\..\Lib\delphimvcframework\ideexpert\DMVC.Expert.Commands.Templates.pas',
   DMVC.Expert.CodeGen.Commands in '..\..\..\Lib\delphimvcframework\ideexpert\DMVC.Expert.CodeGen.Commands.pas';
 
-d.
+end.

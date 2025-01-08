@@ -30,13 +30,13 @@ package ipstudiowinclient;
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   ipstudiowin,
   dsnap;
 
-ocontains
+contains
   vcl.wwmidas in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwmidas.pas',
   vcl.wwclient in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwclient.pas',
   vcl.wwprovider in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwprovider.pas';
 
-d.
+end.

@@ -54,14 +54,14 @@
 {$LIBSUFFIX '270'}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl,
   vclx,
   vcl,
   vclie,
   vclimg;
 
-ocontains
+contains
   UWebOSMaps in '..\..\..\tmssoftware\TMS VCL WebOSMaps\UWebOSMaps.pas',
   UWebOSMapsBrowser in '..\..\..\tmssoftware\TMS VCL WebOSMaps\UWebOSMapsBrowser.pas',
   UWebOSMapsCommon in '..\..\..\tmssoftware\TMS VCL WebOSMaps\UWebOSMapsCommon.pas',
@@ -75,4 +75,4 @@ ocontains
   UWebOSMapsCommonFunctions in '..\..\..\tmssoftware\TMS VCL WebOSMaps\UWebOSMapsCommonFunctions.pas',
   UWebOSMapsIdoc in '..\..\..\tmssoftware\TMS VCL WebOSMaps\UWebOSMapsIdoc.pas';
 
-d.
+end.

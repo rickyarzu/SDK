@@ -30,7 +30,7 @@
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   vcl,
   vclx,
   vclimg,
@@ -50,7 +50,7 @@ rrequires
   gtFont,
   gtRtl;
 
-ocontains
+contains
   gtCstDocEng in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtCstDocEng.pas',
   gtDocConsts in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtDocConsts.pas',
   gtDocUtils in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtDocUtils.pas',
@@ -155,7 +155,7 @@ ocontains
   gtGDIPOBJ.old in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtGDIPOBJ.old.pas',
   gtGDIPUTIL.old in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtGDIPUTIL.old.pas',
   gtAdvGridXportIntf in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\TMS\gtAdvGridXportIntf.pas';
-
+{
   gtFRXportIntf in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\FR\gtFRXportIntf.pas',
 }
 end.

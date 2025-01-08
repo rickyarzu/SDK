@@ -29,16 +29,16 @@ package eMiniInvoice4D;
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD ON}
 
-rrequires
+requires
   rtl,
   xmlrtl,
   eInvoice4D;
 
-ocontains
+contains
   DForce.Mini.ei in '..\..\..\lib\FeInvoice4D\source\DForce.Mini.ei.pas',
   DForce.Mini.ei.Invoice in '..\..\..\lib\FeInvoice4D\source\DForce.Mini.ei.Invoice.pas',
   DForce.Mini.ei.Invoice.Interfaces in '..\..\..\lib\FeInvoice4D\source\DForce.Mini.ei.Invoice.Interfaces.pas',
   DForce.Mini.ei.Invoice.Factory in '..\..\..\lib\FeInvoice4D\source\DForce.Mini.ei.Invoice.Factory.pas';
 
-d.
+end.
 

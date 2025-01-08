@@ -135,6 +135,29 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECBaseClass.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECCipherBase.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECCipherFormats.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECCipherInterface.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECCipherModes.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECCiphers.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECCRC.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECData.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECDataCipher.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECDataHash.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECFormat.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECFormatBase.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECHash.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECHashAuthentication.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECHashBase.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECHashInterface.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECRandom.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECTypes.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECUtil.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiEncryptionCompendium\Source\DECUtilRawByteStringHelper.pas"/>
+        <DCCReference Include="..\..\..\Lib\DelphiEncryptionCompendium\Source\DECHashBitBase.pas"/>
+        <DCCReference Include="..\..\..\Lib\DelphiEncryptionCompendium\Source\DECCipherModesGCM.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -159,12 +182,9 @@
             <Platforms>
                 <Platform value="Android">False</Platform>
                 <Platform value="Android64">True</Platform>
-                <Platform value="iOSDevice32">False</Platform>
                 <Platform value="iOSDevice64">True</Platform>
                 <Platform value="iOSSimARM64">True</Platform>
-                <Platform value="iOSSimulator">False</Platform>
                 <Platform value="Linux64">True</Platform>
-                <Platform value="OSX32">False</Platform>
                 <Platform value="OSX64">True</Platform>
                 <Platform value="OSXARM64">True</Platform>
                 <Platform value="Win32">True</Platform>

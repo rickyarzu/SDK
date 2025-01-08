@@ -33,11 +33,11 @@
 {$DESIGNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl,
   gtDocEng;
 
-ocontains
+contains
   gtAdvGridExpReg in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\TMS\gtAdvGridExpReg.pas';
 
-d.
+end.

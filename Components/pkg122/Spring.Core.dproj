@@ -5,7 +5,7 @@
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <ProjectName Condition="'$(ProjectName)'==''">Spring.Core</ProjectName>
-        <TargetedPlatforms>1741953</TargetedPlatforms>
+        <TargetedPlatforms>1741955</TargetedPlatforms>
         <AppType>Package</AppType>
         <FrameworkType>None</FrameworkType>
         <ProjectVersion>20.2</ProjectVersion>
@@ -31,6 +31,11 @@
     </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
         <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
@@ -68,6 +73,13 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <Import Project="..\..\prj\DXE15\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE15\JanuaLibDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_E>false</DCC_E>
         <DCC_F>false</DCC_F>
@@ -85,6 +97,7 @@
         <VerInfo_Locale>1040</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+        <CfgDependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
@@ -104,6 +117,13 @@
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
@@ -131,12 +151,50 @@
     <PropertyGroup Condition="'$(Cfg_2_OSXARM64)'!=''">
         <BT_BuildType>Debug</BT_BuildType>
     </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+    </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="Spring.Base.dcp"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Services\Spring.Services.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.ActivatorExtension.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.AutoMockExtension.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.Builder.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.Common.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.ComponentActivator.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.Core.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.CreationContext.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.Extensions.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.Injection.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.LifetimeManager.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.Pool.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.ProxyFactory.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.Registration.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.Resolvers.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Container\Spring.Container.ResourceStrings.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Interception\Spring.Interception.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Interception\Spring.Interception.AbstractInvocation.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Interception\Spring.Interception.ClassProxy.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Interception\Spring.Interception.CustomProxy.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Interception\Spring.Interception.InterfaceProxy.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Interception\Spring.Interception.ResourceStrings.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Logging\Spring.Logging.Configuration.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Logging\Spring.Logging.Configuration.Builder.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Logging\Spring.Logging.Container.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Mocking\Spring.Mocking.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Mocking\Spring.Mocking.Core.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Mocking\Spring.Mocking.Interceptor.pas"/>
+        <DCCReference Include="..\..\..\lib\spring4d\Source\Core\Mocking\Spring.Mocking.Matching.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
+            <DependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Release">
             <Key>Cfg_1</Key>
@@ -155,20 +213,22 @@
                 <Source>
                     <Source Name="MainSource">Spring.Core.dpk</Source>
                 </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Platforms>
                 <Platform value="Android">False</Platform>
                 <Platform value="Android64">True</Platform>
-                <Platform value="iOSDevice32">False</Platform>
                 <Platform value="iOSDevice64">True</Platform>
                 <Platform value="iOSSimARM64">True</Platform>
-                <Platform value="iOSSimulator">False</Platform>
                 <Platform value="Linux64">True</Platform>
-                <Platform value="OSX32">False</Platform>
                 <Platform value="OSX64">True</Platform>
                 <Platform value="OSXARM64">True</Platform>
                 <Platform value="Win32">True</Platform>
-                <Platform value="Win64">False</Platform>
+                <Platform value="Win64">True</Platform>
                 <Platform value="Win64x">True</Platform>
             </Platforms>
         </BorlandProject>

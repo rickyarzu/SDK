@@ -31,14 +31,14 @@ package ipstudiowin;
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   VCL,
   VCLX,
   VCLDB,
   VCLACTNBAND,
   vclwinx;
 
-ocontains
+contains
   vcl.wwFixStyleForHiRes in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwFixStyleForHiRes.pas',
   vcl.wwmenuitem in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwmenuitem.pas',
   vcl.Wwcommon in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.Wwcommon.pas',
@@ -107,4 +107,4 @@ ocontains
   vcl.wwdatainspector in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.wwdatainspector.pas',
   vcl.Wwstacks in '..\..\..\Libraries\Woll2Woll InfoPower 4k Sydney\Source\Windows\vcl.Wwstacks.pas';
 
-d.
+end.

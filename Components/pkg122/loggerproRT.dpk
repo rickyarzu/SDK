@@ -31,13 +31,13 @@
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl,
   IndySystem,
   IndyProtocols,
   IndyCore;
 
-ocontains
+contains
   LoggerPro.ElasticSearchAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.ElasticSearchAppender.pas',
   LoggerPro.EMailAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.EMailAppender.pas',
   LoggerPro.FileAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.FileAppender.pas',
@@ -54,4 +54,4 @@ ocontains
   LoggerPro.Renderers in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.Renderers.pas',
   LoggerPro.ConsoleAppender in '..\..\..\lib\delphimvcframework\lib\loggerpro\LoggerPro.ConsoleAppender.pas';
 
-d.
+end.

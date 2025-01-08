@@ -30,10 +30,10 @@ package DECCipher;
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl;
 
-ocontains
+contains
   DECBaseClass in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECBaseClass.pas',
   DECCipherBase in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECCipherBase.pas',
   DECCipherFormats in '..\..\..\lib\DelphiEncryptionCompendium\Source\DECCipherFormats.pas',
@@ -57,4 +57,4 @@ ocontains
   DECHashBitBase in '..\..\..\Lib\DelphiEncryptionCompendium\Source\DECHashBitBase.pas',
   DECCipherModesGCM in '..\..\..\Lib\DelphiEncryptionCompendium\Source\DECCipherModesGCM.pas';
 
-d.
+end.

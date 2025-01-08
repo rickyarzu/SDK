@@ -30,11 +30,11 @@
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl,
   gtRtl;
 
-ocontains
+contains
   gtFilters3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\Filters\gtFilters3.pas';
 
-d.
+end.
