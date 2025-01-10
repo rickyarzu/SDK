@@ -33,7 +33,7 @@ type
     { Public declarations }
   published
     property Date: TDateTime read GetDate write SetDate;
-    property Caption: string read GetJCaption write SetJCaption;
+    property FormCaption: string read GetJCaption write SetJCaption;
     property InputText: string read GetInputText write SetInputText;
   end;
 

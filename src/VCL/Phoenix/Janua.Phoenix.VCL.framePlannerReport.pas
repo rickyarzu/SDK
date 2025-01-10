@@ -71,7 +71,6 @@ type
     btnNewMeeting: TJvSpeedButton;
     btnUndoMeeting: TJvSpeedButton;
     btnContract: TJvSpeedButton;
-    SearchBox1: TSearchBox;
     btnWhatsApp: TJvSpeedButton;
     PictureContainer1: TPictureContainer;
     Panel6: TPanel;
@@ -80,6 +79,7 @@ type
     DBText1: TDBText;
     DBText3: TDBText;
     scDBImage1: TscDBImage;
+    DBText4: TDBText;
     procedure ChangeFilter(Sender: TObject);
     procedure btnSearchClick(Sender: TObject);
     procedure DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);

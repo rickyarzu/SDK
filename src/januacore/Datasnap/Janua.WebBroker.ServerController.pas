@@ -1,23 +1,11 @@
-unit Janua.VCL.frameWebServerManager;
+unit Janua.WebBroker.ServerController;
 
 interface
 
-uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
-  // WebBroker
-  Janua.WebBroker.Server,
-  // VCL
-  VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.StdCtrls, VCL.Mask, scControls, VCL.AppEvnts;
+uses Janua.Core.Classes;
 
 type
-  TJanuaframeWebServerManager = class(TFrame)
-    btnStartServer: TButton;
-    btnStopServer: TButton;
-    sedPort: TscSpinEdit;
-    Label1: TLabel;
-    procedure btnStartServerClick(Sender: TObject);
-    procedure btnStopServerClick(Sender: TObject);
-    procedure sedPortChange(Sender: TObject);
+  TJanuaWebBrokerServerManager = class(TJanuaBindableComponent)
   private
     FWebModuleClass: TComponentClass;
     FWebServer: TJanuaWebBrokerServer;
@@ -33,6 +21,8 @@ type
     procedure SetOnBeforeStartServer(const Value: TNotifyEvent);
     procedure SetWebBrokerClass(const Value: TJanuaWebBrokerServerClass);
     procedure SetOnCreate(const Value: TNotifyEvent);
+    function GetPort: smallint;
+    procedure SetPort(const Value: smallint);
   protected
     procedure StartServer; virtual;
     procedure StopServer; virtual;
@@ -49,6 +39,7 @@ type
     property OnBeforeConnect: TNotifyEvent read FOnBeforeConnect write SetOnBeforeConnect;
     property OnAfterStartServer: TNotifyEvent read FOnAfterStartServer write SetOnAfterStartServer;
     property OnBeforeStartServer: TNotifyEvent read FOnBeforeStartServer write SetOnBeforeStartServer;
+    property Port: smallint read GetPort write SetPort;
   end;
 
 procedure Register;
@@ -62,20 +53,20 @@ uses Janua.Application.Framework;
 
 procedure Register;
 begin
-  RegisterComponents('Januaproject VCL System', [TJanuaframeWebServerManager]);
+  RegisterComponents('Januaproject', [TJanuaWebBrokerServerManager]);
 end;
 
-procedure TJanuaframeWebServerManager.AfterConstruction;
+{ TJanuaframeWebServerManager }
+
+procedure TJanuaWebBrokerServerManager.AfterConstruction;
 begin
   inherited;
   // here goes the AfterConstruction Code
   if Assigned(FOnCreate) then
     FOnCreate(Self);
-  if Assigned(FWebServer) then
-    sedPort.Value := FWebServer.Port;
 end;
 
-procedure TJanuaframeWebServerManager.BeforeDestruction;
+procedure TJanuaWebBrokerServerManager.BeforeDestruction;
 begin
   if Assigned(FWebServer) then
   begin
@@ -87,59 +78,54 @@ begin
   inherited;
 end;
 
-procedure TJanuaframeWebServerManager.btnStartServerClick(Sender: TObject);
+function TJanuaWebBrokerServerManager.GetPort: smallint;
 begin
-  StartServer
+
 end;
 
-procedure TJanuaframeWebServerManager.btnStopServerClick(Sender: TObject);
-begin
-  StopServer
-end;
-
-procedure TJanuaframeWebServerManager.sedPortChange(Sender: TObject);
-begin
-  if Assigned(FWebServer) and (sedPort.Value <> FWebServer.Port) then
-   FWebServer.Port := TRunc(sedPort.Value)
-end;
-
-procedure TJanuaframeWebServerManager.SetOnAfterStartServer(const Value: TNotifyEvent);
+procedure TJanuaWebBrokerServerManager.SetOnAfterStartServer(const Value: TNotifyEvent);
 begin
   FOnAfterStartServer := Value;
 end;
 
-procedure TJanuaframeWebServerManager.SetOnBeforeConnect(const Value: TNotifyEvent);
+procedure TJanuaWebBrokerServerManager.SetOnBeforeConnect(const Value: TNotifyEvent);
 begin
   FOnBeforeConnect := Value;
 end;
 
-procedure TJanuaframeWebServerManager.SetOnBeforeStartServer(const Value: TNotifyEvent);
+procedure TJanuaWebBrokerServerManager.SetOnBeforeStartServer(const Value: TNotifyEvent);
 begin
   FOnBeforeStartServer := Value;
 end;
 
-procedure TJanuaframeWebServerManager.SetOnCreate(const Value: TNotifyEvent);
+procedure TJanuaWebBrokerServerManager.SetOnCreate(const Value: TNotifyEvent);
 begin
   FOnCreate := Value;
 end;
 
-procedure TJanuaframeWebServerManager.SetUrl(const Value: string);
+procedure TJanuaWebBrokerServerManager.SetPort(const Value: smallint);
+begin
+  if Assigned(FWebServer) and (Value <> FWebServer.Port) then
+    FWebServer.Port := Value
+end;
+
+procedure TJanuaWebBrokerServerManager.SetUrl(const Value: string);
 begin
   FUrl := Value;
 end;
 
-procedure TJanuaframeWebServerManager.SetWebBrokerClass(const Value: TJanuaWebBrokerServerClass);
+procedure TJanuaWebBrokerServerManager.SetWebBrokerClass(const Value: TJanuaWebBrokerServerClass);
 begin
   FWebBrokerClass := Value;
   if Assigned(FWebBrokerClass) then
   begin
     TJanuaWebServerFactory.WebServerClass := FWebBrokerClass;
-    FWebServer := TJanuaWebServerFactory.CreateWebServer(sedPort.ValueAsInt) as TJanuaWebBrokerServer;
+    FWebServer := TJanuaWebServerFactory.CreateWebServer(FPort) as TJanuaWebBrokerServer;
     sedPort.Value := FWebServer.Port;
   end;
 end;
 
-procedure TJanuaframeWebServerManager.StartServer;
+procedure TJanuaWebBrokerServerManager.StartServer;
 begin
   if Assigned(OnBeforeStartServer) then
     OnBeforeStartServer(Self);
@@ -150,7 +136,7 @@ begin
   FWebServer.WebModuleClass := FWebModuleClass;
 
   // WebModule Class non è più una 'Class Property ma una proprietà dell'istanza della classe';
-  //FWebBrokerClass.WebModuleClass := FWebModuleClass;
+  // FWebBrokerClass.WebModuleClass := FWebModuleClass;
 
   FUrl := Format('http://localhost:%d', [sedPort.ValueAsInt]);
   Assert(Assigned(FWebServer), 'WebServer Not Assigned');
@@ -160,7 +146,7 @@ begin
     OnAfterStartServer(Self);
 end;
 
-procedure TJanuaframeWebServerManager.StopServer;
+procedure TJanuaWebBrokerServerManager.StopServer;
 begin
   if Assigned(FWebServer) then
     FWebServer.StopServer;

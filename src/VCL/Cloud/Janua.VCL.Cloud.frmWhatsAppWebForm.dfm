@@ -2,8 +2,8 @@ object frmVCLWebBrokerWhatsApp: TfrmVCLWebBrokerWhatsApp
   Left = 271
   Top = 114
   Caption = 'WhatsApp Web Form'
-  ClientHeight = 194
-  ClientWidth = 389
+  ClientHeight = 165
+  ClientWidth = 531
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,51 +12,77 @@ object frmVCLWebBrokerWhatsApp: TfrmVCLWebBrokerWhatsApp
   Font.Style = []
   OnCreate = FormCreate
   TextHeight = 13
-  object Label1: TLabel
-    Left = 24
-    Top = 48
-    Width = 20
-    Height = 13
-    Caption = 'Port'
-  end
-  object ButtonStart: TButton
-    Left = 24
-    Top = 8
-    Width = 75
-    Height = 25
-    Caption = 'Start'
+  object grpLegacy: TGroupBox
+    Left = 8
+    Top = 96
+    Width = 515
+    Height = 57
+    Caption = 'Legacy Statements'
     TabOrder = 0
-    OnClick = ButtonStartClick
+    object Label1: TLabel
+      Left = 192
+      Top = 24
+      Width = 20
+      Height = 13
+      Caption = 'Port'
+    end
+    object ButtonStart: TButton
+      Left = 16
+      Top = 21
+      Width = 75
+      Height = 25
+      Caption = 'Start'
+      TabOrder = 0
+      OnClick = ButtonStartClick
+    end
+    object ButtonStop: TButton
+      Left = 97
+      Top = 21
+      Width = 75
+      Height = 25
+      Caption = 'Stop'
+      TabOrder = 1
+      OnClick = ButtonStopClick
+    end
+    object EditPort: TEdit
+      Left = 232
+      Top = 21
+      Width = 121
+      Height = 21
+      TabOrder = 2
+      Text = '8180'
+    end
+    object ButtonOpenBrowser: TButton
+      Left = 376
+      Top = 21
+      Width = 107
+      Height = 25
+      Caption = 'Open Browser'
+      TabOrder = 3
+      OnClick = ButtonOpenBrowserClick
+    end
   end
-  object ButtonStop: TButton
-    Left = 105
-    Top = 8
-    Width = 75
-    Height = 25
-    Caption = 'Stop'
+  object grpWebBrokerStart: TGroupBox
+    Left = 8
+    Top = 6
+    Width = 515
+    Height = 59
+    Caption = 'Web Broker Server Manager'
     TabOrder = 1
-    OnClick = ButtonStopClick
-  end
-  object EditPort: TEdit
-    Left = 24
-    Top = 67
-    Width = 121
-    Height = 21
-    TabOrder = 2
-    Text = '8180'
-  end
-  object ButtonOpenBrowser: TButton
-    Left = 24
-    Top = 112
-    Width = 107
-    Height = 25
-    Caption = 'Open Browser'
-    TabOrder = 3
-    OnClick = ButtonOpenBrowserClick
+    object JanuaframeWebServerManager1: TJanuaframeWebServerManager
+      AlignWithMargins = True
+      Left = 5
+      Top = 18
+      Width = 505
+      Height = 36
+      Align = alClient
+      TabOrder = 0
+      OnBeforeStartServer = JanuaframeWebServerManager1BeforeStartServer
+    end
   end
   object ApplicationEvents1: TApplicationEvents
     OnIdle = ApplicationEvents1Idle
-    Left = 288
-    Top = 24
+    Left = 360
+    Top = 112
   end
 end

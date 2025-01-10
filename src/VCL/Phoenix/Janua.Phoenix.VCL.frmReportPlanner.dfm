@@ -21,7 +21,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     Top = 0
     Width = 1448
     Height = 1001
-    ActivePage = tabTicketsList
+    ActivePage = tabGoogleCalendarReport
     Align = alClient
     TabOrder = 0
     object tabTicketsList: TTabSheet
@@ -511,6 +511,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             Height = 941
             Align = alClient
             TabOrder = 0
+            ExplicitLeft = -2
             ExplicitWidth = 660
             ExplicitHeight = 941
             inherited lbCap: TLabel
@@ -529,6 +530,12 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
               Caption = 'Filiale'
               ExplicitTop = 52
               ExplicitWidth = 30
+            end
+            inherited DBText4: TDBText
+              Top = 70
+              Width = 488
+              ExplicitTop = 70
+              ExplicitWidth = 488
             end
             inherited lkpCAP: TJvDBLookupCombo
               Top = 47
@@ -766,10 +773,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             inherited ckbFilterDate: TCheckBox
               Top = 2
               ExplicitTop = 2
-            end
-            inherited SearchBox1: TSearchBox
-              Top = 71
-              ExplicitTop = 71
             end
             inherited WATimer: TTimer
               Interval = 60000

@@ -27,6 +27,21 @@ inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
     Height = 15
     Caption = 'Cliente - Filiale'
   end
+  object DBText4: TDBText
+    Left = 16
+    Top = 102
+    Width = 416
+    Height = 17
+    DataField = 'DESCRIZIONE_SCHEDA'
+    DataSource = dmVCLPhoenixPlannerController.dsReportsPlanner
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clMaroon
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    StyleElements = [seClient, seBorder]
+  end
   object lkpCAP: TJvDBLookupCombo
     Left = 438
     Top = 72
@@ -878,14 +893,6 @@ inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
     Caption = 'Filtra Data'
     TabOrder = 8
     OnClick = ckbFilterDateClick
-  end
-  object SearchBox1: TSearchBox
-    Left = 9
-    Top = 100
-    Width = 495
-    Height = 23
-    TabOrder = 9
-    Text = 'SearchBox1'
   end
   object dsCustomers: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryCustomers

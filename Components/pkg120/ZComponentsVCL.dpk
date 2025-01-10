@@ -159,7 +159,8 @@ contains
   ZDlgInputPeriodo in '..\..\..\Libraries\ZPhoenix\ZDlgInputPeriodo.pas' {ZDLG_INTERVALLO_DATE},
   ZDlgInputPeriodoDataOra in '..\..\..\Libraries\ZPhoenix\ZDlgInputPeriodoDataOra.pas' {ZDLG_INTERVALLO_DATETIME},
   ZFIBNodoGenericoInterfacce in '..\..\..\Libraries\ZPhoenix\VelocizzazioneDBase\ZFIBNodoGenericoInterfacce.pas',
-  Zipmaster19 in '..\..\..\libraries\ZPhoenix\Zipmaster19.pas';
+  Zipmaster19 in '..\..\..\libraries\ZPhoenix\Zipmaster19.pas',
+  ZFIBUniDACNodoGenerico2 in '..\..\..\Libraries\ZPhoenix\ZFIBUniDACNodoGenerico2.pas';
 
 end.
 

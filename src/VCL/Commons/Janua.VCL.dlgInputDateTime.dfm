@@ -1,17 +1,14 @@
-inherited dlgTMSInputDate: TdlgTMSInputDate
-  BorderIcons = [biMinimize, biMaximize]
+inherited dlgVCLInputDateTime: TdlgVCLInputDateTime
   BorderStyle = bsDialog
-  Caption = 'Inserire numero'
-  ClientHeight = 129
+  Caption = 'Inserisci Data/Ora'
+  ClientHeight = 121
   ClientWidth = 481
-  Color = clWhite
-  Font.Color = clBlack
-  Font.Height = -16
+  Font.Height = -12
   Position = poScreenCenter
   StyleElements = [seFont, seClient, seBorder]
   ExplicitWidth = 497
-  ExplicitHeight = 168
-  TextHeight = 21
+  ExplicitHeight = 160
+  TextHeight = 15
   object SVGIconImage1: TSVGIconImage [0]
     Left = 8
     Top = 16
@@ -24,9 +21,9 @@ inherited dlgTMSInputDate: TdlgTMSInputDate
     Proportional = False
   end
   object Label1: TLabel [1]
-    Left = 69
+    Left = 79
     Top = 32
-    Width = 253
+    Width = 243
     Height = 27
     AutoSize = False
     Caption = 'Label1'
@@ -39,14 +36,14 @@ inherited dlgTMSInputDate: TdlgTMSInputDate
     WordWrap = True
   end
   inherited StatusBar: TStatusBar
-    Top = 110
+    Top = 102
     Width = 481
-    ExplicitTop = 110
-    ExplicitWidth = 481
+    ExplicitTop = 86
+    ExplicitWidth = 419
   end
   object btnOk: TButton
-    Left = 318
-    Top = 97
+    Left = 319
+    Top = 73
     Width = 67
     Height = 24
     Caption = 'OK'
@@ -57,12 +54,12 @@ inherited dlgTMSInputDate: TdlgTMSInputDate
     Font.Style = [fsBold]
     ModalResult = 1
     ParentFont = False
-    TabOrder = 0
+    TabOrder = 1
     OnClick = btnOkClick
   end
   object AdvGlowButton2: TButton
-    Left = 398
-    Top = 97
+    Left = 406
+    Top = 73
     Width = 67
     Height = 24
     Caption = 'Annulla'
@@ -73,16 +70,17 @@ inherited dlgTMSInputDate: TdlgTMSInputDate
     Font.Style = [fsBold]
     ModalResult = 2
     ParentFont = False
-    TabOrder = 1
-  end
-  object PlannerMaskDatePicker1: TDateTimePicker
-    Left = 342
-    Top = 32
-    Width = 123
-    Height = 29
-    Date = 44020.000000000000000000
-    Time = 0.622337326385604700
     TabOrder = 2
-    OnKeyPress = PlannerMaskDatePicker1KeyPress
+    OnClick = AdvGlowButton1Click
+  end
+  object DateTimePicker1: TDateTimePicker
+    Left = 328
+    Top = 32
+    Width = 145
+    Height = 23
+    Date = 45665.000000000000000000
+    Time = 0.518597881942696400
+    Kind = dtkDateTime
+    TabOrder = 3
   end
 end

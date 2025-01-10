@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Classes, Vcl.Forms, Vcl.Controls, Vcl.Mask,
   AdvEdit,
   AdvMEdBtn, PlannerMaskDatePicker, Vcl.StdCtrls, AdvGlowButton, AdvSpin, Vcl.Dialogs, Vcl.Graphics,
-  uJanuaVCLForm, Janua.Controls.Dialogs.Intf;
+  uJanuaVCLForm, Janua.Controls.Dialogs.Intf, Vcl.ComCtrls;
 
 type
   TdlgTMSInputDate = class(TJanuaVCLFormModel, IDlgInputDateForm)
@@ -32,7 +32,7 @@ type
     { Public declarations }
   published
     property Date: TDateTime read GetDate write SetDate;
-    property Caption: string read GetJCaption write SetJCaption;
+    property FormCaption: string read GetJCaption write SetJCaption;
     property InputText: string read GetInputText write SetInputText;
   end;
 

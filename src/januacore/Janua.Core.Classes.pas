@@ -525,9 +525,9 @@ type
     procedure SetNameJ(const Value: TComponentName);
     function JanuaGetComponent: TComponent;
     procedure JanuaSetComponent(const Value: TComponent);
-    /// <summary> Component to be connected to object properties or Fields </summary>
   public
     property Name: TComponentName read GetNameJ write SetNameJ;
+    /// <summary> Component to be connected to object properties or Fields </summary>
     property Component: TComponent read JanuaGetComponent write JanuaSetComponent;
   end;
 

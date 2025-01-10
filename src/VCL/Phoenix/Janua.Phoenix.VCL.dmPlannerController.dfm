@@ -29835,6 +29835,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     SQL.Strings = (
       'select   '
       's.chiave, '
+      's.ragione_sociale, '
       
         'REPLACE( REPLACE(coalesce(trim(S.cellulare), S.telefono), '#39'/'#39', '#39 +
         #39'), '#39'-'#39', '#39#39')  as telefono  ,  coalesce(coalesce(S.cellulare, s.t' +
@@ -29942,6 +29943,10 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     end
     object qryCellulariStatinoWANUMBER: TWideStringField
       FieldName = 'WANUMBER'
+    end
+    object qryCellulariStatinoRAGIONE_SOCIALE: TWideStringField
+      FieldName = 'RAGIONE_SOCIALE'
+      Size = 255
     end
   end
   object qryElencoEventiWhatsApp: TUniQuery
@@ -30376,9 +30381,10 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
     Top = 640
     ParamData = <
       item
-        DataType = ftUnknown
+        DataType = ftString
         Name = 'wa_id'
-        Value = nil
+        ParamType = ptInput
+        Value = 'MMa002aff12253868c192e4dcfcc26529a'
       end>
     object qryLkpMessageStatusWA_ID: TWideStringField
       FieldName = 'WA_ID'

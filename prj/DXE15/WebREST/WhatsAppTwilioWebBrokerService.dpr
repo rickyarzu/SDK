@@ -38,7 +38,5 @@ begin
   TJanuaWhatsAppWebBrokerUniDACApplication.ApplicationSetup('whatsapp.januservers.com');
 
   Application.CreateForm(TJanuaWhatsAppTwilioWebBrokerService, JanuaWhatsAppTwilioWebBrokerService);
-  Application.CreateForm(TdmPgTwilioWhatsApp, dmPgTwilioWhatsApp);
-  Application.CreateForm(TJanuaCoreDataModule, JanuaCoreDataModule);
   Application.Run;
 end.
