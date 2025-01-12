@@ -188,7 +188,7 @@
             <Form>dmPhoenixIBModel</Form>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\..\Phoenix\Phoenix\SW\PhoenixMain\Globale.pas"/>
+        <DCCReference Include="..\..\..\src\VCL\Phoenix\Janua.Phoenix.Globale.pas"/>
         <DCCReference Include="..\VCL\uPhoenixBackgroundServiceConf.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

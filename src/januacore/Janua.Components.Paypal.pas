@@ -289,23 +289,31 @@ end;
 
 function TJanuaNetHttpPaypalEngine.CreatePayPalOrder(accessToken: string; aPayLoad: TJSONObject): TJSONObject;
 begin
-
+  Result := TJSONObject.Create;
+  { TODO : Add a Create PayPal Order }
+  raise Exception.Create('CreatePayPalOrder not implemented yet');
 end;
 
 function TJanuaNetHttpPaypalEngine.CreatePayPalPayout(accessToken: string;
   payoutItems: TArray<TPayPalPayoutItem>): TJSONObject;
 begin
-
+  Result := TJSONObject.Create;
+  { TODO : Add a Create Create PayPal Payout }
+  raise Exception.Create('CreatePayPalPayout not implemented yet');
 end;
 
 function TJanuaNetHttpPaypalEngine.GetPayPalAccessToken(const aClientId, aSecret: string): string;
 begin
-
+  Result := '';
+  { TODO : Add a Create GetPayPal Access Token }
+  raise Exception.Create('GetPayPalAccessToken not implemented yet');
 end;
 
 function TJanuaNetHttpPaypalEngine.GetPayPalUserInfo(accessToken: string): TJSONObject;
 begin
-
+  Result := TJSONObject.Create;
+  { TODO : Add a Create Create PayPal Payout }
+  raise Exception.Create('Get PayPal User Info not implemented yet');
 end;
 
 { TJanuaRESTPaypalEngine }

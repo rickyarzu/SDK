@@ -15,6 +15,7 @@ Type
     FLogProc: TMessageLogProc;
     FServerName: string;
     FPort: Integer;
+    procedure SetServerName(const Value: string);
   protected
     /// <summary> GetIsActive va impostata nella classe figlia in quanto connessa al WebServer sottostante </summary>
     function GetIsActive: Boolean; virtual;
@@ -35,6 +36,7 @@ Type
     property IsActive: Boolean read GetIsActive write SetIsActive;
     property LogProc: TMessageLogProc read FLogProc write SetLogProc;
     property Port: Integer read GetPort write SetPort;
+    property ServerName: string read FServerName write SetServerName;
   end;
 
   TJanuaWebServerClass = class of TJanuaWebServer;
@@ -73,7 +75,7 @@ begin
   lLogMessage := 'Default port: ' + FPort.ToString;
   if TJanuaApplication.ApplicationType in [jatConsoleSrv] then
     Writeln(lLogMessage);
-  TJanuaLogger.LogMessage('GetPort', lLogMessage, nil);
+  InternalLogProc('GetPort', lLogMessage, nil);
 end;
 
 function TJanuaWebServer.GetPort: Integer;
@@ -101,6 +103,15 @@ begin
   begin
     FPort := Value;
     TJanuacoreOS.WriteParam(FServerName, 'Port', FPort);
+  end;
+end;
+
+procedure TJanuaWebServer.SetServerName(const Value: string);
+begin
+  if FServerName <> Value then
+  begin
+    FPort := TJanuacoreOS.ReadParam(FServerName, 'Port', FPort);
+    FServerName := Value;
   end;
 end;
 

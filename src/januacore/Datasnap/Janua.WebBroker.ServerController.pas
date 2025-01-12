@@ -2,30 +2,30 @@ unit Janua.WebBroker.ServerController;
 
 interface
 
-uses Janua.Core.Classes;
+uses System.Classes, System.SysUtils, Janua.WebBroker.Server, Janua.Core.Classes, Janua.Bindings.Intf;
 
 type
-  TJanuaWebBrokerServerManager = class(TJanuaBindableComponent)
+  TJanuaWebBrokerServerManager = class(TJanuaBindableComponent, IJanuaBindable)
   private
     FWebModuleClass: TComponentClass;
     FWebServer: TJanuaWebBrokerServer;
+    FPort: Smallint;
     FUrl: string;
     FOnBeforeConnect: TNotifyEvent;
     FOnAfterStartServer: TNotifyEvent;
     FOnBeforeStartServer: TNotifyEvent;
     FWebBrokerClass: TJanuaWebBrokerServerClass;
     FOnCreate: TNotifyEvent;
+    FServerName: string;
     procedure SetUrl(const Value: string);
     procedure SetOnBeforeConnect(const Value: TNotifyEvent);
     procedure SetOnAfterStartServer(const Value: TNotifyEvent);
     procedure SetOnBeforeStartServer(const Value: TNotifyEvent);
     procedure SetWebBrokerClass(const Value: TJanuaWebBrokerServerClass);
     procedure SetOnCreate(const Value: TNotifyEvent);
-    function GetPort: smallint;
-    procedure SetPort(const Value: smallint);
-  protected
-    procedure StartServer; virtual;
-    procedure StopServer; virtual;
+    function GetPort: Smallint;
+    procedure SetPort(const Value: Smallint);
+    procedure SetServerName(const Value: string);
   public
     { Public declarations }
     property WebModuleClass: TComponentClass read FWebModuleClass write FWebModuleClass;
@@ -34,12 +34,15 @@ type
   public
     procedure AfterConstruction; override;
     procedure BeforeDestruction; override;
+    procedure StartServer; virtual;
+    procedure StopServer; virtual;
   published
     property OnCreate: TNotifyEvent read FOnCreate write SetOnCreate;
     property OnBeforeConnect: TNotifyEvent read FOnBeforeConnect write SetOnBeforeConnect;
     property OnAfterStartServer: TNotifyEvent read FOnAfterStartServer write SetOnAfterStartServer;
     property OnBeforeStartServer: TNotifyEvent read FOnBeforeStartServer write SetOnBeforeStartServer;
-    property Port: smallint read GetPort write SetPort;
+    property Port: Smallint read GetPort write SetPort;
+    property ServerName: string read FServerName write SetServerName;
   end;
 
 procedure Register;
@@ -48,12 +51,9 @@ implementation
 
 uses Janua.Application.Framework;
 
-{$R *.dfm}
-{ TframeWebBrokerStarter }
-
 procedure Register;
 begin
-  RegisterComponents('Januaproject', [TJanuaWebBrokerServerManager]);
+  RegisterComponents('Janua Remoting', [TJanuaWebBrokerServerManager]);
 end;
 
 { TJanuaframeWebServerManager }
@@ -78,9 +78,9 @@ begin
   inherited;
 end;
 
-function TJanuaWebBrokerServerManager.GetPort: smallint;
+function TJanuaWebBrokerServerManager.GetPort: Smallint;
 begin
-
+  Result := FPort;
 end;
 
 procedure TJanuaWebBrokerServerManager.SetOnAfterStartServer(const Value: TNotifyEvent);
@@ -103,10 +103,27 @@ begin
   FOnCreate := Value;
 end;
 
-procedure TJanuaWebBrokerServerManager.SetPort(const Value: smallint);
+procedure TJanuaWebBrokerServerManager.SetPort(const Value: Smallint);
 begin
-  if Assigned(FWebServer) and (Value <> FWebServer.Port) then
-    FWebServer.Port := Value
+  if FPort <> Value then
+  begin
+    FPort := Value;
+    if Assigned(FWebServer) and (FPort <> FWebServer.Port) then
+      FWebServer.Port := FPort;
+    Notify('Port');
+  end;
+end;
+
+procedure TJanuaWebBrokerServerManager.SetServerName(const Value: string);
+begin
+  if FServerName <> Value then
+  begin
+    FServerName := Value;
+    Notify('ServerName');
+  end;
+
+  if Assigned(FWebServer) then
+    FWebServer.ServerName := FServerName;
 end;
 
 procedure TJanuaWebBrokerServerManager.SetUrl(const Value: string);
@@ -121,7 +138,8 @@ begin
   begin
     TJanuaWebServerFactory.WebServerClass := FWebBrokerClass;
     FWebServer := TJanuaWebServerFactory.CreateWebServer(FPort) as TJanuaWebBrokerServer;
-    sedPort.Value := FWebServer.Port;
+    FWebServer.ServerName := FServerName;
+    FPort := FWebServer.Port;
   end;
 end;
 
@@ -138,7 +156,7 @@ begin
   // WebModule Class non è più una 'Class Property ma una proprietà dell'istanza della classe';
   // FWebBrokerClass.WebModuleClass := FWebModuleClass;
 
-  FUrl := Format('http://localhost:%d', [sedPort.ValueAsInt]);
+  FUrl := Format('http://localhost:%d', [FPort]);
   Assert(Assigned(FWebServer), 'WebServer Not Assigned');
   FWebServer.StartServer;
 

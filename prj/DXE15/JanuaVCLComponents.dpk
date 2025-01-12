@@ -75,8 +75,7 @@ contains
   Janua.VCL.Error in '..\..\src\VCL\Commons\Janua.VCL.Error.pas',
   Janua.Legacy.SplashDialog in '..\..\src\JanuaLegacy\Janua.Legacy.SplashDialog.pas',
   Janua.VCL.Register in '..\..\src\VCL\Janua.VCL.Register.pas',
-  Janua.VCL.frameCRDBGrid in '..\..\src\VCL\Commons\Janua.VCL.frameCRDBGrid.pas' {frameVCLCRDBGrid: TFrame},
-  Janua.VCL.frameWebServerManager in '..\..\src\VCL\Http\Janua.VCL.frameWebServerManager.pas' {JanuaframeWebServerManager: TFrame};
+  Janua.VCL.frameCRDBGrid in '..\..\src\VCL\Commons\Janua.VCL.frameCRDBGrid.pas' {frameVCLCRDBGrid: TFrame};
 
 {
   VCL,

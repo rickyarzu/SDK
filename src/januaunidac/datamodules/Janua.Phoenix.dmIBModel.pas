@@ -20,7 +20,7 @@ var
 
 implementation
 
-uses Janua.Application.Framework, Globale;
+uses Janua.Application.Framework, Janua.Phoenix.Globale;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 

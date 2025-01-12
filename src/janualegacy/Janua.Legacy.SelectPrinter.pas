@@ -158,39 +158,14 @@ begin
 end;
 
 function TJanuaPrinter.GetDefaultPrinter: string;
-var
-  pDevice: pChar;
-  pDriver: pChar;
-  pPort: pChar;
-  hDMode: THandle;
 begin
-  GetMem(pDevice, cchDeviceName);
-  GetMem(pDriver, MAX_PATH);
-  GetMem(pPort, MAX_PATH);
   try
-    try
-      Printer.GetPrinter(pDevice, pDriver, pPort, hDMode);
-      if lStrLen(pDriver) = 0 then
-      begin
-        GetProfileString('Devices', pDevice, '', pDriver, MAX_PATH);
-        pDriver[pos(',', pDriver) - 1] := #0;
-      end;
-      if lStrLen(pPort) = 0 then
-      begin
-        GetProfileString('Devices', pDevice, '', pPort, MAX_PATH);
-        lStrCpy(pPort, @pPort[lStrLen(pPort) + 2]);
-      end;
-      // StrCat(pDevice, ',');
-      FDevice := StrPas(pDevice);
-      FDriver := StrPas(pDriver);
-      FPort := StrPas(pPort);
-      // StrCat(pDevice, ',');
-      Result := StrPas(pDevice);
-    finally
-      FreeMem(pDevice, cchDeviceName);
-      FreeMem(pDriver, MAX_PATH);
-      FreeMem(pPort, MAX_PATH);
-    end;
+    // Set PrinterIndex to -1 to ensure it points to the default printer
+    Printer.PrinterIndex := -1;
+
+    // Get the name of the default printer
+    Result := Printer.Printers[Printer.PrinterIndex];
+
   except
     on e: exception do
     begin
@@ -211,50 +186,28 @@ begin
 end;
 
 procedure TJanuaPrinter.SetDefaultPrinter1(NewDefPrinter: string);
-var
-  ResStr: array [0 .. 255] of Char;
 begin
-  StrPCopy(ResStr, NewDefPrinter);
-  WriteProfileString('windows', 'device', ResStr);
-  StrCopy(ResStr, 'windows');
-  SendMessage(HWND_BROADCAST, WM_WININICHANGE, 0, Longint(@ResStr));
+  var
+  PrinterIndex := Printer.Printers.IndexOf(NewDefPrinter);
+
+  if PrinterIndex <> -1 then
+  begin
+    // Set the selected printer as the default for the application
+    Printer.PrinterIndex := PrinterIndex;
+  end;
 end;
 
 procedure TJanuaPrinter.SetDefaultPrinter2(PrinterName: string);
-var
-  i: integer;
-  Device: pChar;
-  Driver: pChar;
-  Port: pChar;
-  HdeviceMode: THandle;
-  aPrinter: TPrinter;
 begin
-  Printer.PrinterIndex := -1;
-  GetMem(Device, 255);
-  GetMem(Driver, 255);
-  GetMem(Port, 255);
-  aPrinter := TPrinter.Create;
-  try
-    for i := 0 to Printer.Printers.Count - 1 do
-    begin
-      if Printer.Printers[i] = PrinterName then
-      begin
-        aPrinter.PrinterIndex := i;
-        aPrinter.GetPrinter(Device, Driver, Port, HdeviceMode);
-        StrCat(Device, ',');
-        StrCat(Device, Driver);
-        StrCat(Device, Port);
-        WriteProfileString('windows', 'device', Device);
-        StrCopy(Device, 'windows');
-        SendMessage(HWND_BROADCAST, WM_WININICHANGE, 0, Longint(@Device));
-      end;
-    end;
-  finally
-    aPrinter.Free;
+
+  var
+  PrinterIndex := Printer.Printers.IndexOf(PrinterName);
+
+  if PrinterIndex <> -1 then
+  begin
+    // Set the selected printer as the default for the application
+    Printer.PrinterIndex := PrinterIndex;
   end;
-  FreeMem(Device, 255);
-  FreeMem(Driver, 255);
-  FreeMem(Port, 255);
 end;
 
 procedure TJanuaPrinter.SetDevice(const Value: string);
@@ -283,32 +236,8 @@ begin
 end;
 
 procedure TJanuaPrinter.Activate;
-var
-  pDevice: pChar;
-  pDriver: pChar;
-  pPort: pChar;
-  hDMode: THandle;
 begin
-  GetMem(pDevice, cchDeviceName);
-  GetMem(pDriver, MAX_PATH);
-  GetMem(pPort, MAX_PATH);
-  Printer.GetPrinter(pDevice, pDriver, pPort, hDMode);
-  if lStrLen(pDriver) = 0 then
-  begin
-    GetProfileString('Devices', pDevice, '', pDriver, MAX_PATH);
-    pDriver[pos(',', pDriver) - 1] := #0;
-  end;
-  if lStrLen(pPort) = 0 then
-  begin
-    GetProfileString('Devices', pDevice, '', pPort, MAX_PATH);
-    lStrCpy(pPort, @pPort[lStrLen(pPort) + 2]);
-  end;
-  FDevice := StrPas(pDevice);
-  FDriver := StrPas(pDriver);
-  FPort := StrPas(pPort);
-  FreeMem(pDevice, cchDeviceName);
-  FreeMem(pDriver, MAX_PATH);
-  FreeMem(pPort, MAX_PATH);
+  FPrintersList.Assign(Printer.Printers)
 end;
 
 constructor TJanuaPrinter.Create;

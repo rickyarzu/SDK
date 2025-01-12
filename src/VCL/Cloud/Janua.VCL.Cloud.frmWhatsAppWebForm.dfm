@@ -69,7 +69,7 @@ object frmVCLWebBrokerWhatsApp: TfrmVCLWebBrokerWhatsApp
     Height = 59
     Caption = 'Web Broker Server Manager'
     TabOrder = 1
-    object JanuaframeWebServerManager1: TJanuaframeWebServerManager
+    inline JanuaframeWebServerManager1: TJanuaframeWebServerManager
       AlignWithMargins = True
       Left = 5
       Top = 18
@@ -77,7 +77,28 @@ object frmVCLWebBrokerWhatsApp: TfrmVCLWebBrokerWhatsApp
       Height = 36
       Align = alClient
       TabOrder = 0
-      OnBeforeStartServer = JanuaframeWebServerManager1BeforeStartServer
+      ExplicitLeft = 5
+      ExplicitTop = 18
+      ExplicitWidth = 505
+      ExplicitHeight = 36
+      inherited Label1: TLabel
+        Width = 20
+        Height = 13
+        StyleElements = [seFont, seClient, seBorder]
+        ExplicitWidth = 20
+        ExplicitHeight = 13
+      end
+      inherited sedPort: TSpinEdit
+        Height = 22
+        StyleElements = [seFont, seClient, seBorder]
+        ExplicitHeight = 22
+      end
+      inherited JanuaWebBrokerServerManager1: TJanuaWebBrokerServerManager
+        OnCreate = JanuaframeWebServerManager1JanuaWebBrokerServerManager1Create
+        OnBeforeStartServer = JanuaframeWebServerManager1BeforeStartServer
+        Left = 392
+        Top = 65528
+      end
     end
   end
   object ApplicationEvents1: TApplicationEvents

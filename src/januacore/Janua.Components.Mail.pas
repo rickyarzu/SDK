@@ -55,7 +55,7 @@ type
     function GetPort: Word;
   protected
     { Protected declarations }
-    function InternalActivate: boolean;
+    function InternalActivate: boolean; override;
   public
     function SendMailMessage(aMessage: TJanuaMailMessage): boolean; overload;
     function SendMailMessage: boolean; overload;
@@ -64,8 +64,8 @@ type
       var serror: string): boolean; overload;
     function SendMailMulti(vMailMessage: TJanuaMailMessage; var serror: string): boolean; overload;
     function SendMail: boolean;
-    constructor Create(AOwner: TComponent);
-    destructor Destroy;
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy;  override;
     function Execute: boolean;
     function SaveParams: boolean;
     procedure LoadParams;
@@ -232,21 +232,26 @@ end;
 
 function TJanuaMailSender.TestMailServer: boolean;
 begin
-
+  { TODO : Add a check Mail Server to Janua Mail Components }
+  Result := False
 end;
 
 function TJanuaMailSender.SendMailInternal: boolean;
 begin
+  { TODO : Add a check Mail Server to SendMail Internal Janua Mail Components }
+  Result := False
 end;
 
 function TJanuaMailSender.SendMailMessage: boolean;
 begin
-
+  { TODO : Add a check Mail Server to SendMail Message Janua Mail Components }
+  Result := False
 end;
 
 function TJanuaMailSender.SendMailMessage(aMessage: TJanuaMailMessage): boolean;
 begin
-
+  { TODO : Add a check Mail Server to SendMail Message Janua Mail Components }
+  Result := False
 end;
 
 function TJanuaMailSender.SendMailMulti(vMailMessage: TJanuaMailMessage; var serror: string): boolean;

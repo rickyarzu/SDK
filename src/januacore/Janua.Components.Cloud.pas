@@ -51,7 +51,7 @@ end;
 
 destructor TJanuaCloudOAuth.Destroy;
 begin
-  FJanuaFacebookOuth.DisposeOf;
+  FJanuaFacebookOuth.Free;
   inherited;
 end;
 

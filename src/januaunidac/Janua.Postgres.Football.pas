@@ -185,7 +185,7 @@ destructor TJanuaServerPgFootball.Destroy;
 begin
   if Assigned(DM) then
   begin
-    DM.DisposeOf;
+    DM.Free;
     DM := nil;
   end;
   inherited;
@@ -490,7 +490,7 @@ begin
   if not self.FIsSetController then
   begin
     begin
-      FJanuaPgFootballWebController.DisposeOf;
+      FJanuaPgFootballWebController.Free;
       FJanuaPgFootballWebController := nil;
     end;
     self.FJanuaPgFootballWebController := nil;

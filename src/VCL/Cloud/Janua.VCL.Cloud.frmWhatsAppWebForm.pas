@@ -6,7 +6,8 @@ uses
   Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.AppEvnts, VCL.StdCtrls,
   IdHTTPWebBrokerBridge, IdGlobal, Web.HTTPApp,
-  Janua.VCL.frameWebServerManager;
+  // Janua
+  Janua.VCL.frameWebServerManager, Janua.VCL.Interposers;
 
 type
   TfrmVCLWebBrokerWhatsApp = class(TForm)
@@ -25,6 +26,7 @@ type
     procedure ButtonStopClick(Sender: TObject);
     procedure ButtonOpenBrowserClick(Sender: TObject);
     procedure JanuaframeWebServerManager1BeforeStartServer(Sender: TObject);
+    procedure JanuaframeWebServerManager1JanuaWebBrokerServerManager1Create(Sender: TObject);
   private
     FServer: TIdHTTPWebBrokerBridge;
     procedure StartServer;
@@ -87,8 +89,13 @@ end;
 procedure TfrmVCLWebBrokerWhatsApp.JanuaframeWebServerManager1BeforeStartServer(Sender: TObject);
 begin
   // nota JanuaWebBrokerServerClass è una Variabile di tipo TJanuaWebBrokerServerClass
-  JanuaframeWebServerManager1.WebBrokerClass := JanuaWebBrokerServerClass;
-  JanuaframeWebServerManager1.WebModuleClass := WhatsAppWebModuleClass;
+  JanuaframeWebServerManager1.JanuaWebBrokerServerManager1.WebModuleClass := WhatsAppWebModuleClass;
+end;
+
+procedure TfrmVCLWebBrokerWhatsApp.JanuaframeWebServerManager1JanuaWebBrokerServerManager1Create(
+  Sender: TObject);
+begin
+  JanuaframeWebServerManager1.JanuaWebBrokerServerManager1.WebBrokerClass := JanuaWebBrokerServerClass;
 end;
 
 procedure TfrmVCLWebBrokerWhatsApp.StartServer;

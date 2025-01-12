@@ -7,7 +7,7 @@ uses
   Janua.Phoenix.dmIBLabSync in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.dmIBLabSync.pas' {dmPhoenixIBLab: TDataModule},
   Janua.Phoenix.dmIBModel in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.dmIBModel.pas' {dmPhoenixIBModel: TDataModule},
   uPhoenixBackgroundServiceConf in 'uPhoenixBackgroundServiceConf.pas',
-  Globale in '..\..\..\..\Phoenix\Phoenix\SW\PhoenixMain\Globale.pas';
+  Janua.Phoenix.Globale in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.Globale.pas';
 
 {$R *.RES}
 

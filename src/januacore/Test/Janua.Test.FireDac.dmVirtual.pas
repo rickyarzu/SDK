@@ -82,7 +82,7 @@ type
     function GetTable1: TDataset;
     procedure SetTable1(const Value: TDataset);
   public
-    { Public declarations }
+    procedure RefreshDetails; override;
     property jdsVirtualTable1: Janua.Orm.Intf.IJanuaDBDataset read FjdsVirtualTable1
       write SetjdsVirtualTable1;
     property jdsVirtualTable2: Janua.Orm.Intf.IJanuaDBDataset read FjdsVirtualTable2
@@ -258,6 +258,12 @@ end;
 function TdmFDacVirtualTest.GetTable2: TDataset;
 begin
   Result := vtDetail
+end;
+
+procedure TdmFDacVirtualTest.RefreshDetails;
+begin
+  inherited;
+
 end;
 
 procedure TdmFDacVirtualTest.SetTable1(const Value: TDataset);

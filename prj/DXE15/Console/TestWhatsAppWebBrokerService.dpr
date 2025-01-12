@@ -5,9 +5,9 @@ program TestWhatsAppWebBrokerService;
 
 uses
   System.SysUtils,
-  // WebBroker
   Janua.WebBroker.Server,
-  Janua.Application.Framework;
+  Janua.Application.Framework,
+  Janua.Test.dmTestWebWhatsAppService in '..\..\..\src\januacore\Test\Janua.Test.dmTestWebWhatsAppService.pas' {dmTestWebWhatsAppService: TDataModule};
 
 var
   FWebModuleClass: TComponentClass;

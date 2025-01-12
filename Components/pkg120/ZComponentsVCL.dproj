@@ -311,7 +311,6 @@
         </DCCReference>
         <DCCReference Include="..\..\..\Libraries\ZPhoenix\ZGridFunct.pas"/>
         <DCCReference Include="..\..\..\Libraries\ZPhoenix\ZHandleImage.pas"/>
-        <DCCReference Include="..\..\..\Libraries\ZPhoenix\ZPegaso\Globale.pas"/>
         <DCCReference Include="..\..\..\Libraries\ZPhoenix\ZCurl\ZCurl.Easy.pas"/>
         <DCCReference Include="..\..\..\Libraries\ZPhoenix\ZCurl\ZCurl.Interfaces.pas"/>
         <DCCReference Include="..\..\..\Libraries\ZPhoenix\ZCurl\ZCurl.Encoders.pas"/>
@@ -372,6 +371,16 @@
                     </Platform>
                     <Platform Name="Win32">
                         <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClasses">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>64</Operation>
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="AndroidFileProvider">
@@ -941,9 +950,6 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win64">
-                        <Operation>1</Operation>
-                    </Platform>
-                    <Platform Name="Win64x">
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>

@@ -1275,8 +1275,8 @@ end;
 
 procedure TdmUniDacPgChampionships.qryClubsCalcFields(DataSet: TDataSet);
 begin
-  if qryClubssearch_name.Value <> UpperCase(qryClubsclub_name.AsWideString) then
-    qryClubssearch_name.Value := UpperCase(qryClubsclub_name.AsWideString);
+  if qryClubssearch_name.AsWideString <> UpperCase(qryClubsclub_name.AsWideString) then
+    qryClubssearch_name.AsWideString := UpperCase(qryClubsclub_name.AsWideString);
 end;
 
 procedure TdmUniDacPgChampionships.qryMatchDaysAfterOpen(DataSet: TDataSet);

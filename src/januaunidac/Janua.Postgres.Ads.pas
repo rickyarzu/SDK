@@ -78,7 +78,7 @@ procedure TJanuaServerPgAds.DestroyAds(Force: boolean = false);
 begin
   if (not(self.KeepAlive) or Force) and Assigned(DM) then
   begin
-    DM.DisposeOf;
+    DM.Free;
     DM := nil;
     self.IDM := nil;
   end;
