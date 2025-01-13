@@ -13,7 +13,8 @@ uses
   Janua.Bindings.Intf, Janua.Controls.Intf, Janua.Controls.Forms.Intf, Janua.Core.Classes, Janua.VCL.Actions,
   uJanuaVCLForm,
   // Test Model
-  Janua.ViewModels.Intf, Janua.Test.ViewModel.Intf, Janua.Orm.Test.Intf, uframeTestRecordSetOrmSyncNavigator;
+  Janua.ViewModels.Intf, Janua.Test.ViewModel.Intf, Janua.Orm.Test.Intf, uframeTestRecordSetOrmSyncNavigator,
+  Janua.Core.Commons;
 
 type
   TdlgVclMasterDetailTestDBOrmSync = class(TJanuaVCLFormModel, IJanuaMasterDetailTestDialogForm, IJanuaRecordEditDialog)

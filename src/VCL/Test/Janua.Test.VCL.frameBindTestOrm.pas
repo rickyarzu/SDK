@@ -13,7 +13,7 @@ uses
   Janua.Orm.Test.Intf, Janua.Core.Classes,
   Janua.Orm.Dataset.Intf, Janua.Vcl.EnhCRDBGrid,
   // Interposers
-  Janua.Vcl.Interposers, Janua.TMS.Interposers;
+  Janua.Vcl.Interposers, Janua.TMS.Interposers, Vcl.Buttons;
 
 type
   TframeBindTestOrm = class(TFrame)

@@ -358,13 +358,13 @@ inherited frameVclTestOrmDatasetSync: TframeVclTestOrmDatasetSync
     Top = 136
   end
   object DataSource1: TDataSource
-    Left = 96
-    Top = 368
+    Left = 264
+    Top = 312
   end
   object ActionList1: TActionList
     Images = SVGIconImageList1
-    Left = 160
-    Top = 400
+    Left = 360
+    Top = 344
     object Action1: TAction
       Caption = 'Action1'
       GroupIndex = 1
@@ -490,8 +490,8 @@ inherited frameVclTestOrmDatasetSync: TframeVclTestOrmDatasetSync
       end>
     FixedColor = clSilver
     Scaled = True
-    Left = 232
-    Top = 376
+    Left = 368
+    Top = 288
   end
   object DetailActionViewController1: TJanuaActionViewController
     Enabled = True
@@ -503,7 +503,7 @@ inherited frameVclTestOrmDatasetSync: TframeVclTestOrmDatasetSync
     ButtonSize = jbs24
     DBNavigator = dbnavDetail
     Left = 632
-    Top = 192
+    Top = 152
   end
   object JanuaDetailVCLMVVMSearchTextBuilder: TJanuaVCLMVVMSearchTextBuilder
     Enabled = True
@@ -512,8 +512,8 @@ inherited frameVclTestOrmDatasetSync: TframeVclTestOrmDatasetSync
     Language = jlaEnglish
     TestMode = False
     SearchInput = edTextSubModel
-    Left = 808
-    Top = 168
+    Left = 912
+    Top = 152
   end
   object JanuaMVVMMasterController: TJanuaMVVMFormController
     Enabled = True
@@ -538,8 +538,8 @@ inherited frameVclTestOrmDatasetSync: TframeVclTestOrmDatasetSync
     MasterGridBuilder = DetailGridBuilder1
     MasterActions = DetailActionViewController1
     SearchTextBuilder = JanuaDetailVCLMVVMSearchTextBuilder
-    Left = 672
-    Top = 152
+    Left = 752
+    Top = 176
   end
   object MasterGridBuilder1: TJanuaMVVMGridBuilder
     Enabled = True
@@ -558,7 +558,7 @@ inherited frameVclTestOrmDatasetSync: TframeVclTestOrmDatasetSync
     Language = jlaEnglish
     TestMode = False
     Grid = grdDetailWW
-    Left = 960
+    Left = 1040
     Top = 184
   end
 end

@@ -20,7 +20,7 @@ uses
   // Interposers
   Janua.Vcl.EnhCRDBGrid, Janua.Vcl.EnhDBGrid, Janua.Vcl.Interposers, Janua.TMS.Interposers,
   Janua.Vcl.FormController, Janua.Components.Grids, Janua.Vcl.ViewModel, Janua.Core.Classes,
-  Janua.Vcl.Actions;
+  Janua.Vcl.Actions, Janua.Core.Commons;
 
 type
   TframeTestRecordSetOrmSyncNavigator = class(TframeVCLMVVMNavigator, IJanuaContainer, IJanuaBindable)

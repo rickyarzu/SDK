@@ -26,8 +26,8 @@ object frameTestPrintInvoice: TframeTestPrintInvoice
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
     Columns = <
       item
@@ -96,11 +96,13 @@ object frameTestPrintInvoice: TframeTestPrintInvoice
       item
         Expanded = False
         FieldName = 'anagraph_id'
+        Width = 64
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'currency_id'
+        Width = 64
         Visible = True
       end
       item
@@ -136,6 +138,7 @@ object frameTestPrintInvoice: TframeTestPrintInvoice
       item
         Expanded = False
         FieldName = 'net_amount'
+        Width = 64
         Visible = True
       end
       item
@@ -338,8 +341,8 @@ object frameTestPrintInvoice: TframeTestPrintInvoice
     TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
     Columns = <
       item
@@ -419,8 +422,8 @@ object frameTestPrintInvoice: TframeTestPrintInvoice
     TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
     Columns = <
       item
@@ -493,7 +496,7 @@ object frameTestPrintInvoice: TframeTestPrintInvoice
     Left = 282
     Top = 54
     Width = 128
-    Height = 21
+    Height = 23
     DataField = 'calc_number'
     DataSource = dsHeads
     TabOrder = 7
@@ -502,13 +505,12 @@ object frameTestPrintInvoice: TframeTestPrintInvoice
     Left = 1214
     Top = 54
     Width = 157
-    Height = 21
+    Height = 23
     Anchors = [akTop, akRight]
     CharCase = ecUpperCase
     TabOrder = 8
     TextHint = 'Enter Search Text'
     OnChange = Edit1Change
-    ExplicitLeft = 1249
   end
   object DBMemo2: TDBMemo
     Left = 787
@@ -519,7 +521,6 @@ object frameTestPrintInvoice: TframeTestPrintInvoice
     DataField = 'description'
     DataSource = dsRows
     TabOrder = 9
-    ExplicitLeft = 821
   end
   object DBNavigator2: TDBNavigator
     Left = 783
@@ -530,7 +531,6 @@ object frameTestPrintInvoice: TframeTestPrintInvoice
     VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbPost, nbCancel]
     Anchors = [akTop, akRight]
     TabOrder = 10
-    ExplicitLeft = 817
   end
   object btnEditDocument: TButton
     Left = 282
@@ -554,14 +554,13 @@ object frameTestPrintInvoice: TframeTestPrintInvoice
     Left = 1214
     Top = 27
     Width = 157
-    Height = 21
+    Height = 22
     Anchors = [akTop, akRight]
     LookupField = 'id'
     LookupDisplay = 'description'
     LookupSource = dsDocumentTypes
     TabOrder = 13
     OnCloseUp = JvDBLookupCombo1CloseUp
-    ExplicitLeft = 1249
   end
   object btnDel: TButton
     Left = 213
@@ -582,7 +581,6 @@ object frameTestPrintInvoice: TframeTestPrintInvoice
     DataField = 'calc_holder_full_address'
     DataSource = dsHeads
     TabOrder = 15
-    ExplicitWidth = 380
   end
   object dsHeads: TDataSource
     DataSet = dmJanuaPgDocumentsStorage.qryDocHeads
