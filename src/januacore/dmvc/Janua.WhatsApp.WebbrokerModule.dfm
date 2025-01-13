@@ -1,4 +1,6 @@
 object JanuaWhatSappWebBrokerModule: TJanuaWhatSappWebBrokerModule
+  OnCreate = WebModuleCreate
+  OnDestroy = WebModuleDestroy
   Actions = <
     item
       Default = True

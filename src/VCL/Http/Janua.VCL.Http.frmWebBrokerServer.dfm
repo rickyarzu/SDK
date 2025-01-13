@@ -20,9 +20,6 @@ object frmVCLWebBrokerServer: TfrmVCLWebBrokerServer
     Align = alTop
     Caption = 'Web Broker Server Manager'
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = 6
-    ExplicitWidth = 515
     inline JanuaframeWebServerManager: TJanuaframeWebServerManager
       AlignWithMargins = True
       Left = 5
@@ -31,6 +28,10 @@ object frmVCLWebBrokerServer: TfrmVCLWebBrokerServer
       Height = 60
       Align = alClient
       TabOrder = 0
+      ExplicitLeft = 5
+      ExplicitTop = 18
+      ExplicitWidth = 519
+      ExplicitHeight = 60
       inherited Label1: TLabel
         Width = 20
         Height = 13
@@ -54,6 +55,7 @@ object frmVCLWebBrokerServer: TfrmVCLWebBrokerServer
         OnAfterStartServer = JanuaframeWebServerManagerJanuaWebBrokerServerManager1AfterStartServer
         OnBeforeStartServer = JanuaframeWebServerManagerBeforeStartServer
         Port = 8180
+        ServerName = 'TwilioWebHook'
       end
     end
   end
@@ -65,9 +67,6 @@ object frmVCLWebBrokerServer: TfrmVCLWebBrokerServer
     Height = 21
     Align = alTop
     TabOrder = 1
-    ExplicitLeft = 224
-    ExplicitTop = 120
-    ExplicitWidth = 121
   end
   object TMSFNCEdgeWebBrowser1: TTMSFNCEdgeWebBrowser
     AlignWithMargins = True
@@ -84,9 +83,5 @@ object frmVCLWebBrokerServer: TfrmVCLWebBrokerServer
     Settings.EnableAcceleratorKeys = True
     Settings.AllowExternalDrop = True
     Settings.UsePopupMenuAsContextMenu = False
-    ExplicitLeft = 312
-    ExplicitTop = 176
-    ExplicitWidth = 500
-    ExplicitHeight = 350
   end
 end

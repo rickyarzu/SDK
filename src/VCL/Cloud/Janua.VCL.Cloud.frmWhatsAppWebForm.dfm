@@ -8,24 +8,14 @@ inherited frmVCLWebBrokerWhatsApp: TfrmVCLWebBrokerWhatsApp
       end
       inherited sedPort: TSpinEdit
         StyleElements = [seFont, seClient, seBorder]
-      end
-      inherited JanuaWebBrokerServerManager1: TJanuaWebBrokerServerManager
-        ServerName = 'TwilioWebHook'
+        Value = 8180
       end
     end
   end
   inherited Edit1: TEdit
     StyleElements = [seFont, seClient, seBorder]
-    ExplicitLeft = 3
-    ExplicitTop = 86
-    ExplicitWidth = 523
   end
   inherited TMSFNCEdgeWebBrowser1: TTMSFNCEdgeWebBrowser
     DoubleBuffered = True
-    Settings.AllowExternalDrop = False
-    ExplicitLeft = 3
-    ExplicitTop = 113
-    ExplicitWidth = 523
-    ExplicitHeight = 372
   end
 end

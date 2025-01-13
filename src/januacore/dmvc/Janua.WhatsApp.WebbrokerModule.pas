@@ -21,6 +21,8 @@ type
       var Handled: Boolean);
     procedure WebModule1WactStatusCallbackAction(Sender: TObject; Request: TWebRequest;
       Response: TWebResponse; var Handled: Boolean);
+    procedure WebModuleCreate(Sender: TObject);
+    procedure WebModuleDestroy(Sender: TObject);
   private
     { Private declarations }
     FdmPgTwilioWhatsApp: TdmPgTwilioWhatsApp;
@@ -34,15 +36,13 @@ var
 implementation
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
-
-
 {$R *.dfm}
 
 procedure TJanuaWhatSappWebBrokerModule.WebModule1DefaultHandlerAction(Sender: TObject; Request: TWebRequest;
   Response: TWebResponse; var Handled: Boolean);
 begin
-  Response.Content := '<html>' + '<head><title>TW Web Hook</title></head>' +
-    '<body>TW Web Hook<</body>' + '</html>';
+  Response.Content := '<html>' + '<head><title>TW Web Hook</title></head>' + '<body>TW Web Hook<</body>' +
+    '</html>';
 end;
 
 procedure TJanuaWhatSappWebBrokerModule.WebModule1WactFallbackAction(Sender: TObject; Request: TWebRequest;
@@ -54,7 +54,7 @@ begin
   lLines := TStringList.Create;
   try
     Request.ExtractContentFields(lLines);
-    dmPgTwilioWhatsApp.FallBack(lLines.Text);
+    FdmPgTwilioWhatsApp.FallBack(lLines.Text);
   finally
     lLines.Free;
   end;
@@ -72,7 +72,7 @@ begin
   try
     Request.ExtractContentFields(lLines);
     lStatus.SetFromStrings(lLines);
-    dmPgTwilioWhatsApp.StatusCallback(lLines.Text, lStatus);
+    FdmPgTwilioWhatsApp.StatusCallback(lLines.Text, lStatus);
   finally
     lLines.Free;
   end;
@@ -90,11 +90,22 @@ begin
   try
     Request.ExtractContentFields(lLines);
     lHook.SetFromStrings(lLines);
-     dmPgTwilioWhatsApp.WebHook(lLines.Text, lHook);
+    FdmPgTwilioWhatsApp.WebHook(lLines.Text, lHook);
   finally
     lLines.Free;
   end;
 
+end;
+
+procedure TJanuaWhatSappWebBrokerModule.WebModuleCreate(Sender: TObject);
+begin
+  FdmPgTwilioWhatsApp := TdmPgTwilioWhatsApp.Create(nil)
+end;
+
+procedure TJanuaWhatSappWebBrokerModule.WebModuleDestroy(Sender: TObject);
+begin
+  FdmPgTwilioWhatsApp.Free;
+  FdmPgTwilioWhatsApp := nil;
 end;
 
 end.
