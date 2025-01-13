@@ -6,6 +6,9 @@ uses System.Classes, System.UITypes, System.SysUtils,
   Janua.Core.Types, Janua.Forms.Types, Janua.Controls.Dialogs.Intf, Janua.Forms.TextEditor.Intf, Janua.Orm.Intf,
   Janua.Core.Classes;
 
+{$TYPEINFO ON}
+{$METHODINFO ON}
+
 type
   TJanuaCustomGridBuilder = class(TJanuaCoreComponent)
   private

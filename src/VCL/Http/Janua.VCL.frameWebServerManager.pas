@@ -28,8 +28,6 @@ type
     procedure BeforeDestruction; override;
   end;
 
-procedure Register;
-
 implementation
 
 uses Janua.Application.Framework;
@@ -37,15 +35,10 @@ uses Janua.Application.Framework;
 {$R *.dfm}
 { TframeWebBrokerStarter }
 
-procedure Register;
-begin
-  RegisterComponents('Januaproject VCL System', [TJanuaframeWebServerManager]);
-end;
-
 procedure TJanuaframeWebServerManager.AfterConstruction;
 begin
   inherited;
-  JanuaWebBrokerServerManager1.Bind('port', sedPort, 'Value');
+  // JanuaWebBrokerServerManager1.Bind('port', sedPort, 'Value');
   sedPort.Value := JanuaWebBrokerServerManager1.Port;
   // here goes the AfterConstruction Code
 end;

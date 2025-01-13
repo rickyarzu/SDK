@@ -1,14 +1,14 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{E4046C38-22A2-4603-8691-017AE6881D9B}</ProjectGuid>
+        <ProjectGuid>{7507139D-02D5-44FF-BB96-80741DEDAD38}</ProjectGuid>
         <ProjectVersion>20.1</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
-        <MainSource>JanuaWhatsAppWebBroker.dpr</MainSource>
+        <MainSource>JanuaCalendarMulti.dpr</MainSource>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -57,8 +57,9 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
-    <Import Project="..\JanuaeExeDXE15.optset" Condition="'$(Base)'!='' And Exists('..\JanuaeExeDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
         <DCC_S>false</DCC_S>
@@ -66,14 +67,12 @@
         <DCC_K>false</DCC_K>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
-        <VerInfo_Locale>1040</VerInfo_Locale>
-        <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <SanitizedProjectName>JanuaWhatsAppWebBroker</SanitizedProjectName>
-        <CfgDependentOn>..\JanuaeExeDXE15.optset</CfgDependentOn>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+        <SanitizedProjectName>JanuaCalendarMulti</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <DCC_UsePackage>hclcore_xe120;DCLgtDocEng;vclie;bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;dbxcds;vcledge;TRCGooglePlaces_r;FlexCel_Pdf;VisualStyles;VCLTMSFNCAppToolsPkgDXE15;JvAppFrm;JclVcl;Jcl;dbexpress;aseprovider290;JvManagedThreads;inet;vcltouch;uniGUI29VCL;FMX_FlexCel_Core;FireDACDBXDriver;tdsprovider290;tmsbcl;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;JvSystem;ipstudiowinwordxp;JvCrypt;uniGUI29;dbfprovider290;TMSFMXPackPkg;FMXTMSFNCWebSocketPkgDXE15;vclFireDAC;sgcWebSockets;FireDACODBCDriver;emsserverresource;rtl;bigqueryprovider290;DBXSqliteDriver;DBXSybaseASEDriver;htmledit_xe120;JvRuntimeDesign;JvXPCtrls;inetdbxpress;FireDAC;JvDocking;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;netsuiteprovider290;JvCmp;FireDACDb2Driver;DBXOracleDriver;bigcommerceprovider290;vclib;DatasnapConnectorsFreePascal;TMSVCLSecuritySystemPkgCore;SVGIconImageList;Ean;uniGUI29Core;FMXTMSFNCAppToolsPkgDXE15;FMXTMSFNCCorePkgDXE15;sparkle;TMSWebGMapsPkg;bindcompvclwinx;bindcompfmx;TMSVCLUIPackPkgExDXE15;FIBPlus;JvBands;DCLgtQRExp;Intraweb_15_D12;ibmonitor;liteprovider290;FireDACASADriver;Tee;SVGIconImageListFMX;vclactnband;TMSVCLUIPackPkgXlsDXE15;hubspotprovider290;officeXPrt;FireDACInfxDriver;StyleControls;DBXMySQLDriver;VclSmp;DataSnapCommon;AWSSDK;EurekaLogCore;fmxase;JvPluginSystem;TMSVCLUIPackPkgWizDXE15;FlexCel_XlsAdapter;myprovider290;DataSnapIndy10ServerTransport;JclDeveloperTools;FMXTMSFNCCloudPackPkgDXE15;vcldsnap;DBXInterBaseDriver;JvWizards;uniGUI29Chart;vcldb;accessprovider290;JvCore;dacfmx290;sugarprovider290;zohoprovider290;AWSSDKVCL;JvDotNetCtrls;vcl;JvHMI;freshbooksprovider290;DataSnapClient;TMSWebOSMapsPkg;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;TMSWebOSMapsPkgDE;JvPrintPreview;tethering;uniTools29;JanuaThirdPartyVCL;TRCGooglePlaces_d;JvStdCtrls;bindcompvcl;sbridge;CloudService;htmleditfm_xe120;unidac290;odbcprovider290;soapserver;FireDACIBDriver;TMSWebGMapsPkgDE;vclwinx;DataSnapServer;TMSVCLSecuritySystemPkgUI;uniGUI29mCore;IWBootstrap4D12;fmx;DbxCommonDriver;VCLRESTComponents;adsprovider290;FireDACCommonODBC;DBXMSSQLDriver;emsclient;appanalytics;IndyProtocols;vclx;Skia.Package.RTL;magentoprovider290;FmxTeeUI;htmlcompfm_xe120;DBXFirebirdDriver;SKIA_FlexCel_Core;dacvcl290;FireDACSqliteDriver;DbxClientDriver;soapmidas;TeeUI;salesforceprovider290;gtDocEng;vquery290;IWBootstrapD12;ipstudiowin;JvDB;fmxdae;JvCustom;exacttargetprovider290;dclUniFalcon;JvControls;OmniThreadLibraryRuntime;JvJans;JvMM;IndySystem;ZipMasterR;JvGlobus;ibxbindings;JclContainers;JvPageComps;FlexCel_Render;FireDACCommon;DataSnapServerMidas;TMSCloudPkgDEDXE15;bindcompdbx;db2provider290;FireDACMySQLDriver;VCL_FlexCel_Components;remotedb;ZLibrariesWin;TMSVCLUIPackPkgDXE15;mailchimpprovider290;vclimg;DataSnapFireDAC;eInvoice4D;unidacfmx290;pgprovider290;JvDlgs;FMXTMSFNCWXPackPkgDXE15;xdata;QRWRunDXE12_W64;DBXInformixDriver;fmxobj;bindcompvclsmp;DataSnapNativeClient;ZComponentsVCL;FMXTMSFNCUIPackPkgDXE15;TMSCloudPkgDXE15;FlexCel_Report;emshosting;FireDACCommonDriver;IndyIPClient;emsedge;uSynEdit_R2025;crcontrols290;inetdb;mongoprovider290;fmxFireDAC;dynamicsprovider290;ibprovider290;JvPascalInterpreter;oraprovider290;DBXOdbcDriver;JvTimeFramework;dbrtl;JanuaThirdParty;FireDACOracleDriver;Skia.Package.FMX;uniGUI29m;TeeDB;FireDACMSAccDriver;DataSnapConnectors;FireDACMongoDBDriver;FireDACTDataDriver;msprovider290;Skia.Package.VCL;VCLTMSFNCUIPackPkgDXE15;quickbooksprovider290;VCLTMSFNCDashboardPackPkgDXE15;VCLTMSFNCWebSocketPkgDXE15;FlexCel_Core;unidacvcl290;bindcomp;IndyCore;RESTBackendComponents;dmvcframeworkDT;AWSSDKFMX;FireDACADSDriver;RESTComponents;IndyIPServer;dsnapxml;adortl;dsnapcon;DataSnapProviderClient;dac290;DBXDb2Driver;htmlcomp_xe120;dmvcframeworkRT;rsprovider290;FMXTMSFNCDashboardPackPkgDXE15;htmleditcore_xe120;DBXSybaseASADriver;VCLTMSFNCCloudPackPkgDXE15;FMXTee;VCLTMSFNCCorePkgDXE15;soaprtl;TUniFalcon;JvNet;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>VCLTMSFNCMapsPkg;FMXTMSFNCUIPackPkg;DCLgtDocEng;vclie;bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;FMXTMSFNCAppToolsPkg;dbxcds;vcledge;TRCGooglePlaces_r;FlexCel_Pdf;VisualStyles;JvAppFrm;JclVcl;aseprovider290;dbexpress;Jcl;JvManagedThreads;inet;vcltouch;JanuaUniGUI;uniGUI29VCL;FMX_FlexCel_Core;FireDACDBXDriver;tdsprovider290;JanuaUnidac;tmsbcl;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;JvSystem;ipstudiowinwordxp;JvCrypt;uniGUI29;TMSFMXPackPkg;VCLTMSFNCChartPkg;vclFireDAC;sgcWebSockets;FireDACODBCDriver;emsserverresource;rtl;DBXSqliteDriver;FMXTMSFNCChartPkg;DBXSybaseASEDriver;JvRuntimeDesign;JvXPCtrls;inetdbxpress;FireDAC;JvDocking;VCLTMSFNCUIPackPkg;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;JvCmp;FireDACDb2Driver;DBXOracleDriver;vclib;FMXTMSFNCMapsPkg;JanuaVCLMVVM;DatasnapConnectorsFreePascal;SVGIconImageList;TMSVCLSecuritySystemPkgCore;Ean;uniGUI29Core;sparkle;TMSWebGMapsPkg;bindcompvclwinx;bindcompfmx;TMSVCLUIPackPkgExDXE15;FIBPlus;JvBands;DCLgtQRExp;PlanAddons;Intraweb_15_D12;ibmonitor;FireDACASADriver;Tee;SVGIconImageListFMX;vclactnband;TMSVCLUIPackPkgXlsDXE15;officeXPrt;FireDACInfxDriver;StyleControls;DBXMySQLDriver;VclSmp;DataSnapCommon;AWSSDK;fmxase;JanuaTmsControls;JvPluginSystem;TMSVCLUIPackPkgWizDXE15;VCLTMSFNCWXPackPkg;VCLTMSFNCAppToolsPkg;FlexCel_XlsAdapter;myprovider290;DataSnapIndy10ServerTransport;JclDeveloperTools;DBXInterBaseDriver;vcldsnap;JvWizards;uniGUI29Chart;JanuaVCLControls;vcldb;accessprovider290;JvCore;dacfmx290;JanuaUnidacComponents;JanuaMVVM;JanuaVCLComponents;AWSSDKVCL;JvDotNetCtrls;vcl;JvHMI;DataSnapClient;TMSWebOSMapsPkg;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;JvPrintPreview;TMSWebOSMapsPkgDE;tethering;JvStdCtrls;uniTools29;TRCGooglePlaces_d;JanuaThirdPartyVCL;bindcompvcl;JanuaCore;sbridge;CloudService;JanuaFMXControls;unidac290;odbcprovider290;FireDACIBDriver;soapserver;TMSWebGMapsPkgDE;DataSnapServer;vclwinx;TMSVCLSecuritySystemPkgUI;IWBootstrap4D12;fmx;DbxCommonDriver;VCLRESTComponents;FireDACCommonODBC;DBXMSSQLDriver;VCLTMSFNCDashboardPackPkg;emsclient;appanalytics;IndyProtocols;vclx;Skia.Package.RTL;FmxTeeUI;DBXFirebirdDriver;SKIA_FlexCel_Core;dacvcl290;FireDACSqliteDriver;DbxClientDriver;soapmidas;TeeUI;gtDocEng;TMSCloudPkgDE;IWBootstrapD12;ipstudiowin;JvDB;eMiniInvoice4D;fmxdae;JvCustom;JvControls;VCLTMSFNCCloudPackPkg;OmniThreadLibraryRuntime;JvJans;JvMM;IndySystem;ZipMasterR;JvGlobus;JanuaCoreComponents;ibxbindings;JclContainers;JvPageComps;FlexCel_Render;FireDACCommon;DataSnapServerMidas;bindcompdbx;db2provider290;FireDACMySQLDriver;VCL_FlexCel_Components;remotedb;ZLibrariesWin;TMSVCLUIPackPkgDXE15;mailchimpprovider290;vclimg;DataSnapFireDAC;unidacfmx290;pgprovider290;eInvoice4D;JvDlgs;xdata;QRWRunDXE12_W64;DBXInformixDriver;DataSnapNativeClient;bindcompvclsmp;fmxobj;ZComponentsVCL;FMXTMSFNCCorePkg;FlexCel_Report;emshosting;FireDACCommonDriver;IndyIPClient;TMSCloudPkg;FMXTMSFNCCloudPackPkg;emsedge;uSynEdit_R2025;crcontrols290;inetdb;FMXTMSFNCWXPackPkg;fmxFireDAC;ibprovider290;JvPascalInterpreter;oraprovider290;DBXOdbcDriver;JvTimeFramework;dbrtl;JanuaThirdParty;FireDACOracleDriver;Skia.Package.FMX;TeeDB;FireDACMSAccDriver;DataSnapConnectors;FireDACMongoDBDriver;VCLThemeSelector;FireDACTDataDriver;msprovider290;Skia.Package.VCL;FlexCel_Core;FMXTMSFNCDashboardPackPkg;unidacvcl290;bindcomp;IndyCore;RESTBackendComponents;dmvcframeworkDT;AWSSDKFMX;FireDACADSDriver;Spring.Base;RESTComponents;IndyIPServer;dsnapxml;adortl;dsnapcon;DataSnapProviderClient;dac290;DBXDb2Driver;dmvcframeworkRT;DBXSybaseASADriver;VCLTMSFNCCorePkg;FMXTee;soaprtl;TUniFalcon;JvNet;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -82,7 +81,7 @@
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <DCC_UsePackage>vclie;bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;dbxcds;vcledge;TRCGooglePlaces_r;FlexCel_Pdf;VisualStyles;VCLTMSFNCAppToolsPkgDXE15;dbexpress;aseprovider290;inet;vcltouch;uniGUI29VCL;FMX_FlexCel_Core;FireDACDBXDriver;tdsprovider290;tmsbcl;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;ipstudiowinwordxp;uniGUI29;dbfprovider290;FMXTMSFNCWebSocketPkgDXE15;vclFireDAC;sgcWebSockets;FireDACODBCDriver;emsserverresource;rtl;bigqueryprovider290;DBXSqliteDriver;DBXSybaseASEDriver;inetdbxpress;FireDAC;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;netsuiteprovider290;FireDACDb2Driver;DBXOracleDriver;bigcommerceprovider290;vclib;DatasnapConnectorsFreePascal;TMSVCLSecuritySystemPkgCore;SVGIconImageList;Ean;uniGUI29Core;FMXTMSFNCAppToolsPkgDXE15;FMXTMSFNCCorePkgDXE15;sparkle;TMSWebGMapsPkg;bindcompvclwinx;bindcompfmx;TMSVCLUIPackPkgExDXE15;FIBPlus;DCLgtQRExp;ibmonitor;liteprovider290;FireDACASADriver;Tee;SVGIconImageListFMX;vclactnband;TMSVCLUIPackPkgXlsDXE15;hubspotprovider290;officeXPrt;FireDACInfxDriver;StyleControls;DBXMySQLDriver;VclSmp;DataSnapCommon;AWSSDK;fmxase;FlexCel_XlsAdapter;myprovider290;DataSnapIndy10ServerTransport;FMXTMSFNCCloudPackPkgDXE15;vcldsnap;DBXInterBaseDriver;uniGUI29Chart;vcldb;accessprovider290;dacfmx290;sugarprovider290;zohoprovider290;AWSSDKVCL;vcl;freshbooksprovider290;DataSnapClient;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;tethering;uniTools29;JanuaThirdPartyVCL;bindcompvcl;sbridge;CloudService;unidac290;odbcprovider290;soapserver;FireDACIBDriver;vclwinx;DataSnapServer;TMSVCLSecuritySystemPkgUI;uniGUI29mCore;fmx;DbxCommonDriver;VCLRESTComponents;FireDACCommonODBC;DBXMSSQLDriver;emsclient;appanalytics;IndyProtocols;vclx;magentoprovider290;FmxTeeUI;DBXFirebirdDriver;SKIA_FlexCel_Core;dacvcl290;FireDACSqliteDriver;DbxClientDriver;soapmidas;TeeUI;salesforceprovider290;gtDocEng;vquery290;ipstudiowin;fmxdae;exacttargetprovider290;OmniThreadLibraryRuntime;IndySystem;ZipMasterR;ibxbindings;FlexCel_Render;FireDACCommon;DataSnapServerMidas;bindcompdbx;db2provider290;FireDACMySQLDriver;VCL_FlexCel_Components;remotedb;ZLibrariesWin;TMSVCLUIPackPkgDXE15;mailchimpprovider290;vclimg;DataSnapFireDAC;eInvoice4D;unidacfmx290;pgprovider290;FMXTMSFNCWXPackPkgDXE15;xdata;QRWRunDXE12_W64;DBXInformixDriver;fmxobj;bindcompvclsmp;DataSnapNativeClient;ZComponentsVCL;FMXTMSFNCUIPackPkgDXE15;TMSCloudPkgDXE15;FlexCel_Report;emshosting;FireDACCommonDriver;IndyIPClient;emsedge;uSynEdit_R2025;crcontrols290;inetdb;mongoprovider290;fmxFireDAC;dynamicsprovider290;ibprovider290;oraprovider290;DBXOdbcDriver;dbrtl;JanuaThirdParty;FireDACOracleDriver;uniGUI29m;TeeDB;FireDACMSAccDriver;DataSnapConnectors;FireDACMongoDBDriver;FireDACTDataDriver;msprovider290;Skia.Package.VCL;VCLTMSFNCUIPackPkgDXE15;quickbooksprovider290;VCLTMSFNCDashboardPackPkgDXE15;FlexCel_Core;unidacvcl290;bindcomp;IndyCore;RESTBackendComponents;AWSSDKFMX;FireDACADSDriver;RESTComponents;IndyIPServer;dsnapxml;adortl;dsnapcon;DataSnapProviderClient;dac290;DBXDb2Driver;rsprovider290;FMXTMSFNCDashboardPackPkgDXE15;DBXSybaseASADriver;VCLTMSFNCCloudPackPkgDXE15;FMXTee;VCLTMSFNCCorePkgDXE15;soaprtl;TUniFalcon;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>VCLTMSFNCMapsPkg;FMXTMSFNCUIPackPkg;vclie;bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;FMXTMSFNCAppToolsPkg;dbxcds;vcledge;TRCGooglePlaces_r;FlexCel_Pdf;VisualStyles;aseprovider290;dbexpress;inet;vcltouch;JanuaUniGUI;uniGUI29VCL;FMX_FlexCel_Core;FireDACDBXDriver;tdsprovider290;JanuaUnidac;tmsbcl;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;ipstudiowinwordxp;uniGUI29;VCLTMSFNCChartPkg;vclFireDAC;sgcWebSockets;FireDACODBCDriver;emsserverresource;rtl;DBXSqliteDriver;FMXTMSFNCChartPkg;DBXSybaseASEDriver;inetdbxpress;FireDAC;VCLTMSFNCUIPackPkg;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;FireDACDb2Driver;DBXOracleDriver;vclib;FMXTMSFNCMapsPkg;DatasnapConnectorsFreePascal;SVGIconImageList;TMSVCLSecuritySystemPkgCore;Ean;uniGUI29Core;sparkle;TMSWebGMapsPkg;bindcompvclwinx;bindcompfmx;TMSVCLUIPackPkgExDXE15;FIBPlus;DCLgtQRExp;PlanAddons;ibmonitor;FireDACASADriver;Tee;SVGIconImageListFMX;vclactnband;TMSVCLUIPackPkgXlsDXE15;officeXPrt;FireDACInfxDriver;StyleControls;DBXMySQLDriver;VclSmp;DataSnapCommon;AWSSDK;fmxase;JanuaTmsControls;VCLTMSFNCWXPackPkg;VCLTMSFNCAppToolsPkg;FlexCel_XlsAdapter;myprovider290;DataSnapIndy10ServerTransport;DBXInterBaseDriver;vcldsnap;uniGUI29Chart;JanuaVCLControls;vcldb;accessprovider290;dacfmx290;JanuaMVVM;JanuaVCLComponents;AWSSDKVCL;vcl;DataSnapClient;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;tethering;uniTools29;JanuaThirdPartyVCL;bindcompvcl;JanuaCore;sbridge;CloudService;JanuaFMXControls;unidac290;odbcprovider290;FireDACIBDriver;soapserver;DataSnapServer;vclwinx;TMSVCLSecuritySystemPkgUI;fmx;DbxCommonDriver;VCLRESTComponents;FireDACCommonODBC;DBXMSSQLDriver;VCLTMSFNCDashboardPackPkg;emsclient;appanalytics;IndyProtocols;vclx;FmxTeeUI;DBXFirebirdDriver;dacvcl290;FireDACSqliteDriver;DbxClientDriver;soapmidas;TeeUI;gtDocEng;ipstudiowin;fmxdae;VCLTMSFNCCloudPackPkg;OmniThreadLibraryRuntime;IndySystem;ZipMasterR;JanuaCoreComponents;ibxbindings;FlexCel_Render;FireDACCommon;DataSnapServerMidas;bindcompdbx;db2provider290;FireDACMySQLDriver;VCL_FlexCel_Components;remotedb;ZLibrariesWin;TMSVCLUIPackPkgDXE15;mailchimpprovider290;vclimg;DataSnapFireDAC;unidacfmx290;pgprovider290;eInvoice4D;xdata;QRWRunDXE12_W64;DBXInformixDriver;DataSnapNativeClient;bindcompvclsmp;fmxobj;ZComponentsVCL;FMXTMSFNCCorePkg;FlexCel_Report;emshosting;FireDACCommonDriver;IndyIPClient;TMSCloudPkg;FMXTMSFNCCloudPackPkg;emsedge;uSynEdit_R2025;crcontrols290;inetdb;FMXTMSFNCWXPackPkg;fmxFireDAC;ibprovider290;oraprovider290;DBXOdbcDriver;dbrtl;JanuaThirdParty;FireDACOracleDriver;TeeDB;FireDACMSAccDriver;DataSnapConnectors;FireDACMongoDBDriver;VCLThemeSelector;FireDACTDataDriver;msprovider290;Skia.Package.VCL;FlexCel_Core;FMXTMSFNCDashboardPackPkg;unidacvcl290;bindcomp;IndyCore;RESTBackendComponents;AWSSDKFMX;FireDACADSDriver;Spring.Base;RESTComponents;IndyIPServer;dsnapxml;adortl;dsnapcon;DataSnapProviderClient;dac290;DBXDb2Driver;DBXSybaseASADriver;VCLTMSFNCCorePkg;FMXTee;soaprtl;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -106,10 +105,6 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_Define>madExcept;$(DCC_Define)</DCC_Define>
-        <DCC_MapFile>3</DCC_MapFile>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -123,31 +118,16 @@
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
     </PropertyGroup>
-    <Import Project="JanuaeExeDXE15.optset" Condition="'$(Base)'!='' And Exists('JanuaeExeDXE15.optset')"/>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.WhatsApp.WebBroker.UniDACApplication.pas"/>
-        <DCCReference Include="..\..\..\src\VCL\Http\Janua.VCL.Http.frmWebBrokerServer.pas">
-            <Form>frmVCLWebBrokerServer</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.WhatsApp.WebbrokerModule.pas">
-            <Form>JanuaWhatSappWebBrokerModule</Form>
-            <DesignClass>TWebModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\..\src\VCL\Http\Janua.VCL.frameWebServerManager.pas">
-            <Form>JanuaframeWebServerManager</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.WebBroker.UniDACApplication.pas"/>
-        <DCCReference Include="..\..\..\src\VCL\Cloud\Janua.VCL.Cloud.frmWhatsAppWebForm.pas">
-            <Form>frmVCLWebBrokerWhatsApp</Form>
+        <DCCReference Include="ufrmTmsPlannerMultiResource.pas">
+            <Form>frmTmsDemosPlannerMultiResource</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
-            <DependentOn>..\JanuaeExeDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
@@ -164,25 +144,13 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">JanuaWhatsAppWebBroker.dpr</Source>
+                    <Source Name="MainSource">JanuaCalendarMulti.dpr</Source>
                 </Source>
             </Delphi.Personality>
             <Deployment Version="4">
-                <DeployFile LocalName="Win32\Debug\JanuaWhatsAppWebBroker.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="Win32\Debug\JanuaCalendarMulti.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
-                        <RemoteName>JanuaWhatsAppWebBroker.exe</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\JanuaWhatsAppWebBroker.exe" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win64">
-                        <RemoteName>JanuaWhatsAppWebBroker.exe</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\JanuaWhatsAppWebBroker.rsm" Configuration="Debug" Class="DebugSymbols">
-                    <Platform Name="Win64">
-                        <RemoteName>JanuaWhatsAppWebBroker.rsm</RemoteName>
+                        <RemoteName>JanuaCalendarMulti.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

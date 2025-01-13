@@ -1,5 +1,4 @@
 object JanuaWhatSappWebBrokerModule: TJanuaWhatSappWebBrokerModule
-  OnCreate = WebModuleCreate
   Actions = <
     item
       Default = True

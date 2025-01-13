@@ -2,10 +2,11 @@ unit Janua.WebBroker.ServerController;
 
 interface
 
-uses System.Classes, System.SysUtils, Janua.WebBroker.Server, Janua.Core.Classes, Janua.Bindings.Intf;
+uses System.Classes, System.SysUtils,
+  Janua.Core.Types, Janua.WebBroker.Server, Janua.Core.Classes, Janua.Bindings.Intf;
 
 type
-  TJanuaWebBrokerServerManager = class(TJanuaBindableComponent, IJanuaBindable)
+  TJanuaWebBrokerServerManager = class(TJanuaCoreComponent, IJanuaBindable)
   private
     FWebModuleClass: TComponentClass;
     FWebServer: TJanuaWebBrokerServer;
@@ -26,6 +27,8 @@ type
     function GetPort: Smallint;
     procedure SetPort(const Value: Smallint);
     procedure SetServerName(const Value: string);
+  protected
+    function InternalActivate: Boolean; override;
   public
     { Public declarations }
     property WebModuleClass: TComponentClass read FWebModuleClass write FWebModuleClass;
@@ -36,6 +39,8 @@ type
     procedure BeforeDestruction; override;
     procedure StartServer; virtual;
     procedure StopServer; virtual;
+    procedure WriteStatus;
+    procedure SetLogProc(const Value: TMessageLogProc); override;
   published
     property OnCreate: TNotifyEvent read FOnCreate write SetOnCreate;
     property OnBeforeConnect: TNotifyEvent read FOnBeforeConnect write SetOnBeforeConnect;
@@ -49,7 +54,7 @@ procedure Register;
 
 implementation
 
-uses Janua.Application.Framework;
+uses Janua.Application.Framework, Spring;
 
 procedure Register;
 begin
@@ -83,6 +88,32 @@ begin
   Result := FPort;
 end;
 
+function TJanuaWebBrokerServerManager.InternalActivate: Boolean;
+begin
+  Result := Active;
+  if not Result then
+    try
+      Result := inherited;
+      if Result then
+      begin
+        Guard.CheckNotNull(FWebBrokerClass, 'WebBroker Class not Assigned cannot Activate');
+        FWebServer := TJanuaWebServerFactory.CreateWebServer(FPort) as TJanuaWebBrokerServer;
+        FWebServer.ServerName := FServerName;
+        FPort := FWebServer.Port;
+      end;
+    except
+      on e: exception do
+        RaiseException('InternalActivate', e, Self);
+    end;
+end;
+
+procedure TJanuaWebBrokerServerManager.SetLogProc(const Value: TMessageLogProc);
+begin
+  inherited;
+  if Assigned(FWebServer) then
+    FWebServer.LogProc := Value;
+end;
+
 procedure TJanuaWebBrokerServerManager.SetOnAfterStartServer(const Value: TNotifyEvent);
 begin
   FOnAfterStartServer := Value;
@@ -111,6 +142,7 @@ begin
     if Assigned(FWebServer) and (FPort <> FWebServer.Port) then
       FWebServer.Port := FPort;
     Notify('Port');
+    TLinkObservers.ControlChanged(Self);
   end;
 end;
 
@@ -120,6 +152,7 @@ begin
   begin
     FServerName := Value;
     Notify('ServerName');
+    TLinkObservers.ControlChanged(Self);
   end;
 
   if Assigned(FWebServer) then
@@ -134,13 +167,8 @@ end;
 procedure TJanuaWebBrokerServerManager.SetWebBrokerClass(const Value: TJanuaWebBrokerServerClass);
 begin
   FWebBrokerClass := Value;
-  if Assigned(FWebBrokerClass) then
-  begin
-    TJanuaWebServerFactory.WebServerClass := FWebBrokerClass;
-    FWebServer := TJanuaWebServerFactory.CreateWebServer(FPort) as TJanuaWebBrokerServer;
-    FWebServer.ServerName := FServerName;
-    FPort := FWebServer.Port;
-  end;
+  TJanuaWebServerFactory.WebServerClass := FWebBrokerClass;
+  Enabled := Assigned(FWebBrokerClass);
 end;
 
 procedure TJanuaWebBrokerServerManager.StartServer;
@@ -168,6 +196,12 @@ procedure TJanuaWebBrokerServerManager.StopServer;
 begin
   if Assigned(FWebServer) then
     FWebServer.StopServer;
+end;
+
+procedure TJanuaWebBrokerServerManager.WriteStatus;
+begin
+  if Assigned(FWebServer) then
+    FWebServer.WriteStatus;
 end;
 
 end.

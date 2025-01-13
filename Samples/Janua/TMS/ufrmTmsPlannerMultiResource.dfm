@@ -223,7 +223,6 @@ object frmTmsDemosPlannerMultiResource: TfrmTmsDemosPlannerMultiResource
     OnItemDelete = DBPlanner1ItemDelete
     OnItemInsert = DBPlanner1ItemInsert
     ItemSource = DBDaySourcePhoenix
-    ExplicitTop = 28
     TMSStyle = 0
   end
   object ToolBar1: TToolBar

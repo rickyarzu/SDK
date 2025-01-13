@@ -3,10 +3,12 @@ unit Janua.Test.dmTestWebWhatsAppService;
 interface
 
 uses
-  System.SysUtils, System.Classes;
+  System.SysUtils, System.Classes, Janua.Test.dmTestWebBrokerService, Janua.Core.Commons, Janua.Core.Classes,
+  Janua.WebBroker.ServerController;
 
 type
-  TdmTestWebWhatsAppService = class(TDataModule)
+  TdmTestWhatsAppWebBrokerService = class(TdmTestWebBrokerService)
+    procedure JanuaWebBrokerServerManager1BeforeStartServer(Sender: TObject);
   private
     { Private declarations }
   public
@@ -14,12 +16,20 @@ type
   end;
 
 var
-  dmTestWebWhatsAppService: TdmTestWebWhatsAppService;
+  dmTestWhatsAppWebBrokerService: TdmTestWhatsAppWebBrokerService;
 
 implementation
 
-{%CLASSGROUP 'System.Classes.TPersistent'}
+uses Janua.WhatsApp.WebbrokerModule;
 
+{%CLASSGROUP 'System.Classes.TPersistent'}
 {$R *.dfm}
+
+procedure TdmTestWhatsAppWebBrokerService.JanuaWebBrokerServerManager1BeforeStartServer(Sender: TObject);
+begin
+  inherited;
+  // nota JanuaWebBrokerServerClass è una Variabile di tipo TJanuaWebBrokerServerClass
+  JanuaWebBrokerServerManager1.WebModuleClass := WhatsAppWebModuleClass;
+end;
 
 end.

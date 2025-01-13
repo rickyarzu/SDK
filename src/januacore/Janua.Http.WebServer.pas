@@ -102,7 +102,8 @@ begin
   if FPort <> Value then
   begin
     FPort := Value;
-    TJanuacoreOS.WriteParam(FServerName, 'Port', FPort);
+    if not FServerName.IsEmpty then
+      TJanuacoreOS.WriteParam(FServerName, 'Port', FPort);
   end;
 end;
 
@@ -110,8 +111,9 @@ procedure TJanuaWebServer.SetServerName(const Value: string);
 begin
   if FServerName <> Value then
   begin
-    FPort := TJanuacoreOS.ReadParam(FServerName, 'Port', FPort);
     FServerName := Value;
+    if not FServerName.IsEmpty then
+      FPort := TJanuacoreOS.ReadParam(FServerName, 'Port', FPort);
   end;
 end;
 

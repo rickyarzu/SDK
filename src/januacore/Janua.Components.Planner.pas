@@ -4,6 +4,10 @@ interface
 
 uses Janua.Core.Classes, JOrm.Planner.Timetable.Intf;
 
+{$TYPEINFO ON}
+{$METHODINFO ON}
+
+
 type
   TJanuaPlannerController = class(TJanuaCoreComponent)
   private

@@ -7,21 +7,34 @@ uses
   System.SysUtils,
   Janua.WebBroker.Server,
   Janua.Application.Framework,
-  Janua.Test.dmTestWebWhatsAppService in '..\..\..\src\januacore\Test\Janua.Test.dmTestWebWhatsAppService.pas' {dmTestWebWhatsAppService: TDataModule};
+  Janua.Test.dmTestWebBrokerService
+    in '..\..\..\src\januacore\Test\Janua.Test.dmTestWebBrokerService.pas' {dmTestWebBrokerService: TDataModule} ,
+  Janua.Test.dmTestWebWhatsAppService
+    in '..\..\..\src\januacore\Test\Janua.Test.dmTestWebWhatsAppService.pas' {dmTestWhatsAppWebBrokerService: TDataModule};
 
+procedure RunServer;
 var
-  FWebModuleClass: TComponentClass;
-  FWebServer: TJanuaWebBrokerServer;
-  FWebBrokerClass: TJanuaWebBrokerServerClass;
+  DM: TdmTestWhatsAppWebBrokerService;
+begin
+  try
+    DM := TdmTestWhatsAppWebBrokerService.Create(nil);
+    DM.Active := True;
+    if DM.Active then
+      DM.ConsoleRun
+    else
+      WriteLn('Error Activating Web Module');
+  finally
+    DM.Free;
+    DM := nil;
+  end;
+end;
 
 begin
   try
-    TJanuaWebServerFactory.WebServerClass := FWebBrokerClass;
-    FWebServer := TJanuaWebServerFactory.CreateWebServer(8081) as TJanuaWebBrokerServer;
-    WriteLn('Created server with default port: ' +  FWebServer.Port.ToString);
+    RunServer
   except
     on E: Exception do
-      Writeln(E.ClassName, ': ', E.Message);
+      WriteLn(E.ClassName, ': ', E.Message);
   end;
 
 end.

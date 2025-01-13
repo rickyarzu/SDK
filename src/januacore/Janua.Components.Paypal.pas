@@ -10,6 +10,9 @@ uses System.Classes, System.NetEncoding, System.JSON, System.SysUtils,
   // NetHttp
   System.Net.HttpClient, System.Net.HttpClientComponent, System.Net.URLClient, System.NetConsts;
 
+{$TYPEINFO ON}
+{$METHODINFO ON}
+
 Type
 
   TPayPalPayoutItem = record

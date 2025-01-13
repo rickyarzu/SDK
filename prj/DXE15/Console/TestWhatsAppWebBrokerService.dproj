@@ -207,9 +207,12 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="..\..\..\src\januacore\Test\Janua.Test.dmTestWebBrokerService.pas">
+            <Form>dmTestWebBrokerService</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <DCCReference Include="..\..\..\src\januacore\Test\Janua.Test.dmTestWebWhatsAppService.pas">
-            <Form>dmTestWebWhatsAppService</Form>
-            <FormType>dfm</FormType>
+            <Form>dmTestWhatsAppWebBrokerService</Form>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Base">
@@ -252,6 +255,18 @@
                 <DeployFile LocalName="Win32\Debug\TestWhatsAppWebBrokerService.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>TestWhatsAppWebBrokerService.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win64\Debug\TestWhatsAppWebBrokerService.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>TestWhatsAppWebBrokerService.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win64\Debug\TestWhatsAppWebBrokerService.rsm" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win64">
+                        <RemoteName>TestWhatsAppWebBrokerService.rsm</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

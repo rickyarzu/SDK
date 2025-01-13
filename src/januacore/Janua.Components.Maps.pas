@@ -4,6 +4,9 @@ interface
 
 uses System.Classes, Janua.Core.Types,  Janua.Core.Cloud, System.Json;
 
+{$TYPEINFO ON}
+{$METHODINFO ON}
+
 Type
   TJanuaStreetMap = class(TJanuaMapComponent)
   protected

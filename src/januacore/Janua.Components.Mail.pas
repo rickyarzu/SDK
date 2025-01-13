@@ -7,6 +7,9 @@ uses
   // Janua
   Janua.Cloud.Types, Janua.Core.Classes, Janua.Cloud.Mail.Conf, Janua.Cloud.Mail.Intf;
 
+{$TYPEINFO ON}
+{$METHODINFO ON}
+
 type
   TJanuaMailSender = class(TJanuaCoreComponent)
   private
