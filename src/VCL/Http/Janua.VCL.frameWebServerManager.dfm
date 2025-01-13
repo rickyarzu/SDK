@@ -13,7 +13,7 @@ object JanuaframeWebServerManager: TJanuaframeWebServerManager
   end
   object btnStartServer: TButton
     Left = 152
-    Top = 7
+    Top = 5
     Width = 89
     Height = 25
     Caption = 'Start Server'
@@ -22,40 +22,27 @@ object JanuaframeWebServerManager: TJanuaframeWebServerManager
   end
   object btnStopServer: TButton
     Left = 256
-    Top = 7
+    Top = 5
     Width = 89
     Height = 25
     Caption = 'Stop Server'
     TabOrder = 1
     OnClick = btnStopServerClick
   end
-  object sedPort: TscSpinEdit
-    Left = 72
-    Top = 7
-    Width = 66
-    Height = 23
-    FluentUIOpaque = False
-    UseFontColorToStyleColor = False
-    ContentMarginLeft = 0
-    ContentMarginRight = 0
-    ContentMarginTop = 0
-    ContentMarginBottom = 0
-    CustomBackgroundImageNormalIndex = -1
-    CustomBackgroundImageHotIndex = -1
-    CustomBackgroundImageDisabledIndex = -1
-    PromptTextColor = clNone
-    HideMaskWithEmptyText = False
-    HidePromptTextIfFocused = False
-    WallpaperIndex = -1
-    Increment = 1.000000000000000000
-    UpDownKind = scupkDefault
-    ValueType = scvtInteger
-    MouseWheelSupport = True
-    Value = 8081.000000000000000000
-    DisplayType = scedtNumeric
-    Transparent = False
-    BorderKind = scebFrame
+  object sedPort: TSpinEdit
+    Left = 64
+    Top = 5
+    Width = 65
+    Height = 24
+    MaxValue = 65535
+    MinValue = 0
     TabOrder = 2
-    OnChange = sedPortChange
+    Value = 0
+  end
+  object JanuaWebBrokerServerManager1: TJanuaWebBrokerServerManager
+    Enabled = False
+    Port = 0
+    Left = 192
+    Top = 8
   end
 end

@@ -76,7 +76,7 @@ end;
 function TJanuaUniGUIController.MessageDlg(const Msg: string; DlgType: TMsgDlgType;
   Buttons: TMsgDlgButtons): Integer;
 begin
-
+  Result := -1;
 end;
 
 procedure TJanuaUniGUIController.MessageDlg(const Msg: string; DlgType: TMsgDlgType; Buttons: TMsgDlgButtons;

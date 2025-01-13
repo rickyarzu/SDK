@@ -17,9 +17,16 @@ CREATE OR REPLACE VIEW sports.calendar_view
     calendar.update_date,
     calendar.user_insert,
     calendar.user_update
-   FROM sports.calendar 
-    WHERE calendar.db_schema_id =  current_setting('system.db_username')::character varying; 
+   FROM sports.calendar
+   WHERE db_schema_id = system.get_schema_id();
 
 ALTER TABLE sports.calendar_view
     OWNER TO ergo;
+
+
+CREATE TRIGGER calendar_view_iud_trg
+    INSTEAD OF INSERT OR DELETE OR UPDATE 
+    ON sports.calendar_view
+    FOR EACH ROW
+    EXECUTE PROCEDURE sports.calendar_view_trg();
 

@@ -24,7 +24,7 @@ type
   public
     [MVCPath]
     [MVCHTTPMethod([httpGET])]
-    procedure Index; virtual;
+    procedure Index; override;
 
     // Sample CRUD Actions for a "Customer" entity
     [MVCPath('/dataset/($aFormat)/($aParams)')]

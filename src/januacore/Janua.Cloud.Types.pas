@@ -396,25 +396,34 @@ type
 
   /// <summary> When Twilio Sends a Status Post Record it's coverted into a Record and stored here </summary>
   TTWilioStatus = record
+    NumMedia: integer; // =0
+    MessageType: string; // =text
+    ProfileName: string; // =Januaproject
+    SmsMessageSid: string; // SmsMessageSid=SM1cb558f14120a812ac534a7b445d9378
+    NumSegments: integer; // =1
+    ReferralNumMedia: integer; // =0
+    WaId: string; // =393409111351
+    Body: string; // =Ricevuto
     /// <summary> can be either whatsapp or sms message channel but even email with sendgrid </summary>
     ChannelPrefix: string; //
-    ApiVersion: string; // 2010-04-01
+    ApiVersion: string; // ApiVersion=2010-04-01
     MessageStatus: string; // sent
     SmsSid: string; // SM01daea63271ce0d7abb6e7cc3f58af10
-    SmsStatus: string; // sent
+    SmsStatus: string; // SmsStatus=received
     ChannelInstallSid: string; // XE59539e1d21b0c112b13009b146d827f7
-    MsgTo: string; // whatsapp:+393409111351
-    MsgFrom: string; // whatsapp:+393513535778
+    MsgTo: string; // To=whatsapp:+393440682001
+    MsgFrom: string; // From=whatsapp:+393409111351
     /// <summary> Message Unique identifier </summary>
-    MessageSid: string; // SM01daea63271ce0d7abb6e7cc3f58af10
+    MessageSid: string; // MessageSid=SM1cb558f14120a812ac534a7b445d9378
     StructuredMessage: string; // false
     // <summary> Twilio Account unique id can be used to address received messages </summary>
-    AccountSid: string; //
+    AccountSid: string; // AccountSid=AC78d40d3938a560d9b6340ff1570c12b9
     ChannelToAddress: string; // +39340911XXXX
     // Twilio Error: [This message send failed because it violates Channel provider's policy. Please see Channel specific error message for more information.] -
     ChannelStatusMessage: string;
     // Whatsapp Error: [msg=Parameter of type text is missing text value, code=131008]
     ChannelStatusCode: string; // 131008
+    ErrorUrl: string; // ErrorUrl=https://twilio.januaservers.com/webhook
     ErrorCode: string; // 63013
     procedure SetFromString(const aString: string);
     procedure SetFromStrings(const aList: TStringList);
@@ -1306,6 +1315,23 @@ begin
   StructuredMessage := aList.Values['StructuredMessage'];
   AccountSid := aList.Values['AccountSid'];
   ChannelToAddress := aList.Values['ChannelToAddress'];
+
+  // **************** New for Fallback **********************************
+  var
+  sNumMedia := aList.Values['ChannelStatusMessage'];
+  NumMedia := IfThen(sNumMedia = '', '0', sNumMedia).ToInteger(); // =0
+  MessageType := aList.Values['MessageType'];
+  ProfileName := aList.Values['ProfileName'];
+  SmsMessageSid := aList.Values['SmsMessageSid'];
+  var
+  sNumSegments := aList.Values['NumSegments'];
+  NumSegments := IfThen(sNumSegments = '', '0', sNumSegments).ToInteger(); // =0
+  var
+  sReferralNumMedia := aList.Values['ReferralNumMedia'];
+  ReferralNumMedia := IfThen(sReferralNumMedia = '', '0', sReferralNumMedia).ToInteger(); // =0
+  WaId := aList.Values['WaId'];
+  Body := aList.Values['Body'];
+
 end;
 
 { TTwilioWebHook }

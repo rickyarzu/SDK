@@ -73,6 +73,7 @@ function JanuainputText(const sTitle, sCaption: string; const sDefault: string =
 function InputInteger(const InputText: string; const aDefault: integer = 0): integer; inline;
 function InputBox(const sTitle, sCaption: string; sDefault: string): string; inline;
 function JanuaInputDate(const sTitle, sCaption: string; var aDate: TDateTime): boolean; inline;
+function JanuaInputDateTime(const sTitle, sCaption: string; var aDate: TDateTime): boolean; inline;
 function OpenFolderLowLevel(var aFolder: string; const aTitle, aButtonCaption: string): boolean;
 function JanuaOpenFolder(var aFolder: string; const aTitle, aButtonCaption: string): boolean;
 
@@ -835,6 +836,25 @@ var
 begin
   Result := False;
   if TJanuaApplicationFactory.TryGetInterface(IJanuaDialogDate, a) then
+  begin
+    a.DisplayText := sCaption;
+    // 'Data della Richiesta di Rimborso';
+    a.Caption := sTitle; // 'Inserimento Data';
+    a.Date := aDate; // a.Date := FRefundDate;
+    if a.Execute then
+    begin
+      Result := true; // a.Date;
+      aDate := a.Date; // SetRefundDate(a.Date);
+    end;
+  end;
+end;
+
+function JanuaInputDateTime(const sTitle, sCaption: string; var aDate: TDateTime): boolean; inline;
+var
+  a: IJanuaDialogDate;
+begin
+  Result := False;
+  if TJanuaApplicationFactory.TryGetInterface(IJanuaDialogDateTime, a) then
   begin
     a.DisplayText := sCaption;
     // 'Data della Richiesta di Rimborso';

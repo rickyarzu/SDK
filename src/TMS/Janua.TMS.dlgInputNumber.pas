@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, VCL.Graphics, VCL.Controls, VCL.Forms,
   VCL.Dialogs, VCL.StdCtrls, VCL.Mask, AdvSpin, AdvGlowButton,
   // Janua
-  Janua.Controls.Dialogs.Intf, uJanuaVCLForm;
+  Janua.Controls.Dialogs.Intf, uJanuaVCLForm, Vcl.ComCtrls;
 
 type
   TdlgTMSInputNumber = class(TJanuaVCLFormModel, IJanuaDlgIntegerForm)

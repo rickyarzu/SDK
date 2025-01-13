@@ -408,8 +408,6 @@ type
     property lastMessage: string read FLastMessage write SetLastMessage stored false;
   end;
 
-
-
 type
   TJanuaBindableObject = class(TJanuaBindableClass)
     // ************************************** Log Management ***************************************
@@ -525,14 +523,14 @@ type
     procedure SetNameJ(const Value: TComponentName);
     function JanuaGetComponent: TComponent;
     procedure JanuaSetComponent(const Value: TComponent);
-    /// <summary> Component to be connected to object properties or Fields </summary>
   public
     property Name: TComponentName read GetNameJ write SetNameJ;
+    /// <summary> Component to be connected to object properties or Fields </summary>
     property Component: TComponent read JanuaGetComponent write JanuaSetComponent;
   end;
 
 type
-  TJanuaBindableComponent = class(TJanuaCustomComponent)
+  TJanuaBindableComponent = class(TJanuaCustomComponent, IJanuaBindable)
     // ************************************** Log Management ***************************************
   protected
     FLogProc: TMessageLogProc;
@@ -1256,7 +1254,6 @@ begin
   if TJanuaApplication.ApplicationType = TJanuaApplicationType.jatConsoleSrv then
     Writeln(aLog);
 end;
-
 
 { TJanuaCustomRESTClient }
 
@@ -3997,7 +3994,6 @@ begin
 
 end;
 
-
 constructor TJanuaBindableObject.Create(aValues: TValueArray);
 begin
   if Length(aValues) = 0 then
@@ -4051,7 +4047,6 @@ begin
   else
     TJanuaLogger.LogError(aProcName, aError, self)
 end;
-
 
 procedure TJanuaBindableObject.SetLogProc(const Value: TMessageLogProc);
 begin

@@ -9,7 +9,7 @@ uses
   // ThirdParty
   SHDocVw,
   // Janua
-  Janua.VCL.WebBrowser;
+  Janua.VCL.WebBrowser, Winapi.WebView2, Winapi.ActiveX, Vcl.Edge, AdvmWS;
 
 type
   THtmlPreviewDialog = class(TForm)
@@ -19,8 +19,8 @@ type
     AdvOfficePager11: TAdvOfficePage;
     AdvOfficePager12: TAdvOfficePage;
     AdvMemo1: TAdvMemo;
-    WebBrowser1: TWebBrowser;
-    procedure FormCreate(Sender: TObject);
+    EdgeBrowser1: TEdgeBrowser;
+    AdvHTMLMemoStyler1: TAdvHTMLMemoStyler;
   private
     { Private declarations }
     aWrapper: Janua.VCL.WebBrowser.TWebBrowserWrapper;
@@ -38,16 +38,11 @@ implementation
 
 {$R *.dfm}
 
-procedure THtmlPreviewDialog.FormCreate(Sender: TObject);
-begin
-  aWrapper := Janua.VCL.WebBrowser.TWebBrowserWrapper.Create(self.WebBrowser1);
-end;
-
 procedure THtmlPreviewDialog.SetHtmlText(const Value: string);
 begin
   FHtmlText := Value;
-  self.AdvMemo1.Lines.Text := FHtmlText;
-  aWrapper.LoadFromString(FHtmlText);
+  AdvMemo1.Lines.Text := FHtmlText;
+  EdgeBrowser1.NavigateToString(FHtmlText);
 end;
 
 end.

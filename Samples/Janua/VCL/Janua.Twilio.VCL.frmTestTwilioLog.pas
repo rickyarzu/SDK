@@ -3,10 +3,10 @@ unit Janua.Twilio.VCL.frmTestTwilioLog;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Data.DB, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls,
-  Vcl.Buttons, Vcl.Grids, Vcl.DBGrids, CRGrid, AdvMemo, advmjson, DBAdvMemo, PictureContainer, HTMLabel,
-  dbhtmlab, System.ImageList, Vcl.ImgList;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, VCL.Graphics,
+  VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.ExtCtrls, Data.DB, VCL.StdCtrls, VCL.Mask, VCL.DBCtrls,
+  VCL.Buttons, VCL.Grids, VCL.DBGrids, CRGrid, AdvMemo, advmjson, DBAdvMemo, PictureContainer, HTMLabel,
+  dbhtmlab, System.ImageList, VCL.ImgList, VCL.ComCtrls, VCL.ExtDlgs, scControls, scDBControls, VCL.DBCGrids;
 
 type
   TfrmVCLJanuaTestTwilioLog = class(TForm)
@@ -28,9 +28,7 @@ type
     btnSyncMessages: TButton;
     dsWhatsAppMessage: TDataSource;
     Panel3: TPanel;
-    DBNavigator3: TDBNavigator;
     DBMemo3: TDBMemo;
-    CRDBGrid2: TCRDBGrid;
     AdvJSONMemoStyler1: TAdvJSONMemoStyler;
     DBAdvMemo2: TDBAdvMemo;
     grdTwilioClone: TCRDBGrid;
@@ -47,11 +45,35 @@ type
     DBHTMLabel1: TDBHTMLabel;
     PictureContainer1: TPictureContainer;
     ImageList1: TImageList;
+    PageControl1: TPageControl;
+    tabMessages: TTabSheet;
+    TabSheet2: TTabSheet;
+    CRDBGrid2: TCRDBGrid;
+    DBNavigator3: TDBNavigator;
+    pnlStatus: TPanel;
+    DBNavigator5: TDBNavigator;
+    CRDBGrid5: TCRDBGrid;
+    dsWhatsAppStates: TDataSource;
+    scDBImage1: TscDBImage;
+    OpenPictureDialog1: TOpenPictureDialog;
+    SpeedButton1: TSpeedButton;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    tabStatini: TTabSheet;
+    DBCtrlGrid1: TDBCtrlGrid;
+    btnSetIcons: TButton;
+    DBText1: TDBText;
+    DBText2: TDBText;
+    DBText3: TDBText;
+    scDBImage2: TscDBImage;
     procedure btnMaxClick(Sender: TObject);
     procedure btnOpenDatasetsClick(Sender: TObject);
     procedure btnSyncClick(Sender: TObject);
     procedure btnWebNookClick(Sender: TObject);
     procedure btnSyncMessagesClick(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure btnSetIconsClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -80,6 +102,11 @@ begin
   dmPgTWilioSync.qryMaxTwilioLog.Open;
 end;
 
+procedure TfrmVCLJanuaTestTwilioLog.btnSetIconsClick(Sender: TObject);
+begin
+  dmPgTWilioSync.StatiniStatus;
+end;
+
 procedure TfrmVCLJanuaTestTwilioLog.btnSyncClick(Sender: TObject);
 begin
   dmPgTWilioSync.SyncDBTwilio;
@@ -102,6 +129,20 @@ begin
   dmPgTWilioSync.qryWebHook.Open;
   dmPgTWilioSync.qryMessageList.Close;
   dmPgTWilioSync.qryMessageList.Open;
+end;
+
+procedure TfrmVCLJanuaTestTwilioLog.FormCreate(Sender: TObject);
+begin
+  dsWhatsAppStates.DataSet.Open;
+end;
+
+procedure TfrmVCLJanuaTestTwilioLog.SpeedButton1Click(Sender: TObject);
+begin
+  if OpenPictureDialog1.Execute then
+  begin
+    dmPgTWilioSync.tbWhatsAppStates.Edit;
+    dmPgTWilioSync.tbWhatsAppStatesIMAGE.LoadFromFile(OpenPictureDialog1.FileName);
+  end;
 end;
 
 end.

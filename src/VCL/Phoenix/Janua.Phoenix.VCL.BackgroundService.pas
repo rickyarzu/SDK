@@ -7,7 +7,7 @@ uses
   // VCL
   VCL.Graphics, VCL.Controls, VCL.SvcMgr, VCL.Dialogs
   // Janua
-    , Janua.Phoenix.VCL.BackgroundThread;
+    , Janua.Phoenix.VCL.TWilioBackgroundThread;
 
 type
   TsrvPhoenixVCLBackgroundService = class(TService)
@@ -18,7 +18,7 @@ type
     procedure ServiceStop(Sender: TService; var Stopped: Boolean);
     procedure ServiceStart(Sender: TService; var Started: Boolean);
   private
-    FBackgroundThread: TBackgroundThread;
+    FBackgroundThread: TTwilioBackgroundThread;
     { Private declarations }
   public
     function GetServiceController: TServiceController; override;
@@ -82,7 +82,7 @@ end;
 
 procedure TsrvPhoenixVCLBackgroundService.ServiceStart(Sender: TService; var Started: Boolean);
 begin
-  FBackgroundThread := TBackgroundThread.Create(True);
+  FBackgroundThread := TTwilioBackgroundThread.Create(True);
   FBackgroundThread.Start;
   Started := True;
 end;

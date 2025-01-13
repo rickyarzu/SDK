@@ -142,7 +142,7 @@ begin
     end
     else
     begin
-      FListBox.DisposeOf;
+      FListBox.Free;
       FListBox := nil;
     end;
   end;

@@ -5,7 +5,7 @@ uses
   FMX.Forms,
   Janua.FMX.PhoenixMobile.frmMain in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frmMain.pas' {frmFMXPhoenixMobileMain},
   Janua.FMX.PhoenixMobile.Resources in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.Resources.pas' {dmJanuaFMXPhoenixMobileResources: TDataModule},
-  Janua.FMX.PhoenixMobile.frameReportItem in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportItem.pas' {Frame1: TFrame},
+  Janua.FMX.PhoenixMobile.frameReportItem in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportItem.pas' {frameReportItem: TFrame},
   Janua.FMX.PhoenixMobile.frameReportHeader in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportHeader.pas' {frameFMXPhoenixMobileReportHeader: TFrame},
   Janua.FMX.PhoenixMobile.frameReportListModel in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListModel.pas' {frameFMXPhoenixReportListModel: TFrame},
   Janua.FMX.PhoenixMobile.frameReportListEstinguishers in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListEstinguishers.pas' {frameFMXPhoenixReportListEstinguishers: TFrame},

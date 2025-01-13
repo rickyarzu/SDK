@@ -9,10 +9,10 @@ uses
   Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.Grids,
   Vcl.DBGrids, CRGrid, Vcl.ExtCtrls,
   // Janua
-  Janua.Vcl.EnhCRDBGrid, AdvGlowButton;
+  Janua.Vcl.EnhCRDBGrid, AdvGlowButton, Vcl.Buttons;
 
 type
-  TdlgFootballClub = class(TForm)
+  TdlgSportsClubs = class(TForm)
     lbClubID: TLabel;
     edClubID: TDBEdit;
     dsClub: TDataSource;
@@ -22,7 +22,7 @@ type
     edFoundation_date: TDBEdit;
     grdTeams: TEnhCRDBGrid;
     dsTeams: TDataSource;
-    DBNavigator2: TDBNavigator;
+    navTeams: TDBNavigator;
     GroupBox1: TGroupBox;
     lbListTeams: TLabel;
     Label1: TLabel;
@@ -57,18 +57,20 @@ type
   end;
 
 var
-  dlgFootballClub: TdlgFootballClub;
+  dlgSportsClubs: TdlgSportsClubs;
 
 implementation
 
 {$R *.dfm}
 
-uses udmFootballAnagraph, udmFootballPostgres;
+uses Janua.Sports.PgChampionship;
 
-procedure TdlgFootballClub.btnOkClick(Sender: TObject);
+procedure TdlgSportsClubs.btnOkClick(Sender: TObject);
 begin
-  if dmFootballAnagraph.qryAnagraphs.Modified then
+  {
+    if dmFootballAnagraph.qryAnagraphs.Modified then
     dmFootballAnagraph.qryAnagraphs.Post;
+  }
 end;
 
 end.

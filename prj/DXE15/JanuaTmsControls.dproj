@@ -83,7 +83,7 @@
         <CfgDependentOn>JanuaLibDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Linux64)'!=''">
-        <DCC_UsePackage>rtl;FlexCel_Core;FlexCel_XlsAdapter;JanuaMVVM;JanuaUnidac;JanuaVCLComponents;JanuaVCLControls;TMSWebGMapsPkg;JanuaCore;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>rtl;FlexCel_Core;FlexCel_XlsAdapter;JanuaMVVM;JanuaUnidac;JanuaVCLComponents;JanuaVCLControls;TMSWebGMapsPkg;JanuaCore;dbrtl;IndySystem;IndyProtocols;IndyCore;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
@@ -91,10 +91,10 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_UsePackage>rtl;TMSVCLUIPackPkg;TMSVCLUIPackPkgEx;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;SVGIconImageList;SVGIconPackage;JanuaMVVM;JanuaUnidac;JanuaVCLComponents;JanuaVCLControls;TMSWebGMapsPkg;JanuaCore;VCLTMSFNCCloudPackPkg;TMSVCLUIPackPkgDXE15;TMSVCLUIPackPkgExDXE15;VCLTMSFNCCloudPackPkgDXE15;TMSCloudPkgDXE15;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>rtl;TMSVCLUIPackPkg;TMSVCLUIPackPkgEx;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;SVGIconImageList;SVGIconPackage;JanuaMVVM;JanuaUnidac;JanuaVCLComponents;JanuaVCLControls;TMSWebGMapsPkg;JanuaCore;VCLTMSFNCCloudPackPkg;TMSVCLUIPackPkgDXE15;TMSVCLUIPackPkgExDXE15;VCLTMSFNCCloudPackPkgDXE15;TMSCloudPkgDXE15;dbrtl;IndySystem;IndyProtocols;IndyCore;dmvcframeworkDT;dmvcframeworkRT;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <DCC_UsePackage>rtl;TMSVCLUIPackPkg;TMSVCLUIPackPkgEx;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;SVGIconImageList;SVGIconPackage;JanuaMVVM;JanuaVCLComponents;JanuaVCLControls;JanuaCore;VCLTMSFNCCloudPackPkg;TMSVCLUIPackPkgDXE15;TMSVCLUIPackPkgExDXE15;VCLTMSFNCCloudPackPkgDXE15;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>rtl;TMSVCLUIPackPkg;TMSVCLUIPackPkgEx;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;SVGIconImageList;SVGIconPackage;JanuaMVVM;JanuaVCLComponents;JanuaVCLControls;JanuaCore;VCLTMSFNCCloudPackPkg;TMSVCLUIPackPkgDXE15;TMSVCLUIPackPkgExDXE15;VCLTMSFNCCloudPackPkgDXE15;dbrtl;IndySystem;IndyProtocols;IndyCore;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -134,6 +134,93 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="TMSCloudPkgDXE15.dcp"/>
+        <DCCReference Include="JanuaVCLComponents.dcp"/>
+        <DCCReference Include="VCLTMSFNCCloudPackPkgDXE15.dcp"/>
+        <DCCReference Include="TMSVCLUIPackPkgExDXE15.dcp"/>
+        <DCCReference Include="TMSWebGMapsPkg.dcp"/>
+        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.SelectPrinter.pas"/>
+        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.ReadOnly.pas"/>
+        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.InputNumber.pas"/>
+        <DCCReference Include="..\..\src\JanuaLegacy\uJanuaFrameNavigator.pas">
+            <Form>JanuaFrameNavigator</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\src\JanuaLegacy\udlgSelectPrinter.pas">
+            <Form>dlgSelectPrinter</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.Functions.pas"/>
+        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.Error.pas"/>
+        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.frmMDCModel.pas">
+            <Form>frmMDCModel</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Commons\uJanuaVCLFormMDIModel.pas">
+            <Form>JanuaVCLFormMDIModel</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Controls\Janua.VCL.TMSStyles.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.dlgLogin.pas">
+            <Form>dlgTMSLogin</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.dlgServer.pas">
+            <Form>dlgTMSSelectServer</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.Dialogs.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.dlgInputDate.pas">
+            <Form>dlgTMSInputDate</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.dlgInputFloat.pas">
+            <Form>dlgInputFloat</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.dlgInputNumber.pas">
+            <Form>dlgInputNumber</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.dlgInputText.pas">
+            <Form>dlgTMSInputText</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.Functions.pas"/>
+        <DCCReference Include="..\..\src\TMS\udmJanuaTmsSystem.pas">
+            <Form>dmJanuaTmsSystem</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Controls\Janua.Tms.Controls.Impl.pas"/>
+        <DCCReference Include="..\..\src\VCL\Commons\udlgJanuaWizardModel.pas">
+            <Form>dlgJanuaWizardModel</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.Cloud.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.Statistics.MainFormController.pas"/>
+        <DCCReference Include="..\..\src\VCL\System\Janua.VCL.dlgRegisterUser.pas">
+            <Form>dlgRegisterUser</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Cloud\Janua.VCL.Geocoding.pas">
+            <Form>dmGeoCoding</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\System\Janua.VCL.Users.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.RegisterUnit.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.Error.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.NavBar.pas">
+            <Form>JanuaTMSNavBarFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.FrameNavBar.pas">
+            <Form>frameJanuaTmsNavBar</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Forms.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.Interposers.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.Framework.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.dmComponents.pas">
+            <Form>dmTmsComponents</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.Cloud.Mail.VCL.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.MyMonthPlanner.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.SMS.pas"/>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.WebView.pas">
+            <Form>JanuaVCLWebView</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <None Include="ModelSupport_JanuaTmsControls\default.txaPackage"/>
         <None Include="ModelSupport_JanuaTmsControls\default.txvpck"/>
         <None Include="ModelSupport_JanuaTmsControls\Janua\default.txvpck"/>
@@ -162,8 +249,9 @@
                     <Source Name="MainSource">JanuaTmsControls.dpk</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\StyleControls290.bpl">(untitled)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaUnidacComponentsD290.bpl">Janua Unidac Extensions</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Platforms>

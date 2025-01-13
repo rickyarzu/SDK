@@ -440,7 +440,7 @@ type
 
   // TSpinEdit  Vcl.Samples.Spin
 type
-  TSpinEdit = class(VCL.Samples.Spin.TSpinEdit, IJanuaBindableControl)
+  TSpinEdit = class(VCL.Samples.Spin.TSpinEdit, IJanuaBindableControl, IJanuaBindable)
     // ------- Observer
   private
     FObserversList: IDictionary<IJanuaBindable, TProc>;

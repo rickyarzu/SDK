@@ -1,4 +1,4 @@
-unit ufrmMDCChampionship;
+﻿unit ufrmMDCChampionship;
 
 interface
 
@@ -18,7 +18,7 @@ uses
   AdvOfficeHint,
   // Janua
   Janua.Vcl.Dialogs, Janua.Core.Classes, Janua.Core.CustomControls, Janua.Core.System, uJanuaVCLfrmMDCModel,
-  Janua.Vcl.Grids, Janua.Vcl.EnhCRDBGrid, Janua.Components.Dialogs, Janua.Core.Commons,  udlgSportsNewSeason,
+  Janua.Vcl.Grids, Janua.Vcl.EnhCRDBGrid, Janua.Components.Dialogs, Janua.Core.Commons, udlgSportsNewSeason,
   udlgSportsSelectSeason, udlgFootballClub, udlgFootballSelectTeamClubPlayers, Janua.Core.Servers,
   udlgFootballPlayer, udlgFootballSelectMatchTeams, udlgSelectPlayerMatch, Janua.Vcl.TMSStyles,
   Janua.Core.Functions, Janua.Core.Cloud, MemData, Janua.Core.Cloud.Server, Janua.Football.Types;
@@ -69,7 +69,6 @@ type
     btnSearchChamp: TButtonedEdit;
     pnlSeasons: TShader;
     Panel47: TShader;
-    grdSeasons: TEnhCRDBGrid;
     SpeedButton2: TAdvGlowButton;
     SpeedButton3: TAdvGlowButton;
     SpeedButton5: TAdvGlowButton;
@@ -419,6 +418,8 @@ type
     N7: TMenuItem;
     CalcolaOrigineGiocatori1: TMenuItem;
     CalcolaOrigineGiocatoriTutteleStagioni1: TMenuItem;
+    dsSeasons: TDataSource;
+    grdSeasons: TEnhCRDBGrid;
     procedure FormShow(Sender: TObject);
     procedure btnSearchteamKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure Classifica6Colonne1Click(Sender: TObject);
@@ -609,7 +610,7 @@ begin
     qryTeamPlayersseason_id.AsInteger := qryTeamsClubsLeaguesseason_id.AsInteger;
     qryTeamPlayerssince.AsDateTime := Date();
     qryTeamPlayersclub_origin_id.AsInteger := qryTeamsClubsLeaguesteam_id.AsInteger;
-    qryTeamPlayersrole.AsInteger := qryClubPlayersrole.AsInteger;
+    qryTeamPlayersrole_id.AsInteger := qryClubPlayersrole.AsInteger;
   end;
 end;
 
@@ -940,7 +941,7 @@ begin
         if dmUniDacPgChampionships.qryAllPlayers.RecordCount = 1 then
         begin
           if self.JanuaDialog1.JMessageDlg('Attenzione Inserisco: ' +
-            dmUniDacPgChampionships.qryAllPlayersfullname.AsWideString) then
+            dmUniDacPgChampionships.qryAllPlayersfull_name.AsWideString) then
           begin
             btnPlayerAssignClick(self);
             grdMatchTeamAllPlayersDblClick(self);
@@ -1108,8 +1109,8 @@ begin
           dmUniDacPgChampionships.qryChampRankingwon_matches.AsWideString + #9 +
           dmUniDacPgChampionships.qryChampRankingtied_matches.AsWideString + #9 +
           dmUniDacPgChampionships.qryChampRankingLost_matches.AsWideString + #9 +
-          dmUniDacPgChampionships.qryChampRankinggoal_done.AsWideString + #9 +
-          dmUniDacPgChampionships.qryChampRankinggoal_lost.AsWideString);
+          dmUniDacPgChampionships.qryChampRankingscored.AsWideString + #9 +
+          dmUniDacPgChampionships.qryChampRankingconceded.AsWideString);
         dmUniDacPgChampionships.qryChampRanking.Next;
       end;
       a.ShowModal;
@@ -1138,8 +1139,8 @@ begin
           dmUniDacPgChampionships.qryChampRankingwon_matches.AsWideString + #9 +
           dmUniDacPgChampionships.qryChampRankingtied_matches.AsWideString + #9 +
           dmUniDacPgChampionships.qryChampRankingLost_matches.AsWideString + #9 +
-          dmUniDacPgChampionships.qryChampRankinggoal_done.AsWideString + #9 +
-          dmUniDacPgChampionships.qryChampRankinggoal_lost.AsWideString);
+          dmUniDacPgChampionships.qryChampRankingscored.AsWideString + #9 +
+          dmUniDacPgChampionships.qryChampRankingconceded.AsWideString);
         dmUniDacPgChampionships.qryChampRanking.Next;
       end;
       a.ShowModal;
@@ -1184,7 +1185,7 @@ begin
   if not Assigned(dmFootballController) then
     Application.CreateForm(TdmFootballController, dmFootballController);
 
-  grdSeasons.DataSource := dmUniDacPgChampionships.dsSeasons;
+  grdSeasons.DataSource := dsSeasons;
   dmUniDacPgChampionships.Activate;
   // Application.CreateForm(TdmFootballPlayerAnagraph, dmFootballPlayerAnagraph);
   // dmFootballPlayerAnagraph.ServerConf := FServerConf;
@@ -1226,47 +1227,49 @@ begin
 
   // Navigator
   dsClubs.DataSet := dmUniDacPgChampionships.qryClubs;
-  self.navClubs.DataSource := dsClubs;
-  self.grdClubs.DataSource := dsClubs;
-  self.grdTeamsClubsLeagues.DataSource := dmUniDacPgChampionships.dsTeamsClubsLeagues;
+  navClubs.DataSource := dsClubs;
+  grdClubs.DataSource := dsClubs;
+  grdTeamsClubsLeagues.DataSource := dmUniDacPgChampionships.dsTeamsClubsLeagues;
 
   // First Page
   // Teams Club League.
-  self.grdTeamsClubsMain.DataSource := dmUniDacPgChampionships.dsTeams;
-  self.navTeamsClubsMain.DataSource := dmUniDacPgChampionships.dsTeams;
+  grdTeamsClubsMain.DataSource := dmUniDacPgChampionships.dsTeams;
+  navTeamsClubsMain.DataSource := dmUniDacPgChampionships.dsTeams;
   // all club Players
-  self.grdClubPlayers.DataSource := dmUniDacPgChampionships.dsClubPlayers;
+  grdClubPlayers.DataSource := dmUniDacPgChampionships.dsClubPlayers;
   // Team Club Players
-  self.dsTeamsChampPlayers.DataSet := dmUniDacPgChampionships.qryTeamChampPlayers;
-  self.dsTeamPlayers.DataSet := dmUniDacPgChampionships.qryTeamPlayers;
+  if not Assigned(dsTeamsChampPlayers.DataSet) then
+    dsTeamsChampPlayers.DataSet := dmUniDacPgChampionships.qryTeamChampPlayers;
+  if not Assigned(dsTeamPlayers.DataSet) then
+    dsTeamPlayers.DataSet := dmUniDacPgChampionships.qryTeamPlayers;
   // Team Players Last
-  self.grdTeamPlayersLast.DataSource := dmUniDacPgChampionships.dsTeamLastSeason;
-  self.navTeamPlayersLast.DataSource := dmUniDacPgChampionships.dsTeamLastSeason;
+  grdTeamPlayersLast.DataSource := dmUniDacPgChampionships.dsTeamLastSeason;
+  navTeamPlayersLast.DataSource := dmUniDacPgChampionships.dsTeamLastSeason;
 
   // Team Clubs
-  self.grdTeamsClubs.DataSource := dmUniDacPgChampionships.dsTeamsClubsLeagues;
-  self.navTeamsClubs.DataSource := dmUniDacPgChampionships.dsTeamsClubsLeagues;
-  self.grdTeamRankings.DataSource := dmUniDacPgChampionships.dsTeamRankings;
-  self.navTeamHistory.DataSource := dmUniDacPgChampionships.dsTeamHistory;
-  self.grdTeamHistory.DataSource := dmUniDacPgChampionships.dsTeamHistory;
+  grdTeamsClubs.DataSource := dmUniDacPgChampionships.dsTeamsClubsLeagues;
+  navTeamsClubs.DataSource := dmUniDacPgChampionships.dsTeamsClubsLeagues;
+  grdTeamRankings.DataSource := dmUniDacPgChampionships.dsTeamRankings;
+  navTeamHistory.DataSource := dmUniDacPgChampionships.dsTeamHistory;
+  grdTeamHistory.DataSource := dmUniDacPgChampionships.dsTeamHistory;
 
   grdTeamRankings.DataSource := dmUniDacPgChampionships.dsTeamRankings;
 
   // ---------------------------------------------------------------------------------------------
   // ----------------- Matches -------------------------------------------------------------------
   // ---------------------------------------------------------------------------------------------
-  self.grdMatchDays.DataSource := dmUniDacPgChampionships.dsMatchDays;
-  self.grdMatches.DataSource := dmUniDacPgChampionships.dsMatches;
-  self.grdMatchEvents.DataSource := dmUniDacPgChampionships.dsMatchEvents;
-  self.grdMatchTeamPlayers.DataSource := dmUniDacPgChampionships.dsMatchTeamPlayers;
-  self.dsMatchTeams.DataSet := dmUniDacPgChampionships.qryMatchTeams;
-  self.navMatchEvents.DataSource := dmUniDacPgChampionships.dsMatchEvents;
-  self.navMatchTeamPlayers.DataSource := dmUniDacPgChampionships.dsMatchTeamPlayers;
-  self.grdMatchTeamPlayers.DataSource := dmUniDacPgChampionships.dsMatchTeamPlayers;
+  grdMatchDays.DataSource := dmUniDacPgChampionships.dsMatchDays;
   grdMatches.DataSource := dmUniDacPgChampionships.dsMatches;
-  self.grdMatchEvents.DataSource := dmUniDacPgChampionships.dsMatchEvents;
-  self.navMatches.DataSource := dmUniDacPgChampionships.dsMatches;
-  self.dsMatchTeams.DataSet := dmUniDacPgChampionships.qryMatchTeams;
+  grdMatchEvents.DataSource := dmUniDacPgChampionships.dsMatchEvents;
+  grdMatchTeamPlayers.DataSource := dmUniDacPgChampionships.dsMatchTeamPlayers;
+  dsMatchTeams.DataSet := dmUniDacPgChampionships.qryMatchTeams;
+  navMatchEvents.DataSource := dmUniDacPgChampionships.dsMatchEvents;
+  navMatchTeamPlayers.DataSource := dmUniDacPgChampionships.dsMatchTeamPlayers;
+  grdMatchTeamPlayers.DataSource := dmUniDacPgChampionships.dsMatchTeamPlayers;
+  grdMatches.DataSource := dmUniDacPgChampionships.dsMatches;
+  grdMatchEvents.DataSource := dmUniDacPgChampionships.dsMatchEvents;
+  navMatches.DataSource := dmUniDacPgChampionships.dsMatches;
+  dsMatchTeams.DataSet := dmUniDacPgChampionships.qryMatchTeams;
 end;
 
 procedure TfrmMdcChampionship.Gol1Click(Sender: TObject);
@@ -1277,8 +1280,8 @@ begin
   with dmUniDacPgChampionships do
   begin
     dmUniDacPgChampionships.qryMatchEvents.Append;
-    self.JanuaDialogInteger1.Caption := 'Minuti di Gioco';
-    self.JanuaDialogInteger1.Execute;
+    JanuaDialogInteger1.Caption := 'Minuti di Gioco';
+    JanuaDialogInteger1.Execute;
     qryMatchEventsplayer_id.AsInteger := qryMatchTeamPlayersplayer_id.AsInteger;
     qryMatchEventsevent_id.AsInteger := 1;
     qryMatchEventsminute.AsInteger := JanuaDialogInteger1.Number;
@@ -1301,8 +1304,8 @@ begin
   with dmUniDacPgChampionships do
   begin
     dmUniDacPgChampionships.qryMatchEvents.Append;
-    self.JanuaDialogInteger1.Caption := 'Minuti di Gioco';
-    self.JanuaDialogInteger1.Execute;
+    JanuaDialogInteger1.Caption := 'Minuti di Gioco';
+    JanuaDialogInteger1.Execute;
     qryMatchEventsplayer_id.AsInteger := qryMatchTeamPlayersplayer_id.AsInteger;
     qryMatchEventsevent_id.AsInteger := 1;
     qryMatchEventsminute.AsInteger := JanuaDialogInteger1.Number;
@@ -1432,10 +1435,10 @@ end;
 procedure TfrmMdcChampionship.CalculateMatch;
 begin
   if not dmUniDacPgChampionships.CalculateMatch then
-    self.JanuaDialog1.JShowError(dmUniDacPgChampionships.LastErrorMessage, dmUniDacPgChampionships.Log, '')
+    JanuaDialog1.JShowError(dmUniDacPgChampionships.LastErrorMessage, dmUniDacPgChampionships.Log, '')
     // serviva solo in fase di Test del programma ....
   else
-    self.RecordLog(dmUniDacPgChampionships.Log);
+    RecordLog(dmUniDacPgChampionships.Log);
 end;
 
 procedure TfrmMdcChampionship.MenuItem1Click(Sender: TObject);
@@ -1522,7 +1525,7 @@ begin
           dmUniDacPgChampionships.qryTeamPlayersbirth_date.AsWideString + #9 +
           dmUniDacPgChampionships.qryTeamPlayerslkpOriginClubName.AsWideString + #9 +
           dmUniDacPgChampionships.qryTeamPlayersmatches.AsWideString + #9 +
-          dmUniDacPgChampionships.qryTeamPlayersgoal.AsWideString);
+          dmUniDacPgChampionships.qryTeamPlayersscored.AsWideString);
         dmUniDacPgChampionships.qryTeamPlayers.Next;
       end;
       a.ShowModal;
@@ -1576,12 +1579,12 @@ end;
 
 procedure TfrmMdcChampionship.LinkLabelClick(Sender: TObject; const Link: string; LinkType: TSysLinkType);
 begin
-  self.WebBrowser1.Navigate(TLinkLabel(Sender).Hint);
+  WebBrowser1.Navigate(TLinkLabel(Sender).Hint);
 end;
 
 procedure TfrmMdcChampionship.LinkLabelClick1(Sender: TObject);
 begin
-  self.WebBrowser1.Navigate(TLabel(Sender).Hint);
+  WebBrowser1.Navigate(TLabel(Sender).Hint);
 end;
 
 procedure TfrmMdcChampionship.ConRisultati1Click(Sender: TObject);
@@ -1637,11 +1640,11 @@ begin
     qryTeamPlayers.Append;
     qryTeamPlayersfamily_name.AsWideString := qryTeamPlayersLastfamily_name.AsWideString;
     qryTeamPlayersfirst_name.AsWideString := qryTeamPlayersLastfirst_name.AsWideString;
-    qryTeamPlayersfullname.AsWideString := qryTeamPlayersLastfullname.AsWideString;
+    qryTeamPlayersfull_name.AsWideString := qryTeamPlayersLastfull_name.AsWideString;
     qryTeamPlayersteam_id.AsInteger := qryTeamPlayersLastteam_id.AsInteger;
     qryTeamPlayersplayer_id.AsInteger := qryTeamPlayersLastplayer_id.AsInteger;
     qryTeamPlayersseason_id.AsInteger := dmUniDacPgChampionships.qrySeasonsid.AsInteger;
-    qryTeamPlayersrole.AsInteger := qryTeamPlayersLastrole.AsInteger;
+    qryTeamPlayersrole_id.AsInteger := qryTeamPlayersLastrole_id.AsInteger;
     qryTeamPlayers.Post;
   end;
 end;
@@ -1810,9 +1813,11 @@ begin
         qryTeamPlayers.First;
         while not dmUniDacPgChampionships.qryTeamPlayers.eof do
         begin
-          s := IfThen(qryTeamPlayerslostgoal.AsInteger > 0, IfThen(qryTeamPlayersgoal.AsInteger > 0,
-            qryTeamPlayersgoal.AsWideString + '/', '') + '-' + qryTeamPlayerslostgoal.AsWideString,
-            qryTeamPlayersgoal.AsWideString);
+          s := IfThen(qryTeamPlayersconceded.AsInteger > 0, IfThen(qryTeamPlayersscored.AsInteger > 0,
+            qryTeamPlayersscored.AsWideString + '/', '') + '-' + qryTeamPlayersconceded.AsWideString,
+            qryTeamPlayersscored.AsWideString);
+
+          // dmUniDacPgChampionships.qryTeamPlayersconceded
 
           a.AdvMemo1.Lines.Add(dmUniDacPgChampionships.qryTeamPlayerslkpRoleCode.AsWideString + #9 +
             UpperCase(dmUniDacPgChampionships.qryTeamPlayersfamily_name.AsWideString) + ' ' +
@@ -1845,7 +1850,7 @@ end;
 
 procedure TfrmMdcChampionship.pgChampionshipsShow(Sender: TObject);
 begin
-  self.pnlChampionshipsList.Visible := True;
+  pnlChampionshipsList.Visible := True;
   FSelectedForm := TJanuaFooballForm.jffChampionship
 end;
 
@@ -1867,9 +1872,9 @@ end;
 
 procedure TfrmMdcChampionship.RecordLog(aLog: string);
 begin
-  self.memLogs.Lines.Add('');
-  self.memLogs.Lines.Add(DateTimeToStr(Now) + '*************************************************');
-  self.memLogs.Lines.Add(aLog);
+  memLogs.Lines.Add('');
+  memLogs.Lines.Add(DateTimeToStr(Now) + '*************************************************');
+  memLogs.Lines.Add(aLog);
 end;
 
 procedure TfrmMdcChampionship.rgSearchIndexClick(Sender: TObject);
@@ -1993,13 +1998,12 @@ begin
           qryMatchTeamPlayersminutes.AsInteger := qryMatchTeamPlayersUntil.AsInteger -
             qryMatchTeamPlayersSince.AsInteger;
           qryMatchTeamPlayersplayer_id.AsInteger := qryMatchTeamAllPlayersanagraph_id.AsInteger;
-          qryMatchTeamPlayersfull_name.AsWideString := qryMatchTeamAllPlayersfullname.AsWideString;
+          qryMatchTeamPlayersfull_name.AsWideString := qryMatchTeamAllPlayersfull_name.AsWideString;
           qryMatchTeamPlayers.Post;
         end
         else
         begin
-          self.JanuaDialog1.JShowError('Attenzione il giocatore: ' +
-            qryMatchTeamAllPlayersfullname.AsWideString +
+          JanuaDialog1.JShowError('Attenzione il giocatore: ' + qryMatchTeamAllPlayersfull_name.AsWideString +
             ' ? gi? in formazione non pu? entrare come sostituto', '', '');
         end;
       end;
@@ -2043,20 +2047,20 @@ procedure TfrmMdcChampionship.SpeedButton13Click(Sender: TObject);
 var
   i, j: integer;
 begin
-  self.JanuaDialogInteger1.Number := dmUniDacPgChampionships.qryTeamsChampionships.RecordCount;
+  JanuaDialogInteger1.Number := dmUniDacPgChampionships.qryTeamsChampionships.RecordCount;
   JanuaDialogInteger1.Caption := 'Confermare il numero di squadre iscritte al campionato';
   if JanuaDialogInteger1.Number <> dmUniDacPgChampionships.qryTeamsChampionships.RecordCount then
   begin
-    self.JanuaDialog1.JShowError('Attenzione errore nel conteggio squadre giornate', '', '');
+    JanuaDialog1.JShowError('Attenzione errore nel conteggio squadre giornate', '', '');
     Exit;
   end;
 
-  if self.JanuaDialogInteger1.Execute then
+  if JanuaDialogInteger1.Execute then
   begin
-    if Odd(self.JanuaDialogInteger1.Number) then
-      j := self.JanuaDialogInteger1.Number
+    if Odd(JanuaDialogInteger1.Number) then
+      j := JanuaDialogInteger1.Number
     else
-      j := self.JanuaDialogInteger1.Number - 1;
+      j := JanuaDialogInteger1.Number - 1;
 
     for i := 1 to (j) * 2 do
     begin
@@ -2082,7 +2086,7 @@ end;
 procedure TfrmMdcChampionship.SpeedButton20Click(Sender: TObject);
 begin
   inherited;
-  self.TabellinoNew;
+  TabellinoNew;
 end;
 
 procedure TfrmMdcChampionship.SpeedButton21Click(Sender: TObject);
@@ -2111,30 +2115,37 @@ begin
 end;
 
 procedure TfrmMdcChampionship.SpeedButton2Click(Sender: TObject);
-var
-  a: TdlgSportsSelectSeason;
 begin
+  var
   a := TdlgSportsSelectSeason.Create(self);
   try
     a.ShowModal;
-    if a.ModalResult = mrOK then
-      with dmUniDacPgChampionships do
-        try
-          qryChampionships.Append;
-          qryChampionshipsseason_id.Value := qrySeasonsid.AsInteger;
-          qryChampionshipsleague_id.Value := qrySelectLeaguesleague_id.AsInteger;
-          qryChampionshipsleague_name.Value := qrySelectLeaguesleague_name.AsString;
-          { qryChampionshipsiso_country_code.Value := 'IT'; }
-          qryChampionships.Post;
-          JanuaDialog1.JShowMessage('Campionato ' + qryChampionshipsleague_name.AsString + ' - ' +
-            qryChampionshipsleague_name.AsString + ' inserito', '', '');
-        except
-          on e: exception do
-          begin
-            JanuaDialog1.JShowError('Errore di Registrazione Campionato' +
-              qryChampionshipsleague_name.AsString, e.Message, '');
-          end;
-        end;
+    var
+    m := dmUniDacPgChampionships;
+
+    if dmUniDacPgChampionships.qrySelectLeagues.State in [dsEdit, dsInsert] then
+       dmUniDacPgChampionships.qrySelectLeagues.Post;
+
+    if a.ModalResult = mrOK  then
+    try
+      m.qryChampionships.Append;
+      m.qryChampionshipsseason_id.Value := m.qrySeasonsid.AsInteger;
+      m.qryChampionshipsleague_id.Value := m.qrySelectLeaguesid.AsInteger;
+      m.qryChampionshipsleague_name.Value := m.qrySelectLeaguesleague_name.AsString;
+      m.qryChampionshipsdb_schema_id.Value := m.PgErgoConnection.SchemaID;
+      m.qryChampionshipsteams.AsInteger := 10;
+      { qryChampionshipsiso_country_code.Value := 'IT'; }
+      m.qryChampionships.Post;
+      JanuaDialog1.JShowMessage('Campionato ' + m.qryChampionshipsleague_name.AsString + ' - ' +
+        m.qryChampionshipsleague_name.AsString + ' inserito', '', '');
+    except
+      on e: exception do
+      begin
+        m.qryChampionships.Cancel;
+        JanuaDialog1.JShowError('Errore di Registrazione Campionato' + m.qryChampionshipsleague_name.AsString,
+          e.Message, '');
+      end;
+    end;
   finally
     FreeAndNil(a);
   end;
@@ -2251,22 +2262,22 @@ procedure TfrmMdcChampionship.SpeedButton6Click(Sender: TObject);
 var
   i, j, k: integer;
 begin
-  self.JanuaDialogInteger1.Number := dmUniDacPgChampionships.qryTeamsChampionships.RecordCount;
+  JanuaDialogInteger1.Number := dmUniDacPgChampionships.qryTeamsChampionships.RecordCount;
   JanuaDialogInteger1.Caption := 'Confermare il numero di squadre iscritte al campionato';
-  self.JanuaDialogInteger1.Execute;
+  JanuaDialogInteger1.Execute;
   if JanuaDialogInteger1.Number <> dmUniDacPgChampionships.qryTeamsChampionships.RecordCount then
   begin
-    self.JanuaDialog1.JShowError('Attenzione errore nel conteggio squadre giornate', '', '');
+    JanuaDialog1.JShowError('Attenzione errore nel conteggio squadre giornate', '', '');
     Exit;
   end
   else
     with dmUniDacPgChampionships do
     begin
 
-      if Odd(self.JanuaDialogInteger1.Number) then
-        k := self.JanuaDialogInteger1.Number
+      if Odd(JanuaDialogInteger1.Number) then
+        k := JanuaDialogInteger1.Number
       else
-        k := self.JanuaDialogInteger1.Number - 1;
+        k := JanuaDialogInteger1.Number - 1;
 
       dmUniDacPgChampionships.qryMatchDays.First;
       for i := 1 to k do
@@ -2274,15 +2285,15 @@ begin
         j := i + k;
         if qryMatchDays.Locate('match_day_number', j, []) then
         begin
-          // self.JanuaDialog1.JShowMessage('Trovato ritorno: ' + j.ToString(), '', '');
+          // JanuaDialog1.JShowMessage('Trovato ritorno: ' + j.ToString(), '', '');
           if qryMatches.RecordCount = 0 then
           begin
             if qryMatchDays.Locate('match_day_number', i, []) then
             begin
-              // self.JanuaDialog1.JShowMessage('Trovato Andata: ' + i.ToString(), '', '');
+              // JanuaDialog1.JShowMessage('Trovato Andata: ' + i.ToString(), '', '');
               if qryMatches.RecordCount > 0 then
               begin
-                self.JanuaDialog1.JShowMessage('Inserisco Andata: ' + i.ToString() + ' Ritorno: ' +
+                JanuaDialog1.JShowMessage('Inserisco Andata: ' + i.ToString() + ' Ritorno: ' +
                   j.ToString, '', '');
                 qryMatches.First;
                 while not qryMatches.eof do
@@ -2310,7 +2321,7 @@ end;
 procedure TfrmMdcChampionship.btnPlayerAddClick(Sender: TObject);
 begin
   dmUniDacPgChampionships.qryAllPlayers.Append;
-  self.btnPlayerEditClick(Sender);
+  btnPlayerEditClick(Sender);
 end;
 
 procedure TfrmMdcChampionship.btnPlayerEditClick(Sender: TObject);
@@ -2338,8 +2349,8 @@ begin
       begin
         if lkpAllPlayersanagraph_id.AsInteger <> qryAllPlayersanagraph_id.AsInteger then
         begin
-          if JMessageDlg('Attenzione Eredito: ' + lkpAllPlayersfullname.AsWideString + ' in: ' +
-            qryAllPlayersfullname.AsWideString) then
+          if JMessageDlg('Attenzione Eredito: ' + lkpAllPlayersfull_name.AsWideString + ' in: ' +
+            qryAllPlayersfull_name.AsWideString) then
           begin
             inheritPlayer(lkpAllPlayersanagraph_id.AsInteger, qryAllPlayersanagraph_id.AsInteger);
             JShowMessage('Giocatore Ereditato');
@@ -2355,7 +2366,7 @@ end;
 
 procedure TfrmMdcChampionship.btnPlayerAssignClick(Sender: TObject);
 begin
-  case self.FSelectedForm of
+  case FSelectedForm of
     // qryMatchTeamAllPlayers
 
     jffMatch:
@@ -2370,16 +2381,16 @@ begin
         qryAllClubPlayers.Open;
         if qryAllClubPlayers.RecordCount > 0 then
         begin
-          if JanuaDialog1.JMessageDlg('Attenzione ' + qryAllClubPlayersfullname.AsString + ' ? tesserato per '
-            + qryAllClubPlayersclub_name.AsString + ' procedo?') then
+          if JanuaDialog1.JMessageDlg('Attenzione ' + qryAllClubPlayersfull_name.AsString +
+            ' ? tesserato per ' + qryAllClubPlayersclub_name.AsString + ' procedo?') then
           begin
             qryMatchTeamAllPlayers.Append;
             // qryMatchTeamAllPlayersteam_id.AsInteger := dmUniDacPgChampionships.qryMatchTeamsteam_id.AsInteger;
             qryMatchTeamAllPlayersplayer_id.AsInteger := qryAllPlayersanagraph_id.AsInteger;
             qryMatchTeamAllPlayerssince.AsDateTime := Date();
             qryMatchTeamAllPlayersclub_origin_id.AsInteger := qryAllClubPlayersteam_id.AsInteger;
-            qryMatchTeamAllPlayersrole.AsInteger := qryAllPlayersrole.AsInteger;
-            qryMatchTeamAllPlayersfullname.AsWideString := qryAllPlayersfullname.AsWideString;
+            qryMatchTeamAllPlayersrole_id.AsInteger := qryAllPlayersrole_id.AsInteger;
+            qryMatchTeamAllPlayersfull_name.AsWideString := qryAllPlayersfull_name.AsWideString;
             qryMatchTeamAllPlayers.Post;
           end;
         end
@@ -2390,8 +2401,8 @@ begin
           qryMatchTeamAllPlayersplayer_id.AsInteger := qryAllPlayersanagraph_id.AsInteger;
           qryMatchTeamAllPlayerssince.AsDateTime := Date();
           // qryMatchTeamAllPlayersclub_origin_id.AsInteger := qryAllClubPlayersteam_id.AsInteger;
-          qryMatchTeamAllPlayersrole.AsInteger := qryAllPlayersrole.AsInteger;
-          qryMatchTeamAllPlayersfullname.AsWideString := qryAllPlayersfullname.AsWideString;
+          qryMatchTeamAllPlayersrole_id.AsInteger := qryAllPlayersrole_id.AsInteger;
+          qryMatchTeamAllPlayersfull_name.AsWideString := qryAllPlayersfull_name.AsWideString;
           qryMatchTeamAllPlayers.Post;
           qryMatchTeamAllPlayers.Refresh;
         end;
@@ -2402,15 +2413,15 @@ begin
       begin
         if qryTeamPlayers.Locate('player_id', qryAllPlayersanagraph_id.AsInteger, []) then
         begin
-          JanuaDialog1.JShowError('Attenzione il giocatore ? gi? tesserato per il club ' +
+          JanuaDialog1.JShowError('Attenzione il giocatore è già tesserato per il club ' +
             qryClubsclub_name.AsWideString, '', '');
           Exit;
         end;
         qryAllClubPlayers.Open;
         if qryAllClubPlayers.RecordCount > 0 then
         begin
-          if JanuaDialog1.JMessageDlg('Attenzione ' + qryAllClubPlayersfullname.AsString + ' ? tesserato per '
-            + qryAllClubPlayersclub_name.AsString + ' procedo?') then
+          if JanuaDialog1.JMessageDlg('Attenzione ' + qryAllClubPlayersfull_name.AsString +
+            ' ? tesserato per ' + qryAllClubPlayersclub_name.AsString + ' procedo?') then
           begin
             qryTeamPlayers.Append;
             qryTeamPlayersteam_id.AsInteger := qryTeamsClubsLeaguesteam_id.AsInteger;
@@ -2418,8 +2429,8 @@ begin
             qryTeamPlayersseason_id.AsInteger := qryTeamsClubsLeaguesseason_id.AsInteger;
             qryTeamPlayerssince.AsDateTime := Date();
             qryTeamPlayersclub_origin_id.AsInteger := qryAllClubPlayersteam_id.AsInteger;
-            qryTeamPlayersrole.AsInteger := qryAllPlayersrole.AsInteger;
-            qryTeamPlayersfullname.AsWideString := qryAllPlayersfullname.AsWideString;
+            qryTeamPlayersrole_id.AsInteger := qryAllPlayersrole_id.AsInteger;
+            qryTeamPlayersfull_name.AsWideString := qryAllPlayersfull_name.AsWideString;
             qryTeamPlayers.Post;
             qryTeamPlayers.Refresh;
           end;
@@ -2432,7 +2443,7 @@ begin
           qryTeamPlayersseason_id.AsInteger := qryTeamsClubsLeaguesseason_id.AsInteger;
           qryTeamPlayerssince.AsDateTime := Date();
           qryTeamPlayersclub_origin_id.AsInteger := qryTeamsClubsLeaguesteam_id.AsInteger;
-          qryTeamPlayersrole.AsInteger := qryAllPlayersrole.AsInteger;
+          qryTeamPlayersrole_id.AsInteger := qryAllPlayersrole_id.AsInteger;
           qryTeamPlayers.Post;
           qryTeamPlayers.Refresh;
         end;
@@ -2451,8 +2462,8 @@ begin
         qryAllClubPlayers.Open;
         if qryAllClubPlayers.RecordCount > 0 then
         begin
-          if JanuaDialog1.JMessageDlg('Attenzione ' + qryAllClubPlayersfullname.AsString + ' ? tesserato per '
-            + qryAllClubPlayersclub_name.AsString + ' procedo?') then
+          if JanuaDialog1.JMessageDlg('Attenzione ' + qryAllClubPlayersfull_name.AsString +
+            ' ? tesserato per ' + qryAllClubPlayersclub_name.AsString + ' procedo?') then
           begin
             qryTeamChampPlayers.Append;
             // qryTeamChampPlayersteam_id.AsInteger := qryTeamsClubsLeaguesteam_id.AsInteger;
@@ -2460,8 +2471,8 @@ begin
             // qryTeamChampPlayersseason_id.AsInteger := qryTeamsClubsLeaguesseason_id.AsInteger;
             qryTeamChampPlayerssince.AsDateTime := Date();
             qryTeamChampPlayersclub_origin_id.AsInteger := qryTeamsClubsLeaguesteam_id.AsInteger;
-            qryTeamChampPlayersrole_id.AsInteger := qryAllPlayersrole.AsInteger;
-            qryTeamChampPlayersfullname.AsWideString := qryAllPlayersfullname.AsWideString;
+            qryTeamChampPlayersrole_id.AsInteger := qryAllPlayersrole_id.AsInteger;
+            qryTeamChampPlayersfullname.AsWideString := qryAllPlayersfull_name.AsWideString;
             qryTeamChampPlayersteam_id.AsInteger := qryTeamsChampionshipsteam_id.AsInteger;
             qryTeamChampPlayers.Post;
           end;
@@ -2474,8 +2485,8 @@ begin
           // qryTeamChampPlayersseason_id.AsInteger := qryTeamsClubsLeaguesseason_id.AsInteger;
           qryTeamChampPlayerssince.AsDateTime := Date();
           qryTeamChampPlayersclub_origin_id.AsInteger := qryTeamsClubsLeaguesteam_id.AsInteger;
-          qryTeamChampPlayersrole_id.AsInteger := qryAllPlayersrole.AsInteger;
-          qryTeamChampPlayersfullname.AsWideString := qryAllPlayersfullname.AsWideString;
+          qryTeamChampPlayersrole_id.AsInteger := qryAllPlayersrole_id.AsInteger;
+          qryTeamChampPlayersfullname.AsWideString := qryAllPlayersfull_name.AsWideString;
           qryTeamChampPlayers.Post;
         end;
       end;
@@ -2492,9 +2503,9 @@ begin
   a := nil;
   Application.CreateForm(TfrmRichEdit, a);
   try
-    self.grdMatchTeamPlayers.DataSource.Enabled := False;
-    self.grdMatchEvents.DataSource.Enabled := False;
-    self.grdMatchTeams.DataSource.Enabled := False;
+    grdMatchTeamPlayers.DataSource.Enabled := False;
+    grdMatchEvents.DataSource.Enabled := False;
+    grdMatchTeams.DataSource.Enabled := False;
 
     CalculateMatch;
     a.AdvMemo1.Clear;
@@ -2577,12 +2588,12 @@ begin
 
 
 
-            // self.JanuaDialog1.JShowMessage(dmUniDacPgChampionships.qryMatchTeamsteam_name.AsWideString + ' ' +
+            // JanuaDialog1.JShowMessage(dmUniDacPgChampionships.qryMatchTeamsteam_name.AsWideString + ' ' +
             // dmUniDacPgChampionships.qryMatchTeamsTeam_id.AsWideString,
             // 'Home: ' + qryMatcheshome_team_id.AsWideString + sLineBreak + 'Visitors: ' +
             // qryMatchesvisitors_team_id.AsWideString, '');
 
-            // self.JanuaDialog1.JShowMessage
+            // JanuaDialog1.JShowMessage
             // ('Formazione ' + dmUniDacPgChampionships.qryMatchTeamsteam_name.AsWideString,
             // formazione + sLineBreak + 'Marcatori: ' + sLineBreak + gol, '');
 
@@ -2594,14 +2605,14 @@ begin
               dmUniDacPgChampionships.qryMatchesvisitors_notes.AsWideString :=
                 (dmUniDacPgChampionships.qryMatchTeamsteam_name.AsWideString + ': ' + formazione)
               // a.AdvMemo1.Lines.Text;
-              // self.JanuaDialog1.JShowMessage('Formazione Ospiti: ' + dmUniDacPgChampionships.qryMatchesvisitors_notes.AsWideString, '', '');
+              // JanuaDialog1.JShowMessage('Formazione Ospiti: ' + dmUniDacPgChampionships.qryMatchesvisitors_notes.AsWideString, '', '');
             end
             else
             begin
               dmUniDacPgChampionships.qryMatcheshome_notes.AsWideString :=
                 (dmUniDacPgChampionships.qryMatchTeamsteam_name.AsWideString + ': ' + formazione)
               // a.AdvMemo1.Lines.Text;
-              // self.JanuaDialog1.JShowMessage('Formazione Casa: ' + dmUniDacPgChampionships.qryMatcheshome_notes.AsWideString, '', '');
+              // JanuaDialog1.JShowMessage('Formazione Casa: ' + dmUniDacPgChampionships.qryMatcheshome_notes.AsWideString, '', '');
             end;
             dmUniDacPgChampionships.qryMatches.Post;
             // a.AdvMemo1.Lines.Clear;
@@ -2618,9 +2629,9 @@ begin
     a.AdvMemo1.Lines.Add(dmUniDacPgChampionships.qryMatchesvisitors_notes.AsWideString);
     a.ShowModal;
   finally
-    self.grdMatchTeams.DataSource.Enabled := True;
-    self.grdMatchTeamPlayers.DataSource.Enabled := True;
-    self.grdMatchEvents.DataSource.Enabled := True;
+    grdMatchTeams.DataSource.Enabled := True;
+    grdMatchTeamPlayers.DataSource.Enabled := True;
+    grdMatchEvents.DataSource.Enabled := True;
     a.Free;
   end;
 
@@ -2635,9 +2646,9 @@ begin
   a := nil;
   Application.CreateForm(TfrmRichEdit, a);
   try
-    self.grdMatchTeamPlayers.DataSource.Enabled := False;
-    self.grdMatchEvents.DataSource.Enabled := False;
-    self.grdMatchTeams.DataSource.Enabled := False;
+    grdMatchTeamPlayers.DataSource.Enabled := False;
+    grdMatchEvents.DataSource.Enabled := False;
+    grdMatchTeams.DataSource.Enabled := False;
 
     CalculateMatch;
     a.AdvMemo1.Clear;
@@ -2721,12 +2732,12 @@ begin
             a.AdvMemo1.Lines.Add('marcatori:');
             a.AdvMemo1.Lines.Add(gol);
 
-            // self.JanuaDialog1.JShowMessage(dmUniDacPgChampionships.qryMatchTeamsteam_name.AsWideString + ' ' +
+            // JanuaDialog1.JShowMessage(dmUniDacPgChampionships.qryMatchTeamsteam_name.AsWideString + ' ' +
             // dmUniDacPgChampionships.qryMatchTeamsTeam_id.AsWideString,
             // 'Home: ' + qryMatcheshome_team_id.AsWideString + sLineBreak + 'Visitors: ' +
             // qryMatchesvisitors_team_id.AsWideString, '');
 
-            // self.JanuaDialog1.JShowMessage
+            // JanuaDialog1.JShowMessage
             // ('Formazione ' + dmUniDacPgChampionships.qryMatchTeamsteam_name.AsWideString,
             // formazione + sLineBreak + 'Marcatori: ' + sLineBreak + gol, '');
 
@@ -2736,12 +2747,12 @@ begin
             then
             begin
               dmUniDacPgChampionships.qryMatchesvisitors_notes.AsWideString := a.AdvMemo1.Lines.Text;
-              // self.JanuaDialog1.JShowMessage('Formazione Ospiti: ' + dmUniDacPgChampionships.qryMatchesvisitors_notes.AsWideString, '', '');
+              // JanuaDialog1.JShowMessage('Formazione Ospiti: ' + dmUniDacPgChampionships.qryMatchesvisitors_notes.AsWideString, '', '');
             end
             else
             begin
               dmUniDacPgChampionships.qryMatcheshome_notes.AsWideString := a.AdvMemo1.Lines.Text;
-              // self.JanuaDialog1.JShowMessage('Formazione Casa: ' + dmUniDacPgChampionships.qryMatcheshome_notes.AsWideString, '', '');
+              // JanuaDialog1.JShowMessage('Formazione Casa: ' + dmUniDacPgChampionships.qryMatcheshome_notes.AsWideString, '', '');
             end;
             dmUniDacPgChampionships.qryMatches.Post;
             a.AdvMemo1.Lines.Clear;
@@ -2755,9 +2766,9 @@ begin
     a.AdvMemo1.Lines.Add(dmUniDacPgChampionships.qryMatchesvisitors_notes.AsWideString);
     a.ShowModal;
   finally
-    self.grdMatchTeams.DataSource.Enabled := True;
-    self.grdMatchTeamPlayers.DataSource.Enabled := True;
-    self.grdMatchEvents.DataSource.Enabled := True;
+    grdMatchTeams.DataSource.Enabled := True;
+    grdMatchTeamPlayers.DataSource.Enabled := True;
+    grdMatchEvents.DataSource.Enabled := True;
     a.Free;
   end;
 
@@ -2768,7 +2779,7 @@ var
   lPoint: TPoint;
 begin
   lPoint := btnMatchEvents.ClientToScreen(Point(0, 0));
-  self.popTabellino.Popup(lPoint.X, lPoint.Y + btnMatchEvents.Height);
+  popTabellino.Popup(lPoint.X, lPoint.Y + btnMatchEvents.Height);
 
 end;
 
@@ -2779,7 +2790,7 @@ end;
 
 procedure TfrmMdcChampionship.tabMatchesShow(Sender: TObject);
 begin
-  self.FSelectedForm := jffMatch;
+  FSelectedForm := jffMatch;
   grdMatchTeamAllPlayers.Visible := True;
 end;
 
@@ -2790,7 +2801,7 @@ end;
 
 procedure TfrmMdcChampionship.AdvGlowButton11Click(Sender: TObject);
 begin
-  if self.JanuaDialog1.JMessageDlg('Siete sicuri di eliminre questa giornata?') then
+  if JanuaDialog1.JMessageDlg('Siete sicuri di eliminre questa giornata?') then
   begin
     dmUniDacPgChampionships.dsMatches.DataSet.First;
     while not dmUniDacPgChampionships.dsMatches.DataSet.eof do
@@ -2801,29 +2812,29 @@ end;
 
 procedure TfrmMdcChampionship.AdvGlowButton14Click(Sender: TObject);
 begin
-  self.WebBrowser1.GoBack;
+  WebBrowser1.GoBack;
 end;
 
 procedure TfrmMdcChampionship.AdvGlowButton15Click(Sender: TObject);
 begin
-  self.WebBrowser1.GoForward;
+  WebBrowser1.GoForward;
 end;
 
 procedure TfrmMdcChampionship.AdvGlowButton16Click(Sender: TObject);
 begin
-  self.WebBrowser1.Navigate(self.edUrl.Text);
+  WebBrowser1.Navigate(edUrl.Text);
 end;
 
 procedure TfrmMdcChampionship.AdvGlowButton1Click(Sender: TObject);
 begin
-  self.pnlChampionshipsList.Visible := not self.pnlSeasons.Visible;
-  self.splitpnlChampionshipsList.Visible := self.pnlSeasons.Visible;
+  pnlChampionshipsList.Visible := not pnlSeasons.Visible;
+  splitpnlChampionshipsList.Visible := pnlSeasons.Visible;
 end;
 
 procedure TfrmMdcChampionship.AdvGlowButton5Click(Sender: TObject);
 begin
-  self.PgQuery1.SQL.Assign(self.AdvMemo1.Lines);
-  self.PgQuery1.Open;
+  PgQuery1.SQL.Assign(AdvMemo1.Lines);
+  PgQuery1.Open;
 end;
 
 procedure TfrmMdcChampionship.AdvGlowButton7Click(Sender: TObject);
@@ -2860,7 +2871,7 @@ begin
 
         // if qryVerificaMatches.RecordCount > 0 then
         { begin
-          self.JanuaDialog1.JShowError
+          JanuaDialog1.JShowError
           ('Attenzione queste due squadre si incontrano gi? in campionato alla ' +
           qryVerificaMatchesmatch_day_number.AsWideString + '^ Giornata', '', '');
           Exit;
@@ -2942,7 +2953,7 @@ end;
 
 procedure TfrmMdcChampionship.AnagraficheShow(Sender: TObject);
 begin
-  self.FSelectedForm := jffClubs;
+  FSelectedForm := jffClubs;
 end;
 
 procedure TfrmMdcChampionship.AnnullaSostituzione1Click(Sender: TObject);
@@ -2988,8 +2999,8 @@ begin
   with dmUniDacPgChampionships do
   begin
     dmUniDacPgChampionships.qryMatchEvents.Append;
-    self.JanuaDialogInteger1.Caption := 'Minuti di Gioco';
-    self.JanuaDialogInteger1.Execute;
+    JanuaDialogInteger1.Caption := 'Minuti di Gioco';
+    JanuaDialogInteger1.Execute;
     qryMatchEventsplayer_id.AsInteger := qryMatchTeamPlayersplayer_id.AsInteger;
     qryMatchEventsevent_id.AsInteger := 6;
     qryMatchEventsminute.AsInteger := JanuaDialogInteger1.Number;

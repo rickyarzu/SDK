@@ -41,165 +41,23 @@ type
   TdmVCLPhoenixPlannerController = class(TdmVCLPlannerCustomController) // ()
     qryReportPlanner: TUniQuery;
     spSetStatinoStato: TUniStoredProc;
-    qryReportPlannerCHIAVE: TIntegerField;
-    qryReportPlannerDESCRIZIONE_SCHEDA: TStringField;
-    qryReportPlannerCLIENTE: TIntegerField;
-    qryReportPlannerNOME: TStringField;
-    qryReportPlannerPROVINCIA: TStringField;
-    qryReportPlannerCAP: TStringField;
-    qryReportPlannerINDIRIZZO: TStringField;
-    qryReportPlannerTELEFONO: TStringField;
-    qryReportPlannerNOTE: TBlobField;
-    qryReportPlannerORARIO_APERTURA_DAL1: TTimeField;
-    qryReportPlannerORARIO_APERTURA_DAL2: TTimeField;
-    qryReportPlannerORARIO_APERTURA_AL1: TTimeField;
-    qryReportPlannerORARIO_APERTURA_AL2: TTimeField;
-    qryReportPlannerCHIUSURA: TStringField;
-    qryReportPlannerCELLULARE: TStringField;
-    qryReportPlannerEMAIL: TStringField;
-    qryReportPlannerESCLUDI_DA_GENERAZIONE: TStringField;
-    qryReportPlannerSEDE: TStringField;
-    qryReportPlannerID: TStringField;
-    qryReportPlannerREF_TELEFONO: TStringField;
-    qryReportPlannerREF_CELLULARE: TStringField;
-    qryReportPlannerCOMUNE: TStringField;
-    qryReportPlannerFATTURA: TIntegerField;
-    qryReportPlannerDATA_INTERVENTO: TDateField;
-    qryReportPlannerGENERAZIONE_AUTOMATICA: TIntegerField;
-    qryReportPlannerTECNICO_INTERVENTO: TIntegerField;
-    qryReportPlannerNOTE_PER_IL_TECNICO: TWideStringField;
-    qryReportPlannerSOSPESO: TStringField;
-    qryReportPlannerDA_ESPORTARE_SUL_WEB: TStringField;
-    qryReportPlannerRESPONSABILE: TIntegerField;
-    qryReportPlannerESPORTATO_SU_MOBILE: TStringField;
-    qryReportPlannerNOTE_DAL_TECNICO: TBlobField;
-    qryReportPlannerVERBALE_PROVA_DINAMICA: TBlobField;
-    qryReportPlannerVERBALE_MANICHETTE: TBlobField;
-    qryReportPlannerPREVENTIVO: TIntegerField;
-    qryReportPlannerIGNORA_EVIDENZIAZIONE: TStringField;
-    qryReportPlannerANNULLATO_DA_TABLET: TStringField;
-    qryReportPlannerMOBILEWARN_NUOVA_ATTREZZATURA: TStringField;
-    qryReportPlannerMOBILEWARN_ORDINARIA_RITIRATA: TStringField;
-    qryReportPlannerMOBILEWARN_N_ORDIN_CONTROLLATA: TStringField;
-    qryReportPlannerMOBILEWARN_SMALTIMENTO: TStringField;
-    qryReportPlannerSTATO_LAVORAZIONE: TStringField;
-    qryReportPlannerDATA_CHIUSURA_DA_SERVER: TDateField;
-    qryReportPlannerCHIUSURA_EXT: TStringField;
-    qryReportPlannerMOBILEWARN_NON_ESEGUITI: TStringField;
-    qryReportPlannerPRESA_IN_CARICO: TStringField;
-    qryReportPlannerFORNITURA: TStringField;
-    qryReportPlannerORDINARI: TLargeintField;
-    qryReportPlannerSTRAORDINARI: TLargeintField;
-    qryReportPlannerINTERVENTI: TLargeintField;
-    qryReportPlannerNOME_TECNICO: TStringField;
-    qryReportPlannerAPPUNTAMENTO_DATA: TDateField;
-    qryReportPlannerAPPUNTAMENTO_ORA: TTimeField;
-    qryReportPlannerSTATO: TSmallintField;
-    qryReportPlannerSTATINO: TIntegerField;
-    qryReportPlannerESTINTORI_ORDINARIO: TLargeintField;
-    qryReportPlannerESTINTORI_STRAORDINARIO: TLargeintField;
-    qryReportPlannerGRUPPI_ELETTR: TLargeintField;
-    qryReportPlannerFUMI: TLargeintField;
-    qryReportPlannerLUCI: TLargeintField;
-    qryReportPlannerIDRANTI: TLargeintField;
-    qryReportPlannerSPRINKLER: TLargeintField;
-    qryReportPlannerIMPIANTI_EL: TLargeintField;
     qryCustomers: TUniQuery;
     qryCustomersCHIAVE: TIntegerField;
-    qryCustomersDESCRIZIONE_SCHEDA: TStringField;
     qryTech: TUniQuery;
     qryTechRESPONSABILE: TIntegerField;
-    qryTechNOME_TECNICO: TStringField;
     qryCAP: TUniQuery;
-    qryCAPCAP: TStringField;
-    qryReportPlannerAMMINISTRATORE: TIntegerField;
-    qryReportPlannercalcAppuntamentoDataOra: TDateTimeField;
     qryPlannerEvents: TUniQuery;
-    qryPlannerEventsCHIAVE: TIntegerField;
-    qryPlannerEventsSTATINO: TIntegerField;
-    qryPlannerEventsTECNICO: TIntegerField;
-    qryPlannerEventsDALLE_ORE: TDateTimeField;
-    qryPlannerEventsALLE_ORE: TDateTimeField;
-    qryPlannerEventsSUBJECT: TStringField;
-    qryPlannerEventsTECNICO_SIGLA: TStringField;
-    qryPlannerEventsCOLORE: TIntegerField;
-    qryPlannerEventsICONA: TSmallintField;
     qryTechPlanned: TUniQuery;
     tabGoogleCalendars: TUniTable;
     tabGoogleEvents: TUniTable;
-    tabGoogleEventsID: TStringField;
-    tabGoogleEventsETAG: TStringField;
-    tabGoogleEventsSUMMARY: TStringField;
-    tabGoogleEventsDESCRIPTION: TWideMemoField;
-    tabGoogleEventsSTARTTIME: TDateTimeField;
-    tabGoogleEventsENDTIME: TDateTimeField;
-    tabGoogleEventsCREATED: TDateTimeField;
-    tabGoogleEventsUPDATED: TDateTimeField;
-    tabGoogleEventsLOCATION: TStringField;
-    tabGoogleEventsSTATUS: TSmallintField;
-    tabGoogleEventsVISIBILITY: TIntegerField;
-    tabGoogleEventsRECURRENCE: TStringField;
-    tabGoogleEventsRECURRINGID: TStringField;
-    tabGoogleEventsSEQUENCE: TIntegerField;
-    tabGoogleEventsCOLOR: TSmallintField;
-    tabGoogleEventsCALENDARID: TStringField;
-    tabGoogleCalendarsID: TStringField;
-    tabGoogleCalendarsLOCATION: TStringField;
-    tabGoogleCalendarsSUMMARY: TStringField;
-    tabGoogleCalendarsTIMEZONE: TStringField;
-    tabGoogleCalendarsCOLOR: TSmallintField;
-    tabGoogleCalendarsBACK_COLOR: TIntegerField;
-    tabGoogleCalendarsFORE_COLOR: TIntegerField;
-    qryPlannerEventsGOOGLE_JSON: TBlobField;
-    qryPlannerEventsGFORECOLOR: TIntegerField;
-    qryPlannerEventsGBACKCOLOR: TIntegerField;
-    qryPlannerEventsCALENDARIO: TIntegerField;
-    qryPlannerEventsGOOGLEID: TStringField;
     dsTecniciCalendar: TUniDataSource;
     dsTecniciPlanned: TUniDataSource;
     qryPlannerCalendars: TUniQuery;
-    qryPlannerCalendarsCHIAVE: TIntegerField;
-    qryPlannerCalendarsTECNICO: TIntegerField;
-    qryPlannerCalendarsSUMMARY: TBlobField;
-    qryPlannerCalendarsDESCRIPTION: TStringField;
-    qryPlannerCalendarsTECNICO_SIGLA: TStringField;
-    qryPlannerCalendarsCOLORE: TIntegerField;
-    qryPlannerCalendarsJGUID: TGuidField;
-    qryPlannerCalendarsGOOGLE_JSON: TBlobField;
-    qryPlannerCalendarsGFORECOLOR: TIntegerField;
-    qryPlannerCalendarsGBACKCOLOR: TIntegerField;
-    qryPlannerCalendarsDEFAULTCOLOR: TIntegerField;
-    qryPlannerCalendarsGOOGLEID: TStringField;
-    qryPlannerCalendarsGOOGLE_SUMMARY: TStringField;
-    qryPlannerEventsJGUID: TGuidField;
     vtReportPlanner: TVirtualTable;
-    qryTechPlannedRESPONSABILE: TIntegerField;
-    qryTechPlannedNOME_TECNICO: TStringField;
-    qryTechPlannedSIGLA: TStringField;
-    tabGoogleCalendarsISPRIMARY: TStringField;
-    tabGoogleEventsATTENDEES: TWideMemoField;
-    tabGoogleEventsREMINDERS: TWideMemoField;
-    tabGoogleEventsUSEDEFAULTREMINDERS: TStringField;
-    tabGoogleEventsSENDNOTIFICATIONS: TStringField;
-    tabGoogleEventsISALLDAY: TStringField;
-    tabGoogleCalendarsALIAS: TStringField;
-    tabGoogleCalendarsDESCRIPTION: TWideStringField;
-    tabGoogleCalendarsJGUID: TGuidField;
-    tabGoogleEventsJGUID: TGuidField;
     vtGoogleEventsSearch: TVirtualTable;
     dsGoogleEventsSearch: TUniDataSource;
     lkpTecnici: TUniQuery;
-    lkpTecniciCHIAVE: TIntegerField;
-    lkpTecniciDESCRIZIONE: TStringField;
-    lkpTecniciSOSPESO: TStringField;
-    lkpTecniciATTIVO: TStringField;
-    lkpTecniciACCOUNT_MOBILE: TStringField;
-    lkpTecniciEMAIL: TStringField;
-    lkpTecniciTELEFONO: TStringField;
-    lkpTecniciSIGLA: TStringField;
     dsLkpTecnici: TUniDataSource;
-    qryReportPlannerEMAIL_TECNICO: TStringField;
-    qryReportPlannerGCAL: TStringField;
     vtGoogleEventsSearchID3: TStringField;
     vtGoogleEventsSearchETAG3: TStringField;
     vtGoogleEventsSearchSUMMARY3: TStringField;
@@ -223,7 +81,6 @@ type
     vtGoogleEventsSearchReminders3: TMemoField;
     vtGoogleEventsSearchJGUID3: TGuidField;
     vtGoogleEventsSearchCalcColor3: TIntegerField;
-    qryPlannerEventsNOTE: TWideMemoField;
     CalendarGridActions: TActionList;
     actGridCalColor: TAction;
     actGridCalEdit: TAction;
@@ -231,44 +88,11 @@ type
     DBSingleCalendar: TDBDaySource;
     vtPlannerEvents: TVirtualTable;
     qryCAPTecnici: TUniQuery;
-    StringField1: TStringField;
-    qryCAPTecniciTECNICO: TIntegerField;
     qryPlannerCalendars2: TUniQuery;
     DBDaySourceCalendar2: TDBDaySource;
     dsCalendars2: TUniDataSource;
     dsCalendarEvents2: TUniDataSource;
     qryPlannerEvents2: TUniQuery;
-    qryPlannerEvents2CHIAVE: TIntegerField;
-    qryPlannerEvents2STATINO: TIntegerField;
-    qryPlannerEvents2TECNICO: TIntegerField;
-    qryPlannerEvents2DALLE_ORE: TDateTimeField;
-    qryPlannerEvents2ALLE_ORE: TDateTimeField;
-    qryPlannerEvents2NOTE: TWideMemoField;
-    qryPlannerEvents2SUBJECT: TStringField;
-    qryPlannerEvents2TECNICO_SIGLA: TStringField;
-    qryPlannerEvents2COLORE: TIntegerField;
-    qryPlannerEvents2JGUID: TGuidField;
-    qryPlannerEvents2ICONA: TSmallintField;
-    qryPlannerEvents2GOOGLE_JSON: TBlobField;
-    qryPlannerEvents2GFORECOLOR: TIntegerField;
-    qryPlannerEvents2GBACKCOLOR: TIntegerField;
-    qryPlannerEvents2CALENDARIO: TIntegerField;
-    qryPlannerEvents2GOOGLEID: TStringField;
-    qryPlannerCalendars2CHIAVE: TIntegerField;
-    qryPlannerCalendars2TECNICO: TIntegerField;
-    qryPlannerCalendars2SUMMARY: TWideStringField;
-    qryPlannerCalendars2DESCRIPTION: TStringField;
-    qryPlannerCalendars2TECNICO_SIGLA: TStringField;
-    qryPlannerCalendars2COLORE: TIntegerField;
-    qryPlannerCalendars2JGUID: TGuidField;
-    qryPlannerCalendars2GOOGLE_JSON: TWideMemoField;
-    qryPlannerCalendars2GFORECOLOR: TIntegerField;
-    qryPlannerCalendars2GBACKCOLOR: TIntegerField;
-    qryPlannerCalendars2DEFAULTCOLOR: TIntegerField;
-    qryPlannerCalendars2GOOGLEID: TStringField;
-    qryPlannerCalendars2GOOGLE_SUMMARY: TStringField;
-    qryPlannerCalendars2GRUPPO_ID: TStringField;
-    qryPlannerCalendars2ACTIVE: TStringField;
     MainToolBarActions2: TActionList;
     ActionAddMeeting2: TAction;
     ActionUndoMeeting2: TAction;
@@ -279,7 +103,6 @@ type
     ActionSendShare2: TAction;
     ActionPrint2: TAction;
     ActionCalendarSync2: TAction;
-    qryPlannerEventslkpMailTecnico: TStringField;
     qryPersonalPlannerEvents: TUniQuery;
     qryReportPlannercalcIndirizzo: TStringField;
     vtReportPlannerCHIAVE: TIntegerField;
@@ -328,29 +151,7 @@ type
     vtReportPlannercalcIndirizzo: TStringField;
     vtReportPlannercalcImage: TBlobField;
     vtReportPlannercalcReportID: TIntegerField;
-    qryPersonalPlannerEventsCHIAVE: TIntegerField;
-    qryPersonalPlannerEventsSTATINO: TIntegerField;
-    qryPersonalPlannerEventsTECNICO: TIntegerField;
-    qryPersonalPlannerEventsDALLE_ORE: TDateTimeField;
-    qryPersonalPlannerEventsALLE_ORE: TDateTimeField;
-    qryPersonalPlannerEventsSUBJECT: TStringField;
-    qryPersonalPlannerEventsTECNICO_SIGLA: TStringField;
-    qryPersonalPlannerEventsCOLORE: TIntegerField;
-    qryPersonalPlannerEventsJGUID: TGuidField;
-    qryPersonalPlannerEventsICONA: TSmallintField;
-    qryPersonalPlannerEventsGOOGLE_JSON: TBlobField;
-    qryPersonalPlannerEventsGFORECOLOR: TIntegerField;
-    qryPersonalPlannerEventsGBACKCOLOR: TIntegerField;
-    qryPersonalPlannerEventsCALENDARIO: TIntegerField;
-    qryPersonalPlannerEventsGOOGLEID: TStringField;
     qryTecniciCalendar: TUniQuery;
-    qryTecniciCalendarRESPONSABILE: TIntegerField;
-    qryTecniciCalendarNOME_TECNICO: TStringField;
-    qryTecniciCalendarEMAIL: TStringField;
-    qryTecniciCalendarSIGLA: TStringField;
-    qryTecniciCalendarGOOGLEID: TStringField;
-    qryTecniciCalendarCALENDARIO: TIntegerField;
-    qryTecniciCalendarDEFAULTCOLOR: TIntegerField;
     qryGenID: TUniQuery;
     qryGenIDID: TLargeintField;
     dlgItemsActions: TActionList;
@@ -362,9 +163,6 @@ type
     tbGoogleColorsID: TSmallintField;
     tbGoogleColorsBACK_COLOR: TIntegerField;
     tbGoogleColorsFORE_COLOR: TIntegerField;
-    tabGoogleEventsBACKGROUNDCOLOR: TIntegerField;
-    tabGoogleEventsFOREGROUNDCOLOR: TIntegerField;
-    tabGoogleEventsSYNC: TStringField;
     ImageListIcons: TImageList;
     JvImageList1: TJvImageList;
     vtReportPlannercalcStato: TStringField;
@@ -373,90 +171,319 @@ type
     vtGoogleEventsSearchSYNC: TStringField;
     actDlgMessage: TAction;
     qryCellulariStatino: TUniQuery;
-    qryCellulariStatinoTELEFONO: TStringField;
-    qryCellulariStatinoCELLULARE: TStringField;
-    qryCellulariStatinoSTELEFONO: TStringField;
-    qryCellulariStatinoSCELLULARE: TStringField;
-    qryCellulariStatinoCTEL1: TStringField;
-    qryCellulariStatinoCCELL: TStringField;
-    qryCellulariStatinoCTEL2: TStringField;
-    qryCellulariStatinoFCEL: TStringField;
-    qryCellulariStatinoFTEL: TStringField;
-    qryCellulariStatinoRISULTATO: TStringField;
     qryElencoEventiWhatsApp: TUniQuery;
-    qryPersonalPlannerEventsNOTE: TWideMemoField;
-    qryPersonalPlannerEventsWANUMBER: TStringField;
-    qryPersonalPlannerEventsWA_SENT: TStringField;
     actGlobalGoogleSync: TAction;
     UniQuery1: TUniQuery;
-    qryElencoEventiWhatsAppID: TStringField;
-    qryElencoEventiWhatsAppETAG: TStringField;
-    qryElencoEventiWhatsAppSUMMARY: TStringField;
-    qryElencoEventiWhatsAppCREATED: TDateTimeField;
-    qryElencoEventiWhatsAppUPDATED: TDateTimeField;
-    qryElencoEventiWhatsAppLOCATION: TStringField;
-    qryElencoEventiWhatsAppSTATUS: TSmallintField;
-    qryElencoEventiWhatsAppVISIBILITY: TIntegerField;
-    qryElencoEventiWhatsAppRECURRENCE: TStringField;
-    qryElencoEventiWhatsAppJGUID: TGuidField;
-    qryElencoEventiWhatsAppGJGUID: TBytesField;
-    qryElencoEventiWhatsAppSTELEFONO: TStringField;
-    qryElencoEventiWhatsAppSCELLULARE: TStringField;
-    qryElencoEventiWhatsAppCTEL1: TStringField;
-    qryElencoEventiWhatsAppCCELL: TStringField;
-    qryElencoEventiWhatsAppCTEL2: TStringField;
-    qryElencoEventiWhatsAppFCEL: TStringField;
-    qryElencoEventiWhatsAppFTEL: TStringField;
-    qryElencoEventiWhatsAppWANUMBER: TStringField;
-    qryElencoEventiWhatsAppWA: TStringField;
-    qryElencoEventiWhatsAppcalcMessage: TStringField;
     actWhatsApp: TAction;
-    qryElencoEventiWhatsAppTECNICO: TStringField;
     actWaSet: TAction;
     actSelect: TAction;
     actSelectAll: TAction;
-    qryReportPlannerMESE_CALCOLATO: TIntegerField;
-    qryReportPlannerANNO_CALCOLATO: TIntegerField;
-    qryReportPlannerDATA_FINE_MESE_CALCOLATO: TDateField;
-    qryReportPlannerRITARDO: TLargeintField;
-    qryElencoEventiWhatsAppDESCRIPTION: TBlobField;
-    qryElencoEventiWhatsAppSTARTTIME: TDateTimeField;
-    qryElencoEventiWhatsAppENDTIME: TDateTimeField;
-    qryElencoEventiWhatsAppRECURRINGID: TStringField;
-    qryElencoEventiWhatsAppSEQUENCE: TIntegerField;
-    qryElencoEventiWhatsAppCOLOR: TSmallintField;
-    qryElencoEventiWhatsAppCALENDARID: TStringField;
-    qryElencoEventiWhatsAppUSEDEFAULTREMINDERS: TStringField;
-    qryElencoEventiWhatsAppSENDNOTIFICATIONS: TStringField;
-    qryElencoEventiWhatsAppISALLDAY: TStringField;
-    qryElencoEventiWhatsAppATTENDEES: TBlobField;
-    qryElencoEventiWhatsAppREMINDERS: TBlobField;
-    qryElencoEventiWhatsAppBACKGROUNDCOLOR: TIntegerField;
-    qryElencoEventiWhatsAppFOREGROUNDCOLOR: TIntegerField;
-    qryElencoEventiWhatsAppSYNC: TStringField;
-    qryElencoEventiWhatsAppDALLE_ORE: TDateTimeField;
-    qryElencoEventiWhatsAppALLE_ORE: TDateTimeField;
-    qryElencoEventiWhatsAppCEJGUID: TBytesField;
-    qryElencoEventiWhatsAppCHIAVE: TIntegerField;
     actWASendMessage: TAction;
     actWASendMsgTest: TAction;
     actWASetAsMsgSent: TAction;
     actWASetAsConfirmed: TAction;
     actGridConfirmEvent: TAction;
-    lkpTecniciGBACKCOLOR: TIntegerField;
     spUpdateStatini: TUniStoredProc;
     spUpdateWhatsApp: TUniStoredProc;
     qryMessageCount: TUniQuery;
     qryMessageCountMESSAGES: TLargeintField;
     spInsertWhatsAppMsg: TUniStoredProc;
-    qryElencoEventiWhatsAppSTATINO: TIntegerField;
     dsReportsPlanner: TUniDataSource;
     qryReportPlannercalcStato: TStringField;
-    qryReportPlannerSTATO_IMMAGINE: TBlobField;
     actNewMeeting: TAction;
     actUndoMeeting: TAction;
     actContract: TAction;
     actWhatsAppMsg: TAction;
+    qryReportPlannerCHIAVE: TIntegerField;
+    qryReportPlannerDESCRIZIONE_SCHEDA: TWideStringField;
+    qryReportPlannerAMMINISTRATORE: TIntegerField;
+    qryReportPlannerCLIENTE: TIntegerField;
+    qryReportPlannerNOME: TWideStringField;
+    qryReportPlannerPROVINCIA: TWideStringField;
+    qryReportPlannerCAP: TWideStringField;
+    qryReportPlannerINDIRIZZO: TWideStringField;
+    qryReportPlannerTELEFONO: TWideStringField;
+    qryReportPlannerNOTE: TBlobField;
+    qryReportPlannerORARIO_APERTURA_DAL1: TTimeField;
+    qryReportPlannerORARIO_APERTURA_DAL2: TTimeField;
+    qryReportPlannerORARIO_APERTURA_AL1: TTimeField;
+    qryReportPlannerORARIO_APERTURA_AL2: TTimeField;
+    qryReportPlannerCHIUSURA: TWideStringField;
+    qryReportPlannerCELLULARE: TWideStringField;
+    qryReportPlannerEMAIL: TWideStringField;
+    qryReportPlannerESCLUDI_DA_GENERAZIONE: TWideStringField;
+    qryReportPlannerSEDE: TWideStringField;
+    qryReportPlannerID: TWideStringField;
+    qryReportPlannerREF_TELEFONO: TWideStringField;
+    qryReportPlannerREF_CELLULARE: TWideStringField;
+    qryReportPlannerCOMUNE: TWideStringField;
+    qryReportPlannerFATTURA: TIntegerField;
+    qryReportPlannerDATA_INTERVENTO: TDateField;
+    qryReportPlannerGENERAZIONE_AUTOMATICA: TIntegerField;
+    qryReportPlannerTECNICO_INTERVENTO: TIntegerField;
+    qryReportPlannerNOTE_PER_IL_TECNICO: TWideStringField;
+    qryReportPlannerSOSPESO: TWideStringField;
+    qryReportPlannerDA_ESPORTARE_SUL_WEB: TWideStringField;
+    qryReportPlannerRESPONSABILE: TIntegerField;
+    qryReportPlannerESPORTATO_SU_MOBILE: TWideStringField;
+    qryReportPlannerNOTE_DAL_TECNICO: TBlobField;
+    qryReportPlannerVERBALE_PROVA_DINAMICA: TBlobField;
+    qryReportPlannerVERBALE_MANICHETTE: TBlobField;
+    qryReportPlannerPREVENTIVO: TIntegerField;
+    qryReportPlannerIGNORA_EVIDENZIAZIONE: TWideStringField;
+    qryReportPlannerANNULLATO_DA_TABLET: TWideStringField;
+    qryReportPlannerMOBILEWARN_NUOVA_ATTREZZATURA: TWideStringField;
+    qryReportPlannerMOBILEWARN_ORDINARIA_RITIRATA: TWideStringField;
+    qryReportPlannerMOBILEWARN_N_ORDIN_CONTROLLATA: TWideStringField;
+    qryReportPlannerMOBILEWARN_SMALTIMENTO: TWideStringField;
+    qryReportPlannerSTATO_LAVORAZIONE: TWideStringField;
+    qryReportPlannerDATA_CHIUSURA_DA_SERVER: TDateField;
+    qryReportPlannerCHIUSURA_EXT: TWideStringField;
+    qryReportPlannerCHIUSURA_STATINO: TBlobField;
+    qryReportPlannerMOBILEWARN_NON_ESEGUITI: TWideStringField;
+    qryReportPlannerPRESA_IN_CARICO: TWideStringField;
+    qryReportPlannerFORNITURA: TWideStringField;
+    qryReportPlannerORDINARI: TLargeintField;
+    qryReportPlannerSTRAORDINARI: TLargeintField;
+    qryReportPlannerINTERVENTI: TLargeintField;
+    qryReportPlannerNOME_TECNICO: TWideStringField;
+    qryReportPlannerAPPUNTAMENTO_DATA: TDateField;
+    qryReportPlannerAPPUNTAMENTO_ORA: TTimeField;
+    qryReportPlannerSTATO: TSmallintField;
+    qryReportPlannerSTATINO: TIntegerField;
+    qryReportPlannerESTINTORI_ORDINARIO: TLargeintField;
+    qryReportPlannerESTINTORI_STRAORDINARIO: TLargeintField;
+    qryReportPlannerGRUPPI_ELETTR: TLargeintField;
+    qryReportPlannerFUMI: TLargeintField;
+    qryReportPlannerLUCI: TLargeintField;
+    qryReportPlannerIDRANTI: TLargeintField;
+    qryReportPlannerSPRINKLER: TLargeintField;
+    qryReportPlannerIMPIANTI_EL: TLargeintField;
+    qryReportPlannerEMAIL_TECNICO: TWideStringField;
+    qryReportPlannerGCAL: TWideStringField;
+    qryReportPlannerSTATO_IMMAGINE: TBlobField;
+    qryReportPlannerMESE_CALCOLATO: TIntegerField;
+    qryReportPlannerANNO_CALCOLATO: TIntegerField;
+    qryReportPlannerDATA_FINE_MESE_CALCOLATO: TDateField;
+    qryReportPlannerRITARDO: TLargeintField;
+    qryTechPlannedRESPONSABILE: TIntegerField;
+    qryTechPlannedNOME_TECNICO: TWideStringField;
+    qryTechPlannedSIGLA: TWideStringField;
+    lkpTecniciCHIAVE: TIntegerField;
+    lkpTecniciDESCRIZIONE: TWideStringField;
+    lkpTecniciSOSPESO: TWideStringField;
+    lkpTecniciATTIVO: TWideStringField;
+    lkpTecniciACCOUNT_MOBILE: TWideStringField;
+    lkpTecniciEMAIL: TWideStringField;
+    lkpTecniciTELEFONO: TWideStringField;
+    lkpTecniciSIGLA: TWideStringField;
+    lkpTecniciGBACKCOLOR: TIntegerField;
+    tabGoogleCalendarsID: TWideStringField;
+    tabGoogleCalendarsDESCRIPTION: TWideStringField;
+    tabGoogleCalendarsLOCATION: TWideStringField;
+    tabGoogleCalendarsSUMMARY: TWideStringField;
+    tabGoogleCalendarsTIMEZONE: TWideStringField;
+    tabGoogleCalendarsCOLOR: TSmallintField;
+    tabGoogleCalendarsISPRIMARY: TWideStringField;
+    tabGoogleCalendarsJGUID: TGuidField;
+    tabGoogleCalendarsALIAS: TWideStringField;
+    tabGoogleCalendarsBACK_COLOR: TIntegerField;
+    tabGoogleCalendarsFORE_COLOR: TIntegerField;
+    tabGoogleEventsID: TWideStringField;
+    tabGoogleEventsETAG: TWideStringField;
+    tabGoogleEventsSUMMARY: TWideStringField;
+    tabGoogleEventsDESCRIPTION: TWideMemoField;
+    tabGoogleEventsSTARTTIME: TDateTimeField;
+    tabGoogleEventsENDTIME: TDateTimeField;
+    tabGoogleEventsCREATED: TDateTimeField;
+    tabGoogleEventsUPDATED: TDateTimeField;
+    tabGoogleEventsLOCATION: TWideStringField;
+    tabGoogleEventsSTATUS: TSmallintField;
+    tabGoogleEventsVISIBILITY: TIntegerField;
+    tabGoogleEventsRECURRENCE: TWideStringField;
+    tabGoogleEventsRECURRINGID: TWideStringField;
+    tabGoogleEventsSEQUENCE: TIntegerField;
+    tabGoogleEventsCOLOR: TSmallintField;
+    tabGoogleEventsCALENDARID: TWideStringField;
+    tabGoogleEventsUSEDEFAULTREMINDERS: TWideStringField;
+    tabGoogleEventsSENDNOTIFICATIONS: TWideStringField;
+    tabGoogleEventsISALLDAY: TWideStringField;
+    tabGoogleEventsATTENDEES: TWideMemoField;
+    tabGoogleEventsREMINDERS: TWideMemoField;
+    tabGoogleEventsJGUID: TGuidField;
+    tabGoogleEventsBACKGROUNDCOLOR: TIntegerField;
+    tabGoogleEventsFOREGROUNDCOLOR: TIntegerField;
+    tabGoogleEventsSYNC: TWideStringField;
+    qryCAPTecniciCAP: TWideStringField;
+    qryCAPTecniciTECNICO: TIntegerField;
+    qryPersonalPlannerEventsCHIAVE: TIntegerField;
+    qryPersonalPlannerEventsSTATINO: TIntegerField;
+    qryPersonalPlannerEventsTECNICO: TIntegerField;
+    qryPersonalPlannerEventsDALLE_ORE: TDateTimeField;
+    qryPersonalPlannerEventsALLE_ORE: TDateTimeField;
+    qryPersonalPlannerEventsNOTE: TWideMemoField;
+    qryPersonalPlannerEventsSUBJECT: TWideStringField;
+    qryPersonalPlannerEventsTECNICO_SIGLA: TWideStringField;
+    qryPersonalPlannerEventsCOLORE: TIntegerField;
+    qryPersonalPlannerEventsJGUID: TGuidField;
+    qryPersonalPlannerEventsICONA: TSmallintField;
+    qryPersonalPlannerEventsGOOGLE_JSON: TBlobField;
+    qryPersonalPlannerEventsGFORECOLOR: TIntegerField;
+    qryPersonalPlannerEventsGBACKCOLOR: TIntegerField;
+    qryPersonalPlannerEventsCALENDARIO: TIntegerField;
+    qryPersonalPlannerEventsGOOGLEID: TWideStringField;
+    qryPersonalPlannerEventsWANUMBER: TWideStringField;
+    qryPersonalPlannerEventsWA_SENT: TWideStringField;
+    qryPersonalPlannerEventsWA_MESSAGE: TWideStringField;
+    qryElencoEventiWhatsAppID: TWideStringField;
+    qryElencoEventiWhatsAppETAG: TWideStringField;
+    qryElencoEventiWhatsAppSUMMARY: TWideStringField;
+    qryElencoEventiWhatsAppDESCRIPTION: TBlobField;
+    qryElencoEventiWhatsAppSTARTTIME: TDateTimeField;
+    qryElencoEventiWhatsAppENDTIME: TDateTimeField;
+    qryElencoEventiWhatsAppCREATED: TDateTimeField;
+    qryElencoEventiWhatsAppUPDATED: TDateTimeField;
+    qryElencoEventiWhatsAppLOCATION: TWideStringField;
+    qryElencoEventiWhatsAppSTATUS: TSmallintField;
+    qryElencoEventiWhatsAppVISIBILITY: TIntegerField;
+    qryElencoEventiWhatsAppRECURRENCE: TWideStringField;
+    qryElencoEventiWhatsAppRECURRINGID: TWideStringField;
+    qryElencoEventiWhatsAppSEQUENCE: TIntegerField;
+    qryElencoEventiWhatsAppCOLOR: TSmallintField;
+    qryElencoEventiWhatsAppCALENDARID: TWideStringField;
+    qryElencoEventiWhatsAppUSEDEFAULTREMINDERS: TWideStringField;
+    qryElencoEventiWhatsAppSENDNOTIFICATIONS: TWideStringField;
+    qryElencoEventiWhatsAppISALLDAY: TWideStringField;
+    qryElencoEventiWhatsAppATTENDEES: TBlobField;
+    qryElencoEventiWhatsAppREMINDERS: TBlobField;
+    qryElencoEventiWhatsAppJGUID: TGuidField;
+    qryElencoEventiWhatsAppBACKGROUNDCOLOR: TIntegerField;
+    qryElencoEventiWhatsAppFOREGROUNDCOLOR: TIntegerField;
+    qryElencoEventiWhatsAppSYNC: TWideStringField;
+    qryElencoEventiWhatsAppDALLE_ORE: TDateTimeField;
+    qryElencoEventiWhatsAppALLE_ORE: TDateTimeField;
+    qryElencoEventiWhatsAppSTATINO: TIntegerField;
+    qryElencoEventiWhatsAppCEJGUID: TBytesField;
+    qryElencoEventiWhatsAppGJGUID: TBytesField;
+    qryElencoEventiWhatsAppCHIAVE: TIntegerField;
+    qryElencoEventiWhatsAppSTELEFONO: TWideStringField;
+    qryElencoEventiWhatsAppSCELLULARE: TWideStringField;
+    qryElencoEventiWhatsAppCTEL1: TWideStringField;
+    qryElencoEventiWhatsAppCCELL: TWideStringField;
+    qryElencoEventiWhatsAppCTEL2: TWideStringField;
+    qryElencoEventiWhatsAppFCEL: TWideStringField;
+    qryElencoEventiWhatsAppFTEL: TWideStringField;
+    qryElencoEventiWhatsAppWANUMBER: TWideStringField;
+    qryElencoEventiWhatsAppWA: TWideStringField;
+    qryElencoEventiWhatsAppTECNICO: TWideStringField;
+    qryTecniciCalendarRESPONSABILE: TIntegerField;
+    qryTecniciCalendarNOME_TECNICO: TWideStringField;
+    qryTecniciCalendarEMAIL: TWideStringField;
+    qryTecniciCalendarSIGLA: TWideStringField;
+    qryTecniciCalendarGOOGLEID: TWideStringField;
+    qryTecniciCalendarCALENDARIO: TIntegerField;
+    qryTecniciCalendarDEFAULTCOLOR: TIntegerField;
+    qryPlannerCalendarsCHIAVE: TIntegerField;
+    qryPlannerCalendarsTECNICO: TIntegerField;
+    qryPlannerCalendarsSUMMARY: TBlobField;
+    qryPlannerCalendarsDESCRIPTION: TWideStringField;
+    qryPlannerCalendarsTECNICO_SIGLA: TWideStringField;
+    qryPlannerCalendarsCOLORE: TIntegerField;
+    qryPlannerCalendarsJGUID: TGuidField;
+    qryPlannerCalendarsGOOGLE_JSON: TBlobField;
+    qryPlannerCalendarsGFORECOLOR: TIntegerField;
+    qryPlannerCalendarsGBACKCOLOR: TIntegerField;
+    qryPlannerCalendarsDEFAULTCOLOR: TIntegerField;
+    qryPlannerCalendarsGOOGLEID: TWideStringField;
+    qryPlannerCalendarsGOOGLE_SUMMARY: TWideStringField;
+    qryPlannerCalendarsGRUPPO_ID: TWideStringField;
+    qryPlannerCalendarsACTIVE: TWideStringField;
+    qryPlannerEventsCHIAVE: TIntegerField;
+    qryPlannerEventsSTATINO: TIntegerField;
+    qryPlannerEventsTECNICO: TIntegerField;
+    qryPlannerEventsDALLE_ORE: TDateTimeField;
+    qryPlannerEventsALLE_ORE: TDateTimeField;
+    qryPlannerEventsNOTE: TWideMemoField;
+    qryPlannerEventsSUBJECT: TWideStringField;
+    qryPlannerEventsTECNICO_SIGLA: TWideStringField;
+    qryPlannerEventsCOLORE: TIntegerField;
+    qryPlannerEventsJGUID: TGuidField;
+    qryPlannerEventsICONA: TSmallintField;
+    qryPlannerEventsGOOGLE_JSON: TBlobField;
+    qryPlannerEventsGFORECOLOR: TIntegerField;
+    qryPlannerEventsGBACKCOLOR: TIntegerField;
+    qryPlannerEventsCALENDARIO: TIntegerField;
+    qryPlannerEventsGOOGLEID: TWideStringField;
+    qryPlannerEventsWANUMBER: TWideStringField;
+    qryPlannerEventsWA_SENT: TWideStringField;
+    qryPlannerEventsWA_MESSAGE: TWideStringField;
+    qryPlannerEventslkpMailTecnico: TStringField;
+    qryCellulariStatinoCHIAVE: TIntegerField;
+    qryCellulariStatinoTELEFONO: TWideStringField;
+    qryCellulariStatinoCELLULARE: TWideStringField;
+    qryCellulariStatinoSTELEFONO: TWideStringField;
+    qryCellulariStatinoSCELLULARE: TWideStringField;
+    qryCellulariStatinoCTEL1: TWideStringField;
+    qryCellulariStatinoCCELL: TWideStringField;
+    qryCellulariStatinoCTEL2: TWideStringField;
+    qryCellulariStatinoFCEL: TWideStringField;
+    qryCellulariStatinoFTEL: TWideStringField;
+    qryCellulariStatinoRISULTATO: TWideStringField;
+    qryCellulariStatinoWANUMBER: TWideStringField;
+    qryPlannerCalendars2CHIAVE: TIntegerField;
+    qryPlannerCalendars2TECNICO: TIntegerField;
+    qryPlannerCalendars2SUMMARY: TWideStringField;
+    qryPlannerCalendars2DESCRIPTION: TWideStringField;
+    qryPlannerCalendars2TECNICO_SIGLA: TWideStringField;
+    qryPlannerCalendars2COLORE: TIntegerField;
+    qryPlannerCalendars2JGUID: TGuidField;
+    qryPlannerCalendars2GOOGLE_JSON: TWideMemoField;
+    qryPlannerCalendars2GFORECOLOR: TIntegerField;
+    qryPlannerCalendars2GBACKCOLOR: TIntegerField;
+    qryPlannerCalendars2DEFAULTCOLOR: TIntegerField;
+    qryPlannerCalendars2GOOGLEID: TWideStringField;
+    qryPlannerCalendars2GOOGLE_SUMMARY: TWideStringField;
+    qryPlannerCalendars2GRUPPO_ID: TWideStringField;
+    qryPlannerCalendars2ACTIVE: TWideStringField;
+    qryPlannerEvents2CHIAVE: TIntegerField;
+    qryPlannerEvents2STATINO: TIntegerField;
+    qryPlannerEvents2TECNICO: TIntegerField;
+    qryPlannerEvents2DALLE_ORE: TDateTimeField;
+    qryPlannerEvents2ALLE_ORE: TDateTimeField;
+    qryPlannerEvents2NOTE: TWideMemoField;
+    qryPlannerEvents2SUBJECT: TWideStringField;
+    qryPlannerEvents2TECNICO_SIGLA: TWideStringField;
+    qryPlannerEvents2COLORE: TIntegerField;
+    qryPlannerEvents2JGUID: TGuidField;
+    qryPlannerEvents2ICONA: TSmallintField;
+    qryPlannerEvents2GOOGLE_JSON: TBlobField;
+    qryPlannerEvents2GFORECOLOR: TIntegerField;
+    qryPlannerEvents2GBACKCOLOR: TIntegerField;
+    qryPlannerEvents2CALENDARIO: TIntegerField;
+    qryPlannerEvents2GOOGLEID: TWideStringField;
+    qryPlannerEvents2WANUMBER: TWideStringField;
+    qryPlannerEvents2WA_SENT: TWideStringField;
+    qryPlannerEvents2WA_MESSAGE: TWideStringField;
+    qryReportPlannerWA_ID: TWideStringField;
+    qryElencoEventiWhatsAppcalcMessage: TWideStringField;
+    qryReportPlannercalcAppuntamentoDataOra: TDateTimeField;
+    qryCustomersDESCRIZIONE_SCHEDA: TWideStringField;
+    qryTechNOME_TECNICO: TWideStringField;
+    qryCAPCAP: TWideStringField;
+    qryLkpMessageStatus: TUniQuery;
+    qryLkpMessageStatusWA_ID: TWideStringField;
+    tbWhatsAppStates: TUniTable;
+    tbWhatsAppStatesID: TSmallintField;
+    tbWhatsAppStatesDESCRIPTION: TWideStringField;
+    tbWhatsAppStatesIMAGE: TBlobField;
+    qryLkpMessageStatusID: TSmallintField;
+    qryLkpMessageStatusDESCRIPTION: TWideStringField;
+    qryLkpMessageStatusIMAGE: TBlobField;
+    dsStatini: TUniDataSource;
+    qryReportPlannerWA_STATE: TSmallintField;
+    qryReportPlannerWA_IMAGE: TBlobField;
+    qryLkpMessageStatusWA_STATE: TSmallintField;
+    qryCellulariStatinoRAGIONE_SOCIALE: TWideStringField;
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryReportPlannerCalcFields(DataSet: TDataSet);
@@ -493,6 +520,7 @@ type
     procedure actContractExecute(Sender: TObject);
     procedure actWhatsAppMsgExecute(Sender: TObject);
     procedure actUndoMeetingExecute(Sender: TObject);
+    procedure qryReportPlannerAfterScroll(DataSet: TDataSet);
   private
     Stopwatch: TStopwatch;
     FInsertingEvent: Boolean;
@@ -551,6 +579,7 @@ type
     { Private declarations }
   protected
     FAutoFilterTech: Boolean;
+    FSearchCounter: Byte;
     function InternalDeleteItem(aItem: TPlannerItem): Boolean; override;
     procedure InternalUpdateItem(aItem: TPlannerItem);
     procedure InternalItemInsert;
@@ -601,6 +630,8 @@ type
     function UpdateGoogleMeeting(const aMeeting: TJanuaRecEvent): Boolean;
     function SendWhatsAppMessage(const aMeeting: TJanuaRecEvent): Boolean; overload;
     function SendWhatsAppMessage: Boolean; overload;
+    procedure TwilioSync;
+    procedure UpdateReportMsgStatus;
   public
     function AddTechEvent(const aShow: Boolean = True): TJanuaRecEvent;
     function GoogleSync: string;
@@ -648,10 +679,12 @@ var
 implementation
 
 uses Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Core.Functions, Janua.Core.AsyncTask,
-  Janua.Phoenix.VCL.dlgPlannerEvent, Janua.Phoenix.VCL.dlgGoogleSync, Janua.Application.Framework,
-  udlgPhoenixVCLWhatsAppSMSMessage, udlgPhoenixVCLMemoBox, udlgPhoenixWAMessageList,
+  Janua.Application.Framework,
+  Janua.VCL.dlgInputDateTime,
   // Phoenix
-  DlgShowContratto, DlgNuovoStatino;
+  udlgPhoenixVCLWhatsAppSMSMessage, udlgPhoenixVCLMemoBox, DlgShowContratto, DlgNuovoStatino,
+  Janua.Phoenix.VCL.dlgPlannerEvent, Janua.Phoenix.VCL.dlgGoogleSync, udlgPhoenixWAMessageList,
+  Janua.Phoenix.PgTwilioSync;
 
 {$IFDEF WIN32}
 function InitializeDLL: string; stdcall; external 'PhoenixLib32_r10.dll' index 1;
@@ -1374,6 +1407,33 @@ begin
   end;
 end;
 
+procedure TdmVCLPhoenixPlannerController.UpdateReportMsgStatus;
+begin
+  if qryReportPlannerWA_ID.AsString <> '' then
+  begin
+    qryLkpMessageStatus.Close;
+    qryLkpMessageStatus.ParamByName('wa_id').AsString := qryReportPlannerWA_ID.AsString;
+    qryLkpMessageStatus.Open;
+    if (qryLkpMessageStatus.RecordCount > 0) and
+      (qryReportPlannerWA_IMAGE.IsNull or qryReportPlannerWA_STATE.IsNull or
+      (qryLkpMessageStatusWA_STATE.AsInteger <> qryReportPlannerWA_STATE.AsInteger)) then
+    begin
+      var
+      lStream := TMemoryStream.Create;
+      try
+        qryLkpMessageStatusIMAGE.SaveToStream(lStream);
+        qryReportPlanner.Edit;
+        qryReportPlannerWA_STATE.AsInteger := qryLkpMessageStatusWA_STATE.AsInteger;
+        qryReportPlannerWA_IMAGE.LoadFromStream(lStream);
+        qryReportPlanner.Post;
+      finally
+        lStream.Free;
+      end;
+    end;
+    qryLkpMessageStatus.Close;
+  end;
+end;
+
 procedure TdmVCLPhoenixPlannerController.UpdateReportPlanner;
 begin
   dsReportsPlanner.Enabled := False;
@@ -1534,6 +1594,7 @@ end;
 procedure TdmVCLPhoenixPlannerController.DataModuleCreate(Sender: TObject);
 begin
   inherited;
+  FSearchCounter := 0;
   FWATest := False;
   FWATestPhone := '348 826 1954';
   FInsertingEvent := False;
@@ -1915,74 +1976,91 @@ procedure TdmVCLPhoenixPlannerController.FilterDialog;
 
 begin
   try
-    qryReportPlanner.Filter := '';
-    qryReportPlanner.Filtered := False;
+    try
+      Inc(FSearchCounter);
 
-    var
-    vFilter := ReportDateFilter or CustomerFilter or TechFilter or CAPFilter or (FStateFilter > 0);
+      qryReportPlanner.Filter := '';
+      qryReportPlanner.Filtered := False;
 
-    if vFilter then
-    begin
-      if ReportDateFilter then
+      if FSearchCounter >= 5 then
       begin
-        CheckFilter;
-        qryReportPlanner.Filter := qryReportPlanner.Filter + ' APPUNTAMENTO_DATA = ' +
-          QuotedStr(FormatDateTime('dd/mm/yyyy', FReportDate));
+        dsReportsPlanner.Enabled := False;
+        qryReportPlanner.Close;
+        qryReportPlanner.Open;
+        UpdateReportMsgStatus;
       end;
 
-      if TechFilter then
+      var
+      vFilter := ReportDateFilter or CustomerFilter or TechFilter or CAPFilter or (FStateFilter > 0);
+
+      if vFilter then
       begin
-        CheckFilter;
-        qryReportPlanner.Filter := qryReportPlanner.Filter + ' RESPONSABILE = ' + TechID.ToString;
-      end;
+        if ReportDateFilter then
+        begin
+          CheckFilter;
+          qryReportPlanner.Filter := qryReportPlanner.Filter + ' APPUNTAMENTO_DATA = ' +
+            QuotedStr(FormatDateTime('dd/mm/yyyy', FReportDate));
+        end;
 
-      if CustomerFilter then
-      begin
-        CheckFilter;
-        qryReportPlanner.Filter := qryReportPlanner.Filter + ' CLIENTE = ' + CustomerID.ToString;
-      end;
+        if TechFilter then
+        begin
+          CheckFilter;
+          qryReportPlanner.Filter := qryReportPlanner.Filter + ' RESPONSABILE = ' + TechID.ToString;
+        end;
 
-      if CAPFilter then
-      begin
-        CheckFilter;
-        qryReportPlanner.Filter := qryReportPlanner.Filter + ' CAP = ' + QuotedStr(FCAP);
-      end;
+        if CustomerFilter then
+        begin
+          CheckFilter;
+          qryReportPlanner.Filter := qryReportPlanner.Filter + ' CLIENTE = ' + CustomerID.ToString;
+        end;
 
-      case FStateFilter of
-        1:
-          begin
-            CheckFilter;
-            qryReportPlanner.Filter := qryReportPlanner.Filter + ' (STATO = 1 OR STATO = 6)';
-          end;
-        2:
-          begin
-            CheckFilter;
-            qryReportPlanner.Filter := qryReportPlanner.Filter + ' STATO = 4 ';
-          end;
-        3:
-          begin
-            CheckFilter;
-            qryReportPlanner.Filter := qryReportPlanner.Filter + ' STATO = 5 ';
-          end;
-        4:
-          begin
-            CheckFilter;
-            qryReportPlanner.Filter := qryReportPlanner.Filter + ' STATO = 0 ';
-          end;
-        5:
-          begin
-            CheckFilter;
-            qryReportPlanner.Filter := qryReportPlanner.Filter + ' (STATO = 0 OR STATO = 5 OR STATO = 4) ';
-            qryReportPlanner.Filter := qryReportPlanner.Filter + 'AND APPUNTAMENTO_DATA IS NULL ';
-          end;
-      end;
+        if CAPFilter then
+        begin
+          CheckFilter;
+          qryReportPlanner.Filter := qryReportPlanner.Filter + ' CAP = ' + QuotedStr(FCAP);
+        end;
 
-      qryReportPlanner.Filtered := ReportDateFilter or CustomerFilter or TechFilter or CAPFilter or
-        (FStateFilter > 0);
+        case FStateFilter of
+          1:
+            begin
+              CheckFilter;
+              qryReportPlanner.Filter := qryReportPlanner.Filter + ' (STATO = 1 OR STATO = 6)';
+            end;
+          2:
+            begin
+              CheckFilter;
+              qryReportPlanner.Filter := qryReportPlanner.Filter + ' STATO = 4 ';
+            end;
+          3:
+            begin
+              CheckFilter;
+              qryReportPlanner.Filter := qryReportPlanner.Filter + ' STATO = 5 ';
+            end;
+          4:
+            begin
+              CheckFilter;
+              qryReportPlanner.Filter := qryReportPlanner.Filter + ' STATO = 0 ';
+            end;
+          5:
+            begin
+              CheckFilter;
+              qryReportPlanner.Filter := qryReportPlanner.Filter + ' (STATO = 0 OR STATO = 5 OR STATO = 4) ';
+              qryReportPlanner.Filter := qryReportPlanner.Filter + 'AND APPUNTAMENTO_DATA IS NULL ';
+            end;
+        end;
+
+        qryReportPlanner.Filtered := ReportDateFilter or CustomerFilter or TechFilter or CAPFilter or
+          (FStateFilter > 0);
+
+        if qryReportPlannerWA_ID.AsString > '' then
+          UpdateReportMsgStatus;
+      end;
+    except
+      on e: exception do
+        raise exception.Create('Error Filtering ' + qryReportPlanner.Filter + sLineBreak + e.Message);
     end;
-  except
-    on e: exception do
-      raise exception.Create('Error Filtering ' + qryReportPlanner.Filter + sLineBreak + e.Message);
+  finally
+    dsReportsPlanner.Enabled := True;
   end;
 
 end;
@@ -2454,7 +2532,7 @@ begin
       ResourceIndex := qryPlannerCalendarsCHIAVE.AsInteger;
       PositionIndex := PlannerPosition;
       DisplayName := qryPlannerCalendarsTECNICO_SIGLA.AsString;
-      inc(PlannerPosition);
+      Inc(PlannerPosition);
     End;
     qryPlannerCalendars.Next;
   end;
@@ -2484,7 +2562,7 @@ begin
       ResourceIndex := qryPlannerCalendars2CHIAVE.AsInteger;
       PositionIndex := PlannerPosition;
       DisplayName := qryPlannerCalendars2TECNICO_SIGLA.AsString;
-      inc(PlannerPosition);
+      Inc(PlannerPosition);
     End;
     qryPlannerCalendars2.Next;
   end;
@@ -2643,6 +2721,13 @@ begin
   end;
 end;
 
+procedure TdmVCLPhoenixPlannerController.qryReportPlannerAfterScroll(DataSet: TDataSet);
+begin
+  inherited;
+  if qryReportPlannerWA_ID.AsString > '' then
+    UpdateReportMsgStatus;
+end;
+
 procedure TdmVCLPhoenixPlannerController.qryReportPlannerBeforePost(DataSet: TDataSet);
   procedure LoadImageFromImageList(Index: Integer);
   var
@@ -2671,40 +2756,31 @@ const
   blue = 3;
   white = 4;
 begin
+  // passaggio da stato da 0 ad 1 se è presente un appuntamento
   if (qryReportPlannerSTATO.AsInteger = 0) and not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
   begin
     qryReportPlannerSTATO.AsInteger := 1;
   end
-  else if qryReportPlannerSTATO.AsInteger = 4 then
+  // passaggio da stato da 1 ad 0 se non è presente un appuntamento
+  else if (qryReportPlannerSTATO.AsInteger = 1) and qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
   begin
-    {
-      if not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
-      begin
-      if not JMessageDlg('Rapportino non pronto, volete comunque prenotare appuntamento?') then
-      qryReportPlanner.Cancel;
-      end;
-    }
+    qryReportPlannerSTATO.AsInteger := 0;
   end
-  else if qryReportPlannerSTATO.AsInteger = 5 then
+  else if (qryReportPlannerSTATO.AsInteger = 4) and not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
   begin
-    if not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
-    begin
-      qryReportPlannerSTATO.AsInteger := 6;
-    end;
+    qryReportPlannerSTATO.AsInteger := 5;
   end
-  else if (qryReportPlannerSTATO.AsInteger = 6) then
+  else if (qryReportPlannerSTATO.AsInteger = 5) and qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
   begin
-    if qryReportPlannerAPPUNTAMENTO_DATA.IsNull or (qryReportPlannerAPPUNTAMENTO_DATA.Value = 0) then
-    begin
-      qryReportPlannerSTATO.AsInteger := 5;
-    end;
+    qryReportPlannerSTATO.AsInteger := 4;
   end
-  else if qryReportPlannerSTATO.AsInteger = 1 then
+  else if (qryReportPlannerSTATO.AsInteger = 6) and not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
   begin
-    if qryReportPlannerAPPUNTAMENTO_DATA.IsNull or (qryReportPlannerAPPUNTAMENTO_DATA.Value = 0) then
-    begin
-      qryReportPlannerSTATO.AsInteger := 0;
-    end;
+    qryReportPlannerSTATO.AsInteger := 7;
+  end
+  else if (qryReportPlannerSTATO.AsInteger = 7) and qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
+  begin
+    qryReportPlannerSTATO.AsInteger := 6;
   end;
 
   with DataSet do
@@ -2737,17 +2813,19 @@ begin
         4:
           begin
             Image := orange;
-            if vtReportPlannerAPPUNTAMENTO_DATA.IsNull then
-              sStato := 'In Lavorazione'
-            else
-              sStato := 'Lavor. Progr.';
+            sStato := 'In Lavorazione'
           end;
         5:
+          begin
+            Image := orange;
+            sStato := 'Lavor. Progr.';
+          end;
+        6:
           begin
             Image := green;
             sStato := 'Pronti da Rest.';
           end;
-        6:
+        7:
           begin
             Image := blue;
             sStato := 'Rest. Program.';
@@ -2756,12 +2834,14 @@ begin
 
       FieldByName('calcStato').AsString := sStato;
 
-      if not(qryReportPlannerAPPUNTAMENTO_DATA.IsNull or (qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime = 0.0))
+      {
+        if not(qryReportPlannerAPPUNTAMENTO_DATA.IsNull or (qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime = 0.0))
         and (qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime < Date) then
-      begin
+        begin
         Image := red;
         sStato := 'Ritardo';
-      end;
+        end;
+      }
 
       LoadImageFromImageList(Image);
 
@@ -2846,6 +2926,12 @@ begin
   end;
 
   qryReportPlannercalcStato.AsString := sStato;
+
+  { var
+    vIcon := 1; // qryReportPlannerlkpMessageStatus.AsInteger + 1;
+
+    if qryReportPlannerWA_ID.AsString <> '' then
+    qryReportPlannercalStato.AsString := 'X'; }
 
 end;
 
@@ -2955,50 +3041,67 @@ var
   // lSender: IJanuaSMSTwilio;
   lDlg: TdlgPhoenixVCLWhatsAppSMSMessage;
   lMeeting: TJanuaRecEvent;
+  lTimeDlg: TdlgVCLInputDateTime;
 begin
   // ---------------------------------------------------------------------------------------------------------
   // By Default it uses Twilio Sender (note whene more senders will be supported this should be a case choice)
-  var
-  lData := DateToStr(qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime);
-  var
-  lMessage := StringReplace(cMessage, '$$date$$', lData, [rfIgnoreCase, rfReplaceAll]);
-  lMessage := StringReplace(lMessage, '$$address$$', qryReportPlannercalcIndirizzo.AsString,
+  {
+    var
+    lMessage := StringReplace(cMessage, '$$date$$', lData, [rfIgnoreCase, rfReplaceAll]);
+    lMessage := StringReplace(lMessage, '$$address$$', qryReportPlannercalcIndirizzo.AsString,
     [rfIgnoreCase, rfReplaceAll]);
-
-  var
-  aList := TStringList.Create;
-  var
-  aVariables := '';
-  try
-    aList.Add(lData);
-    aList.Add(qryReportPlannercalcIndirizzo.AsString);
-    aVariables := aList.Text;
-  finally
-    aList.Free;
-  end;
+  }
 
   qryCellulariStatino.Close;
   qryCellulariStatino.Params[0].AsInteger := qryReportPlannerCHIAVE.AsInteger;
   qryCellulariStatino.Open;
   var
   vStatino := qryReportPlannerCHIAVE.AsInteger;
+  qryReportPlanner.Filtered := False;
+  qryReportPlanner.Locate('CHIAVE', vStatino, []);
 {$IFDEF DEBUG}
   var
   lTest := qryCellulariStatino.RecordCount;
 {$ENDIF}
+  if qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
+  begin
+    lTimeDlg := TdlgVCLInputDateTime.Create(nil);
+    try
+      lTimeDlg.InputText := 'Data/Ora Appuntamento';
+      lTimeDlg.FormCaption := qryReportPlannerDESCRIZIONE_SCHEDA.AsString;
+      lTimeDlg.ShowModal;
+      qryReportPlanner.Edit;
+      qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime := DateOf(lTimeDlg.Date);
+      qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime := TimeOf(lTimeDlg.Date);
+      qryReportPlanner.Post;
+    finally
+      lTimeDlg.Free;
+    end;
+  end;
+
   lDlg := TdlgPhoenixVCLWhatsAppSMSMessage.Create(nil);
   try
     lDlg.WATemplate := cMessage;
     lMeeting.Summary := qryReportPlannerDESCRIZIONE_SCHEDA.AsString;
     lMeeting.Description := qryReportPlannerNOTE_PER_IL_TECNICO.AsString;
-    lMeeting.StartTime := qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime;
+    lMeeting.StartTime := qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime +
+      qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime;
     lMeeting.EndTime := qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime +
       qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime;
+    lMeeting.Location := qryReportPlannercalcIndirizzo.AsString;
     lDlg.Meeting := lMeeting;
     lDlg.ShowModal;
     if lDlg.ModalResult = mrOK then
     begin
-      lMessage := lDlg.Memo1.Lines.Text;
+      if lMeeting.StartTime <> qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime then
+      begin
+        qryReportPlanner.Edit;
+        qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime := DateOf(lMeeting.StartTime);
+        qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime := TimeOf(lMeeting.StartTime);
+        qryReportPlanner.Post;
+      end;
+
+      // lMessage := lDlg.Memo1.Lines.Text;
       var
       lPhone := '';
       if WATest then
@@ -3008,6 +3111,21 @@ begin
       var
       lWaNumber := lPhone;
       Result := (Length(lPhone) > 7) and (Length(lPhone) <= 13);
+
+      var
+      lData := DateToStr(qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime);
+
+      var
+      aList := TStringList.Create;
+      var
+      aVariables := '';
+      try
+        aList.Add(lData);
+        aList.Add(qryReportPlannercalcIndirizzo.AsString);
+        aVariables := aList.Text;
+      finally
+        aList.Free;
+      end;
 
       if not Result then
         JShowError('Non è presente un numero WhatsApp Valido')
@@ -3031,6 +3149,12 @@ begin
           if vStatino <> 0 then
             spInsertWhatsAppMsg.ParamByName('report_id').Value := vStatino;
           spInsertWhatsAppMsg.ExecProc;
+          qryReportPlanner.Edit;
+          qryReportPlannerWA_ID.AsString := FJanuaAdvTwilio.MessageSid;
+          qryReportPlanner.Post;
+          Sleep(500);
+          TwilioSync;
+          UpdateReportMsgStatus;
         except
           on e: exception do
             raise exception.Create('Messaggio a ' + lDlg.edWAPhone.Text + ' non inviato causa Errore: ' +
@@ -3041,6 +3165,8 @@ begin
   finally
     lDlg.Free;
   end;
+  qryReportPlanner.Filtered := True;
+  qryReportPlanner.Locate('CHIAVE', vStatino, []);
 end;
 
 function TdmVCLPhoenixPlannerController.SendWhatsAppMessage(const aMeeting: TJanuaRecEvent): Boolean;
@@ -3094,7 +3220,7 @@ begin
     lDlg.ShowModal;
     if lDlg.ModalResult = mrOK then
     begin
-      lMessage := lDlg.Memo1.Lines.Text;
+      // lMessage := lDlg.Memo1.Lines.Text;
 
       var
       lPhone := '';
@@ -3295,6 +3421,21 @@ end;
 procedure TdmVCLPhoenixPlannerController.SetWATestPhone(const Value: string);
 begin
   FWATestPhone := Value;
+end;
+
+procedure TdmVCLPhoenixPlannerController.TwilioSync;
+begin
+  var
+  lDmWhatsApp := TdmPgTWilioSync.Create(nil);
+  try
+    lDmWhatsApp.SyncDBTwilio;
+    lDmWhatsApp.SyncMessages;
+    lDmWhatsApp.SyncStatus;
+    lDmWhatsApp.StatiniStatus;
+  finally
+    lDmWhatsApp.Free;
+    lDmWhatsApp := nil;
+  end;
 end;
 
 procedure TdmVCLPhoenixPlannerController.FilterTech;

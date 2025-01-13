@@ -3,33 +3,25 @@ unit Janua.VCL.Cloud.frmWhatsAppWebForm;
 interface
 
 uses
-  Winapi.Messages, System.SysUtils, System.Variants,
-  System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
-  Vcl.AppEvnts, Vcl.StdCtrls, IdHTTPWebBrokerBridge, IdGlobal, Web.HTTPApp;
+  Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.AppEvnts, VCL.StdCtrls,
+  IdHTTPWebBrokerBridge, IdGlobal, Web.HTTPApp,
+  // Janua
+  Janua.VCL.Http.frmWebBrokerServer, Janua.VCL.frameWebServerManager, Janua.VCL.Interposers, Winapi.WebView2,
+  Winapi.ActiveX, VCL.Edge, VCL.TMSFNCTypes, VCL.TMSFNCUtils, VCL.TMSFNCGraphics, VCL.TMSFNCGraphicsTypes,
+  VCL.TMSFNCCustomControl, VCL.TMSFNCWebBrowser, VCL.TMSFNCEdgeWebBrowser;
 
 type
-  TForm1 = class(TForm)
-    ButtonStart: TButton;
-    ButtonStop: TButton;
-    EditPort: TEdit;
-    Label1: TLabel;
-    ApplicationEvents1: TApplicationEvents;
-    ButtonOpenBrowser: TButton;
-    procedure FormCreate(Sender: TObject);
-    procedure ApplicationEvents1Idle(Sender: TObject; var Done: Boolean);
-    procedure ButtonStartClick(Sender: TObject);
-    procedure ButtonStopClick(Sender: TObject);
-    procedure ButtonOpenBrowserClick(Sender: TObject);
+  TfrmVCLWebBrokerWhatsApp = class(TfrmVCLWebBrokerServer)
+    procedure JanuaframeWebServerManagerBeforeStartServer(Sender: TObject);
   private
-    FServer: TIdHTTPWebBrokerBridge;
-    procedure StartServer;
     { Private declarations }
   public
     { Public declarations }
   end;
 
 var
-  Form1: TForm1;
+  frmVCLWebBrokerWhatsApp: TfrmVCLWebBrokerWhatsApp;
 
 implementation
 
@@ -37,56 +29,17 @@ implementation
 
 uses
 {$IFDEF MSWINDOWS}
-  WinApi.Windows, Winapi.ShellApi,
+  Winapi.Windows, Winapi.ShellApi,
 {$ENDIF}
+  // Janua Web Broker
+  Janua.WebBroker.Server, Janua.WhatsApp.WebbrokerModule,
   System.Generics.Collections;
 
-procedure TForm1.ApplicationEvents1Idle(Sender: TObject; var Done: Boolean);
+procedure TfrmVCLWebBrokerWhatsApp.JanuaframeWebServerManagerBeforeStartServer(Sender: TObject);
 begin
-  ButtonStart.Enabled := not FServer.Active;
-  ButtonStop.Enabled := FServer.Active;
-  EditPort.Enabled := not FServer.Active;
-end;
-
-procedure TForm1.ButtonOpenBrowserClick(Sender: TObject);
-{$IFDEF MSWINDOWS}
-var
-  LURL: string;
-{$ENDIF}
-begin
-  StartServer;
-{$IFDEF MSWINDOWS}
-  LURL := Format('http://localhost:%s', [EditPort.Text]);
-  ShellExecute(0,
-        nil,
-        PChar(LURL), nil, nil, SW_SHOWNOACTIVATE);
-{$ENDIF}
-end;
-
-procedure TForm1.ButtonStartClick(Sender: TObject);
-begin
-  StartServer;
-end;
-
-procedure TForm1.ButtonStopClick(Sender: TObject);
-begin
-  FServer.Active := False;
-  FServer.Bindings.Clear;
-end;
-
-procedure TForm1.FormCreate(Sender: TObject);
-begin
-  FServer := TIdHTTPWebBrokerBridge.Create(Self);
-end;
-
-procedure TForm1.StartServer;
-begin
-  if not FServer.Active then
-  begin
-    FServer.Bindings.Clear;
-    FServer.DefaultPort := StrToInt(EditPort.Text);
-    FServer.Active := True;
-  end;
+  inherited;
+  // nota JanuaWebBrokerServerClass è una Variabile di tipo TJanuaWebBrokerServerClass
+  JanuaframeWebServerManager.JanuaWebBrokerServerManager1.WebModuleClass := WhatsAppWebModuleClass;
 end;
 
 end.

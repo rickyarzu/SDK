@@ -33,7 +33,8 @@ implementation
 
 {$R *.dfm}
 
-uses udmFootballPostgres;
+uses Janua.Sports.PgChampionship;
+
 
 procedure TdlgSportsSelectTeamLastSeason.btnEdiSearchClubChange(Sender: TObject);
 begin
@@ -60,8 +61,8 @@ procedure TdlgSportsSelectTeamLastSeason.grdSelectedTeamsDblClick(Sender: TObjec
 var
   id: integer;
 begin
-  if self.DataSource1.DataSet = dmFootballPostgres.qryAllTeamsNoSeason then
-    with dmFootballPostgres do
+  if self.DataSource1.DataSet = dmUniDacPgChampionships.qryAllTeamsNoSeason then
+    with dmUniDacPgChampionships do
     begin
       qryTeamsChampionships.Append;
       qryTeamsChampionshipsseason_id.AsInteger := qryChampionshipsseason_id.AsInteger;

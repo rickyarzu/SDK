@@ -20,7 +20,6 @@ object dlgSportsSelectTeamLastSeason: TdlgSportsSelectTeamLastSeason
     Align = alTop
     Caption = 'Selezionare le Squadre dall'#39'elenco'
     TabOrder = 0
-    ExplicitWidth = 392
   end
   object Panel2: TPanel
     Left = 0
@@ -29,8 +28,6 @@ object dlgSportsSelectTeamLastSeason: TdlgSportsSelectTeamLastSeason
     Height = 41
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 500
-    ExplicitWidth = 392
     DesignSize = (
       396
       41)
@@ -49,7 +46,6 @@ object dlgSportsSelectTeamLastSeason: TdlgSportsSelectTeamLastSeason
       NumGlyphs = 2
       ParentFont = False
       TabOrder = 0
-      ExplicitLeft = 196
     end
     object BitBtn2: TBitBtn
       Left = 294
@@ -67,7 +63,6 @@ object dlgSportsSelectTeamLastSeason: TdlgSportsSelectTeamLastSeason
       NumGlyphs = 2
       ParentFont = False
       TabOrder = 1
-      ExplicitLeft = 290
     end
   end
   object grdSelectedTeams: TCRDBGrid
@@ -117,9 +112,9 @@ object dlgSportsSelectTeamLastSeason: TdlgSportsSelectTeamLastSeason
     TabOrder = 3
     TextHint = 'ricerca club'
     OnChange = btnEdiSearchClubChange
-    ExplicitWidth = 392
   end
   object DataSource1: TDataSource
+    DataSet = dmUniDacPgChampionships.qryAllTeamsNoSeason
     Left = 160
     Top = 280
   end

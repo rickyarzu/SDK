@@ -2,8 +2,8 @@ object frmJanuaMdcModel: TfrmJanuaMdcModel
   Left = 0
   Top = 0
   Caption = 'FrmMdcModel'
-  ClientHeight = 445
-  ClientWidth = 429
+  ClientHeight = 648
+  ClientWidth = 853
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,13 +11,14 @@ object frmJanuaMdcModel: TfrmJanuaMdcModel
   Font.Name = 'Tahoma'
   Font.Style = []
   Menu = mnuMDC
+  Visible = True
   WindowState = wsMaximized
   TextHeight = 13
   object mnuMDC: TAdvMainMenu
-    Version = '2.7.1.8'
+    Version = '2.7.1.12'
     UIStyle = tsOffice2019White
-    Left = 176
-    Top = 344
+    Left = 184
+    Top = 448
     object mnuMDCAppTitle: TMenuItem
       Caption = 'Finestra'
       object mnuParentDivider1: TMenuItem
@@ -126,7 +127,7 @@ object frmJanuaMdcModel: TfrmJanuaMdcModel
     AutoThemeAdapt = True
     Style = tsOffice2019White
     Left = 68
-    Top = 244
+    Top = 268
   end
   object AdvOfficeHint1: TAdvOfficeHint
     Font.Charset = DEFAULT_CHARSET
@@ -151,7 +152,7 @@ object frmJanuaMdcModel: TfrmJanuaMdcModel
     TestMode = False
     Number = 0
     Left = 176
-    Top = 232
+    Top = 312
   end
   object BalloonHint1: TBalloonHint
     Left = 67
@@ -2624,8 +2625,8 @@ object frmJanuaMdcModel: TfrmJanuaMdcModel
     ButtonAppearance.CaptionFont.Height = -11
     ButtonAppearance.CaptionFont.Name = 'Tahoma'
     ButtonAppearance.CaptionFont.Style = []
-    Left = 72
-    Top = 296
+    Left = 80
+    Top = 392
   end
   object AdvOfficeTabSetOfficeStyler1: TAdvOfficeTabSetOfficeStyler
     ButtonBorderColor = clNone
@@ -2714,8 +2715,8 @@ object frmJanuaMdcModel: TfrmJanuaMdcModel
     Top = 200
   end
   object OpenPictureDialog1: TOpenPictureDialog
-    Left = 67
-    Top = 354
+    Left = 91
+    Top = 506
   end
   object JanuaDialog1: TJanuaDialog
     DialogType = jdtWarning

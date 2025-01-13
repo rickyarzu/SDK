@@ -13,7 +13,7 @@ uses
   uJanuaVclForm, Janua.Controls.Forms.Impl, Janua.VCL.Controls.Forms.Impl, Janua.Controls.Forms.Intf,
   // Janua
   Janua.Core.Classes, Janua.REST.Types, Janua.Core.Types, Janua.Http.Types, Janua.REST.Intf,
-  Janua.FDAC.Phoenix.Lab;
+  Janua.Phoenix.dmIBLabSync;
 
 type
   TfrmPhoenixVCLRESTLabClient = class(TJanuaVCLFormModel, IJanuaForm)
@@ -56,15 +56,15 @@ type
     procedure FormCreate(Sender: TObject);
     procedure btnUpdateDataClick(Sender: TObject);
   private
-    FdmFDACPhoenixLab: TdmFDACPhoenixLab;
+    FdmFDACPhoenixLab: TdmPhoenixIBLab;
     { Private declarations }
     procedure StatoLavorazioni;
     procedure Configurazioni;
     procedure ElaborateJson;
-    procedure SetdmFDACPhoenixLab(const Value: TdmFDACPhoenixLab);
+    procedure SetdmFDACPhoenixLab(const Value: TdmPhoenixIBLab);
   public
     { Public declarations }
-    property dmFDACPhoenixLab: TdmFDACPhoenixLab read FdmFDACPhoenixLab write SetdmFDACPhoenixLab;
+    property dmFDACPhoenixLab: TdmPhoenixIBLab read FdmFDACPhoenixLab write SetdmFDACPhoenixLab;
   end;
 
 var
@@ -100,6 +100,7 @@ procedure TfrmPhoenixVCLRESTLabClient.btnUpdateDataClick(Sender: TObject);
 begin
   FdmFDACPhoenixLab.UpdateData;
   memJsonResponse.Lines.Text := FdmFDACPhoenixLab.JsonResponse;
+  memLog.Lines.Text := FdmFDACPhoenixLab.Log.Text;
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.Configurazioni;
@@ -150,10 +151,10 @@ end;
 
 procedure TfrmPhoenixVCLRESTLabClient.FormCreate(Sender: TObject);
 begin
-  FdmFDACPhoenixLab := TdmFDACPhoenixLab.Create(self)
+  FdmFDACPhoenixLab := TdmPhoenixIBLab.Create(self)
 end;
 
-procedure TfrmPhoenixVCLRESTLabClient.SetdmFDACPhoenixLab(const Value: TdmFDACPhoenixLab);
+procedure TfrmPhoenixVCLRESTLabClient.SetdmFDACPhoenixLab(const Value: TdmPhoenixIBLab);
 begin
   FdmFDACPhoenixLab := Value;
 end;

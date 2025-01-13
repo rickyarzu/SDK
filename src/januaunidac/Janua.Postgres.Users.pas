@@ -104,7 +104,7 @@ procedure TJanuaServerUsers.DestroyDataModule(Force: boolean = false);
 begin
   if Assigned(lSys) and ((not self.KeepAlive) or Force) then
   begin
-    lSys.DisposeOf;
+    lSys.Free;
     lSys := nil;
     self.IDM := nil;
   end;

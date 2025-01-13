@@ -1,62 +1,31 @@
-object Form1: TForm1
-  Left = 271
-  Top = 114
-  Caption = 'Form1'
-  ClientHeight = 194
-  ClientWidth = 389
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'Tahoma'
-  Font.Style = []
-  OnCreate = FormCreate
+inherited frmVCLWebBrokerWhatsApp: TfrmVCLWebBrokerWhatsApp
+  StyleElements = [seFont, seClient, seBorder]
   TextHeight = 13
-  object Label1: TLabel
-    Left = 24
-    Top = 48
-    Width = 20
-    Height = 13
-    Caption = 'Port'
+  inherited grpWebBrokerStart: TGroupBox
+    inherited JanuaframeWebServerManager: TJanuaframeWebServerManager
+      inherited Label1: TLabel
+        StyleElements = [seFont, seClient, seBorder]
+      end
+      inherited sedPort: TSpinEdit
+        StyleElements = [seFont, seClient, seBorder]
+      end
+      inherited JanuaWebBrokerServerManager1: TJanuaWebBrokerServerManager
+        ServerName = 'TwilioWebHook'
+      end
+    end
   end
-  object ButtonStart: TButton
-    Left = 24
-    Top = 8
-    Width = 75
-    Height = 25
-    Caption = 'Start'
-    TabOrder = 0
-    OnClick = ButtonStartClick
+  inherited Edit1: TEdit
+    StyleElements = [seFont, seClient, seBorder]
+    ExplicitLeft = 3
+    ExplicitTop = 86
+    ExplicitWidth = 523
   end
-  object ButtonStop: TButton
-    Left = 105
-    Top = 8
-    Width = 75
-    Height = 25
-    Caption = 'Stop'
-    TabOrder = 1
-    OnClick = ButtonStopClick
-  end
-  object EditPort: TEdit
-    Left = 24
-    Top = 67
-    Width = 121
-    Height = 21
-    TabOrder = 2
-    Text = '8180'
-  end
-  object ButtonOpenBrowser: TButton
-    Left = 24
-    Top = 112
-    Width = 107
-    Height = 25
-    Caption = 'Open Browser'
-    TabOrder = 3
-    OnClick = ButtonOpenBrowserClick
-  end
-  object ApplicationEvents1: TApplicationEvents
-    OnIdle = ApplicationEvents1Idle
-    Left = 288
-    Top = 24
+  inherited TMSFNCEdgeWebBrowser1: TTMSFNCEdgeWebBrowser
+    DoubleBuffered = True
+    Settings.AllowExternalDrop = False
+    ExplicitLeft = 3
+    ExplicitTop = 113
+    ExplicitWidth = 523
+    ExplicitHeight = 372
   end
 end

@@ -57,7 +57,7 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
-    <Import Project="..\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('..\JanuaLibDXE15.optset')"/>
+    <Import Project="..\JanuaeExeDXE15.optset" Condition="'$(Base)'!='' And Exists('..\JanuaeExeDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
         <SanitizedProjectName>SportsManager</SanitizedProjectName>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
@@ -71,8 +71,8 @@
         <DCC_S>false</DCC_S>
         <DCC_F>false</DCC_F>
         <DCC_K>false</DCC_K>
-        <Custom_Styles>Windows10|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10.vsf;&quot;Windows10 SlateGray|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10SlateGray.vsf&quot;;&quot;Windows11 Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Dark.vsf&quot;;&quot;Windows11 Light|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Light.vsf&quot;;&quot;Windows11 Modern Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Modern_Dark.vsf&quot;;&quot;Windows11 Modern Light|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Modern_Light.vsf&quot;;Light|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Light.vsf;Win10IDE_Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\WIN10IDE_DARK.vsf;Win10IDE_Light|VCLSTYLE|$(BDSCOMMONDIR)\Styles\WIN10IDE_LIGHT.vsf;&quot;Windows10 Blue Whale|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10BlueWhale.vsf&quot;;&quot;Windows10 Blue Whale LE|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10BlueWhaleLE.vsf&quot;;&quot;Windows10 Clear Day|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10ClearDay.vsf&quot;;&quot;Windows10 Malibu|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10Malibu.vsf&quot;</Custom_Styles>
-        <CfgDependentOn>..\JanuaLibDXE15.optset</CfgDependentOn>
+        <Custom_Styles>&quot;Iceberg Classico|VCLSTYLE|$(BDSCOMMONDIR)\Styles\IcebergClassico.vsf&quot;;Windows10|VCLSTYLE|$(BDSCOMMONDIR)\Styles\DefaultModernStyle.vsf;&quot;Windows10 SlateGray|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10SlateGray.vsf&quot;;&quot;Windows11 Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Dark.vsf&quot;;&quot;Windows11 Light|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Light.vsf&quot;;&quot;Windows11 Modern Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Modern_Dark.vsf&quot;;&quot;Windows11 Modern Light|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Modern_Light.vsf&quot;;&quot;Windows11 Polar Light|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Polar_Light.vsf&quot;;Light|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Light.vsf;Win10IDE_Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\WIN10IDE_DARK.vsf;Win10IDE_Light|VCLSTYLE|$(BDSCOMMONDIR)\Styles\WIN10IDE_LIGHT.vsf;&quot;Windows10 Blue Whale|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10BlueWhale.vsf&quot;;&quot;Windows10 Blue Whale LE|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10BlueWhaleLE.vsf&quot;;&quot;Windows10 Clear Day|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10ClearDay.vsf&quot;;&quot;Windows10 Malibu|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10Malibu.vsf&quot;</Custom_Styles>
+        <CfgDependentOn>..\JanuaeExeDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
@@ -151,6 +151,7 @@
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
+    <Import Project="..\JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('..\JanuaLibDXE15.optset')"/>
     <Import Project="..\..\..\..\Projects\projects.optset" Condition="'$(Base)'!='' And Exists('..\..\..\..\Projects\projects.optset')"/>
     <Import Project="..\..\..\projects.optset" Condition="'$(Base)'!='' And Exists('..\..\..\projects.optset')"/>
     <ItemGroup>
@@ -211,18 +212,31 @@
             <Form>dmViewModelSystem</Form>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\januacore\custom\DILConf.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\custom\PadelConf.pas"/>
         <DCCReference Include="..\..\..\src\VCL\Sports\udlgSportsNewSeason.pas">
             <Form>dlgSportsNewSeason</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\Sports\udlgSportsClub.pas">
-            <Form>dlgFootballClub</Form>
+            <Form>dlgSportsClubs</Form>
             <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Commons\Janua.VCL.dlgWaitSpin.pas">
+            <Form>dlgVCLWaitSpin</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Forms\uJanuaVCLForm.pas">
+            <Form>JanuaVCLFormModel</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Forms\uJanuaVCLFrame.pas">
+            <Form>JanuaVCLFrameModel</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
-            <DependentOn>..\JanuaLibDXE15.optset</DependentOn>
+            <DependentOn>..\JanuaeExeDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
@@ -292,9 +306,11 @@
                     <Source Name="MainSource">SportsManager.dpr</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Januaproject\GitHub\tmssoftware\TMS Logging\packages\d11\.\Win32\Release\dclTMSLogging280.bpl">File C:\Januaproject\GitHub\tmssoftware\TMS Logging\packages\d11\.\Win32\Release\dclTMSLogging280.bpl not found</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\DUnitXIDEExpert280.bpl">Embarcadero Unit Testing IDE Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\Neos Eureka S.r.l\EurekaLog 7\Packages\Studio29\EurekaLogComponent290.bpl">EurekaLog Component</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\Neos Eureka S.r.l\EurekaLog 7\Packages\Studio29\EurekaLogExpert290.bpl">EurekaLog IDE Expert</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="4">

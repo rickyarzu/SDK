@@ -149,7 +149,7 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\..\Phoenix\Phoenix\SW\PhoenixMain\Globale.pas"/>
+        <DCCReference Include="..\..\..\src\VCL\Phoenix\Janua.Phoenix.Globale.pas"/>
         <DCCReference Include="..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.rpStatino.pas">
             <Form>frmRpStatino</Form>
             <FormType>dfm</FormType>

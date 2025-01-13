@@ -10,7 +10,7 @@ uses
   Web.WebBroker,
   Janua.WebBroker.ServerConst,
   Janua.Core.Types,
-  Janua.Core.WebServer,
+  Janua.Http.WebServer,
   Janua.CarService.WebModuleCustomerConfirmation, Vcl.Samples.Spin;
 
 // IdHTTPWebBrokerBridge, IdGlobal, Web.HTTPApp;

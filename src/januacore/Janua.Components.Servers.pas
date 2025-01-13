@@ -5,6 +5,9 @@ interface
 uses Janua.Controls.Dialogs.Intf, Janua.Core.Types, Janua.Core.Classes, Janua.Core.Servers,
   Janua.Core.DB.Types, Janua.Core.DB.Intf;
 
+{$TYPEINFO ON}
+{$METHODINFO ON}
+
 type
   TJanuaServerConf = class(TJanuaCoreComponent)
   private

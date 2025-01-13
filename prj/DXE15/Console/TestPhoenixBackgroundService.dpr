@@ -5,9 +5,7 @@
 
 uses
   System.SysUtils,
-  Janua.Phoenix.VCL.BackgroundThread in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.BackgroundThread.pas',
-  Janua.FDAC.Phoenix.Lab in '..\..\..\src\FireDAC\Janua.FDAC.Phoenix.Lab.pas' {dmFDACPhoenixLab: TDataModule},
-  Janua.FDAC.Phoenix.Model in '..\..\..\src\FireDAC\Janua.FDAC.Phoenix.Model.pas' {dmFDACPhoenixModel: TDataModule},
+  Janua.Phoenix.VCL.LabBackgroundThread in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.LabBackgroundThread.pas',
   uPhoenixBackgroundServiceConf in '..\VCL\uPhoenixBackgroundServiceConf.pas',
   udmPgStorage in '..\..\..\src\januaunidac\datamodules\udmPgStorage.pas' {dmPgStorage: TDataModule},
   Janua.Phoenix.PgTwilioSync in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.PgTwilioSync.pas' {dmPgTWilioSync: TDataModule};

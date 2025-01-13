@@ -1,8 +1,8 @@
-object dlgFootballClub: TdlgFootballClub
+object dlgSportsClubs: TdlgSportsClubs
   Left = 0
   Top = 0
   BorderStyle = bsDialog
-  Caption = 'Gestion Football Club '
+  Caption = 'Gestione Sports Club '
   ClientHeight = 482
   ClientWidth = 734
   Color = clBtnFace
@@ -55,7 +55,7 @@ object dlgFootballClub: TdlgFootballClub
     Width = 73
     Height = 21
     Color = clBtnFace
-    DataField = 'club_id'
+    DataField = 'id'
     DataSource = dsClub
     ReadOnly = True
     TabOrder = 0
@@ -74,7 +74,7 @@ object dlgFootballClub: TdlgFootballClub
     Top = 24
     Width = 134
     Height = 21
-    DataField = 'Foundation_date'
+    DataField = 'foundation_date'
     DataSource = dsClub
     TabOrder = 2
   end
@@ -111,7 +111,7 @@ object dlgFootballClub: TdlgFootballClub
         Visible = True
       end>
   end
-  object DBNavigator2: TDBNavigator
+  object navTeams: TDBNavigator
     Left = 8
     Top = 75
     Width = 320
@@ -221,6 +221,7 @@ object dlgFootballClub: TdlgFootballClub
       Width = 329
       Height = 21
       DataField = 'an_last_name'
+      DataSource = dsClub
       TabOrder = 0
     end
     object edAddress: TDBEdit
@@ -229,6 +230,7 @@ object dlgFootballClub: TdlgFootballClub
       Width = 329
       Height = 21
       DataField = 'an_address'
+      DataSource = dsClub
       TabOrder = 1
     end
     object edtown: TDBEdit
@@ -237,6 +239,7 @@ object dlgFootballClub: TdlgFootballClub
       Width = 329
       Height = 21
       DataField = 'an_town'
+      DataSource = dsClub
       TabOrder = 2
     end
     object edPostalCode: TDBEdit
@@ -245,6 +248,7 @@ object dlgFootballClub: TdlgFootballClub
       Width = 108
       Height = 21
       DataField = 'an_postal_code'
+      DataSource = dsClub
       TabOrder = 3
     end
     object Ediso_country_code: TDBEdit
@@ -253,6 +257,7 @@ object dlgFootballClub: TdlgFootballClub
       Width = 115
       Height = 21
       DataField = 'an_iso_country_code'
+      DataSource = dsClub
       TabOrder = 4
     end
     object edstate_province: TDBEdit
@@ -261,6 +266,7 @@ object dlgFootballClub: TdlgFootballClub
       Width = 93
       Height = 21
       DataField = 'an_state_province'
+      DataSource = dsClub
       TabOrder = 5
     end
     object edphone: TDBEdit
@@ -269,6 +275,7 @@ object dlgFootballClub: TdlgFootballClub
       Width = 137
       Height = 21
       DataField = 'an_phone'
+      DataSource = dsClub
       TabOrder = 6
     end
     object edcellular: TDBEdit
@@ -277,6 +284,7 @@ object dlgFootballClub: TdlgFootballClub
       Width = 186
       Height = 21
       DataField = 'an_cellular'
+      DataSource = dsClub
       TabOrder = 7
     end
     object edcode: TDBEdit
@@ -285,6 +293,7 @@ object dlgFootballClub: TdlgFootballClub
       Width = 97
       Height = 21
       DataField = 'an_code'
+      DataSource = dsClub
       TabOrder = 8
     end
     object Edemail: TDBEdit
@@ -293,6 +302,7 @@ object dlgFootballClub: TdlgFootballClub
       Width = 329
       Height = 21
       DataField = 'an_email'
+      DataSource = dsClub
       TabOrder = 9
     end
     object Edanagraph_id: TDBEdit
@@ -302,6 +312,7 @@ object dlgFootballClub: TdlgFootballClub
       Height = 21
       Color = clBtnFace
       DataField = 'anagraph_id'
+      DataSource = dsClub
       ReadOnly = True
       TabOrder = 10
     end
@@ -381,11 +392,13 @@ object dlgFootballClub: TdlgFootballClub
     Appearance.ColorMirrorDisabledTo = 15921906
   end
   object dsClub: TDataSource
-    Left = 224
-    Top = 240
+    DataSet = dmUniDacPgChampionships.qryClubs
+    Left = 72
+    Top = 176
   end
   object dsTeams: TDataSource
-    Left = 152
-    Top = 240
+    DataSet = dmUniDacPgChampionships.qryTeams
+    Left = 184
+    Top = 256
   end
 end

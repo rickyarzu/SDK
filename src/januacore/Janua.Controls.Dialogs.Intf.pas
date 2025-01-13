@@ -50,12 +50,20 @@ type
     property Caption: string read GetTitle write SetTitle;
   end;
 
+  IJanuaDialogDateTime = interface(IJanuaDialogDate)
+    ['{9794B417-74E5-4FA5-9127-281470CD2EB6}']
+  end;
+
 type
   IJanuadlgInputDate = interface(IJanuaCustomDialogForm)
     ['{AE5E8117-A0C9-4651-BE19-8DC1A5BCBB42}']
     function GetDate: TDateTime;
     procedure SetDate(const Value: TDateTime);
     property Date: TDateTime read GetDate write SetDate;
+  end;
+
+  IJanuadlgInputDateTime = interface(IJanuadlgInputDate)
+   ['{A46A7785-451E-4368-BD18-78D7682573A7}']
   end;
 
 type
@@ -249,8 +257,12 @@ type
     procedure SetInputText(const Value: string);
     { Public declarations }
     property Date: TDateTime read GetDate write SetDate;
-    property Caption: string read GetJCaption write SetJCaption;
+    property FormCaption: string read GetJCaption write SetJCaption;
     property InputText: string read GetInputText write SetInputText;
+  end;
+
+  IDlgInputDateTimeForm = interface(IDlgInputDateForm)
+
   end;
 
   IJanuaOpenFileDialog = interface(IJanuaInterface)

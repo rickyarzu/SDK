@@ -17,7 +17,7 @@ uses
   udlgCmsCategorie in '..\..\..\src\VCL\Cms\udlgCmsCategorie.pas' {dlgCmsCategorie},
   udmPgCloudStorage in '..\..\..\src\januaunidac\datamodules\udmPgCloudStorage.pas' {dmPgCloudStorage: TDataModule},
   udmPgCmsStorage in '..\..\..\src\januaunidac\datamodules\udmPgCmsStorage.pas' {dmPgCmsStorage: TDataModule},
-  DILConf in '..\..\..\src\januacore\custom\DILConf.pas',
+  PadelConf in '..\..\..\src\januacore\custom\PadelConf.pas',
   udmCMSViewModel in '..\..\..\src\VCL\Cms\udmCMSViewModel.pas' {dmCMSViewModel: TDataModule},
   udmPgAdsStorage in '..\..\..\src\januaunidac\datamodules\udmPgAdsStorage.pas' {dmPgAdsStorage: TDataModule},
   udlgMaiilSettingsTMS in '..\..\..\src\VCL\Commons\udlgMaiilSettingsTMS.pas' {dlgMaiilSettingsTMS},
