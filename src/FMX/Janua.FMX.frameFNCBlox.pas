@@ -107,8 +107,8 @@ begin
   sp.FontSize := 16;
   sp.FillColor := TAlphaColors.Red;
 
-  sp.Top := VY;
-  sp.Left := VX;
+  sp.Top := VY - (sp.Height / 2);
+  sp.Left := VX - (sp.Width / 2);
   TMSFNCBloxControl1.Blox.Add(sp);
 
   TMSFNCBloxControl1.EndUpdate;
@@ -119,8 +119,8 @@ procedure TframeFNCBloxDrawing.TMSFNCBloxControl1MouseDown(Sender: TObject; Butt
 begin
   if Button = TMouseButton.mbLeft then
   begin
-    VX := X - 17;
-    VY := Y - 17;
+    VX := X - TMSFNCBloxControl1.LeftRuler.Size;
+    VY := Y - TMSFNCBloxControl1.TopRuler.Size;
   end;
 end;
 
