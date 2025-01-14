@@ -27,7 +27,7 @@ package sbridge;
 {$DEFINE sbridge}
 {$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'Devart SecureBridge Components'}
-{$LIBSUFFIX '280'}
+{$LIBSUFFIX AUTO}
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 

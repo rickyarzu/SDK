@@ -61,5 +61,3 @@ contains
   OpenAI.Utils.ObjectHolder in '..\..\..\lib\DelphiOpenAI\OpenAI.Utils.ObjectHolder.pas';
 
 end.
-
-
