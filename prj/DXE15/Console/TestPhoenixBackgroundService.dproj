@@ -225,16 +225,7 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.BackgroundThread.pas"/>
-        <DCCReference Include="..\..\..\src\FireDAC\Janua.FDAC.Phoenix.Lab.pas">
-            <Form>dmFDACPhoenixLab</Form>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\..\src\FireDAC\Janua.FDAC.Phoenix.Model.pas">
-            <Form>dmFDACPhoenixModel</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.LabBackgroundThread.pas"/>
         <DCCReference Include="..\VCL\uPhoenixBackgroundServiceConf.pas"/>
         <DCCReference Include="..\..\..\src\januaunidac\datamodules\udmPgStorage.pas">
             <Form>dmPgStorage</Form>

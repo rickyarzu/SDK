@@ -211,10 +211,10 @@ begin
   FResponse := string(res);
   Result := I in [200, 201];
 
-  if Result and (res <> '') then
+  if Result and not FResponse.IsEmpty then
   begin
     var
-    aObject := JsonParse(res);
+    aObject := JsonParse(FResponse);
     JsonValue(aObject, 'body', FMessageBody);
     JsonValue(aObject, 'sid', FMessageSid);
     aObject.Free;

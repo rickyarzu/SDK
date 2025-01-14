@@ -369,6 +369,12 @@
             <Form>dlgFMXCanvasImage</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="..\..\..\..\src\FMX\Janua.FMX.frameFNCBlox.pas">
+            <Form>frameFNCBloxDrawing</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\..\src\FMX\Janua.FXM.FNCBloxControls.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\..\JanuaeExeDXE15.optset</DependentOn>
@@ -1397,9 +1403,6 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win64">
-                        <Operation>1</Operation>
-                    </Platform>
-                    <Platform Name="Win64x">
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>

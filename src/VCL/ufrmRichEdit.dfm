@@ -10,8 +10,6 @@ object frmRichEdit: TfrmRichEdit
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
@@ -44,6 +42,5 @@ object frmRichEdit: TfrmRichEdit
       'advMemo1')
     ParentFont = False
     TabOrder = 2
-    Zoom = 100
   end
 end

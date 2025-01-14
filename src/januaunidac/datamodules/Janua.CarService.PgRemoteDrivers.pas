@@ -142,7 +142,7 @@ type
   private
     { Private declarations }
   public
-    { Public declarations }
+    procedure RefreshDetails; override;
   end;
 
   TJanuaPgDriversDataModule = class(TJanuaCustomDriversDataModule, IJanuaCSDriversDataModule)
@@ -216,6 +216,12 @@ begin
   qryTimetableMessages.Close;
   qryTimetableMessages.ParamByName('jguid').AsGuid := qryTimeTableRecordjguid.AsGuid;
   qryTimetableMessages.Open;
+end;
+
+procedure TdmCarServicePgRemoteDrivers.RefreshDetails;
+begin
+  inherited;
+  // no Details to Refresh
 end;
 
 end.

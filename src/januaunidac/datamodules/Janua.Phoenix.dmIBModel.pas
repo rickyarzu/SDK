@@ -20,7 +20,7 @@ var
 
 implementation
 
-uses Janua.Application.Framework, Globale;
+uses Janua.Application.Framework, Janua.Phoenix.Globale;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
@@ -31,7 +31,7 @@ procedure TdmPhoenixIBModel.JanuaUniConnection1BeforeConnect(Sender: TObject);
 begin
   inherited;
   if SystemInformation.DBServer = '' then
-    JanuaUniConnection1.Server := 'localhost'
+    JanuaUniConnection1.Server := '192.168.1.200'
   else
     JanuaUniConnection1.Server := SystemInformation.DBServer;
   JanuaUniConnection1.Database := SystemInformation.DBDatabase;

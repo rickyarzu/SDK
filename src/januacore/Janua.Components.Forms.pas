@@ -4,6 +4,9 @@ interface
 
 uses Janua.Core.Classes, Janua.Core.Types, System.SysUtils, System.Classes, System.StrUtils;
 
+{$TYPEINFO ON}
+{$METHODINFO ON}
+
 type
   TJanuaStyleManager = class(TJanuaCoreComponent)
   strict protected

@@ -16,7 +16,8 @@ uses
   // Janua
   Janua.Phoenix.VCL.dmPlannerController,
   Janua.Core.Types, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Forms.Types, Janua.Bindings.Intf,
-  Janua.Controls.Intf, Janua.Controls.Forms.Intf, uJanuaVCLFrame, Janua.Cloud.Types, VCL.WinXCtrls;
+  Janua.Controls.Intf, Janua.Controls.Forms.Intf, uJanuaVCLFrame, Janua.Cloud.Types, VCL.WinXCtrls,
+  PictureContainer, HTMLabel, dbhtmlab, scControls, scDBControls;
 
 type
   TframeVCLPhoenixPlanneReport = class(TJanuaVCLFrameModel, IJanuaFrame, IJanuaContainer, IJanuaBindable)
@@ -48,8 +49,6 @@ type
     edDateFilter: TJvDatePickerEdit;
     ckbFilterDate: TCheckBox;
     pnlStatino: TPanel;
-    DBText3: TDBText;
-    DBText1: TDBText;
     Panel4: TPanel;
     Panel3: TPanel;
     Panel5: TPanel;
@@ -72,8 +71,15 @@ type
     btnNewMeeting: TJvSpeedButton;
     btnUndoMeeting: TJvSpeedButton;
     btnContract: TJvSpeedButton;
-    SearchBox1: TSearchBox;
     btnWhatsApp: TJvSpeedButton;
+    PictureContainer1: TPictureContainer;
+    Panel6: TPanel;
+    imgListStatus: TImageList;
+    Panel7: TPanel;
+    DBText1: TDBText;
+    DBText3: TDBText;
+    scDBImage1: TscDBImage;
+    DBText4: TDBText;
     procedure ChangeFilter(Sender: TObject);
     procedure btnSearchClick(Sender: TObject);
     procedure DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields; Item: TPlannerItem);
@@ -102,6 +108,7 @@ type
     procedure btnWhatsAppClick(Sender: TObject);
     procedure btnContractClick(Sender: TObject);
     procedure btnUndoMeetingClick(Sender: TObject);
+    procedure btnNewMeetingClick(Sender: TObject);
   private
     // Fields.FieldByName('COLOR')
     ItemColorField: TField;
@@ -113,6 +120,8 @@ type
     FID: Integer;
     FDBKey: string;
     FRecordItem: TJanuaRecEvent;
+
+    JMonitor: TObject;
 
     ItemIDField: TField;
     FreportID: Integer;
@@ -131,6 +140,7 @@ type
 
   public
     { Public declarations }
+    Constructor Create(AOwner: TComponent); override;
     procedure UpdateMessagesBadge;
     procedure AfterConstruction; override;
     procedure Filter;
@@ -147,7 +157,7 @@ implementation
 
 uses System.Math, System.StrUtils, DlgNuovoStatino,
   // Janua
-  Janua.Core.Functions, udmSVGImageList, udlgWhatsAppMessage;
+  Janua.Core.AsyncTask, Janua.Core.Functions, udmSVGImageList, udlgWhatsAppMessage;
 
 {$R *.dfm}
 
@@ -186,6 +196,12 @@ begin
       BeginDrag(False); { if so, drag it }
       FID := dmVCLPhoenixPlannerController.vtReportPlannerCHIAVE.AsInteger;
     end;
+end;
+
+procedure TframeVCLPhoenixPlanneReport.btnNewMeetingClick(Sender: TObject);
+begin
+  inherited;
+  dmVCLPhoenixPlannerController.actNewMeetingExecute(Sender);
 end;
 
 procedure TframeVCLPhoenixPlanneReport.btnSearchClick(Sender: TObject);
@@ -258,6 +274,12 @@ procedure TframeVCLPhoenixPlanneReport.ckbFilterDateClick(Sender: TObject);
 begin
   inherited;
   Filter
+end;
+
+constructor TframeVCLPhoenixPlanneReport.Create(AOwner: TComponent);
+begin
+  inherited;
+  JMonitor := TObject.Create;
 end;
 
 procedure TframeVCLPhoenixPlanneReport.DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields;
@@ -377,7 +399,7 @@ var
 begin
   ADialog := TDLG_STATINO.Create(Nil);
   try
-    ADialog.Init(TFiBConfig.QRY_GENERIC, dmVCLPhoenixPlannerController.vtReportPlannerCHIAVE.AsInteger);
+    ADialog.Init(TFiBConfig.QRY_GENERIC, dmVCLPhoenixPlannerController.qryReportPlannerCHIAVE.AsInteger);
     if ADialog.ShowModal = mrOK then
     begin
       ADialog.NodoStatino.Registra(spsRegistra);
@@ -460,12 +482,55 @@ end;
 
 procedure TframeVCLPhoenixPlanneReport.UpdateMessagesBadge;
 begin
+
   var
   dm := dmVCLPhoenixPlannerController;
   dm.qryMessageCount.Open;
-  btnWhatsAppMessages.Badge := IfThen(dm.qryMessageCountMESSAGES.AsInteger = 0, '',
-    dm.qryMessageCountMESSAGES.AsString);
+  var
+  aResult := dm.qryMessageCountMESSAGES.AsInteger;
   dm.qryMessageCount.Close;
+  btnWhatsAppMessages.Badge := IfThen(aResult = 0, '', aResult.ToString);
+  (*
+    Async.Run<Integer>(
+    function: Integer
+    begin
+    // This is the "background" anonymous method. Runs in the
+    // background thread, and its result is passed
+    // to the "success" callback.
+    // In this case the result is a String.
+    Result := 0;
+    System.TMonitor.Enter(JMonitor);
+    try
+    var
+    dm := dmVCLPhoenixPlannerController;
+    dm.qryMessageCount.Open;
+    Result := dm.qryMessageCountMESSAGES.AsInteger;
+    dm.qryMessageCount.Close;
+    finally
+    System.TMonitor.Exit(JMonitor);
+    end;
+    end,
+    procedure(const aValue: Integer)
+    begin
+    // This is the "success" callback. Runs in the UI thread and
+    // gets the result of the "background" anonymous method.
+    btnWhatsAppMessages.Badge := IfThen(aValue = 0, '', aValue.ToString);
+    end,
+    procedure(const Ex: exception)
+    begin
+    // This is the "error" callback.
+    // Runs in the UI thread and is called only if the
+    // "background" anonymous method raises an exception.
+    // nothing to see here ...
+    end);
+
+    var
+    dm := dmVCLPhoenixPlannerController;
+    dm.qryMessageCount.Open;
+    btnWhatsAppMessages.Badge := IfThen(dm.qryMessageCountMESSAGES.AsInteger = 0, '',
+    dm.qryMessageCountMESSAGES.AsString);
+    dm.qryMessageCount.Close;
+  *)
 end;
 
 procedure TframeVCLPhoenixPlanneReport.WATimerTimer(Sender: TObject);

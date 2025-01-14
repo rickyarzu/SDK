@@ -8,6 +8,9 @@ uses System.Classes,
   // Janua Orm Object
   JORM.System.Intf;
 
+{$TYPEINFO ON}
+{$METHODINFO ON}
+
 type
   TJanuaFieldItem = class(TJanuaBindableItem)
   private

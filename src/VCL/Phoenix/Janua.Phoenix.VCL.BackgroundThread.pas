@@ -3,7 +3,7 @@ unit Janua.Phoenix.VCL.BackgroundThread;
 interface
 
 uses
-  System.Classes;
+  System.SysUtils, System.Classes;
 
 type
   TBackgroundThread = class(TThread)
@@ -23,7 +23,7 @@ type
 implementation
 
 uses
-  System.SysUtils, System.IOUtils, System.Math, Janua.Core.Functions, Janua.FDAC.Phoenix.Lab;
+  System.IOUtils, System.Math, Janua.Core.Functions, Janua.Phoenix.PgTwilioSync;
 
 procedure TBackgroundThread.Continue;
 begin
@@ -49,11 +49,41 @@ begin
     OpenFile;
     WriteLn(LogFile, '   0 - Background Thread Started: ' + DateTimeToStr(Now));
     var
-    i := 0;
+    i := 1;
     var
     j := 0;
+
     while not Terminated do
     begin
+
+      if not FPaused then
+        try
+          if j > 0 then
+            OpenFile;
+          Inc(j);
+          var
+          lDmWhatsApp := TdmPgTWilioSync.Create(nil);
+          try
+            WriteLn(LogFile, Lpad(j.ToString, 4, ' ') + ' - Twilio SyncDBTwilio: ' + DateTimeToStr(Now));
+            lDmWhatsApp.SyncDBTwilio;
+            WriteLn(LogFile, Lpad(j.ToString, 4, ' ') + ' - Twilio SyncMessages: ' + DateTimeToStr(Now));
+            lDmWhatsApp.SyncMessages;
+            WriteLn(LogFile, Lpad(j.ToString, 4, ' ') + ' - Twilio SyncStatus: ' + DateTimeToStr(Now));
+            lDmWhatsApp.SyncStatus;
+          finally
+            lDmWhatsApp.Free;
+            lDmWhatsApp := nil;
+          end;
+          CloseFile(LogFile);
+        except
+          on e: exception do
+          begin
+            WriteLn(LogFile, Lpad(j.ToString, 4, ' ') + ' - Errore Twilio: ' + e.Message +
+              DateTimeToStr(Now));
+            CloseFile(LogFile);
+          end;
+        end;
+
       if not FPaused and (i = 0) then
       begin
         try

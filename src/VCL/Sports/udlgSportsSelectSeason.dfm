@@ -71,7 +71,7 @@ object dlgSportsSelectSeason: TdlgSportsSelectSeason
     Columns = <
       item
         Expanded = False
-        FieldName = 'league_id'
+        FieldName = 'id'
         Title.Caption = 'ID'
         Width = 64
         Visible = True
@@ -85,8 +85,8 @@ object dlgSportsSelectSeason: TdlgSportsSelectSeason
       end
       item
         Expanded = False
-        FieldName = 'iso_country_code'
-        Title.Caption = 'Cod Nazione'
+        FieldName = 'league_code'
+        Title.Caption = 'Codice'
         Width = 64
         Visible = True
       end
@@ -131,9 +131,10 @@ object dlgSportsSelectSeason: TdlgSportsSelectSeason
     GlyphCustomSize = 0
     Orientation = noHorizontal
     TabOrder = 3
-    Version = '1.2.1.0'
+    Version = '1.3.0.1'
   end
   object dsSelectLeagues: TDataSource
+    DataSet = dmUniDacPgChampionships.qrySelectLeagues
     Left = 168
     Top = 472
   end

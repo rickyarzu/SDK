@@ -8,7 +8,7 @@ uses
   FMX.Objects, FMX.Layouts, FMX.TMSBitmapContainer, FMX.Ani, FMX.TMSBaseControl, FMX.TMSBitmap;
 
 type
-  TFrame1 = class(TFrame)
+  TframeReportItem = class(TFrame)
     Rectangle1: TRectangle;
     Label1: TLabel;
     Label2: TLabel;

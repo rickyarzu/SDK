@@ -51,6 +51,7 @@ contains
   Janua.VCL.Planner.dmCustomController in '..\..\src\VCL\Planner\Janua.VCL.Planner.dmCustomController.pas' {dmVCLPlannerCustomController: TDataModule},
   Janua.Phoenix.VCL.dmPlannerController in '..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.dmPlannerController.pas' {dmVCLPhoenixPlannerController: TDataModule},
   Janua.Phoenix.VCL.dlgGoogleSync in '..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.dlgGoogleSync.pas' {dlgPhoenixVCLGoogleSync},
-  Janua.Phoenix.VCL.dmGCalendarController in '..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.dmGCalendarController.pas' {dmPhoenixVCLGCalendarController: TDataModule};
+  Janua.Phoenix.VCL.dmGCalendarController in '..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.dmGCalendarController.pas' {dmPhoenixVCLGCalendarController: TDataModule},
+  Janua.Phoenix.Globale in '..\..\src\VCL\Phoenix\Janua.Phoenix.Globale.pas';
 
 end.

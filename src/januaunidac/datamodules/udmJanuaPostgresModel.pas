@@ -251,7 +251,7 @@ var
 
 implementation
 
-uses Janua.Postgres.Impl, Janua.Core.Functions, Janua.Application.Framework;
+uses Janua.Postgres.Impl, Janua.Core.Functions, Janua.Application.Framework, Janua.Core.DB;
 
 {%CLASSGROUP 'System.Classes.TPersistent'}
 {$R *.dfm}
@@ -306,12 +306,14 @@ begin
     TJanuaApplicationFactory.TryGetInterface(IJanuaUniServerFunctions, FCustomServerFunctions);
     if not Supports(FCustomServerFunctions, IJanuaServerFunctions, Result) then
     CreateException('GetServerFunctions', 'IJanuaUniServerFunctions not set', self); }
+  if not Assigned(FCustomServerFunctions) then
+    FCustomServerFunctions := TJanuaPostgresServerFunctions.Create;
   Result := FCustomServerFunctions;
 end;
 
 function TdmJanuaPostgresModel.GetDatasetErrors: TJanuaDBDatasetErrors;
 begin
-  Result := self.FDatasetErrors
+  Result := FDatasetErrors
 end;
 
 function TdmJanuaPostgresModel.GetDatasetFunctions: IJanuaUniDatasetFunctions;
@@ -321,7 +323,7 @@ end;
 
 function TdmJanuaPostgresModel.GetHasErrors: Boolean;
 begin
-  Result := self.FHaserrors
+  Result := FHaserrors
 end;
 
 function TdmJanuaPostgresModel.GetLastErrorMessage: string;

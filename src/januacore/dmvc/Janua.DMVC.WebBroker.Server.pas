@@ -57,7 +57,7 @@ end;
 function TJanuaDMVCServer.CustomHandler(const Value: String; const Server: TIdHTTPWebBrokerBridge;
   out Handled: Boolean): THandleCommandResult;
 begin
-
+  { TODO : Add a Custom Handler if necessary }
 end;
 
 end.

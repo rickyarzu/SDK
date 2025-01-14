@@ -189,7 +189,7 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\januacore\custom\DILConf.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\custom\PadelConf.pas"/>
         <DCCReference Include="..\..\..\src\VCL\Cms\udmCMSViewModel.pas">
             <Form>dmCMSViewModel</Form>
             <DesignClass>TDataModule</DesignClass>

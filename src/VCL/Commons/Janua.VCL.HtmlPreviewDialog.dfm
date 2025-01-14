@@ -11,10 +11,7 @@ object HtmlPreviewDialog: THtmlPreviewDialog
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
-  OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
@@ -39,7 +36,10 @@ object HtmlPreviewDialog: THtmlPreviewDialog
       NotesFont.Height = -11
       NotesFont.Name = 'Tahoma'
       NotesFont.Style = []
+      Rounded = True
       TabOrder = 0
+      Appearance.Color = clWhite
+      Appearance.ColorTo = clWhite
       Appearance.ColorChecked = 16111818
       Appearance.ColorCheckedTo = 16367008
       Appearance.ColorDisabled = 15921906
@@ -48,6 +48,8 @@ object HtmlPreviewDialog: THtmlPreviewDialog
       Appearance.ColorDownTo = 16367008
       Appearance.ColorHot = 16117985
       Appearance.ColorHotTo = 16372402
+      Appearance.ColorMirror = clSilver
+      Appearance.ColorMirrorTo = clWhite
       Appearance.ColorMirrorHot = 16107693
       Appearance.ColorMirrorHotTo = 16775412
       Appearance.ColorMirrorDown = 16102556
@@ -64,7 +66,7 @@ object HtmlPreviewDialog: THtmlPreviewDialog
     Width = 852
     Height = 571
     Align = alClient
-    ActivePage = AdvOfficePager11
+    ActivePage = AdvOfficePager12
     ButtonSettings.CloseButtonPicture.Data = {
       424DA20400000000000036040000280000000900000009000000010008000000
       00006C000000C30E0000C30E00000001000000010000427B8400DEEFEF00FFFF
@@ -354,6 +356,7 @@ object HtmlPreviewDialog: THtmlPreviewDialog
     TabOrder = 1
     NextPictureChanged = False
     PrevPictureChanged = False
+    TabFontHeight = -11
     object AdvOfficePager11: TAdvOfficePage
       Left = 1
       Top = 26
@@ -361,61 +364,62 @@ object HtmlPreviewDialog: THtmlPreviewDialog
       Height = 543
       Caption = 'Html'
       DoubleBuffered = True
-      PageAppearance.BorderColor = 14922381
-      PageAppearance.Color = 16445929
-      PageAppearance.ColorTo = 15587527
-      PageAppearance.ColorMirror = 15587527
-      PageAppearance.ColorMirrorTo = 16773863
+      PageAppearance.BorderColor = clGray
+      PageAppearance.Color = clWhite
+      PageAppearance.ColorTo = clWhite
+      PageAppearance.ColorMirror = clSilver
+      PageAppearance.ColorMirrorTo = clWhite
       PageAppearance.Gradient = ggVertical
       PageAppearance.GradientMirror = ggVertical
       Text = ''
-      TabAppearance.BorderColor = clNone
-      TabAppearance.BorderColorHot = 15383705
-      TabAppearance.BorderColorSelected = 14922381
-      TabAppearance.BorderColorSelectedHot = 6343929
+      TabAppearance.BorderColor = clBtnFace
+      TabAppearance.BorderColorHot = clBlue
+      TabAppearance.BorderColorSelected = clBtnFace
+      TabAppearance.BorderColorSelectedHot = clNone
       TabAppearance.BorderColorDisabled = clNone
       TabAppearance.BorderColorDown = clNone
       TabAppearance.Color = clBtnFace
       TabAppearance.ColorTo = clWhite
-      TabAppearance.ColorSelected = 16709360
-      TabAppearance.ColorSelectedTo = 16445929
-      TabAppearance.ColorDisabled = clWhite
-      TabAppearance.ColorDisabledTo = clSilver
-      TabAppearance.ColorHot = 14542308
-      TabAppearance.ColorHotTo = 16768709
+      TabAppearance.ColorSelected = clWhite
+      TabAppearance.ColorSelectedTo = clBtnFace
+      TabAppearance.ColorDisabled = clNone
+      TabAppearance.ColorDisabledTo = clNone
+      TabAppearance.ColorHot = clYellow
+      TabAppearance.ColorHotTo = clNone
       TabAppearance.ColorMirror = clWhite
       TabAppearance.ColorMirrorTo = clWhite
-      TabAppearance.ColorMirrorHot = 14016477
-      TabAppearance.ColorMirrorHotTo = 10736609
-      TabAppearance.ColorMirrorSelected = 16445929
-      TabAppearance.ColorMirrorSelectedTo = 16181984
-      TabAppearance.ColorMirrorDisabled = clWhite
-      TabAppearance.ColorMirrorDisabledTo = clSilver
+      TabAppearance.ColorMirrorHot = clNone
+      TabAppearance.ColorMirrorHotTo = clNone
+      TabAppearance.ColorMirrorSelected = clWhite
+      TabAppearance.ColorMirrorSelectedTo = clWhite
+      TabAppearance.ColorMirrorDisabled = clNone
+      TabAppearance.ColorMirrorDisabledTo = clNone
       TabAppearance.Font.Charset = DEFAULT_CHARSET
       TabAppearance.Font.Color = clWindowText
       TabAppearance.Font.Height = -11
-      TabAppearance.Font.Name = 'Tahoma'
+      TabAppearance.Font.Name = 'Segoe UI'
       TabAppearance.Font.Style = []
       TabAppearance.Gradient = ggVertical
       TabAppearance.GradientMirror = ggVertical
-      TabAppearance.GradientHot = ggRadial
+      TabAppearance.GradientHot = ggVertical
       TabAppearance.GradientMirrorHot = ggVertical
       TabAppearance.GradientSelected = ggVertical
       TabAppearance.GradientMirrorSelected = ggVertical
       TabAppearance.GradientDisabled = ggVertical
       TabAppearance.GradientMirrorDisabled = ggVertical
-      TabAppearance.TextColor = 9126421
-      TabAppearance.TextColorHot = 9126421
-      TabAppearance.TextColorSelected = 9126421
-      TabAppearance.TextColorDisabled = clGray
+      TabAppearance.TextColor = clBlue
+      TabAppearance.TextColorHot = clBlue
+      TabAppearance.TextColorSelected = clBlue
+      TabAppearance.TextColorDisabled = clWhite
       TabAppearance.ShadowColor = 15255470
       TabAppearance.HighLightColor = 16775871
       TabAppearance.HighLightColorHot = 16643309
       TabAppearance.HighLightColorSelected = 6540536
       TabAppearance.HighLightColorSelectedHot = 12451839
       TabAppearance.HighLightColorDown = 16776144
-      TabAppearance.BackGround.Color = 16767935
-      TabAppearance.BackGround.ColorTo = clNone
+      TabAppearance.DrawLine = False
+      TabAppearance.BackGround.Color = clWhite
+      TabAppearance.BackGround.ColorTo = clBtnFace
       TabAppearance.BackGround.Direction = gdHorizontal
       object AdvMemo1: TAdvMemo
         Left = 2
@@ -434,6 +438,7 @@ object HtmlPreviewDialog: THtmlPreviewDialog
         AutoCompletion.StartToken = '(.'
         AutoCorrect.Active = True
         AutoHintParameterPosition = hpBelowCode
+        BkColor = clWindow
         BookmarkGlyph.Data = {
           36050000424D3605000000000000360400002800000010000000100000000100
           0800000000000001000000000000000000000001000000000000000000000000
@@ -489,6 +494,8 @@ object HtmlPreviewDialog: THtmlPreviewDialog
         Gutter.Font.Height = -13
         Gutter.Font.Name = 'Courier New'
         Gutter.Font.Style = []
+        Gutter.GutterColorTo = clBtnFace
+        Gutter.LineNumberTextColor = clWindowText
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -13
@@ -509,10 +516,11 @@ object HtmlPreviewDialog: THtmlPreviewDialog
         PrintOptions.PrintLineNumbers = False
         RightMarginColor = 14869218
         ScrollHint = False
-        SelColor = clWhite
-        SelBkColor = clNavy
+        SelColor = clHighlightText
+        SelBkColor = clHighlight
         ShowRightMargin = True
         SmartTabs = False
+        SyntaxStyles = AdvHTMLMemoStyler1
         TabOrder = 0
         TabStop = True
         TrimTrailingSpaces = False
@@ -528,7 +536,7 @@ object HtmlPreviewDialog: THtmlPreviewDialog
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.6.1.1'
+        Version = '3.9.1.1'
         WordWrap = wwNone
       end
     end
@@ -539,80 +547,339 @@ object HtmlPreviewDialog: THtmlPreviewDialog
       Height = 543
       Caption = 'Browser'
       DoubleBuffered = True
-      PageAppearance.BorderColor = 14922381
-      PageAppearance.Color = 16445929
-      PageAppearance.ColorTo = 15587527
-      PageAppearance.ColorMirror = 15587527
-      PageAppearance.ColorMirrorTo = 16773863
+      PageAppearance.BorderColor = clGray
+      PageAppearance.Color = clWhite
+      PageAppearance.ColorTo = clWhite
+      PageAppearance.ColorMirror = clSilver
+      PageAppearance.ColorMirrorTo = clWhite
       PageAppearance.Gradient = ggVertical
       PageAppearance.GradientMirror = ggVertical
       Text = ''
-      TabAppearance.BorderColor = clNone
-      TabAppearance.BorderColorHot = 15383705
-      TabAppearance.BorderColorSelected = 14922381
-      TabAppearance.BorderColorSelectedHot = 6343929
+      TabAppearance.BorderColor = clBtnFace
+      TabAppearance.BorderColorHot = clBlue
+      TabAppearance.BorderColorSelected = clBtnFace
+      TabAppearance.BorderColorSelectedHot = clNone
       TabAppearance.BorderColorDisabled = clNone
       TabAppearance.BorderColorDown = clNone
       TabAppearance.Color = clBtnFace
       TabAppearance.ColorTo = clWhite
-      TabAppearance.ColorSelected = 16709360
-      TabAppearance.ColorSelectedTo = 16445929
-      TabAppearance.ColorDisabled = clWhite
-      TabAppearance.ColorDisabledTo = clSilver
-      TabAppearance.ColorHot = 14542308
-      TabAppearance.ColorHotTo = 16768709
+      TabAppearance.ColorSelected = clWhite
+      TabAppearance.ColorSelectedTo = clBtnFace
+      TabAppearance.ColorDisabled = clNone
+      TabAppearance.ColorDisabledTo = clNone
+      TabAppearance.ColorHot = clYellow
+      TabAppearance.ColorHotTo = clNone
       TabAppearance.ColorMirror = clWhite
       TabAppearance.ColorMirrorTo = clWhite
-      TabAppearance.ColorMirrorHot = 14016477
-      TabAppearance.ColorMirrorHotTo = 10736609
-      TabAppearance.ColorMirrorSelected = 16445929
-      TabAppearance.ColorMirrorSelectedTo = 16181984
-      TabAppearance.ColorMirrorDisabled = clWhite
-      TabAppearance.ColorMirrorDisabledTo = clSilver
+      TabAppearance.ColorMirrorHot = clNone
+      TabAppearance.ColorMirrorHotTo = clNone
+      TabAppearance.ColorMirrorSelected = clWhite
+      TabAppearance.ColorMirrorSelectedTo = clWhite
+      TabAppearance.ColorMirrorDisabled = clNone
+      TabAppearance.ColorMirrorDisabledTo = clNone
       TabAppearance.Font.Charset = DEFAULT_CHARSET
       TabAppearance.Font.Color = clWindowText
       TabAppearance.Font.Height = -11
-      TabAppearance.Font.Name = 'Tahoma'
+      TabAppearance.Font.Name = 'Segoe UI'
       TabAppearance.Font.Style = []
       TabAppearance.Gradient = ggVertical
       TabAppearance.GradientMirror = ggVertical
-      TabAppearance.GradientHot = ggRadial
+      TabAppearance.GradientHot = ggVertical
       TabAppearance.GradientMirrorHot = ggVertical
       TabAppearance.GradientSelected = ggVertical
       TabAppearance.GradientMirrorSelected = ggVertical
       TabAppearance.GradientDisabled = ggVertical
       TabAppearance.GradientMirrorDisabled = ggVertical
-      TabAppearance.TextColor = 9126421
-      TabAppearance.TextColorHot = 9126421
-      TabAppearance.TextColorSelected = 9126421
-      TabAppearance.TextColorDisabled = clGray
+      TabAppearance.TextColor = clBlue
+      TabAppearance.TextColorHot = clBlue
+      TabAppearance.TextColorSelected = clBlue
+      TabAppearance.TextColorDisabled = clWhite
       TabAppearance.ShadowColor = 15255470
       TabAppearance.HighLightColor = 16775871
       TabAppearance.HighLightColorHot = 16643309
       TabAppearance.HighLightColorSelected = 6540536
       TabAppearance.HighLightColorSelectedHot = 12451839
       TabAppearance.HighLightColorDown = 16776144
-      TabAppearance.BackGround.Color = 16767935
-      TabAppearance.BackGround.ColorTo = clNone
+      TabAppearance.DrawLine = False
+      TabAppearance.BackGround.Color = clWhite
+      TabAppearance.BackGround.ColorTo = clBtnFace
       TabAppearance.BackGround.Direction = gdHorizontal
-      object WebBrowser1: TWebBrowser
+      object EdgeBrowser1: TEdgeBrowser
         Left = 2
         Top = 2
         Width = 846
         Height = 539
         Align = alClient
         TabOrder = 0
-        ExplicitLeft = 400
-        ExplicitTop = 168
-        ExplicitWidth = 300
-        ExplicitHeight = 150
-        ControlData = {
-          4C00000070570000B53700000000000000000000000000000000000000000000
-          000000004C000000000000000000000001000000E0D057007335CF11AE690800
-          2B2E126208000000000000004C0000000114020000000000C000000000000046
-          8000000000000000000000000000000000000000000000000000000000000000
-          00000000000000000100000000000000000000000000000000000000}
+        AllowSingleSignOnUsingOSPrimaryAccount = False
+        TargetCompatibleBrowserVersion = '117.0.2045.28'
+        UserDataFolder = '%LOCALAPPDATA%\bds.exe.WebView2'
+        ExplicitLeft = 384
+        ExplicitTop = 48
+        ExplicitWidth = 100
+        ExplicitHeight = 41
       end
     end
+  end
+  object AdvHTMLMemoStyler1: TAdvHTMLMemoStyler
+    AutoFormat = False
+    LineComment = '//'
+    MultiCommentLeft = '<!--'
+    MultiCommentRight = '-->'
+    CommentStyle.TextColor = clSilver
+    CommentStyle.BkColor = clNone
+    CommentStyle.Style = [fsItalic]
+    NumberStyle.TextColor = clBlack
+    NumberStyle.BkColor = clNone
+    NumberStyle.Style = []
+    HighlightStyle.TextColor = clWhite
+    HighlightStyle.BkColor = clRed
+    HighlightStyle.Style = [fsBold]
+    AllStyles = <
+      item
+        KeyWords.Strings = (
+          '&lt'
+          'ABREV'
+          'ACRONYM'
+          'ADDRESS'
+          'APPLET'
+          'AREA'
+          'AU'
+          'AUTHOR'
+          'B'
+          'BANNER'
+          'BASE'
+          'BASEFONT'
+          'BGSOUND'
+          'BIG'
+          'BLINK'
+          'BLOCKQUOTE'
+          'BODY'
+          'BQ'
+          'BR'
+          'CAPTION'
+          'CENTER'
+          'CITE'
+          'CODE'
+          'COL'
+          'COLGROUP'
+          'COMMENT'
+          'CREDIT'
+          'DEL'
+          'DFN'
+          'DIR'
+          'DIV'
+          'DL'
+          'DT'
+          'DD'
+          'EM'
+          'EMBED'
+          'FIG'
+          'FN'
+          'FONT'
+          'FORM'
+          'FRAME'
+          'FRAMESET'
+          'HEAD'
+          'H1'
+          'H2'
+          'H3'
+          'H4'
+          'H5'
+          'H6'
+          'HR'
+          'HTML'
+          'I'
+          'IFRAME'
+          'IMG'
+          'INPUT'
+          'INS'
+          'ISINDEX'
+          'KBD'
+          'LANG'
+          'LH'
+          'LI'
+          'LINK'
+          'LISTING'
+          'MAP'
+          'MARQUEE'
+          'MATH'
+          'MENU'
+          'META'
+          'MULTICOL'
+          'NOBR'
+          'NOFRAMES'
+          'NOTE'
+          'OL'
+          'OVERLAY'
+          'P'
+          'PARAM'
+          'PERSON'
+          'PLAINTEXT'
+          'PRE'
+          'Q'
+          'RANGE'
+          'SAMP'
+          'SCRIPT'
+          'SELECT'
+          'SMALL'
+          'SPACER'
+          'SPOT'
+          'STRIKE'
+          'STRONG'
+          'SUB'
+          'SUP'
+          'TAB'
+          'TBODY'
+          'TEXTAREA'
+          'TEXTFLOW'
+          'TFOOT'
+          'TH'
+          'THEAD'
+          'TITLE'
+          'TT'
+          'U'
+          'UL'
+          'VAR'
+          'WBR'
+          'XMP'
+          'DOCTYPE'
+          'PUBLIC')
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clNavy
+        Font.Height = -11
+        Font.Name = 'Courier New'
+        Font.Style = []
+        BGColor = clNone
+        StyleType = stKeyword
+        BracketStart = #0
+        BracketEnd = #0
+        Info = 'HTML Standard Default'
+      end
+      item
+        KeyWords.Strings = (
+          'TABLE'
+          'BORDER'
+          'TD'
+          'TR'
+          'STYLE'
+          'BORDERCOLOR'
+          'WIDTH'
+          'ID'
+          'BORDERCOLORLIGHT'
+          'BORDERCOLORDARK')
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clOlive
+        Font.Height = -11
+        Font.Name = 'Courier New'
+        Font.Style = []
+        BGColor = clNone
+        StyleType = stKeyword
+        BracketStart = #0
+        BracketEnd = #0
+        Info = 'HTML Table Keywords'
+      end
+      item
+        KeyWords.Strings = (
+          'A'
+          'HREF')
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -11
+        Font.Name = 'Courier New'
+        Font.Style = []
+        BGColor = clNone
+        StyleType = stKeyword
+        BracketStart = #0
+        BracketEnd = #0
+        Info = 'HTML Link Keywords'
+      end
+      item
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBackground
+        Font.Height = -11
+        Font.Name = 'Courier New'
+        Font.Style = []
+        BGColor = clNone
+        StyleType = stBracket
+        BracketStart = #39
+        BracketEnd = #39
+        Info = 'Simple Bracket'
+      end
+      item
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlue
+        Font.Height = -11
+        Font.Name = 'Courier New'
+        Font.Style = []
+        BGColor = clNone
+        StyleType = stBracket
+        BracketStart = '"'
+        BracketEnd = '"'
+        Info = 'Double Bracket'
+      end
+      item
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clTeal
+        Font.Height = -11
+        Font.Name = 'Courier New'
+        Font.Style = []
+        BGColor = clWhite
+        StyleType = stSymbol
+        BracketStart = #0
+        BracketEnd = #0
+        Symbols = ' ,;:.()[]=-*/^%<>#'#13#10
+        Info = 'Symbols Delimiters'
+      end>
+    Description = 'Web pages'
+    Filter = 'HTML Document (*.htm,*.html)|*.htm;*.html'
+    DefaultExtension = '.html'
+    StylerName = 'HTML document'
+    Extensions = 'htm;html'
+    RegionDefinitions = <
+      item
+        Identifier = '<BODY>'
+        RegionStart = '<BODY>'
+        RegionEnd = '</BODY>'
+        RegionType = rtClosed
+        ShowComments = False
+      end
+      item
+        Identifier = '<HEAD>'
+        RegionStart = '<HEAD>'
+        RegionEnd = '</HEAD>'
+        RegionType = rtClosed
+        ShowComments = False
+      end
+      item
+        Identifier = '<HTML>'
+        RegionStart = '<HTML>'
+        RegionEnd = '</HTML>'
+        RegionType = rtClosed
+        ShowComments = False
+      end
+      item
+        Identifier = '<SCRIPT>'
+        RegionStart = '<SCRIPT>'
+        RegionEnd = '</SCRIPT>'
+        RegionType = rtClosed
+        ShowComments = False
+      end
+      item
+        Identifier = '<STYLE>'
+        RegionStart = '<STYLE>'
+        RegionEnd = '</STYLE>'
+        RegionType = rtClosed
+        ShowComments = False
+      end
+      item
+        Identifier = '<FORM>'
+        RegionStart = '<FORM>'
+        RegionEnd = '</FORM>'
+        RegionType = rtClosed
+        ShowComments = False
+      end>
+    Left = 425
+    Top = 106
   end
 end

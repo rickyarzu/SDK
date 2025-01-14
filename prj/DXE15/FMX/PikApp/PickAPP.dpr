@@ -7,30 +7,23 @@ uses
   Janua.Uni.Framework,
   Janua.ViewModels.Framework,
   Janua.FMX.Application,
-  Janua.FMX.dlgNotes in '..\..\..\..\src\FMX\Janua.FMX.dlgNotes.pas' {dlgFMXNotes} ,
-  Janua.CarService.FMX.frmTabbedCarService
-    in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.frmTabbedCarService.pas' {frmFMXCarServiceDriverMain} ,
-  Janua.FMX.LoginDialog in '..\..\..\..\src\FMX\Janua.FMX.LoginDialog.pas' {dlgFMXLoginDialogMobile} ,
-  Janua.FMX.frmModel in '..\..\..\..\src\FMX\Janua.FMX.frmModel.pas' {frmFMXModel} ,
-  Janua.CarService.FMX.dlgLoginMobile
-    in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dlgLoginMobile.pas' {dlgFMXCarserviceLoginDialogMobile} ,
+  Janua.FMX.dlgNotes in '..\..\..\..\src\FMX\Janua.FMX.dlgNotes.pas' {dlgFMXNotes},
+  Janua.CarService.FMX.frmTabbedCarService in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.frmTabbedCarService.pas' {frmFMXCarServiceDriverMain},
+  Janua.FMX.LoginDialog in '..\..\..\..\src\FMX\Janua.FMX.LoginDialog.pas' {dlgFMXLoginDialogMobile},
+  Janua.FMX.frmModel in '..\..\..\..\src\FMX\Janua.FMX.frmModel.pas' {frmFMXModel},
+  Janua.CarService.FMX.dlgLoginMobile in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dlgLoginMobile.pas' {dlgFMXCarserviceLoginDialogMobile},
   Janua.CarService.FMX.Application in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.Application.pas',
-  Janua.FMX.frmAccessCamera in '..\..\..\..\src\FMX\Janua.FMX.frmAccessCamera.pas' {AccessCameraAppForm} ,
-  Janua.FMX.frmSignatureCaptureMobile
-    in '..\..\..\..\src\FMX\Janua.FMX.frmSignatureCaptureMobile.pas' {frmFMXSignatureCaptureMobile} ,
-  Janua.CarService.dmPgDrivers
-    in '..\..\..\..\src\januaunidac\datamodules\Janua.Carservice.dmPgDrivers.pas' {dmPgCarServiceBookingDrivers: TDataModule} ,
-  Janua.FMX.frameUserMobile
-    in '..\..\..\..\src\FMX\Common\Janua.FMX.frameUserMobile.pas' {frameFMXRegisterMobile: TFrame} ,
-  Janua.CarService.FMX.dmDriverClient
-    in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dmDriverClient.pas' {dmCarserviceFMXDriverClient: TDataModule} ,
-  Janua.CarService.FMX.frameDriverConfirmation
-    in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.frameDriverConfirmation.pas' {frameFMXCarServiceDriverConfirmation: TFrame} ,
-  Janua.CarService.FMX.dlgBrowser
-    in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dlgBrowser.pas' {dlgCarServiceBrowser} ,
-  Janua.FMX.frameCanvasPaintImage
-    in '..\..\..\..\src\FMX\Janua.FMX.frameCanvasPaintImage.pas' {frameFMXImageDraw: TFrame} ,
-  Janua.FMX.dlgCanvasImage in '..\..\..\..\src\FMX\Janua.FMX.dlgCanvasImage.pas' {dlgFMXCanvasImage};
+  Janua.FMX.frmAccessCamera in '..\..\..\..\src\FMX\Janua.FMX.frmAccessCamera.pas' {AccessCameraAppForm},
+  Janua.FMX.frmSignatureCaptureMobile in '..\..\..\..\src\FMX\Janua.FMX.frmSignatureCaptureMobile.pas' {frmFMXSignatureCaptureMobile},
+  Janua.Carservice.dmPgDrivers in '..\..\..\..\src\januaunidac\datamodules\Janua.Carservice.dmPgDrivers.pas' {dmPgCarServiceBookingDrivers: TDataModule},
+  Janua.FMX.frameUserMobile in '..\..\..\..\src\FMX\Common\Janua.FMX.frameUserMobile.pas' {frameFMXRegisterMobile: TFrame},
+  Janua.CarService.FMX.dmDriverClient in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dmDriverClient.pas' {dmCarserviceFMXDriverClient: TDataModule},
+  Janua.CarService.FMX.frameDriverConfirmation in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.frameDriverConfirmation.pas' {frameFMXCarServiceDriverConfirmation: TFrame},
+  Janua.CarService.FMX.dlgBrowser in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dlgBrowser.pas' {dlgCarServiceBrowser},
+  Janua.FMX.frameCanvasPaintImage in '..\..\..\..\src\FMX\Janua.FMX.frameCanvasPaintImage.pas' {frameFMXImageDraw: TFrame},
+  Janua.FMX.dlgCanvasImage in '..\..\..\..\src\FMX\Janua.FMX.dlgCanvasImage.pas' {dlgFMXCanvasImage},
+  Janua.FMX.frameFNCBlox in '..\..\..\..\src\FMX\Janua.FMX.frameFNCBlox.pas' {frameFNCBloxDrawing: TFrame},
+  Janua.FXM.FNCBloxControls in '..\..\..\..\src\FMX\Janua.FXM.FNCBloxControls.pas';
 
 {$R *.res}
 

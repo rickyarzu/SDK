@@ -20,15 +20,14 @@ uses
   Globale, ZFIBPlusNodoGenerico2,
   // Janua
   Janua.TMS.Phoenix.framePlannerCalendar, Janua.Phoenix.VCL.dmPlannerController,
-  Janua.VCL.EnhCRDBGrid, Janua.VCL.frameCRDBGrid, uJanuaVCLFrame, Janua.FDAC.Phoenix.Lab,
+  Janua.VCL.EnhCRDBGrid, Janua.VCL.frameCRDBGrid, uJanuaVCLFrame,
   Janua.TMS.Planner.frameCustomCalendar, Janua.VCL.Planner.frameCustomGoogleCalendar,
   Janua.VCL.Planner.framePhoenixGoogleCalendar, Janua.TMS.Phoenix.framePlannerCalendar2,
   Janua.Phoenix.VCL.framePlannerEvent, Janua.Core.Types, Janua.TMS.WebView, Winapi.WebView2, Winapi.ActiveX,
-  VCL.Edge, VCL.DBCtrls, Janua.Phoenix.VCL.framePlannerReport;
+  VCL.Edge, VCL.DBCtrls, Janua.Phoenix.VCL.framePlannerReport, AdvPageControl, uframeWhatsAppMessage;
 
 type
   TfrmPhoenixVCLReportPlanner = class(TForm)
-    mmuPlanner: TMainMenu;
     PageControl1: TPageControl;
     tabTicketsList: TTabSheet;
     tabPlannerCalendar: TTabSheet;
@@ -68,7 +67,6 @@ type
     N1: TMenuItem;
     frameTMSPhoenixPlannerTecnici: TframeTMSPhoenixPlannerCalendar;
     frameVCLPhoenixPlannerCalendari: TframeVCLPhoenixPlannerCalendar2;
-    frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent;
     N3: TMenuItem;
     GoogleSync1: TMenuItem;
     tabPlannerEvents: TTabSheet;
@@ -80,8 +78,16 @@ type
     btnUpdateImage: TBitBtn;
     btnImage: TDBImage;
     tabGoogleCalendarReport: TTabSheet;
-    frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport;
     EdgeBrowser2: TEdgeBrowser;
+    AdvPageControl1: TAdvPageControl;
+    AdvTabSheet1: TAdvTabSheet;
+    AdvTabSheet2: TAdvTabSheet;
+    frameVCLPhoenixPlannerEvent: TframeVCLPhoenixPlannerEvent;
+    pgCalendars: TPageControl;
+    tabReportCalendar: TTabSheet;
+    frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport;
+    tabMessaggi: TTabSheet;
+    frameVCLWhatsAppMessages1: TframeVCLWhatsAppMessages;
     procedure FormCreate(Sender: TObject);
     procedure frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject; const Rect: TRect; DataCol: Integer;
       Column: TColumn; State: TGridDrawState);
@@ -100,10 +106,12 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnUpdateImageClick(Sender: TObject);
     procedure frameVCLPhoenixPlannerEventcboTecniciChange(Sender: TObject);
+    procedure frameVCLPhoenixPlanneReportbtnWhatsAppMessagesClick(Sender: TObject);
+    procedure tabMessaggiShow(Sender: TObject);
+    procedure frameVCLPhoenixPlanneReportWATimerTimer(Sender: TObject);
   private
     { Private declarations }
     FCookies: TJanuaTmsCookies;
-    FdmFDACPhoenixLab: TdmFDACPhoenixLab;
     FdmVCLPhoenixIBPlanner: TdmVCLPhoenixPlannerController;
   public
     { Public declarations }
@@ -231,28 +239,11 @@ end;
 
 procedure TfrmPhoenixVCLReportPlanner.UpdateLab;
 begin
-  Async.Run<Boolean>(
-    function: Boolean
-    begin
-      FdmFDACPhoenixLab.StatoLavorazioni;
-      FdmFDACPhoenixLab.ElaborateJson;
-      FdmFDACPhoenixLab.UpdateData;
-      Result := True;
-    end,
-    procedure(const aResult: Boolean)
-    begin
-      { ShowMessage('Terminato Aggiornamento'); }
-      FdmVCLPhoenixIBPlanner.Setup;
-    end,
-    procedure(const Ex: Exception)
-    begin
-      ShowMessage(Ex.Message);
-      FdmVCLPhoenixIBPlanner.Setup;
-    end);
+
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.DBDaySource1FieldsToItem(Sender: TObject; Fields: TFields;
-Item: TPlannerItem);
+  Item: TPlannerItem);
 begin
   { The FieldsToItem event is called when records are read from the database
     and extra properties are set from database fields. With this code, any
@@ -269,7 +260,7 @@ begin
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.DBDaySource1ItemToFields(Sender: TObject; Fields: TFields;
-Item: TPlannerItem);
+  Item: TPlannerItem);
 begin
   { The ItemToFields event is called when items are written to the database
     and extra properties are stored in database fields. With this code, any
@@ -291,7 +282,6 @@ procedure TfrmPhoenixVCLReportPlanner.FormCreate(Sender: TObject);
 begin
   FdmVCLPhoenixIBPlanner := dmVCLPhoenixPlannerController { .Create(self) };
   FdmVCLPhoenixIBPlanner.Setup;
-  FdmFDACPhoenixLab := TdmFDACPhoenixLab.Create(self);
   frameTMSPhoenixPlannerTecnici.PlannerController := FdmVCLPhoenixIBPlanner;
   PageControl1.ActivePage := self.tabGoogleCalendarReport;
 
@@ -310,7 +300,7 @@ begin
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.frameVCLCRDBGridCRDBGridDrawColumnCell(Sender: TObject;
-const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
+  const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
 var
   backgroundColor: TColor;
   FontColor: TColor;
@@ -325,34 +315,63 @@ begin
     if not FieldByName('APPUNTAMENTO_DATA').IsNull then
       backgroundColor := clWebBeige;
 
-    if (FieldByName('STATO').AsInteger < 0) then
-      FontColor := clRed;
-    if (FieldByName('STATO').AsInteger in [1, 6]) then
-    begin
-      FontColor := clBlue;
-      FontStyles := [fsBold];
-    end;
-    if (FieldByName('STATO').AsInteger = 4) then
-    begin
-      if FieldByName('APPUNTAMENTO_DATA').IsNull then
-        FontColor := clWebTomato
-      else
-      begin
-        FontColor := clBlue;
-        FontStyles := [fsBold];
-      end;
-    end;
-    if (FieldByName('STATO').AsInteger in [5, 6]) then
-      FontColor := clGreen;
+    var
+    iStato := FieldByName('STATO').AsInteger;
 
-    if (FieldByName('RITARDO').AsInteger < 0) and
-      (FieldByName('APPUNTAMENTO_DATA').IsNull or (FieldByName('APPUNTAMENTO_DATA').AsDateTime < Date)) then
+    if (iStato < 0) then
       FontColor := clRed;
+
+    case iStato of
+      0:
+        begin
+          if (FieldByName('RITARDO').AsInteger < 0) and
+            (FieldByName('APPUNTAMENTO_DATA').IsNull or (FieldByName('APPUNTAMENTO_DATA').AsDateTime < Date))
+          then
+            FontColor := clRed;
+        end;
+      1:
+        begin
+          FontColor := clBlue;
+          FontStyles := [fsBold];
+        end;
+      4:
+        begin
+          FontColor := clWebTomato;
+          FontStyles := [];
+        end;
+      5:
+        begin
+          FontColor := clWebTomato;
+          FontStyles := [fsBold];
+        end;
+      6:
+        begin
+          FontColor := clGreen;
+          FontStyles := [];
+        end;
+      7:
+        begin
+          FontColor := clGreen;
+          FontStyles := [fsBold];
+        end;
+    end;
 
     // if (FieldByName('AN_INVOICE').AsInteger  = 2)  then backgroundColor := clYellow;
     DrawField(Column.Field.DisplayText, Rect, Canvas, Column.Font, Column.Alignment,
       FontStyles { Column.Font.Style } , FontColor { Column.Font.Color } , backgroundColor { Column.Color } )
   end;
+
+end;
+
+procedure TfrmPhoenixVCLReportPlanner.frameVCLPhoenixPlanneReportbtnWhatsAppMessagesClick(Sender: TObject);
+begin
+  pgCalendars.ActivePage := tabMessaggi;
+
+end;
+
+procedure TfrmPhoenixVCLReportPlanner.frameVCLPhoenixPlanneReportWATimerTimer(Sender: TObject);
+begin
+  frameVCLPhoenixPlanneReport.WATimerTimer(Sender);
 
 end;
 
@@ -394,6 +413,11 @@ begin
   finally
     ADialog.Free;
   end;
+end;
+
+procedure TfrmPhoenixVCLReportPlanner.tabMessaggiShow(Sender: TObject);
+begin
+  frameVCLWhatsAppMessages1.Setup;
 end;
 
 procedure TfrmPhoenixVCLReportPlanner.Timer1Timer(Sender: TObject);

@@ -456,7 +456,8 @@ type
   private
     class var FWebServerClass: TJanuaWebServerClass;
   public
-    class function CreateWebServer: TJanuaWebServer;
+    class function CreateWebServer: TJanuaWebServer; overload;
+    class function CreateWebServer(const aPort: Integer): TJanuaWebServer; overload;
   public
     class property WebServerClass: TJanuaWebServerClass read FWebServerClass write FWebServerClass;
   end;
@@ -3335,14 +3336,16 @@ end;
 
 class procedure TJanuaCoreOS.RunAndWait(const FileName, Parameters: string);
 var
+{$IF Defined(MSWINDOWS)}
   StartupInfo: TStartupInfo;
   ProcessInfo: TProcessInformation;
+{$ENDIF}
   CommandLine: string;
 begin
   CommandLine := '"' + FileName + '" ' + Parameters;
+{$IF Defined(MSWINDOWS)}
   FillChar(StartupInfo, SizeOf(StartupInfo), 0);
   StartupInfo.cb := SizeOf(StartupInfo);
-{$IF Defined(MSWINDOWS)}
   if not CreateProcess(nil, PChar(CommandLine), nil, nil, false, CREATE_NO_WINDOW, nil, nil, StartupInfo,
     ProcessInfo) then
     RaiseLastOSError;
@@ -3742,14 +3745,14 @@ begin
 
 end;
 
+{$ENDIF MSWINDOWS}
+
 class function TJanuaCoreOS.WriteParam(Key, Name: string; Default: TJsonObject): TJsonObject;
 begin
   if not GetJanuaConfiguration.isLoaded then
     LoadConfiguration;
   Result := GetJanuaConfiguration.setValue(Key, Name, Default);
 end;
-
-{$ENDIF MSWINDOWS}
 
 class procedure TJanuaCoreOS.SetupAppConfiguration;
 var
@@ -4234,6 +4237,13 @@ begin
   Result := nil;
   if Assigned(FWebServerClass) then
     Result := FWebServerClass.Create;
+end;
+
+class function TJanuaWebServerFactory.CreateWebServer(const aPort: Integer): TJanuaWebServer;
+begin
+  Result := nil;
+  if Assigned(FWebServerClass) then
+    Result := FWebServerClass.Create(aPort);
 end;
 
 initialization

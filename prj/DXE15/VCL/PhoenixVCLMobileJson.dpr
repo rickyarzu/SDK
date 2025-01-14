@@ -8,7 +8,7 @@ uses
   Janua.Phoenix.FbJsonReport in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.FbJsonReport.pas' {dmFbPhoenixJsonReport: TDataModule},
   Janua.Phoenix.dmIBModel in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.dmIBModel.pas' {dmPhoenixIBModel: TDataModule},
   Janua.Phoenix.dmIBReportPlanner in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.dmIBReportPlanner.pas' {dmPhoenixIBPlanner: TDataModule},
-  Globale in '..\..\..\..\Phoenix\Phoenix\SW\PhoenixMain\Globale.pas',
+  Janua.Phoenix.Globale in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.Globale.pas',
   Janua.Phoenix.VCL.rpStatino in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.rpStatino.pas' {frmRpStatino},
   IDRANTI in '\\tsclient\RDP Connect\IDRANTI.pas',
   QrStampaStatino in '..\..\..\..\Phoenix\Phoenix\SW\PhoenixMain\QrStampaStatino.pas' {QR_STAMPA_STATINO: TQuickRep};

@@ -176,13 +176,18 @@ type
 
 Type
   TJanuaInterfacedDialogDate = class(TJanuaInterfacedDialog, IJanuaDialogDate)
+  public
+    constructor Create; override;
   private
     FDate: TDateTime;
+    FUseDateTime: boolean;
+    procedure SetUseDateTime(const Value: boolean);
   protected
     function GetDate: TDateTime;
     procedure SetDate(const Value: TDateTime);
   public
     function Execute: boolean; override;
+    property UseDateTime: boolean read FUseDateTime write SetUseDateTime;
   end;
 
 type
@@ -543,13 +548,24 @@ end;
 
 { TJanuaInterfacedDialogDate }
 
+constructor TJanuaInterfacedDialogDate.Create;
+begin
+  inherited;
+  FUseDateTime := False;
+end;
+
 function TJanuaInterfacedDialogDate.Execute: boolean;
 var
   vdlgInput: IJanuadlgInputDate;
 begin
-  { function GetTitle: string;
-    function GetText: string; }
-  if TJanuaApplicationFactory.TryGetInterface(IJanuadlgInputDate, vdlgInput) then
+  Result := False;
+
+  if FUseDateTime then
+    Result := TJanuaApplicationFactory.TryGetInterface(IJanuadlgInputDateTime, vdlgInput)
+  else
+    Result := TJanuaApplicationFactory.TryGetInterface(IJanuadlgInputDate, vdlgInput);
+
+  if Result then
     // TdlgInputDate.Create(nil);
     try
       vdlgInput.Text := GetText;
@@ -575,6 +591,11 @@ end;
 procedure TJanuaInterfacedDialogDate.SetDate(const Value: TDateTime);
 begin
   self.FDate := Value
+end;
+
+procedure TJanuaInterfacedDialogDate.SetUseDateTime(const Value: boolean);
+begin
+  FUseDateTime := Value;
 end;
 
 { TJanuaInterfacedDialogServer }
@@ -611,7 +632,7 @@ end;
 
 function TJanuaCustomOpenDialog.GetDirectoryName: string;
 begin
- Result := TPath.GetDirectoryName(FFileName);
+  Result := TPath.GetDirectoryName(FFileName);
 end;
 
 function TJanuaCustomOpenDialog.GetFileExtension: string;

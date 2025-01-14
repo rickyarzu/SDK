@@ -25,9 +25,12 @@ uses
   udmPgAnagraph in '..\..\..\src\januaunidac\datamodules\udmPgAnagraph.pas' {dmPgAnagraph: TDataModule},
   udlgSportsSelectLkpPlayer in '..\..\..\src\VCL\Sports\udlgSportsSelectLkpPlayer.pas' {dlgSelectLkpPlayer},
   udmPgViewModelSystem in '..\..\..\src\JanuaUnidac\ViewModels\udmPgViewModelSystem.pas' {dmViewModelSystem: TDataModule},
-  DILConf in '..\..\..\src\januacore\custom\DILConf.pas',
+  PadelConf in '..\..\..\src\januacore\custom\PadelConf.pas',
   udlgSportsNewSeason in '..\..\..\src\VCL\Sports\udlgSportsNewSeason.pas' {dlgSportsNewSeason},
-  udlgSportsClub in '..\..\..\src\VCL\Sports\udlgSportsClub.pas' {dlgFootballClub};
+  udlgSportsClub in '..\..\..\src\VCL\Sports\udlgSportsClub.pas' {dlgSportsClubs},
+  Janua.VCL.dlgWaitSpin in '..\..\..\src\VCL\Commons\Janua.VCL.dlgWaitSpin.pas' {dlgVCLWaitSpin},
+  uJanuaVCLForm in '..\..\..\src\VCL\Forms\uJanuaVCLForm.pas' {JanuaVCLFormModel},
+  uJanuaVCLFrame in '..\..\..\src\VCL\Forms\uJanuaVCLFrame.pas' {JanuaVCLFrameModel: TFrame};
 
 {$R *.res}
 
@@ -38,7 +41,6 @@ begin
   TJanuaApplication.ServerAddress := 'pg.januaservers.com';
   TJanuaApplication.ServerDatabaseName := 'ergomercator';
   TJanuaApplication.Initialize;
-  TStyleManager.TrySetStyle('Win10IDE_Light');
   Application.Title := 'Sports Manager';
   Application.CreateForm(TfrmMdcChampionship, frmMdcChampionship);
   Application.Run;

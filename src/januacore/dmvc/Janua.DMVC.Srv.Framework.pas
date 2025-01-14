@@ -14,14 +14,19 @@ type
   TAuthenticationFunc = TFunc<TWebContext, TList<String>, string, boolean>;
 
 type
+  TJanuaDMVCRecordConf = record
+    SessionTimeout: integer;
+  end;
+
   TJanuaDMVCConf = class
   private
+    DMVCRecConf: TJanuaDMVCRecordConf;
+  protected
     function GetSessionTimeOut: integer;
     procedure SetSessionTimeOut(const Value: integer);
-
   public
-    ///<summary>   </summary>
-    property SessionTimeOut: integer read GetSessionTimeOut Write SetSessionTimeOut;
+    /// <summary>   </summary>
+    property SessionTimeout: integer read GetSessionTimeOut Write SetSessionTimeOut;
   end;
 
   TJanuaServerDMVCApplication = class
@@ -94,12 +99,12 @@ end;
 
 function TJanuaDMVCConf.GetSessionTimeOut: integer;
 begin
-
+  Result := DMVCRecConf.SessionTimeout;
 end;
 
 procedure TJanuaDMVCConf.SetSessionTimeOut(const Value: integer);
 begin
-
+  DMVCRecConf.SessionTimeout := Value;
 end;
 
 end.

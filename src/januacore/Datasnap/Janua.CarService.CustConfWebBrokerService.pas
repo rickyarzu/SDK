@@ -11,7 +11,7 @@ uses
   Janua.Application.Framework,
   Janua.Core.Types,
   Janua.WebBroker.ServerConst,
-  Janua.Core.WebServer,
+  Janua.Http.WebServer,
   Janua.CarService.WebModuleCustomerConfirmation;
 
 type

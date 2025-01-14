@@ -11,8 +11,6 @@ inherited dmPgAnagraph: TdmPgAnagraph
         DBType = 520
         FieldType = ftDateTime
       end>
-    Port = 5432
-    Server = 'pg.januaservers.com'
     Left = 48
     Top = 24
     EncryptedPassword = 'CCFF8DFF98FFCFFF92FFCCFF8DFF9CFFCBFF8BFFCFFF8DFF'
@@ -35,6 +33,7 @@ inherited dmPgAnagraph: TdmPgAnagraph
   end
   inherited qryUser: TUniQuery
     Left = 48
+    Top = 312
   end
   inherited qryTowns: TUniQuery
     Left = 48
@@ -1131,6 +1130,7 @@ inherited dmPgAnagraph: TdmPgAnagraph
       '    anagraph.groups g'
       'where '
       '     (db_schema_id = :db_schema_id or db_schema_id = 0)')
+    Active = True
     AfterScroll = qryGroupsAfterScroll
     Left = 280
     Top = 32

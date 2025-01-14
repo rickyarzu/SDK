@@ -187,6 +187,33 @@ end;
 
 function GetJsonDateTime(const AValue: TJsonValue): TDateTime;
 begin
+  var
+  sValue := '';
+  try
+    if Assigned(AValue) then
+      sValue := AValue.Value
+  except
+    on e: Exception do
+      sValue := '';
+  end;
+
+  if sValue = '' then
+    Result := 0.0
+  else
+    try
+      if Pos(':', sValue) > 0 then
+        try
+          Result := JsonDecodeDateTimeISO(sValue)
+        except
+          on e: Exception do
+            Result := JsonDecodeDateTime(sValue)
+        end
+      else
+        Result := JsonDecodeDate(sValue);
+    except
+      on e: Exception do
+        Result := 0.0;
+    end;
 
 end;
 
@@ -423,46 +450,19 @@ begin
   LV := nil;
   LT := nil;
 {$ENDIF FPC}
-  var
-  sValue := '';
+  AValue := 0.0;
   if Assigned(aObject) then
-  begin
-{$IFNDEF FPC}
     try
+{$IFNDEF FPC}
       LT := aObject.Get(aParam);
       if Assigned(LT) then
       begin
         LV := LT.JsonValue;
-        if Assigned(LV) then
-          sValue := LV.Value
-      end
-      else
-        sValue := '';
-    except
-      on e: Exception do
-        sValue := '';
-    end;
-
-    if sValue = '' then
-      AValue := 0.0
-    else
-      try
-        if Pos(':', sValue) > 0 then
-          try
-            AValue := JsonDecodeDateTimeISO(sValue)
-          except
-            on e: Exception do
-              AValue := JsonDecodeDateTime(sValue)
-          end
-        else
-          AValue := JsonDecodeDate(sValue);
-      except
-        on e: Exception do
-          AValue := 0.0;
+        AValue := GetJsonDateTime(LV);
       end;
-  end;
-
 {$ENDIF FPC}
+    finally
+    end;
 end;
 
 procedure JsonValue(aObject: TJsonObject; const aParam: string; var AValue: string;
@@ -1577,6 +1577,5 @@ constructor TDMCJWT.Create(const aJsonJWT: string);
 begin
 
 end;
-
 
 end.

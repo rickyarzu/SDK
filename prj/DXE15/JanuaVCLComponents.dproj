@@ -205,11 +205,6 @@
             <Form>frameVCLCRDBGrid</Form>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Http\Janua.VCL.frameWebServerManager.pas">
-            <Form>JanuaframeWebServerManager</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>

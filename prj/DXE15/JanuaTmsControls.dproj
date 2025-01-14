@@ -88,7 +88,7 @@
         <CfgDependentOn>JanuaLibDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Linux64)'!=''">
-        <DCC_UsePackage>rtl;FlexCel_Core;FlexCel_XlsAdapter;JanuaMVVM;JanuaUnidac;JanuaVCLComponents;JanuaVCLControls;TMSWebGMapsPkg;JanuaCore;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>rtl;FlexCel_Core;FlexCel_XlsAdapter;JanuaMVVM;JanuaUnidac;JanuaVCLComponents;JanuaVCLControls;TMSWebGMapsPkg;JanuaCore;dbrtl;IndySystem;IndyProtocols;IndyCore;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
@@ -96,10 +96,10 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_UsePackage>rtl;TMSVCLUIPackPkg;TMSVCLUIPackPkgEx;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;SVGIconImageList;SVGIconPackage;JanuaMVVM;JanuaUnidac;JanuaVCLComponents;JanuaVCLControls;TMSWebGMapsPkg;JanuaCore;VCLTMSFNCCloudPackPkg;TMSVCLUIPackPkgDXE15;TMSVCLUIPackPkgExDXE15;VCLTMSFNCCloudPackPkgDXE15;TMSCloudPkgDXE15;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>rtl;TMSVCLUIPackPkg;TMSVCLUIPackPkgEx;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;SVGIconImageList;SVGIconPackage;JanuaMVVM;JanuaUnidac;JanuaVCLComponents;JanuaVCLControls;TMSWebGMapsPkg;JanuaCore;VCLTMSFNCCloudPackPkg;TMSVCLUIPackPkgDXE15;TMSVCLUIPackPkgExDXE15;VCLTMSFNCCloudPackPkgDXE15;TMSCloudPkgDXE15;dbrtl;IndySystem;IndyProtocols;IndyCore;dmvcframeworkDT;dmvcframeworkRT;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <DCC_UsePackage>rtl;TMSVCLUIPackPkg;TMSVCLUIPackPkgEx;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;SVGIconImageList;SVGIconPackage;JanuaMVVM;JanuaVCLComponents;JanuaVCLControls;JanuaCore;VCLTMSFNCCloudPackPkg;TMSVCLUIPackPkgDXE15;TMSVCLUIPackPkgExDXE15;VCLTMSFNCCloudPackPkgDXE15;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>rtl;TMSVCLUIPackPkg;TMSVCLUIPackPkgEx;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;SVGIconImageList;SVGIconPackage;JanuaMVVM;JanuaVCLComponents;JanuaVCLControls;JanuaCore;VCLTMSFNCCloudPackPkg;TMSVCLUIPackPkgDXE15;TMSVCLUIPackPkgExDXE15;VCLTMSFNCCloudPackPkgDXE15;dbrtl;IndySystem;IndyProtocols;IndyCore;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -262,8 +262,9 @@
                     <Source Name="MainSource">JanuaTmsControls.dpk</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\StyleControls290.bpl">(untitled)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaUnidacComponentsD290.bpl">Janua Unidac Extensions</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Platforms>

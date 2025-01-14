@@ -1,13 +1,15 @@
 inherited frmMdcChampionship: TfrmMdcChampionship
+  BorderIcons = [biSystemMenu, biMinimize, biMaximize, biHelp]
   Caption = 'Padel Championships'
   ClientHeight = 677
   ClientWidth = 1420
   Color = clBtnFace
-  Position = poDesigned
+  Position = poDefault
+  StyleName = 'Windows10 Clear Day'
   OnCreate = FormCreate
   OnShow = FormShow
-  ExplicitWidth = 1432
-  ExplicitHeight = 735
+  ExplicitWidth = 1436
+  ExplicitHeight = 736
   TextHeight = 13
   object Splitter1: TAdvSplitter [0]
     Left = 1170
@@ -82,7 +84,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
     ToColor = 16250613
     Direction = False
     Version = '1.4.2.1'
-    ExplicitHeight = 643
     object Panel47: TShader
       Left = 1
       Top = 1
@@ -115,6 +116,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Top = 0
         Width = 80
         Height = 41
+        DataSource = dsSeasons
         VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
         Align = alLeft
         Appearance.Color = clWhite
@@ -144,7 +146,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Orientation = noHorizontal
         Style = tsWindows10
         TabOrder = 0
-        Version = '1.2.1.0'
+        Version = '1.3.0.1'
       end
       object ButtonedEdit3: TButtonedEdit
         Left = 79
@@ -170,8 +172,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       Width = 159
       Height = 601
       Align = alClient
-      DataSource = dmUniDacPgChampionships.dsSeasons
-      FixedColor = 16250613
+      DataSource = dsSeasons
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -181,29 +182,28 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       HighlightBGColor = clBlack
       HighlightFont.Charset = DEFAULT_CHARSET
       HighlightFont.Color = clWindowText
-      HighlightFont.Height = -11
-      HighlightFont.Name = 'Tahoma'
+      HighlightFont.Height = -12
+      HighlightFont.Name = 'Segoe UI'
       HighlightFont.Style = []
       Columns = <
         item
           Expanded = False
-          FieldName = 'season_id'
-          Title.Caption = 'id'
-          Width = 24
+          FieldName = 'id'
+          Width = 20
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'season_des'
-          Title.Caption = 'Stagione'
-          Width = 57
+          Title.Caption = 'Descr.'
+          Width = 124
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'season_code'
-          Title.Caption = 'Abb.'
-          Width = 41
+          Title.Caption = 'Cod.'
+          Width = 40
           Visible = True
         end>
     end
@@ -225,8 +225,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
     ToColor = 16250613
     Direction = False
     Version = '1.4.2.1'
-    ExplicitLeft = 1170
-    ExplicitHeight = 643
     object Splitter7: TAdvSplitter
       Left = 1
       Top = 290
@@ -267,11 +265,12 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       object Label2: TLabel
         Left = 1
         Top = 61
-        Width = 95
+        Width = 242
         Height = 13
         Align = alBottom
         Caption = 'Nome del Calciatore'
         Transparent = True
+        ExplicitWidth = 95
       end
       object DBAdvNavigator4: TDBAdvGlowNavigator
         Left = 1
@@ -307,7 +306,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Orientation = noHorizontal
         Style = tsWindows10
         TabOrder = 0
-        Version = '1.2.1.0'
+        Version = '1.3.0.1'
       end
       object ButtonedEditPlayers: TButtonedEdit
         Left = 1
@@ -700,7 +699,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       Align = alBottom
       Caption = 'Panel2'
       TabOrder = 3
-      ExplicitTop = 294
       object grdMatchTeamAllPlayers: TEnhCRDBGrid
         Left = 1
         Top = 40
@@ -765,7 +763,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Orientation = noHorizontal
         Style = tsWindows10
         TabOrder = 1
-        Version = '1.2.1.0'
+        Version = '1.3.0.1'
       end
       object btnEditMatchTeamPlayer: TButtonedEdit
         Left = 1
@@ -795,7 +793,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
     Height = 644
     AdvOfficePagerStyler = AdvOfficePagerOfficeStyler1
     Align = alClient
-    ActivePage = pgCalendarMatches
+    ActivePage = pgChampionships
     ButtonSettings.CloseButtonPicture.Data = {
       424DA20400000000000036040000280000000900000009000000010008000000
       00006C000000C30E0000C30E00000001000000010000427B8400DEEFEF00FFFF
@@ -1079,15 +1077,17 @@ inherited frmMdcChampionship: TfrmMdcChampionship
     ButtonSettings.ScrollButtonFirstHint = 'First'
     ButtonSettings.ScrollButtonLastHint = 'Last'
     ButtonSettings.ClosedListButtonHint = 'Closed Pages'
+    ButtonSettings.ButtonSize = 13
+    ButtonSettings.FullHeight = True
     DoubleBuffered = True
+    TabSettings.ButtonBorder = False
     TabSettings.Rounding = 0
     Text = ''
     ShowShortCutHints = False
     TabOrder = 2
-    ExplicitWidth = 753
-    ExplicitHeight = 643
     NextPictureChanged = False
     PrevPictureChanged = False
+    TabFontHeight = -11
     object pgChampionships: TAdvOfficePage
       Left = 1
       Top = 26
@@ -1096,36 +1096,36 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       Caption = 'Campionati e Squadre'
       DoubleBuffered = True
       ImageIndex = 1
-      PageAppearance.BorderColor = 14474202
-      PageAppearance.Color = 16250613
-      PageAppearance.ColorTo = 16250613
-      PageAppearance.ColorMirror = 16250613
-      PageAppearance.ColorMirrorTo = 16250613
+      PageAppearance.BorderColor = clNone
+      PageAppearance.Color = clWhite
+      PageAppearance.ColorTo = clWhite
+      PageAppearance.ColorMirror = clWhite
+      PageAppearance.ColorMirrorTo = clWhite
       PageAppearance.Gradient = ggVertical
       PageAppearance.GradientMirror = ggVertical
       Text = ''
-      TabAppearance.BorderColor = clNone
-      TabAppearance.BorderColorHot = 15527147
-      TabAppearance.BorderColorSelected = 14474202
-      TabAppearance.BorderColorSelectedHot = 14474202
+      TabAppearance.BorderColor = clWhite
+      TabAppearance.BorderColorHot = clNone
+      TabAppearance.BorderColorSelected = clNone
+      TabAppearance.BorderColorSelectedHot = clNone
       TabAppearance.BorderColorDisabled = clNone
-      TabAppearance.BorderColorDown = 14474202
+      TabAppearance.BorderColorDown = clNone
       TabAppearance.Color = clWhite
       TabAppearance.ColorTo = clWhite
-      TabAppearance.ColorSelected = 16250613
-      TabAppearance.ColorSelectedTo = 16250613
-      TabAppearance.ColorDisabled = 15921906
-      TabAppearance.ColorDisabledTo = 15921906
-      TabAppearance.ColorHot = 16776701
-      TabAppearance.ColorHotTo = clNone
+      TabAppearance.ColorSelected = clWhite
+      TabAppearance.ColorSelectedTo = clWhite
+      TabAppearance.ColorDisabled = 15658734
+      TabAppearance.ColorDisabledTo = clNone
+      TabAppearance.ColorHot = 16316922
+      TabAppearance.ColorHotTo = 16316922
       TabAppearance.ColorMirror = clWhite
       TabAppearance.ColorMirrorTo = clWhite
-      TabAppearance.ColorMirrorHot = 16776701
-      TabAppearance.ColorMirrorHotTo = clNone
-      TabAppearance.ColorMirrorSelected = 16250613
-      TabAppearance.ColorMirrorSelectedTo = 16250613
-      TabAppearance.ColorMirrorDisabled = 15921906
-      TabAppearance.ColorMirrorDisabledTo = 15921906
+      TabAppearance.ColorMirrorHot = 16316922
+      TabAppearance.ColorMirrorHotTo = 16316922
+      TabAppearance.ColorMirrorSelected = clWhite
+      TabAppearance.ColorMirrorSelectedTo = clWhite
+      TabAppearance.ColorMirrorDisabled = 15658734
+      TabAppearance.ColorMirrorDisabledTo = clNone
       TabAppearance.Font.Charset = DEFAULT_CHARSET
       TabAppearance.Font.Color = clWindowText
       TabAppearance.Font.Height = -11
@@ -1139,26 +1139,27 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       TabAppearance.GradientMirrorSelected = ggVertical
       TabAppearance.GradientDisabled = ggVertical
       TabAppearance.GradientMirrorDisabled = ggVertical
-      TabAppearance.TextColor = clBlack
+      TabAppearance.TextColor = 4474440
       TabAppearance.TextColorHot = clBlack
-      TabAppearance.TextColorSelected = clBlack
-      TabAppearance.TextColorDisabled = clGray
+      TabAppearance.TextColorSelected = 4474440
+      TabAppearance.TextColorDisabled = 7303023
       TabAppearance.ShadowColor = clNone
       TabAppearance.HighLightColor = clNone
       TabAppearance.HighLightColorHot = clNone
       TabAppearance.HighLightColorSelected = clNone
       TabAppearance.HighLightColorSelectedHot = clNone
       TabAppearance.HighLightColorDown = clNone
-      TabAppearance.DrawLine = False
+      TabAppearance.DrawLine = True
+      TabAppearance.TextSelectedBold = True
       TabAppearance.BackGround.Color = clWhite
-      TabAppearance.BackGround.ColorTo = clNone
+      TabAppearance.BackGround.ColorTo = clWhite
       TabAppearance.BackGround.Direction = gdHorizontal
       OnShow = pgChampionshipsShow
       object Splitter2: TAdvSplitter
         Left = 329
         Top = 2
         Width = 4
-        Height = 613
+        Height = 612
         Beveled = True
         Color = clSkyBlue
         ParentColor = False
@@ -1177,15 +1178,13 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Left = 333
         Top = 2
         Width = 420
-        Height = 613
+        Height = 612
         Align = alClient
         TabOrder = 0
         FromColor = 16250613
         ToColor = 16250613
         Direction = False
         Version = '1.4.2.1'
-        ExplicitWidth = 416
-        ExplicitHeight = 611
         object Panel28: TShader
           Left = 1
           Top = 1
@@ -1200,7 +1199,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           ToColor = 16250613
           Direction = False
           Version = '1.4.2.1'
-          ExplicitWidth = 414
           object Label9: TLabel
             Left = 72
             Top = 8
@@ -1222,7 +1220,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           ToColor = 16250613
           Direction = False
           Version = '1.4.2.1'
-          ExplicitWidth = 414
           object Button6: TAdvGlowButton
             Left = 0
             Top = 0
@@ -1337,7 +1334,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           Left = 1
           Top = 167
           Width = 418
-          Height = 445
+          Height = 444
           Align = alClient
           DataSource = dsTeamsChampPlayers
           FixedColor = 16250613
@@ -1357,7 +1354,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             end
             item
               Expanded = False
-              FieldName = 'fullname'
+              FieldName = 'full_name'
               Width = 256
               Visible = True
             end
@@ -1370,21 +1367,21 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             end
             item
               Expanded = False
-              FieldName = 'goal'
+              FieldName = 'score'
               Title.Caption = 'Gol'
               Width = 25
               Visible = True
             end
             item
               Expanded = False
-              FieldName = 'lostgoal'
+              FieldName = 'conceded'
               Title.Caption = 'Sub.'
               Width = 25
               Visible = True
             end
             item
               Expanded = False
-              FieldName = 'owngoal'
+              FieldName = 'self_scored'
               Title.Caption = 'Aut.'
               Width = 25
               Visible = True
@@ -1404,7 +1401,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           ToColor = 16250613
           Direction = False
           Version = '1.4.2.1'
-          ExplicitWidth = 414
         end
         object Panel37: TShader
           Left = 1
@@ -1421,7 +1417,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           ToColor = 16250613
           Direction = False
           Version = '1.4.2.1'
-          ExplicitWidth = 414
         end
         object Shader6: TShader
           Left = 1
@@ -1434,7 +1429,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           ToColor = 16250613
           Direction = False
           Version = '1.4.2.1'
-          ExplicitWidth = 414
           object Label6: TLabel
             Left = 6
             Top = 4
@@ -1557,7 +1551,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             Top = 60
             Width = 28
             Height = 21
-            DataField = 'goal'
+            DataField = 'conceded'
             DataSource = dsTeamsChampPlayers
             TabOrder = 3
           end
@@ -1566,7 +1560,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             Top = 60
             Width = 32
             Height = 21
-            DataField = 'lostgoal'
+            DataField = 'conceded'
             DataSource = dsTeamsChampPlayers
             TabOrder = 4
           end
@@ -1575,7 +1569,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             Top = 60
             Width = 41
             Height = 21
-            DataField = 'owngoal'
+            DataField = 'self_scored'
             DataSource = dsTeamsChampPlayers
             TabOrder = 5
           end
@@ -1621,7 +1615,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Left = 2
         Top = 2
         Width = 327
-        Height = 613
+        Height = 612
         Align = alLeft
         Caption = 'Campionati'
         TabOrder = 1
@@ -1629,7 +1623,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         ToColor = 16250613
         Direction = False
         Version = '1.4.2.1'
-        ExplicitHeight = 611
         object Panel4: TShader
           Left = 1
           Top = 1
@@ -1757,7 +1750,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           Left = 1
           Top = 67
           Width = 325
-          Height = 545
+          Height = 544
           Align = alClient
           FixedColor = 16250613
           TabOrder = 1
@@ -1859,7 +1852,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           Orientation = noHorizontal
           Style = tsWindows10
           TabOrder = 3
-          Version = '1.2.1.0'
+          Version = '1.3.0.1'
         end
       end
     end
@@ -1871,36 +1864,36 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       Caption = 'Calendario Partite'
       DoubleBuffered = True
       ImageIndex = 2
-      PageAppearance.BorderColor = 14474202
-      PageAppearance.Color = 16250613
-      PageAppearance.ColorTo = 16250613
-      PageAppearance.ColorMirror = 16250613
-      PageAppearance.ColorMirrorTo = 16250613
+      PageAppearance.BorderColor = clNone
+      PageAppearance.Color = clWhite
+      PageAppearance.ColorTo = clWhite
+      PageAppearance.ColorMirror = clWhite
+      PageAppearance.ColorMirrorTo = clWhite
       PageAppearance.Gradient = ggVertical
       PageAppearance.GradientMirror = ggVertical
       Text = ''
-      TabAppearance.BorderColor = clNone
-      TabAppearance.BorderColorHot = 15527147
-      TabAppearance.BorderColorSelected = 14474202
-      TabAppearance.BorderColorSelectedHot = 14474202
+      TabAppearance.BorderColor = clWhite
+      TabAppearance.BorderColorHot = clNone
+      TabAppearance.BorderColorSelected = clNone
+      TabAppearance.BorderColorSelectedHot = clNone
       TabAppearance.BorderColorDisabled = clNone
-      TabAppearance.BorderColorDown = 14474202
+      TabAppearance.BorderColorDown = clNone
       TabAppearance.Color = clWhite
       TabAppearance.ColorTo = clWhite
-      TabAppearance.ColorSelected = 16250613
-      TabAppearance.ColorSelectedTo = 16250613
-      TabAppearance.ColorDisabled = 15921906
-      TabAppearance.ColorDisabledTo = 15921906
-      TabAppearance.ColorHot = 16776701
-      TabAppearance.ColorHotTo = clNone
+      TabAppearance.ColorSelected = clWhite
+      TabAppearance.ColorSelectedTo = clWhite
+      TabAppearance.ColorDisabled = 15658734
+      TabAppearance.ColorDisabledTo = clNone
+      TabAppearance.ColorHot = 16316922
+      TabAppearance.ColorHotTo = 16316922
       TabAppearance.ColorMirror = clWhite
       TabAppearance.ColorMirrorTo = clWhite
-      TabAppearance.ColorMirrorHot = 16776701
-      TabAppearance.ColorMirrorHotTo = clNone
-      TabAppearance.ColorMirrorSelected = 16250613
-      TabAppearance.ColorMirrorSelectedTo = 16250613
-      TabAppearance.ColorMirrorDisabled = 15921906
-      TabAppearance.ColorMirrorDisabledTo = 15921906
+      TabAppearance.ColorMirrorHot = 16316922
+      TabAppearance.ColorMirrorHotTo = 16316922
+      TabAppearance.ColorMirrorSelected = clWhite
+      TabAppearance.ColorMirrorSelectedTo = clWhite
+      TabAppearance.ColorMirrorDisabled = 15658734
+      TabAppearance.ColorMirrorDisabledTo = clNone
       TabAppearance.Font.Charset = DEFAULT_CHARSET
       TabAppearance.Font.Color = clWindowText
       TabAppearance.Font.Height = -11
@@ -1914,26 +1907,27 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       TabAppearance.GradientMirrorSelected = ggVertical
       TabAppearance.GradientDisabled = ggVertical
       TabAppearance.GradientMirrorDisabled = ggVertical
-      TabAppearance.TextColor = clBlack
+      TabAppearance.TextColor = 4474440
       TabAppearance.TextColorHot = clBlack
-      TabAppearance.TextColorSelected = clBlack
-      TabAppearance.TextColorDisabled = clGray
+      TabAppearance.TextColorSelected = 4474440
+      TabAppearance.TextColorDisabled = 7303023
       TabAppearance.ShadowColor = clNone
       TabAppearance.HighLightColor = clNone
       TabAppearance.HighLightColorHot = clNone
       TabAppearance.HighLightColorSelected = clNone
       TabAppearance.HighLightColorSelectedHot = clNone
       TabAppearance.HighLightColorDown = clNone
-      TabAppearance.DrawLine = False
+      TabAppearance.DrawLine = True
+      TabAppearance.TextSelectedBold = True
       TabAppearance.BackGround.Color = clWhite
-      TabAppearance.BackGround.ColorTo = clNone
+      TabAppearance.BackGround.ColorTo = clWhite
       TabAppearance.BackGround.Direction = gdHorizontal
       OnShow = pgCalendarMatchesShow
       object Splitter3: TAdvSplitter
         Left = 74
         Top = 2
         Width = 4
-        Height = 613
+        Height = 612
         Beveled = True
         Color = clSkyBlue
         ParentColor = False
@@ -1953,7 +1947,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Left = 78
         Top = 2
         Width = 675
-        Height = 613
+        Height = 612
         Align = alClient
         Caption = 'Campionati'
         TabOrder = 0
@@ -1961,8 +1955,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         ToColor = 16250613
         Direction = False
         Version = '1.4.2.1'
-        ExplicitWidth = 671
-        ExplicitHeight = 611
         object AdvSplitter2: TAdvSplitter
           Left = 1
           Top = 289
@@ -1991,7 +1983,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           ToColor = 16250613
           Direction = False
           Version = '1.4.2.1'
-          ExplicitWidth = 669
           object Button9: TAdvGlowButton
             Left = 289
             Top = 1
@@ -2081,7 +2072,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             Orientation = noHorizontal
             Style = tsWindows10
             TabOrder = 1
-            Version = '1.2.1.0'
+            Version = '1.3.0.1'
           end
           object AdvGlowButton3: TAdvGlowButton
             Left = 161
@@ -2374,34 +2365,29 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           ToColor = 16250613
           Direction = False
           Version = '1.4.2.1'
-          ExplicitWidth = 669
         end
         object Panel19: TShader
           Left = 297
           Top = 293
           Width = 377
-          Height = 319
+          Height = 318
           Align = alClient
           TabOrder = 3
           FromColor = 16250613
           ToColor = 16250613
           Direction = False
           Version = '1.4.2.1'
-          ExplicitWidth = 373
-          ExplicitHeight = 317
           object Panel20: TShader
             Left = 1
             Top = 1
             Width = 375
-            Height = 317
+            Height = 316
             Align = alClient
             TabOrder = 0
             FromColor = 16250613
             ToColor = 16250613
             Direction = False
             Version = '1.4.2.1'
-            ExplicitWidth = 371
-            ExplicitHeight = 315
             object grdMatchTeams: TEnhCRDBGrid
               Left = 1
               Top = 1
@@ -2450,7 +2436,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
               ToColor = 16250613
               Direction = False
               Version = '1.4.2.1'
-              ExplicitWidth = 369
               object btnMatchEvents: TAdvGlowButton
                 Left = 161
                 Top = 1
@@ -2558,7 +2543,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                 Appearance.TextColorChecked = clWhite
                 Appearance.TextColorDisabled = 13948116
                 UIStyle = tsWindows10
-                ExplicitWidth = 151
               end
               object navMatchTeamPlayers: TDBAdvGlowNavigator
                 Left = 1
@@ -2595,7 +2579,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                 Orientation = noHorizontal
                 Style = tsWindows10
                 TabOrder = 0
-                Version = '1.2.1.0'
+                Version = '1.3.0.1'
               end
               object btnImportMatch: TAdvGlowButton
                 Left = 81
@@ -2656,7 +2640,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
               Left = 1
               Top = 94
               Width = 373
-              Height = 222
+              Height = 221
               Align = alClient
               Caption = 'Panel62'
               TabOrder = 2
@@ -2664,13 +2648,11 @@ inherited frmMdcChampionship: TfrmMdcChampionship
               ToColor = 16250613
               Direction = False
               Version = '1.4.2.1'
-              ExplicitWidth = 369
-              ExplicitHeight = 220
               object grdMatchTeamPlayers: TEnhCRDBGrid
                 Left = 1
                 Top = 1
                 Width = 371
-                Height = 220
+                Height = 219
                 Align = alClient
                 DataSource = dmUniDacPgChampionships.dsMatchTeamPlayers
                 FixedColor = 16250613
@@ -2694,6 +2676,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                     FieldName = 'pos'
                     Width = 30
                     Visible = True
+                    SortOrder = soAsc
                   end
                   item
                     Expanded = False
@@ -2732,21 +2715,21 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                   end
                   item
                     Expanded = False
-                    FieldName = 'goal'
+                    FieldName = 'score'
                     Title.Caption = 'Gol.'
                     Width = 30
                     Visible = True
                   end
                   item
                     Expanded = False
-                    FieldName = 'owngoal'
+                    FieldName = 'self_scored'
                     Title.Caption = 'Auto'
                     Width = 30
                     Visible = True
                   end
                   item
                     Expanded = False
-                    FieldName = 'lostgoal'
+                    FieldName = 'conceded'
                     Title.Caption = 'Sub'
                     Width = 30
                     Visible = True
@@ -2759,7 +2742,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           Left = 1
           Top = 293
           Width = 296
-          Height = 319
+          Height = 318
           Align = alLeft
           Caption = 'Eventi'
           TabOrder = 4
@@ -2767,7 +2750,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           ToColor = 16250613
           Direction = False
           Version = '1.4.2.1'
-          ExplicitHeight = 317
           object Panel21: TShader
             Left = 1
             Top = 1
@@ -2854,7 +2836,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             Left = 1
             Top = 51
             Width = 294
-            Height = 267
+            Height = 266
             Align = alClient
             DataSource = dmUniDacPgChampionships.dsMatchEvents
             FixedColor = 16250613
@@ -3055,7 +3037,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
               Orientation = noHorizontal
               Style = tsWindows10
               TabOrder = 0
-              Version = '1.2.1.0'
+              Version = '1.3.0.1'
             end
             object AdvGlowButton4: TAdvGlowButton
               Left = 121
@@ -3120,7 +3102,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Left = 2
         Top = 2
         Width = 72
-        Height = 613
+        Height = 612
         Align = alLeft
         Caption = 'Campionati'
         TabOrder = 1
@@ -3128,7 +3110,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         ToColor = 16250613
         Direction = False
         Version = '1.4.2.1'
-        ExplicitHeight = 611
         object Panel14: TShader
           Left = 1
           Top = 1
@@ -3148,7 +3129,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           Left = 1
           Top = 70
           Width = 70
-          Height = 542
+          Height = 541
           Align = alClient
           FixedColor = 15784647
           Options = [dgEditing, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -3302,36 +3283,36 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       Caption = 'Campionati e Classifiche'
       DoubleBuffered = True
       ImageIndex = 4
-      PageAppearance.BorderColor = 14474202
-      PageAppearance.Color = 16250613
-      PageAppearance.ColorTo = 16250613
-      PageAppearance.ColorMirror = 16250613
-      PageAppearance.ColorMirrorTo = 16250613
+      PageAppearance.BorderColor = clNone
+      PageAppearance.Color = clWhite
+      PageAppearance.ColorTo = clWhite
+      PageAppearance.ColorMirror = clWhite
+      PageAppearance.ColorMirrorTo = clWhite
       PageAppearance.Gradient = ggVertical
       PageAppearance.GradientMirror = ggVertical
       Text = ''
-      TabAppearance.BorderColor = clNone
-      TabAppearance.BorderColorHot = 15527147
-      TabAppearance.BorderColorSelected = 14474202
-      TabAppearance.BorderColorSelectedHot = 14474202
+      TabAppearance.BorderColor = clWhite
+      TabAppearance.BorderColorHot = clNone
+      TabAppearance.BorderColorSelected = clNone
+      TabAppearance.BorderColorSelectedHot = clNone
       TabAppearance.BorderColorDisabled = clNone
-      TabAppearance.BorderColorDown = 14474202
+      TabAppearance.BorderColorDown = clNone
       TabAppearance.Color = clWhite
       TabAppearance.ColorTo = clWhite
-      TabAppearance.ColorSelected = 16250613
-      TabAppearance.ColorSelectedTo = 16250613
-      TabAppearance.ColorDisabled = 15921906
-      TabAppearance.ColorDisabledTo = 15921906
-      TabAppearance.ColorHot = 16776701
-      TabAppearance.ColorHotTo = clNone
+      TabAppearance.ColorSelected = clWhite
+      TabAppearance.ColorSelectedTo = clWhite
+      TabAppearance.ColorDisabled = 15658734
+      TabAppearance.ColorDisabledTo = clNone
+      TabAppearance.ColorHot = 16316922
+      TabAppearance.ColorHotTo = 16316922
       TabAppearance.ColorMirror = clWhite
       TabAppearance.ColorMirrorTo = clWhite
-      TabAppearance.ColorMirrorHot = 16776701
-      TabAppearance.ColorMirrorHotTo = clNone
-      TabAppearance.ColorMirrorSelected = 16250613
-      TabAppearance.ColorMirrorSelectedTo = 16250613
-      TabAppearance.ColorMirrorDisabled = 15921906
-      TabAppearance.ColorMirrorDisabledTo = 15921906
+      TabAppearance.ColorMirrorHot = 16316922
+      TabAppearance.ColorMirrorHotTo = 16316922
+      TabAppearance.ColorMirrorSelected = clWhite
+      TabAppearance.ColorMirrorSelectedTo = clWhite
+      TabAppearance.ColorMirrorDisabled = 15658734
+      TabAppearance.ColorMirrorDisabledTo = clNone
       TabAppearance.Font.Charset = DEFAULT_CHARSET
       TabAppearance.Font.Color = clWindowText
       TabAppearance.Font.Height = -11
@@ -3345,19 +3326,20 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       TabAppearance.GradientMirrorSelected = ggVertical
       TabAppearance.GradientDisabled = ggVertical
       TabAppearance.GradientMirrorDisabled = ggVertical
-      TabAppearance.TextColor = clBlack
+      TabAppearance.TextColor = 4474440
       TabAppearance.TextColorHot = clBlack
-      TabAppearance.TextColorSelected = clBlack
-      TabAppearance.TextColorDisabled = clGray
+      TabAppearance.TextColorSelected = 4474440
+      TabAppearance.TextColorDisabled = 7303023
       TabAppearance.ShadowColor = clNone
       TabAppearance.HighLightColor = clNone
       TabAppearance.HighLightColorHot = clNone
       TabAppearance.HighLightColorSelected = clNone
       TabAppearance.HighLightColorSelectedHot = clNone
       TabAppearance.HighLightColorDown = clNone
-      TabAppearance.DrawLine = False
+      TabAppearance.DrawLine = True
+      TabAppearance.TextSelectedBold = True
       TabAppearance.BackGround.Color = clWhite
-      TabAppearance.BackGround.ColorTo = clNone
+      TabAppearance.BackGround.ColorTo = clWhite
       TabAppearance.BackGround.Direction = gdHorizontal
       object pnlRankings: TShader
         Left = 2
@@ -3370,8 +3352,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         ToColor = 16250613
         Direction = False
         Version = '1.4.2.1'
-        ExplicitWidth = 747
-        ExplicitHeight = 611
         object Panel34: TShader
           Left = 1
           Top = 1
@@ -3386,7 +3366,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           ToColor = 16250613
           Direction = False
           Version = '1.4.2.1'
-          ExplicitWidth = 745
         end
         object adgPagerRankings: TAdvOfficePager
           Left = 1
@@ -3679,15 +3658,17 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           ButtonSettings.ScrollButtonFirstHint = 'First'
           ButtonSettings.ScrollButtonLastHint = 'Last'
           ButtonSettings.ClosedListButtonHint = 'Closed Pages'
+          ButtonSettings.ButtonSize = 13
+          ButtonSettings.FullHeight = True
           DoubleBuffered = True
+          TabSettings.ButtonBorder = False
           TabSettings.Rounding = 0
           Text = ''
           ShowShortCutHints = False
           TabOrder = 1
-          ExplicitWidth = 745
-          ExplicitHeight = 585
           NextPictureChanged = False
           PrevPictureChanged = False
+          TabFontHeight = -11
           object pgRankings: TAdvOfficePage
             Left = 1
             Top = 26
@@ -3695,11 +3676,11 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             Height = 558
             Caption = 'Classifica Squadre'
             DoubleBuffered = True
-            PageAppearance.BorderColor = 14474202
-            PageAppearance.Color = 16250613
-            PageAppearance.ColorTo = 16250613
-            PageAppearance.ColorMirror = 16250613
-            PageAppearance.ColorMirrorTo = 16250613
+            PageAppearance.BorderColor = clNone
+            PageAppearance.Color = clWhite
+            PageAppearance.ColorTo = clWhite
+            PageAppearance.ColorMirror = clWhite
+            PageAppearance.ColorMirrorTo = clWhite
             PageAppearance.Gradient = ggVertical
             PageAppearance.GradientMirror = ggVertical
             Picture.Data = {
@@ -3730,28 +3711,28 @@ inherited frmMdcChampionship: TfrmMdcChampionship
               FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
               FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF0000}
             Text = ''
-            TabAppearance.BorderColor = clNone
-            TabAppearance.BorderColorHot = 15527147
-            TabAppearance.BorderColorSelected = 14474202
-            TabAppearance.BorderColorSelectedHot = 14474202
+            TabAppearance.BorderColor = clWhite
+            TabAppearance.BorderColorHot = clNone
+            TabAppearance.BorderColorSelected = clNone
+            TabAppearance.BorderColorSelectedHot = clNone
             TabAppearance.BorderColorDisabled = clNone
-            TabAppearance.BorderColorDown = 14474202
+            TabAppearance.BorderColorDown = clNone
             TabAppearance.Color = clWhite
             TabAppearance.ColorTo = clWhite
-            TabAppearance.ColorSelected = 16250613
-            TabAppearance.ColorSelectedTo = 16250613
-            TabAppearance.ColorDisabled = 15921906
-            TabAppearance.ColorDisabledTo = 15921906
-            TabAppearance.ColorHot = 16776701
-            TabAppearance.ColorHotTo = clNone
+            TabAppearance.ColorSelected = clWhite
+            TabAppearance.ColorSelectedTo = clWhite
+            TabAppearance.ColorDisabled = 15658734
+            TabAppearance.ColorDisabledTo = clNone
+            TabAppearance.ColorHot = 16316922
+            TabAppearance.ColorHotTo = 16316922
             TabAppearance.ColorMirror = clWhite
             TabAppearance.ColorMirrorTo = clWhite
-            TabAppearance.ColorMirrorHot = 16776701
-            TabAppearance.ColorMirrorHotTo = clNone
-            TabAppearance.ColorMirrorSelected = 16250613
-            TabAppearance.ColorMirrorSelectedTo = 16250613
-            TabAppearance.ColorMirrorDisabled = 15921906
-            TabAppearance.ColorMirrorDisabledTo = 15921906
+            TabAppearance.ColorMirrorHot = 16316922
+            TabAppearance.ColorMirrorHotTo = 16316922
+            TabAppearance.ColorMirrorSelected = clWhite
+            TabAppearance.ColorMirrorSelectedTo = clWhite
+            TabAppearance.ColorMirrorDisabled = 15658734
+            TabAppearance.ColorMirrorDisabledTo = clNone
             TabAppearance.Font.Charset = DEFAULT_CHARSET
             TabAppearance.Font.Color = clWindowText
             TabAppearance.Font.Height = -11
@@ -3765,26 +3746,27 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             TabAppearance.GradientMirrorSelected = ggVertical
             TabAppearance.GradientDisabled = ggVertical
             TabAppearance.GradientMirrorDisabled = ggVertical
-            TabAppearance.TextColor = clBlack
+            TabAppearance.TextColor = 4474440
             TabAppearance.TextColorHot = clBlack
-            TabAppearance.TextColorSelected = clBlack
-            TabAppearance.TextColorDisabled = clGray
+            TabAppearance.TextColorSelected = 4474440
+            TabAppearance.TextColorDisabled = 7303023
             TabAppearance.ShadowColor = clNone
             TabAppearance.HighLightColor = clNone
             TabAppearance.HighLightColorHot = clNone
             TabAppearance.HighLightColorSelected = clNone
             TabAppearance.HighLightColorSelectedHot = clNone
             TabAppearance.HighLightColorDown = clNone
-            TabAppearance.DrawLine = False
+            TabAppearance.DrawLine = True
+            TabAppearance.TextSelectedBold = True
             TabAppearance.BackGround.Color = clWhite
-            TabAppearance.BackGround.ColorTo = clNone
+            TabAppearance.BackGround.ColorTo = clWhite
             TabAppearance.BackGround.Direction = gdHorizontal
             OnShow = pgRankingsShow
             object grdChampRanking: TCRDBGrid
               Left = 2
               Top = 30
               Width = 743
-              Height = 528
+              Height = 526
               Align = alClient
               Ctl3D = True
               DataSource = dmUniDacPgChampionships.dsChampRanking
@@ -3943,7 +3925,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
               ToColor = 16250613
               Direction = False
               Version = '1.4.2.1'
-              ExplicitWidth = 739
               object btnRankingExport: TAdvGlowButton
                 Left = 181
                 Top = 1
@@ -4034,7 +4015,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                 Orientation = noHorizontal
                 Style = tsWindows10
                 TabOrder = 1
-                Version = '1.2.1.0'
+                Version = '1.3.0.1'
               end
               object btnUpdateRankings: TAdvGlowButton
                 Left = 1
@@ -4142,11 +4123,11 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             Height = 558
             Caption = 'Classifica Marcatori'
             DoubleBuffered = True
-            PageAppearance.BorderColor = 14474202
-            PageAppearance.Color = 16250613
-            PageAppearance.ColorTo = 16250613
-            PageAppearance.ColorMirror = 16250613
-            PageAppearance.ColorMirrorTo = 16250613
+            PageAppearance.BorderColor = clNone
+            PageAppearance.Color = clWhite
+            PageAppearance.ColorTo = clWhite
+            PageAppearance.ColorMirror = clWhite
+            PageAppearance.ColorMirrorTo = clWhite
             PageAppearance.Gradient = ggVertical
             PageAppearance.GradientMirror = ggVertical
             Picture.Data = {
@@ -4177,28 +4158,28 @@ inherited frmMdcChampionship: TfrmMdcChampionship
               FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
               FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
             Text = ''
-            TabAppearance.BorderColor = clNone
-            TabAppearance.BorderColorHot = 15527147
-            TabAppearance.BorderColorSelected = 14474202
-            TabAppearance.BorderColorSelectedHot = 14474202
+            TabAppearance.BorderColor = clWhite
+            TabAppearance.BorderColorHot = clNone
+            TabAppearance.BorderColorSelected = clNone
+            TabAppearance.BorderColorSelectedHot = clNone
             TabAppearance.BorderColorDisabled = clNone
-            TabAppearance.BorderColorDown = 14474202
+            TabAppearance.BorderColorDown = clNone
             TabAppearance.Color = clWhite
             TabAppearance.ColorTo = clWhite
-            TabAppearance.ColorSelected = 16250613
-            TabAppearance.ColorSelectedTo = 16250613
-            TabAppearance.ColorDisabled = 15921906
-            TabAppearance.ColorDisabledTo = 15921906
-            TabAppearance.ColorHot = 16776701
-            TabAppearance.ColorHotTo = clNone
+            TabAppearance.ColorSelected = clWhite
+            TabAppearance.ColorSelectedTo = clWhite
+            TabAppearance.ColorDisabled = 15658734
+            TabAppearance.ColorDisabledTo = clNone
+            TabAppearance.ColorHot = 16316922
+            TabAppearance.ColorHotTo = 16316922
             TabAppearance.ColorMirror = clWhite
             TabAppearance.ColorMirrorTo = clWhite
-            TabAppearance.ColorMirrorHot = 16776701
-            TabAppearance.ColorMirrorHotTo = clNone
-            TabAppearance.ColorMirrorSelected = 16250613
-            TabAppearance.ColorMirrorSelectedTo = 16250613
-            TabAppearance.ColorMirrorDisabled = 15921906
-            TabAppearance.ColorMirrorDisabledTo = 15921906
+            TabAppearance.ColorMirrorHot = 16316922
+            TabAppearance.ColorMirrorHotTo = 16316922
+            TabAppearance.ColorMirrorSelected = clWhite
+            TabAppearance.ColorMirrorSelectedTo = clWhite
+            TabAppearance.ColorMirrorDisabled = 15658734
+            TabAppearance.ColorMirrorDisabledTo = clNone
             TabAppearance.Font.Charset = DEFAULT_CHARSET
             TabAppearance.Font.Color = clWindowText
             TabAppearance.Font.Height = -11
@@ -4212,25 +4193,26 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             TabAppearance.GradientMirrorSelected = ggVertical
             TabAppearance.GradientDisabled = ggVertical
             TabAppearance.GradientMirrorDisabled = ggVertical
-            TabAppearance.TextColor = clBlack
+            TabAppearance.TextColor = 4474440
             TabAppearance.TextColorHot = clBlack
-            TabAppearance.TextColorSelected = clBlack
-            TabAppearance.TextColorDisabled = clGray
+            TabAppearance.TextColorSelected = 4474440
+            TabAppearance.TextColorDisabled = 7303023
             TabAppearance.ShadowColor = clNone
             TabAppearance.HighLightColor = clNone
             TabAppearance.HighLightColorHot = clNone
             TabAppearance.HighLightColorSelected = clNone
             TabAppearance.HighLightColorSelectedHot = clNone
             TabAppearance.HighLightColorDown = clNone
-            TabAppearance.DrawLine = False
+            TabAppearance.DrawLine = True
+            TabAppearance.TextSelectedBold = True
             TabAppearance.BackGround.Color = clWhite
-            TabAppearance.BackGround.ColorTo = clNone
+            TabAppearance.BackGround.ColorTo = clWhite
             TabAppearance.BackGround.Direction = gdHorizontal
             object grdGoalRanking: TCRDBGrid
               Left = 2
               Top = 30
               Width = 743
-              Height = 528
+              Height = 526
               Align = alClient
               Color = clWhite
               Ctl3D = False
@@ -4282,7 +4264,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
               ToColor = 16250613
               Direction = False
               Version = '1.4.2.1'
-              ExplicitWidth = 739
               object AdvGlowButton9: TAdvGlowButton
                 Left = 181
                 Top = 1
@@ -4372,7 +4353,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                 Orientation = noHorizontal
                 Style = tsWindows10
                 TabOrder = 1
-                Version = '1.2.1.0'
+                Version = '1.3.0.1'
               end
               object AdvGlowButton10: TAdvGlowButton
                 Left = 1
@@ -4480,36 +4461,36 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             Height = 558
             Caption = 'Base Calcolo Classifica'
             DoubleBuffered = True
-            PageAppearance.BorderColor = 14474202
-            PageAppearance.Color = 16250613
-            PageAppearance.ColorTo = 16250613
-            PageAppearance.ColorMirror = 16250613
-            PageAppearance.ColorMirrorTo = 16250613
+            PageAppearance.BorderColor = clNone
+            PageAppearance.Color = clWhite
+            PageAppearance.ColorTo = clWhite
+            PageAppearance.ColorMirror = clWhite
+            PageAppearance.ColorMirrorTo = clWhite
             PageAppearance.Gradient = ggVertical
             PageAppearance.GradientMirror = ggVertical
             Text = ''
-            TabAppearance.BorderColor = clNone
-            TabAppearance.BorderColorHot = 15527147
-            TabAppearance.BorderColorSelected = 14474202
-            TabAppearance.BorderColorSelectedHot = 14474202
+            TabAppearance.BorderColor = clWhite
+            TabAppearance.BorderColorHot = clNone
+            TabAppearance.BorderColorSelected = clNone
+            TabAppearance.BorderColorSelectedHot = clNone
             TabAppearance.BorderColorDisabled = clNone
-            TabAppearance.BorderColorDown = 14474202
+            TabAppearance.BorderColorDown = clNone
             TabAppearance.Color = clWhite
             TabAppearance.ColorTo = clWhite
-            TabAppearance.ColorSelected = 16250613
-            TabAppearance.ColorSelectedTo = 16250613
-            TabAppearance.ColorDisabled = 15921906
-            TabAppearance.ColorDisabledTo = 15921906
-            TabAppearance.ColorHot = 16776701
-            TabAppearance.ColorHotTo = clNone
+            TabAppearance.ColorSelected = clWhite
+            TabAppearance.ColorSelectedTo = clWhite
+            TabAppearance.ColorDisabled = 15658734
+            TabAppearance.ColorDisabledTo = clNone
+            TabAppearance.ColorHot = 16316922
+            TabAppearance.ColorHotTo = 16316922
             TabAppearance.ColorMirror = clWhite
             TabAppearance.ColorMirrorTo = clWhite
-            TabAppearance.ColorMirrorHot = 16776701
-            TabAppearance.ColorMirrorHotTo = clNone
-            TabAppearance.ColorMirrorSelected = 16250613
-            TabAppearance.ColorMirrorSelectedTo = 16250613
-            TabAppearance.ColorMirrorDisabled = 15921906
-            TabAppearance.ColorMirrorDisabledTo = 15921906
+            TabAppearance.ColorMirrorHot = 16316922
+            TabAppearance.ColorMirrorHotTo = 16316922
+            TabAppearance.ColorMirrorSelected = clWhite
+            TabAppearance.ColorMirrorSelectedTo = clWhite
+            TabAppearance.ColorMirrorDisabled = 15658734
+            TabAppearance.ColorMirrorDisabledTo = clNone
             TabAppearance.Font.Charset = DEFAULT_CHARSET
             TabAppearance.Font.Color = clWindowText
             TabAppearance.Font.Height = -11
@@ -4523,19 +4504,20 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             TabAppearance.GradientMirrorSelected = ggVertical
             TabAppearance.GradientDisabled = ggVertical
             TabAppearance.GradientMirrorDisabled = ggVertical
-            TabAppearance.TextColor = clBlack
+            TabAppearance.TextColor = 4474440
             TabAppearance.TextColorHot = clBlack
-            TabAppearance.TextColorSelected = clBlack
-            TabAppearance.TextColorDisabled = clGray
+            TabAppearance.TextColorSelected = 4474440
+            TabAppearance.TextColorDisabled = 7303023
             TabAppearance.ShadowColor = clNone
             TabAppearance.HighLightColor = clNone
             TabAppearance.HighLightColorHot = clNone
             TabAppearance.HighLightColorSelected = clNone
             TabAppearance.HighLightColorSelectedHot = clNone
             TabAppearance.HighLightColorDown = clNone
-            TabAppearance.DrawLine = False
+            TabAppearance.DrawLine = True
+            TabAppearance.TextSelectedBold = True
             TabAppearance.BackGround.Color = clWhite
-            TabAppearance.BackGround.ColorTo = clNone
+            TabAppearance.BackGround.ColorTo = clWhite
             TabAppearance.BackGround.Direction = gdHorizontal
             object Shader4: TShader
               Left = 2
@@ -4548,7 +4530,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
               ToColor = 16250613
               Direction = False
               Version = '1.4.2.1'
-              ExplicitWidth = 739
               object Label42: TLabel
                 Left = 128
                 Top = 12
@@ -4849,36 +4830,36 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       Caption = 'Club e Squadre'
       DoubleBuffered = True
       ImageIndex = 0
-      PageAppearance.BorderColor = 14474202
-      PageAppearance.Color = 16250613
-      PageAppearance.ColorTo = 16250613
-      PageAppearance.ColorMirror = 16250613
-      PageAppearance.ColorMirrorTo = 16250613
+      PageAppearance.BorderColor = clNone
+      PageAppearance.Color = clWhite
+      PageAppearance.ColorTo = clWhite
+      PageAppearance.ColorMirror = clWhite
+      PageAppearance.ColorMirrorTo = clWhite
       PageAppearance.Gradient = ggVertical
       PageAppearance.GradientMirror = ggVertical
       Text = ''
-      TabAppearance.BorderColor = clNone
-      TabAppearance.BorderColorHot = 15527147
-      TabAppearance.BorderColorSelected = 14474202
-      TabAppearance.BorderColorSelectedHot = 14474202
+      TabAppearance.BorderColor = clWhite
+      TabAppearance.BorderColorHot = clNone
+      TabAppearance.BorderColorSelected = clNone
+      TabAppearance.BorderColorSelectedHot = clNone
       TabAppearance.BorderColorDisabled = clNone
-      TabAppearance.BorderColorDown = 14474202
+      TabAppearance.BorderColorDown = clNone
       TabAppearance.Color = clWhite
       TabAppearance.ColorTo = clWhite
-      TabAppearance.ColorSelected = 16250613
-      TabAppearance.ColorSelectedTo = 16250613
-      TabAppearance.ColorDisabled = 15921906
-      TabAppearance.ColorDisabledTo = 15921906
-      TabAppearance.ColorHot = 16776701
-      TabAppearance.ColorHotTo = clNone
+      TabAppearance.ColorSelected = clWhite
+      TabAppearance.ColorSelectedTo = clWhite
+      TabAppearance.ColorDisabled = 15658734
+      TabAppearance.ColorDisabledTo = clNone
+      TabAppearance.ColorHot = 16316922
+      TabAppearance.ColorHotTo = 16316922
       TabAppearance.ColorMirror = clWhite
       TabAppearance.ColorMirrorTo = clWhite
-      TabAppearance.ColorMirrorHot = 16776701
-      TabAppearance.ColorMirrorHotTo = clNone
-      TabAppearance.ColorMirrorSelected = 16250613
-      TabAppearance.ColorMirrorSelectedTo = 16250613
-      TabAppearance.ColorMirrorDisabled = 15921906
-      TabAppearance.ColorMirrorDisabledTo = 15921906
+      TabAppearance.ColorMirrorHot = 16316922
+      TabAppearance.ColorMirrorHotTo = 16316922
+      TabAppearance.ColorMirrorSelected = clWhite
+      TabAppearance.ColorMirrorSelectedTo = clWhite
+      TabAppearance.ColorMirrorDisabled = 15658734
+      TabAppearance.ColorMirrorDisabledTo = clNone
       TabAppearance.Font.Charset = DEFAULT_CHARSET
       TabAppearance.Font.Color = clWindowText
       TabAppearance.Font.Height = -11
@@ -4892,19 +4873,20 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       TabAppearance.GradientMirrorSelected = ggVertical
       TabAppearance.GradientDisabled = ggVertical
       TabAppearance.GradientMirrorDisabled = ggVertical
-      TabAppearance.TextColor = clBlack
+      TabAppearance.TextColor = 4474440
       TabAppearance.TextColorHot = clBlack
-      TabAppearance.TextColorSelected = clBlack
-      TabAppearance.TextColorDisabled = clGray
+      TabAppearance.TextColorSelected = 4474440
+      TabAppearance.TextColorDisabled = 7303023
       TabAppearance.ShadowColor = clNone
       TabAppearance.HighLightColor = clNone
       TabAppearance.HighLightColorHot = clNone
       TabAppearance.HighLightColorSelected = clNone
       TabAppearance.HighLightColorSelectedHot = clNone
       TabAppearance.HighLightColorDown = clNone
-      TabAppearance.DrawLine = False
+      TabAppearance.DrawLine = True
+      TabAppearance.TextSelectedBold = True
       TabAppearance.BackGround.Color = clWhite
-      TabAppearance.BackGround.ColorTo = clNone
+      TabAppearance.BackGround.ColorTo = clWhite
       TabAppearance.BackGround.Direction = gdHorizontal
       OnShow = ClubsShow
       object Panel38: TShader
@@ -4919,15 +4901,15 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         ToColor = 16250613
         Direction = False
         Version = '1.4.2.1'
-        ExplicitHeight = 611
         object Label1: TLabel
           Left = 1
           Top = 59
-          Width = 68
+          Width = 165
           Height = 13
           Align = alTop
           Caption = 'Nome del Club'
           Transparent = True
+          ExplicitWidth = 68
         end
         object navClubs: TDBAdvGlowNavigator
           Left = 1
@@ -4964,7 +4946,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           Orientation = noHorizontal
           Style = tsWindows10
           TabOrder = 0
-          Version = '1.2.1.0'
+          Version = '1.3.0.1'
         end
         object btnEdiSearchClub: TButtonedEdit
           Left = 1
@@ -4989,7 +4971,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           Left = 1
           Top = 93
           Width = 165
-          Height = 303
+          Height = 302
           Align = alClient
           Color = clWhite
           DataSource = dsClubs
@@ -5201,7 +5183,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         end
         object grdTeamsClubsLeagues: TEnhCRDBGrid
           Left = 1
-          Top = 396
+          Top = 395
           Width = 165
           Height = 216
           Align = alBottom
@@ -5236,8 +5218,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Align = alClient
         Caption = 'Panel10'
         TabOrder = 1
-        ExplicitWidth = 580
-        ExplicitHeight = 611
         object pgClubsAnagraphs: TAdvOfficePager
           Left = 1
           Top = 1
@@ -5529,15 +5509,17 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           ButtonSettings.ScrollButtonFirstHint = 'First'
           ButtonSettings.ScrollButtonLastHint = 'Last'
           ButtonSettings.ClosedListButtonHint = 'Closed Pages'
+          ButtonSettings.ButtonSize = 13
+          ButtonSettings.FullHeight = True
           DoubleBuffered = True
+          TabSettings.ButtonBorder = False
           TabSettings.Rounding = 0
           Text = ''
           ShowShortCutHints = False
           TabOrder = 0
-          ExplicitWidth = 578
-          ExplicitHeight = 609
           NextPictureChanged = False
           PrevPictureChanged = False
+          TabFontHeight = -11
           object pgClubsClub: TAdvOfficePage
             Left = 1
             Top = 26
@@ -5545,36 +5527,36 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             Height = 582
             Caption = 'Clubs'
             DoubleBuffered = True
-            PageAppearance.BorderColor = 14474202
-            PageAppearance.Color = 16250613
-            PageAppearance.ColorTo = 16250613
-            PageAppearance.ColorMirror = 16250613
-            PageAppearance.ColorMirrorTo = 16250613
+            PageAppearance.BorderColor = clNone
+            PageAppearance.Color = clWhite
+            PageAppearance.ColorTo = clWhite
+            PageAppearance.ColorMirror = clWhite
+            PageAppearance.ColorMirrorTo = clWhite
             PageAppearance.Gradient = ggVertical
             PageAppearance.GradientMirror = ggVertical
             Text = ''
-            TabAppearance.BorderColor = clNone
-            TabAppearance.BorderColorHot = 15527147
-            TabAppearance.BorderColorSelected = 14474202
-            TabAppearance.BorderColorSelectedHot = 14474202
+            TabAppearance.BorderColor = clWhite
+            TabAppearance.BorderColorHot = clNone
+            TabAppearance.BorderColorSelected = clNone
+            TabAppearance.BorderColorSelectedHot = clNone
             TabAppearance.BorderColorDisabled = clNone
-            TabAppearance.BorderColorDown = 14474202
+            TabAppearance.BorderColorDown = clNone
             TabAppearance.Color = clWhite
             TabAppearance.ColorTo = clWhite
-            TabAppearance.ColorSelected = 16250613
-            TabAppearance.ColorSelectedTo = 16250613
-            TabAppearance.ColorDisabled = 15921906
-            TabAppearance.ColorDisabledTo = 15921906
-            TabAppearance.ColorHot = 16776701
-            TabAppearance.ColorHotTo = clNone
+            TabAppearance.ColorSelected = clWhite
+            TabAppearance.ColorSelectedTo = clWhite
+            TabAppearance.ColorDisabled = 15658734
+            TabAppearance.ColorDisabledTo = clNone
+            TabAppearance.ColorHot = 16316922
+            TabAppearance.ColorHotTo = 16316922
             TabAppearance.ColorMirror = clWhite
             TabAppearance.ColorMirrorTo = clWhite
-            TabAppearance.ColorMirrorHot = 16776701
-            TabAppearance.ColorMirrorHotTo = clNone
-            TabAppearance.ColorMirrorSelected = 16250613
-            TabAppearance.ColorMirrorSelectedTo = 16250613
-            TabAppearance.ColorMirrorDisabled = 15921906
-            TabAppearance.ColorMirrorDisabledTo = 15921906
+            TabAppearance.ColorMirrorHot = 16316922
+            TabAppearance.ColorMirrorHotTo = 16316922
+            TabAppearance.ColorMirrorSelected = clWhite
+            TabAppearance.ColorMirrorSelectedTo = clWhite
+            TabAppearance.ColorMirrorDisabled = 15658734
+            TabAppearance.ColorMirrorDisabledTo = clNone
             TabAppearance.Font.Charset = DEFAULT_CHARSET
             TabAppearance.Font.Color = clWindowText
             TabAppearance.Font.Height = -11
@@ -5588,25 +5570,26 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             TabAppearance.GradientMirrorSelected = ggVertical
             TabAppearance.GradientDisabled = ggVertical
             TabAppearance.GradientMirrorDisabled = ggVertical
-            TabAppearance.TextColor = clBlack
+            TabAppearance.TextColor = 4474440
             TabAppearance.TextColorHot = clBlack
-            TabAppearance.TextColorSelected = clBlack
-            TabAppearance.TextColorDisabled = clGray
+            TabAppearance.TextColorSelected = 4474440
+            TabAppearance.TextColorDisabled = 7303023
             TabAppearance.ShadowColor = clNone
             TabAppearance.HighLightColor = clNone
             TabAppearance.HighLightColorHot = clNone
             TabAppearance.HighLightColorSelected = clNone
             TabAppearance.HighLightColorSelectedHot = clNone
             TabAppearance.HighLightColorDown = clNone
-            TabAppearance.DrawLine = False
+            TabAppearance.DrawLine = True
+            TabAppearance.TextSelectedBold = True
             TabAppearance.BackGround.Color = clWhite
-            TabAppearance.BackGround.ColorTo = clNone
+            TabAppearance.BackGround.ColorTo = clWhite
             TabAppearance.BackGround.Direction = gdHorizontal
             object Panel48: TShader
               Left = 2
               Top = 2
               Width = 576
-              Height = 580
+              Height = 578
               Align = alClient
               Caption = 'Panel48'
               TabOrder = 0
@@ -5614,8 +5597,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
               ToColor = 16250613
               Direction = False
               Version = '1.4.2.1'
-              ExplicitWidth = 572
-              ExplicitHeight = 577
               object Panel51: TShader
                 Left = 1
                 Top = 1
@@ -5628,7 +5609,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                 ToColor = 16250613
                 Direction = False
                 Version = '1.4.2.1'
-                ExplicitWidth = 570
                 object Panel5: TShader
                   Left = 1
                   Top = 1
@@ -5704,12 +5684,13 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                     object Label8: TLabel
                       Left = 1
                       Top = 1
-                      Width = 148
+                      Width = 347
                       Height = 13
                       Align = alTop
                       Alignment = taCenter
                       Caption = 'Squadre Iscritte al Campionato'
                       Transparent = True
+                      ExplicitWidth = 148
                     end
                     object SpeedButton11: TAdvGlowButton
                       Left = 185
@@ -5798,7 +5779,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                       Orientation = noHorizontal
                       Style = tsWindows10
                       TabOrder = 0
-                      Version = '1.2.1.0'
+                      Version = '1.3.0.1'
                     end
                     object Button5: TAdvGlowButton
                       Left = 1
@@ -5867,7 +5848,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                   ToColor = 16250613
                   Direction = False
                   Version = '1.4.2.1'
-                  ExplicitWidth = 217
                   object Panel54: TShader
                     Left = 1
                     Top = 18
@@ -5879,7 +5859,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                     ToColor = 16250613
                     Direction = False
                     Version = '1.4.2.1'
-                    ExplicitWidth = 215
                     object DBNavigator6: TDBAdvGlowNavigator
                       Left = 1
                       Top = 1
@@ -5914,7 +5893,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                       Orientation = noHorizontal
                       Style = tsWindows10
                       TabOrder = 0
-                      Version = '1.2.1.0'
+                      Version = '1.3.0.1'
                     end
                     object Button1: TAdvGlowButton
                       Left = 129
@@ -6068,7 +6047,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                     ToColor = 16250613
                     Direction = False
                     Version = '1.4.2.1'
-                    ExplicitWidth = 215
                   end
                 end
               end
@@ -6076,7 +6054,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                 Left = 1
                 Top = 241
                 Width = 352
-                Height = 338
+                Height = 336
                 Align = alLeft
                 Caption = 'Panel55'
                 TabOrder = 1
@@ -6084,7 +6062,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                 ToColor = 16250613
                 Direction = False
                 Version = '1.4.2.1'
-                ExplicitHeight = 335
                 object Panel56: TShader
                   Left = 1
                   Top = 1
@@ -6131,7 +6108,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                     Orientation = noHorizontal
                     Style = tsWindows10
                     TabOrder = 0
-                    Version = '1.2.1.0'
+                    Version = '1.3.0.1'
                   end
                   object Button3: TAdvGlowButton
                     Left = 145
@@ -6300,7 +6277,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                   Left = 1
                   Top = 118
                   Width = 350
-                  Height = 219
+                  Height = 217
                   Align = alClient
                   DataSource = dsTeamPlayers
                   FixedColor = 16250613
@@ -6470,7 +6447,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                     Top = 60
                     Width = 41
                     Height = 21
-                    DataField = 'goal'
+                    DataField = 'score'
                     DataSource = dsTeamPlayers
                     TabOrder = 3
                   end
@@ -6479,7 +6456,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                     Top = 60
                     Width = 41
                     Height = 21
-                    DataField = 'lostgoal'
+                    DataField = 'conceded'
                     DataSource = dsTeamPlayers
                     TabOrder = 4
                   end
@@ -6488,7 +6465,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                     Top = 60
                     Width = 41
                     Height = 21
-                    DataField = 'owngoal'
+                    DataField = 'self_scored'
                     DataSource = dsTeamPlayers
                     TabOrder = 5
                   end
@@ -6534,7 +6511,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                 Left = 353
                 Top = 241
                 Width = 222
-                Height = 338
+                Height = 336
                 Align = alClient
                 Caption = 'Panel57'
                 TabOrder = 2
@@ -6542,8 +6519,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                 ToColor = 16250613
                 Direction = False
                 Version = '1.4.2.1'
-                ExplicitWidth = 218
-                ExplicitHeight = 335
                 object Panel58: TShader
                   Left = 1
                   Top = 1
@@ -6555,17 +6530,17 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                   ToColor = 16250613
                   Direction = False
                   Version = '1.4.2.1'
-                  ExplicitWidth = 216
                   object Label3: TLabel
                     AlignWithMargins = True
                     Left = 68
                     Top = 4
                     Width = 111
-                    Height = 13
+                    Height = 27
                     Align = alLeft
                     Caption = 'Team anno Precedente'
                     Transparent = True
                     Layout = tlCenter
+                    ExplicitHeight = 13
                   end
                   object Button2: TAdvGlowButton
                     Left = 182
@@ -6709,14 +6684,14 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                     Orientation = noHorizontal
                     Style = tsWindows10
                     TabOrder = 2
-                    Version = '1.2.1.0'
+                    Version = '1.3.0.1'
                   end
                 end
                 object grdTeamPlayersLast: TEnhCRDBGrid
                   Left = 1
                   Top = 36
                   Width = 220
-                  Height = 301
+                  Height = 299
                   Align = alClient
                   DataSource = dmUniDacPgChampionships.dsTeamLastSeason
                   FixedColor = 16250613
@@ -6753,36 +6728,36 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             Height = 582
             Caption = 'Anagrafica e Storico Clubs'
             DoubleBuffered = True
-            PageAppearance.BorderColor = 14474202
-            PageAppearance.Color = 16250613
-            PageAppearance.ColorTo = 16250613
-            PageAppearance.ColorMirror = 16250613
-            PageAppearance.ColorMirrorTo = 16250613
+            PageAppearance.BorderColor = clNone
+            PageAppearance.Color = clWhite
+            PageAppearance.ColorTo = clWhite
+            PageAppearance.ColorMirror = clWhite
+            PageAppearance.ColorMirrorTo = clWhite
             PageAppearance.Gradient = ggVertical
             PageAppearance.GradientMirror = ggVertical
             Text = ''
-            TabAppearance.BorderColor = clNone
-            TabAppearance.BorderColorHot = 15527147
-            TabAppearance.BorderColorSelected = 14474202
-            TabAppearance.BorderColorSelectedHot = 14474202
+            TabAppearance.BorderColor = clWhite
+            TabAppearance.BorderColorHot = clNone
+            TabAppearance.BorderColorSelected = clNone
+            TabAppearance.BorderColorSelectedHot = clNone
             TabAppearance.BorderColorDisabled = clNone
-            TabAppearance.BorderColorDown = 14474202
+            TabAppearance.BorderColorDown = clNone
             TabAppearance.Color = clWhite
             TabAppearance.ColorTo = clWhite
-            TabAppearance.ColorSelected = 16250613
-            TabAppearance.ColorSelectedTo = 16250613
-            TabAppearance.ColorDisabled = 15921906
-            TabAppearance.ColorDisabledTo = 15921906
-            TabAppearance.ColorHot = 16776701
-            TabAppearance.ColorHotTo = clNone
+            TabAppearance.ColorSelected = clWhite
+            TabAppearance.ColorSelectedTo = clWhite
+            TabAppearance.ColorDisabled = 15658734
+            TabAppearance.ColorDisabledTo = clNone
+            TabAppearance.ColorHot = 16316922
+            TabAppearance.ColorHotTo = 16316922
             TabAppearance.ColorMirror = clWhite
             TabAppearance.ColorMirrorTo = clWhite
-            TabAppearance.ColorMirrorHot = 16776701
-            TabAppearance.ColorMirrorHotTo = clNone
-            TabAppearance.ColorMirrorSelected = 16250613
-            TabAppearance.ColorMirrorSelectedTo = 16250613
-            TabAppearance.ColorMirrorDisabled = 15921906
-            TabAppearance.ColorMirrorDisabledTo = 15921906
+            TabAppearance.ColorMirrorHot = 16316922
+            TabAppearance.ColorMirrorHotTo = 16316922
+            TabAppearance.ColorMirrorSelected = clWhite
+            TabAppearance.ColorMirrorSelectedTo = clWhite
+            TabAppearance.ColorMirrorDisabled = 15658734
+            TabAppearance.ColorMirrorDisabledTo = clNone
             TabAppearance.Font.Charset = DEFAULT_CHARSET
             TabAppearance.Font.Color = clWindowText
             TabAppearance.Font.Height = -11
@@ -6796,25 +6771,26 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             TabAppearance.GradientMirrorSelected = ggVertical
             TabAppearance.GradientDisabled = ggVertical
             TabAppearance.GradientMirrorDisabled = ggVertical
-            TabAppearance.TextColor = clBlack
+            TabAppearance.TextColor = 4474440
             TabAppearance.TextColorHot = clBlack
-            TabAppearance.TextColorSelected = clBlack
-            TabAppearance.TextColorDisabled = clGray
+            TabAppearance.TextColorSelected = 4474440
+            TabAppearance.TextColorDisabled = 7303023
             TabAppearance.ShadowColor = clNone
             TabAppearance.HighLightColor = clNone
             TabAppearance.HighLightColorHot = clNone
             TabAppearance.HighLightColorSelected = clNone
             TabAppearance.HighLightColorSelectedHot = clNone
             TabAppearance.HighLightColorDown = clNone
-            TabAppearance.DrawLine = False
+            TabAppearance.DrawLine = True
+            TabAppearance.TextSelectedBold = True
             TabAppearance.BackGround.Color = clWhite
-            TabAppearance.BackGround.ColorTo = clNone
+            TabAppearance.BackGround.ColorTo = clWhite
             TabAppearance.BackGround.Direction = gdHorizontal
             object grdTeamRankings: TCRDBGrid
               Left = 259
               Top = 2
               Width = 319
-              Height = 580
+              Height = 578
               Align = alClient
               Ctl3D = True
               DataSource = dmUniDacPgChampionships.dsTeamRankings
@@ -6952,7 +6928,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
               Left = 2
               Top = 2
               Width = 257
-              Height = 580
+              Height = 578
               Align = alLeft
               Caption = 'Panel39'
               TabOrder = 1
@@ -6960,7 +6936,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
               ToColor = 16250613
               Direction = False
               Version = '1.4.2.1'
-              ExplicitHeight = 577
               object navTeamsClubs: TDBAdvGlowNavigator
                 Left = 1
                 Top = 25
@@ -6995,7 +6970,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                 Orientation = noHorizontal
                 Style = tsWindows10
                 TabOrder = 0
-                Version = '1.2.1.0'
+                Version = '1.3.0.1'
               end
               object Shader25: TShader
                 Left = 1
@@ -7051,7 +7026,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                 Left = 1
                 Top = 223
                 Width = 255
-                Height = 356
+                Height = 354
                 Align = alClient
                 DataSource = dmUniDacPgChampionships.dsTeamHistory
                 FixedColor = 16250613
@@ -7130,7 +7105,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                 Orientation = noHorizontal
                 Style = tsWindows10
                 TabOrder = 4
-                Version = '1.2.1.0'
+                Version = '1.3.0.1'
               end
             end
           end
@@ -7141,36 +7116,36 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             Height = 582
             Caption = 'Anagrafiche dei Club'
             DoubleBuffered = True
-            PageAppearance.BorderColor = 14474202
-            PageAppearance.Color = 16250613
-            PageAppearance.ColorTo = 16250613
-            PageAppearance.ColorMirror = 16250613
-            PageAppearance.ColorMirrorTo = 16250613
+            PageAppearance.BorderColor = clNone
+            PageAppearance.Color = clWhite
+            PageAppearance.ColorTo = clWhite
+            PageAppearance.ColorMirror = clWhite
+            PageAppearance.ColorMirrorTo = clWhite
             PageAppearance.Gradient = ggVertical
             PageAppearance.GradientMirror = ggVertical
             Text = ''
-            TabAppearance.BorderColor = clNone
-            TabAppearance.BorderColorHot = 15527147
-            TabAppearance.BorderColorSelected = 14474202
-            TabAppearance.BorderColorSelectedHot = 14474202
+            TabAppearance.BorderColor = clWhite
+            TabAppearance.BorderColorHot = clNone
+            TabAppearance.BorderColorSelected = clNone
+            TabAppearance.BorderColorSelectedHot = clNone
             TabAppearance.BorderColorDisabled = clNone
-            TabAppearance.BorderColorDown = 14474202
+            TabAppearance.BorderColorDown = clNone
             TabAppearance.Color = clWhite
             TabAppearance.ColorTo = clWhite
-            TabAppearance.ColorSelected = 16250613
-            TabAppearance.ColorSelectedTo = 16250613
-            TabAppearance.ColorDisabled = 15921906
-            TabAppearance.ColorDisabledTo = 15921906
-            TabAppearance.ColorHot = 16776701
-            TabAppearance.ColorHotTo = clNone
+            TabAppearance.ColorSelected = clWhite
+            TabAppearance.ColorSelectedTo = clWhite
+            TabAppearance.ColorDisabled = 15658734
+            TabAppearance.ColorDisabledTo = clNone
+            TabAppearance.ColorHot = 16316922
+            TabAppearance.ColorHotTo = 16316922
             TabAppearance.ColorMirror = clWhite
             TabAppearance.ColorMirrorTo = clWhite
-            TabAppearance.ColorMirrorHot = 16776701
-            TabAppearance.ColorMirrorHotTo = clNone
-            TabAppearance.ColorMirrorSelected = 16250613
-            TabAppearance.ColorMirrorSelectedTo = 16250613
-            TabAppearance.ColorMirrorDisabled = 15921906
-            TabAppearance.ColorMirrorDisabledTo = 15921906
+            TabAppearance.ColorMirrorHot = 16316922
+            TabAppearance.ColorMirrorHotTo = 16316922
+            TabAppearance.ColorMirrorSelected = clWhite
+            TabAppearance.ColorMirrorSelectedTo = clWhite
+            TabAppearance.ColorMirrorDisabled = 15658734
+            TabAppearance.ColorMirrorDisabledTo = clNone
             TabAppearance.Font.Charset = DEFAULT_CHARSET
             TabAppearance.Font.Color = clWindowText
             TabAppearance.Font.Height = -11
@@ -7184,19 +7159,20 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             TabAppearance.GradientMirrorSelected = ggVertical
             TabAppearance.GradientDisabled = ggVertical
             TabAppearance.GradientMirrorDisabled = ggVertical
-            TabAppearance.TextColor = clBlack
+            TabAppearance.TextColor = 4474440
             TabAppearance.TextColorHot = clBlack
-            TabAppearance.TextColorSelected = clBlack
-            TabAppearance.TextColorDisabled = clGray
+            TabAppearance.TextColorSelected = 4474440
+            TabAppearance.TextColorDisabled = 7303023
             TabAppearance.ShadowColor = clNone
             TabAppearance.HighLightColor = clNone
             TabAppearance.HighLightColorHot = clNone
             TabAppearance.HighLightColorSelected = clNone
             TabAppearance.HighLightColorSelectedHot = clNone
             TabAppearance.HighLightColorDown = clNone
-            TabAppearance.DrawLine = False
+            TabAppearance.DrawLine = True
+            TabAppearance.TextSelectedBold = True
             TabAppearance.BackGround.Color = clWhite
-            TabAppearance.BackGround.ColorTo = clNone
+            TabAppearance.BackGround.ColorTo = clWhite
             TabAppearance.BackGround.Direction = gdHorizontal
             object Shader9: TShader
               Left = 2
@@ -7209,7 +7185,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
               ToColor = 16250613
               Direction = False
               Version = '1.4.2.1'
-              ExplicitWidth = 572
               object Label31: TLabel
                 Left = 16
                 Top = 5
@@ -7479,8 +7454,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
               ToColor = 16250613
               Direction = False
               Version = '1.4.2.1'
-              ExplicitTop = 477
-              ExplicitWidth = 572
               object Label35: TLabel
                 Left = 2
                 Top = 5
@@ -7582,7 +7555,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
               ToColor = 16250613
               Direction = False
               Version = '1.4.2.1'
-              ExplicitWidth = 572
               object btnClubAnagraphNew: TAdvGlowButton
                 Left = 114
                 Top = 1
@@ -7857,7 +7829,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
                 ParentCtl3D = False
                 Style = tsWindows10
                 TabOrder = 4
-                Version = '1.2.1.0'
+                Version = '1.3.0.1'
               end
             end
           end
@@ -7871,37 +7843,37 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       Height = 616
       Caption = 'Anagrafiche Giocatori'
       DoubleBuffered = True
-      PageAppearance.BorderColor = 14474202
-      PageAppearance.Color = 16250613
-      PageAppearance.ColorTo = 16250613
-      PageAppearance.ColorMirror = 16250613
-      PageAppearance.ColorMirrorTo = 16250613
+      PageAppearance.BorderColor = clNone
+      PageAppearance.Color = clWhite
+      PageAppearance.ColorTo = clWhite
+      PageAppearance.ColorMirror = clWhite
+      PageAppearance.ColorMirrorTo = clWhite
       PageAppearance.Gradient = ggVertical
       PageAppearance.GradientMirror = ggVertical
       TabVisible = False
       Text = ''
-      TabAppearance.BorderColor = clNone
-      TabAppearance.BorderColorHot = 15527147
-      TabAppearance.BorderColorSelected = 14474202
-      TabAppearance.BorderColorSelectedHot = 14474202
+      TabAppearance.BorderColor = clWhite
+      TabAppearance.BorderColorHot = clNone
+      TabAppearance.BorderColorSelected = clNone
+      TabAppearance.BorderColorSelectedHot = clNone
       TabAppearance.BorderColorDisabled = clNone
-      TabAppearance.BorderColorDown = 14474202
+      TabAppearance.BorderColorDown = clNone
       TabAppearance.Color = clWhite
       TabAppearance.ColorTo = clWhite
-      TabAppearance.ColorSelected = 16250613
-      TabAppearance.ColorSelectedTo = 16250613
-      TabAppearance.ColorDisabled = 15921906
-      TabAppearance.ColorDisabledTo = 15921906
-      TabAppearance.ColorHot = 16776701
-      TabAppearance.ColorHotTo = clNone
+      TabAppearance.ColorSelected = clWhite
+      TabAppearance.ColorSelectedTo = clWhite
+      TabAppearance.ColorDisabled = 15658734
+      TabAppearance.ColorDisabledTo = clNone
+      TabAppearance.ColorHot = 16316922
+      TabAppearance.ColorHotTo = 16316922
       TabAppearance.ColorMirror = clWhite
       TabAppearance.ColorMirrorTo = clWhite
-      TabAppearance.ColorMirrorHot = 16776701
-      TabAppearance.ColorMirrorHotTo = clNone
-      TabAppearance.ColorMirrorSelected = 16250613
-      TabAppearance.ColorMirrorSelectedTo = 16250613
-      TabAppearance.ColorMirrorDisabled = 15921906
-      TabAppearance.ColorMirrorDisabledTo = 15921906
+      TabAppearance.ColorMirrorHot = 16316922
+      TabAppearance.ColorMirrorHotTo = 16316922
+      TabAppearance.ColorMirrorSelected = clWhite
+      TabAppearance.ColorMirrorSelectedTo = clWhite
+      TabAppearance.ColorMirrorDisabled = 15658734
+      TabAppearance.ColorMirrorDisabledTo = clNone
       TabAppearance.Font.Charset = DEFAULT_CHARSET
       TabAppearance.Font.Color = clWindowText
       TabAppearance.Font.Height = -11
@@ -7915,19 +7887,20 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       TabAppearance.GradientMirrorSelected = ggVertical
       TabAppearance.GradientDisabled = ggVertical
       TabAppearance.GradientMirrorDisabled = ggVertical
-      TabAppearance.TextColor = clBlack
+      TabAppearance.TextColor = 4474440
       TabAppearance.TextColorHot = clBlack
-      TabAppearance.TextColorSelected = clBlack
-      TabAppearance.TextColorDisabled = clGray
+      TabAppearance.TextColorSelected = 4474440
+      TabAppearance.TextColorDisabled = 7303023
       TabAppearance.ShadowColor = clNone
       TabAppearance.HighLightColor = clNone
       TabAppearance.HighLightColorHot = clNone
       TabAppearance.HighLightColorSelected = clNone
       TabAppearance.HighLightColorSelectedHot = clNone
       TabAppearance.HighLightColorDown = clNone
-      TabAppearance.DrawLine = False
+      TabAppearance.DrawLine = True
+      TabAppearance.TextSelectedBold = True
       TabAppearance.BackGround.Color = clWhite
-      TabAppearance.BackGround.ColorTo = clNone
+      TabAppearance.BackGround.ColorTo = clWhite
       TabAppearance.BackGround.Direction = gdHorizontal
       object Panel63: TShader
         Left = 2
@@ -7940,7 +7913,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         ToColor = 16250613
         Direction = False
         Version = '1.4.2.1'
-        ExplicitWidth = 747
         object Panel65: TShader
           Left = 1
           Top = 1
@@ -7955,10 +7927,11 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           object Label5: TLabel
             Left = 1
             Top = 4
-            Width = 95
+            Width = 183
             Height = 13
             Align = alBottom
             Caption = 'Nome del Calciatore'
+            ExplicitWidth = 95
           end
           object ButtonedEdit5: TButtonedEdit
             Left = 1
@@ -8029,7 +8002,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           Orientation = noHorizontal
           Style = tsWindows10
           TabOrder = 1
-          Version = '1.2.1.0'
+          Version = '1.3.0.1'
         end
       end
     end
@@ -8040,36 +8013,36 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       Height = 616
       Caption = 'Gestione Utenti del Sistema'
       DoubleBuffered = True
-      PageAppearance.BorderColor = 14474202
-      PageAppearance.Color = 16250613
-      PageAppearance.ColorTo = 16250613
-      PageAppearance.ColorMirror = 16250613
-      PageAppearance.ColorMirrorTo = 16250613
+      PageAppearance.BorderColor = clNone
+      PageAppearance.Color = clWhite
+      PageAppearance.ColorTo = clWhite
+      PageAppearance.ColorMirror = clWhite
+      PageAppearance.ColorMirrorTo = clWhite
       PageAppearance.Gradient = ggVertical
       PageAppearance.GradientMirror = ggVertical
       Text = ''
-      TabAppearance.BorderColor = clNone
-      TabAppearance.BorderColorHot = 15527147
-      TabAppearance.BorderColorSelected = 14474202
-      TabAppearance.BorderColorSelectedHot = 14474202
+      TabAppearance.BorderColor = clWhite
+      TabAppearance.BorderColorHot = clNone
+      TabAppearance.BorderColorSelected = clNone
+      TabAppearance.BorderColorSelectedHot = clNone
       TabAppearance.BorderColorDisabled = clNone
-      TabAppearance.BorderColorDown = 14474202
+      TabAppearance.BorderColorDown = clNone
       TabAppearance.Color = clWhite
       TabAppearance.ColorTo = clWhite
-      TabAppearance.ColorSelected = 16250613
-      TabAppearance.ColorSelectedTo = 16250613
-      TabAppearance.ColorDisabled = 15921906
-      TabAppearance.ColorDisabledTo = 15921906
-      TabAppearance.ColorHot = 16776701
-      TabAppearance.ColorHotTo = clNone
+      TabAppearance.ColorSelected = clWhite
+      TabAppearance.ColorSelectedTo = clWhite
+      TabAppearance.ColorDisabled = 15658734
+      TabAppearance.ColorDisabledTo = clNone
+      TabAppearance.ColorHot = 16316922
+      TabAppearance.ColorHotTo = 16316922
       TabAppearance.ColorMirror = clWhite
       TabAppearance.ColorMirrorTo = clWhite
-      TabAppearance.ColorMirrorHot = 16776701
-      TabAppearance.ColorMirrorHotTo = clNone
-      TabAppearance.ColorMirrorSelected = 16250613
-      TabAppearance.ColorMirrorSelectedTo = 16250613
-      TabAppearance.ColorMirrorDisabled = 15921906
-      TabAppearance.ColorMirrorDisabledTo = 15921906
+      TabAppearance.ColorMirrorHot = 16316922
+      TabAppearance.ColorMirrorHotTo = 16316922
+      TabAppearance.ColorMirrorSelected = clWhite
+      TabAppearance.ColorMirrorSelectedTo = clWhite
+      TabAppearance.ColorMirrorDisabled = 15658734
+      TabAppearance.ColorMirrorDisabledTo = clNone
       TabAppearance.Font.Charset = DEFAULT_CHARSET
       TabAppearance.Font.Color = clWindowText
       TabAppearance.Font.Height = -11
@@ -8083,19 +8056,20 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       TabAppearance.GradientMirrorSelected = ggVertical
       TabAppearance.GradientDisabled = ggVertical
       TabAppearance.GradientMirrorDisabled = ggVertical
-      TabAppearance.TextColor = clBlack
+      TabAppearance.TextColor = 4474440
       TabAppearance.TextColorHot = clBlack
-      TabAppearance.TextColorSelected = clBlack
-      TabAppearance.TextColorDisabled = clGray
+      TabAppearance.TextColorSelected = 4474440
+      TabAppearance.TextColorDisabled = 7303023
       TabAppearance.ShadowColor = clNone
       TabAppearance.HighLightColor = clNone
       TabAppearance.HighLightColorHot = clNone
       TabAppearance.HighLightColorSelected = clNone
       TabAppearance.HighLightColorSelectedHot = clNone
       TabAppearance.HighLightColorDown = clNone
-      TabAppearance.DrawLine = False
+      TabAppearance.DrawLine = True
+      TabAppearance.TextSelectedBold = True
       TabAppearance.BackGround.Color = clWhite
-      TabAppearance.BackGround.ColorTo = clNone
+      TabAppearance.BackGround.ColorTo = clWhite
       TabAppearance.BackGround.Direction = gdHorizontal
       object Shader28: TShader
         Left = 2
@@ -8108,7 +8082,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         ToColor = 16250613
         Direction = False
         Version = '1.4.2.1'
-        ExplicitWidth = 747
         DesignSize = (
           751
           48)
@@ -8333,7 +8306,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             CaptionFont.Height = -12
             CaptionFont.Name = 'Segoe UI'
             CaptionFont.Style = []
-            Version = '1.8.1.0'
+            Version = '1.8.4.0'
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
             Font.Height = -11
@@ -8466,37 +8439,37 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       Height = 616
       Caption = 'Navigatore Squadre'
       DoubleBuffered = True
-      PageAppearance.BorderColor = 14474202
-      PageAppearance.Color = 16250613
-      PageAppearance.ColorTo = 16250613
-      PageAppearance.ColorMirror = 16250613
-      PageAppearance.ColorMirrorTo = 16250613
+      PageAppearance.BorderColor = clNone
+      PageAppearance.Color = clWhite
+      PageAppearance.ColorTo = clWhite
+      PageAppearance.ColorMirror = clWhite
+      PageAppearance.ColorMirrorTo = clWhite
       PageAppearance.Gradient = ggVertical
       PageAppearance.GradientMirror = ggVertical
       TabVisible = False
       Text = ''
-      TabAppearance.BorderColor = clNone
-      TabAppearance.BorderColorHot = 15527147
-      TabAppearance.BorderColorSelected = 14474202
-      TabAppearance.BorderColorSelectedHot = 14474202
+      TabAppearance.BorderColor = clWhite
+      TabAppearance.BorderColorHot = clNone
+      TabAppearance.BorderColorSelected = clNone
+      TabAppearance.BorderColorSelectedHot = clNone
       TabAppearance.BorderColorDisabled = clNone
-      TabAppearance.BorderColorDown = 14474202
+      TabAppearance.BorderColorDown = clNone
       TabAppearance.Color = clWhite
       TabAppearance.ColorTo = clWhite
-      TabAppearance.ColorSelected = 16250613
-      TabAppearance.ColorSelectedTo = 16250613
-      TabAppearance.ColorDisabled = 15921906
-      TabAppearance.ColorDisabledTo = 15921906
-      TabAppearance.ColorHot = 16776701
-      TabAppearance.ColorHotTo = clNone
+      TabAppearance.ColorSelected = clWhite
+      TabAppearance.ColorSelectedTo = clWhite
+      TabAppearance.ColorDisabled = 15658734
+      TabAppearance.ColorDisabledTo = clNone
+      TabAppearance.ColorHot = 16316922
+      TabAppearance.ColorHotTo = 16316922
       TabAppearance.ColorMirror = clWhite
       TabAppearance.ColorMirrorTo = clWhite
-      TabAppearance.ColorMirrorHot = 16776701
-      TabAppearance.ColorMirrorHotTo = clNone
-      TabAppearance.ColorMirrorSelected = 16250613
-      TabAppearance.ColorMirrorSelectedTo = 16250613
-      TabAppearance.ColorMirrorDisabled = 15921906
-      TabAppearance.ColorMirrorDisabledTo = 15921906
+      TabAppearance.ColorMirrorHot = 16316922
+      TabAppearance.ColorMirrorHotTo = 16316922
+      TabAppearance.ColorMirrorSelected = clWhite
+      TabAppearance.ColorMirrorSelectedTo = clWhite
+      TabAppearance.ColorMirrorDisabled = 15658734
+      TabAppearance.ColorMirrorDisabledTo = clNone
       TabAppearance.Font.Charset = DEFAULT_CHARSET
       TabAppearance.Font.Color = clWindowText
       TabAppearance.Font.Height = -11
@@ -8510,26 +8483,27 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       TabAppearance.GradientMirrorSelected = ggVertical
       TabAppearance.GradientDisabled = ggVertical
       TabAppearance.GradientMirrorDisabled = ggVertical
-      TabAppearance.TextColor = clBlack
+      TabAppearance.TextColor = 4474440
       TabAppearance.TextColorHot = clBlack
-      TabAppearance.TextColorSelected = clBlack
-      TabAppearance.TextColorDisabled = clGray
+      TabAppearance.TextColorSelected = 4474440
+      TabAppearance.TextColorDisabled = 7303023
       TabAppearance.ShadowColor = clNone
       TabAppearance.HighLightColor = clNone
       TabAppearance.HighLightColorHot = clNone
       TabAppearance.HighLightColorSelected = clNone
       TabAppearance.HighLightColorSelectedHot = clNone
       TabAppearance.HighLightColorDown = clNone
-      TabAppearance.DrawLine = False
+      TabAppearance.DrawLine = True
+      TabAppearance.TextSelectedBold = True
       TabAppearance.BackGround.Color = clWhite
-      TabAppearance.BackGround.ColorTo = clNone
+      TabAppearance.BackGround.ColorTo = clWhite
       TabAppearance.BackGround.Direction = gdHorizontal
       OnShow = pgNavigatorShow
       object AdvSplitter3: TAdvSplitter
         Left = 610
         Top = 2
         Width = 4
-        Height = 613
+        Height = 612
         Beveled = True
         Color = clSkyBlue
         ParentColor = False
@@ -8549,7 +8523,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Left = 406
         Top = 2
         Width = 4
-        Height = 613
+        Height = 612
         Beveled = True
         Color = clSkyBlue
         ParentColor = False
@@ -8569,7 +8543,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Left = 202
         Top = 2
         Width = 4
-        Height = 613
+        Height = 612
         Beveled = True
         Color = clSkyBlue
         ParentColor = False
@@ -8589,7 +8563,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Left = 206
         Top = 2
         Width = 200
-        Height = 613
+        Height = 612
         Align = alLeft
         Caption = 'Campionati'
         TabOrder = 0
@@ -8597,7 +8571,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         ToColor = 16250613
         Direction = False
         Version = '1.4.2.1'
-        ExplicitHeight = 611
         object Shader13: TShader
           Left = 1
           Top = 1
@@ -8617,7 +8590,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           Left = 1
           Top = 65
           Width = 198
-          Height = 547
+          Height = 546
           Align = alClient
           FixedColor = 15784647
           TabOrder = 1
@@ -8677,7 +8650,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Left = 2
         Top = 2
         Width = 200
-        Height = 613
+        Height = 612
         Align = alLeft
         Caption = 'Campionati'
         TabOrder = 1
@@ -8685,7 +8658,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         ToColor = 16250613
         Direction = False
         Version = '1.4.2.1'
-        ExplicitHeight = 611
         object Shader16: TShader
           Left = 1
           Top = 1
@@ -8705,7 +8677,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           Left = 1
           Top = 65
           Width = 198
-          Height = 547
+          Height = 546
           Align = alClient
           Color = clWhite
           FixedColor = 15784647
@@ -8766,7 +8738,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Left = 410
         Top = 2
         Width = 200
-        Height = 613
+        Height = 612
         Align = alLeft
         Caption = 'Campionati'
         TabOrder = 2
@@ -8774,7 +8746,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         ToColor = 16250613
         Direction = False
         Version = '1.4.2.1'
-        ExplicitHeight = 611
         object Shader19: TShader
           Left = 1
           Top = 1
@@ -8794,7 +8765,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           Left = 1
           Top = 65
           Width = 198
-          Height = 547
+          Height = 546
           Align = alClient
           FixedColor = 15784647
           TabOrder = 1
@@ -8854,7 +8825,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Left = 614
         Top = 2
         Width = 139
-        Height = 613
+        Height = 612
         Align = alClient
         Caption = 'Campionati'
         TabOrder = 3
@@ -8862,8 +8833,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         ToColor = 16250613
         Direction = False
         Version = '1.4.2.1'
-        ExplicitWidth = 135
-        ExplicitHeight = 611
         object Shader22: TShader
           Left = 1
           Top = 1
@@ -8878,13 +8847,12 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           ToColor = 16250613
           Direction = False
           Version = '1.4.2.1'
-          ExplicitWidth = 133
         end
         object EnhCRDBGrid12: TEnhCRDBGrid
           Left = 1
           Top = 65
           Width = 137
-          Height = 547
+          Height = 546
           Align = alClient
           FixedColor = 15784647
           TabOrder = 1
@@ -8940,7 +8908,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           ToColor = 16250613
           Direction = False
           Version = '1.4.2.1'
-          ExplicitWidth = 133
           object btnSearchteam: TButtonedEdit
             Left = 1
             Top = 18
@@ -8959,7 +8926,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
             TabOrder = 0
             TextHint = 'ricerca club'
             OnKeyUp = btnSearchteamKeyUp
-            ExplicitWidth = 131
           end
         end
       end
@@ -8971,36 +8937,36 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       Height = 616
       Caption = 'Calcio Mercato'
       DoubleBuffered = True
-      PageAppearance.BorderColor = 14474202
-      PageAppearance.Color = 16250613
-      PageAppearance.ColorTo = 16250613
-      PageAppearance.ColorMirror = 16250613
-      PageAppearance.ColorMirrorTo = 16250613
+      PageAppearance.BorderColor = clNone
+      PageAppearance.Color = clWhite
+      PageAppearance.ColorTo = clWhite
+      PageAppearance.ColorMirror = clWhite
+      PageAppearance.ColorMirrorTo = clWhite
       PageAppearance.Gradient = ggVertical
       PageAppearance.GradientMirror = ggVertical
       Text = ''
-      TabAppearance.BorderColor = clNone
-      TabAppearance.BorderColorHot = 15527147
-      TabAppearance.BorderColorSelected = 14474202
-      TabAppearance.BorderColorSelectedHot = 14474202
+      TabAppearance.BorderColor = clWhite
+      TabAppearance.BorderColorHot = clNone
+      TabAppearance.BorderColorSelected = clNone
+      TabAppearance.BorderColorSelectedHot = clNone
       TabAppearance.BorderColorDisabled = clNone
-      TabAppearance.BorderColorDown = 14474202
+      TabAppearance.BorderColorDown = clNone
       TabAppearance.Color = clWhite
       TabAppearance.ColorTo = clWhite
-      TabAppearance.ColorSelected = 16250613
-      TabAppearance.ColorSelectedTo = 16250613
-      TabAppearance.ColorDisabled = 15921906
-      TabAppearance.ColorDisabledTo = 15921906
-      TabAppearance.ColorHot = 16776701
-      TabAppearance.ColorHotTo = clNone
+      TabAppearance.ColorSelected = clWhite
+      TabAppearance.ColorSelectedTo = clWhite
+      TabAppearance.ColorDisabled = 15658734
+      TabAppearance.ColorDisabledTo = clNone
+      TabAppearance.ColorHot = 16316922
+      TabAppearance.ColorHotTo = 16316922
       TabAppearance.ColorMirror = clWhite
       TabAppearance.ColorMirrorTo = clWhite
-      TabAppearance.ColorMirrorHot = 16776701
-      TabAppearance.ColorMirrorHotTo = clNone
-      TabAppearance.ColorMirrorSelected = 16250613
-      TabAppearance.ColorMirrorSelectedTo = 16250613
-      TabAppearance.ColorMirrorDisabled = 15921906
-      TabAppearance.ColorMirrorDisabledTo = 15921906
+      TabAppearance.ColorMirrorHot = 16316922
+      TabAppearance.ColorMirrorHotTo = 16316922
+      TabAppearance.ColorMirrorSelected = clWhite
+      TabAppearance.ColorMirrorSelectedTo = clWhite
+      TabAppearance.ColorMirrorDisabled = 15658734
+      TabAppearance.ColorMirrorDisabledTo = clNone
       TabAppearance.Font.Charset = DEFAULT_CHARSET
       TabAppearance.Font.Color = clWindowText
       TabAppearance.Font.Height = -11
@@ -9014,19 +8980,20 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       TabAppearance.GradientMirrorSelected = ggVertical
       TabAppearance.GradientDisabled = ggVertical
       TabAppearance.GradientMirrorDisabled = ggVertical
-      TabAppearance.TextColor = clBlack
+      TabAppearance.TextColor = 4474440
       TabAppearance.TextColorHot = clBlack
-      TabAppearance.TextColorSelected = clBlack
-      TabAppearance.TextColorDisabled = clGray
+      TabAppearance.TextColorSelected = 4474440
+      TabAppearance.TextColorDisabled = 7303023
       TabAppearance.ShadowColor = clNone
       TabAppearance.HighLightColor = clNone
       TabAppearance.HighLightColorHot = clNone
       TabAppearance.HighLightColorSelected = clNone
       TabAppearance.HighLightColorSelectedHot = clNone
       TabAppearance.HighLightColorDown = clNone
-      TabAppearance.DrawLine = False
+      TabAppearance.DrawLine = True
+      TabAppearance.TextSelectedBold = True
       TabAppearance.BackGround.Color = clWhite
-      TabAppearance.BackGround.ColorTo = clNone
+      TabAppearance.BackGround.ColorTo = clWhite
       TabAppearance.BackGround.Direction = gdHorizontal
       OnShow = pgFootballMarketShow
       object Shader27: TShader
@@ -9041,7 +9008,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         ToColor = 16250613
         Direction = False
         Version = '1.4.2.1'
-        ExplicitWidth = 747
         object DBAdvGlowNavigator10: TDBAdvGlowNavigator
           Left = 1
           Top = 1
@@ -9074,14 +9040,14 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           Orientation = noHorizontal
           Style = tsWindows10
           TabOrder = 0
-          Version = '1.2.1.0'
+          Version = '1.3.0.1'
         end
       end
       object EnhCRDBGrid5: TEnhCRDBGrid
         Left = 2
         Top = 43
         Width = 751
-        Height = 572
+        Height = 571
         Align = alClient
         FixedColor = 15784647
         TabOrder = 1
@@ -9177,36 +9143,36 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       Caption = 'Browser'
       DoubleBuffered = True
       ImageIndex = 5
-      PageAppearance.BorderColor = 14474202
-      PageAppearance.Color = 16250613
-      PageAppearance.ColorTo = 16250613
-      PageAppearance.ColorMirror = 16250613
-      PageAppearance.ColorMirrorTo = 16250613
+      PageAppearance.BorderColor = clNone
+      PageAppearance.Color = clWhite
+      PageAppearance.ColorTo = clWhite
+      PageAppearance.ColorMirror = clWhite
+      PageAppearance.ColorMirrorTo = clWhite
       PageAppearance.Gradient = ggVertical
       PageAppearance.GradientMirror = ggVertical
       Text = ''
-      TabAppearance.BorderColor = clNone
-      TabAppearance.BorderColorHot = 15527147
-      TabAppearance.BorderColorSelected = 14474202
-      TabAppearance.BorderColorSelectedHot = 14474202
+      TabAppearance.BorderColor = clWhite
+      TabAppearance.BorderColorHot = clNone
+      TabAppearance.BorderColorSelected = clNone
+      TabAppearance.BorderColorSelectedHot = clNone
       TabAppearance.BorderColorDisabled = clNone
-      TabAppearance.BorderColorDown = 14474202
+      TabAppearance.BorderColorDown = clNone
       TabAppearance.Color = clWhite
       TabAppearance.ColorTo = clWhite
-      TabAppearance.ColorSelected = 16250613
-      TabAppearance.ColorSelectedTo = 16250613
-      TabAppearance.ColorDisabled = 15921906
-      TabAppearance.ColorDisabledTo = 15921906
-      TabAppearance.ColorHot = 16776701
-      TabAppearance.ColorHotTo = clNone
+      TabAppearance.ColorSelected = clWhite
+      TabAppearance.ColorSelectedTo = clWhite
+      TabAppearance.ColorDisabled = 15658734
+      TabAppearance.ColorDisabledTo = clNone
+      TabAppearance.ColorHot = 16316922
+      TabAppearance.ColorHotTo = 16316922
       TabAppearance.ColorMirror = clWhite
       TabAppearance.ColorMirrorTo = clWhite
-      TabAppearance.ColorMirrorHot = 16776701
-      TabAppearance.ColorMirrorHotTo = clNone
-      TabAppearance.ColorMirrorSelected = 16250613
-      TabAppearance.ColorMirrorSelectedTo = 16250613
-      TabAppearance.ColorMirrorDisabled = 15921906
-      TabAppearance.ColorMirrorDisabledTo = 15921906
+      TabAppearance.ColorMirrorHot = 16316922
+      TabAppearance.ColorMirrorHotTo = 16316922
+      TabAppearance.ColorMirrorSelected = clWhite
+      TabAppearance.ColorMirrorSelectedTo = clWhite
+      TabAppearance.ColorMirrorDisabled = 15658734
+      TabAppearance.ColorMirrorDisabledTo = clNone
       TabAppearance.Font.Charset = DEFAULT_CHARSET
       TabAppearance.Font.Color = clWindowText
       TabAppearance.Font.Height = -11
@@ -9220,19 +9186,20 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       TabAppearance.GradientMirrorSelected = ggVertical
       TabAppearance.GradientDisabled = ggVertical
       TabAppearance.GradientMirrorDisabled = ggVertical
-      TabAppearance.TextColor = clBlack
+      TabAppearance.TextColor = 4474440
       TabAppearance.TextColorHot = clBlack
-      TabAppearance.TextColorSelected = clBlack
-      TabAppearance.TextColorDisabled = clGray
+      TabAppearance.TextColorSelected = 4474440
+      TabAppearance.TextColorDisabled = 7303023
       TabAppearance.ShadowColor = clNone
       TabAppearance.HighLightColor = clNone
       TabAppearance.HighLightColorHot = clNone
       TabAppearance.HighLightColorSelected = clNone
       TabAppearance.HighLightColorSelectedHot = clNone
       TabAppearance.HighLightColorDown = clNone
-      TabAppearance.DrawLine = False
+      TabAppearance.DrawLine = True
+      TabAppearance.TextSelectedBold = True
       TabAppearance.BackGround.Color = clWhite
-      TabAppearance.BackGround.ColorTo = clNone
+      TabAppearance.BackGround.ColorTo = clWhite
       TabAppearance.BackGround.Direction = gdHorizontal
       object Shader7: TShader
         Left = 2
@@ -9245,7 +9212,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         ToColor = 16250613
         Direction = False
         Version = '1.4.2.1'
-        ExplicitWidth = 747
         DesignSize = (
           751
           61)
@@ -9337,7 +9303,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           TabOrder = 0
           Text = 'http://www.settimanasport.com'
           TextHint = 'indirizzo o testo da ricercare'
-          ExplicitWidth = 637
         end
       end
       object WebBrowser1: TWebBrowser
@@ -9347,10 +9312,8 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Height = 551
         Align = alClient
         TabOrder = 1
-        ExplicitWidth = 747
-        ExplicitHeight = 550
         ControlData = {
-          4C0000009E4D00000D3900000000000000000000000000000000000000000000
+          4C0000009E4D0000F33800000000000000000000000000000000000000000000
           000000004C000000000000000000000001000000E0D057007335CF11AE690800
           2B2E126208000000000000004C0000000114020000000000C000000000000046
           8000000000000000000000000000000000000000000000000000000000000000
@@ -9364,36 +9327,36 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       Height = 616
       Caption = 'Query'
       DoubleBuffered = True
-      PageAppearance.BorderColor = 14474202
-      PageAppearance.Color = 16250613
-      PageAppearance.ColorTo = 16250613
-      PageAppearance.ColorMirror = 16250613
-      PageAppearance.ColorMirrorTo = 16250613
+      PageAppearance.BorderColor = clNone
+      PageAppearance.Color = clWhite
+      PageAppearance.ColorTo = clWhite
+      PageAppearance.ColorMirror = clWhite
+      PageAppearance.ColorMirrorTo = clWhite
       PageAppearance.Gradient = ggVertical
       PageAppearance.GradientMirror = ggVertical
       Text = ''
-      TabAppearance.BorderColor = clNone
-      TabAppearance.BorderColorHot = 15527147
-      TabAppearance.BorderColorSelected = 14474202
-      TabAppearance.BorderColorSelectedHot = 14474202
+      TabAppearance.BorderColor = clWhite
+      TabAppearance.BorderColorHot = clNone
+      TabAppearance.BorderColorSelected = clNone
+      TabAppearance.BorderColorSelectedHot = clNone
       TabAppearance.BorderColorDisabled = clNone
-      TabAppearance.BorderColorDown = 14474202
+      TabAppearance.BorderColorDown = clNone
       TabAppearance.Color = clWhite
       TabAppearance.ColorTo = clWhite
-      TabAppearance.ColorSelected = 16250613
-      TabAppearance.ColorSelectedTo = 16250613
-      TabAppearance.ColorDisabled = 15921906
-      TabAppearance.ColorDisabledTo = 15921906
-      TabAppearance.ColorHot = 16776701
-      TabAppearance.ColorHotTo = clNone
+      TabAppearance.ColorSelected = clWhite
+      TabAppearance.ColorSelectedTo = clWhite
+      TabAppearance.ColorDisabled = 15658734
+      TabAppearance.ColorDisabledTo = clNone
+      TabAppearance.ColorHot = 16316922
+      TabAppearance.ColorHotTo = 16316922
       TabAppearance.ColorMirror = clWhite
       TabAppearance.ColorMirrorTo = clWhite
-      TabAppearance.ColorMirrorHot = 16776701
-      TabAppearance.ColorMirrorHotTo = clNone
-      TabAppearance.ColorMirrorSelected = 16250613
-      TabAppearance.ColorMirrorSelectedTo = 16250613
-      TabAppearance.ColorMirrorDisabled = 15921906
-      TabAppearance.ColorMirrorDisabledTo = 15921906
+      TabAppearance.ColorMirrorHot = 16316922
+      TabAppearance.ColorMirrorHotTo = 16316922
+      TabAppearance.ColorMirrorSelected = clWhite
+      TabAppearance.ColorMirrorSelectedTo = clWhite
+      TabAppearance.ColorMirrorDisabled = 15658734
+      TabAppearance.ColorMirrorDisabledTo = clNone
       TabAppearance.Font.Charset = DEFAULT_CHARSET
       TabAppearance.Font.Color = clWindowText
       TabAppearance.Font.Height = -11
@@ -9407,19 +9370,20 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       TabAppearance.GradientMirrorSelected = ggVertical
       TabAppearance.GradientDisabled = ggVertical
       TabAppearance.GradientMirrorDisabled = ggVertical
-      TabAppearance.TextColor = clBlack
+      TabAppearance.TextColor = 4474440
       TabAppearance.TextColorHot = clBlack
-      TabAppearance.TextColorSelected = clBlack
-      TabAppearance.TextColorDisabled = clGray
+      TabAppearance.TextColorSelected = 4474440
+      TabAppearance.TextColorDisabled = 7303023
       TabAppearance.ShadowColor = clNone
       TabAppearance.HighLightColor = clNone
       TabAppearance.HighLightColorHot = clNone
       TabAppearance.HighLightColorSelected = clNone
       TabAppearance.HighLightColorSelectedHot = clNone
       TabAppearance.HighLightColorDown = clNone
-      TabAppearance.DrawLine = False
+      TabAppearance.DrawLine = True
+      TabAppearance.TextSelectedBold = True
       TabAppearance.BackGround.Color = clWhite
-      TabAppearance.BackGround.ColorTo = clNone
+      TabAppearance.BackGround.ColorTo = clWhite
       TabAppearance.BackGround.Direction = gdHorizontal
       object Splitter4: TAdvSplitter
         Left = 2
@@ -9449,7 +9413,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         ToColor = 16250613
         Direction = False
         Version = '1.4.2.1'
-        ExplicitWidth = 747
         object AdvGlowButton5: TAdvGlowButton
           Left = 1
           Top = 1
@@ -9566,7 +9529,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
           BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
           25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-        BorderColor = 15000546
         BorderStyle = bsSingle
         ClipboardFormats = [cfText]
         CodeFolding.Enabled = False
@@ -9579,9 +9541,8 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Gutter.Font.Height = -13
         Gutter.Font.Name = 'Courier New'
         Gutter.Font.Style = []
-        Gutter.BorderColor = 15000546
-        Gutter.GutterColor = 16250613
-        Gutter.GutterColorTo = 16250613
+        Gutter.GutterColorTo = clBtnFace
+        Gutter.LineNumberTextColor = clWindowText
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -13
@@ -9623,9 +9584,8 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.7.10.0'
+        Version = '3.9.1.1'
         WordWrap = wwNone
-        ExplicitWidth = 747
       end
       object EnhCRDBGrid1: TEnhCRDBGrid
         Left = 2
@@ -9680,8 +9640,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Orientation = noHorizontal
         Style = tsWindows10
         TabOrder = 3
-        Version = '1.2.1.0'
-        ExplicitWidth = 747
+        Version = '1.3.0.1'
       end
     end
     object AdvOfficePage1: TAdvOfficePage
@@ -9691,36 +9650,36 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       Height = 616
       Caption = 'Logs'
       DoubleBuffered = True
-      PageAppearance.BorderColor = 14474202
-      PageAppearance.Color = 16250613
-      PageAppearance.ColorTo = 16250613
-      PageAppearance.ColorMirror = 16250613
-      PageAppearance.ColorMirrorTo = 16250613
+      PageAppearance.BorderColor = clNone
+      PageAppearance.Color = clWhite
+      PageAppearance.ColorTo = clWhite
+      PageAppearance.ColorMirror = clWhite
+      PageAppearance.ColorMirrorTo = clWhite
       PageAppearance.Gradient = ggVertical
       PageAppearance.GradientMirror = ggVertical
       Text = ''
-      TabAppearance.BorderColor = clNone
-      TabAppearance.BorderColorHot = 15527147
-      TabAppearance.BorderColorSelected = 14474202
-      TabAppearance.BorderColorSelectedHot = 14474202
+      TabAppearance.BorderColor = clWhite
+      TabAppearance.BorderColorHot = clNone
+      TabAppearance.BorderColorSelected = clNone
+      TabAppearance.BorderColorSelectedHot = clNone
       TabAppearance.BorderColorDisabled = clNone
-      TabAppearance.BorderColorDown = 14474202
+      TabAppearance.BorderColorDown = clNone
       TabAppearance.Color = clWhite
       TabAppearance.ColorTo = clWhite
-      TabAppearance.ColorSelected = 16250613
-      TabAppearance.ColorSelectedTo = 16250613
-      TabAppearance.ColorDisabled = 15921906
-      TabAppearance.ColorDisabledTo = 15921906
-      TabAppearance.ColorHot = 16776701
-      TabAppearance.ColorHotTo = clNone
+      TabAppearance.ColorSelected = clWhite
+      TabAppearance.ColorSelectedTo = clWhite
+      TabAppearance.ColorDisabled = 15658734
+      TabAppearance.ColorDisabledTo = clNone
+      TabAppearance.ColorHot = 16316922
+      TabAppearance.ColorHotTo = 16316922
       TabAppearance.ColorMirror = clWhite
       TabAppearance.ColorMirrorTo = clWhite
-      TabAppearance.ColorMirrorHot = 16776701
-      TabAppearance.ColorMirrorHotTo = clNone
-      TabAppearance.ColorMirrorSelected = 16250613
-      TabAppearance.ColorMirrorSelectedTo = 16250613
-      TabAppearance.ColorMirrorDisabled = 15921906
-      TabAppearance.ColorMirrorDisabledTo = 15921906
+      TabAppearance.ColorMirrorHot = 16316922
+      TabAppearance.ColorMirrorHotTo = 16316922
+      TabAppearance.ColorMirrorSelected = clWhite
+      TabAppearance.ColorMirrorSelectedTo = clWhite
+      TabAppearance.ColorMirrorDisabled = 15658734
+      TabAppearance.ColorMirrorDisabledTo = clNone
       TabAppearance.Font.Charset = DEFAULT_CHARSET
       TabAppearance.Font.Color = clWindowText
       TabAppearance.Font.Height = -11
@@ -9734,19 +9693,20 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       TabAppearance.GradientMirrorSelected = ggVertical
       TabAppearance.GradientDisabled = ggVertical
       TabAppearance.GradientMirrorDisabled = ggVertical
-      TabAppearance.TextColor = clBlack
+      TabAppearance.TextColor = 4474440
       TabAppearance.TextColorHot = clBlack
-      TabAppearance.TextColorSelected = clBlack
-      TabAppearance.TextColorDisabled = clGray
+      TabAppearance.TextColorSelected = 4474440
+      TabAppearance.TextColorDisabled = 7303023
       TabAppearance.ShadowColor = clNone
       TabAppearance.HighLightColor = clNone
       TabAppearance.HighLightColorHot = clNone
       TabAppearance.HighLightColorSelected = clNone
       TabAppearance.HighLightColorSelectedHot = clNone
       TabAppearance.HighLightColorDown = clNone
-      TabAppearance.DrawLine = False
+      TabAppearance.DrawLine = True
+      TabAppearance.TextSelectedBold = True
       TabAppearance.BackGround.Color = clWhite
-      TabAppearance.BackGround.ColorTo = clNone
+      TabAppearance.BackGround.ColorTo = clWhite
       TabAppearance.BackGround.Direction = gdHorizontal
       object memLogs: TAdvMemo
         Left = 2
@@ -9809,7 +9769,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
           BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
           BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
           25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-        BorderColor = 15000546
         BorderStyle = bsSingle
         ClipboardFormats = [cfText]
         CodeFolding.Enabled = False
@@ -9822,9 +9781,8 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Gutter.Font.Height = -13
         Gutter.Font.Name = 'Courier New'
         Gutter.Font.Style = []
-        Gutter.BorderColor = 15000546
-        Gutter.GutterColor = 16250613
-        Gutter.GutterColorTo = 16250613
+        Gutter.GutterColorTo = clBtnFace
+        Gutter.LineNumberTextColor = clWindowText
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -13
@@ -9865,10 +9823,8 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.7.10.0'
+        Version = '3.9.1.1'
         WordWrap = wwNone
-        ExplicitWidth = 747
-        ExplicitHeight = 611
       end
     end
   end
@@ -9884,7 +9840,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
     ToColor = 16250613
     Direction = False
     Version = '1.4.2.1'
-    ExplicitHeight = 643
     object Panel7: TShader
       Left = 1
       Top = 43
@@ -9925,7 +9880,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       Width = 242
       Height = 576
       Align = alClient
-      DataSource = dmUniDacPgChampionships.dsMatchDays
+      DataSource = dmUniDacPgChampionships.dsChampionships
       FixedColor = 16250613
       PopupMenu = popChampionships
       TabOrder = 1
@@ -9973,12 +9928,13 @@ inherited frmMdcChampionship: TfrmMdcChampionship
       object Label41: TLabel
         Left = 1
         Top = 1
-        Width = 123
+        Width = 240
         Height = 13
         Align = alTop
         Alignment = taCenter
         Caption = 'Campionati della Stagione'
         Transparent = True
+        ExplicitWidth = 123
       end
       object SpeedButton2: TAdvGlowButton
         Left = 1
@@ -10167,7 +10123,6 @@ inherited frmMdcChampionship: TfrmMdcChampionship
     ToColor = 16250613
     Direction = False
     Version = '1.4.2.1'
-    ExplicitWidth = 1416
     DesignSize = (
       1420
       33)
@@ -10282,9 +10237,9 @@ inherited frmMdcChampionship: TfrmMdcChampionship
         Top = 5
         Width = 97
         Height = 21
-        LookupField = 'season_id'
+        LookupField = 'id'
         LookupDisplay = 'season_des'
-        LookupSource = dmUniDacPgChampionships.dsSeasons
+        LookupSource = dsSeasons
         TabOrder = 0
       end
     end
@@ -10429,56 +10384,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
     end
   end
   inherited AdvOfficePagerOfficeStyler1: TAdvOfficePagerOfficeStyler
-    Style = psWindows10
-    GlowButtonAppearance.BorderColor = 15000546
-    GlowButtonAppearance.BorderColorHot = 16371364
-    GlowButtonAppearance.BorderColorDown = 14983778
-    GlowButtonAppearance.BorderColorChecked = 14327846
-    GlowButtonAppearance.BorderColorDisabled = 14606046
-    GlowButtonAppearance.Color = 16250613
-    GlowButtonAppearance.ColorTo = clNone
-    GlowButtonAppearance.ColorChecked = 16181451
-    GlowButtonAppearance.ColorDisabled = 16250871
-    GlowButtonAppearance.ColorDown = 16244937
-    GlowButtonAppearance.ColorDownTo = clNone
-    GlowButtonAppearance.ColorHot = 16248808
-    GlowButtonAppearance.ColorHotTo = clNone
-    GlowButtonAppearance.ColorMirror = 16250613
-    GlowButtonAppearance.ColorMirrorTo = clNone
-    GlowButtonAppearance.ColorMirrorHot = 16248808
-    GlowButtonAppearance.ColorMirrorHotTo = clNone
-    GlowButtonAppearance.ColorMirrorDown = 16244937
-    GlowButtonAppearance.ColorMirrorDownTo = clNone
-    GlowButtonAppearance.ColorMirrorChecked = 16181451
-    GlowButtonAppearance.ColorMirrorDisabled = 16250871
-    PageAppearance.BorderColor = 14474202
-    PageAppearance.Color = 16250613
-    PageAppearance.ColorTo = 16250613
-    PageAppearance.ColorMirror = 16250613
-    PageAppearance.ColorMirrorTo = 16250613
-    TabAppearance.BorderColor = clNone
-    TabAppearance.BorderColorHot = 15527147
-    TabAppearance.BorderColorSelected = 14474202
-    TabAppearance.BorderColorSelectedHot = 14474202
-    TabAppearance.BorderColorDown = 14474202
-    TabAppearance.ColorSelected = 16250613
-    TabAppearance.ColorSelectedTo = 16250613
-    TabAppearance.ColorDisabled = 15921906
-    TabAppearance.ColorDisabledTo = 15921906
-    TabAppearance.ColorHot = 16776701
-    TabAppearance.ColorHotTo = clNone
-    TabAppearance.ColorMirrorHot = 16776701
-    TabAppearance.ColorMirrorHotTo = clNone
-    TabAppearance.ColorMirrorSelected = 16250613
-    TabAppearance.ColorMirrorSelectedTo = 16250613
-    TabAppearance.ColorMirrorDisabled = 15921906
-    TabAppearance.ColorMirrorDisabledTo = 15921906
-    TabAppearance.TextColor = clBlack
-    TabAppearance.TextColorSelected = clBlack
-    TabAppearance.TextColorDisabled = clGray
-    TabAppearance.DrawLine = False
-    TabAppearance.TextSelectedBold = False
-    TabAppearance.BackGround.ColorTo = clNone
+    Style = psOffice2019White
     Top = 612
   end
   inherited AdvFormStyler1: TAdvFormStyler
@@ -10493,20 +10399,20 @@ inherited frmMdcChampionship: TfrmMdcChampionship
     UIStyle = tsWindows10
   end
   inherited ImageList: TImageList
-    Left = 67
-    Top = 430
+    Left = 659
+    Top = 190
   end
   inherited ImageListHot: TImageList
-    Left = 67
-    Top = 489
+    Left = 707
+    Top = 169
   end
   inherited ImageListDisabled: TImageList
     Left = 67
     Top = 545
   end
   inherited mnuStyler: TAdvMenuStyler
-    Left = 48
-    Top = 312
+    Left = 56
+    Top = 336
   end
   inherited AdvOfficeTabSetOfficeStyler1: TAdvOfficeTabSetOfficeStyler
     GlowButtonAppearance.BorderColor = 15000546
@@ -10565,15 +10471,15 @@ inherited frmMdcChampionship: TfrmMdcChampionship
   end
   inherited ImageList24: TImageList
     Left = 379
-    Top = 174
+    Top = 166
   end
   inherited ImageListHot24: TImageList
-    Left = 379
-    Top = 233
+    Left = 387
+    Top = 265
   end
   inherited ImageListDisabled24: TImageList
-    Left = 379
-    Top = 297
+    Left = 387
+    Top = 329
   end
   object JanuaDialogSostituzione: TJanuaDialogInteger
     Enabled = False
@@ -10585,11 +10491,11 @@ inherited frmMdcChampionship: TfrmMdcChampionship
     Caption = 'Minuti Sostituzione'
     DisplayText = 'Minuti Sostituzione'
     Left = 176
-    Top = 404
+    Top = 380
   end
   object popChampionships: TAdvPopupMenu
     MenuStyler = AdvMenuOfficeStyler1
-    Version = '2.7.1.8'
+    Version = '2.7.1.12'
     UIStyle = tsCustom
     Left = 293
     Top = 544
@@ -10618,7 +10524,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
   end
   object popRosaChampionship: TAdvPopupMenu
     MenuStyler = AdvMenuOfficeStyler1
-    Version = '2.7.1.8'
+    Version = '2.7.1.12'
     UIStyle = tsCustom
     Left = 285
     Top = 192
@@ -10755,14 +10661,14 @@ inherited frmMdcChampionship: TfrmMdcChampionship
     StylerName = 'SQL'
     Extensions = 'sql'
     Left = 179
-    Top = 466
+    Top = 250
   end
   object popRosa: TAdvPopupMenu
     MenuStyler = AdvMenuOfficeStyler1
-    Version = '2.7.1.8'
+    Version = '2.7.1.12'
     UIStyle = tsCustom
     Left = 285
-    Top = 256
+    Top = 248
     object N4Colonne1: TMenuItem
       Caption = '4 Colonne'
       OnClick = ExportRosa
@@ -10781,7 +10687,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
   end
   object popExportMatchDay: TAdvPopupMenu
     MenuStyler = AdvMenuOfficeStyler1
-    Version = '2.7.1.8'
+    Version = '2.7.1.12'
     UIStyle = tsCustom
     Left = 296
     Top = 600
@@ -10796,7 +10702,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
   end
   object popMatchEvents: TAdvPopupMenu
     MenuStyler = AdvMenuOfficeStyler1
-    Version = '2.7.1.8'
+    Version = '2.7.1.12'
     UIStyle = tsCustom
     Left = 184
     Top = 520
@@ -10806,7 +10712,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
   end
   object PopupMenu2: TAdvPopupMenu
     MenuStyler = AdvMenuOfficeStyler1
-    Version = '2.7.1.8'
+    Version = '2.7.1.12'
     UIStyle = tsCustom
     Left = 292
     Top = 373
@@ -10825,7 +10731,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
   end
   object popTabellino: TAdvPopupMenu
     MenuStyler = AdvMenuOfficeStyler1
-    Version = '2.7.1.8'
+    Version = '2.7.1.12'
     UIStyle = tsCustom
     Left = 288
     Top = 312
@@ -10869,8 +10775,8 @@ inherited frmMdcChampionship: TfrmMdcChampionship
     end
   end
   object ImageList1: TImageList
-    Left = 64
-    Top = 376
+    Left = 600
+    Top = 160
     Bitmap = {
       494C010115001900040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000006000000001002000000000000060
@@ -11678,7 +11584,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
   end
   object popChamRanking: TAdvPopupMenu
     MenuStyler = AdvMenuOfficeStyler1
-    Version = '2.7.1.8'
+    Version = '2.7.1.12'
     UIStyle = tsCustom
     Left = 294
     Top = 433
@@ -11854,7 +11760,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
     NotesFont.Style = []
     MenuBorderColor = 9934743
     Left = 392
-    Top = 376
+    Top = 392
   end
   object AdvFormStyler2: TAdvFormStyler
     AutoThemeAdapt = True
@@ -11878,6 +11784,7 @@ inherited frmMdcChampionship: TfrmMdcChampionship
     Top = 248
   end
   object dsClubs: TDataSource
+    DataSet = dmUniDacPgChampionships.qryClubs
     Left = 1056
     Top = 312
   end
@@ -11885,5 +11792,10 @@ inherited frmMdcChampionship: TfrmMdcChampionship
     DataSet = dmUniDacPgChampionships.qryTeamPlayers
     Left = 744
     Top = 544
+  end
+  object dsSeasons: TDataSource
+    DataSet = dmUniDacPgChampionships.qrySeasons
+    Left = 48
+    Top = 417
   end
 end

@@ -40,9 +40,7 @@ requires
   IndySystem,
   IndyProtocols,
   IndyCore,
-  SwagDoc,
-  loggerproRT,
-  dmvcframeworkRT;
+  SwagDoc;
 
 contains
   Pkg.Json.DTO in '..\..\..\Lib\JsonToDelphi\Pkg.Json.DTO.pas',
@@ -55,18 +53,6 @@ contains
   DataSet.Serialize.Language in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Language.pas',
   DataSet.Serialize in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.pas',
   DataSet.Serialize.UpdatedStatus in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.UpdatedStatus.pas',
-  DataSet.Serialize.Utils in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Utils.pas',
-  mormot.core.base in '..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.base.pas',
-  mormot.core.buffers in '..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.buffers.pas',
-  mormot.core.data in '..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.data.pas',
-  mormot.core.datetime in '..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.datetime.pas',
-  mormot.core.json in '..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.json.pas',
-  mormot.core.mustache in '..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.mustache.pas',
-  mormot.core.os in '..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.os.pas',
-  mormot.core.rtti in '..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.rtti.pas',
-  mormot.core.search in '..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.search.pas',
-  mormot.core.text in '..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.text.pas',
-  mormot.core.unicode in '..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.unicode.pas',
-  mormot.core.variants in '..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.variants.pas';
+  DataSet.Serialize.Utils in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Utils.pas';
 
 end.

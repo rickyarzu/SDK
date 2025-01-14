@@ -5,27 +5,25 @@ inherited dlgTMSInputDate: TdlgTMSInputDate
   ClientHeight = 129
   ClientWidth = 481
   Color = clWhite
-  ParentFont = False
   Font.Color = clBlack
   Font.Height = -16
-  Font.Name = 'Segoe UI'
   Position = poScreenCenter
-  OnShow = FormShow
-  ExplicitWidth = 487
-  ExplicitHeight = 158
-  PixelsPerInch = 96
+  StyleElements = [seFont, seClient, seBorder]
+  ExplicitWidth = 497
+  ExplicitHeight = 168
   TextHeight = 21
-  object SVGIconImage1: TSVGIconImage
+  object SVGIconImage1: TSVGIconImage [0]
     Left = 8
     Top = 16
     Width = 65
     Height = 57
     AutoSize = False
-    Proportional = False
     ImageList = dmSVGImageList.SVGIconImageList
     ImageIndex = 31
+    ImageName = '029-calendar'
+    Proportional = False
   end
-  object Label1: TLabel
+  object Label1: TLabel [1]
     Left = 69
     Top = 32
     Width = 253
@@ -39,6 +37,12 @@ inherited dlgTMSInputDate: TdlgTMSInputDate
     Font.Style = []
     ParentFont = False
     WordWrap = True
+  end
+  inherited StatusBar: TStatusBar
+    Top = 110
+    Width = 481
+    ExplicitTop = 110
+    ExplicitWidth = 481
   end
   object btnOk: TButton
     Left = 318

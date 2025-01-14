@@ -2,8 +2,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
   Left = 0
   Top = 0
   Caption = 'Phoenix REST Lab Client'
-  ClientHeight = 641
-  ClientWidth = 1004
+  ClientHeight = 697
+  ClientWidth = 1017
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,7 +15,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 1004
+    Width = 1017
     Height = 57
     Align = alTop
     Caption = 'Panel1'
@@ -75,9 +75,9 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
   object PageControl1: TPageControl
     Left = 0
     Top = 57
-    Width = 1004
-    Height = 584
-    ActivePage = tabJsonList
+    Width = 1017
+    Height = 640
+    ActivePage = tabLog
     Align = alClient
     TabOrder = 1
     object tabJsonList: TTabSheet
@@ -85,8 +85,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
       object memJsonResponse: TAdvMemo
         Left = 0
         Top = 185
-        Width = 996
-        Height = 369
+        Width = 1009
+        Height = 425
         Cursor = crIBeam
         StyleElements = []
         ActiveLineSettings.ShowActiveLine = False
@@ -199,13 +199,13 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.9.0.1'
+        Version = '3.9.1.1'
         WordWrap = wwNone
       end
       object pnlListaEstintori: TPanel
         Left = 0
         Top = 0
-        Width = 996
+        Width = 1009
         Height = 41
         Align = alTop
         TabOrder = 1
@@ -230,7 +230,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
       object memRawResponse: TAdvMemo
         Left = 0
         Top = 41
-        Width = 996
+        Width = 1009
         Height = 144
         Cursor = crIBeam
         StyleElements = []
@@ -344,7 +344,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.9.0.1'
+        Version = '3.9.1.1'
         WordWrap = wwNone
       end
     end
@@ -354,7 +354,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
       object Panel3: TPanel
         Left = 0
         Top = 0
-        Width = 996
+        Width = 1009
         Height = 41
         Align = alTop
         TabOrder = 0
@@ -362,8 +362,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
       object JvDBGrid1: TJvDBGrid
         Left = 0
         Top = 41
-        Width = 996
-        Height = 513
+        Width = 1009
+        Height = 569
         Align = alClient
         DataSource = dsLabEstintori
         TabOrder = 1
@@ -598,7 +598,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
       object Panel2: TPanel
         Left = 0
         Top = 0
-        Width = 996
+        Width = 1009
         Height = 41
         Align = alTop
         TabOrder = 0
@@ -606,8 +606,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
       object memConfigurazioni: TAdvMemo
         Left = 0
         Top = 233
-        Width = 996
-        Height = 321
+        Width = 1009
+        Height = 377
         Cursor = crIBeam
         ActiveLineSettings.ShowActiveLine = False
         ActiveLineSettings.ShowActiveLineIndicator = False
@@ -718,13 +718,13 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.9.0.1'
+        Version = '3.9.1.1'
         WordWrap = wwNone
       end
       object memConfigurazioniHead: TAdvMemo
         Left = 0
         Top = 41
-        Width = 996
+        Width = 1009
         Height = 112
         Cursor = crIBeam
         ActiveLineSettings.ShowActiveLine = False
@@ -836,13 +836,13 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.9.0.1'
+        Version = '3.9.1.1'
         WordWrap = wwNone
       end
       object memTmpConfigurazioni: TAdvMemo
         Left = 0
         Top = 153
-        Width = 996
+        Width = 1009
         Height = 80
         Cursor = crIBeam
         ActiveLineSettings.ShowActiveLine = False
@@ -953,7 +953,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = False
-        Version = '3.9.0.1'
+        Version = '3.9.1.1'
         WordWrap = wwNone
       end
     end
@@ -963,7 +963,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
       object Panel4: TPanel
         Left = 0
         Top = 0
-        Width = 996
+        Width = 1009
         Height = 41
         Align = alTop
         BevelOuter = bvNone
@@ -990,7 +990,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
       object DBGrid1: TDBGrid
         Left = 0
         Top = 41
-        Width = 996
+        Width = 1009
         Height = 352
         Align = alTop
         DataSource = dmFDACPhoenixLab.dsMasterStatini
@@ -1067,8 +1067,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
       object DBGrid2: TDBGrid
         Left = 0
         Top = 393
-        Width = 996
-        Height = 161
+        Width = 1009
+        Height = 217
         Align = alClient
         DataSource = dsDetailEstintori
         TabOrder = 2
@@ -1085,8 +1085,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
       object memLog: TMemo
         Left = 0
         Top = 0
-        Width = 996
-        Height = 554
+        Width = 1009
+        Height = 610
         Align = alClient
         TabOrder = 0
       end

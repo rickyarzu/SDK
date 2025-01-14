@@ -108,6 +108,8 @@
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_Define>madExcept;$(DCC_Define)</DCC_Define>
+        <DCC_MapFile>3</DCC_MapFile>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -126,19 +128,22 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="..\..\..\src\VCL\Cloud\Janua.VCL.Cloud.frmWhatsAppWebForm.pas">
-            <Form>Form1</Form>
-            <FormType>dfm</FormType>
+        <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.WhatsApp.WebBroker.UniDACApplication.pas"/>
+        <DCCReference Include="..\..\..\src\VCL\Http\Janua.VCL.Http.frmWebBrokerServer.pas">
+            <Form>frmVCLWebBrokerServer</Form>
         </DCCReference>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.WhatsApp.WebbrokerModule.pas">
-            <Form>WebModule1</Form>
-            <FormType>dfm</FormType>
+            <Form>JanuaWhatSappWebBrokerModule</Form>
             <DesignClass>TWebModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.BackgroundService.pas">
-            <Form>srvPhoenixVCLBackgroundService</Form>
+        <DCCReference Include="..\..\..\src\VCL\Http\Janua.VCL.frameWebServerManager.pas">
+            <Form>JanuaframeWebServerManager</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\januacore\Datasnap\Janua.WebBroker.UniDACApplication.pas"/>
+        <DCCReference Include="..\..\..\src\VCL\Cloud\Janua.VCL.Cloud.frmWhatsAppWebForm.pas">
+            <Form>frmVCLWebBrokerWhatsApp</Form>
             <FormType>dfm</FormType>
-            <DesignClass>TService</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

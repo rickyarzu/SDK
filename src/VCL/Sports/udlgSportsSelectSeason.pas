@@ -29,12 +29,13 @@ implementation
 
 {$R *.dfm}
 
-uses udmFootballPostgres;
+uses Janua.Sports.PgChampionship;
+
 
 procedure TdlgSportsSelectSeason.FormShow(Sender: TObject);
 begin
-  dmFootballPostgres.qrySelectLeagues.Close;
-  dmFootballPostgres.qrySelectLeagues.Open;
+  dmUniDacPgChampionships.qrySelectLeagues.Close;
+  dmUniDacPgChampionships.qrySelectLeagues.Open;
 end;
 
 end.

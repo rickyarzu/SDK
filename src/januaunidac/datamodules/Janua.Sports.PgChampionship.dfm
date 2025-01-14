@@ -3,6 +3,15 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
   Height = 790
   Width = 971
   inherited PgErgoConnection: TJanuaUniConnection
+    DataTypeMap = <
+      item
+        DBType = 521
+        FieldType = ftDateTime
+      end
+      item
+        DBType = 520
+        FieldType = ftDateTime
+      end>
     Left = 56
     Top = 72
     EncryptedPassword = 'CCFF8DFF98FFCFFF92FFCCFF8DFF9CFFCBFF8BFFCFFF8DFF'
@@ -36,46 +45,62 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     Top = 568
   end
   inherited PgUni: TPostgreSQLUniProvider
-    Left = 128
+    Left = 176
+    Top = 40
   end
   inherited spSetSchemaID: TUniStoredProc
     Left = 56
     Top = 512
     CommandStoredProcName = 'system.set_schema_id'
   end
-  object dspSeasons: TDataSetProvider
-    DataSet = qrySeasons
-    Left = 176
-    Top = 368
-  end
   object qryChampionships: TUniQuery
     SQLInsert.Strings = (
-      'INSERT INTO football.ft_championships'
-      '  (season_id, league_id)'
+      'INSERT INTO sports.championships_view'
+      
+        '  (season_id, league_id, promoted, playoff, relegation, champion' +
+        's, playout, teams, db_schema_id, jguid, deleted, insert_date, up' +
+        'date_date, user_insert, user_update, id, league_name, league_pos' +
+        'ition, league_code)'
       'VALUES'
-      '  (:season_id, :league_id)')
+      
+        '  (:season_id, :league_id, :promoted, :playoff, :relegation, :ch' +
+        'ampions, :playout, :teams, :db_schema_id, :jguid, :deleted, :ins' +
+        'ert_date, :update_date, :user_insert, :user_update, :id, :league' +
+        '_name, :league_position, :league_code)')
     SQLDelete.Strings = (
-      'DELETE FROM football.ft_championships'
+      'DELETE FROM sports.championships_view'
       'WHERE'
       '  season_id = :Old_season_id AND league_id = :Old_league_id')
     SQLUpdate.Strings = (
-      'UPDATE football.ft_championships'
+      'UPDATE sports.championships_view'
       'SET'
-      '  season_id = :season_id, league_id = :league_id'
+      
+        '  season_id = :season_id, league_id = :league_id, promoted = :pr' +
+        'omoted, playoff = :playoff, relegation = :relegation, champions ' +
+        '= :champions, playout = :playout, teams = :teams, db_schema_id =' +
+        ' :db_schema_id, jguid = :jguid, deleted = :deleted, insert_date ' +
+        '= :insert_date, update_date = :update_date, user_insert = :user_' +
+        'insert, user_update = :user_update, id = :id, league_name = :lea' +
+        'gue_name, league_position = :league_position, league_code = :lea' +
+        'gue_code'
       'WHERE'
       '  season_id = :Old_season_id AND league_id = :Old_league_id')
     SQLLock.Strings = (
-      'SELECT * FROM football.ft_championships'
+      'SELECT * FROM sports.championships_view'
       'WHERE'
       '  season_id = :Old_season_id AND league_id = :Old_league_id'
       'FOR UPDATE NOWAIT')
     SQLRefresh.Strings = (
-      'SELECT season_id, league_id FROM football.ft_championships'
+      
+        'SELECT season_id, league_id, promoted, playoff, relegation, cham' +
+        'pions, playout, teams, db_schema_id, jguid, deleted, insert_date' +
+        ', update_date, user_insert, user_update, id, league_name, league' +
+        '_position, league_code FROM sports.championships_view'
       'WHERE'
       '  season_id = :season_id AND league_id = :league_id')
     SQLRecCount.Strings = (
       'SELECT count(*) FROM ('
-      'SELECT * FROM football.ft_championships'
+      'SELECT * FROM sports.championships_view'
       ''
       ') t')
     Connection = PgErgoConnection
@@ -88,21 +113,32 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     MasterSource = dsSeasons
     MasterFields = 'season_id'
     DetailFields = 'season_id'
+    BeforePost = qryChampionshipsBeforePost
     Left = 176
-    Top = 152
+    Top = 208
     ParamData = <
       item
         DataType = ftInteger
         Name = 'season_id'
         ParamType = ptInput
-        Size = 4
-        Value = 77
+        Value = 4
       end>
     object qryChampionshipsseason_id: TSmallintField
       FieldName = 'season_id'
     end
     object qryChampionshipsleague_id: TSmallintField
       FieldName = 'league_id'
+    end
+    object qryChampionshipsleague_name: TWideStringField
+      FieldName = 'league_name'
+      Size = 128
+    end
+    object qryChampionshipsleague_position: TSmallintField
+      FieldName = 'league_position'
+    end
+    object qryChampionshipsleague_code: TWideStringField
+      FieldName = 'league_code'
+      Size = 6
     end
     object qryChampionshipspromoted: TSmallintField
       FieldName = 'promoted'
@@ -149,61 +185,46 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     object qryChampionshipsid: TIntegerField
       FieldName = 'id'
     end
-    object qryChampionshipsleague_name: TWideStringField
-      FieldName = 'league_name'
-      Size = 128
-    end
-    object qryChampionshipsleague_position: TSmallintField
-      FieldName = 'league_position'
-    end
-    object qryChampionshipsleague_code: TWideStringField
-      FieldName = 'league_code'
-      Size = 6
-    end
   end
   object dsSeasons: TDataSource
     DataSet = qrySeasons
     Enabled = False
     Left = 176
-    Top = 96
+    Top = 152
   end
   object dsChampionships: TDataSource
     DataSet = qryChampionships
     Left = 176
-    Top = 200
+    Top = 256
   end
   object qrySeasons: TUniQuery
     SQLInsert.Strings = (
-      'INSERT INTO football.ft_seasons'
-      '  (season_id, season_des, season_code, db_schema_id)'
+      'INSERT INTO sports.seasons_view'
+      '  (id, season_des, season_code)'
       'VALUES'
-      '  (:season_id, :season_des, :season_code, :db_schema_id)')
+      '  (:id, :season_des, :season_code)')
     SQLDelete.Strings = (
-      'DELETE FROM football.ft_seasons'
+      'DELETE FROM sports.seasons_view'
       'WHERE'
-      '  season_id = :Old_season_id')
+      '  id = :Old_id')
     SQLUpdate.Strings = (
-      'UPDATE football.ft_seasons'
+      'UPDATE sports.seasons_view'
       'SET'
-      
-        '  season_id = :season_id, season_des = :season_des, season_code ' +
-        '= :season_code, db_schema_id = :db_schema_id'
+      '  id = :id, season_des = :season_des, season_code = :season_code'
       'WHERE'
-      '  season_id = :Old_season_id')
+      '  id = :Old_id')
     SQLLock.Strings = (
-      'SELECT * FROM football.ft_seasons'
+      'SELECT * FROM sports.seasons_view'
       'WHERE'
-      '  season_id = :Old_season_id'
+      '  id = :Old_id'
       'FOR UPDATE NOWAIT')
     SQLRefresh.Strings = (
-      
-        'SELECT season_id, season_des, season_code, db_schema_id FROM foo' +
-        'tball.ft_seasons'
+      'SELECT id, season_des, season_code FROM sports.seasons_view'
       'WHERE'
-      '  season_id = :season_id')
+      '  id = :id')
     SQLRecCount.Strings = (
       'SELECT count(*) FROM ('
-      'SELECT * FROM football.ft_seasons'
+      'SELECT * FROM sports.seasons_view'
       ''
       ') t')
     Connection = PgErgoConnection
@@ -213,7 +234,7 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     AfterScroll = qrySeasonsAfterScroll
     OnNewRecord = qrySeasonsNewRecord
     Left = 176
-    Top = 48
+    Top = 96
     object qrySeasonsid: TIntegerField
       FieldName = 'id'
     end
@@ -259,57 +280,85 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
   object qryClubs: TUniQuery
     KeyFields = 'club_id'
     SQLInsert.Strings = (
-      'INSERT INTO football.ft_clubs'
+      'INSERT INTO sports.clubs_view'
       
-        '  (club_id, club_name, "Foundation_date", anagraph_id, stadium_i' +
-        'd, town, vice_president, team_manager, athletic_manager, colors,' +
-        ' website, db_schema_id, remote_id, president, club_image, fclb_d' +
-        'eleted, fclb_jguid)'
+        '  (id, club_name, foundation_date, president, stadium_id, town, ' +
+        'vice_president, team_manager, athletic_manager, colors, website,' +
+        ' remote_id, anagraph_id, club_image, db_schema_id, jguid, delete' +
+        'd, insert_date, update_date, user_insert, user_update, an_name, ' +
+        'an_last_name, an_address, an_town, an_postal_code, an_state_prov' +
+        'ince, an_email, an_iso_country_code, an_web, an_code, an_vat_num' +
+        'eric, an_cod_comune, an_cod_provincia, an_vat_id, an_personal_fi' +
+        'scal_code, an_phone, an_phone2, an_cellular, an_currency_id, an_' +
+        'main_group_id, main_category_id, club_id)'
       'VALUES'
       
-        '  (:club_id, :club_name, :"Foundation_date", :anagraph_id, :stad' +
-        'ium_id, :town, :vice_president, :team_manager, :athletic_manager' +
-        ', :colors, :website, :db_schema_id, :remote_id, :president, :clu' +
-        'b_image, :fclb_deleted, :fclb_jguid)')
+        '  (:id, :club_name, :foundation_date, :president, :stadium_id, :' +
+        'town, :vice_president, :team_manager, :athletic_manager, :colors' +
+        ', :website, :remote_id, :anagraph_id, :club_image, :db_schema_id' +
+        ', :jguid, :deleted, :insert_date, :update_date, :user_insert, :u' +
+        'ser_update, :an_name, :an_last_name, :an_address, :an_town, :an_' +
+        'postal_code, :an_state_province, :an_email, :an_iso_country_code' +
+        ', :an_web, :an_code, :an_vat_numeric, :an_cod_comune, :an_cod_pr' +
+        'ovincia, :an_vat_id, :an_personal_fiscal_code, :an_phone, :an_ph' +
+        'one2, :an_cellular, :an_currency_id, :an_main_group_id, :main_ca' +
+        'tegory_id, :club_id)')
     SQLDelete.Strings = (
-      'DELETE FROM football.ft_clubs'
+      'DELETE FROM sports.clubs_view'
       'WHERE'
-      '  club_id = :Old_club_id')
+      '  id = :Old_id')
     SQLUpdate.Strings = (
-      'UPDATE football.ft_clubs'
+      'UPDATE sports.clubs_view'
       'SET'
       
-        '  club_id = :club_id, club_name = :club_name, "Foundation_date" ' +
-        '= :"Foundation_date", anagraph_id = :anagraph_id, stadium_id = :' +
-        'stadium_id, town = :town, vice_president = :vice_president, team' +
-        '_manager = :team_manager, athletic_manager = :athletic_manager, ' +
-        'colors = :colors, website = :website, db_schema_id = :db_schema_' +
-        'id, remote_id = :remote_id, president = :president, club_image =' +
-        ' :club_image, fclb_deleted = :fclb_deleted, fclb_jguid = :fclb_j' +
-        'guid'
+        '  id = :id, club_name = :club_name, foundation_date = :foundatio' +
+        'n_date, president = :president, stadium_id = :stadium_id, town =' +
+        ' :town, vice_president = :vice_president, team_manager = :team_m' +
+        'anager, athletic_manager = :athletic_manager, colors = :colors, ' +
+        'website = :website, remote_id = :remote_id, anagraph_id = :anagr' +
+        'aph_id, club_image = :club_image, db_schema_id = :db_schema_id, ' +
+        'jguid = :jguid, deleted = :deleted, insert_date = :insert_date, ' +
+        'update_date = :update_date, user_insert = :user_insert, user_upd' +
+        'ate = :user_update, an_name = :an_name, an_last_name = :an_last_' +
+        'name, an_address = :an_address, an_town = :an_town, an_postal_co' +
+        'de = :an_postal_code, an_state_province = :an_state_province, an' +
+        '_email = :an_email, an_iso_country_code = :an_iso_country_code, ' +
+        'an_web = :an_web, an_code = :an_code, an_vat_numeric = :an_vat_n' +
+        'umeric, an_cod_comune = :an_cod_comune, an_cod_provincia = :an_c' +
+        'od_provincia, an_vat_id = :an_vat_id, an_personal_fiscal_code = ' +
+        ':an_personal_fiscal_code, an_phone = :an_phone, an_phone2 = :an_' +
+        'phone2, an_cellular = :an_cellular, an_currency_id = :an_currenc' +
+        'y_id, an_main_group_id = :an_main_group_id, main_category_id = :' +
+        'main_category_id, club_id = :club_id'
       'WHERE'
-      '  club_id = :Old_club_id')
+      '  id = :Old_id')
     SQLLock.Strings = (
-      'SELECT * FROM football.ft_clubs'
+      'SELECT * FROM sports.clubs_view'
       'WHERE'
-      '  club_id = :Old_club_id'
+      '  id = :Old_id'
       'FOR UPDATE NOWAIT')
     SQLRefresh.Strings = (
       
-        'SELECT club_id, club_name, "Foundation_date", anagraph_id, stadi' +
-        'um_id, town, vice_president, team_manager, athletic_manager, col' +
-        'ors, website, db_schema_id, remote_id, president, club_image, fc' +
-        'lb_deleted, fclb_jguid FROM football.ft_clubs'
+        'SELECT id, club_name, foundation_date, president, stadium_id, to' +
+        'wn, vice_president, team_manager, athletic_manager, colors, webs' +
+        'ite, remote_id, anagraph_id, club_image, db_schema_id, jguid, de' +
+        'leted, insert_date, update_date, user_insert, user_update, an_na' +
+        'me, an_last_name, an_address, an_town, an_postal_code, an_state_' +
+        'province, an_email, an_iso_country_code, an_web, an_code, an_vat' +
+        '_numeric, an_cod_comune, an_cod_provincia, an_vat_id, an_persona' +
+        'l_fiscal_code, an_phone, an_phone2, an_cellular, an_currency_id,' +
+        ' an_main_group_id, main_category_id, club_id FROM sports.clubs_v' +
+        'iew'
       'WHERE'
-      '  club_id = :club_id')
+      '  id = :id')
     SQLRecCount.Strings = (
       'SELECT count(*) FROM ('
-      'SELECT * FROM football.ft_clubs'
+      'SELECT * FROM sports.clubs_view'
       ''
       ') t')
     Connection = PgErgoConnection
     SQL.Strings = (
-      'select * from football.ft_clubs')
+      'select * from sports.clubs_view')
     Filtered = True
     AfterOpen = qryClubsAfterOpen
     BeforeScroll = qryClubsBeforeScroll
@@ -317,24 +366,19 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     OnCalcFields = qryClubsCalcFields
     Left = 504
     Top = 32
-    object qryClubsclub_id: TIntegerField
-      FieldName = 'club_id'
+    object qryClubsid: TIntegerField
+      FieldName = 'id'
     end
     object qryClubsclub_name: TWideStringField
       FieldName = 'club_name'
       Size = 128
     end
-    object qryClubssearch_name: TWideStringField
-      FieldKind = fkCalculated
-      FieldName = 'search_name'
-      Size = 256
-      Calculated = True
+    object qryClubsfoundation_date: TDateField
+      FieldName = 'foundation_date'
     end
-    object qryClubsFoundation_date: TDateField
-      FieldName = 'Foundation_date'
-    end
-    object qryClubsanagraph_id: TIntegerField
-      FieldName = 'anagraph_id'
+    object qryClubspresident: TWideStringField
+      FieldName = 'president'
+      Size = 128
     end
     object qryClubsstadium_id: TSmallintField
       FieldName = 'stadium_id'
@@ -363,68 +407,102 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       FieldName = 'website'
       Size = 128
     end
-    object qryClubsdb_schema_id: TIntegerField
-      FieldName = 'db_schema_id'
-    end
     object qryClubsremote_id: TIntegerField
       FieldName = 'remote_id'
     end
-    object qryClubspresident: TWideStringField
-      FieldName = 'president'
-      Size = 128
+    object qryClubsanagraph_id: TIntegerField
+      FieldName = 'anagraph_id'
     end
     object qryClubsclub_image: TBlobField
       FieldName = 'club_image'
     end
-    object qryClubsfclb_deleted: TBooleanField
-      FieldName = 'fclb_deleted'
+    object qryClubsdb_schema_id: TIntegerField
+      FieldName = 'db_schema_id'
     end
-    object qryClubsfclb_jguid: TWideStringField
-      FieldName = 'fclb_jguid'
-      Required = True
-      Size = 40
+    object qryClubsjguid: TGuidField
+      FieldName = 'jguid'
+      Size = 38
+    end
+    object qryClubsdeleted: TBooleanField
+      FieldName = 'deleted'
+    end
+    object qryClubsinsert_date: TDateTimeField
+      FieldName = 'insert_date'
+    end
+    object qryClubsupdate_date: TDateTimeField
+      FieldName = 'update_date'
+    end
+    object qryClubsuser_insert: TWideStringField
+      FieldName = 'user_insert'
+      Size = 128
+    end
+    object qryClubsuser_update: TWideStringField
+      FieldName = 'user_update'
+      Size = 128
+    end
+    object qryClubssearch_name: TStringField
+      FieldKind = fkCalculated
+      FieldName = 'search_name'
+      Size = 128
+      Calculated = True
     end
   end
   object qryTeams: TUniQuery
     KeyFields = 'team_id'
     SQLInsert.Strings = (
-      'INSERT INTO football.ft_teams'
-      '  (team_id, club_id, team_name)'
+      'INSERT INTO sports.teams_view'
+      
+        '  (id, club_id, team_name, trainer_id, image, remote_id, db_sche' +
+        'ma_id, jguid, deleted, insert_date, update_date, user_insert, us' +
+        'er_update, club_name, club_image, team_id)'
       'VALUES'
-      '  (:team_id, :club_id, :team_name)')
+      
+        '  (:id, :club_id, :team_name, :trainer_id, :image, :remote_id, :' +
+        'db_schema_id, :jguid, :deleted, :insert_date, :update_date, :use' +
+        'r_insert, :user_update, :club_name, :club_image, :team_id)')
     SQLDelete.Strings = (
-      'DELETE FROM football.ft_teams'
+      'DELETE FROM sports.teams_view'
       'WHERE'
-      '  team_id = :Old_team_id')
+      '  id = :Old_id')
     SQLUpdate.Strings = (
-      'UPDATE football.ft_teams'
+      'UPDATE sports.teams_view'
       'SET'
-      '  team_id = :team_id, club_id = :club_id, team_name = :team_name'
+      
+        '  id = :id, club_id = :club_id, team_name = :team_name, trainer_' +
+        'id = :trainer_id, image = :image, remote_id = :remote_id, db_sch' +
+        'ema_id = :db_schema_id, jguid = :jguid, deleted = :deleted, inse' +
+        'rt_date = :insert_date, update_date = :update_date, user_insert ' +
+        '= :user_insert, user_update = :user_update, club_name = :club_na' +
+        'me, club_image = :club_image, team_id = :team_id'
       'WHERE'
-      '  team_id = :Old_team_id')
+      '  id = :Old_id')
     SQLLock.Strings = (
-      'SELECT * FROM football.ft_teams'
+      'SELECT * FROM sports.teams_view'
       'WHERE'
-      '  team_id = :Old_team_id'
+      '  id = :Old_id'
       'FOR UPDATE NOWAIT')
     SQLRefresh.Strings = (
-      'SELECT team_id, club_id, team_name FROM football.ft_teams'
+      
+        'SELECT id, club_id, team_name, trainer_id, image, remote_id, db_' +
+        'schema_id, jguid, deleted, insert_date, update_date, user_insert' +
+        ', user_update, club_name, club_image, team_id FROM sports.teams_' +
+        'view'
       'WHERE'
-      '  team_id = :team_id')
+      '  id = :id')
     SQLRecCount.Strings = (
       'SELECT count(*) FROM ('
-      'SELECT * FROM football.ft_teams'
+      'SELECT * FROM sports.teams_view'
       ''
       ') t')
     Connection = PgErgoConnection
     SQL.Strings = (
       'select t.* '
-      'from football.ft_teams t '
+      'from sports.teams_view t '
       'where'
-      'club_id = :club_id'
+      'club_id = :id'
       'order by team_name')
     MasterSource = dsClubs
-    MasterFields = 'club_id'
+    MasterFields = 'id'
     DetailFields = 'club_id'
     AfterOpen = qryTeamsAfterOpen
     AfterScroll = qryTeamsAfterScroll
@@ -432,17 +510,10 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     Top = 128
     ParamData = <
       item
-        DataType = ftInteger
-        Name = 'club_id'
-        ParamType = ptInput
-        Size = 4
-        Value = 2713
+        DataType = ftUnknown
+        Name = 'id'
+        Value = nil
       end>
-    object qryTeamsteam_id: TIntegerField
-      FieldName = 'team_id'
-      Origin = 'team_id'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
     object qryTeamsclub_id: TSmallintField
       FieldName = 'club_id'
       Origin = 'club_id'
@@ -452,6 +523,52 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       Origin = 'team_name'
       Size = 128
     end
+    object qryTeamsid: TIntegerField
+      FieldName = 'id'
+    end
+    object qryTeamstrainer_id: TIntegerField
+      FieldName = 'trainer_id'
+    end
+    object qryTeamsimage: TBlobField
+      FieldName = 'image'
+    end
+    object qryTeamsremote_id: TIntegerField
+      FieldName = 'remote_id'
+    end
+    object qryTeamsdb_schema_id: TIntegerField
+      FieldName = 'db_schema_id'
+    end
+    object qryTeamsjguid: TGuidField
+      FieldName = 'jguid'
+      Size = 38
+    end
+    object qryTeamsdeleted: TBooleanField
+      FieldName = 'deleted'
+    end
+    object qryTeamsinsert_date: TDateTimeField
+      FieldName = 'insert_date'
+    end
+    object qryTeamsupdate_date: TDateTimeField
+      FieldName = 'update_date'
+    end
+    object qryTeamsuser_insert: TWideStringField
+      FieldName = 'user_insert'
+      Size = 128
+    end
+    object qryTeamsuser_update: TWideStringField
+      FieldName = 'user_update'
+      Size = 128
+    end
+    object qryTeamsclub_name: TWideStringField
+      FieldName = 'club_name'
+      Size = 128
+    end
+    object qryTeamsclub_image: TBlobField
+      FieldName = 'club_image'
+    end
+    object qryTeamsteam_id: TIntegerField
+      FieldName = 'team_id'
+    end
   end
   object dsClubs: TDataSource
     DataSet = qryClubs
@@ -460,44 +577,57 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
   end
   object qryTeamsChampionships: TUniQuery
     SQLInsert.Strings = (
-      'INSERT INTO football.ft_teams_championships'
-      '  (season_id, league_id, team_id, position, penalty)'
+      'INSERT INTO sports.teams_championships_view'
+      
+        '  (team_name, club_name, id, season_id, league_id, team_id, posi' +
+        'tion, penalty, remote_id, db_schema_id, jguid, deleted, insert_d' +
+        'ate, update_date, user_insert, user_update, club_id, league_name' +
+        ')'
       'VALUES'
-      '  (:season_id, :league_id, :team_id, :position, :penalty)')
+      
+        '  (:team_name, :club_name, :id, :season_id, :league_id, :team_id' +
+        ', :position, :penalty, :remote_id, :db_schema_id, :jguid, :delet' +
+        'ed, :insert_date, :update_date, :user_insert, :user_update, :clu' +
+        'b_id, :league_name)')
     SQLDelete.Strings = (
-      'DELETE FROM football.ft_teams_championships'
+      'DELETE FROM sports.teams_championships_view'
       'WHERE'
       
-        '  season_id = :Old_season_id AND league_id = :Old_league_id AND ' +
-        'team_id = :Old_team_id')
+        '  id = :Old_id AND season_id = :Old_season_id AND league_id = :O' +
+        'ld_league_id')
     SQLUpdate.Strings = (
-      'UPDATE football.ft_teams_championships'
+      'UPDATE sports.teams_championships_view'
       'SET'
       
-        '  season_id = :season_id, league_id = :league_id, team_id = :tea' +
-        'm_id, position = :position, penalty = :penalty'
+        '  team_name = :team_name, club_name = :club_name, id = :id, seas' +
+        'on_id = :season_id, league_id = :league_id, team_id = :team_id, ' +
+        'position = :position, penalty = :penalty, remote_id = :remote_id' +
+        ', db_schema_id = :db_schema_id, jguid = :jguid, deleted = :delet' +
+        'ed, insert_date = :insert_date, update_date = :update_date, user' +
+        '_insert = :user_insert, user_update = :user_update, club_id = :c' +
+        'lub_id, league_name = :league_name'
       'WHERE'
       
-        '  season_id = :Old_season_id AND league_id = :Old_league_id AND ' +
-        'team_id = :Old_team_id')
+        '  id = :Old_id AND season_id = :Old_season_id AND league_id = :O' +
+        'ld_league_id')
     SQLLock.Strings = (
-      'SELECT * FROM football.ft_teams_championships'
+      'SELECT * FROM sports.teams_championships_view'
       'WHERE'
       
-        '  season_id = :Old_season_id AND league_id = :Old_league_id AND ' +
-        'team_id = :Old_team_id'
+        '  id = :Old_id AND season_id = :Old_season_id AND league_id = :O' +
+        'ld_league_id'
       'FOR UPDATE NOWAIT')
     SQLRefresh.Strings = (
       
-        'SELECT season_id, league_id, team_id, position, penalty FROM foo' +
-        'tball.ft_teams_championships'
+        'SELECT team_name, club_name, id, season_id, league_id, team_id, ' +
+        'position, penalty, remote_id, db_schema_id, jguid, deleted, inse' +
+        'rt_date, update_date, user_insert, user_update, club_id, league_' +
+        'name FROM sports.teams_championships_view'
       'WHERE'
-      
-        '  season_id = :season_id AND league_id = :league_id AND team_id ' +
-        '= :team_id')
+      '  id = :id AND season_id = :season_id AND league_id = :league_id')
     SQLRecCount.Strings = (
       'SELECT count(*) FROM ('
-      'SELECT * FROM football.ft_teams_championships'
+      'SELECT * FROM sports.teams_championships_view'
       ''
       ') t')
     Connection = PgErgoConnection
@@ -513,19 +643,19 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     DetailFields = 'season_id;league_id'
     AfterScroll = qryTeamsChampionshipsAfterScroll
     Left = 176
-    Top = 256
+    Top = 312
     ParamData = <
       item
         DataType = ftSmallint
         Name = 'season_id'
         ParamType = ptInput
-        Value = 2
+        Value = 4
       end
       item
         DataType = ftSmallint
         Name = 'league_id'
         ParamType = ptInput
-        Value = 3
+        Value = 13
       end>
     object qryTeamsChampionshipsseason_id: TSmallintField
       FieldName = 'season_id'
@@ -564,7 +694,7 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
   object dsTeamChampionships: TDataSource
     DataSet = qryTeamsChampionships
     Left = 176
-    Top = 312
+    Top = 368
   end
   object qryMatchDays: TUniQuery
     SQLInsert.Strings = (
@@ -645,14 +775,14 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
         Name = 'season_id'
         ParamType = ptInput
         Size = 2
-        Value = 77
+        Value = nil
       end
       item
         DataType = ftSmallint
         Name = 'league_id'
         ParamType = ptInput
         Size = 2
-        Value = 145
+        Value = nil
       end>
     object qryMatchDaysseason_id: TSmallintField
       FieldName = 'season_id'
@@ -681,7 +811,7 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     object qryMatchDayslkpRestTeam: TStringField
       FieldKind = fkLookup
       FieldName = 'lkpRestTeam'
-      LookupDataSet = lkpTeams
+      LookupDataSet = qryLkpTeams
       LookupKeyFields = 'team_id'
       LookupResultField = 'team_name'
       KeyFields = 'rest_team_id'
@@ -715,64 +845,68 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
   end
   object qryMatches: TUniQuery
     SQLInsert.Strings = (
-      'INSERT INTO football.ft_calendar'
+      'INSERT INTO sports.matches_view'
       
-        '  (match_id, league_id, season_id, match_day_number, match_date,' +
-        ' home_team_id, visitors_team_id, goal_home, goal_visitor, points' +
-        '_home, points_visitors, notes, confirmed, db_schema_id, insert_d' +
-        'ate, update_date, home_notes, visitors_notes, match_time, refere' +
-        'e_id, referee_second_id, referee_third_id, suspended, postponed,' +
-        ' forfeit, remote_id, filed_id)'
+        '  (id, league_id, season_id, match_day_number, match_time, match' +
+        '_date, home_team_id, visitors_team_id, score_home, score_visitor' +
+        ', points_home, points_visitors, notes, confirmed, home_notes, vi' +
+        'sitors_notes, suspended, postponed, forfeit, remote_id, field_id' +
+        ', article_url, video_url, db_schema_id, jguid, deleted, insert_d' +
+        'ate, update_date, user_insert, user_update, home_team_name, visi' +
+        'tors_team_name, games_sets)'
       'VALUES'
       
         '  (:match_id, :league_id, :season_id, :match_day_number, :match_' +
-        'date, :home_team_id, :visitors_team_id, :goal_home, :goal_visito' +
-        'r, :points_home, :points_visitors, :notes, :confirmed, :db_schem' +
-        'a_id, :insert_date, :update_date, :home_notes, :visitors_notes, ' +
-        ':match_time, :referee_id, :referee_second_id, :referee_third_id,' +
-        ' :suspended, :postponed, :forfeit, :remote_id, :filed_id)'
-      ''
-      '  ')
+        'time, :match_date, :home_team_id, :visitors_team_id, :score_home' +
+        ', :score_visitor, :points_home, :points_visitors, :notes, :confi' +
+        'rmed, :home_notes, :visitors_notes, :suspended, :postponed, :for' +
+        'feit, :remote_id, :field_id, :article_url, :video_url, :db_schem' +
+        'a_id, :jguid, :deleted, :insert_date, :update_date, :user_insert' +
+        ', :user_update, :home_team_name, :visitors_team_name, :games_set' +
+        's)')
     SQLDelete.Strings = (
-      'DELETE FROM football.ft_calendar'
+      'DELETE FROM sports.matches_view'
       'WHERE'
-      '  match_id = :Old_match_id')
+      '  id = :Old_match_id')
     SQLUpdate.Strings = (
-      'UPDATE football.ft_calendar'
+      'UPDATE sports.matches_view'
       'SET'
       
-        '  match_id = :match_id, league_id = :league_id, season_id = :sea' +
-        'son_id, match_day_number = :match_day_number, match_date = :matc' +
-        'h_date, home_team_id = :home_team_id, visitors_team_id = :visito' +
-        'rs_team_id, goal_home = :goal_home, goal_visitor = :goal_visitor' +
-        ', points_home = :points_home, points_visitors = :points_visitors' +
-        ', notes = :notes, confirmed = :confirmed, db_schema_id = :db_sch' +
-        'ema_id, insert_date = :insert_date, update_date = :update_date, ' +
-        'home_notes = :home_notes, visitors_notes = :visitors_notes, matc' +
-        'h_time = :match_time, referee_id = :referee_id, referee_second_i' +
-        'd = :referee_second_id, referee_third_id = :referee_third_id, su' +
+        '  id = :match_id, league_id = :league_id, season_id = :season_id' +
+        ', match_day_number = :match_day_number, match_time = :match_time' +
+        ', match_date = :match_date, home_team_id = :home_team_id, visito' +
+        'rs_team_id = :visitors_team_id, score_home = :score_home, score_' +
+        'visitor = :score_visitor, points_home = :points_home, points_vis' +
+        'itors = :points_visitors, notes = :notes, confirmed = :confirmed' +
+        ', home_notes = :home_notes, visitors_notes = :visitors_notes, su' +
         'spended = :suspended, postponed = :postponed, forfeit = :forfeit' +
-        ', remote_id = :remote_id, filed_id = :filed_id'
+        ', remote_id = :remote_id, field_id = :field_id, article_url = :a' +
+        'rticle_url, video_url = :video_url, db_schema_id = :db_schema_id' +
+        ', jguid = :jguid, deleted = :deleted, insert_date = :insert_date' +
+        ', update_date = :update_date, user_insert = :user_insert, user_u' +
+        'pdate = :user_update, home_team_name = :home_team_name, visitors' +
+        '_team_name = :visitors_team_name, games_sets = :games_sets'
       'WHERE'
-      '  match_id = :Old_match_id')
+      '  id = :Old_match_id')
     SQLLock.Strings = (
-      'SELECT * FROM football.ft_calendar'
+      'SELECT * FROM sports.matches_view'
       'WHERE'
-      '  match_id = :Old_match_id'
+      '  id = :Old_match_id'
       'FOR UPDATE NOWAIT')
     SQLRefresh.Strings = (
       
-        'SELECT match_id, league_id, season_id, match_day_number, match_d' +
-        'ate, home_team_id, visitors_team_id, goal_home, goal_visitor, po' +
-        'ints_home, points_visitors, notes, confirmed, db_schema_id, inse' +
-        'rt_date, update_date, home_notes, visitors_notes, match_time, re' +
-        'feree_id, referee_second_id, referee_third_id, suspended, postpo' +
-        'ned, forfeit, remote_id, filed_id FROM football.ft_calendar'
+        'SELECT id, league_id, season_id, match_day_number, match_time, m' +
+        'atch_date, home_team_id, visitors_team_id, score_home, score_vis' +
+        'itor, points_home, points_visitors, notes, confirmed, home_notes' +
+        ', visitors_notes, suspended, postponed, forfeit, remote_id, fiel' +
+        'd_id, article_url, video_url, db_schema_id, jguid, deleted, inse' +
+        'rt_date, update_date, user_insert, user_update, home_team_name, ' +
+        'visitors_team_name, games_sets FROM sports.matches_view'
       'WHERE'
-      '  match_id = :match_id')
+      '  id = :match_id')
     SQLRecCount.Strings = (
       'SELECT count(*) FROM ('
-      'SELECT * FROM football.ft_calendar'
+      'SELECT * FROM sports.matches_view'
       ''
       ') t')
     DataTypeMap = <
@@ -853,26 +987,6 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       DefaultExpression = 'false'
       FieldName = 'confirmed'
       Origin = 'confirmed'
-    end
-    object qryMatcheslkpHomeTeam: TStringField
-      FieldKind = fkLookup
-      FieldName = 'lkpHomeTeam'
-      LookupDataSet = lkpTeamsChampionship
-      LookupKeyFields = 'team_id'
-      LookupResultField = 'team_name'
-      KeyFields = 'home_team_id'
-      Size = 60
-      Lookup = True
-    end
-    object qryMatcheslkpVisitorTeam: TStringField
-      FieldKind = fkLookup
-      FieldName = 'lkpVisitorTeam'
-      LookupDataSet = lkpTeamsChampionship
-      LookupKeyFields = 'team_id'
-      LookupResultField = 'team_name'
-      KeyFields = 'visitors_team_id'
-      Size = 60
-      Lookup = True
     end
     object qryMatchesdb_schema_id: TIntegerField
       FieldName = 'db_schema_id'
@@ -960,6 +1074,26 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       FieldName = 'visitors_team_name'
       Size = 128
     end
+    object qryMatcheslkpVisitorTeam: TStringField
+      FieldKind = fkLookup
+      FieldName = 'lkpVisitorTeam'
+      LookupDataSet = lkpTeamsChampionship
+      LookupKeyFields = 'team_id'
+      LookupResultField = 'team_name'
+      KeyFields = 'visitors_team_id'
+      Size = 60
+      Lookup = True
+    end
+    object qryMatcheslkpHomeTeam: TStringField
+      FieldKind = fkLookup
+      FieldName = 'lkpHomeTeam'
+      LookupDataSet = lkpTeamsChampionship
+      LookupKeyFields = 'team_id'
+      LookupResultField = 'team_name'
+      KeyFields = 'home_team_id'
+      Size = 60
+      Lookup = True
+    end
   end
   object dsMatchDays: TDataSource
     DataSet = qryMatchDays
@@ -971,41 +1105,16 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     Left = 288
     Top = 284
   end
-  object lkpTeams: TClientDataSet
-    Aggregates = <>
-    Params = <>
-    ProviderName = 'qryLkpTeams'
-    Left = 736
-    Top = 304
-    object lkpTeamsteam_id: TIntegerField
-      FieldName = 'team_id'
-      Origin = 'team_id'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
-    object lkpTeamsclub_id: TSmallintField
-      FieldName = 'club_id'
-      Origin = 'club_id'
-    end
-    object lkpTeamsteam_name: TWideStringField
-      FieldName = 'team_name'
-      Origin = 'team_name'
-      Size = 128
-    end
-    object lkpTeamsclub_name: TWideStringField
-      FieldName = 'club_name'
-      ReadOnly = True
-      Size = 128
-    end
-  end
   object qryLkpTeams: TUniQuery
     Connection = PgErgoConnection
     SQL.Strings = (
-      'select t.* , c.club_name, club_image'
-      'from footballsports.ft_teams t , football.ft_clubs c'
+      'select t.* , c.club_name, club_image, t.id as team_id'
+      'from sports.teams t , sports.clubs c'
       'where'
-      'c.club_id = t.club_id')
+      'c.id = t.club_id')
+    Active = True
     Left = 736
-    Top = 208
+    Top = 216
     object IntegerField1: TIntegerField
       FieldName = 'team_id'
       Origin = 'team_id'
@@ -1042,54 +1151,13 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       ReadOnly = True
     end
   end
-  object cdsLkpTeams: TDataSetProvider
-    DataSet = qryLkpTeams
-    Left = 736
-    Top = 256
-  end
   object qryLkpEventTypes: TUniQuery
     Connection = PgErgoConnection
     SQL.Strings = (
       'select * from football.ft_event_types')
+    Active = True
     Left = 624
     Top = 16
-  end
-  object dspEventTypes: TDataSetProvider
-    DataSet = qryLkpEventTypes
-    Left = 624
-    Top = 64
-  end
-  object cdsEventTypes: TClientDataSet
-    Aggregates = <>
-    Params = <>
-    ProviderName = 'dspEventTypes'
-    Left = 624
-    Top = 112
-    object cdsEventTypesevent_id: TSmallintField
-      FieldName = 'event_id'
-      Origin = 'event_id'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
-    object cdsEventTypesevent_des: TWideStringField
-      FieldName = 'event_des'
-      Origin = 'event_des'
-    end
-    object cdsEventTypesGoal: TBooleanField
-      FieldName = 'Goal'
-      Origin = '"Goal"'
-    end
-    object cdsEventTypessubst: TBooleanField
-      FieldName = 'subst'
-      Origin = 'subst'
-    end
-    object cdsEventTypessave: TBooleanField
-      FieldName = 'save'
-      Origin = 'save'
-    end
-    object cdsEventTypesaccident: TBooleanField
-      FieldName = 'accident'
-      Origin = 'accident'
-    end
   end
   object qryMatchEvents: TUniQuery
     KeyFields = 'match_events_row_id'
@@ -1141,7 +1209,7 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       end>
     Connection = PgErgoConnection
     SQL.Strings = (
-      'select e.id AS match_events_row_id,  e.*'
+      'select   e.*, e.id AS match_events_row_id'
       'from '
       'sports.match_events_view e'
       'where '
@@ -1255,6 +1323,9 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       FieldName = 'team_name'
       Size = 128
     end
+    object qryMatchEventsmatch_events_row_id: TLargeintField
+      FieldName = 'match_events_row_id'
+    end
   end
   object qryMatchAllPlayers: TUniQuery
     SQLInsert.Strings = (
@@ -1330,6 +1401,7 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       'where '
       'm.match_id = :match_id'
       'order by m.pos')
+    Active = True
     Left = 288
     Top = 456
     ParamData = <
@@ -1343,48 +1415,24 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     end
     object qryMatchAllPlayersmatch_id: TIntegerField
       FieldName = 'match_id'
-      ReadOnly = True
-      Required = True
     end
     object qryMatchAllPlayersplayer_id: TIntegerField
       FieldName = 'player_id'
-      ReadOnly = True
-      Required = True
     end
     object qryMatchAllPlayersminutes: TSmallintField
       FieldName = 'minutes'
-      ReadOnly = True
     end
     object qryMatchAllPlayersvote: TFloatField
       FieldName = 'vote'
-      ReadOnly = True
     end
     object qryMatchAllPlayersplayed: TBooleanField
       FieldName = 'played'
-      ReadOnly = True
     end
     object qryMatchAllPlayersteam_id: TSmallintField
       FieldName = 'team_id'
-      ReadOnly = True
     end
     object qryMatchAllPlayerspos: TSmallintField
       FieldName = 'pos'
-      ReadOnly = True
-    end
-    object qryMatchAllPlayersteam_name: TWideStringField
-      FieldName = 'team_name'
-      ReadOnly = True
-      Size = 128
-    end
-    object qryMatchAllPlayersfull_name: TWideStringField
-      FieldName = 'full_name'
-      ReadOnly = True
-      Size = 512
-    end
-    object qryMatchAllPlayerslkpplayername: TWideStringField
-      FieldName = 'lkpplayername'
-      ReadOnly = True
-      Size = 512
     end
     object qryMatchAllPlayerssubst_id: TIntegerField
       FieldName = 'subst_id'
@@ -1438,14 +1486,31 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       FieldName = 'notes'
       BlobType = ftWideMemo
     end
+    object qryMatchAllPlayersfirst_name: TWideStringField
+      FieldName = 'first_name'
+      Size = 128
+    end
+    object qryMatchAllPlayersfamily_name: TWideStringField
+      FieldName = 'family_name'
+      Size = 128
+    end
+    object qryMatchAllPlayersfull_name: TWideStringField
+      FieldName = 'full_name'
+      Size = 512
+    end
+    object qryMatchAllPlayerslkpplayername: TWideStringField
+      FieldName = 'lkpplayername'
+      Size = 512
+    end
   end
   object qryMatchTeams: TUniQuery
     Connection = PgErgoConnection
     SQL.Strings = (
-      'select * from football.ft_teams where '
-      'team_id in (:home_team_id, :visitors_team_id)')
+      'select *, t.id as team_id  from sports.teams_view t where '
+      'id in (:home_team_id, :visitors_team_id)')
     MasterSource = dsMatches
     MasterFields = 'home_team_id;visitors_team_id'
+    Active = True
     AfterScroll = qryMatchTeamsAfterScroll
     Left = 400
     Top = 160
@@ -1476,6 +1541,44 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       FieldName = 'team_name'
       Size = 128
     end
+    object qryMatchTeamsid: TIntegerField
+      FieldName = 'id'
+      Required = True
+    end
+    object qryMatchTeamstrainer_id: TIntegerField
+      FieldName = 'trainer_id'
+    end
+    object qryMatchTeamsimage: TBlobField
+      FieldName = 'image'
+    end
+    object qryMatchTeamsremote_id: TIntegerField
+      FieldName = 'remote_id'
+    end
+    object qryMatchTeamsdb_schema_id: TIntegerField
+      FieldName = 'db_schema_id'
+    end
+    object qryMatchTeamsjguid: TGuidField
+      FieldName = 'jguid'
+      Required = True
+      Size = 38
+    end
+    object qryMatchTeamsdeleted: TBooleanField
+      FieldName = 'deleted'
+    end
+    object qryMatchTeamsinsert_date: TDateTimeField
+      FieldName = 'insert_date'
+    end
+    object qryMatchTeamsupdate_date: TDateTimeField
+      FieldName = 'update_date'
+    end
+    object qryMatchTeamsuser_insert: TWideStringField
+      FieldName = 'user_insert'
+      Size = 128
+    end
+    object qryMatchTeamsuser_update: TWideStringField
+      FieldName = 'user_update'
+      Size = 128
+    end
   end
   object dsTeams: TDataSource
     DataSet = qryTeams
@@ -1494,54 +1597,52 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
   end
   object qryMatchTeamPlayers: TUniQuery
     SQLInsert.Strings = (
-      'INSERT INTO football.ft_match_players'
+      'INSERT INTO sports.match_players'
       
-        '  (match_id, player_id, minutes, vote, played, team_id, pos, sub' +
-        'st_id, goal, owngoal, lostgoal, since, until, sent_off, injuries' +
-        ')'
+        '  (id, match_id, player_id, minutes, vote, played, team_id, pos,' +
+        ' subst_id, score, self_score, conceded, since, until, sent_off, ' +
+        'injuries, db_schema_id, jguid, deleted, insert_date, update_date' +
+        ', user_insert, user_update)'
       'VALUES'
       
-        '  (:match_id, :player_id, :minutes, :vote, :played, :team_id, :p' +
-        'os, :subst_id, :goal, :owngoal, :lostgoal, :since, :until, :sent' +
-        '_off, :injuries)')
+        '  (:id, :match_id, :player_id, :minutes, :vote, :played, :team_i' +
+        'd, :pos, :subst_id, :score, :self_score, :conceded, :since, :unt' +
+        'il, :sent_off, :injuries, :db_schema_id, :jguid, :deleted, :inse' +
+        'rt_date, :update_date, :user_insert, :user_update)')
     SQLDelete.Strings = (
-      'DELETE FROM football.ft_match_players'
+      'DELETE FROM sports.match_players'
       'WHERE'
-      
-        '  match_id = :Old_match_id AND player_id = :Old_player_id AND te' +
-        'am_id = :Old_team_id')
+      '  id = :Old_id')
     SQLUpdate.Strings = (
-      'UPDATE football.ft_match_players'
+      'UPDATE sports.match_players'
       'SET'
       
-        '  match_id = :match_id, player_id = :player_id, minutes = :minut' +
-        'es, vote = :vote, played = :played, team_id = :team_id, pos = :p' +
-        'os, subst_id = :subst_id, goal = :goal, owngoal = :owngoal, lost' +
-        'goal = :lostgoal, since = :since, until = :until, sent_off = :se' +
-        'nt_off, injuries = :injuries'
+        '  id = :id, match_id = :match_id, player_id = :player_id, minute' +
+        's = :minutes, vote = :vote, played = :played, team_id = :team_id' +
+        ', pos = :pos, subst_id = :subst_id, score = :score, self_score =' +
+        ' :self_score, conceded = :conceded, since = :since, until = :unt' +
+        'il, sent_off = :sent_off, injuries = :injuries, db_schema_id = :' +
+        'db_schema_id, jguid = :jguid, deleted = :deleted, insert_date = ' +
+        ':insert_date, update_date = :update_date, user_insert = :user_in' +
+        'sert, user_update = :user_update'
       'WHERE'
-      
-        '  match_id = :Old_match_id AND player_id = :Old_player_id AND te' +
-        'am_id = :Old_team_id')
+      '  id = :Old_id')
     SQLLock.Strings = (
-      'SELECT * FROM football.ft_match_players'
+      'SELECT * FROM sports.match_players'
       'WHERE'
-      
-        '  match_id = :Old_match_id AND player_id = :Old_player_id AND te' +
-        'am_id = :Old_team_id'
+      '  id = :Old_id'
       'FOR UPDATE NOWAIT')
     SQLRefresh.Strings = (
       
-        'SELECT match_id, player_id, minutes, vote, played, team_id, pos,' +
-        ' subst_id, goal, owngoal, lostgoal, since, until, sent_off, inju' +
-        'ries FROM football.ft_match_players'
+        'SELECT id, match_id, player_id, minutes, vote, played, team_id, ' +
+        'pos, subst_id, score, self_score, conceded, since, until, sent_o' +
+        'ff, injuries, db_schema_id, jguid, deleted, insert_date, update_' +
+        'date, user_insert, user_update FROM sports.match_players'
       'WHERE'
-      
-        '  match_id = :match_id AND player_id = :player_id AND team_id = ' +
-        ':team_id')
+      '  id = :id')
     SQLRecCount.Strings = (
       'SELECT count(*) FROM ('
-      'SELECT * FROM football.ft_match_players'
+      'SELECT * FROM sports.match_players'
       ''
       ') t')
     DataTypeMap = <
@@ -1553,30 +1654,21 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     Connection = PgErgoConnection
     SQL.Strings = (
       'SELECT  '
-      '   m.*, p.family_name, p.first_name, '
-      '   p.family_name || '#39' '#39' || p.first_name || '#39' - '#39' '
-      '   || public.nvl( to_char(p.birth_date, '#39'dd/mm/yy'#39') , '
-      
-        '                  public.nvl(to_char(p.birth_year, '#39'9999'#39'), publ' +
-        'ic.nvl(notes, '#39'n.a.'#39'))) '
-      '   || '#39' '#39' || r.role_name '
-      '  as full_name, r.role_id'
+      '   m.*, p.family_name, p.first_name,  p.full_name, p.role_id'
       '  FROM '
-      '    football.ft_players p'
-      '  , football.ft_match_players m'
-      '  , football.ft_roles r'
+      '    sports.players_view p'
+      '  , sports.match_players m'
       'where '
-      'public.nvl(p.role, 0) = r.role_id'
-      'and'
       'm.match_id = :match_id'
       'and'
       'm.team_id = :team_id'
       'and'
-      'p.anagraph_id = m.player_id'
+      'p.id = m.player_id'
       'order by pos')
     MasterSource = dsMatchTeams
     MasterFields = 'team_id'
     DetailFields = 'team_id'
+    Active = True
     OnNewRecord = qryMatchTeamPlayersNewRecord
     Left = 400
     Top = 272
@@ -1590,35 +1682,107 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
         DataType = ftInteger
         Name = 'team_id'
         ParamType = ptInput
-        Value = 464
+        Value = nil
       end>
+    object qryMatchTeamPlayersid: TLargeintField
+      FieldName = 'id'
+      ReadOnly = True
+      Required = True
+    end
     object qryMatchTeamPlayersmatch_id: TIntegerField
       FieldName = 'match_id'
+      ReadOnly = True
+      Required = True
     end
     object qryMatchTeamPlayersplayer_id: TIntegerField
       FieldName = 'player_id'
+      ReadOnly = True
+      Required = True
     end
     object qryMatchTeamPlayersminutes: TSmallintField
       FieldName = 'minutes'
+      ReadOnly = True
     end
     object qryMatchTeamPlayersvote: TFloatField
       FieldName = 'vote'
+      ReadOnly = True
     end
     object qryMatchTeamPlayersplayed: TBooleanField
       FieldName = 'played'
+      ReadOnly = True
     end
     object qryMatchTeamPlayersteam_id: TSmallintField
       FieldName = 'team_id'
+      ReadOnly = True
+      Required = True
     end
     object qryMatchTeamPlayerspos: TSmallintField
       FieldName = 'pos'
-    end
-    object qryMatchTeamPlayersfull_name: TWideStringField
-      FieldName = 'full_name'
-      Size = 512
+      ReadOnly = True
     end
     object qryMatchTeamPlayerssubst_id: TIntegerField
       FieldName = 'subst_id'
+      ReadOnly = True
+    end
+    object qryMatchTeamPlayersscore: TSmallintField
+      FieldName = 'score'
+      ReadOnly = True
+    end
+    object qryMatchTeamPlayersself_score: TSmallintField
+      FieldName = 'self_score'
+      ReadOnly = True
+    end
+    object qryMatchTeamPlayersconceded: TSmallintField
+      FieldName = 'conceded'
+      ReadOnly = True
+    end
+    object qryMatchTeamPlayerssince: TSmallintField
+      FieldName = 'since'
+      ReadOnly = True
+    end
+    object qryMatchTeamPlayersuntil: TSmallintField
+      FieldName = 'until'
+      ReadOnly = True
+    end
+    object qryMatchTeamPlayerssent_off: TSmallintField
+      FieldName = 'sent_off'
+      ReadOnly = True
+    end
+    object qryMatchTeamPlayersinjuries: TSmallintField
+      FieldName = 'injuries'
+      ReadOnly = True
+    end
+    object qryMatchTeamPlayersdb_schema_id: TIntegerField
+      FieldName = 'db_schema_id'
+      ReadOnly = True
+    end
+    object qryMatchTeamPlayersjguid: TGuidField
+      FieldName = 'jguid'
+      ReadOnly = True
+      Required = True
+      Size = 38
+    end
+    object qryMatchTeamPlayersdeleted: TBooleanField
+      FieldName = 'deleted'
+      ReadOnly = True
+    end
+    object qryMatchTeamPlayersinsert_date: TDateTimeField
+      FieldName = 'insert_date'
+      ReadOnly = True
+    end
+    object qryMatchTeamPlayersupdate_date: TDateTimeField
+      FieldName = 'update_date'
+      ReadOnly = True
+    end
+    object qryMatchTeamPlayersuser_insert: TWideStringField
+      FieldName = 'user_insert'
+      ReadOnly = True
+      Size = 128
+    end
+    object qryMatchTeamPlayersuser_update: TWideStringField
+      FieldName = 'user_update'
+      ReadOnly = True
+      Size = 128
     end
     object qryMatchTeamPlayersfamily_name: TWideStringField
       FieldName = 'family_name'
@@ -1628,31 +1792,12 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       FieldName = 'first_name'
       Size = 128
     end
-    object qryMatchTeamPlayersgoal: TSmallintField
-      FieldName = 'goal'
-    end
-    object qryMatchTeamPlayersowngoal: TSmallintField
-      FieldName = 'owngoal'
-    end
-    object qryMatchTeamPlayerslostgoal: TSmallintField
-      FieldName = 'lostgoal'
+    object qryMatchTeamPlayersfull_name: TWideStringField
+      FieldName = 'full_name'
+      Size = 512
     end
     object qryMatchTeamPlayersrole_id: TSmallintField
       FieldName = 'role_id'
-      ReadOnly = True
-      Required = True
-    end
-    object qryMatchTeamPlayerssince: TSmallintField
-      FieldName = 'since'
-    end
-    object qryMatchTeamPlayersuntil: TSmallintField
-      FieldName = 'until'
-    end
-    object qryMatchTeamPlayerssent_off: TSmallintField
-      FieldName = 'sent_off'
-    end
-    object qryMatchTeamPlayersinjuries: TSmallintField
-      FieldName = 'injuries'
     end
   end
   object dsMatchTeamPlayers: TDataSource
@@ -1662,47 +1807,78 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
   end
   object qryTeamPlayers: TUniQuery
     SQLInsert.Strings = (
-      'INSERT INTO football.ft_teams_players'
-      '  (team_id, player_id, season_id, since, until, club_origin_id)'
+      'INSERT INTO sports.team_players_view'
+      
+        '  (id, team_id, player_id, season_id, since, until, club_origin_' +
+        'id, scored, self_scored, conceded, sent_off, injuries, minutes, ' +
+        'matches, score, votes, remote_id, db_schema_id, jguid, deleted, ' +
+        'insert_date, update_date, user_insert, user_update, anagraph_id,' +
+        ' first_name, family_name, birth_date, an_cellular, an_email, rol' +
+        'e_name, role_code, birth_year, birth_place, notes, height, weigh' +
+        't, role_id, team_name, club_id, full_name, club_name)'
       'VALUES'
       
-        '  (:team_id, :player_id, :season_id, :since, :until, :club_origi' +
-        'n_id)')
+        '  (:id, :team_id, :player_id, :season_id, :since, :until, :club_' +
+        'origin_id, :scored, :self_scored, :conceded, :sent_off, :injurie' +
+        's, :minutes, :matches, :score, :votes, :remote_id, :db_schema_id' +
+        ', :jguid, :deleted, :insert_date, :update_date, :user_insert, :u' +
+        'ser_update, :anagraph_id, :first_name, :family_name, :birth_date' +
+        ', :an_cellular, :an_email, :role_name, :role_code, :birth_year, ' +
+        ':birth_place, :notes, :height, :weight, :role_id, :team_name, :c' +
+        'lub_id, :full_name, :club_name)')
     SQLDelete.Strings = (
-      'DELETE FROM football.ft_teams_players'
+      'DELETE FROM sports.team_players_view'
       'WHERE'
       
-        '  team_id = :Old_team_id AND player_id = :Old_player_id AND seas' +
-        'on_id = :Old_season_id')
+        '  id = :Old_id AND team_id = :Old_team_id AND season_id = :Old_s' +
+        'eason_id')
     SQLUpdate.Strings = (
-      'UPDATE football.ft_teams_players'
+      'UPDATE sports.team_players_view'
       'SET'
       
-        '  team_id = :team_id, player_id = :player_id, season_id = :seaso' +
-        'n_id, since = :since, until = :until, club_origin_id = :club_ori' +
-        'gin_id'
+        '  id = :id, team_id = :team_id, player_id = :player_id, season_i' +
+        'd = :season_id, since = :since, until = :until, club_origin_id =' +
+        ' :club_origin_id, scored = :scored, self_scored = :self_scored, ' +
+        'conceded = :conceded, sent_off = :sent_off, injuries = :injuries' +
+        ', minutes = :minutes, matches = :matches, score = :score, votes ' +
+        '= :votes, remote_id = :remote_id, db_schema_id = :db_schema_id, ' +
+        'jguid = :jguid, deleted = :deleted, insert_date = :insert_date, ' +
+        'update_date = :update_date, user_insert = :user_insert, user_upd' +
+        'ate = :user_update, anagraph_id = :anagraph_id, first_name = :fi' +
+        'rst_name, family_name = :family_name, birth_date = :birth_date, ' +
+        'an_cellular = :an_cellular, an_email = :an_email, role_name = :r' +
+        'ole_name, role_code = :role_code, birth_year = :birth_year, birt' +
+        'h_place = :birth_place, notes = :notes, height = :height, weight' +
+        ' = :weight, role_id = :role_id, team_name = :team_name, club_id ' +
+        '= :club_id, full_name = :full_name, club_name = :club_name'
       'WHERE'
       
-        '  team_id = :Old_team_id AND player_id = :Old_player_id AND seas' +
-        'on_id = :Old_season_id')
+        '  id = :Old_id AND team_id = :Old_team_id AND season_id = :Old_s' +
+        'eason_id')
     SQLLock.Strings = (
-      'SELECT * FROM football.ft_teams_players'
+      'SELECT * FROM sports.team_players_view'
       'WHERE'
       
-        '  team_id = :Old_team_id AND player_id = :Old_player_id AND seas' +
-        'on_id = :Old_season_id'
+        '  id = :Old_id AND team_id = :Old_team_id AND season_id = :Old_s' +
+        'eason_id'
       'FOR UPDATE NOWAIT')
     SQLRefresh.Strings = (
       
-        'SELECT team_id, player_id, season_id, since, until, club_origin_' +
-        'id FROM football.ft_teams_players'
+        'SELECT id, team_id, player_id, season_id, since, until, club_ori' +
+        'gin_id, scored, self_scored, conceded, sent_off, injuries, minut' +
+        'es, matches, score, votes, remote_id, db_schema_id, jguid, delet' +
+        'ed, insert_date, update_date, user_insert, user_update, anagraph' +
+        '_id, first_name, family_name, birth_date, an_cellular, an_email,' +
+        ' role_name, role_code, birth_year, birth_place, notes, height, w' +
+        'eight, role_id, team_name, club_id, full_name, club_name FROM sp' +
+        'orts.team_players_view'
       'WHERE'
       
-        '  team_id = :team_id AND player_id = :player_id AND season_id = ' +
-        ':season_id')
+        '  id = :id AND team_id = :P_1_team_id AND season_id = :P_1_seaso' +
+        'n_id')
     SQLRecCount.Strings = (
       'SELECT count(*) FROM ('
-      'SELECT * FROM football.ft_teams_players'
+      'SELECT * FROM sports.team_players_view'
       ''
       ') t')
     DataTypeMap = <
@@ -1713,25 +1889,14 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       end>
     Connection = PgErgoConnection
     SQL.Strings = (
-      'SELECT   '
-      '   t.*, p.*, r.role_code as lkpRoleCode, '
-      '       p.family_name || '#39' '#39' || p.first_name || '#39' - '#39' '
-      
-        '       || public.nvl(notes, text('#39'n.a.'#39'))  || '#39' '#39' || r.role_name' +
-        ' '
-      '    as fullname'
+      'SELECT '
+      '   t.*'
       '  FROM '
-      '    football.ft_teams_players t'
-      '  , football.ft_players p'
-      '  , football.ft_roles r'
+      '    sports.team_players_view t'
       'where '
-      'r.role_id = public.nvl(p.role,0)'
-      'and'
       'team_id = :team_id'
       'and'
       'season_id = :season_id'
-      'and'
-      'p.anagraph_id = t.player_id'
       'order by family_name, first_name')
     MasterSource = dsTeamsClubsLeagues
     MasterFields = 'team_id;season_id'
@@ -1780,12 +1945,6 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       Origin = 'season_id'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
-    object qryTeamPlayerslkpPlayerName: TWideStringField
-      FieldKind = fkCalculated
-      FieldName = 'lkpPlayerName'
-      Size = 0
-      Calculated = True
-    end
     object qryTeamPlayersanagraph_id: TIntegerField
       FieldName = 'anagraph_id'
       ReadOnly = True
@@ -1805,25 +1964,8 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       ReadOnly = True
       BlobType = ftWideMemo
     end
-    object qryTeamPlayersrole: TSmallintField
-      FieldName = 'role'
-    end
-    object qryTeamPlayerslkpRoleName: TStringField
-      FieldKind = fkLookup
-      FieldName = 'lkpRoleName'
-      LookupDataSet = lkpRoles
-      LookupKeyFields = 'role_id'
-      LookupResultField = 'role_name'
-      KeyFields = 'role'
-      Size = 30
-      Lookup = True
-    end
     object qryTeamPlayersclub_origin_id: TIntegerField
       FieldName = 'club_origin_id'
-    end
-    object qryTeamPlayersfullname: TWideStringField
-      FieldName = 'fullname'
-      Size = 512
     end
     object qryTeamPlayerssince: TDateField
       FieldName = 'since'
@@ -1834,25 +1976,6 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     object qryTeamPlayersbirth_date: TDateField
       FieldName = 'birth_date'
       ReadOnly = True
-    end
-    object qryTeamPlayerslkpClubName: TStringField
-      FieldKind = fkLookup
-      FieldName = 'lkpClubName'
-      LookupDataSet = cdsLkpClubs
-      LookupKeyFields = 'club_id'
-      LookupResultField = 'club_name'
-      KeyFields = 'club_origin_id'
-      Size = 128
-      Lookup = True
-    end
-    object qryTeamPlayersgoal: TSmallintField
-      FieldName = 'goal'
-    end
-    object qryTeamPlayersowngoal: TSmallintField
-      FieldName = 'owngoal'
-    end
-    object qryTeamPlayerslostgoal: TSmallintField
-      FieldName = 'lostgoal'
     end
     object qryTeamPlayerssent_off: TSmallintField
       FieldName = 'sent_off'
@@ -1866,26 +1989,132 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     object qryTeamPlayersmatches: TIntegerField
       FieldName = 'matches'
     end
-    object qryTeamPlayersgoals: TIntegerField
-      FieldName = 'goals'
-    end
     object qryTeamPlayersvotes: TFloatField
       FieldName = 'votes'
     end
-    object qryTeamPlayerslkpOriginClubName: TStringField
+    object qryTeamPlayersid: TLargeintField
+      FieldName = 'id'
+    end
+    object qryTeamPlayersscored: TSmallintField
+      FieldName = 'scored'
+    end
+    object qryTeamPlayersself_scored: TSmallintField
+      FieldName = 'self_scored'
+    end
+    object qryTeamPlayersconceded: TSmallintField
+      FieldName = 'conceded'
+    end
+    object qryTeamPlayersscore: TIntegerField
+      FieldName = 'score'
+    end
+    object qryTeamPlayersremote_id: TIntegerField
+      FieldName = 'remote_id'
+    end
+    object qryTeamPlayersdb_schema_id: TIntegerField
+      FieldName = 'db_schema_id'
+    end
+    object qryTeamPlayersjguid: TGuidField
+      FieldName = 'jguid'
+      Size = 38
+    end
+    object qryTeamPlayersdeleted: TBooleanField
+      FieldName = 'deleted'
+    end
+    object qryTeamPlayersinsert_date: TDateTimeField
+      FieldName = 'insert_date'
+    end
+    object qryTeamPlayersupdate_date: TDateTimeField
+      FieldName = 'update_date'
+    end
+    object qryTeamPlayersuser_insert: TWideStringField
+      FieldName = 'user_insert'
+      Size = 128
+    end
+    object qryTeamPlayersuser_update: TWideStringField
+      FieldName = 'user_update'
+      Size = 128
+    end
+    object qryTeamPlayersan_cellular: TWideStringField
+      FieldName = 'an_cellular'
+    end
+    object qryTeamPlayersan_email: TWideStringField
+      FieldName = 'an_email'
+      Size = 256
+    end
+    object qryTeamPlayersrole_name: TWideStringField
+      FieldName = 'role_name'
+      Size = 30
+    end
+    object qryTeamPlayersrole_code: TWideStringField
+      FieldName = 'role_code'
+      Size = 5
+    end
+    object qryTeamPlayersheight: TSmallintField
+      FieldName = 'height'
+    end
+    object qryTeamPlayersweight: TSmallintField
+      FieldName = 'weight'
+    end
+    object qryTeamPlayersrole_id: TSmallintField
+      FieldName = 'role_id'
+    end
+    object qryTeamPlayersteam_name: TWideStringField
+      FieldName = 'team_name'
+      Size = 128
+    end
+    object qryTeamPlayersclub_id: TSmallintField
+      FieldName = 'club_id'
+    end
+    object qryTeamPlayersfull_name: TWideMemoField
+      FieldName = 'full_name'
+      BlobType = ftWideMemo
+    end
+    object qryTeamPlayerslkprolecode: TWideStringField
       FieldKind = fkLookup
-      FieldName = 'lkpOriginClubName'
-      LookupDataSet = cdsLkpClubs
-      LookupKeyFields = 'club_id'
+      FieldName = 'lkprolecode'
+      LookupDataSet = lkpRoles
+      LookupKeyFields = 'id'
+      LookupResultField = 'role_code'
+      KeyFields = 'role_id'
+      ReadOnly = True
+      Size = 5
+      Lookup = True
+    end
+    object qryTeamPlayerslkpRoleName: TStringField
+      FieldKind = fkLookup
+      FieldName = 'lkpRoleName'
+      LookupDataSet = lkpRoles
+      LookupKeyFields = 'id'
+      LookupResultField = 'role_name'
+      KeyFields = 'role_id'
+      Size = 30
+      Lookup = True
+    end
+    object qryTeamPlayerslkpClubName: TStringField
+      FieldKind = fkLookup
+      FieldName = 'lkpClubName'
+      LookupDataSet = qrylkpClubs
+      LookupKeyFields = 'id'
       LookupResultField = 'club_name'
       KeyFields = 'club_origin_id'
       Size = 128
       Lookup = True
     end
-    object qryTeamPlayerslkprolecode: TWideStringField
-      FieldName = 'lkprolecode'
-      ReadOnly = True
-      Size = 5
+    object qryTeamPlayerslkpPlayerName: TWideStringField
+      FieldKind = fkCalculated
+      FieldName = 'lkpPlayerName'
+      Size = 0
+      Calculated = True
+    end
+    object qryTeamPlayerslkpOriginClubName: TStringField
+      FieldKind = fkLookup
+      FieldName = 'lkpOriginClubName'
+      LookupDataSet = qrylkpClubs
+      LookupKeyFields = 'club_id'
+      LookupResultField = 'club_name'
+      KeyFields = 'club_origin_id'
+      Size = 128
+      Lookup = True
     end
   end
   object dsTeamPlayers: TDataSource
@@ -1994,14 +2223,34 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
         DataType = ftSmallint
         Name = 'TEAM_ID'
         ParamType = ptInput
-        Value = 3771
+        Value = nil
       end
       item
         DataType = ftSmallint
         Name = 'SEASON_ID'
         ParamType = ptInput
-        Value = 77
+        Value = nil
       end>
+    object qryTeamChampPlayerslkpClubName: TStringField
+      FieldKind = fkLookup
+      FieldName = 'lkpClubName'
+      LookupDataSet = qrylkpClubs
+      LookupKeyFields = 'club_id'
+      LookupResultField = 'club_name'
+      KeyFields = 'club_origin_id'
+      Size = 128
+      Lookup = True
+    end
+    object qryTeamChampPlayerslkpOriginClubName: TStringField
+      FieldKind = fkLookup
+      FieldName = 'lkpOriginClubName'
+      LookupDataSet = qrylkpClubs
+      LookupKeyFields = 'club_id'
+      LookupResultField = 'club_name'
+      KeyFields = 'club_origin_id'
+      Size = 128
+      Lookup = True
+    end
     object qryTeamChampPlayersfamily_name: TWideStringField
       FieldName = 'family_name'
       Size = 128
@@ -2079,26 +2328,6 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       FieldName = 'role_code'
       Size = 5
     end
-    object qryTeamChampPlayerslkpClubName: TStringField
-      FieldKind = fkLookup
-      FieldName = 'lkpClubName'
-      LookupDataSet = cdsLkpClubs
-      LookupKeyFields = 'club_id'
-      LookupResultField = 'club_name'
-      KeyFields = 'club_origin_id'
-      Size = 128
-      Lookup = True
-    end
-    object qryTeamChampPlayerslkpOriginClubName: TStringField
-      FieldKind = fkLookup
-      FieldName = 'lkpOriginClubName'
-      LookupDataSet = cdsLkpClubs
-      LookupKeyFields = 'club_id'
-      LookupResultField = 'club_name'
-      KeyFields = 'club_origin_id'
-      Size = 128
-      Lookup = True
-    end
     object qryTeamChampPlayersid: TLargeintField
       FieldName = 'id'
     end
@@ -2171,13 +2400,14 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     Connection = PgErgoConnection
     SQL.Strings = (
       'SELECT *'
-      '  FROM football.ft_ranking_table'
+      '  FROM sports.matchday_ranking_view'
       'WHERE'
       '     season_id = :season_id and league_id = :league_id'
       'order by pos')
     MasterSource = dsChampionships
     MasterFields = 'season_id;league_id'
     DetailFields = 'season_id;league_id'
+    Active = True
     IndexFieldNames = 'pos'
     OnCalcFields = qryChampRankingCalcFields
     Left = 400
@@ -2187,17 +2417,14 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
         DataType = ftSmallint
         Name = 'season_id'
         ParamType = ptInput
-        Value = 77
+        Value = 4
       end
       item
         DataType = ftSmallint
         Name = 'league_id'
         ParamType = ptInput
-        Value = 145
+        Value = 13
       end>
-    object qryChampRankingranking_id: TIntegerField
-      FieldName = 'ranking_id'
-    end
     object qryChampRankingseason_id: TSmallintField
       FieldName = 'season_id'
     end
@@ -2207,8 +2434,97 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     object qryChampRankingteam_id: TSmallintField
       FieldName = 'team_id'
     end
-    object qryChampRankingplayed_matches: TSmallintField
-      FieldName = 'played_matches'
+    object qryChampRankinglkpTeamName: TStringField
+      FieldKind = fkLookup
+      FieldName = 'lkpTeamName'
+      LookupDataSet = qryLkpTeams
+      LookupKeyFields = 'team_id'
+      LookupResultField = 'club_name'
+      KeyFields = 'team_id'
+      Size = 60
+      Lookup = True
+    end
+    object qryChampRankingcalcPunti: TSmallintField
+      FieldKind = fkCalculated
+      FieldName = 'calcPunti'
+      Calculated = True
+    end
+    object qryChampRankingcalcEnglish: TFloatField
+      FieldKind = fkCalculated
+      FieldName = 'calcEnglish'
+      Calculated = True
+    end
+    object qryChampRankingpos: TSmallintField
+      FieldName = 'pos'
+    end
+    object qryChampRankingcalcGoalDifference: TIntegerField
+      FieldKind = fkCalculated
+      FieldName = 'calcGoalDifference'
+      Calculated = True
+    end
+    object qryChampRankingpoints: TSmallintField
+      FieldName = 'points'
+    end
+    object qryChampRankingmatchday: TSmallintField
+      FieldName = 'matchday'
+      Required = True
+    end
+    object qryChampRankingpoints_home: TSmallintField
+      FieldName = 'points_home'
+      Required = True
+    end
+    object qryChampRankingpoints_outside: TSmallintField
+      FieldName = 'points_outside'
+      Required = True
+    end
+    object qryChampRankingscored: TSmallintField
+      FieldName = 'scored'
+      Required = True
+    end
+    object qryChampRankingscored_home: TSmallintField
+      FieldName = 'scored_home'
+      Required = True
+    end
+    object qryChampRankingscored_outside: TSmallintField
+      FieldName = 'scored_outside'
+      Required = True
+    end
+    object qryChampRankingconceded: TSmallintField
+      FieldName = 'conceded'
+      Required = True
+    end
+    object qryChampRankingconceded_home: TSmallintField
+      FieldName = 'conceded_home'
+      Required = True
+    end
+    object qryChampRankingconceded_outside: TSmallintField
+      FieldName = 'conceded_outside'
+      Required = True
+    end
+    object qryChampRankingaggregate_points: TSmallintField
+      FieldName = 'aggregate_points'
+      Required = True
+    end
+    object qryChampRankingaggregate_group: TSmallintField
+      FieldName = 'aggregate_group'
+      Required = True
+    end
+    object qryChampRankingrownum: TSmallintField
+      FieldName = 'rownum'
+      Required = True
+    end
+    object qryChampRankingdb_schema_id: TIntegerField
+      FieldName = 'db_schema_id'
+      Required = True
+    end
+    object qryChampRankinggames_scored: TSmallintField
+      FieldName = 'games_scored'
+    end
+    object qryChampRankinggames_conceded: TSmallintField
+      FieldName = 'games_conceded'
+    end
+    object qryChampRankingplayed: TSmallintField
+      FieldName = 'played'
     end
     object qryChampRankingwon_matches: TSmallintField
       FieldName = 'won_matches'
@@ -2243,42 +2559,19 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     object qryChampRankingoutside_tied: TSmallintField
       FieldName = 'outside_tied'
     end
-    object qryChampRankinggoal_done: TSmallintField
-      FieldName = 'goal_done'
+    object qryChampRankingdelta: TSmallintField
+      FieldName = 'delta'
     end
-    object qryChampRankinggoal_lost: TSmallintField
-      FieldName = 'goal_lost'
+    object qryChampRankingdelta_games: TSmallintField
+      FieldName = 'delta_games'
     end
-    object qryChampRankinglkpTeamName: TStringField
-      FieldKind = fkLookup
-      FieldName = 'lkpTeamName'
-      LookupDataSet = lkpTeams
-      LookupKeyFields = 'team_id'
-      LookupResultField = 'club_name'
-      KeyFields = 'team_id'
-      Size = 60
-      Lookup = True
+    object qryChampRankingteam_name: TWideStringField
+      FieldName = 'team_name'
+      Size = 128
     end
-    object qryChampRankingcalcPunti: TSmallintField
-      FieldKind = fkCalculated
-      FieldName = 'calcPunti'
-      Calculated = True
-    end
-    object qryChampRankingcalcEnglish: TFloatField
-      FieldKind = fkCalculated
-      FieldName = 'calcEnglish'
-      Calculated = True
-    end
-    object qryChampRankingpos: TSmallintField
-      FieldName = 'pos'
-    end
-    object qryChampRankingcalcGoalDifference: TIntegerField
-      FieldKind = fkCalculated
-      FieldName = 'calcGoalDifference'
-      Calculated = True
-    end
-    object qryChampRankingpoints: TSmallintField
-      FieldName = 'points'
+    object qryChampRankingclub_name: TWideStringField
+      FieldName = 'club_name'
+      Size = 128
     end
   end
   object dsChampRanking: TDataSource
@@ -2345,6 +2638,7 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       '     f.season_id = :season_id and l.id = f.league_id)'
       '  ORDER BY l.league_position')
     MasterSource = dsSeasons
+    BeforePost = qrySelectLeaguesBeforePost
     Left = 176
     Top = 536
     ParamData = <
@@ -2533,21 +2827,23 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       end>
     Connection = PgErgoConnection
     SQL.Strings = (
-      'SELECT   '
-      '   p.*, '
       
-        '    family_name || '#39' '#39' || first_name || '#39' - '#39' || public.nvl(note' +
-        's, text('#39'n.a.'#39')) || '#39' '#39' || role_name'
-      '    as fullname'
-      '  FROM '
-      '    football.ft_players p, football.ft_roles r'
+        'SELECT id, anagraph_id, birth_year, birth_place, notes, role_id,' +
+        ' height, weight, remote_id, '
+      
+        '           db_schema_id, jguid, deleted, insert_date, update_dat' +
+        'e, user_insert, user_update, '
+      
+        #9#9'   first_name, family_name, birth_date, an_cellular, an_email,' +
+        ' an_group_id, role_name, '
+      #9#9'   role_code, full_name'
+      #9'FROM sports.players_view p'
       'where '
       
         '    upper(family_name || '#39' '#39' || first_name) like upper('#39'%'#39' || :f' +
         'amily_name || '#39'%'#39')'
       '    and'
       '   (P.ANAGRAPH_id = :player_id or :player_id = 0)'
-      '   and public.nvl(p.role, 0) = r.role_id'
       'order by family_name, first_name')
     Left = 736
     Top = 416
@@ -2563,20 +2859,82 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
         ParamType = ptInput
         Value = 0
       end>
+    object qryAllPlayerslkpRoleName: TStringField
+      FieldKind = fkLookup
+      FieldName = 'lkpRoleName'
+      LookupDataSet = lkpRoles
+      LookupKeyFields = 'id'
+      LookupResultField = 'role_name'
+      KeyFields = 'role_id'
+      Size = 30
+      Lookup = True
+    end
+    object qryAllPlayersid: TIntegerField
+      FieldName = 'id'
+    end
+    object qryAllPlayersrole_id: TSmallintField
+      FieldName = 'role_id'
+    end
+    object qryAllPlayersheight: TSmallintField
+      FieldName = 'height'
+    end
+    object qryAllPlayersweight: TSmallintField
+      FieldName = 'weight'
+    end
+    object qryAllPlayersremote_id: TIntegerField
+      FieldName = 'remote_id'
+    end
+    object qryAllPlayersdb_schema_id: TIntegerField
+      FieldName = 'db_schema_id'
+    end
+    object qryAllPlayersjguid: TGuidField
+      FieldName = 'jguid'
+      Size = 38
+    end
+    object qryAllPlayersdeleted: TBooleanField
+      FieldName = 'deleted'
+    end
+    object qryAllPlayersinsert_date: TDateTimeField
+      FieldName = 'insert_date'
+    end
+    object qryAllPlayersupdate_date: TDateTimeField
+      FieldName = 'update_date'
+    end
+    object qryAllPlayersuser_insert: TWideStringField
+      FieldName = 'user_insert'
+      Size = 128
+    end
+    object qryAllPlayersuser_update: TWideStringField
+      FieldName = 'user_update'
+      Size = 128
+    end
+    object qryAllPlayersan_cellular: TWideStringField
+      FieldName = 'an_cellular'
+    end
+    object qryAllPlayersan_email: TWideStringField
+      FieldName = 'an_email'
+      Size = 256
+    end
+    object qryAllPlayersan_group_id: TSmallintField
+      FieldName = 'an_group_id'
+    end
+    object qryAllPlayersrole_name: TWideStringField
+      FieldName = 'role_name'
+      Size = 30
+    end
+    object qryAllPlayersrole_code: TWideStringField
+      FieldName = 'role_code'
+      Size = 5
+    end
+    object qryAllPlayersfull_name: TWideMemoField
+      FieldName = 'full_name'
+      BlobType = ftWideMemo
+    end
     object qryAllPlayersanagraph_id: TIntegerField
       FieldName = 'anagraph_id'
     end
     object qryAllPlayersbirth_year: TSmallintField
       FieldName = 'birth_year'
-    end
-    object qryAllPlayersfirst_name: TWideStringField
-      FieldName = 'first_name'
-      Required = True
-      Size = 128
-    end
-    object qryAllPlayersfamily_name: TWideStringField
-      FieldName = 'family_name'
-      Size = 128
     end
     object qryAllPlayersbirth_place: TWideStringField
       FieldName = 'birth_place'
@@ -2586,23 +2944,13 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       FieldName = 'notes'
       BlobType = ftWideMemo
     end
-    object qryAllPlayersrole: TSmallintField
-      FieldName = 'role'
+    object qryAllPlayersfirst_name: TWideStringField
+      FieldName = 'first_name'
+      Size = 128
     end
-    object qryAllPlayerslkpRoleName: TStringField
-      FieldKind = fkLookup
-      FieldName = 'lkpRoleName'
-      LookupDataSet = lkpRoles
-      LookupKeyFields = 'role_id'
-      LookupResultField = 'role_name'
-      KeyFields = 'role'
-      Size = 30
-      Lookup = True
-    end
-    object qryAllPlayersfullname: TWideStringField
-      FieldName = 'fullname'
-      ReadOnly = True
-      Size = 512
+    object qryAllPlayersfamily_name: TWideStringField
+      FieldName = 'family_name'
+      Size = 128
     end
     object qryAllPlayersbirth_date: TDateField
       FieldName = 'birth_date'
@@ -2615,44 +2963,76 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
   end
   object qryTeamPlayersLast: TUniQuery
     SQLInsert.Strings = (
-      'INSERT INTO football.ft_teams_players'
-      '  (team_id, player_id, season_id, since, until)'
+      'INSERT INTO sports.team_players_view'
+      
+        '  (id, team_id, player_id, season_id, since, until, club_origin_' +
+        'id, scored, self_scored, conceded, sent_off, injuries, minutes, ' +
+        'matches, score, votes, remote_id, db_schema_id, jguid, deleted, ' +
+        'insert_date, update_date, user_insert, user_update, anagraph_id,' +
+        ' first_name, family_name, birth_date, an_cellular, an_email, rol' +
+        'e_name, role_code, birth_year, birth_place, notes, height, weigh' +
+        't, role_id, team_name, club_id, full_name, club_name)'
       'VALUES'
-      '  (:team_id, :player_id, :season_id, :since, :until)')
+      
+        '  (:id, :team_id, :player_id, :season_id, :since, :until, :club_' +
+        'origin_id, :scored, :self_scored, :conceded, :sent_off, :injurie' +
+        's, :minutes, :matches, :score, :votes, :remote_id, :db_schema_id' +
+        ', :jguid, :deleted, :insert_date, :update_date, :user_insert, :u' +
+        'ser_update, :anagraph_id, :first_name, :family_name, :birth_date' +
+        ', :an_cellular, :an_email, :role_name, :role_code, :birth_year, ' +
+        ':birth_place, :notes, :height, :weight, :role_id, :team_name, :c' +
+        'lub_id, :full_name, :club_name)')
     SQLDelete.Strings = (
-      'DELETE FROM football.ft_teams_players'
+      'DELETE FROM sports.team_players_view'
       'WHERE'
       
-        '  team_id = :Old_team_id AND player_id = :Old_player_id AND seas' +
-        'on_id = :Old_season_id')
+        '  id = :Old_id AND player_id = :Old_player_id AND season_id = :O' +
+        'ld_season_id')
     SQLUpdate.Strings = (
-      'UPDATE football.ft_teams_players'
+      'UPDATE sports.team_players_view'
       'SET'
       
-        '  team_id = :team_id, player_id = :player_id, season_id = :seaso' +
-        'n_id, since = :since, until = :until'
+        '  id = :id, team_id = :team_id, player_id = :player_id, season_i' +
+        'd = :season_id, since = :since, until = :until, club_origin_id =' +
+        ' :club_origin_id, scored = :scored, self_scored = :self_scored, ' +
+        'conceded = :conceded, sent_off = :sent_off, injuries = :injuries' +
+        ', minutes = :minutes, matches = :matches, score = :score, votes ' +
+        '= :votes, remote_id = :remote_id, db_schema_id = :db_schema_id, ' +
+        'jguid = :jguid, deleted = :deleted, insert_date = :insert_date, ' +
+        'update_date = :update_date, user_insert = :user_insert, user_upd' +
+        'ate = :user_update, anagraph_id = :anagraph_id, first_name = :fi' +
+        'rst_name, family_name = :family_name, birth_date = :birth_date, ' +
+        'an_cellular = :an_cellular, an_email = :an_email, role_name = :r' +
+        'ole_name, role_code = :role_code, birth_year = :birth_year, birt' +
+        'h_place = :birth_place, notes = :notes, height = :height, weight' +
+        ' = :weight, role_id = :role_id, team_name = :team_name, club_id ' +
+        '= :club_id, full_name = :full_name, club_name = :club_name'
       'WHERE'
       
-        '  team_id = :Old_team_id AND player_id = :Old_player_id AND seas' +
-        'on_id = :Old_season_id')
+        '  id = :Old_id AND player_id = :Old_player_id AND season_id = :O' +
+        'ld_season_id')
     SQLLock.Strings = (
-      'SELECT * FROM football.ft_teams_players'
+      'SELECT * FROM sports.team_players_view'
       'WHERE'
       
-        '  team_id = :Old_team_id AND player_id = :Old_player_id AND seas' +
-        'on_id = :Old_season_id'
+        '  id = :Old_id AND player_id = :Old_player_id AND season_id = :O' +
+        'ld_season_id'
       'FOR UPDATE NOWAIT')
     SQLRefresh.Strings = (
       
-        'SELECT team_id, player_id, season_id, since, until FROM football' +
-        '.ft_teams_players'
+        'SELECT id, team_id, player_id, season_id, since, until, club_ori' +
+        'gin_id, scored, self_scored, conceded, sent_off, injuries, minut' +
+        'es, matches, score, votes, remote_id, db_schema_id, jguid, delet' +
+        'ed, insert_date, update_date, user_insert, user_update, anagraph' +
+        '_id, first_name, family_name, birth_date, an_cellular, an_email,' +
+        ' role_name, role_code, birth_year, birth_place, notes, height, w' +
+        'eight, role_id, team_name, club_id, full_name, club_name FROM sp' +
+        'orts.team_players_view'
       'WHERE'
-      
-        '  team_id = :team_id AND player_id = :player_id AND season_id = ' +
-        ':season_id')
+      '  id = :id AND player_id = :player_id AND season_id = :season_id')
     SQLRecCount.Strings = (
       'SELECT count(*) FROM ('
-      'SELECT * FROM football.ft_teams_players'
+      'SELECT * FROM sports.team_players_view'
       ''
       ') t')
     DataTypeMap = <
@@ -2664,25 +3044,16 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     Connection = PgErgoConnection
     SQL.Strings = (
       'SELECT   '
-      '   t.*, p.*,'
-      '   p.family_name || '#39' '#39' || p.first_name || '#39' - '#39' '
-      '       || public.nvl(notes, text('#39'n.a.'#39')) || '#39' '#39' || role_name '
-      '    as fullname'
+      '   t.*'
       '  FROM '
-      '    football.ft_teams_players t'
-      '  , football.ft_players p'
-      '  , football.ft_roles r'
+      '    sports.team_players_view t'
       'where '
-      'r.role_id = public.nvl(p.role,0)'
-      'and'
       't.team_id = :team_id'
       'and'
       't.season_id = (:season_id - 1)'
-      'and'
-      'p.anagraph_id = t.player_id'
       'and not exists'
       '(select 1 from     '
-      '  football.ft_teams_players z'
+      '  sports.team_players z'
       '  where '
       '   z.team_id = :team_id'
       '  and'
@@ -2709,6 +3080,16 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
         ParamType = ptInput
         Value = nil
       end>
+    object qryTeamPlayersLastStringField: TStringField
+      FieldKind = fkLookup
+      FieldName = 'lkpRoleName'
+      LookupDataSet = lkpRoles
+      LookupKeyFields = 'id'
+      LookupResultField = 'role_name'
+      KeyFields = 'role_id'
+      Size = 30
+      Lookup = True
+    end
     object qryTeamPlayersLastfamily_name: TWideStringField
       FieldName = 'family_name'
       Origin = 'family_name'
@@ -2756,27 +3137,8 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       ReadOnly = True
       BlobType = ftWideMemo
     end
-    object qryTeamPlayersLastrole: TSmallintField
-      FieldName = 'role'
-      ReadOnly = True
-    end
-    object qryTeamPlayersLastStringField: TStringField
-      FieldKind = fkLookup
-      FieldName = 'lkpRoleName'
-      LookupDataSet = lkpRoles
-      LookupKeyFields = 'role_id'
-      LookupResultField = 'role_name'
-      KeyFields = 'role'
-      Size = 30
-      Lookup = True
-    end
     object qryTeamPlayersLastclub_origin_id: TIntegerField
       FieldName = 'club_origin_id'
-    end
-    object qryTeamPlayersLastfullname: TWideStringField
-      FieldName = 'fullname'
-      ReadOnly = True
-      Size = 512
     end
     object qryTeamPlayersLastsince: TDateField
       FieldName = 'since'
@@ -2788,13 +3150,109 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       FieldName = 'birth_date'
       ReadOnly = True
     end
+    object qryTeamPlayersLastid: TLargeintField
+      FieldName = 'id'
+    end
+    object qryTeamPlayersLastscored: TSmallintField
+      FieldName = 'scored'
+    end
+    object qryTeamPlayersLastself_scored: TSmallintField
+      FieldName = 'self_scored'
+    end
+    object qryTeamPlayersLastconceded: TSmallintField
+      FieldName = 'conceded'
+    end
+    object qryTeamPlayersLastsent_off: TSmallintField
+      FieldName = 'sent_off'
+    end
+    object qryTeamPlayersLastinjuries: TSmallintField
+      FieldName = 'injuries'
+    end
+    object qryTeamPlayersLastminutes: TSmallintField
+      FieldName = 'minutes'
+    end
+    object qryTeamPlayersLastmatches: TIntegerField
+      FieldName = 'matches'
+    end
+    object qryTeamPlayersLastscore: TIntegerField
+      FieldName = 'score'
+    end
+    object qryTeamPlayersLastvotes: TFloatField
+      FieldName = 'votes'
+    end
+    object qryTeamPlayersLastremote_id: TIntegerField
+      FieldName = 'remote_id'
+    end
+    object qryTeamPlayersLastdb_schema_id: TIntegerField
+      FieldName = 'db_schema_id'
+    end
+    object qryTeamPlayersLastjguid: TGuidField
+      FieldName = 'jguid'
+      Size = 38
+    end
+    object qryTeamPlayersLastdeleted: TBooleanField
+      FieldName = 'deleted'
+    end
+    object qryTeamPlayersLastinsert_date: TDateTimeField
+      FieldName = 'insert_date'
+    end
+    object qryTeamPlayersLastupdate_date: TDateTimeField
+      FieldName = 'update_date'
+    end
+    object qryTeamPlayersLastuser_insert: TWideStringField
+      FieldName = 'user_insert'
+      Size = 128
+    end
+    object qryTeamPlayersLastuser_update: TWideStringField
+      FieldName = 'user_update'
+      Size = 128
+    end
+    object qryTeamPlayersLastan_cellular: TWideStringField
+      FieldName = 'an_cellular'
+    end
+    object qryTeamPlayersLastan_email: TWideStringField
+      FieldName = 'an_email'
+      Size = 256
+    end
+    object qryTeamPlayersLastrole_name: TWideStringField
+      FieldName = 'role_name'
+      Size = 30
+    end
+    object qryTeamPlayersLastrole_code: TWideStringField
+      FieldName = 'role_code'
+      Size = 5
+    end
+    object qryTeamPlayersLastheight: TSmallintField
+      FieldName = 'height'
+    end
+    object qryTeamPlayersLastweight: TSmallintField
+      FieldName = 'weight'
+    end
+    object qryTeamPlayersLastrole_id: TSmallintField
+      FieldName = 'role_id'
+    end
+    object qryTeamPlayersLastteam_name: TWideStringField
+      FieldName = 'team_name'
+      Size = 128
+    end
+    object qryTeamPlayersLastclub_id: TSmallintField
+      FieldName = 'club_id'
+    end
+    object qryTeamPlayersLastfull_name: TWideMemoField
+      FieldName = 'full_name'
+      BlobType = ftWideMemo
+    end
+    object qryTeamPlayersLastclub_name: TWideStringField
+      FieldName = 'club_name'
+      Size = 128
+    end
   end
   object qryTeamsClubsLeagues: TUniQuery
     Connection = PgErgoConnection
     SQL.Strings = (
       'SELECT * '
       '  FROM '
-      '  football.ft_view_club_teams_championships v'
+      '  sports.teams_championships_view v'
       '  where'
       '  v.season_id = :season_id '
       '  and  '
@@ -2851,12 +3309,13 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     Top = 520
   end
   object lkpRoles: TUniTable
-    TableName = 'football.ft_roles'
+    TableName = 'sports.roles_view'
     Connection = PgErgoConnection
+    Active = True
     Left = 736
     Top = 360
-    object lkpRolesrole_id: TSmallintField
-      FieldName = 'role_id'
+    object lkpRolesid: TSmallintField
+      FieldName = 'id'
       Required = True
     end
     object lkpRolesrole_code: TWideStringField
@@ -2871,23 +3330,14 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
   object qryTeamRankings: TUniQuery
     Connection = PgErgoConnection
     SQL.Strings = (
+      'SELECT s.season_code, v.*, l.league_name'
       
-        'SELECT football.ft_seasons.season_id,  football.ft_seasons.seaso' +
-        'n_code, '
-      'football.ft_ranking_table.*, football.ft_leagues.league_name'
-      'FROM football.ft_seasons '
-      'INNER JOIN '
-      '(football.ft_leagues '
-      'INNER JOIN football.ft_ranking_table ON '
-      
-        'football.ft_leagues.league_id = football.ft_ranking_table.league' +
-        '_id) '
-      
-        'ON football.ft_seasons.season_id = football.ft_ranking_table.sea' +
-        'son_id'
+        'FROM sports.ranking_view v INNER JOIN sports.seasons s on s.id =' +
+        ' v.season_id '
+      '      INNER JOIN sports.leagues l on v.league_id = l.id'
       'where '
       'team_id = :team_id'
-      'order by football.ft_seasons.season_id desc')
+      'order by v.season_id desc')
     MasterSource = dsTeams
     MasterFields = 'team_id'
     DetailFields = 'team_id'
@@ -2902,103 +3352,124 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       end>
     object qryTeamRankingsseason_code: TWideStringField
       FieldName = 'season_code'
+      ReadOnly = True
       FixedChar = True
       Size = 5
     end
-    object qryTeamRankingsplayed_matches: TSmallintField
-      FieldName = 'played_matches'
-      ReadOnly = True
+    object qryTeamRankingsseason_id: TIntegerField
+      FieldName = 'season_id'
     end
-    object qryTeamRankingswon_matches: TSmallintField
-      FieldName = 'won_matches'
-      ReadOnly = True
+    object qryTeamRankingsleague_id: TIntegerField
+      FieldName = 'league_id'
     end
-    object qryTeamRankingslost_matches: TSmallintField
-      FieldName = 'lost_matches'
-      ReadOnly = True
-    end
-    object qryTeamRankingstied_matches: TSmallintField
-      FieldName = 'tied_matches'
-      ReadOnly = True
-    end
-    object qryTeamRankingshome_matches: TSmallintField
-      FieldName = 'home_matches'
-      ReadOnly = True
-    end
-    object qryTeamRankingshome_won: TSmallintField
-      FieldName = 'home_won'
-      ReadOnly = True
-    end
-    object qryTeamRankingshome_lost: TSmallintField
-      FieldName = 'home_lost'
-      ReadOnly = True
-    end
-    object qryTeamRankingshome_tied: TSmallintField
-      FieldName = 'home_tied'
-      ReadOnly = True
-    end
-    object qryTeamRankingsoutside_played: TSmallintField
-      FieldName = 'outside_played'
-      ReadOnly = True
-    end
-    object qryTeamRankingsoutside_won: TSmallintField
-      FieldName = 'outside_won'
-      ReadOnly = True
-    end
-    object qryTeamRankingsoutside_lost: TSmallintField
-      FieldName = 'outside_lost'
-      ReadOnly = True
-    end
-    object qryTeamRankingsoutside_tied: TSmallintField
-      FieldName = 'outside_tied'
-      ReadOnly = True
-    end
-    object qryTeamRankingsgoal_done: TSmallintField
-      FieldName = 'goal_done'
-      ReadOnly = True
-    end
-    object qryTeamRankingsgoal_lost: TSmallintField
-      FieldName = 'goal_lost'
-      ReadOnly = True
+    object qryTeamRankingsmatchday: TSmallintField
+      FieldName = 'matchday'
     end
     object qryTeamRankingspos: TSmallintField
       FieldName = 'pos'
     end
-    object qryTeamRankingscalcEnglish: TFloatField
-      FieldKind = fkCalculated
-      FieldName = 'calcEnglish'
-      Calculated = True
-    end
-    object qryTeamRankingscalcPunti: TSmallintField
-      FieldKind = fkCalculated
-      FieldName = 'calcPunti'
-      Calculated = True
-    end
     object qryTeamRankingsteam_id: TIntegerField
       FieldName = 'team_id'
-      ReadOnly = True
     end
-    object qryTeamRankingsseason_id: TIntegerField
-      FieldName = 'season_id'
-      Required = True
+    object qryTeamRankingswon_matches: TSmallintField
+      FieldName = 'won_matches'
+    end
+    object qryTeamRankingslost_matches: TSmallintField
+      FieldName = 'lost_matches'
+    end
+    object qryTeamRankingstied_matches: TSmallintField
+      FieldName = 'tied_matches'
+    end
+    object qryTeamRankingshome_matches: TSmallintField
+      FieldName = 'home_matches'
+    end
+    object qryTeamRankingshome_won: TSmallintField
+      FieldName = 'home_won'
+    end
+    object qryTeamRankingshome_lost: TSmallintField
+      FieldName = 'home_lost'
+    end
+    object qryTeamRankingshome_tied: TSmallintField
+      FieldName = 'home_tied'
+    end
+    object qryTeamRankingsoutside_played: TSmallintField
+      FieldName = 'outside_played'
+    end
+    object qryTeamRankingsoutside_won: TSmallintField
+      FieldName = 'outside_won'
+    end
+    object qryTeamRankingsoutside_lost: TSmallintField
+      FieldName = 'outside_lost'
+    end
+    object qryTeamRankingsoutside_tied: TSmallintField
+      FieldName = 'outside_tied'
+    end
+    object qryTeamRankingspoints: TSmallintField
+      FieldName = 'points'
+    end
+    object qryTeamRankingspoints_home: TSmallintField
+      FieldName = 'points_home'
+    end
+    object qryTeamRankingspoints_outside: TSmallintField
+      FieldName = 'points_outside'
+    end
+    object qryTeamRankingsscored: TSmallintField
+      FieldName = 'scored'
+    end
+    object qryTeamRankingsscored_home: TSmallintField
+      FieldName = 'scored_home'
+    end
+    object qryTeamRankingsscored_outside: TSmallintField
+      FieldName = 'scored_outside'
+    end
+    object qryTeamRankingsconceded: TSmallintField
+      FieldName = 'conceded'
+    end
+    object qryTeamRankingsconceded_home: TSmallintField
+      FieldName = 'conceded_home'
+    end
+    object qryTeamRankingsconceded_outside: TSmallintField
+      FieldName = 'conceded_outside'
+    end
+    object qryTeamRankingsaggregate_points: TSmallintField
+      FieldName = 'aggregate_points'
+    end
+    object qryTeamRankingsaggregate_group: TSmallintField
+      FieldName = 'aggregate_group'
+    end
+    object qryTeamRankingsrownum: TSmallintField
+      FieldName = 'rownum'
+    end
+    object qryTeamRankingsdb_schema_id: TIntegerField
+      FieldName = 'db_schema_id'
+    end
+    object qryTeamRankingsdelta: TSmallintField
+      FieldName = 'delta'
+    end
+    object qryTeamRankingsgames_scored: TSmallintField
+      FieldName = 'games_scored'
+    end
+    object qryTeamRankingsgames_conceded: TSmallintField
+      FieldName = 'games_conceded'
+    end
+    object qryTeamRankingsdelta_games: TSmallintField
+      FieldName = 'delta_games'
+    end
+    object qryTeamRankingsteam_name: TWideStringField
+      FieldName = 'team_name'
+      Size = 128
+    end
+    object qryTeamRankingsclub_name: TWideStringField
+      FieldName = 'club_name'
+      Size = 128
+    end
+    object qryTeamRankingsplayed: TSmallintField
+      FieldName = 'played'
     end
     object qryTeamRankingsleague_name: TWideStringField
       FieldName = 'league_name'
       ReadOnly = True
       Size = 128
-    end
-    object qryTeamRankingsranking_id: TIntegerField
-      FieldName = 'ranking_id'
-      ReadOnly = True
-      Required = True
-    end
-    object qryTeamRankingsleague_id: TSmallintField
-      FieldName = 'league_id'
-      ReadOnly = True
-    end
-    object qryTeamRankingspoints: TSmallintField
-      FieldName = 'points'
-      ReadOnly = True
     end
   end
   object dsTeamRankings: TDataSource
@@ -3060,7 +3531,7 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     MasterSource = dsAllPlayers
     MasterFields = 'anagraph_id'
     DetailFields = 'player_id'
-    Left = 848
+    Left = 856
     Top = 504
     ParamData = <
       item
@@ -3177,7 +3648,7 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       FieldKind = fkLookup
       FieldName = 'lkpLeague'
       LookupDataSet = qryLkpLeagues
-      LookupKeyFields = 'league_id'
+      LookupKeyFields = 'id'
       LookupResultField = 'league_name'
       KeyFields = 'league_id'
       Size = 128
@@ -3191,46 +3662,62 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
   end
   object qryAllTeamsNoSeason: TUniQuery
     SQLInsert.Strings = (
-      'INSERT INTO football.ft_teams'
-      '  (team_id, club_id, team_name)'
+      'INSERT INTO sports.teams_view'
+      
+        '  (id, club_id, team_name, trainer_id, image, remote_id, db_sche' +
+        'ma_id, jguid, deleted, insert_date, update_date, user_insert, us' +
+        'er_update, club_name, club_image)'
       'VALUES'
-      '  (:team_id, :club_id, :team_name)')
+      
+        '  (:id, :club_id, :team_name, :trainer_id, :image, :remote_id, :' +
+        'db_schema_id, :jguid, :deleted, :insert_date, :update_date, :use' +
+        'r_insert, :user_update, :club_name, :club_image)')
     SQLDelete.Strings = (
-      'DELETE FROM football.ft_teams'
+      'DELETE FROM sports.teams_view'
       'WHERE'
-      '  team_id = :Old_team_id')
+      '  id = :Old_id')
     SQLUpdate.Strings = (
-      'UPDATE football.ft_teams'
+      'UPDATE sports.teams_view'
       'SET'
-      '  team_id = :team_id, club_id = :club_id, team_name = :team_name'
+      
+        '  id = :id, club_id = :club_id, team_name = :team_name, trainer_' +
+        'id = :trainer_id, image = :image, remote_id = :remote_id, db_sch' +
+        'ema_id = :db_schema_id, jguid = :jguid, deleted = :deleted, inse' +
+        'rt_date = :insert_date, update_date = :update_date, user_insert ' +
+        '= :user_insert, user_update = :user_update, club_name = :club_na' +
+        'me, club_image = :club_image'
       'WHERE'
-      '  team_id = :Old_team_id')
+      '  id = :Old_id')
     SQLLock.Strings = (
-      'SELECT * FROM football.ft_teams'
+      'SELECT * FROM sports.teams_view'
       'WHERE'
-      '  team_id = :Old_team_id'
+      '  id = :Old_id'
       'FOR UPDATE NOWAIT')
     SQLRefresh.Strings = (
-      'SELECT team_id, club_id, team_name FROM football.ft_teams'
+      
+        'SELECT id, club_id, team_name, trainer_id, image, remote_id, db_' +
+        'schema_id, jguid, deleted, insert_date, update_date, user_insert' +
+        ', user_update, club_name, club_image FROM sports.teams_view'
       'WHERE'
-      '  team_id = :team_id')
+      '  id = :id')
     SQLRecCount.Strings = (
       'SELECT count(*) FROM ('
-      'SELECT * FROM football.ft_teams'
+      'SELECT * FROM sports.teams_view'
       ''
       ') t')
     Connection = PgErgoConnection
     SQL.Strings = (
-      'select t.* '
-      'from football.ft_teams t '
+      'select t.* , t.id as team_id'
+      'from sports.teams_view t '
       'where'
       'not exists ('
-      'select 1 from football.ft_teams_championships c '
-      'where c.season_id = :season_id and c.team_id = t.team_id)'
+      'select 1 from sports.teams_championships c '
+      'where c.season_id = :season_id and c.team_id = t.id'
+      ')'
       'order by team_name')
     MasterSource = dsSeasons
     AfterScroll = qryTeamsAfterScroll
-    Left = 736
+    Left = 744
     Top = 40
     ParamData = <
       item
@@ -3296,14 +3783,12 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       ') t')
     Connection = PgErgoConnection
     SQL.Strings = (
-      'SELECT c.season_id, c.league_id, c.team_id, t.team_name'
+      'SELECT v.season_id, v.league_id, v.team_id, v.team_name'
       '  FROM '
-      '  football.ft_teams_championships c, football.ft_teams t'
-      '  where'
-      '  c.team_id = t.team_id'
-      '  and'
-      '  c.season_id = :season_id and c.league_id = :league_id'
-      '  order by t.team_name asc')
+      '  sports.teams_championships_view v'
+      ' where'
+      ' v.season_id = :season_id and v.league_id = :league_id'
+      '  order by v.team_name asc')
     MasterSource = dsChampionships
     MasterFields = 'season_id;league_id'
     DetailFields = 'season_id;league_id'
@@ -3314,14 +3799,13 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
         DataType = ftSmallint
         Name = 'season_id'
         ParamType = ptInput
-        Value = 77
+        Value = 4
       end
       item
         DataType = ftSmallint
         Name = 'league_id'
         ParamType = ptInput
-        Size = 2
-        Value = 145
+        Value = 20
       end>
     object lkpTeamsChampionshipseason_id: TSmallintField
       FieldName = 'season_id'
@@ -3430,6 +3914,16 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
         ParamType = ptInput
         Value = 44
       end>
+    object StringField1: TStringField
+      FieldKind = fkLookup
+      FieldName = 'lkpRoleName'
+      LookupDataSet = lkpRoles
+      LookupKeyFields = 'id'
+      LookupResultField = 'role_name'
+      KeyFields = 'role'
+      Size = 30
+      Lookup = True
+    end
     object qryClubPlayersteam_id: TSmallintField
       FieldName = 'team_id'
       Required = True
@@ -3442,10 +3936,61 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       FieldName = 'season_id'
       Required = True
     end
+    object qryClubPlayerssince: TDateField
+      FieldName = 'since'
+    end
+    object qryClubPlayersuntil: TDateField
+      FieldName = 'until'
+    end
+    object qryClubPlayersclub_origin_id: TIntegerField
+      FieldName = 'club_origin_id'
+    end
+    object qryClubPlayersgoal: TSmallintField
+      FieldName = 'goal'
+    end
+    object qryClubPlayersowngoal: TSmallintField
+      FieldName = 'owngoal'
+    end
+    object qryClubPlayerslostgoal: TSmallintField
+      FieldName = 'lostgoal'
+    end
+    object qryClubPlayerssent_off: TSmallintField
+      FieldName = 'sent_off'
+    end
+    object qryClubPlayersinjuries: TSmallintField
+      FieldName = 'injuries'
+    end
+    object qryClubPlayersminutes: TSmallintField
+      FieldName = 'minutes'
+    end
+    object qryClubPlayersmatches: TIntegerField
+      FieldName = 'matches'
+    end
+    object qryClubPlayersgoals: TIntegerField
+      FieldName = 'goals'
+    end
+    object qryClubPlayersvotes: TFloatField
+      FieldName = 'votes'
+    end
+    object qryClubPlayersdb_schema_id: TIntegerField
+      FieldName = 'db_schema_id'
+    end
+    object qryClubPlayersftmp_jguid: TWideStringField
+      FieldName = 'ftmp_jguid'
+      Required = True
+      Size = 40
+    end
+    object qryClubPlayersftmp_deleted: TBooleanField
+      FieldName = 'ftmp_deleted'
+    end
     object qryClubPlayersanagraph_id: TIntegerField
       FieldName = 'anagraph_id'
       ReadOnly = True
       Required = True
+    end
+    object qryClubPlayersbirth_date: TDateField
+      FieldName = 'birth_date'
+      ReadOnly = True
     end
     object qryClubPlayersbirth_year: TSmallintField
       FieldName = 'birth_year'
@@ -3476,32 +4021,36 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       FieldName = 'role'
       ReadOnly = True
     end
-    object StringField1: TStringField
-      FieldKind = fkLookup
-      FieldName = 'lkpRoleName'
-      LookupDataSet = lkpRoles
-      LookupKeyFields = 'role_id'
-      LookupResultField = 'role_name'
-      KeyFields = 'role'
-      Size = 30
-      Lookup = True
+    object qryClubPlayersremote_id: TIntegerField
+      FieldName = 'remote_id'
+      ReadOnly = True
     end
-    object qryClubPlayersclub_origin_id: TIntegerField
-      FieldName = 'club_origin_id'
+    object qryClubPlayersheight: TSmallintField
+      FieldName = 'height'
+      ReadOnly = True
+    end
+    object qryClubPlayersweight: TSmallintField
+      FieldName = 'weight'
+      ReadOnly = True
+    end
+    object qryClubPlayersdb_schema_id_1: TIntegerField
+      FieldName = 'db_schema_id_1'
+      ReadOnly = True
+    end
+    object qryClubPlayerspplr_jguid: TWideStringField
+      FieldName = 'pplr_jguid'
+      ReadOnly = True
+      Required = True
+      Size = 40
+    end
+    object qryClubPlayerspplr_deleted: TBooleanField
+      FieldName = 'pplr_deleted'
+      ReadOnly = True
     end
     object qryClubPlayersfullname: TWideStringField
       FieldName = 'fullname'
-      Size = 512
-    end
-    object qryClubPlayerssince: TDateField
-      FieldName = 'since'
-    end
-    object qryClubPlayersuntil: TDateField
-      FieldName = 'until'
-    end
-    object qryClubPlayersbirth_date: TDateField
-      FieldName = 'birth_date'
       ReadOnly = True
+      Size = 512
     end
   end
   object dsClubPlayers: TDataSource
@@ -3559,41 +4108,28 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       end>
     Connection = PgErgoConnection
     SQL.Strings = (
-      'SELECT   '
       
-        '   k.club_name,   c.club_id,  s.team_id, s.player_id, s.season_i' +
-        'd, s.since, s.until, p.*,'
-      '   p.family_name || '#39' '#39' || p.first_name || '#39' - '#39' '
+        'SELECT id, team_id, player_id, season_id, since, until, club_ori' +
+        'gin_id, scored, self_scored, conceded, '
       
-        '   || public.nvl( to_char(p.birth_date, '#39'dd/mm/yy'#39') , public.nvl' +
-        '(p.notes, '#39'n.d.'#39') ) '
-      '   || '#39' '#39' || r.role_name'
+        '           sent_off, injuries, minutes, matches, score, votes, r' +
+        'emote_id, db_schema_id, jguid, deleted, '
       
-        '   --    family_name || '#39' '#39' || first_name || '#39' - '#39' || public.nvl' +
-        '(notes, text('#39'n.a.'#39')) || '#39' '#39' || r.role_name '
-      '    as fullname'
-      '  FROM '
-      '    football.ft_teams_players s'
-      '  , football.ft_players p'
-      '  , football.ft_teams c'
-      '  , football.ft_clubs k'
-      '  , football.ft_roles r'
+        #9#9'   insert_date, update_date, user_insert, user_update, anagrap' +
+        'h_id, first_name, family_name, birth_date, '
+      
+        #9#9'   an_cellular, an_email, role_name, role_code, birth_year, bi' +
+        'rth_place, notes, height, weight, role_id, '
+      #9#9'   team_name, club_id, full_name, club_name'
+      #9'FROM sports.team_players_view s'
       'where '
-      'public.nvl(p.role, 0) = r.role_id'
-      'and'
-      'k.club_id = c.club_id'
-      'and'
       's.player_id = :player_id'
       'and'
-      'c.team_id = s.team_id'
-      'and'
-      'season_id = :season_id'
-      'and'
-      'p.anagraph_id = s.player_id'
-      'order by family_name, first_name')
+      's.season_id = :season_id'
+      'order by s.family_name, s.first_name')
     MasterSource = dsAllPlayers
     BeforeOpen = qryAllClubPlayersBeforeOpen
-    Left = 736
+    Left = 744
     Top = 528
     ParamData = <
       item
@@ -3609,64 +4145,50 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       end>
     object qryAllClubPlayersteam_id: TSmallintField
       FieldName = 'team_id'
-      Required = True
     end
     object qryAllClubPlayersplayer_id: TIntegerField
       FieldName = 'player_id'
-      Required = True
     end
     object qryAllClubPlayersseason_id: TSmallintField
       FieldName = 'season_id'
-      Required = True
     end
     object qryAllClubPlayersanagraph_id: TIntegerField
       FieldName = 'anagraph_id'
-      ReadOnly = True
-      Required = True
-    end
-    object qryAllClubPlayersbirth_year: TSmallintField
-      FieldName = 'birth_year'
-      ReadOnly = True
     end
     object qryAllClubPlayersfirst_name: TWideStringField
       FieldName = 'first_name'
-      ReadOnly = True
-      Required = True
       Size = 128
     end
     object qryAllClubPlayersfamily_name: TWideStringField
       FieldName = 'family_name'
-      ReadOnly = True
       Size = 128
+    end
+    object qryAllClubPlayersfull_name: TWideMemoField
+      FieldName = 'full_name'
+      BlobType = ftWideMemo
+    end
+    object qryAllClubPlayersbirth_year: TSmallintField
+      FieldName = 'birth_year'
     end
     object qryAllClubPlayersbirth_place: TWideStringField
       FieldName = 'birth_place'
-      ReadOnly = True
       Size = 128
     end
     object qryAllClubPlayersnotes: TWideMemoField
       FieldName = 'notes'
-      ReadOnly = True
       BlobType = ftWideMemo
     end
-    object qryAllClubPlayersrole: TSmallintField
-      FieldName = 'role'
-      ReadOnly = True
-    end
-    object qryAllClubPlayersclub_id: TSmallintField
-      FieldName = 'club_id'
-      ReadOnly = True
-      Required = True
+    object qryAllClubPlayersteam_name: TWideStringField
+      FieldName = 'team_name'
+      Size = 128
     end
     object qryAllClubPlayersclub_name: TWideStringField
       FieldName = 'club_name'
       ReadOnly = True
       Size = 128
     end
-    object qryAllClubPlayersfullname: TWideStringField
-      FieldName = 'fullname'
-      ReadOnly = True
-      Size = 512
+    object qryAllClubPlayersclub_id: TSmallintField
+      FieldName = 'club_id'
     end
     object qryAllClubPlayerssince: TDateField
       FieldName = 'since'
@@ -3678,6 +4200,90 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       FieldName = 'birth_date'
       ReadOnly = True
     end
+    object qryAllClubPlayersid: TLargeintField
+      FieldName = 'id'
+    end
+    object qryAllClubPlayersclub_origin_id: TIntegerField
+      FieldName = 'club_origin_id'
+    end
+    object qryAllClubPlayersscored: TSmallintField
+      FieldName = 'scored'
+    end
+    object qryAllClubPlayersself_scored: TSmallintField
+      FieldName = 'self_scored'
+    end
+    object qryAllClubPlayersconceded: TSmallintField
+      FieldName = 'conceded'
+    end
+    object qryAllClubPlayerssent_off: TSmallintField
+      FieldName = 'sent_off'
+    end
+    object qryAllClubPlayersinjuries: TSmallintField
+      FieldName = 'injuries'
+    end
+    object qryAllClubPlayersminutes: TSmallintField
+      FieldName = 'minutes'
+    end
+    object qryAllClubPlayersmatches: TIntegerField
+      FieldName = 'matches'
+    end
+    object qryAllClubPlayersscore: TIntegerField
+      FieldName = 'score'
+    end
+    object qryAllClubPlayersvotes: TFloatField
+      FieldName = 'votes'
+    end
+    object qryAllClubPlayersremote_id: TIntegerField
+      FieldName = 'remote_id'
+    end
+    object qryAllClubPlayersdb_schema_id: TIntegerField
+      FieldName = 'db_schema_id'
+    end
+    object qryAllClubPlayersjguid: TGuidField
+      FieldName = 'jguid'
+      Size = 38
+    end
+    object qryAllClubPlayersdeleted: TBooleanField
+      FieldName = 'deleted'
+    end
+    object qryAllClubPlayersinsert_date: TDateTimeField
+      FieldName = 'insert_date'
+    end
+    object qryAllClubPlayersupdate_date: TDateTimeField
+      FieldName = 'update_date'
+    end
+    object qryAllClubPlayersuser_insert: TWideStringField
+      FieldName = 'user_insert'
+      Size = 128
+    end
+    object qryAllClubPlayersuser_update: TWideStringField
+      FieldName = 'user_update'
+      Size = 128
+    end
+    object qryAllClubPlayersan_cellular: TWideStringField
+      FieldName = 'an_cellular'
+    end
+    object qryAllClubPlayersan_email: TWideStringField
+      FieldName = 'an_email'
+      Size = 256
+    end
+    object qryAllClubPlayersrole_name: TWideStringField
+      FieldName = 'role_name'
+      Size = 30
+    end
+    object qryAllClubPlayersrole_code: TWideStringField
+      FieldName = 'role_code'
+      Size = 5
+    end
+    object qryAllClubPlayersheight: TSmallintField
+      FieldName = 'height'
+    end
+    object qryAllClubPlayersweight: TSmallintField
+      FieldName = 'weight'
+    end
+    object qryAllClubPlayersrole_id: TSmallintField
+      FieldName = 'role_id'
+    end
   end
   object dsAllPlayers: TDataSource
     DataSet = qryAllPlayers
@@ -3686,47 +4292,70 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
   end
   object qryMatchTeamAllPlayers: TUniQuery
     SQLInsert.Strings = (
-      'INSERT INTO football.ft_teams_players'
-      '  (team_id, player_id, season_id, since, until, club_origin_id)'
+      'INSERT INTO sports.team_players_view'
+      
+        '  (id, team_id, player_id, season_id, since, until, club_origin_' +
+        'id, scored, self_scored, conceded, sent_off, injuries, minutes, ' +
+        'matches, score, votes, remote_id, db_schema_id, jguid, deleted, ' +
+        'insert_date, update_date, user_insert, user_update, anagraph_id,' +
+        ' first_name, family_name, birth_date, an_cellular, an_email, rol' +
+        'e_name, role_code, birth_year, birth_place, notes, height, weigh' +
+        't, role_id, team_name, club_id, full_name, club_name)'
       'VALUES'
       
-        '  (:team_id, :player_id, :season_id, :since, :until, :club_origi' +
-        'n_id)')
+        '  (:id, :team_id, :player_id, :season_id, :since, :until, :club_' +
+        'origin_id, :scored, :self_scored, :conceded, :sent_off, :injurie' +
+        's, :minutes, :matches, :score, :votes, :remote_id, :db_schema_id' +
+        ', :jguid, :deleted, :insert_date, :update_date, :user_insert, :u' +
+        'ser_update, :anagraph_id, :first_name, :family_name, :birth_date' +
+        ', :an_cellular, :an_email, :role_name, :role_code, :birth_year, ' +
+        ':birth_place, :notes, :height, :weight, :role_id, :team_name, :c' +
+        'lub_id, :full_name, :club_name)')
     SQLDelete.Strings = (
-      'DELETE FROM football.ft_teams_players'
+      'DELETE FROM sports.team_players_view'
       'WHERE'
-      
-        '  team_id = :Old_team_id AND player_id = :Old_player_id AND seas' +
-        'on_id = :Old_season_id')
+      '  id = :Old_id AND team_id = :Old_team_id')
     SQLUpdate.Strings = (
-      'UPDATE football.ft_teams_players'
+      'UPDATE sports.team_players_view'
       'SET'
       
-        '  team_id = :team_id, player_id = :player_id, season_id = :seaso' +
-        'n_id, since = :since, until = :until, club_origin_id = :club_ori' +
-        'gin_id'
+        '  id = :id, team_id = :team_id, player_id = :player_id, season_i' +
+        'd = :season_id, since = :since, until = :until, club_origin_id =' +
+        ' :club_origin_id, scored = :scored, self_scored = :self_scored, ' +
+        'conceded = :conceded, sent_off = :sent_off, injuries = :injuries' +
+        ', minutes = :minutes, matches = :matches, score = :score, votes ' +
+        '= :votes, remote_id = :remote_id, db_schema_id = :db_schema_id, ' +
+        'jguid = :jguid, deleted = :deleted, insert_date = :insert_date, ' +
+        'update_date = :update_date, user_insert = :user_insert, user_upd' +
+        'ate = :user_update, anagraph_id = :anagraph_id, first_name = :fi' +
+        'rst_name, family_name = :family_name, birth_date = :birth_date, ' +
+        'an_cellular = :an_cellular, an_email = :an_email, role_name = :r' +
+        'ole_name, role_code = :role_code, birth_year = :birth_year, birt' +
+        'h_place = :birth_place, notes = :notes, height = :height, weight' +
+        ' = :weight, role_id = :role_id, team_name = :team_name, club_id ' +
+        '= :club_id, full_name = :full_name, club_name = :club_name'
       'WHERE'
-      
-        '  team_id = :Old_team_id AND player_id = :Old_player_id AND seas' +
-        'on_id = :Old_season_id')
+      '  id = :Old_id AND team_id = :Old_team_id')
     SQLLock.Strings = (
-      'SELECT * FROM football.ft_teams_players'
+      'SELECT * FROM sports.team_players_view'
       'WHERE'
-      
-        '  team_id = :Old_team_id AND player_id = :Old_player_id AND seas' +
-        'on_id = :Old_season_id'
+      '  id = :Old_id AND team_id = :Old_team_id'
       'FOR UPDATE NOWAIT')
     SQLRefresh.Strings = (
       
-        'SELECT team_id, player_id, season_id, since, until, club_origin_' +
-        'id FROM football.ft_teams_players'
+        'SELECT id, team_id, player_id, season_id, since, until, club_ori' +
+        'gin_id, scored, self_scored, conceded, sent_off, injuries, minut' +
+        'es, matches, score, votes, remote_id, db_schema_id, jguid, delet' +
+        'ed, insert_date, update_date, user_insert, user_update, anagraph' +
+        '_id, first_name, family_name, birth_date, an_cellular, an_email,' +
+        ' role_name, role_code, birth_year, birth_place, notes, height, w' +
+        'eight, role_id, team_name, club_id, full_name, club_name FROM sp' +
+        'orts.team_players_view'
       'WHERE'
-      
-        '  team_id = :team_id AND player_id = :player_id AND season_id = ' +
-        ':season_id')
+      '  id = :id AND team_id = :team_id')
     SQLRecCount.Strings = (
       'SELECT count(*) FROM ('
-      'SELECT * FROM football.ft_teams_players'
+      'SELECT * FROM sports.team_players_view'
       ''
       ') t')
     DataTypeMap = <
@@ -3738,25 +4367,13 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     Connection = PgErgoConnection
     SQL.Strings = (
       'SELECT   '
-      '   t.*, p.*,'
-      '   p.family_name || '#39' '#39' || p.first_name || '#39' - '#39' '
-      
-        '   || public.nvl( to_char(p.birth_date, '#39'dd/mm/yy'#39') , public.nvl' +
-        '(p.notes, '#39'n.d.'#39') ) '
-      '   || '#39' '#39' || r.role_name '
-      '    as fullname'
+      '   *'
       '  FROM '
-      '    football.ft_teams_players t'
-      '  , football.ft_players p'
-      '  , football.ft_roles r'
+      '    sports.team_players_view'
       'where '
-      'public.nvl(p.role, 0) = r.role_id'
-      'and'
       'team_id = :team_id'
       'and'
       'season_id = :season_id'
-      'and'
-      'p.anagraph_id = t.player_id'
       'order by family_name, first_name')
     OnNewRecord = qryMatchTeamAllPlayersNewRecord
     Left = 400
@@ -3778,9 +4395,9 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       FieldKind = fkLookup
       FieldName = 'lkpRoleName'
       LookupDataSet = lkpRoles
-      LookupKeyFields = 'role_id'
+      LookupKeyFields = 'id'
       LookupResultField = 'role_name'
-      KeyFields = 'role'
+      KeyFields = 'role_id'
       Size = 30
       Lookup = True
     end
@@ -3811,19 +4428,8 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       FieldName = 'birth_place'
       Size = 128
     end
-    object qryMatchTeamAllPlayersnotes: TWideMemoField
-      FieldName = 'notes'
-      BlobType = ftWideMemo
-    end
-    object qryMatchTeamAllPlayersrole: TSmallintField
-      FieldName = 'role'
-    end
     object qryMatchTeamAllPlayersclub_origin_id: TIntegerField
       FieldName = 'club_origin_id'
-    end
-    object qryMatchTeamAllPlayersfullname: TWideStringField
-      FieldName = 'fullname'
-      Size = 512
     end
     object qryMatchTeamAllPlayerssince: TDateField
       FieldName = 'since'
@@ -3834,6 +4440,106 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     object qryMatchTeamAllPlayersbirth_date: TDateField
       FieldName = 'birth_date'
       ReadOnly = True
+    end
+    object qryMatchTeamAllPlayersid: TLargeintField
+      FieldName = 'id'
+    end
+    object qryMatchTeamAllPlayersscored: TSmallintField
+      FieldName = 'scored'
+    end
+    object qryMatchTeamAllPlayersself_scored: TSmallintField
+      FieldName = 'self_scored'
+    end
+    object qryMatchTeamAllPlayersconceded: TSmallintField
+      FieldName = 'conceded'
+    end
+    object qryMatchTeamAllPlayerssent_off: TSmallintField
+      FieldName = 'sent_off'
+    end
+    object qryMatchTeamAllPlayersinjuries: TSmallintField
+      FieldName = 'injuries'
+    end
+    object qryMatchTeamAllPlayersminutes: TSmallintField
+      FieldName = 'minutes'
+    end
+    object qryMatchTeamAllPlayersmatches: TIntegerField
+      FieldName = 'matches'
+    end
+    object qryMatchTeamAllPlayersscore: TIntegerField
+      FieldName = 'score'
+    end
+    object qryMatchTeamAllPlayersvotes: TFloatField
+      FieldName = 'votes'
+    end
+    object qryMatchTeamAllPlayersremote_id: TIntegerField
+      FieldName = 'remote_id'
+    end
+    object qryMatchTeamAllPlayersdb_schema_id: TIntegerField
+      FieldName = 'db_schema_id'
+    end
+    object qryMatchTeamAllPlayersjguid: TGuidField
+      FieldName = 'jguid'
+      Size = 38
+    end
+    object qryMatchTeamAllPlayersdeleted: TBooleanField
+      FieldName = 'deleted'
+    end
+    object qryMatchTeamAllPlayersinsert_date: TDateTimeField
+      FieldName = 'insert_date'
+    end
+    object qryMatchTeamAllPlayersupdate_date: TDateTimeField
+      FieldName = 'update_date'
+    end
+    object qryMatchTeamAllPlayersuser_insert: TWideStringField
+      FieldName = 'user_insert'
+      Size = 128
+    end
+    object qryMatchTeamAllPlayersuser_update: TWideStringField
+      FieldName = 'user_update'
+      Size = 128
+    end
+    object qryMatchTeamAllPlayersan_cellular: TWideStringField
+      FieldName = 'an_cellular'
+    end
+    object qryMatchTeamAllPlayersan_email: TWideStringField
+      FieldName = 'an_email'
+      Size = 256
+    end
+    object qryMatchTeamAllPlayersrole_name: TWideStringField
+      FieldName = 'role_name'
+      Size = 30
+    end
+    object qryMatchTeamAllPlayersrole_code: TWideStringField
+      FieldName = 'role_code'
+      Size = 5
+    end
+    object qryMatchTeamAllPlayersheight: TSmallintField
+      FieldName = 'height'
+    end
+    object qryMatchTeamAllPlayersweight: TSmallintField
+      FieldName = 'weight'
+    end
+    object qryMatchTeamAllPlayersrole_id: TSmallintField
+      FieldName = 'role_id'
+    end
+    object qryMatchTeamAllPlayersteam_name: TWideStringField
+      FieldName = 'team_name'
+      Size = 128
+    end
+    object qryMatchTeamAllPlayersclub_id: TSmallintField
+      FieldName = 'club_id'
+    end
+    object qryMatchTeamAllPlayersfull_name: TWideMemoField
+      FieldName = 'full_name'
+      BlobType = ftWideMemo
+    end
+    object qryMatchTeamAllPlayersclub_name: TWideStringField
+      FieldName = 'club_name'
+      Size = 128
+    end
+    object qryMatchTeamAllPlayersnotes: TWideMemoField
+      FieldName = 'notes'
+      BlobType = ftWideMemo
     end
   end
   object qryAllTeamPlayers: TUniQuery
@@ -3893,27 +4599,18 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       
         '   || public.nvl( to_char(p.birth_date, '#39'dd/mm/yy'#39') , public.nvl' +
         '(p.notes, '#39'n.d.'#39') ) '
-      '   || '#39' '#39' || r.role_name    '
+      '   || '#39' '#39' || p.role_name    '
       '    as fullname'
       '  FROM '
-      '    football.ft_teams_players t'
-      '  , football.ft_players p'
-      '  , football.ft_roles r'
-      ''
+      '    sports.team_players_view p'
       'where '
-      'public.nvl(p.role, 0) = r.role_id'
-      'and'
-      't.team_id = :team_id'
-      'and'
-      't.season_id = (:search_season_id)'
-      'and'
-      'p.anagraph_id = t.player_id'
+      'p.season_id = (:search_season_id)'
       'and'
       '('
-      ' not exists (select 1 from  football.ft_teams_players z'
+      ' not exists (select 1 from  sports.team_players z'
       
         '  where  z.team_id = :team_id and z.season_id = :season_id and z' +
-        '.player_id = t.player_id)'
+        '.player_id = p.player_id)'
       ' or :check_team = '#39'N'#39
       ')'
       'order by family_name, first_name')
@@ -3922,16 +4619,16 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     Top = 576
     ParamData = <
       item
-        DataType = ftSmallint
-        Name = 'team_id'
-        ParamType = ptInput
-        Value = 251
-      end
-      item
         DataType = ftInteger
         Name = 'search_season_id'
         ParamType = ptInput
         Value = nil
+      end
+      item
+        DataType = ftSmallint
+        Name = 'team_id'
+        ParamType = ptInput
+        Value = 251
       end
       item
         DataType = ftSmallint
@@ -3988,6 +4685,32 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       FieldName = 'birth_date'
       ReadOnly = True
     end
+    object qryAllTeamPlayersdb_schema_id: TIntegerField
+      FieldName = 'db_schema_id'
+      ReadOnly = True
+    end
+    object qryAllTeamPlayersremote_id: TIntegerField
+      FieldName = 'remote_id'
+      ReadOnly = True
+    end
+    object qryAllTeamPlayersheight: TSmallintField
+      FieldName = 'height'
+      ReadOnly = True
+    end
+    object qryAllTeamPlayersweight: TSmallintField
+      FieldName = 'weight'
+      ReadOnly = True
+    end
+    object qryAllTeamPlayerspplr_jguid: TWideStringField
+      FieldName = 'pplr_jguid'
+      ReadOnly = True
+      Required = True
+      Size = 40
+    end
+    object qryAllTeamPlayerspplr_deleted: TBooleanField
+      FieldName = 'pplr_deleted'
+      ReadOnly = True
+    end
   end
   object qryClubAllPlayers: TUniQuery
     SQLInsert.Strings = (
@@ -4041,35 +4764,23 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     SQL.Strings = (
       'SELECT   '
       '   distinct  '
-      '   p.family_name || '#39' '#39' || p.first_name || '#39' - '#39' '
+      '   full_name'
       
-        '   || public.nvl( to_char(p.birth_date, '#39'dd/mm/yy'#39') , public.nvl' +
-        '(p.notes, '#39'n.d.'#39') ) '
-      '   || '#39' '#39' || r.role_name    '
-      '   as fullname'
-      '   , anagraph_id,  family_name , first_name, p.role, p.notes'
+        '   , anagraph_id,  family_name , first_name, p.role_id as role, ' +
+        'p.notes, p.id as player_id'
       ''
       '  FROM '
-      '    football.ft_teams_players s'
-      '  , football.ft_players p'
-      '  , football.ft_teams c'
-      '  , football.ft_roles r'
+      '    sports.team_players_view p'
       'where '
-      'public.nvl(p.role, 0) = r.role_id'
+      'p.club_id = :club_id'
       'and'
-      'c.club_id = :club_id'
-      'and'
-      'c.team_id = s.team_id'
-      'and'
-      'season_id = :season_id'
-      'and'
-      'p.anagraph_id = s.player_id'
+      'p.season_id = :season_id'
       'and'
       '('
-      ' not exists (select 1 from  football.ft_teams_players z'
+      ' not exists (select 1 from  sports.team_players z'
       
         '  where  z.team_id = :team_id and z.season_id = :season_id and z' +
-        '.player_id = s.player_id)'
+        '.player_id = p.id)'
       ' or :check_team = '#39'N'#39
       ')'
       'order by family_name, first_name')
@@ -4115,12 +4826,6 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       ReadOnly = True
       Size = 128
     end
-    object qryClubAllPlayersfullname: TWideStringField
-      FieldName = 'fullname'
-      ReadOnly = True
-      Required = True
-      Size = 512
-    end
     object qryClubAllPlayersrole: TSmallintField
       FieldName = 'role'
       ReadOnly = True
@@ -4129,6 +4834,13 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       FieldName = 'notes'
       ReadOnly = True
       BlobType = ftWideMemo
+    end
+    object qryClubAllPlayersfull_name: TWideMemoField
+      FieldName = 'full_name'
+      BlobType = ftWideMemo
+    end
+    object qryClubAllPlayersplayer_id: TLargeintField
+      FieldName = 'player_id'
     end
   end
   object qryTeamHistory: TUniQuery
@@ -4343,9 +5055,9 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       ') t')
     Connection = PgErgoConnection
     SQL.Strings = (
-      'SELECT c.season_id, c.league_id, c.team_id, t.team_name'
+      'SELECT c.season_id, c.league_id, c.team_id, c.team_name'
       '  FROM '
-      '  sports.teams_championships_view t'
+      '  sports.teams_championships_view c'
       '  WHERE'
       '  c.season_id = :season_id and c.league_id = :league_id'
       '  '
@@ -4365,7 +5077,7 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       '   m.season_id = :season_id and m.league_id = :league_id '
       '   and m.match_day_number = :match_day_number)  '
       '   '
-      '  order by t.team_name asc')
+      '  order by c.team_name asc')
     MasterSource = dsMatchDays
     MasterFields = 'season_id;league_id'
     DetailFields = 'season_id;league_id'
@@ -4458,12 +5170,12 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       ') t')
     Connection = PgErgoConnection
     SQL.Strings = (
-      'SELECT match_id, league_id, season_id, '
+      'SELECT  id, league_id, season_id, '
       '       match_day_number, match_date, '
-      '       home_team_id, visitors_team_id, goal_home, '
-      '       goal_visitor, points_home, '
-      '       points_visitors, notes, confirmed'
-      '  FROM football.ft_calendar'
+      '       home_team_id, visitors_team_id, score_home, '
+      '       score_visitor, points_home, '
+      '       points_visitors, notes, confirmed, id as match_id'
+      '  FROM sports.matches_view'
       'WHERE  league_id = :league_id'
       '       and season_id = :season_id'
       '       and'
@@ -4710,7 +5422,7 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     object qryPlayerAlbumlkpTeam: TStringField
       FieldKind = fkLookup
       FieldName = 'lkpTeam'
-      LookupDataSet = lkpTeams
+      LookupDataSet = qryLkpTeams
       LookupKeyFields = 'team_id'
       LookupResultField = 'team_name'
       KeyFields = 'team_id'
@@ -4737,6 +5449,48 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     Top = 632
   end
   object qryClubSeasons: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO sports.club_seasons'
+      
+        '  (club_id, season_id, club_name, remote_id, db_schema_id, jguid' +
+        ', deleted, insert_date, update_date, user_insert, user_update)'
+      'VALUES'
+      
+        '  (:club_id, :season_id, :club_name, :remote_id, :db_schema_id, ' +
+        ':jguid, :deleted, :insert_date, :update_date, :user_insert, :use' +
+        'r_update)')
+    SQLDelete.Strings = (
+      'DELETE FROM sports.club_seasons'
+      'WHERE'
+      '  club_id = :Old_club_id AND season_id = :Old_season_id')
+    SQLUpdate.Strings = (
+      'UPDATE sports.club_seasons'
+      'SET'
+      
+        '  club_id = :club_id, season_id = :season_id, club_name = :club_' +
+        'name, remote_id = :remote_id, db_schema_id = :db_schema_id, jgui' +
+        'd = :jguid, deleted = :deleted, insert_date = :insert_date, upda' +
+        'te_date = :update_date, user_insert = :user_insert, user_update ' +
+        '= :user_update'
+      'WHERE'
+      '  club_id = :Old_club_id AND season_id = :Old_season_id')
+    SQLLock.Strings = (
+      'SELECT * FROM sports.club_seasons'
+      'WHERE'
+      '  club_id = :Old_club_id AND season_id = :Old_season_id'
+      'FOR UPDATE NOWAIT')
+    SQLRefresh.Strings = (
+      
+        'SELECT club_id, season_id, club_name, remote_id, db_schema_id, j' +
+        'guid, deleted, insert_date, update_date, user_insert, user_updat' +
+        'e FROM sports.club_seasons'
+      'WHERE'
+      '  club_id = :club_id AND season_id = :season_id')
+    SQLRecCount.Strings = (
+      'SELECT count(*) FROM ('
+      'SELECT * FROM sports.club_seasons'
+      ''
+      ') t')
     Connection = PgErgoConnection
     SQL.Strings = (
       'select '
@@ -4751,36 +5505,34 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
   end
   object qryLkpSeasons: TUniQuery
     SQLInsert.Strings = (
-      'INSERT INTO football.ft_seasons'
-      '  (season_id, season_des, season_code, db_schema_id)'
+      'INSERT INTO sports.seasons_view'
+      '  (id, season_des, season_code)'
       'VALUES'
-      '  (:season_id, :season_des, :season_code, :db_schema_id)')
+      '  (:season_id, :season_des, :season_code)')
     SQLDelete.Strings = (
-      'DELETE FROM football.ft_seasons'
+      'DELETE FROM sports.seasons_view'
       'WHERE'
-      '  season_id = :Old_season_id')
+      '  id = :Old_season_id')
     SQLUpdate.Strings = (
-      'UPDATE football.ft_seasons'
+      'UPDATE sports.seasons_view'
       'SET'
       
-        '  season_id = :season_id, season_des = :season_des, season_code ' +
-        '= :season_code, db_schema_id = :db_schema_id'
+        '  id = :season_id, season_des = :season_des, season_code = :seas' +
+        'on_code'
       'WHERE'
-      '  season_id = :Old_season_id')
+      '  id = :Old_season_id')
     SQLLock.Strings = (
-      'SELECT * FROM football.ft_seasons'
+      'SELECT * FROM sports.seasons_view'
       'WHERE'
-      '  season_id = :Old_season_id'
+      '  id = :Old_season_id'
       'FOR UPDATE NOWAIT')
     SQLRefresh.Strings = (
-      
-        'SELECT season_id, season_des, season_code, db_schema_id FROM foo' +
-        'tball.ft_seasons'
+      'SELECT id, season_des, season_code FROM sports.seasons_view'
       'WHERE'
-      '  season_id = :season_id')
+      '  id = :season_id')
     SQLRecCount.Strings = (
       'SELECT count(*) FROM ('
-      'SELECT * FROM football.ft_seasons'
+      'SELECT * FROM sports.seasons_view'
       ''
       ') t')
     Connection = PgErgoConnection
@@ -4789,6 +5541,7 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       '   v.id as season_id,  v.season_des,v.season_code  '
       'from sports.seasons_view v'
       'order by id desc')
+    Active = True
     AfterScroll = qrySeasonsAfterScroll
     OnNewRecord = qrySeasonsNewRecord
     Left = 288
@@ -4809,11 +5562,13 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     KeyFields = 'club_id'
     Connection = PgErgoConnection
     SQL.Strings = (
-      'select * from football.ft_clubs')
+      'select c.*, c.id as club_id '
+      'from sports.clubs c')
     Filtered = True
     Left = 624
     Top = 616
     object qrylkpClubsclub_id: TIntegerField
+      AutoGenerateValue = arAutoInc
       FieldName = 'club_id'
     end
     object qrylkpClubsclub_name: TWideStringField
@@ -4823,28 +5578,75 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     object qrylkpClubsFoundation_date: TDateField
       FieldName = 'Foundation_date'
     end
-  end
-  object cdsLkpClubs: TClientDataSet
-    Aggregates = <>
-    Params = <>
-    ProviderName = 'dspClubs'
-    Left = 624
-    Top = 728
-    object cdsLkpClubsclub_id: TIntegerField
-      FieldName = 'club_id'
+    object qrylkpClubsid: TIntegerField
+      AutoGenerateValue = arAutoInc
+      FieldName = 'id'
     end
-    object cdsLkpClubsclub_name: TWideStringField
-      FieldName = 'club_name'
+    object qrylkpClubspresident: TWideStringField
+      FieldName = 'president'
       Size = 128
     end
-    object cdsLkpClubsFoundation_date: TDateField
-      FieldName = 'Foundation_date'
+    object qrylkpClubsstadium_id: TSmallintField
+      FieldName = 'stadium_id'
     end
-  end
-  object dspClubs: TDataSetProvider
-    DataSet = qrylkpClubs
-    Left = 624
-    Top = 672
+    object qrylkpClubstown: TWideStringField
+      FieldName = 'town'
+      Size = 128
+    end
+    object qrylkpClubsvice_president: TWideStringField
+      FieldName = 'vice_president'
+      Size = 128
+    end
+    object qrylkpClubsteam_manager: TWideStringField
+      FieldName = 'team_manager'
+      Size = 128
+    end
+    object qrylkpClubsathletic_manager: TWideStringField
+      FieldName = 'athletic_manager'
+      Size = 128
+    end
+    object qrylkpClubscolors: TWideStringField
+      FieldName = 'colors'
+      Size = 128
+    end
+    object qrylkpClubswebsite: TWideStringField
+      FieldName = 'website'
+      Size = 128
+    end
+    object qrylkpClubsremote_id: TIntegerField
+      FieldName = 'remote_id'
+    end
+    object qrylkpClubsanagraph_id: TIntegerField
+      FieldName = 'anagraph_id'
+    end
+    object qrylkpClubsclub_image: TBlobField
+      FieldName = 'club_image'
+    end
+    object qrylkpClubsdb_schema_id: TIntegerField
+      FieldName = 'db_schema_id'
+    end
+    object qrylkpClubsjguid: TGuidField
+      FieldName = 'jguid'
+      Required = True
+      Size = 38
+    end
+    object qrylkpClubsdeleted: TBooleanField
+      FieldName = 'deleted'
+    end
+    object qrylkpClubsinsert_date: TDateTimeField
+      FieldName = 'insert_date'
+    end
+    object qrylkpClubsupdate_date: TDateTimeField
+      FieldName = 'update_date'
+    end
+    object qrylkpClubsuser_insert: TWideStringField
+      FieldName = 'user_insert'
+      Size = 128
+    end
+    object qrylkpClubsuser_update: TWideStringField
+      FieldName = 'user_update'
+      Size = 128
+    end
   end
   object dsChampRankingView: TDataSource
     DataSet = qryChampRankingView
@@ -5083,32 +5885,32 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     Top = 704
   end
   object prcRanking: TUniStoredProc
-    StoredProcName = 'football.ft_rankings_season'
+    StoredProcName = 'sports.generate_ranking'
     SQL.Strings = (
-      'SELECT football.ft_rankings_season(:p_season_id, :p_league_id)')
+      'SELECT sports.generate_ranking(:p_league_id, :p_season_id)')
     Connection = PgErgoConnection
     Left = 736
     Top = 648
     ParamData = <
       item
-        DataType = ftInteger
+        DataType = ftSmallint
         Name = 'result'
         ParamType = ptResult
         Value = nil
       end
       item
-        DataType = ftInteger
-        Name = 'p_season_id'
+        DataType = ftSmallint
+        Name = 'p_league_id'
         ParamType = ptInput
         Value = nil
       end
       item
-        DataType = ftInteger
-        Name = 'p_league_id'
+        DataType = ftSmallint
+        Name = 'p_season_id'
         ParamType = ptInput
         Value = nil
       end>
-    CommandStoredProcName = 'football.ft_rankings_season:0'
+    CommandStoredProcName = 'sports.generate_ranking'
   end
   object qryDynamicRanking: TUniQuery
     Connection = PgErgoConnection
@@ -5422,7 +6224,7 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     Connection = PgErgoConnection
     SQL.Strings = (
       'SELECT match_day_number'
-      '  FROM football.ft_match_days'
+      '  FROM sports.calendar'
       'WHERE'
       '   season_id = :season_id '
       '   and'
@@ -5441,14 +6243,14 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
         Name = 'season_id'
         ParamType = ptInput
         Size = 2
-        Value = 77
+        Value = nil
       end
       item
         DataType = ftSmallint
         Name = 'league_id'
         ParamType = ptInput
         Size = 2
-        Value = 145
+        Value = nil
       end>
     object lkpMatchDaysFrommatch_day_number: TSmallintField
       FieldName = 'match_day_number'
@@ -5513,7 +6315,7 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     Connection = PgErgoConnection
     SQL.Strings = (
       'SELECT match_day_number'
-      '  FROM football.ft_match_days'
+      '  FROM sports.calendar'
       'WHERE'
       '   season_id = :season_id '
       '   and'
@@ -5524,22 +6326,22 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     DetailFields = 'season_id;league_id'
     DMLRefresh = True
     AfterOpen = qryMatchDaysAfterOpen
-    Left = 864
-    Top = 736
+    Left = 856
+    Top = 624
     ParamData = <
       item
         DataType = ftSmallint
         Name = 'season_id'
         ParamType = ptInput
         Size = 2
-        Value = 77
+        Value = nil
       end
       item
         DataType = ftSmallint
         Name = 'league_id'
         ParamType = ptInput
         Size = 2
-        Value = 145
+        Value = nil
       end>
     object lkpMatchDaysTomatch_day_number: TSmallintField
       FieldName = 'match_day_number'
@@ -5619,34 +6421,20 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     Connection = PgErgoConnection
     SQL.Strings = (
       'SELECT   '
-      '   p.*, '
-      
-        '    lower (family_name || '#39' '#39' || first_name || '#39' - '#39' || public.n' +
-        'vl(notes, text('#39'n.a.'#39')) || '#39' '#39' || role_name)  as fullname'
+      '   p.*'
       '  FROM '
-      '    football.ft_players p, football.ft_roles r'
-      '  where '
-      '    public.nvl(p.role, 0) = r.role_id'
+      '    sports.players_view p'
       'order by family_name, first_name')
     Left = 864
     Top = 192
+    object lkpAllPlayersid: TIntegerField
+      FieldName = 'id'
+    end
     object lkpAllPlayersanagraph_id: TIntegerField
       FieldName = 'anagraph_id'
     end
-    object lkpAllPlayersbirth_date: TDateField
-      FieldName = 'birth_date'
-    end
     object lkpAllPlayersbirth_year: TSmallintField
       FieldName = 'birth_year'
-    end
-    object lkpAllPlayersfirst_name: TWideStringField
-      FieldName = 'first_name'
-      Required = True
-      Size = 128
-    end
-    object lkpAllPlayersfamily_name: TWideStringField
-      FieldName = 'family_name'
-      Size = 128
     end
     object lkpAllPlayersbirth_place: TWideStringField
       FieldName = 'birth_place'
@@ -5656,14 +6444,8 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       FieldName = 'notes'
       BlobType = ftWideMemo
     end
-    object lkpAllPlayersrole: TSmallintField
-      FieldName = 'role'
-    end
-    object lkpAllPlayersdb_schema_id: TIntegerField
-      FieldName = 'db_schema_id'
-    end
-    object lkpAllPlayersremote_id: TIntegerField
-      FieldName = 'remote_id'
+    object lkpAllPlayersrole_id: TSmallintField
+      FieldName = 'role_id'
     end
     object lkpAllPlayersheight: TSmallintField
       FieldName = 'height'
@@ -5671,18 +6453,65 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
     object lkpAllPlayersweight: TSmallintField
       FieldName = 'weight'
     end
-    object lkpAllPlayerspplr_jguid: TWideStringField
-      FieldName = 'pplr_jguid'
-      Required = True
-      Size = 40
+    object lkpAllPlayersremote_id: TIntegerField
+      FieldName = 'remote_id'
     end
-    object lkpAllPlayerspplr_deleted: TBooleanField
-      FieldName = 'pplr_deleted'
+    object lkpAllPlayersdb_schema_id: TIntegerField
+      FieldName = 'db_schema_id'
     end
-    object lkpAllPlayersfullname: TWideStringField
-      FieldName = 'fullname'
-      ReadOnly = True
-      Size = 512
+    object lkpAllPlayersjguid: TGuidField
+      FieldName = 'jguid'
+      Size = 38
+    end
+    object lkpAllPlayersdeleted: TBooleanField
+      FieldName = 'deleted'
+    end
+    object lkpAllPlayersinsert_date: TDateTimeField
+      FieldName = 'insert_date'
+    end
+    object lkpAllPlayersupdate_date: TDateTimeField
+      FieldName = 'update_date'
+    end
+    object lkpAllPlayersuser_insert: TWideStringField
+      FieldName = 'user_insert'
+      Size = 128
+    end
+    object lkpAllPlayersuser_update: TWideStringField
+      FieldName = 'user_update'
+      Size = 128
+    end
+    object lkpAllPlayersfirst_name: TWideStringField
+      FieldName = 'first_name'
+      Size = 128
+    end
+    object lkpAllPlayersfamily_name: TWideStringField
+      FieldName = 'family_name'
+      Size = 128
+    end
+    object lkpAllPlayersbirth_date: TDateField
+      FieldName = 'birth_date'
+    end
+    object lkpAllPlayersan_cellular: TWideStringField
+      FieldName = 'an_cellular'
+    end
+    object lkpAllPlayersan_email: TWideStringField
+      FieldName = 'an_email'
+      Size = 256
+    end
+    object lkpAllPlayersan_group_id: TSmallintField
+      FieldName = 'an_group_id'
+    end
+    object lkpAllPlayersrole_name: TWideStringField
+      FieldName = 'role_name'
+      Size = 30
+    end
+    object lkpAllPlayersrole_code: TWideStringField
+      FieldName = 'role_code'
+      Size = 5
+    end
+    object lkpAllPlayersfull_name: TWideMemoField
+      FieldName = 'full_name'
+      BlobType = ftWideMemo
     end
   end
   object dsLkpAllPlayers: TDataSource
@@ -5757,6 +6586,7 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
       'from sports.leagues_view'
       'order by league_position'
       '')
+    Active = True
     AfterScroll = qrySeasonsAfterScroll
     OnNewRecord = qrySeasonsNewRecord
     Left = 56
@@ -5804,5 +6634,23 @@ inherited dmUniDacPgChampionships: TdmUniDacPgChampionships
         Value = nil
       end>
     CommandStoredProcName = 'sports.cloneseason'
+  end
+  object qryNextVal: TUniQuery
+    Connection = PgErgoConnection
+    SQL.Strings = (
+      'SELECT nextval(:sequence);')
+    Left = 56
+    Top = 632
+    ParamData = <
+      item
+        DataType = ftString
+        Name = 'sequence'
+        ParamType = ptInput
+        Value = 'sports.leagues_seq'
+      end>
+    object qryNextValnextval: TLargeintField
+      FieldName = 'nextval'
+      ReadOnly = True
+    end
   end
 end

@@ -104,7 +104,7 @@ end;
 
 procedure TframeFMXImageDraw.UpdateSize;
 begin
-  self.Height := pnlButtons.Height + Trunc(Width * (330 / 540));
+  Height := pnlButtons.Height + Trunc(Width * (330 / 540));
   LayoutImage.Height := Trunc(Width * (330 / 540));
 end;
 
@@ -112,7 +112,7 @@ procedure TframeFMXImageDraw.Activate(const aOffset: Single = 0.0);
 begin
   FOffset := aOffset;
   SetCanvasControl(imgCar);
-  self.Timer1.Enabled := True;
+  Timer1.Enabled := True;
 end;
 
 procedure TframeFMXImageDraw.AfterConstruction;

@@ -5,15 +5,14 @@ inherited dlgTMSInputNumber: TdlgTMSInputNumber
   ClientHeight = 121
   ClientWidth = 418
   Color = clWhite
-  ParentFont = False
   Font.Color = clBlack
   Font.Height = -16
   Position = poScreenCenter
-  ExplicitWidth = 424
-  ExplicitHeight = 150
-  PixelsPerInch = 96
-  TextHeight = 19
-  object Label1: TLabel
+  StyleElements = [seFont, seClient, seBorder]
+  ExplicitWidth = 434
+  ExplicitHeight = 160
+  TextHeight = 21
+  object Label1: TLabel [0]
     Left = 69
     Top = 35
     Width = 152
@@ -26,11 +25,16 @@ inherited dlgTMSInputNumber: TdlgTMSInputNumber
     Font.Style = [fsBold]
     ParentFont = False
   end
+  inherited StatusBar: TStatusBar
+    Top = 102
+    Width = 418
+  end
   object AdvSpinEdit1: TAdvSpinEdit
     Left = 304
     Top = 32
     Width = 89
     Height = 27
+    Color = clWindow
     Value = 0
     DateValue = 42276.559975474530000000
     HexDigits = 0
@@ -50,7 +54,7 @@ inherited dlgTMSInputNumber: TdlgTMSInputNumber
     ParentFont = False
     TabOrder = 0
     Visible = True
-    Version = '1.9.0.1'
+    Version = '2.0.2.6'
   end
   object AdvGlowButton3: TAdvGlowButton
     Left = 237
@@ -70,7 +74,10 @@ inherited dlgTMSInputNumber: TdlgTMSInputNumber
     NotesFont.Name = 'Tahoma'
     NotesFont.Style = []
     ParentFont = False
+    Rounded = True
     TabOrder = 1
+    Appearance.Color = clWhite
+    Appearance.ColorTo = clWhite
     Appearance.ColorChecked = 16111818
     Appearance.ColorCheckedTo = 16367008
     Appearance.ColorDisabled = 15921906
@@ -79,6 +86,8 @@ inherited dlgTMSInputNumber: TdlgTMSInputNumber
     Appearance.ColorDownTo = 16367008
     Appearance.ColorHot = 16117985
     Appearance.ColorHotTo = 16372402
+    Appearance.ColorMirror = clSilver
+    Appearance.ColorMirrorTo = clWhite
     Appearance.ColorMirrorHot = 16107693
     Appearance.ColorMirrorHotTo = 16775412
     Appearance.ColorMirrorDown = 16102556
@@ -106,7 +115,10 @@ inherited dlgTMSInputNumber: TdlgTMSInputNumber
     NotesFont.Name = 'Tahoma'
     NotesFont.Style = []
     ParentFont = False
+    Rounded = True
     TabOrder = 2
+    Appearance.Color = clWhite
+    Appearance.ColorTo = clWhite
     Appearance.ColorChecked = 16111818
     Appearance.ColorCheckedTo = 16367008
     Appearance.ColorDisabled = 15921906
@@ -115,6 +127,8 @@ inherited dlgTMSInputNumber: TdlgTMSInputNumber
     Appearance.ColorDownTo = 16367008
     Appearance.ColorHot = 16117985
     Appearance.ColorHotTo = 16372402
+    Appearance.ColorMirror = clSilver
+    Appearance.ColorMirrorTo = clWhite
     Appearance.ColorMirrorHot = 16107693
     Appearance.ColorMirrorHotTo = 16775412
     Appearance.ColorMirrorDown = 16102556
@@ -184,8 +198,11 @@ inherited dlgTMSInputNumber: TdlgTMSInputNumber
       045158CDCDCDCD1A90CBC199533F2E2B23231C110A635BCDCDCDCD1BAECECCC2
       C2C2C1C2C1C1AA8C9ABA6BCDCDCDCDCD6BBDB2B2B9BFC0BFB9C0B9B8C2C16BCD
       CDCDCDCDCD8492929CA5A69D91A6B9C1C8B974CDCDCD}
+    Rounded = True
     Transparent = True
     TabOrder = 3
+    Appearance.Color = clWhite
+    Appearance.ColorTo = clWhite
     Appearance.ColorChecked = 16111818
     Appearance.ColorCheckedTo = 16367008
     Appearance.ColorDisabled = 15921906
@@ -194,6 +211,8 @@ inherited dlgTMSInputNumber: TdlgTMSInputNumber
     Appearance.ColorDownTo = 16367008
     Appearance.ColorHot = 16117985
     Appearance.ColorHotTo = 16372402
+    Appearance.ColorMirror = clSilver
+    Appearance.ColorMirrorTo = clWhite
     Appearance.ColorMirrorHot = 16107693
     Appearance.ColorMirrorHotTo = 16775412
     Appearance.ColorMirrorDown = 16102556

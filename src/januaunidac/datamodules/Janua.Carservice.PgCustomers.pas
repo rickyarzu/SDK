@@ -276,6 +276,7 @@ function TdmPgCarServiceCustomers.WebConfirmation(const aParams: TStrings; out a
   end;
 
 begin
+  Result := -1;
   var
   sGUID := aParams.Values['guid'];
   if (sGUID <> '') then
@@ -292,6 +293,7 @@ begin
       aPage := lMessage.Text;
     end;
   end;
+
 end;
 
 function TdmPgCarServiceCustomers.WebResponse(const aGUID: string; out aPage: string): integer;

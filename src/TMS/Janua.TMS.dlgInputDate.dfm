@@ -5,16 +5,14 @@ inherited dlgTMSInputDate: TdlgTMSInputDate
   ClientHeight = 129
   ClientWidth = 481
   Color = clWhite
-  ParentFont = False
   Font.Color = clBlack
   Font.Height = -16
   Position = poScreenCenter
-  OnShow = FormShow
-  ExplicitWidth = 487
-  ExplicitHeight = 158
-  PixelsPerInch = 96
-  TextHeight = 19
-  object Label1: TLabel
+  StyleElements = [seFont, seClient, seBorder]
+  ExplicitWidth = 497
+  ExplicitHeight = 168
+  TextHeight = 21
+  object Label1: TLabel [0]
     Left = 69
     Top = 32
     Width = 253
@@ -28,6 +26,10 @@ inherited dlgTMSInputDate: TdlgTMSInputDate
     Font.Style = []
     ParentFont = False
     WordWrap = True
+  end
+  inherited StatusBar: TStatusBar
+    Top = 110
+    Width = 481
   end
   object AdvGlowButton3: TAdvGlowButton
     Left = 14
@@ -92,8 +94,11 @@ inherited dlgTMSInputDate: TdlgTMSInputDate
       0303030303030303030302021212121212120707070707070707070707070707
       0707070212121212121212121212121212121212121212121212121212121212
       12121212121212121212121212121212121212121212}
+    Rounded = True
     Transparent = True
     TabOrder = 0
+    Appearance.Color = clWhite
+    Appearance.ColorTo = clWhite
     Appearance.ColorChecked = 16111818
     Appearance.ColorCheckedTo = 16367008
     Appearance.ColorDisabled = 15921906
@@ -102,6 +107,8 @@ inherited dlgTMSInputDate: TdlgTMSInputDate
     Appearance.ColorDownTo = 16367008
     Appearance.ColorHot = 16117985
     Appearance.ColorHotTo = 16372402
+    Appearance.ColorMirror = clSilver
+    Appearance.ColorMirrorTo = clWhite
     Appearance.ColorMirrorHot = 16107693
     Appearance.ColorMirrorHotTo = 16775412
     Appearance.ColorMirrorDown = 16102556
@@ -115,10 +122,16 @@ inherited dlgTMSInputDate: TdlgTMSInputDate
     Left = 328
     Top = 32
     Width = 137
-    Height = 27
+    Height = 29
     Color = clWindow
     DefaultHandling = True
     Enabled = True
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 1
     Text = ''
     Visible = True
@@ -132,7 +145,6 @@ inherited dlgTMSInputDate: TdlgTMSInputDate
     FocusFontColor = clBlack
     LabelAlwaysEnabled = False
     LabelPosition = lpLeftTop
-    LabelMargin = 4
     LabelTransparent = False
     LabelFont.Charset = DEFAULT_CHARSET
     LabelFont.Color = clWindowText
@@ -141,7 +153,7 @@ inherited dlgTMSInputDate: TdlgTMSInputDate
     LabelFont.Style = []
     ModifiedColor = clRed
     SelectFirstChar = False
-    Version = '1.5.1.3'
+    Version = '1.6.0.0'
     OnKeyPress = PlannerMaskDatePicker1KeyPress
     ButtonStyle = bsButton
     ButtonWidth = 16
@@ -182,6 +194,8 @@ inherited dlgTMSInputDate: TdlgTMSInputDate
       CaptionTextColor = clBlack
       DateDownColor = clNone
       DateHoverColor = clNone
+      DateSelectColor = 15917525
+      DateSelectBorderColor = 15917525
       DayFont.Charset = DEFAULT_CHARSET
       DayFont.Color = clWindowText
       DayFont.Height = -11
@@ -246,7 +260,8 @@ inherited dlgTMSInputDate: TdlgTMSInputDate
       HintPrevMonth = 'Previous Month'
       HintNextMonth = 'Next Month'
       HintNextYear = 'Next Year'
-      Version = '2.3.3.0'
+      Version = '2.4.4.1'
+      UIStyle = tsOffice2003Blue
       TMSStyle = 0
     end
   end
@@ -268,8 +283,11 @@ inherited dlgTMSInputDate: TdlgTMSInputDate
     NotesFont.Name = 'Tahoma'
     NotesFont.Style = []
     ParentFont = False
+    Rounded = True
     TabOrder = 2
     OnClick = btnOkClick
+    Appearance.Color = clWhite
+    Appearance.ColorTo = clWhite
     Appearance.ColorChecked = 16111818
     Appearance.ColorCheckedTo = 16367008
     Appearance.ColorDisabled = 15921906
@@ -278,6 +296,8 @@ inherited dlgTMSInputDate: TdlgTMSInputDate
     Appearance.ColorDownTo = 16367008
     Appearance.ColorHot = 16117985
     Appearance.ColorHotTo = 16372402
+    Appearance.ColorMirror = clSilver
+    Appearance.ColorMirrorTo = clWhite
     Appearance.ColorMirrorHot = 16107693
     Appearance.ColorMirrorHotTo = 16775412
     Appearance.ColorMirrorDown = 16102556
@@ -305,7 +325,10 @@ inherited dlgTMSInputDate: TdlgTMSInputDate
     NotesFont.Name = 'Tahoma'
     NotesFont.Style = []
     ParentFont = False
+    Rounded = True
     TabOrder = 3
+    Appearance.Color = clWhite
+    Appearance.ColorTo = clWhite
     Appearance.ColorChecked = 16111818
     Appearance.ColorCheckedTo = 16367008
     Appearance.ColorDisabled = 15921906
@@ -314,6 +337,8 @@ inherited dlgTMSInputDate: TdlgTMSInputDate
     Appearance.ColorDownTo = 16367008
     Appearance.ColorHot = 16117985
     Appearance.ColorHotTo = 16372402
+    Appearance.ColorMirror = clSilver
+    Appearance.ColorMirrorTo = clWhite
     Appearance.ColorMirrorHot = 16107693
     Appearance.ColorMirrorHotTo = 16775412
     Appearance.ColorMirrorDown = 16102556

@@ -3,9 +3,7 @@
 uses
   Vcl.SvcMgr,
   Janua.Phoenix.VCL.BackgroundService in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.BackgroundService.pas' {srvPhoenixVCLBackgroundService: TService},
-  Janua.Phoenix.VCL.BackgroundThread in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.BackgroundThread.pas',
-  Janua.FDAC.Phoenix.Lab in '..\..\..\src\FireDAC\Janua.FDAC.Phoenix.Lab.pas' {dmFDACPhoenixLab: TDataModule},
-  Janua.FDAC.Phoenix.Model in '..\..\..\src\FireDAC\Janua.FDAC.Phoenix.Model.pas' {dmFDACPhoenixModel: TDataModule},
+  Janua.Phoenix.VCL.TWilioBackgroundThread in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.TWilioBackgroundThread.pas',
   uPhoenixBackgroundServiceConf in 'uPhoenixBackgroundServiceConf.pas',
   udmPgStorage in '..\..\..\src\januaunidac\datamodules\udmPgStorage.pas' {dmPgStorage: TDataModule},
   Janua.Phoenix.PgTwilioSync in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.PgTwilioSync.pas' {dmPgTWilioSync: TDataModule};

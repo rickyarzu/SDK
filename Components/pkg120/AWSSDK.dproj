@@ -5,7 +5,7 @@
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <ProjectName Condition="'$(ProjectName)'==''">AWSSDK</ProjectName>
-        <TargetedPlatforms>1741953</TargetedPlatforms>
+        <TargetedPlatforms>693377</TargetedPlatforms>
         <AppType>Package</AppType>
         <FrameworkType>None</FrameworkType>
         <ProjectVersion>20.2</ProjectVersion>
@@ -147,6 +147,46 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="xmlrtl.dcp"/>
+        <DCCReference Include="IndySystem.dcp"/>
+        <DCCReference Include="IndyProtocols.dcp"/>
+        <DCCReference Include="IndyCore.dcp"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.AssumeRoleCredentials.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Client.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Core.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.CredentialResolution.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.EC2.InstanceMetadataService.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.ECS.ContainerCredentials.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Enumeration.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.ExpiringToken.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.S3.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.SigV4.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.SNS.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.SQS.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.STS.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Types.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.XML.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.IAM.PolicyDocument.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.JSON.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.SESV2.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Utils.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Polly.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Textract.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.JSON.Attributes.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Translate.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.SecretsManager.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.KMS.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.CognitoIdentityProvider.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.CognitoIdentity.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.CognitoOIDC.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\Appercept.Encoding.RFC2047.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Client.JSONResponse.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Client.Request.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Client.Response.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Client.XMLResponse.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\Appercept.AttributesHelper.pas"/>
+        <DCCReference Include="..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Transcribe.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</DependentOn>
@@ -184,9 +224,8 @@
                 <Platform value="OSXARM64">True</Platform>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">False</Platform>
-                <Platform value="Win64x">True</Platform>
             </Platforms>
-            <Deployment Version="5"/>
+            <Deployment Version="4"/>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>

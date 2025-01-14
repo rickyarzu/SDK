@@ -1,7 +1,16 @@
 object dmFDacVirtualTest: TdmFDacVirtualTest
+  Left = 0
+  Top = 0
+  ClientHeight = 174
+  ClientWidth = 379
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
   OnCreate = DataModuleCreate
-  Height = 213
-  Width = 395
+  TextHeight = 15
   object vtMaster: TFDMemTable
     Active = True
     AfterOpen = vtMasterAfterOpen
