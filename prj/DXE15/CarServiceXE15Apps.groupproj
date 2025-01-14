@@ -54,6 +54,9 @@
         <Projects Include="..\..\Components\pkg120\dclsgcWebSockets.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
             <Dependencies/>
         </Projects>
@@ -106,9 +109,6 @@
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaTmsControls.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaFMXControls.dproj">
@@ -410,6 +410,15 @@
     <Target Name="dclsgcWebSockets:Make">
         <MSBuild Projects="..\..\Components\pkg120\dclsgcWebSockets.dproj" Targets="Make"/>
     </Target>
+    <Target Name="TMSFMXPackPkg">
+        <MSBuild Projects="..\..\Components\pkg120\TMSFMXPackPkg.dproj"/>
+    </Target>
+    <Target Name="TMSFMXPackPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\TMSFMXPackPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFMXPackPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg120\TMSFMXPackPkg.dproj" Targets="Make"/>
+    </Target>
     <Target Name="TUniFalcon">
         <MSBuild Projects="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj"/>
     </Target>
@@ -571,15 +580,6 @@
     </Target>
     <Target Name="JanuaTmsControls:Make">
         <MSBuild Projects="JanuaTmsControls.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="TMSFMXPackPkg">
-        <MSBuild Projects="..\..\Components\pkg120\TMSFMXPackPkg.dproj"/>
-    </Target>
-    <Target Name="TMSFMXPackPkg:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\TMSFMXPackPkg.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="TMSFMXPackPkg:Make">
-        <MSBuild Projects="..\..\Components\pkg120\TMSFMXPackPkg.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaFMXControls">
         <MSBuild Projects="JanuaFMXControls.dproj"/>
@@ -996,13 +996,13 @@
         <MSBuild Projects="..\..\Samples\Janua\FMX\JanuaFMXTestImages.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="sbridge;dclsbridge;TRCGooglePlacesRuntime;OpenAIPackage;SwagDoc;loggerproRT;dmvcframeworkRT;DECCipher;Neon;AWSSDK;AWSSDKFMX;PlanAddons;AWSSDKVCL;Spring_Base;Spring_Core;sgcWebSockets;dclsgcWebSockets;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaRestWeb;JanuaUniMVVMTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;TMSFMXPackPkg;JanuaFMXControls;JanuaVCLMVVM;TMSWebOSMapsPkg;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;CarServiceDMVCService;CarServiceUsersUniGUI;PickAPP;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;TGooglePlacesTest;mod_cscustomersmobile;mod_csdriversmersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;CarServiceUnitTesting;CarServiceDriverApp;Archive;Review;TmsTwilio;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;JanuaAllDemos;EuroFloraApp;TestGoogleVCL;FSMap;Cipher_FMX;RESTDebuggerClient;WebMocksBasic;MatchingDemo;CanvasPainting;JanuaJsonSerializeNeonTest;SamplPlannerVCL;CloudCalendarImportExport;CarServiceWebBrokerCustConfService;CustomPathBlox;JanuaFMXTestImages"/>
+        <CallTarget Targets="sbridge;dclsbridge;TRCGooglePlacesRuntime;OpenAIPackage;SwagDoc;loggerproRT;dmvcframeworkRT;DECCipher;Neon;AWSSDK;AWSSDKFMX;PlanAddons;AWSSDKVCL;Spring_Base;Spring_Core;sgcWebSockets;dclsgcWebSockets;TMSFMXPackPkg;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaRestWeb;JanuaUniMVVMTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;TMSWebOSMapsPkg;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;CarServiceDMVCService;CarServiceUsersUniGUI;PickAPP;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;TGooglePlacesTest;mod_cscustomersmobile;mod_csdriversmersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;CarServiceUnitTesting;CarServiceDriverApp;Archive;Review;TmsTwilio;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;JanuaAllDemos;EuroFloraApp;TestGoogleVCL;FSMap;Cipher_FMX;RESTDebuggerClient;WebMocksBasic;MatchingDemo;CanvasPainting;JanuaJsonSerializeNeonTest;SamplPlannerVCL;CloudCalendarImportExport;CarServiceWebBrokerCustConfService;CustomPathBlox;JanuaFMXTestImages"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="sbridge:Clean;dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;OpenAIPackage:Clean;SwagDoc:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;DECCipher:Clean;Neon:Clean;AWSSDK:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;AWSSDKVCL:Clean;Spring_Base:Clean;Spring_Core:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaRestWeb:Clean;JanuaUniMVVMTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;TMSFMXPackPkg:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebOSMapsPkg:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;CarServiceDMVCService:Clean;CarServiceUsersUniGUI:Clean;PickAPP:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;TGooglePlacesTest:Clean;mod_cscustomersmobile:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;CarServiceUnitTesting:Clean;CarServiceDriverApp:Clean;Archive:Clean;Review:Clean;TmsTwilio:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;TestGoogleVCL:Clean;FSMap:Clean;Cipher_FMX:Clean;RESTDebuggerClient:Clean;WebMocksBasic:Clean;MatchingDemo:Clean;CanvasPainting:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean;CloudCalendarImportExport:Clean;CarServiceWebBrokerCustConfService:Clean;CustomPathBlox:Clean;JanuaFMXTestImages:Clean"/>
+        <CallTarget Targets="sbridge:Clean;dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;OpenAIPackage:Clean;SwagDoc:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;DECCipher:Clean;Neon:Clean;AWSSDK:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;AWSSDKVCL:Clean;Spring_Base:Clean;Spring_Core:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TMSFMXPackPkg:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaRestWeb:Clean;JanuaUniMVVMTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebOSMapsPkg:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;CarServiceDMVCService:Clean;CarServiceUsersUniGUI:Clean;PickAPP:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;TGooglePlacesTest:Clean;mod_cscustomersmobile:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;CarServiceUnitTesting:Clean;CarServiceDriverApp:Clean;Archive:Clean;Review:Clean;TmsTwilio:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;TestGoogleVCL:Clean;FSMap:Clean;Cipher_FMX:Clean;RESTDebuggerClient:Clean;WebMocksBasic:Clean;MatchingDemo:Clean;CanvasPainting:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean;CloudCalendarImportExport:Clean;CarServiceWebBrokerCustConfService:Clean;CustomPathBlox:Clean;JanuaFMXTestImages:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="sbridge:Make;dclsbridge:Make;TRCGooglePlacesRuntime:Make;OpenAIPackage:Make;SwagDoc:Make;loggerproRT:Make;dmvcframeworkRT:Make;DECCipher:Make;Neon:Make;AWSSDK:Make;AWSSDKFMX:Make;PlanAddons:Make;AWSSDKVCL:Make;Spring_Base:Make;Spring_Core:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaRestWeb:Make;JanuaUniMVVMTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;TMSFMXPackPkg:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebOSMapsPkg:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;CarServiceDMVCService:Make;CarServiceUsersUniGUI:Make;PickAPP:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;TGooglePlacesTest:Make;mod_cscustomersmobile:Make;mod_csdriversmersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;CarServiceUnitTesting:Make;CarServiceDriverApp:Make;Archive:Make;Review:Make;TmsTwilio:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;TestGoogleVCL:Make;FSMap:Make;Cipher_FMX:Make;RESTDebuggerClient:Make;WebMocksBasic:Make;MatchingDemo:Make;CanvasPainting:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make;CloudCalendarImportExport:Make;CarServiceWebBrokerCustConfService:Make;CustomPathBlox:Make;JanuaFMXTestImages:Make"/>
+        <CallTarget Targets="sbridge:Make;dclsbridge:Make;TRCGooglePlacesRuntime:Make;OpenAIPackage:Make;SwagDoc:Make;loggerproRT:Make;dmvcframeworkRT:Make;DECCipher:Make;Neon:Make;AWSSDK:Make;AWSSDKFMX:Make;PlanAddons:Make;AWSSDKVCL:Make;Spring_Base:Make;Spring_Core:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TMSFMXPackPkg:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaRestWeb:Make;JanuaUniMVVMTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebOSMapsPkg:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;CarServiceDMVCService:Make;CarServiceUsersUniGUI:Make;PickAPP:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;TGooglePlacesTest:Make;mod_cscustomersmobile:Make;mod_csdriversmersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;CarServiceUnitTesting:Make;CarServiceDriverApp:Make;Archive:Make;Review:Make;TmsTwilio:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;TestGoogleVCL:Make;FSMap:Make;Cipher_FMX:Make;RESTDebuggerClient:Make;WebMocksBasic:Make;MatchingDemo:Make;CanvasPainting:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make;CloudCalendarImportExport:Make;CarServiceWebBrokerCustConfService:Make;CustomPathBlox:Make;JanuaFMXTestImages:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='Libs'">
@@ -2015,7 +2015,7 @@
         <BuildGroupProject Include="JanuaFMXControls.dproj">
             <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64</Platforms>
+            <Platforms>Android64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclsgcWebSockets.dproj">
@@ -2045,8 +2045,8 @@
         <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
             <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64</Platforms>
-            <Enabled>False</Enabled>
+            <Platforms>Android64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceDMVCService.dproj">
             <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
@@ -2087,7 +2087,7 @@
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
             <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64</Platforms>
+            <Platforms>Android64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
@@ -2141,7 +2141,7 @@
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
             <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
             <Configurations/>
-            <Platforms>Android;Android64</Platforms>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
@@ -2183,8 +2183,8 @@
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64</Platforms>
-            <Enabled>False</Enabled>
+            <Platforms>Android64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaUniDACUnitTesting.dproj">
             <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
@@ -2212,7 +2212,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
             <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations/>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2230,8 +2230,8 @@
         </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCoreUnitTesting.dproj">
             <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
-            <Configurations>Test</Configurations>
-            <Platforms>Win64</Platforms>
+            <Configurations/>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
@@ -2262,7 +2262,7 @@
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
             <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
@@ -2314,9 +2314,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSMap\FSMap.dproj">
             <ProjectGuid>{2A82B550-7788-47C4-9C21-1BEFB6A636B0}</ProjectGuid>
@@ -2351,8 +2351,8 @@
         <BuildGroupProject Include="JanuaUnidac.dproj">
             <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64</Platforms>
-            <Enabled>False</Enabled>
+            <Platforms>Android64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj">
             <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
@@ -2434,8 +2434,8 @@
         </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaMVVMCoreTesting.dproj">
             <ProjectGuid>{6111318E-79C0-4F35-AEBF-7D5ADFD28B0F}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
+            <Configurations/>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Testing\prj\CarServiceUnitTesting.dproj">
@@ -2454,7 +2454,7 @@
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\CarServiceBackOfficeUniGUI.dproj">
             <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
