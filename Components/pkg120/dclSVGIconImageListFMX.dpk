@@ -34,11 +34,14 @@ package dclSVGIconImageListFMX;
 requires
   DesignIDE,
   dclfmxstd,
-  SVGIconImageListFMX;
+  SVGIconImageListFMX,
+  RESTComponents,
+  SVGIconImageList;
 
 contains
   FMX.SVGIconImageRegister in '..\..\..\Lib\SVGIconImageList\Packages\FMX.SVGIconImageRegister.pas',
   FMX.SVGIconImageListEditorUnit in '..\..\..\Lib\SVGIconImageList\Packages\FMX.SVGIconImageListEditorUnit.pas' {SVGIconImageListEditorFMX},
-  FMX.SVGTextPropertyEditorUnit in '..\..\..\Lib\SVGIconImageList\Packages\FMX.SVGTextPropertyEditorUnit.pas' {SVGTextPropertyEditorFormFMX};
+  FMX.SVGTextPropertyEditorUnit in '..\..\..\Lib\SVGIconImageList\Packages\FMX.SVGTextPropertyEditorUnit.pas' {SVGTextPropertyEditorFormFMX},
+  FMX.SVGRESTClientFormUnit in '..\..\..\Lib\SVGIconImageList\Packages\FMX.SVGRESTClientFormUnit.pas' {SVGRESTClientSearchForm};
 
 end.

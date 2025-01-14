@@ -34,7 +34,8 @@ requires
   vcl,
   VclSmp,
   SVGImage32Package,
-  vclwinx;
+  vclwinx,
+  RESTComponents;
 
 contains
   SVGIconImage in '..\..\..\Lib\SVGIconImageList\Source\SVGIconImage.pas',
@@ -48,6 +49,7 @@ contains
   Winapi.D2DMissing in '..\..\..\Lib\SVGIconImageList\Source\Winapi.D2DMissing.pas',
   Image32SVGFactory in '..\..\..\Lib\SVGIconImageList\Source\Image32SVGFactory.pas',
   SVGInterfaces in '..\..\..\Lib\SVGIconImageList\Source\SVGInterfaces.pas',
+  Browser.IconifyApi in '..\..\..\Lib\SVGIconImageList\Source\Browser.IconifyApi.pas',
   dlgExportPNG in '..\..\..\Lib\SVGIconImageList\Source\dlgExportPNG.pas' {ExportToPNGDialog};
 
 end.

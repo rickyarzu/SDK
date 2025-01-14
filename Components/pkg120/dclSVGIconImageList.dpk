@@ -39,7 +39,9 @@ requires
 contains
   SVGIconImageListEditorUnit in '..\..\..\Lib\SVGIconImageList\Packages\SVGIconImageListEditorUnit.pas' {SVGIconImageListEditor},
   SVGIconImageRegister in '..\..\..\Lib\SVGIconImageList\Packages\SVGIconImageRegister.pas',
-  SVGTextPropertyEditorUnit in '..\..\..\Lib\SVGIconImageList\Packages\SVGTextPropertyEditorUnit.pas' {SVGTextPropertyEditorForm};
+  SVGTextPropertyEditorUnit in '..\..\..\Lib\SVGIconImageList\Packages\SVGTextPropertyEditorUnit.pas' {SVGTextPropertyEditorForm},
+  SVGIconSetFormUnit in '..\..\..\Lib\SVGIconImageList\Packages\SVGIconSetFormUnit.pas' {SVGIconSetForm},
+  SVGRESTClientFormUnit in '..\..\..\Lib\SVGIconImageList\Packages\SVGRESTClientFormUnit.pas' {SVGRESTClientSearchForm};
 
 end.
 

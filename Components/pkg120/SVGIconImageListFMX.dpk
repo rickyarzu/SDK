@@ -39,6 +39,7 @@ contains
   FMX.ImageSVG in '..\..\..\Lib\SVGIconImageList\Source\FMX.ImageSVG.pas',
   FMX.Image32SVG in '..\..\..\Lib\SVGIconImageList\Source\FMX.Image32SVG.pas',
   FMX.SVGIconImageList in '..\..\..\Lib\SVGIconImageList\Source\FMX.SVGIconImageList.pas',
-  FMX.SVGIconImage in '..\..\..\Lib\SVGIconImageList\Source\FMX.SVGIconImage.pas';
+  FMX.SVGIconImage in '..\..\..\Lib\SVGIconImageList\Source\FMX.SVGIconImage.pas',
+  FMX.SVGIconsUtils in '..\..\..\Lib\SVGIconImageList\Source\FMX.SVGIconsUtils.pas';
 
 end.

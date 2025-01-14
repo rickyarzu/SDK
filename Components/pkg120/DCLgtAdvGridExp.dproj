@@ -149,6 +149,7 @@
         <DCCReference Include="rtl.dcp"/>
         <DCCReference Include="gtDocEng.dcp"/>
         <DCCReference Include="..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\TMS\gtAdvGridExpReg.pas"/>
+        <DCCReference Include="..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\TMS\gtAdvGridXportIntf.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</DependentOn>
@@ -185,6 +186,12 @@
             </Platforms>
             <Deployment Version="5">
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\DCLgtAdvGridExp280.bpl" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\DCLgtAdvGridExp290.bpl" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>DCLgtAdvGridExp.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="OSX32">
                         <Operation>1</Operation>

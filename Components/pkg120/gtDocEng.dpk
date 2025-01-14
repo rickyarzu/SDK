@@ -26,10 +26,11 @@
 {$DEFINE RELEASE}
 {$ENDIF IMPLICITBUILDING}
 {$LIBSUFFIX AUTO}
-{$RUNONLY}
 {$IMPLICITBUILD OFF}
 
 requires
+  TMSVCLUIPackPkgDXE15,
+  QRWRunDXE12_W64,
   vcl,
   vclx,
   vclimg,
@@ -38,11 +39,9 @@ requires
   IndyCore,
   IndySystem,
   IndyProtocols,
-  TMSVCLUIPackPkgDXE15,
   vclwinx,
   dbrtl,
   vcldb,
-  QRWRunDXE12_W64,
   gtCompression,
   gtCrypt,
   gtFilters,
@@ -149,13 +148,13 @@ contains
   gtJwaWinNT3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\PDFCrypt\gtJwaWinNT3.pas',
   gtJwaWinDLLNames3 in '..\..\..\Libraries\eDocEngine VCL Sidney\Shared3\Source\PDFCrypt\gtJwaWinDLLNames3.pas',
   gtDocProducer in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\Producer\gtDocProducer.pas',
-  gtGDIPAPI.old in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtGDIPAPI.old.pas',
   gtQRXportIntf in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\QR\gtQRXportIntf.pas',
+  gtGDIPAPI.old in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtGDIPAPI.old.pas',
   gtGDIPOBJ.old in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtGDIPOBJ.old.pas',
-  gtGDIPUTIL.old in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtGDIPUTIL.old.pas',
-  gtAdvGridXportIntf in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\TMS\gtAdvGridXportIntf.pas';
+  gtGDIPUTIL.old in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\gtGDIPUTIL.old.pas';
 
 {
   gtFRXportIntf in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\FR\gtFRXportIntf.pas',
-}
+  gtAdvGridXportIntf in '..\..\..\Libraries\eDocEngine VCL Sidney\EDocEngine VCL\Source\TMS\gtAdvGridXportIntf.pas'
+  }
 end.

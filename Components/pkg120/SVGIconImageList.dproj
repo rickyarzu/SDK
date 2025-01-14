@@ -2,7 +2,7 @@
     <PropertyGroup>
         <ProjectGuid>{B5E8B9F1-C42D-4AFC-AE08-193731C6515B}</ProjectGuid>
         <MainSource>SVGIconImageList.dpk</MainSource>
-        <ProjectVersion>20.1</ProjectVersion>
+        <ProjectVersion>20.2</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
@@ -105,6 +105,7 @@
         <DCCReference Include="VclSmp.dcp"/>
         <DCCReference Include="SVGImage32Package.dcp"/>
         <DCCReference Include="vclwinx.dcp"/>
+        <DCCReference Include="RESTComponents.dcp"/>
         <DCCReference Include="..\..\..\Lib\SVGIconImageList\Source\SVGIconImage.pas"/>
         <DCCReference Include="..\..\..\Lib\SVGIconImageList\Source\SVGIconImageList.pas"/>
         <DCCReference Include="..\..\..\Lib\SVGIconImageList\Source\SVGIconUtils.pas"/>
@@ -116,6 +117,7 @@
         <DCCReference Include="..\..\..\Lib\SVGIconImageList\Source\Winapi.D2DMissing.pas"/>
         <DCCReference Include="..\..\..\Lib\SVGIconImageList\Source\Image32SVGFactory.pas"/>
         <DCCReference Include="..\..\..\Lib\SVGIconImageList\Source\SVGInterfaces.pas"/>
+        <DCCReference Include="..\..\..\Lib\SVGIconImageList\Source\Browser.IconifyApi.pas"/>
         <DCCReference Include="..\..\..\Lib\SVGIconImageList\Source\dlgExportPNG.pas">
             <Form>ExportToPNGDialog</Form>
         </DCCReference>
@@ -154,7 +156,7 @@
                 <Platform value="Win64">True</Platform>
                 <Platform value="Win64x">False</Platform>
             </Platforms>
-            <Deployment Version="4">
+            <Deployment Version="5">
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\SVGIconImageList290.bpl" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>SVGIconImageList.bpl</RemoteName>
@@ -167,16 +169,6 @@
                     </Platform>
                     <Platform Name="Win32">
                         <Operation>0</Operation>
-                    </Platform>
-                </DeployClass>
-                <DeployClass Name="AndroidClasses">
-                    <Platform Name="Android">
-                        <RemoteDir>classes</RemoteDir>
-                        <Operation>64</Operation>
-                    </Platform>
-                    <Platform Name="Android64">
-                        <RemoteDir>classes</RemoteDir>
-                        <Operation>64</Operation>
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="AndroidFileProvider">

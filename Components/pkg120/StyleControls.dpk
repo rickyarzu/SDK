@@ -79,6 +79,7 @@ contains
   scGPVertPagers in '..\..\..\Libraries\Almediadev\StyleControls\scGPVertPagers.pas',
   scFontViewer in '..\..\..\Libraries\Almediadev\StyleControls\scFontViewer.pas' {FontViewerForm},
   scGPFontControls in '..\..\..\Libraries\Almediadev\StyleControls\scGPFontControls.pas',
-  scMsgDialog in '..\..\..\Libraries\Almediadev\StyleControls\scMsgDialog.pas' {scMsgDlgForm};
+  scMsgDialog in '..\..\..\Libraries\Almediadev\StyleControls\scMsgDialog.pas' {scMsgDlgForm},
+  scFormTabsBar in '..\..\..\Libraries\Almediadev\StyleControls\scFormTabsBar.pas';
 
 end.
