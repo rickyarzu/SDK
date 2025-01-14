@@ -17,7 +17,7 @@ uses
   FMX.Controls.Presentation, FMX.StdCtrls;
 
 type
-  TAndPortBlock = class(TTMSFNCBloxBlock)
+  TCircle = class(TTMSFNCBloxBlock)
   public
     constructor Create; override;
     procedure GetBlockPath(APath: TTMSFNCBloxPath; ADrawer: TTMSFNCBloxBlockDrawer); override;
@@ -52,7 +52,7 @@ const
 {$R *.fmx}
   { TMyBlock }
 
-constructor TAndPortBlock.Create;
+constructor TCircle.Create;
 var
   w, h: Double;
 begin
@@ -69,7 +69,7 @@ begin
   }
 end;
 
-procedure TAndPortBlock.GetBlockPath(APath: TTMSFNCBloxPath; ADrawer: TTMSFNCBloxBlockDrawer);
+procedure TCircle.GetBlockPath(APath: TTMSFNCBloxPath; ADrawer: TTMSFNCBloxBlockDrawer);
 var
   poly: TTMSFNCBloxPointArray;
   w, h: Double;
@@ -107,7 +107,7 @@ begin
   TMSFNCBloxControl1.BeginUpdate;
 
   var
-  sp := TAndPortBlock.Create;
+  sp := TCircle.Create;
 
   sp.Width := 10;
   sp.Height := 10;
@@ -116,8 +116,9 @@ begin
 
   sp.Top := VY;
   sp.Left := VX;
-
   TMSFNCBloxControl1.Blox.Add(sp);
+
+    TMSFNCBloxControl1.EndUpdate;
 end;
 
 procedure TForm1.TMSFNCBloxControl1MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState;
@@ -125,14 +126,14 @@ procedure TForm1.TMSFNCBloxControl1MouseDown(Sender: TObject; Button: TMouseButt
 begin
   if Button = TMouseButton.mbLeft then
   begin
-    VX := X - 5;
-    VY := Y - 5;
+    VX := X - 18;
+    VY := Y - 18;
   end;
 end;
 
 procedure TForm1.TMSFNCBloxControl1RegisterElements(Sender: TObject);
 begin
-  RegisterElement(TAndPortBlock, '', 'AND Port', 'All Port Blocks');
+  RegisterElement(TCircle, '', 'Circle', 'Custom Blocks');
 end;
 
 end.

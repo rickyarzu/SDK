@@ -240,6 +240,9 @@
         <Projects Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -959,14 +962,23 @@
     <Target Name="CarServiceWebBrokerCustConfService:Make">
         <MSBuild Projects="WebREST\CarServiceWebBrokerCustConfService.dproj" Targets="Make"/>
     </Target>
+    <Target Name="CustomPathBlox">
+        <MSBuild Projects="..\..\Samples\Janua\FMX\CustomPathBlox.dproj"/>
+    </Target>
+    <Target Name="CustomPathBlox:Clean">
+        <MSBuild Projects="..\..\Samples\Janua\FMX\CustomPathBlox.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CustomPathBlox:Make">
+        <MSBuild Projects="..\..\Samples\Janua\FMX\CustomPathBlox.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="sbridge;dclsbridge;TRCGooglePlacesRuntime;SwagDoc;loggerproRT;dmvcframeworkRT;DECCipher;Neon;AWSSDK;AWSSDKFMX;PlanAddons;AWSSDKVCL;Spring_Base;Spring_Core;sgcWebSockets;dclsgcWebSockets;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaRestWeb;JanuaUniMVVMTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;TMSFMXPackPkg;JanuaFMXControls;JanuaVCLMVVM;TMSWebOSMapsPkg;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;CarServiceDMVCService;CarServiceUsersUniGUI;PickAPP;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;TGooglePlacesTest;mod_cscustomersmobile;mod_csdriversmersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;CarServiceUnitTesting;CarServiceDriverApp;Archive;Review;TmsTwilio;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;JanuaAllDemos;EuroFloraApp;TestGoogleVCL;FSMap;Cipher_FMX;RESTDebuggerClient;WebMocksBasic;MatchingDemo;CanvasPainting;JanuaJsonSerializeNeonTest;SamplPlannerVCL;CloudCalendarImportExport;CarServiceWebBrokerCustConfService"/>
+        <CallTarget Targets="sbridge;dclsbridge;TRCGooglePlacesRuntime;SwagDoc;loggerproRT;dmvcframeworkRT;DECCipher;Neon;AWSSDK;AWSSDKFMX;PlanAddons;AWSSDKVCL;Spring_Base;Spring_Core;sgcWebSockets;dclsgcWebSockets;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaRestWeb;JanuaUniMVVMTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;TMSFMXPackPkg;JanuaFMXControls;JanuaVCLMVVM;TMSWebOSMapsPkg;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;CarServiceDMVCService;CarServiceUsersUniGUI;PickAPP;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;TGooglePlacesTest;mod_cscustomersmobile;mod_csdriversmersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;CarServiceUnitTesting;CarServiceDriverApp;Archive;Review;TmsTwilio;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;JanuaAllDemos;EuroFloraApp;TestGoogleVCL;FSMap;Cipher_FMX;RESTDebuggerClient;WebMocksBasic;MatchingDemo;CanvasPainting;JanuaJsonSerializeNeonTest;SamplPlannerVCL;CloudCalendarImportExport;CarServiceWebBrokerCustConfService;CustomPathBlox"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="sbridge:Clean;dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;SwagDoc:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;DECCipher:Clean;Neon:Clean;AWSSDK:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;AWSSDKVCL:Clean;Spring_Base:Clean;Spring_Core:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaRestWeb:Clean;JanuaUniMVVMTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;TMSFMXPackPkg:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebOSMapsPkg:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;CarServiceDMVCService:Clean;CarServiceUsersUniGUI:Clean;PickAPP:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;TGooglePlacesTest:Clean;mod_cscustomersmobile:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;CarServiceUnitTesting:Clean;CarServiceDriverApp:Clean;Archive:Clean;Review:Clean;TmsTwilio:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;TestGoogleVCL:Clean;FSMap:Clean;Cipher_FMX:Clean;RESTDebuggerClient:Clean;WebMocksBasic:Clean;MatchingDemo:Clean;CanvasPainting:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean;CloudCalendarImportExport:Clean;CarServiceWebBrokerCustConfService:Clean"/>
+        <CallTarget Targets="sbridge:Clean;dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;SwagDoc:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;DECCipher:Clean;Neon:Clean;AWSSDK:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;AWSSDKVCL:Clean;Spring_Base:Clean;Spring_Core:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaRestWeb:Clean;JanuaUniMVVMTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;TMSFMXPackPkg:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebOSMapsPkg:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;CarServiceDMVCService:Clean;CarServiceUsersUniGUI:Clean;PickAPP:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;TGooglePlacesTest:Clean;mod_cscustomersmobile:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;CarServiceUnitTesting:Clean;CarServiceDriverApp:Clean;Archive:Clean;Review:Clean;TmsTwilio:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;TestGoogleVCL:Clean;FSMap:Clean;Cipher_FMX:Clean;RESTDebuggerClient:Clean;WebMocksBasic:Clean;MatchingDemo:Clean;CanvasPainting:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean;CloudCalendarImportExport:Clean;CarServiceWebBrokerCustConfService:Clean;CustomPathBlox:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="sbridge:Make;dclsbridge:Make;TRCGooglePlacesRuntime:Make;SwagDoc:Make;loggerproRT:Make;dmvcframeworkRT:Make;DECCipher:Make;Neon:Make;AWSSDK:Make;AWSSDKFMX:Make;PlanAddons:Make;AWSSDKVCL:Make;Spring_Base:Make;Spring_Core:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaRestWeb:Make;JanuaUniMVVMTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;TMSFMXPackPkg:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebOSMapsPkg:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;CarServiceDMVCService:Make;CarServiceUsersUniGUI:Make;PickAPP:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;TGooglePlacesTest:Make;mod_cscustomersmobile:Make;mod_csdriversmersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;CarServiceUnitTesting:Make;CarServiceDriverApp:Make;Archive:Make;Review:Make;TmsTwilio:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;TestGoogleVCL:Make;FSMap:Make;Cipher_FMX:Make;RESTDebuggerClient:Make;WebMocksBasic:Make;MatchingDemo:Make;CanvasPainting:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make;CloudCalendarImportExport:Make;CarServiceWebBrokerCustConfService:Make"/>
+        <CallTarget Targets="sbridge:Make;dclsbridge:Make;TRCGooglePlacesRuntime:Make;SwagDoc:Make;loggerproRT:Make;dmvcframeworkRT:Make;DECCipher:Make;Neon:Make;AWSSDK:Make;AWSSDKFMX:Make;PlanAddons:Make;AWSSDKVCL:Make;Spring_Base:Make;Spring_Core:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaRestWeb:Make;JanuaUniMVVMTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;TMSFMXPackPkg:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebOSMapsPkg:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;CarServiceDMVCService:Make;CarServiceUsersUniGUI:Make;PickAPP:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;TGooglePlacesTest:Make;mod_cscustomersmobile:Make;mod_csdriversmersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;CarServiceUnitTesting:Make;CarServiceDriverApp:Make;Archive:Make;Review:Make;TmsTwilio:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;TestGoogleVCL:Make;FSMap:Make;Cipher_FMX:Make;RESTDebuggerClient:Make;WebMocksBasic:Make;MatchingDemo:Make;CanvasPainting:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make;CloudCalendarImportExport:Make;CarServiceWebBrokerCustConfService:Make;CustomPathBlox:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='Libs'">
@@ -1122,6 +1134,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="FMX\EuroFloraApp.dproj">
             <ProjectGuid>{72B6F18A-BB4F-44B4-BD1D-74296E49261E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
+            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
@@ -1602,6 +1620,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
+            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2074,6 +2098,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="FMX\EuroFloraApp.dproj">
             <ProjectGuid>{72B6F18A-BB4F-44B4-BD1D-74296E49261E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
+            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
@@ -2554,6 +2584,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
+            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3026,6 +3062,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="FMX\EuroFloraApp.dproj">
             <ProjectGuid>{72B6F18A-BB4F-44B4-BD1D-74296E49261E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
+            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
@@ -3506,6 +3548,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
+            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -3978,6 +4026,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="FMX\EuroFloraApp.dproj">
             <ProjectGuid>{72B6F18A-BB4F-44B4-BD1D-74296E49261E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
+            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
@@ -4458,6 +4512,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
+            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -4934,6 +4994,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
+            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\DECCipher.dproj">
             <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -5406,6 +5472,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="FMX\EuroFloraApp.dproj">
             <ProjectGuid>{72B6F18A-BB4F-44B4-BD1D-74296E49261E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
+            <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
