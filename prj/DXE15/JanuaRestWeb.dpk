@@ -9,22 +9,24 @@
 {$EXTENDEDSYNTAX ON}
 {$IMPORTEDDATA ON}
 {$IOCHECKS ON}
-{$LOCALSYMBOLS OFF}
+{$LOCALSYMBOLS ON}
 {$LONGSTRINGS ON}
 {$OPENSTRINGS ON}
-{$OPTIMIZATION ON}
+{$OPTIMIZATION OFF}
 {$OVERFLOWCHECKS ON}
 {$RANGECHECKS ON}
-{$REFERENCEINFO OFF}
+{$REFERENCEINFO ON}
 {$SAFEDIVIDE OFF}
-{$STACKFRAMES OFF}
+{$STACKFRAMES ON}
 {$TYPEDADDRESS OFF}
 {$VARSTRINGCHECKS ON}
 {$WRITEABLECONST OFF}
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
-{$DEFINE RELEASE}
+{$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
+{$LIBSUFFIX AUTO}
+{$RUNONLY}
 {$IMPLICITBUILD OFF}
 
 requires
@@ -68,7 +70,6 @@ contains
   Janua.DMVC.WebBroker.Server in '..\..\src\januacore\dmvc\Janua.DMVC.WebBroker.Server.pas',
   Janua.CarService.Driver.DMVCController in '..\..\src\januacore\dmvc\Janua.CarService.Driver.DMVCController.pas',
   Janua.System.Session.DMVC.Controller in '..\..\src\januacore\dmvc\Janua.System.Session.DMVC.Controller.pas',
-  Janua.CarService.DMVC.www.CustConf in '..\..\src\januacore\dmvc\Janua.CarService.DMVC.www.CustConf.pas',
-  Janua.WebBroker.ServerController in '..\..\src\januacore\Datasnap\Janua.WebBroker.ServerController.pas';
+  Janua.CarService.DMVC.www.CustConf in '..\..\src\januacore\dmvc\Janua.CarService.DMVC.www.CustConf.pas';
 
 end.

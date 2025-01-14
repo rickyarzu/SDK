@@ -6,7 +6,7 @@
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>131</TargetedPlatforms>
         <AppType>Package</AppType>
         <ProjectName Condition="'$(ProjectName)'==''">JanuaRestWeb</ProjectName>
@@ -97,6 +97,8 @@
         <VerInfo_Locale>1040</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
+        <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+        <DllSuffix>$(Auto)</DllSuffix>
         <CfgDependentOn>JanuaLibDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
@@ -127,6 +129,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Linux64)'!=''">
         <DCC_UsePackage>rtl;bindengine;xmlrtl;soaprtl;dbrtl;inet;IndySystem;IndyProtocols;IndyCore;RESTComponents;FireDAC;FireDACCommonDriver;FireDACCommon;loggerproRT;JanuaCore;Neon;dsnap;JanuaUnidacComponentsD;JanuaCoreThirdParty;JanuaUnidac;JanuaMVVM;$(DCC_UsePackage)</DCC_UsePackage>
+        <Debugger_Launcher>/usr/bin/gnome-terminal -- &quot;%debuggee%&quot;</Debugger_Launcher>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_OSX64)'!=''">
         <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers;ITSAppUsesNonExemptEncryption=false</VerInfo_Keys>
@@ -142,7 +145,6 @@
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <DCC_UsePackage>rtl;bindengine;xmlrtl;soaprtl;dbrtl;inet;IndySystem;IndyProtocols;IndyCore;RESTComponents;FireDAC;FireDACCommonDriver;FireDACCommon;dmvcframeworkRT;SwagDoc;loggerproRT;JanuaCore;Spring.Base;Neon;DECCipher;IndyIPServer;dsnap;dac290;unidac290;pgprovider290;JanuaUnidacComponentsD;JanuaCoreThirdParty;JanuaUnidac;JanuaMVVM;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
@@ -221,7 +223,6 @@
         <DCCReference Include="..\..\src\januacore\dmvc\Janua.CarService.Driver.DMVCController.pas"/>
         <DCCReference Include="..\..\src\januacore\dmvc\Janua.System.Session.DMVC.Controller.pas"/>
         <DCCReference Include="..\..\src\januacore\dmvc\Janua.CarService.DMVC.www.CustConf.pas"/>
-        <DCCReference Include="..\..\src\januacore\Datasnap\Janua.WebBroker.ServerController.pas"/>
         <None Include="ModelSupport_JanuaRestWeb\default.txvpck"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
@@ -245,7 +246,7 @@
                     <Source Name="MainSource">JanuaRestWeb.dpk</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaCore290.bpl">Janua Core Library Runtime</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaRestWeb.bpl">(untitled)</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
@@ -268,6 +269,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaRestWeb.bpl" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaRestWeb.bpl" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>JanuaRestWeb.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaRestWeb.bpl" Configuration="Release" Class="ProjectOutput"/>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaRestWeb.bpl" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win32">

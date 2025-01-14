@@ -142,7 +142,6 @@ begin
     if Assigned(FWebServer) and (FPort <> FWebServer.Port) then
       FWebServer.Port := FPort;
     Notify('Port');
-    TLinkObservers.ControlChanged(Self);
   end;
 end;
 
@@ -152,7 +151,6 @@ begin
   begin
     FServerName := Value;
     Notify('ServerName');
-    TLinkObservers.ControlChanged(Self);
   end;
 
   if Assigned(FWebServer) then
