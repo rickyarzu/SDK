@@ -14,7 +14,7 @@ uses
   FMX.TMSFNCBloxCorePolygon, FMX.TMSFNCBloxCoreTextCell,
   FMX.TMSFNCBloxCoreLineArrow, FMX.TMSFNCBloxCoreHandle,
   FMX.TMSFNCBloxCoreGroup, FMX.TMSFNCBloxUISnapGrid, FMX.TMSFNCBloxUIRenderer,
-  FMX.Controls.Presentation, FMX.StdCtrls;
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Edit;
 
 type
   TCircle = class(TTMSFNCBloxBlock)
@@ -27,6 +27,7 @@ type
     TMSFNCBloxSelector1: TTMSFNCBloxSelector;
     TMSFNCBloxControl1: TTMSFNCBloxControl;
     Label1: TLabel;
+    Edit1: TEdit;
     procedure TMSFNCBloxControl1RegisterElements(Sender: TObject);
     procedure Label1Click(Sender: TObject);
     procedure TMSFNCBloxControl1MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState;
@@ -118,7 +119,7 @@ begin
   sp.Left := VX;
   TMSFNCBloxControl1.Blox.Add(sp);
 
-    TMSFNCBloxControl1.EndUpdate;
+  TMSFNCBloxControl1.EndUpdate;
 end;
 
 procedure TForm1.TMSFNCBloxControl1MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState;
@@ -126,8 +127,8 @@ procedure TForm1.TMSFNCBloxControl1MouseDown(Sender: TObject; Button: TMouseButt
 begin
   if Button = TMouseButton.mbLeft then
   begin
-    VX := X - 18;
-    VY := Y - 18;
+    VX := X - 17;
+    VY := Y - 17;
   end;
 end;
 

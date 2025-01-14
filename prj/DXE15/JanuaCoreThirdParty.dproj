@@ -6,7 +6,7 @@
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Android64</Platform>
         <TargetedPlatforms>693379</TargetedPlatforms>
         <AppType>Package</AppType>
         <ProjectName Condition="'$(ProjectName)'==''">JanuaCoreThirdParty</ProjectName>
@@ -185,8 +185,6 @@
         <DCCReference Include="IndyProtocols.dcp"/>
         <DCCReference Include="IndyCore.dcp"/>
         <DCCReference Include="SwagDoc.dcp"/>
-        <DCCReference Include="loggerproRT.dcp"/>
-        <DCCReference Include="dmvcframeworkRT.dcp"/>
         <DCCReference Include="..\..\..\Lib\JsonToDelphi\Pkg.Json.DTO.pas"/>
         <DCCReference Include="..\..\..\Lib\JsonToDelphi\Pkg.Json.Settings.pas"/>
         <DCCReference Include="..\..\..\Lib\JsonToDelphi\Pkg.Json.JSONName.pas"/>
@@ -198,18 +196,6 @@
         <DCCReference Include="..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.pas"/>
         <DCCReference Include="..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.UpdatedStatus.pas"/>
         <DCCReference Include="..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Utils.pas"/>
-        <DCCReference Include="..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.base.pas"/>
-        <DCCReference Include="..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.buffers.pas"/>
-        <DCCReference Include="..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.data.pas"/>
-        <DCCReference Include="..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.datetime.pas"/>
-        <DCCReference Include="..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.json.pas"/>
-        <DCCReference Include="..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.mustache.pas"/>
-        <DCCReference Include="..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.os.pas"/>
-        <DCCReference Include="..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.rtti.pas"/>
-        <DCCReference Include="..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.search.pas"/>
-        <DCCReference Include="..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.text.pas"/>
-        <DCCReference Include="..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.unicode.pas"/>
-        <DCCReference Include="..\..\..\Lib\delphimvcframework\lib\dmustache\mormot.core.variants.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>

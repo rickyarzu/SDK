@@ -12,6 +12,9 @@
         <Projects Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="..\..\Components\pkg120\SwagDoc.dproj">
             <Dependencies/>
         </Projects>
@@ -243,6 +246,9 @@
         <Projects Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="..\..\Samples\Janua\FMX\JanuaFMXTestImages.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -277,6 +283,15 @@
     </Target>
     <Target Name="TRCGooglePlacesRuntime:Make">
         <MSBuild Projects="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OpenAIPackage">
+        <MSBuild Projects="..\..\Components\pkg120\OpenAIPackage.dproj"/>
+    </Target>
+    <Target Name="OpenAIPackage:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\OpenAIPackage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OpenAIPackage:Make">
+        <MSBuild Projects="..\..\Components\pkg120\OpenAIPackage.dproj" Targets="Make"/>
     </Target>
     <Target Name="SwagDoc">
         <MSBuild Projects="..\..\Components\pkg120\SwagDoc.dproj"/>
@@ -971,14 +986,23 @@
     <Target Name="CustomPathBlox:Make">
         <MSBuild Projects="..\..\Samples\Janua\FMX\CustomPathBlox.dproj" Targets="Make"/>
     </Target>
+    <Target Name="JanuaFMXTestImages">
+        <MSBuild Projects="..\..\Samples\Janua\FMX\JanuaFMXTestImages.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXTestImages:Clean">
+        <MSBuild Projects="..\..\Samples\Janua\FMX\JanuaFMXTestImages.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXTestImages:Make">
+        <MSBuild Projects="..\..\Samples\Janua\FMX\JanuaFMXTestImages.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="sbridge;dclsbridge;TRCGooglePlacesRuntime;SwagDoc;loggerproRT;dmvcframeworkRT;DECCipher;Neon;AWSSDK;AWSSDKFMX;PlanAddons;AWSSDKVCL;Spring_Base;Spring_Core;sgcWebSockets;dclsgcWebSockets;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaRestWeb;JanuaUniMVVMTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;TMSFMXPackPkg;JanuaFMXControls;JanuaVCLMVVM;TMSWebOSMapsPkg;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;CarServiceDMVCService;CarServiceUsersUniGUI;PickAPP;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;TGooglePlacesTest;mod_cscustomersmobile;mod_csdriversmersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;CarServiceUnitTesting;CarServiceDriverApp;Archive;Review;TmsTwilio;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;JanuaAllDemos;EuroFloraApp;TestGoogleVCL;FSMap;Cipher_FMX;RESTDebuggerClient;WebMocksBasic;MatchingDemo;CanvasPainting;JanuaJsonSerializeNeonTest;SamplPlannerVCL;CloudCalendarImportExport;CarServiceWebBrokerCustConfService;CustomPathBlox"/>
+        <CallTarget Targets="sbridge;dclsbridge;TRCGooglePlacesRuntime;OpenAIPackage;SwagDoc;loggerproRT;dmvcframeworkRT;DECCipher;Neon;AWSSDK;AWSSDKFMX;PlanAddons;AWSSDKVCL;Spring_Base;Spring_Core;sgcWebSockets;dclsgcWebSockets;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaRestWeb;JanuaUniMVVMTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;TMSFMXPackPkg;JanuaFMXControls;JanuaVCLMVVM;TMSWebOSMapsPkg;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;CarServiceDMVCService;CarServiceUsersUniGUI;PickAPP;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;TGooglePlacesTest;mod_cscustomersmobile;mod_csdriversmersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;CarServiceUnitTesting;CarServiceDriverApp;Archive;Review;TmsTwilio;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;JanuaAllDemos;EuroFloraApp;TestGoogleVCL;FSMap;Cipher_FMX;RESTDebuggerClient;WebMocksBasic;MatchingDemo;CanvasPainting;JanuaJsonSerializeNeonTest;SamplPlannerVCL;CloudCalendarImportExport;CarServiceWebBrokerCustConfService;CustomPathBlox;JanuaFMXTestImages"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="sbridge:Clean;dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;SwagDoc:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;DECCipher:Clean;Neon:Clean;AWSSDK:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;AWSSDKVCL:Clean;Spring_Base:Clean;Spring_Core:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaRestWeb:Clean;JanuaUniMVVMTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;TMSFMXPackPkg:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebOSMapsPkg:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;CarServiceDMVCService:Clean;CarServiceUsersUniGUI:Clean;PickAPP:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;TGooglePlacesTest:Clean;mod_cscustomersmobile:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;CarServiceUnitTesting:Clean;CarServiceDriverApp:Clean;Archive:Clean;Review:Clean;TmsTwilio:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;TestGoogleVCL:Clean;FSMap:Clean;Cipher_FMX:Clean;RESTDebuggerClient:Clean;WebMocksBasic:Clean;MatchingDemo:Clean;CanvasPainting:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean;CloudCalendarImportExport:Clean;CarServiceWebBrokerCustConfService:Clean;CustomPathBlox:Clean"/>
+        <CallTarget Targets="sbridge:Clean;dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;OpenAIPackage:Clean;SwagDoc:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;DECCipher:Clean;Neon:Clean;AWSSDK:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;AWSSDKVCL:Clean;Spring_Base:Clean;Spring_Core:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaRestWeb:Clean;JanuaUniMVVMTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;TMSFMXPackPkg:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebOSMapsPkg:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;CarServiceDMVCService:Clean;CarServiceUsersUniGUI:Clean;PickAPP:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;TGooglePlacesTest:Clean;mod_cscustomersmobile:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;CarServiceUnitTesting:Clean;CarServiceDriverApp:Clean;Archive:Clean;Review:Clean;TmsTwilio:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;TestGoogleVCL:Clean;FSMap:Clean;Cipher_FMX:Clean;RESTDebuggerClient:Clean;WebMocksBasic:Clean;MatchingDemo:Clean;CanvasPainting:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean;CloudCalendarImportExport:Clean;CarServiceWebBrokerCustConfService:Clean;CustomPathBlox:Clean;JanuaFMXTestImages:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="sbridge:Make;dclsbridge:Make;TRCGooglePlacesRuntime:Make;SwagDoc:Make;loggerproRT:Make;dmvcframeworkRT:Make;DECCipher:Make;Neon:Make;AWSSDK:Make;AWSSDKFMX:Make;PlanAddons:Make;AWSSDKVCL:Make;Spring_Base:Make;Spring_Core:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaRestWeb:Make;JanuaUniMVVMTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;TMSFMXPackPkg:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebOSMapsPkg:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;CarServiceDMVCService:Make;CarServiceUsersUniGUI:Make;PickAPP:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;TGooglePlacesTest:Make;mod_cscustomersmobile:Make;mod_csdriversmersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;CarServiceUnitTesting:Make;CarServiceDriverApp:Make;Archive:Make;Review:Make;TmsTwilio:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;TestGoogleVCL:Make;FSMap:Make;Cipher_FMX:Make;RESTDebuggerClient:Make;WebMocksBasic:Make;MatchingDemo:Make;CanvasPainting:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make;CloudCalendarImportExport:Make;CarServiceWebBrokerCustConfService:Make;CustomPathBlox:Make"/>
+        <CallTarget Targets="sbridge:Make;dclsbridge:Make;TRCGooglePlacesRuntime:Make;OpenAIPackage:Make;SwagDoc:Make;loggerproRT:Make;dmvcframeworkRT:Make;DECCipher:Make;Neon:Make;AWSSDK:Make;AWSSDKFMX:Make;PlanAddons:Make;AWSSDKVCL:Make;Spring_Base:Make;Spring_Core:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaRestWeb:Make;JanuaUniMVVMTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;TMSFMXPackPkg:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebOSMapsPkg:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;CarServiceDMVCService:Make;CarServiceUsersUniGUI:Make;PickAPP:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;TGooglePlacesTest:Make;mod_cscustomersmobile:Make;mod_csdriversmersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;CarServiceUnitTesting:Make;CarServiceDriverApp:Make;Archive:Make;Review:Make;TmsTwilio:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;TestGoogleVCL:Make;FSMap:Make;Cipher_FMX:Make;RESTDebuggerClient:Make;WebMocksBasic:Make;MatchingDemo:Make;CanvasPainting:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make;CloudCalendarImportExport:Make;CarServiceWebBrokerCustConfService:Make;CustomPathBlox:Make;JanuaFMXTestImages:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='Libs'">
@@ -1086,6 +1110,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1402,6 +1432,12 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImages.dproj">
+            <ProjectGuid>{6A23BE71-2D10-43ED-850D-7F26BE9BF1C4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <ProjectGuid>{F066C655-683B-4579-89EB-AD5A0F4EA5D5}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1568,6 +1604,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1884,6 +1926,12 @@
             <Platforms>Android64;iOSDevice64;OSX64;Win32</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImages.dproj">
+            <ProjectGuid>{6A23BE71-2D10-43ED-850D-7F26BE9BF1C4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <ProjectGuid>{F066C655-683B-4579-89EB-AD5A0F4EA5D5}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2054,6 +2102,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
             <ProjectGuid>{F3B9B7D5-078F-470E-883F-2DAC6B6220D4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2116,8 +2170,8 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\AWSSDK.dproj">
             <ProjectGuid>{9B69AA9A-2D96-403E-91A4-C2953D1F9828}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Android64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\Neon.dproj">
@@ -2194,8 +2248,8 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
             <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms/>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Android64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaAllDemos.dproj">
@@ -2208,7 +2262,7 @@
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Android64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
             <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
@@ -2364,11 +2418,17 @@
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Android64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImages.dproj">
+            <ProjectGuid>{6A23BE71-2D10-43ED-850D-7F26BE9BF1C4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <ProjectGuid>{F066C655-683B-4579-89EB-AD5A0F4EA5D5}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations/>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2394,7 +2454,7 @@
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Android64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\CarServiceBackOfficeUniGUI.dproj">
             <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
@@ -2406,7 +2466,7 @@
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Android64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
             <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
@@ -2536,6 +2596,12 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
             <ProjectGuid>{F3B9B7D5-078F-470E-883F-2DAC6B6220D4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2845,6 +2911,12 @@
         <BuildGroupProject Include="..\..\components\pkg120\Spring.Base.dproj">
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImages.dproj">
+            <ProjectGuid>{6A23BE71-2D10-43ED-850D-7F26BE9BF1C4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -3014,6 +3086,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -3330,6 +3408,12 @@
             <Platforms>Android;Android64;iOSDevice64;OSX64;OSXARM64;Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImages.dproj">
+            <ProjectGuid>{6A23BE71-2D10-43ED-850D-7F26BE9BF1C4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <ProjectGuid>{F066C655-683B-4579-89EB-AD5A0F4EA5D5}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3496,6 +3580,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -3811,6 +3901,12 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImages.dproj">
+            <ProjectGuid>{6A23BE71-2D10-43ED-850D-7F26BE9BF1C4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <ProjectGuid>{F066C655-683B-4579-89EB-AD5A0F4EA5D5}</ProjectGuid>
@@ -3982,6 +4078,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
             <ProjectGuid>{F3B9B7D5-078F-470E-883F-2DAC6B6220D4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -4294,6 +4396,12 @@
             <Platforms>Linux64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImages.dproj">
+            <ProjectGuid>{6A23BE71-2D10-43ED-850D-7F26BE9BF1C4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <ProjectGuid>{F066C655-683B-4579-89EB-AD5A0F4EA5D5}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -4460,6 +4568,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -4776,6 +4890,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImages.dproj">
+            <ProjectGuid>{6A23BE71-2D10-43ED-850D-7F26BE9BF1C4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <ProjectGuid>{F066C655-683B-4579-89EB-AD5A0F4EA5D5}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -4942,6 +5062,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -5256,6 +5382,12 @@
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImages.dproj">
+            <ProjectGuid>{6A23BE71-2D10-43ED-850D-7F26BE9BF1C4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
@@ -5428,6 +5560,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
             <ProjectGuid>{F3B9B7D5-078F-470E-883F-2DAC6B6220D4}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -5738,6 +5876,12 @@
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImages.dproj">
+            <ProjectGuid>{6A23BE71-2D10-43ED-850D-7F26BE9BF1C4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">

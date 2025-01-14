@@ -28,14 +28,14 @@
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   rtl,
   xmlrtl,
   IndySystem,
   IndyProtocols,
   IndyCore;
 
-ocontains
+contains
   AWS.AssumeRoleCredentials in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.AssumeRoleCredentials.pas',
   AWS.Client in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Client.pas',
   AWS.Core in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Core.pas',
@@ -72,4 +72,4 @@ ocontains
   Appercept.AttributesHelper in '..\..\..\Libraries\aws-sdk\Source\AWS\Appercept.AttributesHelper.pas',
   AWS.Transcribe in '..\..\..\Libraries\aws-sdk\Source\AWS\AWS.Transcribe.pas';
 
-d.
+end.

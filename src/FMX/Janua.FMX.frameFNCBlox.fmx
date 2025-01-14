@@ -1,43 +1,58 @@
-object Form1: TForm1
-  Left = 0
-  Top = 0
-  Caption = 'Custom Blocks Drawing Demo'
-  ClientHeight = 550
-  ClientWidth = 870
-  FormFactor.Width = 320
-  FormFactor.Height = 480
-  FormFactor.Devices = [Desktop]
-  DesignerMasterStyle = 0
-  object TMSFNCBloxSelector1: TTMSFNCBloxSelector
-    Anchors = [akTop, akRight, akBottom]
-    Position.X = 457.000000000000000000
-    Position.Y = 8.000000000000000000
-    Size.Width = 400.000000000000000000
-    Size.Height = 512.000000000000000000
+object frameFNCBloxDrawing: TframeFNCBloxDrawing
+  Size.Width = 464.000000000000000000
+  Size.Height = 319.000000000000000000
+  Size.PlatformDefault = False
+  object pnlButtons: TPanel
+    Align = Top
+    Size.Width = 464.000000000000000000
+    Size.Height = 58.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 0
-    Appearance.ItemHeight = 84.000000000000000000
-    Appearance.Stroke.Color = claDarkgray
-    Appearance.Fill.Color = xFFE9E9E9
-    Appearance.StrokeHover.Color = claLightslategray
-    Appearance.FillHover.Color = xFFBBC4CC
-    Appearance.StrokeDown.Color = claSlategray
-    Appearance.FillDown.Color = xFFB8C0C8
-    Appearance.StrokeSelected.Color = claDarkslategray
-    Appearance.FillSelected.Color = xFFB8C0C8
-    Appearance.StrokeDisabled.Color = claDarkgray
-    Appearance.FillDisabled.Color = claSilver
-    Appearance.SeparatorStroke.Color = claDarkgray
-    Appearance.SeparatorFill.Color = xFFBBC4CC
-    Appearance.Font.Size = 10.000000000000000000
-    BloxControl = TMSFNCBloxControl1
-    Rows = 100
-    Items = <>
+    TabOrder = 2
+    object btnClear: TButton
+      Align = Left
+      Size.Width = 81.000000000000000000
+      Size.Height = 58.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Clear '
+      TextSettings.Trimming = None
+    end
+    object btnRedraw: TButton
+      Align = Left
+      Position.X = 81.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 58.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Redraw'
+      TextSettings.Trimming = None
+    end
+    object btnDelLast: TButton
+      Align = Left
+      Position.X = 161.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 58.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Del. Last'
+      TextSettings.Trimming = None
+    end
+    object btnAddNotes: TButton
+      Align = Left
+      Position.X = 241.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 58.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Add Notes'
+      TextSettings.Trimming = None
+      OnClick = btnAddNotesClick
+    end
   end
   object TMSFNCBloxControl1: TTMSFNCBloxControl
-    Align = Left
-    Size.Width = 449.000000000000000000
-    Size.Height = 550.000000000000000000
+    Align = Client
+    Size.Width = 464.000000000000000000
+    Size.Height = 261.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
     OnClick = TMSFNCBloxControl1Click
@@ -4163,27 +4178,5 @@ object Form1: TForm1
     GroupHandleAppearance.RotCenter.Size = 3
     GroupHandleAppearance.RotCenter.Style = hhCrossedEllipse
     Interaction.ChangeTextWithDoubleClick = False
-    OnRegisterElements = TMSFNCBloxControl1RegisterElements
-    object Edit1: TEdit
-      Touch.InteractiveGestures = [LongTap, DoubleTap]
-      TabOrder = 4
-      Size.Width = 17.000000000000000000
-      Size.Height = 17.000000000000000000
-      Size.PlatformDefault = False
-    end
-  end
-  object Label1: TLabel
-    Anchors = [akRight, akBottom]
-    StyledSettings = [Family, Size]
-    HitTest = True
-    Position.X = 737.000000000000000000
-    Position.Y = 525.000000000000000000
-    TextSettings.Font.StyleExt = {04040000000000000004000000}
-    TextSettings.FontColor = claDodgerblue
-    TextSettings.HorzAlign = Trailing
-    TextSettings.Trimming = None
-    Text = 'TMS FNC Blox'
-    TabOrder = 2
-    OnClick = Label1Click
   end
 end
