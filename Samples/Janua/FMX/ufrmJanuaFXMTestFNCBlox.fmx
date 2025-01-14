@@ -8,4 +8,16 @@ object Form3: TForm3
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   DesignerMasterStyle = 0
+  inline frameFNCBloxDrawing1: TframeFNCBloxDrawing
+    Align = Top
+    Size.Width = 451.000000000000000000
+    Size.Height = 319.000000000000000000
+    Size.PlatformDefault = False
+    inherited pnlButtons: TPanel
+      Size.Width = 451.000000000000000000
+    end
+    inherited TMSFNCBloxControl1: TTMSFNCBloxControl
+      Size.Width = 451.000000000000000000
+    end
+  end
 end

@@ -4,10 +4,11 @@ interface
 
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
-  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs;
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, Janua.FMX.frameFNCBlox;
 
 type
   TForm3 = class(TForm)
+    frameFNCBloxDrawing1: TframeFNCBloxDrawing;
   private
     { Private declarations }
   public

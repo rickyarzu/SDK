@@ -26,6 +26,7 @@
 {$DEFINE RELEASE}
 {$ENDIF IMPLICITBUILDING}
 {$LIBSUFFIX AUTO}
+{$RUNONLY}
 {$IMPLICITBUILD OFF}
 
 requires
@@ -77,7 +78,6 @@ contains
   Janua.VCL.Interposers.Grids in '..\..\src\VCL\Controls\Janua.VCL.Interposers.Grids.pas',
   Janua.VCL.frmOverlayAnimation in '..\..\src\VCL\Commons\Janua.VCL.frmOverlayAnimation.pas' {frmVCLOverlayAnimation},
   Janua.VCL.StackTrace in '..\..\src\VCL\Commons\Janua.VCL.StackTrace.pas';
-
 
   {
   gtRtl,

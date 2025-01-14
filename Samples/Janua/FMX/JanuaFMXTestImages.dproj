@@ -5,8 +5,8 @@
         <FrameworkType>FMX</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Android64</Platform>
-        <TargetedPlatforms>693395</TargetedPlatforms>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <TargetedPlatforms>693251</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>JanuaFMXTestImages.dpr</MainSource>
     </PropertyGroup>
@@ -30,11 +30,6 @@
     </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='iOSSimARM64' and '$(Base)'=='true') or '$(Base_iOSSimARM64)'!=''">
         <Base_iOSSimARM64>true</Base_iOSSimARM64>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Linux64' and '$(Base)'=='true') or '$(Base_Linux64)'!=''">
-        <Base_Linux64>true</Base_Linux64>
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
@@ -234,9 +229,6 @@
         <iPad_SpotLight80>$(BDS)\bin\Artwork\iOS\iPad\FM_SpotlightSearchIcon_80x80.png</iPad_SpotLight80>
         <iPad_Setting58>$(BDS)\bin\Artwork\iOS\iPad\FM_SettingIcon_58x58.png</iPad_Setting58>
         <iPad_Notification40>$(BDS)\bin\Artwork\iOS\iPad\FM_NotificationIcon_40x40.png</iPad_Notification40>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_Linux64)'!=''">
-        <DCC_UsePackage>hclcore_xe120;bindengine;aurelius;dbxcds;FlexCel_Pdf;dbexpress;inet;JanuaUnidac;tmsbcl;CustomIPTransport;FireDACMSSQLDriver;FMXTMSFNCWebSocketPkgDXE15;sgcWebSockets;FireDACODBCDriver;emsserverresource;rtl;htmledit_xe120;FMXTMSFNCBloxPkgDXE15;FireDAC;xmlrtl;JanuaUnidacComponentsD;dsnap;FireDACDb2Driver;JanuaVCLMVVM;DatasnapConnectorsFreePascal;SVGIconImageList;FMXTMSFNCAppToolsPkgDXE15;FMXTMSFNCCorePkgDXE15;sparkle;TMSWebGMapsPkg;loggerproRT;PlanAddons;FireDACASADriver;FireDACInfxDriver;DataSnapCommon;AWSSDK;JanuaTmsControls;FlexCel_XlsAdapter;DataSnapIndy10ServerTransport;FMXTMSFNCCloudPackPkgDXE15;JanuaVCLControls;JanuaUnidacComponents;JanuaRestWeb;JanuaMVVM;JanuaVCLComponents;DataSnapClient;emsclientfiredac;FireDACPgDriver;sbridge;JanuaCore;CloudService;JanuaFMXControls;htmleditfm_xe120;FireDACIBDriver;soapserver;TMSWebGMapsPkgDE;DataSnapServer;fmx;DbxCommonDriver;FireDACCommonODBC;emsclient;IndyProtocols;htmlcompfm_xe120;SKIA_FlexCel_Core;FireDACSqliteDriver;DbxClientDriver;soapmidas;IndySystem;JanuaCoreComponents;FlexCel_Render;FireDACCommon;DataSnapServerMidas;Neon;FireDACMySQLDriver;DataSnapFireDAC;FMXTMSFNCWXPackPkgDXE15;xdata;DataSnapNativeClient;FMXTMSFNCUIPackPkgDXE15;FlexCel_Report;emshosting;FireDACCommonDriver;emsedge;inetdb;JanuaCoreThirdParty;dbrtl;FireDACOracleDriver;DataSnapConnectors;FireDACMongoDBDriver;FireDACTDataDriver;FlexCel_Core;bindcomp;IndyCore;RESTBackendComponents;AWSSDKFMX;FireDACADSDriver;RESTComponents;dsnapxml;htmlcomp_xe120;FMXTMSFNCDashboardPackPkgDXE15;htmleditcore_xe120;soaprtl;TUniFalcon;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_OSX64)'!=''">
         <DCC_UsePackage>bindengine;IndyIPCommon;dbxcds;dbexpress;inet;FireDACDBXDriver;CustomIPTransport;FireDACMSSQLDriver;FMXTMSFNCWebSocketPkgDXE15;FireDACODBCDriver;rtl;DBXSqliteDriver;FMXTMSFNCBloxPkgDXE15;inetdbxpress;FireDAC;xmlrtl;ibxpress;dsnap;DBXOracleDriver;SVGIconImageList;FMXTMSFNCAppToolsPkgDXE15;FMXTMSFNCCorePkgDXE15;TMSWebGMapsPkg;loggerproRT;bindcompfmx;PlanAddons;ibmonitor;FireDACASADriver;DBXMySQLDriver;DataSnapCommon;fmxase;DataSnapIndy10ServerTransport;FMXTMSFNCCloudPackPkgDXE15;DBXInterBaseDriver;DataSnapClient;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;tethering;sbridge;JanuaCore;CloudService;FireDACIBDriver;soapserver;TMSWebGMapsPkgDE;DataSnapServer;fmx;DbxCommonDriver;FireDACCommonODBC;emsclient;IndyProtocols;FmxTeeUI;DBXFirebirdDriver;FireDACSqliteDriver;DbxClientDriver;soapmidas;fmxdae;IndySystem;ibxbindings;FireDACCommon;DataSnapServerMidas;bindcompdbx;FireDACMySQLDriver;DataSnapFireDAC;FMXTMSFNCWXPackPkgDXE15;DBXInformixDriver;DataSnapNativeClient;fmxobj;FMXTMSFNCUIPackPkgDXE15;FireDACCommonDriver;IndyIPClient;inetdb;fmxFireDAC;JanuaCoreThirdParty;dbrtl;FireDACOracleDriver;FireDACMongoDBDriver;FireDACTDataDriver;bindcomp;IndyCore;RESTBackendComponents;RESTComponents;IndyIPServer;dsnapxml;DataSnapProviderClient;FMXTMSFNCDashboardPackPkgDXE15;DBXSybaseASADriver;FMXTee;soaprtl;TUniFalcon;$(DCC_UsePackage)</DCC_UsePackage>
@@ -1323,13 +1315,10 @@
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
-                <Platform value="Android">True</Platform>
+                <Platform value="Android">False</Platform>
                 <Platform value="Android64">True</Platform>
-                <Platform value="iOSDevice32">False</Platform>
                 <Platform value="iOSDevice64">True</Platform>
                 <Platform value="iOSSimARM64">True</Platform>
-                <Platform value="Linux64">True</Platform>
-                <Platform value="OSX32">False</Platform>
                 <Platform value="OSX64">True</Platform>
                 <Platform value="OSXARM64">True</Platform>
                 <Platform value="Win32">True</Platform>
