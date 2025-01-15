@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
-        <ProjectVersion>20.1</ProjectVersion>
+        <ProjectVersion>20.2</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
@@ -339,7 +339,7 @@
                     <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\sgcWebSockets280.bpl">ESeGeCe Web Sockets</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
-            <Deployment Version="4">
+            <Deployment Version="5">
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
                     <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
@@ -355,600 +355,105 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\JanuaLegacyUniMVVMTesting\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\JanuaLegacyUniMVVMTesting\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\JanuaUniMVVMTesting\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Dialogs\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Dialogs\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Framework\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Framework\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Reports\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Reports\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mocks\Helpers\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mocks\Helpers\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mocks\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mocks\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\Documents\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\Documents\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\MVVMSearch\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\MVVMSearch\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\System\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\System\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\UniDAC\MVVM\Invoices\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\UniDAC\MVVM\Shipments\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\UniDAC\MVVM\Template\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\UniDAC\MVVM\Test\LookupSearch\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\UniDAC\MVVM\Test\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\UniDAC\MVVM\WHReceipt\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\UniDAC\MVVM\Workflow\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\UniDAC\MVVM\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\UniDAC\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\SystemTest.txvcls" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestAWBViewModel\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestDocumentsViewModel\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestLookupSearchDatasets\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestLookupSearchDatasets\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestMVVInvoices\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestMVVInvoices\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestMVVMUniDAC\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestMVVMUniDAC\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestShipmentsViewModel\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestShipmentsViewModel\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestSystemMVVM\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestWHReceipts\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestWHReceipts\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestWorkflowViewModel\default.txaPackage" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestWorkflowViewModel\default.txvpck" Configuration="TestDebug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\JanuaLegacyUniMVVMTesting\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\JanuaLegacyUniMVVMTesting\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\JanuaUniMVVMTesting\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Dialogs\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Dialogs\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Framework\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Framework\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Reports\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Reports\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mocks\Helpers\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mocks\Helpers\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mocks\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mocks\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\Documents\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\Documents\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\MVVMSearch\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\MVVMSearch\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\System\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\System\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\SystemTest.txvcls" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestAWBViewModel\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestDocumentsViewModel\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestLookupSearchDatasets\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestLookupSearchDatasets\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestMVVInvoices\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestMVVInvoices\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestMVVMUniDAC\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestMVVMUniDAC\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestShipmentsViewModel\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestShipmentsViewModel\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestSystemMVVM\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestWHReceipts\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestWHReceipts\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestWorkflowViewModel\default.txaPackage" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestWorkflowViewModel\default.txvpck" Configuration="Release" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\JanuaLegacyUniMVVMTesting\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\JanuaLegacyUniMVVMTesting\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\JanuaUniMVVMTesting\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Dialogs\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Dialogs\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Framework\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Framework\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Reports\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Reports\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mocks\Helpers\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mocks\Helpers\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mocks\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mocks\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\Documents\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\Documents\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\MVVMSearch\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\MVVMSearch\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\System\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\System\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\UniDAC\MVVM\Invoices\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\UniDAC\MVVM\Shipments\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\UniDAC\MVVM\Template\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\UniDAC\MVVM\Test\LookupSearch\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\UniDAC\MVVM\Test\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\UniDAC\MVVM\WHReceipt\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\UniDAC\MVVM\Workflow\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\UniDAC\MVVM\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\UniDAC\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\SystemTest.txvcls" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestAWBViewModel\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestDocumentsViewModel\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestLookupSearchDatasets\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestLookupSearchDatasets\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestMVVInvoices\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestMVVInvoices\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestMVVMUniDAC\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestMVVMUniDAC\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestShipmentsViewModel\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestShipmentsViewModel\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestSystemMVVM\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestWHReceipts\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestWHReceipts\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestWorkflowViewModel\default.txaPackage" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestWorkflowViewModel\default.txvpck" Configuration="TestDebug" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\JanuaLegacyUniMVVMTesting\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\JanuaLegacyUniMVVMTesting\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\JanuaUniMVVMTesting\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Dialogs\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Dialogs\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Framework\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Framework\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Reports\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\Reports\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mock\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mocks\Helpers\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mocks\Helpers\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mocks\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Mocks\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\Documents\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\Documents\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\MVVMSearch\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\MVVMSearch\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\System\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\System\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\ViewModel\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\Test\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\Janua\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\SystemTest.txvcls" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestAWBViewModel\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestDocumentsViewModel\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestLookupSearchDatasets\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestLookupSearchDatasets\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestMVVInvoices\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestMVVInvoices\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestMVVMUniDAC\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestMVVMUniDAC\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestShipmentsViewModel\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestShipmentsViewModel\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestSystemMVVM\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestWHReceipts\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestWHReceipts\default.txvpck" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestWorkflowViewModel\default.txaPackage" Configuration="Release" Class="ProjectFile"/>
+                <DeployFile LocalName="..\..\Testing\prj\ModelSupport_JanuaUniMVVMTesting\unitTestWorkflowViewModel\default.txvpck" Configuration="Release" Class="ProjectFile"/>
                 <DeployFile LocalName="ModelSupport_JanuaUniMVVMTesting\JanuaUniMVVMTesting\default.txvpck" Configuration="Debug" Class="ProjectFile"/>
                 <DeployFile LocalName="ModelSupport_JanuaUniMVVMTesting\SystemTest.txvcls" Configuration="Debug" Class="ProjectFile"/>
                 <DeployFile LocalName="ModelSupport_JanuaUniMVVMTesting\default.txaPackage" Configuration="Debug" Class="ProjectFile"/>
@@ -958,34 +463,14 @@
                 <DeployFile LocalName="ModelSupport_JanuaUniMVVMTesting\unitTestSystemMVVM\default.txvpck" Configuration="Debug" Class="ProjectFile"/>
                 <DeployFile LocalName="c:\januaproject\bin\Win32\Debug\JanuaUniMVVMTesting.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\JanuaUniMVVMTesting.exe" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="c:\januaproject\bin\Win64\Release\JanuaUniMVVMTesting.exe" Configuration="Release" Class="ProjectOutput">
-                    <Platform Name="Win64">
-                        <RemoteName>JanuaUniMVVMTesting.exe</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="c:\januaproject\bin\Win64\TestDebug\JanuaUniMVVMTesting.exe" Configuration="TestDebug" Class="ProjectOutput">
-                    <Platform Name="Win64">
-                        <RemoteName>JanuaUniMVVMTesting.exe</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
+                <DeployFile LocalName="c:\januaproject\bin\Win64\Release\JanuaUniMVVMTesting.exe" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="c:\januaproject\bin\Win64\TestDebug\JanuaUniMVVMTesting.exe" Configuration="TestDebug" Class="ProjectOutput"/>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="OSX32">
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win32">
                         <Operation>0</Operation>
-                    </Platform>
-                </DeployClass>
-                <DeployClass Name="AndroidClasses">
-                    <Platform Name="Android">
-                        <RemoteDir>classes</RemoteDir>
-                        <Operation>64</Operation>
-                    </Platform>
-                    <Platform Name="Android64">
-                        <RemoteDir>classes</RemoteDir>
-                        <Operation>64</Operation>
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="AndroidFileProvider">
@@ -995,12 +480,6 @@
                     </Platform>
                     <Platform Name="Android64">
                         <RemoteDir>res\xml</RemoteDir>
-                        <Operation>1</Operation>
-                    </Platform>
-                </DeployClass>
-                <DeployClass Name="AndroidGDBServer">
-                    <Platform Name="Android">
-                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>

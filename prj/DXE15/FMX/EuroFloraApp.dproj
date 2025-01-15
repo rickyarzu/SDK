@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{72B6F18A-BB4F-44B4-BD1D-74296E49261E}</ProjectGuid>
-        <ProjectVersion>20.1</ProjectVersion>
+        <ProjectVersion>20.2</ProjectVersion>
         <FrameworkType>FMX</FrameworkType>
         <MainSource>EuroFloraApp.dpr</MainSource>
         <Base>True</Base>
@@ -196,7 +196,7 @@
         <Android_LauncherIcon48>Z:\Resources\Euroflora\Android\Android icons %\icon_mdpi.png</Android_LauncherIcon48>
         <EnabledSysJars>android-support-v4.dex.jar;cloud-messaging.dex.jar;fmx.dex.jar;google-analytics-v2.dex.jar;google-play-billing.dex.jar;google-play-licensing.dex.jar;google-play-services-ads-7.0.0.dex.jar;google-play-services-analytics-7.0.0.dex.jar;google-play-services-base-7.0.0.dex.jar;google-play-services-gcm-7.0.0.dex.jar;google-play-services-identity-7.0.0.dex.jar;google-play-services-maps-7.0.0.dex.jar;google-play-services-panorama-7.0.0.dex.jar;google-play-services-plus-7.0.0.dex.jar;google-play-services-wallet-7.0.0.dex.jar</EnabledSysJars>
         <Android_SplashImage426>..\..\..\..\..\Resources\Euroflora\Android\426x320-9patch.9.png</Android_SplashImage426>
-        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c</VerInfo_Keys>
+        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
         <Android_LauncherIcon36>Z:\Resources\Euroflora\Android\Android icons %\icon_sdpi.png</Android_LauncherIcon36>
         <Android_LauncherIcon96>Z:\Resources\Euroflora\Android\Android icons %\icon_xhdpi.png</Android_LauncherIcon96>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -219,7 +219,7 @@
         <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android64)'!=''">
-        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c</VerInfo_Keys>
+        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <Base_Android>true</Base_Android>
@@ -364,7 +364,7 @@
         <AUP_ACCESS_NETWORK_STATE>true</AUP_ACCESS_NETWORK_STATE>
         <EL_Maps>true</EL_Maps>
         <VerInfo_Build>7</VerInfo_Build>
-        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=7;versionName=1.0.7;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c</VerInfo_Keys>
+        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=7;versionName=1.0.7;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
         <DCC_UseMSBuildExternally>true</DCC_UseMSBuildExternally>
         <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
         <DCC_RangeChecking>true</DCC_RangeChecking>
@@ -383,7 +383,7 @@
         <AUP_ACCESS_NETWORK_STATE>true</AUP_ACCESS_NETWORK_STATE>
         <EL_Maps>true</EL_Maps>
         <VerInfo_Build>7</VerInfo_Build>
-        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=7;versionName=1.0.7;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c</VerInfo_Keys>
+        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=7;versionName=1.0.7;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
         <DCC_UseMSBuildExternally>true</DCC_UseMSBuildExternally>
         <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
         <DCC_RangeChecking>true</DCC_RangeChecking>
@@ -448,7 +448,7 @@
         <VerInfo_Build>3</VerInfo_Build>
         <DCC_UseMSBuildExternally>true</DCC_UseMSBuildExternally>
         <PF_KeyStorePass>857C47DB5F9007DACF7C7131D12CE37981B20541A00D978D97E60FBE8E6C3C8ADB57A3DEE3551C63C1E35725FAC7C317BA95360204642291163A459CE5B722BEC916F341D513FACCBFF83B4472328598F78F330AC3197242</PF_KeyStorePass>
-        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=3;versionName=1.0.1;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c</VerInfo_Keys>
+        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=3;versionName=1.0.1;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
         <DCC_Optimize>false</DCC_Optimize>
         <DCC_DebugDCUs>true</DCC_DebugDCUs>
         <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
@@ -466,7 +466,7 @@
         <VerInfo_Build>3</VerInfo_Build>
         <DCC_UseMSBuildExternally>true</DCC_UseMSBuildExternally>
         <PF_KeyStorePass>857C47DB5F9007DACF7C7131D12CE37981B20541A00D978D97E60FBE8E6C3C8ADB57A3DEE3551C63C1E35725FAC7C317BA95360204642291163A459CE5B722BEC916F341D513FACCBFF83B4472328598F78F330AC3197242</PF_KeyStorePass>
-        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=3;versionName=1.0.1;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c</VerInfo_Keys>
+        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=3;versionName=1.0.1;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
         <DCC_Optimize>false</DCC_Optimize>
         <DCC_DebugDCUs>true</DCC_DebugDCUs>
         <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
@@ -573,13 +573,12 @@
                 <Platform value="Android64">True</Platform>
                 <Platform value="iOSDevice64">True</Platform>
                 <Platform value="iOSSimARM64">True</Platform>
-                <Platform value="Linux64">False</Platform>
                 <Platform value="OSX64">True</Platform>
                 <Platform value="OSXARM64">True</Platform>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
             </Platforms>
-            <Deployment Version="4">
+            <Deployment Version="5">
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libPCRE.dylib" Class="DependencyModule"/>
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
                     <Platform Name="iOSSimulator">
@@ -720,18 +719,8 @@
                 <DeployFile LocalName="C:\januaproject\bin\OSX32\Debug\EuroFlora103.info.plist" Configuration="Debug" Class="ProjectOSXInfoPList"/>
                 <DeployFile LocalName="C:\januaproject\bin\OSX32\Debug\EuroFlora103" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="C:\januaproject\bin\Win32\Debug\EuroFloraApp.exe" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="C:\januaproject\bin\Win64\Debug\EuroFloraApp.exe" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win64">
-                        <RemoteName>EuroFloraApp.exe</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="C:\januaproject\bin\Win64\Debug\EuroFloraApp.rsm" Configuration="Debug" Class="DebugSymbols">
-                    <Platform Name="Win64">
-                        <RemoteName>EuroFloraApp.rsm</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
+                <DeployFile LocalName="C:\januaproject\bin\Win64\Debug\EuroFloraApp.exe" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\januaproject\bin\Win64\Debug\EuroFloraApp.rsm" Configuration="Debug" Class="DebugSymbols"/>
                 <DeployFile LocalName="C:\januaproject\bin\iOSDevice32\Release\EuroFlora2018" Configuration="Release" Class="ProjectOutput_iOS32"/>
                 <DeployFile LocalName="C:\januaproject\bin\iOSDevice64\Debug\EuroFlora2018.dSYM" Configuration="Debug" Class="ProjectiOSDeviceDebug"/>
                 <DeployFile LocalName="C:\januaproject\bin\iOSDevice64\Debug\EuroFlora2018.entitlements" Configuration="Debug" Class="ProjectiOSEntitlements"/>
@@ -794,16 +783,6 @@
                         <Operation>0</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="AndroidClasses">
-                    <Platform Name="Android">
-                        <RemoteDir>classes</RemoteDir>
-                        <Operation>64</Operation>
-                    </Platform>
-                    <Platform Name="Android64">
-                        <RemoteDir>classes</RemoteDir>
-                        <Operation>64</Operation>
-                    </Platform>
-                </DeployClass>
                 <DeployClass Name="AndroidFileProvider">
                     <Platform Name="Android">
                         <RemoteDir>res\xml</RemoteDir>
@@ -811,12 +790,6 @@
                     </Platform>
                     <Platform Name="Android64">
                         <RemoteDir>res\xml</RemoteDir>
-                        <Operation>1</Operation>
-                    </Platform>
-                </DeployClass>
-                <DeployClass Name="AndroidGDBServer">
-                    <Platform Name="Android">
-                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
@@ -1440,6 +1413,9 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64x">
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
