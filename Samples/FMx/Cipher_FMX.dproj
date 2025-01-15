@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
-        <ProjectVersion>20.1</ProjectVersion>
+        <ProjectVersion>20.2</ProjectVersion>
         <FrameworkType>FMX</FrameworkType>
         <MainSource>Cipher_FMX.dpr</MainSource>
         <Base>True</Base>
@@ -10,6 +10,7 @@
         <TargetedPlatforms>36883</TargetedPlatforms>
         <AppType>Application</AppType>
         <PlatformSDK Condition="'$(PlatformSDK)'=='' And '$(Platform)'=='Android64'">AndroidSDK26.1.1_64bit.sdk</PlatformSDK>
+        <ProjectName Condition="'$(ProjectName)'==''">Cipher_FMX</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -142,7 +143,7 @@
         <Android_SplashImage426>Crypto_426_320.png</Android_SplashImage426>
         <Android_LauncherIcon72>CryptoIcon_72.png</Android_LauncherIcon72>
         <Android_SplashImage960>Crypto_960_720.png</Android_SplashImage960>
-        <VerInfo_Keys>package=com.dec.Cipher_FMX;label=DEC cipher demo;versionCode=4;versionName=1.4.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
+        <VerInfo_Keys>package=com.dec.Cipher_FMX;label=DEC cipher demo;versionCode=4;versionName=1.4.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
         <Android_NotificationIcon24>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png</Android_NotificationIcon24>
         <Android_NotificationIcon36>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png</Android_NotificationIcon36>
@@ -158,7 +159,7 @@
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android64)'!=''">
-        <VerInfo_Keys>package=com.dec.Cipher_FMX;label=DEC cipher demo;versionCode=4;versionName=1.4.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
+        <VerInfo_Keys>package=com.dec.Cipher_FMX;label=DEC cipher demo;versionCode=4;versionName=1.4.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <Base_Android>true</Base_Android>
@@ -374,7 +375,7 @@
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp280.bpl">Microsoft Office XP Beispiele für gekapselte Komponenten für Automation Server</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
-            <Deployment Version="4">
+            <Deployment Version="5">
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libPCRE.dylib" Class="DependencyModule"/>
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
                     <Platform Name="iOSSimulator">
@@ -402,7 +403,6 @@
                 <DeployFile LocalName="$(BDS)\lib\android\debug\mips\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeMipsFile"/>
                 <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Android64__Demos\AndroidManifest.xml" Configuration="Debug" Class="ProjectAndroidManifest"/>
                 <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Android64__Demos\AndroidManifest.xml" Configuration="Release" Class="ProjectAndroidManifest"/>
-                <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Android64__Demos\Cipher_FMX.classes" Configuration="Debug" Class="AndroidClasses"/>
                 <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Android64__Demos\colors.xml" Configuration="Debug" Class="Android_Colors"/>
                 <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Android64__Demos\colors.xml" Configuration="Release" Class="Android_Colors"/>
                 <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Android64__Demos\libCipher_FMX.so" Configuration="Debug" Class="ProjectOutput"/>
@@ -416,7 +416,6 @@
                 <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Android64__Demos\styles.xml" Configuration="Debug" Class="AndroidSplashStyles"/>
                 <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Android64__Demos\styles.xml" Configuration="Release" Class="AndroidSplashStyles"/>
                 <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Android__Demos\AndroidManifest.xml" Configuration="Debug" Class="ProjectAndroidManifest"/>
-                <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Android__Demos\Cipher_FMX.classes" Configuration="Debug" Class="AndroidClasses"/>
                 <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Android__Demos\colors.xml" Configuration="Debug" Class="Android_Colors"/>
                 <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Android__Demos\libCipher_FMX.so" Configuration="Debug" Class="ProjectOutput_Android32"/>
                 <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Android__Demos\splash_image_def.xml" Configuration="Debug" Class="AndroidSplashImageDef"/>
@@ -424,18 +423,8 @@
                 <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Android__Demos\styles-v21.xml" Configuration="Debug" Class="AndroidSplashStylesV21"/>
                 <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Android__Demos\styles.xml" Configuration="Debug" Class="AndroidSplashStyles"/>
                 <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Win32__Demos\Cipher_FMX.exe" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Win32__Demos\Cipher_FMX.exe" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win32">
-                        <RemoteName>Cipher_FMX.exe</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Win32__Demos\Cipher_FMX.rsm" Configuration="Debug" Class="DebugSymbols">
-                    <Platform Name="Win32">
-                        <RemoteName>Cipher_FMX.rsm</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
+                <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Win32__Demos\Cipher_FMX.exe" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="..\..\Compiled\BIN_IDExx.x_Win32__Demos\Cipher_FMX.rsm" Configuration="Debug" Class="DebugSymbols"/>
                 <DeployFile LocalName="CryptoIcon_144.png" Configuration="Debug" Class="Android_LauncherIcon144"/>
                 <DeployFile LocalName="CryptoIcon_144.png" Configuration="Release" Class="Android_LauncherIcon144"/>
                 <DeployFile LocalName="CryptoIcon_192.png" Configuration="Debug" Class="Android_LauncherIcon192"/>
@@ -468,16 +457,6 @@
                         <Operation>0</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="AndroidClasses">
-                    <Platform Name="Android">
-                        <RemoteDir>classes</RemoteDir>
-                        <Operation>64</Operation>
-                    </Platform>
-                    <Platform Name="Android64">
-                        <RemoteDir>classes</RemoteDir>
-                        <Operation>64</Operation>
-                    </Platform>
-                </DeployClass>
                 <DeployClass Name="AndroidFileProvider">
                     <Platform Name="Android">
                         <RemoteDir>res\xml</RemoteDir>
@@ -485,12 +464,6 @@
                     </Platform>
                     <Platform Name="Android64">
                         <RemoteDir>res\xml</RemoteDir>
-                        <Operation>1</Operation>
-                    </Platform>
-                </DeployClass>
-                <DeployClass Name="AndroidGDBServer">
-                    <Platform Name="Android">
-                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
@@ -1116,6 +1089,9 @@
                     <Platform Name="Win64">
                         <Operation>1</Operation>
                     </Platform>
+                    <Platform Name="Win64x">
+                        <Operation>1</Operation>
+                    </Platform>
                 </DeployClass>
                 <DeployClass Name="ProjectiOSDeviceDebug">
                     <Platform Name="iOSDevice32">
@@ -1409,13 +1385,13 @@
                 <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win64x" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
                 <Platform value="Android">True</Platform>
                 <Platform value="Android64">True</Platform>
                 <Platform value="iOSDevice64">False</Platform>
                 <Platform value="iOSSimARM64">False</Platform>
-                <Platform value="Linux64">False</Platform>
                 <Platform value="OSX64">True</Platform>
                 <Platform value="OSXARM64">False</Platform>
                 <Platform value="Win32">True</Platform>

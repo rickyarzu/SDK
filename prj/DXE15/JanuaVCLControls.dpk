@@ -26,7 +26,6 @@
 {$DEFINE RELEASE}
 {$ENDIF IMPLICITBUILDING}
 {$LIBSUFFIX AUTO}
-{$RUNONLY}
 {$IMPLICITBUILD OFF}
 
 requires
@@ -79,11 +78,4 @@ contains
   Janua.VCL.frmOverlayAnimation in '..\..\src\VCL\Commons\Janua.VCL.frmOverlayAnimation.pas' {frmVCLOverlayAnimation},
   Janua.VCL.StackTrace in '..\..\src\VCL\Commons\Janua.VCL.StackTrace.pas';
 
-  {
-  gtRtl,
-  gtFont,
-  gtFilters,
-  gtCrypt,
-  officeXPrt,
-  }
 end.
