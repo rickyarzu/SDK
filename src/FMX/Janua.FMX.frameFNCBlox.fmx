@@ -16,6 +16,7 @@ object frameFNCBloxDrawing: TframeFNCBloxDrawing
       TabOrder = 3
       Text = 'Clear '
       TextSettings.Trimming = None
+      OnClick = btnClearClick
     end
     object btnRedraw: TButton
       Align = Left
@@ -50,6 +51,7 @@ object frameFNCBloxDrawing: TframeFNCBloxDrawing
     end
   end
   object TMSFNCBloxControl1: TTMSFNCBloxControl
+    Color = x000000FF
     Align = Client
     Size.Width = 464.000000000000000000
     Size.Height = 261.000000000000000000
@@ -58,6 +60,7 @@ object frameFNCBloxDrawing: TframeFNCBloxDrawing
     OnClick = TMSFNCBloxControl1Click
     OnMouseDown = TMSFNCBloxControl1MouseDown
     Fill.Kind = gfkTexture
+    Fill.Color = x000000FF
     Fill.TextureMode = gtmFit
     Fill.Texture.PNG = {
       89504E470D0A1A0A0000000D4948445200000209000000F608060000005C3914

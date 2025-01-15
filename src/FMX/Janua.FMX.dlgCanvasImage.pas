@@ -7,7 +7,8 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls, FMX.Objects,
   FMX.Controls.Presentation,
   // Janua
-  Janua.Core.Types, Janua.FMX.frameCanvasPaintImage, FMX.Memo.Types, FMX.ScrollBox, FMX.Memo;
+  Janua.Core.Types, Janua.FMX.frameCanvasPaintImage, FMX.Memo.Types, FMX.ScrollBox, FMX.Memo,
+  Janua.FMX.frameFNCBlox;
 
 type
   TdlgFMXCanvasImage = class(TForm)
@@ -15,11 +16,10 @@ type
     Image6: TImage;
     SpeedButton1: TSpeedButton;
     Button1: TButton;
-    frameFMXImageDraw1: TframeFMXImageDraw;
+    frameFMXImageDraw1: TframeFNCBloxDrawing;
     Label1: TLabel;
     Memo1: TMemo;
     procedure FormShow(Sender: TObject);
-    procedure FormResize(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure frameFMXImageDraw1btnRedrawClick(Sender: TObject);
   private
@@ -42,14 +42,9 @@ implementation
 {$R *.fmx}
 { TdlgFMXCanvasImage }
 
-procedure TdlgFMXCanvasImage.FormResize(Sender: TObject);
-begin
-  self.frameFMXImageDraw1.UpdateSize;
-end;
-
 procedure TdlgFMXCanvasImage.FormShow(Sender: TObject);
 begin
-  frameFMXImageDraw1.Activate(frameFMXImageDraw1.LayoutImage.Position.Y);
+
   // frameFMXImageDraw1.btnRedrawClick(frameFMXImageDraw1);
 end;
 

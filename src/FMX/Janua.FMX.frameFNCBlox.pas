@@ -22,9 +22,11 @@ type
     btnAddNotes: TButton;
     TMSFNCBloxControl1: TTMSFNCBloxControl;
     procedure btnAddNotesClick(Sender: TObject);
-    procedure TMSFNCBloxControl1MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X,
-      Y: Single);
+    procedure TMSFNCBloxControl1MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState;
+      X, Y: Single);
     procedure TMSFNCBloxControl1Click(Sender: TObject);
+    procedure btnRedrawClick(Sender: TObject);
+    procedure btnClearClick(Sender: TObject);
   private
     FDrawing: boolean; // to indicate that we should be FDrawing in the `OnMouseMove` event
     FImgDrawings: TJanuaImageDraws;
@@ -45,6 +47,8 @@ type
   public
     procedure btnNoteOKClick(Sender: TObject);
     procedure btnNoteCancelClick(Sender: TObject);
+  public
+    property ImageDrawings: TJanuaImageDraws read FImageDrawings write FImageDrawings;
   end;
 
 implementation
@@ -67,6 +71,11 @@ begin
 {$ENDIF}
 end;
 
+procedure TframeFNCBloxDrawing.btnClearClick(Sender: TObject);
+begin
+  TMSFNCBloxControl1.Blox.Clear;
+end;
+
 procedure TframeFNCBloxDrawing.btnNoteCancelClick(Sender: TObject);
 begin
   FreeNotes
@@ -79,6 +88,11 @@ begin
     FImgDrawings.Notes := FdlgFMXNotes.Memo1.Lines.Text;
     FreeNotes;
   end;
+end;
+
+procedure TframeFNCBloxDrawing.btnRedrawClick(Sender: TObject);
+begin
+  TMSFNCBloxControl1.Repaint
 end;
 
 procedure TframeFNCBloxDrawing.DrawCanvas(xpre, ypre, X, Y, Offset: Single);

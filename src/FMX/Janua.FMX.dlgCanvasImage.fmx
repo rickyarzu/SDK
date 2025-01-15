@@ -7,7 +7,6 @@ object dlgFMXCanvasImage: TdlgFMXCanvasImage
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
-  OnResize = FormResize
   OnShow = FormShow
   DesignerMasterStyle = 0
   object toolBarDriverTask: TToolBar
@@ -5210,7 +5209,7 @@ object dlgFMXCanvasImage: TdlgFMXCanvasImage
       TextSettings.Trimming = None
     end
   end
-  inline frameFMXImageDraw1: TframeFMXImageDraw
+  inline frameFMXImageDraw1: TframeFNCBloxDrawing
     Align = Top
     Position.Y = 48.000000000000000000
     Size.Width = 370.000000000000000000
@@ -5222,15 +5221,9 @@ object dlgFMXCanvasImage: TdlgFMXCanvasImage
         OnClick = frameFMXImageDraw1btnRedrawClick
       end
     end
-    inherited LayoutImage: TLayout
+    inherited TMSFNCBloxControl1: TTMSFNCBloxControl
       Size.Width = 370.000000000000000000
       Size.Height = 234.000000000000000000
-      inherited imgCar: TImage
-        MultiResBitmap.Height = 383
-        MultiResBitmap.Width = 637
-        Size.Width = 370.000000000000000000
-        Size.Height = 234.000000000000000000
-      end
     end
   end
   object Memo1: TMemo
@@ -5241,8 +5234,8 @@ object dlgFMXCanvasImage: TdlgFMXCanvasImage
     Size.Height = 297.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
-    Viewport.Width = 366.000000000000000000
-    Viewport.Height = 293.000000000000000000
+    Viewport.Width = 370.000000000000000000
+    Viewport.Height = 297.000000000000000000
   end
   object Label1: TLabel
     Align = Top
@@ -5251,6 +5244,7 @@ object dlgFMXCanvasImage: TdlgFMXCanvasImage
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
     TextSettings.HorzAlign = Center
+    TextSettings.Trimming = None
     Text = 'Note ed Annotazioni'
     TabOrder = 3
   end
