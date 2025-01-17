@@ -2,7 +2,7 @@
 
 interface
 
-uses VCL.Forms, VCL.ImgList, VCL.Graphics, udmSVGImageList, udmVCLMainApplication;
+uses VCL.Forms, VCL.ImgList, VCL.Graphics, udmSVGImageList;
 
 type
   TJanuaVCLApplication = class
@@ -14,7 +14,6 @@ type
     class var FdmImgListIcon32: TdmSVGImageList;
     class var FdmImgListIcon48: TdmSVGImageList;
     class var FdmImgListIcon24: TdmSVGImageList;
-    class var FdmVCLMainApplication: TdmVCLMainApplication;
   class var
   private
     class function GetImgListVCLIcons16: TCustomImageList; static;
@@ -28,7 +27,6 @@ type
     class function GetFontVCLIcons48: TCustomImageList; static;
 
     class function GetIconFontColor: Integer; static;
-    class function GetTdmVCLMainApplication: TdmVCLMainApplication; static;
   public
     class procedure SetIconFontColor(const Value: Integer); static;
     class property ImgListVCLIcons16: TCustomImageList read GetImgListVCLIcons16;
@@ -41,9 +39,7 @@ type
     class property FontVCLIcons24: TCustomImageList read GetFontVCLIcons24;
     class property FontVCLIcons48: TCustomImageList read GetFontVCLIcons48;
     class property IconFontColor: Integer read GetIconFontColor write SetIconFontColor;
-    class property MainApplication: TdmVCLMainApplication read GetTdmVCLMainApplication;
   public
-    class procedure RegisterMainApplication(aApplication: TdmVCLMainApplication);
     class function GetWidthText(const Text: String; Font: TFont): Integer;
   public
     class procedure Initialize;
@@ -178,11 +174,6 @@ begin
   Result := FdmImgListIcon48.SVGIconImageList
 end;
 
-class function TJanuaVCLApplication.GetTdmVCLMainApplication: TdmVCLMainApplication;
-begin
-  Result := FdmVCLMainApplication;
-end;
-
 class function TJanuaVCLApplication.GetWidthText(const Text: String; Font: TFont): Integer;
 var
   LBmp: TBitmap;
@@ -210,11 +201,6 @@ begin
   finally
     FInitialized := True;
   end;
-end;
-
-class procedure TJanuaVCLApplication.RegisterMainApplication(aApplication: TdmVCLMainApplication);
-begin
-  FdmVCLMainApplication := aApplication
 end;
 
 class procedure TJanuaVCLApplication.SetIconFontColor(const Value: Integer);

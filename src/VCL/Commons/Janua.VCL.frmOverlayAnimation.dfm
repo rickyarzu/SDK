@@ -12,12 +12,10 @@ object frmVCLOverlayAnimation: TfrmVCLOverlayAnimation
   Font.Name = 'Tahoma'
   Font.Style = []
   FormStyle = fsStayOnTop
-  OldCreateOrder = False
   Position = poScreenCenter
   DesignSize = (
     776
     124)
-  PixelsPerInch = 96
   TextHeight = 13
   object pbAnimation: TProgressBar
     Left = 32

@@ -36,6 +36,8 @@ inherited dlgVCLInputNumber: TdlgVCLInputNumber
   inherited StatusBar: TStatusBar
     Top = 102
     Width = 418
+    ExplicitTop = 102
+    ExplicitWidth = 418
   end
   object AdvSpinEdit1: TSpinEdit
     Left = 304

@@ -209,98 +209,12 @@
     <PropertyGroup Condition="'$(Cfg_Debug_Win64)'!=''">
         <VerInfo_Locale>1040</VerInfo_Locale>
         <VerInfo_IncludeVerInfo>false</VerInfo_IncludeVerInfo>
+        <DCC_CBuilderOutput>None</DCC_CBuilderOutput>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="rtl.dcp"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScTypes.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScFunctions.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScAlgorithmSupport.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScASN1.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScBase64.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScBigInteger.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScBridge.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScEC25519.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScCMS.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScCertificateConsts.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScCertificateExts.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScCipher.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScCipherSuites.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScClient.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScClientHandshakeLayer.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScServerHandshakeLayer.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScCLRClasses.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScConsts.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScCryptoAPIIntf.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScCryptoAPIStorage.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScCryptoTransformIntf.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScDECUtil.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScHash.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScHashAlgorithm.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScHMAC.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScLayers.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScMD5SHA1CSP.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScOids.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScReaderWriter.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScReceiveBuffer.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScRNG.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSecureSocket.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSocketController.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSSH2Channel.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSSH2Connection.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSSH2DataHandler.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScDataHandler.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSSH2ServerConnection.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSSHChannel.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSSHClient.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSSHConnectionParameter.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSSHServer.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSSHSocket.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSSHUtils.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSSHConsts.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSSL3HandshakeLayer.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSSLClient.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSSLServer.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScTCPServer.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSSLMessages.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSSLExtensions.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSSLTypes.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSymmetricAlgorithm.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScThread.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScTLS1HandshakeLayer.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScTLS13HandshakeLayer.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScUtils.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScVio.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScVioSocket.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScVioTcp.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSecureConnection.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScHttp.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScVioHttp.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScFTPUtils.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScFTPListParser.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScFTPClient.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScWebSocketClient.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSFTPConsts.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSFTPPacket.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSFTPUtils.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSFTPClient.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSFTPServer.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScParser.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScJson.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScJsonSerializator.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScPipe.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSignalRConsts.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSignalRMessages.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSignalRProtocol.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSignalRHttpConnection.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSignalRHttpTransports.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSignalRHubConnection.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScCoders.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSMTPUtils.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScMailMessage.pas"/>
-        <DCCReference Include="..\..\..\Libraries\Devart SecureBridge\Source\ScSMTPClient.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</DependentOn>
@@ -350,7 +264,9 @@
                     <Source Name="MainSource">sbridge.dpk</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\StyleControls290.bpl">(untitled)</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Platforms>

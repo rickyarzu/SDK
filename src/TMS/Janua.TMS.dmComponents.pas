@@ -7,7 +7,6 @@ uses
 
 type
   TdmTmsComponents = class(TDataModule)
-    AdvTwilio1: TAdvTwilio;
   private
     { Private declarations }
   public

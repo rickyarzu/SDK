@@ -7,7 +7,7 @@ uses
   VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.ExtCtrls, VCL.StdCtrls,
   VCL.Imaging.pngimage, VCL.Buttons,
   // tmsUXlsSST
-  JvExExtCtrls, JvImage, VCL.TMSFNCTypes,
+  JvExExtCtrls, JvImage,
   // Janua
     Janua.Core.System, Janua.Controls.Intf, Janua.Controls.Forms.Intf, Janua.Controls.Dialogs.Intf,
   // inherited

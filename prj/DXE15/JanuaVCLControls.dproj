@@ -78,6 +78,7 @@
         <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;DUnitX.StackTrace;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
         <VerInfo_Locale>1040</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
+        <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
         <CfgDependentOn>JanuaLibDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Linux64)'!=''">
@@ -89,7 +90,7 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_UsePackage>rtl;VCLTMSFNCCorePkgDXE15;Jcl;JvCore;JvSystem;JvStdCtrls;JvDB;SVGIconImageList;SVGImage32Package;QRWRunDXE12_W64;gtDocEng;gtRtl;gtFont;gtFilters;gtCrypt;officeXPrt;JanuaCore;JanuaCoreComponents;JanuaUnidacComponents;JanuaMVVM;JanuaUnidac;VCLThemeSelector;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>rtl;VCLTMSFNCCorePkgDXE15;Jcl;JvCore;JvSystem;JvStdCtrls;JvDB;SVGIconImageList;SVGImage32Package;QRWRunDXE12_W64;gtDocEng;gtRtl;gtFont;gtFilters;gtCrypt;officeXPrt;JanuaCore;JanuaCoreComponents;JanuaUnidacComponents;JanuaMVVM;JanuaUnidac;VCLThemeSelector;TMSVCLUIPackPkgExDXE15;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
@@ -97,7 +98,7 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_UsePackage>rtl;VCLTMSFNCCorePkgDXE15;SVGIconImageList;SVGImage32Package;QRWRunDXE12_W64;gtDocEng;gtRtl;gtFont;gtFilters;gtCrypt;officeXPrt;JanuaCore;JanuaCoreComponents;JanuaMVVM;JanuaUnidac;VCLThemeSelector;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>rtl;VCLTMSFNCCorePkgDXE15;SVGIconImageList;SVGImage32Package;QRWRunDXE12_W64;gtDocEng;gtRtl;gtFont;gtFilters;gtCrypt;officeXPrt;JanuaCore;JanuaCoreComponents;JanuaMVVM;JanuaUnidac;VCLThemeSelector;TMSVCLUIPackPkgExDXE15;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64x)'!=''">
         <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
@@ -153,6 +154,7 @@
         <DCCReference Include="SVGImage32Package.dcp"/>
         <DCCReference Include="VCLThemeSelector.dcp"/>
         <DCCReference Include="gtDocEng.dcp"/>
+        <DCCReference Include="TMSVCLUIPackPkgExDXE15.dcp"/>
         <DCCReference Include="VCLTMSFNCCorePkgDXE15.dcp"/>
         <DCCReference Include="..\..\src\VCL\Forms\uJanuaVCLForm.pas">
             <Form>JanuaVCLFormModel</Form>
@@ -167,32 +169,40 @@
         </DCCReference>
         <DCCReference Include="..\..\src\janualegacy\Janua.Legacy.Application.pas"/>
         <DCCReference Include="..\..\src\VCL\Janua.VCLControls.Impl.pas"/>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Printers.pas"/>
         <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Functions.pas"/>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Controllers.pas"/>
-        <DCCReference Include="..\..\src\VCL\Forms\uVCLGnosticeReportEngine.pas">
-            <Form>dmVCLGnosticeReportEngine</Form>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Framework.pas"/>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.CategoryButtonsFrame.pas">
-            <Form>JanuaCategoryButtonsFrame</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Printers.pas"/>
         <DCCReference Include="..\..\src\VCL\Commons\udmSVGImageList.pas">
             <Form>dmSVGImageList</Form>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Forms\Janua.VCL.Controls.Forms.Impl.pas"/>
-        <DCCReference Include="..\..\src\VCL\System\Janua.VCL.dlgLogin.pas">
-            <Form>dlgVCLLoginDialog</Form>
+        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.frmOverlayAnimation.pas">
+            <Form>frmVCLOverlayAnimation</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Forms\uVCLGnosticeReportEngine.pas">
+            <Form>dmVCLGnosticeReportEngine</Form>
+            <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\src\VCL\Forms\uJanuaVCLCustomLoginDialog.pas">
             <Form>dlgVCLCustomLoginDialog</Form>
         </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Forms\uJanuaVCLFrame.pas">
+            <Form>JanuaVCLFrameModel</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Commons\Janua.Vcl.Styles.ControlColor.pas"/>
+        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.StackTrace.pas"/>
+        <DCCReference Include="..\..\src\VCL\Cloud\Janua.VCL.Cloud.Impl.pas"/>
+        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Bindings.Intf.pas"/>
+        <DCCReference Include="..\..\src\VCL\Controls\Janua.VCL.Interposers.Grids.pas"/>
+        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Controllers.pas"/>
+        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Framework.pas"/>
         <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.dlgInputNumber.pas">
             <Form>dlgVCLInputNumber</Form>
         </DCCReference>
+        <DCCReference Include="..\..\src\VCL\System\Janua.VCL.dlgLogin.pas">
+            <Form>dlgVCLLoginDialog</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Forms\Janua.VCL.Controls.Forms.Impl.pas"/>
         <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.dlgInputDate.pas">
             <Form>dlgTMSInputDate</Form>
         </DCCReference>
@@ -203,22 +213,9 @@
         <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.dlgInputText.pas">
             <Form>dlgVCLInputText</Form>
         </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Bindings.Intf.pas"/>
-        <DCCReference Include="..\..\src\VCL\Forms\uJanuaVCLFrame.pas">
-            <Form>JanuaVCLFrameModel</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.Vcl.Styles.ControlColor.pas"/>
         <DCCReference Include="..\..\src\VCL\Commons\udlgSelectMultiString.pas">
             <Form>dlgSelectMultiString</Form>
         </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Cloud\Janua.VCL.Cloud.Impl.pas"/>
-        <DCCReference Include="..\..\src\VCL\Controls\Janua.VCL.ObrLib.pas"/>
-        <DCCReference Include="..\..\src\VCL\Controls\Janua.VCL.Interposers.Grids.pas"/>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.frmOverlayAnimation.pas">
-            <Form>frmVCLOverlayAnimation</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.StackTrace.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>
@@ -254,6 +251,12 @@
             </Platforms>
             <Deployment Version="5">
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaVCLControls290.bpl" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaVCLControls290.bpl" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>JanuaVCLControls.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="OSX32">
                         <Operation>1</Operation>
