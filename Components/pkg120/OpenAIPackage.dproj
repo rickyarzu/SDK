@@ -218,6 +218,34 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="RESTComponents.dcp"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.API.Params.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.API.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Audio.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Chat.Functions.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Chat.Functions.Samples.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Chat.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Completions.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Component.Chat.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Component.Reg.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Edits.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Embeddings.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Engines.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Errors.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Files.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.FineTunes.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.FineTuning.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Images.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Models.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Moderations.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Utils.ChatHistory.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Component.Functions.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Assistants.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Types.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Utils.Base64.pas"/>
+        <DCCReference Include="..\..\..\lib\DelphiOpenAI\OpenAI.Utils.ObjectHolder.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</DependentOn>

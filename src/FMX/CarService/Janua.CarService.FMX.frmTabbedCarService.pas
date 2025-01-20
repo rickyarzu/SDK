@@ -170,8 +170,8 @@ begin
   // FdlgFMXCanvasImage:  TdlgFMXCanvasImage;
   if not Assigned(FdlgFMXCanvasImage) then
     FdlgFMXCanvasImage := TdlgFMXCanvasImage.Create(self);
-  FdlgFMXCanvasImage.ImageDrawings := self.FImgDrawings;
-  FdlgFMXCanvasImage.OnCloseDialog := self.CanvasImageDlgClose;
+  FdlgFMXCanvasImage.ImageDrawings := FImgDrawings;
+  FdlgFMXCanvasImage.OnCloseDialog := CanvasImageDlgClose;
 {$IFNDEF MSWINDOWS}
   FdlgFMXCanvasImage.WindowState := TWindowState.wsMaximized;
 {$ENDIF}

@@ -2,15 +2,16 @@ object dlgFMXCanvasImage: TdlgFMXCanvasImage
   Left = 0
   Top = 0
   Caption = 'Modifica Immagine'
-  ClientHeight = 654
-  ClientWidth = 370
+  ClientHeight = 684
+  ClientWidth = 415
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnResize = FormResize
   OnShow = FormShow
   DesignerMasterStyle = 0
   object toolBarDriverTask: TToolBar
-    Size.Width = 370.000000000000000000
+    Size.Width = 415.000000000000000000
     Size.Height = 48.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
@@ -5178,7 +5179,7 @@ object dlgFMXCanvasImage: TdlgFMXCanvasImage
           Scale = 2.000000000000000000
         end>
       Align = HorzCenter
-      Position.X = 116.000000000000000000
+      Position.X = 139.000000000000000000
       Size.Width = 137.000000000000000000
       Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
@@ -5199,7 +5200,7 @@ object dlgFMXCanvasImage: TdlgFMXCanvasImage
       Align = Right
       Anchors = []
       Margins.Right = 5.000000000000000000
-      Position.X = 317.000000000000000000
+      Position.X = 362.000000000000000000
       Size.Width = 48.000000000000000000
       Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
@@ -5212,35 +5213,47 @@ object dlgFMXCanvasImage: TdlgFMXCanvasImage
   inline frameFMXImageDraw1: TframeFNCBloxDrawing
     Align = Top
     Position.Y = 48.000000000000000000
-    Size.Width = 370.000000000000000000
-    Size.Height = 292.000000000000000000
+    Size.Width = 415.000000000000000000
+    Size.Height = 449.000000000000000000
     Size.PlatformDefault = False
     inherited pnlButtons: TPanel
-      Size.Width = 370.000000000000000000
+      Size.Width = 415.000000000000000000
+      Size.Height = 33.000000000000000000
+      inherited btnClear: TButton
+        Size.Height = 33.000000000000000000
+      end
       inherited btnRedraw: TButton
+        Size.Height = 33.000000000000000000
         OnClick = frameFMXImageDraw1btnRedrawClick
+      end
+      inherited btnDelLast: TButton
+        Size.Height = 33.000000000000000000
+      end
+      inherited btnAddNotes: TButton
+        Size.Height = 33.000000000000000000
       end
     end
     inherited TMSFNCBloxControl1: TTMSFNCBloxControl
-      Size.Width = 370.000000000000000000
-      Size.Height = 234.000000000000000000
+      RotationAngle = 90.000000000000000000
+      Size.Width = 415.000000000000000000
+      Size.Height = 416.000000000000000000
     end
   end
   object Memo1: TMemo
     Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
     DataDetectorTypes = []
     Align = Client
-    Size.Width = 370.000000000000000000
-    Size.Height = 297.000000000000000000
+    Size.Width = 415.000000000000000000
+    Size.Height = 170.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
-    Viewport.Width = 370.000000000000000000
-    Viewport.Height = 297.000000000000000000
+    Viewport.Width = 411.000000000000000000
+    Viewport.Height = 166.000000000000000000
   end
   object Label1: TLabel
     Align = Top
-    Position.Y = 340.000000000000000000
-    Size.Width = 370.000000000000000000
+    Position.Y = 497.000000000000000000
+    Size.Width = 415.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
     TextSettings.HorzAlign = Center

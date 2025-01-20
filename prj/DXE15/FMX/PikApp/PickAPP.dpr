@@ -46,7 +46,7 @@ begin
   TJanuaApplication.AppName := ('drivers.carservice.com');
   TJanuaApplication.ServerAddress := 'pg.januaservers.com' { 185.36.74.140 };
 
-  Application.Initialize;
+    Application.Initialize;
   TJanuaCarServiceFMXMobileApplication.ApplicationSetup('drivers.carservice.com');
   TJanuaApplication.ServerAddress := 'pg.januaservers.com' { 185.36.74.140 };
   // Remote Configuration  {'https://api.pikapp.it/'}

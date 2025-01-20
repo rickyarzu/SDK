@@ -22,6 +22,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure frameFMXImageDraw1btnRedrawClick(Sender: TObject);
+    procedure FormResize(Sender: TObject);
   private
     FOnCloseDialog: TNotifyEvent;
     procedure SetImageDrawings(const Value: TJanuaImageDraws);
@@ -40,11 +41,36 @@ var
 implementation
 
 {$R *.fmx}
+
+procedure ResizeBitmap(Source: TBitmap; var Destination: TBitmap; NewWidth, NewHeight: Integer);
+begin
+  // Create a new bitmap with the desired size
+  Destination := TBitmap.Create;
+  Destination.SetSize(NewWidth, NewHeight);
+
+  // Draw the source bitmap onto the destination bitmap, scaling it
+  Destination.Canvas.BeginScene;
+  try
+    Destination.Canvas.DrawBitmap(Source,
+                                  RectF(0, 0, Source.Width, Source.Height), // Source rectangle
+                                  RectF(0, 0, NewWidth, NewHeight),         // Destination rectangle
+                                  1.0,                                      // Opacity
+                                  True);                                    // HighQuality (antialiasing)
+  finally
+    Destination.Canvas.EndScene;
+  end;
+end;
+
 { TdlgFMXCanvasImage }
+
+procedure TdlgFMXCanvasImage.FormResize(Sender: TObject);
+begin
+  frameFMXImageDraw1.UpdateSize;
+end;
 
 procedure TdlgFMXCanvasImage.FormShow(Sender: TObject);
 begin
-
+  frameFMXImageDraw1.UpdateSize;
   // frameFMXImageDraw1.btnRedrawClick(frameFMXImageDraw1);
 end;
 

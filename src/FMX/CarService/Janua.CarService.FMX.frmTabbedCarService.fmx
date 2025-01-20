@@ -16054,9 +16054,9 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
                 Align = Right
                 Images = ImageList1
                 ImageIndex = 18
-                Position.X = 262.000000000000000000
+                Position.X = -22.888671875000000000
                 Size.Width = 168.000000000000000000
-                Size.Height = 30.000000000000000000
+                Size.Height = 31.921875000000000000
                 Size.PlatformDefault = False
                 TabOrder = 0
                 Text = 'Chiama Utente'
@@ -37282,11 +37282,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
     Top = 313
     GestureData = <
       item
-        Control = pgMessages
-        Collection = <>
-      end
-      item
-        Control = pgHome
+        Control = pgCarHome
         Collection = <
           item
             GestureID = sgiLeft
@@ -37296,7 +37292,11 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
           end>
       end
       item
-        Control = pgCarHome
+        Control = pgMessages
+        Collection = <>
+      end
+      item
+        Control = pgHome
         Collection = <
           item
             GestureID = sgiLeft
