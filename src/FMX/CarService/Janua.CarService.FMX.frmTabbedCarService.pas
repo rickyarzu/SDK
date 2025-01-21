@@ -101,6 +101,7 @@ type
     btnCheckVehicleState: TSpeedButton;
     TimerNote: TTimer;
     TimerCanvas: TTimer;
+    memLayout: TLayout;
 
     procedure GestureDone(Sender: TObject; const EventInfo: TGestureEventInfo; var Handled: Boolean);
     procedure FormCreate(Sender: TObject);

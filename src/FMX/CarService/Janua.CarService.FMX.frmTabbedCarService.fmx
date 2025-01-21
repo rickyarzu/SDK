@@ -16011,7 +16011,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
               Images = ImageList1
               ImageIndex = 13
               Margins.Top = 3.000000000000000000
-              Position.Y = 275.000000000000000000
+              Position.Y = 277.000000000000000000
               Size.Width = 443.000000000000000000
               Size.Height = 48.000000000000000000
               Size.PlatformDefault = False
@@ -16024,7 +16024,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
               Images = ImageList1
               ImageIndex = 12
               Margins.Top = 3.000000000000000000
-              Position.Y = 326.000000000000000000
+              Position.Y = 328.000000000000000000
               Size.Width = 443.000000000000000000
               Size.Height = 48.000000000000000000
               Size.PlatformDefault = False
@@ -16034,36 +16034,6 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
               TextSettings.Trimming = None
               OnClick = btnSignatureClick
             end
-            object Memo1: TMemo
-              Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
-              DataDetectorTypes = []
-              Lines.Strings = (
-                'Ritiro Veicolo Fiat Tipo '
-                'colore Blu targata AA123EE')
-              StyledSettings = [Family, Style, FontColor]
-              Align = Top
-              Margins.Top = 5.000000000000000000
-              Position.Y = 234.000000000000000000
-              Size.Width = 443.000000000000000000
-              Size.Height = 38.000000000000000000
-              Size.PlatformDefault = False
-              TabOrder = 9
-              Viewport.Width = 430.000000000000000000
-              Viewport.Height = 30.000000000000000000
-              object btnCallClient: TButton
-                Align = Right
-                Images = ImageList1
-                ImageIndex = 18
-                Position.X = -22.888671875000000000
-                Size.Width = 168.000000000000000000
-                Size.Height = 31.921875000000000000
-                Size.PlatformDefault = False
-                TabOrder = 0
-                Text = 'Chiama Utente'
-                TextSettings.Trimming = None
-                OnClick = btnCallClientClick
-              end
-            end
             object btnVehicleCamera: TSpeedButton
               Align = Top
               Images = ImageList1
@@ -16072,7 +16042,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
               Margins.Top = 3.000000000000000000
               Margins.Right = 3.000000000000000000
               Position.X = 3.000000000000000000
-              Position.Y = 479.000000000000000000
+              Position.Y = 481.000000000000000000
               Size.Width = 437.000000000000000000
               Size.Height = 48.000000000000000000
               Size.PlatformDefault = False
@@ -16090,7 +16060,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
               Margins.Top = 3.000000000000000000
               Margins.Right = 3.000000000000000000
               Position.X = 3.000000000000000000
-              Position.Y = 428.000000000000000000
+              Position.Y = 430.000000000000000000
               Size.Width = 437.000000000000000000
               Size.Height = 48.000000000000000000
               Size.PlatformDefault = False
@@ -16108,7 +16078,7 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
               Margins.Top = 3.000000000000000000
               Margins.Right = 3.000000000000000000
               Position.X = 3.000000000000000000
-              Position.Y = 377.000000000000000000
+              Position.Y = 379.000000000000000000
               Size.Width = 437.000000000000000000
               Size.Height = 48.000000000000000000
               Size.PlatformDefault = False
@@ -16117,6 +16087,43 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
               Text = 'Verifica Stato Veicolo'
               TextSettings.Trimming = None
               OnClick = btnCheckVehicleStateClick
+            end
+            object memLayout: TLayout
+              Align = Top
+              Position.Y = 229.000000000000000000
+              Size.Width = 443.000000000000000000
+              Size.Height = 45.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 9
+              object Memo1: TMemo
+                Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+                DataDetectorTypes = []
+                Lines.Strings = (
+                  'Ritiro Veicolo Fiat Tipo '
+                  'colore Blu targata AA123EE')
+                StyledSettings = [Family, Style, FontColor]
+                Align = Client
+                Margins.Top = 5.000000000000000000
+                Size.Width = 275.000000000000000000
+                Size.Height = 40.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 9
+                Viewport.Width = 267.000000000000000000
+                Viewport.Height = 32.000000000000000000
+              end
+              object btnCallClient: TButton
+                Align = Right
+                Images = ImageList1
+                ImageIndex = 18
+                Position.X = 275.000000000000000000
+                Size.Width = 168.000000000000000000
+                Size.Height = 45.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 0
+                Text = 'Chiama Utente'
+                TextSettings.Trimming = None
+                OnClick = btnCallClientClick
+              end
             end
           end
         end
@@ -37292,10 +37299,6 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
           end>
       end
       item
-        Control = pgMessages
-        Collection = <>
-      end
-      item
         Control = pgHome
         Collection = <
           item
@@ -37304,6 +37307,10 @@ object frmFMXCarServiceDriverMain: TfrmFMXCarServiceDriverMain
           item
             GestureID = sgiRight
           end>
+      end
+      item
+        Control = pgMessages
+        Collection = <>
       end>
   end
   object ActionList1: TActionList
