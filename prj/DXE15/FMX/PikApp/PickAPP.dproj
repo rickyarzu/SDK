@@ -4,7 +4,7 @@
         <ProjectVersion>20.2</ProjectVersion>
         <FrameworkType>FMX</FrameworkType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Android64</Platform>
         <TargetedPlatforms>693267</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -374,8 +374,8 @@
             <Form>frameFMXImageDraw</Form>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\..\src\FMX\Janua.FMX.dlgCanvasImage.pas">
-            <Form>dlgFMXCanvasImage</Form>
+        <DCCReference Include="..\..\..\..\src\FMX\Janua.FMX.dlgCanvasImageBlox.pas">
+            <Form>dlgFMXCanvasImageBlox</Form>
             <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\..\src\FMX\Janua.FMX.frameFNCBlox.pas">
@@ -384,6 +384,10 @@
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\..\src\FMX\Janua.FXM.FNCBloxControls.pas"/>
+        <DCCReference Include="..\..\..\..\src\FMX\Janua.FMX.dlgCanvasImage.pas">
+            <Form>dlgFMXCanvasImage</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\..\JanuaeExeDXE15.optset</DependentOn>

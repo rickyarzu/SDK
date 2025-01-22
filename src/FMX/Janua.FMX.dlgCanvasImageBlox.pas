@@ -1,4 +1,4 @@
-unit Janua.FMX.dlgCanvasImage;
+unit Janua.FMX.dlgCanvasImageBlox;
 
 interface
 
@@ -7,18 +7,18 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls, FMX.Objects,
   FMX.Controls.Presentation,
   // Janua
-  Janua.Core.Types, Janua.FMX.frameCanvasPaintImage, FMX.Memo.Types, FMX.ScrollBox, FMX.Memo, FMX.Layouts;
+  Janua.Core.Types, Janua.FMX.frameCanvasPaintImage, FMX.Memo.Types, FMX.ScrollBox, FMX.Memo,
+  Janua.FMX.frameFNCBlox;
 
 type
-  TdlgFMXCanvasImage = class(TForm)
+  TdlgFMXCanvasImageBlox = class(TForm)
     toolBarDriverTask: TToolBar;
     Image6: TImage;
     SpeedButton1: TSpeedButton;
     Button1: TButton;
     Label1: TLabel;
     Memo1: TMemo;
-    layoutCanvasImage: TLayout;
-    frameFMXImageDraw1 : TframeFMXImageDraw;
+    frameFMXImageDraw1: TframeFNCBloxDrawing;
     procedure FormShow(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure frameFMXImageDraw1btnRedrawClick(Sender: TObject);
@@ -36,13 +36,11 @@ type
   end;
 
 var
-  dlgFMXCanvasImage: TdlgFMXCanvasImage;
+  dlgFMXCanvasImageBlox: TdlgFMXCanvasImageBlox;
 
 implementation
 
 {$R *.fmx}
-
-uses Janua.FMX.dlgCanvasImageBlox;
 
 procedure ResizeBitmap(Source: TBitmap; var Destination: TBitmap; NewWidth, NewHeight: Integer);
 begin
@@ -65,39 +63,39 @@ end;
 
 { TdlgFMXCanvasImage }
 
-procedure TdlgFMXCanvasImage.FormResize(Sender: TObject);
+procedure TdlgFMXCanvasImageBlox.FormResize(Sender: TObject);
 begin
   frameFMXImageDraw1.UpdateSize;
 end;
 
-procedure TdlgFMXCanvasImage.FormShow(Sender: TObject);
+procedure TdlgFMXCanvasImageBlox.FormShow(Sender: TObject);
 begin
   frameFMXImageDraw1.UpdateSize;
   // frameFMXImageDraw1.btnRedrawClick(frameFMXImageDraw1);
 end;
 
-procedure TdlgFMXCanvasImage.frameFMXImageDraw1btnRedrawClick(Sender: TObject);
+procedure TdlgFMXCanvasImageBlox.frameFMXImageDraw1btnRedrawClick(Sender: TObject);
 begin
   frameFMXImageDraw1.btnRedrawClick(Sender);
 end;
 
-function TdlgFMXCanvasImage.GetImageDrawings: TJanuaImageDraws;
+function TdlgFMXCanvasImageBlox.GetImageDrawings: TJanuaImageDraws;
 begin
   Result := frameFMXImageDraw1.ImageDrawings;
 end;
 
-procedure TdlgFMXCanvasImage.SetImageDrawings(const Value: TJanuaImageDraws);
+procedure TdlgFMXCanvasImageBlox.SetImageDrawings(const Value: TJanuaImageDraws);
 begin
   frameFMXImageDraw1.ImageDrawings := Value;
   Memo1.Lines.Text := Value.Notes;
 end;
 
-procedure TdlgFMXCanvasImage.SetOnCloseDialog(const Value: TNotifyEvent);
+procedure TdlgFMXCanvasImageBlox.SetOnCloseDialog(const Value: TNotifyEvent);
 begin
   FOnCloseDialog := Value;
 end;
 
-procedure TdlgFMXCanvasImage.SpeedButton1Click(Sender: TObject);
+procedure TdlgFMXCanvasImageBlox.SpeedButton1Click(Sender: TObject);
 begin
   self.Close;
   if Assigned(FOnCloseDialog) then

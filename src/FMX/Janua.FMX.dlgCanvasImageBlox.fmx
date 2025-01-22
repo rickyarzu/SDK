@@ -1,4 +1,4 @@
-object dlgFMXCanvasImage: TdlgFMXCanvasImage
+object dlgFMXCanvasImageBlox: TdlgFMXCanvasImageBlox
   Left = 0
   Top = 0
   Caption = 'Modifica Immagine'
@@ -5213,18 +5213,17 @@ object dlgFMXCanvasImage: TdlgFMXCanvasImage
   object Memo1: TMemo
     Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
     DataDetectorTypes = []
-    Align = Top
-    Position.Y = 377.000000000000000000
+    Align = Client
     Size.Width = 415.000000000000000000
-    Size.Height = 316.000000000000000000
+    Size.Height = 336.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
     Viewport.Width = 411.000000000000000000
-    Viewport.Height = 312.000000000000000000
+    Viewport.Height = 332.000000000000000000
   end
   object Label1: TLabel
     Align = Top
-    Position.Y = 360.000000000000000000
+    Position.Y = 331.000000000000000000
     Size.Width = 415.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
@@ -5233,31 +5232,18 @@ object dlgFMXCanvasImage: TdlgFMXCanvasImage
     Text = 'Note ed Annotazioni'
     TabOrder = 2
   end
-  object layoutCanvasImage: TLayout
+  inline frameFMXImageDraw1: TframeFNCBloxDrawing
     Align = Top
     Position.Y = 48.000000000000000000
     Size.Width = 415.000000000000000000
-    Size.Height = 312.000000000000000000
+    Size.Height = 283.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 3
-    inline frameFMXImageDraw1: TframeFMXImageDraw
-      Align = Top
+    inherited pnlButtons: TPanel
       Size.Width = 415.000000000000000000
-      Size.Height = 312.000000000000000000
-      Size.PlatformDefault = False
-      inherited pnlButtons: TPanel
-        Size.Width = 415.000000000000000000
-      end
-      inherited LayoutImage: TLayout
-        Size.Width = 415.000000000000000000
-        Size.Height = 254.000000000000000000
-        inherited imgCar: TImage
-          MultiResBitmap.Height = 383
-          MultiResBitmap.Width = 637
-          Size.Width = 415.000000000000000000
-          Size.Height = 254.000000000000000000
-        end
-      end
+    end
+    inherited TMSFNCBloxControl1: TTMSFNCBloxControl
+      Size.Width = 415.000000000000000000
+      Fill.TextureMode = gtmFit
     end
   end
 end

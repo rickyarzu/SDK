@@ -21,9 +21,10 @@ uses
   Janua.CarService.FMX.frameDriverConfirmation in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.frameDriverConfirmation.pas' {frameFMXCarServiceDriverConfirmation: TFrame},
   Janua.CarService.FMX.dlgBrowser in '..\..\..\..\src\FMX\CarService\Janua.CarService.FMX.dlgBrowser.pas' {dlgCarServiceBrowser},
   Janua.FMX.frameCanvasPaintImage in '..\..\..\..\src\FMX\Janua.FMX.frameCanvasPaintImage.pas' {frameFMXImageDraw: TFrame},
-  Janua.FMX.dlgCanvasImage in '..\..\..\..\src\FMX\Janua.FMX.dlgCanvasImage.pas' {dlgFMXCanvasImage},
+  Janua.FMX.dlgCanvasImageBlox in '..\..\..\..\src\FMX\Janua.FMX.dlgCanvasImageBlox.pas' {dlgFMXCanvasImageBlox},
   Janua.FMX.frameFNCBlox in '..\..\..\..\src\FMX\Janua.FMX.frameFNCBlox.pas' {frameFNCBloxDrawing: TFrame},
-  Janua.FXM.FNCBloxControls in '..\..\..\..\src\FMX\Janua.FXM.FNCBloxControls.pas';
+  Janua.FXM.FNCBloxControls in '..\..\..\..\src\FMX\Janua.FXM.FNCBloxControls.pas',
+  Janua.FMX.dlgCanvasImage in '..\..\..\..\src\FMX\Janua.FMX.dlgCanvasImage.pas' {dlgFMXCanvasImage};
 
 {$R *.res}
 
@@ -72,6 +73,7 @@ begin
   begin
     TJanuaApplication.UserSessionVM.LoginByKey(FSessionKey);
     Application.CreateForm(TfrmFMXCarServiceDriverMain, frmFMXCarServiceDriverMain);
+    Application.CreateForm(TdlgFMXCanvasImage, dlgFMXCanvasImage);
     Application.MainForm := frmFMXCarServiceDriverMain;
     Application.Run;
   end;
