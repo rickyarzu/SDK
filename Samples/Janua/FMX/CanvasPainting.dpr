@@ -6,7 +6,7 @@ uses
   Janua.FMX.Test.frmImageCanvas in 'Janua.FMX.Test.frmImageCanvas.pas' {frmFMXTestImageDraw},
   Janua.FMX.frameCanvasPaintImage in '..\..\..\src\FMX\Janua.FMX.frameCanvasPaintImage.pas' {frameFMXImageDraw: TFrame},
   Janua.FMX.dlgNotes in '..\..\..\src\FMX\Janua.FMX.dlgNotes.pas' {dlgFMXNotes},
-  Janua.FMX.dlgCanvasImage in '..\..\..\src\FMX\Janua.FMX.dlgCanvasImage.pas' {dlgFMXCanvasImage};
+  Janua.FMX.dlgCanvasImageBlox in '..\..\..\src\FMX\Janua.FMX.dlgCanvasImageBlox.pas' {dlgFMXCanvasImageBlox};
 
 {$R *.res}
 

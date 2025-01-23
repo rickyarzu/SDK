@@ -101,6 +101,7 @@ type
     btnCheckVehicleState: TSpeedButton;
     TimerNote: TTimer;
     TimerCanvas: TTimer;
+    memLayout: TLayout;
 
     procedure GestureDone(Sender: TObject; const EventInfo: TGestureEventInfo; var Handled: Boolean);
     procedure FormCreate(Sender: TObject);
@@ -170,8 +171,8 @@ begin
   // FdlgFMXCanvasImage:  TdlgFMXCanvasImage;
   if not Assigned(FdlgFMXCanvasImage) then
     FdlgFMXCanvasImage := TdlgFMXCanvasImage.Create(self);
-  FdlgFMXCanvasImage.ImageDrawings := self.FImgDrawings;
-  FdlgFMXCanvasImage.OnCloseDialog := self.CanvasImageDlgClose;
+  FdlgFMXCanvasImage.ImageDrawings := FImgDrawings;
+  FdlgFMXCanvasImage.OnCloseDialog := CanvasImageDlgClose;
 {$IFNDEF MSWINDOWS}
   FdlgFMXCanvasImage.WindowState := TWindowState.wsMaximized;
 {$ENDIF}
@@ -335,6 +336,11 @@ begin
     lbDateTime.Text := FDriverDM.qryDriverCalendartitle.AsString;
     lbFrom.Text := FDriverDM.qryDriverCalendarfrom_full_address.AsString;
     lbDelivery.Text := FDriverDM.qryDriverCalendarto_full_address.AsString;
+
+    Memo1.Lines.Clear;
+    Memo1.Lines.Add('Veicolo: ' + FDriverDM.qryDriverCalendarvehicle_model.AsWideString);
+    Memo1.Lines.Add('Targato: ' + FDriverDM.qryDriverCalendarvehicle_numberplate.AsWideString + ', colore: ' +
+      FDriverDM.qryDriverCalendarvehicle_color.AsWideString);
   end;
 
   if FDriverDM.qryDriverCalendarstate_id.AsInteger = 0 then

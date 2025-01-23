@@ -148,6 +148,9 @@ type
     qryDriverCalendarto_cellular: TWideStringField;
     qryDriverCalendarto_email: TWideStringField;
     qryDriverCalendarto_name: TWideStringField;
+    qryDriverCalendarvehicle_numberplate: TWideStringField;
+    qryDriverCalendarvehicle_model: TWideStringField;
+    qryDriverCalendarvehicle_color: TWideStringField;
   private
     { Private declarations }
   public

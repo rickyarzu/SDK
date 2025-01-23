@@ -312,8 +312,8 @@
             <Form>dlgFMXNotes</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\FMX\Janua.FMX.dlgCanvasImage.pas">
-            <Form>dlgFMXCanvasImage</Form>
+        <DCCReference Include="..\..\..\src\FMX\Janua.FMX.dlgCanvasImageBlox.pas">
+            <Form>dlgFMXCanvasImageBlox</Form>
             <FormType>fmx</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">

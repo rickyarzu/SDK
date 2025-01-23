@@ -694,6 +694,18 @@ inherited dmPgCarServiceBookingDrivers: TdmPgCarServiceBookingDrivers
       FieldName = 'to_name'
       Size = 128
     end
+    object qryDriverCalendarvehicle_numberplate: TWideStringField
+      FieldName = 'vehicle_numberplate'
+      Size = 24
+    end
+    object qryDriverCalendarvehicle_model: TWideStringField
+      FieldName = 'vehicle_model'
+      Size = 128
+    end
+    object qryDriverCalendarvehicle_color: TWideStringField
+      FieldName = 'vehicle_color'
+      Size = 64
+    end
   end
   object qryMessages: TUniQuery
     SQLInsert.Strings = (

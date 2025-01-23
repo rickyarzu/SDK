@@ -1,7 +1,7 @@
 object frameFMXImageDraw: TframeFMXImageDraw
   Align = Client
   Size.Width = 464.000000000000000000
-  Size.Height = 337.000000000000000000
+  Size.Height = 338.000000000000000000
   Size.PlatformDefault = False
   OnResize = FormResize
   object pnlButtons: TPanel
@@ -57,7 +57,7 @@ object frameFMXImageDraw: TframeFMXImageDraw
   object LayoutImage: TLayout
     Align = Client
     Size.Width = 464.000000000000000000
-    Size.Height = 279.000000000000000000
+    Size.Height = 280.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
     object imgCar: TImage
@@ -7767,7 +7767,7 @@ object frameFMXImageDraw: TframeFMXImageDraw
         end>
       Align = Client
       Size.Width = 464.000000000000000000
-      Size.Height = 279.000000000000000000
+      Size.Height = 280.000000000000000000
       Size.PlatformDefault = False
     end
   end
