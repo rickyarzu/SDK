@@ -22,7 +22,5 @@ object JanuaVCLFormModel: TJanuaVCLFormModel
       item
         Width = 200
       end>
-    ExplicitTop = 401
-    ExplicitWidth = 769
   end
 end

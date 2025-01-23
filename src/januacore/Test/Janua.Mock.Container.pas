@@ -14,7 +14,8 @@ type
     constructor Create(AOwner: TComponent); override;
     // ************************************* Bindings Procedures ***********************************
   private
-    FOnKeyDown: TJanuaKeyEvent;
+    FJanuaOnKeyDown: TJanuaKeyEvent;
+  protected
 
   protected
     function GetLeft: Integer;
@@ -68,10 +69,10 @@ type
     procedure JanuaSetAction(const Value: IJanuaAction);
     property JanuaAction: IJanuaAction read JanuaGetAction Write JanuaSetAction;
 
-    function GetOnKeyDown: TJanuaKeyEvent;
-    procedure SetOnKeyDown(const Value: TJanuaKeyEvent);
-    function GetOnKeyUp: TJanuaKeyEvent;
-    procedure SetOnKeyUp(const Value: TJanuaKeyEvent);
+    function JanuaOnKeyDown: TJanuaKeyEvent;
+    procedure SetJanuaOnKeyDown(const Value: TJanuaKeyEvent);
+    function GetJanuaOnKeyUp: TJanuaKeyEvent;
+    procedure SetJanuaOnKeyUp(const Value: TJanuaKeyEvent);
     function GetOnMouseDown: TJanuaMouseEvent;
     procedure SetOnMouseDown(const Value: TJanuaMouseEvent);
     function GetOnMouseMove: TJanuaMouseMoveEvent;
@@ -91,12 +92,12 @@ type
     /// <summary> Component to be connected to object properties or Fields </summary>
     property Component: TComponent read JanuaGetComponent write JanuaSetComponent;
     property Name: TComponentName read GetNameJ write SetNameJ;
-    property OnKeyUp: TJanuaKeyEvent read GetOnKeyUp write SetOnKeyUp;
+    property JanuaOnKeyUp: TJanuaKeyEvent read GetJanuaOnKeyUp write SetJanuaOnKeyUp;
     property OnMouseDown: TJanuaMouseEvent read GetOnMouseDown write SetOnMouseDown;
     property OnMouseMove: TJanuaMouseMoveEvent read GetOnMouseMove write SetOnMouseMove;
     property OnMouseUp: TJanuaMouseEvent read GetOnMouseUp write SetOnMouseUp;
     property OnMouseWheel: TJanuaMouseWheelEvent read GetOnMouseWheel write SetOnMouseWheel;
-    property OnKeyDownJanua: TJanuaKeyEvent read GetOnKeyDown write SetOnKeyDown;
+    property JanuaOnKeyDownJanua: TJanuaKeyEvent read JanuaOnKeyDown write SetJanuaOnKeyDown;
   end;
 
 implementation
@@ -174,12 +175,12 @@ begin
   Result := Self.Name;
 end;
 
-function TJanuaMockContainer.GetOnKeyDown: TJanuaKeyEvent;
+function TJanuaMockContainer.JanuaOnKeyDown: TJanuaKeyEvent;
 begin
-  Result := FOnKeyDown
+  Result := FJanuaOnKeyDown
 end;
 
-function TJanuaMockContainer.GetOnKeyUp: TJanuaKeyEvent;
+function TJanuaMockContainer.GetJanuaOnKeyUp: TJanuaKeyEvent;
 begin
 
 end;
@@ -309,12 +310,12 @@ begin
 
 end;
 
-procedure TJanuaMockContainer.SetOnKeyDown(const Value: TJanuaKeyEvent);
+procedure TJanuaMockContainer.SetJanuaOnKeyDown(const Value: TJanuaKeyEvent);
 begin
 
 end;
 
-procedure TJanuaMockContainer.SetOnKeyUp(const Value: TJanuaKeyEvent);
+procedure TJanuaMockContainer.SetJanuaOnKeyUp(const Value: TJanuaKeyEvent);
 begin
 
 end;

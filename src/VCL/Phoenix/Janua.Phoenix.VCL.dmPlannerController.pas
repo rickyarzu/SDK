@@ -1934,7 +1934,7 @@ begin
         1:
           begin
             CheckFilter;
-            qryReportPlanner.Filter := qryReportPlanner.Filter + ' (STATO = 1 OR STATO = 6)';
+            qryReportPlanner.Filter := qryReportPlanner.Filter + ' (STATO = 1 OR STATO = 5 OR STATO = 7)';
           end;
         2:
           begin
@@ -1944,7 +1944,7 @@ begin
         3:
           begin
             CheckFilter;
-            qryReportPlanner.Filter := qryReportPlanner.Filter + ' STATO = 5 ';
+            qryReportPlanner.Filter := qryReportPlanner.Filter + ' STATO = 6 ';
           end;
         4:
           begin
@@ -1954,7 +1954,7 @@ begin
         5:
           begin
             CheckFilter;
-            qryReportPlanner.Filter := qryReportPlanner.Filter + ' (STATO = 0 OR STATO = 5 OR STATO = 4) ';
+            qryReportPlanner.Filter := qryReportPlanner.Filter + ' (STATO = 0 OR STATO = 6 OR STATO = 4) ';
           end;
       end;
 
@@ -2024,7 +2024,7 @@ begin
           1:
             begin
               CheckFilter;
-              qryReportPlanner.Filter := qryReportPlanner.Filter + ' (STATO = 1 OR STATO = 6)';
+              qryReportPlanner.Filter := qryReportPlanner.Filter + ' (STATO = 1 OR STATO = 7 OR STATO = 5)';
             end;
           2:
             begin
@@ -2034,7 +2034,7 @@ begin
           3:
             begin
               CheckFilter;
-              qryReportPlanner.Filter := qryReportPlanner.Filter + ' STATO = 5 ';
+              qryReportPlanner.Filter := qryReportPlanner.Filter + ' STATO = 6 ';
             end;
           4:
             begin
@@ -2044,7 +2044,7 @@ begin
           5:
             begin
               CheckFilter;
-              qryReportPlanner.Filter := qryReportPlanner.Filter + ' (STATO = 0 OR STATO = 5 OR STATO = 4) ';
+              qryReportPlanner.Filter := qryReportPlanner.Filter + ' (STATO = 0 OR STATO = 4 OR STATO = 6) ';
               qryReportPlanner.Filter := qryReportPlanner.Filter + 'AND APPUNTAMENTO_DATA IS NULL ';
             end;
         end;
@@ -2910,16 +2910,17 @@ begin
       end;
     4:
       begin
-        if qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
-          sStato := 'In Lavorazione'
-        else
-          sStato := 'Lavor. Progr.';
+        sStato := 'In Lavorazione'
       end;
     5:
       begin
-        sStato := 'Pronti da Rest.';
+        sStato := 'Lavor. Progr.';
       end;
     6:
+      begin
+        sStato := 'Pronti da Rest.';
+      end;
+    7:
       begin
         sStato := 'Rest. Program.';
       end;
@@ -3559,17 +3560,19 @@ begin
           4:
             begin
               Image := orange;
-              if vtReportPlannerAPPUNTAMENTO_DATA.IsNull then
-                sStato := 'In Lavorazione'
-              else
-                sStato := 'Lavor. Progr.';
+              sStato := 'In Lavorazione'
             end;
           5:
+            begin
+              Image := orange;
+              sStato := 'Lavor. Progr.';
+            end;
+          6:
             begin
               Image := green;
               sStato := 'Pronti da Rest.';
             end;
-          6:
+          7:
             begin
               Image := blue;
               sStato := 'Rest. Program.';

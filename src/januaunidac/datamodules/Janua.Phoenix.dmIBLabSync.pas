@@ -512,12 +512,13 @@ begin
           end;
       end;
 
-
+      {
       if not(qryReportPlannerAPPUNTAMENTO_DATA.IsNull or (qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime = 0.0))
         and (qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime < Date) then
       begin
         Image := red;
       end;
+      }
 
       LoadImageFromImageList(Image);
 
