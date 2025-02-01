@@ -246,7 +246,7 @@ object frmAllDemosContainer: TfrmAllDemosContainer
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.9.1.1'
+        Version = '3.9.1.2'
         WordWrap = wwNone
       end
     end

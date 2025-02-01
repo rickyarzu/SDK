@@ -28,19 +28,19 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
       Align = alTop
       TabOrder = 1
       object imgBooked1: TUniImage
-        Left = 238
+        Left = 246
         Top = 1
-        Width = 51
-        Height = 25
+        Width = 26
+        Height = 26
         Hint = ''
         Stretch = True
         Images = imglSlotBooking
         ImageIndex = 0
       end
       object tgSelected1: TUniFSToggle
-        Left = 235
+        Left = 246
         Top = 1
-        Width = 51
+        Width = 25
         Height = 25
         Hint = ''
         Visible = False
@@ -128,10 +128,10 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         TabOrder = 3
       end
       object tgSelected5: TUniFSToggle
-        Left = 235
+        Left = 246
         Top = 2
-        Width = 51
-        Height = 24
+        Width = 25
+        Height = 25
         Hint = ''
         Visible = False
         ThemeOn = Success
@@ -140,9 +140,9 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         TitleOff = 'OFF'
       end
       object imgBooked5: TUniImage
-        Left = 235
+        Left = 247
         Top = 3
-        Width = 51
+        Width = 25
         Height = 25
         Hint = ''
         Stretch = True
@@ -194,10 +194,10 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         TabOrder = 3
       end
       object tgSelected4: TUniFSToggle
-        Left = 235
+        Left = 246
         Top = 0
-        Width = 51
-        Height = 24
+        Width = 25
+        Height = 25
         Hint = ''
         Visible = False
         ThemeOn = Success
@@ -206,9 +206,9 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         TitleOff = 'OFF'
       end
       object imgBooked4: TUniImage
-        Left = 235
+        Left = 247
         Top = 3
-        Width = 51
+        Width = 25
         Height = 25
         Hint = ''
         Stretch = True
@@ -260,10 +260,10 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         TabOrder = 3
       end
       object tgSelected3: TUniFSToggle
-        Left = 235
+        Left = 246
         Top = 2
-        Width = 51
-        Height = 24
+        Width = 25
+        Height = 25
         Hint = ''
         Visible = False
         ThemeOn = Success
@@ -272,9 +272,9 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         TitleOff = 'OFF'
       end
       object imgBooked3: TUniImage
-        Left = 235
+        Left = 247
         Top = 3
-        Width = 51
+        Width = 25
         Height = 25
         Hint = ''
         Stretch = True
@@ -326,10 +326,10 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         TabOrder = 3
       end
       object tgSelected2: TUniFSToggle
-        Left = 235
+        Left = 246
         Top = 5
-        Width = 51
-        Height = 24
+        Width = 25
+        Height = 25
         Hint = ''
         Visible = False
         ThemeOn = Success
@@ -338,9 +338,9 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         TitleOff = 'OFF'
       end
       object imgBooked2: TUniImage
-        Left = 235
+        Left = 247
         Top = 4
-        Width = 51
+        Width = 25
         Height = 25
         Hint = ''
         Stretch = True
@@ -392,10 +392,10 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         TabOrder = 3
       end
       object tgSelected6: TUniFSToggle
-        Left = 235
+        Left = 246
         Top = 3
-        Width = 51
-        Height = 24
+        Width = 25
+        Height = 25
         Hint = ''
         Visible = False
         ThemeOn = Success
@@ -404,9 +404,9 @@ object dlgUniGUICarserviceTimetableCheck: TdlgUniGUICarserviceTimetableCheck
         TitleOff = 'OFF'
       end
       object imgBooked6: TUniImage
-        Left = 235
+        Left = 247
         Top = 4
-        Width = 51
+        Width = 25
         Height = 25
         Hint = ''
         Stretch = True

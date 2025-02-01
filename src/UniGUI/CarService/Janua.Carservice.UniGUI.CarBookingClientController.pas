@@ -42,7 +42,6 @@ type
     FedFirstName: TUniEdit;
     FbtnSearch: TUniFSButton;
     FbtnReturnAddress: TUniFSButton;
-    lDlg: TdlgUniGUICarServiceCustomerVehicles;
     procedure SetbtnReturnAddress(const Value: TUniFSButton);
     procedure SetbtnSearch(const Value: TUniFSButton);
     procedure SetdblcbAnagraphCustomers(const Value: TUniFSComboBox);
@@ -58,7 +57,22 @@ type
     procedure SetlbSelectCustomer(const Value: TUniLabel);
     procedure SelectCustomerVehicle;
   private
+    { Private declarations }
+    FGoogleSearchDialog1: TUniGoogleSearchDialog;
+    FGoogleSearchDialog2: TUniGoogleSearchDialog;
+    FMonitorObject: TObject;
+    FLength: integer;
+    FUsersList: IAnagraphViews;
+    FCarBooking: IBookingHeadView;
+    FMainAddress: String;
+    FReturnAddress: String;
     FCustomerVehicleDataset: TDataset;
+    lDlg: TdlgUniGUICarServiceCustomerVehicles;
+    procedure SetCarBooking(const Value: IBookingHeadView);
+    procedure SetUsersList(const Value: IAnagraphViews);
+    function GetAnagraph: IBookingAnagraphView;
+    procedure AssignUserList;
+  private
     procedure SetCustomerVehicleDataset(const Value: TDataset);
   published
     property edCarModel: TUniEdit read FedCarModel write SetedCarModel;
@@ -76,20 +90,7 @@ type
     property btnReturnAddress: TUniFSButton read FbtnReturnAddress write SetbtnReturnAddress;
     property lbSelectCustomer: TUniLabel read FlbSelectCustomer write SetlbSelectCustomer;
     property CustomerVehicleDataset: TDataset read FCustomerVehicleDataset write SetCustomerVehicleDataset;
-  private
-    { Private declarations }
-    FGoogleSearchDialog1: TUniGoogleSearchDialog;
-    FGoogleSearchDialog2: TUniGoogleSearchDialog;
-    FMonitorObject: TObject;
-    FLength: integer;
-    FUsersList: IAnagraphViews;
-    FCarBooking: IBookingHeadView;
-    FMainAddress: String;
-    FReturnAddress: String;
-    procedure SetCarBooking(const Value: IBookingHeadView);
-    procedure SetUsersList(const Value: IAnagraphViews);
-    function GetAnagraph: IBookingAnagraphView;
-    procedure AssignUserList;
+
   public
     constructor Create(AOwner: TComponent); override;
     { Public declarations }
@@ -302,7 +303,7 @@ begin
   var
   lChar := Copy(lPhone, 1, 1);
 
-  if not (lChar = '+') then
+  if not(lChar = '+') then
     lPhone := '+39' + lPhone;
 
   FCarBooking.CustCellular.AsString := EdCustomerPhone.Text;

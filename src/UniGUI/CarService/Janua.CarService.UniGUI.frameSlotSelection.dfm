@@ -1,135 +1,168 @@
 object frameCarServiceSlotSelection: TframeCarServiceSlotSelection
   Left = 0
   Top = 0
-  Width = 606
-  Height = 427
+  Width = 318
+  Height = 242
   OnCreate = UniFrameCreate
   Font.Height = -12
   TabOrder = 0
   object pnlTimeSelect1: TUniSimplePanel
-    Left = 0
-    Top = 0
-    Width = 606
+    AlignWithMargins = True
+    Left = 3
+    Top = 3
+    Width = 312
     Height = 32
     Hint = ''
     ParentColor = False
     Align = alTop
     TabOrder = 0
+    ExplicitLeft = 0
+    ExplicitTop = 0
+    ExplicitWidth = 606
     inline frameTimeSelect1: TframeTimeSelect
       Left = 0
       Top = 0
-      Width = 606
+      Width = 312
       Height = 32
       Align = alClient
       Anchors = [akLeft, akTop, akRight, akBottom]
       Font.Height = -12
       TabOrder = 0
       Background.Picture.Data = {00}
+      ExplicitWidth = 606
+      ExplicitHeight = 32
     end
   end
   object pnlTimeSelect5: TUniSimplePanel
-    Left = 0
-    Top = 128
-    Width = 606
-    Height = 25
+    AlignWithMargins = True
+    Left = 3
+    Top = 155
+    Width = 312
+    Height = 32
     Hint = ''
     ParentColor = False
     Align = alTop
     TabOrder = 1
-    ExplicitTop = 120
+    ExplicitLeft = 0
+    ExplicitTop = 128
+    ExplicitWidth = 606
     inline frameTimeSelect5: TframeTimeSelect
       Left = 0
       Top = 0
       Width = 640
-      Height = 28
+      Height = 32
       Font.Height = -12
       TabOrder = 0
       Background.Picture.Data = {00}
+      ExplicitHeight = 32
     end
   end
   object pnlTimeSelect4: TUniSimplePanel
-    Left = 0
-    Top = 96
-    Width = 606
+    AlignWithMargins = True
+    Left = 3
+    Top = 117
+    Width = 312
     Height = 32
     Hint = ''
     ParentColor = False
     Align = alTop
     TabOrder = 2
+    ExplicitLeft = 0
+    ExplicitTop = 96
+    ExplicitWidth = 606
     inline frameTimeSelect4: TframeTimeSelect
       Left = 0
       Top = 0
-      Width = 606
+      Width = 312
       Height = 32
       Align = alClient
       Anchors = [akLeft, akTop, akRight, akBottom]
       Font.Height = -12
       TabOrder = 0
       Background.Picture.Data = {00}
+      ExplicitWidth = 606
+      ExplicitHeight = 32
     end
   end
   object pnlTimeSelect3: TUniSimplePanel
-    Left = 0
-    Top = 64
-    Width = 606
+    AlignWithMargins = True
+    Left = 3
+    Top = 79
+    Width = 312
     Height = 32
     Hint = ''
     ParentColor = False
     Align = alTop
     TabOrder = 3
+    ExplicitLeft = 0
+    ExplicitTop = 64
+    ExplicitWidth = 606
     inline frameTimeSelect3: TframeTimeSelect
       Left = 0
       Top = 0
-      Width = 606
+      Width = 312
       Height = 32
       Align = alClient
       Anchors = [akLeft, akTop, akRight, akBottom]
       Font.Height = -12
       TabOrder = 0
       Background.Picture.Data = {00}
+      ExplicitWidth = 606
+      ExplicitHeight = 32
     end
   end
   object pnlTimeSelect2: TUniSimplePanel
-    Left = 0
-    Top = 32
-    Width = 606
+    AlignWithMargins = True
+    Left = 3
+    Top = 41
+    Width = 312
     Height = 32
     Hint = ''
     ParentColor = False
     Align = alTop
     TabOrder = 4
+    ExplicitLeft = 0
+    ExplicitTop = 32
+    ExplicitWidth = 606
     inline frameTimeSelect2: TframeTimeSelect
       Left = 0
       Top = 0
-      Width = 606
+      Width = 312
       Height = 32
       Align = alClient
       Anchors = [akLeft, akTop, akRight, akBottom]
       Font.Height = -12
       TabOrder = 0
       Background.Picture.Data = {00}
+      ExplicitWidth = 606
+      ExplicitHeight = 32
     end
   end
   object pnlTimeSelect6: TUniSimplePanel
-    Left = 0
-    Top = 153
-    Width = 606
+    AlignWithMargins = True
+    Left = 3
+    Top = 193
+    Width = 312
     Height = 32
     Hint = ''
     ParentColor = False
     Align = alTop
     TabOrder = 5
-    ExplicitTop = 200
+    ExplicitLeft = 0
+    ExplicitTop = 153
+    ExplicitWidth = 606
     inline frameTimeSelect6: TframeTimeSelect
       Left = 0
       Top = 0
-      Width = 606
+      Width = 312
       Height = 32
       Align = alClient
       Anchors = [akLeft, akTop, akRight, akBottom]
       Font.Height = -12
       TabOrder = 0
       Background.Picture.Data = {00}
+      ExplicitWidth = 606
+      ExplicitHeight = 32
     end
   end
   object imglSlotBooking: TUniNativeImageList

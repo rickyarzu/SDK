@@ -110,7 +110,7 @@ begin
   // Remote Configuration  {'https://api.pikapp.it/'}
   TJanuaApplication.RestServer := 'http://localhost';
   TJanuaApplication.RestClientConf.Server := 'http://localhost';
-  TJanuaApplication.RestClientConf.Port := frameDMVCWebBroker.sedPort.ValueAsInt;
+  TJanuaApplication.RestClientConf.Port := frameDMVCWebBroker.sedPort.Value;
   FClientLogin.ServerPort := TJanuaApplication.RestClientConf.Port;
   FClientLogin.ServerURL := TJanuaApplication.RestClientConf.Server;
 
