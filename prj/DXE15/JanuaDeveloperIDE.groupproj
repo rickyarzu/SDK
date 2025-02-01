@@ -838,12 +838,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj">
-            <ProjectGuid>{CA4B4F68-709F-4719-9D8D-8C7CA0A49C0F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
             <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -868,12 +862,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
             <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -884,6 +872,12 @@
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAISimpleChat.dproj">
+            <ProjectGuid>{33E05D36-3C31-444D-ADB3-6A3A6B02ADE5}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
@@ -994,12 +988,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
-            <ProjectGuid>{52100C0C-FB8E-4647-A3EC-89E9C5655199}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaDMVCUnitTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1060,6 +1048,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
+            <ProjectGuid>{11EEA46D-19EF-40FF-B375-3304654FF02B}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1096,6 +1090,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
             <ProjectGuid>{7582C379-F1A8-4B34-8B3E-55C7502EF71D}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1120,6 +1120,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj">
+            <ProjectGuid>{6BE05E5C-60C0-4E4B-B812-98A8F109F0FE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidac.dproj">
             <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1130,12 +1136,6 @@
             <ProjectGuid>{73806B2E-AD18-479D-B880-21B83B523D43}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAISimpleChat.dproj">
-            <ProjectGuid>{BFDEE0F1-0647-4DC4-B516-5699A40BC0F4}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\DMVCVCLTestClientServer.dproj">
@@ -1234,18 +1234,12 @@
             <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniMVVMTesting.dproj">
             <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
-            <Configurations>TestDebug</Configurations>
+            <Configurations/>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj">
-            <ProjectGuid>{CA4B4F68-709F-4719-9D8D-8C7CA0A49C0F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
@@ -1256,9 +1250,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLForms.dproj">
             <ProjectGuid>{DD9E3E41-672F-4AA7-ADB6-50E527930EC2}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceDMVCService.dproj">
             <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
@@ -1270,13 +1264,7 @@
             <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
             <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
@@ -1288,6 +1276,12 @@
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAISimpleChat.dproj">
+            <ProjectGuid>{33E05D36-3C31-444D-ADB3-6A3A6B02ADE5}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
@@ -1364,7 +1358,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaUniDACUnitTesting.dproj">
             <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
-            <Configurations>TestDebug</Configurations>
+            <Configurations/>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -1384,7 +1378,7 @@
             <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCore.dproj">
             <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
@@ -1394,19 +1388,13 @@
         </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCoreUnitTesting.dproj">
             <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
-            <Configurations>Test</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
-            <ProjectGuid>{52100C0C-FB8E-4647-A3EC-89E9C5655199}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
+            <Configurations/>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaDMVCUnitTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations/>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -1454,8 +1442,8 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaRestWeb.dproj">
             <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceDMVCRestApplication.dproj">
@@ -1464,11 +1452,17 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
+            <ProjectGuid>{11EEA46D-19EF-40FF-B375-3304654FF02B}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
             <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
@@ -1492,12 +1486,18 @@
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\DMVC\sslserver\SSLSample.dproj">
             <ProjectGuid>{C6A43575-0F1C-4BE1-AC97-88DD0821D55E}</ProjectGuid>
             <Configurations/>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
@@ -1524,6 +1524,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj">
+            <ProjectGuid>{6BE05E5C-60C0-4E4B-B812-98A8F109F0FE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidac.dproj">
             <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1534,12 +1540,6 @@
             <ProjectGuid>{73806B2E-AD18-479D-B880-21B83B523D43}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAISimpleChat.dproj">
-            <ProjectGuid>{BFDEE0F1-0647-4DC4-B516-5699A40BC0F4}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\DMVCVCLTestClientServer.dproj">
@@ -1564,7 +1564,7 @@
             <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\Spring.Base.dproj">
             <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
@@ -1586,7 +1586,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\JanuaDevIDEUniGUI.dproj">
             <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
+            <Configurations/>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -1616,7 +1616,7 @@
         </BuildGroupProject>
         <BuildGroupProject Include="VCL\JanuaDevIDEXE15.dproj">
             <ProjectGuid>{9CEAFE26-25F4-4E80-9940-7685CB53F190}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+            <Configurations/>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -1646,12 +1646,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj">
-            <ProjectGuid>{CA4B4F68-709F-4719-9D8D-8C7CA0A49C0F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
             <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1676,12 +1670,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
             <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1692,6 +1680,12 @@
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAISimpleChat.dproj">
+            <ProjectGuid>{33E05D36-3C31-444D-ADB3-6A3A6B02ADE5}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
@@ -1802,12 +1796,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
-            <ProjectGuid>{52100C0C-FB8E-4647-A3EC-89E9C5655199}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaDMVCUnitTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1868,6 +1856,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
+            <ProjectGuid>{11EEA46D-19EF-40FF-B375-3304654FF02B}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1904,6 +1898,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
             <ProjectGuid>{7582C379-F1A8-4B34-8B3E-55C7502EF71D}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1928,6 +1928,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj">
+            <ProjectGuid>{6BE05E5C-60C0-4E4B-B812-98A8F109F0FE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidac.dproj">
             <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1938,12 +1944,6 @@
             <ProjectGuid>{73806B2E-AD18-479D-B880-21B83B523D43}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAISimpleChat.dproj">
-            <ProjectGuid>{BFDEE0F1-0647-4DC4-B516-5699A40BC0F4}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\DMVCVCLTestClientServer.dproj">
@@ -2050,12 +2050,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj">
-            <ProjectGuid>{CA4B4F68-709F-4719-9D8D-8C7CA0A49C0F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
             <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2080,12 +2074,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
             <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2096,6 +2084,12 @@
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAISimpleChat.dproj">
+            <ProjectGuid>{33E05D36-3C31-444D-ADB3-6A3A6B02ADE5}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
@@ -2206,12 +2200,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
-            <ProjectGuid>{52100C0C-FB8E-4647-A3EC-89E9C5655199}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaDMVCUnitTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2272,6 +2260,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
+            <ProjectGuid>{11EEA46D-19EF-40FF-B375-3304654FF02B}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2308,6 +2302,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
             <ProjectGuid>{7582C379-F1A8-4B34-8B3E-55C7502EF71D}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2332,6 +2332,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj">
+            <ProjectGuid>{6BE05E5C-60C0-4E4B-B812-98A8F109F0FE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidac.dproj">
             <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2342,12 +2348,6 @@
             <ProjectGuid>{73806B2E-AD18-479D-B880-21B83B523D43}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAISimpleChat.dproj">
-            <ProjectGuid>{BFDEE0F1-0647-4DC4-B516-5699A40BC0F4}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\DMVCVCLTestClientServer.dproj">
@@ -2454,12 +2454,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj">
-            <ProjectGuid>{CA4B4F68-709F-4719-9D8D-8C7CA0A49C0F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
             <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2484,12 +2478,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
             <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2500,6 +2488,12 @@
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAISimpleChat.dproj">
+            <ProjectGuid>{33E05D36-3C31-444D-ADB3-6A3A6B02ADE5}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
@@ -2610,12 +2604,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
-            <ProjectGuid>{52100C0C-FB8E-4647-A3EC-89E9C5655199}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaDMVCUnitTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2676,6 +2664,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
+            <ProjectGuid>{11EEA46D-19EF-40FF-B375-3304654FF02B}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2712,6 +2706,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
             <ProjectGuid>{7582C379-F1A8-4B34-8B3E-55C7502EF71D}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2736,6 +2736,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj">
+            <ProjectGuid>{6BE05E5C-60C0-4E4B-B812-98A8F109F0FE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidac.dproj">
             <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2746,12 +2752,6 @@
             <ProjectGuid>{73806B2E-AD18-479D-B880-21B83B523D43}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAISimpleChat.dproj">
-            <ProjectGuid>{BFDEE0F1-0647-4DC4-B516-5699A40BC0F4}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\DMVCVCLTestClientServer.dproj">
@@ -2858,12 +2858,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj">
-            <ProjectGuid>{CA4B4F68-709F-4719-9D8D-8C7CA0A49C0F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
             <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2888,12 +2882,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
             <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2904,6 +2892,12 @@
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAISimpleChat.dproj">
+            <ProjectGuid>{33E05D36-3C31-444D-ADB3-6A3A6B02ADE5}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
@@ -3014,12 +3008,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
-            <ProjectGuid>{52100C0C-FB8E-4647-A3EC-89E9C5655199}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaDMVCUnitTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3080,6 +3068,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
+            <ProjectGuid>{11EEA46D-19EF-40FF-B375-3304654FF02B}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3116,6 +3110,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
             <ProjectGuid>{7582C379-F1A8-4B34-8B3E-55C7502EF71D}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3140,6 +3140,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj">
+            <ProjectGuid>{6BE05E5C-60C0-4E4B-B812-98A8F109F0FE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidac.dproj">
             <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3150,12 +3156,6 @@
             <ProjectGuid>{73806B2E-AD18-479D-B880-21B83B523D43}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAISimpleChat.dproj">
-            <ProjectGuid>{BFDEE0F1-0647-4DC4-B516-5699A40BC0F4}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\DMVCVCLTestClientServer.dproj">
@@ -3262,12 +3262,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj">
-            <ProjectGuid>{CA4B4F68-709F-4719-9D8D-8C7CA0A49C0F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
             <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3292,12 +3286,6 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
             <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3308,6 +3296,12 @@
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAISimpleChat.dproj">
+            <ProjectGuid>{33E05D36-3C31-444D-ADB3-6A3A6B02ADE5}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
@@ -3418,12 +3412,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
-            <ProjectGuid>{52100C0C-FB8E-4647-A3EC-89E9C5655199}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaDMVCUnitTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3484,6 +3472,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TUniFalcon.dproj">
+            <ProjectGuid>{11EEA46D-19EF-40FF-B375-3304654FF02B}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations/>
@@ -3520,6 +3514,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
+            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
             <ProjectGuid>{7582C379-F1A8-4B34-8B3E-55C7502EF71D}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3544,6 +3544,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj">
+            <ProjectGuid>{6BE05E5C-60C0-4E4B-B812-98A8F109F0FE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidac.dproj">
             <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
             <Configurations/>
@@ -3554,12 +3560,6 @@
             <ProjectGuid>{73806B2E-AD18-479D-B880-21B83B523D43}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\Janua\JanuaOpenAISimpleChat.dproj">
-            <ProjectGuid>{BFDEE0F1-0647-4DC4-B516-5699A40BC0F4}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\DMVCVCLTestClientServer.dproj">

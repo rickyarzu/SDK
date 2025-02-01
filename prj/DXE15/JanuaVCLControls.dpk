@@ -78,10 +78,4 @@ contains
   Janua.VCL.dlgInputText in '..\..\src\VCL\Commons\Janua.VCL.dlgInputText.pas' {dlgVCLInputText},
   udlgSelectMultiString in '..\..\src\VCL\Commons\udlgSelectMultiString.pas' {dlgSelectMultiString};
 
-(*
-
-
-
-
-*)
 end.
