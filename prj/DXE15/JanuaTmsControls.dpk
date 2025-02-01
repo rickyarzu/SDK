@@ -59,10 +59,8 @@ contains
   udmJanuaTmsSystem in '..\..\src\TMS\udmJanuaTmsSystem.pas' {dmJanuaTmsSystem: TDataModule},
   Janua.Tms.Controls.Impl in '..\..\src\VCL\Controls\Janua.Tms.Controls.Impl.pas',
   udlgJanuaWizardModel in '..\..\src\VCL\Commons\udlgJanuaWizardModel.pas' {dlgJanuaWizardModel},
-  Janua.TMS.Cloud in '..\..\src\TMS\Janua.TMS.Cloud.pas',
   Janua.TMS.Statistics.MainFormController in '..\..\src\TMS\Janua.TMS.Statistics.MainFormController.pas',
   Janua.VCL.dlgRegisterUser in '..\..\src\VCL\System\Janua.VCL.dlgRegisterUser.pas' {dlgRegisterUser},
-  Janua.VCL.Geocoding in '..\..\src\VCL\Cloud\Janua.VCL.Geocoding.pas' {dmGeoCoding: TDataModule},
   Janua.VCL.Users in '..\..\src\VCL\System\Janua.VCL.Users.pas',
   Janua.TMS.RegisterUnit in '..\..\src\TMS\Janua.TMS.RegisterUnit.pas',
   Janua.TMS.Error in '..\..\src\TMS\Janua.TMS.Error.pas',
@@ -70,11 +68,10 @@ contains
   Janua.TMS.FrameNavBar in '..\..\src\TMS\Janua.TMS.FrameNavBar.pas' {frameJanuaTmsNavBar: TFrame},
   Janua.VCL.Forms in '..\..\src\VCL\Commons\Janua.VCL.Forms.pas',
   Janua.TMS.Interposers in '..\..\src\TMS\Janua.TMS.Interposers.pas',
-  Janua.TMS.Framework in '..\..\src\TMS\Janua.TMS.Framework.pas',
-  Janua.TMS.dmComponents in '..\..\src\TMS\Janua.TMS.dmComponents.pas' {dmTmsComponents: TDataModule},
+  Janua.TMS.Cloud in '..\..\src\TMS\Janua.TMS.Cloud.pas',
+  Janua.VCL.Geocoding in '..\..\src\VCL\Cloud\Janua.VCL.Geocoding.pas' {dmGeoCoding: TDataModule},
   Janua.TMS.Cloud.Mail.VCL in '..\..\src\TMS\Janua.TMS.Cloud.Mail.VCL.pas',
   Janua.TMS.MyMonthPlanner in '..\..\src\TMS\Janua.TMS.MyMonthPlanner.pas',
-  Janua.TMS.SMS in '..\..\src\TMS\Janua.TMS.SMS.pas',
-  Janua.TMS.WebView in '..\..\src\TMS\Janua.TMS.WebView.pas' {JanuaVCLWebView: TFrame};
+  Janua.TMS.Framework in '..\..\src\TMS\Janua.TMS.Framework.pas';
 
 end.

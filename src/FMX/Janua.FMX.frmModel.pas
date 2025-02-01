@@ -12,7 +12,7 @@ uses
   Janua.Controls.Intf, Janua.Controls.Forms.Intf;
 
 type
-  TfrmFMXModel = class(TForm, {IJanuaForm,} {IJanuaContainer,} {IJanuaControl,} IJanuaBindable)
+  TfrmFMXModel = class(TForm, { IJanuaForm, } { IJanuaContainer, } IJanuaControl, IJanuaBindable)
   strict protected
     FBindControlsList: IJanuaBindControlsList;
     // ------- Observer
@@ -116,11 +116,58 @@ type
     property OnCloseQueryJ: TJanuaCloseQueryEvent read GetOnCloseQueryJanua write SetOnCloseQueryJanua;
     property Params: TJanuaVariantArray read GetParams write SetParams;
     // ************************** IJanuaContainer *****************************************************
-   protected
+  protected
     function GetCaption: string;
-    function GetActive: Boolean;
-    procedure SetActive(const Value: Boolean); override;
-    function GetTransparency: Boolean;
+    function GetActive: boolean;
+    procedure SetActive(const Value: boolean); override;
+    function GetTransparency: boolean;
+    // *********************** IJanuaControl ********************************************
+  protected
+    function GetHint: string;
+    procedure SetHint(const Value: string);
+    function JanuaGetAlign: TJanuaAlign;
+    procedure JanuaSetAlign(const Value: TJanuaAlign);
+    procedure SetAlignWM(const Value: boolean);
+    function GetAlignWM: boolean;
+    function GetChildControls: IList<IJanuaControl>;
+    procedure setChildControls(const Value: IList<IJanuaControl>);
+    function GetControls(const aIndex: Integer): IJanuaControl;
+    property Controls[const aIndex: Integer]: IJanuaControl read GetControls;
+    function AddControl: IJanuaControl;
+    procedure DelControl(const aControl: IJanuaControl);
+
+    procedure JanuaSetParent(const Value: IJanuaControl);
+    function JanuaGetParent: IJanuaControl;
+    /// <summary> Defines the container control (parent control). </summary>
+    function GetAsComponent: TComponent;
+    procedure SetAsComponent(const Value: TComponent);
+    function JanuaGetAction: IJanuaAction;
+    procedure JanuaSetAction(const Value: IJanuaAction);
+
+    // Janua Events
+    function GetJanuaOnKeyDown: TJanuaKeyEvent;
+    procedure SetJanuaOnKeyDown(const Value: TJanuaKeyEvent);
+    function GetOnKeyUp: TJanuaKeyEvent;
+    procedure SetOnKeyUp(const Value: TJanuaKeyEvent);
+    function GetOnMouseDown: TJanuaMouseEvent;
+    procedure SetOnMouseDown(const Value: TJanuaMouseEvent);
+    function GetOnMouseMove: TJanuaMouseMoveEvent;
+    procedure SetOnMouseMove(const Value: TJanuaMouseMoveEvent);
+    function GetOnMouseUp: TJanuaMouseEvent;
+    procedure SetOnMouseUp(const Value: TJanuaMouseEvent);
+    function GetOnMouseWheel: TJanuaMouseWheelEvent;
+    procedure SetOnMouseWheel(const Value: TJanuaMouseWheelEvent);
+
+  public
+    property JanuaAction: IJanuaAction read JanuaGetAction Write JanuaSetAction;
+    property AsComponent: TComponent read GetAsComponent write SetAsComponent;
+    property JanuaParent: IJanuaControl read JanuaGetParent write JanuaSetParent;
+    property Hint: string read GetHint write SetHint;
+    /// <summary> Determines how the control aligns within its container (parent control). </summary>
+    property Align: TJanuaAlign read JanuaGetAlign write JanuaSetAlign;
+    property AlignWithMargins: boolean read GetAlignWM write SetAlignWM;
+    property ChildControls: IList<IJanuaControl> read GetChildControls write setChildControls;
+
   end;
 
 var
@@ -132,6 +179,11 @@ implementation
 { TfrmFMXModel }
 
 function TfrmFMXModel.Activate: boolean;
+begin
+
+end;
+
+function TfrmFMXModel.AddControl: IJanuaControl;
 begin
 
 end;
@@ -178,6 +230,11 @@ begin
 
 end;
 
+procedure TfrmFMXModel.DelControl(const aControl: IJanuaControl);
+begin
+
+end;
+
 destructor TfrmFMXModel.Destroy;
 begin
 
@@ -199,12 +256,22 @@ begin
 
 end;
 
-function TfrmFMXModel.GetActive: Boolean;
+function TfrmFMXModel.GetActive: boolean;
 begin
 
 end;
 
 function TfrmFMXModel.GetAfterActivate: TProc;
+begin
+
+end;
+
+function TfrmFMXModel.GetAlignWM: boolean;
+begin
+
+end;
+
+function TfrmFMXModel.GetAsComponent: TComponent;
 begin
 
 end;
@@ -219,7 +286,22 @@ begin
 
 end;
 
+function TfrmFMXModel.GetChildControls: IList<IJanuaControl>;
+begin
+
+end;
+
+function TfrmFMXModel.GetControls(const aIndex: Integer): IJanuaControl;
+begin
+
+end;
+
 function TfrmFMXModel.GetFormStyleJanua: TJanuaFormStyle;
+begin
+
+end;
+
+function TfrmFMXModel.GetHint: string;
 begin
 
 end;
@@ -269,7 +351,7 @@ begin
 
 end;
 
-function TfrmFMXModel.GetTransparency: Boolean;
+function TfrmFMXModel.GetTransparency: boolean;
 begin
 
 end;
@@ -284,12 +366,42 @@ begin
 
 end;
 
+function TfrmFMXModel.JanuaGetAction: IJanuaAction;
+begin
+
+end;
+
+function TfrmFMXModel.JanuaGetAlign: TJanuaAlign;
+begin
+
+end;
+
 function TfrmFMXModel.JanuaGetComponent: TComponent;
 begin
 
 end;
 
+function TfrmFMXModel.JanuaGetParent: IJanuaControl;
+begin
+
+end;
+
+procedure TfrmFMXModel.JanuaSetAction(const Value: IJanuaAction);
+begin
+
+end;
+
+procedure TfrmFMXModel.JanuaSetAlign(const Value: TJanuaAlign);
+begin
+
+end;
+
 procedure TfrmFMXModel.JanuaSetComponent(const Value: TComponent);
+begin
+
+end;
+
+procedure TfrmFMXModel.JanuaSetParent(const Value: IJanuaControl);
 begin
 
 end;
@@ -300,12 +412,27 @@ begin
 
 end;
 
-procedure TfrmFMXModel.SetActive(const Value: Boolean);
+procedure TfrmFMXModel.SetActive(const Value: boolean);
 begin
 
 end;
 
 procedure TfrmFMXModel.SetAfterActivate(const Value: TProc);
+begin
+
+end;
+
+procedure TfrmFMXModel.SetAlignWM(const Value: boolean);
+begin
+
+end;
+
+procedure TfrmFMXModel.SetAsComponent(const Value: TComponent);
+begin
+
+end;
+
+procedure TfrmFMXModel.setChildControls(const Value: IList<IJanuaControl>);
 begin
 
 end;
@@ -316,6 +443,11 @@ begin
 end;
 
 procedure TfrmFMXModel.SetHasErrors(const Value: boolean);
+begin
+
+end;
+
+procedure TfrmFMXModel.SetHint(const Value: string);
 begin
 
 end;

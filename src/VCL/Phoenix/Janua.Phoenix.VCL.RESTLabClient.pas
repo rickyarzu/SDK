@@ -17,44 +17,55 @@ uses
 
 type
   TfrmPhoenixVCLRESTLabClient = class(TJanuaVCLFormModel, IJanuaForm)
+    AdvJSONMemoStyler1: TAdvJSONMemoStyler;
+    dsLabEstintori: TDataSource;
+    dsDetailEstintori: TDataSource;
+    SaveTextFileDialog1: TSaveTextFileDialog;
+    PageControl1: TPageControl;
+    tabLab: TTabSheet;
+    tabTestJson: TTabSheet;
+    PageControl2: TPageControl;
+    tabJsonList: TTabSheet;
+    memJsonResponse: TAdvMemo;
+    pnlListaEstintori: TPanel;
+    btnSaveJson: TButton;
+    ProgressBar1: TProgressBar;
+    memRawResponse: TAdvMemo;
+    tabUpdateData: TTabSheet;
+    Panel3: TPanel;
+    JvDBGrid1: TJvDBGrid;
+    tabJsonConfigurazioni: TTabSheet;
+    Panel2: TPanel;
+    memConfigurazioni: TAdvMemo;
+    memConfigurazioniHead: TAdvMemo;
+    memTmpConfigurazioni: TAdvMemo;
+    tabUpdateReports: TTabSheet;
+    Panel4: TPanel;
+    DBNavigator1: TDBNavigator;
+    btnOpen: TButton;
+    DBGrid1: TDBGrid;
+    DBGrid2: TDBGrid;
+    tabLog: TTabSheet;
+    memLog: TMemo;
     Panel1: TPanel;
     edUsername: TLabeledEdit;
     edPassword: TLabeledEdit;
     edServerUrl: TLabeledEdit;
     btnRestCall: TButton;
-    PageControl1: TPageControl;
-    tabJsonList: TTabSheet;
-    tabJsonConfigurazioni: TTabSheet;
-    memJsonResponse: TAdvMemo;
-    AdvJSONMemoStyler1: TAdvJSONMemoStyler;
-    pnlListaEstintori: TPanel;
-    Panel2: TPanel;
-    memConfigurazioni: TAdvMemo;
-    tabUpdateReports: TTabSheet;
-    memConfigurazioniHead: TAdvMemo;
-    memTmpConfigurazioni: TAdvMemo;
-    memRawResponse: TAdvMemo;
-    dsLabEstintori: TDataSource;
-    tabLog: TTabSheet;
-    memLog: TMemo;
-    Panel4: TPanel;
-    DBNavigator1: TDBNavigator;
-    DBGrid1: TDBGrid;
-    DBGrid2: TDBGrid;
-    dsDetailEstintori: TDataSource;
-    btnOpen: TButton;
     btnUpdateData: TButton;
-    tabUpdateData: TTabSheet;
-    Panel3: TPanel;
-    JvDBGrid1: TJvDBGrid;
-    SaveTextFileDialog1: TSaveTextFileDialog;
-    btnSaveJson: TButton;
-    ProgressBar1: TProgressBar;
+    tabTestREST: TTabSheet;
+    RemoteDB: TTabSheet;
+    PageControl3: TPageControl;
+    tabConfigurazini: TTabSheet;
+    Panel5: TPanel;
+    memJsonConfigurazioni: TAdvMemo;
+    btnTestConfigurazini: TButton;
     procedure btnRestCallClick(Sender: TObject);
     procedure btnOpenClick(Sender: TObject);
     procedure btnSaveJsonClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnUpdateDataClick(Sender: TObject);
+    procedure btnTestConfiguraziniClick(Sender: TObject);
   private
     FdmFDACPhoenixLab: TdmPhoenixIBLab;
     { Private declarations }
@@ -73,7 +84,7 @@ var
 implementation
 
 uses
-  Janua.Application.Framework, Janua.REST.Client, Janua.Core.JSON;
+  Janua.Application.Framework, Janua.REST.Client, Janua.Core.JSON, MainUnit, EsportazioneSuMobile;
 
 {$R *.dfm}
 
@@ -94,6 +105,13 @@ procedure TfrmPhoenixVCLRESTLabClient.btnSaveJsonClick(Sender: TObject);
 begin
   if self.SaveTextFileDialog1.Execute then
     memJsonResponse.Lines.SaveToFile(self.SaveTextFileDialog1.FileName)
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.btnTestConfiguraziniClick(Sender: TObject);
+begin
+  TMOBExporting.Test := True;
+  MOBExportingConfigurazioni(MAIN_FORM.QRY_GENERIC);
+  memJsonConfigurazioni.Lines.Text := TMOBExporting.Configurazioni;
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.btnUpdateDataClick(Sender: TObject);

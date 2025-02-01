@@ -49,13 +49,14 @@ type
     procedure btnNoteCancelClick(Sender: TObject);
   public
     property ImageDrawings: TJanuaImageDraws read FImageDrawings write FImageDrawings;
+    procedure UpdateSize;
   end;
 
 implementation
 
 {$R *.fmx}
 
-uses Janua.Application.Framework, Janua.FXM.FNCBloxControls;
+uses Janua.Application.Framework, Janua.FXM.FNCBloxControls, System.Math;
 
 procedure TframeFNCBloxDrawing.btnAddNotesClick(Sender: TObject);
 begin
@@ -133,9 +134,19 @@ procedure TframeFNCBloxDrawing.TMSFNCBloxControl1MouseDown(Sender: TObject; Butt
 begin
   if Button = TMouseButton.mbLeft then
   begin
-    VX := X - TMSFNCBloxControl1.LeftRuler.Size;
+    var
+    vLeft := IfThen(TMSFNCBloxControl1.LeftRuler.Visible, TMSFNCBloxControl1.LeftRuler.Size, 0.0);
+    VX := X - vLeft;
+    var
+    vRight := IfThen(TMSFNCBloxControl1.TopRuler.Visible, TMSFNCBloxControl1.TopRuler.Size, 0.0);
     VY := Y - TMSFNCBloxControl1.TopRuler.Size;
   end;
+end;
+
+procedure TframeFNCBloxDrawing.UpdateSize;
+begin
+  // Height := pnlButtons.Height + Trunc(Width * (188 / 420));
+  Height := pnlButtons.Height + Trunc(Width * (420 / 188));
 end;
 
 end.

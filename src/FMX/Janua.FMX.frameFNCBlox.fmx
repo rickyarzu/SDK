@@ -1,6 +1,6 @@
 object frameFNCBloxDrawing: TframeFNCBloxDrawing
   Size.Width = 464.000000000000000000
-  Size.Height = 319.000000000000000000
+  Size.Height = 283.000000000000000000
   Size.PlatformDefault = False
   object pnlButtons: TPanel
     Align = Top
@@ -54,14 +54,13 @@ object frameFNCBloxDrawing: TframeFNCBloxDrawing
     Color = x000000FF
     Align = Client
     Size.Width = 464.000000000000000000
-    Size.Height = 261.000000000000000000
+    Size.Height = 225.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
     OnClick = TMSFNCBloxControl1Click
     OnMouseDown = TMSFNCBloxControl1MouseDown
     Fill.Kind = gfkTexture
     Fill.Color = x000000FF
-    Fill.TextureMode = gtmFit
     Fill.Texture.PNG = {
       89504E470D0A1A0A0000000D4948445200000209000000F608060000005C3914
       1D0000000473424954080808087C0864880000200049444154789CEC7D777854
@@ -4130,7 +4129,9 @@ object frameFNCBloxDrawing: TframeFNCBloxDrawing
       2CC72D3C70514E03E42C835CF590620E542A950008BCF88E5C682A2CFF3D3996
       22EF2F26212C6109CBEF57FE1F5E2B6C2B7A8D3B4B0000000049454E44AE4260
       82}
+    TopRuler.Visible = False
     TopRuler.Size = 16
+    LeftRuler.Visible = False
     LeftRuler.Size = 16
     ElementHandleAppearance.Size.StrokeColor = claDodgerblue
     ElementHandleAppearance.Size.FillColor = claLightblue

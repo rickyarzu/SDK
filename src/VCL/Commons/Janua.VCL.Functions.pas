@@ -9,9 +9,7 @@ uses
   VCL.Controls, VCL.StdCtrls, VCL.Mask, VCL.Graphics, VCL.Imaging.GIFImg, VCL.Imaging.JPEG,
   VCL.Imaging.PngImage, VCL.Consts, VCL.Forms,
   // JEDI VCL
-{$IFNDEF VER330}
   JvToolEdit, JvExControls, JvSpeedButton,
-{$ENDIF}
   Data.DB;
 
 procedure DrawField(const Value: String; const Rect: TRect; vCanvas: TCanvas; vFont: TFont;

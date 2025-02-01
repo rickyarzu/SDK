@@ -183,8 +183,8 @@ type
     procedure JanuaSetAction(const Value: IJanuaAction);
     property JanuaAction: IJanuaAction read JanuaGetAction Write JanuaSetAction;
 
-    function GetOnKeyDown: TJanuaKeyEvent;
-    procedure SetOnKeyDown(const Value: TJanuaKeyEvent);
+    function JanuaOnKeyDown: TJanuaKeyEvent;
+    procedure SetJanuaOnKeyDown(const Value: TJanuaKeyEvent);
     function GetOnKeyUp: TJanuaKeyEvent;
     procedure SetOnKeyUp(const Value: TJanuaKeyEvent);
     function GetOnMouseDown: TJanuaMouseEvent;
@@ -195,6 +195,9 @@ type
     procedure SetOnMouseUp(const Value: TJanuaMouseEvent);
     function GetOnMouseWheel: TJanuaMouseWheelEvent;
     procedure SetOnMouseWheel(const Value: TJanuaMouseWheelEvent);
+
+    function GetJanuaOnKeyUp: TJanuaKeyEvent;
+    procedure SetJanuaOnKeyUp(const Value: TJanuaKeyEvent);
   protected
     procedure Loaded; override;
   strict private
@@ -436,6 +439,11 @@ begin
   Result := FInitialized;
 end;
 
+function TJanuaVCLFormModel.GetJanuaOnKeyUp: TJanuaKeyEvent;
+begin
+
+end;
+
 function TJanuaVCLFormModel.GetLeft: Integer;
 begin
   Result := Self.Left
@@ -506,7 +514,7 @@ begin
 
 end;
 
-function TJanuaVCLFormModel.GetOnKeyDown: TJanuaKeyEvent;
+function TJanuaVCLFormModel.JanuaOnKeyDown: TJanuaKeyEvent;
 begin
 
 end;
@@ -878,7 +886,12 @@ begin
 
 end;
 
-procedure TJanuaVCLFormModel.SetOnKeyDown(const Value: TJanuaKeyEvent);
+procedure TJanuaVCLFormModel.SetJanuaOnKeyDown(const Value: TJanuaKeyEvent);
+begin
+
+end;
+
+procedure TJanuaVCLFormModel.SetJanuaOnKeyUp(const Value: TJanuaKeyEvent);
 begin
 
 end;

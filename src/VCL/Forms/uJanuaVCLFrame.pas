@@ -154,8 +154,8 @@ type
     function JanuaGetAction: IJanuaAction;
     procedure JanuaSetAction(const Value: IJanuaAction);
 
-    function GetOnKeyDown: TJanuaKeyEvent;
-    procedure SetOnKeyDown(const Value: TJanuaKeyEvent);
+    function JanuaOnKeyDown: TJanuaKeyEvent;
+    procedure SetJanuaOnKeyDown(const Value: TJanuaKeyEvent);
     function GetOnKeyUp: TJanuaKeyEvent;
     procedure SetOnKeyUp(const Value: TJanuaKeyEvent);
     function GetOnMouseDown: TJanuaMouseEvent;
@@ -344,7 +344,7 @@ begin
 
 end;
 
-function TJanuaVCLFrameModel.GetOnKeyDown: TJanuaKeyEvent;
+function TJanuaVCLFrameModel.JanuaOnKeyDown: TJanuaKeyEvent;
 begin
 
 end;
@@ -559,7 +559,7 @@ begin
 
 end;
 
-procedure TJanuaVCLFrameModel.SetOnKeyDown(const Value: TJanuaKeyEvent);
+procedure TJanuaVCLFrameModel.SetJanuaOnKeyDown(const Value: TJanuaKeyEvent);
 begin
 
 end;

@@ -1,0 +1,17 @@
+select * from system.useradd('testadmin@test.it', 'testadmin', 'T4stP4ssw0rd!', 1, false);
+
+select * from system.useradd('angelo.mangiaracina@gmail.com', 'angman', '4ngm4n!', 1, false);
+--0deb1c54814305ca9ad266f53bc82511528a2667688e772a731efe5af3b6344f
+select * from  system.createpublicschema('0deb1c54814305ca9ad266f53bc82511528a2667688e772a731efe5af3b6344f', 
+                            '2747d10b9c05d29c49bd75f273d2971aa11f194c9be74d542e279a2a42f3c88c'
+                            , 'angmanpub', 'Test Angelo', true, null, 1, 1);
+
+select * from  system.userlogin('angman', '4ngm4n!', 'angelo.mangiaracina@gmail.com');
+-- 2747d10b9c05d29c49bd75f273d2971aa11f194c9be74d542e279a2a42f3c88c
+
+select * from system.createpersonalschema('2747d10b9c05d29c49bd75f273d2971aa11f194c9be74d542e279a2a42f3c88c')
+-- 3416a75f4cea9109507cacd8e2f2aefca4d2af7a2834d7d1e97f66f40330f696
+
+SELECT * FROM system.db_schemas
+
+    system.useradd_with_profile(p_email, p_username, p_firstname, p_lastname, p_address, p_town, p_postal_code, p_password, p_phone, p_an_group_id, p_anagraph_id, p_default_schema_id, p_country_id, p_ispublic, p_guid, p_user_id)

@@ -96,6 +96,9 @@
         <Projects Include="Testing\JanuaUniMVVMTesting.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="JanuaTestLibraries.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="JanuaVCLControls.dproj">
             <Dependencies/>
         </Projects>
@@ -244,6 +247,12 @@
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\Janua\FMX\JanuaFMXTestImageResize.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -532,6 +541,15 @@
     </Target>
     <Target Name="JanuaUniMVVMTesting:Make">
         <MSBuild Projects="Testing\JanuaUniMVVMTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaTestLibraries">
+        <MSBuild Projects="JanuaTestLibraries.dproj"/>
+    </Target>
+    <Target Name="JanuaTestLibraries:Clean">
+        <MSBuild Projects="JanuaTestLibraries.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaTestLibraries:Make">
+        <MSBuild Projects="JanuaTestLibraries.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaVCLControls">
         <MSBuild Projects="JanuaVCLControls.dproj"/>
@@ -983,14 +1001,32 @@
     <Target Name="CustomPathBlox:Make">
         <MSBuild Projects="..\..\Samples\Janua\FMX\CustomPathBlox.dproj" Targets="Make"/>
     </Target>
+    <Target Name="VCLThemeSelector">
+        <MSBuild Projects="..\..\Components\pkg120\VCLThemeSelector.dproj"/>
+    </Target>
+    <Target Name="VCLThemeSelector:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\VCLThemeSelector.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLThemeSelector:Make">
+        <MSBuild Projects="..\..\Components\pkg120\VCLThemeSelector.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXTestImageResize">
+        <MSBuild Projects="..\..\Samples\Janua\FMX\JanuaFMXTestImageResize.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXTestImageResize:Clean">
+        <MSBuild Projects="..\..\Samples\Janua\FMX\JanuaFMXTestImageResize.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXTestImageResize:Make">
+        <MSBuild Projects="..\..\Samples\Janua\FMX\JanuaFMXTestImageResize.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="OpenAIPackage;sbridge;dclsbridge;TRCGooglePlacesRuntime;SwagDoc;loggerproRT;dmvcframeworkRT;DECCipher;Neon;AWSSDK;AWSSDKFMX;PlanAddons;AWSSDKVCL;Spring_Base;Spring_Core;sgcWebSockets;dclsgcWebSockets;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaRestWeb;JanuaUniMVVMTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;TMSFMXPackPkg;JanuaFMXControls;JanuaVCLMVVM;TMSWebOSMapsPkg;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;CarServiceDMVCService;CarServiceUsersUniGUI;PickAPP;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;TGooglePlacesTest;mod_cscustomersmobile;mod_csdriversmersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;CarServiceUnitTesting;CarServiceDriverApp;Archive;Review;TmsTwilio;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;JanuaAllDemos;EuroFloraApp;TestGoogleVCL;FSMap;Cipher_FMX;RESTDebuggerClient;WebMocksBasic;MatchingDemo;CanvasPainting;JanuaJsonSerializeNeonTest;SamplPlannerVCL;CloudCalendarImportExport;CarServiceWebBrokerCustConfService;CustomPathBlox"/>
+        <CallTarget Targets="OpenAIPackage;sbridge;dclsbridge;TRCGooglePlacesRuntime;SwagDoc;loggerproRT;dmvcframeworkRT;DECCipher;Neon;AWSSDK;AWSSDKFMX;PlanAddons;AWSSDKVCL;Spring_Base;Spring_Core;sgcWebSockets;dclsgcWebSockets;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaRestWeb;JanuaUniMVVMTesting;JanuaTestLibraries;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;TMSFMXPackPkg;JanuaFMXControls;JanuaVCLMVVM;TMSWebOSMapsPkg;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;CarServiceDMVCService;CarServiceUsersUniGUI;PickAPP;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;TGooglePlacesTest;mod_cscustomersmobile;mod_csdriversmersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;CarServiceUnitTesting;CarServiceDriverApp;Archive;Review;TmsTwilio;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;JanuaAllDemos;EuroFloraApp;TestGoogleVCL;FSMap;Cipher_FMX;RESTDebuggerClient;WebMocksBasic;MatchingDemo;CanvasPainting;JanuaJsonSerializeNeonTest;SamplPlannerVCL;CloudCalendarImportExport;CarServiceWebBrokerCustConfService;CustomPathBlox;VCLThemeSelector;JanuaFMXTestImageResize"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="OpenAIPackage:Clean;sbridge:Clean;dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;SwagDoc:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;DECCipher:Clean;Neon:Clean;AWSSDK:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;AWSSDKVCL:Clean;Spring_Base:Clean;Spring_Core:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaRestWeb:Clean;JanuaUniMVVMTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;TMSFMXPackPkg:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebOSMapsPkg:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;CarServiceDMVCService:Clean;CarServiceUsersUniGUI:Clean;PickAPP:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;TGooglePlacesTest:Clean;mod_cscustomersmobile:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;CarServiceUnitTesting:Clean;CarServiceDriverApp:Clean;Archive:Clean;Review:Clean;TmsTwilio:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;TestGoogleVCL:Clean;FSMap:Clean;Cipher_FMX:Clean;RESTDebuggerClient:Clean;WebMocksBasic:Clean;MatchingDemo:Clean;CanvasPainting:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean;CloudCalendarImportExport:Clean;CarServiceWebBrokerCustConfService:Clean;CustomPathBlox:Clean"/>
+        <CallTarget Targets="OpenAIPackage:Clean;sbridge:Clean;dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;SwagDoc:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;DECCipher:Clean;Neon:Clean;AWSSDK:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;AWSSDKVCL:Clean;Spring_Base:Clean;Spring_Core:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaRestWeb:Clean;JanuaUniMVVMTesting:Clean;JanuaTestLibraries:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;TMSFMXPackPkg:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebOSMapsPkg:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;CarServiceDMVCService:Clean;CarServiceUsersUniGUI:Clean;PickAPP:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;TGooglePlacesTest:Clean;mod_cscustomersmobile:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;CarServiceUnitTesting:Clean;CarServiceDriverApp:Clean;Archive:Clean;Review:Clean;TmsTwilio:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;TestGoogleVCL:Clean;FSMap:Clean;Cipher_FMX:Clean;RESTDebuggerClient:Clean;WebMocksBasic:Clean;MatchingDemo:Clean;CanvasPainting:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean;CloudCalendarImportExport:Clean;CarServiceWebBrokerCustConfService:Clean;CustomPathBlox:Clean;VCLThemeSelector:Clean;JanuaFMXTestImageResize:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="OpenAIPackage:Make;sbridge:Make;dclsbridge:Make;TRCGooglePlacesRuntime:Make;SwagDoc:Make;loggerproRT:Make;dmvcframeworkRT:Make;DECCipher:Make;Neon:Make;AWSSDK:Make;AWSSDKFMX:Make;PlanAddons:Make;AWSSDKVCL:Make;Spring_Base:Make;Spring_Core:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaRestWeb:Make;JanuaUniMVVMTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;TMSFMXPackPkg:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebOSMapsPkg:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;CarServiceDMVCService:Make;CarServiceUsersUniGUI:Make;PickAPP:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;TGooglePlacesTest:Make;mod_cscustomersmobile:Make;mod_csdriversmersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;CarServiceUnitTesting:Make;CarServiceDriverApp:Make;Archive:Make;Review:Make;TmsTwilio:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;TestGoogleVCL:Make;FSMap:Make;Cipher_FMX:Make;RESTDebuggerClient:Make;WebMocksBasic:Make;MatchingDemo:Make;CanvasPainting:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make;CloudCalendarImportExport:Make;CarServiceWebBrokerCustConfService:Make;CustomPathBlox:Make"/>
+        <CallTarget Targets="OpenAIPackage:Make;sbridge:Make;dclsbridge:Make;TRCGooglePlacesRuntime:Make;SwagDoc:Make;loggerproRT:Make;dmvcframeworkRT:Make;DECCipher:Make;Neon:Make;AWSSDK:Make;AWSSDKFMX:Make;PlanAddons:Make;AWSSDKVCL:Make;Spring_Base:Make;Spring_Core:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaRestWeb:Make;JanuaUniMVVMTesting:Make;JanuaTestLibraries:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;TMSFMXPackPkg:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebOSMapsPkg:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;CarServiceDMVCService:Make;CarServiceUsersUniGUI:Make;PickAPP:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;TGooglePlacesTest:Make;mod_cscustomersmobile:Make;mod_csdriversmersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;CarServiceUnitTesting:Make;CarServiceDriverApp:Make;Archive:Make;Review:Make;TmsTwilio:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;TestGoogleVCL:Make;FSMap:Make;Cipher_FMX:Make;RESTDebuggerClient:Make;WebMocksBasic:Make;MatchingDemo:Make;CanvasPainting:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make;CloudCalendarImportExport:Make;CarServiceWebBrokerCustConfService:Make;CustomPathBlox:Make;VCLThemeSelector:Make;JanuaFMXTestImageResize:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='Libs'">
@@ -1150,6 +1186,18 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImageResize.dproj">
+            <ProjectGuid>{B440A192-C378-4CFD-A24D-A7940161F3DD}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
+            <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
             <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1256,7 +1304,7 @@
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
             <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
@@ -1444,11 +1492,17 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTestLibraries.dproj">
+            <ProjectGuid>{A15C968C-4FB8-40B4-8B93-DB1086007320}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\CarServiceBackOfficeUniGUI.dproj">
             <ProjectGuid>{E12E8F49-20C7-423D-8ADA-8916C99A8832}</ProjectGuid>
@@ -1636,6 +1690,18 @@
             <ProjectGuid>{72B6F18A-BB4F-44B4-BD1D-74296E49261E}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImageResize.dproj">
+            <ProjectGuid>{B440A192-C378-4CFD-A24D-A7940161F3DD}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
+            <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
@@ -1932,6 +1998,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTestLibraries.dproj">
+            <ProjectGuid>{A15C968C-4FB8-40B4-8B93-DB1086007320}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1991,8 +2063,8 @@
         <BuildGroupProject Include="JanuaFMXControls.dproj">
             <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64</Platforms>
-            <Enabled>True</Enabled>
+            <Platforms>Android64</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dclsgcWebSockets.dproj">
             <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
@@ -2003,7 +2075,7 @@
         <BuildGroupProject Include="Testing\JanuaUniMVVMTesting.dproj">
             <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
             <Configurations>TestDebug</Configurations>
-            <Platforms>Win64</Platforms>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\CarServiceUsersUniGUI.dproj">
@@ -2021,8 +2093,8 @@
         <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
             <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64</Platforms>
-            <Enabled>False</Enabled>
+            <Platforms>Android64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceDMVCService.dproj">
             <ProjectGuid>{44C7E62F-2426-4E81-BB4B-DA42F75045B1}</ProjectGuid>
@@ -2033,7 +2105,7 @@
         <BuildGroupProject Include="JanuaVCLComponents.dproj">
             <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\VCL\Google Places\TGooglePlacesTest.dproj">
@@ -2063,8 +2135,8 @@
         <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
             <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64</Platforms>
-            <Enabled>True</Enabled>
+            <Platforms>Android64</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
             <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
@@ -2126,6 +2198,18 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImageResize.dproj">
+            <ProjectGuid>{B440A192-C378-4CFD-A24D-A7940161F3DD}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
+            <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
             <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2153,13 +2237,13 @@
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64</Platforms>
+            <Platforms>Android64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaUniDACUnitTesting.dproj">
             <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win64</Platforms>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceDMVCustomerConfirmation.dproj">
@@ -2183,13 +2267,13 @@
         <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
             <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
             <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCore.dproj">
@@ -2201,7 +2285,7 @@
         <BuildGroupProject Include="Testing\JanuaCoreUnitTesting.dproj">
             <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
             <Configurations>Test</Configurations>
-            <Platforms>Win64</Platforms>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Planner\TMS\Demo32\CloudCalendarImportExport.dproj">
@@ -2243,7 +2327,7 @@
         <BuildGroupProject Include="FMX\PikApp\PickAPP.dproj">
             <ProjectGuid>{88A4E1A4-7328-4E90-8C6E-F739706C74DA}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
+            <Platforms>Android64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="CarServiceCustomerConfirmation.dproj">
@@ -2261,13 +2345,13 @@
         <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaRestWeb.dproj">
             <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Archive\Archive.dproj">
@@ -2279,14 +2363,14 @@
         <BuildGroupProject Include="JanuaTmsControls.dproj">
             <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSMap\FSMap.dproj">
             <ProjectGuid>{2A82B550-7788-47C4-9C21-1BEFB6A636B0}</ProjectGuid>
@@ -2303,14 +2387,14 @@
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
             <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Android64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
             <ProjectGuid>{DD619250-0298-4A11-96EF-FFDEBA724392}</ProjectGuid>
@@ -2327,8 +2411,8 @@
         <BuildGroupProject Include="JanuaUnidac.dproj">
             <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64</Platforms>
-            <Enabled>False</Enabled>
+            <Platforms>Android64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\RESTCloudAPI\field-report-delphi\Review\Review.dproj">
             <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
@@ -2382,12 +2466,12 @@
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Android64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLControls.dproj">
             <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\Spring.Base.dproj">
@@ -2405,7 +2489,7 @@
         <BuildGroupProject Include="Testing\JanuaMVVMCoreTesting.dproj">
             <ProjectGuid>{6111318E-79C0-4F35-AEBF-7D5ADFD28B0F}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Testing\prj\CarServiceUnitTesting.dproj">
@@ -2418,6 +2502,12 @@
             <ProjectGuid>{64B85F5B-4DBA-477C-BE26-F38C31AC5D14}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTestLibraries.dproj">
+            <ProjectGuid>{A15C968C-4FB8-40B4-8B93-DB1086007320}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
@@ -2614,6 +2704,18 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImageResize.dproj">
+            <ProjectGuid>{B440A192-C378-4CFD-A24D-A7940161F3DD}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
+            <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
             <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2908,6 +3010,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTestLibraries.dproj">
+            <ProjectGuid>{A15C968C-4FB8-40B4-8B93-DB1086007320}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3100,6 +3208,18 @@
             <ProjectGuid>{72B6F18A-BB4F-44B4-BD1D-74296E49261E}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImageResize.dproj">
+            <ProjectGuid>{B440A192-C378-4CFD-A24D-A7940161F3DD}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
+            <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
@@ -3396,6 +3516,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTestLibraries.dproj">
+            <ProjectGuid>{A15C968C-4FB8-40B4-8B93-DB1086007320}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -3588,6 +3714,18 @@
             <ProjectGuid>{72B6F18A-BB4F-44B4-BD1D-74296E49261E}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImageResize.dproj">
+            <ProjectGuid>{B440A192-C378-4CFD-A24D-A7940161F3DD}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
+            <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
@@ -3880,6 +4018,12 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj">
             <ProjectGuid>{64B85F5B-4DBA-477C-BE26-F38C31AC5D14}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTestLibraries.dproj">
+            <ProjectGuid>{A15C968C-4FB8-40B4-8B93-DB1086007320}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -4078,6 +4222,18 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImageResize.dproj">
+            <ProjectGuid>{B440A192-C378-4CFD-A24D-A7940161F3DD}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
+            <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
             <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -4372,6 +4528,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTestLibraries.dproj">
+            <ProjectGuid>{A15C968C-4FB8-40B4-8B93-DB1086007320}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -4564,6 +4726,18 @@
             <ProjectGuid>{72B6F18A-BB4F-44B4-BD1D-74296E49261E}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImageResize.dproj">
+            <ProjectGuid>{B440A192-C378-4CFD-A24D-A7940161F3DD}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
+            <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
@@ -4860,6 +5034,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTestLibraries.dproj">
+            <ProjectGuid>{A15C968C-4FB8-40B4-8B93-DB1086007320}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -5052,6 +5232,18 @@
             <ProjectGuid>{72B6F18A-BB4F-44B4-BD1D-74296E49261E}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImageResize.dproj">
+            <ProjectGuid>{B440A192-C378-4CFD-A24D-A7940161F3DD}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
+            <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
@@ -5346,6 +5538,12 @@
             <ProjectGuid>{64B85F5B-4DBA-477C-BE26-F38C31AC5D14}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTestLibraries.dproj">
+            <ProjectGuid>{A15C968C-4FB8-40B4-8B93-DB1086007320}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
@@ -5542,6 +5740,18 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaFMXTestImageResize.dproj">
+            <ProjectGuid>{B440A192-C378-4CFD-A24D-A7940161F3DD}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
+            <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\FMX\CustomPathBlox.dproj">
             <ProjectGuid>{113794EB-85DE-47ED-98D6-B1B301EA61E8}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -5833,6 +6043,12 @@
         <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Demos\FSTheme\FSTheme.dproj">
             <ProjectGuid>{64B85F5B-4DBA-477C-BE26-F38C31AC5D14}</ProjectGuid>
             <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTestLibraries.dproj">
+            <ProjectGuid>{A15C968C-4FB8-40B4-8B93-DB1086007320}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>

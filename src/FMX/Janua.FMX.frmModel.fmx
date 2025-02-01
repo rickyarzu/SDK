@@ -1,8 +1,8 @@
 object frmFMXModel: TfrmFMXModel
   Left = 0
   Top = 0
-  ClientHeight = 530
-  ClientWidth = 317
+  ClientHeight = 580
+  ClientWidth = 261
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]

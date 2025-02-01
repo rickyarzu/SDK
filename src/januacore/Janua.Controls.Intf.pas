@@ -75,10 +75,10 @@ type
     procedure JanuaSetAction(const Value: IJanuaAction);
     property JanuaAction: IJanuaAction read JanuaGetAction Write JanuaSetAction;
 
-    function GetOnKeyDown: TJanuaKeyEvent;
-    procedure SetOnKeyDown(const Value: TJanuaKeyEvent);
-    function GetOnKeyUp: TJanuaKeyEvent;
-    procedure SetOnKeyUp(const Value: TJanuaKeyEvent);
+    function JanuaOnKeyDown: TJanuaKeyEvent;
+    procedure SetJanuaOnKeyDown(const Value: TJanuaKeyEvent);
+    function GetJanuaOnKeyUp: TJanuaKeyEvent;
+    procedure SetJanuaOnKeyUp(const Value: TJanuaKeyEvent);
     function GetOnMouseDown: TJanuaMouseEvent;
     procedure SetOnMouseDown(const Value: TJanuaMouseEvent);
     function GetOnMouseMove: TJanuaMouseMoveEvent;
@@ -88,12 +88,12 @@ type
     function GetOnMouseWheel: TJanuaMouseWheelEvent;
     procedure SetOnMouseWheel(const Value: TJanuaMouseWheelEvent);
 
-    property OnKeyUp: TJanuaKeyEvent read GetOnKeyUp write SetOnKeyUp;
+    property JanuaOnKeyUp: TJanuaKeyEvent read GetJanuaOnKeyUp write SetJanuaOnKeyUp;
     property OnMouseDown: TJanuaMouseEvent read GetOnMouseDown write SetOnMouseDown;
     property OnMouseMove: TJanuaMouseMoveEvent read GetOnMouseMove write SetOnMouseMove;
     property OnMouseUp: TJanuaMouseEvent read GetOnMouseUp write SetOnMouseUp;
     property OnMouseWheel: TJanuaMouseWheelEvent read GetOnMouseWheel write SetOnMouseWheel;
-    property OnKeyDownJanua: TJanuaKeyEvent read GetOnKeyDown write SetOnKeyDown;
+    property JanuaOnKeyDownJanua: TJanuaKeyEvent read JanuaOnKeyDown write SetJanuaOnKeyDown;
 
   end;
 

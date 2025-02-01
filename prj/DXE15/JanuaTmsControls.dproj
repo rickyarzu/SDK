@@ -200,14 +200,9 @@
         <DCCReference Include="..\..\src\VCL\Commons\udlgJanuaWizardModel.pas">
             <Form>dlgJanuaWizardModel</Form>
         </DCCReference>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.Cloud.pas"/>
         <DCCReference Include="..\..\src\TMS\Janua.TMS.Statistics.MainFormController.pas"/>
         <DCCReference Include="..\..\src\VCL\System\Janua.VCL.dlgRegisterUser.pas">
             <Form>dlgRegisterUser</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Cloud\Janua.VCL.Geocoding.pas">
-            <Form>dmGeoCoding</Form>
-            <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\src\VCL\System\Janua.VCL.Users.pas"/>
         <DCCReference Include="..\..\src\TMS\Janua.TMS.RegisterUnit.pas"/>
@@ -222,18 +217,14 @@
         </DCCReference>
         <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Forms.pas"/>
         <DCCReference Include="..\..\src\TMS\Janua.TMS.Interposers.pas"/>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.Framework.pas"/>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.dmComponents.pas">
-            <Form>dmTmsComponents</Form>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.Cloud.pas"/>
+        <DCCReference Include="..\..\src\VCL\Cloud\Janua.VCL.Geocoding.pas">
+            <Form>dmGeoCoding</Form>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\src\TMS\Janua.TMS.Cloud.Mail.VCL.pas"/>
         <DCCReference Include="..\..\src\TMS\Janua.TMS.MyMonthPlanner.pas"/>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.SMS.pas"/>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.WebView.pas">
-            <Form>JanuaVCLWebView</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
+        <DCCReference Include="..\..\src\TMS\Janua.TMS.Framework.pas"/>
         <None Include="ModelSupport_JanuaTmsControls\default.txaPackage"/>
         <None Include="ModelSupport_JanuaTmsControls\default.txvpck"/>
         <None Include="ModelSupport_JanuaTmsControls\Janua\default.txvpck"/>
@@ -277,6 +268,12 @@
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Win64\JanuaTmsControls280.bpl" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Win64\JanuaTmsControls280.bpl" Configuration="Release" Class="ProjectOutput"/>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaTmsControls290.bpl" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaTmsControls290.bpl" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>JanuaTmsControls.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="OSX32">
                         <Operation>1</Operation>
