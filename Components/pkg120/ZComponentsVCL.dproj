@@ -151,6 +151,7 @@
         <DCCReference Include="ZipMasterR.dcp"/>
         <DCCReference Include="ZLibrariesWin.dcp"/>
         <DCCReference Include="JanuaThirdPartyVCL.dcp"/>
+        <DCCReference Include="JanuaCore.dcp"/>
         <DCCReference Include="..\..\..\Libraries\ZPhoenix\ZFTPAlcinoe\source\ZALWinInetFTPClient.pas"/>
         <DCCReference Include="..\..\..\Libraries\ZPhoenix\ZFTPAlcinoe\source\ZALFTPClient.pas"/>
         <DCCReference Include="..\..\..\Libraries\ZPhoenix\VelocizzazioneDBase\ZFrameTabAccessoria.pas">

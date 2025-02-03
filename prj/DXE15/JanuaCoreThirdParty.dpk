@@ -53,6 +53,7 @@ contains
   DataSet.Serialize.Language in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Language.pas',
   DataSet.Serialize in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.pas',
   DataSet.Serialize.UpdatedStatus in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.UpdatedStatus.pas',
-  DataSet.Serialize.Utils in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Utils.pas';
+  DataSet.Serialize.Utils in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Utils.pas',
+  Alcinoe.FTP.Client in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FTP.Client.pas';
 
 end.

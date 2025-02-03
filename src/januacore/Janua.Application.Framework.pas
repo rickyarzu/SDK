@@ -529,7 +529,7 @@ type
   public
     class constructor Create;
     class procedure PublicClearLog(const Sender: TObject; const ProcedureName: string);
-    class procedure RunAndWait(const FileName, Parameters: string);
+    class function RunAndWait(const FileName, Parameters: string; const aStartupDir: Widestring = ''): DWORD;
     class function PublicWriteLog(Sender: TObject; ProcedureName, sMessage: string; isError: Boolean = false)
       : TJanuaLogRecord;
     class function PublicWriteError(Sender: TObject; aProcedureName, sMessage: string; e: Exception;
@@ -3334,23 +3334,33 @@ begin
 {$ENDIF}
 end;
 
-class procedure TJanuaCoreOS.RunAndWait(const FileName, Parameters: string);
+class function TJanuaCoreOS.RunAndWait(const FileName, Parameters: string;
+  const aStartupDir: Widestring = ''): DWord;
 var
 {$IF Defined(MSWINDOWS)}
   StartupInfo: TStartupInfo;
   ProcessInfo: TProcessInformation;
 {$ENDIF}
   CommandLine: string;
+  DirPointer: PWideChar;
 begin
-  CommandLine := '"' + FileName + '" ' + Parameters;
+  Result := 0;
+  CommandLine := ifThen(FileName.IsEmpty, '', '"' + FileName + '" ') + Parameters;
+
 {$IF Defined(MSWINDOWS)}
+  if aStartupDir = '' then
+    DirPointer := Nil
+  else
+    DirPointer := @(aStartupDir[1]);
+
   FillChar(StartupInfo, SizeOf(StartupInfo), 0);
   StartupInfo.cb := SizeOf(StartupInfo);
-  if not CreateProcess(nil, PChar(CommandLine), nil, nil, false, CREATE_NO_WINDOW, nil, nil, StartupInfo,
+  if not CreateProcess(nil, PChar(CommandLine), nil, nil, false, CREATE_NO_WINDOW, nil, DirPointer, StartupInfo,
     ProcessInfo) then
     RaiseLastOSError;
   try
     WaitForSingleObject(ProcessInfo.hProcess, INFINITE);
+    GetExitCodeProcess(ProcessInfo.hProcess, Result);
   finally
     CloseHandle(ProcessInfo.hProcess);
     CloseHandle(ProcessInfo.hThread);

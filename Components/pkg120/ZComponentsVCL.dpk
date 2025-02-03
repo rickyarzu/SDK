@@ -52,7 +52,8 @@ requires
   dsnap,
   ZipMasterR,
   ZLibrariesWin,
-  JanuaThirdPartyVCL;
+  JanuaThirdPartyVCL,
+  JanuaCore;
 
 contains
   ZALWinInetFTPClient in '..\..\..\Libraries\ZPhoenix\ZFTPAlcinoe\source\ZALWinInetFTPClient.pas',

@@ -3,6 +3,7 @@ inherited dmPgTWilioSync: TdmPgTWilioSync
   Width = 645
   inherited PgErgoConnection: TJanuaUniConnection
     Port = 5432
+    PoolingOptions.Validate = True
     Server = 'pg.januaservers.com'
     EncryptedPassword = 'CCFF8DFF98FFCFFF92FFCCFF8DFF9CFFCBFF8BFFCFFF8DFF'
   end
@@ -70,6 +71,8 @@ inherited dmPgTWilioSync: TdmPgTWilioSync
     SQL.Strings = (
       'SELECT * FROM cloud.twilio_log where id > :max_id'
       'ORDER BY id ASC ')
+    ReadOnly = True
+    UniDirectional = True
     Left = 72
     Top = 144
     ParamData = <

@@ -166,6 +166,8 @@ type
     procedure SetOnMouseUp(const Value: TJanuaMouseEvent);
     function GetOnMouseWheel: TJanuaMouseWheelEvent;
     procedure SetOnMouseWheel(const Value: TJanuaMouseWheelEvent);
+    function GetJanuaOnKeyUp: TJanuaKeyEvent;
+    procedure SetJanuaOnKeyUp(const Value: TJanuaKeyEvent);
   end;
 
 implementation
@@ -317,6 +319,11 @@ end;
 function TJanuaVCLFrameModel.GetInitialized: Boolean;
 begin
   Result := FInitialized
+end;
+
+function TJanuaVCLFrameModel.GetJanuaOnKeyUp: TJanuaKeyEvent;
+begin
+
 end;
 
 function TJanuaVCLFrameModel.GetLeft: Integer;
@@ -560,6 +567,11 @@ begin
 end;
 
 procedure TJanuaVCLFrameModel.SetJanuaOnKeyDown(const Value: TJanuaKeyEvent);
+begin
+
+end;
+
+procedure TJanuaVCLFrameModel.SetJanuaOnKeyUp(const Value: TJanuaKeyEvent);
 begin
 
 end;
