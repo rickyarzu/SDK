@@ -67,3 +67,5 @@ __recovery/
 
 # Boss dependency manager vendor folder https://github.com/HashLoad/boss
 modules/
+prj/DXE15/VCL/Win64/Debug/OpenshiftPodRedisXE15.cmds
+prj/DXE15/VCL/Win64/Debug/PhoenixBackgroundService.cmds
