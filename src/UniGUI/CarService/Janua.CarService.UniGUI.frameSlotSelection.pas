@@ -29,6 +29,7 @@ type
     FTimeTableSlots: IList<ItimetableSlot>;
     FFRames: IList<TframeTimeSelect>;
     FUpdating: Boolean;
+  private
     FSlotID: Smallint;
     procedure SetTimeTableSlots(const Value: IList<ItimetableSlot>);
     function GetSlotID: Integer;

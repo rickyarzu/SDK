@@ -99,11 +99,22 @@ begin
         tgSelected.Visible := False;
         imgBooked.Visible := True;
         imgBooked.ImageIndex := 0;
+      end
+      else
+      begin
+        ulbDate.Font.Color := clBlack;
+        ulbTime.Font.Color := clBlack;
+        ulbDeliveryTime.Font.Color := clBlack;
+        tgSelected.Visible := True;
+        imgBooked.Visible := False;
+        imgBooked.ImageIndex := 0;
       end;
     end;
   end
   else
+  begin
     FTimeTableSlot := nil;
+  end;
 end;
 
 procedure TframeTimeSelect.tgSelectedToggled(const Value: Boolean);

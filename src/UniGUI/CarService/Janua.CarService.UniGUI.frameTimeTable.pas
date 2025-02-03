@@ -64,6 +64,7 @@ type
     property FromIndex: Integer read FFromIndex write SetFromIndex;
     property ToIndex: Integer read FToIndex write SetToIndex;
     property Modified: Boolean read FModified write SetModified;
+    procedure RefreshBooking;
   end;
 
 implementation
@@ -184,6 +185,12 @@ begin
   inherited;
 end;
 
+procedure TframeCarServiceUniGUITimeTable.RefreshBooking;
+begin
+  lbTimetableDAte.Text := FTimeTableView.Workingday.AsString;
+  lbDeliveryTime.Text := FTimeTableView.SlotDes.AsString;
+end;
+
 procedure TframeCarServiceUniGUITimeTable.SetAddresses(const Value: IBookingAddresses);
 var
   i: Integer;
@@ -230,6 +237,10 @@ end;
 procedure TframeCarServiceUniGUITimeTable.SetTimeTableView(const Value: ItimetableView);
 begin
   FTimeTableView := Value;
+  if Assigned(FTimeTableView) then
+  begin
+    RefreshBooking;
+  end;
 end;
 
 end.

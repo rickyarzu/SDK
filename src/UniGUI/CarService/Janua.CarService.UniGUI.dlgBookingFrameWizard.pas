@@ -24,6 +24,13 @@ uses
   Janua.CarService.UniGUI.frameCarBookingClient, Janua.CarService.UniGUI.frameAddressesSelect,
   Janua.CarService.UniGUI.BookingSummaryController;
 
+// ********** History *****************************************************************************
+{
+
+  20241501_01 Updated size of select time grid with alTop/AlignWithMargins
+
+}
+
 type
   TBookingPageEnum = (pgSelectDate, pgSelectSlot, pgCustomer, pgLocations, pgSummary, pgPayment);
 
@@ -182,6 +189,8 @@ begin
       end;
     Ord(pgSelectSlot):
       begin
+        frameDeliveryTimeSelect.frameCarServiceSlotSelection1.ClearAllFrames;
+        framePickupTimeSelect.frameCarServiceSlotSelection1.ClearAllFrames;
         PgCBookingSteps.ActivePageIndex := Ord(pgSelectDate);
       end;
     Ord(pgCustomer):

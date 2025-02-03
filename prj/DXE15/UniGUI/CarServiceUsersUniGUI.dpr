@@ -27,7 +27,6 @@ uses
   Janua.UniGUI.frameSettings in '..\..\..\src\UniGUI\Common\Janua.UniGUI.frameSettings.pas' {frameUniGUIAccountSettings: TUniFrame},
   Janua.UniGUI.frameSettingsPassword in '..\..\..\src\UniGUI\Common\Janua.UniGUI.frameSettingsPassword.pas' {frameUniGUISettingPassword: TUniFrame},
   Janua.Anagraph.UniGUI.frameAccountingInfo in '..\..\..\src\UniGUI\Anagraph\Janua.Anagraph.UniGUI.frameAccountingInfo.pas' {frameUniGUIAnagAccountingInfo: TUniFrame},
-  Janua.Carservice.BookingController in '..\..\..\src\UniGUI\CarService\Janua.Carservice.BookingController.pas' {n: TDataModule},
   Janua.CarService.UniGUI.frameTimeSlot in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.frameTimeSlot.pas' {frameTimeSelect: TUniFrame},
   Janua.UniGUI.dlgHTMLMessage in '..\..\..\src\UniGUI\Common\Janua.UniGUI.dlgHTMLMessage.pas' {frmUniGUIHtmlMessage: TUniForm},
   Janua.UniGUI.dlgSearchGoogleAddress in '..\..\..\src\UniGUI\Common\Janua.UniGUI.dlgSearchGoogleAddress.pas' {dlgUniGUISearchGoogleAddress: TUniForm},
@@ -45,7 +44,12 @@ uses
   Janua.CarService.UniGUI.SlotSelectionController in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.SlotSelectionController.pas',
   Janua.Postgres.Anagraph in '..\..\..\src\januaunidac\Janua.Postgres.Anagraph.pas',
   Janua.Anagraph.Postgres.Storage in '..\..\..\src\januaunidac\datamodules\Janua.Anagraph.Postgres.Storage.pas' {dmJanuaPgAnagraphStorage: TDataModule},
-  Janua.CarService.UniGUI.dlgBookingFrameWizard in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgBookingFrameWizard.pas' {dlgUniGUIBookingFrameWizard: TUniForm};
+  Janua.CarService.UniGUI.dlgBookingFrameWizard in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgBookingFrameWizard.pas' {dlgUniGUIBookingFrameWizard: TUniForm},
+  Janua.CarService.UniGUI.dlgBookingWizard in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgBookingWizard.pas' {dlgUniGUIBookingWizard: TUniForm},
+  Janua.Carservice.BookingController in '..\..\..\src\UniGUI\CarService\Janua.Carservice.BookingController.pas' {dmUniGUICarServiceBookingController: TDataModule},
+  Janua.CarService.UniGUI.AddressSelectController in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.AddressSelectController.pas',
+  Janua.CarService.UniGUI.BookingSummaryController in '..\..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.BookingSummaryController.pas',
+  Janua.Carservice.UniGUI.CarBookingClientController in '..\..\..\src\UniGUI\CarService\Janua.Carservice.UniGUI.CarBookingClientController.pas';
 
 {$R *.res}
 
@@ -71,6 +75,7 @@ begin
 
   Application.Initialize;
   TUniServerModule.Create(Application);
+  Application.CreateForm(TdmUniGUICarServiceBookingController, dmUniGUICarServiceBookingController);
   Application.Run;
 
 end.

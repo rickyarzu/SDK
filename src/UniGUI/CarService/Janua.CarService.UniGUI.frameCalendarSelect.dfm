@@ -22,9 +22,6 @@ object frameUNICalendarSelect: TframeUNICalendarSelect
     ParentColor = False
     Color = clBtnFace
     TabOrder = 0
-    ExplicitLeft = -32
-    ExplicitTop = 16
-    ExplicitWidth = 265
   end
   object lbPickupDateSelect: TUniLabel
     AlignWithMargins = True
@@ -42,9 +39,6 @@ object frameUNICalendarSelect: TframeUNICalendarSelect
     ParentColor = False
     Color = clBtnFace
     TabOrder = 1
-    ExplicitLeft = -50
-    ExplicitTop = 59
-    ExplicitWidth = 283
   end
   object cldPickup1: TUniCalendar
     AlignWithMargins = True
@@ -59,12 +53,9 @@ object frameUNICalendarSelect: TframeUNICalendarSelect
     TabOrder = 2
     Align = alTop
     OnClick = cldPickup1Click
-    ExplicitLeft = -50
-    ExplicitTop = 80
-    ExplicitWidth = 381
   end
   object btnCheckPickupDate: TUniButton
-    Left = 24
+    Left = 40
     Top = 272
     Width = 217
     Height = 25

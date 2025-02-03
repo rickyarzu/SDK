@@ -39,7 +39,7 @@ object frameCarServiceUniGUITimeTable: TframeCarServiceUniGUITimeTable
       end
       object lbTimetableDAte: TUniLabel
         Left = 96
-        Top = 8
+        Top = 10
         Width = 66
         Height = 17
         Hint = ''

@@ -2,72 +2,23 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
   Left = 0
   Top = 0
   Width = 640
-  Height = 480
+  Height = 543
   Font.Height = -12
   TabOrder = 0
   object cntCarBookingClient: TUniContainerPanel
     Left = 0
     Top = 0
     Width = 640
-    Height = 480
+    Height = 543
     Hint = ''
     ParentColor = False
     Align = alClient
     TabOrder = 0
-    object dblcbAnagraphCustomers: TUniFSComboBox
-      AlignWithMargins = True
-      Left = 10
-      Top = 51
-      Width = 620
-      Height = 23
-      Hint = ''
-      Margins.Left = 10
-      Margins.Top = 5
-      Margins.Right = 10
-      Text = 'Seleziona Cliente'
-      Align = alTop
-      TabOrder = 1
-      AnyMatch = True
-      IconItems = <>
-      OnChange = dblcbAnagraphCustomersChange
-      Value = '-1'
-    end
-    object edCarModel: TUniEdit
-      AlignWithMargins = True
-      Left = 10
-      Top = 288
-      Width = 620
-      Hint = ''
-      Margins.Left = 10
-      Margins.Top = 30
-      Margins.Right = 10
-      Text = ''
-      Align = alTop
-      TabOrder = 2
-      FieldLabel = 'Modello Veicolo'
-      FieldLabelAlign = laTop
-    end
-    object lbSelectCustomer: TUniLabel
-      AlignWithMargins = True
-      Left = 10
-      Top = 30
-      Width = 620
-      Height = 13
-      Hint = ''
-      Margins.Left = 10
-      Margins.Top = 30
-      Margins.Right = 10
-      AutoSize = False
-      Caption = 'Seleziona Scheda Cliente precedente'
-      Align = alTop
-      ParentColor = False
-      Color = clBtnFace
-      TabOrder = 3
-    end
+    ExplicitHeight = 480
     object UniContainerPanel1: TUniContainerPanel
       AlignWithMargins = True
       Left = 7
-      Top = 80
+      Top = 73
       Width = 626
       Height = 57
       Hint = ''
@@ -75,7 +26,8 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       Margins.Right = 7
       ParentColor = False
       Align = alTop
-      TabOrder = 4
+      TabOrder = 1
+      ExplicitTop = 80
       object UniContainerPanel6: TUniContainerPanel
         Left = 0
         Top = 0
@@ -122,7 +74,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
     object UniContainerPanel2: TUniContainerPanel
       AlignWithMargins = True
       Left = 7
-      Top = 143
+      Top = 136
       Width = 626
       Height = 50
       Hint = ''
@@ -130,7 +82,8 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       Margins.Right = 7
       ParentColor = False
       Align = alTop
-      TabOrder = 5
+      TabOrder = 2
+      ExplicitTop = 143
       object UniContainerPanel8: TUniContainerPanel
         Left = 538
         Top = 0
@@ -195,7 +148,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
     object UniContainerPanel3: TUniContainerPanel
       AlignWithMargins = True
       Left = 7
-      Top = 199
+      Top = 192
       Width = 626
       Height = 56
       Hint = ''
@@ -203,7 +156,8 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       Margins.Right = 7
       ParentColor = False
       Align = alTop
-      TabOrder = 6
+      TabOrder = 3
+      ExplicitTop = 199
       object UniContainerPanel10: TUniContainerPanel
         Left = 0
         Top = 0
@@ -250,7 +204,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
     object UniContainerPanel4: TUniContainerPanel
       AlignWithMargins = True
       Left = 7
-      Top = 316
+      Top = 320
       Width = 626
       Height = 57
       Hint = ''
@@ -258,7 +212,8 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       Margins.Right = 7
       ParentColor = False
       Align = alTop
-      TabOrder = 7
+      TabOrder = 4
+      ExplicitTop = 316
       object UniContainerPanel12: TUniContainerPanel
         Left = 0
         Top = 0
@@ -305,7 +260,7 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
     object UniContainerPanel5: TUniContainerPanel
       AlignWithMargins = True
       Left = 7
-      Top = 379
+      Top = 383
       Width = 626
       Height = 60
       Hint = ''
@@ -313,7 +268,8 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
       Margins.Right = 7
       ParentColor = False
       Align = alTop
-      TabOrder = 8
+      TabOrder = 5
+      ExplicitTop = 379
       object UniContainerPanel14: TUniContainerPanel
         Left = 0
         Top = 0
@@ -373,6 +329,83 @@ object frameUniGuiCarBookingClient: TframeUniGuiCarBookingClient
           ImageIndex = 0
           OnClick = btnReturnAddressClick
         end
+      end
+    end
+    object cnt05CarModel: TUniContainerPanel
+      AlignWithMargins = True
+      Left = 7
+      Top = 254
+      Width = 626
+      Height = 60
+      Hint = ''
+      Margins.Left = 7
+      Margins.Right = 7
+      ParentColor = False
+      Align = alTop
+      TabOrder = 6
+      ExplicitTop = 257
+      ExplicitWidth = 720
+      object edCarModel: TUniEdit
+        AlignWithMargins = True
+        Left = 3
+        Top = 35
+        Width = 620
+        Hint = ''
+        Text = ''
+        Align = alBottom
+        TabOrder = 1
+        EmptyText = 'Modello Veicolo'
+        FieldLabelAlign = laTop
+      end
+    end
+    object cnt01SelectCustomer: TUniContainerPanel
+      AlignWithMargins = True
+      Left = 7
+      Top = 3
+      Width = 626
+      Height = 64
+      Hint = ''
+      Margins.Left = 7
+      Margins.Right = 7
+      ParentColor = False
+      Align = alTop
+      TabOrder = 7
+      ExplicitWidth = 720
+      object lbSelectCustomer: TUniLabel
+        AlignWithMargins = True
+        Left = 10
+        Top = 10
+        Width = 606
+        Height = 13
+        Hint = ''
+        Margins.Left = 10
+        Margins.Top = 10
+        Margins.Right = 10
+        AutoSize = False
+        Caption = 'Seleziona Scheda Cliente precedente'
+        Align = alTop
+        ParentColor = False
+        Color = clBtnFace
+        TabOrder = 1
+      end
+      object dblcbAnagraphCustomers: TUniFSComboBox
+        AlignWithMargins = True
+        Left = 10
+        Top = 31
+        Width = 606
+        Height = 23
+        Hint = ''
+        Margins.Left = 10
+        Margins.Top = 5
+        Margins.Right = 10
+        Text = 'Seleziona Cliente'
+        Align = alTop
+        TabOrder = 2
+        AnyMatch = True
+        IconItems = <>
+        OnChange = dblcbAnagraphCustomersChange
+        Value = '-1'
+        ExplicitTop = 41
       end
     end
   end

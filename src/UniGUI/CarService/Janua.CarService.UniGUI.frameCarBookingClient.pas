@@ -18,9 +18,6 @@ uses
 type
   TframeUniGuiCarBookingClient = class(TUniFrame)
     cntCarBookingClient: TUniContainerPanel;
-    dblcbAnagraphCustomers: TUniFSComboBox;
-    edCarModel: TUniEdit;
-    lbSelectCustomer: TUniLabel;
     UniContainerPanel1: TUniContainerPanel;
     UniContainerPanel6: TUniContainerPanel;
     edFirstName: TUniEdit;
@@ -46,6 +43,11 @@ type
     edReturnAddress: TUniEdit;
     UniContainerPanel15: TUniContainerPanel;
     btnReturnAddress: TUniFSButton;
+    cnt05CarModel: TUniContainerPanel;
+    edCarModel: TUniEdit;
+    cnt01SelectCustomer: TUniContainerPanel;
+    lbSelectCustomer: TUniLabel;
+    dblcbAnagraphCustomers: TUniFSComboBox;
     procedure dblcbAnagraphCustomersChange(Sender: TObject);
     procedure btnSearchClick(Sender: TObject);
     procedure EdFullAddressEnter(Sender: TObject);
@@ -95,6 +97,7 @@ uses Janua.Core.Functions, Janua.Core.AsyncTask, Janua.Core.Entities,
 procedure TframeUniGuiCarBookingClient.btnReturnAddressClick(Sender: TObject);
 begin
   FGoogleSearchDialog2.RecordAddress := Anagraph.ReturnAddress;
+  FGoogleSearchDialog2.edtFullAddress := edReturnAddress;
   FGoogleSearchDialog2.Execute(edReturnAddress.Text);
 end;
 
@@ -102,6 +105,7 @@ procedure TframeUniGuiCarBookingClient.btnSearchClick(Sender: TObject);
 begin
   FGoogleSearchDialog1.RecordAnagraph := FCarBooking.AnagraphClient as IAnagraph;
   FGoogleSearchDialog1.RecordAddress := FCarBooking.AnagraphClient.MainAddress;
+  FGoogleSearchDialog1.edtFullAddress := EdFullAddress;
   FGoogleSearchDialog1.Execute(EdFullAddress.Text);
 end;
 
@@ -247,6 +251,14 @@ begin
     FCarBooking.AnagraphClient.AnLastName.AsString := EdLastName.Text;
   end;
 
+  var
+  lPhone := Trim(EdCustomerPhone.Text);
+  var
+  lChar := Copy(lPhone, 1, 1);
+
+  if not(lChar = '+') then
+    lPhone := '+39' + lPhone;
+
   FCarBooking.CustCellular.AsString := EdCustomerPhone.Text;
   FCarBooking.AnagraphClient.AnCellular.AsString := EdCustomerPhone.Text;
 
@@ -264,10 +276,26 @@ begin
     FCarBooking.AnagraphClient.SyncMainAddress;
   end;
 
-  if (FGoogleSearchDialog2.GooglePlace.AddressFull <> '') and
+  var
+  lReturn := FCarBooking.AnagraphClient.ReturnAddress.FullAddress.AsString;
+  var
+  lGoogle := FGoogleSearchDialog2.GooglePlace.AddressFull;
+
+  if (lGoogle <> '') and (lReturn <> lGoogle) then
+    FCarBooking.AnagraphClient.ReturnAddress.SetfromRecordAddress(FGoogleSearchDialog2.GooglePlace);
+
+{$IFDEF DEBUG}
+  var
+  lMain := FCarBooking.AnagraphClient.MainAddress.FullAddress.AsString;
+  if lReturn <> lMain then
+    ShowMessage(lReturn + sLineBreak + lMain, nil);
+{$ENDIF}
+  (*
+    if (FGoogleSearchDialog2.GooglePlace.AddressFull <> '') and
     (FGoogleSearchDialog2.GooglePlace.AddressFull <> FCarBooking.AnagraphClient.ReturnAddress.FullAddress.
     AsString) then
     FCarBooking.AnagraphClient.ReturnAddress.SetfromRecordAddress(FGoogleSearchDialog2.GooglePlace);
+  *)
 end;
 
 procedure TframeUniGuiCarBookingClient.SearchVehicleResult(Sender: TObject; var Action: TCloseAction);
@@ -311,29 +339,6 @@ begin
   FCarBooking := Value;
   if Assigned(FCarBooking) then
   begin
-    {
-      edFirstName.BindToField(FCarBooking.CustFirstName);
-      edFirstName.BindToField(FCarBooking.AnagraphClient.AnName);
-
-      EdLastName.BindToField(FCarBooking.CustLastName);
-      EdLastName.BindToField(FCarBooking.AnagraphClient.AnLastName);
-
-      EdFullAddress.BindToField(FCarBooking.FullAddress);
-      EdFullAddress.BindToField(FCarBooking.AnagraphClient.AnFullAddress);
-
-      EdCustomerPhone.BindToField(FCarBooking.CustCellular);
-      EdCustomerPhone.BindToField(FCarBooking.AnagraphClient.AnCellular);
-
-      edCustomerEmail.BindToField(FCarBooking.CustEmail);
-      edCustomerEmail.BindToField(FCarBooking.AnagraphClient.AnEmail);
-
-      edCarModel.BindToField(FCarBooking.VehicleModel);
-      edCarNumberPlate.BindToField(FCarBooking.VehicleNumberplate);
-      edCarColor.BindToField(FCarBooking.VehicleColor);
-
-      edReturnAddress.BindToField(FCarBooking.AnagraphClient.ReturnAddress.FullAddress);
-    }
-
     FGoogleSearchDialog1.RecordAnagraph := FCarBooking.AnagraphClient as IAnagraph;
   end;
 end;

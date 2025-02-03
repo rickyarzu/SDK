@@ -126,9 +126,13 @@ begin
     lID := FBookingHead.Addresses.BookingAddress.Id.AsInteger;
 
     FBookingHead.Addresses.Post;
-
-    if not FBookingHead.AnagraphClient.MainAddress.Id.AsInteger =
+    {
+      if not FBookingHead.AnagraphClient.MainAddress.Id.AsInteger =
       (FBookingHead.AnagraphClient.ReturnAddress.Id.AsInteger) then
+    }
+    if not FBookingHead.AnagraphClient.ReturnAddress.FullAddress.AsString.IsEmpty and
+      not(FBookingHead.AnagraphClient.MainAddress.FullAddress.AsString = FBookingHead.AnagraphClient.
+      ReturnAddress.FullAddress.AsString) then
     begin
       FBookingHead.Addresses.Append;
       FBookingHead.Addresses.BookingAddress.Assign(FBookingHead.AnagraphClient.ReturnAddress);
@@ -156,10 +160,12 @@ begin
     frameTimeTablePickup.Addresses := FBookingHead.Addresses;
     frameTimeTablePickup.FromIndex := 0;
     frameTimeTablePickup.ToIndex := lCount;
+    frameTimeTablePickup.TimeTableView := FBookingHead.PickupDateTime;
 
     frameTimeTableDelivery.Addresses := FBookingHead.Addresses;
     frameTimeTableDelivery.FromIndex := lCount;
     frameTimeTableDelivery.ToIndex := IfThen(lCount = 1, 0, 1);
+    frameTimeTableDelivery.TimeTableView := FBookingHead.DeliveryDateTime;
 
     frameTimeTablePickup.Modified := False;
     frameTimeTableDelivery.Modified := False;
