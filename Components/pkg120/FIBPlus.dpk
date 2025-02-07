@@ -27,6 +27,7 @@ package FIBPlus;
 {$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'FibPlus Access Components'}
 {$LIBSUFFIX AUTO}
+{$RUNONLY}
 {$IMPLICITBUILD OFF}
 
 requires
