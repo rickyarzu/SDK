@@ -1,54 +1,142 @@
-object dlgFMXNotes: TdlgFMXNotes
+object rmFMXTMSFNCGoogleDirections: TrmFMXTMSFNCGoogleDirections
   Left = 0
   Top = 0
-  Caption = 'Notes'
-  ClientHeight = 474
-  ClientWidth = 302
+  Caption = 'TMS FNC Maps: TTMSFNCGoogleMaps Integrated Directions Demo'
+  ClientHeight = 707
+  ClientWidth = 269
   Position = ScreenCenter
-  WindowState = wsMaximized
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
   DesignerMasterStyle = 0
-  object Layout1: TLayout
-    Align = Bottom
-    Position.Y = 436.000000000000000000
-    Size.Width = 302.000000000000000000
-    Size.Height = 38.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 1
-    object btnOK: TSpeedButton
-      Align = Right
-      Position.X = 163.000000000000000000
-      Size.Width = 139.000000000000000000
-      Size.Height = 38.000000000000000000
-      Size.PlatformDefault = False
-      Text = 'OK'
-      TextSettings.Trimming = None
-      OnClick = btnOKClick
-    end
-    object btnCancel: TSpeedButton
-      Align = Client
-      Size.Width = 163.000000000000000000
-      Size.Height = 38.000000000000000000
-      Size.PlatformDefault = False
-      Text = 'Annulla'
-      TextSettings.Trimming = None
-    end
-  end
-  object Memo1: TMemo
-    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
-    DataDetectorTypes = []
+  object tabMap: TTabControl
     Align = Client
-    Size.Width = 302.000000000000000000
-    Size.Height = 388.000000000000000000
+    Size.Width = 269.000000000000000000
+    Size.Height = 659.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 2
-    Viewport.Width = 298.000000000000000000
-    Viewport.Height = 384.000000000000000000
+    TabIndex = 0
+    TabOrder = 1
+    TabPosition = PlatformDefault
+    Sizes = (
+      269s
+      633s
+      269s
+      633s)
+    object tabGMap: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = True
+      Size.Width = 58.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Mappa'
+      object TMSFNCGoogleMaps1: TTMSFNCGoogleMaps
+        Align = Client
+        Size.Width = 269.000000000000000000
+        Size.Height = 633.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Polylines = <>
+        Polygons = <>
+        Circles = <>
+        Rectangles = <>
+        Markers = <>
+        Options.DefaultLatitude = 40.689247000000000000
+        Options.DefaultLongitude = -74.044501999999990000
+        Options.DefaultZoomLevel = 12.000000000000000000
+        Options.BackgroundColor = claNull
+        Options.DisablePOI = False
+        Options.Version = 'weekly'
+        ElementContainers = <>
+        HeadLinks = <>
+        OnRetrievedDirectionsData = TMSFNCGoogleMaps1RetrievedDirectionsData
+        KMLLayers = <>
+        Directions = <>
+        Clusters = <>
+        OverlayViews = <>
+        HeatMaps = <>
+      end
+    end
+    object tabRoute: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 66.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Percorso'
+      object pnlRoutes: TPanel
+        Align = Client
+        Size.Width = 269.000000000000000000
+        Size.Height = 633.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object TMSFNCWebBrowser1: TTMSFNCWebBrowser
+          Align = Client
+          Size.Width = 269.000000000000000000
+          Size.Height = 560.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+        end
+        object Rectangle1: TRectangle
+          Align = Top
+          Corners = []
+          Fill.Color = claWhite
+          Sides = []
+          Size.Width = 269.000000000000000000
+          Size.Height = 73.000000000000000000
+          Size.PlatformDefault = False
+          object Label6: TLabel
+            Position.X = 16.000000000000000000
+            Position.Y = 8.000000000000000000
+            Text = 'Dettagli:'
+            TabOrder = 6
+          end
+          object lbDescription: TLabel
+            Position.X = 104.000000000000000000
+            Position.Y = 8.000000000000000000
+            Text = 'Descrizione'
+            TabOrder = 2
+          end
+          object lbDistance: TLabel
+            Position.X = 104.000000000000000000
+            Position.Y = 32.000000000000000000
+            Size.Width = 81.000000000000000000
+            Size.Height = 17.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Distanza'
+            TabOrder = 3
+          end
+          object lbDuration: TLabel
+            Position.X = 200.000000000000000000
+            Position.Y = 32.000000000000000000
+            Size.Width = 97.000000000000000000
+            Size.Height = 17.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Duration'
+            TabOrder = 4
+          end
+          object Label2: TLabel
+            Position.X = 16.000000000000000000
+            Position.Y = 56.000000000000000000
+            Text = 'Percorso'
+            TabOrder = 5
+          end
+        end
+      end
+    end
   end
   object toolBarDriverTask: TToolBar
-    Size.Width = 302.000000000000000000
+    Size.Width = 269.000000000000000000
     Size.Height = 48.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
@@ -5216,7 +5304,7 @@ object dlgFMXNotes: TdlgFMXNotes
           Scale = 2.000000000000000000
         end>
       Align = HorzCenter
-      Position.X = 82.000000000000000000
+      Position.X = 66.000000000000000000
       Size.Width = 137.000000000000000000
       Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
@@ -5237,7 +5325,7 @@ object dlgFMXNotes: TdlgFMXNotes
       Align = Right
       Anchors = []
       Margins.Right = 5.000000000000000000
-      Position.X = 249.000000000000000000
+      Position.X = 216.000000000000000000
       Size.Width = 48.000000000000000000
       Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
@@ -5245,7 +5333,12 @@ object dlgFMXNotes: TdlgFMXNotes
       TabOrder = 0
       Text = 'Take Photo'
       TextSettings.Trimming = None
-      OnClick = Button1Click
     end
+  end
+  object Timer1: TTimer
+    Enabled = False
+    OnTimer = Timer1Timer
+    Left = 184
+    Top = 56
   end
 end

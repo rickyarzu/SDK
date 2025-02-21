@@ -1,0 +1,286 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'GoogleMaps Features Demo'
+  ClientHeight = 916
+  ClientWidth = 1004
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Panel1: TPanel
+    Align = Top
+    Size.Width = 1004.000000000000000000
+    Size.Height = 225.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Label7: TLabel
+      Anchors = [akTop, akRight]
+      Position.X = 720.000000000000000000
+      Position.Y = 88.000000000000000000
+      Size.Width = 265.000000000000000000
+      Size.Height = 66.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 
+        'You can drag and drop the green marker anywhere on the map. This' +
+        ' feature is currently only available in Google Maps'
+      TabOrder = 3
+    end
+    object Label5: TLabel
+      Position.X = 28.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 101.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Google API Key:'
+      TabOrder = 5
+    end
+    object MapAPIEdit: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 0
+      Text = 'AIzaSyC4MhJTBoZVF6ps-jPIaw_bvyRlAyITxoM'
+      Position.X = 208.000000000000000000
+      Position.Y = 14.000000000000000000
+      Size.Width = 220.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      OnChange = MapAPIEditChange
+    end
+    object Label10: TLabel
+      Anchors = [akTop, akRight]
+      Position.X = 684.000000000000000000
+      Position.Y = 75.000000000000000000
+      Text = 'Drag and Drop:'
+      TabOrder = 7
+    end
+    object Label11: TLabel
+      Anchors = [akTop, akRight]
+      Position.X = 684.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 149.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'MC Donald'#39's Worldwide:'
+      TabOrder = 4
+    end
+    object Label12: TLabel
+      Anchors = [akTop, akRight]
+      Position.X = 712.000000000000000000
+      Position.Y = 32.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 
+        'Shows all of the countries with a MC Donald'#39's restaurant and how' +
+        ' many there are in the country.'
+      TabOrder = 1
+    end
+    object Button2: TButton
+      Position.X = 208.000000000000000000
+      Position.Y = 68.000000000000000000
+      Size.Width = 220.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 8
+      Text = 'MC Donald'#39's Worldwide'
+      TextSettings.Trimming = None
+      OnClick = Button2Click
+    end
+    object Label1: TLabel
+      Position.X = 28.000000000000000000
+      Position.Y = 45.000000000000000000
+      Text = 'Theme:'
+      TabOrder = 10
+    end
+    object ComboBox1: TComboBox
+      Items.Strings = (
+        'Day'
+        'Night'
+        'Express')
+      ItemIndex = 0
+      Position.X = 208.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 220.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 11
+      OnChange = ComboBox1Change
+    end
+    object Label2: TLabel
+      Position.X = 28.000000000000000000
+      Position.Y = 100.000000000000000000
+      Size.Width = 161.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Green Marker Drag Position:'
+      TabOrder = 15
+    end
+    object Label3: TLabel
+      Position.X = 208.000000000000000000
+      Position.Y = 100.000000000000000000
+      Size.Width = 220.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = '0.0, 0.0'
+      TabOrder = 16
+    end
+    object Label4: TLabel
+      Position.X = 28.000000000000000000
+      Position.Y = 72.000000000000000000
+      Size.Width = 161.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Clusters:'
+      TabOrder = 12
+    end
+    object cbStreetView: TCheckBox
+      Position.X = 456.000000000000000000
+      Position.Y = 40.000000000000000000
+      TabOrder = 17
+      Text = 'Toggle StreetView'
+      OnChange = cbStreetViewChange
+    end
+    object cbMarkerLabel: TCheckBox
+      IsChecked = True
+      Position.X = 456.000000000000000000
+      Position.Y = 100.000000000000000000
+      Size.Width = 169.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 20
+      Text = 'Toggle Marker OverlayView'
+      OnChange = cbMarkerLabelChange
+    end
+    object cbOverlayViewCoordinate: TCheckBox
+      Position.X = 208.000000000000000000
+      Position.Y = 124.000000000000000000
+      Size.Width = 265.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 19
+      Text = 'Toggle OverlayView at coordinate'
+      OnChange = cbOverlayViewCoordinateChange
+    end
+    object Label6: TLabel
+      Position.X = 28.000000000000000000
+      Position.Y = 124.000000000000000000
+      Size.Width = 161.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'OverlayViews:'
+      TabOrder = 14
+    end
+    object cbOverlayViewBounds: TCheckBox
+      Position.X = 208.000000000000000000
+      Position.Y = 148.000000000000000000
+      Size.Width = 265.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 18
+      Text = 'Toggle OverlayView at bounds'
+      OnChange = cbOverlayViewBoundsChange
+    end
+    object Label8: TLabel
+      Anchors = [akTop, akRight]
+      Position.X = 684.000000000000000000
+      Position.Y = 147.000000000000000000
+      Text = 'OverlayViews:'
+      TabOrder = 6
+    end
+    object Label9: TLabel
+      Anchors = [akTop, akRight]
+      Position.X = 720.000000000000000000
+      Position.Y = 160.000000000000000000
+      Size.Width = 265.000000000000000000
+      Size.Height = 66.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 
+        'An OverlayView can be displayed at a specific coordinate, betwee' +
+        'n specific bounds or connected to a marker.'
+      TabOrder = 2
+    end
+    object Label13: TLabel
+      Position.X = 28.000000000000000000
+      Position.Y = 180.000000000000000000
+      Size.Width = 161.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Polyline Symbols:'
+      TabOrder = 13
+    end
+    object cbSymbolColor: TComboBox
+      Items.Strings = (
+        'Black'
+        'Blue'
+        'Red')
+      ItemIndex = 0
+      Position.X = 208.000000000000000000
+      Position.Y = 176.000000000000000000
+      TabOrder = 22
+      OnChange = cbSymbolColorChange
+    end
+    object btUpdate: TButton
+      Position.X = 456.000000000000000000
+      Position.Y = 14.000000000000000000
+      Size.Width = 121.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 23
+      Text = 'Update'
+      TextSettings.Trimming = None
+      OnClick = btUpdateClick
+    end
+    object cbSymbolType: TComboBox
+      Items.Strings = (
+        'Open Arrow'
+        'Close Arrow'
+        'Circle')
+      ItemIndex = 0
+      Position.X = 328.000000000000000000
+      Position.Y = 176.000000000000000000
+      TabOrder = 24
+      OnChange = cbSymbolTypeChange
+    end
+  end
+  object TMSFNCGoogleMaps1: TTMSFNCGoogleMaps
+    Align = Client
+    Size.Width = 1004.000000000000000000
+    Size.Height = 691.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    OnMapInitialized = TMSFNCGoogleMaps1MapInitialized
+    Polylines = <>
+    Polygons = <>
+    Circles = <>
+    Rectangles = <>
+    Markers = <
+      item
+        Longitude = -74.044501999999990000
+        Latitude = 40.689247000000000000
+        Title = 'Drag & Drop Marker'
+        IconURL = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+        DefaultIcon.Enabled = False
+        Draggable = True
+      end>
+    Options.DefaultLatitude = 40.689247000000000000
+    Options.DefaultLongitude = -74.044501999999990000
+    Options.DefaultZoomLevel = 2.000000000000000000
+    Options.BackgroundColor = claNull
+    Options.DisablePOI = False
+    Options.Version = 'weekly'
+    ElementContainers = <>
+    HeadLinks = <>
+    OnMarkerDragEnd = TMSFNCGoogleMaps1MarkerDragEnd
+    KMLLayers = <>
+    Directions = <>
+    Clusters = <>
+    OverlayViews = <>
+    HeatMaps = <>
+  end
+end
