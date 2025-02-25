@@ -247,7 +247,7 @@
         <DCCReference Include="bindcomp.dcp"/>
         <DCCReference Include="JanuaCore.dcp"/>
         <DCCReference Include="JanuaMVVM.dcp"/>
-        <DCCReference Include="TMSFMXPackPkg.dcp"/>
+        <DCCReference Include="TMSFMXPackPkgDXE15.dcp"/>
         <DCCReference Include="JanuaCoreComponents.dcp"/>
         <DCCReference Include="dac290.dcp"/>
         <DCCReference Include="unidac290.dcp"/>

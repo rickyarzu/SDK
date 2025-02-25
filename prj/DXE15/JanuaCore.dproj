@@ -257,11 +257,11 @@
         <DCCReference Include="FireDAC.dcp"/>
         <DCCReference Include="FireDACCommonDriver.dcp"/>
         <DCCReference Include="FireDACCommon.dcp"/>
-        <DCCReference Include="Neon.dcp"/>
+        <DCCReference Include="NeonCrossPlatform.dcp"/>
         <DCCReference Include="OpenAIPackage.dcp"/>
         <DCCReference Include="Spring.Base.dcp"/>
         <DCCReference Include="JanuaCoreThirdParty.dcp"/>
-        <DCCReference Include="RestRequestLib.dcp"/>
+        <DCCReference Include="JanuaRestRequestLib.dcp"/>
         <DCCReference Include="..\..\src\januacore\ViewModels\Janua.ViewModels.Intf.pas"/>
         <DCCReference Include="..\..\src\januacore\ViewModels\Janua.Anagraph.ViewModel.Intf.pas"/>
         <DCCReference Include="..\..\src\JanuaLegacy\JanuaRigaDettaglio.pas"/>

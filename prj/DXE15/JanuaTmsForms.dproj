@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{DA64F06C-35AE-4E3F-817F-AC5D4ADF06B2}</ProjectGuid>
-        <ProjectVersion>20.1</ProjectVersion>
+        <ProjectVersion>20.2</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
@@ -9,6 +9,7 @@
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>JanuaTmsForms.dpr</MainSource>
+        <ProjectName Condition="'$(ProjectName)'==''">JanuaTmsForms</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -57,7 +58,7 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
-    <Import Project="JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('JanuaLibDXE15.optset')"/>
+    <Import Project="C:\Januaproject\Components\Distro\DXE15\JanuaeExeDXE15.optset" Condition="'$(Base)'!='' And Exists('C:\Januaproject\Components\Distro\DXE15\JanuaeExeDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
@@ -71,7 +72,7 @@
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
         <SanitizedProjectName>JanuaTmsForms</SanitizedProjectName>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <CfgDependentOn>JanuaLibDXE15.optset</CfgDependentOn>
+        <CfgDependentOn>C:\Januaproject\Components\Distro\DXE15\JanuaeExeDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>FireDACIBDriver;TMSWebGMapsPkgDE;vclwinx;DataSnapServer;dacvcl280;fmx;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;aurelius;FMX_FlexCel_Components;appanalytics;IndyProtocols;vclx;TMSVCLUIPackPkgWiz;dbxcds;vcledge;unidac280;FlexCel_Pdf;DBXFirebirdDriver;TMSVCLUIPackPkgEx;SKIA_FlexCel_Core;vclgtxDocumentStudioControls;JvAppFrm;FireDACSqliteDriver;DbxClientDriver;JclVcl;soapmidas;Jcl;dbexpress;JvManagedThreads;gtDocEng;TMSCloudPkgDE;TMSVCLUIPackPkg;unidacvcl280;inet;dacfmx280;vcltouch;ipstudiowin;JvDB;FMX_FlexCel_Core;eMiniInvoice4D;FireDACDBXDriver;QRWRunDXE11_w64;fmxdae;JanuaUnidac;JvCustom;tmsbcl;CustomIPTransport;FireDACMSSQLDriver;JvSystem;VCL_FlexCel_Core;SVGIconPackage;ipstudiowinwordxp;JvControls;JvCrypt;OmniThreadLibraryRuntime;JvJans;JvMM;IndySystem;JvGlobus;TMSFMXPackPkg;JanuaCoreComponents;ibxbindings;JclContainers;JvPageComps;vclFireDAC;FlexCel_Render;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;unidacfmx280;bindcompdbx;rtl;FireDACMySQLDriver;VCL_FlexCel_Components;remotedb;DBXSqliteDriver;gtxDocumentEngines;DBXSybaseASEDriver;JvRuntimeDesign;JvXPCtrls;vclimg;DataSnapFireDAC;eInvoice4D;inetdbxpress;FireDAC;JvDocking;JvDlgs;xmlrtl;ibxpress;dsnap;xdata;JvCmp;FireDACDb2Driver;DBXOracleDriver;DBXInformixDriver;vclib;fmxobj;bindcompvclsmp;DataSnapNativeClient;JanuaVCLMVVM;DatasnapConnectorsFreePascal;SVGIconImageList;Ean;FlexCel_Report;emshosting;sparkle;EanEditors;FireDACCommonDriver;uniGUI28Chart;TMSWebGMapsPkg;IndyIPClient;dac280;TMSCloudPkg;bindcompvclwinx;emsedge;bindcompfmx;JvBands;inetdb;ibmonitor;FireDACASADriver;SVGIconImageListFMX;vclactnband;fmxFireDAC;officeXPrt;FireDACInfxDriver;StyleControls;DBXMySQLDriver;VclSmp;DataSnapCommon;JvPascalInterpreter;Barcomp;fmxase;JanuaTmsControls;JvPluginSystem;DBXOdbcDriver;JvTimeFramework;dbrtl;FireDACOracleDriver;FlexCel_XlsAdapter;FireDACMSAccDriver;gtxDocumentStudioCore;DataSnapIndy10ServerTransport;JclDeveloperTools;DataSnapConnectors;vcldsnap;DBXInterBaseDriver;FireDACMongoDBDriver;VCLThemeSelector;JvWizards;TMSVCLUIPackPkgXls;FireDACTDataDriver;JanuaVCLControls;vcldb;uSynEdit_R2024;FlexCel_Core;JvCore;vquery280;JanuaUnidacComponents;bindcomp;IndyCore;RESTBackendComponents;dmvcframeworkDT;JanuaMVVM;JanuaVCLComponents;FireDACADSDriver;Spring.Base;RESTComponents;IndyIPServer;vcl;dsnapxml;adortl;dsnapcon;DataSnapClient;DataSnapProviderClient;JvDotNetCtrls;JvHMI;uniGUI28VCL;TMSWebOSMapsPkg;DBXDb2Driver;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;JvPrintPreview;dmvcframeworkRT;TMSWebOSMapsPkgDE;tethering;JvStdCtrls;JanuaCore;crcontrols280;vclgtxDocumentStudioCore;bindcompvcl;CloudService;DBXSybaseASADriver;JanuaFMXControls;soaprtl;soapserver;JvNet;$(DCC_UsePackage)</DCC_UsePackage>
@@ -127,6 +128,7 @@
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
     </PropertyGroup>
+    <Import Project="JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('JanuaLibDXE15.optset')"/>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
@@ -167,7 +169,7 @@
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
-            <DependentOn>JanuaLibDXE15.optset</DependentOn>
+            <DependentOn>C:\Januaproject\Components\Distro\DXE15\JanuaeExeDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
@@ -188,14 +190,9 @@
                 </Source>
                 <Excluded_Packages/>
             </Delphi.Personality>
-            <Deployment Version="4">
+            <Deployment Version="5">
                 <DeployFile LocalName="Win32\Debug\JanuaTmsForms.exe" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="c:\januaproject\bin\Win64\Release\JanuaTmsForms.exe" Configuration="Release" Class="ProjectOutput">
-                    <Platform Name="Win64">
-                        <RemoteName>JanuaTmsForms.exe</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
+                <DeployFile LocalName="c:\januaproject\bin\Win64\Release\JanuaTmsForms.exe" Configuration="Release" Class="ProjectOutput"/>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="iOSSimulator">
                         <Operation>1</Operation>
@@ -208,16 +205,6 @@
                         <Operation>0</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="AndroidClasses">
-                    <Platform Name="Android">
-                        <RemoteDir>classes</RemoteDir>
-                        <Operation>64</Operation>
-                    </Platform>
-                    <Platform Name="Android64">
-                        <RemoteDir>classes</RemoteDir>
-                        <Operation>64</Operation>
-                    </Platform>
-                </DeployClass>
                 <DeployClass Name="AndroidFileProvider">
                     <Platform Name="Android">
                         <RemoteDir>res\xml</RemoteDir>
@@ -225,12 +212,6 @@
                     </Platform>
                     <Platform Name="Android64">
                         <RemoteDir>res\xml</RemoteDir>
-                        <Operation>1</Operation>
-                    </Platform>
-                </DeployClass>
-                <DeployClass Name="AndroidGDBServer">
-                    <Platform Name="Android">
-                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
@@ -856,6 +837,9 @@
                     <Platform Name="Win64">
                         <Operation>1</Operation>
                     </Platform>
+                    <Platform Name="Win64x">
+                        <Operation>1</Operation>
+                    </Platform>
                 </DeployClass>
                 <DeployClass Name="ProjectiOSDeviceDebug">
                     <Platform Name="iOSDevice32">
@@ -1149,6 +1133,7 @@
                 <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win64x" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
                 <Platform value="Win32">True</Platform>

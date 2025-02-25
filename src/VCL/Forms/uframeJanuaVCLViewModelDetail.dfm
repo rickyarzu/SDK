@@ -44,8 +44,8 @@ object frameJanuaVCLViewModelDetail: TframeJanuaVCLViewModelDetail
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
   end
   object ActionList1: TActionList
@@ -68,6 +68,7 @@ object frameJanuaVCLViewModelDetail: TframeJanuaVCLViewModelDetail
     Top = 152
   end
   object JanuaDetailActionViewController: TJanuaActionViewController
+    Enabled = False
     Verbose = False
     LogToFile = False
     Language = jlaEnglish

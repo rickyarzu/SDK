@@ -30,7 +30,7 @@
 {$RUNONLY}
 {$IMPLICITBUILD OFF}
 
-rrequires
+requires
   JanuaCore,
   JanuaMVVM,
   JanuaCoreComponents,
@@ -49,10 +49,10 @@ rrequires
   FireDAC,
   FireDACCommonDriver,
   FireDACCommon,
-  dac280,
+  dac290,
   Spring.Base;
 
-ocontains
+contains
   Janua.System.FDacDM in '..\..\src\januacore\datamodule\Janua.System.FDacDM.pas' {dmFDacMemSystemServer: TDataModule},
   Janua.Virtual.Anagraph in '..\..\src\januacore\datamodule\Janua.Virtual.Anagraph.pas',
   Janua.Virtual.Cloud in '..\..\src\januacore\datamodule\Janua.Virtual.Cloud.pas',
@@ -67,7 +67,6 @@ ocontains
   udmVirtualSystemServer in '..\..\src\januacore\datamodule\udmVirtualSystemServer.pas' {dmVirtualSystemServer: TDataModule},
   udmVirtualFootballServer in '..\..\src\januacore\datamodule\udmVirtualFootballServer.pas' {dmVirtualFootballServer: TDataModule},
   udmVirtualFootballStorage in '..\..\src\januacore\datamodule\udmVirtualFootballStorage.pas' {dmVirtualFootballStorage: TDataModule},
-  Janua.Orm.Firedac in '..\..\src\januacore\Janua.Orm.Firedac.pas',
   Janua.Test.FireDac.dmVirtual in '..\..\src\januacore\Test\Janua.Test.FireDac.dmVirtual.pas' {dmFDacVirtualTest: TDataModule},
   Janua.Documents.FdacDM.Virtual in '..\..\src\januacore\datamodule\Janua.Documents.FdacDM.Virtual.pas' {dmVirtualDocuments: TDataModule},
   Janua.WHReceipts.FdacDM.Virtual in '..\..\src\januacore\datamodule\Janua.WHReceipts.FdacDM.Virtual.pas' {dmVirtualWHReceipts: TDataModule},
@@ -79,4 +78,4 @@ ocontains
   Janua.Shipping.Vessels.Firedac.Virtual in '..\..\src\januacore\datamodule\Janua.Shipping.Vessels.Firedac.Virtual.pas' {dmFDMockShippingVessels: TDataModule},
   Janua.Mock.Firedac.Framework in '..\..\src\januacore\datamodule\Janua.Mock.Firedac.Framework.pas';
 
-d.
+end.

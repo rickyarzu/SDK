@@ -134,15 +134,6 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="..\..\..\Testing\src\ufrmTest.pas">
-            <Form>frmTest</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\..\Testing\src\ufrmTest2.pas">
-            <Form>frmTest2</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\..\Testing\src\ufrmTest3.pas">
-            <Form>frmTest3</Form>
-        </DCCReference>
         <DCCReference Include="..\..\..\Testing\src\uframeTest.pas">
             <Form>frameTest</Form>
             <DesignClass>TFrame</DesignClass>
@@ -177,40 +168,56 @@
             <Form>dlgVCLTestPgTablesList</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\VCL\Test\Janua.VCL.frameTestViewModelAnagraphSearch.pas">
-            <Form>frameTestViewModelAnagraphSearch</Form>
+        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.dlgVCLLogin.pas">
+            <Form>dlgVCLCarServiceLogin</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.PhoenixCore.pas"/>
+        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.framePrintAWBs.pas"/>
+        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.framePrintInvoice.pas"/>
+        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.framePrintWarehouseReceipts.pas"/>
+        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.frameRecordSetOrmSyncNavigator.pas">
+            <Form>frameTestRecordSetOrmSyncNavigator</Form>
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.frameViewModelLocationSearch.pas">
-            <Form>frameTestViewModelLocationSearch</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.framePrintInvoice.pas">
-            <Form>frameTestPrintInvoice</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.framePrintAWBs.pas">
-            <Form>frameTestPrintAWBs</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.framePrintWarehouseReceipts.pas">
-            <Form>framePrintWarehouseReceipts</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.frameOrmDB.pas">
-            <Form>frameTestOrmDB</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\..\Testing\src\uframeVclTestOrmDatasetSync.pas">
+        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.frameVclOrmDatasetSync.pas">
             <Form>frameVclTestOrmDatasetSync</Form>
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.frameViewModelLocationSearch.pas"/>
+        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.frmDatasetOrmSync.pas">
+            <Form>frmTestVCLDatasetOrmSync</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.frmDMVCRestClientServer.pas">
+            <Form>frmTestRestClientServer</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.frmRESTAuthorization.pas">
+            <Form>frmVCLTestRESTAuthorization</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.frmTest.pas">
+            <Form>frmTest</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.frmTest2.pas">
+            <Form>frmTest2</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.frmTest3.pas">
+            <Form>frmTest3</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.frameViewModelAnagraphSearch.pas">
+            <Form>frameTestViewModelAnagraphSearch</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PrivateController.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PublicController.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>C:\Januaproject\Components\Distro\DXE15\JanuaeExeDXE15.optset</DependentOn>
