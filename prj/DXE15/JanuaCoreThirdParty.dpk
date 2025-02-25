@@ -24,6 +24,7 @@
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
 {$DEFINE DEBUG}
+{$DEFINE TOKENJWT}
 {$ENDIF IMPLICITBUILDING}
 {$LIBSUFFIX AUTO}
 {$RUNONLY}
@@ -39,11 +40,12 @@ requires
   inet,
   IndySystem,
   IndyProtocols,
+  IndyIPClient,
+  Spring.Base,
   IndyCore,
   SwagDoc;
 
 contains
-
   FB4D.VisionMLDefinition in '..\..\..\Lib\FB4D\Source\FB4D.VisionMLDefinition.pas',
   FB4D.VisionML in '..\..\..\Lib\FB4D\Source\FB4D.VisionML.pas',
   FB4D.Storage in '..\..\..\Lib\FB4D\Source\FB4D.Storage.pas',
@@ -57,7 +59,7 @@ contains
   FB4D.GeminiAI in '..\..\..\Lib\FB4D\Source\FB4D.GeminiAI.pas',
   FB4D.Functions in '..\..\..\Lib\FB4D\Source\FB4D.Functions.pas',
   FB4D.Firestore in '..\..\..\Lib\FB4D\Source\FB4D.Firestore.pas',
-  FB4D.Firestore.Listener in '..\..\..\Lib\FB4D\Source\FB4D.FireStore.Listener.pas',
+  FB4D.FireStore.Listener in '..\..\..\Lib\FB4D\Source\FB4D.FireStore.Listener.pas',
   FB4D.Document in '..\..\..\Lib\FB4D\Source\FB4D.Document.pas',
   FB4D.Configuration in '..\..\..\Lib\FB4D\Source\FB4D.Configuration.pas',
   Pkg.Json.DTO in '..\..\..\Lib\JsonToDelphi\Pkg.Json.DTO.pas',
@@ -71,7 +73,9 @@ contains
   DataSet.Serialize in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.pas',
   DataSet.Serialize.UpdatedStatus in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.UpdatedStatus.pas',
   DataSet.Serialize.Utils in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Utils.pas',
+{$IF MSWINDOWS}
   Alcinoe.FTP.Client in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FTP.Client.pas',
+{$ENDIF}
   FB4D.Authentication in '..\..\..\Lib\FB4D\Source\FB4D.Authentication.pas';
 
 end.

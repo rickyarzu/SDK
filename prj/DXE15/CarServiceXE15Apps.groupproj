@@ -3,9 +3,6 @@
         <ProjectGuid>{8CA1D8D8-742B-4D70-827A-9E136DF67D92}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="..\..\Components\pkg120\sbridge.dproj">
             <Dependencies/>
         </Projects>
@@ -15,46 +12,13 @@
         <Projects Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Components\pkg120\SwagDoc.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\loggerproRT.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\components\pkg120\DECCipher.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\components\pkg120\Neon.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\components\pkg120\AWSSDK.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\components\pkg120\AWSSDKFMX.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\PlanAddons.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\components\pkg120\AWSSDKVCL.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\components\pkg120\Spring.Base.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\components\pkg120\Spring.Core.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\components\pkg120\sgcWebSockets.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Components\pkg120\dclsgcWebSockets.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaCoreThirdParty.dproj">
@@ -111,16 +75,10 @@
         <Projects Include="JanuaTmsControls.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="JanuaFMXControls.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaVCLMVVM.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
@@ -258,7 +216,7 @@
         <Projects Include="..\..\Samples\Janua\FMX\JanuaGMapsDemo.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="C:\Januaproject\Components\TMS FNC Maps\Demos\FMX\GoogleMapsIntegratedDirections\FMXGoogleMapsIntegratedDirectionsDemo.dproj">
+        <Projects Include="..\..\Samples\Janua\JanuaTestCamera.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -269,15 +227,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="OpenAIPackage">
-        <MSBuild Projects="..\..\Components\pkg120\OpenAIPackage.dproj"/>
-    </Target>
-    <Target Name="OpenAIPackage:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\OpenAIPackage.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="OpenAIPackage:Make">
-        <MSBuild Projects="..\..\Components\pkg120\OpenAIPackage.dproj" Targets="Make"/>
-    </Target>
     <Target Name="sbridge">
         <MSBuild Projects="..\..\Components\pkg120\sbridge.dproj"/>
     </Target>
@@ -305,24 +254,6 @@
     <Target Name="TRCGooglePlacesRuntime:Make">
         <MSBuild Projects="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj" Targets="Make"/>
     </Target>
-    <Target Name="SwagDoc">
-        <MSBuild Projects="..\..\Components\pkg120\SwagDoc.dproj"/>
-    </Target>
-    <Target Name="SwagDoc:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\SwagDoc.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="SwagDoc:Make">
-        <MSBuild Projects="..\..\Components\pkg120\SwagDoc.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="loggerproRT">
-        <MSBuild Projects="..\..\Components\pkg120\loggerproRT.dproj"/>
-    </Target>
-    <Target Name="loggerproRT:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\loggerproRT.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="loggerproRT:Make">
-        <MSBuild Projects="..\..\Components\pkg120\loggerproRT.dproj" Targets="Make"/>
-    </Target>
     <Target Name="dmvcframeworkRT">
         <MSBuild Projects="..\..\Components\pkg120\dmvcframeworkRT.dproj"/>
     </Target>
@@ -331,78 +262,6 @@
     </Target>
     <Target Name="dmvcframeworkRT:Make">
         <MSBuild Projects="..\..\Components\pkg120\dmvcframeworkRT.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="DECCipher">
-        <MSBuild Projects="..\..\components\pkg120\DECCipher.dproj"/>
-    </Target>
-    <Target Name="DECCipher:Clean">
-        <MSBuild Projects="..\..\components\pkg120\DECCipher.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="DECCipher:Make">
-        <MSBuild Projects="..\..\components\pkg120\DECCipher.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="Neon">
-        <MSBuild Projects="..\..\components\pkg120\Neon.dproj"/>
-    </Target>
-    <Target Name="Neon:Clean">
-        <MSBuild Projects="..\..\components\pkg120\Neon.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="Neon:Make">
-        <MSBuild Projects="..\..\components\pkg120\Neon.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="AWSSDK">
-        <MSBuild Projects="..\..\components\pkg120\AWSSDK.dproj"/>
-    </Target>
-    <Target Name="AWSSDK:Clean">
-        <MSBuild Projects="..\..\components\pkg120\AWSSDK.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="AWSSDK:Make">
-        <MSBuild Projects="..\..\components\pkg120\AWSSDK.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="AWSSDKFMX">
-        <MSBuild Projects="..\..\components\pkg120\AWSSDKFMX.dproj"/>
-    </Target>
-    <Target Name="AWSSDKFMX:Clean">
-        <MSBuild Projects="..\..\components\pkg120\AWSSDKFMX.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="AWSSDKFMX:Make">
-        <MSBuild Projects="..\..\components\pkg120\AWSSDKFMX.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="PlanAddons">
-        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj"/>
-    </Target>
-    <Target Name="PlanAddons:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="PlanAddons:Make">
-        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="AWSSDKVCL">
-        <MSBuild Projects="..\..\components\pkg120\AWSSDKVCL.dproj"/>
-    </Target>
-    <Target Name="AWSSDKVCL:Clean">
-        <MSBuild Projects="..\..\components\pkg120\AWSSDKVCL.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="AWSSDKVCL:Make">
-        <MSBuild Projects="..\..\components\pkg120\AWSSDKVCL.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="Spring_Base">
-        <MSBuild Projects="..\..\components\pkg120\Spring.Base.dproj"/>
-    </Target>
-    <Target Name="Spring_Base:Clean">
-        <MSBuild Projects="..\..\components\pkg120\Spring.Base.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="Spring_Base:Make">
-        <MSBuild Projects="..\..\components\pkg120\Spring.Base.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="Spring_Core">
-        <MSBuild Projects="..\..\components\pkg120\Spring.Core.dproj"/>
-    </Target>
-    <Target Name="Spring_Core:Clean">
-        <MSBuild Projects="..\..\components\pkg120\Spring.Core.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="Spring_Core:Make">
-        <MSBuild Projects="..\..\components\pkg120\Spring.Core.dproj" Targets="Make"/>
     </Target>
     <Target Name="sgcWebSockets">
         <MSBuild Projects="..\..\components\pkg120\sgcWebSockets.dproj"/>
@@ -421,15 +280,6 @@
     </Target>
     <Target Name="dclsgcWebSockets:Make">
         <MSBuild Projects="..\..\Components\pkg120\dclsgcWebSockets.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="TUniFalcon">
-        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj"/>
-    </Target>
-    <Target Name="TUniFalcon:Clean">
-        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="TUniFalcon:Make">
-        <MSBuild Projects="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaCoreThirdParty">
         <MSBuild Projects="JanuaCoreThirdParty.dproj"/>
@@ -593,15 +443,6 @@
     <Target Name="JanuaTmsControls:Make">
         <MSBuild Projects="JanuaTmsControls.dproj" Targets="Make"/>
     </Target>
-    <Target Name="TMSFMXPackPkg">
-        <MSBuild Projects="..\..\Components\pkg120\TMSFMXPackPkg.dproj"/>
-    </Target>
-    <Target Name="TMSFMXPackPkg:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\TMSFMXPackPkg.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="TMSFMXPackPkg:Make">
-        <MSBuild Projects="..\..\Components\pkg120\TMSFMXPackPkg.dproj" Targets="Make"/>
-    </Target>
     <Target Name="JanuaFMXControls">
         <MSBuild Projects="JanuaFMXControls.dproj"/>
     </Target>
@@ -619,15 +460,6 @@
     </Target>
     <Target Name="JanuaVCLMVVM:Make">
         <MSBuild Projects="JanuaVCLMVVM.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="TMSWebOSMapsPkg">
-        <MSBuild Projects="..\..\components\pkg120\TMSWebOSMapsPkg.dproj"/>
-    </Target>
-    <Target Name="TMSWebOSMapsPkg:Clean">
-        <MSBuild Projects="..\..\components\pkg120\TMSWebOSMapsPkg.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="TMSWebOSMapsPkg:Make">
-        <MSBuild Projects="..\..\components\pkg120\TMSWebOSMapsPkg.dproj" Targets="Make"/>
     </Target>
     <Target Name="TMSWebGMapsPkg">
         <MSBuild Projects="..\..\components\pkg120\TMSWebGMapsPkg.dproj"/>
@@ -1034,23 +866,23 @@
     <Target Name="JanuaGMapsDemo:Make">
         <MSBuild Projects="..\..\Samples\Janua\FMX\JanuaGMapsDemo.dproj" Targets="Make"/>
     </Target>
-    <Target Name="FMXGoogleMapsIntegratedDirectionsDemo">
-        <MSBuild Projects="C:\Januaproject\Components\TMS FNC Maps\Demos\FMX\GoogleMapsIntegratedDirections\FMXGoogleMapsIntegratedDirectionsDemo.dproj"/>
+    <Target Name="JanuaTestCamera">
+        <MSBuild Projects="..\..\Samples\Janua\JanuaTestCamera.dproj"/>
     </Target>
-    <Target Name="FMXGoogleMapsIntegratedDirectionsDemo:Clean">
-        <MSBuild Projects="C:\Januaproject\Components\TMS FNC Maps\Demos\FMX\GoogleMapsIntegratedDirections\FMXGoogleMapsIntegratedDirectionsDemo.dproj" Targets="Clean"/>
+    <Target Name="JanuaTestCamera:Clean">
+        <MSBuild Projects="..\..\Samples\Janua\JanuaTestCamera.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="FMXGoogleMapsIntegratedDirectionsDemo:Make">
-        <MSBuild Projects="C:\Januaproject\Components\TMS FNC Maps\Demos\FMX\GoogleMapsIntegratedDirections\FMXGoogleMapsIntegratedDirectionsDemo.dproj" Targets="Make"/>
+    <Target Name="JanuaTestCamera:Make">
+        <MSBuild Projects="..\..\Samples\Janua\JanuaTestCamera.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="OpenAIPackage;sbridge;dclsbridge;TRCGooglePlacesRuntime;SwagDoc;loggerproRT;dmvcframeworkRT;DECCipher;Neon;AWSSDK;AWSSDKFMX;PlanAddons;AWSSDKVCL;Spring_Base;Spring_Core;sgcWebSockets;dclsgcWebSockets;TUniFalcon;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaRestWeb;JanuaUniMVVMTesting;JanuaTestLibraries;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;TMSFMXPackPkg;JanuaFMXControls;JanuaVCLMVVM;TMSWebOSMapsPkg;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;CarServiceDMVCService;CarServiceUsersUniGUI;PickAPP;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;TGooglePlacesTest;mod_cscustomersmobile;mod_csdriversmersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;CarServiceUnitTesting;CarServiceDriverApp;Archive;Review;TmsTwilio;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;JanuaAllDemos;EuroFloraApp;TestGoogleVCL;FSMap;Cipher_FMX;RESTDebuggerClient;WebMocksBasic;MatchingDemo;CanvasPainting;JanuaJsonSerializeNeonTest;SamplPlannerVCL;CloudCalendarImportExport;CarServiceWebBrokerCustConfService;CustomPathBlox;VCLThemeSelector;JanuaFMXTestImageResize;JanuaGMapsDemo;FMXGoogleMapsIntegratedDirectionsDemo"/>
+        <CallTarget Targets="sbridge;dclsbridge;TRCGooglePlacesRuntime;dmvcframeworkRT;sgcWebSockets;dclsgcWebSockets;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaRestWeb;JanuaUniMVVMTesting;JanuaTestLibraries;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;CarServiceDMVCService;CarServiceUsersUniGUI;PickAPP;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;TGooglePlacesTest;mod_cscustomersmobile;mod_csdriversmersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;CarServiceUnitTesting;CarServiceDriverApp;Archive;Review;TmsTwilio;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;JanuaAllDemos;EuroFloraApp;TestGoogleVCL;FSMap;Cipher_FMX;RESTDebuggerClient;WebMocksBasic;MatchingDemo;CanvasPainting;JanuaJsonSerializeNeonTest;SamplPlannerVCL;CloudCalendarImportExport;CarServiceWebBrokerCustConfService;CustomPathBlox;VCLThemeSelector;JanuaFMXTestImageResize;JanuaGMapsDemo;JanuaTestCamera"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="OpenAIPackage:Clean;sbridge:Clean;dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;SwagDoc:Clean;loggerproRT:Clean;dmvcframeworkRT:Clean;DECCipher:Clean;Neon:Clean;AWSSDK:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;AWSSDKVCL:Clean;Spring_Base:Clean;Spring_Core:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;TUniFalcon:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaRestWeb:Clean;JanuaUniMVVMTesting:Clean;JanuaTestLibraries:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;TMSFMXPackPkg:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebOSMapsPkg:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;CarServiceDMVCService:Clean;CarServiceUsersUniGUI:Clean;PickAPP:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;TGooglePlacesTest:Clean;mod_cscustomersmobile:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;CarServiceUnitTesting:Clean;CarServiceDriverApp:Clean;Archive:Clean;Review:Clean;TmsTwilio:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;TestGoogleVCL:Clean;FSMap:Clean;Cipher_FMX:Clean;RESTDebuggerClient:Clean;WebMocksBasic:Clean;MatchingDemo:Clean;CanvasPainting:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean;CloudCalendarImportExport:Clean;CarServiceWebBrokerCustConfService:Clean;CustomPathBlox:Clean;VCLThemeSelector:Clean;JanuaFMXTestImageResize:Clean;JanuaGMapsDemo:Clean;FMXGoogleMapsIntegratedDirectionsDemo:Clean"/>
+        <CallTarget Targets="sbridge:Clean;dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;dmvcframeworkRT:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaRestWeb:Clean;JanuaUniMVVMTesting:Clean;JanuaTestLibraries:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;CarServiceDMVCService:Clean;CarServiceUsersUniGUI:Clean;PickAPP:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;TGooglePlacesTest:Clean;mod_cscustomersmobile:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;CarServiceUnitTesting:Clean;CarServiceDriverApp:Clean;Archive:Clean;Review:Clean;TmsTwilio:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;TestGoogleVCL:Clean;FSMap:Clean;Cipher_FMX:Clean;RESTDebuggerClient:Clean;WebMocksBasic:Clean;MatchingDemo:Clean;CanvasPainting:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean;CloudCalendarImportExport:Clean;CarServiceWebBrokerCustConfService:Clean;CustomPathBlox:Clean;VCLThemeSelector:Clean;JanuaFMXTestImageResize:Clean;JanuaGMapsDemo:Clean;JanuaTestCamera:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="OpenAIPackage:Make;sbridge:Make;dclsbridge:Make;TRCGooglePlacesRuntime:Make;SwagDoc:Make;loggerproRT:Make;dmvcframeworkRT:Make;DECCipher:Make;Neon:Make;AWSSDK:Make;AWSSDKFMX:Make;PlanAddons:Make;AWSSDKVCL:Make;Spring_Base:Make;Spring_Core:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;TUniFalcon:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaRestWeb:Make;JanuaUniMVVMTesting:Make;JanuaTestLibraries:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;TMSFMXPackPkg:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebOSMapsPkg:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;CarServiceDMVCService:Make;CarServiceUsersUniGUI:Make;PickAPP:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;TGooglePlacesTest:Make;mod_cscustomersmobile:Make;mod_csdriversmersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;CarServiceUnitTesting:Make;CarServiceDriverApp:Make;Archive:Make;Review:Make;TmsTwilio:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;TestGoogleVCL:Make;FSMap:Make;Cipher_FMX:Make;RESTDebuggerClient:Make;WebMocksBasic:Make;MatchingDemo:Make;CanvasPainting:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make;CloudCalendarImportExport:Make;CarServiceWebBrokerCustConfService:Make;CustomPathBlox:Make;VCLThemeSelector:Make;JanuaFMXTestImageResize:Make;JanuaGMapsDemo:Make;FMXGoogleMapsIntegratedDirectionsDemo:Make"/>
+        <CallTarget Targets="sbridge:Make;dclsbridge:Make;TRCGooglePlacesRuntime:Make;dmvcframeworkRT:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaRestWeb:Make;JanuaUniMVVMTesting:Make;JanuaTestLibraries:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;CarServiceDMVCService:Make;CarServiceUsersUniGUI:Make;PickAPP:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;TGooglePlacesTest:Make;mod_cscustomersmobile:Make;mod_csdriversmersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;CarServiceUnitTesting:Make;CarServiceDriverApp:Make;Archive:Make;Review:Make;TmsTwilio:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;TestGoogleVCL:Make;FSMap:Make;Cipher_FMX:Make;RESTDebuggerClient:Make;WebMocksBasic:Make;MatchingDemo:Make;CanvasPainting:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make;CloudCalendarImportExport:Make;CarServiceWebBrokerCustConfService:Make;CustomPathBlox:Make;VCLThemeSelector:Make;JanuaFMXTestImageResize:Make;JanuaGMapsDemo:Make;JanuaTestCamera:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='Libs'">
@@ -1144,20 +976,8 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
-            <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
             <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
-            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1192,12 +1012,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
-            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1228,24 +1042,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\DECCipher.dproj">
-            <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDK.dproj">
-            <ProjectGuid>{9B69AA9A-2D96-403E-91A4-C2953D1F9828}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Neon.dproj">
-            <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1268,24 +1064,6 @@
             <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\SwagDoc.dproj">
-            <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="C:\Januaproject\Components\TMS FNC Maps\Demos\FMX\GoogleMapsIntegratedDirections\FMXGoogleMapsIntegratedDirectionsDemo.dproj">
-            <ProjectGuid>{F2DCBD83-3D8B-486D-9D86-B1E22967E2D0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
-            <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
@@ -1354,12 +1132,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKFMX.dproj">
-            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1408,17 +1180,17 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaTestCamera.dproj">
+            <ProjectGuid>{5B0F35A2-EF78-4E42-9460-12CE3011CB5D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
             <ProjectGuid>{DD619250-0298-4A11-96EF-FFDEBA724392}</ProjectGuid>
@@ -1442,12 +1214,6 @@
             <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
-            <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
@@ -1498,12 +1264,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Base.dproj">
-            <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <ProjectGuid>{F066C655-683B-4579-89EB-AD5A0F4EA5D5}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1546,22 +1306,10 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Core.dproj">
-            <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
             <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
-            <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniMobileDemo.dproj">
@@ -1662,22 +1410,10 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
-            <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
             <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
-            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
@@ -1710,12 +1446,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
-            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1746,24 +1476,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\DECCipher.dproj">
-            <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDK.dproj">
-            <ProjectGuid>{9B69AA9A-2D96-403E-91A4-C2953D1F9828}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Neon.dproj">
-            <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64;iOSDevice64;OSX64;Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaUniDACUnitTesting.dproj">
             <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
             <Configurations>TestDebug</Configurations>
@@ -1784,24 +1496,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\VCL\Google\TestGoogleVCL.dproj">
             <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\SwagDoc.dproj">
-            <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="C:\Januaproject\Components\TMS FNC Maps\Demos\FMX\GoogleMapsIntegratedDirections\FMXGoogleMapsIntegratedDirectionsDemo.dproj">
-            <ProjectGuid>{F2DCBD83-3D8B-486D-9D86-B1E22967E2D0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
-            <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1872,12 +1566,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKFMX.dproj">
-            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1926,16 +1614,16 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaTestCamera.dproj">
+            <ProjectGuid>{5B0F35A2-EF78-4E42-9460-12CE3011CB5D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
@@ -1960,12 +1648,6 @@
             <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
-            <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
@@ -2016,12 +1698,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Base.dproj">
-            <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64;iOSDevice64;OSX64;Win32</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <ProjectGuid>{F066C655-683B-4579-89EB-AD5A0F4EA5D5}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2064,21 +1740,9 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Core.dproj">
-            <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64;iOSDevice64;OSX64;Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
             <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
-            <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2180,22 +1844,10 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
-            <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
             <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
-            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
@@ -2228,12 +1880,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
-            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations/>
@@ -2264,24 +1910,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\DECCipher.dproj">
-            <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDK.dproj">
-            <ProjectGuid>{9B69AA9A-2D96-403E-91A4-C2953D1F9828}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Neon.dproj">
-            <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -2304,24 +1932,6 @@
             <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\SwagDoc.dproj">
-            <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="C:\Januaproject\Components\TMS FNC Maps\Demos\FMX\GoogleMapsIntegratedDirections\FMXGoogleMapsIntegratedDirectionsDemo.dproj">
-            <ProjectGuid>{F2DCBD83-3D8B-486D-9D86-B1E22967E2D0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
-            <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
@@ -2390,12 +2000,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKFMX.dproj">
-            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2444,16 +2048,16 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaTestCamera.dproj">
+            <ProjectGuid>{5B0F35A2-EF78-4E42-9460-12CE3011CB5D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
@@ -2478,12 +2082,6 @@
             <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
-            <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
@@ -2534,12 +2132,6 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Base.dproj">
-            <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <ProjectGuid>{F066C655-683B-4579-89EB-AD5A0F4EA5D5}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2582,22 +2174,10 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Core.dproj">
-            <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
             <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
-            <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniMobileDemo.dproj">
@@ -2698,18 +2278,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
-            <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
-            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
             <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2746,12 +2314,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
-            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2782,24 +2344,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\DECCipher.dproj">
-            <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDK.dproj">
-            <ProjectGuid>{9B69AA9A-2D96-403E-91A4-C2953D1F9828}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Neon.dproj">
-            <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2822,24 +2366,6 @@
             <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\SwagDoc.dproj">
-            <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="C:\Januaproject\Components\TMS FNC Maps\Demos\FMX\GoogleMapsIntegratedDirections\FMXGoogleMapsIntegratedDirectionsDemo.dproj">
-            <ProjectGuid>{F2DCBD83-3D8B-486D-9D86-B1E22967E2D0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
-            <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCoreUnitTesting.dproj">
@@ -2908,12 +2434,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKFMX.dproj">
-            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2962,15 +2482,15 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaUniGUI.dproj">
-            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
-            <Configurations>Release</Configurations>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaTestCamera.dproj">
+            <ProjectGuid>{5B0F35A2-EF78-4E42-9460-12CE3011CB5D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2996,12 +2516,6 @@
             <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
-            <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
@@ -3052,12 +2566,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Base.dproj">
-            <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <ProjectGuid>{F066C655-683B-4579-89EB-AD5A0F4EA5D5}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3100,21 +2608,9 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Core.dproj">
-            <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
             <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
-            <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -3216,22 +2712,10 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
-            <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
             <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
-            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
@@ -3264,12 +2748,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
-            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -3300,24 +2778,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\DECCipher.dproj">
-            <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64;iOSDevice64;OSX64;OSXARM64;Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDK.dproj">
-            <ProjectGuid>{9B69AA9A-2D96-403E-91A4-C2953D1F9828}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Neon.dproj">
-            <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64;iOSDevice64;OSX64;OSXARM64;Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -3340,24 +2800,6 @@
             <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\SwagDoc.dproj">
-            <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64;iOSDevice64;OSX64;OSXARM64;Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="C:\Januaproject\Components\TMS FNC Maps\Demos\FMX\GoogleMapsIntegratedDirections\FMXGoogleMapsIntegratedDirectionsDemo.dproj">
-            <ProjectGuid>{F2DCBD83-3D8B-486D-9D86-B1E22967E2D0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
-            <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCoreUnitTesting.dproj">
@@ -3426,12 +2868,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKFMX.dproj">
-            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64;iOSDevice64;OSX64;OSXARM64;Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -3480,16 +2916,16 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaTestCamera.dproj">
+            <ProjectGuid>{5B0F35A2-EF78-4E42-9460-12CE3011CB5D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
@@ -3514,12 +2950,6 @@
             <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
-            <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
@@ -3570,12 +3000,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Base.dproj">
-            <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64;iOSDevice64;OSX64;OSXARM64;Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <ProjectGuid>{F066C655-683B-4579-89EB-AD5A0F4EA5D5}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3618,22 +3042,10 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Core.dproj">
-            <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64;iOSDevice64;OSX64;OSXARM64;Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
             <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
-            <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64;iOSDevice64;OSX64;OSXARM64;Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniMobileDemo.dproj">
@@ -3734,20 +3146,8 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
-            <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
             <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
-            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -3782,12 +3182,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
-            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3818,24 +3212,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\DECCipher.dproj">
-            <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDK.dproj">
-            <ProjectGuid>{9B69AA9A-2D96-403E-91A4-C2953D1F9828}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Neon.dproj">
-            <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -3856,24 +3232,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\VCL\Google\TestGoogleVCL.dproj">
             <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\SwagDoc.dproj">
-            <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="C:\Januaproject\Components\TMS FNC Maps\Demos\FMX\GoogleMapsIntegratedDirections\FMXGoogleMapsIntegratedDirectionsDemo.dproj">
-            <ProjectGuid>{F2DCBD83-3D8B-486D-9D86-B1E22967E2D0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
-            <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -3944,12 +3302,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKFMX.dproj">
-            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3998,17 +3350,17 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaTestCamera.dproj">
+            <ProjectGuid>{5B0F35A2-EF78-4E42-9460-12CE3011CB5D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
             <ProjectGuid>{DD619250-0298-4A11-96EF-FFDEBA724392}</ProjectGuid>
@@ -4032,12 +3384,6 @@
             <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
-            <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
@@ -4088,12 +3434,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Base.dproj">
-            <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <ProjectGuid>{F066C655-683B-4579-89EB-AD5A0F4EA5D5}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -4136,21 +3476,9 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Core.dproj">
-            <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
             <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
-            <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -4252,20 +3580,8 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
-            <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
             <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
-            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -4300,12 +3616,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
-            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
-            <Configurations/>
-            <Platforms>Linux64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -4336,24 +3646,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\DECCipher.dproj">
-            <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Linux64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDK.dproj">
-            <ProjectGuid>{9B69AA9A-2D96-403E-91A4-C2953D1F9828}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Neon.dproj">
-            <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Linux64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -4374,24 +3666,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\VCL\Google\TestGoogleVCL.dproj">
             <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\SwagDoc.dproj">
-            <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Linux64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="C:\Januaproject\Components\TMS FNC Maps\Demos\FMX\GoogleMapsIntegratedDirections\FMXGoogleMapsIntegratedDirectionsDemo.dproj">
-            <ProjectGuid>{F2DCBD83-3D8B-486D-9D86-B1E22967E2D0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
-            <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -4462,12 +3736,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKFMX.dproj">
-            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Linux64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -4516,15 +3784,15 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaUniGUI.dproj">
-            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaTestCamera.dproj">
+            <ProjectGuid>{5B0F35A2-EF78-4E42-9460-12CE3011CB5D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
-            <Configurations>Debug</Configurations>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -4550,12 +3818,6 @@
             <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
-            <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
@@ -4606,12 +3868,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Base.dproj">
-            <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Linux64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <ProjectGuid>{F066C655-683B-4579-89EB-AD5A0F4EA5D5}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -4654,23 +3910,11 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Core.dproj">
-            <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Linux64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
             <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
-            <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Linux64</Platforms>
-            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Touch\AllFeatures\UniMobileDemo.dproj">
             <ProjectGuid>{57CFDCF4-3C6A-4774-9E34-2316897D983C}</ProjectGuid>
@@ -4770,22 +4014,10 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
-            <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
             <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
-            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
@@ -4818,12 +4050,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
-            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
             <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -4854,24 +4080,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\DECCipher.dproj">
-            <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDK.dproj">
-            <ProjectGuid>{9B69AA9A-2D96-403E-91A4-C2953D1F9828}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Neon.dproj">
-            <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaUniDACUnitTesting.dproj">
             <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
             <Configurations>TestDebug</Configurations>
@@ -4892,24 +4100,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\VCL\Google\TestGoogleVCL.dproj">
             <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\SwagDoc.dproj">
-            <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="C:\Januaproject\Components\TMS FNC Maps\Demos\FMX\GoogleMapsIntegratedDirections\FMXGoogleMapsIntegratedDirectionsDemo.dproj">
-            <ProjectGuid>{F2DCBD83-3D8B-486D-9D86-B1E22967E2D0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
-            <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -4980,12 +4170,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKFMX.dproj">
-            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64;iOSDevice64;OSX64;Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -5034,16 +4218,16 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaTestCamera.dproj">
+            <ProjectGuid>{5B0F35A2-EF78-4E42-9460-12CE3011CB5D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
@@ -5068,12 +4252,6 @@
             <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
-            <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
@@ -5124,12 +4302,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Base.dproj">
-            <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <ProjectGuid>{F066C655-683B-4579-89EB-AD5A0F4EA5D5}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -5172,21 +4344,9 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Core.dproj">
-            <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
             <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
-            <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -5288,22 +4448,10 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
-            <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
             <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
-            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
@@ -5332,12 +4480,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\JanuaJsonSerializeNeonTest.dproj">
             <ProjectGuid>{C6E3D577-8DFF-472C-AFA7-B9C26C5A4F1B}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
-            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -5372,24 +4514,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\DECCipher.dproj">
-            <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDK.dproj">
-            <ProjectGuid>{9B69AA9A-2D96-403E-91A4-C2953D1F9828}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Neon.dproj">
-            <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -5410,24 +4534,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\VCL\Google\TestGoogleVCL.dproj">
             <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\SwagDoc.dproj">
-            <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="C:\Januaproject\Components\TMS FNC Maps\Demos\FMX\GoogleMapsIntegratedDirections\FMXGoogleMapsIntegratedDirectionsDemo.dproj">
-            <ProjectGuid>{F2DCBD83-3D8B-486D-9D86-B1E22967E2D0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
-            <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -5498,12 +4604,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKFMX.dproj">
-            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -5552,17 +4652,17 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaTestCamera.dproj">
+            <ProjectGuid>{5B0F35A2-EF78-4E42-9460-12CE3011CB5D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
             <ProjectGuid>{DD619250-0298-4A11-96EF-FFDEBA724392}</ProjectGuid>
@@ -5586,12 +4686,6 @@
             <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
-            <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
@@ -5642,12 +4736,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Base.dproj">
-            <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <ProjectGuid>{F066C655-683B-4579-89EB-AD5A0F4EA5D5}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -5690,21 +4778,9 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Core.dproj">
-            <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
             <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
-            <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -5806,23 +4882,11 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\TMSFMXPackPkg.dproj">
-            <ProjectGuid>{22985F53-2C69-431B-91F7-65FAA6790392}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\Params\mod_uniparams.dproj">
             <ProjectGuid>{B6C17768-5C4E-47EF-9109-6795AAE1EABF}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
-            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\mod_cscustomersmobile.dproj">
             <ProjectGuid>{F3B9B7D5-078F-470E-883F-2DAC6B6220D4}</ProjectGuid>
@@ -5850,12 +4914,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\JanuaJsonSerializeNeonTest.dproj">
             <ProjectGuid>{C6E3D577-8DFF-472C-AFA7-B9C26C5A4F1B}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKVCL.dproj">
-            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -5890,24 +4948,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\DECCipher.dproj">
-            <ProjectGuid>{A150B2FE-B643-47BE-BA38-7AE52E269F86}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDK.dproj">
-            <ProjectGuid>{9B69AA9A-2D96-403E-91A4-C2953D1F9828}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Neon.dproj">
-            <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations/>
@@ -5928,24 +4968,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\VCL\Google\TestGoogleVCL.dproj">
             <ProjectGuid>{99222C56-9938-4BE8-B045-6B9E0624B4D2}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\SwagDoc.dproj">
-            <ProjectGuid>{5B9408E7-46AC-4431-9716-C9EB9F8589B1}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="C:\Januaproject\Components\TMS FNC Maps\Demos\FMX\GoogleMapsIntegratedDirections\FMXGoogleMapsIntegratedDirectionsDemo.dproj">
-            <ProjectGuid>{F2DCBD83-3D8B-486D-9D86-B1E22967E2D0}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\..\Libraries\UniFalcon\Packages\TUniFalcon.dproj">
-            <ProjectGuid>{B80D8C38-75A7-49B0-8B11-88D6C8E50B61}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -6016,12 +5038,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\AWSSDKFMX.dproj">
-            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -6070,16 +5086,16 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\JanuaTestCamera.dproj">
+            <ProjectGuid>{5B0F35A2-EF78-4E42-9460-12CE3011CB5D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="WebREST\CarServiceWebBrokerCustConfService.dproj">
@@ -6104,12 +5120,6 @@
             <ProjectGuid>{ADE3F108-EF11-4F69-A2A7-B7C9AD2040D7}</ProjectGuid>
             <Configurations/>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\TMSWebOSMapsPkg.dproj">
-            <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
-            <Configurations/>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TMSWebGMapsPkg.dproj">
@@ -6160,12 +5170,6 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Base.dproj">
-            <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <ProjectGuid>{F066C655-683B-4579-89EB-AD5A0F4EA5D5}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -6208,21 +5212,9 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\Spring.Core.dproj">
-            <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\FMx\Cipher_FMX.dproj">
             <ProjectGuid>{F90DC8C6-DC04-46FE-8D5C-2260589FBEF1}</ProjectGuid>
             <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\loggerproRT.dproj">
-            <ProjectGuid>{A703CB82-0A5E-440C-84D3-A358B5F6B2B3}</ProjectGuid>
-            <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>

@@ -6,9 +6,10 @@
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">iOSSimARM64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1741955</TargetedPlatforms>
         <AppType>Package</AppType>
+        <ProjectName Condition="'$(ProjectName)'==''">JOSE</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -254,7 +255,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JOSE290.bpl" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="C:\Embarcadero\Studio\23.0\Bpl\JOSE290.bpl" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>JOSE.bpl</RemoteName>
                         <Overwrite>true</Overwrite>

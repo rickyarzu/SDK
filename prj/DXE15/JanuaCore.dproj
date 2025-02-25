@@ -8,8 +8,7 @@
         <AppType>Package</AppType>
         <FrameworkType>None</FrameworkType>
         <ProjectVersion>20.2</ProjectVersion>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
-        <ProjectName Condition="'$(ProjectName)'==''">JanuaCore</ProjectName>
+        <Platform Condition="'$(Platform)'==''">Android64</Platform>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>

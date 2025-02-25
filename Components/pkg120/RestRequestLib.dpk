@@ -45,6 +45,7 @@ contains
   RESTRequest4D.Request.Contract in '..\..\..\lib\RESTRequest4Delphi\src\RESTRequest4D.Request.Contract.pas',
   RESTRequest4D.Response.Client in '..\..\..\lib\RESTRequest4Delphi\src\RESTRequest4D.Response.Client.pas',
   RESTRequest4D.Response.Contract in '..\..\..\lib\RESTRequest4Delphi\src\RESTRequest4D.Response.Contract.pas',
-  RESTRequest4D.Utils in '..\..\..\lib\RESTRequest4Delphi\src\RESTRequest4D.Utils.pas';
+  RESTRequest4D.Utils in '..\..\..\lib\RESTRequest4Delphi\src\RESTRequest4D.Utils.pas',
+  RESTRequest4D.Request.Adapter.Contract in '..\..\..\Lib\RESTRequest4Delphi\src\RESTRequest4D.Request.Adapter.Contract.pas';
 
 end.
