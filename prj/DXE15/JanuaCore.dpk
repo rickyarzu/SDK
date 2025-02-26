@@ -35,8 +35,11 @@ requires
   dbrtl,
   soaprtl,
   inet,
+{$IFNDEF LINUX}
   IndyIPClient,
   IndyIPCommon,
+{$ENDIF}
+
   IndySystem,
   IndyProtocols,
   IndyCore,

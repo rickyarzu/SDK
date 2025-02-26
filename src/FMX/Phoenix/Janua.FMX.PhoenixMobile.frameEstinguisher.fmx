@@ -305,7 +305,6 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       TabOrder = 11
       GroupName = '1'
       Text = 'TMSFNCRadioButton'
-      Font.Name = 'Segoe UI'
     end
     object ckbRitir: TTMSFNCRadioButton
       Color = claNull
@@ -318,7 +317,6 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       TabOrder = 10
       GroupName = '1'
       Text = 'TMSFNCRadioButton'
-      Font.Name = 'Segoe UI'
     end
     object ckbSmalt: TTMSFNCRadioButton
       Color = claNull
@@ -331,7 +329,6 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       TabOrder = 9
       GroupName = '1'
       Text = 'TMSFNCRadioButton'
-      Font.Name = 'Segoe UI'
     end
     object ckbRest: TTMSFNCRadioButton
       Color = claNull
@@ -344,7 +341,6 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       TabOrder = 8
       GroupName = '1'
       Text = 'TMSFNCRadioButton'
-      Font.Name = 'Segoe UI'
     end
     object ckbNonEseg: TTMSFNCRadioButton
       Color = claNull
@@ -357,7 +353,6 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       TabOrder = 7
       GroupName = '1'
       Text = 'TMSFNCRadioButton'
-      Font.Name = 'Segoe UI'
     end
   end
   object Rectangle4: TRectangle

@@ -56,6 +56,12 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Linux64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Linux64)'!=''">
+        <Cfg_2_Linux64>true</Cfg_2_Linux64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
         <Cfg_2_Win32>true</Cfg_2_Win32>
         <CfgParent>Cfg_2</CfgParent>
@@ -84,6 +90,7 @@
     <PropertyGroup Condition="'$(Base_Linux64)'!=''">
         <DCC_UsePackage>rtl;SVGIconImageList;JanuaCore;JanuaCoreComponents;JanuaUnidacComponents;JanuaMVVM;JanuaUnidac;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Define>CROSSVCL;$(DCC_Define)</DCC_Define>
+        <DCC_UnitSearchPath>$(crossvcl)\Redist;$(crossvcl)\Redist;$(crossvcl)\Redist;$(crossvcl)\Redist;$(crossvcl)\Redist;$(crossvcl)\Redist;$(crossvcl)\Redist;$(crossvcl)\Redist;$(crossvcl)\Lib\$(ProductVersion)\$(Platform)\$(Config);$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
@@ -129,6 +136,9 @@
         <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
         <DCC_RangeChecking>true</DCC_RangeChecking>
         <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Linux64)'!=''">
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -257,6 +267,11 @@
                 <Platform value="Win64x">True</Platform>
             </Platforms>
             <Deployment Version="5">
+                <DeployFile LocalName="$(crossvcl)\Redist\libcrossvcl.so">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="C:\Embarcadero\Studio\23.0\Bpl\JanuaVCLControls290.bpl" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>JanuaVCLControls.bpl</RemoteName>
