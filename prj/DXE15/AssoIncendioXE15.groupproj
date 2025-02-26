@@ -268,14 +268,14 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Desktop\TreeView - SourceMenu\UniGuiTreeViewSourceMenu.dproj">
-            <ProjectGuid>{CB21C158-38F5-44D1-BBA7-742C3E79E638}</ProjectGuid>
+        <BuildGroupProject Include="..\..\components\pkg120\CoolTrayIconWin.dproj">
+            <ProjectGuid>{58D06162-E151-4422-BB7C-87BBAD4906DB}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\CoolTrayIconWin.dproj">
-            <ProjectGuid>{58D06162-E151-4422-BB7C-87BBAD4906DB}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Desktop\TreeView - SourceMenu\UniGuiTreeViewSourceMenu.dproj">
+            <ProjectGuid>{CB21C158-38F5-44D1-BBA7-742C3E79E638}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -310,14 +310,14 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
-            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaCoreComponents.dproj">
-            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
@@ -384,14 +384,14 @@
             <Platforms>Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Desktop\TreeView - SourceMenu\UniGuiTreeViewSourceMenu.dproj">
-            <ProjectGuid>{CB21C158-38F5-44D1-BBA7-742C3E79E638}</ProjectGuid>
+        <BuildGroupProject Include="..\..\components\pkg120\CoolTrayIconWin.dproj">
+            <ProjectGuid>{58D06162-E151-4422-BB7C-87BBAD4906DB}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\CoolTrayIconWin.dproj">
-            <ProjectGuid>{58D06162-E151-4422-BB7C-87BBAD4906DB}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Desktop\TreeView - SourceMenu\UniGuiTreeViewSourceMenu.dproj">
+            <ProjectGuid>{CB21C158-38F5-44D1-BBA7-742C3E79E638}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -426,17 +426,17 @@
             <Platforms>Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
-            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
@@ -500,14 +500,14 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Desktop\TreeView - SourceMenu\UniGuiTreeViewSourceMenu.dproj">
-            <ProjectGuid>{CB21C158-38F5-44D1-BBA7-742C3E79E638}</ProjectGuid>
+        <BuildGroupProject Include="..\..\components\pkg120\CoolTrayIconWin.dproj">
+            <ProjectGuid>{58D06162-E151-4422-BB7C-87BBAD4906DB}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\CoolTrayIconWin.dproj">
-            <ProjectGuid>{58D06162-E151-4422-BB7C-87BBAD4906DB}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\UniGUI\Demos\Desktop\TreeView - SourceMenu\UniGuiTreeViewSourceMenu.dproj">
+            <ProjectGuid>{CB21C158-38F5-44D1-BBA7-742C3E79E638}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -542,16 +542,16 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
-            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations/>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">

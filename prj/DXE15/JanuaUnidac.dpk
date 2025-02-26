@@ -167,7 +167,6 @@ contains
   Janua.Carservice.PgSettings in '..\..\src\januaunidac\datamodules\Janua.Carservice.PgSettings.pas' {dmPgSettings: TDataModule},
   Janua.CarService.PgRemoteDrivers in '..\..\src\januaunidac\datamodules\Janua.CarService.PgRemoteDrivers.pas' {dmCarServicePgRemoteDrivers: TDataModule},
   Janua.Carservice.PgCustomers in '..\..\src\januaunidac\datamodules\Janua.Carservice.PgCustomers.pas' {dmPgCustomers: TDataModule},
-  Janua.Carservice.PgBookingList in '..\..\src\januaunidac\datamodules\Janua.Carservice.PgBookingList.pas' {PgPgBookingList: TDataModule},
   Janua.Firebird.dmStorage in '..\..\src\januaunidac\datamodules\Janua.Firebird.dmStorage.pas' {dmJanuaFBStorage: TDataModule},
   Janua.Firebird.Impl in '..\..\src\januaunidac\Janua.Firebird.Impl.pas',
   Janua.Commons.pgCountriesLocal in '..\..\src\januaunidac\datamodules\Janua.Commons.pgCountriesLocal.pas' {dmPgCountriesLocal: TDataModule},
