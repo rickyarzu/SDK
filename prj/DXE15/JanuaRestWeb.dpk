@@ -32,7 +32,7 @@
 requires
   dmvcframeworkRT,
   DECCipher,
-  Neon,
+  NeonCrossPlatform,
   Spring.Base,
   loggerproRT,
   SwagDoc,

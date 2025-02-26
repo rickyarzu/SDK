@@ -198,7 +198,7 @@
         </DelphiCompile>
         <DCCReference Include="dmvcframeworkRT.dcp"/>
         <DCCReference Include="DECCipher.dcp"/>
-        <DCCReference Include="Neon.dcp"/>
+        <DCCReference Include="NeonCrossPlatform.dcp"/>
         <DCCReference Include="Spring.Base.dcp"/>
         <DCCReference Include="loggerproRT.dcp"/>
         <DCCReference Include="SwagDoc.dcp"/>

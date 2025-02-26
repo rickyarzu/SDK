@@ -247,7 +247,7 @@
         <DCCReference Include="unidac290.dcp"/>
         <DCCReference Include="pgprovider290.dcp"/>
         <DCCReference Include="oraprovider290.dcp"/>
-        <DCCReference Include="RestRequestLib.dcp"/>
+        <DCCReference Include="JanuaRestRequestLib.dcp"/>
         <DCCReference Include="JanuaCoreThirdParty.dcp"/>
         <DCCReference Include="JanuaCore.dcp"/>
         <DCCReference Include="JanuaCoreComponents.dcp"/>

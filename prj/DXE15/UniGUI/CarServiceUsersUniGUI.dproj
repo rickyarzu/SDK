@@ -368,54 +368,24 @@
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
-            <Deployment Version="4">
+            <Deployment Version="5">
                 <DeployFile LocalName="..\..\..\..\..\bin\Win32\Debug\CarServiceUsersUniGUI.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="..\..\..\..\..\bin\Win64\Debug\CarServiceUsersUniGUI.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="..\..\..\Components\include\Dac.inc" Configuration="Debug" Class="ProjectFile"/>
-                <DeployFile LocalName="..\..\..\Components\include\Dac.inc" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
+                <DeployFile LocalName="..\..\..\Components\include\Dac.inc" Configuration="Debug" Class="ProjectFile"/>
                 <DeployFile LocalName="..\..\..\Components\include\IdeVer.inc" Configuration="Debug" Class="ProjectFile"/>
-                <DeployFile LocalName="..\..\..\Components\include\IdeVer.inc" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
+                <DeployFile LocalName="..\..\..\Components\include\IdeVer.inc" Configuration="Debug" Class="ProjectFile"/>
                 <DeployFile LocalName="..\..\..\History\CarServiceUsersUniGUI.txt" Configuration="Debug" Class="ProjectFile"/>
-                <DeployFile LocalName="..\..\..\History\CarServiceUsersUniGUI.txt" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
+                <DeployFile LocalName="..\..\..\History\CarServiceUsersUniGUI.txt" Configuration="Debug" Class="ProjectFile"/>
                 <DeployFile LocalName="..\..\..\History\CarServiceUsersUniGUI.txt" Configuration="Release" Class="ProjectFile"/>
                 <DeployFile LocalName="..\..\..\include\JANUACORE.INC" Configuration="Debug" Class="ProjectFile"/>
-                <DeployFile LocalName="..\..\..\include\JANUACORE.INC" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
+                <DeployFile LocalName="..\..\..\include\JANUACORE.INC" Configuration="Debug" Class="ProjectFile"/>
                 <DeployFile LocalName="..\..\..\res\CarService\pickup_timer_Logo_150.png" Configuration="Debug" Class="UWP_DelphiLogo150"/>
                 <DeployFile LocalName="..\..\..\res\CarService\pickup_timer_Logo_44.png" Configuration="Debug" Class="UWP_DelphiLogo44"/>
                 <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\CarServiceUsersUniGUI.exe" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\CarServiceUsersUniGUI.exe" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win64">
-                        <RemoteName>CarServiceUsersUniGUI.exe</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
+                <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\CarServiceUsersUniGUI.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\CarServiceUsersUniGUI.rsm" Configuration="Debug" Class="DebugSymbols"/>
-                <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\CarServiceUsersUniGUI.rsm" Configuration="Debug" Class="DebugSymbols">
-                    <Platform Name="Win64">
-                        <RemoteName>CarServiceUsersUniGUI.rsm</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
+                <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\CarServiceUsersUniGUI.rsm" Configuration="Debug" Class="DebugSymbols"/>
                 <DeployFile LocalName="c:\januaproject\bin\Win64\Release\CarServiceUsersUniGUI.exe" Configuration="Release" Class="ProjectOutput"/>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="iOSSimulator">

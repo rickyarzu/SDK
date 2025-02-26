@@ -48,11 +48,11 @@ requires
   FireDAC,
   FireDACCommonDriver,
   FireDACCommon,
-  Neon,
+  NeonCrossPlatform,
   OpenAIPackage,
   Spring.Base,
   JanuaCoreThirdParty,
-  RestRequestLib;
+  JanuaRestRequestLib;
 
 contains
   Janua.ViewModels.Intf in '..\..\src\januacore\ViewModels\Janua.ViewModels.Intf.pas',

@@ -1,0 +1,2 @@
+setx /m PGPASSWORD "3rg0m3rc4t0r"
+"C:\Program Files\PostgreSQL\12\pgAdmin 4\runtime\pg_dump.exe" --file "C:\Users\ergom\Downloads\sportmedia.backup" --host "pg.januaservers.com" --username "ergo"  "januaproject"

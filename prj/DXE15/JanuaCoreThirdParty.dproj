@@ -6,9 +6,10 @@
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Android64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1741955</TargetedPlatforms>
         <AppType>Package</AppType>
+        <ProjectName Condition="'$(ProjectName)'==''">JanuaCoreThirdParty</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -96,6 +97,7 @@
         <DllSuffix>$(Auto)</DllSuffix>
         <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
         <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
+        <DCC_Define>TOKENJWT;$(DCC_Define)</DCC_Define>
         <CfgDependentOn>JanuaLibDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
@@ -194,8 +196,26 @@
         <DCCReference Include="inet.dcp"/>
         <DCCReference Include="IndySystem.dcp"/>
         <DCCReference Include="IndyProtocols.dcp"/>
+        <DCCReference Include="IndyIPClient.dcp"/>
+        <DCCReference Include="Spring.Base.dcp"/>
         <DCCReference Include="IndyCore.dcp"/>
         <DCCReference Include="SwagDoc.dcp"/>
+        <DCCReference Include="..\..\..\Lib\FB4D\Source\FB4D.VisionMLDefinition.pas"/>
+        <DCCReference Include="..\..\..\Lib\FB4D\Source\FB4D.VisionML.pas"/>
+        <DCCReference Include="..\..\..\Lib\FB4D\Source\FB4D.Storage.pas"/>
+        <DCCReference Include="..\..\..\Lib\FB4D\Source\FB4D.Response.pas"/>
+        <DCCReference Include="..\..\..\Lib\FB4D\Source\FB4D.Request.pas"/>
+        <DCCReference Include="..\..\..\Lib\FB4D\Source\FB4D.RealTimeDB.pas"/>
+        <DCCReference Include="..\..\..\Lib\FB4D\Source\FB4D.RealTimeDB.Listener.pas"/>
+        <DCCReference Include="..\..\..\Lib\FB4D\Source\FB4D.OAuth.pas"/>
+        <DCCReference Include="..\..\..\Lib\FB4D\Source\FB4D.Interfaces.pas"/>
+        <DCCReference Include="..\..\..\Lib\FB4D\Source\FB4D.Helpers.pas"/>
+        <DCCReference Include="..\..\..\Lib\FB4D\Source\FB4D.GeminiAI.pas"/>
+        <DCCReference Include="..\..\..\Lib\FB4D\Source\FB4D.Functions.pas"/>
+        <DCCReference Include="..\..\..\Lib\FB4D\Source\FB4D.Firestore.pas"/>
+        <DCCReference Include="..\..\..\Lib\FB4D\Source\FB4D.FireStore.Listener.pas"/>
+        <DCCReference Include="..\..\..\Lib\FB4D\Source\FB4D.Document.pas"/>
+        <DCCReference Include="..\..\..\Lib\FB4D\Source\FB4D.Configuration.pas"/>
         <DCCReference Include="..\..\..\Lib\JsonToDelphi\Pkg.Json.DTO.pas"/>
         <DCCReference Include="..\..\..\Lib\JsonToDelphi\Pkg.Json.Settings.pas"/>
         <DCCReference Include="..\..\..\Lib\JsonToDelphi\Pkg.Json.JSONName.pas"/>
@@ -207,6 +227,8 @@
         <DCCReference Include="..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.pas"/>
         <DCCReference Include="..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.UpdatedStatus.pas"/>
         <DCCReference Include="..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Utils.pas"/>
+        <DCCReference Include="..\..\..\Lib\Alcinoe\Source\Alcinoe.FTP.Client.pas"/>
+        <DCCReference Include="..\..\..\Lib\FB4D\Source\FB4D.Authentication.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>
@@ -229,8 +251,7 @@
                     <Source Name="MainSource">JanuaCoreThirdParty.dpk</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Embarcadero\Studio\23.0\Bpl\JanuaUnidac290.bpl">Janua UniDAC</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
