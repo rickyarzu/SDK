@@ -62,7 +62,7 @@ type
   TFattureArretrate = class
   private
     FAssegno: Boolean;
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FContante: Boolean;
     [SuppressZero]
     FData: TDateTime; // TDateTime
@@ -81,7 +81,7 @@ type
     FTotale: Integer;
   published
     property Assegno: Boolean read FAssegno write FAssegno;
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Contante: Boolean read FContante write FContante;
     property Data: TDateTime read FData write FData; // TDateTime
     property DataPagamento: TDateTime read FDataPagamento write FDataPagamento; // TDateTime
@@ -154,7 +154,6 @@ type
     property SPURGOIMPIANTO: Boolean read FSPURGOIMPIANTO write FSPURGOIMPIANTO;
   end;
 
-
   TBocchelli = class
   private
     [JSONName('ANNO_MANICHETTA')]
@@ -168,7 +167,7 @@ type
     FANOMALIAAPPROVATA: Boolean;
     FAnomaliaOnDownload: string;
     FAnomaliaRisolta: Boolean;
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FConsegnato: Boolean;
     FControllato: Boolean;
     [SuppressZero]
@@ -212,7 +211,7 @@ type
     property ANOMALIAAPPROVATA: Boolean read FANOMALIAAPPROVATA write FANOMALIAAPPROVATA;
     property AnomaliaOnDownload: string read FAnomaliaOnDownload write FAnomaliaOnDownload;
     property AnomaliaRisolta: Boolean read FAnomaliaRisolta write FAnomaliaRisolta;
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Consegnato: Boolean read FConsegnato write FConsegnato;
     property Controllato: Boolean read FControllato write FControllato;
     property DataControllo: TDateTime read FDataControllo write FDataControllo; // TDateTime
@@ -245,7 +244,7 @@ type
     [GenericListReflect]
     FBocchelli: TObjectList<TBocchelli>;
     FCHIAVE: Integer;
-    FDESCRIZIONE: string;
+    FDescrizione: string;
     [JSONName('PROVA_DINAMICA')]
     FPROVADINAMICA: Integer;
     [JSONName('QUANDO_PROVA_DINAMICA')]
@@ -268,23 +267,25 @@ type
   published
     property Bocchelli: TObjectList<TBocchelli> read GetBocchelli;
     property CHIAVE: Integer read FCHIAVE write FCHIAVE;
-    property DESCRIZIONE: string read FDESCRIZIONE write FDESCRIZIONE;
+    property Descrizione: string read FDescrizione write FDescrizione;
     property PROVADINAMICA: Integer read FPROVADINAMICA write FPROVADINAMICA;
     property QUANDOPROVADINAMICA: string read FQUANDOPROVADINAMICA write FQUANDOPROVADINAMICA;
     property STATO: string read FSTATO write FSTATO;
-    property SuggerimentoLunghManichetta: string read FSuggerimentoLunghManichetta write FSuggerimentoLunghManichetta;
-    property SuggerimentoTipiBocchelli: string read FSuggerimentoTipiBocchelli write FSuggerimentoTipiBocchelli;
+    property SuggerimentoLunghManichetta: string read FSuggerimentoLunghManichetta
+      write FSuggerimentoLunghManichetta;
+    property SuggerimentoTipiBocchelli: string read FSuggerimentoTipiBocchelli
+      write FSuggerimentoTipiBocchelli;
     property TIPO: string read FTIPO write FTIPO;
     property TIPOATTACCOMOTOPOMPA: Integer read FTIPOATTACCOMOTOPOMPA write FTIPOATTACCOMOTOPOMPA;
     property UBICAZIONE: string read FUBICAZIONE write FUBICAZIONE;
-    property UBICAZIONEATTACCOMOTOPOMPA: string read FUBICAZIONEATTACCOMOTOPOMPA write FUBICAZIONEATTACCOMOTOPOMPA;
+    property UBICAZIONEATTACCOMOTOPOMPA: string read FUBICAZIONEATTACCOMOTOPOMPA
+      write FUBICAZIONEATTACCOMOTOPOMPA;
     property UltimaProvaDinamica: TUltimaProvaDinamica read FUltimaProvaDinamica;
     property VALVOLAINTERCETTAZIONE: string read FVALVOLAINTERCETTAZIONE write FVALVOLAINTERCETTAZIONE;
   public
     constructor Create; override;
     destructor Destroy; override;
   end;
-
 
   TElementiElettrici = class
   private
@@ -293,7 +294,7 @@ type
     FANOMALIAAPPROVATA: Boolean;
     FAnomaliaOnDownload: string;
     FAnomaliaRisolta: Boolean;
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FControllato: Boolean;
     [SuppressZero]
     FDataControllo: TDateTime;
@@ -312,7 +313,7 @@ type
     property ANOMALIAAPPROVATA: Boolean read FANOMALIAAPPROVATA write FANOMALIAAPPROVATA;
     property AnomaliaOnDownload: string read FAnomaliaOnDownload write FAnomaliaOnDownload;
     property AnomaliaRisolta: Boolean read FAnomaliaRisolta write FAnomaliaRisolta;
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Controllato: Boolean read FControllato write FControllato;
     property DataControllo: TDateTime read FDataControllo write FDataControllo; // TDateTime
     property MARCA: Integer read FMARCA write FMARCA;
@@ -328,7 +329,7 @@ type
 
   TImpiantiElettrici = class(TJsonDTO)
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
     [JSONName('ElementiElettrici'), JSONMarshalled(False)]
     FElementiElettriciArray: TArray<TElementiElettrici>;
@@ -343,7 +344,7 @@ type
   protected
     function GetAsJson: string; override;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
     property ElementiElettrici: TObjectList<TElementiElettrici> read GetElementiElettrici;
     property PREZZO: Integer read FPREZZO write FPREZZO;
@@ -361,7 +362,7 @@ type
     FANOMALIAAPPROVATA: Boolean;
     FAnomaliaOnDownload: string;
     FAnomaliaRisolta: Boolean;
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FControllato: Boolean;
     FDescrizione: string;
     [SuppressZero]
@@ -410,7 +411,7 @@ type
     property ANOMALIAAPPROVATA: Boolean read FANOMALIAAPPROVATA write FANOMALIAAPPROVATA;
     property AnomaliaOnDownload: string read FAnomaliaOnDownload write FAnomaliaOnDownload;
     property AnomaliaRisolta: Boolean read FAnomaliaRisolta write FAnomaliaRisolta;
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Controllato: Boolean read FControllato write FControllato;
     property Descrizione: string read FDescrizione write FDescrizione;
     property DataControllo: TDateTime read FDataControllo write FDataControllo; // TDateTime
@@ -448,7 +449,7 @@ type
     FANTE: string;
     FAnomaliaOnDownload: string;
     FAnomaliaRisolta: Boolean;
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FConsegnato: Boolean;
     FControllato: Boolean;
     FDIMENSIONE: string;
@@ -489,7 +490,7 @@ type
     property ANTE: string read FANTE write FANTE;
     property AnomaliaOnDownload: string read FAnomaliaOnDownload write FAnomaliaOnDownload;
     property AnomaliaRisolta: Boolean read FAnomaliaRisolta write FAnomaliaRisolta;
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Consegnato: Boolean read FConsegnato write FConsegnato;
     property Controllato: Boolean read FControllato write FControllato;
     property DIMENSIONE: string read FDIMENSIONE write FDIMENSIONE;
@@ -627,7 +628,7 @@ type
     FAUTONOMIA: Integer;
     FAnomaliaOnDownload: string;
     FAnomaliaRisolta: Boolean;
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FConsegnato: Boolean;
     FControllato: Boolean;
     [SuppressZero]
@@ -653,7 +654,7 @@ type
     property AUTONOMIA: Integer read FAUTONOMIA write FAUTONOMIA;
     property AnomaliaOnDownload: string read FAnomaliaOnDownload write FAnomaliaOnDownload;
     property AnomaliaRisolta: Boolean read FAnomaliaRisolta write FAnomaliaRisolta;
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Consegnato: Boolean read FConsegnato write FConsegnato;
     property Controllato: Boolean read FControllato write FControllato;
     property DataControllo: TDateTime read FDataControllo write FDataControllo; // TDateTime
@@ -677,7 +678,7 @@ type
     FANOMALIAAPPROVATA: Boolean;
     FAnomaliaOnDownload: string;
     FAnomaliaRisolta: Boolean;
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FControllato: Boolean;
     FDescrizione: string;
     [SuppressZero]
@@ -722,7 +723,7 @@ type
     property ANOMALIAAPPROVATA: Boolean read FANOMALIAAPPROVATA write FANOMALIAAPPROVATA;
     property AnomaliaOnDownload: string read FAnomaliaOnDownload write FAnomaliaOnDownload;
     property AnomaliaRisolta: Boolean read FAnomaliaRisolta write FAnomaliaRisolta;
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Controllato: Boolean read FControllato write FControllato;
     property Descrizione: string read FDescrizione write FDescrizione;
     property DataControllo: TDateTime read FDataControllo write FDataControllo; // TDateTime
@@ -756,7 +757,7 @@ type
     FANOMALIAAPPROVATA: Boolean;
     FAnomaliaOnDownload: string;
     FAnomaliaRisolta: Boolean;
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FCOMPRESSORE: string;
     FControllato: Boolean;
     FDescrizione: string;
@@ -788,7 +789,7 @@ type
     property ANOMALIAAPPROVATA: Boolean read FANOMALIAAPPROVATA write FANOMALIAAPPROVATA;
     property AnomaliaOnDownload: string read FAnomaliaOnDownload write FAnomaliaOnDownload;
     property AnomaliaRisolta: Boolean read FAnomaliaRisolta write FAnomaliaRisolta;
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property COMPRESSORE: string read FCOMPRESSORE write FCOMPRESSORE;
     property Controllato: Boolean read FControllato write FControllato;
     property Descrizione: string read FDescrizione write FDescrizione;
@@ -820,7 +821,7 @@ type
     FAggiuntoDaMobile: Boolean;
     FAnomaliaOnDownload: string;
     FAnomaliaRisolta: Boolean;
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FConsegnato: Boolean;
     FControllato: Boolean;
     [SuppressZero, JSONName('DATA_LAVORAZIONE')]
@@ -843,7 +844,7 @@ type
     FDataSmaltimento: TDateTime;
     [JSONName('ID_NFC')]
     FIDNFC: string;
-    FMARCA: integer;
+    FMARCA: Integer;
     FMATRICOLA: string;
     FMotivoControlloNegato: string;
     FMotivoRitiro: string;
@@ -859,13 +860,13 @@ type
     FPERIODICITACOLLAUDO: Integer;
     [JSONName('PERIODICITA_REVISIONE')]
     FPERIODICITAREVISIONE: Integer;
-    FPROGRESSIVO: integer;
+    FPROGRESSIVO: Integer;
     FRestituito: Boolean;
     FRitirato: Boolean;
     FSTATO: string;
     FSmaltito: Boolean;
     [JSONName('TIPO_ESTINTORE')]
-    FTIPOESTINTORE: integer;
+    FTIPOESTINTORE: Integer;
     [JSONName('TIPO_INTERVENTO')]
     FTIPOINTERVENTO: string;
     FTecnicoConsegna: Integer;
@@ -882,7 +883,7 @@ type
     property AggiuntoDaMobile: Boolean read FAggiuntoDaMobile write FAggiuntoDaMobile;
     property AnomaliaOnDownload: string read FAnomaliaOnDownload write FAnomaliaOnDownload;
     property AnomaliaRisolta: Boolean read FAnomaliaRisolta write FAnomaliaRisolta;
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Consegnato: Boolean read FConsegnato write FConsegnato;
     property Controllato: Boolean read FControllato write FControllato;
     property DATALAVORAZIONE: TDateTime read FDATALAVORAZIONE write FDATALAVORAZIONE; // TDateTime
@@ -895,7 +896,7 @@ type
     property DataRitiro: TDateTime read FDataRitiro write FDataRitiro; // TDateTime
     property DataSmaltimento: TDateTime read FDataSmaltimento write FDataSmaltimento; // TDateTime
     property IDNFC: string read FIDNFC write FIDNFC;
-    property MARCA: integer read FMARCA write FMARCA;
+    property MARCA: Integer read FMARCA write FMARCA;
     property MATRICOLA: string read FMATRICOLA write FMATRICOLA;
     property MotivoControlloNegato: string read FMotivoControlloNegato write FMotivoControlloNegato;
     property MotivoRitiro: string read FMotivoRitiro write FMotivoRitiro;
@@ -908,12 +909,12 @@ type
     property OrarioSmaltimento: string read FOrarioSmaltimento write FOrarioSmaltimento;
     property PERIODICITACOLLAUDO: Integer read FPERIODICITACOLLAUDO write FPERIODICITACOLLAUDO;
     property PERIODICITAREVISIONE: Integer read FPERIODICITAREVISIONE write FPERIODICITAREVISIONE;
-    property PROGRESSIVO: integer read FPROGRESSIVO write FPROGRESSIVO;
+    property PROGRESSIVO: Integer read FPROGRESSIVO write FPROGRESSIVO;
     property Restituito: Boolean read FRestituito write FRestituito;
     property Ritirato: Boolean read FRitirato write FRitirato;
     property STATO: string read FSTATO write FSTATO;
     property Smaltito: Boolean read FSmaltito write FSmaltito;
-    property TIPOESTINTORE: integer read FTIPOESTINTORE write FTIPOESTINTORE;
+    property TIPOESTINTORE: Integer read FTIPOESTINTORE write FTIPOESTINTORE;
     property TIPOINTERVENTO: string read FTIPOINTERVENTO write FTIPOINTERVENTO;
     property TecnicoConsegna: Integer read FTecnicoConsegna write FTecnicoConsegna;
     property TecnicoControllo: Integer read FTecnicoControllo write FTecnicoControllo;
@@ -926,15 +927,28 @@ type
 
   TStatino = class(TJsonDTO)
   private
-    FAccessori: TAccessori;
+    [JSONName('CHIAVE')]
+    FCHIAVE: Integer;
+    [JSONName('RAGIONE_SOCIALE')]
+    FRAGIONESOCIALE: string;
+    [JSONName('REF_CELLULARE')]
+    FREFCELLULARE: string;
+    [JSONName('REF_TELEFONO')]
+    FREFTELEFONO: string;
+    [JSONName('RESPONSABILE')]
+    FRESPONSABILE: Integer;
+    [JSONName('TITOLO')]
+    FTITOLO: string;
+    [JSONName('PROVINCIA')]
+    FPROVINCIA: string;
     [JSONName('CAP')]
     FCAP: string;
     [JSONName('CELLULARE')]
     FCELLULARE: string;
-    FChiave: Integer;
     FCHIUSURA: string;
     [JSONName('COD_ENTE_SDI')]
     FCODENTESDI: string;
+    [JSONName('COMUNE')]
     FComune: string;
     [JSONName('CONCLUSO')]
     FCONCLUSO: Boolean;
@@ -962,10 +976,6 @@ type
     FESTINTORIRITIRATE: Integer;
     [JSONName('ESTINTORI_SMALTITI')]
     FESTINTORISMALTITI: Integer;
-    [JSONName('Estintori'), JSONMarshalled(False)]
-    FEstintoriArray: TArray<TEstintori>;
-    [GenericListReflect]
-    FEstintori: TObjectList<TEstintori>;
     [SuppressZero]
     FFDataDiscrepanza: TDateTime;
     FFORNITURA: Boolean;
@@ -974,10 +984,6 @@ type
     FFUMICONTROLLATE: Integer;
     [JSONName('FUMI_NON_CONTROLLATE')]
     FFUMINONCONTROLLATE: Integer;
-    [JSONName('FattureArretrate'), JSONMarshalled(False)]
-    FFattureArretrateArray: TArray<TFattureArretrate>;
-    [GenericListReflect]
-    FFattureArretrate: TObjectList<TFattureArretrate>;
     FFattureInSedeNonElencate: Boolean;
     [JSONName('GENERAZIONE_AUTOMATICA')]
     FGENERAZIONEAUTOMATICA: Integer;
@@ -985,10 +991,6 @@ type
     FGRUPPICONTROLLATI: Integer;
     [JSONName('GRUPPI_NON_CONTROLLATI')]
     FGRUPPINONCONTROLLATI: Integer;
-    [JSONName('GruppiPressurizzazione'), JSONMarshalled(False)]
-    FGruppiPressurizzazioneArray: TArray<TGruppiPressurizzazione>;
-    [GenericListReflect]
-    FGruppiPressurizzazione: TObjectList<TGruppiPressurizzazione>;
     [JSONName('IDRANTI_CONSEGNATI')]
     FIDRANTICONSEGNATI: Integer;
     [JSONName('IDRANTI_CONTROLLATE')]
@@ -1001,25 +1003,15 @@ type
     FIDRANTIRITIRATI: Integer;
     [JSONName('IDRANTI_SMALTITI')]
     FIDRANTISMALTITI: Integer;
+    [JSONName('INDIRIZZO')]
     FIndirizzo: string;
-    [JSONName('Idranti'), JSONMarshalled(False)]
-    FIdrantiArray: TArray<TIdranti>;
-    [GenericListReflect]
-    FIdranti: TObjectList<TIdranti>;
-    [JSONName('ImpiantiElettrici'), JSONMarshalled(False)]
-    FImpiantiElettriciArray: TArray<TImpiantiElettrici>;
-    [GenericListReflect]
-    FImpiantiElettrici: TObjectList<TImpiantiElettrici>;
+    [JSONName('INFO_APPUNTAMENTO')]
     FInfoAppuntamento: string;
     FInvioTemporaneo: Boolean;
     [JSONName('LUCI_CONTROLLATE')]
     FLUCICONTROLLATE: Integer;
     [JSONName('LUCI_NON_CONTROLLATE')]
     FLUCINONCONTROLLATE: Integer;
-    [JSONName('Luci'), JSONMarshalled(False)]
-    FLuciArray: TArray<TLuci>;
-    [GenericListReflect]
-    FLuci: TObjectList<TLuci>;
     [JSONName('MAIL_INVIATE_AUTOMATICAMENTE')]
     FMAILINVIATEAUTOMATICAMENTE: Boolean;
     [JSONName('MESE_PRIMA_VISITA')]
@@ -1028,6 +1020,7 @@ type
     FNOMEAMMINISTRATORE: string;
     [JSONName('NOME_FILIALE')]
     FNOMEFILIALE: string;
+    [JSONName('NOTE')]
     FNote: string;
     [JSONName('NOTE_DEL_TECNICO')]
     FNOTEDELTECNICO: string;
@@ -1055,40 +1048,59 @@ type
     FPORTENONCONTROLLATE: Integer;
     [JSONName('PRESA_IN_CARICO')]
     FPRESAINCARICO: Boolean;
-    FPROVINCIA: string;
-    [JSONName('Porte'), JSONMarshalled(False)]
-    FPorteArray: TArray<TPorte>;
-    [GenericListReflect]
-    FPorte: TObjectList<TPorte>;
-    [JSONName('Prodotti'), JSONMarshalled(False)]
-    FProdottiArray: TArray<TProdotti>;
-    [GenericListReflect]
-    FProdotti: TObjectList<TProdotti>;
-    [JSONName('RAGIONE_SOCIALE')]
-    FRAGIONESOCIALE: string;
-    [JSONName('REF_CELLULARE')]
-    FREFCELLULARE: string;
-    [JSONName('REF_TELEFONO')]
-    FREFTELEFONO: string;
-    FRESPONSABILE: Integer;
-    [JSONName('RilevatoriFumo'), JSONMarshalled(False)]
-    FRilevatoriFumoArray: TArray<TRilevatoriFumo>;
-    [GenericListReflect]
-    FRilevatoriFumo: TObjectList<TRilevatoriFumo>;
     [JSONName('SPRINKLER_CONTROLLATE')]
     FSPRINKLERCONTROLLATE: Integer;
     [JSONName('SPRINKLER_NON_CONTROLLATI')]
     FSPRINKLERNONCONTROLLATI: Integer;
     FSoloFatture: Boolean;
+    [JSONName('TECNICO_INTERVENTO')]
+    FTECNICOINTERVENTO: Integer;
+    [JSONName('TELEFONO')]
+    FTELEFONO: string;
+    [JSONName('TERMINA_CLIENTE')]
+    FTerminaCliente: Boolean;
+    FAccessori: TAccessori;
+    [JSONName('Estintori'), JSONMarshalled(False)]
+    FEstintoriArray: TArray<TEstintori>;
+    [JSONName('Estintori'), GenericListReflect]
+    FEstintori: TObjectList<TEstintori>;
+    [JSONName('Luci'), JSONMarshalled(False)]
+    FLuciArray: TArray<TLuci>;
+    [JSONName('Luci'), GenericListReflect]
+    FLuci: TObjectList<TLuci>;
+    [JSONName('Idranti'), JSONMarshalled(False)]
+    FIdrantiArray: TArray<TIdranti>;
+    [GenericListReflect]
+    FIdranti: TObjectList<TIdranti>;
+    [JSONName('ImpiantiElettrici'), JSONMarshalled(False)]
+    FImpiantiElettriciArray: TArray<TImpiantiElettrici>;
+    [JSONName('ImpiantiElettrici'), GenericListReflect]
+    FImpiantiElettrici: TObjectList<TImpiantiElettrici>;
+    [JSONName('Porte'), JSONMarshalled(False)]
+    FPorteArray: TArray<TPorte>;
+    [JSONName('Porte'), GenericListReflect]
+    FPorte: TObjectList<TPorte>;
+    [JSONName('Prodotti'), JSONMarshalled(False)]
+    FProdottiArray: TArray<TProdotti>;
+    [JSONName('Prodotti'),GenericListReflect]
+    FProdotti: TObjectList<TProdotti>;
+    [JSONName('RilevatoriFumo'), JSONMarshalled(False)]
+    FRilevatoriFumoArray: TArray<TRilevatoriFumo>;
+    [JSONName('RilevatoriFumo'), GenericListReflect]
+    FRilevatoriFumo: TObjectList<TRilevatoriFumo>;
     [JSONName('Sprinkler'), JSONMarshalled(False)]
     FSprinklerArray: TArray<TSprinkler>;
     [GenericListReflect]
     FSprinkler: TObjectList<TSprinkler>;
-    [JSONName('TECNICO_INTERVENTO')]
-    FTECNICOINTERVENTO: Integer;
-    FTELEFONO: string;
-    FTITOLO: string;
-    FTerminaCliente: Boolean;
+    [JSONName('GruppiPressurizzazione'), JSONMarshalled(False)]
+    FGruppiPressurizzazioneArray: TArray<TGruppiPressurizzazione>;
+    [GenericListReflect]
+    FGruppiPressurizzazione: TObjectList<TGruppiPressurizzazione>;
+    [JSONName('FattureArretrate'), JSONMarshalled(False)]
+    FFattureArretrateArray: TArray<TFattureArretrate>;
+    [GenericListReflect]
+    FFattureArretrate: TObjectList<TFattureArretrate>;
+    [JSONName('ZTmpInfo')]
     FZTmpInfo: TZTmpInfo;
     function GetEstintori: TObjectList<TEstintori>;
     function GetFattureArretrate: TObjectList<TFattureArretrate>;
@@ -1106,7 +1118,7 @@ type
     property Accessori: TAccessori read FAccessori;
     property CAP: string read FCAP write FCAP;
     property CELLULARE: string read FCELLULARE write FCELLULARE;
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property CHIUSURA: string read FCHIUSURA write FCHIUSURA;
     property CODENTESDI: string read FCODENTESDI write FCODENTESDI;
     property Comune: string read FComune write FComune;
@@ -1209,7 +1221,7 @@ uses Janua.Core.Functions, System.SysUtils, System.StrUtils;
 function ReplaceJsonToPhoenix(const aJson: string): string;
 begin
   Result := aJson;
-  GlobalParams :=  GlobalParams + sLineBreak + '-------------------' + sLineBreak;
+  GlobalParams := GlobalParams + sLineBreak + '-------------------' + sLineBreak;
 
   for var I := 2010 to 2030 do
   begin
@@ -1231,7 +1243,7 @@ begin
       Result := StringReplace(Result, vReplaced, vReplacer, [rfReplaceAll]);
       if vTest > 0 then
         GlobalParams := GlobalParams + (vReplaced + ' - ' + vReplacer + ' Found: ' + vTest.ToString) +
-          slineBreak;
+          sLineBreak;
     end;
   end;
 end;
@@ -1262,7 +1274,7 @@ begin
       Result := StringReplace(Result, vReplaced, vReplacer, [rfReplaceAll]);
       if vTest > 0 then
         GlobalParams := GlobalParams + (vReplaced + ' - ' + vReplacer + ' Found: ' + vTest.ToString) +
-          slineBreak;
+          sLineBreak;
     end;
   end;
 end;
