@@ -35,11 +35,8 @@ requires
   dbrtl,
   soaprtl,
   inet,
-{$IFNDEF LINUX}
   IndyIPClient,
   IndyIPCommon,
-{$ENDIF}
-
   IndySystem,
   IndyProtocols,
   IndyCore,
@@ -416,6 +413,8 @@ contains
   JOrm.Cloud.GoogleCalendars.Impl in '..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Impl.pas',
   JOrm.Cloud.GoogleCalendars.Custom.Intf in '..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Custom.Intf.pas',
   JOrm.Cloud.GoogleCalendars.Custom.Impl in '..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Custom.Impl.pas',
-  Janua.WebBroker.ServerConst in '..\..\src\januacore\Datasnap\Janua.WebBroker.ServerConst.pas';
+  Janua.WebBroker.ServerConst in '..\..\src\januacore\Datasnap\Janua.WebBroker.ServerConst.pas',
+  Janua.Core.Json.DTO in '..\..\src\januacore\Janua.Core.Json.DTO.pas',
+  Phoenix.Json.Config in '..\..\src\januacore\Phoenix.Json.Config.pas';
 
 end.

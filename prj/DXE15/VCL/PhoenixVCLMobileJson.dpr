@@ -10,7 +10,6 @@ uses
   Janua.Phoenix.dmIBReportPlanner in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.dmIBReportPlanner.pas' {dmPhoenixIBPlanner: TDataModule},
   Janua.Phoenix.Globale in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.Globale.pas',
   Janua.Phoenix.VCL.rpStatino in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.rpStatino.pas' {frmRpStatino},
-  IDRANTI in '\\tsclient\RDP Connect\IDRANTI.pas',
   QrStampaStatino in '..\..\..\..\Phoenix\Phoenix\SW\PhoenixMain\QrStampaStatino.pas' {QR_STAMPA_STATINO: TQuickRep};
 
 {$R *.res}

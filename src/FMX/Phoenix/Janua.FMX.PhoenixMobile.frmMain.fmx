@@ -328,9 +328,8 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             end
             inherited Switch1: TSwitch
               Position.X = 340.000000000000000000
-              Position.Y = 2.000000000000000000
               Size.Width = 44.000000000000000000
-              Size.Height = 26.000000000000000000
+              Size.Height = 30.000000000000000000
             end
           end
           inherited Layout3: TLayout
@@ -359,8 +358,8 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             Size.Width = 378.000000000000000000
             Size.Height = 44.000000000000000000
             TabOrder = 7
-            Viewport.Width = 370.000000000000000000
-            Viewport.Height = 36.000000000000000000
+            Viewport.Width = 378.000000000000000000
+            Viewport.Height = 44.000000000000000000
           end
         end
         inherited rcReportSummary: TRectangle
