@@ -856,7 +856,7 @@ inherited frameVCLPhoenixPlanneReport: TframeVCLPhoenixPlanneReport
   object btnWhatsAppMessages: TAdvBadgeButton
     Left = 510
     Top = 72
-    Width = 137
+    Width = 140
     Height = 25
     Caption = 'Messaggi'
     Font.Charset = DEFAULT_CHARSET
