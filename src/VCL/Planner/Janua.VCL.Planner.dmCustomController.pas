@@ -1,4 +1,4 @@
-unit Janua.VCL.Planner.dmCustomController;
+Ôªøunit Janua.VCL.Planner.dmCustomController;
 
 interface
 
@@ -528,7 +528,7 @@ const
   cAppName = '+393440682001' { '+15302036772' };
   cMessageType = jmtWhatsApp;
   cMessage = 'Buongiorno, sono Marina della Asso Antincendio e Sicurezza Srl' + sl +
-    'La contatto per comunicarLe che nella giornata del {{1}} il Ns tecnico passer‡ per la verifica degli estintori c/o la vs sede in {{2}}. Nel caso in cui non dovessimo ricevere riscontro daremo per confermata la Vs presenza. '
+    'La contatto per comunicarLe che nella giornata del {{1}} il Ns tecnico passer√† per la verifica degli estintori c/o la vs sede in {{2}}. Nel caso in cui non dovessimo ricevere riscontro daremo per confermata la Vs presenza. '
     + sl + 'Cordiali Saluti' + sl + sl +
     'Per comunicare eventuali variazioni cliccare qui: https://wa.me/393474065336';
 
@@ -1769,7 +1769,7 @@ begin
         SetGoogleCalendarColor(FGroupBackColor, FGroupForeColor);
         // Per prima cosa imposto delle variabili 'interne' in base al Calendario ma domanda
         // Ha 'senso'? Mi spiego ho selezionato un Calendario nella Lista con index >= 0
-        // Quindi se CalendarItemIndex Ë una propriet‡ Allora anche il calendario 'Selezionato' Diventa
+        // Quindi se CalendarItemIndex √® una propriet√† Allora anche il calendario 'Selezionato' Diventa
         // una property ... cambiamo quindi un attimo il 'gioco'.
 
         // Default Reminders
