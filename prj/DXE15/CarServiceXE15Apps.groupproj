@@ -3,28 +3,13 @@
         <ProjectGuid>{8CA1D8D8-742B-4D70-827A-9E136DF67D92}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\..\Components\pkg120\sbridge.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\dclsbridge.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Components\pkg120\dmvcframeworkRT.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\components\pkg120\sgcWebSockets.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\dclsgcWebSockets.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="JanuaCoreThirdParty.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\components\pkg120\RestRequestLib.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaCore.dproj">
@@ -227,24 +212,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="sbridge">
-        <MSBuild Projects="..\..\Components\pkg120\sbridge.dproj"/>
-    </Target>
-    <Target Name="sbridge:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\sbridge.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="sbridge:Make">
-        <MSBuild Projects="..\..\Components\pkg120\sbridge.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="dclsbridge">
-        <MSBuild Projects="..\..\Components\pkg120\dclsbridge.dproj"/>
-    </Target>
-    <Target Name="dclsbridge:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\dclsbridge.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="dclsbridge:Make">
-        <MSBuild Projects="..\..\Components\pkg120\dclsbridge.dproj" Targets="Make"/>
-    </Target>
     <Target Name="TRCGooglePlacesRuntime">
         <MSBuild Projects="..\..\components\pkg120\TRCGooglePlacesRuntime.dproj"/>
     </Target>
@@ -263,24 +230,6 @@
     <Target Name="dmvcframeworkRT:Make">
         <MSBuild Projects="..\..\Components\pkg120\dmvcframeworkRT.dproj" Targets="Make"/>
     </Target>
-    <Target Name="sgcWebSockets">
-        <MSBuild Projects="..\..\components\pkg120\sgcWebSockets.dproj"/>
-    </Target>
-    <Target Name="sgcWebSockets:Clean">
-        <MSBuild Projects="..\..\components\pkg120\sgcWebSockets.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="sgcWebSockets:Make">
-        <MSBuild Projects="..\..\components\pkg120\sgcWebSockets.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="dclsgcWebSockets">
-        <MSBuild Projects="..\..\Components\pkg120\dclsgcWebSockets.dproj"/>
-    </Target>
-    <Target Name="dclsgcWebSockets:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\dclsgcWebSockets.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="dclsgcWebSockets:Make">
-        <MSBuild Projects="..\..\Components\pkg120\dclsgcWebSockets.dproj" Targets="Make"/>
-    </Target>
     <Target Name="JanuaCoreThirdParty">
         <MSBuild Projects="JanuaCoreThirdParty.dproj"/>
     </Target>
@@ -289,15 +238,6 @@
     </Target>
     <Target Name="JanuaCoreThirdParty:Make">
         <MSBuild Projects="JanuaCoreThirdParty.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="RestRequestLib">
-        <MSBuild Projects="..\..\components\pkg120\RestRequestLib.dproj"/>
-    </Target>
-    <Target Name="RestRequestLib:Clean">
-        <MSBuild Projects="..\..\components\pkg120\RestRequestLib.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="RestRequestLib:Make">
-        <MSBuild Projects="..\..\components\pkg120\RestRequestLib.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaCore">
         <MSBuild Projects="JanuaCore.dproj"/>
@@ -876,13 +816,13 @@
         <MSBuild Projects="..\..\Samples\Janua\JanuaTestCamera.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="sbridge;dclsbridge;TRCGooglePlacesRuntime;dmvcframeworkRT;sgcWebSockets;dclsgcWebSockets;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaRestWeb;JanuaUniMVVMTesting;JanuaTestLibraries;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;CarServiceDMVCService;CarServiceUsersUniGUI;PickAPP;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;TGooglePlacesTest;mod_cscustomersmobile;mod_csdriversmersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;CarServiceUnitTesting;CarServiceDriverApp;Archive;Review;TmsTwilio;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;JanuaAllDemos;EuroFloraApp;TestGoogleVCL;FSMap;Cipher_FMX;RESTDebuggerClient;WebMocksBasic;MatchingDemo;CanvasPainting;JanuaJsonSerializeNeonTest;SamplPlannerVCL;CloudCalendarImportExport;CarServiceWebBrokerCustConfService;CustomPathBlox;VCLThemeSelector;JanuaFMXTestImageResize;JanuaGMapsDemo;JanuaTestCamera"/>
+        <CallTarget Targets="TRCGooglePlacesRuntime;dmvcframeworkRT;JanuaCoreThirdParty;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaCoreComponents;JanuaMVVMCoreTesting;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaRestWeb;JanuaUniMVVMTesting;JanuaTestLibraries;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;TMSWebGMapsPkg;JanuaCarServiceDMVCFullTesting;CarServiceBackOffice;CarServiceDMVCustomerConfirmation;CarServiceDMVCService;CarServiceUsersUniGUI;PickAPP;CarServiceApache;CarServiceBackOfficeUniGUI;CarServiceCustomerConfirmation;CarServiceCustConfService;TGooglePlacesTest;mod_cscustomersmobile;mod_csdriversmersmobile;CarServiceDriverConfirmation;CarServiceDriverConfService;CarServiceUnitTesting;CarServiceDriverApp;Archive;Review;TmsTwilio;mod_uniparams;FSTheme;FSThemeApache;ButtonStyle;UniMobileDemo;UniGuiTouch;NeonMainDemo;JanuaAllDemos;EuroFloraApp;TestGoogleVCL;FSMap;Cipher_FMX;RESTDebuggerClient;WebMocksBasic;MatchingDemo;CanvasPainting;JanuaJsonSerializeNeonTest;SamplPlannerVCL;CloudCalendarImportExport;CarServiceWebBrokerCustConfService;CustomPathBlox;VCLThemeSelector;JanuaFMXTestImageResize;JanuaGMapsDemo;JanuaTestCamera"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="sbridge:Clean;dclsbridge:Clean;TRCGooglePlacesRuntime:Clean;dmvcframeworkRT:Clean;sgcWebSockets:Clean;dclsgcWebSockets:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaRestWeb:Clean;JanuaUniMVVMTesting:Clean;JanuaTestLibraries:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;CarServiceDMVCService:Clean;CarServiceUsersUniGUI:Clean;PickAPP:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;TGooglePlacesTest:Clean;mod_cscustomersmobile:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;CarServiceUnitTesting:Clean;CarServiceDriverApp:Clean;Archive:Clean;Review:Clean;TmsTwilio:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;TestGoogleVCL:Clean;FSMap:Clean;Cipher_FMX:Clean;RESTDebuggerClient:Clean;WebMocksBasic:Clean;MatchingDemo:Clean;CanvasPainting:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean;CloudCalendarImportExport:Clean;CarServiceWebBrokerCustConfService:Clean;CustomPathBlox:Clean;VCLThemeSelector:Clean;JanuaFMXTestImageResize:Clean;JanuaGMapsDemo:Clean;JanuaTestCamera:Clean"/>
+        <CallTarget Targets="TRCGooglePlacesRuntime:Clean;dmvcframeworkRT:Clean;JanuaCoreThirdParty:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaMVVMCoreTesting:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaRestWeb:Clean;JanuaUniMVVMTesting:Clean;JanuaTestLibraries:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;TMSWebGMapsPkg:Clean;JanuaCarServiceDMVCFullTesting:Clean;CarServiceBackOffice:Clean;CarServiceDMVCustomerConfirmation:Clean;CarServiceDMVCService:Clean;CarServiceUsersUniGUI:Clean;PickAPP:Clean;CarServiceApache:Clean;CarServiceBackOfficeUniGUI:Clean;CarServiceCustomerConfirmation:Clean;CarServiceCustConfService:Clean;TGooglePlacesTest:Clean;mod_cscustomersmobile:Clean;mod_csdriversmersmobile:Clean;CarServiceDriverConfirmation:Clean;CarServiceDriverConfService:Clean;CarServiceUnitTesting:Clean;CarServiceDriverApp:Clean;Archive:Clean;Review:Clean;TmsTwilio:Clean;mod_uniparams:Clean;FSTheme:Clean;FSThemeApache:Clean;ButtonStyle:Clean;UniMobileDemo:Clean;UniGuiTouch:Clean;NeonMainDemo:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;TestGoogleVCL:Clean;FSMap:Clean;Cipher_FMX:Clean;RESTDebuggerClient:Clean;WebMocksBasic:Clean;MatchingDemo:Clean;CanvasPainting:Clean;JanuaJsonSerializeNeonTest:Clean;SamplPlannerVCL:Clean;CloudCalendarImportExport:Clean;CarServiceWebBrokerCustConfService:Clean;CustomPathBlox:Clean;VCLThemeSelector:Clean;JanuaFMXTestImageResize:Clean;JanuaGMapsDemo:Clean;JanuaTestCamera:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="sbridge:Make;dclsbridge:Make;TRCGooglePlacesRuntime:Make;dmvcframeworkRT:Make;sgcWebSockets:Make;dclsgcWebSockets:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaRestWeb:Make;JanuaUniMVVMTesting:Make;JanuaTestLibraries:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;CarServiceDMVCService:Make;CarServiceUsersUniGUI:Make;PickAPP:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;TGooglePlacesTest:Make;mod_cscustomersmobile:Make;mod_csdriversmersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;CarServiceUnitTesting:Make;CarServiceDriverApp:Make;Archive:Make;Review:Make;TmsTwilio:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;TestGoogleVCL:Make;FSMap:Make;Cipher_FMX:Make;RESTDebuggerClient:Make;WebMocksBasic:Make;MatchingDemo:Make;CanvasPainting:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make;CloudCalendarImportExport:Make;CarServiceWebBrokerCustConfService:Make;CustomPathBlox:Make;VCLThemeSelector:Make;JanuaFMXTestImageResize:Make;JanuaGMapsDemo:Make;JanuaTestCamera:Make"/>
+        <CallTarget Targets="TRCGooglePlacesRuntime:Make;dmvcframeworkRT:Make;JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaMVVMCoreTesting:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaRestWeb:Make;JanuaUniMVVMTesting:Make;JanuaTestLibraries:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;TMSWebGMapsPkg:Make;JanuaCarServiceDMVCFullTesting:Make;CarServiceBackOffice:Make;CarServiceDMVCustomerConfirmation:Make;CarServiceDMVCService:Make;CarServiceUsersUniGUI:Make;PickAPP:Make;CarServiceApache:Make;CarServiceBackOfficeUniGUI:Make;CarServiceCustomerConfirmation:Make;CarServiceCustConfService:Make;TGooglePlacesTest:Make;mod_cscustomersmobile:Make;mod_csdriversmersmobile:Make;CarServiceDriverConfirmation:Make;CarServiceDriverConfService:Make;CarServiceUnitTesting:Make;CarServiceDriverApp:Make;Archive:Make;Review:Make;TmsTwilio:Make;mod_uniparams:Make;FSTheme:Make;FSThemeApache:Make;ButtonStyle:Make;UniMobileDemo:Make;UniGuiTouch:Make;NeonMainDemo:Make;JanuaAllDemos:Make;EuroFloraApp:Make;TestGoogleVCL:Make;FSMap:Make;Cipher_FMX:Make;RESTDebuggerClient:Make;WebMocksBasic:Make;MatchingDemo:Make;CanvasPainting:Make;JanuaJsonSerializeNeonTest:Make;SamplPlannerVCL:Make;CloudCalendarImportExport:Make;CarServiceWebBrokerCustConfService:Make;CustomPathBlox:Make;VCLThemeSelector:Make;JanuaFMXTestImageResize:Make;JanuaGMapsDemo:Make;JanuaTestCamera:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='Libs'">
@@ -909,12 +849,6 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsgcWebSockets.dproj">
-            <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaUniMVVMTesting.dproj">
             <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
@@ -1096,22 +1030,10 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaAllDemos.dproj">
             <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\RestRequestLib.dproj">
-            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
@@ -1130,12 +1052,6 @@
             <ProjectGuid>{C0D20835-1452-4AF3-9358-7E349845FEC2}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
-            <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaRestWeb.dproj">
@@ -1242,12 +1158,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\FSThemeApache\FSThemeApache.dproj">
             <ProjectGuid>{1B6CC124-BFCC-4DE2-86C6-E9CF894D3F3D}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
-            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1344,12 +1254,6 @@
             <Platforms>Android64;iOSDevice64;OSX64;Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsgcWebSockets.dproj">
-            <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaUniMVVMTesting.dproj">
             <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
             <Configurations>TestDebug</Configurations>
@@ -1530,23 +1434,11 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaAllDemos.dproj">
             <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\RestRequestLib.dproj">
-            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64;iOSDevice64;OSX64;Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
             <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
@@ -1565,12 +1457,6 @@
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
-            <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64;iOSDevice64;OSX64;Win32;Win64</Platforms>
-            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaRestWeb.dproj">
             <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
@@ -1678,12 +1564,6 @@
             <ProjectGuid>{1B6CC124-BFCC-4DE2-86C6-E9CF894D3F3D}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
-            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
@@ -1778,12 +1658,6 @@
             <Platforms>Android64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsgcWebSockets.dproj">
-            <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaUniMVVMTesting.dproj">
             <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
             <Configurations>TestDebug</Configurations>
@@ -1964,22 +1838,10 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaAllDemos.dproj">
             <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\RestRequestLib.dproj">
-            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
@@ -1998,12 +1860,6 @@
             <ProjectGuid>{C0D20835-1452-4AF3-9358-7E349845FEC2}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
-            <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaRestWeb.dproj">
@@ -2114,12 +1970,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
-            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -2206,8 +2056,8 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsgcWebSockets.dproj">
-            <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
+        <BuildGroupProject Include="JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -2216,12 +2066,6 @@
             <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="JanuaFMXControls.dproj">
-            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="UniGUI\CarServiceUsersUniGUI.dproj">
@@ -2392,12 +2236,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaCarServiceDMVCFullTesting.dproj">
             <ProjectGuid>{8E4693AC-996A-427A-9A80-4CF2D7CE1E1B}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2406,12 +2244,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaAllDemos.dproj">
             <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\RestRequestLib.dproj">
-            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -2432,12 +2264,6 @@
             <ProjectGuid>{C0D20835-1452-4AF3-9358-7E349845FEC2}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
-            <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaRestWeb.dproj">
@@ -2548,12 +2374,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
-            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2644,12 +2464,6 @@
             <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsgcWebSockets.dproj">
-            <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaUniMVVMTesting.dproj">
@@ -2832,22 +2646,10 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaAllDemos.dproj">
             <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\RestRequestLib.dproj">
-            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64;iOSDevice64;OSX64;OSXARM64;Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
@@ -2866,12 +2668,6 @@
             <ProjectGuid>{C0D20835-1452-4AF3-9358-7E349845FEC2}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
-            <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Android;Android64;iOSDevice64;OSX64;OSXARM64;Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaRestWeb.dproj">
@@ -2982,12 +2778,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
-            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -3079,12 +2869,6 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsgcWebSockets.dproj">
-            <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaUniMVVMTesting.dproj">
             <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
@@ -3266,20 +3050,8 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaAllDemos.dproj">
             <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\RestRequestLib.dproj">
-            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -3299,12 +3071,6 @@
         <BuildGroupProject Include="CarServiceCustomerConfirmation.dproj">
             <ProjectGuid>{C0D20835-1452-4AF3-9358-7E349845FEC2}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
-            <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -3412,12 +3178,6 @@
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\UniGUI\FSThemeApache\FSThemeApache.dproj">
             <ProjectGuid>{1B6CC124-BFCC-4DE2-86C6-E9CF894D3F3D}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
-            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -3514,12 +3274,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsgcWebSockets.dproj">
-            <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaUniMVVMTesting.dproj">
             <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
             <Configurations>TestDebug</Configurations>
@@ -3700,23 +3454,11 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaAllDemos.dproj">
             <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\RestRequestLib.dproj">
-            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Linux64</Platforms>
-            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
             <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
@@ -3735,12 +3477,6 @@
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
-            <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Linux64</Platforms>
-            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaRestWeb.dproj">
             <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
@@ -3850,12 +3586,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
-            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -3946,12 +3676,6 @@
             <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsgcWebSockets.dproj">
-            <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaUniMVVMTesting.dproj">
@@ -4134,20 +3858,8 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaAllDemos.dproj">
             <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\RestRequestLib.dproj">
-            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -4168,12 +3880,6 @@
             <ProjectGuid>{C0D20835-1452-4AF3-9358-7E349845FEC2}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
-            <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaRestWeb.dproj">
@@ -4282,12 +3988,6 @@
             <ProjectGuid>{1B6CC124-BFCC-4DE2-86C6-E9CF894D3F3D}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
-            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
@@ -4382,12 +4082,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsgcWebSockets.dproj">
-            <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaUniMVVMTesting.dproj">
             <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
             <Configurations>TestDebug</Configurations>
@@ -4568,20 +4262,8 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaAllDemos.dproj">
             <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\RestRequestLib.dproj">
-            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -4601,12 +4283,6 @@
         <BuildGroupProject Include="CarServiceCustomerConfirmation.dproj">
             <ProjectGuid>{C0D20835-1452-4AF3-9358-7E349845FEC2}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
-            <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -4716,12 +4392,6 @@
             <ProjectGuid>{1B6CC124-BFCC-4DE2-86C6-E9CF894D3F3D}</ProjectGuid>
             <Configurations>Release</Configurations>
             <Platforms>Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
-            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
@@ -4816,12 +4486,6 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsgcWebSockets.dproj">
-            <ProjectGuid>{134B6FF2-5C5E-4DAB-A4C0-341F8D4AE024}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="Testing\JanuaUniMVVMTesting.dproj">
             <ProjectGuid>{498B3D82-8A73-4F32-A36B-4868B6FA30AB}</ProjectGuid>
             <Configurations>TestDebug</Configurations>
@@ -5002,23 +4666,11 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\sbridge.dproj">
-            <ProjectGuid>{AD4897FD-2160-4513-B66C-5E314E221241}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaAllDemos.dproj">
             <ProjectGuid>{F6AA358F-A152-40ED-9B06-A4554E1C2894}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\RestRequestLib.dproj">
-            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Samples\Janua\FMX\CanvasPainting.dproj">
             <ProjectGuid>{12404598-E79A-40FB-AE7C-7A2F8D3AFD79}</ProjectGuid>
@@ -5035,12 +4687,6 @@
         <BuildGroupProject Include="CarServiceCustomerConfirmation.dproj">
             <ProjectGuid>{C0D20835-1452-4AF3-9358-7E349845FEC2}</ProjectGuid>
             <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\components\pkg120\sgcWebSockets.dproj">
-            <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -5149,12 +4795,6 @@
         <BuildGroupProject Include="..\..\Samples\UniGUI\FSThemeApache\FSThemeApache.dproj">
             <ProjectGuid>{1B6CC124-BFCC-4DE2-86C6-E9CF894D3F3D}</ProjectGuid>
             <Configurations/>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\dclsbridge.dproj">
-            <ProjectGuid>{2CECFD19-8641-4671-9EE3-52AB5D8F0473}</ProjectGuid>
-            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>

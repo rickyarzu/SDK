@@ -1,4 +1,4 @@
-unit Janua.Phoenix.VCL.dmPlannerController;
+ï»¿unit Janua.Phoenix.VCL.dmPlannerController;
 
 interface
 
@@ -714,7 +714,7 @@ var
 
 const
   cMessage = 'Buongiorno, sono Marina della Asso Antincendio e Sicurezza Srl' + sl +
-    'La contatto per comunicarLe che nella giornata del {{1}} il Ns tecnico passerà per la verifica degli estintori c/o la vs sede in {{2}}. Nel caso in cui non dovessimo ricevere riscontro daremo per confermata la Vs presenza. '
+    'La contatto per comunicarLe che nella giornata del {{1}} il Ns tecnico passerÃ  per la verifica degli estintori c/o la vs sede in {{2}}. Nel caso in cui non dovessimo ricevere riscontro daremo per confermata la Vs presenza. '
     + sl + 'Cordiali Saluti' + sl + sl +
     'Per comunicare eventuali variazioni cliccare qui: https://wa.me/393474065336';
 
@@ -1003,7 +1003,7 @@ begin
   lPhone := StringReplace(lPhone, ' ', '', [rfIgnoreCase, rfReplaceAll]);
 
   if lPhone = '' then
-    JShowError('Non è presente un numero WhatsApp Valido')
+    JShowError('Non Ã¨ presente un numero WhatsApp Valido')
   else
   begin
     var
@@ -1064,7 +1064,7 @@ begin
   var
   lPhone := JanuaInputText('Inserire cellulare test', 'Numero di Cellulare', WATestPhone);
   if lPhone = '' then
-    JShowError('Non è presente un numero WhatsApp Valido')
+    JShowError('Non Ã¨ presente un numero WhatsApp Valido')
   else
   begin
     lPhone := StringReplace(lPhone, ' ', '', [rfIgnoreCase, rfReplaceAll]);
@@ -1320,7 +1320,7 @@ begin
             qryReportPlanner.Post;
 
             qryPersonalPlannerEvents.Append;
-            // Chiave ora è impostata automaticamente dal programma (GenID)
+            // Chiave ora Ã¨ impostata automaticamente dal programma (GenID)
             vTime := SumDateTime(lDlg.edDate.DateTime, lDlg.edTime.Time);
             qryPersonalPlannerEventsDALLE_ORE.AsDateTime := vTime;
             qryPersonalPlannerEventsALLE_ORE.AsDateTime := vTime + (1 / 24);
@@ -2135,9 +2135,9 @@ begin
       qryPersonalPlannerEventsDALLE_ORE.AsDateTime := aStartDate;
       qryPersonalPlannerEventsALLE_ORE.AsDateTime := aEndDate;
       qryPersonalPlannerEventsCOLORE.AsInteger := cRedColor;
-      // qryTecniciCalendarDEFAULTCOLOR.AsInteger è stato sostituito dal colore Rosso
+      // qryTecniciCalendarDEFAULTCOLOR.AsInteger Ã¨ stato sostituito dal colore Rosso
       qryPersonalPlannerEvents.Post;
-      // Il record Google nasce 'non identificato' in quanto non è ancora stato salvato su Google
+      // Il record Google nasce 'non identificato' in quanto non Ã¨ ancora stato salvato su Google
       Result.ID := '';
       Result.ETag := '';
       Result.Summary := qryPersonalPlannerEventsSUBJECT.AsString;
@@ -2756,12 +2756,12 @@ const
   blue = 3;
   white = 4;
 begin
-  // passaggio da stato da 0 ad 1 se è presente un appuntamento
+  // passaggio da stato da 0 ad 1 se Ã¨ presente un appuntamento
   if (qryReportPlannerSTATO.AsInteger = 0) and not qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
   begin
     qryReportPlannerSTATO.AsInteger := 1;
   end
-  // passaggio da stato da 1 ad 0 se non è presente un appuntamento
+  // passaggio da stato da 1 ad 0 se non Ã¨ presente un appuntamento
   else if (qryReportPlannerSTATO.AsInteger = 1) and qryReportPlannerAPPUNTAMENTO_DATA.IsNull then
   begin
     qryReportPlannerSTATO.AsInteger := 0;
@@ -2858,9 +2858,11 @@ begin
             SumDateTime(qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime,
             qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime);
       end;
-
-      qryReportPlannercalcIndirizzo.AsString := qryReportPlannerINDIRIZZO.AsString + ', ' +
-        qryReportPlannerCAP.AsString + qryReportPlannerCOMUNE.AsString;
+      var
+      vTesto := qryReportPlannerINDIRIZZO.AsString + ', ' + qryReportPlannerCAP.AsString +
+        qryReportPlannerCOMUNE.AsString;
+      vTesto := StringReplace(vTesto, '''', 'â€™', [rfReplaceAll]);
+      qryReportPlannercalcIndirizzo.AsString := vTesto;
     except
       on e: exception do
       begin
@@ -3089,7 +3091,7 @@ begin
       qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime;
     lMeeting.EndTime := qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime +
       qryReportPlannerAPPUNTAMENTO_ORA.AsDateTime;
-    lMeeting.Location := qryReportPlannercalcIndirizzo.AsString;
+    lMeeting.Location := StringReplace(qryReportPlannercalcIndirizzo.AsString, '''', 'â€™', [rfReplaceAll]);
     lDlg.Meeting := lMeeting;
     lDlg.ShowModal;
     if lDlg.ModalResult = mrOK then
@@ -3122,14 +3124,14 @@ begin
       aVariables := '';
       try
         aList.Add(lData);
-        aList.Add(qryReportPlannercalcIndirizzo.AsString);
+        aList.Add(lMeeting.Location);
         aVariables := aList.Text;
       finally
         aList.Free;
       end;
 
       if not Result then
-        JShowError('Non è presente un numero WhatsApp Valido')
+        JShowError('Non Ã¨ presente un numero WhatsApp Valido')
       else
       begin
         lPhone := StringReplace(lPhone, ' ', '', [rfIgnoreCase, rfReplaceAll]);
@@ -3160,7 +3162,11 @@ begin
           on e: exception do
             raise exception.Create('Messaggio a ' + lDlg.edWAPhone.Text + ' non inviato causa Errore: ' +
               sLineBreak + e.Message);
-        end;
+        end
+      else
+      begin
+        JShowError('Attenzione Errore nell''invio del messaggio: ' + JanuaAdvTwilio.LastError);
+      end;
     end;
 
   finally
@@ -3234,7 +3240,7 @@ begin
       Result := (Length(lPhone) > 7) and (Length(lPhone) <= 13);
 
       if not Result then
-        JShowError('Non è presente un numero WhatsApp Valido')
+        JShowError('Non Ã¨ presente un numero WhatsApp Valido')
       else
       begin
         lPhone := StringReplace(lPhone, ' ', '', [rfIgnoreCase, rfReplaceAll]);

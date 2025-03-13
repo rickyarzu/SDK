@@ -3,28 +3,7 @@
         <ProjectGuid>{7E60AD61-6B0B-4A83-8ED7-932AD2541FA6}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\..\Components\pkg120\Spring.Base.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\Spring.Core.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\StyleControls.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\StyleControlsD.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\Neon.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="JanuaCoreThirdParty.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\RestRequestLib.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaCore.dproj">
@@ -63,10 +42,22 @@
         <Projects Include="VCL\OpenshiftPodRedisXE15.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Testing\OpenshiftPodRedisTest.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="..\..\..\tmssoftware\TMS VCL UI Pack\Demos\AdvMemo\Main Demo\AdvMemoMainDemo.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\..\tmssoftware\TMS VCL UI Pack\Demos\AdvMemo\Multi File with one TAdvMemo\AdvMemoMultiFileDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\..\Lib\DelphiEncryptionCompendium\Source\DEC60.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\Janua\FMX\JanuaHash_FMX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\JanuaCoreUnitTesting.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -77,60 +68,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="Spring_Base">
-        <MSBuild Projects="..\..\Components\pkg120\Spring.Base.dproj"/>
-    </Target>
-    <Target Name="Spring_Base:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\Spring.Base.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="Spring_Base:Make">
-        <MSBuild Projects="..\..\Components\pkg120\Spring.Base.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="Spring_Core">
-        <MSBuild Projects="..\..\Components\pkg120\Spring.Core.dproj"/>
-    </Target>
-    <Target Name="Spring_Core:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\Spring.Core.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="Spring_Core:Make">
-        <MSBuild Projects="..\..\Components\pkg120\Spring.Core.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="StyleControls">
-        <MSBuild Projects="..\..\Components\pkg120\StyleControls.dproj"/>
-    </Target>
-    <Target Name="StyleControls:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\StyleControls.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="StyleControls:Make">
-        <MSBuild Projects="..\..\Components\pkg120\StyleControls.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="StyleControlsD">
-        <MSBuild Projects="..\..\Components\pkg120\StyleControlsD.dproj"/>
-    </Target>
-    <Target Name="StyleControlsD:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\StyleControlsD.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="StyleControlsD:Make">
-        <MSBuild Projects="..\..\Components\pkg120\StyleControlsD.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="Neon">
-        <MSBuild Projects="..\..\Components\pkg120\Neon.dproj"/>
-    </Target>
-    <Target Name="Neon:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\Neon.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="Neon:Make">
-        <MSBuild Projects="..\..\Components\pkg120\Neon.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="OpenAIPackage">
-        <MSBuild Projects="..\..\Components\pkg120\OpenAIPackage.dproj"/>
-    </Target>
-    <Target Name="OpenAIPackage:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\OpenAIPackage.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="OpenAIPackage:Make">
-        <MSBuild Projects="..\..\Components\pkg120\OpenAIPackage.dproj" Targets="Make"/>
-    </Target>
     <Target Name="JanuaCoreThirdParty">
         <MSBuild Projects="JanuaCoreThirdParty.dproj"/>
     </Target>
@@ -139,15 +76,6 @@
     </Target>
     <Target Name="JanuaCoreThirdParty:Make">
         <MSBuild Projects="JanuaCoreThirdParty.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="RestRequestLib">
-        <MSBuild Projects="..\..\Components\pkg120\RestRequestLib.dproj"/>
-    </Target>
-    <Target Name="RestRequestLib:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\RestRequestLib.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="RestRequestLib:Make">
-        <MSBuild Projects="..\..\Components\pkg120\RestRequestLib.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaCore">
         <MSBuild Projects="JanuaCore.dproj"/>
@@ -257,6 +185,15 @@
     <Target Name="OpenshiftPodRedisXE15:Make">
         <MSBuild Projects="VCL\OpenshiftPodRedisXE15.dproj" Targets="Make"/>
     </Target>
+    <Target Name="OpenshiftPodRedisTest">
+        <MSBuild Projects="Testing\OpenshiftPodRedisTest.dproj"/>
+    </Target>
+    <Target Name="OpenshiftPodRedisTest:Clean">
+        <MSBuild Projects="Testing\OpenshiftPodRedisTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OpenshiftPodRedisTest:Make">
+        <MSBuild Projects="Testing\OpenshiftPodRedisTest.dproj" Targets="Make"/>
+    </Target>
     <Target Name="AdvMemoMainDemo">
         <MSBuild Projects="..\..\..\tmssoftware\TMS VCL UI Pack\Demos\AdvMemo\Main Demo\AdvMemoMainDemo.dproj"/>
     </Target>
@@ -275,14 +212,41 @@
     <Target Name="AdvMemoMultiFileDemo:Make">
         <MSBuild Projects="..\..\..\tmssoftware\TMS VCL UI Pack\Demos\AdvMemo\Multi File with one TAdvMemo\AdvMemoMultiFileDemo.dproj" Targets="Make"/>
     </Target>
+    <Target Name="DEC60">
+        <MSBuild Projects="..\..\..\Lib\DelphiEncryptionCompendium\Source\DEC60.dproj"/>
+    </Target>
+    <Target Name="DEC60:Clean">
+        <MSBuild Projects="..\..\..\Lib\DelphiEncryptionCompendium\Source\DEC60.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DEC60:Make">
+        <MSBuild Projects="..\..\..\Lib\DelphiEncryptionCompendium\Source\DEC60.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaHash_FMX">
+        <MSBuild Projects="..\..\Samples\Janua\FMX\JanuaHash_FMX.dproj"/>
+    </Target>
+    <Target Name="JanuaHash_FMX:Clean">
+        <MSBuild Projects="..\..\Samples\Janua\FMX\JanuaHash_FMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaHash_FMX:Make">
+        <MSBuild Projects="..\..\Samples\Janua\FMX\JanuaHash_FMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting">
+        <MSBuild Projects="Testing\JanuaCoreUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Clean">
+        <MSBuild Projects="Testing\JanuaCoreUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Make">
+        <MSBuild Projects="Testing\JanuaCoreUnitTesting.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="Spring_Base;Spring_Core;StyleControls;StyleControlsD;Neon;OpenAIPackage;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaRestWeb;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaVCLMVVM;OpenshiftPodRedisXE15;AdvMemoMainDemo;AdvMemoMultiFileDemo"/>
+        <CallTarget Targets="JanuaCoreThirdParty;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaRestWeb;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaVCLMVVM;OpenshiftPodRedisXE15;OpenshiftPodRedisTest;AdvMemoMainDemo;AdvMemoMultiFileDemo;DEC60;JanuaHash_FMX;JanuaCoreUnitTesting"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Spring_Base:Clean;Spring_Core:Clean;StyleControls:Clean;StyleControlsD:Clean;Neon:Clean;OpenAIPackage:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaRestWeb:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;OpenshiftPodRedisXE15:Clean;AdvMemoMainDemo:Clean;AdvMemoMultiFileDemo:Clean"/>
+        <CallTarget Targets="JanuaCoreThirdParty:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaRestWeb:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;OpenshiftPodRedisXE15:Clean;OpenshiftPodRedisTest:Clean;AdvMemoMainDemo:Clean;AdvMemoMultiFileDemo:Clean;DEC60:Clean;JanuaHash_FMX:Clean;JanuaCoreUnitTesting:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Spring_Base:Make;Spring_Core:Make;StyleControls:Make;StyleControlsD:Make;Neon:Make;OpenAIPackage:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaRestWeb:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;OpenshiftPodRedisXE15:Make;AdvMemoMainDemo:Make;AdvMemoMultiFileDemo:Make"/>
+        <CallTarget Targets="JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaRestWeb:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;OpenshiftPodRedisXE15:Make;OpenshiftPodRedisTest:Make;AdvMemoMainDemo:Make;AdvMemoMultiFileDemo:Make;DEC60:Make;JanuaHash_FMX:Make;JanuaCoreUnitTesting:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='Lib'">
@@ -310,16 +274,16 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Base.dproj">
-            <ProjectGuid>{8F00FFD6-085B-4B31-B6A2-D3157F252221}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLComponents.dproj">
             <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\..\Lib\DelphiEncryptionCompendium\Source\DEC60.dproj">
+            <ProjectGuid>{34FB3EC0-D6C0-4F92-9FEE-3E0E87C91FC4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaTmsControls.dproj">
@@ -327,12 +291,6 @@
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\Neon.dproj">
-            <ProjectGuid>{75F9AE11-84E6-446E-AEA1-A253010C6B2F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
@@ -352,22 +310,10 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
-            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{AEF0734F-C1E6-4A7A-BC68-D170EF3FE99F}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\Spring.Core.dproj">
-            <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaHash_FMX.dproj">
+            <ProjectGuid>{E6A23F63-4CF8-4715-BB2C-BFCA7EFA2431}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLMVVM.dproj">
@@ -394,6 +340,12 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="Testing\JanuaCoreUnitTesting.dproj">
+            <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
+            <Configurations>Test</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidac.dproj">
             <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -406,15 +358,9 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\RestRequestLib.dproj">
-            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
-            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
-            <Configurations>Release</Configurations>
+        <BuildGroupProject Include="Testing\OpenshiftPodRedisTest.dproj">
+            <ProjectGuid>{FB3E28F2-44C1-4A9E-AB99-8DA0606A30FD}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>

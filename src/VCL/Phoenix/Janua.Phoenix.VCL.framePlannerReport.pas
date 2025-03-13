@@ -1,4 +1,4 @@
-unit Janua.Phoenix.VCL.framePlannerReport;
+ï»¿unit Janua.Phoenix.VCL.framePlannerReport;
 
 interface
 
@@ -421,14 +421,14 @@ procedure TframeVCLPhoenixPlanneReport.Filter;
 var
   lFilter: TRecordFilter;
 begin
-  // il Tecnico può essere impostato o non impostato (difficile) ma in ogni caso deve essere possibile riaassegnare
+  // il Tecnico puÃ² essere impostato o non impostato (difficile) ma in ogni caso deve essere possibile riaassegnare
   if not cboTecnici.Value.IsEmpty then
     lFilter.TecnicoDB := cboTecnici.Value.ToInteger
   else
     lFilter.TecnicoDB := -1;
   lFilter.TecnicoCk := cbkFilterReport.Checked; { not lkpGroups.Value.IsEmpty and ckbFilterTech.Checked; }
 
-  // Cap può essere Non settato (default) impostato (ha un cap) o resettato (tutti i cap) pari a 00000
+  // Cap puÃ² essere Non settato (default) impostato (ha un cap) o resettato (tutti i cap) pari a 00000
   lFilter.CAP := lkpCAP.Value;
   lFilter.CAPCk := not(lkpCAP.Value.IsEmpty or (lkpCAP.Value = '00000'));
 
