@@ -75,8 +75,20 @@ type
     FTemplate: TACLTemplateRecord;
     FReqTemplate: string;
     FACLTemplate: string;
+    FRequest: TStrings;
+    FACLModel: TSTrings;
     procedure SetACLTemplate(const Value: string);
     procedure SetReqTemplate(const Value: string);
+    function GetAdminPassword: string;
+    function GetAdminPasswordBase64: string;
+    function GetAdminPasswordSHA: string;
+    function GetAdminUser: string;
+    procedure SetACLModel(const Value: TSTrings);
+    procedure SetAdminPassword(const Value: string);
+    procedure SetAdminPasswordBase64(const Value: string);
+    procedure SetAdminPasswordSHA(const Value: string);
+    procedure SetAdminUser(const Value: string);
+    procedure SetRequest(const Value: TStrings);
   protected
     function GetPINGPasswordBase64: string;
     procedure SetPINGPasswordBase64(const Value: string);
@@ -91,6 +103,14 @@ type
     property PINGPassword: string read GetPINGPassword write SetPINGPassword;
     property PINGPasswordSHA: string read GetPINGPasswordSHA write SetPINGPasswordSHA;
     property PingPasswordBase64: string read GetPINGPasswordBase64 write SetPINGPasswordBase64;
+
+    property AdminUser: string read GetAdminUser write SetAdminUser;
+    property AdminPassword: string read GetAdminPassword write SetAdminPassword;
+    property AdminPasswordSHA: string read GetAdminPasswordSHA write SetAdminPasswordSHA;
+    property AdminPasswordBase64: string read GetAdminPasswordBase64 write SetAdminPasswordBase64;
+
+    property ACLModel: TSTrings read FACLModel write SetACLModel;
+    property Request: TStrings read FRequest write SetRequest;
   public
     property ACLTemplate: string read FACLTemplate write SetACLTemplate;
     property ReqTemplate: string read FReqTemplate write SetReqTemplate;
@@ -121,9 +141,9 @@ type
     procedure SetHeadFields(const Value: TStrings);
     procedure SetTemplatesController(const Value: TRedisTemplateController);
   protected
-    procedure SetDevnomeMicroservizio(const Value: string);
-    procedure SetDevPassword(const Value: string);
-    procedure SetDevUserName(const Value: string);
+    procedure SetNomeMicroservizio(const Value: string);
+    procedure SetPassword(const Value: string);
+    procedure SetUserName(const Value: string);
   protected
     procedure SetareaFunzionale(const Value: string);
     procedure SetlabelOrganization(const Value: string);
@@ -140,13 +160,13 @@ type
     property HeadFields: TStrings read FHeadFields write SetHeadFields;
     property ACLFields: TStrings read FACLFields write SetACLFields;
   published
-    property nomeMicroservizio: string read GetnomeMicroservizio write SetnomeMicroservizio;
+    property nomeMicroservizio: string read GetnomeMicroservizio write SetNomeMicroservizio;
     property areaFunzionale: string read GetareaFunzionale write SetareaFunzionale;
     property labelOrganization: string read GetlabelOrganization write SetlabelOrganization;
     property labelPartOf: string read GetlabelPartOf write SetlabelPartOf;
     property maxMemoryPolicy: string read GetmaxMemoryPolicy write SetmaxMemoryPolicy;
-    property UserName: string read FRequest.UserName write SetDevUserName;
-    property Password: string read FRequest.Password write SetDevPassword;
+    property UserName: string read FRequest.UserName write SetUserName;
+    property Password: string read FRequest.Password write SetPassword;
   public
     property TemplatesController: TRedisTemplateController read FTemplatesController
       write SetTemplatesController;
@@ -289,9 +309,19 @@ begin
   end;
 end;
 
+procedure TRequestController.SetPassword(const Value: string);
+begin
+
+end;
+
 procedure TRequestController.SetTemplatesController(const Value: TRedisTemplateController);
 begin
   FTemplatesController := Value;
+end;
+
+procedure TRequestController.SetUserName(const Value: string);
+begin
+
 end;
 
 { TRedisTemplateController }
@@ -322,6 +352,26 @@ begin
   Result := FTemplate.PingPasswordBase64
 end;
 
+function TRedisTemplateController.GetAdminPassword: string;
+begin
+  Result := FTemplate.AdminPassword
+end;
+
+function TRedisTemplateController.GetAdminPasswordBase64: string;
+begin
+  Result := FTemplate.AdminPasswordBase64
+end;
+
+function TRedisTemplateController.GetAdminPasswordSHA: string;
+begin
+  Result := FTemplate.AdminPasswordSHA
+end;
+
+function TRedisTemplateController.GetAdminUser: string;
+begin
+  Result := FTemplate.AdminUser
+end;
+
 function TRedisTemplateController.GetPINGPassword: string;
 begin
   Result := FTemplate.PINGPassword
@@ -337,9 +387,34 @@ begin
   Result := FTemplate.PINGUser
 end;
 
+procedure TRedisTemplateController.SetACLModel(const Value: TSTrings);
+begin
+  FACLModel := Value;
+end;
+
 procedure TRedisTemplateController.SetACLTemplate(const Value: string);
 begin
   FACLTemplate := Value;
+end;
+
+procedure TRedisTemplateController.SetAdminPassword(const Value: string);
+begin
+
+end;
+
+procedure TRedisTemplateController.SetAdminPasswordBase64(const Value: string);
+begin
+
+end;
+
+procedure TRedisTemplateController.SetAdminPasswordSHA(const Value: string);
+begin
+
+end;
+
+procedure TRedisTemplateController.SetAdminUser(const Value: string);
+begin
+
 end;
 
 procedure TRedisTemplateController.SetPINGPassword(const Value: string);
@@ -367,6 +442,16 @@ begin
     FTemplate.PINGUser := Value;
     Notify('PINGUser');
   end;
+end;
+
+procedure TRedisTemplateController.SetReqTemplate(const Value: string);
+begin
+
+end;
+
+procedure TRedisTemplateController.SetRequest(const Value: TStrings);
+begin
+  FRequest := Value;
 end;
 
 { TRedisTemplatesController }

@@ -1,4 +1,4 @@
-unit Janua.Core.Functions.Test;
+ο»Ώunit Janua.Core.Functions.Test;
 
 interface
 
@@ -6,7 +6,7 @@ uses
   DUnitX.TestFramework, FireDAC.Comp.Client,
   System.StrUtils, System.SysUtils, System.Classes, Data.DB,
   // Janua Units to Test
-  Janua.Core.Functions, Janua.Test.FireDac.dmVirtual;
+  Janua.Core.Functions, Janua.Test.FireDAC.dmVirtual;
 
 { dmTestFunctionsDataset := TdmTestFunctionsDataset.Create(nil); }
 
@@ -34,11 +34,11 @@ type
     [TestCase('Nil', '')]
     procedure TestFreeAndNil;
     [Test]
-    [TestCase('A', 'ΰθμ^')]
+    [TestCase('A', 'Γ Γ¨Γ¬^')]
     procedure TestEncode64(aString: string);
-    [TestCase('A', 'ΰθμ^')]
+    [TestCase('A', 'Γ Γ¨Γ¬^')]
     procedure TestEncode64UTF8(aString: string);
-    [TestCase('A', 'ΰθμ^')]
+    [TestCase('A', 'Γ Γ¨Γ¬^')]
     procedure TestEncode64String(aString: string);
     // Test with TestCase Attribute to supply parameters.
     [Test]
@@ -101,6 +101,8 @@ type
     [TestCase('False', 'false,F91GG')]
     [TestCase('False', 'false,-+81GG')]
     procedure TestHex(const expected: boolean; const aHex: string);
+    [TestCase('True', 'ed4c34dcfe7bfebc95f90151804b0f40e196652d8d4ba9caf4dcceb04ba3e3ed,AbCdEfGhIlMnOp')]
+    procedure TestSha256(const expected: string; const Value: string);
   end;
 
 implementation
@@ -310,6 +312,13 @@ begin
   boolTest := bTest = 1;
   bResult := Janua.Core.Functions.FPartitaIva(aVat, sError, sSpec);
   DUnitX.TestFramework.Assert.AreEqual(bResult, boolTest);
+end;
+
+procedure TFunctionsTest.TestSha256(const expected, Value: string);
+begin
+  var
+  vTest := Janua.Core.Functions.Sha256(Value);
+  Assert.AreEqual(expected, vTest, 'Sha256 Convertion Error');
 end;
 
 procedure TFunctionsTest.TestTpl(aPath: string);

@@ -22,6 +22,17 @@ const
   cInvalidDate = cNullDate + 1;
 
 type
+  TJanuaShape = (
+    jsCircle,
+    jsEllipse,
+    jsSquare,
+    jsRectangle,
+    jsStar,
+    jsPentagon,
+    jsHexagon,
+    jsDiamond
+  );
+
   TJanuaPoint = record
     X: Single;
     Y: Single;
@@ -32,18 +43,27 @@ type
   TJanuaDraw = record
   private
     FNotes: string;
+    FRadius: Single;
+    FShape: TJanuaShape;
     function GetItem(Index: Integer): TJanuaPoint;
     procedure SetItem(Index: Integer; Value: TJanuaPoint);
     function GetCount: Integer;
     procedure SetNotes(const Value: string);
+    procedure SetRadius(const Value: Single);
+    procedure SetShape(const Value: TJanuaShape);
   public
     Points: Tarray<TJanuaPoint>;
     property Count: Integer read GetCount;
     property Items[Index: Integer]: TJanuaPoint read GetItem write SetItem; default;
     property Notes: string read FNotes write SetNotes;
+    property Radius: Single read FRadius write SetRadius;
+    property Shape: TJanuaShape read FShape write SetShape;
   public
-    constructor Create(aX, aY: Single);
+    /// <summary> Create the Draw with it's first Point </summary>
+    constructor Create(aX, aY: Single; aShape: TJanuaShape = jsEllipse);
+    /// <summary> Add a point record </summary>
     procedure AddPoint(aPoint: TJanuaPoint); overload;
+    /// <summary> Add a point creating it from coordinates </summary>
     procedure AddPoint(aX, aY: Single); overload;
     procedure DelPoint;
     function ActualX: Single;
@@ -57,17 +77,27 @@ type
     procedure SetItem(Index: Integer; Value: TJanuaDraw);
     function GetCount: Integer;
   public
+    /// <summary> Array of TJanuaDraw inside an Image </summary>
     Draws: Tarray<TJanuaDraw>;
+    /// <summary> Image Width where points where taken </summary>
     Width: Single;
+    /// <summary> Image Height where points where taken </summary>
     Heigth: Single;
+    /// <summary> Notes added to Image (useful for annotations on car incident or check list) </summary>
     Notes: string;
+    /// <summary> Returns the Count of Draws in an Image </summary>
     property Count: Integer read GetCount;
+    /// <summary> Returns the draw from the  </summary>
     property Items[Index: Integer]: TJanuaDraw read GetItem write SetItem; default;
   public
+    /// <summary> Creates the record with Heigth and Width of an Image </summary>
     constructor Create(aWidth, aHeigth: Single);
     procedure AddDraw(aDraw: TJanuaDraw);
+    /// <summary> Deletes the last inserted Draw  </summary>
     procedure DelDraw;
+    /// <summary> Serialize the record to a json object  </summary>
     function Serialize: string;
+    /// <summary> Deserialize the record to a json object  </summary>
     procedure DeSerialize(const aJson: string);
   end;
 
@@ -461,7 +491,7 @@ const
     { 4 jptDateTime } 'datetime', 'integer' { 5 jptInteger } , 'cardinal' { 6 jptCardinal } ,
     'largeint' { 7 jptLargeInt } , 'autoinc' { 8 jptAutoInc } , 'smallint' { 9 jptSmallint } ,
     'shortint' { 10 jptShortint } , 'byte' { 11 jptByte } , 'word' { 12 jptWord } ,
-    'filename' { 13 jptFilename } , 'string' { 14 jptString } , 'float' { 15 jptFloat } ,
+    'filename' { 13 jptFilename } , 'string' { 14 jptString } , 'Single' { 15 jptFloat } ,
     'sigle' { 16 jptSinglehg } , 'html' { 17 jptHtmlText } , 'rtf' { 18 jptRichText } ,
     'boolean' { 19 jptBoolean } , 'text' { 20 jptText } , 'blob' { 21 jptBlob } , 'bytes' { 22 jptBytes } ,
     'variant' { 23 jptVariant } , 'guid' { 24 jptGUID } , 'array' { 25 jptArray } , 'ADT' { 26 jptADT } ,
@@ -5324,9 +5354,10 @@ begin
   Points[lP] := aPoint;
 end;
 
-constructor TJanuaDraw.Create(aX, aY: Single);
+constructor TJanuaDraw.Create(aX, aY: Single; aShape: TJanuaShape);
 begin
-  self.AddPoint(aX, aY)
+  AddPoint(aX, aY);
+  FShape := aShape;
 end;
 
 procedure TJanuaDraw.DelPoint;
@@ -5358,6 +5389,16 @@ end;
 procedure TJanuaDraw.SetNotes(const Value: string);
 begin
   FNotes := Value;
+end;
+
+procedure TJanuaDraw.SetRadius(const Value: Single);
+begin
+  FRadius := Value;
+end;
+
+procedure TJanuaDraw.SetShape(const Value: TJanuaShape);
+begin
+  FShape := Value;
 end;
 
 { TJanuaImageDraws }

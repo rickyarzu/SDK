@@ -6,7 +6,6 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   // FMX
   FMX.Layouts, FMX.TMSBaseControl, FMX.TMSMemo, FMX.TMSMemoStyles, FMX.TMSFNCCustomWEBControl, FMX.TabControl,
-
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
   FMX.Controls.Presentation, FMX.StdCtrls,
   // Janua
@@ -21,9 +20,10 @@ type
     btnRedraw: TButton;
     btnDelLast: TButton;
     btnAddNotes: TButton;
+    Timer1: TTimer;
+    Rectangle1: TRectangle;
     LayoutImage: TLayout;
     imgCar: TImage;
-    Timer1: TTimer;
     procedure FormResize(Sender: TObject);
     procedure btnClearClick(Sender: TObject);
     procedure pntBoxCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
@@ -268,8 +268,8 @@ procedure TframeFMXImageDraw.pntBoxCarMouseDown(Sender: TObject; Button: TMouseB
   X, Y: Single);
 begin
   FDrawing := True;
-  { if Assigned(pntBoxCar) then
-    pntBoxCar.Canvas.BeginScene; }
+  if Assigned(pntBoxCar) then
+    pntBoxCar.Canvas.BeginScene;
   LastDraw := TJanuaDraw.Create(X, Y);
   { lbCount.Text := 'Count: ' + LastDraw.Count.ToString; }
 

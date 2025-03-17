@@ -60,6 +60,9 @@
         <Projects Include="Testing\JanuaCoreUnitTesting.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="VCL\TeestOracleConnection.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -239,17 +242,32 @@
     <Target Name="JanuaCoreUnitTesting:Make">
         <MSBuild Projects="Testing\JanuaCoreUnitTesting.dproj" Targets="Make"/>
     </Target>
+    <Target Name="TeestOracleConnection">
+        <MSBuild Projects="VCL\TeestOracleConnection.dproj"/>
+    </Target>
+    <Target Name="TeestOracleConnection:Clean">
+        <MSBuild Projects="VCL\TeestOracleConnection.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TeestOracleConnection:Make">
+        <MSBuild Projects="VCL\TeestOracleConnection.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="JanuaCoreThirdParty;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaRestWeb;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaVCLMVVM;OpenshiftPodRedisXE15;OpenshiftPodRedisTest;AdvMemoMainDemo;AdvMemoMultiFileDemo;DEC60;JanuaHash_FMX;JanuaCoreUnitTesting"/>
+        <CallTarget Targets="JanuaCoreThirdParty;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaRestWeb;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaVCLMVVM;OpenshiftPodRedisXE15;OpenshiftPodRedisTest;AdvMemoMainDemo;AdvMemoMultiFileDemo;DEC60;JanuaHash_FMX;JanuaCoreUnitTesting;TeestOracleConnection"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="JanuaCoreThirdParty:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaRestWeb:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;OpenshiftPodRedisXE15:Clean;OpenshiftPodRedisTest:Clean;AdvMemoMainDemo:Clean;AdvMemoMultiFileDemo:Clean;DEC60:Clean;JanuaHash_FMX:Clean;JanuaCoreUnitTesting:Clean"/>
+        <CallTarget Targets="JanuaCoreThirdParty:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaRestWeb:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaVCLMVVM:Clean;OpenshiftPodRedisXE15:Clean;OpenshiftPodRedisTest:Clean;AdvMemoMainDemo:Clean;AdvMemoMultiFileDemo:Clean;DEC60:Clean;JanuaHash_FMX:Clean;JanuaCoreUnitTesting:Clean;TeestOracleConnection:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaRestWeb:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;OpenshiftPodRedisXE15:Make;OpenshiftPodRedisTest:Make;AdvMemoMainDemo:Make;AdvMemoMultiFileDemo:Make;DEC60:Make;JanuaHash_FMX:Make;JanuaCoreUnitTesting:Make"/>
+        <CallTarget Targets="JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaRestWeb:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaVCLMVVM:Make;OpenshiftPodRedisXE15:Make;OpenshiftPodRedisTest:Make;AdvMemoMainDemo:Make;AdvMemoMultiFileDemo:Make;DEC60:Make;JanuaHash_FMX:Make;JanuaCoreUnitTesting:Make;TeestOracleConnection:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='Lib'">
+        <BuildGroupProject Include="VCL\TeestOracleConnection.dproj">
+            <ProjectGuid>{0182548D-9573-419B-B75A-995D99510E2D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -292,14 +310,14 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
-            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaCoreComponents.dproj">
-            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
