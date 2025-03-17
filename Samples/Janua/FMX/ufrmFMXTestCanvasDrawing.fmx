@@ -2,7 +2,7 @@ object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
   Left = 0
   Top = 0
   Caption = 'Form FXM Test Canvas Drawing'
-  ClientHeight = 535
+  ClientHeight = 588
   ClientWidth = 1065
   FormFactor.Width = 320
   FormFactor.Height = 480
@@ -14,7 +14,7 @@ object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
     Align = Right
     Position.X = 677.000000000000000000
     Size.Width = 388.000000000000000000
-    Size.Height = 535.000000000000000000
+    Size.Height = 588.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     Font.Family = 'Consolas'
@@ -83,22 +83,22 @@ object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
   object TestDrawCircle: TTabControl
     Align = Client
     Size.Width = 677.000000000000000000
-    Size.Height = 535.000000000000000000
+    Size.Height = 588.000000000000000000
     Size.PlatformDefault = False
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 1
     TabPosition = PlatformDefault
     Sizes = (
       677s
-      509s
+      562s
       677s
-      509s)
+      562s)
     object tabFrame: TTabItem
       CustomIcon = <
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 77.000000000000000000
       Size.Height = 26.000000000000000000
       Size.PlatformDefault = False
@@ -106,24 +106,24 @@ object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
       TabOrder = 0
       Text = 'Frame Test'
       inline frameFMXImageDraw1: TframeFMXImageDraw
-        Align = Client
+        Align = Top
         Size.Width = 677.000000000000000000
-        Size.Height = 509.000000000000000000
+        Size.Height = 562.000000000000000000
         Size.PlatformDefault = False
         inherited pnlButtons: TPanel
           Size.Width = 677.000000000000000000
         end
         inherited Rectangle1: TRectangle
           Size.Width = 677.000000000000000000
-          Size.Height = 451.000000000000000000
+          Size.Height = 504.000000000000000000
           inherited LayoutImage: TLayout
             Size.Width = 677.000000000000000000
-            Size.Height = 451.000000000000000000
+            Size.Height = 504.000000000000000000
             inherited imgCar: TImage
               MultiResBitmap.Height = 383
               MultiResBitmap.Width = 637
               Size.Width = 677.000000000000000000
-              Size.Height = 451.000000000000000000
+              Size.Height = 504.000000000000000000
             end
           end
         end
@@ -134,7 +134,7 @@ object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 98.000000000000000000
       Size.Height = 26.000000000000000000
       Size.PlatformDefault = False
@@ -7846,18 +7846,29 @@ object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
               'Z:\GitHub\framework\JanuaProject\20 Applications\20.02 CarServic' +
               'e\Immagini\Vehicle-Hire-Forms-700x990.png'
           end>
-        Align = Client
+        Align = Top
         Size.Width = 677.000000000000000000
-        Size.Height = 509.000000000000000000
+        Size.Height = 409.000000000000000000
         Size.PlatformDefault = False
         object pbBadge: TPaintBox
           Align = Client
           Size.Width = 677.000000000000000000
-          Size.Height = 509.000000000000000000
+          Size.Height = 409.000000000000000000
           Size.PlatformDefault = False
-          OnClick = pbBadgeClick
-          OnMouseDown = pbBadgeMouseDown
+          OnMouseMove = pbBadgeMouseMove
+          OnMouseUp = pbBadgeMouseUp
         end
+      end
+      object btnTestOffset: TButton
+        Align = Top
+        Position.Y = 409.000000000000000000
+        Size.Width = 677.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Test Offset Button'
+        TextSettings.Trimming = None
+        OnClick = btnTestOffsetClick
       end
     end
   end

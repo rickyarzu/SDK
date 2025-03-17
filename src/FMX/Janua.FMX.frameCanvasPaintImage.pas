@@ -24,6 +24,7 @@ type
     Rectangle1: TRectangle;
     LayoutImage: TLayout;
     imgCar: TImage;
+    btnOffSet: TButton;
     procedure FormResize(Sender: TObject);
     procedure btnClearClick(Sender: TObject);
     procedure pntBoxCarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);

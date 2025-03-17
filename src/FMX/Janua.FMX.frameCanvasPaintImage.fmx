@@ -1,7 +1,7 @@
 object frameFMXImageDraw: TframeFMXImageDraw
   Align = Client
   Size.Width = 464.000000000000000000
-  Size.Height = 338.000000000000000000
+  Size.Height = 336.000000000000000000
   Size.PlatformDefault = False
   OnResize = FormResize
   object pnlButtons: TPanel
@@ -15,7 +15,7 @@ object frameFMXImageDraw: TframeFMXImageDraw
       Size.Width = 81.000000000000000000
       Size.Height = 58.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 3
+      TabOrder = 4
       Text = 'Clear '
       TextSettings.Trimming = None
       OnClick = btnClearClick
@@ -26,7 +26,7 @@ object frameFMXImageDraw: TframeFMXImageDraw
       Size.Width = 80.000000000000000000
       Size.Height = 58.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 2
+      TabOrder = 3
       Text = 'Redraw'
       TextSettings.Trimming = None
       OnClick = btnRedrawClick
@@ -37,7 +37,7 @@ object frameFMXImageDraw: TframeFMXImageDraw
       Size.Width = 80.000000000000000000
       Size.Height = 58.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 1
+      TabOrder = 2
       Text = 'Del. Last'
       TextSettings.Trimming = None
       OnClick = btnDelLastClick
@@ -48,8 +48,18 @@ object frameFMXImageDraw: TframeFMXImageDraw
       Size.Width = 80.000000000000000000
       Size.Height = 58.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 0
+      TabOrder = 1
       Text = 'Add Notes'
+      TextSettings.Trimming = None
+      OnClick = btnAddNotesClick
+    end
+    object btnOffSet: TButton
+      Align = Client
+      Size.Width = 143.000000000000000000
+      Size.Height = 58.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Calibratura'
       TextSettings.Trimming = None
       OnClick = btnAddNotesClick
     end
@@ -66,13 +76,13 @@ object frameFMXImageDraw: TframeFMXImageDraw
     Corners = []
     Fill.Color = claWhite
     Size.Width = 464.000000000000000000
-    Size.Height = 280.000000000000000000
+    Size.Height = 278.000000000000000000
     Size.PlatformDefault = False
     Stroke.Color = claWhite
     object LayoutImage: TLayout
       Align = Client
       Size.Width = 464.000000000000000000
-      Size.Height = 280.000000000000000000
+      Size.Height = 278.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
       object imgCar: TImage
@@ -7782,7 +7792,7 @@ object frameFMXImageDraw: TframeFMXImageDraw
           end>
         Align = Client
         Size.Width = 464.000000000000000000
-        Size.Height = 280.000000000000000000
+        Size.Height = 278.000000000000000000
         Size.PlatformDefault = False
       end
     end

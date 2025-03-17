@@ -22,16 +22,7 @@ const
   cInvalidDate = cNullDate + 1;
 
 type
-  TJanuaShape = (
-    jsCircle,
-    jsEllipse,
-    jsSquare,
-    jsRectangle,
-    jsStar,
-    jsPentagon,
-    jsHexagon,
-    jsDiamond
-  );
+  TJanuaShape = (jsCircle, jsEllipse, jsSquare, jsRectangle, jsStar, jsPentagon, jsHexagon, jsDiamond);
 
   TJanuaPoint = record
     X: Single;
@@ -65,8 +56,11 @@ type
     procedure AddPoint(aPoint: TJanuaPoint); overload;
     /// <summary> Add a point creating it from coordinates </summary>
     procedure AddPoint(aX, aY: Single); overload;
+    // <summary> Delete the last Inserted Point </summary>
     procedure DelPoint;
+    // <summary> X Coordinates of last Inserted Point </summary>
     function ActualX: Single;
+    // <summary>  Y Coordinates of last Inserted Point </summary>
     function ActualY: Single;
   end;
 
@@ -92,6 +86,7 @@ type
   public
     /// <summary> Creates the record with Heigth and Width of an Image </summary>
     constructor Create(aWidth, aHeigth: Single);
+    /// <summary> Add a new Draw to the Draw List  </summary>
     procedure AddDraw(aDraw: TJanuaDraw);
     /// <summary> Deletes the last inserted Draw  </summary>
     procedure DelDraw;
