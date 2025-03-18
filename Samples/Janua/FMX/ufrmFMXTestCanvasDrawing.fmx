@@ -85,7 +85,7 @@ object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
     Size.Width = 677.000000000000000000
     Size.Height = 588.000000000000000000
     Size.PlatformDefault = False
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 1
     TabPosition = PlatformDefault
     Sizes = (
@@ -98,7 +98,7 @@ object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 77.000000000000000000
       Size.Height = 26.000000000000000000
       Size.PlatformDefault = False
@@ -112,6 +112,10 @@ object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
         Size.PlatformDefault = False
         inherited pnlButtons: TPanel
           Size.Width = 677.000000000000000000
+          inherited btnTestOffset: TButton
+            Size.Width = 677.000000000000000000
+            OnClick = frameFMXImageDraw1btnTestOffsetClick
+          end
         end
         inherited Rectangle1: TRectangle
           Size.Width = 677.000000000000000000
@@ -123,7 +127,7 @@ object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
               MultiResBitmap.Height = 383
               MultiResBitmap.Width = 637
               Size.Width = 677.000000000000000000
-              Size.Height = 504.000000000000000000
+              Size.Height = 409.000000000000000000
             end
           end
         end
@@ -134,7 +138,7 @@ object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 98.000000000000000000
       Size.Height = 26.000000000000000000
       Size.PlatformDefault = False
