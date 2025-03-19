@@ -511,7 +511,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
             Height = 941
             Align = alClient
             TabOrder = 0
-            ExplicitLeft = -2
             ExplicitWidth = 660
             ExplicitHeight = 941
             inherited lbCap: TLabel
@@ -578,6 +577,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
                     end
                     inherited btnWhatsApp: TJvSpeedButton
                       Height = 28
+                      OnClick = frameVCLPhoenixPlanneReportbtnWhatsAppClick
                       ExplicitHeight = 48
                     end
                     inherited pnlInterventi: TPanel
@@ -895,7 +895,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
               inherited TMSFNCChat1: TTMSFNCChat
                 Width = 400
                 Height = 817
-                DoubleBuffered = True
                 ExplicitWidth = 400
                 ExplicitHeight = 817
               end
@@ -947,7 +946,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           TabBackGroundColor = clBtnFace
           TabMargin.RightMargin = 0
           TabOverlap = 0
-          Version = '2.0.5.0'
+          Version = '2.1.0.0'
           PersistPagesState.Location = plRegistry
           PersistPagesState.Enabled = False
           TabOrder = 1
@@ -1159,7 +1158,6 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
               inherited btnSearch: TBitBtn
                 Left = 667
                 Top = 890
-                DoubleBuffered = True
                 ImageIndex = 16
                 ImageName = '017-clock'
                 ExplicitLeft = 667

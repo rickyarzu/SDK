@@ -47,24 +47,11 @@ type
     Image5: TImage;
     toolBarDriverTask: TToolBar;
     Image6: TImage;
-    Layout1: TLayout;
     Layout2: TLayout;
     lstOperations: TListView;
     tmtMsgs: TTimer;
     SpeedButton1: TSpeedButton;
     Button1: TButton;
-    lbDateTime: TLabel;
-    Label1: TLabel;
-    lbFrom: TLabel;
-    lbdesTo: TLabel;
-    lbDelivery: TLabel;
-    lbStartTask: TLabel;
-    swRemember: TSwitch;
-    lbEndTravel: TLabel;
-    Switch1: TSwitch;
-    btnSignature: TSpeedButton;
-    SpeedButton2: TSpeedButton;
-    Memo1: TMemo;
     Button2: TButton;
     Button3: TButton;
     Button4: TButton;
@@ -95,13 +82,28 @@ type
     Button9: TButton;
     Layout3: TLayout;
     WebBrowser1: TWebBrowser;
-    btnCallClient: TButton;
+    TimerNote: TTimer;
+    TimerCanvas: TTimer;
+    Rectangle1: TRectangle;
+    Layout1: TLayout;
+    lbDateTime: TLabel;
+    Label1: TLabel;
+    lbFrom: TLabel;
+    lbdesTo: TLabel;
+    lbDelivery: TLabel;
+    lbStartTask: TLabel;
+    swRemember: TSwitch;
+    lbEndTravel: TLabel;
+    Switch1: TSwitch;
+    btnSignature: TSpeedButton;
+    SpeedButton2: TSpeedButton;
     btnVehicleCamera: TSpeedButton;
     btnNotes: TSpeedButton;
     btnCheckVehicleState: TSpeedButton;
-    TimerNote: TTimer;
-    TimerCanvas: TTimer;
     memLayout: TLayout;
+    Memo1: TMemo;
+    btnCallClient: TButton;
+    btnPositiion: TSpeedButton;
 
     procedure GestureDone(Sender: TObject; const EventInfo: TGestureEventInfo; var Handled: Boolean);
     procedure FormCreate(Sender: TObject);
@@ -123,6 +125,7 @@ type
     procedure btnNotesClick(Sender: TObject);
     procedure TimerNoteTimer(Sender: TObject);
     procedure btnCheckVehicleStateClick(Sender: TObject);
+    procedure btnPositiionClick(Sender: TObject);
   private
     FSessionKey: string;
     FdlgFMXNotes: TdlgFMXNotes;
@@ -151,7 +154,7 @@ implementation
 uses
   Janua.Application.Framework, FMX.DialogService, Janua.CarService.FMX.dlgLoginMobile,
   Janua.FMX.frmAccessCamera, Janua.FMX.frmSignatureCaptureMobile, Janua.Core.AsyncTask,
-  Janua.CarService.FMX.dlgBrowser;
+  Janua.CarService.FMX.dlgBrowser{, Janua.FMX.frmTMSFNCGoogleDirections};
 
 {$R *.fmx}
 
@@ -219,6 +222,18 @@ begin
   FdlgFMXNotes.WindowState := TWindowState.wsMaximized;
 {$ENDIF}
   FdlgFMXNotes.ShowModal(FreeNotes);
+end;
+
+procedure TfrmFMXCarServiceDriverMain.btnPositiionClick(Sender: TObject);
+begin
+{
+  var
+  dlg := TrmFMXTMSFNCGoogleDirections.Create(self);
+  dlg.Origin := self.lbFrom.Text;
+  dlg.Destination := self.lbDelivery.Text;
+  dlg.Timer1.Enabled := True;
+  dlg.Show;
+  }
 end;
 
 procedure TfrmFMXCarServiceDriverMain.btnSignatureClick(Sender: TObject);

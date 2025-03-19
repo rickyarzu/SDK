@@ -24,6 +24,7 @@
 {$MINENUMSIZE 1}
 {$IMAGEBASE $400000}
 {$DEFINE DEBUG}
+{$DEFINE TOKENJWT}
 {$ENDIF IMPLICITBUILDING}
 {$LIBSUFFIX AUTO}
 {$RUNONLY}
@@ -39,27 +40,13 @@ requires
   inet,
   IndySystem,
   IndyProtocols,
+  IndyIPClient,
+  Spring.Base,
   IndyCore,
+  Jose,
   SwagDoc;
 
 contains
-
-  FB4D.VisionMLDefinition in '..\..\..\Lib\FB4D\Source\FB4D.VisionMLDefinition.pas',
-  FB4D.VisionML in '..\..\..\Lib\FB4D\Source\FB4D.VisionML.pas',
-  FB4D.Storage in '..\..\..\Lib\FB4D\Source\FB4D.Storage.pas',
-  FB4D.Response in '..\..\..\Lib\FB4D\Source\FB4D.Response.pas',
-  FB4D.Request in '..\..\..\Lib\FB4D\Source\FB4D.Request.pas',
-  FB4D.RealTimeDB in '..\..\..\Lib\FB4D\Source\FB4D.RealTimeDB.pas',
-  FB4D.RealTimeDB.Listener in '..\..\..\Lib\FB4D\Source\FB4D.RealTimeDB.Listener.pas',
-  FB4D.OAuth in '..\..\..\Lib\FB4D\Source\FB4D.OAuth.pas',
-  FB4D.Interfaces in '..\..\..\Lib\FB4D\Source\FB4D.Interfaces.pas',
-  FB4D.Helpers in '..\..\..\Lib\FB4D\Source\FB4D.Helpers.pas',
-  FB4D.GeminiAI in '..\..\..\Lib\FB4D\Source\FB4D.GeminiAI.pas',
-  FB4D.Functions in '..\..\..\Lib\FB4D\Source\FB4D.Functions.pas',
-  FB4D.Firestore in '..\..\..\Lib\FB4D\Source\FB4D.Firestore.pas',
-  FB4D.Firestore.Listener in '..\..\..\Lib\FB4D\Source\FB4D.FireStore.Listener.pas',
-  FB4D.Document in '..\..\..\Lib\FB4D\Source\FB4D.Document.pas',
-  FB4D.Configuration in '..\..\..\Lib\FB4D\Source\FB4D.Configuration.pas',
   Pkg.Json.DTO in '..\..\..\Lib\JsonToDelphi\Pkg.Json.DTO.pas',
   Pkg.Json.Settings in '..\..\..\Lib\JsonToDelphi\Pkg.Json.Settings.pas',
   Pkg.Json.JSONName in '..\..\..\Lib\JsonToDelphi\Pkg.Json.JSONName.pas',
@@ -70,8 +57,6 @@ contains
   DataSet.Serialize.Language in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Language.pas',
   DataSet.Serialize in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.pas',
   DataSet.Serialize.UpdatedStatus in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.UpdatedStatus.pas',
-  DataSet.Serialize.Utils in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Utils.pas',
-  Alcinoe.FTP.Client in '..\..\..\Lib\Alcinoe\Source\Alcinoe.FTP.Client.pas',
-  FB4D.Authentication in '..\..\..\Lib\FB4D\Source\FB4D.Authentication.pas';
+  DataSet.Serialize.Utils in '..\..\..\Lib\dataset-serialize\src\DataSet.Serialize.Utils.pas';
 
 end.

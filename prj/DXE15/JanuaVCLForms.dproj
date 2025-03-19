@@ -58,7 +58,7 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
-    <Import Project="JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('JanuaLibDXE15.optset')"/>
+    <Import Project="C:\Januaproject\Components\Distro\DXE15\JanuaeExeDXE15.optset" Condition="'$(Base)'!='' And Exists('C:\Januaproject\Components\Distro\DXE15\JanuaeExeDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
@@ -72,7 +72,7 @@
         <SanitizedProjectName>JanuaVCLForms</SanitizedProjectName>
         <VerInfo_Locale>1040</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <CfgDependentOn>JanuaLibDXE15.optset</CfgDependentOn>
+        <CfgDependentOn>C:\Januaproject\Components\Distro\DXE15\JanuaeExeDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>FireDACIBDriver;TMSWebGMapsPkgDE;vclwinx;DataSnapServer;dacvcl280;fmx;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;aurelius;FMX_FlexCel_Components;appanalytics;IndyProtocols;vclx;TMSVCLUIPackPkgWiz;dbxcds;vcledge;unidac280;FlexCel_Pdf;VisualStyles;DBXFirebirdDriver;TMSVCLUIPackPkgEx;SKIA_FlexCel_Core;vclgtxDocumentStudioControls;JvAppFrm;FireDACSqliteDriver;DbxClientDriver;JclVcl;soapmidas;Jcl;dbexpress;gtDocEng;JvManagedThreads;TMSCloudPkgDE;TMSVCLUIPackPkg;unidacvcl280;inet;dacfmx280;vcltouch;ipstudiowin;JvDB;FMX_FlexCel_Core;eMiniInvoice4D;FireDACDBXDriver;QRWRunDXE11_w64;fmxdae;JanuaUnidac;tmsbcl;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;SVGIconPackage;JvSystem;JvCustom;JvControls;OmniThreadLibraryRuntime;JvCrypt;JvJans;JvMM;IndySystem;JvGlobus;JanuaCoreComponents;JclContainers;JvPageComps;vclFireDAC;FlexCel_Render;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;unidacfmx280;bindcompdbx;rtl;FireDACMySQLDriver;VCL_FlexCel_Components;remotedb;DBXSqliteDriver;DBXSybaseASEDriver;JvRuntimeDesign;JvXPCtrls;vclimg;DataSnapFireDAC;eInvoice4D;inetdbxpress;FireDAC;JvDocking;JvDlgs;xmlrtl;dsnap;xdata;JvCmp;FireDACDb2Driver;DBXOracleDriver;DBXInformixDriver;fmxobj;bindcompvclsmp;DataSnapNativeClient;JanuaVCLMVVM;DatasnapConnectorsFreePascal;SVGIconImageList;Ean;FlexCel_Report;emshosting;sparkle;EanEditors;FireDACCommonDriver;uniGUI28Chart;TMSWebGMapsPkg;IndyIPClient;dac280;TMSCloudPkg;bindcompvclwinx;emsedge;bindcompfmx;JvBands;inetdb;FireDACASADriver;SVGIconImageListFMX;vclactnband;fmxFireDAC;officeXPrt;FireDACInfxDriver;DBXMySQLDriver;VclSmp;sbridge280;DataSnapCommon;Barcomp;JvPascalInterpreter;EurekaLogCore;fmxase;JanuaTmsControls;JvPluginSystem;DBXOdbcDriver;JvTimeFramework;dbrtl;FireDACOracleDriver;FlexCel_XlsAdapter;FireDACMSAccDriver;DataSnapIndy10ServerTransport;JclDeveloperTools;uniTools28;DataSnapConnectors;vcldsnap;DBXInterBaseDriver;FireDACMongoDBDriver;VCLThemeSelector;JvWizards;TMSVCLUIPackPkgXls;FireDACTDataDriver;JanuaVCLControls;vcldb;uSynEdit_R2024;FlexCel_Core;JvCore;vquery280;JanuaUnidacComponents;bindcomp;IndyCore;RESTBackendComponents;dmvcframeworkDT;JanuaMVVM;JanuaVCLComponents;FireDACADSDriver;Spring.Base;RESTComponents;IndyIPServer;vcl;dsnapxml;adortl;dsnapcon;DataSnapClient;DataSnapProviderClient;JvDotNetCtrls;JvHMI;uniGUI28VCL;DBXDb2Driver;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;dmvcframeworkRT;JvPrintPreview;tethering;JanuaCore;JvStdCtrls;crcontrols280;bindcompvcl;CloudService;DBXSybaseASADriver;soaprtl;soapserver;JvNet;$(DCC_UsePackage)</DCC_UsePackage>
@@ -118,7 +118,6 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
@@ -129,6 +128,7 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
+    <Import Project="JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('JanuaLibDXE15.optset')"/>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
@@ -264,9 +264,13 @@
             <Form>FrmMain</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="..\..\src\VCL\Test\Janua.Test.VCL.frmTest3.pas">
+            <Form>frmTest3</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
-            <DependentOn>JanuaLibDXE15.optset</DependentOn>
+            <DependentOn>C:\Januaproject\Components\Distro\DXE15\JanuaeExeDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
@@ -285,12 +289,21 @@
                 <Source>
                     <Source Name="MainSource">JanuaVCLForms.dpr</Source>
                 </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="C:\Embarcadero\Studio\23.0\Bpl\JanuaUnidac290.bpl">Janua UniDAC</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="5">
                 <DeployFile LocalName="..\..\..\..\bin\Win64\Release\JanuaVCLForms.exe" Configuration="Release" Class="ProjectOutput"/>
                 <DeployFile LocalName="Win32\Debug\JanuaVCLForms.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="c:\januaproject\bin\Win32\Release\JanuaVCLForms.exe" Configuration="Release" Class="ProjectOutput"/>
-                <DeployFile LocalName="c:\januaproject\bin\Win32\Release\JanuaVCLForms.exe" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="c:\januaproject\bin\Win32\Release\JanuaVCLForms.exe" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>JanuaVCLForms.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="iOSSimulator">
                         <Operation>1</Operation>

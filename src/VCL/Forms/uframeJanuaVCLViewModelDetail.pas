@@ -12,7 +12,7 @@ uses
   Janua.ViewModels.Intf, uJanuaVCLForm, Janua.Core.Types, Janua.Core.Classes.Intf, Janua.Orm.Intf,
   Janua.Forms.Types, Janua.Controls.Intf, Janua.Controls.Forms.Intf,
   // Interposers
-  Janua.Vcl.Interposers, Janua.TMS.Interposers, Janua.Vcl.EnhCRDBGrid, Janua.Vcl.EnhDBGrid;
+  Janua.Vcl.Interposers, Janua.TMS.Interposers, Janua.Vcl.EnhCRDBGrid, Janua.Vcl.EnhDBGrid, Janua.Core.Commons;
 
 type
   TframeJanuaVCLViewModelDetail = class(TFrame)
@@ -54,7 +54,7 @@ begin
     if Assigned(FViewModel) then
     begin
       FViewModel.Activate;
-      grdMaster.DataSource := FViewModel.dsMaster;
+      grdMaster.DataSource := FViewModel.jdsDataset.DataSource;
       JanuaDetailActionViewController.JanuaActionList := FViewModel.MainActionList;
       JanuaDetailActionViewController.Activate;
     end;

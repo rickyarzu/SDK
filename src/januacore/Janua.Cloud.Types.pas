@@ -448,7 +448,7 @@ type
     From: string; // whatsapp:+393409111351
     ApiVersion: string; // 2010-04-01
     procedure SetFromString(const aString: string);
-    procedure SetFromStrings(const aList: TStringList);
+    procedure SetFromStrings(const aList: TStrings);
     function GetAsJson: string;
     procedure SetAsJson(const aJson: string);
   end;
@@ -1359,7 +1359,7 @@ begin
   end;
 end;
 
-procedure TTwilioWebHook.SetFromStrings(const aList: TStringList);
+procedure TTwilioWebHook.SetFromStrings(const aList: TStrings);
 begin
   SmsMessageSid := aList.Values['SmsMessageSid'];
   NumMedia := aList.Values['NumMedia'];

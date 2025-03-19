@@ -1,0 +1,395 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  BorderStyle = Single
+  Caption = 'DEC hash demo'
+  ClientHeight = 970
+  ClientWidth = 452
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  object VertScrollBox1: TVertScrollBox
+    Align = Client
+    Size.Width = 452.000000000000000000
+    Size.Height = 970.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'scrollboxstyle'
+    TabOrder = 0
+    OnCalcContentBounds = VertScrollBox1CalcContentBounds
+    Viewport.Width = 447.000000000000000000
+    Viewport.Height = 970.000000000000000000
+    object LayoutBottom: TLayout
+      Position.Y = 740.000000000000000000
+      Size.Width = 425.000000000000000000
+      Size.Height = 450.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Label3: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 42.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'labelstyle'
+        TextSettings.WordWrap = False
+        Text = 'Input'
+      end
+      object Label4: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 80.000000000000000000
+        Size.Width = 150.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'labelstyle'
+        TextSettings.WordWrap = False
+        Text = 'Digest/Hash value'
+      end
+      object ButtonCalc: TButton
+        Anchors = [akLeft, akTop, akRight]
+        Position.X = 15.000000000000000000
+        Position.Y = 144.000000000000000000
+        Size.Width = 400.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        Text = 'Calc'
+        TextSettings.Trimming = None
+        OnClick = ButtonCalcClick
+      end
+      object EditInput: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akLeft, akTop, akRight]
+        StyleLookup = 'editstyle'
+        TabOrder = 3
+        Position.X = 16.000000000000000000
+        Position.Y = 44.000000000000000000
+        Size.Width = 399.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        OnChangeTracking = EditInputChangeTracking
+        OnKeyUp = EditInputKeyUp
+      end
+      object EditOutput: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akLeft, akTop, akRight]
+        StyleLookup = 'editstyle'
+        TabOrder = 5
+        Position.X = 16.000000000000000000
+        Position.Y = 108.000000000000000000
+        Size.Width = 399.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object LabelVersion: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 192.000000000000000000
+        Size.Width = 272.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'labelstyle'
+        TextSettings.WordWrap = False
+        Text = #169' 2018-2022 by Team DEC V%0:s'
+      end
+    end
+    object LayoutTop: TLayout
+      Margins.Right = 10.000000000000000000
+      Size.Width = 425.000000000000000000
+      Size.Height = 520.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object ComboBoxHashFunction: TComboBox
+        Anchors = [akLeft, akTop, akRight]
+        Position.X = 16.000000000000000000
+        Position.Y = 44.000000000000000000
+        Size.Width = 400.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'comboboxstyle'
+        TabOrder = 0
+        OnChange = ComboBoxHashFunctionChange
+      end
+      object ComboBoxInputFormatting: TComboBox
+        Anchors = [akLeft, akTop, akRight]
+        Position.X = 16.000000000000000000
+        Position.Y = 116.000000000000000000
+        Size.Width = 400.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'comboboxstyle'
+        TabOrder = 1
+      end
+      object ComboBoxOutputFormatting: TComboBox
+        Anchors = [akLeft, akTop, akRight]
+        Position.X = 16.000000000000000000
+        Position.Y = 188.000000000000000000
+        Size.Width = 400.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'comboboxstyle'
+        TabOrder = 2
+      end
+      object Label2: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 16.000000000000000000
+        Size.Width = 114.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'labelstyle'
+        TextSettings.WordWrap = False
+        Text = 'Hash function'
+      end
+      object Label5: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 88.000000000000000000
+        Size.Width = 139.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'labelstyle'
+        TextSettings.WordWrap = False
+        Text = 'Input is in format'
+      end
+      object Label6: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 160.000000000000000000
+        Size.Width = 178.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'labelstyle'
+        TextSettings.WordWrap = False
+        Text = 'Desired output format'
+      end
+      object CheckBoxLiveCalc: TCheckBox
+        Anchors = [akLeft, akTop, akRight]
+        Position.X = 16.000000000000000000
+        Position.Y = 232.000000000000000000
+        Size.Width = 401.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'checkboxstyle'
+        TabOrder = 3
+        Text = 'Live calculation'
+      end
+      object CheckBoxIsPasswordHash: TCheckBox
+        Anchors = [akLeft, akTop, akRight]
+        Enabled = False
+        Position.X = 16.000000000000000000
+        Position.Y = 264.000000000000000000
+        Size.Width = 401.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'checkboxstyle'
+        TabOrder = 7
+        Text = 'Is password hash algorithm'
+      end
+      object CheckBoxIsExtensibleOutputHash: TCheckBox
+        Anchors = [akLeft, akTop, akRight]
+        Enabled = False
+        Position.X = 16.000000000000000000
+        Position.Y = 457.000000000000000000
+        Size.Width = 401.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'checkboxstyle'
+        TabOrder = 4
+        Text = 'Is extensible output hash algorithm'
+      end
+      object LabelHashLength: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 496.000000000000000000
+        Size.Width = 242.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'labelstyle'
+        Text = 'Generated hash length (byte)'
+        TabOrder = 12
+      end
+      object EditHashLength: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akTop, akRight]
+        StyleLookup = 'editstyle'
+        TabOrder = 13
+        MaxLength = 4
+        FilterChar = '0123456789'
+        Text = '64'
+        TextSettings.HorzAlign = Trailing
+        Position.X = 317.000000000000000000
+        Position.Y = 484.000000000000000000
+        Size.Width = 100.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        OnChange = EditHashLengthChange
+      end
+      object LabelRounds: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 332.000000000000000000
+        Size.Width = 242.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'labelstyle'
+        Text = 'Number of rounds'
+        TabOrder = 10
+      end
+      object EditRounds: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akTop, akRight]
+        StyleLookup = 'editstyle'
+        TabOrder = 11
+        MaxLength = 4
+        FilterChar = '0123456789'
+        Text = '3'
+        TextSettings.HorzAlign = Trailing
+        Position.X = 317.000000000000000000
+        Position.Y = 323.000000000000000000
+        Size.Width = 100.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        OnChange = EditRoundsChange
+      end
+      object CheckBoxHasRounds: TCheckBox
+        Anchors = [akLeft, akTop, akRight]
+        Enabled = False
+        Position.X = 16.000000000000000000
+        Position.Y = 296.000000000000000000
+        Size.Width = 401.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'checkboxstyle'
+        TabOrder = 6
+        Text = 'Has rounds property'
+      end
+      object CheckBoxLastByteBitSize: TCheckBox
+        Anchors = [akLeft, akTop, akRight]
+        Enabled = False
+        Position.X = 16.000000000000000000
+        Position.Y = 363.000000000000000000
+        Size.Width = 401.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'checkboxstyle'
+        TabOrder = 5
+        Text = 'Supports incomplete last byte'
+      end
+      object LabelLastByteBits: TLabel
+        Anchors = [akLeft, akTop, akRight]
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 406.000000000000000000
+        Size.Width = 293.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'labelstyle'
+        TextSettings.VertAlign = Leading
+        TextSettings.Trimming = Word
+        Text = 'Number of used bits of last byte (0 = use complete byte)'
+        TabOrder = 8
+      end
+      object EditLastByteBits: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akTop, akRight]
+        StyleLookup = 'editstyle'
+        TabOrder = 9
+        MaxLength = 4
+        FilterChar = '01234567'
+        Text = '0'
+        TextSettings.HorzAlign = Trailing
+        Position.X = 317.000000000000000000
+        Position.Y = 417.000000000000000000
+        Size.Width = 100.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object LayoutSalt: TLayout
+      Position.Y = 520.000000000000000000
+      Size.Width = 425.000000000000000000
+      Size.Height = 220.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 14
+      object Label1: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 104.000000000000000000
+        Size.Width = 32.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'labelstyle'
+        TextSettings.WordWrap = False
+        Text = 'Salt'
+        TabOrder = 1
+      end
+      object EditSalt: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akLeft, akTop, akRight]
+        StyleLookup = 'editstyle'
+        TabOrder = 4
+        Position.X = 16.000000000000000000
+        Position.Y = 128.000000000000000000
+        Size.Width = 401.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        OnChangeTracking = EditInputChangeTracking
+        OnKeyUp = EditInputKeyUp
+      end
+      object Label7: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 16.000000000000000000
+        Size.Width = 155.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'labelstyle'
+        TextSettings.WordWrap = False
+        Text = 'Desired salt format'
+        TabOrder = 5
+      end
+      object ComboBoxSaltFormatting: TComboBox
+        Anchors = [akLeft, akTop, akRight]
+        Position.X = 16.000000000000000000
+        Position.Y = 52.000000000000000000
+        Size.Width = 400.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'comboboxstyle'
+        TabOrder = 3
+      end
+      object Label8: TLabel
+        AutoSize = True
+        Position.X = 16.000000000000000000
+        Position.Y = 184.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'labelstyle'
+        TextSettings.WordWrap = False
+        Text = 'Cost'
+        TabOrder = 0
+      end
+      object EditCost: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akTop, akRight]
+        StyleLookup = 'editstyle'
+        TabOrder = 13
+        MaxLength = 3
+        FilterChar = '0123456789'
+        Text = '10'
+        TextSettings.HorzAlign = Trailing
+        Position.X = 317.000000000000000000
+        Position.Y = 180.000000000000000000
+        Size.Width = 100.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        OnChange = EditCostChange
+      end
+    end
+  end
+end

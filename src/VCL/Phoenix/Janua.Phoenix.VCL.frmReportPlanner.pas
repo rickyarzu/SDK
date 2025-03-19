@@ -109,6 +109,7 @@ type
     procedure frameVCLPhoenixPlanneReportbtnWhatsAppMessagesClick(Sender: TObject);
     procedure tabMessaggiShow(Sender: TObject);
     procedure frameVCLPhoenixPlanneReportWATimerTimer(Sender: TObject);
+    procedure frameVCLPhoenixPlanneReportbtnWhatsAppClick(Sender: TObject);
   private
     { Private declarations }
     FCookies: TJanuaTmsCookies;
@@ -360,6 +361,12 @@ begin
     DrawField(Column.Field.DisplayText, Rect, Canvas, Column.Font, Column.Alignment,
       FontStyles { Column.Font.Style } , FontColor { Column.Font.Color } , backgroundColor { Column.Color } )
   end;
+
+end;
+
+procedure TfrmPhoenixVCLReportPlanner.frameVCLPhoenixPlanneReportbtnWhatsAppClick(Sender: TObject);
+begin
+  frameVCLPhoenixPlanneReport.btnWhatsAppClick(Sender);
 
 end;
 

@@ -12,7 +12,7 @@ uses
   Janua.Controls.Intf, Janua.Controls.Forms.Intf;
 
 type
-  TfrmFMXModel = class(TForm, { IJanuaForm, } { IJanuaContainer, } IJanuaControl, IJanuaBindable)
+  TfrmFMXModel = class(TForm, { IJanuaForm, } { IJanuaContainer, } { IJanuaControl, } IJanuaBindable)
   strict protected
     FBindControlsList: IJanuaBindControlsList;
     // ------- Observer
@@ -311,6 +311,11 @@ begin
 
 end;
 
+function TfrmFMXModel.GetJanuaOnKeyDown: TJanuaKeyEvent;
+begin
+
+end;
+
 function TfrmFMXModel.GetLocalLog: string;
 begin
 
@@ -332,6 +337,31 @@ begin
 end;
 
 function TfrmFMXModel.GetOnCloseQueryJanua: TJanuaCloseQueryEvent;
+begin
+
+end;
+
+function TfrmFMXModel.GetOnKeyUp: TJanuaKeyEvent;
+begin
+
+end;
+
+function TfrmFMXModel.GetOnMouseDown: TJanuaMouseEvent;
+begin
+
+end;
+
+function TfrmFMXModel.GetOnMouseMove: TJanuaMouseMoveEvent;
+begin
+
+end;
+
+function TfrmFMXModel.GetOnMouseUp: TJanuaMouseEvent;
+begin
+
+end;
+
+function TfrmFMXModel.GetOnMouseWheel: TJanuaMouseWheelEvent;
 begin
 
 end;
@@ -457,6 +487,11 @@ begin
 
 end;
 
+procedure TfrmFMXModel.SetJanuaOnKeyDown(const Value: TJanuaKeyEvent);
+begin
+
+end;
+
 procedure TfrmFMXModel.SetLogToFile(const Value: boolean);
 begin
 
@@ -468,6 +503,31 @@ begin
 end;
 
 procedure TfrmFMXModel.SetOnCloseQueryJanua(const Value: TJanuaCloseQueryEvent);
+begin
+
+end;
+
+procedure TfrmFMXModel.SetOnKeyUp(const Value: TJanuaKeyEvent);
+begin
+
+end;
+
+procedure TfrmFMXModel.SetOnMouseDown(const Value: TJanuaMouseEvent);
+begin
+
+end;
+
+procedure TfrmFMXModel.SetOnMouseMove(const Value: TJanuaMouseMoveEvent);
+begin
+
+end;
+
+procedure TfrmFMXModel.SetOnMouseUp(const Value: TJanuaMouseEvent);
+begin
+
+end;
+
+procedure TfrmFMXModel.SetOnMouseWheel(const Value: TJanuaMouseWheelEvent);
 begin
 
 end;

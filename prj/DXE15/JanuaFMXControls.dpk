@@ -44,7 +44,7 @@ requires
   bindcomp,
   JanuaCore,
   JanuaMVVM,
-  TMSFMXPackPkg,
+  TMSFMXPackPkgDXE15,
   JanuaCoreComponents,
   dac290,
   unidac290,

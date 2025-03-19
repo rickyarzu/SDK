@@ -82,7 +82,8 @@
         <CfgDependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</CfgDependentOn>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Linux64)'!=''">
-        <DCC_UsePackage>rtl;bindengine;xmlrtl;soaprtl;dbrtl;inet;IndySystem;IndyProtocols;IndyCore;bindcomp;dsnap;ZipMasterR;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>rtl;bindengine;xmlrtl;soaprtl;dbrtl;inet;IndySystem;IndyProtocols;IndyCore;bindcomp;dsnap;ZipMasterR;JanuaCore;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_Define>CROSSVCL;$(DCC_Define)</DCC_Define>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
@@ -90,10 +91,10 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_UsePackage>vcl;rtl;vclwinx;bindengine;xmlrtl;vclactnband;vclx;soaprtl;dbrtl;inet;vclie;IndySystem;IndyProtocols;IndyCore;bindcomp;vcldb;VclSmp;dsnap;QRWRunDXE11_w64;DCLgtQRExp;gtDocEng;Barcomp;FIBPlus;JanuaThirdPartyVCL;ZipMasterR;ZComponentsWin;ZComponentsD;ZLibrariesWin;TMSVCLUIPackPkgXls;JanuaThirdParty;QRWRunDXE12_W64;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>vcl;rtl;vclwinx;bindengine;xmlrtl;vclactnband;vclx;soaprtl;dbrtl;inet;vclie;IndySystem;IndyProtocols;IndyCore;bindcomp;vcldb;VclSmp;dsnap;QRWRunDXE11_w64;DCLgtQRExp;gtDocEng;Barcomp;FIBPlus;JanuaThirdPartyVCL;ZipMasterR;ZComponentsWin;ZComponentsD;ZLibrariesWin;TMSVCLUIPackPkgXls;JanuaThirdParty;QRWRunDXE12_W64;JanuaCore;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <DCC_UsePackage>vcl;rtl;vclwinx;bindengine;xmlrtl;vclactnband;vclx;soaprtl;dbrtl;inet;vclie;IndySystem;IndyProtocols;IndyCore;bindcomp;vcldb;VclSmp;dsnap;QRWRunDXE11_w64;DCLgtQRExp;gtDocEng;Barcomp;FIBPlus;JanuaThirdPartyVCL;ZComponentsD;TMSVCLUIPackPkgXls;JanuaThirdParty;QRWRunDXE12_W64;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>vcl;rtl;vclwinx;bindengine;xmlrtl;vclactnband;vclx;soaprtl;dbrtl;inet;vclie;IndySystem;IndyProtocols;IndyCore;bindcomp;vcldb;VclSmp;dsnap;QRWRunDXE11_w64;DCLgtQRExp;gtDocEng;Barcomp;FIBPlus;JanuaThirdPartyVCL;ZComponentsD;TMSVCLUIPackPkgXls;JanuaThirdParty;QRWRunDXE12_W64;JanuaCore;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>

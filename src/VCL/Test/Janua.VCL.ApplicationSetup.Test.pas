@@ -7,8 +7,8 @@ procedure ApplicationTearDown;
 
 implementation
 
-uses Janua.VCL.Framework, System.types, Janua.Controls.Forms.Impl, Janua.TMS.NavBar, ufrmTest, ufrmTest2,
-  ufrmTest3, uFrameTest, System.SysUtils, Janua.Application.Framework;
+uses Janua.VCL.Framework, System.types, Janua.Controls.Forms.Impl, Janua.TMS.NavBar, Janua.Test.VCL.frmTest,
+  Janua.Test.VCL.frmTest2, Janua.Test.VCL.frmTest3, uFrameTest, System.SysUtils, Janua.Application.Framework;
 
 procedure ApplicationTearDown;
 begin
