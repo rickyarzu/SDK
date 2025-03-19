@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="43ol9etor5f_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::k8etxzybyfo_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,192,134" />
+      <reference referencedUin="delphi:e_class:src:OpenshiftPodRedisXE15:OpenshiftPodRedisXE15.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::coe6eck64uj_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="221,1,100,134" />
+      <reference referencedUin="design:view:::35vb5bar7z75c1i8k_v" />
+      <reference referencedUin="design:view:::lv45ucpule_v" />
+    </reference>
+    <reference referencedUin="design:view:::9ap49s40py7pgnphm_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="221,154,99,42" />
+    </reference>
+  </view>
+</nodeSet>

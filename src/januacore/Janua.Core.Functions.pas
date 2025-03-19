@@ -119,6 +119,8 @@ function Decode64(const aString: string; aStream: TStream): string; overload;
 function Decode64(const aString: string; aBlob: TJanuaBlob): string; overload;
 function URLEncode64(const aString: string): string;
 function URLDecode64(const aString: string): string;
+function Sha256(const aString: string): string;
+function Sha256DEC(const aString: string): string;
 
 // Encrypt / Decrypt Simple Strings
 
@@ -477,7 +479,7 @@ const
 implementation
 
 uses
-  IdHash, IdHashSHA,
+  IdHash, IdHashSHA, System.Hash,
 {$IFDEF DELPHIXE}
   System.NetEncoding, Soap.XSBuiltIns, Data.FmtBcd, System.Types, System.Character
 {$IFDEF MSWINDOWS}, System.Win.ComObJ, System.Win.Registry {$ENDIF},
@@ -485,7 +487,8 @@ uses
   FileUtil, Types, DateUtils,
 {$ENDIF DELPHIXE}
   // Encrypt DECCipher Algoritms
-  DECCipherBase, DECCipherModes, DECCipherFormats, DECCiphers,
+  DECCipherBase, DECCipherModes, DECCipherFormats, DECCiphers, DECBaseClass,
+  DECHashInterface, DECHashBase, DECFormatBase, DECHash,
   // Janua Core Libraries and Application Framework
   Janua.Core.JSON, Janua.Controls.Dialogs.Intf, Janua.Application.Framework;
 
@@ -1331,6 +1334,25 @@ begin
   finally
     LOutputStream.Free;
   end;
+end;
+
+function Sha256DEC(const aString: string): string;
+var
+  Hash: TDECHash;
+  HashClass: TDECHashClass;
+  InputFormatting: TDECFormatClass;
+  OutputFormatting: TDECFormatClass;
+  SaltFormatting: TDECFormatClass;
+  InputBuffer: TBytes;
+  OutputBuffer: TBytes;
+begin
+  InputFormatting := TDECFormat.ClassByName('THash_SHA_256');
+
+end;
+
+function Sha256(const aString: string): string;
+begin
+  Result := System.Hash.THashSHA2.GetHashString(aString, THashSHA2.TSHA2Version.Sha256);
 end;
 
 function Encode64(const S: string; const ByteEncoding: IIdTextEncoding = nil): string;

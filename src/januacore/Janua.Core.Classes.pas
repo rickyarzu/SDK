@@ -377,13 +377,11 @@ type
     procedure SetVerbose(const Value: Boolean);
     procedure SetLastMessage(const Value: string);
   protected
-    FActive: Boolean;
     FLastErrorMessage: string;
     FHasErrors: Boolean;
     FLog: string;
     FVerbose: Boolean;
     FOwner: TJanuaCustomComponent;
-    procedure SetActive(const Value: Boolean); override;
     procedure Deactivate; override;
     procedure AddLog(aLog: string);
     procedure SetLog(const Value: string); virtual;
@@ -393,8 +391,7 @@ type
     function IsDesigning: Boolean;
   public
     constructor Create; overload; virtual; // overloaded virtual Method
-    constructor Create(AOwner: TJanuaCustomComponent); overload; virtual;
-    // overloaded virtual Method
+    constructor Create(AOwner: TJanuaCustomComponent); overload; virtual; // overloaded virtual Method
     Destructor Destroy; override;
     function Activate: Boolean; override;
     procedure ClearErrors;
@@ -406,6 +403,22 @@ type
     property Verbose: Boolean read FVerbose write SetVerbose;
     property Active: Boolean read FActive write SetActive stored false default false;
     property lastMessage: string read FLastMessage write SetLastMessage stored false;
+  end;
+
+  TJanuaBindablePersistent = class(TJanuaPersistent)
+    // ************************************* Bindings Procedures ***********************************
+  strict protected
+    FBindManager: IJanuaBindManager;
+    function GetBindManager: IJanuaBindManager;
+  public
+    property BindManager: IJanuaBindManager read GetBindManager;
+  public
+    constructor Create; override;
+    procedure NotifiyAllProperties;
+    procedure Notify(const AProperty: string);
+    procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
+      const AReadOnly: Boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput,
+      jbcEvaluate]);
   end;
 
 type
@@ -1759,10 +1772,10 @@ end;
 
 constructor TJanuaPersistent.Create(AOwner: TJanuaCustomComponent);
 begin
-  if Assigned(AOwner) and (AOwner <> nil) then
+  if Assigned(AOwner) then
   begin
     // AOwner.AddPersistent(self);
-    self.FOwner := AOwner;
+    FOwner := AOwner;
   end;
 end;
 
@@ -1776,18 +1789,6 @@ destructor TJanuaPersistent.Destroy;
 begin
   // qui dovrebbe notificare il destroy
   inherited;
-end;
-
-procedure TJanuaPersistent.SetActive(const Value: Boolean);
-begin
-  inherited;
-  if Value and not FActive then
-    FActive := self.Activate
-  else
-  begin
-    self.FActive := Value;
-    Deactivate;
-  end;
 end;
 
 procedure TJanuaPersistent.SetLastMessage(const Value: string);
@@ -3031,7 +3032,7 @@ end;
 
 function TJanuaCustomPersistent.Activate: Boolean;
 begin
-  self.FActive := true;
+  FActive := true;
   Result := true;
 end;
 
@@ -3042,7 +3043,16 @@ end;
 
 procedure TJanuaCustomPersistent.SetActive(const Value: Boolean);
 begin
-  FActive := Value;
+  if FActive <> Value then
+  begin
+    if Value then
+      FActive := Activate
+    else
+    begin
+      FActive := false;
+      Deactivate;
+    end;
+  end;
 end;
 
 procedure TJanuaCustomPersistent.SetName(const Value: string);
@@ -4834,6 +4844,41 @@ end;
 procedure TJanuaCustomLogger.Terminate;
 begin
 
+end;
+
+{ TJanuaBindablePersistent }
+
+procedure TJanuaBindablePersistent.Bind(const AProperty: string; const ABindToObject: TObject;
+const ABindToProperty: string; const AReadOnly: Boolean; const ACreateOptions: TJanuaBindCreateOptions);
+begin
+  try
+    if Assigned(FBindManager) then
+      FBindManager.Bind(AProperty, ABindToObject, ABindToProperty, AReadOnly, ACreateOptions);
+  except
+    on E: Exception do
+      Raise Exception.Create(ClassName + '.Bind Error:' + E.Message);
+  end;
+end;
+
+constructor TJanuaBindablePersistent.Create;
+begin
+  inherited;
+  FBindManager := TJanuaBindManager.Create(self);
+end;
+
+function TJanuaBindablePersistent.GetBindManager: IJanuaBindManager;
+begin
+  Result := FBindManager
+end;
+
+procedure TJanuaBindablePersistent.NotifiyAllProperties;
+begin
+  FBindManager.NotifyAll
+end;
+
+procedure TJanuaBindablePersistent.Notify(const AProperty: string);
+begin
+  FBindManager.Notify(AProperty);
 end;
 
 initialization
