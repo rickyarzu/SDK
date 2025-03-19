@@ -124,7 +124,7 @@ object frameUniGUICarServiceAddressSelect: TframeUniGUICarServiceAddressSelect
         ParentColor = False
         Align = alClient
         TabOrder = 1
-        inline frameTimeTableDelivery: TframeCarServiceUniGUITimeTable
+        inline frameTimeTablePickup: TframeCarServiceUniGUITimeTable
           Left = 0
           Top = 0
           Width = 634
@@ -192,7 +192,7 @@ object frameUniGUICarServiceAddressSelect: TframeUniGUICarServiceAddressSelect
         ParentColor = False
         Align = alClient
         TabOrder = 1
-        inline frameTimeTablePickup: TframeCarServiceUniGUITimeTable
+        inline frameTimeTableDelivery: TframeCarServiceUniGUITimeTable
           Left = 0
           Top = 0
           Width = 634
