@@ -85,16 +85,8 @@ var
   lText: string;
   lHook: TTwilioWebHook;
 begin
-  var
-  lLines := TStringList.Create;
-  try
-    Request.ExtractContentFields(lLines);
-    lHook.SetFromStrings(lLines);
-    FdmPgTwilioWhatsApp.WebHook(lLines.Text, lHook);
-  finally
-    lLines.Free;
-  end;
-
+  lHook.SetFromStrings(Request.ContentFields);
+  FdmPgTwilioWhatsApp.WebHook(Request.ContentFields.Text, lHook);
 end;
 
 procedure TJanuaWhatSappWebBrokerModule.WebModuleCreate(Sender: TObject);

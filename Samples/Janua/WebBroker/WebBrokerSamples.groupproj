@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{CF25975E-A279-4245-A80C-6CEAE0C01A22}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TestWebBrokerSimpleConsole.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TestWebBrokerSimpleConsole">
+        <MSBuild Projects="TestWebBrokerSimpleConsole.dproj"/>
+    </Target>
+    <Target Name="TestWebBrokerSimpleConsole:Clean">
+        <MSBuild Projects="TestWebBrokerSimpleConsole.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestWebBrokerSimpleConsole:Make">
+        <MSBuild Projects="TestWebBrokerSimpleConsole.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TestWebBrokerSimpleConsole"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TestWebBrokerSimpleConsole:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TestWebBrokerSimpleConsole:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
