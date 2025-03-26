@@ -1,90 +1,146 @@
-object frameFMXImageDraw: TframeFMXImageDraw
-  Align = Client
-  Size.Width = 464.000000000000000000
-  Size.Height = 336.000000000000000000
-  Size.PlatformDefault = False
-  OnResize = FormResize
-  object pnlButtons: TPanel
-    Align = Top
-    Size.Width = 464.000000000000000000
-    Size.Height = 58.000000000000000000
+object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
+  Left = 0
+  Top = 0
+  Caption = 'Form FXM Test Canvas Drawing'
+  ClientHeight = 588
+  ClientWidth = 1065
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object TMSFNCMemo1: TTMSFNCMemo
+    Align = Right
+    Position.X = 677.000000000000000000
+    Size.Width = 388.000000000000000000
+    Size.Height = 588.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 1
-    object btnClear: TButton
-      Align = Left
-      Size.Width = 81.000000000000000000
-      Size.Height = 58.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 4
-      Text = 'Clear '
-      TextSettings.Trimming = None
-      OnClick = btnClearClick
-    end
-    object btnRedraw: TButton
-      Align = Left
-      Position.X = 81.000000000000000000
-      Size.Width = 80.000000000000000000
-      Size.Height = 58.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 3
-      Text = 'Redraw'
-      TextSettings.Trimming = None
-      OnClick = btnRedrawClick
-    end
-    object btnDelLast: TButton
-      Align = Left
-      Position.X = 161.000000000000000000
-      Size.Width = 80.000000000000000000
-      Size.Height = 58.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 2
-      Text = 'Del. Last'
-      TextSettings.Trimming = None
-      OnClick = btnDelLastClick
-    end
-    object btnAddNotes: TButton
-      Align = Left
-      Position.X = 241.000000000000000000
-      Size.Width = 80.000000000000000000
-      Size.Height = 58.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 1
-      Text = 'Add Notes'
-      TextSettings.Trimming = None
-      OnClick = btnAddNotesClick
-    end
-    object btnOffSet: TButton
-      Align = Client
-      Size.Width = 143.000000000000000000
-      Size.Height = 58.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 0
-      Text = 'Calibratura'
-      TextSettings.Trimming = None
-      OnClick = btnAddNotesClick
-    end
+    TabOrder = 0
+    Font.Family = 'Consolas'
+    Font.Name = 'Consolas'
+    Options.WordWrap = wwtOff
+    Options.WordWrapColumn = 80
+    CompletionList = <>
+    LanguageFileExtensionsMap = <
+      item
+        Language = mlBat
+        Extension = '.bat'
+      end
+      item
+        Language = mlCsharp
+        Extension = '.cs'
+      end
+      item
+        Language = mlCSS
+        Extension = '.css'
+      end
+      item
+        Language = mlHtml
+        Extension = '.html'
+      end
+      item
+        Language = mlJavascript
+        Extension = '.js'
+      end
+      item
+        Language = mlJSON
+        Extension = '.json'
+      end
+      item
+        Extension = '.pas'
+      end
+      item
+        Extension = '.dpr'
+      end
+      item
+        Extension = '.dfm'
+      end
+      item
+        Extension = '.fmx'
+      end
+      item
+        Extension = '.inc'
+      end
+      item
+        Extension = '.dproj'
+      end
+      item
+        Language = mlPlainText
+        Extension = '.txt'
+      end
+      item
+        Language = mlTypeScript
+        Extension = '.ts'
+      end
+      item
+        Language = mlXml
+        Extension = '.xml'
+      end>
+    ActiveSource = -1
+    Sources = <>
   end
-  object Timer1: TTimer
-    Enabled = False
-    Interval = 300
-    OnTimer = Timer1Timer
-    Left = 304
-    Top = 146
-  end
-  object Rectangle1: TRectangle
+  object TestDrawCircle: TTabControl
     Align = Client
-    Corners = []
-    Fill.Color = claWhite
-    Size.Width = 464.000000000000000000
-    Size.Height = 278.000000000000000000
+    Size.Width = 677.000000000000000000
+    Size.Height = 588.000000000000000000
     Size.PlatformDefault = False
-    Stroke.Color = claWhite
-    object LayoutImage: TLayout
-      Align = Client
-      Size.Width = 464.000000000000000000
-      Size.Height = 278.000000000000000000
+    TabIndex = 0
+    TabOrder = 1
+    TabPosition = PlatformDefault
+    Sizes = (
+      677s
+      562s
+      677s
+      562s)
+    object tabFrame: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = True
+      Size.Width = 77.000000000000000000
+      Size.Height = 26.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 2
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Frame Test'
+      inline frameFMXImageDraw1: TframeFMXImageDraw
+        Align = Top
+        Size.Width = 677.000000000000000000
+        Size.Height = 562.000000000000000000
+        Size.PlatformDefault = False
+        inherited pnlButtons: TPanel
+          Size.Width = 677.000000000000000000
+        end
+        inherited Rectangle1: TRectangle
+          Size.Width = 677.000000000000000000
+          Size.Height = 504.000000000000000000
+          inherited LayoutImage: TLayout
+            Size.Width = 677.000000000000000000
+            Size.Height = 504.000000000000000000
+            inherited imgCar: TImage
+              MultiResBitmap.Height = 383
+              MultiResBitmap.Width = 637
+              Size.Width = 677.000000000000000000
+              Size.Height = 504.000000000000000000
+            end
+          end
+        end
+      end
+    end
+    object tabTestDrawCircle: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 98.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TestDrawCircle'
       object imgCar: TImage
         MultiResBitmap.Height = 383
         MultiResBitmap.Width = 637
@@ -7790,10 +7846,29 @@ object frameFMXImageDraw: TframeFMXImageDraw
               'Z:\GitHub\framework\JanuaProject\20 Applications\20.02 CarServic' +
               'e\Immagini\Vehicle-Hire-Forms-700x990.png'
           end>
-        Align = Client
-        Size.Width = 464.000000000000000000
-        Size.Height = 278.000000000000000000
+        Align = Top
+        Size.Width = 677.000000000000000000
+        Size.Height = 409.000000000000000000
         Size.PlatformDefault = False
+        object pbBadge: TPaintBox
+          Align = Client
+          Size.Width = 677.000000000000000000
+          Size.Height = 409.000000000000000000
+          Size.PlatformDefault = False
+          OnMouseMove = pbBadgeMouseMove
+          OnMouseUp = pbBadgeMouseUp
+        end
+      end
+      object btnTestOffset: TButton
+        Align = Top
+        Position.Y = 409.000000000000000000
+        Size.Width = 677.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Test Offset Button'
+        TextSettings.Trimming = None
+        OnClick = btnTestOffsetClick
       end
     end
   end

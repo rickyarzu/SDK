@@ -1213,7 +1213,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
         Height = 41
         Align = alTop
         TabOrder = 0
-        ExplicitTop = 8
         object SpeedButton23: TSpeedButton
           Left = 208
           Top = 8
@@ -1665,9 +1664,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
             Align = alTop
             Caption = 'Utente Ping'
             TabOrder = 0
-            ExplicitLeft = 18
-            ExplicitTop = 8
-            ExplicitWidth = 950
             object Label1: TLabel
               Left = 17
               Top = 32
@@ -1737,9 +1733,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
             Align = alTop
             Caption = 'Utente Admin'
             TabOrder = 1
-            ExplicitLeft = 18
-            ExplicitTop = 136
-            ExplicitWidth = 950
             object Label5: TLabel
               Left = 17
               Top = 32
@@ -1779,9 +1772,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
             Height = 530
             Align = alClient
             TabOrder = 2
-            ExplicitLeft = 18
-            ExplicitWidth = 950
-            ExplicitHeight = 360
             object ListBox1: TListBox
               Left = 1
               Top = 42
@@ -1790,7 +1780,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
               Align = alLeft
               ItemHeight = 15
               TabOrder = 0
-              ExplicitHeight = 317
             end
             object PageControl3: TPageControl
               Left = 122
@@ -1864,7 +1853,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
                     25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-                  BorderColor = 10724259
                   BorderStyle = bsSingle
                   ClipboardFormats = [cfText]
                   CodeFolding.Enabled = False
@@ -1877,8 +1865,7 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   Gutter.Font.Height = -13
                   Gutter.Font.Name = 'Courier New'
                   Gutter.Font.Style = []
-                  Gutter.BorderColor = 10724259
-                  Gutter.GutterColor = clWhite
+                  Gutter.GutterColorTo = clBtnFace
                   Gutter.LineNumberTextColor = clWindowText
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
@@ -1921,8 +1908,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   UseStyler = True
                   Version = '3.9.1.7'
                   WordWrap = wwNone
-                  ExplicitWidth = 819
-                  ExplicitHeight = 287
                 end
               end
               object TabSheet4: TTabSheet
@@ -1990,7 +1975,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
                     25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-                  BorderColor = 10724259
                   BorderStyle = bsSingle
                   ClipboardFormats = [cfText]
                   CodeFolding.Enabled = False
@@ -2003,8 +1987,7 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   Gutter.Font.Height = -13
                   Gutter.Font.Name = 'Courier New'
                   Gutter.Font.Style = []
-                  Gutter.BorderColor = 10724259
-                  Gutter.GutterColor = clWhite
+                  Gutter.GutterColorTo = clBtnFace
                   Gutter.LineNumberTextColor = clWindowText
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
@@ -2047,8 +2030,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   UseStyler = True
                   Version = '3.9.1.7'
                   WordWrap = wwNone
-                  ExplicitWidth = 819
-                  ExplicitHeight = 287
                 end
               end
             end
@@ -2059,7 +2040,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
               Height = 41
               Align = alTop
               TabOrder = 2
-              ExplicitWidth = 948
               object SpeedButton34: TSpeedButton
                 Left = 208
                 Top = 8
@@ -2499,8 +2479,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
             Align = alTop
             Caption = 'Utente Ping'
             TabOrder = 0
-            ExplicitLeft = 6
-            ExplicitTop = 11
             object Label8: TLabel
               Left = 17
               Top = 32
@@ -2570,7 +2548,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
             Align = alTop
             Caption = 'Utente Admin'
             TabOrder = 1
-            ExplicitTop = 127
             object Label12: TLabel
               Left = 17
               Top = 32
@@ -2610,8 +2587,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
             Height = 530
             Align = alClient
             TabOrder = 2
-            ExplicitLeft = 6
-            ExplicitTop = 299
             object ListBox2: TListBox
               Left = 1
               Top = 42
@@ -2694,7 +2669,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
                     25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-                  BorderColor = 10724259
                   BorderStyle = bsSingle
                   ClipboardFormats = [cfText]
                   CodeFolding.Enabled = False
@@ -2707,8 +2681,7 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   Gutter.Font.Height = -13
                   Gutter.Font.Name = 'Courier New'
                   Gutter.Font.Style = []
-                  Gutter.BorderColor = 10724259
-                  Gutter.GutterColor = clWhite
+                  Gutter.GutterColorTo = clBtnFace
                   Gutter.LineNumberTextColor = clWindowText
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
@@ -2751,8 +2724,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   UseStyler = True
                   Version = '3.9.1.7'
                   WordWrap = wwNone
-                  ExplicitWidth = 819
-                  ExplicitHeight = 287
                 end
               end
               object TabSheet11: TTabSheet
@@ -2820,7 +2791,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
                     25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-                  BorderColor = 10724259
                   BorderStyle = bsSingle
                   ClipboardFormats = [cfText]
                   CodeFolding.Enabled = False
@@ -2833,8 +2803,7 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   Gutter.Font.Height = -13
                   Gutter.Font.Name = 'Courier New'
                   Gutter.Font.Style = []
-                  Gutter.BorderColor = 10724259
-                  Gutter.GutterColor = clWhite
+                  Gutter.GutterColorTo = clBtnFace
                   Gutter.LineNumberTextColor = clWindowText
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
@@ -2877,8 +2846,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   UseStyler = True
                   Version = '3.9.1.7'
                   WordWrap = wwNone
-                  ExplicitWidth = 819
-                  ExplicitHeight = 287
                 end
               end
             end
@@ -3328,8 +3295,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
             Align = alTop
             Caption = 'Utente Ping'
             TabOrder = 0
-            ExplicitLeft = 6
-            ExplicitTop = 11
             object Label14: TLabel
               Left = 17
               Top = 32
@@ -3399,7 +3364,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
             Align = alTop
             Caption = 'Utente Admin'
             TabOrder = 1
-            ExplicitTop = 127
             object Label18: TLabel
               Left = 17
               Top = 32
@@ -3439,8 +3403,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
             Height = 530
             Align = alClient
             TabOrder = 2
-            ExplicitLeft = 6
-            ExplicitTop = 299
             object ListBox3: TListBox
               Left = 1
               Top = 42
@@ -3458,8 +3420,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
               ActivePage = TabSheet14
               Align = alClient
               TabOrder = 1
-              ExplicitWidth = 827
-              ExplicitHeight = 317
               object TabSheet13: TTabSheet
                 Caption = 'Sviluppo ACL'
                 OnShow = tabTemplateSviluppoACLShow
@@ -3524,7 +3484,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
                     25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-                  BorderColor = 10724259
                   BorderStyle = bsSingle
                   ClipboardFormats = [cfText]
                   CodeFolding.Enabled = False
@@ -3537,8 +3496,7 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   Gutter.Font.Height = -13
                   Gutter.Font.Name = 'Courier New'
                   Gutter.Font.Style = []
-                  Gutter.BorderColor = 10724259
-                  Gutter.GutterColor = clWhite
+                  Gutter.GutterColorTo = clBtnFace
                   Gutter.LineNumberTextColor = clWindowText
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
@@ -3581,8 +3539,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   UseStyler = True
                   Version = '3.9.1.7'
                   WordWrap = wwNone
-                  ExplicitWidth = 819
-                  ExplicitHeight = 287
                 end
               end
               object TabSheet14: TTabSheet
@@ -3650,7 +3606,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
                     25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-                  BorderColor = 10724259
                   BorderStyle = bsSingle
                   ClipboardFormats = [cfText]
                   CodeFolding.Enabled = False
@@ -3663,8 +3618,7 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   Gutter.Font.Height = -13
                   Gutter.Font.Name = 'Courier New'
                   Gutter.Font.Style = []
-                  Gutter.BorderColor = 10724259
-                  Gutter.GutterColor = clWhite
+                  Gutter.GutterColorTo = clBtnFace
                   Gutter.LineNumberTextColor = clWindowText
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
@@ -3707,8 +3661,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   UseStyler = True
                   Version = '3.9.1.7'
                   WordWrap = wwNone
-                  ExplicitWidth = 819
-                  ExplicitHeight = 287
                 end
               end
               object TabSheet15: TTabSheet
@@ -3776,7 +3728,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
                     25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-                  BorderColor = 10724259
                   BorderStyle = bsSingle
                   ClipboardFormats = [cfText]
                   CodeFolding.Enabled = False
@@ -3789,8 +3740,7 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   Gutter.Font.Height = -13
                   Gutter.Font.Name = 'Courier New'
                   Gutter.Font.Style = []
-                  Gutter.BorderColor = 10724259
-                  Gutter.GutterColor = clWhite
+                  Gutter.GutterColorTo = clBtnFace
                   Gutter.LineNumberTextColor = clWindowText
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
@@ -3833,8 +3783,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   UseStyler = True
                   Version = '3.9.1.7'
                   WordWrap = wwNone
-                  ExplicitWidth = 819
-                  ExplicitHeight = 287
                 end
               end
               object TabSheet16: TTabSheet
@@ -3902,7 +3850,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
                     25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-                  BorderColor = 10724259
                   BorderStyle = bsSingle
                   ClipboardFormats = [cfText]
                   CodeFolding.Enabled = False
@@ -3915,8 +3862,7 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   Gutter.Font.Height = -13
                   Gutter.Font.Name = 'Courier New'
                   Gutter.Font.Style = []
-                  Gutter.BorderColor = 10724259
-                  Gutter.GutterColor = clWhite
+                  Gutter.GutterColorTo = clBtnFace
                   Gutter.LineNumberTextColor = clWindowText
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
@@ -3959,8 +3905,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   UseStyler = True
                   Version = '3.9.1.7'
                   WordWrap = wwNone
-                  ExplicitWidth = 819
-                  ExplicitHeight = 287
                 end
               end
               object TabSheet17: TTabSheet
@@ -4028,7 +3972,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
                     25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-                  BorderColor = 10724259
                   BorderStyle = bsSingle
                   ClipboardFormats = [cfText]
                   CodeFolding.Enabled = False
@@ -4041,8 +3984,7 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   Gutter.Font.Height = -13
                   Gutter.Font.Name = 'Courier New'
                   Gutter.Font.Style = []
-                  Gutter.BorderColor = 10724259
-                  Gutter.GutterColor = clWhite
+                  Gutter.GutterColorTo = clBtnFace
                   Gutter.LineNumberTextColor = clWindowText
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
@@ -4085,8 +4027,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   UseStyler = True
                   Version = '3.9.1.7'
                   WordWrap = wwNone
-                  ExplicitWidth = 819
-                  ExplicitHeight = 287
                 end
               end
               object TabSheet18: TTabSheet
@@ -4154,7 +4094,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
                     25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-                  BorderColor = 10724259
                   BorderStyle = bsSingle
                   ClipboardFormats = [cfText]
                   CodeFolding.Enabled = False
@@ -4167,8 +4106,7 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   Gutter.Font.Height = -13
                   Gutter.Font.Name = 'Courier New'
                   Gutter.Font.Style = []
-                  Gutter.BorderColor = 10724259
-                  Gutter.GutterColor = clWhite
+                  Gutter.GutterColorTo = clBtnFace
                   Gutter.LineNumberTextColor = clWindowText
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
@@ -4211,8 +4149,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   UseStyler = True
                   Version = '3.9.1.7'
                   WordWrap = wwNone
-                  ExplicitWidth = 819
-                  ExplicitHeight = 287
                 end
               end
             end
@@ -4648,8 +4584,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
         ActivePage = tabCommon
         Align = alClient
         TabOrder = 0
-        ExplicitWidth = 995
-        ExplicitHeight = 640
         object tabCommon: TTabSheet
           Caption = 'Parte Comune'
           object lbTemplatesTitle: TLabel
@@ -4854,7 +4788,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
                     25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-                  BorderColor = 10724259
                   BorderStyle = bsSingle
                   ClipboardFormats = [cfText]
                   CodeFolding.Enabled = False
@@ -4867,8 +4800,7 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   Gutter.Font.Height = -13
                   Gutter.Font.Name = 'Courier New'
                   Gutter.Font.Style = []
-                  Gutter.BorderColor = 10724259
-                  Gutter.GutterColor = clWhite
+                  Gutter.GutterColorTo = clBtnFace
                   Gutter.LineNumberTextColor = clWindowText
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
@@ -4978,7 +4910,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
                     25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-                  BorderColor = 10724259
                   BorderStyle = bsSingle
                   ClipboardFormats = [cfText]
                   CodeFolding.Enabled = False
@@ -4991,8 +4922,7 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   Gutter.Font.Height = -13
                   Gutter.Font.Name = 'Courier New'
                   Gutter.Font.Style = []
-                  Gutter.BorderColor = 10724259
-                  Gutter.GutterColor = clWhite
+                  Gutter.GutterColorTo = clBtnFace
                   Gutter.LineNumberTextColor = clWindowText
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
@@ -5102,7 +5032,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
                     25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-                  BorderColor = 10724259
                   BorderStyle = bsSingle
                   ClipboardFormats = [cfText]
                   CodeFolding.Enabled = False
@@ -5115,8 +5044,7 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   Gutter.Font.Height = -13
                   Gutter.Font.Name = 'Courier New'
                   Gutter.Font.Style = []
-                  Gutter.BorderColor = 10724259
-                  Gutter.GutterColor = clWhite
+                  Gutter.GutterColorTo = clBtnFace
                   Gutter.LineNumberTextColor = clWindowText
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
@@ -5226,7 +5154,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
                     25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-                  BorderColor = 10724259
                   BorderStyle = bsSingle
                   ClipboardFormats = [cfText]
                   CodeFolding.Enabled = False
@@ -5239,8 +5166,7 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   Gutter.Font.Height = -13
                   Gutter.Font.Name = 'Courier New'
                   Gutter.Font.Style = []
-                  Gutter.BorderColor = 10724259
-                  Gutter.GutterColor = clWhite
+                  Gutter.GutterColorTo = clBtnFace
                   Gutter.LineNumberTextColor = clWindowText
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
@@ -5350,7 +5276,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
                     25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-                  BorderColor = 10724259
                   BorderStyle = bsSingle
                   ClipboardFormats = [cfText]
                   CodeFolding.Enabled = False
@@ -5363,8 +5288,7 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   Gutter.Font.Height = -13
                   Gutter.Font.Name = 'Courier New'
                   Gutter.Font.Style = []
-                  Gutter.BorderColor = 10724259
-                  Gutter.GutterColor = clWhite
+                  Gutter.GutterColorTo = clBtnFace
                   Gutter.LineNumberTextColor = clWindowText
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
@@ -5474,7 +5398,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
                     BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
                     25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-                  BorderColor = 10724259
                   BorderStyle = bsSingle
                   ClipboardFormats = [cfText]
                   CodeFolding.Enabled = False
@@ -5487,8 +5410,7 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
                   Gutter.Font.Height = -13
                   Gutter.Font.Name = 'Courier New'
                   Gutter.Font.Style = []
-                  Gutter.BorderColor = 10724259
-                  Gutter.GutterColor = clWhite
+                  Gutter.GutterColorTo = clBtnFace
                   Gutter.LineNumberTextColor = clWindowText
                   Font.Charset = DEFAULT_CHARSET
                   Font.Color = clBlack
@@ -5973,7 +5895,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
         Height = 145
         Align = alTop
         TabOrder = 1
-        ExplicitTop = 8
         object lbAreaFunzionale: TLabel
           Left = 24
           Top = 16
@@ -6088,7 +6009,6 @@ object frmVCLINPMainRedis: TfrmVCLINPMainRedis
         Height = 41
         Align = alTop
         TabOrder = 2
-        ExplicitTop = 8
         object SpeedButton12: TSpeedButton
           Left = 208
           Top = 8

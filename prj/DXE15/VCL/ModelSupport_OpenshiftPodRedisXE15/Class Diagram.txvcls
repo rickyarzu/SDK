@@ -10,7 +10,7 @@
     </reference>
     <reference referencedUin="delphi:e_class:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestController">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="260,200,283,610" />
+      <property name="bounds" value="260,200,283,310" />
       <property name="hideOperation" value="True" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestController.Create()" />
@@ -95,8 +95,8 @@
         <property name="bendpoints" value="" />
       </reference>
       <reference referencedUin="delphi:l_ast:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestController.RequestRecord">
-        <property name="sourceAnchor" value="543,539" />
-        <property name="targetAnchor" value="640,539" />
+        <property name="sourceAnchor" value="534,510" />
+        <property name="targetAnchor" value="730,740" />
         <property name="bendpoints" value="" />
       </reference>
       <reference referencedUin="delphi:l_ast:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestController.TestRequest">
@@ -114,6 +114,30 @@
         <property name="targetAnchor" value="640,775" />
         <property name="bendpoints" value="" />
       </reference>
+      <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestController.FRequest" />
+      <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestController.FTemplatesController" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestController.SetTemplatesController(Janua.INPS.RedisRequest.TRedisTemplateController)" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestController.SetNomeMicroservizio(System.string)" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestController.SetPassword(System.string)" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestController.SetUserName(System.string)" />
+      <reference referencedUin="delphi:e_property:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestController.UserName" />
+      <reference referencedUin="delphi:e_property:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestController.Password" />
+      <reference referencedUin="delphi:e_property:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestController.TemplatesController" />
+      <reference referencedUin="delphi:l_ast:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestController.FRequest">
+        <property name="sourceAnchor" value="528,510" />
+        <property name="targetAnchor" value="723,740" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestController.TemplatesController">
+        <property name="sourceAnchor" value="393,510" />
+        <property name="targetAnchor" value="393,645" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestController.FTemplatesController">
+        <property name="sourceAnchor" value="401,510" />
+        <property name="targetAnchor" value="401,645" />
+        <property name="bendpoints" value="" />
+      </reference>
     </reference>
     <reference referencedUin="delphi:e_class:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TACLTemplatesRecord">
       <property name="$shortcutReference" value="true" />
@@ -127,7 +151,7 @@
     </reference>
     <reference referencedUin="delphi:e_class:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestControllerRecord">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="640,400,324,278" />
+      <property name="bounds" value="640,400,324,188" />
       <property name="location_set_by_user" value="True" />
       <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestControllerRecord.PINGPassword" />
       <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestControllerRecord.PINGPasswordSHA" />
@@ -148,20 +172,23 @@
         <property name="bendpoints" value="" />
       </reference>
       <reference referencedUin="delphi:l_ast:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestControllerRecord.ProdRequest">
-        <property name="sourceAnchor" value="758,678" />
+        <property name="sourceAnchor" value="758,588" />
         <property name="targetAnchor" value="758,740" />
         <property name="bendpoints" value="" />
       </reference>
       <reference referencedUin="delphi:l_ast:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestControllerRecord.TestRequest">
-        <property name="sourceAnchor" value="766,678" />
+        <property name="sourceAnchor" value="766,588" />
         <property name="targetAnchor" value="766,740" />
         <property name="bendpoints" value="" />
       </reference>
       <reference referencedUin="delphi:l_ast:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestControllerRecord.DevRequest">
-        <property name="sourceAnchor" value="774,678" />
+        <property name="sourceAnchor" value="774,588" />
         <property name="targetAnchor" value="774,740" />
         <property name="bendpoints" value="" />
       </reference>
+      <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestControllerRecord.DevText" />
+      <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestControllerRecord.TestText" />
+      <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestControllerRecord.ProdText" />
     </reference>
     <reference referencedUin="delphi:e_class:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestRecord">
       <property name="$shortcutReference" value="true" />
@@ -173,6 +200,69 @@
       <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestRecord.nomeMicroservizio" />
       <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestRecord.ACL" />
       <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestRecord.Request" />
+      <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestRecord.PasswordSHA256" />
+      <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestRecord.PasswordBase64" />
+      <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestRecord.maxMemoryPolicy" />
+      <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestRecord.labelPartOf" />
+      <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestRecord.areaFunzionale" />
+      <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestRecord.labelOrganization" />
+      <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRequestRecord.ACLBase64" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="229,645,321,263" />
+      <property name="hideAttribute" value="True" />
+      <property name="hideOperation" value="True" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.Create()" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.Destroy()" />
+      <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.FTemplate" />
+      <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.FReqTemplate" />
+      <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.FACLTemplate" />
+      <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.FRequest" />
+      <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.FACLModel" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.SetACLTemplate(System.string)" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.SetReqTemplate(System.string)" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.GetAdminPassword()" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.GetAdminPasswordBase64()" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.GetAdminPasswordSHA()" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.GetAdminUser()" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.SetACLModel(Janua.INPS.RedisRequest.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.SetAdminPassword(System.string)" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.SetAdminPasswordBase64(System.string)" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.SetAdminPasswordSHA(System.string)" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.SetAdminUser(System.string)" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.SetRequest(Janua.INPS.RedisRequest.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.GetPINGPasswordBase64()" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.SetPINGPasswordBase64(System.string)" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.SetPINGPassword(System.string)" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.SetPINGPasswordSHA(System.string)" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.SetPINGUser(System.string)" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.GetPINGPassword()" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.GetPINGPasswordSHA()" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.GetPINGUser()" />
+      <reference referencedUin="delphi:e_property:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.PINGUser" />
+      <reference referencedUin="delphi:e_property:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.PINGPassword" />
+      <reference referencedUin="delphi:e_property:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.PINGPasswordSHA" />
+      <reference referencedUin="delphi:e_property:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.PingPasswordBase64" />
+      <reference referencedUin="delphi:e_property:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.AdminUser" />
+      <reference referencedUin="delphi:e_property:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.AdminPassword" />
+      <reference referencedUin="delphi:e_property:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.AdminPasswordSHA" />
+      <reference referencedUin="delphi:e_property:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.AdminPasswordBase64" />
+      <reference referencedUin="delphi:e_property:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.ACLModel" />
+      <reference referencedUin="delphi:e_property:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.Request" />
+      <reference referencedUin="delphi:e_property:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.ACLTemplate" />
+      <reference referencedUin="delphi:e_property:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplateController.ReqTemplate" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplatesController">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="640,940,328,177" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplatesController.FTemplates" />
+      <reference referencedUin="delphi:e_field:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplatesController.FTemplatesFileName" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplatesController.SetTemplates(Janua.INPS.RedisRequest.TTemplatesRecord)" />
+      <reference referencedUin="delphi:e_method:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplatesController.SetTemplatesFileName(Janua.INPS.RedisRequest.TFileName)" />
+      <reference referencedUin="delphi:e_property:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplatesController.Templates" />
+      <reference referencedUin="delphi:e_property:src:OpenshiftPodRedisXE15:Janua.INPS.RedisRequest.TRedisTemplatesController.TemplatesFileName" />
     </reference>
   </view>
 </nodeSet>
