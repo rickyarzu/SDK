@@ -1,9 +1,9 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <DCC_DcuOutput>c:\januaproject\dcu\DXE14\WebBroker\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_DcuOutput>c:\januaproject\dcu\DXE15\WebBroker\$(Platform)\$(Config)</DCC_DcuOutput>
         <DCC_ExeOutput>c:\januaproject\bin\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_HppOutputARM>false</DCC_HppOutputARM>
-        <DCC_UnitSearchPath>c:\januaproject\dcu\DXE14\WebBroker\$(Platform)\$(Config);$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>c:\januaproject\dcu\DXE15\WebBroker\$(Platform)\$(Config);$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <DCC_Hints>false</DCC_Hints>
         <DCC_IOChecking>true</DCC_IOChecking>
         <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
