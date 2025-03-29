@@ -26,6 +26,7 @@ type
     procedure pbBadgeMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
     procedure pbBadgeMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);
     procedure btnTestOffsetClick(Sender: TObject);
+    procedure frameFMXImageDraw1btnTestOffsetClick(Sender: TObject);
   private
     FBadge: NativeInt;
     FClickPoint: TPointF;
@@ -143,6 +144,12 @@ end;
 procedure TfrmFMXTestCanvasDrawing.FormShow(Sender: TObject);
 begin
   frameFMXImageDraw1.Activate(0.0);
+end;
+
+procedure TfrmFMXTestCanvasDrawing.frameFMXImageDraw1btnTestOffsetClick(Sender: TObject);
+begin
+  frameFMXImageDraw1.btnTestOffsetClick(Sender);
+
 end;
 
 procedure TfrmFMXTestCanvasDrawing.pbBadgeMouseMove(Sender: TObject; Shift: TShiftState; X, Y: Single);

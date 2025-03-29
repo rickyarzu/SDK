@@ -1,4 +1,4 @@
-package JanuaRestWebDesign;
+package JanuaRestWebComponents;
 
 {$R *.res}
 {$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
@@ -26,6 +26,7 @@ package JanuaRestWebDesign;
 {$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
 {$DESCRIPTION 'Janua Rest Http Library'}
+{$LIBSUFFIX AUTO}
 {$IMPLICITBUILD ON}
 
 requires

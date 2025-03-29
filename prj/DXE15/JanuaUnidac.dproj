@@ -8,7 +8,8 @@
         <AppType>Package</AppType>
         <FrameworkType>None</FrameworkType>
         <ProjectVersion>20.2</ProjectVersion>
-        <Platform Condition="'$(Platform)'==''">OSXARM64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <ProjectName Condition="'$(ProjectName)'==''">JanuaUnidac</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -504,8 +505,8 @@
         <DCCReference Include="..\..\src\januaunidac\Janua.Uni.SessionSource.pas"/>
         <DCCReference Include="..\..\src\janualegacy\Janua.Shipping.Refund.pas"/>
         <DCCReference Include="..\..\src\janualegacy\Janua.Shipping.RefundAgentStatement.pas"/>
-        <DCCReference Include="..\..\src\januaunidac\datamodules\udmPgStorage.pas">
-            <Form>dmPgStorage</Form>
+        <DCCReference Include="..\..\src\januaunidac\datamodules\udmFbStorage.pas">
+            <Form>dmFbStorage</Form>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\src\januaunidac\datamodules\Janua.Anagraph.Postgres.Storage.pas">
@@ -611,12 +612,12 @@
             <Form>dmJanuaFBStorage</Form>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\src\januaunidac\Janua.Firebird.Impl.pas"/>
         <DCCReference Include="..\..\src\januaunidac\datamodules\Janua.Commons.pgCountriesLocal.pas">
             <Form>dmPgCountriesLocal</Form>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\src\januaunidac\Janua.Postgres.JPublic.pas"/>
+        <DCCReference Include="..\..\src\januaunidac\Janua.Firebird.Impl.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>
@@ -674,6 +675,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="C:\Embarcadero\Studio\23.0\Bpl\Linux64\bplJanuaUnidac290.so" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\Embarcadero\Studio\23.0\Bpl\OSXARM64\bplJanuaUnidac290.dylib" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="OSXARM64">
+                        <RemoteName>bplJanuaUnidac.dylib</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaUnidac280.bpl" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaUnidac290.bpl" Configuration="Release" Class="ProjectOutput"/>
                 <DeployClass Name="AdditionalDebugSymbols">

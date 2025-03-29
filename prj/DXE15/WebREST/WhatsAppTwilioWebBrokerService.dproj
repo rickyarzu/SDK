@@ -195,7 +195,7 @@
             <Form>JanuaWhatsAppTwilioWebBrokerService</Form>
             <DesignClass>TService</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\januacore\dmvc\Janua.WhatsApp.WebbrokerModule.pas">
+        <DCCReference Include="..\..\..\src\januacore\dmvc\Phoenix.WhatsApp.WebbrokerModule.pas">
             <Form>JanuaWhatSappWebBrokerModule</Form>
             <DesignClass>TWebModule</DesignClass>
         </DCCReference>
@@ -203,7 +203,9 @@
             <Form>dmPgTwilioWhatsApp</Form>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\januaunidac\datamodules\udmPgStorage.pas"/>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\udmFbStorage.pas">
+            <Form>dmFbStorage</Form>
+        </DCCReference>
         <DCCReference Include="..\..\..\src\januacore\datamodule\Janua.Core.DataModule.pas">
             <Form>JanuaCoreDataModule</Form>
             <DesignClass>TDataModule</DesignClass>

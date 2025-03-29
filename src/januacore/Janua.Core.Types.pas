@@ -22,7 +22,8 @@ const
   cInvalidDate = cNullDate + 1;
 
 type
-  TJanuaShape = (jsCircle, jsEllipse, jsSquare, jsRectangle, jsStar, jsPentagon, jsHexagon, jsDiamond);
+  TJanuaShape = (jsCircle, jsEllipse, jsSquare, jsRectangle, jsStar, jsPentagon, jsHexagon, jsDiamond,
+    jsDrawing);
 
   TJanuaPoint = record
     X: Single;
@@ -45,8 +46,10 @@ type
   public
     Points: Tarray<TJanuaPoint>;
     property Count: Integer read GetCount;
+    // <summary> All the points that make up the drawing </summary>
     property Items[Index: Integer]: TJanuaPoint read GetItem write SetItem; default;
     property Notes: string read FNotes write SetNotes;
+    // <summary> Default 'Radius' for circles and ellipses </summary>
     property Radius: Single read FRadius write SetRadius;
     property Shape: TJanuaShape read FShape write SetShape;
   public
