@@ -72,7 +72,7 @@ SELECT * FROM FILIALI_CLIENTI
 ORDER BY NOME
  --  // ... E GENERA TUTTI I NODI DELLE FILIALI CORRELATE E DELLE ATTREZZATURE ECCETTO IL GRUPPO DI PRESSURIZZAZIONE
  ---> Cicla sui nodi per ogni filiale ------
------------------------------------------------------------------------------------------------------------------------------------
+--ESTINTORI_CLIENTI---------------------------------------------------------------------------------------------------------------------------------
 
 if TContratto(TmpNode.Data).FAttrezzatureAbilitate.Estintori then            
               TmpQuery.ParamByName('IdContratto').AsInteger := TSingoloIntero(TmpNode.Data).Value;
@@ -86,15 +86,11 @@ SELECT ESTINTORI_CLIENTI.*,CAT_ESTINTORI.CO2,CAT_ESTINTORI.SENZA_SCADENZA FROM E
    AND ESTINTORI_CLIENTI.STATO = 'A' /* ID_ATTREZZATURA_ATTIVA */ 
    AND ESTINTORI_CLIENTI.TIPO_ESTINTORE = CAT_ESTINTORI.CHIAVE
    
- -----------------------------------------------------------------------------------------------------------------------------------
+ --PORTE_CLIENTI---------------------------------------------------------------------------------------------------------------------------------
 if TContratto(TmpNode.Data).FAttrezzatureAbilitate.Porte then
 	SELECT * FROM PORTE_CLIENTI WHERE CLIENTE = :IdContratto AND STATO =  'A' /* ID_ATTREZZATURA_ATTIVA */ 
 					AND FILIALE = :IdFiliale;
- -----------------------------------------------------------------------------------------------------------------------------------
-if TContratto(TmpNode.Data).FAttrezzatureAbilitate.Porte then
-	SELECT * FROM PORTE_CLIENTI WHERE CLIENTE = :IdContratto AND STATO =  'A' /* ID_ATTREZZATURA_ATTIVA */ 
-					AND FILIALE = :IdFiliale;
- -----------------------------------------------------------------------------------------------------------------------------------
+ --BOCCHELLI---------------------------------------------------------------------------------------------------------------------------------
  SELECT * FROM BOCCHELLI,IDRANTI_CLIENTI
                  WHERE IDRANTI_CLIENTI.CHIAVE = BOCCHELLI.IDRANTE
                 AND IDRANTI_CLIENTI.CLIENTE = :IdContratto AND IDRANTI_CLIENTI.STATO = 'A' /* ID_ATTREZZATURA_ATTIVA */ 
@@ -103,15 +99,15 @@ if TContratto(TmpNode.Data).FAttrezzatureAbilitate.Porte then
 				
               TmpQuery.ParamByName('IdContratto').AsInteger := TSingoloIntero(TmpNode.Data).Value;
               TmpQuery.ParamByName('IdFiliale').AsInteger := TSingoloIntero(TmpNode2.Data).Value;
- -----------------------------------------------------------------------------------------------------------------------------------
+ --LUCI_CLIENTI---------------------------------------------------------------------------------------------------------------------------------
  if TContratto(TmpNode.Data).FAttrezzatureAbilitate.Luci then			  
-	SELECT * FROM PORTE_CLIENTI WHERE CLIENTE = :IdContratto AND STATO =  'A' /* ID_ATTREZZATURA_ATTIVA */ 
+	SELECT * FROM LUCI_CLIENTI WHERE CLIENTE = :IdContratto AND STATO =  'A' /* ID_ATTREZZATURA_ATTIVA */ 
 					AND FILIALE = :IdFiliale;		
- -----------------------------------------------------------------------------------------------------------------------------------
+ --FUMO_CLIENTI---------------------------------------------------------------------------------------------------------------------------------
  if TContratto(TmpNode.Data).FAttrezzatureAbilitate.Fumi then
- 	SELECT * FROM LUCI_CLIENTI WHERE CLIENTE = :IdContratto AND STATO =  'A' /* ID_ATTREZZATURA_ATTIVA */ 
+ 	SELECT * FROM FUMO_CLIENTI WHERE CLIENTE = :IdContratto AND STATO =  'A' /* ID_ATTREZZATURA_ATTIVA */ 
 					AND FILIALE = :IdFiliale;
- -----------------------------------------------------------------------------------------------------------------------------------
+ --IDRANTI_CLIENTI---------------------------------------------------------------------------------------------------------------------------------
  --- prova dinamica 
   Procedure AddProveDinamicaInFattura(AQuery: TpFIBQuery; MESE: Integer; NodoContratto: TTreeNode);
   var
@@ -145,7 +141,7 @@ if TContratto(TmpNode.Data).FAttrezzatureAbilitate.Porte then
       end;
     end;
   end;
-  ---------------------------------------------------------------------------------------------------------------------------------
+  --Mese Estintore Verifica-------------------------------------------------------------------------------------------------------------------------------
   
   Procedure CheckMeseEstintore(MESE, ANNO: Integer; NodoEstintore: TTreeNode);
   var
@@ -275,26 +271,11 @@ begin
   -- di conseguenza visto sopra ValiditaCollaudo è sempre 0 in questo Ciclo 
   if (ValiditaCollaudo = 0) or (ValiditaRevisione = 0) then
   begin
-    CopyArrayInTStringList(AQuery.SQL, ['SELECT PERIODICITA_REVISIONE,PERIODICITA_COLLAUDO',
-      '  FROM CAT_ESTINTORI', 'WHERE CHIAVE = ' + IntToStr(IdCatEstintore)]);
-    try
-      AQuery.ExecQuery;
-      if not AQuery.Eof then
-      begin
+    SELECT PERIODICITA_REVISIONE, PERIODICITA_COLLAUDO FROM CAT_ESTINTORI WHERE CHIAVE = :IdCatEstintore;
+
         ValiditaCollaudo := AQuery.FieldByName('PERIODICITA_COLLAUDO').AsInteger;
         ValiditaRevisione := AQuery.FieldByName('PERIODICITA_REVISIONE').AsInteger;
-        if ListaPeriodicita <> Nil then
-        begin
-          if ListaPeriodicita.IndexOf(IntToStr(IdCatEstintore)) = -1 then
-            ListaPeriodicita.AddObject(IntToStr(IdCatEstintore),
-              TObject(ValiditaCollaudo * 1000 + ValiditaRevisione));
-        end;
-      end;
-    finally
-      AQuery.Close;
-    end;
-  end;
-
+		
   if ValiditaCollaudo <> 0 then
     LastCollaudo := SumMonth(DataStartupColl, ValiditaCollaudo)
   else
@@ -306,3 +287,187 @@ begin
     LastRevisione := DataStartupRev;
 end;
  
+--Mese ATTREZZATURE Verifica-------------------------------------------------------------------------------------------------------------------------------
+
+  Procedure CheckMeseAttrezzatura(MESE: Integer; NodoAttrezzatura: TTreeNode);
+  var
+    AContratto: TContratto;
+    AnAttrezzatura: TAttrezzatura;
+    PrimaVisita: Boolean;
+    DescrFattura: String;
+  begin
+    AnAttrezzatura := TAttrezzatura(TmpNode.Data);
+    AContratto := TContratto(GetAncestor(TmpNode, 0).Data);
+    PrimaVisita := MESE = AContratto.MesePrimaVisita;
+    if PrimaVisita then
+    begin
+      case AnAttrezzatura.Tipo of
+        attPorte:
+          DescrFattura := 'Manutenzione ordinaria porta tagliafuoco';
+        attSprinkler:
+          DescrFattura := 'Manutenzione ordinaria sprinkler';
+        attFumi:
+          DescrFattura := 'Manutenzione ordinaria impianto rivelazione incendi';
+        attLuci:
+          DescrFattura := 'Manutenzione ordinaria impianto luci';
+      else
+        DescrFattura := '???';
+      end;
+      AContratto.AddVoceFattura(TVoceDaFatturare.Create(False, '', AnAttrezzatura.Tipo, DescrFattura, True,
+        TmpNode.Parent.Parent.Text, AnAttrezzatura.Ubicazione, -1, cntOrdinario, False));
+    end
+    else
+      AContratto.AddVoceFattura(TVoceDaFatturare.Create(False, '', AnAttrezzatura.Tipo, DescrFattura, False,
+        TmpNode.Parent.Parent.Text, AnAttrezzatura.Ubicazione, -1, cntOrdinario, False));
+  end;
+
+--Mese ATTREZZATURE Verifica-------------------------------------------------------------------------------------------------------------------------------
+
+  Procedure CheckMeseAttrezzatura(MESE: Integer; NodoAttrezzatura: TTreeNode);
+  var
+    AContratto: TContratto;
+    AnAttrezzatura: TAttrezzatura;
+    PrimaVisita: Boolean;
+    DescrFattura: String;
+  begin
+    AnAttrezzatura := TAttrezzatura(TmpNode.Data);
+    AContratto := TContratto(GetAncestor(TmpNode, 0).Data);
+    PrimaVisita := MESE = AContratto.MesePrimaVisita;
+    if PrimaVisita then
+    begin
+      case AnAttrezzatura.Tipo of
+        attPorte:
+          DescrFattura := 'Manutenzione ordinaria porta tagliafuoco';
+        attSprinkler:
+          DescrFattura := 'Manutenzione ordinaria sprinkler';
+        attFumi:
+          DescrFattura := 'Manutenzione ordinaria impianto rivelazione incendi';
+        attLuci:
+          DescrFattura := 'Manutenzione ordinaria impianto luci';
+      else
+        DescrFattura := '???';
+      end;
+      AContratto.AddVoceFattura(TVoceDaFatturare.Create(False, '', AnAttrezzatura.Tipo, DescrFattura, True,
+        TmpNode.Parent.Parent.Text, AnAttrezzatura.Ubicazione, -1, cntOrdinario, False));
+    end
+    else
+      AContratto.AddVoceFattura(TVoceDaFatturare.Create(False, '', AnAttrezzatura.Tipo, DescrFattura, False,
+        TmpNode.Parent.Parent.Text, AnAttrezzatura.Ubicazione, -1, cntOrdinario, False));
+  end;
+
+
+--Bocchelli -----------------------------------------------------------------------------------------------------------------------------------------------
+  Procedure CheckMeseBocchello(MESE, ANNO: Integer; NodoBocchello: TTreeNode);
+  var
+    ScadenzaVicina: TDateTime;
+    ScadenzaLontana: TDateTime;
+    PrimaVisita: Boolean;
+    ABocchello: TBocchello;
+    AContratto: TContratto;
+  begin
+    ABocchello := TBocchello(TmpNode.Data);
+    AContratto := TContratto(GetAncestor(TmpNode, 0).Data);
+    GetUltimiCollBocchello(FQuery, ABocchello.DataStartupColl, ABocchello.DataCollaudo);
+
+    PrimaVisita := MESE = AContratto.MesePrimaVisita;
+
+    ScadenzaVicina := EncodeDate(ANNO, MESE, 1);
+    ScadenzaLontana := ScadenzaVicina;
+    ScadenzaVicina := SumMonth(ScadenzaVicina, 2);
+    ScadenzaLontana := SumMonth(ScadenzaLontana, 8);
+    ScadenzaVicina := GetLastDateMonth(GetMonth(ScadenzaVicina), GetYear(ScadenzaVicina));
+    ScadenzaLontana := GetLastDateMonth(GetMonth(ScadenzaLontana), GetYear(ScadenzaLontana));
+
+    if (ScadenzaVicina >= ABocchello.DataCollaudo) and (ABocchello.DataStartupColl <> ABocchello.DataCollaudo)
+    then
+    begin
+      TmpNode.Text := TmpNode.Text + ' - ' + 'Collaudo';
+      ABocchello.DaCollaudare := True;
+      AContratto.AddVoceFattura(TVoceDaFatturare.Create(False, '', attBocchelli, 'Collaudo sistema idranti',
+        PrimaVisita, TmpNode.Parent.Parent.Text, ABocchello.Ubicazione, -1, cntCollaudo, False));
+    end
+    else
+    begin
+      TmpNode.Text := TmpNode.Text + ' - ' + 'Ordinario';
+      if PrimaVisita then
+        AContratto.AddVoceFattura(TVoceDaFatturare.Create(False, '', attBocchelli,
+          'Manutenzione ordinaria idranti', PrimaVisita, TmpNode.Parent.Parent.Text, ABocchello.Ubicazione,
+          -1, cntOrdinario, False))
+      else
+        AContratto.AddVoceFattura(TVoceDaFatturare.Create(False, '', attBocchelli,
+          'Manutenzione ordinaria idranti', False, TmpNode.Parent.Parent.Text, ABocchello.Ubicazione, -1,
+          cntOrdinario, False));
+    end;
+  end;
+  
+ --Impianti Elettrici -----------------------------------------------------------------------------------------------------------------------------------------------
+ Procedure HandleImpiantiElettrici;
+
+    IsTheRightMonth: Boolean;
+    Mesi: Array [01 .. 04] of Integer;
+    i: Integer;
+    Contratto: TContratto;
+    TmpQuery: TpFIBQuery;
+    TmpString: String;
+
+        SELECT * FROM ELEMENTI_IMPIANTI_ELETTRICI WHERE IMPIANTO = :IdImpianto;
+		
+        SELECT IMPIANTI_ELETTRICI_CLIENTI.FILIALE AS FILIALE_IMPIANTO,
+             IMPIANTI_ELETTRICI_CLIENTI.CHIAVE AS CHIAVE_IMPIANTO,
+             IMPIANTI_ELETTRICI_CLIENTI.DESCRIZIONE AS DESCRIZIONE_IMPIANTO,
+             IMPIANTI_ELETTRICI_CLIENTI.TIPO_VISITA AS IMPIANTI_ELETTRICI_TIPO_VISITE,
+             CLIENTI.*,FILIALI_CLIENTI.NOME AS DESCRIZIONE_FILIALE,
+             FILIALI_CLIENTI.CHIAVE AS CHIAVE_FILIALE,
+             AMMINISTRATORI.ENTE_PUBBLICO AS ENTE_PUBBLICO,
+             AMMINISTRATORI.RAGIONE_SOCIALE AS NOME_AMMINISTRATORE
+          FROM CLIENTI,IMPIANTI_ELETTRICI_CLIENTI,AMMINISTRATORI,FILIALI_CLIENTI
+           WHERE CLIENTI.CHIAVE = IMPIANTI_ELETTRICI_CLIENTI.CLIENTE
+           AND AMMINISTRATORI.CHIAVE = CLIENTI.AMMINISTRATORE  AND CLIENTI.DISDETTATO <> 'T'
+           AND CLIENTI.SOSPENSIONE_TEMPORANEA <> 'T'
+           AND CLIENTI.IMPIANTI_ELETTRICI_VISIBILI = 'T'
+           AND FILIALI_CLIENTI.ESCLUDI_DA_GENERAZIONE <> 'T'
+           AND FILIALI_CLIENTI.CHIAVE = IMPIANTI_ELETTRICI_CLIENTI.FILIALE
+           AND IMPIANTI_ELETTRICI_CLIENTI.STATO = 'A';
+		   
+          while not Eof do
+          begin
+            FillChar(Mesi, SizeOf(Mesi), 0);
+            Mesi[1] := FieldByName('VISITA_FATTURAZIONE_ORDINARIA').AsInteger;
+            Mesi[2] := (FieldByName('VISITA_FATTURAZIONE_ORDINARIA').AsInteger + 6) mod 12;
+            if FieldByName('IMPIANTI_ELETTRICI_TIPO_VISITE').AsString <> ID_PERIODO_GRP_SPR_SEMESTRALE then
+            begin
+              // Trimestrale
+              Mesi[3] := (FieldByName('VISITA_FATTURAZIONE_ORDINARIA').AsInteger + 3) mod 12;
+              Mesi[4] := (FieldByName('VISITA_FATTURAZIONE_ORDINARIA').AsInteger + 9) mod 12;
+            end;
+            for i := Low(Mesi) to High(Mesi) do
+              if Mesi[i] = 0 then
+                Mesi[i] := 12;
+            IsTheRightMonth := FieldByName('IMPIANTI_ELETTRICI_TIPO_VISITE')
+              .AsString = ID_PERIODO_GRP_SPR_MENSILE;
+            if not IsTheRightMonth then
+              for i := Low(Mesi) to High(Mesi) do
+                IsTheRightMonth := IsTheRightMonth or (MESE.ItemIndex + 1 = Mesi[i]);
+            if IsTheRightMonth then
+            begin
+              TmpQuery.ParamByName('IdImpianto').AsInteger := FieldByName('CHIAVE_IMPIANTO').AsInteger;
+              try
+                TmpQuery.ExecQuery;
+                while not TmpQuery.Eof do
+                begin
+                  TmpString := FieldByName('DESCRIZIONE_IMPIANTO').AsString + ' - Prog. ' +
+                    TmpQuery.FieldByName('PROGRESSIVO').AsString;
+                  TREE_LOG.Items.AddChildObject(GetNodoPeriodicitaMensile(Contratto, nodImpiantiElettrici),
+                    TmpString, TElemImpiantoElettrico.Create(TmpQuery.FieldByName('CHIAVE').AsInteger,
+                    TmpString));
+                  TmpQuery.Next;
+                end;
+              finally
+                TmpQuery.Close;
+              end;
+              Contratto.AddVoceFattura(TVoceDaFatturare.Create(False, '', attImpiantoElettrico,
+                FieldByName('DESCRIZIONE_IMPIANTO').AsString, True, FieldByName('DESCRIZIONE_FILIALE')
+                .AsString, 'Ubicazione', -1, cntControlloImpElettricoPeriodico, False,
+                FieldByName('CHIAVE_IMPIANTO').AsInteger));
+            end;
+          end;
