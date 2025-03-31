@@ -170,6 +170,7 @@ contains
   Janua.Firebird.dmStorage in '..\..\src\januaunidac\datamodules\Janua.Firebird.dmStorage.pas' {dmJanuaFBStorage: TDataModule},
   Janua.Commons.pgCountriesLocal in '..\..\src\januaunidac\datamodules\Janua.Commons.pgCountriesLocal.pas' {dmPgCountriesLocal: TDataModule},
   Janua.Postgres.JPublic in '..\..\src\januaunidac\Janua.Postgres.JPublic.pas',
-  Janua.Firebird.Impl in '..\..\src\januaunidac\Janua.Firebird.Impl.pas';
+  Janua.Firebird.Impl in '..\..\src\januaunidac\Janua.Firebird.Impl.pas',
+  udmPgStorage in '..\..\src\januaunidac\datamodules\udmPgStorage.pas' {dmPgStorage: TDataModule};
 
 end.

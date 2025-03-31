@@ -202,6 +202,7 @@
         <DCCReference Include="..\..\..\lib\RESTRequest4Delphi\src\RESTRequest4D.Response.Client.pas"/>
         <DCCReference Include="..\..\..\lib\RESTRequest4Delphi\src\RESTRequest4D.Response.Contract.pas"/>
         <DCCReference Include="..\..\..\lib\RESTRequest4Delphi\src\RESTRequest4D.Utils.pas"/>
+        <DCCReference Include="..\..\..\Lib\RESTRequest4Delphi\src\RESTRequest4D.Request.Adapter.Contract.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\..\prj\DXE15\JanuaLibDXE15.optset</DependentOn>
@@ -247,6 +248,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="C:\Embarcadero\Studio\23.0\Bpl\JanuaRestRequestLib290.bpl" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaRestRequestLib290.bpl" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>JanuaRestRequestLib.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\RestRequestLib290.bpl" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="OSX32">
