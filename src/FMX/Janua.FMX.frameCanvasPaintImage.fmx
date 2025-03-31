@@ -12,9 +12,8 @@ object frameFMXImageDraw: TframeFMXImageDraw
     TabOrder = 1
     object btnClear: TButton
       Align = Left
-      Position.Y = 58.000000000000000000
       Size.Width = 81.000000000000000000
-      Size.Height = 0.000000000000000000
+      Size.Height = 58.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 4
       Text = 'Clear '
@@ -24,9 +23,8 @@ object frameFMXImageDraw: TframeFMXImageDraw
     object btnRedraw: TButton
       Align = Left
       Position.X = 81.000000000000000000
-      Position.Y = 58.000000000000000000
       Size.Width = 80.000000000000000000
-      Size.Height = 0.000000000000000000
+      Size.Height = 58.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
       Text = 'Redraw'
@@ -36,9 +34,8 @@ object frameFMXImageDraw: TframeFMXImageDraw
     object btnDelLast: TButton
       Align = Left
       Position.X = 161.000000000000000000
-      Position.Y = 58.000000000000000000
       Size.Width = 80.000000000000000000
-      Size.Height = 0.000000000000000000
+      Size.Height = 58.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
       Text = 'Del. Last'
@@ -48,9 +45,8 @@ object frameFMXImageDraw: TframeFMXImageDraw
     object btnAddNotes: TButton
       Align = Left
       Position.X = 241.000000000000000000
-      Position.Y = 58.000000000000000000
       Size.Width = 80.000000000000000000
-      Size.Height = 0.000000000000000000
+      Size.Height = 58.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
       Text = 'Add Notes'
@@ -58,8 +54,8 @@ object frameFMXImageDraw: TframeFMXImageDraw
       OnClick = btnAddNotesClick
     end
     object btnTestOffset: TButton
-      Align = Top
-      Size.Width = 464.000000000000000000
+      Align = Client
+      Size.Width = 143.000000000000000000
       Size.Height = 58.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0

@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{E4046C38-22A2-4603-8691-017AE6881D9B}</ProjectGuid>
+        <ProjectGuid>{BC06F120-D080-4B44-B85E-DA53851381ED}</ProjectGuid>
         <ProjectVersion>20.2</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
@@ -188,7 +188,7 @@
                     <Source Name="MainSource">PhoenixWhatsAppWebBroker.dpr</Source>
                 </Source>
             </Delphi.Personality>
-            <Deployment Version="5">
+            <Deployment Version="4">
                 <DeployFile LocalName="Win32\Debug\JanuaWhatsAppWebBroker.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="c:\januaproject\bin\Win32\Debug\PhoenixWhatsAppWebBroker.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
@@ -207,6 +207,16 @@
                     </Platform>
                     <Platform Name="Win32">
                         <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClasses">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>64</Operation>
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="AndroidFileProvider">
@@ -839,9 +849,6 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win64">
-                        <Operation>1</Operation>
-                    </Platform>
-                    <Platform Name="Win64x">
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>

@@ -85,7 +85,7 @@ object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
     Size.Width = 677.000000000000000000
     Size.Height = 588.000000000000000000
     Size.PlatformDefault = False
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 1
     TabPosition = PlatformDefault
     Sizes = (
@@ -98,13 +98,15 @@ object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 77.000000000000000000
       Size.Height = 26.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
       Text = 'Frame Test'
+      ExplicitSize.cx = 77.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
       inline frameFMXImageDraw1: TframeFMXImageDraw
         Align = Top
         Size.Width = 677.000000000000000000
@@ -112,8 +114,21 @@ object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
         Size.PlatformDefault = False
         inherited pnlButtons: TPanel
           Size.Width = 677.000000000000000000
+          inherited btnClear: TButton
+            Size.Height = 58.000000000000000000
+          end
+          inherited btnRedraw: TButton
+            Size.Height = 58.000000000000000000
+          end
+          inherited btnDelLast: TButton
+            Size.Height = 58.000000000000000000
+          end
+          inherited btnAddNotes: TButton
+            Size.Height = 58.000000000000000000
+          end
           inherited btnTestOffset: TButton
-            Size.Width = 677.000000000000000000
+            Align = Client
+            Size.Width = 356.000000000000000000
             OnClick = frameFMXImageDraw1btnTestOffsetClick
           end
         end
@@ -138,13 +153,15 @@ object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 98.000000000000000000
       Size.Height = 26.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
       Text = 'TestDrawCircle'
+      ExplicitSize.cx = 98.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
       object imgCar: TImage
         MultiResBitmap.Height = 383
         MultiResBitmap.Width = 637
