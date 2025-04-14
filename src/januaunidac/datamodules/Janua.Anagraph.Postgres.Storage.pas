@@ -835,11 +835,11 @@ begin
   try
     if Assigned(FDM) then
       FreeAndNil(FDM);
-    inherited;
   except
     on e: Exception do
       LogException('Destroy', e, self);
   end;
+  inherited;
 end;
 
 procedure TJanuaPgAnagraphModel.GetInternalCreate;

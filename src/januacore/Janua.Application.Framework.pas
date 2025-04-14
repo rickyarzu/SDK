@@ -2896,7 +2896,11 @@ end;
 class procedure TJanuaCoreOS.Initialize;
 begin
   if TJanuaApplication.AppName <> '' then
-    GetJanuaConfiguration.Initialize(GetConfigFileName);
+  begin
+    var
+    lConfiFileName := GetConfigFileName;
+    GetJanuaConfiguration.Initialize(lConfiFileName);
+  end;
 end;
 
 class procedure TJanuaCoreOS.InternalExec(FileName, parameter: string);

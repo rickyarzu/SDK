@@ -27,7 +27,7 @@ uses
   FireDAC.Comp.DataSet,
   FireDAC.Comp.Client, AdvFontCombo, System.Actions, Vcl.ActnList, Janua.Vcl.EnhCRDBGrid, JvExExtCtrls,
   JvRadioGroup,
-  AdvDBDateTimePicker, AdvStyleIF;
+  AdvDBDateTimePicker, AdvStyleIF, AdvHintInfo;
 
 type
   TfrmVCLCmsEditor = class(TForm)

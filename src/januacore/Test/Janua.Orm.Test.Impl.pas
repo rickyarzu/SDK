@@ -23,8 +23,8 @@ type
 type
   TJanuaTestSubRecordSet = class(TJanuaRecordSet, IJanuaRecordSet, IJanuaTestSubRecordSet)
   private
-    FInteger: Integer;
-    FString: Integer;
+    FInteger: IJanuaField;
+    FString: IJanuaField;
     FSubRecord: IJanuaTestSubRecord;
   private
     function GetInteger: IJanuaField;

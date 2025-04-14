@@ -1,5 +1,4 @@
 /// <summary>
-
 /// Test Model for Interface structure of Janua RecordSets
 /// </summary>
 unit Janua.Orm.Test.Intf;

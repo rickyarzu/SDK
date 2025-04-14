@@ -245,11 +245,11 @@ begin
   try
     FAnagraphRecord := nil;
     FAnagraphDataModule := nil;
-    inherited;
   except
     on e: Exception do
       LogException('Destroy', e, Self);
   end;
+  inherited;
 end;
 
 function TJanuaDBAnagraphModel.FindAddresbyID(aID: Integer): boolean;
@@ -513,7 +513,7 @@ begin
   var
   lID := aAnagraph.AnagraphID.AsInteger;
   var
-  lMID := aAnagraph.MainAddress.ID.AsInteger;
+  lMID := aAnagraph.MainAddress.Id.AsInteger;
 {$ENDIF}
 end;
 

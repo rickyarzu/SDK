@@ -102,7 +102,7 @@ begin
   TJanuaApplication.ServerAddress := TJanuaCoreOS.ReadRegistry(False, 'address', 'postgres',
     TJanuaApplication.ServerAddress);
   TJanuaApplication.ServerSchema := 'public';
-  TJanuaApplication.ServerDatabaseName := TJanuaCoreOS.ReadRegistry(False, 'username', 'postgres', 'ergo');
+  TJanuaApplication.ServerUserName := TJanuaCoreOS.ReadRegistry(False, 'username', 'postgres', 'ergo');
   TJanuaApplication.ServerPassword := TJanuaCoreOS.ReadRegistryCrypt(False, 'password', 'postgres',
     '3rg0m3rc4t0r');
   TJanuaApplication.ServerPort := TJanuaCoreOS.ReadRegistry(False, 'port', 'postgres',

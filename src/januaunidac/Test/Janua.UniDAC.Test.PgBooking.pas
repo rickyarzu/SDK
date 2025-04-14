@@ -284,7 +284,7 @@ begin
         // Nothing
       end);
 
-    Assert.IsTrue(lTest, 'Login Failed');
+    Assert.IsTrue(lTest, 'Login Failed:  ' + lEmail + '/' + lPassword);
 
     FUserSessionVM.LocalAnagraph.Addresses.First;
     LogMessage('Login Service 1 Address: ' + FUserSessionVM.LocalAnagraph.Addresses.FullAddress.AsString);
