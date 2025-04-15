@@ -1,8 +1,7 @@
 inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
-  Height = 575
-  Width = 1039
+  Height = 443
+  Width = 716
   inherited JanuaUniConnection1: TJanuaUniConnection
-    Connected = True
     Left = 96
     EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
   end

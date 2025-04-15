@@ -38,6 +38,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
         end>
       TextSettings.Font.Size = 13.000000000000000000
       TextSettings.FontColor = claTeal
+      TextSettings.Trimming = None
       StyledSettings = [Family, Style]
       IsSelected = True
       ImageIndex = 5
@@ -74,6 +75,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
           CustomIcon = <
             item
             end>
+          TextSettings.Trimming = None
           IsSelected = True
           Size.Width = 11.000000000000000000
           Size.Height = 11.000000000000000000
@@ -124,8 +126,8 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
                 Height = 285
                 PNG = {
                   89504E470D0A1A0A0000000D494844520000021F0000011D0806000000AC7D05
-                  47000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
-                  026F49444154785EEDC13101000000C2A0F54F6D0B2F20000000000000000000
+                  470000000473424954080808087C0864880000026F49444154789CEDC1310100
+                  0000C2A0F54F6D0B2FA000000000000000000000000000000000000000000000
                   0000000000000000000000000000000000000000000000000000000000000000
                   0000000000000000000000000000000000000000000000000000000000000000
                   0000000000000000000000000000000000000000000000000000000000000000
@@ -144,8 +146,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
                   0000000000000000000000000000000000000000000000000000000000000000
                   0000000000000000000000000000000000000000000000000000000000000000
                   0000000000000000000000000000000000000000000000000000000000000000
-                  0000000000000000000000000000808F1A73B000010EEC310F0000000049454E
-                  44AE426082}
+                  00004E0673B00001AFF075CA0000000049454E44AE426082}
                 FileName = 'Z:\januaproject\Resources\Euroflora\landscape.png'
               end>
             Align = Top
@@ -159,6 +160,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
           CustomIcon = <
             item
             end>
+          TextSettings.Trimming = None
           IsSelected = False
           Size.Width = 11.000000000000000000
           Size.Height = 11.000000000000000000
@@ -195,6 +197,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
               StyleLookup = 'backtoolbutton'
               Text = '  '
               TextSettings.FontColor = claDarkgreen
+              TextSettings.Trimming = None
               OnClick = btnFairPlacesBackClick
             end
           end
@@ -257,6 +260,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
           CustomIcon = <
             item
             end>
+          TextSettings.Trimming = None
           IsSelected = False
           Size.Width = 11.000000000000000000
           Size.Height = 11.000000000000000000
@@ -356,6 +360,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
               Size.PlatformDefault = False
               StyleLookup = 'backtoolbutton'
               Text = '  '
+              TextSettings.Trimming = None
               OnClick = SpeedButton4Click
             end
           end
@@ -373,9 +378,10 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
             Size.Width = 378.000000000000000000
             Size.Height = 44.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 36
+            TabOrder = 37
             Text = 'btnCall'
             TextSettings.FontColor = claDarkmagenta
+            TextSettings.Trimming = None
             OnClick = btnCallFairClick
           end
           object btnWebFair: TButton
@@ -391,8 +397,9 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
             Size.Width = 378.000000000000000000
             Size.Height = 44.000000000000000000
             Size.PlatformDefault = False
-            TabOrder = 35
+            TabOrder = 36
             Text = 'Sito Web'
+            TextSettings.Trimming = None
             OnClick = btnWebFairClick
           end
           object pnlMapFairDetail: TPanel
@@ -409,6 +416,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
           CustomIcon = <
             item
             end>
+          TextSettings.Trimming = None
           IsSelected = False
           Size.Width = 11.000000000000000000
           Size.Height = 11.000000000000000000
@@ -443,6 +451,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
               Size.PlatformDefault = False
               StyleLookup = 'backtoolbutton'
               Text = '  '
+              TextSettings.Trimming = None
               OnClick = SpeedButton5Click
             end
           end
@@ -475,6 +484,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
         item
         end>
       TextSettings.FontColor = claTeal
+      TextSettings.Trimming = None
       StyledSettings = [Family, Style]
       IsSelected = False
       ImageIndex = 6
@@ -511,6 +521,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
           CustomIcon = <
             item
             end>
+          TextSettings.Trimming = None
           IsSelected = True
           Size.Width = 11.000000000000000000
           Size.Height = 11.000000000000000000
@@ -558,6 +569,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
           CustomIcon = <
             item
             end>
+          TextSettings.Trimming = None
           IsSelected = False
           Size.Width = 11.000000000000000000
           Size.Height = 11.000000000000000000
@@ -589,7 +601,6 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
               Action = PreviousTabAction1
               Align = Left
               ControlType = Platform
-              Enabled = True
               ImageIndex = -1
               Margins.Left = 5.000000000000000000
               Position.X = 5.000000000000000000
@@ -598,6 +609,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
               Size.PlatformDefault = False
               StyleLookup = 'backtoolbutton'
               Text = '  '
+              TextSettings.Trimming = None
             end
           end
           object pnlAround: TPanel
@@ -664,6 +676,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
           CustomIcon = <
             item
             end>
+          TextSettings.Trimming = None
           IsSelected = False
           Size.Width = 11.000000000000000000
           Size.Height = 11.000000000000000000
@@ -693,7 +706,6 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
               Action = PreviousTabAction1
               Align = Left
               ControlType = Platform
-              Enabled = True
               ImageIndex = -1
               Margins.Left = 5.000000000000000000
               Position.X = 5.000000000000000000
@@ -702,6 +714,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
               Size.PlatformDefault = False
               StyleLookup = 'backtoolbutton'
               Text = '  '
+              TextSettings.Trimming = None
             end
           end
           object btnCall: TButton
@@ -720,6 +733,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
             TabOrder = 5
             Text = 'btnCall'
             TextSettings.FontColor = claDarkmagenta
+            TextSettings.Trimming = None
             OnClick = btnCallClick
           end
           object btnWeb: TButton
@@ -736,6 +750,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
             Size.PlatformDefault = False
             TabOrder = 4
             Text = 'Sito Web'
+            TextSettings.Trimming = None
             OnClick = btnWebClick
           end
           object Rectangle1: TRectangle
@@ -814,6 +829,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
           CustomIcon = <
             item
             end>
+          TextSettings.Trimming = None
           IsSelected = False
           Size.Width = 11.000000000000000000
           Size.Height = 11.000000000000000000
@@ -842,7 +858,6 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
             object SpeedButton2: TSpeedButton
               Action = PreviousTabAction1
               Align = Left
-              Enabled = True
               ImageIndex = -1
               Margins.Left = 5.000000000000000000
               Position.X = 5.000000000000000000
@@ -851,6 +866,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
               Size.PlatformDefault = False
               StyleLookup = 'backtoolbutton'
               Text = '  '
+              TextSettings.Trimming = None
             end
           end
           object WebBrowser1: TWebBrowser
@@ -869,6 +885,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
         end>
       TextSettings.Font.Size = 13.000000000000000000
       TextSettings.FontColor = claTeal
+      TextSettings.Trimming = None
       StyledSettings = [Family, Style]
       IsSelected = False
       ImageIndex = 0
@@ -901,6 +918,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
           CustomIcon = <
             item
             end>
+          TextSettings.Trimming = None
           IsSelected = True
           Size.Width = 11.000000000000000000
           Size.Height = 11.000000000000000000
@@ -996,6 +1014,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
           CustomIcon = <
             item
             end>
+          TextSettings.Trimming = None
           IsSelected = False
           Size.Width = 11.000000000000000000
           Size.Height = 11.000000000000000000
@@ -1030,6 +1049,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
               Size.PlatformDefault = False
               StyleLookup = 'backtoolbutton'
               Text = '  '
+              TextSettings.Trimming = None
               OnClick = btnEventsBackClick
             end
           end
@@ -1049,6 +1069,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
         end>
       TextSettings.Font.Size = 13.000000000000000000
       TextSettings.FontColor = claTeal
+      TextSettings.Trimming = None
       StyledSettings = [Family, Style]
       IsSelected = False
       ImageIndex = 24
@@ -1081,6 +1102,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
           CustomIcon = <
             item
             end>
+          TextSettings.Trimming = None
           IsSelected = True
           Size.Width = 11.000000000000000000
           Size.Height = 11.000000000000000000
@@ -1179,6 +1201,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
           CustomIcon = <
             item
             end>
+          TextSettings.Trimming = None
           IsSelected = False
           Size.Width = 11.000000000000000000
           Size.Height = 11.000000000000000000
@@ -1213,6 +1236,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
               Size.PlatformDefault = False
               StyleLookup = 'backtoolbutton'
               Text = '  '
+              TextSettings.Trimming = None
               OnClick = SpeedButton3Click
             end
           end
@@ -1261,6 +1285,18 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
     Top = 57
     GestureData = <
       item
+        Control = TabControl1Fair
+        Collection = <>
+      end
+      item
+        Control = TabControl3Events
+        Collection = <>
+      end
+      item
+        Control = TabControl4News
+        Collection = <>
+      end
+      item
         Control = TabControlMain
         Collection = <
           item
@@ -1271,10 +1307,6 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
           end>
       end
       item
-        Control = TabControl1Fair
-        Collection = <>
-      end
-      item
         Control = TabControl2Around
         Collection = <
           item
@@ -1283,14 +1315,6 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
           item
             GestureID = sgiRight
           end>
-      end
-      item
-        Control = TabControl3Events
-        Collection = <>
-      end
-      item
-        Control = TabControl4News
-        Collection = <>
       end>
   end
   object ActionList1: TActionList
@@ -1453,8 +1477,8 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
             Height = 499
             PNG = {
               89504E470D0A1A0A0000000D4948445200000200000001F308060000005696A5
-              D0000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
-              03F549444154785EEDC101010000008220FFAF6E484000000000000000000000
+              D00000000473424954080808087C086488000003F549444154789CEDC1010100
+              00008220FFAF6E48400100000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
@@ -1485,8 +1509,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
-              0000000000000000000000000000000000000000F0AC069AD4000132FBE8D500
-              00000049454E44AE426082}
+              00000000000000C0B5019AD40001BD6598080000000049454E44AE426082}
             FileName = '\\vmware-host\Shared Folders\Downloads\media-3.png'
           end>
         Name = 'media-3'
@@ -1501,8 +1524,8 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
             Height = 508
             PNG = {
               89504E470D0A1A0A0000000D4948445200000200000001FC0806000000A7C017
-              05000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
-              040849444154785EEDC13101000000C2A0F54F6D0C1F20000000000000000000
+              050000000473424954080808087C0864880000040749444154789CEDC1310100
+              0000C2A0F54F6D0C1FA000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
@@ -1533,8 +1556,8 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000000000000000000
-              00000000000000B8A801E2DD000104FF62850000000049454E44AE426082}
+              0000000000000000000000000000000000000000000000000000E063E2DD0001
+              9F20C68B0000000049454E44AE426082}
             FileName = '\\vmware-host\Shared Folders\Downloads\media-10.png'
           end>
         Name = 'media-10'
@@ -1549,8 +1572,8 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
             Height = 499
             PNG = {
               89504E470D0A1A0A0000000D4948445200000200000001F308060000005696A5
-              D0000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
-              03F549444154785EEDC101010000008220FFAF6E484000000000000000000000
+              D00000000473424954080808087C086488000003F549444154789CEDC1010100
+              00008220FFAF6E48400100000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
@@ -1581,8 +1604,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
-              0000000000000000000000000000000000000000F0AC069AD4000132FBE8D500
-              00000049454E44AE426082}
+              00000000000000C0B5019AD40001BD6598080000000049454E44AE426082}
             FileName = '\\vmware-host\Shared Folders\Downloads\media.png'
           end>
         Name = 'media'
@@ -1597,8 +1619,8 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
             Height = 508
             PNG = {
               89504E470D0A1A0A0000000D4948445200000200000001FC0806000000A7C017
-              05000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
-              040849444154785EEDC13101000000C2A0F54F6D0C1F20000000000000000000
+              050000000473424954080808087C0864880000040749444154789CEDC1310100
+              0000C2A0F54F6D0C1FA000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
@@ -1629,8 +1651,8 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000000000000000000
-              00000000000000B8A801E2DD000104FF62850000000049454E44AE426082}
+              0000000000000000000000000000000000000000000000000000E063E2DD0001
+              9F20C68B0000000049454E44AE426082}
             FileName = '\\vmware-host\Shared Folders\Downloads\media-11.png'
           end>
         Name = 'media-11'
@@ -1645,8 +1667,8 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
             Height = 505
             PNG = {
               89504E470D0A1A0A0000000D4948445200000200000001F90806000000F70D86
-              B6000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
-              040249444154785EEDC13101000000C2A0F54F6D0D0F20000000000000000000
+              B60000000473424954080808087C0864880000040249444154789CEDC1010D00
+              0000C2A0F74F6D0E37A000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
@@ -1677,8 +1699,8 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
-              0000000000000000000000000000000000000000000000000000000000000000
-              00F85703CADA00016B2C08FC0000000049454E44AE426082}
+              0000000000000000000000000000000000000000E0C000CADA00013AAAA2A800
+              00000049454E44AE426082}
             FileName = '\\vmware-host\Shared Folders\Downloads\camera.png'
           end>
         Name = 'camera'
@@ -1693,8 +1715,8 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
             Height = 499
             PNG = {
               89504E470D0A1A0A0000000D4948445200000200000001F308060000005696A5
-              D0000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
-              03F549444154785EEDC101010000008220FFAF6E484000000000000000000000
+              D00000000473424954080808087C086488000003F549444154789CEDC1010100
+              00008220FFAF6E48400100000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
@@ -1725,8 +1747,7 @@ object frmEuroFloraAppMain: TfrmEuroFloraAppMain
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
               0000000000000000000000000000000000000000000000000000000000000000
-              0000000000000000000000000000000000000000F0AC069AD4000132FBE8D500
-              00000049454E44AE426082}
+              00000000000000C0B5019AD40001BD6598080000000049454E44AE426082}
             FileName = '\\vmware-host\Shared Folders\Downloads\media-2.png'
           end>
         Name = 'media-2'

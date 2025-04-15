@@ -3,6 +3,7 @@ inherited dmPgStorage: TdmPgStorage
   OnDestroy = DataModuleDestroy
   Height = 220
   Width = 214
+  PixelsPerInch = 120
   object PgErgoConnection: TJanuaUniConnection
     DataTypeMap = <
       item
@@ -14,7 +15,7 @@ inherited dmPgStorage: TdmPgStorage
         FieldType = ftDateTime
       end>
     ProviderName = 'PostgreSQL'
-    Port = 5433
+    Port = 5432
     Database = 'ergomercator'
     SpecificOptions.Strings = (
       'PostgreSQL.Schema=public'
@@ -25,7 +26,7 @@ inherited dmPgStorage: TdmPgStorage
     PoolingOptions.ConnectionLifetime = 300000
     Pooling = True
     Username = 'ergo'
-    Server = '192.168.247.1'
+    Server = 'pg.januaservers.com'
     LoginPrompt = False
     BeforeConnect = PgErgoConnectionBeforeConnect
     OnError = PgErgoConnectionError

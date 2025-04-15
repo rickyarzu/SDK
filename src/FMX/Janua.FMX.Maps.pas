@@ -17,7 +17,7 @@ uses
   // FGX    // libreria componenti Firemonkey di
   FMX.Maps, FMX.TMSWebGMapsCommon,
   // Tms
-  FMX.TMSWebGMapsWebBrowser, FMX.TMSWebGMaps, FMX.TMSWebOSMapsWebBrowser, FMX.TMSWebOSMaps, FMX.TMSButton,
+  FMX.TMSWebGMapsWebBrowser, FMX.TMSWebGMaps, FMX.TMSButton,
   // FMX
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls, FMX.Objects, FMX.Edit,
   FMX.Controls.Presentation, FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base,

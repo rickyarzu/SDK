@@ -20,17 +20,6 @@ uses
   // Forms and Libs
   udmPgStorage, Janua.Unidac.Connection, DAScript, UniScript;
 
-(*
-  //
-  // Januaproject
-  // Types/Intf
-
-  Janua.Cloud.Mail.Impl,
-  // Impl
-  Janua.Unidac.Connection, Janua.Vcl.Interposers, Janua.TMS.Interposers,
-  Janua.Vcl.Cloud.frameMailMessageConfig,  Janua.Vcl.Cloud.frameSMSMessageConfig,
-  Janua.Vcl.Cloud.FrameLandingMessageConfig, Janua.Vcl.Cloud.frameSMSSenderConfig;
-*)
 
 type
   /// <summary>Car Service Booking DataModule. </summary>

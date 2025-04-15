@@ -202,7 +202,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 11
       GroupName = '1'
-      Font.Name = 'Segoe UI'
+      Text = 'TMSFNCRadioButton'
     end
     object ckbRitir: TTMSFNCRadioButton
       Color = claNull
@@ -214,7 +214,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 10
       GroupName = '1'
-      Font.Name = 'Segoe UI'
+      Text = 'TMSFNCRadioButton'
     end
     object ckbSmalt: TTMSFNCRadioButton
       Color = claNull
@@ -226,7 +226,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 9
       GroupName = '1'
-      Font.Name = 'Segoe UI'
+      Text = 'TMSFNCRadioButton'
     end
     object ckbSmaltim: TTMSFNCRadioButton
       Color = claNull
@@ -238,7 +238,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 8
       GroupName = '1'
-      Font.Name = 'Segoe UI'
+      Text = 'TMSFNCRadioButton'
     end
     object ckbNonEseg: TTMSFNCRadioButton
       Color = claNull
@@ -250,7 +250,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 7
       GroupName = '1'
-      Font.Name = 'Segoe UI'
+      Text = 'TMSFNCRadioButton'
     end
   end
   object Rectangle4: TRectangle

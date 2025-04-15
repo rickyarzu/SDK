@@ -1,0 +1,2292 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{0F44533F-00E8-4113-9184-347F109DE9B9}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\Components\pkg120\Ean.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\gtRtl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\gtCompression.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\gtCrypt.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\gtFilters.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\gtFont.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\gtDocEng.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\DCLgtAdvGridExp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\DCLgtDocProd.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\DCLgtQRExp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\TMSWebGMapsPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\TMSWebGMapsPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\TMSWebOSMapsPkg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\OmniThreadLibraryRuntime.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\OmniThreadLibraryDesigntime.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\JOSE.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\TRCGooglePlaces_r.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\TRCGooglePlaces_d.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\VisualStyles.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\ZipMasterR.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\FIBPlus.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\FIBPlusEditors.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreThirdParty.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\JanuaRestRequestLib.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCore.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaMVVM.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaCoreComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUnidacComponentsD.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUnidac.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUnidacComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaRestWeb.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaThirdPartyVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaTmsControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaFMXControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLMVVM.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUniGUI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Janua.UNI.TMLogistic.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\ZLibrariesWin.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Components\pkg120\ZComponentsVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\JanuaCoreUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Testing\JanuaUniDACUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Ean">
+        <MSBuild Projects="..\..\Components\pkg120\Ean.dproj"/>
+    </Target>
+    <Target Name="Ean:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\Ean.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Ean:Make">
+        <MSBuild Projects="..\..\Components\pkg120\Ean.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtRtl">
+        <MSBuild Projects="..\..\Components\pkg120\gtRtl.dproj"/>
+    </Target>
+    <Target Name="gtRtl:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\gtRtl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtRtl:Make">
+        <MSBuild Projects="..\..\Components\pkg120\gtRtl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtCompression">
+        <MSBuild Projects="..\..\Components\pkg120\gtCompression.dproj"/>
+    </Target>
+    <Target Name="gtCompression:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\gtCompression.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtCompression:Make">
+        <MSBuild Projects="..\..\Components\pkg120\gtCompression.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtCrypt">
+        <MSBuild Projects="..\..\Components\pkg120\gtCrypt.dproj"/>
+    </Target>
+    <Target Name="gtCrypt:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\gtCrypt.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtCrypt:Make">
+        <MSBuild Projects="..\..\Components\pkg120\gtCrypt.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtFilters">
+        <MSBuild Projects="..\..\Components\pkg120\gtFilters.dproj"/>
+    </Target>
+    <Target Name="gtFilters:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\gtFilters.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtFilters:Make">
+        <MSBuild Projects="..\..\Components\pkg120\gtFilters.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtFont">
+        <MSBuild Projects="..\..\Components\pkg120\gtFont.dproj"/>
+    </Target>
+    <Target Name="gtFont:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\gtFont.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtFont:Make">
+        <MSBuild Projects="..\..\Components\pkg120\gtFont.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="gtDocEng">
+        <MSBuild Projects="..\..\Components\pkg120\gtDocEng.dproj"/>
+    </Target>
+    <Target Name="gtDocEng:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\gtDocEng.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="gtDocEng:Make">
+        <MSBuild Projects="..\..\Components\pkg120\gtDocEng.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtAdvGridExp">
+        <MSBuild Projects="..\..\Components\pkg120\DCLgtAdvGridExp.dproj"/>
+    </Target>
+    <Target Name="DCLgtAdvGridExp:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\DCLgtAdvGridExp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtAdvGridExp:Make">
+        <MSBuild Projects="..\..\Components\pkg120\DCLgtAdvGridExp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtDocEng">
+        <MSBuild Projects="..\..\Components\pkg120\DCLgtDocEng.dproj"/>
+    </Target>
+    <Target Name="DCLgtDocEng:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\DCLgtDocEng.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtDocEng:Make">
+        <MSBuild Projects="..\..\Components\pkg120\DCLgtDocEng.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtDocProd">
+        <MSBuild Projects="..\..\Components\pkg120\DCLgtDocProd.dproj"/>
+    </Target>
+    <Target Name="DCLgtDocProd:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\DCLgtDocProd.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtDocProd:Make">
+        <MSBuild Projects="..\..\Components\pkg120\DCLgtDocProd.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCLgtQRExp">
+        <MSBuild Projects="..\..\Components\pkg120\DCLgtQRExp.dproj"/>
+    </Target>
+    <Target Name="DCLgtQRExp:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\DCLgtQRExp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCLgtQRExp:Make">
+        <MSBuild Projects="..\..\Components\pkg120\DCLgtQRExp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkg">
+        <MSBuild Projects="..\..\Components\pkg120\TMSWebGMapsPkg.dproj"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\TMSWebGMapsPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg120\TMSWebGMapsPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkgDE">
+        <MSBuild Projects="..\..\Components\pkg120\TMSWebGMapsPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\TMSWebGMapsPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSWebGMapsPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg120\TMSWebGMapsPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSWebOSMapsPkg">
+        <MSBuild Projects="..\..\Components\pkg120\TMSWebOSMapsPkg.dproj"/>
+    </Target>
+    <Target Name="TMSWebOSMapsPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\TMSWebOSMapsPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSWebOSMapsPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg120\TMSWebOSMapsPkg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TMSWebOSMapsPkgDE">
+        <MSBuild Projects="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj"/>
+    </Target>
+    <Target Name="TMSWebOSMapsPkgDE:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSWebOSMapsPkgDE:Make">
+        <MSBuild Projects="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OmniThreadLibraryRuntime">
+        <MSBuild Projects="..\..\Components\pkg120\OmniThreadLibraryRuntime.dproj"/>
+    </Target>
+    <Target Name="OmniThreadLibraryRuntime:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\OmniThreadLibraryRuntime.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OmniThreadLibraryRuntime:Make">
+        <MSBuild Projects="..\..\Components\pkg120\OmniThreadLibraryRuntime.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OmniThreadLibraryDesigntime">
+        <MSBuild Projects="..\..\Components\pkg120\OmniThreadLibraryDesigntime.dproj"/>
+    </Target>
+    <Target Name="OmniThreadLibraryDesigntime:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\OmniThreadLibraryDesigntime.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OmniThreadLibraryDesigntime:Make">
+        <MSBuild Projects="..\..\Components\pkg120\OmniThreadLibraryDesigntime.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JOSE">
+        <MSBuild Projects="..\..\Components\pkg120\JOSE.dproj"/>
+    </Target>
+    <Target Name="JOSE:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\JOSE.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JOSE:Make">
+        <MSBuild Projects="..\..\Components\pkg120\JOSE.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TRCGooglePlaces_r">
+        <MSBuild Projects="..\..\Components\pkg120\TRCGooglePlaces_r.dproj"/>
+    </Target>
+    <Target Name="TRCGooglePlaces_r:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\TRCGooglePlaces_r.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TRCGooglePlaces_r:Make">
+        <MSBuild Projects="..\..\Components\pkg120\TRCGooglePlaces_r.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TRCGooglePlaces_d">
+        <MSBuild Projects="..\..\Components\pkg120\TRCGooglePlaces_d.dproj"/>
+    </Target>
+    <Target Name="TRCGooglePlaces_d:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\TRCGooglePlaces_d.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TRCGooglePlaces_d:Make">
+        <MSBuild Projects="..\..\Components\pkg120\TRCGooglePlaces_d.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VCLThemeSelector">
+        <MSBuild Projects="..\..\Components\pkg120\VCLThemeSelector.dproj"/>
+    </Target>
+    <Target Name="VCLThemeSelector:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\VCLThemeSelector.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLThemeSelector:Make">
+        <MSBuild Projects="..\..\Components\pkg120\VCLThemeSelector.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="VisualStyles">
+        <MSBuild Projects="..\..\Components\pkg120\VisualStyles.dproj"/>
+    </Target>
+    <Target Name="VisualStyles:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\VisualStyles.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VisualStyles:Make">
+        <MSBuild Projects="..\..\Components\pkg120\VisualStyles.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PlanAddons">
+        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj"/>
+    </Target>
+    <Target Name="PlanAddons:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PlanAddons:Make">
+        <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ZipMasterR">
+        <MSBuild Projects="..\..\Components\pkg120\ZipMasterR.dproj"/>
+    </Target>
+    <Target Name="ZipMasterR:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\ZipMasterR.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ZipMasterR:Make">
+        <MSBuild Projects="..\..\Components\pkg120\ZipMasterR.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FIBPlus">
+        <MSBuild Projects="..\..\Components\pkg120\FIBPlus.dproj"/>
+    </Target>
+    <Target Name="FIBPlus:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\FIBPlus.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FIBPlus:Make">
+        <MSBuild Projects="..\..\Components\pkg120\FIBPlus.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FIBPlusEditors">
+        <MSBuild Projects="..\..\Components\pkg120\FIBPlusEditors.dproj"/>
+    </Target>
+    <Target Name="FIBPlusEditors:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\FIBPlusEditors.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FIBPlusEditors:Make">
+        <MSBuild Projects="..\..\Components\pkg120\FIBPlusEditors.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreThirdParty">
+        <MSBuild Projects="JanuaCoreThirdParty.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreThirdParty:Clean">
+        <MSBuild Projects="JanuaCoreThirdParty.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreThirdParty:Make">
+        <MSBuild Projects="JanuaCoreThirdParty.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaRestRequestLib">
+        <MSBuild Projects="..\..\Components\pkg120\JanuaRestRequestLib.dproj"/>
+    </Target>
+    <Target Name="JanuaRestRequestLib:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\JanuaRestRequestLib.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaRestRequestLib:Make">
+        <MSBuild Projects="..\..\Components\pkg120\JanuaRestRequestLib.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCore">
+        <MSBuild Projects="JanuaCore.dproj"/>
+    </Target>
+    <Target Name="JanuaCore:Clean">
+        <MSBuild Projects="JanuaCore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCore:Make">
+        <MSBuild Projects="JanuaCore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaMVVM">
+        <MSBuild Projects="JanuaMVVM.dproj"/>
+    </Target>
+    <Target Name="JanuaMVVM:Clean">
+        <MSBuild Projects="JanuaMVVM.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaMVVM:Make">
+        <MSBuild Projects="JanuaMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreComponents">
+        <MSBuild Projects="JanuaCoreComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Clean">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Make">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidacComponentsD">
+        <MSBuild Projects="JanuaUnidacComponentsD.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidacComponentsD:Clean">
+        <MSBuild Projects="JanuaUnidacComponentsD.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidacComponentsD:Make">
+        <MSBuild Projects="JanuaUnidacComponentsD.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidac">
+        <MSBuild Projects="JanuaUnidac.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidac:Clean">
+        <MSBuild Projects="JanuaUnidac.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidac:Make">
+        <MSBuild Projects="JanuaUnidac.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents">
+        <MSBuild Projects="JanuaUnidacComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents:Clean">
+        <MSBuild Projects="JanuaUnidacComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidacComponents:Make">
+        <MSBuild Projects="JanuaUnidacComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaRestWeb">
+        <MSBuild Projects="JanuaRestWeb.dproj"/>
+    </Target>
+    <Target Name="JanuaRestWeb:Clean">
+        <MSBuild Projects="JanuaRestWeb.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaRestWeb:Make">
+        <MSBuild Projects="JanuaRestWeb.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaThirdPartyVCL">
+        <MSBuild Projects="JanuaThirdPartyVCL.dproj"/>
+    </Target>
+    <Target Name="JanuaThirdPartyVCL:Clean">
+        <MSBuild Projects="JanuaThirdPartyVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaThirdPartyVCL:Make">
+        <MSBuild Projects="JanuaThirdPartyVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControls">
+        <MSBuild Projects="JanuaVCLControls.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Clean">
+        <MSBuild Projects="JanuaVCLControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Make">
+        <MSBuild Projects="JanuaVCLControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLComponents">
+        <MSBuild Projects="JanuaVCLComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLComponents:Clean">
+        <MSBuild Projects="JanuaVCLComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLComponents:Make">
+        <MSBuild Projects="JanuaVCLComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaTmsControls">
+        <MSBuild Projects="JanuaTmsControls.dproj"/>
+    </Target>
+    <Target Name="JanuaTmsControls:Clean">
+        <MSBuild Projects="JanuaTmsControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaTmsControls:Make">
+        <MSBuild Projects="JanuaTmsControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControls">
+        <MSBuild Projects="JanuaFMXControls.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Clean">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Make">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM">
+        <MSBuild Projects="JanuaVCLMVVM.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM:Clean">
+        <MSBuild Projects="JanuaVCLMVVM.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLMVVM:Make">
+        <MSBuild Projects="JanuaVCLMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUniGUI">
+        <MSBuild Projects="JanuaUniGUI.dproj"/>
+    </Target>
+    <Target Name="JanuaUniGUI:Clean">
+        <MSBuild Projects="JanuaUniGUI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUniGUI:Make">
+        <MSBuild Projects="JanuaUniGUI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Janua_UNI_TMLogistic">
+        <MSBuild Projects="Janua.UNI.TMLogistic.dproj"/>
+    </Target>
+    <Target Name="Janua_UNI_TMLogistic:Clean">
+        <MSBuild Projects="Janua.UNI.TMLogistic.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Janua_UNI_TMLogistic:Make">
+        <MSBuild Projects="Janua.UNI.TMLogistic.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ZLibrariesWin">
+        <MSBuild Projects="..\..\Components\pkg120\ZLibrariesWin.dproj"/>
+    </Target>
+    <Target Name="ZLibrariesWin:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\ZLibrariesWin.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ZLibrariesWin:Make">
+        <MSBuild Projects="..\..\Components\pkg120\ZLibrariesWin.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ZComponentsVCL">
+        <MSBuild Projects="..\..\Components\pkg120\ZComponentsVCL.dproj"/>
+    </Target>
+    <Target Name="ZComponentsVCL:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\ZComponentsVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ZComponentsVCL:Make">
+        <MSBuild Projects="..\..\Components\pkg120\ZComponentsVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting">
+        <MSBuild Projects="Testing\JanuaCoreUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Clean">
+        <MSBuild Projects="Testing\JanuaCoreUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Make">
+        <MSBuild Projects="Testing\JanuaCoreUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUniDACUnitTesting">
+        <MSBuild Projects="Testing\JanuaUniDACUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaUniDACUnitTesting:Clean">
+        <MSBuild Projects="Testing\JanuaUniDACUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUniDACUnitTesting:Make">
+        <MSBuild Projects="Testing\JanuaUniDACUnitTesting.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Ean;gtRtl;gtCompression;gtCrypt;gtFilters;gtFont;gtDocEng;DCLgtAdvGridExp;DCLgtDocEng;DCLgtDocProd;DCLgtQRExp;TMSWebGMapsPkg;TMSWebGMapsPkgDE;TMSWebOSMapsPkg;TMSWebOSMapsPkgDE;OmniThreadLibraryRuntime;OmniThreadLibraryDesigntime;JOSE;TRCGooglePlaces_r;TRCGooglePlaces_d;VCLThemeSelector;VisualStyles;PlanAddons;ZipMasterR;FIBPlus;FIBPlusEditors;JanuaCoreThirdParty;JanuaRestRequestLib;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaRestWeb;JanuaThirdPartyVCL;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaUniGUI;Janua_UNI_TMLogistic;ZLibrariesWin;ZComponentsVCL;JanuaCoreUnitTesting;JanuaUniDACUnitTesting"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Ean:Clean;gtRtl:Clean;gtCompression:Clean;gtCrypt:Clean;gtFilters:Clean;gtFont:Clean;gtDocEng:Clean;DCLgtAdvGridExp:Clean;DCLgtDocEng:Clean;DCLgtDocProd:Clean;DCLgtQRExp:Clean;TMSWebGMapsPkg:Clean;TMSWebGMapsPkgDE:Clean;TMSWebOSMapsPkg:Clean;TMSWebOSMapsPkgDE:Clean;OmniThreadLibraryRuntime:Clean;OmniThreadLibraryDesigntime:Clean;JOSE:Clean;TRCGooglePlaces_r:Clean;TRCGooglePlaces_d:Clean;VCLThemeSelector:Clean;VisualStyles:Clean;PlanAddons:Clean;ZipMasterR:Clean;FIBPlus:Clean;FIBPlusEditors:Clean;JanuaCoreThirdParty:Clean;JanuaRestRequestLib:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaRestWeb:Clean;JanuaThirdPartyVCL:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaUniGUI:Clean;Janua_UNI_TMLogistic:Clean;ZLibrariesWin:Clean;ZComponentsVCL:Clean;JanuaCoreUnitTesting:Clean;JanuaUniDACUnitTesting:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Ean:Make;gtRtl:Make;gtCompression:Make;gtCrypt:Make;gtFilters:Make;gtFont:Make;gtDocEng:Make;DCLgtAdvGridExp:Make;DCLgtDocEng:Make;DCLgtDocProd:Make;DCLgtQRExp:Make;TMSWebGMapsPkg:Make;TMSWebGMapsPkgDE:Make;TMSWebOSMapsPkg:Make;TMSWebOSMapsPkgDE:Make;OmniThreadLibraryRuntime:Make;OmniThreadLibraryDesigntime:Make;JOSE:Make;TRCGooglePlaces_r:Make;TRCGooglePlaces_d:Make;VCLThemeSelector:Make;VisualStyles:Make;PlanAddons:Make;ZipMasterR:Make;FIBPlus:Make;FIBPlusEditors:Make;JanuaCoreThirdParty:Make;JanuaRestRequestLib:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaRestWeb:Make;JanuaThirdPartyVCL:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaUniGUI:Make;Janua_UNI_TMLogistic:Make;ZLibrariesWin:Make;ZComponentsVCL:Make;JanuaCoreUnitTesting:Make;JanuaUniDACUnitTesting:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Build All iOS'">
+        <BuildGroupProject Include="..\..\Components\pkg120\FIBPlus.dproj">
+            <ProjectGuid>{8D7CFC52-3B57-4E5C-9A5A-E9B7724FB0BA}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\ZComponentsVCL.dproj">
+            <ProjectGuid>{059E1D50-2C91-4F41-8A58-A7AC2388401A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OmniThreadLibraryRuntime.dproj">
+            <ProjectGuid>{2FCB214C-2EBE-4450-BF73-C4913A71810E}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>iOSDevice64;iOSSimARM64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>iOSDevice64;iOSSimARM64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\ZipMasterR.dproj">
+            <ProjectGuid>{96234B86-B398-4815-9772-3C0238E8651E}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaRestWeb.dproj">
+            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TRCGooglePlaces_r.dproj">
+            <ProjectGuid>{81BB3BDA-CC47-4521-B502-AA066872C53B}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
+            <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>iOSDevice64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtAdvGridExp.dproj">
+            <ProjectGuid>{ED12E885-FDD5-40D4-B85C-C68F8F98DEE4}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtDocEng.dproj">
+            <ProjectGuid>{A5B7CEEF-90EE-471F-BD80-CE093CBC040A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Ean.dproj">
+            <ProjectGuid>{7719EBE9-0F90-4934-871D-532DA7D4C50C}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\FIBPlusEditors.dproj">
+            <ProjectGuid>{FF48EAB1-CE8D-45FF-9B6B-3D949B000333}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtRtl.dproj">
+            <ProjectGuid>{09E69B44-CBD4-4205-BFA5-4941FE3E862C}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>iOSDevice64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
+            <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OmniThreadLibraryDesigntime.dproj">
+            <ProjectGuid>{9C6E3253-6D30-468F-9370-7C643D6F9D1E}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TRCGooglePlaces_d.dproj">
+            <ProjectGuid>{D5B03ADA-8055-487B-95D2-BDE1DECF1E41}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>iOSDevice64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkg.dproj">
+            <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtQRExp.dproj">
+            <ProjectGuid>{1AE7DBAA-FEC1-43C9-AFC5-7FE101FE1CE1}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkg.dproj">
+            <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VisualStyles.dproj">
+            <ProjectGuid>{8FE9B45A-7CA0-49F7-9DC7-19E3C05754F3}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaThirdPartyVCL.dproj">
+            <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>iOSDevice64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\ZLibrariesWin.dproj">
+            <ProjectGuid>{066A5CAF-AF5A-4D52-8697-77CA5F2415D8}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
+            <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocProd.dproj">
+            <ProjectGuid>{7DD5B5E4-AC8E-4849-B177-BC61A6DD0F67}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtCompression.dproj">
+            <ProjectGuid>{5D1203B1-5555-4370-92C8-527C8E1BCF74}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>iOSDevice64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>iOSDevice64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Testing\JanuaUniDACUnitTesting.dproj">
+            <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkgDE.dproj">
+            <ProjectGuid>{610403E9-CED5-41C7-85AB-DE084C7772E3}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>iOSDevice64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtFilters.dproj">
+            <ProjectGuid>{EAC3AF48-3724-4F63-AEA4-36518C58E736}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Testing\JanuaCoreUnitTesting.dproj">
+            <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
+            <Configurations>Test</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtFont.dproj">
+            <ProjectGuid>{1169F6B9-70D9-4453-9CC4-4BB390A8C8BB}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\JanuaRestRequestLib.dproj">
+            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>iOSDevice64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
+            <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>iOSDevice64;iOSSimARM64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtCrypt.dproj">
+            <ProjectGuid>{55C51D8E-35FC-4EE3-9F7E-5D5336A4F34F}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\JOSE.dproj">
+            <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>iOSDevice64;iOSSimARM64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='Build All MacOS'">
+        <BuildGroupProject Include="..\..\Components\pkg120\FIBPlus.dproj">
+            <ProjectGuid>{8D7CFC52-3B57-4E5C-9A5A-E9B7724FB0BA}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\ZComponentsVCL.dproj">
+            <ProjectGuid>{059E1D50-2C91-4F41-8A58-A7AC2388401A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OmniThreadLibraryRuntime.dproj">
+            <ProjectGuid>{2FCB214C-2EBE-4450-BF73-C4913A71810E}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\ZipMasterR.dproj">
+            <ProjectGuid>{96234B86-B398-4815-9772-3C0238E8651E}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaRestWeb.dproj">
+            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TRCGooglePlaces_r.dproj">
+            <ProjectGuid>{81BB3BDA-CC47-4521-B502-AA066872C53B}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
+            <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtAdvGridExp.dproj">
+            <ProjectGuid>{ED12E885-FDD5-40D4-B85C-C68F8F98DEE4}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtDocEng.dproj">
+            <ProjectGuid>{A5B7CEEF-90EE-471F-BD80-CE093CBC040A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Ean.dproj">
+            <ProjectGuid>{7719EBE9-0F90-4934-871D-532DA7D4C50C}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\FIBPlusEditors.dproj">
+            <ProjectGuid>{FF48EAB1-CE8D-45FF-9B6B-3D949B000333}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtRtl.dproj">
+            <ProjectGuid>{09E69B44-CBD4-4205-BFA5-4941FE3E862C}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
+            <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OmniThreadLibraryDesigntime.dproj">
+            <ProjectGuid>{9C6E3253-6D30-468F-9370-7C643D6F9D1E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TRCGooglePlaces_d.dproj">
+            <ProjectGuid>{D5B03ADA-8055-487B-95D2-BDE1DECF1E41}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkg.dproj">
+            <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtQRExp.dproj">
+            <ProjectGuid>{1AE7DBAA-FEC1-43C9-AFC5-7FE101FE1CE1}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkg.dproj">
+            <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VisualStyles.dproj">
+            <ProjectGuid>{8FE9B45A-7CA0-49F7-9DC7-19E3C05754F3}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaThirdPartyVCL.dproj">
+            <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\ZLibrariesWin.dproj">
+            <ProjectGuid>{066A5CAF-AF5A-4D52-8697-77CA5F2415D8}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
+            <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocProd.dproj">
+            <ProjectGuid>{7DD5B5E4-AC8E-4849-B177-BC61A6DD0F67}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtCompression.dproj">
+            <ProjectGuid>{5D1203B1-5555-4370-92C8-527C8E1BCF74}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Testing\JanuaUniDACUnitTesting.dproj">
+            <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkgDE.dproj">
+            <ProjectGuid>{610403E9-CED5-41C7-85AB-DE084C7772E3}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtFilters.dproj">
+            <ProjectGuid>{EAC3AF48-3724-4F63-AEA4-36518C58E736}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Testing\JanuaCoreUnitTesting.dproj">
+            <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
+            <Configurations>Test</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtFont.dproj">
+            <ProjectGuid>{1169F6B9-70D9-4453-9CC4-4BB390A8C8BB}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\JanuaRestRequestLib.dproj">
+            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
+            <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtCrypt.dproj">
+            <ProjectGuid>{55C51D8E-35FC-4EE3-9F7E-5D5336A4F34F}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\JOSE.dproj">
+            <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='Build All Android'">
+        <BuildGroupProject Include="..\..\Components\pkg120\FIBPlus.dproj">
+            <ProjectGuid>{8D7CFC52-3B57-4E5C-9A5A-E9B7724FB0BA}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\ZComponentsVCL.dproj">
+            <ProjectGuid>{059E1D50-2C91-4F41-8A58-A7AC2388401A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OmniThreadLibraryRuntime.dproj">
+            <ProjectGuid>{2FCB214C-2EBE-4450-BF73-C4913A71810E}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\ZipMasterR.dproj">
+            <ProjectGuid>{96234B86-B398-4815-9772-3C0238E8651E}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaRestWeb.dproj">
+            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TRCGooglePlaces_r.dproj">
+            <ProjectGuid>{81BB3BDA-CC47-4521-B502-AA066872C53B}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
+            <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtAdvGridExp.dproj">
+            <ProjectGuid>{ED12E885-FDD5-40D4-B85C-C68F8F98DEE4}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtDocEng.dproj">
+            <ProjectGuid>{A5B7CEEF-90EE-471F-BD80-CE093CBC040A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Ean.dproj">
+            <ProjectGuid>{7719EBE9-0F90-4934-871D-532DA7D4C50C}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\FIBPlusEditors.dproj">
+            <ProjectGuid>{FF48EAB1-CE8D-45FF-9B6B-3D949B000333}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtRtl.dproj">
+            <ProjectGuid>{09E69B44-CBD4-4205-BFA5-4941FE3E862C}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
+            <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OmniThreadLibraryDesigntime.dproj">
+            <ProjectGuid>{9C6E3253-6D30-468F-9370-7C643D6F9D1E}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TRCGooglePlaces_d.dproj">
+            <ProjectGuid>{D5B03ADA-8055-487B-95D2-BDE1DECF1E41}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkg.dproj">
+            <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtQRExp.dproj">
+            <ProjectGuid>{1AE7DBAA-FEC1-43C9-AFC5-7FE101FE1CE1}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkg.dproj">
+            <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VisualStyles.dproj">
+            <ProjectGuid>{8FE9B45A-7CA0-49F7-9DC7-19E3C05754F3}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaThirdPartyVCL.dproj">
+            <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\ZLibrariesWin.dproj">
+            <ProjectGuid>{066A5CAF-AF5A-4D52-8697-77CA5F2415D8}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
+            <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocProd.dproj">
+            <ProjectGuid>{7DD5B5E4-AC8E-4849-B177-BC61A6DD0F67}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtCompression.dproj">
+            <ProjectGuid>{5D1203B1-5555-4370-92C8-527C8E1BCF74}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Testing\JanuaUniDACUnitTesting.dproj">
+            <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkgDE.dproj">
+            <ProjectGuid>{610403E9-CED5-41C7-85AB-DE084C7772E3}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtFilters.dproj">
+            <ProjectGuid>{EAC3AF48-3724-4F63-AEA4-36518C58E736}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Testing\JanuaCoreUnitTesting.dproj">
+            <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
+            <Configurations>Test</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtFont.dproj">
+            <ProjectGuid>{1169F6B9-70D9-4453-9CC4-4BB390A8C8BB}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\JanuaRestRequestLib.dproj">
+            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
+            <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtCrypt.dproj">
+            <ProjectGuid>{55C51D8E-35FC-4EE3-9F7E-5D5336A4F34F}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\JOSE.dproj">
+            <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Android64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='Build All Win'">
+        <BuildGroupProject Include="..\..\Components\pkg120\FIBPlus.dproj">
+            <ProjectGuid>{8D7CFC52-3B57-4E5C-9A5A-E9B7724FB0BA}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\ZComponentsVCL.dproj">
+            <ProjectGuid>{059E1D50-2C91-4F41-8A58-A7AC2388401A}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OmniThreadLibraryRuntime.dproj">
+            <ProjectGuid>{2FCB214C-2EBE-4450-BF73-C4913A71810E}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\ZipMasterR.dproj">
+            <ProjectGuid>{96234B86-B398-4815-9772-3C0238E8651E}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaRestWeb.dproj">
+            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TRCGooglePlaces_r.dproj">
+            <ProjectGuid>{81BB3BDA-CC47-4521-B502-AA066872C53B}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
+            <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtAdvGridExp.dproj">
+            <ProjectGuid>{ED12E885-FDD5-40D4-B85C-C68F8F98DEE4}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtDocEng.dproj">
+            <ProjectGuid>{A5B7CEEF-90EE-471F-BD80-CE093CBC040A}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Ean.dproj">
+            <ProjectGuid>{7719EBE9-0F90-4934-871D-532DA7D4C50C}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\FIBPlusEditors.dproj">
+            <ProjectGuid>{FF48EAB1-CE8D-45FF-9B6B-3D949B000333}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtRtl.dproj">
+            <ProjectGuid>{09E69B44-CBD4-4205-BFA5-4941FE3E862C}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
+            <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OmniThreadLibraryDesigntime.dproj">
+            <ProjectGuid>{9C6E3253-6D30-468F-9370-7C643D6F9D1E}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TRCGooglePlaces_d.dproj">
+            <ProjectGuid>{D5B03ADA-8055-487B-95D2-BDE1DECF1E41}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkg.dproj">
+            <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtQRExp.dproj">
+            <ProjectGuid>{1AE7DBAA-FEC1-43C9-AFC5-7FE101FE1CE1}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkg.dproj">
+            <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VisualStyles.dproj">
+            <ProjectGuid>{8FE9B45A-7CA0-49F7-9DC7-19E3C05754F3}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaThirdPartyVCL.dproj">
+            <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\ZLibrariesWin.dproj">
+            <ProjectGuid>{066A5CAF-AF5A-4D52-8697-77CA5F2415D8}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
+            <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocProd.dproj">
+            <ProjectGuid>{7DD5B5E4-AC8E-4849-B177-BC61A6DD0F67}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtCompression.dproj">
+            <ProjectGuid>{5D1203B1-5555-4370-92C8-527C8E1BCF74}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Testing\JanuaUniDACUnitTesting.dproj">
+            <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkgDE.dproj">
+            <ProjectGuid>{610403E9-CED5-41C7-85AB-DE084C7772E3}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtFilters.dproj">
+            <ProjectGuid>{EAC3AF48-3724-4F63-AEA4-36518C58E736}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Testing\JanuaCoreUnitTesting.dproj">
+            <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
+            <Configurations>Test</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtFont.dproj">
+            <ProjectGuid>{1169F6B9-70D9-4453-9CC4-4BB390A8C8BB}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\JanuaRestRequestLib.dproj">
+            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
+            <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtCrypt.dproj">
+            <ProjectGuid>{55C51D8E-35FC-4EE3-9F7E-5D5336A4F34F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\JOSE.dproj">
+            <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='Gnostice'">
+        <BuildGroupProject Include="..\..\Components\pkg120\FIBPlus.dproj">
+            <ProjectGuid>{8D7CFC52-3B57-4E5C-9A5A-E9B7724FB0BA}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\ZComponentsVCL.dproj">
+            <ProjectGuid>{059E1D50-2C91-4F41-8A58-A7AC2388401A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OmniThreadLibraryRuntime.dproj">
+            <ProjectGuid>{2FCB214C-2EBE-4450-BF73-C4913A71810E}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\ZipMasterR.dproj">
+            <ProjectGuid>{96234B86-B398-4815-9772-3C0238E8651E}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaRestWeb.dproj">
+            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TRCGooglePlaces_r.dproj">
+            <ProjectGuid>{81BB3BDA-CC47-4521-B502-AA066872C53B}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
+            <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtAdvGridExp.dproj">
+            <ProjectGuid>{ED12E885-FDD5-40D4-B85C-C68F8F98DEE4}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtDocEng.dproj">
+            <ProjectGuid>{A5B7CEEF-90EE-471F-BD80-CE093CBC040A}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Ean.dproj">
+            <ProjectGuid>{7719EBE9-0F90-4934-871D-532DA7D4C50C}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\FIBPlusEditors.dproj">
+            <ProjectGuid>{FF48EAB1-CE8D-45FF-9B6B-3D949B000333}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtRtl.dproj">
+            <ProjectGuid>{09E69B44-CBD4-4205-BFA5-4941FE3E862C}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
+            <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OmniThreadLibraryDesigntime.dproj">
+            <ProjectGuid>{9C6E3253-6D30-468F-9370-7C643D6F9D1E}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TRCGooglePlaces_d.dproj">
+            <ProjectGuid>{D5B03ADA-8055-487B-95D2-BDE1DECF1E41}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkg.dproj">
+            <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtQRExp.dproj">
+            <ProjectGuid>{1AE7DBAA-FEC1-43C9-AFC5-7FE101FE1CE1}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkg.dproj">
+            <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VisualStyles.dproj">
+            <ProjectGuid>{8FE9B45A-7CA0-49F7-9DC7-19E3C05754F3}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaThirdPartyVCL.dproj">
+            <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\ZLibrariesWin.dproj">
+            <ProjectGuid>{066A5CAF-AF5A-4D52-8697-77CA5F2415D8}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
+            <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocProd.dproj">
+            <ProjectGuid>{7DD5B5E4-AC8E-4849-B177-BC61A6DD0F67}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtCompression.dproj">
+            <ProjectGuid>{5D1203B1-5555-4370-92C8-527C8E1BCF74}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Testing\JanuaUniDACUnitTesting.dproj">
+            <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkgDE.dproj">
+            <ProjectGuid>{610403E9-CED5-41C7-85AB-DE084C7772E3}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtFilters.dproj">
+            <ProjectGuid>{EAC3AF48-3724-4F63-AEA4-36518C58E736}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Testing\JanuaCoreUnitTesting.dproj">
+            <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
+            <Configurations>Test</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtFont.dproj">
+            <ProjectGuid>{1169F6B9-70D9-4453-9CC4-4BB390A8C8BB}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\JanuaRestRequestLib.dproj">
+            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
+            <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtCrypt.dproj">
+            <ProjectGuid>{55C51D8E-35FC-4EE3-9F7E-5D5336A4F34F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\JOSE.dproj">
+            <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='Build All Linux'">
+        <BuildGroupProject Include="..\..\Components\pkg120\FIBPlus.dproj">
+            <ProjectGuid>{8D7CFC52-3B57-4E5C-9A5A-E9B7724FB0BA}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\ZComponentsVCL.dproj">
+            <ProjectGuid>{059E1D50-2C91-4F41-8A58-A7AC2388401A}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OmniThreadLibraryRuntime.dproj">
+            <ProjectGuid>{2FCB214C-2EBE-4450-BF73-C4913A71810E}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaFMXControls.dproj">
+            <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\ZipMasterR.dproj">
+            <ProjectGuid>{96234B86-B398-4815-9772-3C0238E8651E}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaRestWeb.dproj">
+            <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TRCGooglePlaces_r.dproj">
+            <ProjectGuid>{81BB3BDA-CC47-4521-B502-AA066872C53B}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
+            <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLComponents.dproj">
+            <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtAdvGridExp.dproj">
+            <ProjectGuid>{ED12E885-FDD5-40D4-B85C-C68F8F98DEE4}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtDocEng.dproj">
+            <ProjectGuid>{A5B7CEEF-90EE-471F-BD80-CE093CBC040A}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaTmsControls.dproj">
+            <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\Ean.dproj">
+            <ProjectGuid>{7719EBE9-0F90-4934-871D-532DA7D4C50C}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\FIBPlusEditors.dproj">
+            <ProjectGuid>{FF48EAB1-CE8D-45FF-9B6B-3D949B000333}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtRtl.dproj">
+            <ProjectGuid>{09E69B44-CBD4-4205-BFA5-4941FE3E862C}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidacComponents.dproj">
+            <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
+            <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkgDE.dproj">
+            <ProjectGuid>{F6814DA5-F145-4921-BF14-2AE61A52AA62}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
+            <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUniGUI.dproj">
+            <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\OmniThreadLibraryDesigntime.dproj">
+            <ProjectGuid>{9C6E3253-6D30-468F-9370-7C643D6F9D1E}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TRCGooglePlaces_d.dproj">
+            <ProjectGuid>{D5B03ADA-8055-487B-95D2-BDE1DECF1E41}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaUnidac.dproj">
+            <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkg.dproj">
+            <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtQRExp.dproj">
+            <ProjectGuid>{1AE7DBAA-FEC1-43C9-AFC5-7FE101FE1CE1}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkg.dproj">
+            <ProjectGuid>{AC19D231-40A1-4553-9D5C-429FDF1F0214}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VisualStyles.dproj">
+            <ProjectGuid>{8FE9B45A-7CA0-49F7-9DC7-19E3C05754F3}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaThirdPartyVCL.dproj">
+            <ProjectGuid>{E3CF04B8-142D-46AE-B2EA-4C7BEBF59982}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaMVVM.dproj">
+            <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLControls.dproj">
+            <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\ZLibrariesWin.dproj">
+            <ProjectGuid>{066A5CAF-AF5A-4D52-8697-77CA5F2415D8}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\VCLThemeSelector.dproj">
+            <ProjectGuid>{134855EC-BEEC-4D02-8E46-0656246778B5}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocProd.dproj">
+            <ProjectGuid>{7DD5B5E4-AC8E-4849-B177-BC61A6DD0F67}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtCompression.dproj">
+            <ProjectGuid>{5D1203B1-5555-4370-92C8-527C8E1BCF74}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Testing\JanuaUniDACUnitTesting.dproj">
+            <ProjectGuid>{DC4D683C-F233-4288-A6DD-C74880105E77}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkgDE.dproj">
+            <ProjectGuid>{610403E9-CED5-41C7-85AB-DE084C7772E3}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaVCLMVVM.dproj">
+            <ProjectGuid>{D6FE6235-A2DB-4B2C-BC01-4BCC927F845A}</ProjectGuid>
+            <Configurations/>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtFilters.dproj">
+            <ProjectGuid>{EAC3AF48-3724-4F63-AEA4-36518C58E736}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="JanuaCore.dproj">
+            <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Testing\JanuaCoreUnitTesting.dproj">
+            <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
+            <Configurations>Test</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtFont.dproj">
+            <ProjectGuid>{1169F6B9-70D9-4453-9CC4-4BB390A8C8BB}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\JanuaRestRequestLib.dproj">
+            <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">
+            <ProjectGuid>{E759A7AF-0418-44FC-BF51-E4544B806438}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\gtCrypt.dproj">
+            <ProjectGuid>{55C51D8E-35FC-4EE3-9F7E-5D5336A4F34F}</ProjectGuid>
+            <Configurations/>
+            <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Components\pkg120\JOSE.dproj">
+            <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Linux64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>

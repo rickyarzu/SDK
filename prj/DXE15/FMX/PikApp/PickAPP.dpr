@@ -73,7 +73,6 @@ begin
   begin
     TJanuaApplication.UserSessionVM.LoginByKey(FSessionKey);
     Application.CreateForm(TfrmFMXCarServiceDriverMain, frmFMXCarServiceDriverMain);
-    Application.CreateForm(TdlgFMXCanvasImage, dlgFMXCanvasImage);
     Application.MainForm := frmFMXCarServiceDriverMain;
     Application.Run;
   end;

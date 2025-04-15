@@ -1,6 +1,7 @@
 inherited dmJanuaPgAnagraphStorage: TdmJanuaPgAnagraphStorage
   Height = 382
   Width = 927
+  PixelsPerInch = 120
   inherited PgErgoConnection: TJanuaUniConnection
     DataTypeMap = <
       item
@@ -16,8 +17,6 @@ inherited dmJanuaPgAnagraphStorage: TdmJanuaPgAnagraphStorage
         FieldType = ftString
         FieldLength = 38
       end>
-    Port = 5432
-    Server = 'pg.januaservers.com'
     SchemaID = 36
     Top = 8
     EncryptedPassword = 'CCFF8DFF98FFCFFF92FFCCFF8DFF9CFFCBFF8BFFCFFF8DFF'

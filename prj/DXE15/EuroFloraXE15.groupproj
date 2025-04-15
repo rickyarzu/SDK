@@ -3,6 +3,9 @@
         <ProjectGuid>{4AB23B71-090B-4FC0-B986-8A071E7AFF86}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
+        <Projects Include="..\..\Components\pkg120\TMSFMXWebGMapsPkg.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="FMX\EuroFloraApp.dproj">
             <Dependencies/>
         </Projects>
@@ -14,6 +17,15 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
+    <Target Name="TMSFMXWebGMapsPkg">
+        <MSBuild Projects="..\..\Components\pkg120\TMSFMXWebGMapsPkg.dproj"/>
+    </Target>
+    <Target Name="TMSFMXWebGMapsPkg:Clean">
+        <MSBuild Projects="..\..\Components\pkg120\TMSFMXWebGMapsPkg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TMSFMXWebGMapsPkg:Make">
+        <MSBuild Projects="..\..\Components\pkg120\TMSFMXWebGMapsPkg.dproj" Targets="Make"/>
+    </Target>
     <Target Name="EuroFloraApp">
         <MSBuild Projects="FMX\EuroFloraApp.dproj"/>
     </Target>
@@ -24,13 +36,13 @@
         <MSBuild Projects="FMX\EuroFloraApp.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="EuroFloraApp"/>
+        <CallTarget Targets="TMSFMXWebGMapsPkg;EuroFloraApp"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="EuroFloraApp:Clean"/>
+        <CallTarget Targets="TMSFMXWebGMapsPkg:Clean;EuroFloraApp:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="EuroFloraApp:Make"/>
+        <CallTarget Targets="TMSFMXWebGMapsPkg:Make;EuroFloraApp:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

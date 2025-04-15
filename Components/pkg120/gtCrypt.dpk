@@ -30,7 +30,7 @@
 
 requires
   rtl,
-  vcl,
+  {vcl,}
   gtRtl;
 
 contains

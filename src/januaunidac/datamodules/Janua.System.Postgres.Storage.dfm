@@ -1,10 +1,9 @@
 inherited dmPgSystemStorage: TdmPgSystemStorage
   Height = 606
   Width = 757
+  PixelsPerInch = 120
   inherited PgErgoConnection: TJanuaUniConnection
     AutoCommit = False
-    Port = 5432
-    Server = 'pg.januaservers.com'
     EncryptedPassword = 'CCFF8DFF98FFCFFF92FFCCFF8DFF9CFFCBFF8BFFCFFF8DFF'
   end
   object tbUserSessionRoles: TUniTable
@@ -495,7 +494,7 @@ inherited dmPgSystemStorage: TdmPgSystemStorage
       'SELECT system.createpersonalschema(:p_session_key)')
     Connection = PgErgoConnection
     Left = 424
-    Top = 264
+    Top = 280
     ParamData = <
       item
         DataType = ftWideString
@@ -517,7 +516,7 @@ inherited dmPgSystemStorage: TdmPgSystemStorage
       'SELECT system.usertest(:p_username, :p_email)')
     Connection = PgErgoConnection
     Left = 424
-    Top = 144
+    Top = 160
     ParamData = <
       item
         DataType = ftInteger
@@ -700,8 +699,8 @@ inherited dmPgSystemStorage: TdmPgSystemStorage
       ''
       '      and s.db_user_id = u.db_user_id')
     BeforePost = qrySearchUserProfileBeforePost
-    Left = 536
-    Top = 40
+    Left = 544
+    Top = 56
     ParamData = <
       item
         DataType = ftString
@@ -886,8 +885,8 @@ inherited dmPgSystemStorage: TdmPgSystemStorage
       '  )'
       '  and (us.db_user_id = :p_user_id or :p_user_id = 0)'
       '  limit 100')
-    Left = 536
-    Top = 104
+    Left = 544
+    Top = 120
     ParamData = <
       item
         DataType = ftWideString
@@ -1100,7 +1099,7 @@ inherited dmPgSystemStorage: TdmPgSystemStorage
       'WHERE '
       '   verify_token = :verify_token')
     Left = 424
-    Top = 328
+    Top = 344
     ParamData = <
       item
         DataType = ftString
@@ -1280,8 +1279,8 @@ inherited dmPgSystemStorage: TdmPgSystemStorage
     MasterSource = dsUserSession
     MasterFields = 'db_user_id'
     DetailFields = 'db_user_id'
-    Left = 536
-    Top = 224
+    Left = 544
+    Top = 240
     ParamData = <
       item
         DataType = ftInteger
@@ -1335,7 +1334,7 @@ inherited dmPgSystemStorage: TdmPgSystemStorage
       'SELECT system.setuserdefaultschema(:p_session_key, :p_user_id)')
     Connection = PgErgoConnection
     Left = 424
-    Top = 392
+    Top = 408
     ParamData = <
       item
         DataType = ftBoolean
@@ -1573,7 +1572,7 @@ inherited dmPgSystemStorage: TdmPgSystemStorage
       'SELECT system.startsessionbyurl(:p_url)')
     Connection = PgErgoConnection
     Left = 424
-    Top = 448
+    Top = 464
     ParamData = <
       item
         DataType = ftWideString
@@ -1600,7 +1599,7 @@ inherited dmPgSystemStorage: TdmPgSystemStorage
     SQL.Strings = (
       'select * from system.startsessionbyurl(:p_url)')
     Left = 424
-    Top = 504
+    Top = 520
     ParamData = <
       item
         DataType = ftWideString
@@ -3125,7 +3124,7 @@ inherited dmPgSystemStorage: TdmPgSystemStorage
         '_schema_id, :p_country_id, :p_ispublic)')
     Connection = PgErgoConnection
     Left = 424
-    Top = 200
+    Top = 216
     ParamData = <
       item
         DataType = ftWideString
@@ -3231,8 +3230,8 @@ inherited dmPgSystemStorage: TdmPgSystemStorage
       
         'SELECT system.userlogin(:p_username, :p_password, :p_email) as R' +
         'esult')
-    Left = 536
-    Top = 168
+    Left = 544
+    Top = 184
     ParamData = <
       item
         DataType = ftWideString

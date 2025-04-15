@@ -529,7 +529,11 @@ type
   public
     class constructor Create;
     class procedure PublicClearLog(const Sender: TObject; const ProcedureName: string);
+{$IFDEF MSWINDOWS}
     class function RunAndWait(const FileName, Parameters: string; const aStartupDir: Widestring = ''): DWORD;
+{$ELSE}
+    class function RunAndWait(const FileName, Parameters: string; const aStartupDir: Widestring = ''): Word;
+{$ENDIF}
     class function PublicWriteLog(Sender: TObject; ProcedureName, sMessage: string; isError: Boolean = false)
       : TJanuaLogRecord;
     class function PublicWriteError(Sender: TObject; aProcedureName, sMessage: string; e: Exception;
@@ -2791,7 +2795,7 @@ class function TJanuaCoreOS.GetUserName: String;
 // ****************************************************************************
 {$IFDEF MSWINDOWS}
 var
-  nSize: DWord;
+  nSize: DWORD;
 {$ENDIF}
 begin
   Result := '';
@@ -2892,7 +2896,11 @@ end;
 class procedure TJanuaCoreOS.Initialize;
 begin
   if TJanuaApplication.AppName <> '' then
-    GetJanuaConfiguration.Initialize(GetConfigFileName);
+  begin
+    var
+    lConfiFileName := GetConfigFileName;
+    GetJanuaConfiguration.Initialize(lConfiFileName);
+  end;
 end;
 
 class procedure TJanuaCoreOS.InternalExec(FileName, parameter: string);
@@ -3334,8 +3342,15 @@ begin
 {$ENDIF}
 end;
 
+{$IFDEF MSWINDOWS}
+
 class function TJanuaCoreOS.RunAndWait(const FileName, Parameters: string;
-  const aStartupDir: Widestring = ''): DWord;
+  const aStartupDir: Widestring = ''): DWORD;
+{$ELSE}
+
+class function TJanuaCoreOS.RunAndWait(const FileName, Parameters: string;
+  const aStartupDir: Widestring = ''): Word;
+{$ENDIF}
 var
 {$IF Defined(MSWINDOWS)}
   StartupInfo: TStartupInfo;
@@ -3355,8 +3370,8 @@ begin
 
   FillChar(StartupInfo, SizeOf(StartupInfo), 0);
   StartupInfo.cb := SizeOf(StartupInfo);
-  if not CreateProcess(nil, PChar(CommandLine), nil, nil, false, CREATE_NO_WINDOW, nil, DirPointer, StartupInfo,
-    ProcessInfo) then
+  if not CreateProcess(nil, PChar(CommandLine), nil, nil, false, CREATE_NO_WINDOW, nil, DirPointer,
+    StartupInfo, ProcessInfo) then
     RaiseLastOSError;
   try
     WaitForSingleObject(ProcessInfo.hProcess, INFINITE);

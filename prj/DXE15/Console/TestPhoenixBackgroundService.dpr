@@ -7,8 +7,8 @@ uses
   System.SysUtils,
   Janua.Phoenix.VCL.LabBackgroundThread in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.LabBackgroundThread.pas',
   uPhoenixBackgroundServiceConf in '..\VCL\uPhoenixBackgroundServiceConf.pas',
-  udmPgStorage in '..\..\..\src\januaunidac\datamodules\udmPgStorage.pas' {dmPgStorage: TDataModule},
-  Janua.Phoenix.PgTwilioSync in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.PgTwilioSync.pas' {dmPgTWilioSync: TDataModule};
+  udmFbStorage in '..\..\..\src\januaunidac\datamodules\udmFbStorage.pas' {dmFbStorage: TDataModule},
+  Phoenix.Twiliio.dmFbWhatsApp in '..\..\..\src\januaunidac\datamodules\Phoenix.Twiliio.dmFbWhatsApp.pas' {dmFbTwilioWhatsApp: TDataModule};
 
 var
   FBackgroundThread: TBackgroundThread;

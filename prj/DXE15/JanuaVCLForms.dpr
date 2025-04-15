@@ -42,7 +42,8 @@ uses
   Janua.VCL.CoreComponents.Test in '..\..\src\VCL\Test\Janua.VCL.CoreComponents.Test.pas',
   Janua.Test.VCLTestFilters in '..\..\src\VCL\Test\Janua.Test.VCLTestFilters.pas' {frmVCLTestFilters},
   Janua.VCL.TestApplication in '..\..\src\VCL\Commons\Janua.VCL.TestApplication.pas',
-  Janua.VCL.Cloud.RESTDebuggerClient in '..\..\src\VCL\Cloud\Janua.VCL.Cloud.RESTDebuggerClient.pas' {FrmMain};
+  Janua.VCL.Cloud.RESTDebuggerClient in '..\..\src\VCL\Cloud\Janua.VCL.Cloud.RESTDebuggerClient.pas' {FrmMain},
+  Janua.Test.VCL.frmTest3 in '..\..\src\VCL\Test\Janua.Test.VCL.frmTest3.pas' {frmTest3};
 
 {$R *.res}
 
@@ -54,6 +55,7 @@ begin
   Application.CreateForm(TdlgVCLDocChargesRow, dlgVCLDocChargesRow);
   Application.CreateForm(TfrmVCLTestFilters, frmVCLTestFilters);
   Application.CreateForm(TFrmMain, FrmMain);
+  Application.CreateForm(TfrmTest3, frmTest3);
   pplication.Run;
 
 end.

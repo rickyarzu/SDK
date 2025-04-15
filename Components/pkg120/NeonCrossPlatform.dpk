@@ -49,7 +49,7 @@ package NeonCrossPlatform;
 {$DESCRIPTION 'Neon Serialization Library'}
 {$LIBSUFFIX AUTO}
 {$RUNONLY}
-{$IMPLICITBUILD ON}
+{$IMPLICITBUILD OFF}
 
 requires
   rtl,

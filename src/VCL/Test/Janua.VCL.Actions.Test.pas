@@ -65,7 +65,7 @@ type
 implementation
 
 uses System.SysUtils, System.DateUtils, System.StrUtils, Janua.VCL.Actions, VCL.ToolWin, VCL.ComCtrls,
-  Janua.Application.Framework, ufrmTest, Janua.VCL.Framework;
+  Janua.Application.Framework, Janua.Test.VCL.frmTest, Janua.VCL.Framework;
 
 procedure TTestActions.OnExecute(const aAction: IJanuaAction);
 begin

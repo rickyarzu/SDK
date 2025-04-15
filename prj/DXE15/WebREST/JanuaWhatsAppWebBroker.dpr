@@ -17,7 +17,10 @@ uses
   Janua.WhatsApp.WebbrokerModule in '..\..\..\src\januacore\dmvc\Janua.WhatsApp.WebbrokerModule.pas' {JanuaWhatSappWebBrokerModule: TWebModule},
   Janua.VCL.frameWebServerManager in '..\..\..\src\VCL\Http\Janua.VCL.frameWebServerManager.pas' {JanuaframeWebServerManager: TFrame},
   Janua.WebBroker.UniDACApplication in '..\..\..\src\januacore\Datasnap\Janua.WebBroker.UniDACApplication.pas',
-  Janua.VCL.Cloud.frmWhatsAppWebForm in '..\..\..\src\VCL\Cloud\Janua.VCL.Cloud.frmWhatsAppWebForm.pas' {frmVCLWebBrokerWhatsApp};
+  Janua.VCL.Cloud.frmWhatsAppWebForm in '..\..\..\src\VCL\Cloud\Janua.VCL.Cloud.frmWhatsAppWebForm.pas' {frmVCLWebBrokerWhatsApp},
+  udmPgStorage in '..\..\..\src\januaunidac\datamodules\udmPgStorage.pas' {dmPgStorage: TDataModule},
+  Janua.Phoenix.PgTwilioSync in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.PgTwilioSync.pas' {dmPgTWilioSync: TDataModule},
+  Janua.Twilio.dmPgWhatsApp in '..\..\..\src\januaunidac\datamodules\Janua.Twilio.dmPgWhatsApp.pas' {dmPgTwilioWhatsApp: TDataModule};
 
 {$R *.res}
 
@@ -28,6 +31,9 @@ begin
   TJanuaApplication.ApplicationType := TJanuaApplicationType.jatWinService;
   TJanuaWhatsAppWebBrokerUniDACApplication.ApplicationSetup('whatsapp.januservers.com');
   Application.CreateForm(TfrmVCLWebBrokerWhatsApp, frmVCLWebBrokerWhatsApp);
+  Application.CreateForm(TdmPgStorage, dmPgStorage);
+  Application.CreateForm(TdmPgTWilioSync, dmPgTWilioSync);
+  Application.CreateForm(TdmPgTwilioWhatsApp, dmPgTwilioWhatsApp);
   Application.Run;
 
 end.

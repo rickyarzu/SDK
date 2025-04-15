@@ -1,14 +1,15 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{60710574-B0DB-4A0A-9717-B7A61C57A138}</ProjectGuid>
-        <ProjectVersion>20.1</ProjectVersion>
+        <ProjectVersion>20.2</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>PhoenixBackgroundService.dpr</MainSource>
+        <ProjectName Condition="'$(ProjectName)'==''">PhoenixBackgroundService</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -192,13 +193,13 @@
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.TWilioBackgroundThread.pas"/>
         <DCCReference Include="uPhoenixBackgroundServiceConf.pas"/>
-        <DCCReference Include="..\..\..\src\januaunidac\datamodules\udmPgStorage.pas">
-            <Form>dmPgStorage</Form>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\udmFbStorage.pas">
+            <Form>dmFbStorage</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Phoenix.PgTwilioSync.pas">
-            <Form>dmPgTWilioSync</Form>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Phoenix.Twiliio.dmFbWhatsApp.pas">
+            <Form>dmFbTwilioWhatsApp</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
@@ -231,7 +232,7 @@
                     <Excluded_Packages Name="C:\Program Files (x86)\Neos Eureka S.r.l\EurekaLog 7\Packages\Studio29\EurekaLogExpert290.bpl">EurekaLog IDE Expert</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
-            <Deployment Version="4"/>
+            <Deployment Version="5"/>
             <Platforms>
                 <Platform value="Android">False</Platform>
                 <Platform value="Android64">False</Platform>
@@ -248,4 +249,5 @@
     </ProjectExtensions>
     <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
     <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
 </Project>

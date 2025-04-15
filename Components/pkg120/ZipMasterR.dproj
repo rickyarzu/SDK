@@ -7,7 +7,7 @@
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Package</AppType>
         <FrameworkType>VCL</FrameworkType>
-        <ProjectVersion>20.2</ProjectVersion>
+        <ProjectVersion>20.3</ProjectVersion>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <ProjectName Condition="'$(ProjectName)'==''">ZipMasterR</ProjectName>
     </PropertyGroup>
@@ -135,53 +135,53 @@
         </DelphiCompile>
         <DCCReference Include="vcl.dcp"/>
         <DCCReference Include="vclx.dcp"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZipMstr.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMArgSplit.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMBaseOpr.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMBody.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMCoDec.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMCommand.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMCompat.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMCore.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMCRC.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMCtx.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMDelZip.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMDlg.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMDllLoad.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMDrv.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMEngine.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMEntryReader.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMFileOpr.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMFStream.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMHandler.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMLister.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMMatch.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMMFStream.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMMisc.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMMsg.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMOprCore.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMOprDeflate.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMOprDel.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMOprDll.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMOprFile.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMOprMerge.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMOprMod.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMOprMsgStr.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMOprUnzip.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMSFXInt.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMStructs.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMUnzipOpr.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMUTF8.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMUtils.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMWinFuncs.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMXcpt.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMZipBase.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMZipDirectory.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMZipEOC.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMZipMulti.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMZipReader.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMZipWriter.pas"/>
-        <DCCReference Include="..\..\..\lib\DelphiZip\ZMZLibExApi.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZipMstr.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMArgSplit.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMBaseOpr.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMBody.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMCoDec.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMCommand.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMCompat.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMCore.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMCRC.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMCtx.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMDelZip.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMDlg.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMDllLoad.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMDrv.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMEngine.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMEntryReader.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMFileOpr.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMFStream.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMHandler.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMLister.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMMatch.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMMFStream.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMMisc.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMMsg.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMOprCore.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMOprDeflate.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMOprDel.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMOprDll.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMOprFile.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMOprMerge.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMOprMod.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMOprMsgStr.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMOprUnzip.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMSFXInt.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMStructs.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMUnzipOpr.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMUTF8.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMUtils.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMWinFuncs.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMXcpt.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMZipBase.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMZipDirectory.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMZipEOC.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMZipMulti.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMZipReader.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMZipWriter.pas"/>
+        <DCCReference Include="..\..\..\lib\ZipMaster\ZMZLibExApi.pas"/>
         <None Include="..\..\..\Lib\DelphiZip\ZipVers.inc"/>
         <None Include="..\..\..\Lib\DelphiZip\ZMConfig192.inc"/>
         <BuildConfiguration Include="Base">
@@ -351,6 +351,16 @@
                     </Platform>
                     <Platform Name="Android64">
                         <RemoteDir>res\values-v31</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV35">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v35</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-v35</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>

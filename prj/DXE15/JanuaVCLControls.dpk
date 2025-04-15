@@ -76,6 +76,8 @@ contains
   Janua.VCL.dlgServer in '..\..\src\VCL\System\Janua.VCL.dlgServer.pas' {dlgVCLSelectServer},
   Janua.VCL.Dialogs in '..\..\src\VCL\Commons\Janua.VCL.Dialogs.pas',
   Janua.VCL.dlgInputText in '..\..\src\VCL\Commons\Janua.VCL.dlgInputText.pas' {dlgVCLInputText},
-  udlgSelectMultiString in '..\..\src\VCL\Commons\udlgSelectMultiString.pas' {dlgSelectMultiString};
+  udlgSelectMultiString in '..\..\src\VCL\Commons\udlgSelectMultiString.pas' {dlgSelectMultiString},
+  Janua.VCL.CategoryButtonsFrame in '..\..\src\VCL\Commons\Janua.VCL.CategoryButtonsFrame.pas' {JanuaCategoryButtonsFrame: TFrame},
+  Janua.VCL.DevIDE.FormDesigner.Intf in '..\..\src\VCL\DevIDE\Janua.VCL.DevIDE.FormDesigner.Intf.pas';
 
 end.

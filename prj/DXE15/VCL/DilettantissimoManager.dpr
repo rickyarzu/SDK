@@ -41,7 +41,6 @@ begin
   Application.MainFormOnTaskbar := True;
   TJanuaApplication.ServerAddress := 'pg.januaservers.com';
   TJanuaApplication.ServerDatabaseName := 'ergomercator';
-  TStyleManager.TrySetStyle('Windows11 Modern Light');
   Application.Title := 'Football Magazine';
   Application.CreateForm(TfrmMdcFootballChampionship, frmMdcFootballChampionship);
   // Application.CreateForm(TdlgFootballSubAnagraph, dlgFootballSubAnagraph);

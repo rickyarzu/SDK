@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{F31484A8-0E00-438D-8279-7D5571911456}</ProjectGuid>
-        <ProjectVersion>20.1</ProjectVersion>
+        <ProjectVersion>20.2</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
@@ -9,6 +9,7 @@
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>OpenshiftPodRedisXE15.dpr</MainSource>
+        <ProjectName Condition="'$(ProjectName)'==''">OpenshiftPodRedisXE15</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -148,6 +149,16 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\..\..\src\januacore\Janua.INPS.RedisRequest.pas"/>
+        <None Include="ModelSupport_OpenshiftPodRedisXE15\default.txaPackage"/>
+        <None Include="ModelSupport_OpenshiftPodRedisXE15\default.txvpck"/>
+        <None Include="ModelSupport_OpenshiftPodRedisXE15\Janua\default.txvpck"/>
+        <None Include="ModelSupport_OpenshiftPodRedisXE15\OpenshiftPodRedisXE15\default.txvpck"/>
+        <None Include="ModelSupport_OpenshiftPodRedisXE15\Janua\INPS\default.txvpck"/>
+        <None Include="ModelSupport_OpenshiftPodRedisXE15\Janua\INPS\RedisRequest\default.txvpck"/>
+        <None Include="ModelSupport_OpenshiftPodRedisXE15\Class Diagram.txvcls"/>
+        <None Include="ModelSupport_OpenshiftPodRedisXE15\Janua\VCL\default.txvpck"/>
+        <None Include="ModelSupport_OpenshiftPodRedisXE15\Janua\VCL\INPS\Redis\default.txaPackage"/>
+        <None Include="ModelSupport_OpenshiftPodRedisXE15\Janua\VCL\INPS\Redis\frmMain\default.txaPackage"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaeExeDXE15.optset</DependentOn>
@@ -173,27 +184,28 @@
                     <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\dclJVEsoft270.bpl">JVEsoft Cross Platform Infrastructure Component Suite</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
-            <Deployment Version="4">
-                <DeployFile LocalName="..\..\..\..\INPS\Redis\cache150.png" Configuration="Debug" Class="UWP_DelphiLogo44">
+            <Deployment Version="5">
+                <DeployFile LocalName="..\..\..\..\INPS\Redis\cache150.png" Configuration="Debug" Class="UWP_DelphiLogo44"/>
+                <DeployFile LocalName="..\..\..\..\INPS\Redis\cache44.png" Configuration="Debug" Class="UWP_DelphiLogo44"/>
+                <DeployFile LocalName="ModelSupport_OpenshiftPodRedisXE15\Janua\VCL\INPS\Redis\default.txaPackage" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win64">
-                        <RemoteDir>Assets\</RemoteDir>
-                        <RemoteName>Logo44x44.png</RemoteName>
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\..\..\..\INPS\Redis\cache44.png" Configuration="Debug" Class="UWP_DelphiLogo44">
+                <DeployFile LocalName="ModelSupport_OpenshiftPodRedisXE15\Janua\VCL\INPS\Redis\frmMain\default.txaPackage" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win64">
-                        <RemoteDir>Assets\</RemoteDir>
-                        <RemoteName>Logo44x44.png</RemoteName>
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Win32\Debug\OpenshiftPodRedisXE15.exe" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win32">
-                        <RemoteName>OpenshiftPodRedisXE15.exe</RemoteName>
+                <DeployFile LocalName="ModelSupport_OpenshiftPodRedisXE15\default.txaPackage" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win64">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="Win32\Debug\OpenshiftPodRedisXE15.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="Win64\Debug\OpenshiftPodRedisXE15.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win64">
                         <RemoteName>OpenshiftPodRedisXE15.exe</RemoteName>
@@ -218,16 +230,6 @@
                         <Operation>0</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="AndroidClasses">
-                    <Platform Name="Android">
-                        <RemoteDir>classes</RemoteDir>
-                        <Operation>64</Operation>
-                    </Platform>
-                    <Platform Name="Android64">
-                        <RemoteDir>classes</RemoteDir>
-                        <Operation>64</Operation>
-                    </Platform>
-                </DeployClass>
                 <DeployClass Name="AndroidFileProvider">
                     <Platform Name="Android">
                         <RemoteDir>res\xml</RemoteDir>
@@ -235,12 +237,6 @@
                     </Platform>
                     <Platform Name="Android64">
                         <RemoteDir>res\xml</RemoteDir>
-                        <Operation>1</Operation>
-                    </Platform>
-                </DeployClass>
-                <DeployClass Name="AndroidGDBServer">
-                    <Platform Name="Android">
-                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
@@ -866,6 +862,9 @@
                     <Platform Name="Win64">
                         <Operation>1</Operation>
                     </Platform>
+                    <Platform Name="Win64x">
+                        <Operation>1</Operation>
+                    </Platform>
                 </DeployClass>
                 <DeployClass Name="ProjectiOSDeviceDebug">
                     <Platform Name="iOSDevice32">
@@ -1158,11 +1157,13 @@
                 <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win64x" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
             </Platforms>
+            <ModelSupport>True</ModelSupport>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>

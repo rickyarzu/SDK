@@ -12,14 +12,22 @@ uses
   uJanuaVCLForm, Janua.Controls.Intf, Janua.Controls.Forms.Intf, // *** Janua VCL Form BindModel ****
   Janua.Core.Classes, Janua.Components.Dialogs, Janua.Vcl.Geocoding, Janua.Core.Types, Janua.Vcl.Dialogs,
   // VCL
-  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.Menus, JvExControls,
   Vcl.ExtCtrls, AdvMemo, AdvmSQLS, Vcl.Grids, Vcl.DBGrids, CRGrid, DBAdvNavigator, Vcl.Buttons, AdvmPS,
   JvBaseDlg, JvSelectDirectory, AdvmWS, advmjson, AdvGlowButton, AdvAppStyler, Vcl.DBCtrls, AdvUtil,
-  AdvObj, BaseGrid, AdvGrid, DBAdvGrid, tmsAdvGridExcel, JvComponentBase, JvDBGridExport,
-  Janua.Vcl.EnhDBGrid, JvCsvData, JvExControls, JvDBLookup, uframeTestViewModelAnagraphSearch, Vcl.Menus,
-  Janua.Vcl.EnhCRDBGrid, uframeTestViewModelLocationSearch, uframeTestPrintInvoice, uframeTestPrintAWBs,
-  uframePrintWarehouseReceipts, uframeTestOrmDB, uframeVclTestOrmDatasetSync, uJanuaVCLFrame,
-  Janua.Core.Legacy, AdvStyleIF, Vcl.Mask, Janua.Core.Commons,  Janua.Unidac.Connection;
+  AdvObj, BaseGrid, AdvGrid, DBAdvGrid, tmsAdvGridExcel, JvComponentBase, JvDBGridExport, JvCsvData,
+  JvDBLookup,
+  // Janua
+  Janua.Vcl.EnhDBGrid,    Janua.Vcl.EnhCRDBGrid,
+  Janua.Test.Vcl.frameViewModelAnagraphSearch {uframeTestViewModelAnagraphSearch} ,
+  Janua.Test.Vcl.frameViewModelLocationSearch {uframeTestViewModelLocationSearch},
+  Janua.Test.VCL.framePrintInvoice {uframeTestPrintInvoice},
+  Janua.Test.vcl.framePrintAWBs  {uframeTestPrintAWBs},
+  Janua.Test.VCL.framePrintWarehouseReceipts  {uframePrintWarehouseReceipts},
+  Janua.Test.VCL.frameOrmDB {uframeTestOrmDB},
+  Janua.Test.VCL.frameVclOrmDatasetSync {uframeVclTestOrmDatasetSync},
+  uJanuaVCLFrame,
+  Janua.Core.Legacy, AdvStyleIF, Vcl.Mask, Janua.Core.Commons, Janua.Unidac.Connection;
 
 type
   TfrmUnitTestJanuaVCLComponents = class(TJanuaVCLFormModel, IJanuaContainer, IJanuaForm)
@@ -316,13 +324,13 @@ implementation
 
 uses
   uTestORM, System.StrUtils,
+  Vcl.Styles,
   System.Types,
   System.IOUtils,
   IPPeerServer,
   IPPeerAPI,
   Web.WebReq,
   Web.WebBroker,
-  Vcl.Styles.Utils.SysControls,
   Janua.Server.Impl,
   Janua.Metro5.Builder, Janua.Html.Metro5.Pages, Janua.Html.Bootstrap4.Builder,
   Janua.Html.Metro5.Impl, Janua.Html.Metro5.Intf, Janua.Metro5.Builder.Intf,
@@ -596,12 +604,14 @@ begin
   // Assert.IsNotNull(aStorage, 'Error aStorage is nil');
   aStorage.CreateDataset;
   // Nota: aMatchesStorage non 'conosce' Virtual o Postgres ma si riferisce solo all'interfaccia ....
-  aMatchesStorage := TJanuaCustomDatasetStorage.Create('matches', IMatches { TMatches } , [aStorage.jdsMatches]);
+  aMatchesStorage := TJanuaCustomDatasetStorage.Create('matches', IMatches { TMatches } ,
+    [aStorage.jdsMatches]);
   // Assert.IsNotNull(aMatchesStorage, 'Error aMatchesStorage is nil');
   // provo ad assegnare aMatches al relativo Storage .......................
   aStorage.OpenMatches;
 
-  if not TJanuaApplicationFactory.TryGetRecordSetIntf(IMatches, 'matches', aMatchesStorage, nil, aMatches) then
+  if not TJanuaOrmFactory.TryGetRecordSetIntf(IMatches, 'matches', aMatchesStorage, nil, aMatches)
+  then
     raise Exception.Create('aMatchesStorage.Create IMatches not set');
 
   // aMatches := TMatchFactory.CreateRecordset('matches', aMatchesStorage, nil);
@@ -927,8 +937,7 @@ begin
   if WebRequestHandler <> nil then
     WebRequestHandler.WebModuleClass := WebModuleClass;
 
-  TSysStyleManager.Enabled := True;
-
+  // TSysStyleManager.Enabled := True;
 end;
 
 procedure TfrmUnitTestJanuaVCLComponents.edPortChange(Sender: TObject);
@@ -1040,8 +1049,8 @@ begin
       self.qryIndexFields.SQL.Add('SELECT a.attname, format_type(a.atttypid, a.atttypmod) AS data_type');
       self.qryIndexFields.SQL.Add('FROM   pg_index i JOIN   pg_attribute a ON a.attrelid = i.indrelid');
       self.qryIndexFields.SQL.Add('  AND a.attnum = ANY(i.indkey)');
-      self.qryIndexFields.SQL.Add('WHERE  i.indrelid = ''' + vtGuidGenerator.fieldByName('SchemaTable').AsString +
-        '''::regclass AND    i.indisprimary');
+      self.qryIndexFields.SQL.Add('WHERE  i.indrelid = ''' + vtGuidGenerator.fieldByName('SchemaTable')
+        .AsString + '''::regclass AND    i.indisprimary');
       qryIndexFields.Open;
     end;
   end;
@@ -1228,14 +1237,15 @@ begin
   p := s + 's';
 
   p := TJanuaApplication.DialogText.InputText('plurale', 'RecordSet', p);
-  st := TJanuaApplication.DialogText.InputText('storage: ', 'Storage Name:', 'T' + Capitalize(aSchema) + 'Storage');
+  st := TJanuaApplication.DialogText.InputText('storage: ', 'Storage Name:',
+    'T' + Capitalize(aSchema) + 'Storage');
 
   bCustom := TJanuaApplication.Dialogs.JMessageDlg('Creo la classe Custom?');
 
   aAbbr := LowerCase(edAbbreviation.Text);
   PgDDLColumnsTable.Open;
-  Janua.Orm.Generator.GenerateRecordSet(aIntf, aImpl, aCustom, PgDDLColumnsTable, aDataset, aSchema, aAbbr, aFileIntf,
-    aFileImpl, s, p, bCustom);
+  Janua.Orm.Generator.GenerateRecordSet(aIntf, aImpl, aCustom, PgDDLColumnsTable, aDataset, aSchema, aAbbr,
+    aFileIntf, aFileImpl, s, p, bCustom);
   memSourceIntf.Lines.Text := aIntf;
   MemSourceImpl.Lines.Text := aImpl;
 

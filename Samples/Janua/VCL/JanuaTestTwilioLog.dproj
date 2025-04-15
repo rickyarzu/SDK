@@ -1,14 +1,15 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{12375DAE-6782-47A6-96EB-A38E56906C39}</ProjectGuid>
-        <ProjectVersion>20.1</ProjectVersion>
+        <ProjectVersion>20.2</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>JanuaTestTwilioLog.dpr</MainSource>
+        <ProjectName Condition="'$(ProjectName)'==''">JanuaTestTwilioLog</ProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -130,13 +131,13 @@
             <Form>frmVCLJanuaTestTwilioLog</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Phoenix.PgTwilioSync.pas">
-            <Form>dmPgTWilioSync</Form>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Phoenix.Twiliio.dmFbWhatsApp.pas">
+            <Form>dmFbTwilioWhatsApp</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\januaunidac\datamodules\udmPgStorage.pas">
-            <Form>dmPgStorage</Form>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\udmFbStorage.pas">
+            <Form>dmFbStorage</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
@@ -175,7 +176,7 @@
                     <Excluded_Packages Name="C:\Program Files (x86)\Neos Eureka S.r.l\EurekaLog 7\Packages\Studio29\EurekaLogExpert290.bpl">EurekaLog IDE Expert</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
-            <Deployment Version="4"/>
+            <Deployment Version="5"/>
             <Platforms>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
@@ -185,4 +186,5 @@
     </ProjectExtensions>
     <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
     <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
 </Project>

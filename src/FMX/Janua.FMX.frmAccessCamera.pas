@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, System.Permissions,
   System.Actions, System.Generics.Collections,
   // Janua
-  Janua.Core.Functions,
+  Janua.Core.Functions, // Check Janua.Core.Functions
   // FMX
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   FMX.ActnList, FMX.StdActns, FMX.MediaLibrary.Actions, FMX.Objects, FMX.Graphics,

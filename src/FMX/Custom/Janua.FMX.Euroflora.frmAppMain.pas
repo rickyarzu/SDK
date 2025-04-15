@@ -8,11 +8,12 @@ uses
   FMX.Controls.Presentation, Janua.Core.Cloud, FMX.Platform, FMX.ListView.Types, FMX.ListView.Appearances,
   FMX.ListView.Adapters.Base, System.Net.URLClient, System.Net.HttpClient, System.Net.HttpClientComponent,
   System.Sensors, System.Sensors.Components, Janua.FMX.Cms, System.ImageList, FMX.ImgList,
-  Janua.FMX.Services, Janua.Core.Classes, Janua.FMX.ListViewMenu, System.Actions, FMX.ActnList, FMX.Gestures,
+   System.Actions, FMX.ActnList, FMX.Gestures,
   FMX.WebBrowser, FMX.Objects, FMX.ListView, FMX.Maps,
   // Janua Components
-  Janua.FMX.Maps, Janua.Anagraph.Types, Janua.Maps.Types, Janua.Core.Types, Janua.FMX.FormControls,
-  FMX.Edit, Janua.FMX.StandardMaps, Janua.Core.Commons;
+  Janua.FMX.Services, Janua.Core.Classes, Janua.FMX.ListViewMenu,
+  Janua.Anagraph.Types, Janua.Maps.Types, Janua.Core.Types, Janua.FMX.FormControls,
+  FMX.Edit,  Janua.Core.Commons, Janua.FMX.StandardMaps;
 
 type
   TfrmEuroFloraAppMain = class(TForm)

@@ -212,10 +212,18 @@ begin
   if (k >= 0) and (l >= 0) then
     with FDataset do
       for i := 0 to k do
-        for j := 0 to l do
-          if (Params[j].Name.ToLower <> 'jguid') and (Params[j].Name.ToLower = GetParams[i].DBField.ToLower)
-          then
-            Params[j].Value := GetParams[i].AsVariant;
+      begin
+        var
+        lJanuaParam := GetParams[i].DBField.ToLower;
+        if (lJanuaParam <> 'jguid') and (lJanuaParam <> 'result') then
+          for j := 0 to l do
+          begin
+            var
+            lDataParam := Params[j].Name.ToLower;
+            if lDataParam = lJanuaParam then
+              Params[j].Value := GetParams[i].AsVariant;
+          end;
+      end;
 end;
 
 constructor TJanuaCustomUniDataset.Create;
@@ -445,7 +453,7 @@ begin
   inherited;
 end;
 
-procedure TJanuaCustomUniDataset.SetUniDataset(const aDataset: TCustomUniDataSet);
+procedure TJanuaCustomUniDataset.SeTUniDataset(const aDataset: TCustomUniDataSet);
 begin
   FDataset := aDataset;
   if Assigned(FDataset) then
@@ -649,10 +657,21 @@ procedure TJanuaPgStoredProcedure.ExecSQL;
 { var
   i, j: Integer; }
 begin
-  Assert(Assigned(FPgStoredProc));
-  ApplyParams;
   Guard.CheckNotNull(FPgStoredProc, 'FPgStoredProc not correctly Set (nil)');
-  FPgStoredProc.Execute;
+{$IFDEF DEBUG}
+  var
+  lTest := FPgStoredProc.StoredProcName;
+{$ENDIF}
+  ApplyParams;
+  if not FPgStoredProc.Connection.InTransaction then
+    FPgStoredProc.Connection.StartTransaction;
+  try
+    FPgStoredProc.Execute;
+    FPgStoredProc.Connection.Commit;
+  except
+    on e: Exception do
+      FPgStoredProc.Connection.Rollback;
+  end;
 
   if GetResultType <> TJanuaFieldType.jptUnknown then
     GetResult.SetFromParam(FPgStoredProc.ParamByName('Result'))

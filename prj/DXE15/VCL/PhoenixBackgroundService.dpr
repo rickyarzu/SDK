@@ -5,8 +5,8 @@ uses
   Janua.Phoenix.VCL.BackgroundService in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.BackgroundService.pas' {srvPhoenixVCLBackgroundService: TService},
   Janua.Phoenix.VCL.TWilioBackgroundThread in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.TWilioBackgroundThread.pas',
   uPhoenixBackgroundServiceConf in 'uPhoenixBackgroundServiceConf.pas',
-  udmPgStorage in '..\..\..\src\januaunidac\datamodules\udmPgStorage.pas' {dmPgStorage: TDataModule},
-  Janua.Phoenix.PgTwilioSync in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.PgTwilioSync.pas' {dmPgTWilioSync: TDataModule};
+  udmFbStorage in '..\..\..\src\januaunidac\datamodules\udmFbStorage.pas' {dmFbStorage: TDataModule},
+  Phoenix.Twiliio.dmFbWhatsApp in '..\..\..\src\januaunidac\datamodules\Phoenix.Twiliio.dmFbWhatsApp.pas' {dmFbTwilioWhatsApp: TDataModule};
 
 {$R *.RES}
 
@@ -29,7 +29,7 @@ begin
     Application.Initialize;
   TPhoenixBackgroundServiceApp.ApplicationSetup('service.assoantincendio.com');
   Application.CreateForm(TsrvPhoenixVCLBackgroundService, srvPhoenixVCLBackgroundService);
-  Application.CreateForm(TdmPgStorage, dmPgStorage);
-  Application.CreateForm(TdmPgTWilioSync, dmPgTWilioSync);
+  Application.CreateForm(TdmFbStorage, dmFbStorage);
+  Application.CreateForm(TdmFbTwilioWhatsApp, dmFbTwilioWhatsApp);
   Application.Run;
 end.
