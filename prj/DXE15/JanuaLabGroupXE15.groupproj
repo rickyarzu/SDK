@@ -584,7 +584,7 @@
             <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>iOSDevice64;iOSSimARM64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\ZipMasterR.dproj">
             <ProjectGuid>{96234B86-B398-4815-9772-3C0238E8651E}</ProjectGuid>
@@ -594,8 +594,8 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaRestWeb.dproj">
             <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
+            <Configurations/>
+            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TRCGooglePlaces_r.dproj">
@@ -607,7 +607,7 @@
         <BuildGroupProject Include="JanuaUnidacComponentsD.dproj">
             <ProjectGuid>{40270E1D-0A98-4C40-B11C-DA7140172009}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>iOSDevice64</Platforms>
+            <Platforms>iOSDevice64;iOSSimARM64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLComponents.dproj">
@@ -655,8 +655,8 @@
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>iOSDevice64</Platforms>
-            <Enabled>True</Enabled>
+            <Platforms>iOSDevice64;iOSSimARM64</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\DCLgtDocEng.dproj">
             <ProjectGuid>{930C11FC-BD68-4A39-A8F3-42397D83EE80}</ProjectGuid>
@@ -697,8 +697,8 @@
         <BuildGroupProject Include="JanuaUnidac.dproj">
             <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>iOSDevice64</Platforms>
-            <Enabled>True</Enabled>
+            <Platforms>iOSDevice64;iOSSimARM64</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSWebOSMapsPkg.dproj">
             <ProjectGuid>{F69E3D78-5E08-4768-B751-0485C0F1884D}</ProjectGuid>
@@ -733,7 +733,7 @@
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>iOSDevice64</Platforms>
+            <Platforms>iOSDevice64;iOSSimARM64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLControls.dproj">
@@ -769,13 +769,13 @@
         <BuildGroupProject Include="JanuaCoreComponents.dproj">
             <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>iOSDevice64</Platforms>
+            <Platforms>iOSDevice64;iOSSimARM64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
             <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>iOSDevice64</Platforms>
+            <Platforms>iOSDevice64;iOSSimARM64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\TMSWebGMapsPkgDE.dproj">
@@ -793,7 +793,7 @@
         <BuildGroupProject Include="JanuaCore.dproj">
             <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>iOSDevice64</Platforms>
+            <Platforms>iOSDevice64;iOSSimARM64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\gtFilters.dproj">
@@ -811,7 +811,7 @@
         <BuildGroupProject Include="..\..\Components\pkg120\JanuaRestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
-            <Platforms>iOSDevice64</Platforms>
+            <Platforms>iOSDevice64;iOSSimARM64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="Janua.UNI.TMLogistic.dproj">

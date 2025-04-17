@@ -3,25 +3,10 @@
         <ProjectGuid>{8CA1D8D8-742B-4D70-827A-9E136DF67D92}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\..\Components\pkg110\AWSSDK.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="..\..\Components\pkg120\PlanAddons.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="..\..\Components\pkg120\TUniFalcon.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="..\..\Components\pkg110\SwagDoc.dproj">
@@ -168,6 +153,9 @@
         <Projects Include="..\..\Samples\DMVC\fileupload\FilesUploadDemo.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="WebREST\CarServiceDMVCRestApplication.dproj">
             <Dependencies/>
         </Projects>
@@ -195,13 +183,10 @@
         <Projects Include="..\..\Samples\Janua\WebBroker\WebBrokerDMVCServerTest.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Components\pkg120\StyleControls.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="..\..\Components\pkg120\StyleControlsD.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="VCL\JanuaRestDMVCTestIDEXE15.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -212,33 +197,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="AWSSDK">
-        <MSBuild Projects="..\..\Components\pkg110\AWSSDK.dproj"/>
-    </Target>
-    <Target Name="AWSSDK:Clean">
-        <MSBuild Projects="..\..\Components\pkg110\AWSSDK.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="AWSSDK:Make">
-        <MSBuild Projects="..\..\Components\pkg110\AWSSDK.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="AWSSDKVCL">
-        <MSBuild Projects="..\..\Components\pkg110\AWSSDKVCL.dproj"/>
-    </Target>
-    <Target Name="AWSSDKVCL:Clean">
-        <MSBuild Projects="..\..\Components\pkg110\AWSSDKVCL.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="AWSSDKVCL:Make">
-        <MSBuild Projects="..\..\Components\pkg110\AWSSDKVCL.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="AWSSDKFMX">
-        <MSBuild Projects="..\..\Components\pkg110\AWSSDKFMX.dproj"/>
-    </Target>
-    <Target Name="AWSSDKFMX:Clean">
-        <MSBuild Projects="..\..\Components\pkg110\AWSSDKFMX.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="AWSSDKFMX:Make">
-        <MSBuild Projects="..\..\Components\pkg110\AWSSDKFMX.dproj" Targets="Make"/>
-    </Target>
     <Target Name="PlanAddons">
         <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj"/>
     </Target>
@@ -248,15 +206,6 @@
     <Target Name="PlanAddons:Make">
         <MSBuild Projects="..\..\Components\pkg120\PlanAddons.dproj" Targets="Make"/>
     </Target>
-    <Target Name="OpenAIPackage">
-        <MSBuild Projects="..\..\Components\pkg120\OpenAIPackage.dproj"/>
-    </Target>
-    <Target Name="OpenAIPackage:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\OpenAIPackage.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="OpenAIPackage:Make">
-        <MSBuild Projects="..\..\Components\pkg120\OpenAIPackage.dproj" Targets="Make"/>
-    </Target>
     <Target Name="TUniFalcon">
         <MSBuild Projects="..\..\Components\pkg120\TUniFalcon.dproj"/>
     </Target>
@@ -265,15 +214,6 @@
     </Target>
     <Target Name="TUniFalcon:Make">
         <MSBuild Projects="..\..\Components\pkg120\TUniFalcon.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="JanuaOpenAIQuickChat">
-        <MSBuild Projects="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj"/>
-    </Target>
-    <Target Name="JanuaOpenAIQuickChat:Clean">
-        <MSBuild Projects="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="JanuaOpenAIQuickChat:Make">
-        <MSBuild Projects="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj" Targets="Make"/>
     </Target>
     <Target Name="SwagDoc">
         <MSBuild Projects="..\..\Components\pkg110\SwagDoc.dproj"/>
@@ -707,6 +647,15 @@
     <Target Name="FilesUploadDemo:Make">
         <MSBuild Projects="..\..\Samples\DMVC\fileupload\FilesUploadDemo.dproj" Targets="Make"/>
     </Target>
+    <Target Name="JanuaOpenAIQuickChat">
+        <MSBuild Projects="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj"/>
+    </Target>
+    <Target Name="JanuaOpenAIQuickChat:Clean">
+        <MSBuild Projects="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaOpenAIQuickChat:Make">
+        <MSBuild Projects="..\..\Samples\Janua\JanuaOpenAIQuickChat.dproj" Targets="Make"/>
+    </Target>
     <Target Name="CarServiceDMVCRestApplication">
         <MSBuild Projects="WebREST\CarServiceDMVCRestApplication.dproj"/>
     </Target>
@@ -788,24 +737,6 @@
     <Target Name="WebBrokerDMVCServerTest:Make">
         <MSBuild Projects="..\..\Samples\Janua\WebBroker\WebBrokerDMVCServerTest.dproj" Targets="Make"/>
     </Target>
-    <Target Name="StyleControls">
-        <MSBuild Projects="..\..\Components\pkg120\StyleControls.dproj"/>
-    </Target>
-    <Target Name="StyleControls:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\StyleControls.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="StyleControls:Make">
-        <MSBuild Projects="..\..\Components\pkg120\StyleControls.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="StyleControlsD">
-        <MSBuild Projects="..\..\Components\pkg120\StyleControlsD.dproj"/>
-    </Target>
-    <Target Name="StyleControlsD:Clean">
-        <MSBuild Projects="..\..\Components\pkg120\StyleControlsD.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="StyleControlsD:Make">
-        <MSBuild Projects="..\..\Components\pkg120\StyleControlsD.dproj" Targets="Make"/>
-    </Target>
     <Target Name="JanuaRestDMVCTestIDEXE15">
         <MSBuild Projects="VCL\JanuaRestDMVCTestIDEXE15.dproj"/>
     </Target>
@@ -815,14 +746,23 @@
     <Target Name="JanuaRestDMVCTestIDEXE15:Make">
         <MSBuild Projects="VCL\JanuaRestDMVCTestIDEXE15.dproj" Targets="Make"/>
     </Target>
+    <Target Name="JanuaVCLChatGPTTest">
+        <MSBuild Projects="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLChatGPTTest:Clean">
+        <MSBuild Projects="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLChatGPTTest:Make">
+        <MSBuild Projects="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="AWSSDK;AWSSDKVCL;AWSSDKFMX;PlanAddons;OpenAIPackage;TUniFalcon;JanuaOpenAIQuickChat;SwagDoc;sgcWebSockets;DECCipher;loggerproRT;JOSE;Neon;Spring_Base;Spring_Core;dmvcframeworkRT;JanuaThirdPartyVCL;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaUniMVVMTesting;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaRestWeb;JanuaDMVCUnitTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaDevIDEXE15;JanuaDevIDEUniGUI;JanuaVCLForms;DMVCVCLTestClientServer;JanuaAllDemos;EuroFloraApp;PhoenixAssoApp;SSLSample;JanuaVCLTestRESTImportExport;RestRequestSamplesXE14;RestLibDemo;AuthenticateAuthorize;AuthenticationAuthorizationClient;WinsoftPDFDemo;DMVCServiceDemoXE14;dmvcwindowsservice;RESTDebuggerClient;JanuaOpenAISimpleChat;FilesUploadDemo;CarServiceDMVCRestApplication;CarServiceDMVCService;CarServiceDMVCustomerConfirmation;renders;JanuaVCLTestCloudFlare;CustomSVGBlox;PickAPP;CarServiceWebBrokerCustConfVCL;WebBrokerDMVCServerTest;StyleControls;StyleControlsD;JanuaRestDMVCTestIDEXE15"/>
+        <CallTarget Targets="PlanAddons;TUniFalcon;SwagDoc;sgcWebSockets;DECCipher;loggerproRT;JOSE;Neon;Spring_Base;Spring_Core;dmvcframeworkRT;JanuaThirdPartyVCL;JanuaCoreThirdParty;RestRequestLib;JanuaCore;JanuaCoreUnitTesting;JanuaMVVM;JanuaUniMVVMTesting;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaUniDACUnitTesting;JanuaRestWeb;JanuaDMVCUnitTesting;JanuaVCLControls;JanuaVCLComponents;JanuaUniGUI;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaDevIDEXE15;JanuaDevIDEUniGUI;JanuaVCLForms;DMVCVCLTestClientServer;JanuaAllDemos;EuroFloraApp;PhoenixAssoApp;SSLSample;JanuaVCLTestRESTImportExport;RestRequestSamplesXE14;RestLibDemo;AuthenticateAuthorize;AuthenticationAuthorizationClient;WinsoftPDFDemo;DMVCServiceDemoXE14;dmvcwindowsservice;RESTDebuggerClient;JanuaOpenAISimpleChat;FilesUploadDemo;JanuaOpenAIQuickChat;CarServiceDMVCRestApplication;CarServiceDMVCService;CarServiceDMVCustomerConfirmation;renders;JanuaVCLTestCloudFlare;CustomSVGBlox;PickAPP;CarServiceWebBrokerCustConfVCL;WebBrokerDMVCServerTest;JanuaRestDMVCTestIDEXE15;JanuaVCLChatGPTTest"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AWSSDK:Clean;AWSSDKVCL:Clean;AWSSDKFMX:Clean;PlanAddons:Clean;OpenAIPackage:Clean;TUniFalcon:Clean;JanuaOpenAIQuickChat:Clean;SwagDoc:Clean;sgcWebSockets:Clean;DECCipher:Clean;loggerproRT:Clean;JOSE:Clean;Neon:Clean;Spring_Base:Clean;Spring_Core:Clean;dmvcframeworkRT:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaUniMVVMTesting:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaRestWeb:Clean;JanuaDMVCUnitTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaDevIDEXE15:Clean;JanuaDevIDEUniGUI:Clean;JanuaVCLForms:Clean;DMVCVCLTestClientServer:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;PhoenixAssoApp:Clean;SSLSample:Clean;JanuaVCLTestRESTImportExport:Clean;RestRequestSamplesXE14:Clean;RestLibDemo:Clean;AuthenticateAuthorize:Clean;AuthenticationAuthorizationClient:Clean;WinsoftPDFDemo:Clean;DMVCServiceDemoXE14:Clean;dmvcwindowsservice:Clean;RESTDebuggerClient:Clean;JanuaOpenAISimpleChat:Clean;FilesUploadDemo:Clean;CarServiceDMVCRestApplication:Clean;CarServiceDMVCService:Clean;CarServiceDMVCustomerConfirmation:Clean;renders:Clean;JanuaVCLTestCloudFlare:Clean;CustomSVGBlox:Clean;PickAPP:Clean;CarServiceWebBrokerCustConfVCL:Clean;WebBrokerDMVCServerTest:Clean;StyleControls:Clean;StyleControlsD:Clean;JanuaRestDMVCTestIDEXE15:Clean"/>
+        <CallTarget Targets="PlanAddons:Clean;TUniFalcon:Clean;SwagDoc:Clean;sgcWebSockets:Clean;DECCipher:Clean;loggerproRT:Clean;JOSE:Clean;Neon:Clean;Spring_Base:Clean;Spring_Core:Clean;dmvcframeworkRT:Clean;JanuaThirdPartyVCL:Clean;JanuaCoreThirdParty:Clean;RestRequestLib:Clean;JanuaCore:Clean;JanuaCoreUnitTesting:Clean;JanuaMVVM:Clean;JanuaUniMVVMTesting:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaUniDACUnitTesting:Clean;JanuaRestWeb:Clean;JanuaDMVCUnitTesting:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaUniGUI:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaDevIDEXE15:Clean;JanuaDevIDEUniGUI:Clean;JanuaVCLForms:Clean;DMVCVCLTestClientServer:Clean;JanuaAllDemos:Clean;EuroFloraApp:Clean;PhoenixAssoApp:Clean;SSLSample:Clean;JanuaVCLTestRESTImportExport:Clean;RestRequestSamplesXE14:Clean;RestLibDemo:Clean;AuthenticateAuthorize:Clean;AuthenticationAuthorizationClient:Clean;WinsoftPDFDemo:Clean;DMVCServiceDemoXE14:Clean;dmvcwindowsservice:Clean;RESTDebuggerClient:Clean;JanuaOpenAISimpleChat:Clean;FilesUploadDemo:Clean;JanuaOpenAIQuickChat:Clean;CarServiceDMVCRestApplication:Clean;CarServiceDMVCService:Clean;CarServiceDMVCustomerConfirmation:Clean;renders:Clean;JanuaVCLTestCloudFlare:Clean;CustomSVGBlox:Clean;PickAPP:Clean;CarServiceWebBrokerCustConfVCL:Clean;WebBrokerDMVCServerTest:Clean;JanuaRestDMVCTestIDEXE15:Clean;JanuaVCLChatGPTTest:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AWSSDK:Make;AWSSDKVCL:Make;AWSSDKFMX:Make;PlanAddons:Make;OpenAIPackage:Make;TUniFalcon:Make;JanuaOpenAIQuickChat:Make;SwagDoc:Make;sgcWebSockets:Make;DECCipher:Make;loggerproRT:Make;JOSE:Make;Neon:Make;Spring_Base:Make;Spring_Core:Make;dmvcframeworkRT:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaUniMVVMTesting:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaRestWeb:Make;JanuaDMVCUnitTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaDevIDEXE15:Make;JanuaDevIDEUniGUI:Make;JanuaVCLForms:Make;DMVCVCLTestClientServer:Make;JanuaAllDemos:Make;EuroFloraApp:Make;PhoenixAssoApp:Make;SSLSample:Make;JanuaVCLTestRESTImportExport:Make;RestRequestSamplesXE14:Make;RestLibDemo:Make;AuthenticateAuthorize:Make;AuthenticationAuthorizationClient:Make;WinsoftPDFDemo:Make;DMVCServiceDemoXE14:Make;dmvcwindowsservice:Make;RESTDebuggerClient:Make;JanuaOpenAISimpleChat:Make;FilesUploadDemo:Make;CarServiceDMVCRestApplication:Make;CarServiceDMVCService:Make;CarServiceDMVCustomerConfirmation:Make;renders:Make;JanuaVCLTestCloudFlare:Make;CustomSVGBlox:Make;PickAPP:Make;CarServiceWebBrokerCustConfVCL:Make;WebBrokerDMVCServerTest:Make;StyleControls:Make;StyleControlsD:Make;JanuaRestDMVCTestIDEXE15:Make"/>
+        <CallTarget Targets="PlanAddons:Make;TUniFalcon:Make;SwagDoc:Make;sgcWebSockets:Make;DECCipher:Make;loggerproRT:Make;JOSE:Make;Neon:Make;Spring_Base:Make;Spring_Core:Make;dmvcframeworkRT:Make;JanuaThirdPartyVCL:Make;JanuaCoreThirdParty:Make;RestRequestLib:Make;JanuaCore:Make;JanuaCoreUnitTesting:Make;JanuaMVVM:Make;JanuaUniMVVMTesting:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaUniDACUnitTesting:Make;JanuaRestWeb:Make;JanuaDMVCUnitTesting:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaUniGUI:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaDevIDEXE15:Make;JanuaDevIDEUniGUI:Make;JanuaVCLForms:Make;DMVCVCLTestClientServer:Make;JanuaAllDemos:Make;EuroFloraApp:Make;PhoenixAssoApp:Make;SSLSample:Make;JanuaVCLTestRESTImportExport:Make;RestRequestSamplesXE14:Make;RestLibDemo:Make;AuthenticateAuthorize:Make;AuthenticationAuthorizationClient:Make;WinsoftPDFDemo:Make;DMVCServiceDemoXE14:Make;dmvcwindowsservice:Make;RESTDebuggerClient:Make;JanuaOpenAISimpleChat:Make;FilesUploadDemo:Make;JanuaOpenAIQuickChat:Make;CarServiceDMVCRestApplication:Make;CarServiceDMVCService:Make;CarServiceDMVCustomerConfirmation:Make;renders:Make;JanuaVCLTestCloudFlare:Make;CustomSVGBlox:Make;PickAPP:Make;CarServiceWebBrokerCustConfVCL:Make;WebBrokerDMVCServerTest:Make;JanuaRestDMVCTestIDEXE15:Make;JanuaVCLChatGPTTest:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='ThirdParty'">
@@ -862,15 +802,15 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
-            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
+            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -878,12 +818,6 @@
             <ProjectGuid>{33E05D36-3C31-444D-ADB3-6A3A6B02ADE5}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
-            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\dmvcframeworkRT.dproj">
@@ -1024,12 +958,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
-            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1060,12 +988,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
-            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1088,12 +1010,6 @@
             <ProjectGuid>{C6A43575-0F1C-4BE1-AC97-88DD0821D55E}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
@@ -1186,12 +1102,6 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDK.dproj">
-            <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1216,8 +1126,8 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
-            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj">
+            <ProjectGuid>{9F929D48-8B95-40AF-9496-23F4258017E7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1266,15 +1176,15 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
-            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
-            <Configurations/>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
+            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
+            <Configurations/>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -1282,12 +1192,6 @@
             <ProjectGuid>{33E05D36-3C31-444D-ADB3-6A3A6B02ADE5}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
-            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\dmvcframeworkRT.dproj">
@@ -1428,12 +1332,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
-            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1464,12 +1362,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
-            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1492,12 +1384,6 @@
             <ProjectGuid>{C6A43575-0F1C-4BE1-AC97-88DD0821D55E}</ProjectGuid>
             <Configurations/>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
@@ -1590,12 +1476,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDK.dproj">
-            <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
-            <Configurations>Debug;Release</Configurations>
-            <Platforms>Win32;Win64</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1620,8 +1500,8 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
-            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj">
+            <ProjectGuid>{9F929D48-8B95-40AF-9496-23F4258017E7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -1670,15 +1550,15 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
-            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
+            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -1686,12 +1566,6 @@
             <ProjectGuid>{33E05D36-3C31-444D-ADB3-6A3A6B02ADE5}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
-            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\dmvcframeworkRT.dproj">
@@ -1832,12 +1706,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
-            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -1868,12 +1736,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
-            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -1896,12 +1758,6 @@
             <ProjectGuid>{C6A43575-0F1C-4BE1-AC97-88DD0821D55E}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
@@ -1994,12 +1850,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDK.dproj">
-            <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2024,8 +1874,8 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
-            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj">
+            <ProjectGuid>{9F929D48-8B95-40AF-9496-23F4258017E7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -2074,15 +1924,15 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
-            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
+            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2090,12 +1940,6 @@
             <ProjectGuid>{33E05D36-3C31-444D-ADB3-6A3A6B02ADE5}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
-            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\dmvcframeworkRT.dproj">
@@ -2236,12 +2080,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
-            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2272,12 +2110,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
-            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2300,12 +2132,6 @@
             <ProjectGuid>{C6A43575-0F1C-4BE1-AC97-88DD0821D55E}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
@@ -2398,12 +2224,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDK.dproj">
-            <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2428,8 +2248,8 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
-            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj">
+            <ProjectGuid>{9F929D48-8B95-40AF-9496-23F4258017E7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -2478,15 +2298,15 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
-            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
+            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2494,12 +2314,6 @@
             <ProjectGuid>{33E05D36-3C31-444D-ADB3-6A3A6B02ADE5}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
-            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\dmvcframeworkRT.dproj">
@@ -2640,12 +2454,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
-            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2676,12 +2484,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
-            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2704,12 +2506,6 @@
             <ProjectGuid>{C6A43575-0F1C-4BE1-AC97-88DD0821D55E}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
@@ -2802,12 +2598,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDK.dproj">
-            <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -2832,8 +2622,8 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
-            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj">
+            <ProjectGuid>{9F929D48-8B95-40AF-9496-23F4258017E7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -2882,15 +2672,15 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
-            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
+            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -2898,12 +2688,6 @@
             <ProjectGuid>{33E05D36-3C31-444D-ADB3-6A3A6B02ADE5}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
-            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\dmvcframeworkRT.dproj">
@@ -3044,12 +2828,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
-            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3080,12 +2858,6 @@
             <Platforms>Win64</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
-            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3108,12 +2880,6 @@
             <ProjectGuid>{C6A43575-0F1C-4BE1-AC97-88DD0821D55E}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
@@ -3206,12 +2972,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDK.dproj">
-            <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3236,8 +2996,8 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
-            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj">
+            <ProjectGuid>{9F929D48-8B95-40AF-9496-23F4258017E7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
@@ -3286,15 +3046,15 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
-            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\PlanAddons.dproj">
             <ProjectGuid>{C2A99AB9-188C-4311-95A7-716C7C34FF1C}</ProjectGuid>
             <Configurations>Release</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\DMVC\authenticationauthorization\AuthenticateAuthorize.dproj">
+            <ProjectGuid>{7B54055A-5749-4136-9FE2-35FDBEEA874C}</ProjectGuid>
+            <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
@@ -3302,12 +3062,6 @@
             <ProjectGuid>{33E05D36-3C31-444D-ADB3-6A3A6B02ADE5}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKVCL.dproj">
-            <ProjectGuid>{7F9BCB37-7D60-4BB7-8292-D5DBC7EC7845}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\dmvcframeworkRT.dproj">
@@ -3448,12 +3202,6 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDKFMX.dproj">
-            <ProjectGuid>{3DE14ECC-6B21-4DF6-A3A4-0291A831AFDE}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\sgcWebSockets.dproj">
             <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -3484,12 +3232,6 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\StyleControls.dproj">
-            <ProjectGuid>{2EA98E55-1CAF-457D-A84A-54A96D9A4490}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidacComponents.dproj">
             <ProjectGuid>{23EE2002-9EA2-4E96-B87E-B7B937EC900F}</ProjectGuid>
             <Configurations/>
@@ -3512,12 +3254,6 @@
             <ProjectGuid>{C6A43575-0F1C-4BE1-AC97-88DD0821D55E}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\OpenAIPackage.dproj">
-            <ProjectGuid>{9BBBEE38-9A11-4D1C-9BC6-ABDE97DA2B8A}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\..\Libraries\Winsoft\Winsoft PDF Library\Delphi\WinsoftPDFDemo.dproj">
@@ -3610,12 +3346,6 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg110\AWSSDK.dproj">
-            <ProjectGuid>{DB8627BD-64B9-4431-A6C9-D60DE96F04B8}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg110\Spring.Core.dproj">
             <ProjectGuid>{3F933A25-7C87-419F-B285-EE0B5E3F0B73}</ProjectGuid>
             <Configurations>Release</Configurations>
@@ -3640,8 +3370,8 @@
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="..\..\Components\pkg120\StyleControlsD.dproj">
-            <ProjectGuid>{E1C69C4A-8DBC-4D7B-BF93-680737293083}</ProjectGuid>
+        <BuildGroupProject Include="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj">
+            <ProjectGuid>{9F929D48-8B95-40AF-9496-23F4258017E7}</ProjectGuid>
             <Configurations>Debug</Configurations>
             <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>

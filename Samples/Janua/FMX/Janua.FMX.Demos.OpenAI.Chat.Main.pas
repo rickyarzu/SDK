@@ -23,7 +23,6 @@ type
     ListBox1: TListBox;
     Button1: TButton;
     Button2: TButton;
-    StyleBook1: TStyleBook;
     OpenDialogImg: TOpenDialog;
     procedure FormCreate(Sender: TObject);
     procedure OpenAIChat1Chat(Sender: TObject; Event: TChat);

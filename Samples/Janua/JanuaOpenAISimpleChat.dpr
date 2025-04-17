@@ -5,7 +5,7 @@ uses
   FMX.Forms,
   OpenAI.API.Params,
   OpenAI.API,
-  OpenAI.Audio,  
+  OpenAI.Audio,
   OpenAI.Chat.Functions,
   OpenAI.Chat.Functions.Samples,
   OpenAI.Chat,
@@ -28,12 +28,14 @@ uses
   OpenAI.Types,
   OpenAI.Utils.ObjectHolder,
   OpenAI.Utils.Base64,
-  Janua.FMX.Demos.OpenAI.Chat.Main in 'FMX\Janua.FMX.Demos.OpenAI.Chat.Main.pas' {FormChat};
+  Janua.FMX.Demos.OpenAI.Chat.Main in 'FMX\Janua.FMX.Demos.OpenAI.Chat.Main.pas' {FormChat},
+  Janua.Cloud.dmOpenAI in '..\..\src\januacore\datamodule\Janua.Cloud.dmOpenAI.pas' {DataModule1: TDataModule};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.CreateForm(TFormChat, FormChat);
+  Application.CreateForm(TDataModule1, DataModule1);
   Application.Run;
 end.

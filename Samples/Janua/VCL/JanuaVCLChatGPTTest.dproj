@@ -1,22 +1,17 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{538AE77C-0428-4B9C-A8ED-99DE37D4DAF9}</ProjectGuid>
-        <MainSource>JanuaTmsControls.dpk</MainSource>
-        <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
-        <TargetedPlatforms>131</TargetedPlatforms>
-        <AppType>Package</AppType>
-        <FrameworkType>VCL</FrameworkType>
+        <ProjectGuid>{9F929D48-8B95-40AF-9496-23F4258017E7}</ProjectGuid>
         <ProjectVersion>20.3</ProjectVersion>
+        <FrameworkType>VCL</FrameworkType>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
-        <ProjectName Condition="'$(ProjectName)'==''">JanuaTmsControls</ProjectName>
+        <ProjectName Condition="'$(ProjectName)'==''">JanuaVCLChatGPTTest</ProjectName>
+        <TargetedPlatforms>3</TargetedPlatforms>
+        <AppType>Application</AppType>
+        <MainSource>JanuaVCLChatGPTTest.dpr</MainSource>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Linux64' and '$(Base)'=='true') or '$(Base_Linux64)'!=''">
-        <Base_Linux64>true</Base_Linux64>
-        <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
@@ -29,12 +24,7 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win64x' and '$(Base)'=='true') or '$(Base_Win64x)'!=''">
-        <Base_Win64x>true</Base_Win64x>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
         <Cfg_1>true</Cfg_1>
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
@@ -51,7 +41,7 @@
         <Cfg_1>true</Cfg_1>
         <Base>true</Base>
     </PropertyGroup>
-    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
         <Cfg_2>true</Cfg_2>
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
@@ -68,209 +58,114 @@
         <Cfg_2>true</Cfg_2>
         <Base>true</Base>
     </PropertyGroup>
-    <Import Project="JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('JanuaLibDXE15.optset')"/>
     <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_E>false</DCC_E>
-        <DCC_F>false</DCC_F>
-        <DCC_K>false</DCC_K>
         <DCC_N>false</DCC_N>
         <DCC_S>false</DCC_S>
-        <DCC_ImageBase>00400000</DCC_ImageBase>
-        <GenDll>true</GenDll>
-        <GenPackage>true</GenPackage>
-        <SanitizedProjectName>JanuaTmsControls</SanitizedProjectName>
-        <DCC_Description>Janua TMS Controls</DCC_Description>
-        <DllSuffix>$(Auto)</DllSuffix>
-        <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
-        <VerInfo_Locale>1040</VerInfo_Locale>
-        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <CfgDependentOn>JanuaLibDXE15.optset</CfgDependentOn>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_Linux64)'!=''">
-        <DCC_UsePackage>rtl;FlexCel_Core;FlexCel_XlsAdapter;JanuaMVVM;JanuaUnidac;JanuaVCLComponents;JanuaVCLControls;TMSWebGMapsPkg;JanuaCore;dbrtl;IndySystem;IndyProtocols;IndyCore;$(DCC_UsePackage)</DCC_UsePackage>
-        <DCC_Define>CROSSVCL;$(DCC_Define)</DCC_Define>
+        <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+        <SanitizedProjectName>JanuaVCLChatGPTTest</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_UsePackage>DCLgtDocEng;vclie;bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;dbxcds;vcledge;TRCGooglePlaces_r;FlexCel_Pdf;VisualStyles;JvAppFrm;JclVcl;aseprovider290;dbexpress;Jcl;JvManagedThreads;inet;vcltouch;JanuaUniGUI;uniGUI29VCL;FMX_FlexCel_Core;FireDACDBXDriver;tdsprovider290;JanuaUnidac;tmsbcl;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;JvSystem;ipstudiowinwordxp;JvCrypt;uniGUI29;dbfprovider290;vclFireDAC;FireDACODBCDriver;emsserverresource;VCLTMSFNCRESTClientEditorPkgDXE15;rtl;bigqueryprovider290;gtRtl;gtFont;DBXSqliteDriver;gtFilters;DBXSybaseASEDriver;FMXTMSFNCBloxPkgDXE15;JvRuntimeDesign;JvXPCtrls;inetdbxpress;FireDAC;JvDocking;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;netsuiteprovider290;JvCmp;FireDACDb2Driver;DBXOracleDriver;bigcommerceprovider290;vclib;JanuaVCLMVVM;DatasnapConnectorsFreePascal;SVGIconImageList;Spring.Data;Ean;gtCompression;FMXTMSFNCCorePkgDXE15;sparkle;sphinx;TMSWebGMapsPkg;bindcompvclwinx;bindcompfmx;TMSVCLUIPackPkgExDXE15;FIBPlus;DCLgtQRExp;JvBands;VCLTMSFNCBloxPkgDXE15;PlanAddons;TUniFalconDesign;ibmonitor;liteprovider290;FireDACASADriver;SVGIconImageListFMX;vclactnband;TMSVCLUIPackPkgXlsDXE15;hubspotprovider290;officeXPrt;FireDACInfxDriver;DBXMySQLDriver;VclSmp;DataSnapCommon;fmxase;JanuaTmsControls;JvPluginSystem;TMSVCLUIPackPkgWizDXE15;FlexCel_XlsAdapter;myprovider290;DataSnapIndy10ServerTransport;JclDeveloperTools;FMXTMSFNCCloudPackPkgDXE15;vcldsnap;DBXInterBaseDriver;JvWizards;uniGUI29Chart;JanuaVCLControls;vcldb;accessprovider290;JvCore;dacfmx290;TMSmCLPkgDXE15;sugarprovider290;JanuaUnidacComponents;inetstn;JanuaMVVM;zohoprovider290;JanuaVCLComponents;JvDotNetCtrls;vcl;JvHMI;freshbooksprovider290;DataSnapClient;TMSWebOSMapsPkg;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;TMSWebOSMapsPkgDE;JvPrintPreview;tethering;uniTools29;JanuaThirdPartyVCL;TRCGooglePlaces_d;JanuaCore;bindcompvcl;JvStdCtrls;CloudService;JanuaFMXControls;TMSFMXPackPkgDXE15;unidac290;odbcprovider290;soapserver;FireDACIBDriver;TMSWebGMapsPkgDE;vclwinx;DataSnapServer;DecCipher;fmx;DbxCommonDriver;VCLRESTComponents;adsprovider290;FireDACCommonODBC;DBXMSSQLDriver;emsclient;ApperceptAPIClient;appanalytics;IndyProtocols;vclx;Skia.Package.RTL;magentoprovider290;gtCrypt;FMXTMSFNCRESTClientEditorPkgDXE15;DBXFirebirdDriver;SKIA_FlexCel_Core;vclgtxDocumentStudioControls;dacvcl290;FireDACSqliteDriver;DbxClientDriver;soapmidas;salesforceprovider290;gtDocEng;vquery290;ipstudiowin;JvDB;fmxdae;JvCustom;exacttargetprovider290;JvControls;OmniThreadLibraryRuntime;JvJans;JvMM;IndySystem;ZipMasterR;JvGlobus;JanuaCoreComponents;ibxbindings;OpenAIPackage;JclContainers;JvPageComps;FlexCel_Render;FireDACCommon;DataSnapServerMidas;TMSCloudPkgDEDXE15;bindcompdbx;db2provider290;FireDACMySQLDriver;VCL_FlexCel_Components;remotedb;ZLibrariesWin;TMSVCLUIPackPkgDXE15;mailchimpprovider290;vclimg;DataSnapFireDAC;unidacfmx290;pgprovider290;JvDlgs;xdata;QRWRunDXE12_W64;DBXInformixDriver;fmxobj;bindcompvclsmp;DataSnapNativeClient;TMSFMXCloudPackPkgDEDXE15;ZComponentsVCL;FMXTMSFNCUIPackPkgDXE15;TMSCloudPkgDXE15;TMSFNCCorePkgDXE15;emshosting;SVGIconImageListRestClient;VCLTMSFNCBloxToolBarsPkgDXE15;FireDACCommonDriver;IndyIPClient;emsedge;uSynEdit_R2025;crcontrols290;inetdb;mongoprovider290;TMSFMXCloudPackPkgDXE15;fmxFireDAC;dynamicsprovider290;ibprovider290;fmxgtxDocumentStudioControls;sbridge280;JvPascalInterpreter;oraprovider290;DBXOdbcDriver;JvTimeFramework;dbrtl;uniGUI29m;FireDACOracleDriver;Skia.Package.FMX;FireDACMSAccDriver;DataSnapConnectors;FMXTMSFNCMapsPkgDXE15;FireDACMongoDBDriver;VCLThemeSelector;FireDACTDataDriver;msprovider290;Skia.Package.VCL;VCLTMSFNCUIPackPkgDXE15;quickbooksprovider290;FlexCel_Core;unidacvcl290;bindcomp;IndyCore;RESTBackendComponents;dmvcframeworkDT;FireDACADSDriver;FMXTMSFNCBloxToolBarsPkgDXE15;Spring.Base;RESTComponents;IndyIPServer;dsnapxml;adortl;VCLTMSFNCMapsPkgDXE15;dsnapcon;DataSnapProviderClient;dac290;DBXDb2Driver;dmvcframeworkRT;rsprovider290;DBXSybaseASADriver;VCLTMSFNCCloudPackPkgDXE15;VCLTMSFNCCorePkgDXE15;soaprtl;TUniFalcon;JvNet;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_UsePackage>rtl;TMSVCLUIPackPkg;TMSVCLUIPackPkgEx;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;SVGIconImageList;SVGIconPackage;JanuaMVVM;JanuaUnidac;JanuaVCLComponents;JanuaVCLControls;TMSWebGMapsPkg;JanuaCore;VCLTMSFNCCloudPackPkg;TMSVCLUIPackPkgDXE15;TMSVCLUIPackPkgExDXE15;VCLTMSFNCCloudPackPkgDXE15;TMSCloudPkgDXE15;dbrtl;IndySystem;IndyProtocols;IndyCore;dmvcframeworkDT;dmvcframeworkRT;$(DCC_UsePackage)</DCC_UsePackage>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <DCC_UsePackage>rtl;TMSVCLUIPackPkg;TMSVCLUIPackPkgEx;FlexCel_Core;FlexCel_XlsAdapter;VCL_FlexCel_Core;SVGIconImageList;SVGIconPackage;JanuaMVVM;JanuaVCLComponents;JanuaVCLControls;JanuaCore;VCLTMSFNCCloudPackPkg;TMSVCLUIPackPkgDXE15;TMSVCLUIPackPkgExDXE15;VCLTMSFNCCloudPackPkgDXE15;dbrtl;IndySystem;IndyProtocols;IndyCore;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>vclie;bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;dbxcds;vcledge;TRCGooglePlaces_r;FlexCel_Pdf;VisualStyles;aseprovider290;dbexpress;inet;vcltouch;JanuaUniGUI;uniGUI29VCL;FMX_FlexCel_Core;FireDACDBXDriver;tdsprovider290;JanuaUnidac;tmsbcl;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;uniGUI29;dbfprovider290;vclFireDAC;FireDACODBCDriver;emsserverresource;VCLTMSFNCRESTClientEditorPkgDXE15;rtl;bigqueryprovider290;gtRtl;gtFont;DBXSqliteDriver;gtFilters;DBXSybaseASEDriver;FMXTMSFNCBloxPkgDXE15;inetdbxpress;FireDAC;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;netsuiteprovider290;FireDACDb2Driver;DBXOracleDriver;bigcommerceprovider290;vclib;DatasnapConnectorsFreePascal;SVGIconImageList;Spring.Data;Ean;gtCompression;sparkle;sphinx;TMSWebGMapsPkg;bindcompvclwinx;bindcompfmx;TMSVCLUIPackPkgExDXE15;FIBPlus;DCLgtQRExp;VCLTMSFNCBloxPkgDXE15;PlanAddons;ibmonitor;liteprovider290;FireDACASADriver;SVGIconImageListFMX;vclactnband;TMSVCLUIPackPkgXlsDXE15;hubspotprovider290;officeXPrt;FireDACInfxDriver;DBXMySQLDriver;VclSmp;DataSnapCommon;fmxase;JanuaTmsControls;FlexCel_XlsAdapter;myprovider290;DataSnapIndy10ServerTransport;FMXTMSFNCCloudPackPkgDXE15;vcldsnap;DBXInterBaseDriver;uniGUI29Chart;JanuaVCLControls;vcldb;accessprovider290;dacfmx290;sugarprovider290;JanuaUnidacComponents;inetstn;JanuaMVVM;zohoprovider290;JanuaVCLComponents;vcl;freshbooksprovider290;DataSnapClient;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;tethering;uniTools29;JanuaThirdPartyVCL;JanuaCore;bindcompvcl;CloudService;JanuaFMXControls;TMSFMXPackPkgDXE15;unidac290;odbcprovider290;soapserver;FireDACIBDriver;vclwinx;DataSnapServer;DecCipher;fmx;DbxCommonDriver;VCLRESTComponents;adsprovider290;FireDACCommonODBC;DBXMSSQLDriver;emsclient;ApperceptAPIClient;appanalytics;IndyProtocols;vclx;magentoprovider290;gtCrypt;DBXFirebirdDriver;dacvcl290;FireDACSqliteDriver;DbxClientDriver;soapmidas;salesforceprovider290;gtDocEng;vquery290;ipstudiowin;fmxdae;exacttargetprovider290;OmniThreadLibraryRuntime;IndySystem;ZipMasterR;JanuaCoreComponents;ibxbindings;FlexCel_Render;FireDACCommon;DataSnapServerMidas;bindcompdbx;db2provider290;FireDACMySQLDriver;VCL_FlexCel_Components;remotedb;ZLibrariesWin;TMSVCLUIPackPkgDXE15;mailchimpprovider290;vclimg;DataSnapFireDAC;unidacfmx290;pgprovider290;xdata;QRWRunDXE12_W64;DBXInformixDriver;fmxobj;bindcompvclsmp;DataSnapNativeClient;ZComponentsVCL;TMSCloudPkgDXE15;emshosting;SVGIconImageListRestClient;VCLTMSFNCBloxToolBarsPkgDXE15;FireDACCommonDriver;IndyIPClient;emsedge;uSynEdit_R2025;crcontrols290;inetdb;mongoprovider290;TMSFMXCloudPackPkgDXE15;fmxFireDAC;dynamicsprovider290;ibprovider290;sbridge280;oraprovider290;DBXOdbcDriver;dbrtl;uniGUI29m;FireDACOracleDriver;FireDACMSAccDriver;DataSnapConnectors;FMXTMSFNCMapsPkgDXE15;FireDACMongoDBDriver;VCLThemeSelector;FireDACTDataDriver;msprovider290;Skia.Package.VCL;VCLTMSFNCUIPackPkgDXE15;quickbooksprovider290;FlexCel_Core;unidacvcl290;bindcomp;IndyCore;RESTBackendComponents;FireDACADSDriver;FMXTMSFNCBloxToolBarsPkgDXE15;Spring.Base;RESTComponents;IndyIPServer;dsnapxml;adortl;VCLTMSFNCMapsPkgDXE15;dsnapcon;DataSnapProviderClient;dac290;DBXDb2Driver;dmvcframeworkRT;rsprovider290;DBXSybaseASADriver;VCLTMSFNCCloudPackPkgDXE15;VCLTMSFNCCorePkgDXE15;soaprtl;TUniFalcon;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_Win64x)'!=''">
-        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
-        <BT_BuildType>Debug</BT_BuildType>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <VerInfo_Locale>1033</VerInfo_Locale>
-        <BCC_EnableBatchCompilation>true</BCC_EnableBatchCompilation>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
-        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
-        <DCC_DebugInformation>0</DCC_DebugInformation>
-        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
-        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Locale>1033</VerInfo_Locale>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
         <DCC_Optimize>false</DCC_Optimize>
         <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
-        <DCC_RangeChecking>true</DCC_RangeChecking>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
         <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <DCC_RemoteDebug>false</DCC_RemoteDebug>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Locale>1033</VerInfo_Locale>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="rtl.dcp"/>
-        <DCCReference Include="TMSCloudPkgDXE15.dcp"/>
-        <DCCReference Include="JanuaVCLComponents.dcp"/>
-        <DCCReference Include="VCLTMSFNCCloudPackPkgDXE15.dcp"/>
-        <DCCReference Include="TMSVCLUIPackPkgExDXE15.dcp"/>
-        <DCCReference Include="TMSWebGMapsPkg.dcp"/>
-        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.SelectPrinter.pas"/>
-        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.ReadOnly.pas"/>
-        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.InputNumber.pas"/>
-        <DCCReference Include="..\..\src\JanuaLegacy\uJanuaFrameNavigator.pas">
-            <Form>JanuaFrameNavigator</Form>
-            <DesignClass>TFrame</DesignClass>
+        <DCCReference Include="Janua.VCL.frmDemoChatGPT.pas">
+            <Form>Form2</Form>
+            <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="..\..\src\JanuaLegacy\udlgSelectPrinter.pas">
-            <Form>dlgSelectPrinter</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.Functions.pas"/>
-        <DCCReference Include="..\..\src\JanuaLegacy\Janua.Legacy.Error.pas"/>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.frmMDCModel.pas">
-            <Form>frmMDCModel</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Commons\uJanuaVCLFormMDIModel.pas">
-            <Form>JanuaVCLFormMDIModel</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Controls\Janua.VCL.TMSStyles.pas"/>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.dlgLogin.pas">
-            <Form>dlgTMSLogin</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.dlgServer.pas">
-            <Form>dlgTMSSelectServer</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.Dialogs.pas"/>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.dlgInputDate.pas">
-            <Form>dlgTMSInputDate</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.dlgInputFloat.pas">
-            <Form>dlgInputFloat</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.dlgInputNumber.pas">
-            <Form>dlgInputNumber</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.dlgInputText.pas">
-            <Form>dlgTMSInputText</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.Functions.pas"/>
-        <DCCReference Include="..\..\src\TMS\udmJanuaTmsSystem.pas">
-            <Form>dmJanuaTmsSystem</Form>
+        <DCCReference Include="..\..\..\src\januacore\datamodule\Janua.Cloud.dmOpenAI.pas">
+            <Form>DataModule1</Form>
+            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Controls\Janua.Tms.Controls.Impl.pas"/>
-        <DCCReference Include="..\..\src\VCL\Commons\udlgJanuaWizardModel.pas">
-            <Form>dlgJanuaWizardModel</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.Statistics.MainFormController.pas"/>
-        <DCCReference Include="..\..\src\VCL\System\Janua.VCL.dlgRegisterUser.pas">
-            <Form>dlgRegisterUser</Form>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\System\Janua.VCL.Users.pas"/>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.RegisterUnit.pas"/>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.Error.pas"/>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.NavBar.pas">
-            <Form>JanuaTMSNavBarFrame</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.FrameNavBar.pas">
-            <Form>frameJanuaTmsNavBar</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\VCL\Commons\Janua.VCL.Forms.pas"/>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.Interposers.pas"/>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.Cloud.pas"/>
-        <DCCReference Include="..\..\src\VCL\Cloud\Janua.VCL.Geocoding.pas">
-            <Form>dmGeoCoding</Form>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.Cloud.Mail.VCL.pas"/>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.MyMonthPlanner.pas"/>
-        <DCCReference Include="..\..\src\TMS\Janua.TMS.Framework.pas"/>
-        <None Include="ModelSupport_JanuaTmsControls\default.txaPackage"/>
-        <None Include="ModelSupport_JanuaTmsControls\default.txvpck"/>
-        <None Include="ModelSupport_JanuaTmsControls\Janua\default.txvpck"/>
-        <None Include="ModelSupport_JanuaTmsControls\Janua\TMS\default.txvpck"/>
-        <None Include="ModelSupport_JanuaTmsControls\Janua\TMS\SMS\default.txvpck"/>
-        <None Include="ModelSupport_JanuaTmsControls\Janua\TMS\SMS\default.txaPackage"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
-            <DependentOn>JanuaLibDXE15.optset</DependentOn>
         </BuildConfiguration>
-        <BuildConfiguration Include="Release">
+        <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
             <CfgParent>Base</CfgParent>
         </BuildConfiguration>
-        <BuildConfiguration Include="Debug">
+        <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
         </BuildConfiguration>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Delphi.Personality.12</Borland.Personality>
-        <Borland.ProjectType>Package</Borland.ProjectType>
+        <Borland.ProjectType>Application</Borland.ProjectType>
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">JanuaTmsControls.dpk</Source>
+                    <Source Name="MainSource">JanuaVCLChatGPTTest.dpr</Source>
                 </Source>
-                <Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
-                </Excluded_Packages>
             </Delphi.Personality>
-            <Platforms>
-                <Platform value="Linux64">True</Platform>
-                <Platform value="Win32">True</Platform>
-                <Platform value="Win64">True</Platform>
-                <Platform value="Win64x">False</Platform>
-            </Platforms>
             <Deployment Version="5">
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Win64\JanuaTmsControls280.bpl" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Win64\JanuaTmsControls280.bpl" Configuration="Release" Class="ProjectOutput"/>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaTmsControls290.bpl" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="Win32\Debug\JanuaVCLChatGPTTest.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>JanuaVCLChatGPTTest.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win32">
@@ -684,6 +579,7 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win32">
@@ -692,14 +588,17 @@
                 </DeployClass>
                 <DeployClass Name="DependencyFramework">
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.framework</Extensions>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.framework</Extensions>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.framework</Extensions>
                     </Platform>
@@ -708,15 +607,30 @@
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="DependencyModule">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
@@ -739,14 +653,17 @@
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
@@ -772,12 +689,15 @@
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="Win32">
@@ -792,9 +712,44 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="ProjectOSXDebug"/>
-                <DeployClass Name="ProjectOSXEntitlements"/>
-                <DeployClass Name="ProjectOSXInfoPList"/>
+                <DeployClass Name="ProjectOSXDebug">
+                    <Platform Name="OSX64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXEntitlements">
+                    <Platform Name="OSX32">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXInfoPList">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
                 <DeployClass Name="ProjectOSXResource">
                     <Platform Name="OSX32">
                         <RemoteDir>Contents\Resources</RemoteDir>
@@ -831,12 +786,15 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win32">
@@ -874,9 +832,41 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="ProjectiOSEntitlements"/>
-                <DeployClass Name="ProjectiOSInfoPList"/>
-                <DeployClass Name="ProjectiOSLaunchScreen"/>
+                <DeployClass Name="ProjectiOSEntitlements">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSInfoPList">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSLaunchScreen">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                </DeployClass>
                 <DeployClass Name="ProjectiOSResource">
                     <Platform Name="iOSDevice32">
                         <Operation>1</Operation>
@@ -1113,16 +1103,18 @@
                 <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="iOSSimARM64" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win64x" Name="$(PROJECTNAME)"/>
             </Deployment>
-            <ModelSupport>True</ModelSupport>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">True</Platform>
+            </Platforms>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>

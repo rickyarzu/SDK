@@ -3,10 +3,10 @@ unit Janua.Core.DataModule;
 interface
 
 uses
-  Janua.Core.Types, System.SysUtils, System.Classes, Spring.Collections, System.Bindings.Helper,
+  System.SysUtils, System.Classes, Spring.Collections, System.Bindings.Helper,
   // JanuaProject
   Janua.Bindings.Intf, Janua.Controls.Intf, Janua.Controls.Forms.Intf, Janua.Core.Classes.Intf,
-  Janua.Orm.Intf;
+  Janua.Core.Types, Janua.Orm.Intf;
 
 type
   TJanuaCoreDataModule = class(TDataModule, IJanuaDataModule, IJanuaBindable)
