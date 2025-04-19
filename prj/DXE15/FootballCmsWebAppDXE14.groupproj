@@ -27,6 +27,9 @@
         <Projects Include="JanuaFMXControls.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="..\..\..\Projects\VCL\Football\prj\SportmediaManager.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="VCL\DilettantissimoManager.dproj">
             <Dependencies/>
         </Projects>
@@ -128,6 +131,15 @@
     <Target Name="JanuaFMXControls:Make">
         <MSBuild Projects="JanuaFMXControls.dproj" Targets="Make"/>
     </Target>
+    <Target Name="SportmediaManager">
+        <MSBuild Projects="..\..\..\Projects\VCL\Football\prj\SportmediaManager.dproj"/>
+    </Target>
+    <Target Name="SportmediaManager:Clean">
+        <MSBuild Projects="..\..\..\Projects\VCL\Football\prj\SportmediaManager.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SportmediaManager:Make">
+        <MSBuild Projects="..\..\..\Projects\VCL\Football\prj\SportmediaManager.dproj" Targets="Make"/>
+    </Target>
     <Target Name="DilettantissimoManager">
         <MSBuild Projects="VCL\DilettantissimoManager.dproj"/>
     </Target>
@@ -192,13 +204,13 @@
         <MSBuild Projects="FMX\LNDLiguriaApp.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="JanuaCore;JanuaCoreComponents;JanuaMVVM;JanuaUnidac;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaFMXControls;DilettantissimoManager;LndCms;DilettantissimoCms;JanuaVCLUnitTesting;SportmediaApp;SportMediaConsole;LNDLiguriaApp"/>
+        <CallTarget Targets="JanuaCore;JanuaCoreComponents;JanuaMVVM;JanuaUnidac;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaFMXControls;SportmediaManager;DilettantissimoManager;LndCms;DilettantissimoCms;JanuaVCLUnitTesting;SportmediaApp;SportMediaConsole;LNDLiguriaApp"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="JanuaCore:Clean;JanuaCoreComponents:Clean;JanuaMVVM:Clean;JanuaUnidac:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;DilettantissimoManager:Clean;LndCms:Clean;DilettantissimoCms:Clean;JanuaVCLUnitTesting:Clean;SportmediaApp:Clean;SportMediaConsole:Clean;LNDLiguriaApp:Clean"/>
+        <CallTarget Targets="JanuaCore:Clean;JanuaCoreComponents:Clean;JanuaMVVM:Clean;JanuaUnidac:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;SportmediaManager:Clean;DilettantissimoManager:Clean;LndCms:Clean;DilettantissimoCms:Clean;JanuaVCLUnitTesting:Clean;SportmediaApp:Clean;SportMediaConsole:Clean;LNDLiguriaApp:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="JanuaCore:Make;JanuaCoreComponents:Make;JanuaMVVM:Make;JanuaUnidac:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;DilettantissimoManager:Make;LndCms:Make;DilettantissimoCms:Make;JanuaVCLUnitTesting:Make;SportmediaApp:Make;SportMediaConsole:Make;LNDLiguriaApp:Make"/>
+        <CallTarget Targets="JanuaCore:Make;JanuaCoreComponents:Make;JanuaMVVM:Make;JanuaUnidac:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;SportmediaManager:Make;DilettantissimoManager:Make;LndCms:Make;DilettantissimoCms:Make;JanuaVCLUnitTesting:Make;SportmediaApp:Make;SportMediaConsole:Make;LNDLiguriaApp:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
