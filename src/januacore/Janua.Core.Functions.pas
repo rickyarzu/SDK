@@ -4163,9 +4163,7 @@ begin
       Result := Result + LC;
 end;
 
-function EncodeURIComponent(
-
-  const ASrc: string): UTF8String;
+function EncodeURIComponent(const ASrc: string): UTF8String;
 const
   HexMap: UTF8String = '0123456789ABCDEF';
 
