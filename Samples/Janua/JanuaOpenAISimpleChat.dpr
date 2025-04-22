@@ -29,13 +29,13 @@ uses
   OpenAI.Utils.ObjectHolder,
   OpenAI.Utils.Base64,
   Janua.FMX.Demos.OpenAI.Chat.Main in 'FMX\Janua.FMX.Demos.OpenAI.Chat.Main.pas' {FormChat},
-  Janua.Cloud.dmOpenAI in '..\..\src\januacore\datamodule\Janua.Cloud.dmOpenAI.pas' {DataModule1: TDataModule};
+  Janua.Cloud.dmOpenAI in '..\..\src\januacore\datamodule\Janua.Cloud.dmOpenAI.pas' {dmCloudOpenAI: TDataModule};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.CreateForm(TFormChat, FormChat);
-  Application.CreateForm(TDataModule1, DataModule1);
+  Application.CreateForm(TdmCloudOpenAI, dmCloudOpenAI);
   Application.Run;
 end.

@@ -229,7 +229,7 @@
             <Form>FormChat</Form>
         </DCCReference>
         <DCCReference Include="..\..\src\januacore\datamodule\Janua.Cloud.dmOpenAI.pas">
-            <Form>DataModule1</Form>
+            <Form>dmCloudOpenAI</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>

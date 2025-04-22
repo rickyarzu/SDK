@@ -1,4 +1,4 @@
-inherited DataModule1: TDataModule1
+inherited dmCloudOpenAI: TdmCloudOpenAI
   Height = 220
   Width = 571
   PixelsPerInch = 120
@@ -23,6 +23,11 @@ inherited DataModule1: TDataModule1
     Temperature = 1.000000000000000000
     TopP = 1.000000000000000000
     MaxTokens = 4096
+    OnChat = OpenAIChat1Chat
+    OnChatDelta = OpenAIChat1ChatDelta
+    OnError = OpenAIChat1Error
+    OnBeginWork = OpenAIChat1BeginWork
+    OnEndWork = OpenAIChat1EndWork
     Left = 272
     Top = 48
   end
