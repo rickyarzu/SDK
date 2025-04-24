@@ -40,7 +40,9 @@ requires
   inet,
   IndySystem,
   IndyProtocols,
+  {$IFNDEF LINUX}
   IndyIPClient,
+  {$ENDIF}
   Spring.Base,
   IndyCore,
   Jose,
