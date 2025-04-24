@@ -1,47 +1,17 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{4F61AED8-DBC6-44B7-82F3-B983CA6C7F7F}</ProjectGuid>
-        <MainSource>sgcWebSockets.dpk</MainSource>
+        <ProjectGuid>{9F929D48-8B95-40AF-9496-23F4258017E7}</ProjectGuid>
         <ProjectVersion>20.3</ProjectVersion>
-        <FrameworkType>None</FrameworkType>
+        <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
-        <TargetedPlatforms>131</TargetedPlatforms>
-        <AppType>Package</AppType>
-        <ProjectName Condition="'$(ProjectName)'==''">sgcWebSockets</ProjectName>
+        <ProjectName Condition="'$(ProjectName)'==''">JanuaVCLChatGPTTest</ProjectName>
+        <TargetedPlatforms>3</TargetedPlatforms>
+        <AppType>Application</AppType>
+        <MainSource>JanuaVCLChatGPTTest.dpr</MainSource>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Android' and '$(Base)'=='true') or '$(Base_Android)'!=''">
-        <Base_Android>true</Base_Android>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Base)'=='true') or '$(Base_Android64)'!=''">
-        <Base_Android64>true</Base_Android64>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Base)'=='true') or '$(Base_iOSDevice64)'!=''">
-        <Base_iOSDevice64>true</Base_iOSDevice64>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='iOSSimARM64' and '$(Base)'=='true') or '$(Base_iOSSimARM64)'!=''">
-        <Base_iOSSimARM64>true</Base_iOSSimARM64>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='OSX64' and '$(Base)'=='true') or '$(Base_OSX64)'!=''">
-        <Base_OSX64>true</Base_OSX64>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='OSXARM64' and '$(Base)'=='true') or '$(Base_OSXARM64)'!=''">
-        <Base_OSXARM64>true</Base_OSXARM64>
-        <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
@@ -51,11 +21,6 @@
     </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
         <Base_Win64>true</Base_Win64>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win64x' and '$(Base)'=='true') or '$(Base_Win64x)'!=''">
-        <Base_Win64x>true</Base_Win64x>
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
@@ -70,12 +35,29 @@
         <Cfg_1>true</Cfg_1>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
+        <Cfg_1_Win64>true</Cfg_1_Win64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
         <Cfg_2>true</Cfg_2>
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
-    <Import Project="..\..\prj\DXE14\JanuaLibDXE14.optset" Condition="'$(Base)'!='' And Exists('..\..\prj\DXE14\JanuaLibDXE14.optset')"/>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
+        <Cfg_2_Win64>true</Cfg_2_Win64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
         <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
@@ -84,66 +66,29 @@
         <DCC_S>false</DCC_S>
         <DCC_F>false</DCC_F>
         <DCC_K>false</DCC_K>
-        <GenDll>true</GenDll>
-        <GenPackage>true</GenPackage>
-        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
-        <SanitizedProjectName>sgcWebSockets</SanitizedProjectName>
-        <DCC_Description>ESeGeCe Web Sockets</DCC_Description>
-        <DllSuffix>$(Auto)</DllSuffix>
-        <RuntimeOnlyPackage>true</RuntimeOnlyPackage>
-        <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
-        <CfgDependentOn>..\..\prj\DXE14\JanuaLibDXE14.optset</CfgDependentOn>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_Android)'!=''">
-        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
-        <BT_BuildType>Debug</BT_BuildType>
-        <EnabledSysJars>activity-1.1.0.dex.jar;annotation-1.2.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;asynclayoutinflater-1.0.0.dex.jar;billing-4.0.0.dex.jar;biometric-1.1.0.dex.jar;browser-1.0.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;coordinatorlayout-1.0.0.dex.jar;core-1.5.0-rc02.dex.jar;core-common-2.1.0.dex.jar;core-runtime-2.1.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;firebase-annotations-16.0.0.dex.jar;firebase-common-20.0.0.dex.jar;firebase-components-17.0.0.dex.jar;firebase-datatransport-18.0.0.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.0.0.dex.jar;firebase-installations-interop-17.0.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-22.0.0.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;legacy-support-core-ui-1.0.0.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.2.0.dex.jar;lifecycle-livedata-2.0.0.dex.jar;lifecycle-livedata-core-2.2.0.dex.jar;lifecycle-runtime-2.2.0.dex.jar;lifecycle-service-2.0.0.dex.jar;lifecycle-viewmodel-2.2.0.dex.jar;lifecycle-viewmodel-savedstate-2.2.0.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;play-services-ads-20.1.0.dex.jar;play-services-ads-base-20.1.0.dex.jar;play-services-ads-identifier-17.0.0.dex.jar;play-services-ads-lite-20.1.0.dex.jar;play-services-base-17.5.0.dex.jar;play-services-basement-17.6.0.dex.jar;play-services-cloud-messaging-16.0.0.dex.jar;play-services-drive-17.0.0.dex.jar;play-services-games-21.0.0.dex.jar;play-services-location-18.0.0.dex.jar;play-services-maps-17.0.1.dex.jar;play-services-measurement-base-18.0.0.dex.jar;play-services-measurement-sdk-api-18.0.0.dex.jar;play-services-places-placereport-17.0.0.dex.jar;play-services-stats-17.0.0.dex.jar;play-services-tasks-17.2.0.dex.jar;print-1.0.0.dex.jar;room-common-2.1.0.dex.jar;room-runtime-2.1.0.dex.jar;savedstate-1.0.0.dex.jar;slidingpanelayout-1.0.0.dex.jar;sqlite-2.0.1.dex.jar;sqlite-framework-2.0.1.dex.jar;swiperefreshlayout-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.0.0.dex.jar;transport-runtime-3.0.0.dex.jar;user-messaging-platform-1.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.1.0.dex.jar</EnabledSysJars>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_Android64)'!=''">
-        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
-        <BT_BuildType>Debug</BT_BuildType>
-        <EnabledSysJars>activity-1.1.0.dex.jar;annotation-1.2.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;asynclayoutinflater-1.0.0.dex.jar;billing-4.0.0.dex.jar;biometric-1.1.0.dex.jar;browser-1.0.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;coordinatorlayout-1.0.0.dex.jar;core-1.5.0-rc02.dex.jar;core-common-2.1.0.dex.jar;core-runtime-2.1.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;firebase-annotations-16.0.0.dex.jar;firebase-common-20.0.0.dex.jar;firebase-components-17.0.0.dex.jar;firebase-datatransport-18.0.0.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.0.0.dex.jar;firebase-installations-interop-17.0.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-22.0.0.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;legacy-support-core-ui-1.0.0.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.2.0.dex.jar;lifecycle-livedata-2.0.0.dex.jar;lifecycle-livedata-core-2.2.0.dex.jar;lifecycle-runtime-2.2.0.dex.jar;lifecycle-service-2.0.0.dex.jar;lifecycle-viewmodel-2.2.0.dex.jar;lifecycle-viewmodel-savedstate-2.2.0.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;play-services-ads-20.1.0.dex.jar;play-services-ads-base-20.1.0.dex.jar;play-services-ads-identifier-17.0.0.dex.jar;play-services-ads-lite-20.1.0.dex.jar;play-services-base-17.5.0.dex.jar;play-services-basement-17.6.0.dex.jar;play-services-cloud-messaging-16.0.0.dex.jar;play-services-drive-17.0.0.dex.jar;play-services-games-21.0.0.dex.jar;play-services-location-18.0.0.dex.jar;play-services-maps-17.0.1.dex.jar;play-services-measurement-base-18.0.0.dex.jar;play-services-measurement-sdk-api-18.0.0.dex.jar;play-services-places-placereport-17.0.0.dex.jar;play-services-stats-17.0.0.dex.jar;play-services-tasks-17.2.0.dex.jar;print-1.0.0.dex.jar;room-common-2.1.0.dex.jar;room-runtime-2.1.0.dex.jar;savedstate-1.0.0.dex.jar;slidingpanelayout-1.0.0.dex.jar;sqlite-2.0.1.dex.jar;sqlite-framework-2.0.1.dex.jar;swiperefreshlayout-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.0.0.dex.jar;transport-runtime-3.0.0.dex.jar;user-messaging-platform-1.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.1.0.dex.jar</EnabledSysJars>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_iOSDevice64)'!=''">
-        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDevelopmentRegion=en;CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleInfoDictionaryVersion=7.1;CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;LSRequiresIPhoneOS=true;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);UIDeviceFamily=iPhone &amp; iPad;NSLocationAlwaysUsageDescription=The reason for accessing the location information of the user;NSLocationWhenInUseUsageDescription=The reason for accessing the location information of the user;NSLocationAlwaysAndWhenInUseUsageDescription=The reason for accessing the location information of the user;UIBackgroundModes=;NSContactsUsageDescription=The reason for accessing the contacts;NSPhotoLibraryUsageDescription=The reason for accessing the photo library;NSPhotoLibraryAddUsageDescription=The reason for adding to the photo library;NSCameraUsageDescription=The reason for accessing the camera;NSFaceIDUsageDescription=The reason for accessing the face id;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSSiriUsageDescription=The reason for accessing Siri;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing bluetooth;NSBluetoothPeripheralUsageDescription=The reason for accessing bluetooth peripherals;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSMotionUsageDescription=The reason for accessing the accelerometer;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers</VerInfo_Keys>
-        <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <BT_BuildType>Debug</BT_BuildType>
-        <VerInfo_BundleId>$(MSBuildProjectName)</VerInfo_BundleId>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_iOSSimARM64)'!=''">
-        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDevelopmentRegion=en;CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleInfoDictionaryVersion=7.1;CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;LSRequiresIPhoneOS=true;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);UIDeviceFamily=iPhone &amp; iPad;NSLocationAlwaysUsageDescription=The reason for accessing the location information of the user;NSLocationWhenInUseUsageDescription=The reason for accessing the location information of the user;NSLocationAlwaysAndWhenInUseUsageDescription=The reason for accessing the location information of the user;UIBackgroundModes=;NSContactsUsageDescription=The reason for accessing the contacts;NSPhotoLibraryUsageDescription=The reason for accessing the photo library;NSPhotoLibraryAddUsageDescription=The reason for adding to the photo library;NSCameraUsageDescription=The reason for accessing the camera;NSFaceIDUsageDescription=The reason for accessing the face id;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSSiriUsageDescription=The reason for accessing Siri;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing bluetooth;NSBluetoothPeripheralUsageDescription=The reason for accessing bluetooth peripherals;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSMotionUsageDescription=The reason for accessing the accelerometer;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers</VerInfo_Keys>
-        <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_OSX64)'!=''">
-        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers;ITSAppUsesNonExemptEncryption=false</VerInfo_Keys>
-        <BT_BuildType>Debug</BT_BuildType>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_OSXARM64)'!=''">
-        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers;ITSAppUsesNonExemptEncryption=false</VerInfo_Keys>
-        <BT_BuildType>Debug</BT_BuildType>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+        <SanitizedProjectName>JanuaVCLChatGPTTest</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_UsePackage>DCLgtDocEng;vclie;bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;dbxcds;vcledge;TRCGooglePlaces_r;FlexCel_Pdf;VisualStyles;JvAppFrm;JclVcl;aseprovider290;dbexpress;Jcl;JvManagedThreads;inet;vcltouch;JanuaUniGUI;uniGUI29VCL;FMX_FlexCel_Core;FireDACDBXDriver;tdsprovider290;JanuaUnidac;tmsbcl;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;JvSystem;ipstudiowinwordxp;JvCrypt;uniGUI29;dbfprovider290;vclFireDAC;FireDACODBCDriver;emsserverresource;VCLTMSFNCRESTClientEditorPkgDXE15;rtl;bigqueryprovider290;gtRtl;gtFont;DBXSqliteDriver;gtFilters;DBXSybaseASEDriver;FMXTMSFNCBloxPkgDXE15;JvRuntimeDesign;JvXPCtrls;inetdbxpress;FireDAC;JvDocking;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;netsuiteprovider290;JvCmp;FireDACDb2Driver;DBXOracleDriver;bigcommerceprovider290;vclib;JanuaVCLMVVM;DatasnapConnectorsFreePascal;SVGIconImageList;Spring.Data;Ean;gtCompression;FMXTMSFNCCorePkgDXE15;sparkle;sphinx;TMSWebGMapsPkg;bindcompvclwinx;bindcompfmx;TMSVCLUIPackPkgExDXE15;FIBPlus;DCLgtQRExp;JvBands;VCLTMSFNCBloxPkgDXE15;PlanAddons;TUniFalconDesign;ibmonitor;liteprovider290;FireDACASADriver;SVGIconImageListFMX;vclactnband;TMSVCLUIPackPkgXlsDXE15;hubspotprovider290;officeXPrt;FireDACInfxDriver;DBXMySQLDriver;VclSmp;DataSnapCommon;fmxase;JanuaTmsControls;JvPluginSystem;TMSVCLUIPackPkgWizDXE15;FlexCel_XlsAdapter;myprovider290;DataSnapIndy10ServerTransport;JclDeveloperTools;FMXTMSFNCCloudPackPkgDXE15;vcldsnap;DBXInterBaseDriver;JvWizards;uniGUI29Chart;JanuaVCLControls;vcldb;accessprovider290;JvCore;dacfmx290;TMSmCLPkgDXE15;sugarprovider290;JanuaUnidacComponents;inetstn;JanuaMVVM;zohoprovider290;JanuaVCLComponents;JvDotNetCtrls;vcl;JvHMI;freshbooksprovider290;DataSnapClient;TMSWebOSMapsPkg;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;TMSWebOSMapsPkgDE;JvPrintPreview;tethering;uniTools29;JanuaThirdPartyVCL;TRCGooglePlaces_d;JanuaCore;bindcompvcl;JvStdCtrls;CloudService;JanuaFMXControls;TMSFMXPackPkgDXE15;unidac290;odbcprovider290;soapserver;FireDACIBDriver;TMSWebGMapsPkgDE;vclwinx;DataSnapServer;DecCipher;fmx;DbxCommonDriver;VCLRESTComponents;adsprovider290;FireDACCommonODBC;DBXMSSQLDriver;emsclient;ApperceptAPIClient;appanalytics;IndyProtocols;vclx;Skia.Package.RTL;magentoprovider290;gtCrypt;FMXTMSFNCRESTClientEditorPkgDXE15;DBXFirebirdDriver;SKIA_FlexCel_Core;vclgtxDocumentStudioControls;dacvcl290;FireDACSqliteDriver;DbxClientDriver;soapmidas;salesforceprovider290;gtDocEng;vquery290;ipstudiowin;JvDB;fmxdae;JvCustom;exacttargetprovider290;JvControls;OmniThreadLibraryRuntime;JvJans;JvMM;IndySystem;ZipMasterR;JvGlobus;JanuaCoreComponents;ibxbindings;OpenAIPackage;JclContainers;JvPageComps;FlexCel_Render;FireDACCommon;DataSnapServerMidas;TMSCloudPkgDEDXE15;bindcompdbx;db2provider290;FireDACMySQLDriver;VCL_FlexCel_Components;remotedb;ZLibrariesWin;TMSVCLUIPackPkgDXE15;mailchimpprovider290;vclimg;DataSnapFireDAC;unidacfmx290;pgprovider290;JvDlgs;xdata;QRWRunDXE12_W64;DBXInformixDriver;fmxobj;bindcompvclsmp;DataSnapNativeClient;TMSFMXCloudPackPkgDEDXE15;ZComponentsVCL;FMXTMSFNCUIPackPkgDXE15;TMSCloudPkgDXE15;TMSFNCCorePkgDXE15;emshosting;SVGIconImageListRestClient;VCLTMSFNCBloxToolBarsPkgDXE15;FireDACCommonDriver;IndyIPClient;emsedge;uSynEdit_R2025;crcontrols290;inetdb;mongoprovider290;TMSFMXCloudPackPkgDXE15;fmxFireDAC;dynamicsprovider290;ibprovider290;fmxgtxDocumentStudioControls;sbridge280;JvPascalInterpreter;oraprovider290;DBXOdbcDriver;JvTimeFramework;dbrtl;uniGUI29m;FireDACOracleDriver;Skia.Package.FMX;FireDACMSAccDriver;DataSnapConnectors;FMXTMSFNCMapsPkgDXE15;FireDACMongoDBDriver;VCLThemeSelector;FireDACTDataDriver;msprovider290;Skia.Package.VCL;VCLTMSFNCUIPackPkgDXE15;quickbooksprovider290;FlexCel_Core;unidacvcl290;bindcomp;IndyCore;RESTBackendComponents;dmvcframeworkDT;FireDACADSDriver;FMXTMSFNCBloxToolBarsPkgDXE15;Spring.Base;RESTComponents;IndyIPServer;dsnapxml;adortl;VCLTMSFNCMapsPkgDXE15;dsnapcon;DataSnapProviderClient;dac290;DBXDb2Driver;dmvcframeworkRT;rsprovider290;DBXSybaseASADriver;VCLTMSFNCCloudPackPkgDXE15;VCLTMSFNCCorePkgDXE15;soaprtl;TUniFalcon;JvNet;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_UsePackage>vclie;bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;dbxcds;vcledge;TRCGooglePlaces_r;FlexCel_Pdf;VisualStyles;aseprovider290;dbexpress;inet;vcltouch;JanuaUniGUI;uniGUI29VCL;FMX_FlexCel_Core;FireDACDBXDriver;tdsprovider290;JanuaUnidac;tmsbcl;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;uniGUI29;dbfprovider290;vclFireDAC;FireDACODBCDriver;emsserverresource;VCLTMSFNCRESTClientEditorPkgDXE15;rtl;bigqueryprovider290;gtRtl;gtFont;DBXSqliteDriver;gtFilters;DBXSybaseASEDriver;FMXTMSFNCBloxPkgDXE15;inetdbxpress;FireDAC;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;netsuiteprovider290;FireDACDb2Driver;DBXOracleDriver;bigcommerceprovider290;vclib;DatasnapConnectorsFreePascal;SVGIconImageList;Spring.Data;Ean;gtCompression;sparkle;sphinx;TMSWebGMapsPkg;bindcompvclwinx;bindcompfmx;TMSVCLUIPackPkgExDXE15;FIBPlus;DCLgtQRExp;VCLTMSFNCBloxPkgDXE15;PlanAddons;ibmonitor;liteprovider290;FireDACASADriver;SVGIconImageListFMX;vclactnband;TMSVCLUIPackPkgXlsDXE15;hubspotprovider290;officeXPrt;FireDACInfxDriver;DBXMySQLDriver;VclSmp;DataSnapCommon;fmxase;JanuaTmsControls;FlexCel_XlsAdapter;myprovider290;DataSnapIndy10ServerTransport;FMXTMSFNCCloudPackPkgDXE15;vcldsnap;DBXInterBaseDriver;uniGUI29Chart;JanuaVCLControls;vcldb;accessprovider290;dacfmx290;sugarprovider290;JanuaUnidacComponents;inetstn;JanuaMVVM;zohoprovider290;JanuaVCLComponents;vcl;freshbooksprovider290;DataSnapClient;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;tethering;uniTools29;JanuaThirdPartyVCL;JanuaCore;bindcompvcl;CloudService;JanuaFMXControls;TMSFMXPackPkgDXE15;unidac290;odbcprovider290;soapserver;FireDACIBDriver;vclwinx;DataSnapServer;DecCipher;fmx;DbxCommonDriver;VCLRESTComponents;adsprovider290;FireDACCommonODBC;DBXMSSQLDriver;emsclient;ApperceptAPIClient;appanalytics;IndyProtocols;vclx;magentoprovider290;gtCrypt;DBXFirebirdDriver;dacvcl290;FireDACSqliteDriver;DbxClientDriver;soapmidas;salesforceprovider290;gtDocEng;vquery290;ipstudiowin;fmxdae;exacttargetprovider290;OmniThreadLibraryRuntime;IndySystem;ZipMasterR;JanuaCoreComponents;ibxbindings;FlexCel_Render;FireDACCommon;DataSnapServerMidas;bindcompdbx;db2provider290;FireDACMySQLDriver;VCL_FlexCel_Components;remotedb;ZLibrariesWin;TMSVCLUIPackPkgDXE15;mailchimpprovider290;vclimg;DataSnapFireDAC;unidacfmx290;pgprovider290;xdata;QRWRunDXE12_W64;DBXInformixDriver;fmxobj;bindcompvclsmp;DataSnapNativeClient;ZComponentsVCL;TMSCloudPkgDXE15;emshosting;SVGIconImageListRestClient;VCLTMSFNCBloxToolBarsPkgDXE15;FireDACCommonDriver;IndyIPClient;emsedge;uSynEdit_R2025;crcontrols290;inetdb;mongoprovider290;TMSFMXCloudPackPkgDXE15;fmxFireDAC;dynamicsprovider290;ibprovider290;sbridge280;oraprovider290;DBXOdbcDriver;dbrtl;uniGUI29m;FireDACOracleDriver;FireDACMSAccDriver;DataSnapConnectors;FMXTMSFNCMapsPkgDXE15;FireDACMongoDBDriver;VCLThemeSelector;FireDACTDataDriver;msprovider290;Skia.Package.VCL;VCLTMSFNCUIPackPkgDXE15;quickbooksprovider290;FlexCel_Core;unidacvcl290;bindcomp;IndyCore;RESTBackendComponents;FireDACADSDriver;FMXTMSFNCBloxToolBarsPkgDXE15;Spring.Base;RESTComponents;IndyIPServer;dsnapxml;adortl;VCLTMSFNCMapsPkgDXE15;dsnapcon;DataSnapProviderClient;dac290;DBXDb2Driver;dmvcframeworkRT;rsprovider290;DBXSybaseASADriver;VCLTMSFNCCloudPackPkgDXE15;VCLTMSFNCCorePkgDXE15;soaprtl;TUniFalcon;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_Win64x)'!=''">
-        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
-        <BT_BuildType>Debug</BT_BuildType>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -157,8 +102,10 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Locale>1033</VerInfo_Locale>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -166,183 +113,27 @@
         <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+    </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="rtl.dcp"/>
-        <DCCReference Include="dbrtl.dcp"/>
-        <DCCReference Include="inet.dcp"/>
-        <DCCReference Include="fmx.dcp"/>
-        <DCCReference Include="IndyCore.dcp"/>
-        <DCCReference Include="IndySystem.dcp"/>
-        <DCCReference Include="IndyProtocols.dcp"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcJSON.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcIWWebSocket.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\source\sgcIWWebSocket_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcIWWebSocket_Protocol_Base.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcIWWebSocket_Protocol_Dataset_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcIWWebSocket_Protocol_sgc_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcIWWebSocket_Protocols.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocols.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Classes.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Const.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_CustomClient.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_CustomServer.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Extensions.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Extension_Base.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Extension_DeflateFrame.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Extension_PerMessage_Deflate.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Helpers.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_HTTPResponse.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_LoadBalancer_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_LoadBalancer_Message.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_LoadBalancer_Server.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_Base_Message.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_Broker_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_Broker_Message.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_Broker_Server.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_Dataset_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_Dataset_Message.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_Dataset_Server.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_Files_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_Files_Message.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_Files_Server.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_sgc_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_sgc_Message.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_sgc_Server.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_WebRTC_Message.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_WebRTC_Server.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_WAMP_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_WAMP_Message.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_WAMP_Server.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_MQTT_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_MQTT_Message.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_WAMP2_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_WAMP2_Message.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Server.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Server_Proxy.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Types.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_Base_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_Base_Server.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Resources.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Client_WinHTTP.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Classes_WinHTTP.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_WinAPI.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Classes_Indy.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_API_Bitfinex.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_API_Blockchain.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_API_Pusher.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_API_SignalR.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_API_Bittrex.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_API_SocketIO.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_API_Binance.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_API_Bitstamp.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_APIs.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcSTOMP.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_STOMP_ActiveMQ_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_STOMP_Broker_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_STOMP_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_STOMP_Message.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_STOMP_RabbitMQ_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Classes_Sockets.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Server_Base.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcTCP_Classes_Indy.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_Const.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_API_Huobi.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_OAuth_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_OAuth2_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_Classes.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_Helpers.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_API_Cex.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_AppRTC_Server.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_Presence_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_Presence_Message.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_Presence_Server.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_API_Bitmex.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Classes_SyncObjs.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Classes_Queues.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_API_SignalRCore.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_API_Kraken.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcBase_Classes.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcBase_Const.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcBase_Helpers.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcTCP_Classes.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcBase_Sync.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcTCP_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcIoT.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcIoT_Classes.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_API_Coinbase.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcIoT_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcIoT_MQTT_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcIoT_Amazon_MQTT_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcIoT_Azure_MQTT_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_API_Coinbase.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_API_FXCM.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcSSL_SChannel.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcSSL_SChannel_Indy.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcSSL_WinSSPI.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_Amazon_AWS.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_Amazon_SQS.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_Amazon_AWS_Signature.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_API_Discord.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_API_Binance.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_API.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_Google_Cloud.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_Google_PubSub.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_Google_Calendar.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_API_Kraken.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcLib_Telegram.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcLib_Telegram_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcUDP_Classes.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcUDP_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcP2P.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcUDP_Server.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcUDP_Classes_Indy.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcSocket_Classes.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcSocket_Classes_Indy.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcSocket_Const.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_MultipartFormData.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcP2P_STUN_Classes.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcP2P_STUN_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcP2P_STUN_Helpers.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcP2P_STUN_Server.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcP2P_STUN_Types.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_API_FTX.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_API_FTX.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcLib_RCON_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_API_Cryptohopper.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcLibs.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_JWT_HMAC.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_JWT_ES.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_JWT_Classes.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_JWT_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_JWT_RSA.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_JWT_Helpers.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_JWT_Types.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_API_ThreeCommas.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_API_ThreeCommas.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Server_API_RTCMultiConnection.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Server_API_Base.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Server_API_SocketIO.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Server_APIs.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcAMQP.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcAMQP_Classes.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcAMQP_Const.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcAMQP_Helpers.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcAMQP_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcHTTP_API_Bitmex.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_AMQP_Client.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_AMQP_Message.pas"/>
-        <DCCReference Include="..\..\..\Libraries\sgcWebSockets\Source\sgcWebSocket_Protocol_AMQP_RabbitMQ_Client.pas"/>
-        <None Include="..\..\..\Libraries\sgcWebSockets\Source\sgcVer.inc"/>
+        <DCCReference Include="Janua.VCL.frmDemoChatGPT.pas">
+            <Form>Form2</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\januacore\datamodule\Janua.Cloud.dmOpenAI.pas">
+            <Form>dmCloudOpenAI</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
-            <DependentOn>..\..\prj\DXE14\JanuaLibDXE14.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
@@ -355,38 +146,26 @@
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Delphi.Personality.12</Borland.Personality>
-        <Borland.ProjectType>Package</Borland.ProjectType>
+        <Borland.ProjectType>Application</Borland.ProjectType>
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">sgcWebSockets.dpk</Source>
+                    <Source Name="MainSource">JanuaVCLChatGPTTest.dpr</Source>
                 </Source>
-                <Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k280.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp280.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp280.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
-                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="5">
-                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
-                    <Platform Name="iOSSimulator">
+                <DeployFile LocalName="Win32\Debug\JanuaVCLChatGPTTest.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>JanuaVCLChatGPTTest.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libpcre.dylib" Class="DependencyModule">
-                    <Platform Name="iOSSimulator">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
-                    <Platform Name="OSX32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\sgcWebSockets280.bpl" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win32">
@@ -800,6 +579,7 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win32">
@@ -808,14 +588,17 @@
                 </DeployClass>
                 <DeployClass Name="DependencyFramework">
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.framework</Extensions>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.framework</Extensions>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.framework</Extensions>
                     </Platform>
@@ -824,15 +607,30 @@
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="DependencyModule">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
@@ -855,14 +653,17 @@
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
@@ -888,12 +689,15 @@
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="Win32">
@@ -908,9 +712,44 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="ProjectOSXDebug"/>
-                <DeployClass Name="ProjectOSXEntitlements"/>
-                <DeployClass Name="ProjectOSXInfoPList"/>
+                <DeployClass Name="ProjectOSXDebug">
+                    <Platform Name="OSX64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXEntitlements">
+                    <Platform Name="OSX32">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXInfoPList">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
                 <DeployClass Name="ProjectOSXResource">
                     <Platform Name="OSX32">
                         <RemoteDir>Contents\Resources</RemoteDir>
@@ -947,12 +786,15 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win32">
@@ -990,9 +832,41 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="ProjectiOSEntitlements"/>
-                <DeployClass Name="ProjectiOSInfoPList"/>
-                <DeployClass Name="ProjectiOSLaunchScreen"/>
+                <DeployClass Name="ProjectiOSEntitlements">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSInfoPList">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSLaunchScreen">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                </DeployClass>
                 <DeployClass Name="ProjectiOSResource">
                     <Platform Name="iOSDevice32">
                         <Operation>1</Operation>
@@ -1230,24 +1104,16 @@
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="iOSSimARM64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win64x" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
-                <Platform value="Android">False</Platform>
-                <Platform value="Android64">False</Platform>
-                <Platform value="iOSDevice64">False</Platform>
-                <Platform value="iOSSimARM64">False</Platform>
-                <Platform value="Linux64">True</Platform>
-                <Platform value="OSX64">False</Platform>
-                <Platform value="OSXARM64">False</Platform>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
-                <Platform value="Win64x">False</Platform>
             </Platforms>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>

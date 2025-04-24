@@ -1150,7 +1150,7 @@
             <ProjectGuid>{6C9DE12E-3603-42EF-921C-877D0FB57D60}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>OSX64;OSXARM64</Platforms>
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
     </ItemGroup>
     <ItemGroup Condition="'$(BuildGroup)'=='Build All Android'">
