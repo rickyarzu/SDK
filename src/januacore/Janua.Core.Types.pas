@@ -1036,7 +1036,7 @@ type
 
 type
   TJanuaServerRecordConfs = record
-    Items: TDictionary<string, TJanuaServerRecordConf>;
+    Items: TDictionary<TJanuaDBEngine, TJanuaServerRecordConf>;
   private
     FasJsonObject: TJsonObject;
     function GetAsJson: string;
@@ -1050,11 +1050,11 @@ type
     constructor Create(aItem: TJanuaServerRecordConf); overload;
     function Count: Integer;
     procedure Add(aItem: TJanuaServerRecordConf); overload;
-    procedure Add(aName: string; aItem: TJanuaServerRecordConf); overload;
+    procedure Add(aEngine: TJanuaDBEngine; aItem: TJanuaServerRecordConf); overload;
     function find(aItem: TJanuaServerRecordConf): Boolean; overload;
-    function find(aName: string): Boolean; overload;
+    function find(aEngine: TJanuaDBEngine): Boolean; overload;
     procedure delete(aItem: TJanuaServerRecordConf); overload;
-    procedure delete(aName: string); overload;
+    procedure delete(aEngine: TJanuaDBEngine); overload;
     property AsJsonObject: TJsonObject read FasJsonObject write SetasJsonObject;
     property AsJson: string read GetAsJson write SetasJson;
     property asJsonPretty: string read GetasJsonPretty write setasJsonPretty;
@@ -3426,12 +3426,12 @@ end;
 
 procedure TJanuaServerRecordConfs.Add(aItem: TJanuaServerRecordConf);
 begin
-  Items.Add(aItem.GetEngineName, aItem)
+  Items.Add(aItem.DBEngine, aItem)
 end;
 
-procedure TJanuaServerRecordConfs.Add(aName: string; aItem: TJanuaServerRecordConf);
+procedure TJanuaServerRecordConfs.Add(aEngine: TJanuaDBEngine; aItem: TJanuaServerRecordConf);
 begin
-  Items.Add(aName, aItem)
+  Items.Add(aEngine, aItem)
 end;
 
 function TJanuaServerRecordConfs.AsText: string;
@@ -3451,19 +3451,19 @@ end;
 constructor TJanuaServerRecordConfs.Create(aItem: TJanuaServerRecordConf);
 begin
   // Do Something
-  Items.Add(aItem.EngineName, aItem)
+  Items.Add(aItem.DBEngine, aItem)
 end;
 
-procedure TJanuaServerRecordConfs.delete(aName: string);
+procedure TJanuaServerRecordConfs.delete(aEngine: TJanuaDBEngine);
 begin
-  if Items.ContainsKey(aName) then
-    Items.Remove(aName)
+  if Items.ContainsKey(aEngine) then
+    Items.Remove(aEngine)
 end;
 
 procedure TJanuaServerRecordConfs.delete(aItem: TJanuaServerRecordConf);
 begin
-  if Items.ContainsKey(aItem.GetEngineName) then
-    Items.Remove(aItem.GetEngineName)
+  if Items.ContainsKey(aItem.DBEngine) then
+    Items.Remove(aItem.DBEngine)
 end;
 
 function TJanuaServerRecordConfs.Equals(aConf: TJanuaServerRecordConfs): Boolean;
@@ -3476,24 +3476,23 @@ begin
     for var aKey in Items.Keys do
       Result := Result and aConf.find(aKey)
   end;
-
 end;
 
 class operator TJanuaServerRecordConfs.Finalize(var Dest: TJanuaServerRecordConfs);
 begin
-
+  Dest.Items := TDictionary<TJanuaDBEngine, TJanuaServerRecordConf>.Create;
 end;
 
-function TJanuaServerRecordConfs.find(aName: string): Boolean;
+function TJanuaServerRecordConfs.find(aEngine: TJanuaDBEngine): Boolean;
 begin
-
+  Result := Items.ContainsKey(aEngine)
 end;
 
 function TJanuaServerRecordConfs.find(aItem: TJanuaServerRecordConf): Boolean;
 var
   lItem: TJanuaServerRecordConf;
 begin
-  Result := Items.ContainsKey(aItem.GetEngineName)
+  Result := Items.ContainsKey(aItem.DBEngine)
 end;
 
 function TJanuaServerRecordConfs.GetAsJson: string;
