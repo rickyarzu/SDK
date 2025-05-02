@@ -16,4 +16,13 @@ select * from sports.sets where match_id = 779
 select sports.generate_day_ranking(5::smallint,  18::smallint, 4::smallint) /*p_season_id*/; 
 sports.generate_day_ranking(p_day, p_league_id, p_season_id);
 
+select * from sports.matches where 
+score_home = 0 and score_visitor = 0 and points_home = 0 and points_visitors = 0
+
+update sports.matches set
+score_home = null , score_visitor = null ,  points_home =  null ,  points_visitors = null 
+
+where 
+score_home = 0 and score_visitor = 0 and points_home = 0 and points_visitors = 0
+
 
