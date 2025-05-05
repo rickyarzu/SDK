@@ -16,7 +16,7 @@ uses
   // VCL
   VCL.StdCtrls, VCL.Controls, VCL.Forms, VCL.Mask, VCL.DBCtrls, VCL.ExtCtrls, VCL.Grids, VCL.DBGrids,
   // Interposers
-  Janua.VCL.Interposers;
+  Janua.VCL.Interposers, Vcl.Buttons;
 
 type
   TframeTestPrintAWBs = class(TJanuaVCLFrameModel, IJanuaContainer, IJanuaBindable)
