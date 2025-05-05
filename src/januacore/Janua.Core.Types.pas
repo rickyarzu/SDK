@@ -1006,6 +1006,12 @@ type
 type
   TJanuaServerRecordConf = record
   private
+    function GetAsJson: string;
+    function GetasJsonPretty: string;
+    function GetAsJsonObject: TJsonObject;
+    procedure SetasJson(const Value: string);
+    procedure SetasJsonObject(const Value: TJsonObject);
+    procedure setasJsonPretty(const Value: string);
     function GetEngineName: string;
     procedure SetEngineName(const Value: string);
   public
@@ -1022,9 +1028,11 @@ type
     DBEngine: TJanuaDBEngine;
     Pooling: boolean;
     ItemIndex: Integer;
+    Token: string;
   public
     procedure Initialize;
     constructor Create(const aAddress: string); overload;
+    constructor Create(const aObject: TJsonObject); overload;
     function Conf: String;
     function TestAddress: boolean;
     function GetConfiguration: string;
@@ -1036,6 +1044,9 @@ type
     constructor Create(aDBEngine: TJanuaDBEngine); overload;
   public
     property EngineName: string read GetEngineName write SetEngineName;
+    property AsJsonObject: TJsonObject read GetAsJsonObject write SetasJsonObject;
+    property AsJson: string read GetAsJson write SetasJson;
+    property asJsonPretty: string read GetasJsonPretty write setasJsonPretty;
   end;
 
 type
@@ -1118,12 +1129,12 @@ type
     CustomServerUser: string;
   private
     procedure SetasJsonObject(aJsonObject: TJsonObject);
-    function getAsJsonObject: TJsonObject;
+    function GetAsJsonObject: TJsonObject;
     procedure SetKey(const Value: string);
     function GetAsJson: string;
   public
     property Key: string read FKey write SetKey;
-    property AsJsonObject: TJsonObject read getAsJsonObject write SetasJsonObject;
+    property AsJsonObject: TJsonObject read GetAsJsonObject write SetasJsonObject;
     property AsJson: string read GetAsJson;
   public
     function ToString: string;
@@ -1414,7 +1425,7 @@ type
     FsValue: string;
     function GetAsInteger: Integer;
     function getAsString: string;
-    function getAsJsonObject: TJsonObject;
+    function GetAsJsonObject: TJsonObject;
     procedure SetAsInteger(const Value: Integer);
     procedure SetasJsonObject(const Value: TJsonObject);
     procedure setAsString(const Value: string);
@@ -1422,7 +1433,7 @@ type
   public
     property AsInteger: Integer read GetAsInteger write SetAsInteger;
     property AsString: string read getAsString write setAsString;
-    property AsJsonObject: TJsonObject read getAsJsonObject write SetasJsonObject;
+    property AsJsonObject: TJsonObject read GetAsJsonObject write SetasJsonObject;
     property sValue: string read FsValue write SetsValue;
   public
     procedure Clear;
@@ -1446,7 +1457,7 @@ type
   protected
     function GetItems: IDictionary<string, TJanuaConfValue>;
   private
-    function getAsJsonObject: TJsonObject;
+    function GetAsJsonObject: TJsonObject;
     procedure SetasJsonObject(const Value: TJsonObject);
   public
     property Items: IDictionary<string, TJanuaConfValue> read GetItems;
@@ -1478,7 +1489,7 @@ type
     destructor Destroy; override;
     function FindValue(const aKey: string): boolean;
   public
-    property AsJsonObject: TJsonObject read getAsJsonObject write SetasJsonObject;
+    property AsJsonObject: TJsonObject read GetAsJsonObject write SetasJsonObject;
   end;
 
 type
@@ -1503,7 +1514,7 @@ type
     FIsLoaded: boolean;
   private
     function GetKeys: IDictionary<string, TJanuaConfKey>;
-    function getAsJsonObject: TJsonObject;
+    function GetAsJsonObject: TJsonObject;
     procedure SetasJsonObject(const Value: TJsonObject);
     procedure ClearKeys;
   public
@@ -1550,7 +1561,7 @@ type
     function getValue(aKey, aName: string; aDefault: TJanuaServerRecordConfs)
       : TJanuaServerRecordConfs; overload;
   public
-    property AsJsonObject: TJsonObject read getAsJsonObject write SetasJsonObject;
+    property AsJsonObject: TJsonObject read GetAsJsonObject write SetasJsonObject;
   end;
 
 {$ENDREGION 'Configuration'}
@@ -1593,7 +1604,8 @@ uses
   StrUtils, Math, DateUtils,
 {$ENDIF}
   IdIcmpClient,
-  Janua.Core.Json;
+  // Janua.Core.Functions,
+  Janua.Core.Crypt, Janua.Core.Json;
 
 var
   FIntfDictioary: TDictionary<TGUID, PTypeInfo>;
@@ -3302,6 +3314,12 @@ begin
   DBEngine := aDBEngine;
 end;
 
+constructor TJanuaServerRecordConf.Create(const aObject: TJsonObject);
+begin
+  Initialize;
+  SetasJsonObject(aObject);
+end;
+
 constructor TJanuaServerRecordConf.Create(aConf: TJanuaServerRecordConf);
 begin
   Initialize;
@@ -3312,6 +3330,44 @@ function TJanuaServerRecordConf.Equals(aConf: TJanuaServerRecordConf): boolean;
 begin
   Result := (Port = aConf.Port) and (DatabaseName = aConf.DatabaseName) and (Password = aConf.Password) and
     (Direct = aConf.Direct) and (Address = aConf.Address) and (Username = aConf.Username);
+end;
+
+function TJanuaServerRecordConf.GetAsJson: string;
+begin
+  var
+  lJson := GetAsJsonObject;
+  Result := lJson.ToJSON();
+  lJson.Free;
+end;
+
+function TJanuaServerRecordConf.GetAsJsonObject: TJsonObject;
+begin
+  Result := TJsonObject.Create;
+  Janua.Core.Json.JsonPair(Result, 'username', Username);
+  Janua.Core.Json.JsonPair(Result, 'schema', Schema);
+  var
+  lValue := TJanuaCriptEncode.EncryptDES3(Password);
+  Janua.Core.Json.JsonPair(Result, 'password', lValue);
+  Janua.Core.Json.JsonPair(Result, 'port', Port);
+  Janua.Core.Json.JsonPair(Result, 'databaseName', DatabaseName);
+  Janua.Core.Json.JsonPair(Result, 'direct', Direct);
+  Janua.Core.Json.JsonPair(Result, 'address', Address);
+  Janua.Core.Json.JsonPair(Result, 'pooling', Pooling);
+  // Token
+  Janua.Core.Json.JsonPair(Result, 'token', Token);
+  // JanuaDBEngineCode  TJanuaDBEngine
+  var
+  lDBEngine := JanuaDBEngineCode[DBEngine];
+  // TEnumConvertor<TJanuaDBEngine>.ToString(Value: T) TJanuaDBEngine;
+  Janua.Core.Json.JsonPair(Result, 'dbengine', lDBEngine);
+end;
+
+function TJanuaServerRecordConf.GetasJsonPretty: string;
+begin
+  var
+  lJson := GetAsJsonObject;
+  Result := JsonObjectToPretty(lJson);
+  lJson.Free;
 end;
 
 function TJanuaServerRecordConf.GetConfiguration: string;
@@ -3398,6 +3454,43 @@ begin
   finally
     LObject.Free
   end;
+end;
+
+procedure TJanuaServerRecordConf.SetasJson(const Value: string);
+begin
+  var
+  aObject := JsonParse(Value);
+  if Assigned(aObject) then
+    SetasJsonObject(aObject)
+end;
+
+procedure TJanuaServerRecordConf.SetasJsonObject(const Value: TJsonObject);
+begin
+  JsonValue(Value, 'port', Port);
+  JsonValue(Value, 'databasename', DatabaseName);
+  var
+  lPassword := '';
+  JsonValue(Value, 'password', lPassword);
+  Password := TJanuaCriptEncode.DecryptDES3(lPassword);
+  JsonValue(Value, 'direct', Direct);
+  JsonValue(Value, 'address', Address);
+  JsonValue(Value, 'username', Username);
+  JsonValue(Value, 'schema', Schema);
+  var
+  lEngine := '';
+  JsonValue(Value, 'dbengine', lEngine);
+
+  if not lEngine.IsEmpty then
+    TEnumConvertor<TJanuaDBEngine>.TryFromStringArray(lEngine, JanuaDBEngineCode, DBEngine);
+
+end;
+
+procedure TJanuaServerRecordConf.setasJsonPretty(const Value: string);
+begin
+  var
+  aObject := JsonParse(Value);
+  if Assigned(aObject) then
+    SetasJsonObject(aObject)
 end;
 
 procedure TJanuaServerRecordConf.SetEngineName(const Value: string);
@@ -3640,7 +3733,7 @@ end;
 {$REGION 'JanuaServerSession'}
 { TJanuaServerSession }
 
-function TJanuaServerSession.getAsJsonObject: TJsonObject;
+function TJanuaServerSession.GetAsJsonObject: TJsonObject;
 begin
   Result := TJsonObject.Create;
   Janua.Core.Json.JsonPair(Result, 'key', Key);
@@ -3919,7 +4012,7 @@ begin
     Result := Keys[aKey.ToLower].FindValue(aValue.ToLower)
 end;
 
-function TJanuaConfiguration.getAsJsonObject: TJsonObject;
+function TJanuaConfiguration.GetAsJsonObject: TJsonObject;
 var
   aArray: TJsonArray;
   aPair: TPair<string, TJanuaConfKey>;
@@ -4765,12 +4858,10 @@ begin
   Result := iValue;
 end;
 
-function TJanuaConfValue.getAsJsonObject: TJsonObject;
+function TJanuaConfValue.GetAsJsonObject: TJsonObject;
 begin
   Result := TJsonObject.Create;
-
   Janua.Core.Json.JsonPair(Result, 'key', Key);
-
   Janua.Core.Json.JsonPair(Result, 'type', JanuaConfType[ValueType]);
 
   case ValueType of
@@ -5015,7 +5106,7 @@ begin
   Result := Items.ContainsKey(aKey.ToLower)
 end;
 
-function TJanuaConfKey.getAsJsonObject: TJsonObject;
+function TJanuaConfKey.GetAsJsonObject: TJsonObject;
 var
   aPair: TPair<string, TJanuaConfValue>;
   aArray: TJsonArray;

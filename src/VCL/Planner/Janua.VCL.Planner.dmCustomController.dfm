@@ -6265,7 +6265,7 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    DateFrom = 45595.000000000000000000
+    DateFrom = 45774.000000000000000000
     Left = 416
     Top = 40
   end
@@ -12782,10 +12782,9 @@ inherited dmVCLPlannerCustomController: TdmVCLPlannerCustomController
   object JanuaUniConnection1: TJanuaUniConnection
     ProviderName = 'InterBase'
     Port = 3050
-    Database = 'C:\PhoenixDB\PHOENIX.FDB'
+    Database = 'D:\PhoenixDB\PHOENIX.FDB'
     Username = 'SYSDBA'
-    Server = '192.168.1.200'
-    Connected = True
+    Server = '192.168.1.201'
     LoginPrompt = False
     SchemaParamKey = 'system.db_schema_id'
     SchemaParams = <>

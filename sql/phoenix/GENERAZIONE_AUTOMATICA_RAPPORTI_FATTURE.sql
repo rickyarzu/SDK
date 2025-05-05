@@ -37,6 +37,7 @@ SELECT * FROM FILIALI_CLIENTI
   AND ESCLUDI_DA_GENERAZIONE <> 'T'
 ORDER BY NOME
 
+---- deprecato ----------------------------------------------------------------------------------------------
 SELECT VOCI_PREVENTIVI.*,
       (SELECT ID_PREVENTIVO FROM PREVENTIVI WHERE PREVENTIVI.CHIAVE = VOCI_PREVENTIVI.PREVENTIVO),
       (SELECT ANNO_PREVENTIVO FROM PREVENTIVI WHERE PREVENTIVI.CHIAVE = VOCI_PREVENTIVI.PREVENTIVO),
@@ -47,7 +48,7 @@ WHERE STATO = 'K' AND FATTURA IS NULL AND ID_CLIENTE = :IdContratto)
   AND VOCE_VUOTA IS NULL
 ORDER BY PREVENTIVO,ORDINAMENTO
 
--- quindi gira anche i preventivi oltre alle filiali. 
+-- quindi gira anche i preventivi oltre alle filiali. --- deprecato non lo fa più ---------------------------
 
 TContratto(TmpNode.Data).AddVoceFattura(TVoceDaFatturare.Create(True, '', attNone,
     Somma_N_Stringhe([TmpQuery.FieldByName('DESCRIZIONE').AsString,
@@ -78,7 +79,8 @@ if TContratto(TmpNode.Data).FAttrezzatureAbilitate.Estintori then
               TmpQuery.ParamByName('IdContratto').AsInteger := TSingoloIntero(TmpNode.Data).Value;
               TmpQuery.ParamByName('IdFiliale').AsInteger := TSingoloIntero(TmpNode2.Data).Value;
 
-SELECT ESTINTORI_CLIENTI.*,CAT_ESTINTORI.CO2,CAT_ESTINTORI.SENZA_SCADENZA FROM ESTINTORI_CLIENTI,CAT_ESTINTORI
+SELECT ESTINTORI_CLIENTI.*,CAT_ESTINTORI.CO2,CAT_ESTINTORI.SENZA_SCADENZA 
+FROM ESTINTORI_CLIENTI,CAT_ESTINTORI
  WHERE ESTINTORI_CLIENTI.CLIENTE = :IdContratto
    AND ESTINTORI_CLIENTI.FILIALE = :IdFiliale
    AND CAT_ESTINTORI.PERIODICITA_COLLAUDO <> 0
@@ -471,3 +473,35 @@ end;
                 FieldByName('CHIAVE_IMPIANTO').AsInteger));
             end;
           end;
+--------------------------------------------------------------------------------------------------------------------------
+
+SET TERM !! ;
+
+CREATE PROCEDURE CalcolaMeseAnno (vmese INT)  
+RETURNS (vanno INT, vnuovo_mese INT)  
+AS  
+    DECLARE vannocorrente INT;
+    DECLARE vmese_attuale INT;
+BEGIN  
+    -- Ottenere l'anno e il mese correnti  
+    vannocorrente = EXTRACT(YEAR FROM CURRENT_DATE);  
+    vmese_attuale = EXTRACT(MONTH FROM CURRENT_DATE);  
+
+    -- Impostare l'anno di ritorno uguale a quello corrente di default
+    vanno = vannocorrente;
+    vnuovo_mese = vmese;
+
+    -- Regole di aggiornamento anno/mese
+    IF (vmese = 12 AND vmese_attuale = 12) THEN  
+        vanno = vannocorrente + 1;  -- Se siamo a dicembre e il mese passato è 12, passiamo all'anno successivo  
+        
+    ELSE IF ((vmese = 1 OR vmese = 2) AND (vmese_attuale = 11 OR vmese_attuale = 12)) THEN  
+        vanno = vannocorrente + 1;  -- Se il mese è gennaio o febbraio e ci troviamo a novembre o dicembre, aumentiamo l'anno  
+
+    END IF;  
+
+    -- Restituire i valori aggiornati  
+    SUSPEND;  
+END !!  
+
+SET TERM ; !!  
