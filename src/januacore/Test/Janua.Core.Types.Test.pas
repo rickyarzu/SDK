@@ -32,6 +32,8 @@ type
     procedure JanuaArray;
     [Test]
     procedure CustomParams;
+    [Test]
+    procedure ServerRecordConf;
   end;
 
 procedure TestLog(aLog: string);
@@ -176,6 +178,24 @@ begin
     aInteger := bBlob.AsInteger;
     Assert.AreEqual(123456, aInteger);
   *)
+end;
+
+procedure TTestJanuaCoreTypesObject.ServerRecordConf;
+begin
+  var
+  lConf := TJanuaServerRecordConf.Create('TestAddress');
+  var
+  aObject := lConf.AsJsonObject;
+  var
+  vTestString := aObject.ToJson;
+
+  var
+  lConf2 :=  TJanuaServerRecordConf.Create('NewAddress');
+
+  lConf2.AsJson := vTestString;
+
+  Assert.IsTrue(lConf.Equals(lConf2), lConf.AsJson + ' - ' + lConf2.AsJson );
+
 end;
 
 procedure TTestJanuaCoreTypesObject.Setup;

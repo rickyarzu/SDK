@@ -552,6 +552,7 @@ type
     FWATestPhone: string;
     FAfterCalendarAction: TNotifyEvent;
     FvtReportPlannerDS: TDataSource;
+    FGoogleSyncActive: Boolean;
     procedure SetCustomerFilter(const Value: Boolean);
     procedure SetCustomerID(const Value: Int64);
     procedure SetReportDate(const Value: TDateTime);
@@ -576,6 +577,7 @@ type
     procedure SetWATestPhone(const Value: string);
     procedure SetAfterCalendarAction(const Value: TNotifyEvent);
     procedure SetvtReportPlannerDS(const Value: TDataSource);
+    procedure SetGoogleSyncActive(const Value: Boolean);
     { Private declarations }
   protected
     FAutoFilterTech: Boolean;
@@ -671,6 +673,7 @@ type
     property WATestPhone: string read FWATestPhone write SetWATestPhone;
     property AfterCalendarAction: TNotifyEvent read FAfterCalendarAction write SetAfterCalendarAction;
     property vtReportPlannerDS: TDataSource read FvtReportPlannerDS write SetvtReportPlannerDS;
+    property GoogleSyncActive: Boolean read FGoogleSyncActive write SetGoogleSyncActive;
   end;
 
 var
@@ -805,21 +808,20 @@ end;
 procedure TdmVCLPhoenixPlannerController.actGlobalGoogleSyncExecute(Sender: TObject);
 begin
   inherited;
-  try
+  if FGoogleSyncActive then
     try
-      UpdateGoogleDLL;
-      spUpdateWhatsApp.ExecProc;
-    except
-      on e: exception do
-        JShowError('Google Sync non Riuscita', e.Message, '');
+      try
+        UpdateGoogleDLL;
+        spUpdateWhatsApp.ExecProc;
+      except
+        on e: exception do
+          JShowError('Google Sync non Riuscita', e.Message, '');
+      end;
+    finally
+      dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.Close;
+      dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.Open;
+      UpdateReportPlanner;
     end;
-  finally
-    dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.Close;
-    dmVCLPhoenixPlannerController.qryPersonalPlannerEvents.Open;
-
-    UpdateReportPlanner;
-
-  end;
 end;
 
 procedure TdmVCLPhoenixPlannerController.actGridConfirmEventExecute(Sender: TObject);
@@ -839,7 +841,8 @@ begin
     var
     vTest := True;
     try
-      ConfirmGoogleEventDLL(sGUID);
+      if FGoogleSyncActive then
+        ConfirmGoogleEventDLL(sGUID);
       if Assigned(FAfterCalendarAction) then
         FAfterCalendarAction(self);
     except
@@ -1021,7 +1024,7 @@ begin
       finally
         aStrings.Free;
       end;
-      if vTest then
+      if vTest and FGoogleSyncActive then
         WhatsAppSentDLL(sGUID);
     except
       on e: exception do
@@ -1083,7 +1086,8 @@ begin
 
       if lSent then
       begin
-        WhatsAppSentDLL(sGUID);
+        if FGoogleSyncActive then
+          WhatsAppSentDLL(sGUID);
         qryElencoEventiWhatsApp.Edit;
         qryElencoEventiWhatsAppWA.AsString := 'F';
         qryElencoEventiWhatsApp.Post;
@@ -1109,7 +1113,8 @@ begin
   sGUID := StringReplace(qryElencoEventiWhatsAppJGUID.AsString, '{', '', []);
   sGUID := StringReplace(sGUID, '}', '', []);
 
-  If JMessageDlg('Confermo come contattato: ' + qryElencoEventiWhatsAppSUMMARY.AsString) then
+  If FGoogleSyncActive and JMessageDlg('Confermo come contattato: ' + qryElencoEventiWhatsAppSUMMARY.AsString)
+  then
     ConfirmGoogleEventDLL(sGUID);
 
   qryElencoEventiWhatsApp.Edit;
@@ -1125,7 +1130,8 @@ begin
 
   If JMessageDlg('Confermo come contattato: ' + qryElencoEventiWhatsAppSUMMARY.AsString) then
   begin
-    WhatsAppSentDLL(sGUID);
+    if FGoogleSyncActive then
+      WhatsAppSentDLL(sGUID);
 
     qryElencoEventiWhatsApp.Edit;
     qryElencoEventiWhatsAppWA.AsString := 'F';
@@ -1145,7 +1151,8 @@ end;
 
 procedure TdmVCLPhoenixPlannerController.actWhatsAppExecute(Sender: TObject);
 begin
-  UpdateGoogleDLL;
+  if FGoogleSyncActive then
+    UpdateGoogleDLL;
   spUpdateWhatsApp.ExecProc;
   qryElencoEventiWhatsApp.Close;
   qryElencoEventiWhatsApp.ParamByName('DATE_FROM').AsDate := Date() + 1;
@@ -1156,7 +1163,8 @@ begin
   Application.CreateForm(TdlgVCLPhoenixWAMessageList, dlgVCLPhoenixWAMessageList);
   try
     dlgVCLPhoenixWAMessageList.ShowModal;
-    UpdateGoogleDLL;
+    if FGoogleSyncActive then
+      UpdateGoogleDLL;
     qryPersonalPlannerEvents.Close;
     qryPersonalPlannerEvents.Open;
   finally
@@ -1344,7 +1352,7 @@ begin
           end;
 
           if (qryTecniciCalendarRESPONSABILE.AsInteger = TechID) or qryTecniciCalendar.Locate('RESPONSABILE',
-            TechID, []) then
+            TechID, []) and FGoogleSyncActive then
           begin
             // Google Calendar Table
             // SELECT * FROM   GOOGLE_CALENDAR_EVENTS WHERE sync = 'F' and etag = '""';
@@ -1594,6 +1602,7 @@ end;
 procedure TdmVCLPhoenixPlannerController.DataModuleCreate(Sender: TObject);
 begin
   inherited;
+  FGoogleSyncActive := False;
   FSearchCounter := 0;
   FWATest := False;
   FWATestPhone := '348 826 1954';
@@ -1640,8 +1649,10 @@ begin
   aDay := DayOfWeek(Date + 1);
   aDay := 1 + IfThen(aDay >= 6, 7 - aDay, 0);
   FSelectedDate := Date + aDay;
-  var
-  vTest := InitializeDLL;
+
+  if FGoogleSyncActive then
+    var
+    vTest := InitializeDLL;
 
   LoadCalendarsFromDB := (
     procedure
@@ -1851,36 +1862,39 @@ end;
 
 procedure TdmVCLPhoenixPlannerController.DeleteGoogleMeeting(const aGUID: string);
 begin
-  var
-  sGUID := StringReplace(aGUID, '{', '', []);
-  sGUID := StringReplace(sGUID, '}', '', []);
-  DeleteGoogleEventDLL(sGUID);
-  // dmVCLPhoenixPlannerController.qryPersonalPlannerEvents
-  if qryPersonalPlannerEvents.Locate('JGUID', aGUID, []) then
+  if FGoogleSyncActive then
   begin
     var
-    vChiave := qryPersonalPlannerEventsSTATINO.AsInteger;
-    vtReportPlanner.Filtered := False;
-    if vtReportPlanner.Locate('CHIAVE', vChiave, []) then
+    sGUID := StringReplace(aGUID, '{', '', []);
+    sGUID := StringReplace(sGUID, '}', '', []);
+    DeleteGoogleEventDLL(sGUID);
+    // dmVCLPhoenixPlannerController.qryPersonalPlannerEvents
+    if qryPersonalPlannerEvents.Locate('JGUID', aGUID, []) then
     begin
-      vtReportPlanner.Edit;
-      // Forza l'update.
-      vtReportPlanner.FieldByName('calcReportID').Clear;
-      vtReportPlannerSTATO.AsInteger := vtReportPlannerSTATO.AsInteger - 1;
-      vtReportPlannerAPPUNTAMENTO_DATA.Clear;
-      vtReportPlannerAPPUNTAMENTO_ORA.Clear;
-      vtReportPlanner.Post;
-      // dmVCLPhoenixPlannerController.vtReportPlanner
+      var
+      vChiave := qryPersonalPlannerEventsSTATINO.AsInteger;
+      vtReportPlanner.Filtered := False;
+      if vtReportPlanner.Locate('CHIAVE', vChiave, []) then
+      begin
+        vtReportPlanner.Edit;
+        // Forza l'update.
+        vtReportPlanner.FieldByName('calcReportID').Clear;
+        vtReportPlannerSTATO.AsInteger := vtReportPlannerSTATO.AsInteger - 1;
+        vtReportPlannerAPPUNTAMENTO_DATA.Clear;
+        vtReportPlannerAPPUNTAMENTO_ORA.Clear;
+        vtReportPlanner.Post;
+        // dmVCLPhoenixPlannerController.vtReportPlanner
 
+      end;
+      vtReportPlanner.Close;
+      vtReportPlanner.Open;
+      vtReportPlanner.Filtered := True;
     end;
-    vtReportPlanner.Close;
-    vtReportPlanner.Open;
-    vtReportPlanner.Filtered := True;
+    qryPersonalPlannerEvents.Close;
+    qryPersonalPlannerEvents.Open;
+    qryReportPlanner.Close;
+    qryReportPlanner.Open;
   end;
-  qryPersonalPlannerEvents.Close;
-  qryPersonalPlannerEvents.Open;
-  qryReportPlanner.Close;
-  qryReportPlanner.Open;
 end;
 
 procedure TdmVCLPhoenixPlannerController.EditEvent;
@@ -2170,18 +2184,19 @@ begin
       vTest := Result.GetAsJson;
       var
       vTest2 := '';
-      try
-        vTest2 := CreateGoogleEventDLL(vTest);
-      except
-        on e: exception do
-        begin
-          qryPersonalPlannerEvents.Delete;
-          qryPersonalPlannerEvents.Close;
-          qryPersonalPlannerEvents.Open;
-          vBool := False;
-          JShowError('Errore Inserimento Google Appuntamento: ' + aSubject, e.Message);
+      if FGoogleSyncActive then
+        try
+          vTest2 := CreateGoogleEventDLL(vTest);
+        except
+          on e: exception do
+          begin
+            qryPersonalPlannerEvents.Delete;
+            qryPersonalPlannerEvents.Close;
+            qryPersonalPlannerEvents.Open;
+            vBool := False;
+            JShowError('Errore Inserimento Google Appuntamento: ' + aSubject, e.Message);
+          end;
         end;
-      end;
 
       if vBool then
       begin
@@ -2632,12 +2647,14 @@ begin
       aRecEvent.Description := qryPersonalPlannerEventsNOTE.AsString;
       var
       aJson := aRecEvent.GetAsJson;
-
-      aJson := UpdateGoogleEventDLL(aJson);
-      if aJson <> '' then
+      if FGoogleSyncActive then
       begin
-        aRecEvent.SetAsJson(aJson);
-        FGCalEventsDict.AddOrSetValue(aRecEvent.GetGUID, aRecEvent);
+        aJson := UpdateGoogleEventDLL(aJson);
+        if aJson <> '' then
+        begin
+          aRecEvent.SetAsJson(aJson);
+          FGCalEventsDict.AddOrSetValue(aRecEvent.GetGUID, aRecEvent);
+        end;
       end;
     end;
   end;
@@ -2655,7 +2672,9 @@ begin
   if aRecEvent.JGUID = '' then
     aRecEvent.JGUID := qryPersonalPlannerEventsJGUID.AsString;
 
-  DeleteGoogleEventDLL(sTest);
+  if FGoogleSyncActive then
+    DeleteGoogleEventDLL(sTest);
+
   if (qryPersonalPlannerEventsSTATINO.AsInteger > 0) then
   begin
     try
@@ -3254,7 +3273,9 @@ begin
         report_id type of column whatsapp_messages.report_id }
       if Result then
         try
-          WhatsAppSentDLL(sGUID);
+          if FGoogleSyncActive then
+            WhatsAppSentDLL(sGUID);
+
           qryPersonalPlannerEvents.Edit;
           qryPersonalPlannerEventsCOLORE.AsInteger := 7911679;
           qryPersonalPlannerEvents.Post;
@@ -3324,9 +3345,15 @@ begin
   FCustomerID := Value;
 end;
 
+procedure TdmVCLPhoenixPlannerController.SetGoogleSyncActive(const Value: Boolean);
+begin
+  FGoogleSyncActive := Value;
+end;
+
 procedure TdmVCLPhoenixPlannerController.SetGoogleTest;
 begin
-  TestDLL;
+  if FGoogleSyncActive then
+    TestDLL;
 end;
 
 procedure TdmVCLPhoenixPlannerController.SetItemCaptionField2(const Value: TField);
@@ -3462,7 +3489,9 @@ end;
 
 function TdmVCLPhoenixPlannerController.GoogleSync: string;
 begin
-  Result := UpdateGoogleDLL;
+  if FGoogleSyncActive then
+    Result := UpdateGoogleDLL
+  else Result := '';
 end;
 
 procedure TdmVCLPhoenixPlannerController.UndoMeeting;
