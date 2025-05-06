@@ -1,9 +1,8 @@
 inherited dmPgStorage: TdmPgStorage
   OnCreate = DataModuleCreate
   OnDestroy = DataModuleDestroy
-  Height = 220
-  Width = 214
-  PixelsPerInch = 120
+  Height = 176
+  Width = 171
   object PgErgoConnection: TJanuaUniConnection
     DataTypeMap = <
       item
@@ -33,12 +32,12 @@ inherited dmPgStorage: TdmPgStorage
     SchemaParamKey = 'system.db_schema_id'
     SchemaSQL = 'SET SESSION "%s" = %s; '
     SchemaParams = <>
-    Left = 72
-    Top = 16
+    Left = 58
+    Top = 13
     EncryptedPassword = 'CCFF8DFF98FFCFFF92FFCCFF8DFF9CFFCBFF8BFFCFFF8DFF'
   end
   object PgUniProv: TPostgreSQLUniProvider
-    Left = 72
-    Top = 80
+    Left = 58
+    Top = 64
   end
 end

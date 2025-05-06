@@ -1,21 +1,23 @@
 inherited dlgVCLCarServiceLogin: TdlgVCLCarServiceLogin
   Caption = 'Car Service Login'
-  ClientHeight = 234
-  ClientWidth = 560
-  ExplicitWidth = 562
-  ExplicitHeight = 267
+  ClientHeight = 226
+  ClientWidth = 558
+  ExplicitLeft = 3
+  ExplicitTop = 3
+  ExplicitWidth = 576
+  ExplicitHeight = 273
   DesignSize = (
-    560
-    234)
+    558
+    226)
   TextHeight = 17
   inherited HTMLabel1: TLabel
-    Left = 286
+    Left = 284
     Top = 74
     ExplicitLeft = 318
     ExplicitTop = 74
   end
   inherited lbUsername: TLabel
-    Left = 286
+    Left = 284
     Top = 21
     ExplicitLeft = 318
     ExplicitTop = 21
@@ -3846,39 +3848,39 @@ inherited dlgVCLCarServiceLogin: TdlgVCLCarServiceLogin
     ExplicitHeight = 218
   end
   inherited btnUndo: TButton
-    Left = 286
+    Left = 284
     Top = 192
-    ExplicitLeft = 272
+    ExplicitLeft = 286
     ExplicitTop = 192
   end
   inherited btnLogin: TButton
-    Left = 420
+    Left = 418
     Top = 192
-    ExplicitLeft = 406
+    ExplicitLeft = 420
     ExplicitTop = 192
   end
   inherited ckbShowPasswordChar: TCheckBox
-    Left = 384
+    Left = 382
     Width = 125
-    ExplicitLeft = 370
+    ExplicitLeft = 384
     ExplicitWidth = 125
   end
   inherited edPassword: TEdit
-    Left = 284
+    Left = 282
     Top = 93
     TextHint = 'password'
-    ExplicitLeft = 270
+    ExplicitLeft = 284
     ExplicitTop = 93
   end
   inherited edUserName: TEdit
-    Left = 284
+    Left = 282
     Top = 40
     TextHint = 'nomeutente@tailormadelogistic.com'
-    ExplicitLeft = 270
+    ExplicitLeft = 284
     ExplicitTop = 40
   end
   inherited ckbRemember: TCheckBox
-    Left = 284
-    ExplicitLeft = 270
+    Left = 282
+    ExplicitLeft = 284
   end
 end
