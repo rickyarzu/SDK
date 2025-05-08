@@ -1,7 +1,7 @@
 inherited dmCloudOpenAI: TdmCloudOpenAI
-  Height = 220
-  Width = 571
-  PixelsPerInch = 120
+  OnCreate = DataModuleCreate
+  Height = 176
+  Width = 457
   object OpenAIChatFunctions1: TOpenAIChatFunctions
     Items = <
       item
@@ -13,8 +13,8 @@ inherited dmCloudOpenAI: TdmCloudOpenAI
           'ncisco, CA"},'#13#10'      "unit": {"type": "string", "enum": ["celsiu' +
           's", "fahrenheit"]}'#13#10'  },'#13#10'  "required": ["location"]'#13#10'}'
       end>
-    Left = 384
-    Top = 96
+    Left = 307
+    Top = 77
   end
   object OpenAIChat1: TOpenAIChat
     Client = OpenAIClient1
@@ -28,14 +28,14 @@ inherited dmCloudOpenAI: TdmCloudOpenAI
     OnError = OpenAIChat1Error
     OnBeginWork = OpenAIChat1BeginWork
     OnEndWork = OpenAIChat1EndWork
-    Left = 272
-    Top = 48
+    Left = 218
+    Top = 38
   end
   object OpenAIClient1: TOpenAIClient
     Token = 'sk-proj-tTsxWQ2cZBn59GSD0wgeT3BlbkFJLBtHvfG9DqFwM8nwInOZ'
     BaseURL = 'https://api.openai.com/v1'
     Organization = 'org-j8lCTp12ss14C8q7lkRPzVf1'
-    Left = 168
-    Top = 96
+    Left = 134
+    Top = 77
   end
 end

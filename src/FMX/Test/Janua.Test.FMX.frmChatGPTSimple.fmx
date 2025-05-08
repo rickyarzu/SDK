@@ -1,0 +1,112 @@
+object Form3: TForm3
+  Left = 0
+  Top = 0
+  Caption = 'Form3'
+  ClientHeight = 436
+  ClientWidth = 792
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object MemoMessages: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    TextSettings.WordWrap = True
+    Anchors = [akLeft, akTop, akRight]
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 770.000000000000000000
+    Size.Height = 217.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Viewport.Width = 766.000000000000000000
+    Viewport.Height = 213.000000000000000000
+  end
+  object MemoMessage: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    TextSettings.WordWrap = True
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Position.X = 8.000000000000000000
+    Position.Y = 337.000000000000000000
+    Size.Width = 770.000000000000000000
+    Size.Height = 79.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Viewport.Width = 766.000000000000000000
+    Viewport.Height = 75.000000000000000000
+  end
+  object ButtonSend: TButton
+    Anchors = [akTop, akRight]
+    Position.X = 698.000000000000000000
+    Position.Y = 233.000000000000000000
+    Size.Width = 80.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = 'Send'
+    TextSettings.Trimming = None
+    OnClick = ButtonSendClick
+  end
+  object ButtonStreamSend: TButton
+    Anchors = [akTop, akRight]
+    Position.X = 698.000000000000000000
+    Position.Y = 265.000000000000000000
+    Size.Width = 80.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'StreamSend'
+    TextSettings.Trimming = None
+  end
+  object AniIndicatorBusy: TAniIndicator
+    Align = Center
+    Enabled = True
+    Visible = False
+  end
+  object ListBox1: TListBox
+    Anchors = [akLeft, akTop, akRight]
+    Position.X = 8.000000000000000000
+    Position.Y = 233.000000000000000000
+    Size.Width = 642.000000000000000000
+    Size.Height = 96.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 9
+    DisableFocusEffect = True
+    ItemHeight = 75.000000000000000000
+    ItemWidth = 75.000000000000000000
+    DefaultItemStyles.ItemStyle = 'listboxitemstyle_image'
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    ListStyle = Horizontal
+    Viewport.Width = 638.000000000000000000
+    Viewport.Height = 92.000000000000000000
+  end
+  object btnAddFile: TButton
+    Anchors = [akTop, akRight]
+    Position.X = 666.000000000000000000
+    Position.Y = 233.000000000000000000
+    Size.Width = 24.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+    Text = '+'
+    TextSettings.Trimming = None
+    OnClick = btnAddFileClick
+  end
+  object Button2: TButton
+    Anchors = [akTop, akRight]
+    Position.X = 666.000000000000000000
+    Position.Y = 265.000000000000000000
+    Size.Width = 24.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+    Text = '-'
+    TextSettings.Trimming = None
+  end
+  object OpenDialogImg: TOpenDialog
+    Left = 384
+    Top = 160
+  end
+end

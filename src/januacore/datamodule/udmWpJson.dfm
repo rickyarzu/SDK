@@ -1,4 +1,4 @@
 object dmWpJson: TdmWpJson
-  Height = 568
-  Width = 711
+  Height = 337
+  Width = 553
 end

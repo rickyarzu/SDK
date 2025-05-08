@@ -1,15 +1,15 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{0589AF1C-2C22-4769-9EE5-60C624A2AB77}</ProjectGuid>
-        <MainSource>JanuaThirdParty.dpk</MainSource>
+        <ProjectGuid>{80E0C7F7-011B-4320-870B-CDC15924CC06}</ProjectGuid>
         <ProjectVersion>20.3</ProjectVersion>
-        <FrameworkType>None</FrameworkType>
+        <FrameworkType>FMX</FrameworkType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
-        <TargetedPlatforms>3</TargetedPlatforms>
-        <AppType>Package</AppType>
-        <ProjectName Condition="'$(ProjectName)'==''">JanuaThirdParty</ProjectName>
+        <ProjectName Condition="'$(ProjectName)'==''">JanuaFMXTestSimpleChat</ProjectName>
+        <TargetedPlatforms>693395</TargetedPlatforms>
+        <AppType>Application</AppType>
+        <MainSource>JanuaFMXTestSimpleChat.dpr</MainSource>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -59,11 +59,6 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win64x' and '$(Base)'=='true') or '$(Base_Win64x)'!=''">
-        <Base_Win64x>true</Base_Win64x>
-        <CfgParent>Base</CfgParent>
-        <Base>true</Base>
-    </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
         <Cfg_1>true</Cfg_1>
         <CfgParent>Base</CfgParent>
@@ -86,79 +81,197 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
-    <Import Project="JanuaLibDXE15.optset" Condition="'$(Base)'!='' And Exists('JanuaLibDXE15.optset')"/>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
+        <Cfg_2_Win64>true</Cfg_2_Win64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
         <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
         <DCC_S>false</DCC_S>
         <DCC_F>false</DCC_F>
         <DCC_K>false</DCC_K>
-        <GenDll>true</GenDll>
-        <GenPackage>true</GenPackage>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
-        <VerInfo_Locale>1040</VerInfo_Locale>
-        <SanitizedProjectName>JanuaThirdParty</SanitizedProjectName>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
-        <DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
-        <DllSuffix>$(Auto)</DllSuffix>
-        <DCC_UseMSBuildExternally>false</DCC_UseMSBuildExternally>
-        <DCC_Description>Janua 3rd Party Cross Platform</DCC_Description>
-        <CfgDependentOn>JanuaLibDXE15.optset</CfgDependentOn>
+        <AUP_ACCESS_COARSE_LOCATION>true</AUP_ACCESS_COARSE_LOCATION>
+        <AUP_ACCESS_FINE_LOCATION>true</AUP_ACCESS_FINE_LOCATION>
+        <AUP_CALL_PHONE>true</AUP_CALL_PHONE>
+        <AUP_CAMERA>true</AUP_CAMERA>
+        <AUP_INTERNET>true</AUP_INTERNET>
+        <AUP_READ_EXTERNAL_STORAGE>true</AUP_READ_EXTERNAL_STORAGE>
+        <AUP_WRITE_EXTERNAL_STORAGE>true</AUP_WRITE_EXTERNAL_STORAGE>
+        <AUP_READ_PHONE_STATE>true</AUP_READ_PHONE_STATE>
+        <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
+        <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
+        <SanitizedProjectName>JanuaFMXTestSimpleChat</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
-        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
+        <DCC_UsePackage>bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;dbxcds;FlexCel_Pdf;aseprovider290;dbexpress;inet;FMX_FlexCel_Core;FireDACDBXDriver;JanuaUnidac;tmsbcl;CustomIPTransport;emsserverresource;rtl;DBXSqliteDriver;FMXTMSFNCBloxPkgDXE15;FireDAC;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;Spring.Data;sparkle;sphinx;bindcompfmx;ibmonitor;liteprovider290;DataSnapCommon;fmxase;FlexCel_XlsAdapter;myprovider290;FMXTMSFNCCloudPackPkgDXE15;DBXInterBaseDriver;accessprovider290;dacfmx290;JanuaUnidacComponents;inetstn;JanuaMVVM;DataSnapClient;emsclientfiredac;FireDACDSDriver;tethering;CloudService;JanuaFMXControls;TMSFMXPackPkgDXE15;unidac290;odbcprovider290;soapserver;FireDACIBDriver;DecCipher;fmx;DbxCommonDriver;adsprovider290;emsclient;IndyProtocols;FireDACSqliteDriver;DbxClientDriver;soapmidas;vquery290;IndySystem;JanuaCoreComponents;ibxbindings;FlexCel_Render;FireDACCommon;bindcompdbx;db2provider290;remotedb;DataSnapFireDAC;pgprovider290;xdata;DataSnapNativeClient;emshosting;FireDACCommonDriver;IndyIPClient;emsedge;TMSFMXCloudPackPkgDXE15;fmxFireDAC;ibprovider290;sbridge280;oraprovider290;dbrtl;FMXTMSFNCMapsPkgDXE15;msprovider290;FlexCel_Core;bindcomp;IndyCore;RESTBackendComponents;FMXTMSFNCBloxToolBarsPkgDXE15;Spring.Base;RESTComponents;IndyIPServer;dsnapxml;DataSnapProviderClient;dac290;soaprtl;$(DCC_UsePackage)</DCC_UsePackage>
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=;minSdkVersion=23;targetSdkVersion=35</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
-        <EnabledSysJars>activity-1.7.2.dex.jar;annotation-experimental-1.3.0.dex.jar;annotation-jvm-1.6.0.dex.jar;annotations-13.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;billing-6.0.1.dex.jar;biometric-1.1.0.dex.jar;browser-1.4.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;concurrent-futures-1.1.0.dex.jar;core-1.10.1.dex.jar;core-common-2.2.0.dex.jar;core-ktx-1.10.1.dex.jar;core-runtime-2.2.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;error_prone_annotations-2.9.0.dex.jar;exifinterface-1.3.6.dex.jar;firebase-annotations-16.2.0.dex.jar;firebase-common-20.3.1.dex.jar;firebase-components-17.1.0.dex.jar;firebase-datatransport-18.1.7.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-encoders-proto-16.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.1.3.dex.jar;firebase-installations-interop-17.1.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-23.1.2.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;kotlin-stdlib-1.8.22.dex.jar;kotlin-stdlib-common-1.8.22.dex.jar;kotlin-stdlib-jdk7-1.8.22.dex.jar;kotlin-stdlib-jdk8-1.8.22.dex.jar;kotlinx-coroutines-android-1.6.4.dex.jar;kotlinx-coroutines-core-jvm-1.6.4.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.6.1.dex.jar;lifecycle-livedata-2.6.1.dex.jar;lifecycle-livedata-core-2.6.1.dex.jar;lifecycle-runtime-2.6.1.dex.jar;lifecycle-service-2.6.1.dex.jar;lifecycle-viewmodel-2.6.1.dex.jar;lifecycle-viewmodel-savedstate-2.6.1.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;okio-jvm-3.4.0.dex.jar;play-services-ads-22.2.0.dex.jar;play-services-ads-base-22.2.0.dex.jar;play-services-ads-identifier-18.0.0.dex.jar;play-services-ads-lite-22.2.0.dex.jar;play-services-appset-16.0.1.dex.jar;play-services-base-18.1.0.dex.jar;play-services-basement-18.1.0.dex.jar;play-services-cloud-messaging-17.0.1.dex.jar;play-services-location-21.0.1.dex.jar;play-services-maps-18.1.0.dex.jar;play-services-measurement-base-20.1.2.dex.jar;play-services-measurement-sdk-api-20.1.2.dex.jar;play-services-stats-17.0.2.dex.jar;play-services-tasks-18.0.2.dex.jar;print-1.0.0.dex.jar;profileinstaller-1.3.0.dex.jar;room-common-2.2.5.dex.jar;room-runtime-2.2.5.dex.jar;savedstate-1.2.1.dex.jar;sqlite-2.1.0.dex.jar;sqlite-framework-2.1.0.dex.jar;startup-runtime-1.1.1.dex.jar;tracing-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.1.8.dex.jar;transport-runtime-3.1.8.dex.jar;user-messaging-platform-2.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.7.0.dex.jar</EnabledSysJars>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <Android_LauncherIcon36>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png</Android_LauncherIcon36>
+        <Android_LauncherIcon48>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png</Android_LauncherIcon48>
+        <Android_LauncherIcon72>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png</Android_LauncherIcon72>
+        <Android_LauncherIcon96>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png</Android_LauncherIcon96>
+        <Android_LauncherIcon144>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png</Android_LauncherIcon144>
+        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+        <Android_SplashImage426>$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png</Android_SplashImage426>
+        <Android_SplashImage470>$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png</Android_SplashImage470>
+        <Android_SplashImage640>$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png</Android_SplashImage640>
+        <Android_SplashImage960>$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png</Android_SplashImage960>
+        <IncludeAndroid_AdaptiveIcon>true</IncludeAndroid_AdaptiveIcon>
+        <IncludeAndroid_VectorizedSplash>true</IncludeAndroid_VectorizedSplash>
+        <Android_AdaptiveIconMonochrome>$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Monochrome.xml</Android_AdaptiveIconMonochrome>
+        <Android_AdaptiveIconForeground>$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Foreground.xml</Android_AdaptiveIconForeground>
+        <Android_AdaptiveIconBackground>$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Background.xml</Android_AdaptiveIconBackground>
+        <Android_VectorizedSplash>$(BDS)\bin\Artwork\Android\FM_VectorizedSplash.xml</Android_VectorizedSplash>
+        <Android_VectorizedSplashDark>$(BDS)\bin\Artwork\Android\FM_VectorizedSplashDark.xml</Android_VectorizedSplashDark>
+        <Android_VectorizedSplashV31>$(BDS)\bin\Artwork\Android\FM_VectorizedSplashV31.xml</Android_VectorizedSplashV31>
+        <Android_VectorizedSplashV31Dark>$(BDS)\bin\Artwork\Android\FM_VectorizedSplashV31Dark.xml</Android_VectorizedSplashV31Dark>
+        <Android_NotificationIcon24>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png</Android_NotificationIcon24>
+        <Android_NotificationIcon36>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png</Android_NotificationIcon36>
+        <Android_NotificationIcon48>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png</Android_NotificationIcon48>
+        <Android_NotificationIcon72>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png</Android_NotificationIcon72>
+        <Android_NotificationIcon96>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png</Android_NotificationIcon96>
+        <IncludeAndroid_NotificationAccentColor>false</IncludeAndroid_NotificationAccentColor>
+        <IncludeAndroid_VectorizedNotificationIcon>true</IncludeAndroid_VectorizedNotificationIcon>
+        <Android_VectorizedNotificationIcon>$(BDS)\bin\Artwork\Android\FM_VectorizedNotificationIcon.xml</Android_VectorizedNotificationIcon>
+        <EnabledSysJars>activity-1.7.2.dex.jar;annotation-experimental-1.4.1.dex.jar;annotation-jvm-1.8.1.dex.jar;annotations-13.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;billing-7.1.1.dex.jar;biometric-1.1.0.dex.jar;browser-1.4.0.dex.jar;cloud-messaging.dex.jar;collection-jvm-1.4.2.dex.jar;concurrent-futures-1.1.0.dex.jar;core-1.15.0.dex.jar;core-common-2.2.0.dex.jar;core-ktx-1.15.0.dex.jar;core-runtime-2.2.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;error_prone_annotations-2.9.0.dex.jar;exifinterface-1.3.6.dex.jar;firebase-annotations-16.2.0.dex.jar;firebase-common-20.3.1.dex.jar;firebase-components-17.1.0.dex.jar;firebase-datatransport-18.1.7.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-encoders-proto-16.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.1.3.dex.jar;firebase-installations-interop-17.1.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-23.1.2.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;kotlin-stdlib-1.8.22.dex.jar;kotlin-stdlib-common-1.8.22.dex.jar;kotlin-stdlib-jdk7-1.8.22.dex.jar;kotlin-stdlib-jdk8-1.8.22.dex.jar;kotlinx-coroutines-android-1.6.4.dex.jar;kotlinx-coroutines-core-jvm-1.6.4.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.6.2.dex.jar;lifecycle-livedata-2.6.2.dex.jar;lifecycle-livedata-core-2.6.2.dex.jar;lifecycle-runtime-2.6.2.dex.jar;lifecycle-service-2.6.2.dex.jar;lifecycle-viewmodel-2.6.2.dex.jar;lifecycle-viewmodel-savedstate-2.6.2.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;okio-jvm-3.4.0.dex.jar;play-services-ads-22.2.0.dex.jar;play-services-ads-base-22.2.0.dex.jar;play-services-ads-identifier-18.0.0.dex.jar;play-services-ads-lite-22.2.0.dex.jar;play-services-appset-16.0.1.dex.jar;play-services-base-18.5.0.dex.jar;play-services-basement-18.4.0.dex.jar;play-services-cloud-messaging-17.0.1.dex.jar;play-services-location-21.0.1.dex.jar;play-services-maps-18.1.0.dex.jar;play-services-measurement-base-20.1.2.dex.jar;play-services-measurement-sdk-api-20.1.2.dex.jar;play-services-stats-17.0.2.dex.jar;play-services-tasks-18.2.0.dex.jar;print-1.0.0.dex.jar;profileinstaller-1.3.0.dex.jar;room-common-2.2.5.dex.jar;room-runtime-2.2.5.dex.jar;savedstate-1.2.1.dex.jar;sqlite-2.1.0.dex.jar;sqlite-framework-2.1.0.dex.jar;startup-runtime-1.1.1.dex.jar;tracing-1.2.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.1.8.dex.jar;transport-runtime-3.1.8.dex.jar;user-messaging-platform-2.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.7.0.dex.jar</EnabledSysJars>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android64)'!=''">
-        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
+        <DCC_UsePackage>bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;dbxcds;FlexCel_Pdf;aseprovider290;dbexpress;inet;FMX_FlexCel_Core;FireDACDBXDriver;JanuaUnidac;tmsbcl;CustomIPTransport;emsserverresource;rtl;DBXSqliteDriver;FMXTMSFNCBloxPkgDXE15;FireDAC;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;Spring.Data;gtCompression;sparkle;sphinx;TMSWebGMapsPkg;bindcompfmx;PlanAddons;ibmonitor;liteprovider290;DataSnapCommon;FlexCel_XlsAdapter;myprovider290;FMXTMSFNCCloudPackPkgDXE15;DBXInterBaseDriver;accessprovider290;dacfmx290;JanuaUnidacComponents;inetstn;JanuaMVVM;DataSnapClient;emsclientfiredac;FireDACDSDriver;tethering;JanuaCore;CloudService;JanuaFMXControls;TMSFMXPackPkgDXE15;unidac290;odbcprovider290;soapserver;FireDACIBDriver;TMSWebGMapsPkgDE;DecCipher;fmx;DbxCommonDriver;adsprovider290;emsclient;IndyProtocols;FireDACSqliteDriver;DbxClientDriver;soapmidas;vquery290;IndySystem;JanuaCoreComponents;ibxbindings;FlexCel_Render;FireDACCommon;bindcompdbx;db2provider290;remotedb;DataSnapFireDAC;pgprovider290;xdata;DataSnapNativeClient;emshosting;FireDACCommonDriver;IndyIPClient;emsedge;TMSFMXCloudPackPkgDXE15;fmxFireDAC;ibprovider290;sbridge280;oraprovider290;dbrtl;FMXTMSFNCMapsPkgDXE15;msprovider290;FlexCel_Core;bindcomp;IndyCore;RESTBackendComponents;FMXTMSFNCBloxToolBarsPkgDXE15;Spring.Base;RESTComponents;IndyIPServer;dsnapxml;DataSnapProviderClient;dac290;dmvcframeworkRT;soaprtl;$(DCC_UsePackage)</DCC_UsePackage>
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=;minSdkVersion=23;targetSdkVersion=35</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
-        <EnabledSysJars>activity-1.7.2.dex.jar;annotation-experimental-1.3.0.dex.jar;annotation-jvm-1.6.0.dex.jar;annotations-13.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;billing-6.0.1.dex.jar;biometric-1.1.0.dex.jar;browser-1.4.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;concurrent-futures-1.1.0.dex.jar;core-1.10.1.dex.jar;core-common-2.2.0.dex.jar;core-ktx-1.10.1.dex.jar;core-runtime-2.2.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;error_prone_annotations-2.9.0.dex.jar;exifinterface-1.3.6.dex.jar;firebase-annotations-16.2.0.dex.jar;firebase-common-20.3.1.dex.jar;firebase-components-17.1.0.dex.jar;firebase-datatransport-18.1.7.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-encoders-proto-16.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.1.3.dex.jar;firebase-installations-interop-17.1.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-23.1.2.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;kotlin-stdlib-1.8.22.dex.jar;kotlin-stdlib-common-1.8.22.dex.jar;kotlin-stdlib-jdk7-1.8.22.dex.jar;kotlin-stdlib-jdk8-1.8.22.dex.jar;kotlinx-coroutines-android-1.6.4.dex.jar;kotlinx-coroutines-core-jvm-1.6.4.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.6.1.dex.jar;lifecycle-livedata-2.6.1.dex.jar;lifecycle-livedata-core-2.6.1.dex.jar;lifecycle-runtime-2.6.1.dex.jar;lifecycle-service-2.6.1.dex.jar;lifecycle-viewmodel-2.6.1.dex.jar;lifecycle-viewmodel-savedstate-2.6.1.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;okio-jvm-3.4.0.dex.jar;play-services-ads-22.2.0.dex.jar;play-services-ads-base-22.2.0.dex.jar;play-services-ads-identifier-18.0.0.dex.jar;play-services-ads-lite-22.2.0.dex.jar;play-services-appset-16.0.1.dex.jar;play-services-base-18.1.0.dex.jar;play-services-basement-18.1.0.dex.jar;play-services-cloud-messaging-17.0.1.dex.jar;play-services-location-21.0.1.dex.jar;play-services-maps-18.1.0.dex.jar;play-services-measurement-base-20.1.2.dex.jar;play-services-measurement-sdk-api-20.1.2.dex.jar;play-services-stats-17.0.2.dex.jar;play-services-tasks-18.0.2.dex.jar;print-1.0.0.dex.jar;profileinstaller-1.3.0.dex.jar;room-common-2.2.5.dex.jar;room-runtime-2.2.5.dex.jar;savedstate-1.2.1.dex.jar;sqlite-2.1.0.dex.jar;sqlite-framework-2.1.0.dex.jar;startup-runtime-1.1.1.dex.jar;tracing-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.1.8.dex.jar;transport-runtime-3.1.8.dex.jar;user-messaging-platform-2.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.7.0.dex.jar</EnabledSysJars>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <Android_LauncherIcon36>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png</Android_LauncherIcon36>
+        <Android_LauncherIcon48>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png</Android_LauncherIcon48>
+        <Android_LauncherIcon72>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png</Android_LauncherIcon72>
+        <Android_LauncherIcon96>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png</Android_LauncherIcon96>
+        <Android_LauncherIcon144>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png</Android_LauncherIcon144>
+        <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+        <Android_SplashImage426>$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png</Android_SplashImage426>
+        <Android_SplashImage470>$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png</Android_SplashImage470>
+        <Android_SplashImage640>$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png</Android_SplashImage640>
+        <Android_SplashImage960>$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png</Android_SplashImage960>
+        <IncludeAndroid_AdaptiveIcon>true</IncludeAndroid_AdaptiveIcon>
+        <IncludeAndroid_VectorizedSplash>true</IncludeAndroid_VectorizedSplash>
+        <Android_AdaptiveIconMonochrome>$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Monochrome.xml</Android_AdaptiveIconMonochrome>
+        <Android_AdaptiveIconForeground>$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Foreground.xml</Android_AdaptiveIconForeground>
+        <Android_AdaptiveIconBackground>$(BDS)\bin\Artwork\Android\FM_AdaptiveIcon_Background.xml</Android_AdaptiveIconBackground>
+        <Android_VectorizedSplash>$(BDS)\bin\Artwork\Android\FM_VectorizedSplash.xml</Android_VectorizedSplash>
+        <Android_VectorizedSplashDark>$(BDS)\bin\Artwork\Android\FM_VectorizedSplashDark.xml</Android_VectorizedSplashDark>
+        <Android_VectorizedSplashV31>$(BDS)\bin\Artwork\Android\FM_VectorizedSplashV31.xml</Android_VectorizedSplashV31>
+        <Android_VectorizedSplashV31Dark>$(BDS)\bin\Artwork\Android\FM_VectorizedSplashV31Dark.xml</Android_VectorizedSplashV31Dark>
+        <Android_NotificationIcon24>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png</Android_NotificationIcon24>
+        <Android_NotificationIcon36>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png</Android_NotificationIcon36>
+        <Android_NotificationIcon48>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png</Android_NotificationIcon48>
+        <Android_NotificationIcon72>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png</Android_NotificationIcon72>
+        <Android_NotificationIcon96>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png</Android_NotificationIcon96>
+        <IncludeAndroid_NotificationAccentColor>false</IncludeAndroid_NotificationAccentColor>
+        <IncludeAndroid_VectorizedNotificationIcon>true</IncludeAndroid_VectorizedNotificationIcon>
+        <Android_VectorizedNotificationIcon>$(BDS)\bin\Artwork\Android\FM_VectorizedNotificationIcon.xml</Android_VectorizedNotificationIcon>
+        <EnabledSysJars>activity-1.7.2.dex.jar;annotation-experimental-1.4.1.dex.jar;annotation-jvm-1.8.1.dex.jar;annotations-13.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;billing-7.1.1.dex.jar;biometric-1.1.0.dex.jar;browser-1.4.0.dex.jar;cloud-messaging.dex.jar;collection-jvm-1.4.2.dex.jar;concurrent-futures-1.1.0.dex.jar;core-1.15.0.dex.jar;core-common-2.2.0.dex.jar;core-ktx-1.15.0.dex.jar;core-runtime-2.2.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;error_prone_annotations-2.9.0.dex.jar;exifinterface-1.3.6.dex.jar;firebase-annotations-16.2.0.dex.jar;firebase-common-20.3.1.dex.jar;firebase-components-17.1.0.dex.jar;firebase-datatransport-18.1.7.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-encoders-proto-16.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.1.3.dex.jar;firebase-installations-interop-17.1.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-23.1.2.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;kotlin-stdlib-1.8.22.dex.jar;kotlin-stdlib-common-1.8.22.dex.jar;kotlin-stdlib-jdk7-1.8.22.dex.jar;kotlin-stdlib-jdk8-1.8.22.dex.jar;kotlinx-coroutines-android-1.6.4.dex.jar;kotlinx-coroutines-core-jvm-1.6.4.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.6.2.dex.jar;lifecycle-livedata-2.6.2.dex.jar;lifecycle-livedata-core-2.6.2.dex.jar;lifecycle-runtime-2.6.2.dex.jar;lifecycle-service-2.6.2.dex.jar;lifecycle-viewmodel-2.6.2.dex.jar;lifecycle-viewmodel-savedstate-2.6.2.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;okio-jvm-3.4.0.dex.jar;play-services-ads-22.2.0.dex.jar;play-services-ads-base-22.2.0.dex.jar;play-services-ads-identifier-18.0.0.dex.jar;play-services-ads-lite-22.2.0.dex.jar;play-services-appset-16.0.1.dex.jar;play-services-base-18.5.0.dex.jar;play-services-basement-18.4.0.dex.jar;play-services-cloud-messaging-17.0.1.dex.jar;play-services-location-21.0.1.dex.jar;play-services-maps-18.1.0.dex.jar;play-services-measurement-base-20.1.2.dex.jar;play-services-measurement-sdk-api-20.1.2.dex.jar;play-services-stats-17.0.2.dex.jar;play-services-tasks-18.2.0.dex.jar;print-1.0.0.dex.jar;profileinstaller-1.3.0.dex.jar;room-common-2.2.5.dex.jar;room-runtime-2.2.5.dex.jar;savedstate-1.2.1.dex.jar;sqlite-2.1.0.dex.jar;sqlite-framework-2.1.0.dex.jar;startup-runtime-1.1.1.dex.jar;tracing-1.2.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.1.8.dex.jar;transport-runtime-3.1.8.dex.jar;user-messaging-platform-2.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.7.0.dex.jar</EnabledSysJars>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_iOSDevice64)'!=''">
+        <DCC_UsePackage>bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;dbxcds;FlexCel_Pdf;aseprovider290;dbexpress;inet;FMX_FlexCel_Core;FireDACDBXDriver;JanuaUnidac;tmsbcl;CustomIPTransport;emsserverresource;rtl;DBXSqliteDriver;FMXTMSFNCBloxPkgDXE15;FireDAC;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;Spring.Data;gtCompression;sparkle;sphinx;TMSWebGMapsPkg;bindcompfmx;PlanAddons;ibmonitor;liteprovider290;DataSnapCommon;fmxase;FlexCel_XlsAdapter;myprovider290;FMXTMSFNCCloudPackPkgDXE15;DBXInterBaseDriver;accessprovider290;dacfmx290;JanuaUnidacComponents;inetstn;JanuaMVVM;DataSnapClient;emsclientfiredac;FireDACDSDriver;tethering;JanuaCore;CloudService;JanuaFMXControls;TMSFMXPackPkgDXE15;unidac290;odbcprovider290;soapserver;FireDACIBDriver;TMSWebGMapsPkgDE;DecCipher;fmx;DbxCommonDriver;adsprovider290;emsclient;IndyProtocols;FireDACSqliteDriver;DbxClientDriver;soapmidas;vquery290;IndySystem;JanuaCoreComponents;ibxbindings;FlexCel_Render;FireDACCommon;bindcompdbx;db2provider290;remotedb;DataSnapFireDAC;pgprovider290;xdata;DataSnapNativeClient;emshosting;FireDACCommonDriver;IndyIPClient;emsedge;TMSFMXCloudPackPkgDXE15;fmxFireDAC;ibprovider290;sbridge280;oraprovider290;dbrtl;FMXTMSFNCMapsPkgDXE15;msprovider290;FlexCel_Core;bindcomp;IndyCore;RESTBackendComponents;FMXTMSFNCBloxToolBarsPkgDXE15;Spring.Base;RESTComponents;IndyIPServer;dsnapxml;DataSnapProviderClient;dac290;dmvcframeworkRT;soaprtl;$(DCC_UsePackage)</DCC_UsePackage>
         <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDevelopmentRegion=en;CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleInfoDictionaryVersion=7.1;CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;LSRequiresIPhoneOS=true;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);UIDeviceFamily=iPhone &amp; iPad;NSLocationAlwaysUsageDescription=The reason for accessing the location information of the user;NSLocationWhenInUseUsageDescription=The reason for accessing the location information of the user;NSLocationAlwaysAndWhenInUseUsageDescription=The reason for accessing the location information of the user;UIBackgroundModes=;NSContactsUsageDescription=The reason for accessing the contacts;NSPhotoLibraryUsageDescription=The reason for accessing the photo library;NSPhotoLibraryAddUsageDescription=The reason for adding to the photo library;NSCameraUsageDescription=The reason for accessing the camera;NSFaceIDUsageDescription=The reason for accessing the face id;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSSiriUsageDescription=The reason for accessing Siri;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing bluetooth;NSBluetoothPeripheralUsageDescription=The reason for accessing bluetooth peripherals;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSMotionUsageDescription=The reason for accessing the accelerometer;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers</VerInfo_Keys>
         <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_BundleId>$(MSBuildProjectName)</VerInfo_BundleId>
+        <iOS_AppStore1024>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_1024x1024.png</iOS_AppStore1024>
+        <iPhone_AppIcon120>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_120x120.png</iPhone_AppIcon120>
+        <iPhone_AppIcon180>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_180x180.png</iPhone_AppIcon180>
+        <iPhone_Launch2x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImage_2x.png</iPhone_Launch2x>
+        <iPhone_LaunchDark2x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImageDark_2x.png</iPhone_LaunchDark2x>
+        <iPhone_Launch3x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImage_3x.png</iPhone_Launch3x>
+        <iPhone_LaunchDark3x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImageDark_3x.png</iPhone_LaunchDark3x>
+        <iPhone_Spotlight80>$(BDS)\bin\Artwork\iOS\iPhone\FM_SpotlightSearchIcon_80x80.png</iPhone_Spotlight80>
+        <iPhone_Spotlight120>$(BDS)\bin\Artwork\iOS\iPhone\FM_SpotlightSearchIcon_120x120.png</iPhone_Spotlight120>
+        <iPhone_Setting58>$(BDS)\bin\Artwork\iOS\iPhone\FM_SettingIcon_58x58.png</iPhone_Setting58>
+        <iPhone_Setting87>$(BDS)\bin\Artwork\iOS\iPhone\FM_SettingIcon_87x87.png</iPhone_Setting87>
+        <iPhone_Notification40>$(BDS)\bin\Artwork\iOS\iPhone\FM_NotificationIcon_40x40.png</iPhone_Notification40>
+        <iPhone_Notification60>$(BDS)\bin\Artwork\iOS\iPhone\FM_NotificationIcon_60x60.png</iPhone_Notification60>
+        <iPad_AppIcon152>$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_152x152.png</iPad_AppIcon152>
+        <iPad_AppIcon167>$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_167x167.png</iPad_AppIcon167>
+        <iPad_Launch2x>$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImage_2x.png</iPad_Launch2x>
+        <iPad_LaunchDark2x>$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImageDark_2x.png</iPad_LaunchDark2x>
+        <iPad_SpotLight80>$(BDS)\bin\Artwork\iOS\iPad\FM_SpotlightSearchIcon_80x80.png</iPad_SpotLight80>
+        <iPad_Setting58>$(BDS)\bin\Artwork\iOS\iPad\FM_SettingIcon_58x58.png</iPad_Setting58>
+        <iPad_Notification40>$(BDS)\bin\Artwork\iOS\iPad\FM_NotificationIcon_40x40.png</iPad_Notification40>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_iOSSimARM64)'!=''">
+        <DCC_UsePackage>bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;dbxcds;FlexCel_Pdf;aseprovider290;dbexpress;inet;FMX_FlexCel_Core;FireDACDBXDriver;JanuaUnidac;tmsbcl;CustomIPTransport;emsserverresource;rtl;DBXSqliteDriver;FMXTMSFNCBloxPkgDXE15;FireDAC;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;Spring.Data;sparkle;sphinx;bindcompfmx;PlanAddons;ibmonitor;liteprovider290;DataSnapCommon;fmxase;FlexCel_XlsAdapter;myprovider290;FMXTMSFNCCloudPackPkgDXE15;DBXInterBaseDriver;accessprovider290;dacfmx290;JanuaUnidacComponents;inetstn;JanuaMVVM;DataSnapClient;emsclientfiredac;FireDACDSDriver;tethering;CloudService;JanuaFMXControls;TMSFMXPackPkgDXE15;unidac290;odbcprovider290;soapserver;FireDACIBDriver;DecCipher;fmx;DbxCommonDriver;adsprovider290;emsclient;IndyProtocols;FireDACSqliteDriver;DbxClientDriver;soapmidas;vquery290;IndySystem;JanuaCoreComponents;ibxbindings;FlexCel_Render;FireDACCommon;bindcompdbx;db2provider290;remotedb;DataSnapFireDAC;pgprovider290;xdata;DataSnapNativeClient;emshosting;FireDACCommonDriver;IndyIPClient;emsedge;TMSFMXCloudPackPkgDXE15;fmxFireDAC;ibprovider290;oraprovider290;dbrtl;FMXTMSFNCMapsPkgDXE15;msprovider290;FlexCel_Core;bindcomp;IndyCore;RESTBackendComponents;FMXTMSFNCBloxToolBarsPkgDXE15;Spring.Base;RESTComponents;IndyIPServer;dsnapxml;DataSnapProviderClient;dac290;dmvcframeworkRT;soaprtl;$(DCC_UsePackage)</DCC_UsePackage>
         <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDevelopmentRegion=en;CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleInfoDictionaryVersion=7.1;CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;LSRequiresIPhoneOS=true;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);UIDeviceFamily=iPhone &amp; iPad;NSLocationAlwaysUsageDescription=The reason for accessing the location information of the user;NSLocationWhenInUseUsageDescription=The reason for accessing the location information of the user;NSLocationAlwaysAndWhenInUseUsageDescription=The reason for accessing the location information of the user;UIBackgroundModes=;NSContactsUsageDescription=The reason for accessing the contacts;NSPhotoLibraryUsageDescription=The reason for accessing the photo library;NSPhotoLibraryAddUsageDescription=The reason for adding to the photo library;NSCameraUsageDescription=The reason for accessing the camera;NSFaceIDUsageDescription=The reason for accessing the face id;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSSiriUsageDescription=The reason for accessing Siri;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing bluetooth;NSBluetoothPeripheralUsageDescription=The reason for accessing bluetooth peripherals;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSMotionUsageDescription=The reason for accessing the accelerometer;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers</VerInfo_Keys>
         <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <iOS_AppStore1024>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_1024x1024.png</iOS_AppStore1024>
+        <iPhone_AppIcon120>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_120x120.png</iPhone_AppIcon120>
+        <iPhone_AppIcon180>$(BDS)\bin\Artwork\iOS\iPhone\FM_ApplicationIcon_180x180.png</iPhone_AppIcon180>
+        <iPhone_Launch2x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImage_2x.png</iPhone_Launch2x>
+        <iPhone_LaunchDark2x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImageDark_2x.png</iPhone_LaunchDark2x>
+        <iPhone_Launch3x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImage_3x.png</iPhone_Launch3x>
+        <iPhone_LaunchDark3x>$(BDS)\bin\Artwork\iOS\iPhone\FM_LaunchImageDark_3x.png</iPhone_LaunchDark3x>
+        <iPhone_Spotlight80>$(BDS)\bin\Artwork\iOS\iPhone\FM_SpotlightSearchIcon_80x80.png</iPhone_Spotlight80>
+        <iPhone_Spotlight120>$(BDS)\bin\Artwork\iOS\iPhone\FM_SpotlightSearchIcon_120x120.png</iPhone_Spotlight120>
+        <iPhone_Setting58>$(BDS)\bin\Artwork\iOS\iPhone\FM_SettingIcon_58x58.png</iPhone_Setting58>
+        <iPhone_Setting87>$(BDS)\bin\Artwork\iOS\iPhone\FM_SettingIcon_87x87.png</iPhone_Setting87>
+        <iPhone_Notification40>$(BDS)\bin\Artwork\iOS\iPhone\FM_NotificationIcon_40x40.png</iPhone_Notification40>
+        <iPhone_Notification60>$(BDS)\bin\Artwork\iOS\iPhone\FM_NotificationIcon_60x60.png</iPhone_Notification60>
+        <iPad_AppIcon152>$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_152x152.png</iPad_AppIcon152>
+        <iPad_AppIcon167>$(BDS)\bin\Artwork\iOS\iPad\FM_ApplicationIcon_167x167.png</iPad_AppIcon167>
+        <iPad_Launch2x>$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImage_2x.png</iPad_Launch2x>
+        <iPad_LaunchDark2x>$(BDS)\bin\Artwork\iOS\iPad\FM_LaunchImageDark_2x.png</iPad_LaunchDark2x>
+        <iPad_SpotLight80>$(BDS)\bin\Artwork\iOS\iPad\FM_SpotlightSearchIcon_80x80.png</iPad_SpotLight80>
+        <iPad_Setting58>$(BDS)\bin\Artwork\iOS\iPad\FM_SettingIcon_58x58.png</iPad_Setting58>
+        <iPad_Notification40>$(BDS)\bin\Artwork\iOS\iPad\FM_NotificationIcon_40x40.png</iPad_Notification40>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Linux64)'!=''">
-        <DCC_UsePackage>rtl;bindengine;xmlrtl;soaprtl;dbrtl;inet;IndySystem;IndyProtocols;IndyCore;bindcomp;dsnap;RESTComponents;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>bindengine;aurelius;dbxcds;FlexCel_Pdf;aseprovider290;dbexpress;inet;JanuaUnidac;tmsbcl;CustomIPTransport;FireDACMSSQLDriver;FireDACODBCDriver;emsserverresource;rtl;FMXTMSFNCBloxPkgDXE15;FireDAC;xmlrtl;JanuaUnidacComponentsD;dsnap;FireDACDb2Driver;JanuaVCLMVVM;DatasnapConnectorsFreePascal;Spring.Data;gtCompression;sparkle;sphinx;TMSWebGMapsPkg;PlanAddons;liteprovider290;FireDACASADriver;FireDACInfxDriver;DataSnapCommon;JanuaTmsControls;FlexCel_XlsAdapter;myprovider290;DataSnapIndy10ServerTransport;FMXTMSFNCCloudPackPkgDXE15;JanuaVCLControls;accessprovider290;dacfmx290;JanuaUnidacComponents;inetstn;JanuaMVVM;JanuaVCLComponents;DataSnapClient;emsclientfiredac;FireDACPgDriver;JanuaCore;CloudService;JanuaFMXControls;TMSFMXPackPkgDXE15;unidac290;odbcprovider290;soapserver;FireDACIBDriver;TMSWebGMapsPkgDE;DataSnapServer;DecCipher;fmx;DbxCommonDriver;adsprovider290;FireDACCommonODBC;emsclient;IndyProtocols;FireDACSqliteDriver;DbxClientDriver;soapmidas;vquery290;IndySystem;JanuaCoreComponents;FlexCel_Render;FireDACCommon;DataSnapServerMidas;db2provider290;FireDACMySQLDriver;remotedb;DataSnapFireDAC;pgprovider290;xdata;DataSnapNativeClient;emshosting;FireDACCommonDriver;emsedge;inetdb;TMSFMXCloudPackPkgDXE15;ibprovider290;sbridge280;oraprovider290;dbrtl;FireDACOracleDriver;DataSnapConnectors;FMXTMSFNCMapsPkgDXE15;FireDACMongoDBDriver;FireDACTDataDriver;msprovider290;FlexCel_Core;bindcomp;IndyCore;RESTBackendComponents;FireDACADSDriver;FMXTMSFNCBloxToolBarsPkgDXE15;Spring.Base;RESTComponents;dsnapxml;dac290;dmvcframeworkRT;soaprtl;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_OSX64)'!=''">
+        <DCC_UsePackage>bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;dbxcds;FlexCel_Pdf;dbexpress;inet;FMX_FlexCel_Core;FireDACDBXDriver;JanuaUnidac;tmsbcl;CustomIPTransport;FireDACMSSQLDriver;FireDACODBCDriver;emsserverresource;rtl;DBXSqliteDriver;FMXTMSFNCBloxPkgDXE15;inetdbxpress;FireDAC;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;DBXOracleDriver;Spring.Data;gtCompression;sparkle;sphinx;TMSWebGMapsPkg;bindcompfmx;PlanAddons;ibmonitor;liteprovider290;FireDACASADriver;DBXMySQLDriver;DataSnapCommon;fmxase;FlexCel_XlsAdapter;myprovider290;DataSnapIndy10ServerTransport;FMXTMSFNCCloudPackPkgDXE15;DBXInterBaseDriver;accessprovider290;dacfmx290;JanuaUnidacComponents;inetstn;JanuaMVVM;DataSnapClient;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;tethering;JanuaCore;CloudService;JanuaFMXControls;TMSFMXPackPkgDXE15;unidac290;odbcprovider290;soapserver;FireDACIBDriver;TMSWebGMapsPkgDE;DataSnapServer;DecCipher;fmx;DbxCommonDriver;adsprovider290;FireDACCommonODBC;emsclient;IndyProtocols;DBXFirebirdDriver;FireDACSqliteDriver;DbxClientDriver;soapmidas;vquery290;fmxdae;IndySystem;JanuaCoreComponents;ibxbindings;FlexCel_Render;FireDACCommon;DataSnapServerMidas;bindcompdbx;db2provider290;FireDACMySQLDriver;remotedb;DataSnapFireDAC;pgprovider290;xdata;DBXInformixDriver;fmxobj;DataSnapNativeClient;emshosting;FireDACCommonDriver;IndyIPClient;emsedge;inetdb;TMSFMXCloudPackPkgDXE15;fmxFireDAC;ibprovider290;sbridge280;oraprovider290;dbrtl;FireDACOracleDriver;FMXTMSFNCMapsPkgDXE15;FireDACMongoDBDriver;FireDACTDataDriver;msprovider290;FlexCel_Core;bindcomp;IndyCore;RESTBackendComponents;FMXTMSFNCBloxToolBarsPkgDXE15;Spring.Base;RESTComponents;IndyIPServer;dsnapxml;DataSnapProviderClient;dac290;dmvcframeworkRT;DBXSybaseASADriver;soaprtl;$(DCC_UsePackage)</DCC_UsePackage>
         <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing the Bluetooth interface</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_OSXARM64)'!=''">
+        <DCC_UsePackage>bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;dbxcds;FlexCel_Pdf;dbexpress;inet;FMX_FlexCel_Core;FireDACDBXDriver;JanuaUnidac;tmsbcl;CustomIPTransport;FireDACMSSQLDriver;FireDACODBCDriver;emsserverresource;rtl;DBXSqliteDriver;FMXTMSFNCBloxPkgDXE15;inetdbxpress;FireDAC;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;DBXOracleDriver;Spring.Data;sparkle;sphinx;bindcompfmx;PlanAddons;ibmonitor;liteprovider290;FireDACASADriver;DBXMySQLDriver;DataSnapCommon;fmxase;FlexCel_XlsAdapter;myprovider290;DataSnapIndy10ServerTransport;FMXTMSFNCCloudPackPkgDXE15;DBXInterBaseDriver;accessprovider290;dacfmx290;JanuaUnidacComponents;inetstn;JanuaMVVM;DataSnapClient;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;tethering;CloudService;JanuaFMXControls;TMSFMXPackPkgDXE15;unidac290;odbcprovider290;soapserver;FireDACIBDriver;DataSnapServer;DecCipher;fmx;DbxCommonDriver;adsprovider290;FireDACCommonODBC;emsclient;IndyProtocols;DBXFirebirdDriver;FireDACSqliteDriver;DbxClientDriver;soapmidas;vquery290;fmxdae;IndySystem;JanuaCoreComponents;ibxbindings;FlexCel_Render;FireDACCommon;DataSnapServerMidas;bindcompdbx;db2provider290;FireDACMySQLDriver;remotedb;DataSnapFireDAC;pgprovider290;xdata;DBXInformixDriver;fmxobj;DataSnapNativeClient;emshosting;FireDACCommonDriver;IndyIPClient;emsedge;inetdb;TMSFMXCloudPackPkgDXE15;fmxFireDAC;ibprovider290;oraprovider290;dbrtl;FireDACOracleDriver;FMXTMSFNCMapsPkgDXE15;FireDACMongoDBDriver;FireDACTDataDriver;msprovider290;FlexCel_Core;bindcomp;IndyCore;RESTBackendComponents;FMXTMSFNCBloxToolBarsPkgDXE15;Spring.Base;RESTComponents;IndyIPServer;dsnapxml;DataSnapProviderClient;dac290;dmvcframeworkRT;DBXSybaseASADriver;soaprtl;$(DCC_UsePackage)</DCC_UsePackage>
         <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers;ITSAppUsesNonExemptEncryption=false;NSBluetoothAlwaysUsageDescription=The reason for accessing the Bluetooth interface</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_UsePackage>DCLgtDocEng;vclie;bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;dbxcds;vcledge;TRCGooglePlaces_r;FlexCel_Pdf;VisualStyles;JvAppFrm;JclVcl;aseprovider290;dbexpress;Jcl;JvManagedThreads;inet;vcltouch;JanuaUniGUI;uniGUI29VCL;FMX_FlexCel_Core;FireDACDBXDriver;tdsprovider290;JanuaUnidac;tmsbcl;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;JvSystem;ipstudiowinwordxp;JvCrypt;uniGUI29;dbfprovider290;vclFireDAC;FireDACODBCDriver;emsserverresource;VCLTMSFNCRESTClientEditorPkgDXE15;rtl;bigqueryprovider290;gtRtl;gtFont;DBXSqliteDriver;gtFilters;DBXSybaseASEDriver;FMXTMSFNCBloxPkgDXE15;JvRuntimeDesign;JvXPCtrls;inetdbxpress;FireDAC;JvDocking;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;netsuiteprovider290;JvCmp;FireDACDb2Driver;DBXOracleDriver;bigcommerceprovider290;vclib;JanuaVCLMVVM;DatasnapConnectorsFreePascal;SVGIconImageList;Spring.Data;Ean;gtCompression;FMXTMSFNCCorePkgDXE15;sparkle;sphinx;TMSWebGMapsPkg;bindcompvclwinx;bindcompfmx;TMSVCLUIPackPkgExDXE15;FIBPlus;DCLgtQRExp;JvBands;VCLTMSFNCBloxPkgDXE15;PlanAddons;TUniFalconDesign;ibmonitor;liteprovider290;FireDACASADriver;SVGIconImageListFMX;vclactnband;TMSVCLUIPackPkgXlsDXE15;hubspotprovider290;officeXPrt;FireDACInfxDriver;DBXMySQLDriver;VclSmp;DataSnapCommon;fmxase;JanuaTmsControls;JvPluginSystem;TMSVCLUIPackPkgWizDXE15;FlexCel_XlsAdapter;myprovider290;DataSnapIndy10ServerTransport;JclDeveloperTools;FMXTMSFNCCloudPackPkgDXE15;vcldsnap;DBXInterBaseDriver;JvWizards;uniGUI29Chart;JanuaVCLControls;vcldb;accessprovider290;JvCore;dacfmx290;TMSmCLPkgDXE15;sugarprovider290;JanuaUnidacComponents;inetstn;JanuaMVVM;zohoprovider290;JanuaVCLComponents;JvDotNetCtrls;vcl;JvHMI;freshbooksprovider290;DataSnapClient;TMSWebOSMapsPkg;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;TMSWebOSMapsPkgDE;JvPrintPreview;tethering;uniTools29;JanuaThirdPartyVCL;TRCGooglePlaces_d;JanuaCore;bindcompvcl;JvStdCtrls;CloudService;JanuaFMXControls;TMSFMXPackPkgDXE15;unidac290;odbcprovider290;soapserver;FireDACIBDriver;TMSWebGMapsPkgDE;vclwinx;DataSnapServer;DecCipher;fmx;DbxCommonDriver;VCLRESTComponents;adsprovider290;FireDACCommonODBC;DBXMSSQLDriver;emsclient;ApperceptAPIClient;appanalytics;IndyProtocols;vclx;Skia.Package.RTL;magentoprovider290;gtCrypt;FMXTMSFNCRESTClientEditorPkgDXE15;DBXFirebirdDriver;SKIA_FlexCel_Core;vclgtxDocumentStudioControls;dacvcl290;FireDACSqliteDriver;DbxClientDriver;soapmidas;salesforceprovider290;gtDocEng;vquery290;ipstudiowin;JvDB;fmxdae;JvCustom;exacttargetprovider290;JvControls;OmniThreadLibraryRuntime;JvJans;JvMM;IndySystem;ZipMasterR;JvGlobus;JanuaCoreComponents;ibxbindings;OpenAIPackage;JclContainers;JvPageComps;FlexCel_Render;FireDACCommon;DataSnapServerMidas;TMSCloudPkgDEDXE15;bindcompdbx;db2provider290;FireDACMySQLDriver;VCL_FlexCel_Components;remotedb;ZLibrariesWin;TMSVCLUIPackPkgDXE15;mailchimpprovider290;vclimg;DataSnapFireDAC;unidacfmx290;pgprovider290;JvDlgs;xdata;QRWRunDXE12_W64;DBXInformixDriver;fmxobj;bindcompvclsmp;DataSnapNativeClient;TMSFMXCloudPackPkgDEDXE15;ZComponentsVCL;FMXTMSFNCUIPackPkgDXE15;TMSCloudPkgDXE15;TMSFNCCorePkgDXE15;emshosting;SVGIconImageListRestClient;VCLTMSFNCBloxToolBarsPkgDXE15;FireDACCommonDriver;IndyIPClient;emsedge;uSynEdit_R2025;crcontrols290;inetdb;mongoprovider290;TMSFMXCloudPackPkgDXE15;fmxFireDAC;dynamicsprovider290;ibprovider290;fmxgtxDocumentStudioControls;sbridge280;JvPascalInterpreter;oraprovider290;DBXOdbcDriver;JvTimeFramework;dbrtl;uniGUI29m;FireDACOracleDriver;Skia.Package.FMX;FireDACMSAccDriver;DataSnapConnectors;FMXTMSFNCMapsPkgDXE15;FireDACMongoDBDriver;VCLThemeSelector;FireDACTDataDriver;msprovider290;Skia.Package.VCL;VCLTMSFNCUIPackPkgDXE15;quickbooksprovider290;FlexCel_Core;unidacvcl290;bindcomp;IndyCore;RESTBackendComponents;dmvcframeworkDT;FireDACADSDriver;FMXTMSFNCBloxToolBarsPkgDXE15;Spring.Base;RESTComponents;IndyIPServer;dsnapxml;adortl;VCLTMSFNCMapsPkgDXE15;dsnapcon;DataSnapProviderClient;dac290;DBXDb2Driver;dmvcframeworkRT;rsprovider290;DBXSybaseASADriver;VCLTMSFNCCloudPackPkgDXE15;VCLTMSFNCCorePkgDXE15;soaprtl;TUniFalcon;JvNet;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <DCC_UsePackage>rtl;vcl;vclwinx;bindengine;xmlrtl;vclactnband;vclx;soaprtl;dbrtl;inet;vclie;IndySystem;IndyProtocols;IndyCore;bindcomp;vcldb;VclSmp;dsnap;QRWRunDXE11_w64;DCLgtQRExp;gtDocEng;Barcomp;FIBPlus;ZComponentsD;ZLibrariesWin;ZipMasterR;ZComponentsVCL;JanuaThirdPartyVCL;RESTComponents;$(DCC_UsePackage)</DCC_UsePackage>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <DCC_UsePackage>rtl;vcl;vclwinx;bindengine;xmlrtl;vclactnband;vclx;soaprtl;dbrtl;inet;vclie;IndySystem;IndyProtocols;IndyCore;bindcomp;vcldb;VclSmp;dsnap;QRWRunDXE11_w64;DCLgtQRExp;gtDocEng;Barcomp;FIBPlus;ZComponentsD;ZLibrariesWin;ZipMasterR;JanuaThirdPartyVCL;RESTComponents;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>vclie;bindengine;IndyIPCommon;aurelius;FMX_FlexCel_Components;dbxcds;vcledge;TRCGooglePlaces_r;FlexCel_Pdf;VisualStyles;aseprovider290;dbexpress;inet;vcltouch;JanuaUniGUI;uniGUI29VCL;FMX_FlexCel_Core;FireDACDBXDriver;tdsprovider290;JanuaUnidac;tmsbcl;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;uniGUI29;dbfprovider290;vclFireDAC;FireDACODBCDriver;emsserverresource;VCLTMSFNCRESTClientEditorPkgDXE15;rtl;bigqueryprovider290;gtRtl;gtFont;DBXSqliteDriver;gtFilters;DBXSybaseASEDriver;FMXTMSFNCBloxPkgDXE15;inetdbxpress;FireDAC;xmlrtl;JanuaUnidacComponentsD;ibxpress;dsnap;netsuiteprovider290;FireDACDb2Driver;DBXOracleDriver;bigcommerceprovider290;vclib;DatasnapConnectorsFreePascal;SVGIconImageList;Spring.Data;Ean;gtCompression;sparkle;sphinx;TMSWebGMapsPkg;bindcompvclwinx;bindcompfmx;TMSVCLUIPackPkgExDXE15;FIBPlus;DCLgtQRExp;VCLTMSFNCBloxPkgDXE15;PlanAddons;ibmonitor;liteprovider290;FireDACASADriver;SVGIconImageListFMX;vclactnband;TMSVCLUIPackPkgXlsDXE15;hubspotprovider290;officeXPrt;FireDACInfxDriver;DBXMySQLDriver;VclSmp;DataSnapCommon;fmxase;JanuaTmsControls;FlexCel_XlsAdapter;myprovider290;DataSnapIndy10ServerTransport;FMXTMSFNCCloudPackPkgDXE15;vcldsnap;DBXInterBaseDriver;uniGUI29Chart;JanuaVCLControls;vcldb;accessprovider290;dacfmx290;sugarprovider290;JanuaUnidacComponents;inetstn;JanuaMVVM;zohoprovider290;JanuaVCLComponents;vcl;freshbooksprovider290;DataSnapClient;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;tethering;uniTools29;JanuaThirdPartyVCL;JanuaCore;bindcompvcl;CloudService;JanuaFMXControls;TMSFMXPackPkgDXE15;unidac290;odbcprovider290;soapserver;FireDACIBDriver;vclwinx;DataSnapServer;DecCipher;fmx;DbxCommonDriver;VCLRESTComponents;adsprovider290;FireDACCommonODBC;DBXMSSQLDriver;emsclient;ApperceptAPIClient;appanalytics;IndyProtocols;vclx;magentoprovider290;gtCrypt;DBXFirebirdDriver;dacvcl290;FireDACSqliteDriver;DbxClientDriver;soapmidas;salesforceprovider290;gtDocEng;vquery290;ipstudiowin;fmxdae;exacttargetprovider290;OmniThreadLibraryRuntime;IndySystem;ZipMasterR;JanuaCoreComponents;ibxbindings;FlexCel_Render;FireDACCommon;DataSnapServerMidas;bindcompdbx;db2provider290;FireDACMySQLDriver;VCL_FlexCel_Components;remotedb;ZLibrariesWin;TMSVCLUIPackPkgDXE15;mailchimpprovider290;vclimg;DataSnapFireDAC;unidacfmx290;pgprovider290;xdata;QRWRunDXE12_W64;DBXInformixDriver;fmxobj;bindcompvclsmp;DataSnapNativeClient;ZComponentsVCL;TMSCloudPkgDXE15;emshosting;SVGIconImageListRestClient;VCLTMSFNCBloxToolBarsPkgDXE15;FireDACCommonDriver;IndyIPClient;emsedge;uSynEdit_R2025;crcontrols290;inetdb;mongoprovider290;TMSFMXCloudPackPkgDXE15;fmxFireDAC;dynamicsprovider290;ibprovider290;sbridge280;oraprovider290;DBXOdbcDriver;dbrtl;uniGUI29m;FireDACOracleDriver;FireDACMSAccDriver;DataSnapConnectors;FMXTMSFNCMapsPkgDXE15;FireDACMongoDBDriver;VCLThemeSelector;FireDACTDataDriver;msprovider290;Skia.Package.VCL;VCLTMSFNCUIPackPkgDXE15;quickbooksprovider290;FlexCel_Core;unidacvcl290;bindcomp;IndyCore;RESTBackendComponents;FireDACADSDriver;FMXTMSFNCBloxToolBarsPkgDXE15;Spring.Base;RESTComponents;IndyIPServer;dsnapxml;adortl;VCLTMSFNCMapsPkgDXE15;dsnapcon;DataSnapProviderClient;dac290;DBXDb2Driver;dmvcframeworkRT;rsprovider290;DBXSybaseASADriver;VCLTMSFNCCloudPackPkgDXE15;VCLTMSFNCCorePkgDXE15;soaprtl;TUniFalcon;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Base_Win64x)'!=''">
-        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
-        <BT_BuildType>Debug</BT_BuildType>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -172,12 +285,10 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Locale>1033</VerInfo_Locale>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
-        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Locale>1033</VerInfo_Locale>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -185,16 +296,27 @@
         <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
-    <Import Project="JanuaUNIGUIXE15.optset" Condition="'$(Base)'!='' And Exists('JanuaUNIGUIXE15.optset')"/>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+    </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="rtl.dcp"/>
-        <DCCReference Include="RESTComponents.dcp"/>
+        <DCCReference Include="..\..\..\src\FMX\Test\Janua.Test.FMX.frmChatGPTSimple.pas">
+            <Form>Form3</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\januacore\datamodule\Janua.Cloud.dmOpenAI.pas">
+            <Form>dmCloudOpenAI</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
-            <DependentOn>JanuaLibDXE15.optset</DependentOn>
         </BuildConfiguration>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_1</Key>
@@ -207,16 +329,12 @@
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Delphi.Personality.12</Borland.Personality>
-        <Borland.ProjectType>Package</Borland.ProjectType>
+        <Borland.ProjectType>Application</Borland.ProjectType>
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">JanuaThirdParty.dpk</Source>
+                    <Source Name="MainSource">JanuaFMXTestSimpleChat.dpr</Source>
                 </Source>
-                <Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp280.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
-                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="5">
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
@@ -234,11 +352,18 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaThirdParty.bpl" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Win64\JanuaThirdParty280.bpl" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaThirdParty290.bpl" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="Win32\Debug\JanuaFMXTestSimpleChat.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>JanuaFMXTestSimpleChat.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win32">
@@ -652,6 +777,7 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win32">
@@ -660,14 +786,17 @@
                 </DeployClass>
                 <DeployClass Name="DependencyFramework">
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.framework</Extensions>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.framework</Extensions>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.framework</Extensions>
                     </Platform>
@@ -676,15 +805,30 @@
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="DependencyModule">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
@@ -707,14 +851,17 @@
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                         <Extensions>.dylib</Extensions>
                     </Platform>
@@ -740,12 +887,15 @@
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
                         <Operation>0</Operation>
                     </Platform>
                     <Platform Name="Win32">
@@ -760,9 +910,44 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="ProjectOSXDebug"/>
-                <DeployClass Name="ProjectOSXEntitlements"/>
-                <DeployClass Name="ProjectOSXInfoPList"/>
+                <DeployClass Name="ProjectOSXDebug">
+                    <Platform Name="OSX64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXEntitlements">
+                    <Platform Name="OSX32">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXInfoPList">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSXARM64">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
                 <DeployClass Name="ProjectOSXResource">
                     <Platform Name="OSX32">
                         <RemoteDir>Contents\Resources</RemoteDir>
@@ -799,12 +984,15 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="OSXARM64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win32">
@@ -842,9 +1030,41 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <DeployClass Name="ProjectiOSEntitlements"/>
-                <DeployClass Name="ProjectiOSInfoPList"/>
-                <DeployClass Name="ProjectiOSLaunchScreen"/>
+                <DeployClass Name="ProjectiOSEntitlements">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSInfoPList">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSLaunchScreen">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimARM64">
+                        <RemoteDir>..\$(PROJECTNAME).launchscreen</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                </DeployClass>
                 <DeployClass Name="ProjectiOSResource">
                     <Platform Name="iOSDevice32">
                         <Operation>1</Operation>
@@ -1082,24 +1302,25 @@
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="iOSSimARM64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win64x" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
-                <Platform value="Android">False</Platform>
-                <Platform value="Android64">False</Platform>
-                <Platform value="iOSDevice64">False</Platform>
-                <Platform value="iOSSimARM64">False</Platform>
-                <Platform value="Linux64">False</Platform>
-                <Platform value="OSX64">False</Platform>
-                <Platform value="OSXARM64">False</Platform>
+                <Platform value="Android">True</Platform>
+                <Platform value="Android64">True</Platform>
+                <Platform value="iOSDevice32">False</Platform>
+                <Platform value="iOSDevice64">True</Platform>
+                <Platform value="iOSSimARM64">True</Platform>
+                <Platform value="Linux64">True</Platform>
+                <Platform value="OSX32">False</Platform>
+                <Platform value="OSX64">True</Platform>
+                <Platform value="OSXARM64">True</Platform>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
-                <Platform value="Win64x">False</Platform>
             </Platforms>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>

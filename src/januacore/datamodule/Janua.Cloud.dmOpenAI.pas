@@ -19,6 +19,7 @@ type
     procedure OpenAIChat1ChatDelta(Sender: TObject; Event: TChat; IsDone: Boolean);
     procedure OpenAIChat1EndWork(Sender: TObject);
     procedure OpenAIChat1Error(Sender: TObject; Error: Exception);
+    procedure DataModuleCreate(Sender: TObject);
   private
     FBusy: Boolean;
     FMemoMessages: TStringList;
@@ -44,16 +45,23 @@ var
 
 implementation
 
+{%CLASSGROUP 'System.Classes.TPersistent'}
+
 uses
   System.JSON, System.IOUtils, OpenAI.Chat, OpenAI.Utils.Base64;
 
-{%CLASSGROUP 'System.Classes.TPersistent'}
 {$R *.dfm}
 
 constructor TdmCloudOpenAI.Create(AOwner: TComponent);
 begin
   inherited;
   FMemoMessages := TStringList.Create
+end;
+
+procedure TdmCloudOpenAI.DataModuleCreate(Sender: TObject);
+begin
+  inherited;
+  OpenAIClient1.Token := 'sk-proj-tTsxWQ2cZBn59GSD0wgeT3BlbkFJLBtHvfG9DqFwM8nwInOZ';
 end;
 
 destructor TdmCloudOpenAI.Destroy;
