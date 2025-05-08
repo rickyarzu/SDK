@@ -1,10 +1,10 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{CC9F8274-3D3D-4B8A-840B-564E01BD6593}</ProjectGuid>
-        <ProjectVersion>20.2</ProjectVersion>
+        <ProjectVersion>20.3</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -218,6 +218,7 @@
         </DCCReference>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PrivateController.pas"/>
         <DCCReference Include="..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PublicController.pas"/>
+        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCLApplication.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>C:\Januaproject\Components\Distro\DXE15\JanuaeExeDXE15.optset</DependentOn>
@@ -370,6 +371,16 @@
                     </Platform>
                     <Platform Name="Android64">
                         <RemoteDir>res\values-v31</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV35">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v35</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-v35</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>

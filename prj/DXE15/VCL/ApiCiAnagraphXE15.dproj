@@ -247,7 +247,7 @@
         <DCCReference Include="..\..\..\Testing\src\udlgTestVCLMasterDetailTestDBOrmSync.pas">
             <Form>dlgVclMasterDetailTestDBOrmSync</Form>
         </DCCReference>
-        <DCCReference Include="..\..\..\Testing\src\udlgTestVCLMasterRecordSetOrmSync.pas">
+        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.dlgMasterRecordSetOrmSync.pas">
             <Form>dlgTestVCLMasterRecordSetOrmSync</Form>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\Forms\Janua.VCL.MVVM.frameNavigator.pas">

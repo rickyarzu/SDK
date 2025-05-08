@@ -39,7 +39,8 @@ uses
   Janua.Test.VCL.frmTest3 in '..\..\..\src\VCL\Test\Janua.Test.VCL.frmTest3.pas' {frmTest3},
   Janua.Test.VCL.frameViewModelAnagraphSearch in '..\..\..\src\VCL\Test\Janua.Test.VCL.frameViewModelAnagraphSearch.pas' {frameTestViewModelAnagraphSearch: TFrame},
   Janua.DMVC.Test.PrivateController in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PrivateController.pas',
-  Janua.DMVC.Test.PublicController in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PublicController.pas';
+  Janua.DMVC.Test.PublicController in '..\..\..\src\januacore\dmvc\Test\Janua.DMVC.Test.PublicController.pas',
+  Janua.Test.VCLApplication in '..\..\..\src\VCL\Test\Janua.Test.VCLApplication.pas';
 
 {$R *.res}
 
@@ -52,21 +53,12 @@ begin
   errorManager.Activate;
   // Inizializzazione TAilor Made Logistic Application
   // Viene impostato l'albero delle finestre ed il menu principale
-  TJanuaTMLogisticVCLApplication.ApplicationSetup;
+  TJanuaTestVCLApplication.ApplicationSetup('testvcldesktop.januaproject.it');
   TJanuaApplication.Title := 'VCL Test Main Application';
   Application.Title := 'VCL Test Main Application';
   Application.MainFormOnTaskbar := True;
-{$IFDEF DEBUG}
   System.ReportMemoryLeaksOnShutdown := True;
-{$ENDIF}
   uApplicationSetup.ApplicationSetup;
   Application.CreateForm(TfrmUnitTestJanuaVCLComponents, frmUnitTestJanuaVCLComponents);
-  Application.CreateForm(TdlgVCLCarServiceLogin, dlgVCLCarServiceLogin);
-  Application.CreateForm(TfrmTestVCLDatasetOrmSync, frmTestVCLDatasetOrmSync);
-  Application.CreateForm(TfrmTestRestClientServer, frmTestRestClientServer);
-  Application.CreateForm(TfrmVCLTestRESTAuthorization, frmVCLTestRESTAuthorization);
-  Application.CreateForm(TfrmTest, frmTest);
-  Application.CreateForm(TfrmTest2, frmTest2);
-  Application.CreateForm(TfrmTest3, frmTest3);
   errorManager.Free;
 end.

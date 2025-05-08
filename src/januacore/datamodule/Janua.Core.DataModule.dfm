@@ -1,5 +1,4 @@
 object JanuaCoreDataModule: TJanuaCoreDataModule
-  Height = 388
-  Width = 628
-  PixelsPerInch = 120
+  Height = 310
+  Width = 502
 end

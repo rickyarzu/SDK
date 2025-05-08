@@ -124,19 +124,10 @@ type
   end;
 
   TJanuaApplicationSettings = record
-  private
-    FSALT: RawByteString;
-    FCipherKey: RawByteString;
-    procedure SetCipherKey(const Value: RawByteString);
-    procedure SetSALT(const Value: RawByteString);
   public
     LocalLogin: TJanuaLocalLogin;
   public
-    constructor Create(aCipherKey: RawByteString);
     procedure LoadSettings;
-  public
-    property SALT: RawByteString read FSALT write SetSALT;
-    property CipherKey: RawByteString read FCipherKey write SetCipherKey;
   end;
 
   TJanuaApplication = class
@@ -332,6 +323,8 @@ type
     class function GetServerPort: Word; static;
     class procedure SetServerPort(Value: Word); static;
   public
+    class function ReadServerConf(const aEngine: TJanuaDBEngine): TJanuaServerRecordConf;
+    class procedure SetServerConf(const aServerConf: TJanuaServerRecordConf);
     class property JanuaServerConf: TJanuaServerRecordConf read GetJanuaServerConf write SetJanuaServerConf;
     class property ServerUserName: string read GetServerUsername write SetServerUsername;
     class property ServerAddress: string read GetServerAddress write SetServerAddress;
@@ -1677,6 +1670,11 @@ begin
   Result := IniFile.ReadString(aSection, aKey, aDefault);
 end;
 
+class function TJanuaApplication.ReadServerConf(const aEngine: TJanuaDBEngine): TJanuaServerRecordConf;
+begin
+
+end;
+
 class procedure TJanuaApplication.ReleaseObject(const aObject: TObject);
 begin
   if Assigned(aObject) and (TInterfacedObject(aObject).RefCount > 1) then
@@ -1863,6 +1861,11 @@ begin
     FJanuaServerConf.Address := Value
 end;
 
+class procedure TJanuaApplication.SetServerConf(const aServerConf: TJanuaServerRecordConf);
+begin
+
+end;
+
 class procedure TJanuaApplication.SetServerDatabaseName(Value: string);
 begin
   FJanuaServerConf.DatabaseName := Value
@@ -1963,7 +1966,6 @@ begin
     FUnitTesting := false;
     FIsTestVersion := false;
     FSentLog := false;
-    FSettings.Create('T4nt0v4l4g4t.');
   except
     on e: Exception do
       raise Exception.Create('TJanuaApplication.Create ' + e.Message);
@@ -3458,9 +3460,9 @@ begin
 end;
 
 class procedure TJanuaCoreOS.WriteRegistryCrypt(Machine: Boolean; stringa, chiave, valore: string);
-var
-  LValue: string;
+
 begin
+  var
   LValue := EncryptDES3(valore);
   { lValue := } WriteRegistry(Machine, stringa, chiave, LValue);
 end;
@@ -4177,25 +4179,9 @@ end;
 
 { TJanuaApplicationSettings }
 
-constructor TJanuaApplicationSettings.Create(aCipherKey: RawByteString);
-begin
-  FCipherKey := aCipherKey;
-  FSALT := #0#0#0#0#0#0#0#0;
-end;
-
 procedure TJanuaApplicationSettings.LoadSettings;
 begin
   LocalLogin.LoadSettings;
-end;
-
-procedure TJanuaApplicationSettings.SetCipherKey(const Value: RawByteString);
-begin
-  FCipherKey := Value;
-end;
-
-procedure TJanuaApplicationSettings.SetSALT(const Value: RawByteString);
-begin
-  FSALT := Value;
 end;
 
 { TJanuaLocalLogin }

@@ -9,6 +9,7 @@ uses
   TestInsight.DUnitX,
   {$ELSE}
   DUnitX.Loggers.Console,
+  DUnitX.Loggers.XML.NUnit,
   {$ENDIF }
   DUnitX.TestFramework,
   Janua.Orm.Register,
