@@ -9,6 +9,27 @@
         <Projects Include="JanuaCore.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="JanuaCoreComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaMVVM.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUnidac.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaFMXControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaUniGUI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="JanuaVCLComponents.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj">
             <Dependencies/>
         </Projects>
@@ -44,6 +65,69 @@
     <Target Name="JanuaCore:Make">
         <MSBuild Projects="JanuaCore.dproj" Targets="Make"/>
     </Target>
+    <Target Name="JanuaCoreComponents">
+        <MSBuild Projects="JanuaCoreComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Clean">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreComponents:Make">
+        <MSBuild Projects="JanuaCoreComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaMVVM">
+        <MSBuild Projects="JanuaMVVM.dproj"/>
+    </Target>
+    <Target Name="JanuaMVVM:Clean">
+        <MSBuild Projects="JanuaMVVM.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaMVVM:Make">
+        <MSBuild Projects="JanuaMVVM.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUnidac">
+        <MSBuild Projects="JanuaUnidac.dproj"/>
+    </Target>
+    <Target Name="JanuaUnidac:Clean">
+        <MSBuild Projects="JanuaUnidac.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUnidac:Make">
+        <MSBuild Projects="JanuaUnidac.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControls">
+        <MSBuild Projects="JanuaFMXControls.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Clean">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Make">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaUniGUI">
+        <MSBuild Projects="JanuaUniGUI.dproj"/>
+    </Target>
+    <Target Name="JanuaUniGUI:Clean">
+        <MSBuild Projects="JanuaUniGUI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaUniGUI:Make">
+        <MSBuild Projects="JanuaUniGUI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLControls">
+        <MSBuild Projects="JanuaVCLControls.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Clean">
+        <MSBuild Projects="JanuaVCLControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLControls:Make">
+        <MSBuild Projects="JanuaVCLControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaVCLComponents">
+        <MSBuild Projects="JanuaVCLComponents.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLComponents:Clean">
+        <MSBuild Projects="JanuaVCLComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLComponents:Make">
+        <MSBuild Projects="JanuaVCLComponents.dproj" Targets="Make"/>
+    </Target>
     <Target Name="JanuaVCLChatGPTTest">
         <MSBuild Projects="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj"/>
     </Target>
@@ -72,13 +156,13 @@
         <MSBuild Projects="..\..\Samples\Janua\JanuaOpenAISimpleChat.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="JanuaCoreThirdParty;JanuaCore;JanuaVCLChatGPTTest;SimpleChat;JanuaOpenAISimpleChat"/>
+        <CallTarget Targets="JanuaCoreThirdParty;JanuaCore;JanuaCoreComponents;JanuaMVVM;JanuaUnidac;JanuaFMXControls;JanuaUniGUI;JanuaVCLControls;JanuaVCLComponents;JanuaVCLChatGPTTest;SimpleChat;JanuaOpenAISimpleChat"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="JanuaCoreThirdParty:Clean;JanuaCore:Clean;JanuaVCLChatGPTTest:Clean;SimpleChat:Clean;JanuaOpenAISimpleChat:Clean"/>
+        <CallTarget Targets="JanuaCoreThirdParty:Clean;JanuaCore:Clean;JanuaCoreComponents:Clean;JanuaMVVM:Clean;JanuaUnidac:Clean;JanuaFMXControls:Clean;JanuaUniGUI:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaVCLChatGPTTest:Clean;SimpleChat:Clean;JanuaOpenAISimpleChat:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaVCLChatGPTTest:Make;SimpleChat:Make;JanuaOpenAISimpleChat:Make"/>
+        <CallTarget Targets="JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaCoreComponents:Make;JanuaMVVM:Make;JanuaUnidac:Make;JanuaFMXControls:Make;JanuaUniGUI:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaVCLChatGPTTest:Make;SimpleChat:Make;JanuaOpenAISimpleChat:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
