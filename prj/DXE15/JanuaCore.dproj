@@ -653,6 +653,7 @@
             <Form>dmCloudOpenAI</Form>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
+        <None Include="ModelSupport_JanuaCore\default.txvpck"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>

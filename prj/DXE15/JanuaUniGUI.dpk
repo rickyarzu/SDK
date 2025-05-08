@@ -68,6 +68,7 @@ contains
   Janua.Anagraph.UniGUI.dlgSimpleAnagraph in '..\..\src\UniGUI\Anagraph\Janua.Anagraph.UniGUI.dlgSimpleAnagraph.pas' {dlgUniGUISimpleAnagraph: TUniForm},
   Janua.UniGUI.dlgHTMLDisclaimer in '..\..\src\UniGUI\Common\Janua.UniGUI.dlgHTMLDisclaimer.pas' {frmUniGUIHtmlDisclaimer: TUniForm},
   Janua.UniGUI.dlgHTMLMessage in '..\..\src\UniGUI\Common\Janua.UniGUI.dlgHTMLMessage.pas' {frmUniGUIHtmlMessage: TUniForm},
-  Janua.CarService.UniGUI.dlgCustomerVehicles in '..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgCustomerVehicles.pas' {dlgUniGUICarServiceCustomerVehicles: TUniForm};
+  Janua.CarService.UniGUI.dlgCustomerVehicles in '..\..\src\UniGUI\CarService\Janua.CarService.UniGUI.dlgCustomerVehicles.pas' {dlgUniGUICarServiceCustomerVehicles: TUniForm},
+  Janua.UniGUI.frmContactViewer in '..\..\src\UniGUI\Common\Janua.UniGUI.frmContactViewer.pas' {frmContactViewerUniGUI: TUniForm};
 
 end.

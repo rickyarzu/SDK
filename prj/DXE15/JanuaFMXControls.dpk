@@ -30,6 +30,15 @@
 {$LIBSUFFIX AUTO}
 {$IMPLICITBUILD OFF}
 
+rcontains
+  Unit3 in 'Unit3.pas';
+
+contains
+  Unit3 in 'Unit3.pas' {Form3};
+
+contains
+  Unit3 in 'Unit3.pas';
+
 requires
   rtl,
   dbrtl,
@@ -52,7 +61,7 @@ requires
   JanuaUnidacComponentsD,
   JanuaUnidac;
 
-contains
+ocontains
   Janua.FMX.Forms in '..\..\src\FMX\Janua.FMX.Forms.pas',
   Janua.FMX.FormControls in '..\..\src\FMX\Janua.FMX.FormControls.pas',
   Janua.FMX.MapStandardControls in '..\..\src\FMX\Cloud\Janua.FMX.MapStandardControls.pas',
@@ -67,6 +76,7 @@ contains
   Janua.FMX.Application in '..\..\src\FMX\Janua.FMX.Application.pas',
   Janua.FMX.Interposers in '..\..\src\FMX\Janua.FMX.Interposers.pas',
   Janua.FMX.Register in '..\..\src\FMX\Janua.FMX.Register.pas',
-  Janua.FMX.CanvasPainter in '..\..\src\FMX\Janua.FMX.CanvasPainter.pas';
+  Janua.FMX.CanvasPainter in '..\..\src\FMX\Janua.FMX.CanvasPainter.pas',
+  Unit3 in 'Unit3.pas' {Form3};
 
-end.
+d.

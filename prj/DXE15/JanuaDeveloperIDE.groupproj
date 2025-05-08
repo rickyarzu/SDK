@@ -165,4 +165,6 @@
         <CallTarget Targets="JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaCoreComponents:Make;JanuaMVVM:Make;JanuaUnidac:Make;JanuaFMXControls:Make;JanuaUniGUI:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaVCLChatGPTTest:Make;SimpleChat:Make;JanuaOpenAISimpleChat:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Lib'"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Lib Win 32/64'"/>
 </Project>
