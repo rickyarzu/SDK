@@ -418,6 +418,7 @@ contains
   Janua.WebBroker.ServerConst in '..\..\src\januacore\Datasnap\Janua.WebBroker.ServerConst.pas',
   Janua.Core.Json.DTO in '..\..\src\januacore\Janua.Core.Json.DTO.pas',
   Phoenix.Json.Config in '..\..\src\januacore\Phoenix.Json.Config.pas',
-  Janua.Core.ContactViewer in '..\..\src\januacore\Janua.Core.ContactViewer.pas';
+  Janua.Core.ContactViewer in '..\..\src\januacore\Janua.Core.ContactViewer.pas',
+  Janua.Cloud.dmOpenAI in '..\..\src\januacore\datamodule\Janua.Cloud.dmOpenAI.pas' {dmCloudOpenAI: TDataModule};
 
 end.

@@ -3,22 +3,19 @@
         <ProjectGuid>{3AD7FA56-C45D-4371-A217-09FFD65DE1A6}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="C:\Januaproject\Components\Distro\DelphiOpenAI\Samples\Chat\SimpleChat.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="JanuaCoreThirdParty.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaCore.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\..\Samples\Janua\JanuaOpenAISimpleChat.dproj">
+        <Projects Include="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Testing\JanuaFMXTestSimpleChat.pas">
+        <Projects Include="C:\Januaproject\Components\Distro\DelphiOpenAI\Samples\Chat\SimpleChat.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Samples\Janua\JanuaOpenAISimpleChat.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -29,24 +26,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="JanuaVCLChatGPTTest">
-        <MSBuild Projects="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj"/>
-    </Target>
-    <Target Name="JanuaVCLChatGPTTest:Clean">
-        <MSBuild Projects="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="JanuaVCLChatGPTTest:Make">
-        <MSBuild Projects="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="SimpleChat">
-        <MSBuild Projects="C:\Januaproject\Components\Distro\DelphiOpenAI\Samples\Chat\SimpleChat.dproj"/>
-    </Target>
-    <Target Name="SimpleChat:Clean">
-        <MSBuild Projects="C:\Januaproject\Components\Distro\DelphiOpenAI\Samples\Chat\SimpleChat.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="SimpleChat:Make">
-        <MSBuild Projects="C:\Januaproject\Components\Distro\DelphiOpenAI\Samples\Chat\SimpleChat.dproj" Targets="Make"/>
-    </Target>
     <Target Name="JanuaCoreThirdParty">
         <MSBuild Projects="JanuaCoreThirdParty.dproj"/>
     </Target>
@@ -65,6 +44,24 @@
     <Target Name="JanuaCore:Make">
         <MSBuild Projects="JanuaCore.dproj" Targets="Make"/>
     </Target>
+    <Target Name="JanuaVCLChatGPTTest">
+        <MSBuild Projects="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj"/>
+    </Target>
+    <Target Name="JanuaVCLChatGPTTest:Clean">
+        <MSBuild Projects="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaVCLChatGPTTest:Make">
+        <MSBuild Projects="..\..\Samples\Janua\VCL\JanuaVCLChatGPTTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SimpleChat">
+        <MSBuild Projects="C:\Januaproject\Components\Distro\DelphiOpenAI\Samples\Chat\SimpleChat.dproj"/>
+    </Target>
+    <Target Name="SimpleChat:Clean">
+        <MSBuild Projects="C:\Januaproject\Components\Distro\DelphiOpenAI\Samples\Chat\SimpleChat.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SimpleChat:Make">
+        <MSBuild Projects="C:\Januaproject\Components\Distro\DelphiOpenAI\Samples\Chat\SimpleChat.dproj" Targets="Make"/>
+    </Target>
     <Target Name="JanuaOpenAISimpleChat">
         <MSBuild Projects="..\..\Samples\Janua\JanuaOpenAISimpleChat.dproj"/>
     </Target>
@@ -74,23 +71,14 @@
     <Target Name="JanuaOpenAISimpleChat:Make">
         <MSBuild Projects="..\..\Samples\Janua\JanuaOpenAISimpleChat.dproj" Targets="Make"/>
     </Target>
-    <Target Name="JanuaFMXTestSimpleChat">
-        <MSBuild Projects="Testing\JanuaFMXTestSimpleChat.pas"/>
-    </Target>
-    <Target Name="JanuaFMXTestSimpleChat:Clean">
-        <MSBuild Projects="Testing\JanuaFMXTestSimpleChat.pas" Targets="Clean"/>
-    </Target>
-    <Target Name="JanuaFMXTestSimpleChat:Make">
-        <MSBuild Projects="Testing\JanuaFMXTestSimpleChat.pas" Targets="Make"/>
-    </Target>
     <Target Name="Build">
-        <CallTarget Targets="JanuaVCLChatGPTTest;SimpleChat;JanuaCoreThirdParty;JanuaCore;JanuaOpenAISimpleChat;JanuaFMXTestSimpleChat"/>
+        <CallTarget Targets="JanuaCoreThirdParty;JanuaCore;JanuaVCLChatGPTTest;SimpleChat;JanuaOpenAISimpleChat"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="JanuaVCLChatGPTTest:Clean;SimpleChat:Clean;JanuaCoreThirdParty:Clean;JanuaCore:Clean;JanuaOpenAISimpleChat:Clean;JanuaFMXTestSimpleChat:Clean"/>
+        <CallTarget Targets="JanuaCoreThirdParty:Clean;JanuaCore:Clean;JanuaVCLChatGPTTest:Clean;SimpleChat:Clean;JanuaOpenAISimpleChat:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="JanuaVCLChatGPTTest:Make;SimpleChat:Make;JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaOpenAISimpleChat:Make;JanuaFMXTestSimpleChat:Make"/>
+        <CallTarget Targets="JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaVCLChatGPTTest:Make;SimpleChat:Make;JanuaOpenAISimpleChat:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
