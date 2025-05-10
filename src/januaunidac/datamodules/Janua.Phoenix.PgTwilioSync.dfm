@@ -2,9 +2,7 @@ inherited dmPgTWilioSync: TdmPgTWilioSync
   Height = 342
   Width = 645
   inherited PgErgoConnection: TJanuaUniConnection
-    Port = 5432
     PoolingOptions.Validate = True
-    Server = 'pg.januaservers.com'
     EncryptedPassword = 'CCFF8DFF98FFCFFF92FFCCFF8DFF9CFFCBFF8BFFCFFF8DFF'
   end
   object FbPhoenixConnection: TUniConnection
@@ -325,6 +323,14 @@ inherited dmPgTWilioSync: TdmPgTWilioSync
       item
         FieldName = 'JGUID'
         FieldType = ftGuid
+      end
+      item
+        FieldName = 'JSON_CONTENT'
+        FieldType = ftWideMemo
+      end
+      item
+        FieldName = 'BODY_RECEIVED'
+        FieldType = ftWideMemo
       end>
     Connection = FbPhoenixConnection
     SQL.Strings = (
@@ -362,12 +368,6 @@ inherited dmPgTWilioSync: TdmPgTWilioSync
     object qryWebHookUPDATE_DATE: TDateTimeField
       FieldName = 'UPDATE_DATE'
     end
-    object qryWebHookJSON_CONTENT: TBlobField
-      FieldName = 'JSON_CONTENT'
-    end
-    object qryWebHookBODY_RECEIVED: TBlobField
-      FieldName = 'BODY_RECEIVED'
-    end
     object qryWebHookmemTwilioJson: TStringField
       FieldKind = fkCalculated
       FieldName = 'memTwilioJson'
@@ -377,6 +377,14 @@ inherited dmPgTWilioSync: TdmPgTWilioSync
     object qryWebHookACTION: TWideStringField
       FieldName = 'ACTION'
       Size = 128
+    end
+    object qryWebHookJSON_CONTENT: TWideMemoField
+      FieldName = 'JSON_CONTENT'
+      BlobType = ftWideMemo
+    end
+    object qryWebHookBODY_RECEIVED: TWideMemoField
+      FieldName = 'BODY_RECEIVED'
+      BlobType = ftWideMemo
     end
   end
   object qryMessageStatus: TUniQuery
@@ -417,6 +425,10 @@ inherited dmPgTWilioSync: TdmPgTWilioSync
       item
         FieldName = 'BODY_RECEIVED'
         FieldType = ftWideMemo
+      end
+      item
+        FieldName = 'JSON_CONTENT'
+        FieldType = ftWideMemo
       end>
     Connection = FbPhoenixConnection
     SQL.Strings = (
@@ -453,9 +465,6 @@ inherited dmPgTWilioSync: TdmPgTWilioSync
     object qryMessageStatusUPDATE_DATE: TDateTimeField
       FieldName = 'UPDATE_DATE'
     end
-    object qryMessageStatusJSON_CONTENT: TBlobField
-      FieldName = 'JSON_CONTENT'
-    end
     object qryMessageStatusBODY_RECEIVED: TWideMemoField
       FieldName = 'BODY_RECEIVED'
       BlobType = ftWideMemo
@@ -469,6 +478,10 @@ inherited dmPgTWilioSync: TdmPgTWilioSync
       FieldName = 'memTwilioJson'
       Size = 2048
       Calculated = True
+    end
+    object qryMessageStatusJSON_CONTENT: TWideMemoField
+      FieldName = 'JSON_CONTENT'
+      BlobType = ftWideMemo
     end
   end
   object spInsertMessage: TUniStoredProc

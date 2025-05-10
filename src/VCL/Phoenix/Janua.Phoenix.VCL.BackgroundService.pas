@@ -5,9 +5,9 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Classes, System.Win.Registry,
   // VCL
-  VCL.Graphics, VCL.Controls, VCL.SvcMgr, VCL.Dialogs
+  VCL.SvcMgr,
   // Janua
-    , Janua.Phoenix.VCL.TWilioBackgroundThread;
+  Janua.Phoenix.VCL.TWilioBackgroundThread;
 
 type
   TsrvPhoenixVCLBackgroundService = class(TService)
