@@ -27,7 +27,8 @@ From FATTURE F WHERE F.id_cliente = 1611712
 
 -- Vedo le differenti righe fattura ----
 
-select FATTURA, ORDINAMENTO, IMPORTO, QUANTITA, IVA, UNITA_DI_MISURA, CODICE_A_BARRE, IMPORTO_IVATO, SCONTO, PRODOTTO, CODICE, DESCRIZIONE
+select FATTURA, ORDINAMENTO, IMPORTO, QUANTITA, IVA, UNITA_DI_MISURA, CODICE_A_BARRE, IMPORTO_IVATO, SCONTO, PRODOTTO,
+       CODICE, DESCRIZIONE, VOCE_VUOTA, JGUID
 from VOCI_FATTURE VF where VF.fattura = 2254778
 
 -- Riga Vuota in Posizione 0.
@@ -40,5 +41,45 @@ from VOCI_FATTURE VF where VF.fattura = 2254778
 -- UNITA_DI_MISURA = Nr.
 -- CODICE_A_BARRE = ''
 -- IMPORTO_IVATO 'F' (Vedi Reverse Charge).
--- SCONTO = 0 PRODOTTO, CODICE (Niulli)  DESCRIZIONE Vedi Sopra
+-- SCONTO = 0 PRODOTTO, CODICE (Niulli)  DESCRIZIONE Vedi Sopr
+
+select CHIAVE, VISITA_FATTURAZIONE_ORDINARIA VFA, IVA, PARTITA_IVA PARTIVA, CODICE_FISCALE CF, NATURA_IVA NATIVA, FATTURA_ANTICIPATA FATTANT, ESENTE_IVA, C.note_in_fattura,
+       GRUPPO_PRESS_VISIBILE, GRUPPO_TIPO_VISITE, GRUPPO_PREZZO_VISITA_SEMESTRALE, GRUPPO_PREZZO_VISITA_TRIMEST, GRUPPO_PREZZO_VISITA_MENSILE,
+       --ESTINTORI_VISIBILI,
+       --SPRINKLER_VISIBILI, SPRINKLER_TIPO_VISITE, PREZZO_ORDINARIE_SPRINKLER, PREZZO_SEMESTRALE_SPRINKLER,
+       --RIL_FUMO_VISIBILI, PREZZO_ORDINARIE_FUMI,
+       --LUCI_VISIBILI, PREZZO_ORDINARIE_LUCI,
+       --PORTE_VISIBILI, PREZZO_ORDINARIE_PORTE,
+       --IMPIANTO_IDRANTI_VISIBILE, PREZZO_ORDINARIE_IDRANTI, PREZZO_COLLAUDI_IDRANTI, COSTO_SOSTITUZIONE_VALVOLA,
+       --IMPIANTI_ELETTRICI_VISIBILI,
+       COND_PAGAMENTO, ISTAT,  RAGIONE_SOCIALE,
+       DISDETTATO, MANUALE, DATA_CONTRATTO, NON_CONFERMATO, SOSPESO, DATA_DIFFERITA, SOSPENSIONE_TEMPORANEA, INIZIO_SOSP_TEMPORANEA, MOTIV_SOSP_TEMPORANEA,
+       BANCA_APPOGGIO, ABI, CAB
+from CLIENTI C WHERE C.chiave = 1611712
+
+-- ESENTE IVA = T
+-- NOTE: Reverse Charge: operazione non soggetta ad IVA ai sensi dell’art. 17, comma 5 del D.P.R. n. 633 del 1972
+-- Quindi Se Esente IVA = 'T' applico Iva 0 e nelle note viene Riportarto il REverse Charge
+
+SELECT
+2254778                                 AS FATTURA, /*FATTURA_ID*/
+ROW_NUMBER()  OVER (ORDER BY C.IVA) + 1 AS ORDINAMENTO, /*INC_POS*/
+c.gruppo_prezzo_visita_trimest          AS IMPORTO,
+100                                     AS QUANTITA,  /*DEFAULT? CHIEDERE*/
+C.iva                                   AS IVA,
+'Nr.'                                   AS UNITA_DI_MISURA, /*DEFAULT*/
+''                                      AS CODICE_A_BARRE,
+gruppo_prezzo_visita_trimest + (gruppo_prezzo_visita_trimest * C.IVA) AS IMPORTO_IVATO,
+0                                       AS SCONTO,
+''                                      AS PRODOTTO,
+''                                      AS CODICE,
+'Controllo trimestrale GPA impianto ' ||
+'Gruppo Pressurizzazione visita di '  ||
+M.nome_mese || ' ' || 2025 /*ANNO*/     AS DESCRIZIONE,
+NULL                                    AS VOCE_VUOTA,
+GEN_UUID()                              AS JGUID
+from VISTA_GRUPPI_TRIMESTRALI  VGT
+JOIN CLIENTI C ON C.chiave = VGT.cliente
+JOIN mesi M ON VGT.visita = M.mese
+WHERE VGT.visita = 5 AND VGT.cliente = 1611712 /*CLIENTE_ID*/
 
