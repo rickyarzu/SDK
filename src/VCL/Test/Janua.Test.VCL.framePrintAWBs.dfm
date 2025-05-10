@@ -1,8 +1,8 @@
 object frameTestPrintAWBs: TframeTestPrintAWBs
   Left = 0
   Top = 0
-  ClientHeight = 634
-  ClientWidth = 1395
+  ClientHeight = 626
+  ClientWidth = 1393
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -10,8 +10,8 @@ object frameTestPrintAWBs: TframeTestPrintAWBs
   Font.Name = 'Tahoma'
   Font.Style = []
   DesignSize = (
-    1395
-    634)
+    1393
+    626)
   TextHeight = 13
   object btnStartTest: TButton
     Left = 26
@@ -25,8 +25,8 @@ object frameTestPrintAWBs: TframeTestPrintAWBs
   object DBGrid1: TDBGrid
     Left = 24
     Top = 82
-    Width = 1345
-    Height = 376
+    Width = 1343
+    Height = 368
     Anchors = [akLeft, akTop, akRight, akBottom]
     DataSource = dsHeads
     TabOrder = 1
@@ -682,8 +682,8 @@ object frameTestPrintAWBs: TframeTestPrintAWBs
   end
   object grdRows: TDBGrid
     Left = 24
-    Top = 463
-    Width = 853
+    Top = 455
+    Width = 851
     Height = 196
     Anchors = [akLeft, akRight, akBottom]
     DataSource = dsRows
@@ -813,7 +813,7 @@ object frameTestPrintAWBs: TframeTestPrintAWBs
     TabOrder = 6
   end
   object Edit1: TEdit
-    Left = 1212
+    Left = 1210
     Top = 54
     Width = 157
     Height = 21
@@ -821,25 +821,30 @@ object frameTestPrintAWBs: TframeTestPrintAWBs
     CharCase = ecUpperCase
     TabOrder = 7
     TextHint = 'Enter Search Text'
+    ExplicitLeft = 1212
   end
   object DBMemo2: TDBMemo
-    Left = 887
-    Top = 502
+    Left = 885
+    Top = 494
     Width = 223
     Height = 157
     Anchors = [akRight, akBottom]
     DataSource = dsRows
     TabOrder = 8
+    ExplicitLeft = 887
+    ExplicitTop = 502
   end
   object DBNavigator2: TDBNavigator
-    Left = 883
-    Top = 464
+    Left = 881
+    Top = 456
     Width = 224
     Height = 32
     DataSource = dsHeads
     VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbPost, nbCancel]
     Anchors = [akRight, akBottom]
     TabOrder = 9
+    ExplicitLeft = 883
+    ExplicitTop = 464
   end
   object btnEditDocument: TButton
     Left = 282
@@ -871,16 +876,17 @@ object frameTestPrintAWBs: TframeTestPrintAWBs
   object DBMemo3: TDBMemo
     Left = 863
     Top = 3
-    Width = 343
+    Width = 341
     Height = 72
     Anchors = [akLeft, akTop, akRight]
     DataSource = dsHeads
     TabOrder = 13
+    ExplicitWidth = 343
   end
   object DBGrid2: TDBGrid
     Left = 1116
-    Top = 463
-    Width = 253
+    Top = 455
+    Width = 251
     Height = 196
     Anchors = [akLeft, akRight, akBottom]
     DataSource = dsSurcharges

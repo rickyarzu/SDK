@@ -17,43 +17,43 @@ object frameTestViewModelLocationSearch: TframeTestViewModelLocationSearch
     object lbCountry: TLabel
       Left = 19
       Top = 73
-      Width = 39
-      Height = 13
+      Width = 43
+      Height = 15
       Caption = 'Country'
     end
     object lbCode: TLabel
       Left = 24
       Top = 136
-      Width = 25
-      Height = 13
+      Width = 28
+      Height = 15
       Caption = 'Code'
     end
     object lbTown: TLabel
       Left = 128
       Top = 136
-      Width = 76
-      Height = 13
+      Width = 85
+      Height = 15
       Caption = 'Town - Location'
     end
     object lbIataCode: TLabel
       Left = 632
       Top = 136
-      Width = 52
-      Height = 13
+      Width = 54
+      Height = 15
       Caption = 'IATA Code'
     end
     object lbAreaCode: TLabel
       Left = 629
       Top = 73
-      Width = 51
-      Height = 13
+      Width = 55
+      Height = 15
       Caption = 'Area Code'
     end
     object edCountry: TEdit
       Left = 21
       Top = 96
       Width = 593
-      Height = 21
+      Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 0
       Text = 'edCountry'
@@ -62,7 +62,7 @@ object frameTestViewModelLocationSearch: TframeTestViewModelLocationSearch
       Left = 24
       Top = 160
       Width = 91
-      Height = 21
+      Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 1
       Text = 'Code'
@@ -71,7 +71,7 @@ object frameTestViewModelLocationSearch: TframeTestViewModelLocationSearch
       Left = 128
       Top = 160
       Width = 486
-      Height = 21
+      Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 2
     end
@@ -79,7 +79,7 @@ object frameTestViewModelLocationSearch: TframeTestViewModelLocationSearch
       Left = 632
       Top = 160
       Width = 89
-      Height = 21
+      Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 3
     end
@@ -87,7 +87,7 @@ object frameTestViewModelLocationSearch: TframeTestViewModelLocationSearch
       Left = 632
       Top = 96
       Width = 86
-      Height = 21
+      Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 4
     end
@@ -95,7 +95,7 @@ object frameTestViewModelLocationSearch: TframeTestViewModelLocationSearch
       Left = 19
       Top = 29
       Width = 574
-      Height = 21
+      Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 5
       TextHint = 'Google Search Address'
@@ -130,50 +130,50 @@ object frameTestViewModelLocationSearch: TframeTestViewModelLocationSearch
     object Label1: TLabel
       Left = 128
       Top = 61
-      Width = 39
-      Height = 13
+      Width = 43
+      Height = 15
       Caption = 'Country'
     end
     object Label2: TLabel
       Left = 19
       Top = 61
-      Width = 25
-      Height = 13
+      Width = 28
+      Height = 15
       Caption = 'Code'
     end
     object Label3: TLabel
       Left = 344
       Top = 61
-      Width = 76
-      Height = 13
+      Width = 85
+      Height = 15
       Caption = 'Town - Location'
     end
     object Label4: TLabel
       Left = 19
       Top = 157
-      Width = 25
-      Height = 13
+      Width = 28
+      Height = 15
       Caption = 'Code'
     end
     object Label5: TLabel
       Left = 128
       Top = 157
-      Width = 39
-      Height = 13
+      Width = 43
+      Height = 15
       Caption = 'Country'
     end
     object Label6: TLabel
       Left = 344
       Top = 157
-      Width = 76
-      Height = 13
+      Width = 85
+      Height = 15
       Caption = 'Town - Location'
     end
     object edCountry1: TEdit
       Left = 128
       Top = 80
       Width = 201
-      Height = 21
+      Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 0
       Text = 'edCountry'
@@ -182,7 +182,7 @@ object frameTestViewModelLocationSearch: TframeTestViewModelLocationSearch
       Left = 19
       Top = 80
       Width = 91
-      Height = 21
+      Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 1
       Text = 'Code'
@@ -191,7 +191,7 @@ object frameTestViewModelLocationSearch: TframeTestViewModelLocationSearch
       Left = 344
       Top = 80
       Width = 270
-      Height = 21
+      Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 2
     end
@@ -199,7 +199,7 @@ object frameTestViewModelLocationSearch: TframeTestViewModelLocationSearch
       Left = 19
       Top = 29
       Width = 574
-      Height = 21
+      Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 3
       TextHint = 'Google Search Address'
@@ -231,7 +231,7 @@ object frameTestViewModelLocationSearch: TframeTestViewModelLocationSearch
       Left = 19
       Top = 125
       Width = 574
-      Height = 21
+      Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 7
       TextHint = 'Google Search Address'
@@ -240,7 +240,7 @@ object frameTestViewModelLocationSearch: TframeTestViewModelLocationSearch
       Left = 19
       Top = 176
       Width = 91
-      Height = 21
+      Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 8
       Text = 'Code'
@@ -249,7 +249,7 @@ object frameTestViewModelLocationSearch: TframeTestViewModelLocationSearch
       Left = 128
       Top = 176
       Width = 201
-      Height = 21
+      Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 9
       Text = 'edCountry'
@@ -258,7 +258,7 @@ object frameTestViewModelLocationSearch: TframeTestViewModelLocationSearch
       Left = 344
       Top = 176
       Width = 270
-      Height = 21
+      Height = 23
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 10
     end
