@@ -24,7 +24,8 @@ order by f.chiave, vf.ordinamento
 -- Servizio manutenzione porte tagliafuoco come da contratto visita di Maggio 2025
 
 select F.id_cliente, VF.fattura, VF.ordinamento ORD, VF.importo, VF.quantita QTA, VF.unita_di_misura UM, VF.descrizione
-from voci_fatture vf join fatture f on vf.fattura = f.chiave
+from voci_fatture
+ vf join fatture f on vf.fattura = f.chiave
 where (lower(vf.descrizione) like '%estint%' or (lower(vf.descrizione) like '%smal%')  ) -- and f.generazione_automatica = 202505
 and f.chiave in (select distinct vcf.fattura  from voci_fatture vcf where lower(vcf.descrizione) like '%smal%')
 order by f.generazione_automatica desc,  f.chiave, vf.ordinamento
@@ -33,20 +34,36 @@ order by f.generazione_automatica desc,  f.chiave, vf.ordinamento
 
 -- fattura 2253950 --
 -- Cliente Fattura: 2208919
+-- Filiale: 2208978
 
-select vf.ordinamento, vf.importo, vf.quantita, vf.iva, vf.unita_di_misura
- from voci_fatture vf where vf.fattura = 2253950 order by vf.ordinamento asc
-
--- Riga numero 2 porte Tagliafuoco
+SELECT * FROM CLIENTI WHERE CHIAVE = 2208919;
 
 
-select  C.CHIAVE, c.porte_visibili VIS, PREZZO_ORDINARIE_PORTE  PREZZO,FC.chiave AS FILIALE, FC.nome, FM.stato, FM.dimensione, FM.ubicazione,
-       C.VISITA_FATTURAZIONE_ORDINARIA VFA, C.NATURA_IVA NATIVA, IVA,  C.ESENTE_IVA, C.PARTITA_IVA PARTIVA, C.CODICE_FISCALE CF,  C.FATTURA_ANTICIPATA FATTANT, C.note_in_fattura
-from CLIENTI C JOIN FATTURE F ON F.id_cliente = C.chiave join filiali_clienti fc on fc.cliente = C.chiave
-JOIN porte_clienti FM ON FM.filiale = FC.chiave
-WHERE F.chiave = 2253950  AND fm.stato = 'A'
--- questa query riporta 'MOLTE' porte da controllare ..........................
+SELECT PE.* FROM VISTA_PIANIFICAZIONE_ESTINTORI PE
+WHERE PE.cliente = 2208919 AND PE.filiale = 2208978 AND PE.mese = 5 AND PE.anno = 2025
+ORDER BY PE.tipo_estintore;
 
+
+SELECT * FROM filiali_clienti FC WHERE FC.cliente = 2208919;
+
+-- CHIAVE        CLIENTE      NOME                PROVINCIA    CAP      INDIRIZZO      TELEFONO    NOTE      CELLULARE    EMAIL    ESCLUDI_DA_GENERAZIONE    SEDE    ID    REF_TELEFONO    REF_CELLULARE    COMUNE    JGUID    FIL_WANUMBER
+-- 2.208.978     2.208.919    MAGAZZINO GENOVA    GE           16162    VIA G.BRUZZO 8            (MEMO)     3331203938    l.rovero@frigogenova.it    F    T            Davide    GENOVA        3331203938
+
+
+
+select vf.ordinamento, vf.importo, vf.quantita, vf.iva, vf.unita_di_misura, vf.descrizione, vf.voce_vuota
+ from voci_fatture vf where vf.fattura = 2253950
+ -- and  (lower(vf.descrizione) like '%estint%' or (lower(vf.descrizione) like '%smal%')  )
+ order by vf.ordinamento asc;
+
+-- Verfifichiamo sul campo la bontà del modello di Analisi .....................
+
+select
+       ROW_NUMBER()  OVER (ORDER BY TIPO_ESTINTORE, INTERVENTO) + 1 AS ORDINAMENTO, /*INC_POS*/
+       INTERVENTO, IMPORTO, QUANTITA, IVA, UNITA_DI_MISURA, IMPORTO_IVATO, SCONTO, DESCRIZIONE, CLIENTE, FILIALE, MESE,
+       NOME_MESE, ANNO, TIPO_ESTINTORE, CAUSALE, IMPORTO_TOTALE
+from VISTA_VOCI_FATTURE_ESTINTORI WHERE MESE = 5 AND ANNO = 2025 AND CLIENTE = 2208919
+ORDER BY TIPO_ESTINTORE, INTERVENTO
 
 --Servizio manutenzione porte tagliafuoco come da contratto visita di Maggio 2025
 
