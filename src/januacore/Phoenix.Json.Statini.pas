@@ -39,14 +39,19 @@ type
   TZTmpInfo = class(TJsonDTO)
   private
     FAggiornaIndice: Boolean;
+
+    // Operazioni
     [JSONName('Operazioni'), JSONMarshalled(False)]
     FOperazioniArray: TArray<TOperazioni>;
     [GenericListReflect]
     FOperazioni: TObjectList<TOperazioni>;
+
+    // Stato Lavorazioni
     [JSONName('StatoLavorazioni'), JSONMarshalled(False)]
     FStatoLavorazioniArray: TArray<TStatoLavorazioni>;
     [GenericListReflect]
     FStatoLavorazioni: TObjectList<TStatoLavorazioni>;
+
     function GetOperazioni: TObjectList<TOperazioni>;
     function GetStatoLavorazioni: TObjectList<TStatoLavorazioni>;
   protected
@@ -165,15 +170,23 @@ type
     FANOMALIA: string;
     [JSONName('ANOMALIA_APPROVATA')]
     FANOMALIAAPPROVATA: Boolean;
+    [JSONName('AnomaliaOnDownload')]
     FAnomaliaOnDownload: string;
+    [JSONName('AnomaliaRisolta')]
     FAnomaliaRisolta: Boolean;
+    [JSONName('CHIAVE')]
     FCHIAVE: Integer;
+    [JSONName('Consegnato')]
     FConsegnato: Boolean;
+    [JSONName('Controllato')]
     FControllato: Boolean;
+    [JSONName('DataControllo')]
     [SuppressZero]
     FDataControllo: TDateTime;
+    [JSONName('DataPressatura')]
     [SuppressZero]
     FDataPressatura: TDateTime;
+    [JSONName('DataRitiro')]
     [SuppressZero]
     FDataRitiro: TDateTime;
     [JSONName('ID_BOCCHELLO')]
@@ -188,10 +201,15 @@ type
     FMESESTARTUP: Integer;
     [JSONName('NOTE_TECNICO')]
     FNOTETECNICO: string;
+    [JSONName('OrarioControllo')]
     FOrarioControllo: string;
+    [JSONName('OrarioRitiro')]
     FOrarioRitiro: string;
+    [JSONName('PressaturaEffettuata')]
     FPressaturaEffettuata: Boolean;
+    [JSONName('Ritirato')]
     FRitirato: Boolean;
+    [JSONName('STATO')]
     FSTATO: string;
     [JSONName('TIPO_BOCCHELLO')]
     FTIPOBOCCHELLO: Integer;
@@ -199,9 +217,13 @@ type
     FTIPOINTERVENTO: string;
     [JSONName('TIPO_LANCIA')]
     FTIPOLANCIA: Integer;
+    [JSONName('TecnicoControllo')]
     FTecnicoControllo: Integer;
+    [JSONName('TecnicoPressatura')]
     FTecnicoPressatura: Integer;
+    [JSONName('TecnicoRitiro')]
     FTecnicoRitiro: Integer;
+    [JSONName('UBICAZION')]
     FUBICAZIONE: string;
   published
     property ANNOMANICHETTA: string read FANNOMANICHETTA write FANNOMANICHETTA;
@@ -239,19 +261,25 @@ type
 
   TIdranti = class(TJsonDTO)
   private
+    // Bocchelli
     [JSONName('Bocchelli'), JSONMarshalled(False)]
     FBocchelliArray: TArray<TBocchelli>;
     [GenericListReflect]
     FBocchelli: TObjectList<TBocchelli>;
+    [JSONName('CHIAVE')]
     FCHIAVE: Integer;
     FDescrizione: string;
     [JSONName('PROVA_DINAMICA')]
     FPROVADINAMICA: Integer;
     [JSONName('QUANDO_PROVA_DINAMICA')]
     FQUANDOPROVADINAMICA: string;
+    [JSONName('STATO')]
     FSTATO: string;
+    [JSONName('SuggerimentoLunghManichetta')]
     FSuggerimentoLunghManichetta: string;
+    [JSONName('SuggerimentoTipiBocchelli')]
     FSuggerimentoTipiBocchelli: string;
+    [JSONName('TIPO')]
     FTIPO: string;
     [JSONName('TIPO_ATTACCO_MOTOPOMPA')]
     FTIPOATTACCOMOTOPOMPA: Integer;
@@ -261,6 +289,7 @@ type
     FUltimaProvaDinamica: TUltimaProvaDinamica;
     [JSONName('VALVOLA_INTERCETTAZIONE')]
     FVALVOLAINTERCETTAZIONE: string;
+
     function GetBocchelli: TObjectList<TBocchelli>;
   protected
     function GetAsJson: string; override;
@@ -289,24 +318,38 @@ type
 
   TElementiElettrici = class
   private
+    [JSONName('ANOMALIA')]
     FANOMALIA: string;
     [JSONName('ANOMALIA_APPROVATA')]
     FANOMALIAAPPROVATA: Boolean;
+    [JSONName('AnomaliaOnDownload')]
     FAnomaliaOnDownload: string;
+    [JSONName('AnomaliaRisolta')]
     FAnomaliaRisolta: Boolean;
+    [JSONName('CHIAVE')]
     FCHIAVE: Integer;
+    [JSONName('Controllato')]
     FControllato: Boolean;
+    [JSONName('DataControllo')]
     [SuppressZero]
     FDataControllo: TDateTime;
+    [JSONName('MARCA')]
     FMARCA: Integer;
+    [JSONName('MODELLO')]
     FMODELLO: string;
+    [JSONName('OrarioControllo')]
     FOrarioControllo: string;
+    [JSONName('PROGRESSIVO')]
     FPROGRESSIVO: Integer;
+    [JSONName('STATO')]
     FSTATO: string;
+    [JSONName('TIPO')]
     FTIPO: Integer;
     [JSONName('TIPO_INTERVENTO')]
     FTIPOINTERVENTO: string;
+    [JSONName('TecnicoControllo')]
     FTecnicoControllo: Integer;
+    [JSONName('UBICAZIONE')]
     FUBICAZIONE: string;
   published
     property ANOMALIA: string read FANOMALIA write FANOMALIA;
@@ -329,16 +372,24 @@ type
 
   TImpiantiElettrici = class(TJsonDTO)
   private
+    [JSONName('CHIAVE')]
     FCHIAVE: Integer;
+    [JSONName('Descrizione')]
     FDescrizione: string;
+
+    // Elementi Elettrici
     [JSONName('ElementiElettrici'), JSONMarshalled(False)]
     FElementiElettriciArray: TArray<TElementiElettrici>;
     [GenericListReflect]
     FElementiElettrici: TObjectList<TElementiElettrici>;
+
+    [JSONName('PREZZO')]
     FPREZZO: Integer;
+    [JSONName('STATO')]
     FSTATO: string;
     [JSONName('TIPO_VISITA')]
     FTIPOVISITA: string;
+    [JSONName('UBICAZIONE')]
     FUBICAZIONE: string;
     function GetElementiElettrici: TObjectList<TElementiElettrici>;
   protected
@@ -357,14 +408,21 @@ type
 
   TGruppiPressurizzazione = class
   private
+    [JSONName('ANOMALIA')]
     FANOMALIA: string;
     [JSONName('ANOMALIA_APPROVATA')]
     FANOMALIAAPPROVATA: Boolean;
+    [JSONName('AnomaliaOnDownload')]
     FAnomaliaOnDownload: string;
+    [JSONName('AnomaliaRisolta')]
     FAnomaliaRisolta: Boolean;
+    [JSONName('CHIAVE')]
     FCHIAVE: Integer;
+    [JSONName('Controllato')]
     FControllato: Boolean;
+    [JSONName('Descrizione')]
     FDescrizione: string;
+    [JSONName('DataControllo')]
     [SuppressZero]
     FDataControllo: TDateTime;
     [JSONName('ID_NFC')]
@@ -385,9 +443,13 @@ type
     FMODELLOPOMPAJOCKEY: string;
     [JSONName('MODELLO_POMPA_PORTATA')]
     FMODELLOPOMPAPORTATA: string;
+    [JSONName('Note')]
     FNote: string;
+    [JSONName('NonControllato')]
     FNonControllato: Boolean;
+    [JSONName('OrarioControllo')]
     FOrarioControllo: string;
+    [JSONName('STATO')]
     FSTATO: string;
     [JSONName('TIPO_BATTERIE')]
     FTIPOBATTERIE: string;
@@ -403,6 +465,7 @@ type
     FTIPOSTAZIONE: string;
     [JSONName('TIPO_VISITA')]
     FTIPOVISITA: string;
+    [JSONName('TecnicoControllo')]
     FTecnicoControllo: Integer;
     [JSONName('VASI_ESPANSIONE')]
     FVASIESPANSIONE: string;
@@ -443,29 +506,42 @@ type
   private
     [JSONName('ANNO_COSTRUZIONE')]
     FANNOCOSTRUZIONE: Integer;
+    [JSONName('ANOMALIA')]
     FANOMALIA: string;
     [JSONName('ANOMALIA_APPROVATA')]
     FANOMALIAAPPROVATA: Boolean;
+    [JSONName('ANTE')]
     FANTE: string;
+    [JSONName('AnomaliaOnDownload')]
     FAnomaliaOnDownload: string;
+    [JSONName('AnomaliaRisolta')]
     FAnomaliaRisolta: Boolean;
+    [JSONName('CHIAVE')]
     FCHIAVE: Integer;
+    [JSONName('Consegnato')]
     FConsegnato: Boolean;
+    [JSONName('Controllato')]
     FControllato: Boolean;
+    [JSONName('DIMENSIONE')]
     FDIMENSIONE: string;
     [SuppressZero]
     FDataControllo: TDateTime; // TDateTime
     [JSONName('ID_NFC')]
     FIDNFC: string;
+    [JSONName('MARCA')]
     FMARCA: Integer;
     [JSONName('MARCA_MANIGLIONE')]
     FMARCAMANIGLIONE: Integer;
     FMATRICOLA: string;
     [JSONName('NOTE_TECNICO')]
     FNOTETECNICO: string;
+    [JSONName('OrarioControllo')]
     FOrarioControllo: string;
+    [JSONName('PROGRESSIVO')]
     FPROGRESSIVO: Integer;
+    [JSONName('STATO')]
     FSTATO: string;
+    [JSONName('TIPO')]
     FTIPO: Integer;
     [JSONName('TIPO_GUARNIZIONE')]
     FTIPOGUARNIZIONE: Integer;
@@ -481,7 +557,9 @@ type
     FTIPOSERRATURAANTAPRINCIPALE: Integer;
     [JSONName('TIPO_SERRATURA_ANTA_SECONDARIA')]
     FTIPOSERRATURAANTASECONDARIA: Integer;
+    [JSONName('TecnicoControllo')]
     FTecnicoControllo: Integer;
+    [JSONName('UBICAZIONE')]
     FUBICAZIONE: string;
   published
     property ANNOCOSTRUZIONE: Integer read FANNOCOSTRUZIONE write FANNOCOSTRUZIONE;
@@ -519,15 +597,25 @@ type
 
   TVerbaleCollaudoManichette = class
   private
+    [JSONName('CAP')]
     FCAP: string;
+    [JSONName('CONCLUSO')]
     FCONCLUSO: Boolean;
+    [JSONName('CodiceFiscale')]
     FCodiceFiscale: string;
+    [JSONName('Comune')]
     FComune: string;
+    [JSONName('Destinatario')]
     FDestinatario: string;
+    [JSONName('EMail')]
     FEMail: string;
+    [JSONName('Indirizzo')]
     FIndirizzo: string;
+    [JSONName('InformazioniCollaudo')]
     FInformazioniCollaudo: string;
+    [JSONName('LunghezzaManichette')]
     FLunghezzaManichette: string;
+    [JSONName('NOTETECNICO')]
     FNOTETECNICO: string;
     FOperazioniDescrizione01: string;
     FOperazioniDescrizione02: string;
@@ -622,31 +710,46 @@ type
 
   TLuci = class
   private
+    [JSONName('ANOMALIA')]
     FANOMALIA: string;
     [JSONName('ANOMALIA_APPROVATA')]
     FANOMALIAAPPROVATA: Boolean;
+    [JSONName('AUTONOMIA')]
     FAUTONOMIA: Integer;
+    [JSONName('AnomaliaOnDownload')]
     FAnomaliaOnDownload: string;
+    [JSONName('AnomaliaRisolta')]
     FAnomaliaRisolta: Boolean;
+    [JSONName('CHIAVE')]
     FCHIAVE: Integer;
+    [JSONName('Consegnato')]
     FConsegnato: Boolean;
+    [JSONName('Controllato')]
     FControllato: Boolean;
+    [JSONName('DataControllo')]
     [SuppressZero]
     FDataControllo: TDateTime; // TDateTime
     [JSONName('ID_NFC')]
     FIDNFC: string;
+    [JSONName('MARCA')]
     FMARCA: Integer;
+    [JSONName('MODELLO')]
     FMODELLO: string;
     [JSONName('NOTE_TECNICO')]
     FNOTETECNICO: string;
+    [JSONName('OrarioControllo')]
     FOrarioControllo: string;
+    [JSONName('PROGRESSIVO')]
     FPROGRESSIVO: Integer;
+    [JSONName('STATO')]
     FSTATO: string;
     [JSONName('TIPO_INTERVENTO')]
     FTIPOINTERVENTO: string;
     [JSONName('TIPO_LUCE')]
     FTIPOLUCE: Integer;
+    [JSONName('TecnicoControllo')]
     FTecnicoControllo: Integer;
+    [JSONName('UBICAZIONE')]
     FUBICAZIONE: string;
   published
     property ANOMALIA: string read FANOMALIA write FANOMALIA;
@@ -673,14 +776,21 @@ type
 
   TRilevatoriFumo = class
   private
+  [JSONName('ANOMALIA')]
     FANOMALIA: string;
     [JSONName('ANOMALIA_APPROVATA')]
     FANOMALIAAPPROVATA: Boolean;
+    [JSONName('AnomaliaOnDownload')]
     FAnomaliaOnDownload: string;
+    [JSONName('AnomaliaRisolta')]
     FAnomaliaRisolta: Boolean;
+    [JSONName('CHIAVE')]
     FCHIAVE: Integer;
+    [JSONName('Controllato')]
     FControllato: Boolean;
+    [JSONName('Descrizione')]
     FDescrizione: string;
+    [JSONName('DataControllo')]
     [SuppressZero]
     FDataControllo: TDateTime; // TDateTime
     [JSONName('ID_NFC')]
@@ -691,7 +801,9 @@ type
     FMARCARILLINEARI: string;
     [JSONName('NOTE_TECNICO')]
     FNOTETECNICO: string;
+    [JSONName('NonControllato')]
     FNonControllato: Boolean;
+    [JSONName('OrarioControllo')]
     FOrarioControllo: string;
     [JSONName('QUANTITA_BATTERIE')]
     FQUANTITABATTERIE: string;
@@ -703,6 +815,7 @@ type
     FQUANTITARILEVATORI: string;
     [JSONName('QUANTITA_RIL_LINEARI')]
     FQUANTITARILLINEARI: string;
+    [JSONName('STATO')]
     FSTATO: string;
     [JSONName('TIPI_RILEVATORI_LINEARI_FUMI')]
     FTIPIRILEVATORILINEARIFUMI: string;
@@ -716,7 +829,9 @@ type
     FTIPORILEVATORI: string;
     [JSONName('TIPO_RIL_LINEARI')]
     FTIPORILLINEARI: string;
+    [JSONName('TecnicoControllo')]
     FTecnicoControllo: Integer;
+    [JSONName('UBICAZIONE')]
     FUBICAZIONE: string;
   published
     property ANOMALIA: string read FANOMALIA write FANOMALIA;
@@ -752,35 +867,52 @@ type
 
   TSprinkler = class
   private
+    [JSONName('ANOMALIA')]
     FANOMALIA: string;
     [JSONName('ANOMALIA_APPROVATA')]
     FANOMALIAAPPROVATA: Boolean;
+    [JSONName('AnomaliaOnDownload')]
     FAnomaliaOnDownload: string;
+    [JSONName('AnomaliaRisolta')]
     FAnomaliaRisolta: Boolean;
+    [JSONName('CHIAVE')]
     FCHIAVE: Integer;
+    [JSONName('COMPRESSORE')]
     FCOMPRESSORE: string;
+    [JSONName('Controllato')]
     FControllato: Boolean;
+    [JSONName('Descrizione')]
     FDescrizione: string;
+    [JSONName('DataControllo')]
     [SuppressZero]
     FDataControllo: TDateTime;
     [JSONName('ID_NFC')]
     FIDNFC: string;
+    [JSONName('MARCA')]
     FMARCA: string;
+    [JSONName('MODELLO')]
     FMODELLO: string;
+    [JSONName('Note')]
     FNote: string;
+    [JSONName('NonControllato')]
     FNonControllato: Boolean;
+    [JSONName('OrarioControllo')]
     FOrarioControllo: string;
     [JSONName('QUANTITA_VALVOLE')]
     FQUANTITAVALVOLE: string;
+    [JSONName('STATO')]
     FSTATO: string;
     [JSONName('TARATURA_VALVOLE')]
     FTARATURAVALVOLE: Integer;
+    [JSONName('TIPO')]
     FTIPO: string;
     [JSONName('TIPO_INTERVENTO')]
     FTIPOINTERVENTO: string;
     [JSONName('TIPO_VISITA')]
     FTIPOVISITA: string;
+    [JSONName('TecnicoControllo')]
     FTecnicoControllo: Integer;
+    [JSONName('UBICAZIONE')]
     FUBICAZIONE: string;
     [JSONName('VALVOLE_RICAMBIO')]
     FVALVOLERICAMBIO: Boolean;
@@ -815,14 +947,21 @@ type
   private
     [JSONName('ANNO_COSTRUZIONE')]
     FANNOCOSTRUZIONE: string;
+    [JSONName('ANOMALIA')]
     FANOMALIA: string;
     [JSONName('ANOMALIA_APPROVATA')]
     FANOMALIAAPPROVATA: Boolean;
+    [JSONName('AggiuntoDaMobile')]
     FAggiuntoDaMobile: Boolean;
+    [JSONName('AnomaliaOnDownload')]
     FAnomaliaOnDownload: string;
+    [JSONName('AnomaliaRisolta')]
     FAnomaliaRisolta: Boolean;
+    [JSONName('CHIAVE')]
     FCHIAVE: Integer;
+    [JSONName('Consegnato')]
     FConsegnato: Boolean;
+    [JSONName('Controllato')]
     FControllato: Boolean;
     [SuppressZero, JSONName('DATA_LAVORAZIONE')]
     FDATALAVORAZIONE: TDateTime;
@@ -830,51 +969,79 @@ type
     FDATASTARTUPCOL: string;
     [JSONName('DATA_STARTUP_REV')]
     FDATASTARTUPREV: string;
+    [JSONName('DataConsegna')]
     [SuppressZero]
     FDataConsegna: TDateTime;
+    [JSONName('DataControllo')]
     [SuppressZero]
     FDataControllo: TDateTime;
+     [JSONName('DataControlloNegato')]
     [SuppressZero]
     FDataControlloNegato: TDateTime;
+    [JSONName('DataRestituzione')]
     [SuppressZero]
     FDataRestituzione: TDateTime;
+    [JSONName('DataRitiro')]
     [SuppressZero]
     FDataRitiro: TDateTime;
+    [JSONName('DataSmaltimento')]
     [SuppressZero]
     FDataSmaltimento: TDateTime;
     [JSONName('ID_NFC')]
     FIDNFC: string;
+    [JSONName('MARCA')]
     FMARCA: Integer;
+    [JSONName('MATRICOLA')]
     FMATRICOLA: string;
+    [JSONName('MotivoControlloNegato')]
     FMotivoControlloNegato: string;
+    [JSONName('MotivoRitiro')]
     FMotivoRitiro: string;
     [JSONName('NOTE_TECNICO')]
     FNOTETECNICO: string;
+    [JSONName('NonControllato')]
     FNonControllato: Boolean;
+    [JSONName('OrarioConsegna')]
     FOrarioConsegna: string;
+    [JSONName('OrarioControllo')]
     FOrarioControllo: string;
+    [JSONName('OrarioControlloNegato')]
     FOrarioControlloNegato: string;
+    [JSONName('OrarioRitiro')]
     FOrarioRitiro: string;
+    [JSONName('OrarioSmaltimento')]
     FOrarioSmaltimento: string;
     [JSONName('PERIODICITA_COLLAUDO')]
     FPERIODICITACOLLAUDO: Integer;
     [JSONName('PERIODICITA_REVISIONE')]
     FPERIODICITAREVISIONE: Integer;
+    [JSONName('PROGRESSIVO')]
     FPROGRESSIVO: Integer;
+    [JSONName('Restituito')]
     FRestituito: Boolean;
+    [JSONName('Ritirato')]
     FRitirato: Boolean;
+    [JSONName('STATO')]
     FSTATO: string;
+    [JSONName('Smaltito')]
     FSmaltito: Boolean;
     [JSONName('TIPO_ESTINTORE')]
     FTIPOESTINTORE: Integer;
     [JSONName('TIPO_INTERVENTO')]
     FTIPOINTERVENTO: string;
+    [JSONName('TecnicoConsegna')]
     FTecnicoConsegna: Integer;
+    [JSONName('TecnicoControllo')]
     FTecnicoControllo: Integer;
+    [JSONName('TecnicoControlloNegato')]
     FTecnicoControlloNegato: Integer;
+    [JSONName('TecnicoRestituzione')]
     FTecnicoRestituzione: Integer;
+    [JSONName('TecnicoRitiro')]
     FTecnicoRitiro: Integer;
+    [JSONName('TecnicoSmaltimento')]
     FTecnicoSmaltimento: Integer;
+    [JSONName('UBICAZIONE')]
     FUBICAZIONE: string;
   published
     property ANNOCOSTRUZIONE: string read FANNOCOSTRUZIONE write FANNOCOSTRUZIONE;
@@ -945,6 +1112,7 @@ type
     FCAP: string;
     [JSONName('CELLULARE')]
     FCELLULARE: string;
+    [JSONName('CHIUSURA')]
     FCHIUSURA: string;
     [JSONName('COD_ENTE_SDI')]
     FCODENTESDI: string;
@@ -956,7 +1124,9 @@ type
     FDATAINTERVENTO: TDateTime;
     [JSONName('DESCRIZIONE_CONTRATTO')]
     FDESCRIZIONECONTRATTO: string;
+    [JSONName('DataEliminazioneProdotto')]
     FDataEliminazioneProdotto: string;
+    [JSONName('DocumentoAnnullato')]
     FDocumentoAnnullato: Boolean;
     [JSONName('ELEMENTI_ELETTRICI_CONTROLLATI')]
     FELEMENTIELETTRICICONTROLLATI: Integer;
@@ -976,14 +1146,18 @@ type
     FESTINTORIRITIRATE: Integer;
     [JSONName('ESTINTORI_SMALTITI')]
     FESTINTORISMALTITI: Integer;
+    [JSONName('FDataDiscrepanza')]
     [SuppressZero]
     FFDataDiscrepanza: TDateTime;
+    [JSONName('FORNITURA')]
     FFORNITURA: Boolean;
+    [JSONName('FOrarioDiscrepanza')]
     FFOrarioDiscrepanza: string;
     [JSONName('FUMI_CONTROLLATE')]
     FFUMICONTROLLATE: Integer;
     [JSONName('FUMI_NON_CONTROLLATE')]
     FFUMINONCONTROLLATE: Integer;
+    [JSONName('FattureInSedeNonElencate')]
     FFattureInSedeNonElencate: Boolean;
     [JSONName('GENERAZIONE_AUTOMATICA')]
     FGENERAZIONEAUTOMATICA: Integer;
@@ -1007,6 +1181,7 @@ type
     FIndirizzo: string;
     [JSONName('INFO_APPUNTAMENTO')]
     FInfoAppuntamento: string;
+    [JSONName('InvioTemporaneo')]
     FInvioTemporaneo: Boolean;
     [JSONName('LUCI_CONTROLLATE')]
     FLUCICONTROLLATE: Integer;
@@ -1028,6 +1203,7 @@ type
     FNOTEPERILTECNICO: string;
     [JSONName('NOTE_STAMPABILI')]
     FNOTESTAMPABILI: Boolean;
+    [JSONName('NonVisualizzareAlert')]
     FNonVisualizzareAlert: Boolean;
     [JSONName('ORARIO_APERTURA_AL1')]
     FORARIOAPERTURAAL1: string;
@@ -1037,6 +1213,7 @@ type
     FORARIOAPERTURADAL1: string;
     [JSONName('ORARIO_APERTURA_DAL2')]
     FORARIOAPERTURADAL2: string;
+    [JSONName('OraProgrammazioneIntervento')]
     FOraProgrammazioneIntervento: string;
     [JSONName('PEC_AMMINISTRATORE')]
     FPECAMMINISTRATORE: string;
@@ -1052,6 +1229,7 @@ type
     FSPRINKLERCONTROLLATE: Integer;
     [JSONName('SPRINKLER_NON_CONTROLLATI')]
     FSPRINKLERNONCONTROLLATI: Integer;
+    [JSONName('SoloFatture')]
     FSoloFatture: Boolean;
     [JSONName('TECNICO_INTERVENTO')]
     FTECNICOINTERVENTO: Integer;
@@ -1059,49 +1237,77 @@ type
     FTELEFONO: string;
     [JSONName('TERMINA_CLIENTE')]
     FTerminaCliente: Boolean;
+    [JSONName('Accessori')]
     FAccessori: TAccessori;
-    [JSONName('Estintori'), JSONMarshalled(False)]
-    FEstintoriArray: TArray<TEstintori>;
-    [JSONName('Estintori'), GenericListReflect]
-    FEstintori: TObjectList<TEstintori>;
-    [JSONName('Luci'), JSONMarshalled(False)]
-    FLuciArray: TArray<TLuci>;
-    [JSONName('Luci'), GenericListReflect]
-    FLuci: TObjectList<TLuci>;
-    [JSONName('Idranti'), JSONMarshalled(False)]
-    FIdrantiArray: TArray<TIdranti>;
-    [GenericListReflect]
-    FIdranti: TObjectList<TIdranti>;
-    [JSONName('ImpiantiElettrici'), JSONMarshalled(False)]
-    FImpiantiElettriciArray: TArray<TImpiantiElettrici>;
-    [JSONName('ImpiantiElettrici'), GenericListReflect]
-    FImpiantiElettrici: TObjectList<TImpiantiElettrici>;
-    [JSONName('Porte'), JSONMarshalled(False)]
-    FPorteArray: TArray<TPorte>;
-    [JSONName('Porte'), GenericListReflect]
-    FPorte: TObjectList<TPorte>;
-    [JSONName('Prodotti'), JSONMarshalled(False)]
-    FProdottiArray: TArray<TProdotti>;
-    [JSONName('Prodotti'),GenericListReflect]
-    FProdotti: TObjectList<TProdotti>;
-    [JSONName('RilevatoriFumo'), JSONMarshalled(False)]
-    FRilevatoriFumoArray: TArray<TRilevatoriFumo>;
-    [JSONName('RilevatoriFumo'), GenericListReflect]
-    FRilevatoriFumo: TObjectList<TRilevatoriFumo>;
-    [JSONName('Sprinkler'), JSONMarshalled(False)]
-    FSprinklerArray: TArray<TSprinkler>;
-    [GenericListReflect]
-    FSprinkler: TObjectList<TSprinkler>;
-    [JSONName('GruppiPressurizzazione'), JSONMarshalled(False)]
-    FGruppiPressurizzazioneArray: TArray<TGruppiPressurizzazione>;
-    [GenericListReflect]
-    FGruppiPressurizzazione: TObjectList<TGruppiPressurizzazione>;
+
+    // Lista Fatture Arretrate
     [JSONName('FattureArretrate'), JSONMarshalled(False)]
     FFattureArretrateArray: TArray<TFattureArretrate>;
     [GenericListReflect]
     FFattureArretrate: TObjectList<TFattureArretrate>;
+
+    // Lista Estintori
+    [JSONName('Estintori'), JSONMarshalled(False)]
+    FEstintoriArray: TArray<TEstintori>;
+    [GenericListReflect]
+    FEstintori: TObjectList<TEstintori>;
+    // [JSONName('Estintori'), GenericListReflect]
+
+    // Lista Luci
+    [JSONName('Luci'), JSONMarshalled(False)]
+    FLuciArray: TArray<TLuci>;
+    [GenericListReflect]
+    FLuci: TObjectList<TLuci>;
+    // [JSONName('Luci'), GenericListReflect]
+
+    // Lista Idranti
+    [JSONName('Idranti'), JSONMarshalled(False)]
+    FIdrantiArray: TArray<TIdranti>;
+    [GenericListReflect]
+    FIdranti: TObjectList<TIdranti>;
+
+    // Lista Impianti Elettrici
+    [JSONName('ImpiantiElettrici'), JSONMarshalled(False)]
+    FImpiantiElettriciArray: TArray<TImpiantiElettrici>;
+    [GenericListReflect]
+    FImpiantiElettrici: TObjectList<TImpiantiElettrici>;
+    // [JSONName('ImpiantiElettrici'), GenericListReflect]
+
+    // Lista Porte
+    [JSONName('Porte'), JSONMarshalled(False)]
+    FPorteArray: TArray<TPorte>;
+    [GenericListReflect]
+    FPorte: TObjectList<TPorte>;
+    // [JSONName('Porte'), GenericListReflect]
+
+    [JSONName('Prodotti'), JSONMarshalled(False)]
+    FProdottiArray: TArray<TProdotti>;
+    [GenericListReflect]
+    FProdotti: TObjectList<TProdotti>;
+    // [JSONName('Prodotti'), GenericListReflect]
+
+    [JSONName('RilevatoriFumo'), JSONMarshalled(False)]
+    FRilevatoriFumoArray: TArray<TRilevatoriFumo>;
+    [GenericListReflect]
+    FRilevatoriFumo: TObjectList<TRilevatoriFumo>;
+    // [JSONName('RilevatoriFumo'), GenericListReflect]
+
+    // Lista Sprinkler
+    [JSONName('Sprinkler'), JSONMarshalled(False)]
+    FSprinklerArray: TArray<TSprinkler>;
+    [GenericListReflect]
+    FSprinkler: TObjectList<TSprinkler>;
+
+    // Lista Gruppi di Pressurizzazione
+    [JSONName('GruppiPressurizzazione'), JSONMarshalled(False)]
+    FGruppiPressurizzazioneArray: TArray<TGruppiPressurizzazione>;
+    [GenericListReflect]
+    FGruppiPressurizzazione: TObjectList<TGruppiPressurizzazione>;
+
+    // Tmp Info
     [JSONName('ZTmpInfo')]
     FZTmpInfo: TZTmpInfo;
+
     function GetEstintori: TObjectList<TEstintori>;
     function GetFattureArretrate: TObjectList<TFattureArretrate>;
     function GetGruppiPressurizzazione: TObjectList<TGruppiPressurizzazione>;
@@ -1246,6 +1452,10 @@ begin
           sLineBreak;
     end;
   end;
+
+  // if Pos(Result, 'T00:00:00.000Z') > 0  then
+  Result := StringReplace(Result, 'T00:00:00.000Z', '', [rfReplaceAll]);
+
 end;
 
 function ReplacePhoenixJson(const aJson: string): string;

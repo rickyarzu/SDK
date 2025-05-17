@@ -1,7 +1,8 @@
 inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
-  Height = 443
-  Width = 716
+  Height = 541
+  Width = 705
   inherited JanuaUniConnection1: TJanuaUniConnection
+    Connected = True
     Left = 96
     EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
   end
@@ -239,6 +240,92 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     DetailFields = 'STATINO'
     Left = 392
     Top = 200
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'CHIAVE'
+        Value = nil
+      end>
+    object tbLuciSTATINO: TIntegerField
+      FieldName = 'STATINO'
+    end
+    object tbLuciANOMALIA: TStringField
+      FieldName = 'ANOMALIA'
+      Size = 255
+    end
+    object tbLuciANOMALIA_APPROVATA: TStringField
+      FieldName = 'ANOMALIA_APPROVATA'
+      FixedChar = True
+      Size = 1
+    end
+    object tbLuciAUTONOMIA: TIntegerField
+      FieldName = 'AUTONOMIA'
+    end
+    object tbLuciANOMALIAONDOWNLOAD: TStringField
+      FieldName = 'ANOMALIAONDOWNLOAD'
+      Size = 255
+    end
+    object tbLuciANOMALIARISOLTA: TStringField
+      FieldName = 'ANOMALIARISOLTA'
+      FixedChar = True
+      Size = 1
+    end
+    object tbLuciCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+    end
+    object tbLuciCONSEGNATO: TStringField
+      FieldName = 'CONSEGNATO'
+      FixedChar = True
+      Size = 1
+    end
+    object tbLuciCONTROLLATO: TStringField
+      FieldName = 'CONTROLLATO'
+      FixedChar = True
+      Size = 1
+    end
+    object tbLuciDATACONTROLLO: TDateField
+      FieldName = 'DATACONTROLLO'
+    end
+    object tbLuciID_NFC: TStringField
+      FieldName = 'ID_NFC'
+      Size = 255
+    end
+    object tbLuciMARCA: TIntegerField
+      FieldName = 'MARCA'
+    end
+    object tbLuciMODELLO: TStringField
+      FieldName = 'MODELLO'
+      Size = 255
+    end
+    object tbLuciNOTE_TECNICO: TStringField
+      FieldName = 'NOTE_TECNICO'
+      Size = 255
+    end
+    object tbLuciORARIOCONTROLLO: TStringField
+      FieldName = 'ORARIOCONTROLLO'
+      Size = 255
+    end
+    object tbLuciPROGRESSIVO: TIntegerField
+      FieldName = 'PROGRESSIVO'
+    end
+    object tbLuciSTATO: TStringField
+      FieldName = 'STATO'
+      Size = 255
+    end
+    object tbLuciTIPO_INTERVENTO: TStringField
+      FieldName = 'TIPO_INTERVENTO'
+      Size = 255
+    end
+    object tbLuciTIPO_LUCE: TIntegerField
+      FieldName = 'TIPO_LUCE'
+    end
+    object tbLuciTECNICOCONTROLLO: TIntegerField
+      FieldName = 'TECNICOCONTROLLO'
+    end
+    object tbLuciUBICAZIONE: TStringField
+      FieldName = 'UBICAZIONE'
+      Size = 255
+    end
   end
   object tbEstintori: TUniTable
     TableName = 'STATINI_ESTINTORI'
@@ -248,6 +335,189 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     DetailFields = 'STATINO'
     Left = 504
     Top = 200
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'CHIAVE'
+        Value = nil
+      end>
+    object tbEstintoriSTATINO: TIntegerField
+      FieldName = 'STATINO'
+    end
+    object tbEstintoriANNO_COSTRUZIONE: TStringField
+      FieldName = 'ANNO_COSTRUZIONE'
+      Size = 255
+    end
+    object tbEstintoriANOMALIA: TStringField
+      FieldName = 'ANOMALIA'
+      Size = 255
+    end
+    object tbEstintoriANOMALIA_APPROVATA: TStringField
+      FieldName = 'ANOMALIA_APPROVATA'
+      FixedChar = True
+      Size = 1
+    end
+    object tbEstintoriAGGIUNTODAMOBILE: TStringField
+      FieldName = 'AGGIUNTODAMOBILE'
+      FixedChar = True
+      Size = 1
+    end
+    object tbEstintoriANOMALIAONDOWNLOAD: TStringField
+      FieldName = 'ANOMALIAONDOWNLOAD'
+      Size = 255
+    end
+    object tbEstintoriANOMALIARISOLTA: TStringField
+      FieldName = 'ANOMALIARISOLTA'
+      FixedChar = True
+      Size = 1
+    end
+    object tbEstintoriCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+    end
+    object tbEstintoriCONSEGNATO: TStringField
+      FieldName = 'CONSEGNATO'
+      FixedChar = True
+      Size = 1
+    end
+    object tbEstintoriCONTROLLATO: TStringField
+      FieldName = 'CONTROLLATO'
+      FixedChar = True
+      Size = 1
+    end
+    object tbEstintoriDATA_LAVORAZIONE: TDateField
+      FieldName = 'DATA_LAVORAZIONE'
+    end
+    object tbEstintoriDATA_STARTUP_COL: TStringField
+      FieldName = 'DATA_STARTUP_COL'
+      Size = 255
+    end
+    object tbEstintoriDATA_STARTUP_REV: TStringField
+      FieldName = 'DATA_STARTUP_REV'
+      Size = 255
+    end
+    object tbEstintoriDATACONSEGNA: TDateField
+      FieldName = 'DATACONSEGNA'
+    end
+    object tbEstintoriDATACONTROLLO: TDateField
+      FieldName = 'DATACONTROLLO'
+    end
+    object tbEstintoriDATACONTROLLONEGATO: TDateField
+      FieldName = 'DATACONTROLLONEGATO'
+    end
+    object tbEstintoriDATARESTITUZIONE: TDateField
+      FieldName = 'DATARESTITUZIONE'
+    end
+    object tbEstintoriDATARITIRO: TDateField
+      FieldName = 'DATARITIRO'
+    end
+    object tbEstintoriDATASMALTIMENTO: TDateField
+      FieldName = 'DATASMALTIMENTO'
+    end
+    object tbEstintoriID_NFC: TStringField
+      FieldName = 'ID_NFC'
+      Size = 255
+    end
+    object tbEstintoriMARCA: TIntegerField
+      FieldName = 'MARCA'
+    end
+    object tbEstintoriMATRICOLA: TStringField
+      FieldName = 'MATRICOLA'
+      Size = 255
+    end
+    object tbEstintoriMOTIVOCONTROLLONEGATO: TStringField
+      FieldName = 'MOTIVOCONTROLLONEGATO'
+      Size = 255
+    end
+    object tbEstintoriMOTIVORITIRO: TStringField
+      FieldName = 'MOTIVORITIRO'
+      Size = 255
+    end
+    object tbEstintoriNOTE_TECNICO: TStringField
+      FieldName = 'NOTE_TECNICO'
+      Size = 255
+    end
+    object tbEstintoriNONCONTROLLATO: TStringField
+      FieldName = 'NONCONTROLLATO'
+      FixedChar = True
+      Size = 1
+    end
+    object tbEstintoriORARIOCONSEGNA: TStringField
+      FieldName = 'ORARIOCONSEGNA'
+      Size = 255
+    end
+    object tbEstintoriORARIOCONTROLLO: TStringField
+      FieldName = 'ORARIOCONTROLLO'
+      Size = 255
+    end
+    object tbEstintoriORARIOCONTROLLONEGATO: TStringField
+      FieldName = 'ORARIOCONTROLLONEGATO'
+      Size = 255
+    end
+    object tbEstintoriORARIORITIRO: TStringField
+      FieldName = 'ORARIORITIRO'
+      Size = 255
+    end
+    object tbEstintoriORARIOSMALTIMENTO: TStringField
+      FieldName = 'ORARIOSMALTIMENTO'
+      Size = 255
+    end
+    object tbEstintoriPERIODICITA_COLLAUDO: TIntegerField
+      FieldName = 'PERIODICITA_COLLAUDO'
+    end
+    object tbEstintoriPERIODICITA_REVISIONE: TIntegerField
+      FieldName = 'PERIODICITA_REVISIONE'
+    end
+    object tbEstintoriPROGRESSIVO: TIntegerField
+      FieldName = 'PROGRESSIVO'
+    end
+    object tbEstintoriRESTITUITO: TStringField
+      FieldName = 'RESTITUITO'
+      FixedChar = True
+      Size = 1
+    end
+    object tbEstintoriRITIRATO: TStringField
+      FieldName = 'RITIRATO'
+      FixedChar = True
+      Size = 1
+    end
+    object tbEstintoriSTATO: TStringField
+      FieldName = 'STATO'
+      Size = 255
+    end
+    object tbEstintoriSMALTITO: TStringField
+      FieldName = 'SMALTITO'
+      FixedChar = True
+      Size = 1
+    end
+    object tbEstintoriTIPO_ESTINTORE: TIntegerField
+      FieldName = 'TIPO_ESTINTORE'
+    end
+    object tbEstintoriTIPO_INTERVENTO: TStringField
+      FieldName = 'TIPO_INTERVENTO'
+      Size = 255
+    end
+    object tbEstintoriTECNICOCONSEGNA: TIntegerField
+      FieldName = 'TECNICOCONSEGNA'
+    end
+    object tbEstintoriTECNICOCONTROLLO: TIntegerField
+      FieldName = 'TECNICOCONTROLLO'
+    end
+    object tbEstintoriTECNICOCONTROLLONEGATO: TIntegerField
+      FieldName = 'TECNICOCONTROLLONEGATO'
+    end
+    object tbEstintoriTECNICORESTITUZIONE: TIntegerField
+      FieldName = 'TECNICORESTITUZIONE'
+    end
+    object tbEstintoriTECNICORITIRO: TIntegerField
+      FieldName = 'TECNICORITIRO'
+    end
+    object tbEstintoriTECNICOSMALTIMENTO: TIntegerField
+      FieldName = 'TECNICOSMALTIMENTO'
+    end
+    object tbEstintoriUBICAZIONE: TStringField
+      FieldName = 'UBICAZIONE'
+      Size = 255
+    end
   end
   object tbIdranti: TUniTable
     TableName = 'STATINI_IDRANTI'
@@ -257,6 +527,61 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     DetailFields = 'STATINO'
     Left = 304
     Top = 200
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'CHIAVE'
+        Value = nil
+      end>
+    object tbIdrantiSTATINO: TIntegerField
+      FieldName = 'STATINO'
+    end
+    object tbIdrantiCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+    end
+    object tbIdrantiDESCRIZIONE: TStringField
+      FieldName = 'DESCRIZIONE'
+      Size = 255
+    end
+    object tbIdrantiPROVA_DINAMICA: TIntegerField
+      FieldName = 'PROVA_DINAMICA'
+    end
+    object tbIdrantiQUANDO_PROVA_DINAMICA: TStringField
+      FieldName = 'QUANDO_PROVA_DINAMICA'
+      Size = 255
+    end
+    object tbIdrantiSTATO: TStringField
+      FieldName = 'STATO'
+      Size = 255
+    end
+    object tbIdrantiSUGGERIMENTOLUNGHMANICHETTA: TStringField
+      FieldName = 'SUGGERIMENTOLUNGHMANICHETTA'
+      Size = 255
+    end
+    object tbIdrantiSUGGERIMENTOTIPIBOCCHELLI: TStringField
+      FieldName = 'SUGGERIMENTOTIPIBOCCHELLI'
+      Size = 255
+    end
+    object tbIdrantiTIPO: TStringField
+      FieldName = 'TIPO'
+      Size = 255
+    end
+    object tbIdrantiTIPO_ATTACCO_MOTOPOMPA: TStringField
+      FieldName = 'TIPO_ATTACCO_MOTOPOMPA'
+      Size = 255
+    end
+    object tbIdrantiUBICAZIONE: TStringField
+      FieldName = 'UBICAZIONE'
+      Size = 255
+    end
+    object tbIdrantiUBICAZIONE_ATTACCO_MOTOPOMPA: TStringField
+      FieldName = 'UBICAZIONE_ATTACCO_MOTOPOMPA'
+      Size = 255
+    end
+    object tbIdrantiVALVOLA_INTERCETTAZIONE: TStringField
+      FieldName = 'VALVOLA_INTERCETTAZIONE'
+      Size = 255
+    end
   end
   object tbBocchelli: TUniTable
     TableName = 'STATINI_BOCCHELLI'
@@ -266,6 +591,140 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     DetailFields = 'STATINO;IDRANTE'
     Left = 304
     Top = 344
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'STATINO'
+        Value = nil
+      end
+      item
+        DataType = ftUnknown
+        Name = 'CHIAVE'
+        Value = nil
+      end>
+    object tbBocchelliSTATINO: TIntegerField
+      FieldName = 'STATINO'
+    end
+    object tbBocchelliIDRANTE: TIntegerField
+      FieldName = 'IDRANTE'
+    end
+    object tbBocchelliANNO_MANICHETTA: TStringField
+      FieldName = 'ANNO_MANICHETTA'
+      Size = 255
+    end
+    object tbBocchelliANNO_PRESSATURA: TStringField
+      FieldName = 'ANNO_PRESSATURA'
+      Size = 255
+    end
+    object tbBocchelliANNO_STARTUP: TIntegerField
+      FieldName = 'ANNO_STARTUP'
+    end
+    object tbBocchelliANOMALIA: TStringField
+      FieldName = 'ANOMALIA'
+      Size = 255
+    end
+    object tbBocchelliANOMALIA_APPROVATA: TStringField
+      FieldName = 'ANOMALIA_APPROVATA'
+      FixedChar = True
+      Size = 1
+    end
+    object tbBocchelliANOMALIAONDOWNLOAD: TStringField
+      FieldName = 'ANOMALIAONDOWNLOAD'
+      Size = 255
+    end
+    object tbBocchelliANOMALIARISOLTA: TStringField
+      FieldName = 'ANOMALIARISOLTA'
+      FixedChar = True
+      Size = 1
+    end
+    object tbBocchelliCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+    end
+    object tbBocchelliCONSEGNATO: TStringField
+      FieldName = 'CONSEGNATO'
+      FixedChar = True
+      Size = 1
+    end
+    object tbBocchelliCONTROLLATO: TStringField
+      FieldName = 'CONTROLLATO'
+      FixedChar = True
+      Size = 1
+    end
+    object tbBocchelliDATACONTROLLO: TDateField
+      FieldName = 'DATACONTROLLO'
+    end
+    object tbBocchelliDATAPRESSATURA: TDateField
+      FieldName = 'DATAPRESSATURA'
+    end
+    object tbBocchelliDATARITIRO: TDateField
+      FieldName = 'DATARITIRO'
+    end
+    object tbBocchelliID_BOCCHELLO: TIntegerField
+      FieldName = 'ID_BOCCHELLO'
+    end
+    object tbBocchelliID_NFC: TStringField
+      FieldName = 'ID_NFC'
+      Size = 255
+    end
+    object tbBocchelliLUNGHEZZA_MANICHETTA: TIntegerField
+      FieldName = 'LUNGHEZZA_MANICHETTA'
+    end
+    object tbBocchelliMESE_PRESSATURA: TStringField
+      FieldName = 'MESE_PRESSATURA'
+      Size = 255
+    end
+    object tbBocchelliMESE_STARTUP: TIntegerField
+      FieldName = 'MESE_STARTUP'
+    end
+    object tbBocchelliNOTE_TECNICO: TStringField
+      FieldName = 'NOTE_TECNICO'
+      Size = 255
+    end
+    object tbBocchelliORARIOCONTROLLO: TStringField
+      FieldName = 'ORARIOCONTROLLO'
+      Size = 255
+    end
+    object tbBocchelliORARIORITIRO: TStringField
+      FieldName = 'ORARIORITIRO'
+      Size = 255
+    end
+    object tbBocchelliPRESSATURAEFFETTUATA: TStringField
+      FieldName = 'PRESSATURAEFFETTUATA'
+      FixedChar = True
+      Size = 1
+    end
+    object tbBocchelliRITIRATO: TStringField
+      FieldName = 'RITIRATO'
+      FixedChar = True
+      Size = 1
+    end
+    object tbBocchelliSTATO: TStringField
+      FieldName = 'STATO'
+      Size = 255
+    end
+    object tbBocchelliTIPO_BOCCHELLO: TIntegerField
+      FieldName = 'TIPO_BOCCHELLO'
+    end
+    object tbBocchelliTIPO_INTERVENTO: TStringField
+      FieldName = 'TIPO_INTERVENTO'
+      Size = 255
+    end
+    object tbBocchelliTIPO_LANCIA: TIntegerField
+      FieldName = 'TIPO_LANCIA'
+    end
+    object tbBocchelliTECNICOCONTROLLO: TIntegerField
+      FieldName = 'TECNICOCONTROLLO'
+    end
+    object tbBocchelliTECNICOPRESSATURA: TIntegerField
+      FieldName = 'TECNICOPRESSATURA'
+    end
+    object tbBocchelliTECNICORITIRO: TIntegerField
+      FieldName = 'TECNICORITIRO'
+    end
+    object tbBocchelliUBICAZIONE: TStringField
+      FieldName = 'UBICAZIONE'
+      Size = 255
+    end
   end
   object dsStatini: TUniDataSource
     DataSet = qryStatini
@@ -285,6 +744,127 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     DetailFields = 'STATINO'
     Left = 616
     Top = 200
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'CHIAVE'
+        Value = nil
+      end>
+    object tbRilFumoSTATINO: TIntegerField
+      FieldName = 'STATINO'
+    end
+    object tbRilFumoANOMALIA: TStringField
+      FieldName = 'ANOMALIA'
+      Size = 255
+    end
+    object tbRilFumoANOMALIA_APPROVATA: TStringField
+      FieldName = 'ANOMALIA_APPROVATA'
+      FixedChar = True
+      Size = 1
+    end
+    object tbRilFumoANOMALIAONDOWNLOAD: TStringField
+      FieldName = 'ANOMALIAONDOWNLOAD'
+      Size = 255
+    end
+    object tbRilFumoANOMALIARISOLTA: TStringField
+      FieldName = 'ANOMALIARISOLTA'
+      FixedChar = True
+      Size = 1
+    end
+    object tbRilFumoCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+    end
+    object tbRilFumoCONTROLLATO: TStringField
+      FieldName = 'CONTROLLATO'
+      FixedChar = True
+      Size = 1
+    end
+    object tbRilFumoDESCRIZIONE: TStringField
+      FieldName = 'DESCRIZIONE'
+      Size = 255
+    end
+    object tbRilFumoDATACONTROLLO: TDateField
+      FieldName = 'DATACONTROLLO'
+    end
+    object tbRilFumoID_NFC: TStringField
+      FieldName = 'ID_NFC'
+      Size = 255
+    end
+    object tbRilFumoMARCA_CENTRALE: TStringField
+      FieldName = 'MARCA_CENTRALE'
+      Size = 255
+    end
+    object tbRilFumoMARCA_RIL_LINEARI: TStringField
+      FieldName = 'MARCA_RIL_LINEARI'
+      Size = 255
+    end
+    object tbRilFumoNOTE_TECNICO: TStringField
+      FieldName = 'NOTE_TECNICO'
+      Size = 255
+    end
+    object tbRilFumoNONCONTROLLATO: TStringField
+      FieldName = 'NONCONTROLLATO'
+      FixedChar = True
+      Size = 1
+    end
+    object tbRilFumoORARIOCONTROLLO: TStringField
+      FieldName = 'ORARIOCONTROLLO'
+      Size = 255
+    end
+    object tbRilFumoQUANTITA_BATTERIE: TStringField
+      FieldName = 'QUANTITA_BATTERIE'
+      Size = 255
+    end
+    object tbRilFumoQUANTITA_PANNELLI_OTT_ACUST: TStringField
+      FieldName = 'QUANTITA_PANNELLI_OTT_ACUST'
+      Size = 255
+    end
+    object tbRilFumoQUANTITA_PULSANTI: TStringField
+      FieldName = 'QUANTITA_PULSANTI'
+      Size = 255
+    end
+    object tbRilFumoQUANTITA_RILEVATORI: TStringField
+      FieldName = 'QUANTITA_RILEVATORI'
+      Size = 255
+    end
+    object tbRilFumoQUANTITA_RIL_LINEARI: TStringField
+      FieldName = 'QUANTITA_RIL_LINEARI'
+      Size = 255
+    end
+    object tbRilFumoSTATO: TStringField
+      FieldName = 'STATO'
+      Size = 255
+    end
+    object tbRilFumoTIPI_RILEVATORI_LINEARI_FUMI: TStringField
+      FieldName = 'TIPI_RILEVATORI_LINEARI_FUMI'
+      Size = 255
+    end
+    object tbRilFumoTIPO_BATTERIE: TDateField
+      FieldName = 'TIPO_BATTERIE'
+    end
+    object tbRilFumoTIPO_CENTRALE: TStringField
+      FieldName = 'TIPO_CENTRALE'
+      Size = 255
+    end
+    object tbRilFumoTIPO_INTERVENTO: TStringField
+      FieldName = 'TIPO_INTERVENTO'
+      Size = 255
+    end
+    object tbRilFumoTIPO_RILEVATORI: TStringField
+      FieldName = 'TIPO_RILEVATORI'
+      Size = 255
+    end
+    object tbRilFumoTIPO_RIL_LINEARI: TStringField
+      FieldName = 'TIPO_RIL_LINEARI'
+      Size = 255
+    end
+    object tbRilFumoTECNICOCONTROLLO: TIntegerField
+      FieldName = 'TECNICOCONTROLLO'
+    end
+    object tbRilFumoUBICAZIONE: TStringField
+      FieldName = 'UBICAZIONE'
+      Size = 255
+    end
   end
   object tbPorte: TUniTable
     TableName = 'STATINI_PORTE'
@@ -294,6 +874,121 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     DetailFields = 'STATINO'
     Left = 200
     Top = 200
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'CHIAVE'
+        Value = nil
+      end>
+    object tbPorteSTATINO: TIntegerField
+      FieldName = 'STATINO'
+    end
+    object tbPorteANNO_COSTRUZIONE: TIntegerField
+      FieldName = 'ANNO_COSTRUZIONE'
+    end
+    object tbPorteANOMALIA: TStringField
+      FieldName = 'ANOMALIA'
+      Size = 255
+    end
+    object tbPorteANOMALIA_APPROVATA: TStringField
+      FieldName = 'ANOMALIA_APPROVATA'
+      FixedChar = True
+      Size = 1
+    end
+    object tbPorteANTE: TStringField
+      FieldName = 'ANTE'
+      Size = 255
+    end
+    object tbPorteANOMALIAONDOWNLOAD: TStringField
+      FieldName = 'ANOMALIAONDOWNLOAD'
+      Size = 255
+    end
+    object tbPorteANOMALIARISOLTA: TStringField
+      FieldName = 'ANOMALIARISOLTA'
+      FixedChar = True
+      Size = 1
+    end
+    object tbPorteCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+    end
+    object tbPorteCONSEGNATO: TStringField
+      FieldName = 'CONSEGNATO'
+      FixedChar = True
+      Size = 1
+    end
+    object tbPorteCONTROLLATO: TStringField
+      FieldName = 'CONTROLLATO'
+      FixedChar = True
+      Size = 1
+    end
+    object tbPorteDIMENSIONE: TStringField
+      FieldName = 'DIMENSIONE'
+      Size = 255
+    end
+    object tbPorteDATACONTROLLO: TDateField
+      FieldName = 'DATACONTROLLO'
+    end
+    object tbPorteID_NFC: TStringField
+      FieldName = 'ID_NFC'
+      Size = 255
+    end
+    object tbPorteMARCA: TIntegerField
+      FieldName = 'MARCA'
+    end
+    object tbPorteMARCA_MANIGLIONE: TIntegerField
+      FieldName = 'MARCA_MANIGLIONE'
+    end
+    object tbPorteMATRICOLA: TStringField
+      FieldName = 'MATRICOLA'
+      Size = 255
+    end
+    object tbPorteNOTE_TECNICO: TStringField
+      FieldName = 'NOTE_TECNICO'
+      Size = 255
+    end
+    object tbPorteORARIOCONTROLLO: TStringField
+      FieldName = 'ORARIOCONTROLLO'
+      Size = 255
+    end
+    object tbPortePROGRESSIVO: TIntegerField
+      FieldName = 'PROGRESSIVO'
+    end
+    object tbPorteSTATO: TStringField
+      FieldName = 'STATO'
+      Size = 255
+    end
+    object tbPorteTIPO: TIntegerField
+      FieldName = 'TIPO'
+    end
+    object tbPorteTIPO_GUARNIZIONE: TIntegerField
+      FieldName = 'TIPO_GUARNIZIONE'
+    end
+    object tbPorteTIPO_INSTALLAZIONE: TIntegerField
+      FieldName = 'TIPO_INSTALLAZIONE'
+    end
+    object tbPorteTIPO_INTERVENTO: TStringField
+      FieldName = 'TIPO_INTERVENTO'
+      Size = 255
+    end
+    object tbPorteTIPO_MANIGLIA_ESTERNA: TIntegerField
+      FieldName = 'TIPO_MANIGLIA_ESTERNA'
+    end
+    object tbPorteTIPO_MANIGLIONE: TIntegerField
+      FieldName = 'TIPO_MANIGLIONE'
+    end
+    object tbPorteTIPO_SERRATURA_ANTA_PRINCIPALE: TIntegerField
+      FieldName = 'TIPO_SERRATURA_ANTA_PRINCIPALE'
+    end
+    object tbPorteTIPO_SERRATURA_ANTA_SECONDARIA: TIntegerField
+      FieldName = 'TIPO_SERRATURA_ANTA_SECONDARIA'
+    end
+    object tbPorteTECNICOCONTROLLO: TIntegerField
+      FieldName = 'TECNICOCONTROLLO'
+    end
+    object tbPorteUBICAZIONE: TStringField
+      FieldName = 'UBICAZIONE'
+      Size = 255
+    end
   end
   object tbGruppi: TUniTable
     TableName = 'statini_gruppi_pressurizzazione'
@@ -303,6 +998,136 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     DetailFields = 'STATINO'
     Left = 24
     Top = 200
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'CHIAVE'
+        Value = nil
+      end>
+    object tbGruppiSTATINO: TIntegerField
+      FieldName = 'STATINO'
+    end
+    object tbGruppiANOMALIA: TStringField
+      FieldName = 'ANOMALIA'
+      Size = 255
+    end
+    object tbGruppiANOMALIA_APPROVATA: TStringField
+      FieldName = 'ANOMALIA_APPROVATA'
+      FixedChar = True
+      Size = 1
+    end
+    object tbGruppiANOMALIAONDOWNLOAD: TStringField
+      FieldName = 'ANOMALIAONDOWNLOAD'
+      Size = 255
+    end
+    object tbGruppiANOMALIARISOLTA: TStringField
+      FieldName = 'ANOMALIARISOLTA'
+      FixedChar = True
+      Size = 1
+    end
+    object tbGruppiCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+    end
+    object tbGruppiCONTROLLATO: TStringField
+      FieldName = 'CONTROLLATO'
+      FixedChar = True
+      Size = 1
+    end
+    object tbGruppiDESCRIZIONE: TStringField
+      FieldName = 'DESCRIZIONE'
+      Size = 255
+    end
+    object tbGruppiDATACONTROLLO: TDateField
+      FieldName = 'DATACONTROLLO'
+    end
+    object tbGruppiID_NFC: TStringField
+      FieldName = 'ID_NFC'
+      Size = 255
+    end
+    object tbGruppiMARCA_MISURATORE_PORTATA: TStringField
+      FieldName = 'MARCA_MISURATORE_PORTATA'
+      Size = 255
+    end
+    object tbGruppiMARCA_MOTOPOMPA: TStringField
+      FieldName = 'MARCA_MOTOPOMPA'
+      Size = 255
+    end
+    object tbGruppiMARCA_POMPA_JOCKEY: TStringField
+      FieldName = 'MARCA_POMPA_JOCKEY'
+      Size = 255
+    end
+    object tbGruppiMARCA_POMPA_PORTATA: TStringField
+      FieldName = 'MARCA_POMPA_PORTATA'
+      Size = 255
+    end
+    object tbGruppiMODELLO_MISURATORE_PORTATA: TStringField
+      FieldName = 'MODELLO_MISURATORE_PORTATA'
+      Size = 255
+    end
+    object tbGruppiMODELLO_MOTOPOMPA: TStringField
+      FieldName = 'MODELLO_MOTOPOMPA'
+      Size = 255
+    end
+    object tbGruppiMODELLO_POMPA_JOCKEY: TStringField
+      FieldName = 'MODELLO_POMPA_JOCKEY'
+      Size = 255
+    end
+    object tbGruppiMODELLO_POMPA_PORTATA: TStringField
+      FieldName = 'MODELLO_POMPA_PORTATA'
+      Size = 255
+    end
+    object tbGruppiNOTE: TStringField
+      FieldName = 'NOTE'
+      Size = 255
+    end
+    object tbGruppiNONCONTROLLATO: TStringField
+      FieldName = 'NONCONTROLLATO'
+      FixedChar = True
+      Size = 1
+    end
+    object tbGruppiORARIOCONTROLLO: TStringField
+      FieldName = 'ORARIOCONTROLLO'
+      Size = 255
+    end
+    object tbGruppiSTATO: TStringField
+      FieldName = 'STATO'
+      Size = 255
+    end
+    object tbGruppiTIPO_BATTERIE: TStringField
+      FieldName = 'TIPO_BATTERIE'
+      Size = 255
+    end
+    object tbGruppiTIPO_INTERVENTO: TStringField
+      FieldName = 'TIPO_INTERVENTO'
+      Size = 255
+    end
+    object tbGruppiTIPO_MOTOPOMPA: TStringField
+      FieldName = 'TIPO_MOTOPOMPA'
+      Size = 255
+    end
+    object tbGruppiTIPO_POMPA_JOCKEY: TStringField
+      FieldName = 'TIPO_POMPA_JOCKEY'
+      Size = 255
+    end
+    object tbGruppiTIPO_POMPA_PORTATA: TStringField
+      FieldName = 'TIPO_POMPA_PORTATA'
+      Size = 255
+    end
+    object tbGruppiTIPO_STAZIONE: TStringField
+      FieldName = 'TIPO_STAZIONE'
+      Size = 255
+    end
+    object tbGruppiTIPO_VISITA: TStringField
+      FieldName = 'TIPO_VISITA'
+      Size = 255
+    end
+    object tbGruppiTECNICOCONTROLLO: TIntegerField
+      FieldName = 'TECNICOCONTROLLO'
+    end
+    object tbGruppiVASI_ESPANSIONE: TStringField
+      FieldName = 'VASI_ESPANSIONE'
+      Size = 255
+    end
   end
   object tbElementi: TUniTable
     TableName = 'statini_elementi_elettrici'
@@ -388,6 +1213,12 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     DetailFields = 'STATINO'
     Left = 112
     Top = 200
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'CHIAVE'
+        Value = nil
+      end>
     object tbImpiantiSTATINO: TIntegerField
       FieldName = 'STATINO'
     end
