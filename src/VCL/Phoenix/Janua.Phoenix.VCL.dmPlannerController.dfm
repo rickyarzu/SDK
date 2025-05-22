@@ -12602,10 +12602,12 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       end>
   end
   inherited JanuaUniConnection1: TJanuaUniConnection
+    Database = 'C:\PhoenixDB\PHOENIX.FDB'
     SpecificOptions.Strings = (
       'InterBase.UseUnicode=True')
     Options.DisconnectedMode = True
     Pooling = True
+    Server = '192.168.1.200'
     EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
   end
   inherited dsCalendars: TUniDataSource
@@ -20558,7 +20560,6 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       'FROM  TECNICI T JOIN calendario on calendario.tecnico = t.chiave'
       'where T.EMAIL IS NOT NULL '
       'AND T.ATTIVO = '#39'T'#39)
-    Active = True
     Left = 576
     Top = 416
     object lkpTecniciCHIAVE: TIntegerField

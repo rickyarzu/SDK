@@ -1034,8 +1034,15 @@ end;
 
 procedure JsonPair(aObject: TJsonObject; aParam: string; AValue: Int64);
 begin
+  if Assigned(aObject) then
 {$IFNDEF FPC}
-  aObject.AddPair(TJSONPair.Create(TJSONString.Create(aParam.ToLower), TJsonNumber.Create(AValue)))
+    aObject.AddPair(aParam.ToLower, AValue);
+{$ELSE}
+    begin
+  if aObject.IndexOfName(aParam) >= 0 then
+    aObject.Delete(aObject.IndexOfName(aParam));
+  aObject.Add(aParam.ToLower, TJSONInt64Number.Create(AValue));
+end;
 {$ENDIF FPC}
 end;
 
@@ -1145,6 +1152,7 @@ begin
   else
     Result := sJson;
 {$ENDIF  FPC}
+
   begin
   end;
 end;

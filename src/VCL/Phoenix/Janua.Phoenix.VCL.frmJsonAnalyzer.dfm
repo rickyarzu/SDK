@@ -193,7 +193,7 @@ object frmPhoenixVCLJsonAnalyzer: TfrmPhoenixVCLJsonAnalyzer
         Align = alTop
         TabOrder = 1
         object btnJsonPretty: TButton
-          Left = 1
+          Left = 201
           Top = 1
           Width = 184
           Height = 63
@@ -201,9 +201,10 @@ object frmPhoenixVCLJsonAnalyzer: TfrmPhoenixVCLJsonAnalyzer
           Caption = 'Json Pretty'
           TabOrder = 0
           OnClick = btnJsonPrettyClick
+          ExplicitLeft = 1
         end
         object btnJsonOnOff: TButton
-          Left = 185
+          Left = 385
           Top = 1
           Width = 200
           Height = 63
@@ -211,19 +212,22 @@ object frmPhoenixVCLJsonAnalyzer: TfrmPhoenixVCLJsonAnalyzer
           Caption = 'Attiva'
           TabOrder = 1
           OnClick = btnJsonOnOffClick
+          ExplicitLeft = 185
         end
         object btnClipboard: TButton
-          Left = 385
+          Left = 585
           Top = 1
           Width = 200
           Height = 63
           Align = alLeft
           Caption = 'ClipBoard'
+          Enabled = False
           TabOrder = 2
           OnClick = btnClipboardClick
+          ExplicitLeft = 385
         end
         object btnTest: TButton
-          Left = 585
+          Left = 785
           Top = 1
           Width = 200
           Height = 63
@@ -231,6 +235,19 @@ object frmPhoenixVCLJsonAnalyzer: TfrmPhoenixVCLJsonAnalyzer
           Caption = 'Json Import Test'
           TabOrder = 3
           OnClick = btnTestClick
+          ExplicitLeft = 585
+        end
+        object btnOpenTables: TButton
+          Left = 1
+          Top = 1
+          Width = 200
+          Height = 63
+          Align = alLeft
+          Caption = 'Open Tables'
+          TabOrder = 4
+          OnClick = btnOpenTablesClick
+          ExplicitLeft = -39
+          ExplicitTop = -3
         end
       end
       object Panel1: TPanel
@@ -292,7 +309,6 @@ object frmPhoenixVCLJsonAnalyzer: TfrmPhoenixVCLJsonAnalyzer
               FieldName = 'NOME'
               Width = 604
               Visible = True
-              SortOrder = soAsc
             end>
         end
         object CRDBGrid1: TCRDBGrid
@@ -314,7 +330,6 @@ object frmPhoenixVCLJsonAnalyzer: TfrmPhoenixVCLJsonAnalyzer
               FieldName = 'CHIAVE'
               Width = 51
               Visible = True
-              SortOrder = soAsc
             end
             item
               Expanded = False
@@ -350,7 +365,7 @@ object frmPhoenixVCLJsonAnalyzer: TfrmPhoenixVCLJsonAnalyzer
         Top = 65
         Width = 319
         Height = 600
-        ActivePage = tabCompatible
+        ActivePage = tabOriginal
         Align = alClient
         TabOrder = 3
         object tabOriginal: TTabSheet
@@ -1074,7 +1089,6 @@ object frmPhoenixVCLJsonAnalyzer: TfrmPhoenixVCLJsonAnalyzer
     Database = 'C:\PhoenixDB\PHOENIX.FDB'
     Username = 'SYSDBA'
     Server = '192.168.1.200'
-    Connected = True
     LoginPrompt = False
     Left = 432
     Top = 320
@@ -1087,7 +1101,6 @@ object frmPhoenixVCLJsonAnalyzer: TfrmPhoenixVCLJsonAnalyzer
   object tbClienti: TUniTable
     TableName = 'CLIENTI'
     Connection = UniConnection1
-    Active = True
     IndexFieldNames = 'RAGIONE_SOCIALE'
     Left = 68
     Top = 219
@@ -1099,16 +1112,8 @@ object frmPhoenixVCLJsonAnalyzer: TfrmPhoenixVCLJsonAnalyzer
     MasterSource = dsClienti
     MasterFields = 'CHIAVE'
     DetailFields = 'CLIENTE'
-    Active = True
     Left = 244
     Top = 235
-    ParamData = <
-      item
-        DataType = ftInteger
-        Name = 'CHIAVE'
-        ParamType = ptInput
-        Value = 1454385
-      end>
     object tbFilialiCHIAVE: TIntegerField
       FieldName = 'CHIAVE'
       Required = True
@@ -1211,16 +1216,8 @@ object frmPhoenixVCLJsonAnalyzer: TfrmPhoenixVCLJsonAnalyzer
     MasterSource = dsFiliali
     MasterFields = 'CHIAVE'
     DetailFields = 'FILIALE'
-    Active = True
     Left = 660
     Top = 227
-    ParamData = <
-      item
-        DataType = ftInteger
-        Name = 'CHIAVE'
-        ParamType = ptInput
-        Value = 1454940
-      end>
     object tbStatiniCHIAVE: TIntegerField
       FieldName = 'CHIAVE'
       Required = True

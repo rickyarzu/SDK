@@ -29,7 +29,5 @@ begin
     Application.Initialize;
   TPhoenixBackgroundServiceApp.ApplicationSetup('service.assoantincendio.com');
   Application.CreateForm(TsrvPhoenixVCLBackgroundService, srvPhoenixVCLBackgroundService);
-  Application.CreateForm(TdmFbStorage, dmFbStorage);
-  Application.CreateForm(TdmFbTwilioWhatsApp, dmFbTwilioWhatsApp);
   Application.Run;
 end.
