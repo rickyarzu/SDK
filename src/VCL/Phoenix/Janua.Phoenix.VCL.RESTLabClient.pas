@@ -67,12 +67,38 @@ type
     EnhCRDBGrid1: TEnhCRDBGrid;
     EnhCRDBGrid2: TEnhCRDBGrid;
     EnhCRDBGrid3: TEnhCRDBGrid;
+    tabGruppi: TTabSheet;
+    tabPorte: TTabSheet;
+    tabImpianti: TTabSheet;
+    grSprinkler: TEnhCRDBGrid;
+    EnhCRDBGrid5: TEnhCRDBGrid;
+    EnhCRDBGrid6: TEnhCRDBGrid;
+    EnhCRDBGrid7: TEnhCRDBGrid;
+    tabEstintori: TTabSheet;
+    EnhCRDBGrid8: TEnhCRDBGrid;
+    tabIdranti: TTabSheet;
+    btnApriTutti: TButton;
+    EnhCRDBGrid9: TEnhCRDBGrid;
+    EnhCRDBGrid10: TEnhCRDBGrid;
+    tabRilevatoriFumi: TTabSheet;
+    EnhCRDBGrid11: TEnhCRDBGrid;
+    grdInterventiGruppi: TEnhCRDBGrid;
+    grdInterventiPorte: TEnhCRDBGrid;
+    EnhCRDBGrid4: TEnhCRDBGrid;
+    tabSintesiEstintori: TTabSheet;
+    EnhCRDBGrid12: TEnhCRDBGrid;
+    TabSheet1: TTabSheet;
+    Panel6: TPanel;
+    EnhCRDBGrid13: TEnhCRDBGrid;
     procedure btnRestCallClick(Sender: TObject);
     procedure btnOpenClick(Sender: TObject);
     procedure btnSaveJsonClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnUpdateDataClick(Sender: TObject);
     procedure btnTestConfiguraziniClick(Sender: TObject);
+    procedure btnApriTuttiClick(Sender: TObject);
+    procedure EnhCRDBGrid3ColEnter(Sender: TObject);
+    procedure EnhCRDBGrid3CellClick(Column: TColumn);
   private
     FdmFDACPhoenixLab: TdmPhoenixIBLab;
     { Private declarations }
@@ -95,6 +121,11 @@ uses
   Janua.Phoenix.FbJsonReport;
 
 {$R *.dfm}
+
+procedure TfrmPhoenixVCLRESTLabClient.btnApriTuttiClick(Sender: TObject);
+begin
+  dmFbPhoenixJsonReport.ApriTuttiIUniQuery
+end;
 
 procedure TfrmPhoenixVCLRESTLabClient.btnOpenClick(Sender: TObject);
 begin
@@ -175,9 +206,21 @@ begin
   memJsonResponse.Lines.Text := FdmFDACPhoenixLab.JsonResponse;
 end;
 
+procedure TfrmPhoenixVCLRESTLabClient.EnhCRDBGrid3CellClick(Column: TColumn);
+begin
+
+  dmFbPhoenixJsonReport.OpenSintesiReport(Column.Field.DataSet);
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.EnhCRDBGrid3ColEnter(Sender: TObject);
+begin
+  dmFbPhoenixJsonReport.OpenSintesiReport(TEnhCRDBgrid(Sender).DataSource.DataSet);
+end;
+
 procedure TfrmPhoenixVCLRESTLabClient.FormCreate(Sender: TObject);
 begin
-  FdmFDACPhoenixLab := TdmPhoenixIBLab.Create(self)
+  FdmFDACPhoenixLab := TdmPhoenixIBLab.Create(self);
+  Application.CreateForm(TdmFbPhoenixJsonReport, dmFbPhoenixJsonReport);
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.SetdmFDACPhoenixLab(const Value: TdmPhoenixIBLab);
