@@ -241,6 +241,45 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="rtl.dcp"/>
+        <DCCReference Include="dbrtl.dcp"/>
+        <DCCReference Include="IndySystem.dcp"/>
+        <DCCReference Include="IndyProtocols.dcp"/>
+        <DCCReference Include="IndyCore.dcp"/>
+        <DCCReference Include="bindengine.dcp"/>
+        <DCCReference Include="inet.dcp"/>
+        <DCCReference Include="soaprtl.dcp"/>
+        <DCCReference Include="xmlrtl.dcp"/>
+        <DCCReference Include="fmx.dcp"/>
+        <DCCReference Include="bindcomp.dcp"/>
+        <DCCReference Include="JanuaCore.dcp"/>
+        <DCCReference Include="JanuaMVVM.dcp"/>
+        <DCCReference Include="TMSFMXPackPkgDXE15.dcp"/>
+        <DCCReference Include="JanuaCoreComponents.dcp"/>
+        <DCCReference Include="dac290.dcp"/>
+        <DCCReference Include="unidac290.dcp"/>
+        <DCCReference Include="pgprovider290.dcp"/>
+        <DCCReference Include="JanuaUnidacComponentsD.dcp"/>
+        <DCCReference Include="JanuaUnidac.dcp"/>
+        <DCCReference Include="..\..\src\FMX\Janua.FMX.Forms.pas"/>
+        <DCCReference Include="..\..\src\FMX\Janua.FMX.FormControls.pas"/>
+        <DCCReference Include="..\..\src\FMX\Cloud\Janua.FMX.MapStandardControls.pas"/>
+        <DCCReference Include="..\..\src\FMX\Cloud\Janua.FMX.Geocoding.pas"/>
+        <DCCReference Include="..\..\src\FMX\Janua.FMX.Dialogs.pas"/>
+        <DCCReference Include="..\..\src\FMX\Janua.FMX.ListViewMenu.pas"/>
+        <DCCReference Include="..\..\src\FMX\Janua.FMX.StandardMaps.pas"/>
+        <DCCReference Include="..\..\src\FMX\Janua.FMX.Functions.pas"/>
+        <DCCReference Include="..\..\src\FMX\Janua.FMX.Services.pas"/>
+        <DCCReference Include="..\..\src\FMX\Janua.FMX.Cms.pas"/>
+        <DCCReference Include="..\..\src\FMX\Janua.FMX.Cloud.pas"/>
+        <DCCReference Include="..\..\src\FMX\Janua.FMX.Application.pas"/>
+        <DCCReference Include="..\..\src\FMX\Janua.FMX.Interposers.pas"/>
+        <DCCReference Include="..\..\src\FMX\Janua.FMX.Register.pas"/>
+        <DCCReference Include="..\..\src\FMX\Janua.FMX.CanvasPainter.pas"/>
+        <DCCReference Include="..\..\src\FMX\Common\Janua.FMX.frmContactViewer.pas">
+            <Form>frmContactViewerFMX</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>
@@ -299,6 +338,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaFMXControls280.bpl" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaFMXControls290.bpl" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>JanuaFMXControls.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="OSX32">
                         <Operation>1</Operation>

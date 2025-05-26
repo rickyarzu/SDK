@@ -33,4 +33,7 @@ requires
   JanuaRestWeb,
   rtl;
 
+contains
+  Janua.WebBroker.ServerController in '..\..\src\januacore\Datasnap\Janua.WebBroker.ServerController.pas';
+
 end.

@@ -41,6 +41,10 @@ object JanuaframeWebServerManager: TJanuaframeWebServerManager
   end
   object JanuaWebBrokerServerManager1: TJanuaWebBrokerServerManager
     Enabled = False
+    Verbose = False
+    LogToFile = False
+    Language = jlaNone
+    TestMode = False
     Port = 0
     Left = 192
     Top = 8
