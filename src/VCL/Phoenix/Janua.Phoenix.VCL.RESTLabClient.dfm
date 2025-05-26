@@ -17,7 +17,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
     Top = 0
     Width = 1017
     Height = 697
-    ActivePage = tabTestJson
+    ActivePage = RemoteDB
     Align = alClient
     TabOrder = 0
     object tabLab: TTabSheet
@@ -30,8 +30,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         ActivePage = tabLog
         Align = alClient
         TabOrder = 0
-        ExplicitWidth = 1017
-        ExplicitHeight = 640
         object tabJsonList: TTabSheet
           Caption = 'Lista Estintori'
           object memJsonResponse: TAdvMemo
@@ -96,7 +94,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
               BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
               BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
               25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-            BorderColor = 10724259
             BorderStyle = bsSingle
             ClipboardFormats = [cfText]
             CodeFolding.Enabled = True
@@ -109,9 +106,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Gutter.Font.Height = -13
             Gutter.Font.Name = 'Courier New'
             Gutter.Font.Style = []
-            Gutter.BorderColor = 10724259
-            Gutter.GutterColor = clWhite
-            Gutter.LineNumberTextColor = 3881787
+            Gutter.GutterColorTo = clBtnFace
+            Gutter.LineNumberTextColor = clWindowText
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
             Font.Height = -13
@@ -155,8 +151,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UseStyler = True
             Version = '3.9.1.1'
             WordWrap = wwNone
-            ExplicitWidth = 1009
-            ExplicitHeight = 425
           end
           object pnlListaEstintori: TPanel
             Left = 0
@@ -245,7 +239,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
               BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
               BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
               25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-            BorderColor = 10724259
             BorderStyle = bsSingle
             ClipboardFormats = [cfText]
             CodeFolding.Enabled = True
@@ -258,9 +251,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Gutter.Font.Height = -13
             Gutter.Font.Name = 'Courier New'
             Gutter.Font.Style = []
-            Gutter.BorderColor = 10724259
-            Gutter.GutterColor = clWhite
-            Gutter.LineNumberTextColor = 3881787
+            Gutter.GutterColorTo = clBtnFace
+            Gutter.LineNumberTextColor = clWindowText
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
             Font.Height = -13
@@ -304,7 +296,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UseStyler = True
             Version = '3.9.1.1'
             WordWrap = wwNone
-            ExplicitWidth = 1009
           end
         end
         object tabUpdateData: TTabSheet
@@ -373,76 +364,91 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
               item
                 Expanded = False
                 FieldName = 'RESET_DATA_COLLAUDO'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'RESET_DATA_REVISIONE'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'DATA_CONTROLLO'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'DATA_SMALTIMENTO'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'DATA_RESTITUZIONE'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'DATA_CONSEGNA'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'DATA_CONTROLLO_NEGATO'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'DATA_STARTUP_REV'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'TIPO_ESTINTORE'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'PROGRESSIVO'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'MATRICOLA'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'ANNO_COSTRUZIONE'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'DATA_STARTUP_COL'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'STATO'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'ANOMALIA_APPROVATA'
+                Width = 64
                 Visible = True
               end
               item
@@ -477,51 +483,61 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
               item
                 Expanded = False
                 FieldName = 'TIPO_INTERVENTO'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'PERIODICITA_COLLAUDO'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'PERIODICITA_REVISIONE'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'ANOMALIA_DOWNLOAD'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'RITIRATO'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'DATA_RITIRO'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'ORARIO_RITIRO'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'TECNIOO_RITIRO'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'CONSEGNATO'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'DATA_LAVORAZIONE'
+                Width = 64
                 Visible = True
               end>
           end
@@ -598,7 +614,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
               BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
               BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
               25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-            BorderColor = 10724259
             BorderStyle = bsSingle
             ClipboardFormats = [cfText]
             CodeFolding.Enabled = True
@@ -611,8 +626,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Gutter.Font.Height = -13
             Gutter.Font.Name = 'Courier New'
             Gutter.Font.Style = []
-            Gutter.BorderColor = 10724259
-            Gutter.GutterColor = clWhite
+            Gutter.GutterColorTo = clBtnFace
             Gutter.LineNumberTextColor = clWindowText
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
@@ -656,8 +670,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UseStyler = True
             Version = '3.9.1.1'
             WordWrap = wwNone
-            ExplicitWidth = 1009
-            ExplicitHeight = 377
           end
           object memConfigurazioniHead: TAdvMemo
             Left = 0
@@ -720,7 +732,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
               BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
               BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
               25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-            BorderColor = 10724259
             BorderStyle = bsSingle
             ClipboardFormats = [cfText]
             CodeFolding.Enabled = True
@@ -733,8 +744,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Gutter.Font.Height = -13
             Gutter.Font.Name = 'Courier New'
             Gutter.Font.Style = []
-            Gutter.BorderColor = 10724259
-            Gutter.GutterColor = clWhite
+            Gutter.GutterColorTo = clBtnFace
             Gutter.LineNumberTextColor = clWindowText
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
@@ -778,7 +788,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UseStyler = True
             Version = '3.9.1.1'
             WordWrap = wwNone
-            ExplicitWidth = 1009
           end
           object memTmpConfigurazioni: TAdvMemo
             Left = 0
@@ -841,7 +850,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
               BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
               BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
               25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-            BorderColor = 10724259
             BorderStyle = bsSingle
             ClipboardFormats = [cfText]
             CodeFolding.Enabled = True
@@ -854,8 +862,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Gutter.Font.Height = -13
             Gutter.Font.Name = 'Courier New'
             Gutter.Font.Style = []
-            Gutter.BorderColor = 10724259
-            Gutter.GutterColor = clWhite
+            Gutter.GutterColorTo = clBtnFace
             Gutter.LineNumberTextColor = clWindowText
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
@@ -898,7 +905,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UseStyler = False
             Version = '3.9.1.1'
             WordWrap = wwNone
-            ExplicitWidth = 1009
           end
         end
         object tabUpdateReports: TTabSheet
@@ -992,16 +998,19 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
               item
                 Expanded = False
                 FieldName = 'SOSPESO'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'STATO_LAVORAZIONE'
+                Width = 64
                 Visible = True
               end
               item
                 Expanded = False
                 FieldName = 'DATA_CHIUSURA_DA_SERVER'
+                Width = 64
                 Visible = True
               end>
           end
@@ -1041,7 +1050,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         Align = alTop
         Caption = 'Panel1'
         TabOrder = 1
-        ExplicitTop = 8
         object edUsername: TLabeledEdit
           Left = 16
           Top = 18
@@ -1115,9 +1123,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Height = 41
             Align = alTop
             TabOrder = 0
-            ExplicitLeft = 312
-            ExplicitTop = 40
-            ExplicitWidth = 185
             object btnTestConfigurazini: TButton
               Left = 1
               Top = 1
@@ -1146,6 +1151,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             AutoCompletion.StartToken = '(.'
             AutoCorrect.Active = True
             AutoHintParameterPosition = hpBelowCode
+            BkColor = clWindow
             BookmarkGlyph.Data = {
               36050000424D3605000000000000360400002800000010000000100000000100
               0800000000000001000000000000000000000001000000000000000000000000
@@ -1189,7 +1195,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
               BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
               BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
               25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-            BorderColor = 10724259
             BorderStyle = bsSingle
             ClipboardFormats = [cfText]
             CodeFolding.Enabled = False
@@ -1202,9 +1207,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Gutter.Font.Height = -13
             Gutter.Font.Name = 'Courier New'
             Gutter.Font.Style = []
-            Gutter.BorderColor = 10724259
-            Gutter.GutterColor = clWhite
-            Gutter.LineNumberTextColor = 3881787
+            Gutter.GutterColorTo = clBtnFace
+            Gutter.LineNumberTextColor = clWindowText
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
             Font.Height = -13
@@ -1215,7 +1219,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
               '')
             MarkerList.UseDefaultMarkerImageIndex = False
             MarkerList.DefaultMarkerImageIndex = -1
-            MarkerList.ImageTransparentColor = -1
+            MarkerList.ImageTransparentColor = -16776961
             OleDropTarget = []
             PrintOptions.MarginLeft = 0
             PrintOptions.MarginRight = 0
@@ -1225,8 +1229,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             PrintOptions.PrintLineNumbers = False
             RightMarginColor = 14869218
             ScrollHint = False
-            SelColor = clWhite
-            SelBkColor = clNavy
+            SelColor = clHighlightText
+            SelBkColor = clHighlight
             ShowRightMargin = True
             SmartTabs = False
             TabOrder = 1
@@ -1246,10 +1250,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UseStyler = True
             Version = '3.9.1.1'
             WordWrap = wwNone
-            ExplicitLeft = 512
-            ExplicitTop = 128
-            ExplicitWidth = 350
-            ExplicitHeight = 250
           end
         end
       end
@@ -1261,6 +1261,90 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
     object RemoteDB: TTabSheet
       Caption = 'Remote DB Test'
       ImageIndex = 3
+      object pnlTestJson: TPanel
+        Left = 0
+        Top = 0
+        Width = 1009
+        Height = 57
+        Align = alTop
+        Caption = 'Panel6'
+        TabOrder = 0
+      end
+      object PageControl4: TPageControl
+        Left = 0
+        Top = 57
+        Width = 1009
+        Height = 610
+        ActivePage = tabTestLuci
+        Align = alClient
+        TabOrder = 1
+        object tabTestLuci: TTabSheet
+          Caption = 'Luci'
+          object EnhCRDBGrid1: TEnhCRDBGrid
+            Left = 696
+            Top = 0
+            Width = 305
+            Height = 580
+            Align = alRight
+            TabOrder = 0
+            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Color = clWindowText
+            TitleFont.Height = -12
+            TitleFont.Name = 'Segoe UI'
+            TitleFont.Style = []
+            HighlightBGColor = clBlack
+            HighlightFont.Charset = DEFAULT_CHARSET
+            HighlightFont.Color = clWindowText
+            HighlightFont.Height = -12
+            HighlightFont.Name = 'Segoe UI'
+            HighlightFont.Style = []
+          end
+          object EnhCRDBGrid2: TEnhCRDBGrid
+            Left = 345
+            Top = 0
+            Width = 351
+            Height = 580
+            Align = alClient
+            DataSource = dmFbPhoenixJsonReport.dsInterventiLuci
+            TabOrder = 1
+            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Color = clWindowText
+            TitleFont.Height = -12
+            TitleFont.Name = 'Segoe UI'
+            TitleFont.Style = []
+            HighlightBGColor = clBlack
+            HighlightFont.Charset = DEFAULT_CHARSET
+            HighlightFont.Color = clWindowText
+            HighlightFont.Height = -12
+            HighlightFont.Name = 'Segoe UI'
+            HighlightFont.Style = []
+          end
+          object EnhCRDBGrid3: TEnhCRDBGrid
+            Left = 0
+            Top = 0
+            Width = 345
+            Height = 580
+            Align = alLeft
+            DataSource = dmFbPhoenixJsonReport.dsStatiniLuci
+            TabOrder = 2
+            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Color = clWindowText
+            TitleFont.Height = -12
+            TitleFont.Name = 'Segoe UI'
+            TitleFont.Style = []
+            HighlightBGColor = clBlack
+            HighlightFont.Charset = DEFAULT_CHARSET
+            HighlightFont.Color = clWindowText
+            HighlightFont.Height = -12
+            HighlightFont.Name = 'Segoe UI'
+            HighlightFont.Style = []
+          end
+        end
+        object TabTestSprinkler: TTabSheet
+          Caption = 'Sprinkler'
+          ImageIndex = 1
+        end
+      end
     end
   end
   object AdvJSONMemoStyler1: TAdvJSONMemoStyler

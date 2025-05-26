@@ -3,7 +3,7 @@ unit Phoenix.Json.Statini;
 interface
 
 uses
-  Janua.Core.Json, System.Generics.Collections, REST.Json.Types, Pkg.Json.DTO;
+  Janua.Core.Json, System.Generics.Collections, REST.Json.Types, Pkg.Json.DTO, Janua.Core.Json.DTO;
 
 {$M+}
 

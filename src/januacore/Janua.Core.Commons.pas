@@ -49,19 +49,36 @@ type
     property BindCount: Integer read GetBindCount;
   end;
 
-  TJanuaBindableClass = class(TObject)
+  TJanuaBindableClass = class(TObject, IJanuaBindable)
+    // ********************************* Interface Suppport **************************************************
+  private
+    FOwnerInterface: IInterface;
+  protected
+    { IInterface }
+    function _AddRef: Integer; stdcall;
+    function _Release: Integer; stdcall;
+  public
+    function QueryInterface(const IID: TGUID; out Obj): HResult; virtual; stdcall;
+    procedure AfterConstruction; override;
+    // ************************************* Bindings Procedures ***********************************
   strict protected
     FBindManager: IJanuaBindManager;
     function GetBindManager: IJanuaBindManager;
   public
     property BindManager: IJanuaBindManager read GetBindManager;
   public
-    constructor Create; overload;
+    procedure ClearBindings;
     procedure NotifiyAllProperties;
     procedure Notify(const AProperty: string);
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
       const AReadOnly: Boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput,
       jbcEvaluate]);
+    // *********************************************************************************************
+  protected
+    function GetSelf: TObject;
+  public
+    property AsObject: TObject read GetSelf;
+    constructor Create; overload;
   end;
 
 type
@@ -345,6 +362,12 @@ end;
 
 { Spring, Spring.Collections, }
 
+procedure TJanuaBindableClass.AfterConstruction;
+begin
+  inherited;
+
+end;
+
 procedure TJanuaBindableClass.Bind(const AProperty: string; const ABindToObject: TObject;
   const ABindToProperty: string; const AReadOnly: Boolean; const ACreateOptions: TJanuaBindCreateOptions);
 begin
@@ -357,6 +380,12 @@ begin
   end;
 end;
 
+procedure TJanuaBindableClass.ClearBindings;
+begin
+  if Assigned(FBindManager) then
+    FBindManager.ClearBindings
+end;
+
 constructor TJanuaBindableClass.Create;
 begin
   FBindManager := TJanuaBindManager.Create(self);
@@ -367,6 +396,11 @@ begin
   Result := FBindManager
 end;
 
+function TJanuaBindableClass.GetSelf: TObject;
+begin
+  Result := self
+end;
+
 procedure TJanuaBindableClass.NotifiyAllProperties;
 begin
   FBindManager.NotifyAll
@@ -375,6 +409,24 @@ end;
 procedure TJanuaBindableClass.Notify(const AProperty: string);
 begin
   FBindManager.Notify(AProperty);
+end;
+
+function TJanuaBindableClass.QueryInterface(const IID: TGUID; out Obj): HResult;
+begin
+  if GetInterface(IID, Obj) then
+    Result := S_OK
+  else
+    Result := E_NOINTERFACE;
+end;
+
+function TJanuaBindableClass._AddRef: Integer;
+begin
+  Result := -1; // Non facciamo reference counting
+end;
+
+function TJanuaBindableClass._Release: Integer;
+begin
+  Result := -1; // Non facciamo reference counting
 end;
 
 end.

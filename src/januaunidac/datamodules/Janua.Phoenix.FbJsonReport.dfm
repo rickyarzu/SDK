@@ -1,13 +1,15 @@
 inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
-  Height = 541
-  Width = 705
+  Height = 895
+  Width = 860
   inherited JanuaUniConnection1: TJanuaUniConnection
-    Connected = True
+    SpecificOptions.Strings = (
+      'InterBase.UseUnicode=True')
+    Options.DisconnectedMode = True
     Left = 96
     EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
   end
   inherited InterBaseUniProvider1: TInterBaseUniProvider
-    Left = 208
+    Left = 192
     Top = 64
   end
   object qryStatini: TUniQuery
@@ -240,12 +242,6 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     DetailFields = 'STATINO'
     Left = 392
     Top = 200
-    ParamData = <
-      item
-        DataType = ftUnknown
-        Name = 'CHIAVE'
-        Value = nil
-      end>
     object tbLuciSTATINO: TIntegerField
       FieldName = 'STATINO'
     end
@@ -335,12 +331,6 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     DetailFields = 'STATINO'
     Left = 504
     Top = 200
-    ParamData = <
-      item
-        DataType = ftUnknown
-        Name = 'CHIAVE'
-        Value = nil
-      end>
     object tbEstintoriSTATINO: TIntegerField
       FieldName = 'STATINO'
     end
@@ -527,12 +517,6 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     DetailFields = 'STATINO'
     Left = 304
     Top = 200
-    ParamData = <
-      item
-        DataType = ftUnknown
-        Name = 'CHIAVE'
-        Value = nil
-      end>
     object tbIdrantiSTATINO: TIntegerField
       FieldName = 'STATINO'
     end
@@ -591,17 +575,6 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     DetailFields = 'STATINO;IDRANTE'
     Left = 304
     Top = 344
-    ParamData = <
-      item
-        DataType = ftUnknown
-        Name = 'STATINO'
-        Value = nil
-      end
-      item
-        DataType = ftUnknown
-        Name = 'CHIAVE'
-        Value = nil
-      end>
     object tbBocchelliSTATINO: TIntegerField
       FieldName = 'STATINO'
     end
@@ -874,12 +847,6 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     DetailFields = 'STATINO'
     Left = 200
     Top = 200
-    ParamData = <
-      item
-        DataType = ftUnknown
-        Name = 'CHIAVE'
-        Value = nil
-      end>
     object tbPorteSTATINO: TIntegerField
       FieldName = 'STATINO'
     end
@@ -998,12 +965,6 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     DetailFields = 'STATINO'
     Left = 24
     Top = 200
-    ParamData = <
-      item
-        DataType = ftUnknown
-        Name = 'CHIAVE'
-        Value = nil
-      end>
     object tbGruppiSTATINO: TIntegerField
       FieldName = 'STATINO'
     end
@@ -1213,12 +1174,6 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     DetailFields = 'STATINO'
     Left = 112
     Top = 200
-    ParamData = <
-      item
-        DataType = ftUnknown
-        Name = 'CHIAVE'
-        Value = nil
-      end>
     object tbImpiantiSTATINO: TIntegerField
       FieldName = 'STATINO'
     end
@@ -1249,5 +1204,261 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     DataSet = tbImpianti
     Left = 112
     Top = 272
+  end
+  object qryStatiniLuci: TUniQuery
+    DataTypeMap = <
+      item
+        FieldName = 'JSON_DA_MOBILE'
+        FieldType = ftWideMemo
+      end>
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      
+        'SELECT DISTINCT STATINO, S.ragione_sociale, S.indirizzo, S.data_' +
+        'intervento, s.json_da_mobile'
+      
+        'From INTERVENTI_ATTREZZATURE  IAT JOIN STATINI S ON S.chiave = I' +
+        'AT.statino'
+      'WHERE IAT.tipo_attrezzatura = '#39'L'#39
+      'ORDER BY STATINO DESC;')
+    Active = True
+    Left = 392
+    Top = 448
+    object qryStatiniLuciSTATINO: TIntegerField
+      FieldName = 'STATINO'
+    end
+    object qryStatiniLuciRAGIONE_SOCIALE: TStringField
+      FieldName = 'RAGIONE_SOCIALE'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryStatiniLuciINDIRIZZO: TStringField
+      FieldName = 'INDIRIZZO'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryStatiniLuciDATA_INTERVENTO: TDateField
+      FieldName = 'DATA_INTERVENTO'
+      ReadOnly = True
+    end
+    object qryStatiniLuciJSON_DA_MOBILE: TWideMemoField
+      FieldName = 'JSON_DA_MOBILE'
+      ReadOnly = True
+      BlobType = ftWideMemo
+    end
+  end
+  object qryCheckListLuci: TUniQuery
+    DataTypeMap = <
+      item
+        FieldName = 'JSON_DA_MOBILE'
+        FieldType = ftWideMemo
+      end>
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      
+        'select SCK.attrezzatura, SCK.checklist, DESCRIZIONE, TIPOLOGIA, ' +
+        'ORDINAMENTO, ANOMALIE_CORRELATE, SOTTOCATEGORIA'
+      'from CHECKLIST_ATTREZZATURE CKA'
+      
+        'JOIN STATO_CHECKLIST_ATTREZZATURE SCK ON SCK.checklist = CKA.chi' +
+        'ave'
+      'WHERE CKA.tipologia = '#39'L'#39' and SCK.attrezzatura = :ATTREZZATURA'
+      'ORDER BY CKA.ordinamento')
+    MasterSource = dsInterventiLuci
+    MasterFields = 'ATTREZZATURA'
+    DetailFields = 'ATTREZZATURA'
+    Left = 392
+    Top = 720
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'ATTREZZATURA'
+        ParamType = ptInput
+        Value = 2089444
+      end>
+    object qryCheckListLuciATTREZZATURA: TIntegerField
+      FieldName = 'ATTREZZATURA'
+      Required = True
+    end
+    object qryCheckListLuciCHECKLIST: TIntegerField
+      FieldName = 'CHECKLIST'
+      Required = True
+    end
+    object qryCheckListLuciDESCRIZIONE: TStringField
+      FieldName = 'DESCRIZIONE'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryCheckListLuciTIPOLOGIA: TStringField
+      FieldName = 'TIPOLOGIA'
+      ReadOnly = True
+      FixedChar = True
+      Size = 1
+    end
+    object qryCheckListLuciORDINAMENTO: TSmallintField
+      FieldName = 'ORDINAMENTO'
+      ReadOnly = True
+    end
+    object qryCheckListLuciANOMALIE_CORRELATE: TBlobField
+      FieldName = 'ANOMALIE_CORRELATE'
+      ReadOnly = True
+    end
+    object qryCheckListLuciSOTTOCATEGORIA: TIntegerField
+      FieldName = 'SOTTOCATEGORIA'
+      ReadOnly = True
+    end
+  end
+  object qryInterventiLuci: TUniQuery
+    DataTypeMap = <
+      item
+        FieldName = 'UBICAZIONE'
+        FieldType = ftWideString
+        FieldLength = 1024
+      end
+      item
+        FieldName = 'ANOMALIA'
+        FieldType = ftWideString
+        FieldLength = 1024
+      end>
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      
+        'select IAT.CHIAVE, STATINO, ATTREZZATURA, TIPO_ATTREZZATURA, UBI' +
+        'CAZIONE, PROGRESSIVO, IAT.ANOMALIA, TIPO, DATA_CONTROLLO, DATA_C' +
+        'ONSEGNA,'
+      
+        '       PERIODI_NON_ORDINARI, DATA_CONTROLLO_NEGATO,  CLIENTE, FI' +
+        'LIALE, TIPO_LUCE, MARCA, ANOMALIA_APPROVATA, MODELLO, AUTONOMIA,' +
+        ' PREC_ANOMALIA,'
+      
+        '       TL.descrizione AS DES_TIPO_LUCE , marche_luci.descrizione' +
+        ' AS DES_MARCA_LUCE'
+      
+        'FROM interventi_attrezzature IAT JOIN LUCI_CLIENTI L ON L.chiave' +
+        ' = IAT.attrezzatura'
+      
+        'JOIN TIPO_LUCI TL ON TL.chiave = L.tipo_luce  JOIN marche_luci o' +
+        'n marche_luci.chiave = l.marca'
+      'WHERE IAT.tipo_attrezzatura = '#39'L'#39' AND STATINO = :STATINO'
+      'ORDER BY IAT.statino desc,  L.progressivo;')
+    MasterSource = dsStatiniLuci
+    MasterFields = 'STATINO'
+    DetailFields = 'STATINO'
+    Left = 392
+    Top = 584
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'STATINO'
+        ParamType = ptInput
+        Value = 2262863
+      end>
+    object qryInterventiLuciCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
+    end
+    object qryInterventiLuciSTATINO: TIntegerField
+      FieldName = 'STATINO'
+    end
+    object qryInterventiLuciATTREZZATURA: TIntegerField
+      FieldName = 'ATTREZZATURA'
+    end
+    object qryInterventiLuciTIPO_ATTREZZATURA: TStringField
+      FieldName = 'TIPO_ATTREZZATURA'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiLuciPROGRESSIVO: TIntegerField
+      FieldName = 'PROGRESSIVO'
+      ReadOnly = True
+    end
+    object qryInterventiLuciTIPO: TStringField
+      FieldName = 'TIPO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiLuciDATA_CONTROLLO: TDateField
+      FieldName = 'DATA_CONTROLLO'
+    end
+    object qryInterventiLuciDATA_CONSEGNA: TDateField
+      FieldName = 'DATA_CONSEGNA'
+    end
+    object qryInterventiLuciPERIODI_NON_ORDINARI: TStringField
+      FieldName = 'PERIODI_NON_ORDINARI'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiLuciDATA_CONTROLLO_NEGATO: TDateField
+      FieldName = 'DATA_CONTROLLO_NEGATO'
+    end
+    object qryInterventiLuciCLIENTE: TIntegerField
+      FieldName = 'CLIENTE'
+      ReadOnly = True
+    end
+    object qryInterventiLuciFILIALE: TIntegerField
+      FieldName = 'FILIALE'
+      ReadOnly = True
+    end
+    object qryInterventiLuciTIPO_LUCE: TIntegerField
+      FieldName = 'TIPO_LUCE'
+      ReadOnly = True
+    end
+    object qryInterventiLuciMARCA: TIntegerField
+      FieldName = 'MARCA'
+      ReadOnly = True
+    end
+    object qryInterventiLuciANOMALIA_APPROVATA: TStringField
+      FieldName = 'ANOMALIA_APPROVATA'
+      ReadOnly = True
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiLuciMODELLO: TStringField
+      FieldName = 'MODELLO'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryInterventiLuciAUTONOMIA: TSmallintField
+      FieldName = 'AUTONOMIA'
+      ReadOnly = True
+    end
+    object qryInterventiLuciPREC_ANOMALIA: TBlobField
+      FieldName = 'PREC_ANOMALIA'
+      ReadOnly = True
+    end
+    object qryInterventiLuciDES_TIPO_LUCE: TStringField
+      FieldName = 'DES_TIPO_LUCE'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryInterventiLuciDES_MARCA_LUCE: TStringField
+      FieldName = 'DES_MARCA_LUCE'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryInterventiLuciUBICAZIONE: TWideStringField
+      FieldName = 'UBICAZIONE'
+      ReadOnly = True
+      Size = 1024
+    end
+    object qryInterventiLuciANOMALIA: TWideStringField
+      FieldName = 'ANOMALIA'
+      Size = 1024
+    end
+  end
+  object dsStatiniLuci: TUniDataSource
+    DataSet = qryStatiniLuci
+    Left = 392
+    Top = 520
+  end
+  object dsInterventiLuci: TUniDataSource
+    DataSet = qryInterventiLuci
+    Left = 392
+    Top = 656
+  end
+  object dsCheckListLuci: TUniDataSource
+    DataSet = qryCheckListLuci
+    Left = 392
+    Top = 792
   end
 end

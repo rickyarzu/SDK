@@ -13,7 +13,7 @@ uses
   uJanuaVclForm, Janua.Controls.Forms.Impl, Janua.VCL.Controls.Forms.Impl, Janua.Controls.Forms.Intf,
   // Janua
   Janua.Core.Classes, Janua.REST.Types, Janua.Core.Types, Janua.Http.Types, Janua.REST.Intf,
-  Janua.Phoenix.dmIBLabSync;
+  Janua.Phoenix.dmIBLabSync, CRGrid, Janua.VCL.EnhCRDBGrid;
 
 type
   TfrmPhoenixVCLRESTLabClient = class(TJanuaVCLFormModel, IJanuaForm)
@@ -60,6 +60,13 @@ type
     Panel5: TPanel;
     memJsonConfigurazioni: TAdvMemo;
     btnTestConfigurazini: TButton;
+    pnlTestJson: TPanel;
+    PageControl4: TPageControl;
+    tabTestLuci: TTabSheet;
+    TabTestSprinkler: TTabSheet;
+    EnhCRDBGrid1: TEnhCRDBGrid;
+    EnhCRDBGrid2: TEnhCRDBGrid;
+    EnhCRDBGrid3: TEnhCRDBGrid;
     procedure btnRestCallClick(Sender: TObject);
     procedure btnOpenClick(Sender: TObject);
     procedure btnSaveJsonClick(Sender: TObject);
@@ -84,7 +91,8 @@ var
 implementation
 
 uses
-  Janua.Application.Framework, Janua.REST.Client, Janua.Core.JSON, MainUnit, EsportazioneSuMobile;
+  Janua.Application.Framework, Janua.REST.Client, Janua.Core.JSON, MainUnit, EsportazioneSuMobile,
+  Janua.Phoenix.FbJsonReport;
 
 {$R *.dfm}
 
