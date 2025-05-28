@@ -14,6 +14,7 @@ uses
   JvDBLookup, VCL.Menus, VCL.ComCtrls, VCL.ImgList,
   // TMS
   AdvCustomComponent, AdvPDFIO, AdvPlannerPDFIO, Planner, DBPlanner, AdvCustomControl, AdvWebBrowser,
+  AdvPageControl,
   // DB - UniDAC
   CRGrid, ActnList, MemDS, Data.DB, DBAccess, Uni,
   // ZLibraries
@@ -24,7 +25,7 @@ uses
   Janua.TMS.Planner.frameCustomCalendar, Janua.VCL.Planner.frameCustomGoogleCalendar,
   Janua.VCL.Planner.framePhoenixGoogleCalendar, Janua.TMS.Phoenix.framePlannerCalendar2,
   Janua.Phoenix.VCL.framePlannerEvent, Janua.Core.Types, Janua.TMS.WebView, Winapi.WebView2, Winapi.ActiveX,
-  VCL.Edge, VCL.DBCtrls, Janua.Phoenix.VCL.framePlannerReport, AdvPageControl, uframeWhatsAppMessage;
+  VCL.Edge, VCL.DBCtrls, Janua.Phoenix.VCL.framePlannerReport, uframeWhatsAppMessage;
 
 type
   TfrmPhoenixVCLReportPlanner = class(TForm)

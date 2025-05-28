@@ -90,6 +90,14 @@ type
     TabSheet1: TTabSheet;
     Panel6: TPanel;
     EnhCRDBGrid13: TEnhCRDBGrid;
+    dsStatino: TDataSource;
+    btnTestReport: TButton;
+    DBText1: TDBText;
+    DBText2: TDBText;
+    DBText3: TDBText;
+    EnhCRDBGrid14: TEnhCRDBGrid;
+    btnPreviewReport: TButton;
+    Button1: TButton;
     procedure btnRestCallClick(Sender: TObject);
     procedure btnOpenClick(Sender: TObject);
     procedure btnSaveJsonClick(Sender: TObject);
@@ -99,6 +107,7 @@ type
     procedure btnApriTuttiClick(Sender: TObject);
     procedure EnhCRDBGrid3ColEnter(Sender: TObject);
     procedure EnhCRDBGrid3CellClick(Column: TColumn);
+    procedure EnhCRDBGrid3DblClick(Sender: TObject);
   private
     FdmFDACPhoenixLab: TdmPhoenixIBLab;
     { Private declarations }
@@ -117,6 +126,11 @@ var
 implementation
 
 uses
+  // Phoenix
+  DlgShowContratto, DlgNuovoStatino, Globale, ZFIBPlusNodoGenerico2,
+  // Janua
+  Janua.Phoenix.dmIBReportPlanner, Janua.VCL.Functions, Janua.Core.AsyncTask,
+  Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Phoenix.VCL.dlgModificaStatino,
   Janua.Application.Framework, Janua.REST.Client, Janua.Core.JSON, MainUnit, EsportazioneSuMobile,
   Janua.Phoenix.FbJsonReport;
 
@@ -208,13 +222,32 @@ end;
 
 procedure TfrmPhoenixVCLRESTLabClient.EnhCRDBGrid3CellClick(Column: TColumn);
 begin
-
+  dsStatino.DataSet := Column.Field.DataSet;
   dmFbPhoenixJsonReport.OpenSintesiReport(Column.Field.DataSet);
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.EnhCRDBGrid3ColEnter(Sender: TObject);
 begin
-  dmFbPhoenixJsonReport.OpenSintesiReport(TEnhCRDBgrid(Sender).DataSource.DataSet);
+  dmFbPhoenixJsonReport.OpenSintesiReport(TEnhCRDBGrid(Sender).DataSource.DataSet);
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.EnhCRDBGrid3DblClick(Sender: TObject);
+var
+  ADialog: TDLG_STATINO;
+begin
+  ADialog := TDLG_STATINO.Create(Nil);
+  try
+    ADialog.Init(TFiBConfig.QRY_GENERIC, TEnhCRDBGrid(Sender).DataSource.DataSet.FieldByName('STATINO')
+      .AsInteger);
+    if ADialog.ShowModal = mrOK then
+    begin
+      ADialog.NodoStatino.Registra(spsRegistra);
+      // FStatinoModificato := True;
+    end;
+  finally
+    ADialog.Free;
+  end;
+
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.FormCreate(Sender: TObject);

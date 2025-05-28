@@ -1,5 +1,5 @@
 inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
-  Height = 895
+  Height = 975
   Width = 1267
   inherited JanuaUniConnection1: TJanuaUniConnection
     SpecificOptions.Strings = (
@@ -1226,7 +1226,7 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       
         'From INTERVENTI_ATTREZZATURE  IAT JOIN STATINI S ON S.chiave = I' +
         'AT.statino'
-      'WHERE IAT.tipo_attrezzatura = '#39'L'#39
+      'WHERE IAT.tipo_attrezzatura = '#39'L'#39'  and s.stato = 9'
       'ORDER BY STATINO DESC;')
     Left = 568
     Top = 456
@@ -1274,7 +1274,7 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     MasterFields = 'ATTREZZATURA'
     DetailFields = 'ATTREZZATURA'
     Left = 568
-    Top = 728
+    Top = 736
     ParamData = <
       item
         DataType = ftInteger
@@ -1351,7 +1351,7 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     MasterFields = 'STATINO'
     DetailFields = 'STATINO'
     Left = 568
-    Top = 592
+    Top = 600
     ParamData = <
       item
         DataType = ftInteger
@@ -1460,12 +1460,12 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
   object dsInterventiLuci: TUniDataSource
     DataSet = qryInterventiLuci
     Left = 568
-    Top = 664
+    Top = 672
   end
   object dsCheckListLuci: TUniDataSource
     DataSet = qryCheckListLuci
     Left = 568
-    Top = 800
+    Top = 808
   end
   object qryStatiniEstintori: TUniQuery
     DataTypeMap = <
@@ -1481,6 +1481,7 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       
         'From INTERVENTI_ESTINTORI IAT JOIN STATINI S ON S.chiave = IAT.s' +
         'tatino'
+      'WHERE s.stato = 9'
       'ORDER BY STATINO DESC;')
     Left = 704
     Top = 456
@@ -1521,7 +1522,7 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       
         'From INTERVENTI_ATTREZZATURE  IAT JOIN STATINI S ON S.chiave = I' +
         'AT.statino'
-      'WHERE IAT.tipo_attrezzatura = '#39'F'#39
+      'WHERE IAT.tipo_attrezzatura = '#39'F'#39'  and s.stato = 9'
       'ORDER BY STATINO DESC;')
     Left = 840
     Top = 456
@@ -1560,11 +1561,34 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
         'SELECT DISTINCT STATINO, S.ragione_sociale, S.indirizzo, S.data_' +
         'intervento, s.json_da_mobile'
       
-        'From INTERVENTI_ESTINTORI IAT JOIN STATINI S ON S.chiave = IAT.s' +
-        'tatino'
+        'From INTERVENTI_IDRANTI IAT JOIN STATINI S ON S.chiave = IAT.sta' +
+        'tino'
+      'WHERE  s.stato = 9'
       'ORDER BY STATINO DESC;')
-    Left = 416
+    Left = 448
     Top = 456
+    object qryStatiniIdrantiSTATINO: TIntegerField
+      FieldName = 'STATINO'
+    end
+    object qryStatiniIdrantiRAGIONE_SOCIALE: TWideStringField
+      FieldName = 'RAGIONE_SOCIALE'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryStatiniIdrantiINDIRIZZO: TWideStringField
+      FieldName = 'INDIRIZZO'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryStatiniIdrantiDATA_INTERVENTO: TDateField
+      FieldName = 'DATA_INTERVENTO'
+      ReadOnly = True
+    end
+    object qryStatiniIdrantiJSON_DA_MOBILE: TWideMemoField
+      FieldName = 'JSON_DA_MOBILE'
+      ReadOnly = True
+      BlobType = ftWideMemo
+    end
   end
   object qryStatiniPorte: TUniQuery
     DataTypeMap = <
@@ -1580,9 +1604,9 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       
         'From INTERVENTI_ATTREZZATURE  IAT JOIN STATINI S ON S.chiave = I' +
         'AT.statino'
-      'WHERE IAT.tipo_attrezzatura = '#39'P'#39
+      'WHERE IAT.tipo_attrezzatura = '#39'P'#39'  and s.stato = 9'
       'ORDER BY STATINO DESC;')
-    Left = 288
+    Left = 320
     Top = 456
     object qryStatiniPorteSTATINO: TIntegerField
       FieldName = 'STATINO'
@@ -1621,8 +1645,9 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       
         'From INTERVENTI_IMPIANTI_ELETTRICI IAT JOIN STATINI S ON S.chiav' +
         'e = IAT.statino'
+      'WHERE  s.stato = 9'
       'ORDER BY STATINO DESC;')
-    Left = 176
+    Left = 184
     Top = 456
     object qryStatiniImpiantiSTATINO: TIntegerField
       FieldName = 'STATINO'
@@ -1661,7 +1686,7 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       
         'From INTERVENTI_ATTREZZATURE  IAT JOIN STATINI S ON S.chiave = I' +
         'AT.statino'
-      'WHERE IAT.tipo_attrezzatura = '#39'G'#39
+      'WHERE IAT.tipo_attrezzatura = '#39'G'#39' and s.stato = 9'
       'ORDER BY STATINO DESC;')
     Left = 56
     Top = 456
@@ -1695,17 +1720,17 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
   end
   object dsStatiniImpianti: TUniDataSource
     DataSet = qryStatiniImpianti
-    Left = 176
+    Left = 184
     Top = 528
   end
   object dsStatiniPorte: TUniDataSource
     DataSet = qryStatiniPorte
-    Left = 288
+    Left = 320
     Top = 528
   end
   object dsStatiniIdranti: TUniDataSource
     DataSet = qryStatiniIdranti
-    Left = 416
+    Left = 448
     Top = 528
   end
   object dsStatiniEstintori: TUniDataSource
@@ -1732,7 +1757,7 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       
         'From INTERVENTI_ATTREZZATURE  IAT JOIN STATINI S ON S.chiave = I' +
         'AT.statino'
-      'WHERE IAT.tipo_attrezzatura = '#39'S'#39
+      'WHERE IAT.tipo_attrezzatura = '#39'S'#39'  and s.stato = 9'
       'ORDER BY STATINO DESC;')
     Left = 992
     Top = 456
@@ -2053,10 +2078,10 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
         'ave = IAT.attrezzatura'
       'WHERE IAT.tipo_attrezzatura = '#39'P'#39' and STATINO = :STATINO'
       'ORDER BY IAT.statino desc;')
-    MasterSource = dsStatiniPorte
+    MasterSource = dsStatiniIdranti
     MasterFields = 'STATINO'
     DetailFields = 'STATINO'
-    Left = 288
+    Left = 320
     Top = 600
     ParamData = <
       item
@@ -2216,7 +2241,7 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
   end
   object dsInterventiPorte: TUniDataSource
     DataSet = qryInterventiPorte
-    Left = 288
+    Left = 320
     Top = 672
   end
   object qryInterventiSprinkler: TUniQuery
@@ -2404,7 +2429,7 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       'ORDER BY EC.progressivo')
     MasterSource = dsStatiniEstintori
     Left = 704
-    Top = 592
+    Top = 600
     ParamData = <
       item
         DataType = ftUnknown
@@ -2512,7 +2537,7 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
   object dsInterventiEstintori: TUniDataSource
     DataSet = qryInterventiEstintori
     Left = 704
-    Top = 664
+    Top = 672
   end
   object qryEstintoriSintesi: TUniQuery
     Connection = JanuaUniConnection1
@@ -2552,7 +2577,7 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       '      -- where ie.statino = 2263121'
       'GROUP BY CATE.descrizione;')
     Left = 704
-    Top = 728
+    Top = 736
     object qryEstintoriSintesiDESCRIZIONE: TWideStringField
       DisplayWidth = 80
       FieldName = 'DESCRIZIONE'
@@ -2586,7 +2611,7 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
   object dsEstintoriSintesi: TUniDataSource
     DataSet = qryEstintoriSintesi
     Left = 704
-    Top = 800
+    Top = 808
   end
   object dsSintesiReport: TUniDataSource
     DataSet = qrySintesiReport
@@ -2776,5 +2801,364 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       FieldName = 'NON_ESEGUITE'
       ReadOnly = True
     end
+  end
+  object qryInterventiImpianti: TUniQuery
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'select DESCRIZIONE, MODELLO, UBICAZIONE,'
+      
+        '       IE.CHIAVE, STATINO, ELEMENTO_IMPIANTO_ELETTRICO, IE.ANOMA' +
+        'LIA, DATA_CONTROLLO, IE.TIPO, DATA_CONSEGNA,'
+      '       DESCRIZIONE_ALTERNATIVA, DATA_CONTROLLO_NEGATO,'
+      
+        '       IMPIANTO, PROGRESSIVO, EL.TIPO TIPO_EL, MARCA,  RINNOVATO' +
+        '_DA, ANOMALIA_APPROVATA,'
+      '       STATO, PREC_ANOMALIA, NOTE_TECNICO, ID_NFC'
+      
+        'from INTERVENTI_IMPIANTI_ELETTRICI IE JOIN ELEMENTI_IMPIANTI_ELE' +
+        'TTRICI EL ON EL.chiave = IE.elemento_impianto_elettrico'
+      '     JOIN TIPI_ELEM_IMPIANTI_ELETTRICI TP ON TP.chiave = EL.tipo'
+      '     WHERE STATINO = :STATINO'
+      '     ORDER BY PROGRESSIVO')
+    MasterSource = dsStatiniImpianti
+    MasterFields = 'STATINO'
+    DetailFields = 'STATINO'
+    Left = 184
+    Top = 600
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'STATINO'
+        Value = nil
+      end>
+    object qryInterventiImpiantiDESCRIZIONE: TWideStringField
+      FieldName = 'DESCRIZIONE'
+      Size = 255
+    end
+    object qryInterventiImpiantiMODELLO: TWideStringField
+      FieldName = 'MODELLO'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryInterventiImpiantiUBICAZIONE: TBlobField
+      FieldName = 'UBICAZIONE'
+      ReadOnly = True
+    end
+    object qryInterventiImpiantiCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      ReadOnly = True
+      Required = True
+    end
+    object qryInterventiImpiantiSTATINO: TIntegerField
+      FieldName = 'STATINO'
+      ReadOnly = True
+    end
+    object qryInterventiImpiantiELEMENTO_IMPIANTO_ELETTRICO: TIntegerField
+      FieldName = 'ELEMENTO_IMPIANTO_ELETTRICO'
+      ReadOnly = True
+    end
+    object qryInterventiImpiantiANOMALIA: TBlobField
+      FieldName = 'ANOMALIA'
+      ReadOnly = True
+    end
+    object qryInterventiImpiantiDATA_CONTROLLO: TDateField
+      FieldName = 'DATA_CONTROLLO'
+      ReadOnly = True
+    end
+    object qryInterventiImpiantiTIPO: TWideStringField
+      FieldName = 'TIPO'
+      ReadOnly = True
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiImpiantiDATA_CONSEGNA: TDateField
+      FieldName = 'DATA_CONSEGNA'
+      ReadOnly = True
+    end
+    object qryInterventiImpiantiDESCRIZIONE_ALTERNATIVA: TWideStringField
+      FieldName = 'DESCRIZIONE_ALTERNATIVA'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryInterventiImpiantiDATA_CONTROLLO_NEGATO: TDateField
+      FieldName = 'DATA_CONTROLLO_NEGATO'
+      ReadOnly = True
+    end
+    object qryInterventiImpiantiIMPIANTO: TIntegerField
+      FieldName = 'IMPIANTO'
+      ReadOnly = True
+    end
+    object qryInterventiImpiantiPROGRESSIVO: TIntegerField
+      FieldName = 'PROGRESSIVO'
+      ReadOnly = True
+    end
+    object qryInterventiImpiantiTIPO_EL: TIntegerField
+      FieldName = 'TIPO_EL'
+      ReadOnly = True
+    end
+    object qryInterventiImpiantiMARCA: TIntegerField
+      FieldName = 'MARCA'
+      ReadOnly = True
+    end
+    object qryInterventiImpiantiRINNOVATO_DA: TIntegerField
+      FieldName = 'RINNOVATO_DA'
+      ReadOnly = True
+    end
+    object qryInterventiImpiantiANOMALIA_APPROVATA: TWideStringField
+      FieldName = 'ANOMALIA_APPROVATA'
+      ReadOnly = True
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiImpiantiSTATO: TWideStringField
+      FieldName = 'STATO'
+      ReadOnly = True
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiImpiantiPREC_ANOMALIA: TBlobField
+      FieldName = 'PREC_ANOMALIA'
+      ReadOnly = True
+    end
+    object qryInterventiImpiantiNOTE_TECNICO: TBlobField
+      FieldName = 'NOTE_TECNICO'
+      ReadOnly = True
+    end
+    object qryInterventiImpiantiID_NFC: TWideStringField
+      FieldName = 'ID_NFC'
+      ReadOnly = True
+      Size = 100
+    end
+  end
+  object dsInterventiImpianti: TUniDataSource
+    DataSet = qryInterventiImpianti
+    Left = 184
+    Top = 672
+  end
+  object qryInterventiIdranti: TUniQuery
+    DataTypeMap = <
+      item
+        FieldName = 'ANOMALIA'
+        FieldType = ftWideString
+        FieldLength = 300
+      end
+      item
+        FieldName = 'NOTE_TECNICO'
+        FieldType = ftWideString
+        FieldLength = 300
+      end
+      item
+        FieldName = 'UBICAZIONE'
+        FieldType = ftWideString
+        FieldLength = 300
+      end>
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      
+        'select ID_BOCCHELLO, B.UBICAZIONE, TB.DESCRIZIONE AS DES_BOCCHEL' +
+        'LO, TL.DESCRIZIONE AS TIPO_LANCIA,'
+      
+        '        IC.UBICAZIONE AS UBICAZIONE_IDRANTE, IC. DESCRIZIONE AS ' +
+        'DESCRIZIONE_IDRANTE, IC.prova_dinamica, IC.ubicazione_attacco_mo' +
+        'topompa'
+      
+        '        TIPO_ATTACCO_MOTOPOMPA, PROVA_DINAMICA, QUANDO_PROVA_DIN' +
+        'AMICA'
+      
+        '        TIPO, DESCRIZIONE_ALTERNATIVA, RESET_DATA_COLLAUDO, ID.A' +
+        'NOMALIA, DATA_CONTROLLO,'
+      
+        '       DATA_RITIRO, DATA_SMALTIMENTO, DATA_RESTITUZIONE, DATA_CO' +
+        'NSEGNA, DATA_PRESSATURA, DATA_CONTROLLO_NEGATO,'
+      
+        '       IDRANTE,  TIPO_BOCCHELLO, TIPO_LANCIA, LUNGHEZZA_MANICHET' +
+        'TA,  MESE_STARTUP,'
+      
+        '       ANNO_STARTUP, ANNO_MANICHETTA, B.RINNOVATO_DA, ANOMALIA_A' +
+        'PPROVATA, B.ANOMALIA, B.STATO, PREC_ANOMALIA, NOTE_TECNICO,'
+      
+        '       MESE_PRESSATURA, ANNO_PRESSATURA,  BOCCHELLO,  ID.CHIAVE,' +
+        ' STATINO'
+      
+        'from INTERVENTI_IDRANTI ID JOIN BOCCHELLI B ON B.chiave = ID.boc' +
+        'chello'
+      
+        '     JOIN TIPO_BOCCHELLI TB ON TB.chiave = coalesce(B.tipo_bocch' +
+        'ello, 0)'
+      
+        '     JOIN TIPO_LANCIA TL ON TL.chiave = coalesce( B.tipo_lancia ' +
+        ', 0)'
+      '     JOIN IDRANTI_CLIENTI IC ON IC.chiave = B.idrante'
+      'WHERE STATINO = :STATINO'
+      'ORDER BY ID_BOCCHELLO')
+    MasterSource = dsStatiniIdranti
+    MasterFields = 'STATINO'
+    DetailFields = 'STATINO'
+    Left = 448
+    Top = 600
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'STATINO'
+        Value = nil
+      end>
+    object qryInterventiIdrantiID_BOCCHELLO: TIntegerField
+      FieldName = 'ID_BOCCHELLO'
+    end
+    object qryInterventiIdrantiUBICAZIONE: TWideStringField
+      FieldName = 'UBICAZIONE'
+      Size = 300
+    end
+    object qryInterventiIdrantiDES_BOCCHELLO: TWideStringField
+      FieldName = 'DES_BOCCHELLO'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryInterventiIdrantiTIPO_LANCIA: TWideStringField
+      FieldName = 'TIPO_LANCIA'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryInterventiIdrantiUBICAZIONE_IDRANTE: TBlobField
+      FieldName = 'UBICAZIONE_IDRANTE'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiDESCRIZIONE_IDRANTE: TWideStringField
+      FieldName = 'DESCRIZIONE_IDRANTE'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryInterventiIdrantiPROVA_DINAMICA: TIntegerField
+      FieldName = 'PROVA_DINAMICA'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiTIPO_ATTACCO_MOTOPOMPA: TWideStringField
+      FieldName = 'TIPO_ATTACCO_MOTOPOMPA'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryInterventiIdrantiPROVA_DINAMICA_1: TIntegerField
+      FieldName = 'PROVA_DINAMICA_1'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiTIPO: TWideStringField
+      FieldName = 'TIPO'
+      ReadOnly = True
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiIdrantiDESCRIZIONE_ALTERNATIVA: TWideStringField
+      FieldName = 'DESCRIZIONE_ALTERNATIVA'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryInterventiIdrantiRESET_DATA_COLLAUDO: TWideStringField
+      FieldName = 'RESET_DATA_COLLAUDO'
+      ReadOnly = True
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiIdrantiANOMALIA: TWideStringField
+      FieldName = 'ANOMALIA'
+      ReadOnly = True
+      Size = 300
+    end
+    object qryInterventiIdrantiDATA_CONTROLLO: TDateField
+      FieldName = 'DATA_CONTROLLO'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiDATA_RITIRO: TDateField
+      FieldName = 'DATA_RITIRO'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiDATA_SMALTIMENTO: TDateField
+      FieldName = 'DATA_SMALTIMENTO'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiDATA_RESTITUZIONE: TDateField
+      FieldName = 'DATA_RESTITUZIONE'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiDATA_CONSEGNA: TDateField
+      FieldName = 'DATA_CONSEGNA'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiDATA_PRESSATURA: TDateField
+      FieldName = 'DATA_PRESSATURA'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiDATA_CONTROLLO_NEGATO: TDateField
+      FieldName = 'DATA_CONTROLLO_NEGATO'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiIDRANTE: TIntegerField
+      FieldName = 'IDRANTE'
+    end
+    object qryInterventiIdrantiTIPO_BOCCHELLO: TIntegerField
+      FieldName = 'TIPO_BOCCHELLO'
+    end
+    object qryInterventiIdrantiTIPO_LANCIA_1: TIntegerField
+      FieldName = 'TIPO_LANCIA_1'
+    end
+    object qryInterventiIdrantiLUNGHEZZA_MANICHETTA: TIntegerField
+      FieldName = 'LUNGHEZZA_MANICHETTA'
+    end
+    object qryInterventiIdrantiMESE_STARTUP: TSmallintField
+      FieldName = 'MESE_STARTUP'
+    end
+    object qryInterventiIdrantiANNO_STARTUP: TSmallintField
+      FieldName = 'ANNO_STARTUP'
+    end
+    object qryInterventiIdrantiANNO_MANICHETTA: TSmallintField
+      FieldName = 'ANNO_MANICHETTA'
+    end
+    object qryInterventiIdrantiRINNOVATO_DA: TIntegerField
+      FieldName = 'RINNOVATO_DA'
+    end
+    object qryInterventiIdrantiANOMALIA_APPROVATA: TWideStringField
+      FieldName = 'ANOMALIA_APPROVATA'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiIdrantiANOMALIA_1: TWideMemoField
+      FieldName = 'ANOMALIA_1'
+      BlobType = ftWideMemo
+    end
+    object qryInterventiIdrantiSTATO: TWideStringField
+      FieldName = 'STATO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiIdrantiPREC_ANOMALIA: TBlobField
+      FieldName = 'PREC_ANOMALIA'
+    end
+    object qryInterventiIdrantiNOTE_TECNICO: TWideStringField
+      FieldName = 'NOTE_TECNICO'
+      Size = 300
+    end
+    object qryInterventiIdrantiMESE_PRESSATURA: TSmallintField
+      FieldName = 'MESE_PRESSATURA'
+    end
+    object qryInterventiIdrantiANNO_PRESSATURA: TSmallintField
+      FieldName = 'ANNO_PRESSATURA'
+    end
+    object qryInterventiIdrantiBOCCHELLO: TIntegerField
+      FieldName = 'BOCCHELLO'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      ReadOnly = True
+      Required = True
+    end
+    object qryInterventiIdrantiSTATINO: TIntegerField
+      FieldName = 'STATINO'
+      ReadOnly = True
+    end
+  end
+  object dsInterventiIdranti: TUniDataSource
+    DataSet = qryInterventiIdranti
+    Left = 448
+    Top = 672
   end
 end

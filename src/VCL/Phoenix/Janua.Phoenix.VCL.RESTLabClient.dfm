@@ -2,8 +2,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
   Left = 0
   Top = 0
   Caption = 'Phoenix REST Lab Client'
-  ClientHeight = 697
-  ClientWidth = 1017
+  ClientHeight = 855
+  ClientWidth = 1491
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,28 +15,32 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 1017
-    Height = 697
+    Width = 1491
+    Height = 855
     ActivePage = RemoteDB
     Align = alClient
     TabOrder = 0
+    ExplicitWidth = 1017
+    ExplicitHeight = 697
     object tabLab: TTabSheet
       Caption = 'Laboratori'
       object PageControl2: TPageControl
         Left = 0
         Top = 57
-        Width = 1009
-        Height = 610
+        Width = 1483
+        Height = 768
         ActivePage = tabLog
         Align = alClient
         TabOrder = 0
+        ExplicitWidth = 1009
+        ExplicitHeight = 610
         object tabJsonList: TTabSheet
           Caption = 'Lista Estintori'
           object memJsonResponse: TAdvMemo
             Left = 0
             Top = 185
-            Width = 1001
-            Height = 395
+            Width = 1475
+            Height = 553
             Cursor = crIBeam
             StyleElements = []
             ActiveLineSettings.ShowActiveLine = False
@@ -151,14 +155,17 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UseStyler = True
             Version = '3.9.1.1'
             WordWrap = wwNone
+            ExplicitWidth = 1001
+            ExplicitHeight = 395
           end
           object pnlListaEstintori: TPanel
             Left = 0
             Top = 0
-            Width = 1001
+            Width = 1475
             Height = 41
             Align = alTop
             TabOrder = 1
+            ExplicitWidth = 1001
             object btnSaveJson: TButton
               Left = 1
               Top = 1
@@ -180,7 +187,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           object memRawResponse: TAdvMemo
             Left = 0
             Top = 41
-            Width = 1001
+            Width = 1475
             Height = 144
             Cursor = crIBeam
             StyleElements = []
@@ -296,6 +303,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UseStyler = True
             Version = '3.9.1.1'
             WordWrap = wwNone
+            ExplicitWidth = 1001
           end
         end
         object tabUpdateData: TTabSheet
@@ -304,16 +312,17 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           object Panel3: TPanel
             Left = 0
             Top = 0
-            Width = 1001
+            Width = 1475
             Height = 41
             Align = alTop
             TabOrder = 0
+            ExplicitWidth = 1001
           end
           object JvDBGrid1: TJvDBGrid
             Left = 0
             Top = 41
-            Width = 1001
-            Height = 539
+            Width = 1475
+            Height = 697
             Align = alClient
             DataSource = dsLabEstintori
             TabOrder = 1
@@ -548,16 +557,17 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           object Panel2: TPanel
             Left = 0
             Top = 0
-            Width = 1001
+            Width = 1475
             Height = 41
             Align = alTop
             TabOrder = 0
+            ExplicitWidth = 1001
           end
           object memConfigurazioni: TAdvMemo
             Left = 0
             Top = 233
-            Width = 1001
-            Height = 347
+            Width = 1475
+            Height = 505
             Cursor = crIBeam
             ActiveLineSettings.ShowActiveLine = False
             ActiveLineSettings.ShowActiveLineIndicator = False
@@ -670,11 +680,13 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UseStyler = True
             Version = '3.9.1.1'
             WordWrap = wwNone
+            ExplicitWidth = 1001
+            ExplicitHeight = 347
           end
           object memConfigurazioniHead: TAdvMemo
             Left = 0
             Top = 41
-            Width = 1001
+            Width = 1475
             Height = 112
             Cursor = crIBeam
             ActiveLineSettings.ShowActiveLine = False
@@ -788,11 +800,12 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UseStyler = True
             Version = '3.9.1.1'
             WordWrap = wwNone
+            ExplicitWidth = 1001
           end
           object memTmpConfigurazioni: TAdvMemo
             Left = 0
             Top = 153
-            Width = 1001
+            Width = 1475
             Height = 80
             Cursor = crIBeam
             ActiveLineSettings.ShowActiveLine = False
@@ -905,6 +918,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UseStyler = False
             Version = '3.9.1.1'
             WordWrap = wwNone
+            ExplicitWidth = 1001
           end
         end
         object tabUpdateReports: TTabSheet
@@ -913,11 +927,12 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           object Panel4: TPanel
             Left = 0
             Top = 0
-            Width = 1001
+            Width = 1475
             Height = 41
             Align = alTop
             BevelOuter = bvNone
             TabOrder = 0
+            ExplicitWidth = 1001
             object DBNavigator1: TDBNavigator
               Left = 0
               Top = 0
@@ -940,7 +955,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           object DBGrid1: TDBGrid
             Left = 0
             Top = 41
-            Width = 1001
+            Width = 1475
             Height = 352
             Align = alTop
             DataSource = dmFDACPhoenixLab.dsMasterStatini
@@ -1017,8 +1032,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           object DBGrid2: TDBGrid
             Left = 0
             Top = 393
-            Width = 1001
-            Height = 187
+            Width = 1475
+            Height = 345
             Align = alClient
             DataSource = dsDetailEstintori
             TabOrder = 2
@@ -1035,21 +1050,24 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           object memLog: TMemo
             Left = 0
             Top = 0
-            Width = 1001
-            Height = 580
+            Width = 1475
+            Height = 738
             Align = alClient
             TabOrder = 0
+            ExplicitWidth = 1001
+            ExplicitHeight = 580
           end
         end
       end
       object Panel1: TPanel
         Left = 0
         Top = 0
-        Width = 1009
+        Width = 1483
         Height = 57
         Align = alTop
         Caption = 'Panel1'
         TabOrder = 1
+        ExplicitWidth = 1009
         object edUsername: TLabeledEdit
           Left = 16
           Top = 18
@@ -1109,20 +1127,23 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
       object PageControl3: TPageControl
         Left = 0
         Top = 0
-        Width = 1009
-        Height = 667
+        Width = 1483
+        Height = 825
         ActivePage = tabConfigurazini
         Align = alClient
         TabOrder = 0
+        ExplicitWidth = 1009
+        ExplicitHeight = 667
         object tabConfigurazini: TTabSheet
           Caption = 'Configurazioni'
           object Panel5: TPanel
             Left = 0
             Top = 0
-            Width = 1001
+            Width = 1475
             Height = 41
             Align = alTop
             TabOrder = 0
+            ExplicitWidth = 1001
             object btnTestConfigurazini: TButton
               Left = 1
               Top = 1
@@ -1137,8 +1158,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           object memJsonConfigurazioni: TAdvMemo
             Left = 0
             Top = 41
-            Width = 1001
-            Height = 596
+            Width = 1475
+            Height = 754
             Cursor = crIBeam
             ActiveLineSettings.ShowActiveLine = False
             ActiveLineSettings.ShowActiveLineIndicator = False
@@ -1250,6 +1271,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UseStyler = True
             Version = '3.9.1.1'
             WordWrap = wwNone
+            ExplicitWidth = 1001
+            ExplicitHeight = 596
           end
         end
       end
@@ -1264,11 +1287,38 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
       object pnlTestJson: TPanel
         Left = 0
         Top = 0
-        Width = 1009
+        Width = 1483
         Height = 57
         Align = alTop
-        Caption = 'Panel6'
         TabOrder = 0
+        ExplicitWidth = 1009
+        object DBText1: TDBText
+          Left = 344
+          Top = 24
+          Width = 41
+          Height = 15
+          AutoSize = True
+          DataField = 'RAGIONE_SOCIALE'
+          DataSource = dsStatino
+        end
+        object DBText2: TDBText
+          Left = 232
+          Top = 24
+          Width = 41
+          Height = 15
+          AutoSize = True
+          DataField = 'STATINO'
+          DataSource = dsStatino
+        end
+        object DBText3: TDBText
+          Left = 776
+          Top = 24
+          Width = 41
+          Height = 15
+          AutoSize = True
+          DataField = 'INDIRIZZO'
+          DataSource = dsStatino
+        end
         object btnApriTutti: TButton
           Left = 1
           Top = 1
@@ -1279,23 +1329,53 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           TabOrder = 0
           OnClick = btnApriTuttiClick
         end
+        object btnTestReport: TButton
+          Left = 1320
+          Top = 1
+          Width = 162
+          Height = 55
+          Align = alRight
+          Caption = 'Test Rapportino'
+          TabOrder = 1
+          OnClick = btnApriTuttiClick
+        end
+        object btnPreviewReport: TButton
+          Left = 1168
+          Top = 1
+          Width = 152
+          Height = 55
+          Align = alRight
+          Caption = 'Rapportino Originale'
+          TabOrder = 2
+          OnClick = btnApriTuttiClick
+        end
+        object Button1: TButton
+          Left = 1024
+          Top = 1
+          Width = 144
+          Height = 55
+          Align = alRight
+          Caption = 'Button1'
+          TabOrder = 3
+        end
       end
       object PageControl4: TPageControl
         Left = 0
         Top = 57
-        Width = 1009
-        Height = 447
-        ActivePage = tabTestLuci
+        Width = 1483
+        Height = 605
+        ActivePage = tabIdranti
         Align = alClient
         TabOrder = 1
+        ExplicitWidth = 1009
         ExplicitHeight = 610
         object tabTestLuci: TTabSheet
           Caption = 'Luci'
           object EnhCRDBGrid1: TEnhCRDBGrid
-            Left = 696
+            Left = 1170
             Top = 0
             Width = 305
-            Height = 417
+            Height = 575
             Align = alRight
             TabOrder = 0
             TitleFont.Charset = DEFAULT_CHARSET
@@ -1313,8 +1393,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           object EnhCRDBGrid2: TEnhCRDBGrid
             Left = 345
             Top = 0
-            Width = 351
-            Height = 417
+            Width = 825
+            Height = 575
             Align = alClient
             DataSource = dmFbPhoenixJsonReport.dsInterventiLuci
             TabOrder = 1
@@ -1341,7 +1421,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
                 Expanded = False
                 FieldName = 'TIPO_ATTREZZATURA'
                 Title.Caption = 'Tipo'
-                Width = 27
+                Width = 40
                 Visible = True
               end
               item
@@ -1469,7 +1549,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Left = 0
             Top = 0
             Width = 345
-            Height = 417
+            Height = 575
             Align = alLeft
             DataSource = dmFbPhoenixJsonReport.dsStatiniLuci
             TabOrder = 2
@@ -1480,6 +1560,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             TitleFont.Style = []
             OnCellClick = EnhCRDBGrid3CellClick
             OnColEnter = EnhCRDBGrid3ColEnter
+            OnDblClick = EnhCRDBGrid3DblClick
             HighlightBGColor = clBlack
             HighlightFont.Charset = DEFAULT_CHARSET
             HighlightFont.Color = clWindowText
@@ -1526,7 +1607,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Left = 0
             Top = 0
             Width = 345
-            Height = 417
+            Height = 575
             Align = alLeft
             DataSource = dmFbPhoenixJsonReport.DSStatiniSprinkler
             TabOrder = 0
@@ -1535,6 +1616,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             TitleFont.Height = -12
             TitleFont.Name = 'Segoe UI'
             TitleFont.Style = []
+            OnCellClick = EnhCRDBGrid3CellClick
+            OnColEnter = EnhCRDBGrid3ColEnter
             HighlightBGColor = clBlack
             HighlightFont.Charset = DEFAULT_CHARSET
             HighlightFont.Color = clWindowText
@@ -1576,8 +1659,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           object EnhCRDBGrid9: TEnhCRDBGrid
             Left = 345
             Top = 0
-            Width = 656
-            Height = 417
+            Width = 1130
+            Height = 575
             Align = alClient
             DataSource = dmFbPhoenixJsonReport.dsInterventiSprinkler
             TabOrder = 1
@@ -1746,7 +1829,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Left = 0
             Top = 0
             Width = 345
-            Height = 417
+            Height = 575
             Align = alLeft
             DataSource = dmFbPhoenixJsonReport.dsStatiniGruppi
             TabOrder = 0
@@ -1755,6 +1838,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             TitleFont.Height = -12
             TitleFont.Name = 'Segoe UI'
             TitleFont.Style = []
+            OnCellClick = EnhCRDBGrid3CellClick
+            OnColEnter = EnhCRDBGrid3ColEnter
             HighlightBGColor = clBlack
             HighlightFont.Charset = DEFAULT_CHARSET
             HighlightFont.Color = clWindowText
@@ -1796,8 +1881,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           object grdInterventiGruppi: TEnhCRDBGrid
             Left = 345
             Top = 0
-            Width = 656
-            Height = 417
+            Width = 1130
+            Height = 575
             Align = alClient
             DataSource = dmFbPhoenixJsonReport.dsInterventiGruppi
             TabOrder = 1
@@ -2020,7 +2105,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Left = 0
             Top = 0
             Width = 345
-            Height = 417
+            Height = 575
             Align = alLeft
             DataSource = dmFbPhoenixJsonReport.dsStatiniPorte
             TabOrder = 0
@@ -2029,6 +2114,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             TitleFont.Height = -12
             TitleFont.Name = 'Segoe UI'
             TitleFont.Style = []
+            OnCellClick = EnhCRDBGrid3CellClick
+            OnColEnter = EnhCRDBGrid3ColEnter
             HighlightBGColor = clBlack
             HighlightFont.Charset = DEFAULT_CHARSET
             HighlightFont.Color = clWindowText
@@ -2070,8 +2157,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           object grdInterventiPorte: TEnhCRDBGrid
             Left = 345
             Top = 0
-            Width = 656
-            Height = 417
+            Width = 1130
+            Height = 575
             Align = alClient
             DataSource = dmFbPhoenixJsonReport.dsInterventiPorte
             TabOrder = 1
@@ -2300,7 +2387,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Left = 0
             Top = 0
             Width = 345
-            Height = 417
+            Height = 575
             Align = alLeft
             DataSource = dmFbPhoenixJsonReport.dsStatiniImpianti
             TabOrder = 0
@@ -2324,7 +2411,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Left = 0
             Top = 0
             Width = 345
-            Height = 417
+            Height = 575
             Align = alLeft
             DataSource = dmFbPhoenixJsonReport.dsStatiniEstintori
             TabOrder = 0
@@ -2333,6 +2420,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             TitleFont.Height = -12
             TitleFont.Name = 'Segoe UI'
             TitleFont.Style = []
+            OnCellClick = EnhCRDBGrid3CellClick
+            OnColEnter = EnhCRDBGrid3ColEnter
             HighlightBGColor = clBlack
             HighlightFont.Charset = DEFAULT_CHARSET
             HighlightFont.Color = clWindowText
@@ -2374,8 +2463,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           object EnhCRDBGrid4: TEnhCRDBGrid
             Left = 345
             Top = 0
-            Width = 656
-            Height = 417
+            Width = 1130
+            Height = 575
             Align = alClient
             DataSource = dmFbPhoenixJsonReport.dsInterventiEstintori
             TabOrder = 1
@@ -2523,12 +2612,12 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           Caption = 'Idranti'
           ImageIndex = 6
           object EnhCRDBGrid10: TEnhCRDBGrid
-            Left = 0
+            Left = 345
             Top = 0
-            Width = 345
-            Height = 417
-            Align = alLeft
-            DataSource = dmFbPhoenixJsonReport.dsStatiniIdranti
+            Width = 1130
+            Height = 575
+            Align = alClient
+            DataSource = dmFbPhoenixJsonReport.dsInterventiIdranti
             TabOrder = 0
             TitleFont.Charset = DEFAULT_CHARSET
             TitleFont.Color = clWindowText
@@ -2541,6 +2630,289 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             HighlightFont.Height = -12
             HighlightFont.Name = 'Segoe UI'
             HighlightFont.Style = []
+            Columns = <
+              item
+                Expanded = False
+                FieldName = 'ID_BOCCHELLO'
+                Width = 88
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'UBICAZIONE'
+                Width = 300
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DES_BOCCHELLO'
+                Width = 389
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'TIPO_LANCIA'
+                Width = 300
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'UBICAZIONE_IDRANTE'
+                Width = 124
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DESCRIZIONE_IDRANTE'
+                Width = 300
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'PROVA_DINAMICA'
+                Width = 105
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'TIPO_ATTACCO_MOTOPOMPA'
+                Width = 300
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'PROVA_DINAMICA_1'
+                Title.Caption = 'Pr. Dinamica'
+                Width = 71
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'TIPO'
+                Width = 29
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DESCRIZIONE_ALTERNATIVA'
+                Width = 300
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'RESET_DATA_COLLAUDO'
+                Width = 137
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ANOMALIA'
+                Width = 1804
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DATA_CONTROLLO'
+                Width = 108
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DATA_RITIRO'
+                Width = 74
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DATA_SMALTIMENTO'
+                Width = 120
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DATA_RESTITUZIONE'
+                Width = 115
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DATA_CONSEGNA'
+                Width = 102
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DATA_PRESSATURA'
+                Width = 108
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DATA_CONTROLLO_NEGATO'
+                Width = 159
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'IDRANTE'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'TIPO_BOCCHELLO'
+                Width = 102
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'TIPO_LANCIA_1'
+                Width = 87
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'LUNGHEZZA_MANICHETTA'
+                Width = 151
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'MESE_STARTUP'
+                Width = 86
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ANNO_STARTUP'
+                Width = 92
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ANNO_MANICHETTA'
+                Width = 118
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'RINNOVATO_DA'
+                Width = 92
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ANOMALIA_APPROVATA'
+                Width = 138
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ANOMALIA_1'
+                Width = 77
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'STATO'
+                Width = 39
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'PREC_ANOMALIA'
+                Width = 99
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'NOTE_TECNICO'
+                Width = 1804
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'MESE_PRESSATURA'
+                Width = 107
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ANNO_PRESSATURA'
+                Width = 113
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'BOCCHELLO'
+                Width = 72
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'CHIAVE'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'STATINO'
+                Width = 64
+                Visible = True
+              end>
+          end
+          object EnhCRDBGrid14: TEnhCRDBGrid
+            Left = 0
+            Top = 0
+            Width = 345
+            Height = 575
+            Align = alLeft
+            DataSource = dmFbPhoenixJsonReport.dsStatiniIdranti
+            TabOrder = 1
+            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Color = clWindowText
+            TitleFont.Height = -12
+            TitleFont.Name = 'Segoe UI'
+            TitleFont.Style = []
+            OnCellClick = EnhCRDBGrid3CellClick
+            OnColEnter = EnhCRDBGrid3ColEnter
+            HighlightBGColor = clBlack
+            HighlightFont.Charset = DEFAULT_CHARSET
+            HighlightFont.Color = clWindowText
+            HighlightFont.Height = -12
+            HighlightFont.Name = 'Segoe UI'
+            HighlightFont.Style = []
+            Columns = <
+              item
+                Expanded = False
+                FieldName = 'STATINO'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'RAGIONE_SOCIALE'
+                Width = 240
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'INDIRIZZO'
+                Width = 1534
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DATA_INTERVENTO'
+                Width = 107
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'JSON_DA_MOBILE'
+                Width = 100
+                Visible = True
+              end>
           end
         end
         object tabRilevatoriFumi: TTabSheet
@@ -2550,7 +2922,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Left = 0
             Top = 0
             Width = 345
-            Height = 417
+            Height = 575
             Align = alLeft
             DataSource = dmFbPhoenixJsonReport.dsStatiniFumo
             TabOrder = 0
@@ -2559,6 +2931,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             TitleFont.Height = -12
             TitleFont.Name = 'Segoe UI'
             TitleFont.Style = []
+            OnCellClick = EnhCRDBGrid3CellClick
             HighlightBGColor = clBlack
             HighlightFont.Charset = DEFAULT_CHARSET
             HighlightFont.Color = clWindowText
@@ -2573,8 +2946,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           object EnhCRDBGrid12: TEnhCRDBGrid
             Left = 0
             Top = 0
-            Width = 1001
-            Height = 417
+            Width = 1475
+            Height = 575
             Align = alClient
             DataSource = dmFbPhoenixJsonReport.dsEstintoriSintesi
             TabOrder = 0
@@ -2641,16 +3014,18 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
       end
       object Panel6: TPanel
         Left = 0
-        Top = 504
-        Width = 1009
+        Top = 662
+        Width = 1483
         Height = 163
         Align = alBottom
         Caption = 'Panel6'
         TabOrder = 2
+        ExplicitTop = 504
+        ExplicitWidth = 1009
         object EnhCRDBGrid13: TEnhCRDBGrid
           Left = 1
           Top = 1
-          Width = 1007
+          Width = 1481
           Height = 161
           Align = alClient
           DataSource = dmFbPhoenixJsonReport.dsSintesiReport
@@ -2840,5 +3215,10 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
     Filter = 'Jsonn Files|*.json'
     Left = 708
     Top = 227
+  end
+  object dsStatino: TDataSource
+    DataSet = dmFbPhoenixJsonReport.qryStatiniLuci
+    Left = 604
+    Top = 178
   end
 end
