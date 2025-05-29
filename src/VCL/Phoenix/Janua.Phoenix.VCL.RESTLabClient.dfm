@@ -20,8 +20,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
     ActivePage = RemoteDB
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 1017
-    ExplicitHeight = 697
     object tabLab: TTabSheet
       Caption = 'Laboratori'
       object PageControl2: TPageControl
@@ -32,8 +30,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         ActivePage = tabLog
         Align = alClient
         TabOrder = 0
-        ExplicitWidth = 1009
-        ExplicitHeight = 610
         object tabJsonList: TTabSheet
           Caption = 'Lista Estintori'
           object memJsonResponse: TAdvMemo
@@ -155,8 +151,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UseStyler = True
             Version = '3.9.1.1'
             WordWrap = wwNone
-            ExplicitWidth = 1001
-            ExplicitHeight = 395
           end
           object pnlListaEstintori: TPanel
             Left = 0
@@ -165,7 +159,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Height = 41
             Align = alTop
             TabOrder = 1
-            ExplicitWidth = 1001
             object btnSaveJson: TButton
               Left = 1
               Top = 1
@@ -303,7 +296,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UseStyler = True
             Version = '3.9.1.1'
             WordWrap = wwNone
-            ExplicitWidth = 1001
           end
         end
         object tabUpdateData: TTabSheet
@@ -316,7 +308,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Height = 41
             Align = alTop
             TabOrder = 0
-            ExplicitWidth = 1001
           end
           object JvDBGrid1: TJvDBGrid
             Left = 0
@@ -561,7 +552,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Height = 41
             Align = alTop
             TabOrder = 0
-            ExplicitWidth = 1001
           end
           object memConfigurazioni: TAdvMemo
             Left = 0
@@ -680,8 +670,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UseStyler = True
             Version = '3.9.1.1'
             WordWrap = wwNone
-            ExplicitWidth = 1001
-            ExplicitHeight = 347
           end
           object memConfigurazioniHead: TAdvMemo
             Left = 0
@@ -800,7 +788,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UseStyler = True
             Version = '3.9.1.1'
             WordWrap = wwNone
-            ExplicitWidth = 1001
           end
           object memTmpConfigurazioni: TAdvMemo
             Left = 0
@@ -918,7 +905,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UseStyler = False
             Version = '3.9.1.1'
             WordWrap = wwNone
-            ExplicitWidth = 1001
           end
         end
         object tabUpdateReports: TTabSheet
@@ -932,7 +918,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Align = alTop
             BevelOuter = bvNone
             TabOrder = 0
-            ExplicitWidth = 1001
             object DBNavigator1: TDBNavigator
               Left = 0
               Top = 0
@@ -1054,8 +1039,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Height = 738
             Align = alClient
             TabOrder = 0
-            ExplicitWidth = 1001
-            ExplicitHeight = 580
           end
         end
       end
@@ -1067,7 +1050,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         Align = alTop
         Caption = 'Panel1'
         TabOrder = 1
-        ExplicitWidth = 1009
         object edUsername: TLabeledEdit
           Left = 16
           Top = 18
@@ -1132,8 +1114,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         ActivePage = tabConfigurazini
         Align = alClient
         TabOrder = 0
-        ExplicitWidth = 1009
-        ExplicitHeight = 667
         object tabConfigurazini: TTabSheet
           Caption = 'Configurazioni'
           object Panel5: TPanel
@@ -1143,7 +1123,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Height = 41
             Align = alTop
             TabOrder = 0
-            ExplicitWidth = 1001
             object btnTestConfigurazini: TButton
               Left = 1
               Top = 1
@@ -1271,8 +1250,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UseStyler = True
             Version = '3.9.1.1'
             WordWrap = wwNone
-            ExplicitWidth = 1001
-            ExplicitHeight = 596
           end
         end
       end
@@ -1291,7 +1268,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         Height = 57
         Align = alTop
         TabOrder = 0
-        ExplicitWidth = 1009
+        ExplicitLeft = 32
+        ExplicitTop = -6
         object DBText1: TDBText
           Left = 344
           Top = 24
@@ -1330,9 +1308,9 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           OnClick = btnApriTuttiClick
         end
         object btnTestReport: TButton
-          Left = 1320
+          Left = 1344
           Top = 1
-          Width = 162
+          Width = 138
           Height = 55
           Align = alRight
           Caption = 'Test Rapportino'
@@ -1340,23 +1318,36 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           OnClick = btnApriTuttiClick
         end
         object btnPreviewReport: TButton
-          Left = 1168
+          Left = 1208
           Top = 1
-          Width = 152
+          Width = 136
           Height = 55
           Align = alRight
           Caption = 'Rapportino Originale'
           TabOrder = 2
-          OnClick = btnApriTuttiClick
+          OnClick = btnPreviewReportClick
+          ExplicitLeft = 1184
         end
-        object Button1: TButton
-          Left = 1024
+        object btnJson: TButton
+          Left = 1088
           Top = 1
-          Width = 144
+          Width = 120
           Height = 55
           Align = alRight
-          Caption = 'Button1'
+          Caption = 'Verifica Json'
           TabOrder = 3
+          OnClick = btnJsonClick
+          ExplicitLeft = 1048
+        end
+        object btnLuci: TButton
+          Left = 1032
+          Top = 1
+          Width = 56
+          Height = 55
+          Align = alRight
+          Caption = 'Luci'
+          TabOrder = 4
+          OnClick = btnLuciClick
         end
       end
       object PageControl4: TPageControl
@@ -1364,11 +1355,9 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         Top = 57
         Width = 1483
         Height = 605
-        ActivePage = tabIdranti
+        ActivePage = tabTestLuci
         Align = alClient
         TabOrder = 1
-        ExplicitWidth = 1009
-        ExplicitHeight = 610
         object tabTestLuci: TTabSheet
           Caption = 'Luci'
           object EnhCRDBGrid1: TEnhCRDBGrid
@@ -1433,7 +1422,14 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
               item
                 Expanded = False
                 FieldName = 'ANOMALIA'
-                Width = 400
+                Width = 200
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ANOMALIA_ON_DOWNLOAD'
+                Title.Caption = 'Anomalia Tablet'
+                Width = 200
                 Visible = True
               end
               item
@@ -1618,6 +1614,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             TitleFont.Style = []
             OnCellClick = EnhCRDBGrid3CellClick
             OnColEnter = EnhCRDBGrid3ColEnter
+            OnDblClick = EnhCRDBGrid3DblClick
             HighlightBGColor = clBlack
             HighlightFont.Charset = DEFAULT_CHARSET
             HighlightFont.Color = clWindowText
@@ -1840,6 +1837,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             TitleFont.Style = []
             OnCellClick = EnhCRDBGrid3CellClick
             OnColEnter = EnhCRDBGrid3ColEnter
+            OnDblClick = EnhCRDBGrid3DblClick
             HighlightBGColor = clBlack
             HighlightFont.Charset = DEFAULT_CHARSET
             HighlightFont.Color = clWindowText
@@ -2116,6 +2114,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             TitleFont.Style = []
             OnCellClick = EnhCRDBGrid3CellClick
             OnColEnter = EnhCRDBGrid3ColEnter
+            OnDblClick = EnhCRDBGrid3DblClick
             HighlightBGColor = clBlack
             HighlightFont.Charset = DEFAULT_CHARSET
             HighlightFont.Color = clWindowText
@@ -2386,7 +2385,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           object EnhCRDBGrid7: TEnhCRDBGrid
             Left = 0
             Top = 0
-            Width = 345
+            Width = 353
             Height = 575
             Align = alLeft
             DataSource = dmFbPhoenixJsonReport.dsStatiniImpianti
@@ -2402,6 +2401,190 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             HighlightFont.Height = -12
             HighlightFont.Name = 'Segoe UI'
             HighlightFont.Style = []
+            Columns = <
+              item
+                Expanded = False
+                FieldName = 'STATINO'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'RAGIONE_SOCIALE'
+                Width = 240
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'INDIRIZZO'
+                Width = 1534
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DATA_INTERVENTO'
+                Width = 107
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'JSON_DA_MOBILE'
+                Width = 100
+                Visible = True
+              end>
+          end
+          object EnhCRDBGrid16: TEnhCRDBGrid
+            Left = 353
+            Top = 0
+            Width = 1122
+            Height = 575
+            Align = alClient
+            DataSource = dmFbPhoenixJsonReport.dsInterventiImpianti
+            TabOrder = 1
+            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Color = clWindowText
+            TitleFont.Height = -12
+            TitleFont.Name = 'Segoe UI'
+            TitleFont.Style = []
+            HighlightBGColor = clBlack
+            HighlightFont.Charset = DEFAULT_CHARSET
+            HighlightFont.Color = clWindowText
+            HighlightFont.Height = -12
+            HighlightFont.Name = 'Segoe UI'
+            HighlightFont.Style = []
+            Columns = <
+              item
+                Expanded = False
+                FieldName = 'MODELLO'
+                Width = 300
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'UBICAZIONE'
+                Width = 72
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DESCRIZIONE'
+                Width = 300
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'CHIAVE'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'STATINO'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ELEMENTO_IMPIANTO_ELETTRICO'
+                Width = 186
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ANOMALIA'
+                Width = 66
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DATA_CONTROLLO'
+                Width = 108
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'TIPO'
+                Width = 29
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DATA_CONSEGNA'
+                Width = 102
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DESCRIZIONE_ALTERNATIVA'
+                Width = 1534
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DATA_CONTROLLO_NEGATO'
+                Width = 159
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'IMPIANTO'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'PROGRESSIVO'
+                Width = 79
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'TIPO_EL'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'MARCA'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'RINNOVATO_DA'
+                Width = 92
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ANOMALIA_APPROVATA'
+                Width = 138
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'STATO'
+                Width = 39
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'PREC_ANOMALIA'
+                Width = 99
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'NOTE_TECNICO'
+                Width = 88
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ID_NFC'
+                Width = 604
+                Visible = True
+              end>
           end
         end
         object tabEstintori: TTabSheet
@@ -2422,6 +2605,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             TitleFont.Style = []
             OnCellClick = EnhCRDBGrid3CellClick
             OnColEnter = EnhCRDBGrid3ColEnter
+            OnDblClick = EnhCRDBGrid3DblClick
             HighlightBGColor = clBlack
             HighlightFont.Charset = DEFAULT_CHARSET
             HighlightFont.Color = clWindowText
@@ -2876,6 +3060,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             TitleFont.Style = []
             OnCellClick = EnhCRDBGrid3CellClick
             OnColEnter = EnhCRDBGrid3ColEnter
+            OnDblClick = EnhCRDBGrid3DblClick
             HighlightBGColor = clBlack
             HighlightFont.Charset = DEFAULT_CHARSET
             HighlightFont.Color = clWindowText
@@ -2938,6 +3123,238 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             HighlightFont.Height = -12
             HighlightFont.Name = 'Segoe UI'
             HighlightFont.Style = []
+            Columns = <
+              item
+                Expanded = False
+                FieldName = 'STATINO'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'RAGIONE_SOCIALE'
+                Width = 240
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'INDIRIZZO'
+                Width = 1534
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DATA_INTERVENTO'
+                Width = 107
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'JSON_DA_MOBILE'
+                Width = 100
+                Visible = True
+              end>
+          end
+          object EnhCRDBGrid15: TEnhCRDBGrid
+            Left = 345
+            Top = 0
+            Width = 1130
+            Height = 575
+            Align = alClient
+            DataSource = dmFbPhoenixJsonReport.dsInterventiFumi
+            TabOrder = 1
+            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Color = clWindowText
+            TitleFont.Height = -12
+            TitleFont.Name = 'Segoe UI'
+            TitleFont.Style = []
+            HighlightBGColor = clBlack
+            HighlightFont.Charset = DEFAULT_CHARSET
+            HighlightFont.Color = clWindowText
+            HighlightFont.Height = -12
+            HighlightFont.Name = 'Segoe UI'
+            HighlightFont.Style = []
+            Columns = <
+              item
+                Expanded = False
+                FieldName = 'UBICAZIONE'
+                Width = 72
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ANOMALIA'
+                Width = 66
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DESCRIZIONE'
+                Width = 1534
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'CHIAVE'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'STATINO'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ATTREZZATURA'
+                Width = 88
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'TIPO'
+                Width = 29
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DATA_CONTROLLO'
+                Width = 108
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DATA_CONSEGNA'
+                Width = 102
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'PERIODI_NON_ORDINARI'
+                Width = 138
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DATA_CONTROLLO_NEGATO'
+                Width = 159
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'FILIALE'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'MARCA_CENTRALE'
+                Width = 107
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'TIPO_CENTRALE'
+                Width = 90
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'QUANTITA_BATTERIE'
+                Width = 115
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'TIPO_BATTERIE'
+                Width = 83
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'QUANTITA_RILEVATORI'
+                Width = 128
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'TIPO_RILEVATORI'
+                Width = 96
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'QUANTITA_RIL_LINEARI'
+                Width = 129
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'TIPO_RIL_LINEARI'
+                Width = 97
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'MARCA_RIL_LINEARI'
+                Width = 114
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'QUANTITA_PULSANTI'
+                Width = 119
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'QUANTITA_PANNELLI_OTT_ACUST'
+                Width = 187
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'STATO'
+                Width = 39
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'RINNOVATO_DA'
+                Width = 92
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ANOMALIA_APPROVATA'
+                Width = 138
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ANOMALIA_1'
+                Width = 77
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'PREC_ANOMALIA'
+                Width = 99
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'NOTE_TECNICO'
+                Width = 88
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ID_NFC'
+                Width = 604
+                Visible = True
+              end>
           end
         end
         object tabSintesiEstintori: TTabSheet
@@ -3007,8 +3424,8 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
               end>
           end
         end
-        object TabSheet1: TTabSheet
-          Caption = 'TabSheet1'
+        object tabInterventiRiepilogo: TTabSheet
+          Caption = 'Interventi Riepilogo'
           ImageIndex = 9
         end
       end
@@ -3020,8 +3437,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         Align = alBottom
         Caption = 'Panel6'
         TabOrder = 2
-        ExplicitTop = 504
-        ExplicitWidth = 1009
         object EnhCRDBGrid13: TEnhCRDBGrid
           Left = 1
           Top = 1

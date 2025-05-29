@@ -9,6 +9,8 @@ uses
   VCL.Grids, VCL.DBGrids, VCL.Buttons, VCL.DBCtrls, VCL.ExtDlgs,
   // TMS
   AdvMemo, advmjson, JvExDBGrids, JvDBGrid,
+  // Phoenix
+  Phoenix.JSON.Config, Phoenix.JSON.Statini,
   // Forms
   uJanuaVclForm, Janua.Controls.Forms.Impl, Janua.VCL.Controls.Forms.Impl, Janua.Controls.Forms.Intf,
   // Janua
@@ -87,7 +89,7 @@ type
     EnhCRDBGrid4: TEnhCRDBGrid;
     tabSintesiEstintori: TTabSheet;
     EnhCRDBGrid12: TEnhCRDBGrid;
-    TabSheet1: TTabSheet;
+    tabInterventiRiepilogo: TTabSheet;
     Panel6: TPanel;
     EnhCRDBGrid13: TEnhCRDBGrid;
     dsStatino: TDataSource;
@@ -97,7 +99,10 @@ type
     DBText3: TDBText;
     EnhCRDBGrid14: TEnhCRDBGrid;
     btnPreviewReport: TButton;
-    Button1: TButton;
+    btnJson: TButton;
+    EnhCRDBGrid15: TEnhCRDBGrid;
+    EnhCRDBGrid16: TEnhCRDBGrid;
+    btnLuci: TButton;
     procedure btnRestCallClick(Sender: TObject);
     procedure btnOpenClick(Sender: TObject);
     procedure btnSaveJsonClick(Sender: TObject);
@@ -108,6 +113,9 @@ type
     procedure EnhCRDBGrid3ColEnter(Sender: TObject);
     procedure EnhCRDBGrid3CellClick(Column: TColumn);
     procedure EnhCRDBGrid3DblClick(Sender: TObject);
+    procedure btnPreviewReportClick(Sender: TObject);
+    procedure btnJsonClick(Sender: TObject);
+    procedure btnLuciClick(Sender: TObject);
   private
     FdmFDACPhoenixLab: TdmPhoenixIBLab;
     { Private declarations }
@@ -126,13 +134,14 @@ var
 implementation
 
 uses
+  uQrpPhoenixReport, Janua.Phoenix.VCL.ReportController, Janua.Interbase.dmModel, Janua.Phoenix.FbReport,
   // Phoenix
   DlgShowContratto, DlgNuovoStatino, Globale, ZFIBPlusNodoGenerico2,
   // Janua
   Janua.Phoenix.dmIBReportPlanner, Janua.VCL.Functions, Janua.Core.AsyncTask,
   Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Phoenix.VCL.dlgModificaStatino,
   Janua.Application.Framework, Janua.REST.Client, Janua.Core.JSON, MainUnit, EsportazioneSuMobile,
-  Janua.Phoenix.FbJsonReport;
+  Janua.Phoenix.FbJsonReport, ufrmPhoenixJsonPreview;
 
 {$R *.dfm}
 
@@ -141,9 +150,68 @@ begin
   dmFbPhoenixJsonReport.ApriTuttiIUniQuery
 end;
 
+procedure TfrmPhoenixVCLRESTLabClient.btnJsonClick(Sender: TObject);
+begin
+  var
+  lJson := JsonPretty(dsStatino.DataSet.FieldByName('JSON_DA_MOBILE').AsString);
+  lJson := ReplacePhoenixJson(lJson);
+  var
+  lStatino := TStatino.Create;
+  lStatino.AsJson := lJson;
+  lJson := JsonPretty(lStatino.AsJson);
+  frmJsonPreview.AdvMemo1.Lines.Text := lJson;
+  frmJsonPreview.ShowModal;
+  dmFbPhoenixJsonReport.UpdateFromClass(lStatino);
+
+  {
+    var
+    lJson := tbStatiniJSON_DA_MOBILE.AsString;
+    if lJson <> '' then
+    begin
+    memOriginal.Lines.Text := JsonPretty(lJson);
+    lJson := ReplacePhoenixJson(lJson);
+    memJsonPretty.Lines.Text := JsonPretty(lJson);
+    tabParameters.Lines.Text := GlobalParams;
+
+    var
+    lStatino := TStatino.Create;
+    lStatino.AsJson := lJson;
+
+    lJson := lStatino.AsJson;
+
+    if lJson <> '' then
+    memJsonFinal.Lines.Text := JsonPretty(lJson);
+    end;
+
+  }
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.btnLuciClick(Sender: TObject);
+begin
+  dmFbPhoenixJsonReport.UpdateAllLuci
+end;
+
 procedure TfrmPhoenixVCLRESTLabClient.btnOpenClick(Sender: TObject);
 begin
   FdmFDACPhoenixLab.Refresh;
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.btnPreviewReportClick(Sender: TObject);
+var
+  ADialog: TDLG_STATINO;
+begin
+  ADialog := TDLG_STATINO.Create(Nil);
+  try
+    ADialog.Init(TFiBConfig.QRY_GENERIC, dsStatino.DataSet.FieldByName('STATINO').AsInteger);
+    if ADialog.ShowModal = mrOK then
+    begin
+      ADialog.NodoStatino.Registra(spsRegistra);
+      // FStatinoModificato := True;
+    end;
+  finally
+    ADialog.Free;
+  end;
+
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.btnRestCallClick(Sender: TObject);
@@ -254,6 +322,10 @@ procedure TfrmPhoenixVCLRESTLabClient.FormCreate(Sender: TObject);
 begin
   FdmFDACPhoenixLab := TdmPhoenixIBLab.Create(self);
   Application.CreateForm(TdmFbPhoenixJsonReport, dmFbPhoenixJsonReport);
+  dsStatino.DataSet := dmFbPhoenixJsonReport.qryStatiniLuci;
+  Application.CreateForm(TfrmJsonPreview, frmJsonPreview);
+  Application.CreateForm(TdmPhoenixFbReport, dmPhoenixFbReport);
+  Application.CreateForm(TdmVCLPhoenixReportController, dmVCLPhoenixReportController);
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.SetdmFDACPhoenixLab(const Value: TdmPhoenixIBLab);

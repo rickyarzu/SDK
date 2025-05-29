@@ -3,8 +3,12 @@ unit Janua.Phoenix.FbJsonReport;
 interface
 
 uses
-  System.SysUtils, System.Classes, Janua.Phoenix.dmIBModel, Janua.Interbase.dmModel, UniProvider,
-  InterBaseUniProvider, Data.DB, DBAccess, Uni, Janua.Unidac.Connection, MemDS;
+  System.SysUtils, System.Classes,
+  // DAC
+  UniProvider, InterBaseUniProvider, Data.DB, DBAccess, Uni, MemDS,
+  // Phoenix
+  Phoenix.JSON.Config, Phoenix.JSON.Statini,
+  Janua.Phoenix.dmIBModel, Janua.Interbase.dmModel, Janua.Unidac.Connection;
 
 type
   TdmFbPhoenixJsonReport = class(TdmJanuaInterbaseModel)
@@ -604,6 +608,43 @@ type
     qryInterventiIdrantiCHIAVE: TIntegerField;
     qryInterventiIdrantiSTATINO: TIntegerField;
     dsInterventiIdranti: TUniDataSource;
+    qryInterventiFumi: TUniQuery;
+    dsInterventiFumi: TUniDataSource;
+    qryInterventiFumiCHIAVE: TIntegerField;
+    qryInterventiFumiSTATINO: TIntegerField;
+    qryInterventiFumiUBICAZIONE: TBlobField;
+    qryInterventiFumiATTREZZATURA: TIntegerField;
+    qryInterventiFumiANOMALIA: TBlobField;
+    qryInterventiFumiTIPO: TWideStringField;
+    qryInterventiFumiDATA_CONTROLLO: TDateField;
+    qryInterventiFumiDATA_CONSEGNA: TDateField;
+    qryInterventiFumiPERIODI_NON_ORDINARI: TWideStringField;
+    qryInterventiFumiDATA_CONTROLLO_NEGATO: TDateField;
+    qryInterventiFumiFILIALE: TIntegerField;
+    qryInterventiFumiMARCA_CENTRALE: TIntegerField;
+    qryInterventiFumiTIPO_CENTRALE: TIntegerField;
+    qryInterventiFumiQUANTITA_BATTERIE: TIntegerField;
+    qryInterventiFumiTIPO_BATTERIE: TIntegerField;
+    qryInterventiFumiQUANTITA_RILEVATORI: TIntegerField;
+    qryInterventiFumiTIPO_RILEVATORI: TIntegerField;
+    qryInterventiFumiQUANTITA_RIL_LINEARI: TIntegerField;
+    qryInterventiFumiTIPO_RIL_LINEARI: TIntegerField;
+    qryInterventiFumiMARCA_RIL_LINEARI: TIntegerField;
+    qryInterventiFumiQUANTITA_PULSANTI: TIntegerField;
+    qryInterventiFumiQUANTITA_PANNELLI_OTT_ACUST: TIntegerField;
+    qryInterventiFumiSTATO: TWideStringField;
+    qryInterventiFumiRINNOVATO_DA: TIntegerField;
+    qryInterventiFumiANOMALIA_APPROVATA: TWideStringField;
+    qryInterventiFumiANOMALIA_1: TBlobField;
+    qryInterventiFumiDESCRIZIONE: TWideStringField;
+    qryInterventiFumiPREC_ANOMALIA: TBlobField;
+    qryInterventiFumiNOTE_TECNICO: TBlobField;
+    qryInterventiFumiID_NFC: TWideStringField;
+    qryInterventiLuciORARIO_CONTROLLO: TTimeField;
+    qryInterventiLuciCONTROLLATO: TWideStringField;
+    qryInterventiLuciANOMALIA_ON_DOWNLOAD: TWideStringField;
+    qryInterventiLuciANOMALIA_RISOLTA: TWideStringField;
+    qryInterventiLuciTECNICO_CONTROLLO: TIntegerField;
   private
     FJsonPretty: string;
     FOriginal: string;
@@ -617,12 +658,16 @@ type
     procedure SetFoundReplace(const Value: string);
     procedure SetJsonFinal(const Value: string);
     procedure SetJsonCompatible(const Value: string);
+    function BoolToStr(const aBoolean: boolean): string;
     { Private declarations }
   public
     { Public declarations }
     procedure OpenSintesiReport(const aDataset: TDataset);
     procedure ApriTuttiIUniQuery;
     procedure ElaborateJson(const aStatino: integer);
+    procedure UpdateFromClass(const aClass: TStatino);
+    procedure UpdateLuci(const aClass: TStatino);
+    procedure UpdateAllLuci;
     property JsonPretty: string read FJsonPretty write SetJsonPretty;
     property Original: string read FOriginal write SetOriginal;
     property TestBack: string read FTestBack write SetTestBack;
@@ -636,7 +681,7 @@ var
 
 implementation
 
-uses Phoenix.Json.Statini, Janua.Core.Json, System.StrUtils;
+uses System.StrUtils, Janua.Core.Functions, Janua.Core.JSON;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
@@ -662,6 +707,11 @@ begin
 
 end;
 
+function TdmFbPhoenixJsonReport.BoolToStr(const aBoolean: boolean): string;
+begin
+  Result := IfThen(aBoolean, 'T', 'F');
+end;
+
 procedure TdmFbPhoenixJsonReport.ElaborateJson(const aStatino: integer);
 var
   lPorte: TPorte;
@@ -680,9 +730,9 @@ begin
 
   var
   lJson := qryStatiniJSON_DA_MOBILE.AsString;
-  FOriginal := Janua.Core.Json.JsonPretty(lJson);
+  FOriginal := Janua.Core.JSON.JsonPretty(lJson);
   lJson := ReplacePhoenixJson(lJson);
-  FJsonPretty := Janua.Core.Json.JsonPretty(lJson);
+  FJsonPretty := Janua.Core.JSON.JsonPretty(lJson);
 
   FFoundReplace := GlobalParams;
 
@@ -1019,7 +1069,7 @@ begin
     end;
 
   FJsonFinal := lStatino.AsJson;
-  FJsonFinal := Janua.Core.Json.JsonPretty(FJsonFinal);
+  FJsonFinal := Janua.Core.JSON.JsonPretty(FJsonFinal);
 
   FJsonCompatible := ReplaceJsonToPhoenix(FJsonFinal);
 
@@ -1065,6 +1115,53 @@ end;
 procedure TdmFbPhoenixJsonReport.SetTestBack(const Value: string);
 begin
   FTestBack := Value;
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateAllLuci;
+begin
+  qryStatiniLuci.First;
+  While not qryStatiniLuci.Eof do
+  begin
+    var
+    lStatino := TStatino.Create;
+    var
+    lJson := ReplacePhoenixJson(qryStatiniLuciJSON_DA_MOBILE.AsString);
+    try
+      lStatino.AsJson := lJson;
+      UpdateLuci(lStatino);
+    except
+      on e: exception do
+        // per ora non fa nulla
+    end;
+    qryStatiniLuci.Next;
+  end;
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateFromClass(const aClass: TStatino);
+begin
+  UpdateLuci(aClass);
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateLuci(const aClass: TStatino);
+var
+  lLuci: TLuci;
+begin
+  if aClass.Luci.Count > 0 then
+    for lLuci in aClass.Luci do
+      if qryInterventiLuci.Locate('ATTREZZATURA', lLuci.Chiave, []) then
+      begin
+        try
+          qryInterventiLuci.Edit;
+          qryInterventiLuciCONTROLLATO.AsString := BoolToStr(lLuci.Controllato);
+          qryInterventiLuciANOMALIA_ON_DOWNLOAD.AsString := lLuci.AnomaliaOnDownload;
+          qryInterventiLuciANOMALIA_RISOLTA.AsString := BoolToStr(lLuci.AnomaliaRisolta);
+          qryInterventiLuciTECNICO_CONTROLLO.AsInteger := lLuci.TecnicoControllo;
+          qryInterventiLuci.Post;
+        except
+          on e: exception do
+            qryInterventiLuci.Cancel;
+        end;
+      end;
 end;
 
 end.

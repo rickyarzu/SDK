@@ -201,7 +201,6 @@ object frmPhoenixVCLJsonAnalyzer: TfrmPhoenixVCLJsonAnalyzer
           Caption = 'Json Pretty'
           TabOrder = 0
           OnClick = btnJsonPrettyClick
-          ExplicitLeft = 1
         end
         object btnJsonOnOff: TButton
           Left = 385
@@ -212,7 +211,6 @@ object frmPhoenixVCLJsonAnalyzer: TfrmPhoenixVCLJsonAnalyzer
           Caption = 'Attiva'
           TabOrder = 1
           OnClick = btnJsonOnOffClick
-          ExplicitLeft = 185
         end
         object btnClipboard: TButton
           Left = 585
@@ -224,7 +222,6 @@ object frmPhoenixVCLJsonAnalyzer: TfrmPhoenixVCLJsonAnalyzer
           Enabled = False
           TabOrder = 2
           OnClick = btnClipboardClick
-          ExplicitLeft = 385
         end
         object btnTest: TButton
           Left = 785
@@ -235,7 +232,6 @@ object frmPhoenixVCLJsonAnalyzer: TfrmPhoenixVCLJsonAnalyzer
           Caption = 'Json Import Test'
           TabOrder = 3
           OnClick = btnTestClick
-          ExplicitLeft = 585
         end
         object btnOpenTables: TButton
           Left = 1
@@ -246,8 +242,6 @@ object frmPhoenixVCLJsonAnalyzer: TfrmPhoenixVCLJsonAnalyzer
           Caption = 'Open Tables'
           TabOrder = 4
           OnClick = btnOpenTablesClick
-          ExplicitLeft = -39
-          ExplicitTop = -3
         end
       end
       object Panel1: TPanel
