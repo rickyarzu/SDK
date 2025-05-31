@@ -723,6 +723,21 @@
         <None Include="ModelSupport_JanuaCore\Janua\Core\System\Types\default.txaPackage"/>
         <None Include="ModelSupport_JanuaCore\Janua\Core\Types\default.txvpck"/>
         <None Include="ModelSupport_JanuaCore\Janua\Application\Framework\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Types\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\CodeGen\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Generator\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Functions\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Intf\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Test\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Impl\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Dataset\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Register\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Firedac\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\CodeGen\Impl\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Test\Intf\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Test\Impl\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Dataset\Impl\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Dataset\Intf\default.txvpck"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>

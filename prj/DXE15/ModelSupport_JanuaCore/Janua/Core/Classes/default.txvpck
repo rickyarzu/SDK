@@ -376,7 +376,7 @@
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="666,1792,248,507" />
+      <property name="bounds" value="666,1792,189,507" />
       <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.FLogProc" />
       <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.GetLogProc()" />
       <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.SetLogProc(TProc`3)" />
@@ -513,8 +513,8 @@
       <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableObject.InternalActivate()" />
       <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableObject.Active" />
       <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableObject:Janua.Core.Classes.TJanuaInterfacedObject">
-        <property name="sourceAnchor" value="911,488" />
-        <property name="targetAnchor" value="911,1792" />
+        <property name="sourceAnchor" value="999,489" />
+        <property name="targetAnchor" value="799,1792" />
         <property name="bendpoints" value="" />
       </reference>
     </reference>
@@ -524,7 +524,7 @@
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaBindableObject">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="908,594,216,252" />
+      <property name="bounds" value="908,594,189,252" />
       <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaBindableObject.FLogProc" />
       <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableObject.GetLogProc()" />
       <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableObject.SetLogProc(TProc`3)" />
@@ -579,8 +579,8 @@
       <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.asJsonObject" />
       <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.AsJsonString" />
       <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser:Janua.Core.Classes.TJanuaInterfacedObject">
-        <property name="sourceAnchor" value="991,1479" />
-        <property name="targetAnchor" value="880,1792" />
+        <property name="sourceAnchor" value="983,1479" />
+        <property name="targetAnchor" value="855,1803" />
         <property name="bendpoints" value="" />
       </reference>
     </reference>
@@ -603,7 +603,7 @@
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaBasicLogger">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="1219,124,194,93" />
+      <property name="bounds" value="1219,124,129,93" />
       <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaBasicLogger:Janua.Core.Classes.TJanuaCustomLogger">
         <property name="sourceAnchor" value="1243,217" />
         <property name="targetAnchor" value="851,468" />
@@ -612,7 +612,7 @@
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableComponent">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="208,1878,247,192" />
+      <property name="bounds" value="208,1878,231,192" />
       <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableComponent.FComponent" />
       <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableComponent.GetNameJ()" />
       <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableComponent.SetNameJ(Janua.Core.Classes.TComponentName)" />
@@ -783,13 +783,13 @@
       <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.Create()" />
       <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaActionList:Janua.Core.Classes.TJanuaInterfacedObject">
         <property name="sourceAnchor" value="952,2013" />
-        <property name="targetAnchor" value="914,2013" />
+        <property name="targetAnchor" value="855,2013" />
         <property name="bendpoints" value="" />
       </reference>
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TOfTypeEnumerator&lt;2&gt;">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="1219,1713,220,193" />
+      <property name="bounds" value="1219,1713,131,193" />
       <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TOfTypeEnumerator&lt;2&gt;.FTestList" />
       <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TOfTypeEnumerator&lt;2&gt;.FIndex" />
       <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TOfTypeEnumerator&lt;2&gt;.Create(TList`1)" />
@@ -997,14 +997,14 @@
       <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.SettingLocation" />
       <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.UserSessionVM" />
       <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject:Janua.Core.Classes.TJanuaBindableObject">
-        <property name="sourceAnchor" value="1846,288" />
-        <property name="targetAnchor" value="1124,663" />
+        <property name="sourceAnchor" value="1846,287" />
+        <property name="targetAnchor" value="1097,670" />
         <property name="bendpoints" value="" />
       </reference>
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TOfInterfaceEnumerator&lt;2&gt;">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="554,2705,217,193" />
+      <property name="bounds" value="554,2705,153,193" />
       <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TOfInterfaceEnumerator&lt;2&gt;.FTestList" />
       <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TOfInterfaceEnumerator&lt;2&gt;.FIndex" />
       <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TOfInterfaceEnumerator&lt;2&gt;.Create(IList`1)" />
