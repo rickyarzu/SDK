@@ -1,0 +1,1228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="y269fhsh1cn_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTModel">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,273,118" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTModel.SetJanuaRESTClient(Janua.Core.Classes.TJanuaCustomRESTClient)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTModel.FJanuaRESTClient" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTModel.JanuaRESTClient" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTModel:Janua.Core.Classes.TJanuaCoreComponent">
+        <property name="sourceAnchor" value="167,128" />
+        <property name="targetAnchor" value="1219,2952" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTModel.FJanuaRESTClient">
+        <property name="sourceAnchor" value="160,128" />
+        <property name="targetAnchor" value="461,1407" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTModel.JanuaRESTClient">
+        <property name="sourceAnchor" value="154,128" />
+        <property name="targetAnchor" value="454,1407" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="302,1,297,358" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.FJanuaISOLanguages" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.FSelectedLanguage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.FFound" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.SetID(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.SetCode(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.SetIsoCode3(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.SetLanguage(Janua.Core.Types.TJanuaLanguage)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.SetLanguageName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.SetLanguagesList()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.Create(Janua.Core.Commons.TJanuaCustomComponent,Janua.Core.Types.TJanuaLanguage)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.Create(Janua.Core.Commons.TJanuaCustomComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.Activate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.Deactivate()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.ID" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.LanguageName" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.Code" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.IsoCode3" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.Language" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.Found" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages:Janua.Core.Classes.TJanuaPersistent">
+        <property name="sourceAnchor" value="422,359" />
+        <property name="targetAnchor" value="422,378" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.FJanuaISOLanguages">
+        <property name="sourceAnchor" value="464,359" />
+        <property name="targetAnchor" value="464,2705" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaISOLanguages.FSelectedLanguage">
+        <property name="sourceAnchor" value="456,359" />
+        <property name="targetAnchor" value="456,2705" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaContent">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="93,147,206,793" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaContent.FMemDataset" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.geTFdMemTable()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.seTFdMemTable(Janua.Core.Classes.TFdMemTable)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaContent.FBlob" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaContent.FStrings" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaContent.FMimeType" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaContent.FContentType" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaContent.FMaxLength" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaContent.FMinLength" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaContent.FDigits" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaContent.FIsSet" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaContent.FJsonObject" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.getAsBlob()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.setAsBlob(Janua.Core.Types.TJanuaBlob)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.setAsString(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.SetMimeType(Janua.Core.Classes.TJanuaMime)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.SetContentType(Janua.Core.Types.TJanuaContentType)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.GetJsonObject()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.SetJsonObject(Janua.Core.Classes.TJsonObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.SetDigits(System.Smallint)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.SetMaxLength(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.SetMinLength(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.SetIsSet(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.getAsStrings()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.setAsStrings(Janua.Core.Classes.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.JsonObjectClear()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.SetAsJson(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.GetAsJson()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.getAsString()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.Clear()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.Unset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.LoadFromStream(Janua.Core.Classes.TStream)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.LoadFromFile(Janua.Core.Classes.TFileName)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.SaveToStream(Janua.Core.Classes.TStream)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaContent.SaveToFile(Janua.Core.Classes.TFileName)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaContent.AsJson" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaContent.AsBlob" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaContent.AsStrings" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaContent.AsString" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaContent.asJsonObject" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaContent.MimeType" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaContent.ContentType" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaContent.MaxLength" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaContent.MinLength" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaContent.Digits" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaContent.isSet" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaContent:Janua.Core.Classes.TJanuaObject">
+        <property name="sourceAnchor" value="299,716" />
+        <property name="targetAnchor" value="1219,2274" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaContent.FMimeType">
+        <property name="sourceAnchor" value="299,897" />
+        <property name="targetAnchor" value="637,897" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaContent.MimeType">
+        <property name="sourceAnchor" value="299,889" />
+        <property name="targetAnchor" value="637,889" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="318,378,208,463" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.FLastMessage" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.SetVerbose(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.SetLastMessage(System.string)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.FLastErrorMessage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.FHasErrors" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.FLog" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.FVerbose" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.FOwner" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.Deactivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.AddLog(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.SetLog(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.WriteLog(System.string,System.Boolean,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.WriteError(System.string,Janua.Core.Classes.Exception)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.IsDesigning()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.Create(Janua.Core.Commons.TJanuaCustomComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.Activate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.ClearErrors()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.ClearLog()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.Log" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.LastErrorMessage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.HasErrors" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.Verbose" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.Active" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent.lastMessage" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaPersistent:Janua.Core.Classes.TJanuaCustomPersistent">
+        <property name="sourceAnchor" value="518,841" />
+        <property name="targetAnchor" value="1255,2616" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaDatasetProvider">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="637,1,198,118" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaDatasetProvider.FDataset" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaDatasetProvider.SetDataset(Janua.Core.Classes.TJanuaJsonDacDataset)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaDatasetProvider.Dataset" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaDatasetProvider:Janua.Core.Classes.TJanuaCoreComponent">
+        <property name="sourceAnchor" value="747,119" />
+        <property name="targetAnchor" value="1262,2842" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaDatasetProvider.FDataset">
+        <property name="sourceAnchor" value="726,119" />
+        <property name="targetAnchor" value="340,2705" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaDatasetProvider.Dataset">
+        <property name="sourceAnchor" value="719,119" />
+        <property name="targetAnchor" value="333,2705" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.REnumerationEnumerator">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="318,860,256,145" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.REnumerationEnumerator.EnumeratorTypeInfo" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.REnumerationEnumerator.Create(Janua.Core.Classes.PTypeInfo)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.REnumerationEnumerator.From(Janua.Core.Classes.PTypeInfo)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.REnumerationEnumerator.GetEnumerator()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaCustomViewModel">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="637,138,233,84" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCustomViewModel.RESTModel" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaCustomViewModel:Janua.Core.Classes.TJanuaCoreComponent">
+        <property name="sourceAnchor" value="761,222" />
+        <property name="targetAnchor" value="1262,2842" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaCustomViewModel.RESTModel">
+        <property name="sourceAnchor" value="637,158" />
+        <property name="targetAnchor" value="283,94" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="design:view:::4k7y9w0wvjl_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="129,959,180,410" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Intf.IJanuaInterface" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Intf.IJanuaBasicLogger" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Intf.TJanuaSetActions" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Intf.IJanuaLogger" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Intf.TJanuaStandardActions" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Intf.TJanuaActionEvent" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Intf.IEnumerator&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Intf.IJanuaJsonObjectSerializer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Intf.IJanuaBarcode" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Intf.IEnumerable&lt;1&gt;" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Intf.TJanuaStandardAction" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Intf.IJanuaJsonParser" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Intf.IJanuaAction" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Intf.IJanuaBindableComponent" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Intf.IJanuaBindableObject" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Intf.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Intf.IJanuaActionable" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Intf.IJanuaDataModuleContainer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Intf.IJanuaActionList" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="637,241,214,594" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.FlogRecords" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.FLogStarted" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.FLock" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.GetLogRecords()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.SetlogRecords(Janua.Core.Types.TJanuaLogRecords)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.GetDefaultProcedure()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.SetDefaultProcedure(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.Startup()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.ClearLog()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.ClearLocalLog(Janua.Core.Classes.TObject,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.StartWatch()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.StopWatch()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.ResetWatch()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.SaveLogToFile(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.StartLog()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.StopLog()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.ExportToCSV(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.LogString(Janua.Core.Classes.TObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.TailLog()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.Initialize()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.Terminate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.GetGUID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.SetGUID(Janua.Core.Classes.TGUID)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.FlushLog()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.LogRecord(System.string,System.string,Janua.Core.Classes.TObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.LogError(System.string,System.string,Janua.Core.Classes.TObject,Janua.Core.Classes.Exception)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.LogError(System.string,System.string,Janua.Core.Classes.TObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.LogWarning(System.string,System.string,Janua.Core.Classes.TObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.Destroy()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.Calendar" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.guid" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger.DefaultProcedure" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaCustomLogger:Janua.Core.Classes.TJanuaInterfacedObject">
+        <property name="sourceAnchor" value="758,835" />
+        <property name="targetAnchor" value="758,1792" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaMime">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="637,854,180,477" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaMime.FCharset" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaMime.FMimeType" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaMime.FExtension" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaMime.FMimeList" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaMime.FCharSetList" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaMime.SetCharset(Janua.Http.Types.TJanuaCharsetType)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaMime.SetCharsetString(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaMime.SetMimeString(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaMime.SetMimeType(Janua.Http.Types.TJanuaMimeType)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaMime.SetExtension(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaMime.SetMimeList(Janua.Core.Classes.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaMime.SetCharSetList(Janua.Core.Classes.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaMime.getCharsetString()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaMime.getMimeString()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaMime.getIsSet()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaMime.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaMime.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaMime.Assign(Janua.Core.Classes.TPersistent)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaMime.MimeString" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaMime.MimeType" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaMime.CharsetString" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaMime.Charset" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaMime.Extension" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaMime.MimeList" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaMime.CharSetList" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaMime.isSet" />
+    </reference>
+    <reference referencedUin="design:view:::1zqcte218ll_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="637,1350,197,423" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaTWSCopeTypes" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaFBAgeRange" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaFBUserDevice" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaFBUrlType" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaFacebookUrl" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaTwitterUrl" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaSocialType" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaTWSCopeType" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaFacebookPublicFields" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaFBSCopeType" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaFBEducationExperience" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaTWUrlType" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaFBAboutMe" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaFBResponseType" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaFacebookLocation" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaFBAdminNote" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaFBSCopeTypes" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaFacebookUser" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaFBExperience" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.Social.TJanuaFBPage" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="398,1407,230,433" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.GetAppName()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.SetErrorMessage(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.SetHasErrors(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.Activate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.InternalActivate()" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.FUserProfile" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.FLoginRecord" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.FHasErrors" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.FErrorMessage" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.GetIsPublic()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.GetIsLoggedIn()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.SetLoginRecord(Janua.Core.Classes.TJanuaLoginRecord)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.SetUserProfile(Janua.Core.Entities.TJanuaRecordUserProfile)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.IsLoggedIn" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.isPublic" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.AppName" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.HasErrors" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.ErrorMessage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.LoginRecord" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.UserProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.Deactivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.LogOut()" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient:Janua.Core.Classes.TJanuaObject">
+        <property name="sourceAnchor" value="628,1738" />
+        <property name="targetAnchor" value="1219,2329" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.FLoginRecord">
+        <property name="sourceAnchor" value="628,1482" />
+        <property name="targetAnchor" value="1230,744" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaCustomRESTClient.LoginRecord">
+        <property name="sourceAnchor" value="628,1474" />
+        <property name="targetAnchor" value="1223,744" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="666,1792,248,507" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.FLogProc" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.GetLogProc()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.SetLogProc(TProc`3)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.LogProc" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.GetSelf()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.InternalCreate()" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.FInitialized" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.InternalActivateThreaded()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.GetActive()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.SetActive(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.Active" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.FActivateThreaded" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.FAfterActivate" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.GetAfterActivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.SetAfterActivate(Janua.Core.Classes.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.Activate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.Create(Tarray`1)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.Destroy()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.AfterActivate" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.WriteLog(System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.WriteError(System.string,System.string,Janua.Core.Classes.Exception)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.WriteLocalLog(System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.WriteLocalError(System.string,System.string,Janua.Core.Classes.Exception)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.ClearLocalLog(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.ClearLocalLog()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.GetLogString()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObject.LogString" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaCoordinates">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="149,1407,241,328" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCoordinates.FCoordinates" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoordinates.getLatitude()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoordinates.getLongitude()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoordinates.getAddress()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoordinates.SetLatitude(System.Double)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoordinates.SetLongitude(System.Double)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoordinates.SetAddress(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoordinates.SetCoordinates(Janua.Core.Types.TJanuaRecordCoordinates)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoordinates.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoordinates.Create(System.Double,System.Double)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoordinates.ToString()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoordinates.Clear()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoordinates.GetCoordinatesFromAddress()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCoordinates.Coordinates" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCoordinates.Latitude" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCoordinates.Longitude" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCoordinates.Address" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaAction">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="457,1878,208,789" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaAction.FCaption" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaAction.FTag" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaAction.FEnabled" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaAction.FVisible" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaAction.FOnExecute" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaAction.FProc" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaAction.FImageIndex" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaAction.FDropDownList" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaAction.FHasDropDown" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaAction.FName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaAction.FGUID" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.GetGUID()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.SetGUID(Janua.Core.Classes.TGUID)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.GetName()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.SetName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.GetCaption()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.SetCaption(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.GetEnabled()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.SetEnabled(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.GetOnExecute()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.SetOnExecute(Janua.Core.Classes.Intf.TJanuaActionEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.GetProc()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.SetProc(TProc`1)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.GetImageIndex()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.SetImageIndex(Janua.Core.Classes.TImageIndex)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.GetHasDropDown()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.SetHasDropDown(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.GetDropDownList()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.SetDropDownList(Janua.Core.Classes.Intf.IJanuaActionList)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.GetTag()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.SetTag(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.GetVisible()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.SetVisible(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.ExecuteAction(Janua.Core.Classes.TObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.Execute()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.Create()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaAction.DropDownList" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaAction.HasDropDown" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaAction.Tag" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaAction.Enabled" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaAction.Caption" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaAction.ImageIndex" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaAction.Name" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaAction.guid" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaAction.Visible" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaAction.UpdateName(System.string,System.string,Janua.Core.Classes.TGUID)" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaAction:Janua.Core.Classes.TJanuaInterfacedBindableObject">
+        <property name="sourceAnchor" value="655,1878" />
+        <property name="targetAnchor" value="988,489" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.@unitclass">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.@unitclass.JwriteLog(System.string)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaImageRSSTag">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="908,1,141,220" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaImageRSSTag.Image" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaImageRSSTag.Url" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaImageRSSTag.Title" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaImageRSSTag.Link" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaImageRSSTag.Width" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaImageRSSTag.Heigth" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaImageRSSTag.Description" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaImageRSSTag.SetDefault()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaImageRSSTag.Create(Janua.Core.Types.TJanuaRSSFeedType)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableObject">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="908,240,223,249" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableObject.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableObject.Destroy()" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableObject.FBindManager" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableObject.GetBindManager()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableObject.Notify(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableObject.Bind(System.string,Janua.Core.Classes.TObject,System.string,System.Boolean,set@Janua.Bindings.Intf.TJanuaBindCreateOption)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableObject.BindManager" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableObject.ClearBindings()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableObject.InternalActivate()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableObject.Active" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableObject:Janua.Core.Classes.TJanuaInterfacedObject">
+        <property name="sourceAnchor" value="911,488" />
+        <property name="targetAnchor" value="911,1792" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedObjectClass">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="908,508,184,67" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaBindableObject">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="908,594,216,252" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaBindableObject.FLogProc" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableObject.GetLogProc()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableObject.SetLogProc(TProc`3)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableObject.LogError(System.string,System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaBindableObject.LogProc" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableObject.AttachObserver(Janua.Core.Classes.TObject,Janua.Core.Classes.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableObject.Detach(Janua.Core.Classes.TObject)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaBindableObject.AsObject" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableObject.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableObject.Create(Tarray`1)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableObject.Destroy()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TEnumerationEnumerator">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="908,865,162,178" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TEnumerationEnumerator.FMinValue" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TEnumerationEnumerator.FMaxValue" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TEnumerationEnumerator.FValue" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TEnumerationEnumerator.Create(Janua.Core.Classes.PTypeInfo)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TEnumerationEnumerator.GetCurrent()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TEnumerationEnumerator.MoveNext()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TEnumerationEnumerator.Current" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TTestList&lt;1&gt;">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1169,1,275,104" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TTestList&lt;1&gt;.OfType&lt;1&gt;()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="952,1062,229,417" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.FIndex" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.FasJsonObject" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.GetAsJsonString()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.GetasJsonObject()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.SetasJsonObject(Janua.Core.Classes.TJsonObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.SetAsJsonString(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.Create(Janua.Core.Classes.TJsonObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.FindKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.ParseJson(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.JsonValue(System.string,ref@System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.JsonValue(System.string,ref@Janua.Core.Classes.TDateTime)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.JsonValue(System.string,ref@System.Int64)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.JsonValue(System.string,ref@System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.JsonValue(System.string,ref@System.Extended)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.JsonValue(System.string,ref@System.Double)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.JsonValue(System.string,ref@System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.JsonValue(System.string,ref@Janua.Core.Classes.TJsonArray)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.JsonValue(System.string,ref@Janua.Core.Classes.TJsonObject)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.asJsonObject" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser.AsJsonString" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaJsonParser:Janua.Core.Classes.TJanuaInterfacedObject">
+        <property name="sourceAnchor" value="991,1479" />
+        <property name="targetAnchor" value="880,1792" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaItemRSSTag">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="908,1498,130,280" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaItemRSSTag.Item" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaItemRSSTag.Title" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaItemRSSTag.Author" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaItemRSSTag.Link" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaItemRSSTag.Description" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaItemRSSTag.category" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaItemRSSTag.comments" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaItemRSSTag.enclosure" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaItemRSSTag.guid" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaItemRSSTag.pubDate" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaItemRSSTag.Source" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaItemRSSTag.SetDefault()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaItemRSSTag.Create(Janua.Core.Types.TJanuaRSSFeedType)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaBasicLogger">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1219,124,194,93" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaBasicLogger:Janua.Core.Classes.TJanuaCustomLogger">
+        <property name="sourceAnchor" value="1243,217" />
+        <property name="targetAnchor" value="851,468" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableComponent">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="208,1878,247,192" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableComponent.FComponent" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableComponent.GetNameJ()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableComponent.SetNameJ(Janua.Core.Classes.TComponentName)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableComponent.JanuaGetComponent()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableComponent.JanuaSetComponent(Janua.Core.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableComponent.Name" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableComponent.Component" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaInterfacedBindableComponent:Janua.Core.Classes.TJanuaInterfacedBindableObject">
+        <property name="sourceAnchor" value="371,1878" />
+        <property name="targetAnchor" value="965,489" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaBindableItem">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1219,236,223,237" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaBindableItem.FBindManager" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableItem.GetBindManager()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableItem.GetSelf()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableItem.ClearBindings()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableItem.Bind(System.string,Janua.Core.Classes.TObject,System.string,System.Boolean,set@Janua.Bindings.Intf.TJanuaBindCreateOption)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableItem.AttachObserver(Janua.Core.Classes.TObject,Janua.Core.Classes.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableItem.Detach(Janua.Core.Classes.TObject)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaBindableItem.BindManager" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableItem.Create(Janua.Core.Classes.TCollection)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableItem.Destroy()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaLoginRecord">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1219,492,230,252" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaLoginRecord.Session" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaLoginRecord.UserProfile" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaLoginRecord.GetIsLoggedIn()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaLoginRecord.GetIsPublicSession()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaLoginRecord.GetJsonObject()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaLoginRecord.SetIsLoggedIn(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaLoginRecord.Clear()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaLoginRecord.LoadFromJsonObject(Janua.Core.Classes.TJsonObject)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaLoginRecord.IsPublicSession" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaLoginRecord.IsLoggedIn" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaLoginRecord.asJsonObject" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaFileCache">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1219,763,222,328" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaFileCache.FTextFiles" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaFileCache.FFileLoader" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaFileCache.FFileName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaFileCache.FHomeDir" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaFileCache.FSelectedFile" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaFileCache.FFound" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaFileCache.SetTextFiles(TDictionary`2)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaFileCache.SetHomeDir(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaFileCache.SetSelectedFile(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaFileCache.SetFound(System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaFileCache.SelectedFile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaFileCache.Found" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaFileCache.SearchFile(System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaFileCache.Create(Janua.Core.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaFileCache.Destroy()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaFileCache.HomeDir" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaFileCache.TextFiles" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaFileCache:Janua.Core.Classes.TJanuaCoreComponent">
+        <property name="sourceAnchor" value="1330,1091" />
+        <property name="targetAnchor" value="1330,2842" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaBindablePersistent">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1219,1110,234,237" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaBindablePersistent.FBindManager" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindablePersistent.GetBindManager()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindablePersistent.GetSelf()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindablePersistent.ClearBindings()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaBindablePersistent.BindManager" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindablePersistent.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindablePersistent.NotifiyAllProperties()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindablePersistent.Notify(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindablePersistent.Bind(System.string,Janua.Core.Classes.TObject,System.string,System.Boolean,set@Janua.Bindings.Intf.TJanuaBindCreateOption)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaBindablePersistent.AsObject" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaBindablePersistent:Janua.Core.Classes.TJanuaPersistent">
+        <property name="sourceAnchor" value="1219,1148" />
+        <property name="targetAnchor" value="526,679" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaFeeds">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="29,1878,173,160" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaFeeds.Url" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaFeeds.RSSTags" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaFeeds.Feeds" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaFeeds.Create(Janua.Core.Types.TJanuaRSSFeedType)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaFeeds.ToString()" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaFeeds.RSSTags">
+        <property name="sourceAnchor" value="202,1981" />
+        <property name="targetAnchor" value="1219,1981" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaFeeds.Feeds">
+        <property name="sourceAnchor" value="184,2038" />
+        <property name="targetAnchor" value="773,2718" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1219,1366,253,328" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry.FLanguageName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry.FMainCountry" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry.FCultureCode" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry.FCultures" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry.FMainCountryCode" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry.FOnChangeCulture" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry.SetCultureCode(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry.SetCultures(Janua.Core.Classes.TJanuaISOCultures)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry.SetLanguage(Janua.Core.Types.TJanuaLanguage)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry.Create(Janua.Core.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry.Destroy()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry.CultureCode" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry.LanguageName" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry.MainCountryCode" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry.MainCountry" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry.Cultures" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry.OnChangeCulture" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry:Janua.Core.Classes.TJanuaCoreComponent">
+        <property name="sourceAnchor" value="1345,1694" />
+        <property name="targetAnchor" value="1345,2842" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry.FCultures">
+        <property name="sourceAnchor" value="1298,1694" />
+        <property name="targetAnchor" value="1137,2248" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaIsoLanguageCountry.Cultures">
+        <property name="sourceAnchor" value="1291,1694" />
+        <property name="targetAnchor" value="1130,2248" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaActionList">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="952,1797,215,432" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.FActions" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.FItemIndex" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.FStdActions" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.FOnUpdateAction" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.GetStdActions(Janua.Core.Classes.Intf.TJanuaStandardAction)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.GetActions()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.GetItemIndex()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.GetItems(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.SetItemIndex(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.SetItems(System.string,Janua.Core.Classes.Intf.IJanuaAction)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.GetOnUpdateAction()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.SetOnUpdateAction(Janua.Core.Classes.TNotifyEvent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.ClearActions()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.DoUpdateActions()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.FindAction(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.Add(System.string,System.Boolean,TProc`1,Janua.Core.Classes.Intf.TJanuaStandardAction,Janua.Core.Classes.TImageIndex,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.Add(Janua.Core.Classes.Intf.IJanuaAction,Janua.Core.Classes.Intf.TJanuaStandardAction)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.Actions" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.ItemIndex" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.Items[string]" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.StdActions[Janua.Core.Classes.Intf.TJanuaStandardAction]" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.OnUpdateAction" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaActionList.Create()" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaActionList:Janua.Core.Classes.TJanuaInterfacedObject">
+        <property name="sourceAnchor" value="952,2013" />
+        <property name="targetAnchor" value="914,2013" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TOfTypeEnumerator&lt;2&gt;">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1219,1713,220,193" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TOfTypeEnumerator&lt;2&gt;.FTestList" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TOfTypeEnumerator&lt;2&gt;.FIndex" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TOfTypeEnumerator&lt;2&gt;.Create(TList`1)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TOfTypeEnumerator&lt;2&gt;.Reset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TOfTypeEnumerator&lt;2&gt;.GetCurrent()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TOfTypeEnumerator&lt;2&gt;.MoveNext()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaRSSTags">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1219,1925,204,280" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaRSSTags.Channel" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaRSSTags.Title" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaRSSTags.Link" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaRSSTags.Description" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaRSSTags.Language" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaRSSTags.pubDate" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaRSSTags.lastBuildDate" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaRSSTags.generator" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaRSSTags.Item" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaRSSTags.Image" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaRSSTags.FeedType" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaRSSTags.Create(Janua.Core.Types.TJanuaRSSFeedType)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaRSSTags.ToString()" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaRSSTags.Item">
+        <property name="sourceAnchor" value="1219,1939" />
+        <property name="targetAnchor" value="1038,1717" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaRSSTags.Image">
+        <property name="sourceAnchor" value="1296,1925" />
+        <property name="targetAnchor" value="997,221" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaObject">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1219,2224,160,373" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaObject.FLastMessage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaObject.FName" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaObject.SetVerbose(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaObject.SetLastMessage(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaObject.SetNameJ(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaObject.Deactivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaObject.InternalActivate()" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaObject.FLastErrorMessage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaObject.FHasErrors" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaObject.FVerbose" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaObject.WriteLog(System.string,System.string,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaObject.WriteError(System.string,System.string,Janua.Core.Classes.Exception,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaObject.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaObject.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaObject.ClearErrors()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaObject.LastErrorMessage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaObject.HasErrors" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaObject.Verbose" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaObject.lastMessage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaObject.Name" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaObject:Janua.Core.Classes.TJanuaCustomObject">
+        <property name="sourceAnchor" value="1219,2437" />
+        <property name="targetAnchor" value="187,2795" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1510,1,298,564" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.FLogProc" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.GetLogProc()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.SetLogProc(TProc`3)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.LogError(System.string,System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.LogProc" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.notDesigning()" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.FObserversList" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.CallObservers()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.DetachObservers()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.AttachObserver(Janua.Core.Classes.TObject,Janua.Core.Classes.TProc)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.Detach(Janua.Core.Classes.TObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.JanuaGetComponent()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.JanuaSetComponent(Janua.Core.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.GetNameJ()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.SetNameJ(Janua.Core.Classes.TComponentName)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.FBindManager" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.GetBindManager()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.GetSelf()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.Notify(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.Bind(System.string,Janua.Core.Classes.TObject,System.string,System.Boolean,set@Janua.Bindings.Intf.TJanuaBindCreateOption)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.BindManager" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.ClearBindings()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.WriteLog(System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.WriteError(System.string,System.string,Janua.Core.Classes.Exception)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.WriteLocalLog(System.string,System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.WriteLocalError(System.string,System.string,Janua.Core.Classes.Exception)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.ClearLocalLog(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.GetLogString()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.Create(Janua.Core.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.Destroy()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaBindableComponent.LogString" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="952,2248,226,508" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.FISOCultures" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.FSelectedCulture" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.FLanguageName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.FCultureCode" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.FCountry" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.FCountryCode" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.FIsoCode3" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.FCulture" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.FFound" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.FIsoLanguages" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.SetCountry(Janua.Core.Types.TJanuaISOCountries)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.SetCountryCode(Janua.Core.Types.TJanuaisoCountryCode)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.SetCultureCode(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.SetIsoCode3(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.SetLanguageName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.SetCulture(Janua.Core.Types.TJanuaCultures)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.SetSelectedCulture()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.SetIsoLanguages(Janua.Core.Classes.TJanuaISOLanguages)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.Deactivate()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.IsoCode3" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.CultureCode" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.LanguageName" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.CountryCode" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.Culture" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.Country" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.Found" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.IsoLanguages" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures:Janua.Core.Classes.TJanuaObject">
+        <property name="sourceAnchor" value="1178,2422" />
+        <property name="targetAnchor" value="1219,2422" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.FISOCultures">
+        <property name="sourceAnchor" value="1142,2248" />
+        <property name="targetAnchor" value="1595,772" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.FSelectedCulture">
+        <property name="sourceAnchor" value="1135,2248" />
+        <property name="targetAnchor" value="1588,772" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.FIsoLanguages">
+        <property name="sourceAnchor" value="998,2248" />
+        <property name="targetAnchor" value="497,359" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaISOCultures.IsoLanguages">
+        <property name="sourceAnchor" value="992,2248" />
+        <property name="targetAnchor" value="490,359" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaCustomPersistent">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1219,2616,159,207" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomPersistent.SetName(System.string)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCustomPersistent.FName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCustomPersistent.FActive" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomPersistent.SetActive(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomPersistent.Deactivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomPersistent.Activate()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCustomPersistent.Name" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCustomPersistent.Active" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaFeed">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="773,2705,169,220" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaFeed.Title" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaFeed.AbstractText" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaFeed.LinkUrl" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaFeed.Text" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaFeed.Image" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaFeed.Author" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaFeed.RawText" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaFeed.Date" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaFeed.ToString()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1846,1,337,403" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.FKey" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.FUserSessionVM" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.FSettingLocation" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.SetUserSessionVM(Janua.System.ViewModel.Intf.IJanuaSystemUserSessionViewModel)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.SetSettingLocation(Janua.Core.System.Types.TJanuaSettingLocation)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.GetUserSessionVM()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.GetAsJson()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.SetAsJson(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.SetKey(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.StoreConfig(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.RetrieveConfig(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.NotifyAll()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.CheckAll()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.Create()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.Create(Janua.Core.System.Types.TJanuaSettingLocation)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.Create(Janua.System.ViewModel.Intf.IJanuaSystemUserSessionViewModel,Janua.Core.System.Types.TJanuaSettingLocation)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.LoadConfig()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.SaveConfig()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.AsJson" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.Key" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.SettingLocation" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject.UserSessionVM" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaBindableConfObject:Janua.Core.Classes.TJanuaBindableObject">
+        <property name="sourceAnchor" value="1846,288" />
+        <property name="targetAnchor" value="1124,663" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TOfInterfaceEnumerator&lt;2&gt;">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="554,2705,217,193" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TOfInterfaceEnumerator&lt;2&gt;.FTestList" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TOfInterfaceEnumerator&lt;2&gt;.FIndex" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TOfInterfaceEnumerator&lt;2&gt;.Create(IList`1)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TOfInterfaceEnumerator&lt;2&gt;.Reset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TOfInterfaceEnumerator&lt;2&gt;.GetCurrent()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TOfInterfaceEnumerator&lt;2&gt;.MoveNext()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaISORecordLanguage">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="375,2705,178,158" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISORecordLanguage.ID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISORecordLanguage.Name" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISORecordLanguage.Code" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISORecordLanguage.IsoCode3" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISORecordLanguage.Language" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="196,2705,174,763" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.FEncodedDataset" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.FDecodedDataset" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.FJsonObject" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.FKeyFields" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.FisReadOny" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.FDataSource" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.FIsVirtualTable" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.SetDecodedDataset(Janua.Core.Classes.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.SetEncodedDataset(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.SetJsonObject(Janua.Core.Classes.TJsonObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.SetKeyFields(Janua.Core.Classes.TStrings)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.SetisReadOny(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.SetDataSource(Janua.Core.Classes.TDataSource)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.AssignDatasource()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.getRecordCount()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.SetIsVirtualTable(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.CreateVirtualTable()" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.FVirtualTable" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.seTFdMemTable(Janua.Core.Classes.TDataset)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.FMemDataset" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.FPostDataset" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.FDelDataset" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.CreateInternalDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.DestroyInternalDataset()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.LoadFromJsonObject(Janua.Core.Classes.TJsonObject)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.Create(Janua.Core.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.asJsonObject()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.AsJson()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.AfterPost(Janua.Core.Classes.TDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.FieldByName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.AssignDataset(Janua.Core.Classes.TDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.LoadFromFile(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.SaveToFile(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.LoadFromJson(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.EncodedDataset" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.DecodedDataset" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.JsonObject" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.Open()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.Close()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.MemDataset" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.KeyFields" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.isReadOny" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.DataSource" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.RecordCount" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset.IsVirtualTable" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaJsonDacDataset:Janua.Core.Classes.TJanuaCoreComponent">
+        <property name="sourceAnchor" value="370,3155" />
+        <property name="targetAnchor" value="1219,3155" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaCustomObject">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="27,2705,160,237" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCustomObject.FActive" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomObject.SetName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomObject.SetActive(System.Boolean)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCustomObject.FName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCustomObject.FActve" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomObject.InternalActivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomObject.Deactivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCustomObject.Activate()" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCustomObject.Name" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCustomObject.Active" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaISOCulture">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1510,584,229,188" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOCulture.ID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOCulture.IsoCode3" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOCulture.CultureCode" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOCulture.LanguageName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOCulture.CountryCode" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOCulture.Country" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOCulture.Culture" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TOfTypeEnumeratorFactory&lt;2&gt;">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1510,791,232,148" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TOfTypeEnumeratorFactory&lt;2&gt;.FTestList" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TOfTypeEnumeratorFactory&lt;2&gt;.Create(TList`1)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TOfTypeEnumeratorFactory&lt;2&gt;.GetEnumerator()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaISOCountry">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1510,958,198,238" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaISOCountry.FisoCountry" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOCountry.GetCountry2Code()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOCountry.GetCountry3Code()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOCountry.SetCountry2Code(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOCountry.SetCountry3Code(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOCountry.SetisoCountry(Janua.Core.Types.TJanuaISOCountries)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOCountry.Create(Janua.Core.Commons.TJanuaCustomComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaISOCountry.Create(Janua.Core.Commons.TJanuaCustomComponent,Janua.Core.Types.TJanuaISOCountries)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaISOCountry.Country3Code" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaISOCountry.isoCountry" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaISOCountry.Country2Code" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaISOCountry:Janua.Core.Classes.TJanuaPersistent">
+        <property name="sourceAnchor" value="1510,1037" />
+        <property name="targetAnchor" value="526,649" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaBarcodeInterfacedObject">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1510,1215,200,81" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaBarcodeInterfacedObject:Janua.Core.Classes.TJanuaInterfacedBindableObject">
+        <property name="sourceAnchor" value="1583,1215" />
+        <property name="targetAnchor" value="1102,489" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaDatasetClient">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1510,1315,198,118" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaDatasetClient.FDataset" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaDatasetClient.SetDataset(Janua.Core.Classes.TJanuaJsonDacDataset)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaDatasetClient.Dataset" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaDatasetClient:Janua.Core.Classes.TJanuaCoreComponent">
+        <property name="sourceAnchor" value="1600,1433" />
+        <property name="targetAnchor" value="1414,2842" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaDatasetClient.FDataset">
+        <property name="sourceAnchor" value="1562,1433" />
+        <property name="targetAnchor" value="370,2973" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Classes.TJanuaDatasetClient.Dataset">
+        <property name="sourceAnchor" value="1555,1433" />
+        <property name="targetAnchor" value="370,2965" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1219,2842,267,939" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.GetApplicationType()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.SetApplicationType(Janua.Core.Types.TJanuaApplicationType)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.FLocalLog" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.FLogToFile" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.FHasMessage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.FVerbose" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.SetLogToFile(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.GetLogText()" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.FLastMessage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.FLogErrors" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.GetLocalLog()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.RaiseLocalException(System.string,Janua.Core.Classes.Exception)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.ClearMessage()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.ClearErrors()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.AddLog(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.WriteLog(System.string,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.WriteLog(System.string,System.string,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.WriteError(System.string,Janua.Core.Classes.Exception,System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.WriteError(System.string,System.string,Janua.Core.Classes.Exception,System.Boolean)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.LocalLog" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.LogText" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.InternalActivate()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.InternalDeactivate()" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.FIsServer" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.FDebugMode" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.SetIsServer(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.SetDebugMode(System.Boolean)" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.FOnChangeLanguage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.FLanguage" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.FTestMode" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.SetVerbose(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.LocalRaiseException(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.WriteMessage(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.SetTestMode(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.isInitializing()" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.FIsLoaded" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.GenerateJsonError(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.GenerateJsonResult(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.CanRaise()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.GetIsLoaded()" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.JanuaComponentCount" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.Create(Janua.Core.Classes.TComponent)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.SetLanguage(Janua.Core.Types.TJanuaLanguage)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.ApplicationType" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.lastMessage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.HasMessage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.LastErrorMessage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.Verbose" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.LogToFile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.Language" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.OnChangeLanguage" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.IsServer" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.isLoaded" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.TestMode" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent.DebugMode" />
+      <reference referencedUin="delphi:l_gnt:src:JanuaCore:Janua.Core.Classes.TJanuaCoreComponent:Janua.Core.Classes.TJanuaBindableComponent">
+        <property name="sourceAnchor" value="1399,2842" />
+        <property name="targetAnchor" value="1630,565" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+  </view>
+</nodeSet>
