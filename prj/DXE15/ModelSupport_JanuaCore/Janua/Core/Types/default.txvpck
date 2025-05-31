@@ -6,7 +6,7 @@
     <property name="$name" value="default" />
     <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.TJanuaRecordCoordinates">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="10,10,175,235" />
+      <property name="bounds" value="10,10,176,235" />
       <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaRecordCoordinates.Latitude" />
       <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaRecordCoordinates.Longitude" />
       <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaRecordCoordinates.Address" />
@@ -123,7 +123,7 @@
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.TJanuaJsonString">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="63,430,150,36" />
+      <property name="bounds" value="63,430,154,36" />
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.TStringArray">
       <property name="$shortcutReference" value="true" />
@@ -139,7 +139,7 @@
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.TJanuaConfKey">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="417,536,270,566" />
+      <property name="bounds" value="417,536,278,553" />
       <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaConfKey.Key" />
       <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Core.Types.TJanuaConfKey.FItems" />
       <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaConfKey.GetItems()" />
@@ -300,12 +300,12 @@
       <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Types.TLocalCoordinates.IsUpdating" />
       <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Types.TLocalCoordinates.FCoordinates">
         <property name="sourceAnchor" value="745,693" />
-        <property name="targetAnchor" value="185,204" />
+        <property name="targetAnchor" value="186,204" />
         <property name="bendpoints" value="" />
       </reference>
       <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Types.TLocalCoordinates.Coordinates">
-        <property name="sourceAnchor" value="739,693" />
-        <property name="targetAnchor" value="185,209" />
+        <property name="sourceAnchor" value="740,693" />
+        <property name="targetAnchor" value="186,209" />
         <property name="bendpoints" value="" />
       </reference>
     </reference>
@@ -364,7 +364,7 @@
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.TJanuaServerRecordConf">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="725,890,182,657" />
+      <property name="bounds" value="725,890,185,657" />
       <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaServerRecordConf.GetAsJson()" />
       <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaServerRecordConf.GetasJsonPretty()" />
       <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Core.Types.TJanuaServerRecordConf.GetAsJsonObject()" />
@@ -404,7 +404,7 @@
       <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Types.TJanuaServerRecordConf.AsJson" />
       <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Core.Types.TJanuaServerRecordConf.asJsonPretty" />
       <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Core.Types.TJanuaServerRecordConf.DBEngine">
-        <property name="sourceAnchor" value="907,1313" />
+        <property name="sourceAnchor" value="910,1315" />
         <property name="targetAnchor" value="1513,1946" />
         <property name="bendpoints" value="" />
       </reference>
@@ -648,7 +648,7 @@
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.TLogArray">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="1221,1,226,36" />
+      <property name="bounds" value="1221,1,230,36" />
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.TJanuaGenderType">
       <property name="$shortcutReference" value="true" />
@@ -726,7 +726,7 @@
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.ISmartReference&lt;1&gt;">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="1221,233,122,42" />
+      <property name="bounds" value="1221,233,123,42" />
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.TJanuaStringArray">
       <property name="$shortcutReference" value="true" />
@@ -1450,7 +1450,7 @@
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.TRecFieldDefArray">
       <property name="$shortcutReference" value="true" />
-      <property name="bounds" value="1931,56,251,36" />
+      <property name="bounds" value="1931,56,258,36" />
     </reference>
     <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Core.Types.TJanuaComponentTypes">
       <property name="$shortcutReference" value="true" />

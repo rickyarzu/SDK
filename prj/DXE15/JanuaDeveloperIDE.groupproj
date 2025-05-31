@@ -48,6 +48,9 @@
         <Projects Include="WebREST\JanuaWhatsAppWebBroker.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Testing\JanuaCoreUnitTesting.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -191,19 +194,28 @@
     <Target Name="JanuaWhatsAppWebBroker:Make">
         <MSBuild Projects="WebREST\JanuaWhatsAppWebBroker.dproj" Targets="Make"/>
     </Target>
+    <Target Name="JanuaCoreUnitTesting">
+        <MSBuild Projects="Testing\JanuaCoreUnitTesting.dproj"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Clean">
+        <MSBuild Projects="Testing\JanuaCoreUnitTesting.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaCoreUnitTesting:Make">
+        <MSBuild Projects="Testing\JanuaCoreUnitTesting.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="JanuaCoreThirdParty;JanuaCore;JanuaCoreComponents;JanuaMVVM;JanuaUnidac;JanuaRestWeb;JanuaFMXControls;JanuaRestWebComponents;JanuaUniGUI;JanuaVCLControls;JanuaVCLComponents;JanuaVCLChatGPTTest;SimpleChat;JanuaOpenAISimpleChat;JanuaWhatsAppWebBroker"/>
+        <CallTarget Targets="JanuaCoreThirdParty;JanuaCore;JanuaCoreComponents;JanuaMVVM;JanuaUnidac;JanuaRestWeb;JanuaFMXControls;JanuaRestWebComponents;JanuaUniGUI;JanuaVCLControls;JanuaVCLComponents;JanuaVCLChatGPTTest;SimpleChat;JanuaOpenAISimpleChat;JanuaWhatsAppWebBroker;JanuaCoreUnitTesting"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="JanuaCoreThirdParty:Clean;JanuaCore:Clean;JanuaCoreComponents:Clean;JanuaMVVM:Clean;JanuaUnidac:Clean;JanuaRestWeb:Clean;JanuaFMXControls:Clean;JanuaRestWebComponents:Clean;JanuaUniGUI:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaVCLChatGPTTest:Clean;SimpleChat:Clean;JanuaOpenAISimpleChat:Clean;JanuaWhatsAppWebBroker:Clean"/>
+        <CallTarget Targets="JanuaCoreThirdParty:Clean;JanuaCore:Clean;JanuaCoreComponents:Clean;JanuaMVVM:Clean;JanuaUnidac:Clean;JanuaRestWeb:Clean;JanuaFMXControls:Clean;JanuaRestWebComponents:Clean;JanuaUniGUI:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaVCLChatGPTTest:Clean;SimpleChat:Clean;JanuaOpenAISimpleChat:Clean;JanuaWhatsAppWebBroker:Clean;JanuaCoreUnitTesting:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaCoreComponents:Make;JanuaMVVM:Make;JanuaUnidac:Make;JanuaRestWeb:Make;JanuaFMXControls:Make;JanuaRestWebComponents:Make;JanuaUniGUI:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaVCLChatGPTTest:Make;SimpleChat:Make;JanuaOpenAISimpleChat:Make;JanuaWhatsAppWebBroker:Make"/>
+        <CallTarget Targets="JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaCoreComponents:Make;JanuaMVVM:Make;JanuaUnidac:Make;JanuaRestWeb:Make;JanuaFMXControls:Make;JanuaRestWebComponents:Make;JanuaUniGUI:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaVCLChatGPTTest:Make;SimpleChat:Make;JanuaOpenAISimpleChat:Make;JanuaWhatsAppWebBroker:Make;JanuaCoreUnitTesting:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
-    <ItemGroup Condition="'$(BuildGroup)'=='Lib Win 32/64'">
-        <BuildGroupProject Include="JanuaCoreComponents.dproj">
-            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+    <ItemGroup Condition="'$(BuildGroup)'=='Lib'">
+        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
@@ -220,6 +232,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="Testing\JanuaCoreUnitTesting.dproj">
+            <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
+            <Configurations>Test</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCore.dproj">
             <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
             <Configurations/>
@@ -232,6 +250,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="WebREST\JanuaWhatsAppWebBroker.dproj">
+            <ProjectGuid>{E4046C38-22A2-4603-8691-017AE6881D9B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
             <Configurations/>
@@ -242,12 +266,6 @@
             <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="WebREST\JanuaWhatsAppWebBroker.dproj">
-            <ProjectGuid>{E4046C38-22A2-4603-8691-017AE6881D9B}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaRestWeb.dproj">
@@ -286,16 +304,16 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
-            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
     </ItemGroup>
-    <ItemGroup Condition="'$(BuildGroup)'=='Lib'">
-        <BuildGroupProject Include="JanuaCoreComponents.dproj">
-            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+    <ItemGroup Condition="'$(BuildGroup)'=='Lib Win 32/64'">
+        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
@@ -312,6 +330,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="Testing\JanuaCoreUnitTesting.dproj">
+            <ProjectGuid>{737FBCB6-648B-444C-B275-4918E4C1FE78}</ProjectGuid>
+            <Configurations>Test</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaCore.dproj">
             <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
             <Configurations/>
@@ -324,6 +348,12 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="WebREST\JanuaWhatsAppWebBroker.dproj">
+            <ProjectGuid>{E4046C38-22A2-4603-8691-017AE6881D9B}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
             <Configurations/>
@@ -334,12 +364,6 @@
             <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
             <Configurations/>
             <Platforms/>
-            <Enabled>False</Enabled>
-        </BuildGroupProject>
-        <BuildGroupProject Include="WebREST\JanuaWhatsAppWebBroker.dproj">
-            <ProjectGuid>{E4046C38-22A2-4603-8691-017AE6881D9B}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaRestWeb.dproj">
@@ -378,8 +402,8 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
-            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
