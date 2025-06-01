@@ -17,7 +17,6 @@ uses
   Janua.Cloud.Types.Test in '..\..\..\src\januacore\Test\Janua.Cloud.Types.Test.pas',
   Janua.Core.Functions.Test in '..\..\..\src\januacore\Test\Janua.Core.Functions.Test.pas',
   Janua.Test.FireDac.dmVirtual in '..\..\..\src\januacore\Test\Janua.Test.FireDac.dmVirtual.pas' {dmFDacVirtualTest: TDataModule},
-  Janua.Core.Types.Test in '..\..\..\src\januacore\Test\Janua.Core.Types.Test.pas',
   Janua.Orm.Test.Impl in '..\..\..\src\januacore\Test\Janua.Orm.Test.Impl.pas',
   Janua.Orm.Test.Intf in '..\..\..\src\januacore\Test\Janua.Orm.Test.Intf.pas',
   Janua.Orm.Test in '..\..\..\src\januacore\Test\Janua.Orm.Test.pas',
@@ -40,7 +39,9 @@ uses
   Janua.Http.Test in '..\..\..\src\januacore\Test\Janua.Http.Test.pas',
   Janua.Http.WebMock.Test in '..\..\..\src\januacore\Test\Janua.Http.WebMock.Test.pas',
   Janua.Rest.TestClasses in '..\..\..\src\januacore\Test\Janua.Rest.TestClasses.pas',
-  Janua.Rest.UnitTest.Client in '..\..\..\src\januacore\Test\Janua.Rest.UnitTest.Client.pas';
+  Janua.Rest.UnitTest.Client in '..\..\..\src\januacore\Test\Janua.Rest.UnitTest.Client.pas',
+  Janua.Http.Types.Test in '..\..\..\src\januacore\Test\Janua.Http.Types.Test.pas',
+  Janua.Core.Types.Test in '..\..\..\src\januacore\Test\Janua.Core.Types.Test.pas';
 
 { keep comment here to protect the following conditional from being removed by the IDE when adding a unit }
 {$IFNDEF TESTINSIGHT}

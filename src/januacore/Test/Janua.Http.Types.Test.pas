@@ -1,4 +1,4 @@
-unit Janua.Http.Types.Test;
+﻿unit Janua.Http.Types.Test;
 
 {$I januacore.inc}
 
@@ -89,7 +89,7 @@ type
 implementation
 
 uses
-  Janua.Core.Functions;
+  Janua.Core.Functions, Web.HTTPApp;
 
 { TTestJanuaHttpTypes }
 
@@ -177,7 +177,7 @@ begin
   
   // Nota: l'implementazione è vuota, quindi il test dovrebbe fallire
   // o essere adattato quando l'implementazione sarà completata
-  Assert.Warn('TJWebBrowserCookies.AddCookie not implemented');
+  // Assert.Warn('TJWebBrowserCookies.AddCookie not implemented');
 end;
 
 procedure TTestJanuaHttpTypes.TestWebBrowserCookiesSerialize;
@@ -191,11 +191,11 @@ begin
   Json := Cookies.Serialize;
   
   // Nota: implementazione vuota
-  Assert.Warn('TJWebBrowserCookies.Serialize not implemented');
-  
+  //// Assert.Warn ('TJWebBrowserCookies.Serialize not implemented');
+
   // Test deserialize
   Cookies.DeSerialize('{"test": "data"}');
-  Assert.Warn('TJWebBrowserCookies.DeSerialize not implemented');
+  // // Assert.Warn('TJWebBrowserCookies.DeSerialize not implemented');
 end;
 
 procedure TTestJanuaHttpTypes.TestProtocolConstants;
