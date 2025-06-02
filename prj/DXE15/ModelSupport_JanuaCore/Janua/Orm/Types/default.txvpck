@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="gnb4v0xtont_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaOrderByField">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1320,140,182,237" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaOrderByField.FOrderBy" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaOrderByField.FFieldName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaOrderByField.FCompare" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaOrderByField.SetCompare(Janua.Orm.Types.TOrderByCompare)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaOrderByField.SetFieldName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaOrderByField.SetOrderBy(Janua.Orm.Types.TOrderByEnum)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaOrderByField.Create(System.string,Janua.Orm.Types.TOrderByEnum,Janua.Orm.Types.TOrderByCompare)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaOrderByField.FieldName" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaOrderByField.OrderBy" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaOrderByField.Compare" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Orm.Types.TJanuaOrderByField.FOrderBy">
+        <property name="sourceAnchor" value="1320,307" />
+        <property name="targetAnchor" value="1023,471" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Orm.Types.TJanuaOrderByField.FCompare">
+        <property name="sourceAnchor" value="1320,176" />
+        <property name="targetAnchor" value="1183,176" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Orm.Types.TJanuaOrderByField.OrderBy">
+        <property name="sourceAnchor" value="1320,302" />
+        <property name="targetAnchor" value="1023,466" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Orm.Types.TJanuaOrderByField.Compare">
+        <property name="sourceAnchor" value="1320,168" />
+        <property name="targetAnchor" value="1183,168" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaEntityNames">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="420,20,219,36" />
+      <property name="location_set_by_user" value="True" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaEntity">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="60,20,200,2213" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.None" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.TestMaster" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.TestDetail" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.AdsBannerLogs" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.AdsBanners" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.AdsClickLogs" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.AdsDomains" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.AdsDomainsLocations" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.AdsLastBanner" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.AdsPublishSlots" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.AnagraphCategories" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.AnagraphAnagraphs" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.AnagraphBranches" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.AnagraphGroups" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.AnagraphIdentities" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.AnagraphAddresses" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtArgumentsChampionships" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtCalendar" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtChampionships" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtClubSeasons" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtClubs" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtEventTypes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtFieldTypes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtFields" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtLeagueGroups" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtLeagues" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtMatchDays" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.ftMatches" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtMatchEvents" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtMatchPlayers" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtPlayerCareer" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtPlayers" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtRankingTable" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtRoles" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtSeasons" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtTeams" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtTeamsChampionships" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtTeams_history" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtTeamsPlayers" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtTeamsTrainers" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtTrainers" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtTrainersCareer" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtJsonCalendar" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtGoalRanking" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtTeamsHome" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.FtTeamsVisitors" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsAppLanguages" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsApps" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsArguments" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsArguments_groups" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsArgumentsRoles" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsArticles" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsEvents" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsGraphicMenu" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsGraphicMenu_groups" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsGraphicMenuRows" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsMainArguments" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsMenu" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsMenuItems" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsMenuItemsT" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsNews" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsNewsTypes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsPages" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsPagesT" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsPagesTypes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsRssArticles" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsRssFeeds" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsSessionLogs" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsSessions" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsSpecifications" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsSubArguments" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsTemplates" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsTemplatesPages" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsThemes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsThemesPages" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsWebMenus" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsWebSites" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsWebitemsPictures" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.CmsArticlesAttachments" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysAppForms" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysAppFormsObjects" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysAppFormsObjectsProperties" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysAppFormsObjectsTranslations" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysAppFormsTranslations" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysAppFunctions" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysAppLicenses" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysAppMemberForms" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysAppMessages" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysApplications" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbAppGrpParam" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbAppSchemas" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbApplicationsRoles" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbEsrSchParam" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbGroups" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbGroupsSchemas" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbGrpSchParam" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbPackagesSchemas" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbRoles" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbSchemaParams" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbSchemas" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbSchemasRoles" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbUserGroups" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbUserSessions" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbUsers" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbUsersPayments" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbUsersProfiles" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbUsersRoles" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbUsersSchemas" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbUsersSchemasApps" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysDbUsersSchemasRoles" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysFinancialYears" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysFormModels" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysFormObjectsTrans" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysPackages" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysPackagesApplications" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysSchemalog" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysSysParams" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysSysRoles" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysSyslog" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.SysTempSession" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.DocHeads" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.DocRows" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.DocAttachments" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.DocTypes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.DocVatAmounts" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.LogShipments" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.LogShipmentRows" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.LogAWBs" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.LogAWBRows" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.LogAWBCodes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.LogContainerTypes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.LogLocations" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.LogTypeOfGoods" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.LogConditions" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.PlannerTimetable" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.PlannerActivities" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.ActivitiesPlannerGroup" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.WorkTypes" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.WorkFlows" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.WorkAttachments" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.WorkLevels" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.ShippingVessels" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.ItemsGroups" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaEntity.ItemsDefinitions" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TRecordUnits">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1380,560,159,238" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TRecordUnits.Create(Janua.Orm.Types.TRecordUnitConf)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TRecordUnits.Destroy()" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TRecordUnits.FImplFile" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TRecordUnits.FIntfFile" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TRecordUnits.FConf" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TRecordUnits.SetImplFile(Janua.Orm.Types.TRecordUnitFile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TRecordUnits.SetIntfFile(Janua.Orm.Types.TRecordUnitFile)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TRecordUnits.SetConf(Janua.Orm.Types.TRecordUnitConf)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TRecordUnits.IntfFile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TRecordUnits.ImplFile" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TRecordUnits.Conf" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Orm.Types.TRecordUnits.FImplFile">
+        <property name="sourceAnchor" value="1454,798" />
+        <property name="targetAnchor" value="1454,920" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Orm.Types.TRecordUnits.FIntfFile">
+        <property name="sourceAnchor" value="1446,798" />
+        <property name="targetAnchor" value="1446,920" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Orm.Types.TRecordUnits.FConf">
+        <property name="sourceAnchor" value="1380,749" />
+        <property name="targetAnchor" value="1215,749" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Orm.Types.TRecordUnits.IntfFile">
+        <property name="sourceAnchor" value="1438,798" />
+        <property name="targetAnchor" value="1438,920" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Orm.Types.TRecordUnits.ImplFile">
+        <property name="sourceAnchor" value="1430,798" />
+        <property name="targetAnchor" value="1430,920" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Orm.Types.TRecordUnits.Conf">
+        <property name="sourceAnchor" value="1380,741" />
+        <property name="targetAnchor" value="1215,741" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.@unitclass">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.@unitclass.CJanuaOperators" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.@unitclass.JanuaEntityNames" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.@unitclass.IsEntityInSet(Janua.Orm.Types.TJanuaEntity,TArray`1)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.@unitclass.AddEntityToSet(Janua.Orm.Types.TJanuaEntity,ref@TArray`1)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaFieldKind">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1680,540,111,128" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaFieldKind.jfkCalculated" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaFieldKind.jfkData" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaFieldKind.jfkLookup" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaFieldKind.jfkParam" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaFieldKind.jfkParamLookup" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TRecordSetState">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1680,380,113,128" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TRecordSetState.rsNone" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TRecordSetState.rsInserting" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TRecordSetState.rsEditing" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TRecordSetState.rsDeleting" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TRecordSetState.rsLoading" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TDatasetPagination">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1660,120,187,205" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TDatasetPagination.Active" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TDatasetPagination.Page" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TDatasetPagination.Size" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TDatasetPagination.Assign(Janua.Orm.Types.TDatasetPagination)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TDatasetPagination.GetAsJsonValue()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TDatasetPagination.SetAsJsonValue(Janua.Orm.Types.TJsonValue)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TDatasetPagination.GetFromRecord()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TDatasetPagination.GetToRecord()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="500,140,202,507" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.FGridExport" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.FGridPos" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.FGridVisible" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.FGridFontColor" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.FGridTitle" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.FCharWidth" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.FDisplayWidth" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.GetCharWidth()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.GetGridFontColor()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.SetGridFontColor(Nullable`1)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.SetGridPos(System.Word)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.SetGridVisible(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.GetGridExport()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.SetGridExport(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.GetGridPos()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.GetGridVisible()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.SetGridTitle(Janua.Orm.Types.TNullableString)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.SetCharWidth(Janua.Orm.Types.TNullableInteger)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.GetDisplayWidth()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.SetDisplayWidth(Janua.Orm.Types.TNullableInteger)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.Create(System.Boolean,System.Word)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.DisplayWidth" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.GridExport" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.GridPos" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.GridVisible" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.GridFontColor" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.GridTitle" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef.CharWidth" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TOrderByCompare">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1060,100,123,113" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TOrderByCompare.jocDefault" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TOrderByCompare.jocCaseSensitive" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TOrderByCompare.jocCaseInsensitive" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TOrderByCompare.jocOrdinal" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaRecordState">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="320,220,129,188" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaRecordState.jrsNone" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaRecordState.jrsModified" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaRecordState.jrsNewRecord" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaRecordState.jrsDeleted" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaRecordState.jrsErased" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaRecordState.jrsDatabaseLoading" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaRecordState.jrsStoreLoading" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaRecordState.jrsPosting" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaRecordState.jrsAssigning" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1080,700,135,343" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf.FDatasetName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf.FPluralName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf.FTargetDir" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf.FSchemaName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf.FDataset" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf.FSingularName" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf.SetDatasetName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf.SetPluralName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf.SetTargetDir(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf.SetSchemaName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf.SetDataset(Janua.Orm.Types.TDataset)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf.SetSingularName(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf.DatasetName" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf.PluralName" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf.SingularName" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf.TargetDir" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf.SchemaName" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf.Dataset" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TOrderByEnum">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="920,460,103,83" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TOrderByEnum.jobASC" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TOrderByEnum.jobDESC" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="500,800,220,327" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField.FMappedField" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField.FGridFieldDef" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField.FDisplayWidth" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField.GetMappedField()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField.SetMappedField(Janua.Orm.Types.TField)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField.GetGridFieldDef()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField.SetGridFieldDef(Janua.Orm.Types.TJanuaGridFieldDef)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField.GetTitle()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField.SetTitle(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField.GetMask()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField.SetMask(System.string)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField.MappedField" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField.GridFieldDef" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField.Mask" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField.Title" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField.Create(Janua.Orm.Types.TField,System.Boolean,System.Boolean,System.Integer)" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField.FGridFieldDef">
+        <property name="sourceAnchor" value="601,800" />
+        <property name="targetAnchor" value="601,647" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField.GridFieldDef">
+        <property name="sourceAnchor" value="593,800" />
+        <property name="targetAnchor" value="593,647" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="300,820,145,207" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.FFieldGUID" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.FMappedField" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.GetMappedField()" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.SetMappedField(Janua.Orm.Types.TField)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.SetFieldGUID(Janua.Orm.Types.TGUID)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.MappedField" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.FieldGUID" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef.Create(Janua.Orm.Types.TGUID,Janua.Orm.Types.TField)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaEntities">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="700,20,232,36" />
+      <property name="location_set_by_user" value="True" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TRecordUnitFile">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="1380,920,148,208" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TRecordUnitFile.FFileName" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TRecordUnitFile.FText" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TRecordUnitFile.FConf" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TRecordUnitFile.SetFileName(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TRecordUnitFile.SetText(System.string)" />
+      <reference referencedUin="delphi:e_method:src:JanuaCore:Janua.Orm.Types.TRecordUnitFile.SetConf(Janua.Orm.Types.TRecordUnitConf)" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TRecordUnitFile.Conf" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TRecordUnitFile.FileName" />
+      <reference referencedUin="delphi:e_property:src:JanuaCore:Janua.Orm.Types.TRecordUnitFile.Text" />
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Orm.Types.TRecordUnitFile.FConf">
+        <property name="sourceAnchor" value="1380,981" />
+        <property name="targetAnchor" value="1215,981" />
+        <property name="bendpoints" value="" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:JanuaCore:Janua.Orm.Types.TRecordUnitFile.Conf">
+        <property name="sourceAnchor" value="1380,973" />
+        <property name="targetAnchor" value="1215,973" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaOperator">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="840,860,115,218" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaOperator.Equals" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaOperator.MoreThan" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaOperator.LessThan" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaOperator.Like" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaOperator.NotEqual" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaOperator.LikeUpper" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaOperator.LikeLower" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaOperator.LikeStrippedUpper" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaOperator.LikeStrippedLower" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaOperator.MoreThanEquals" />
+      <reference referencedUin="delphi:e_field:src:JanuaCore:Janua.Orm.Types.TJanuaOperator.LessThanEquals" />
+    </reference>
+  </view>
+</nodeSet>

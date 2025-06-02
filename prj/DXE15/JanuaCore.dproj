@@ -59,6 +59,11 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64x' and '$(Base)'=='true') or '$(Base_Win64x)'!=''">
+        <Base_Win64x>true</Base_Win64x>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
         <Cfg_1>true</Cfg_1>
         <CfgParent>Base</CfgParent>
@@ -186,6 +191,14 @@
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <DCC_UsePackage>rtl;soaprtl;dbrtl;xmlrtl;inet;bindengine;DbxCommonDriver;CustomIPTransport;IndyIPCommon;IndySystem;IndyProtocols;IndyCore;IndyIPClient;RESTComponents;FireDAC;FireDACCommonDriver;FireDACCommon;OpenAIPackage;JanuaCoreThirdParty;RestRequestLib;Spring.Base;Neon;DECCipher;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64x)'!=''">
+        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <BCC_EnableBatchCompilation>true</BCC_EnableBatchCompilation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
@@ -641,6 +654,90 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <None Include="ModelSupport_JanuaCore\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Delphi\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Core\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Core\Classes\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Jorm\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Phoenix\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\udmJanuaLegacySystem\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\JanuaRigaDettaglio\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\udmWpJson\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\uJanuaSimulationRow\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\udmJanuaCoreRSS\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\udmJanuaCoreDBConnection\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\udmMainApplication\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Delphi\Mocks\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\JOrm\Workflow\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\JOrm\Shipping\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\JOrm\Logistic\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\JOrm\Repository\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\JOrm\Carservice\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\JOrm\Cms\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\JOrm\Cloud\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\JOrm\Items\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\JOrm\System\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\JOrm\Planner\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\JOrm\Anagraph\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\JOrm\Football\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\JOrm\Local\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\JOrm\Documents\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Writers\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\football\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\REST\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Wordpress\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Test\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\lnd\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Http\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\TMLogistic\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Mock\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Controls\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Anagraph\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Server\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Metro5\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Reporting\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Html\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Lookups\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Documents\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Bindings\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Dilettantissimo\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\ViewModels\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Firedac\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Mocks\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Cms\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Legacy\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\System\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Cloud\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Carservice\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Logistic\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Application\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Forms\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Apps\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Maps\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\WebBroker\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\JanuaServiceTrattative\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Phoenix\Json\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Core\Classes\Intf\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Core\Classes\Social\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Core\System\Types\default.txaPackage"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Core\Types\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Application\Framework\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Types\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\CodeGen\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Generator\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Functions\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Intf\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Test\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Impl\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Dataset\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Register\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Firedac\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\CodeGen\Impl\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Test\Intf\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Test\Impl\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Dataset\Impl\default.txvpck"/>
+        <None Include="ModelSupport_JanuaCore\Janua\Orm\Dataset\Intf\default.txvpck"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>
@@ -678,9 +775,10 @@
                 <Platform value="OSXARM64">True</Platform>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
+                <Platform value="Win64x">False</Platform>
             </Platforms>
             <ModelSupport>True</ModelSupport>
-            <Deployment Version="4">
+            <Deployment Version="5">
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
                     <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
@@ -712,16 +810,6 @@
                     </Platform>
                     <Platform Name="Win32">
                         <Operation>0</Operation>
-                    </Platform>
-                </DeployClass>
-                <DeployClass Name="AndroidClasses">
-                    <Platform Name="Android">
-                        <RemoteDir>classes</RemoteDir>
-                        <Operation>64</Operation>
-                    </Platform>
-                    <Platform Name="Android64">
-                        <RemoteDir>classes</RemoteDir>
-                        <Operation>64</Operation>
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="AndroidFileProvider">
@@ -1301,6 +1389,9 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64x">
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>

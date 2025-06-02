@@ -6,21 +6,25 @@
     <property name="$name" value="default" />
     <reference referencedUin="design:view:::rcx12lk93sl_v">
       <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,194,151" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaLegacySystem.@unitclass" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaLegacySystem.TdmJanuaLegacySystem" />
     </reference>
     <reference referencedUin="design:view:::1e2f34ianbt_v">
       <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="223,1,163,151" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:JanuaRigaDettaglio.@unitclass" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:JanuaRigaDettaglio.TJanuaRigaDettaglio" />
     </reference>
     <reference referencedUin="design:view:::nyc6aidnyeq_v">
       <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="223,171,124,151" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:udmWpJson.TdmWpJson" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:udmWpJson.@unitclass" />
     </reference>
     <reference referencedUin="design:view:::0i8kyscv1pm_v">
       <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="44,180,178,151" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:uJanuaSimulationRow.TJanuaSimulationRow" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:uJanuaSimulationRow.@unitclass" />
     </reference>
@@ -42,25 +46,30 @@
     </reference>
     <reference referencedUin="design:view:::dq5m54e810g_v">
       <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="424,1,165,151" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaCoreRSS.TdmJanuaCoreRSS" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaCoreRSS.@unitclass" />
     </reference>
     <reference referencedUin="design:view:::p8xytkwkxim_v">
       <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="405,171,219,151" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaCoreDBConnection.TdmJanuaCoreDBConnections" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:udmJanuaCoreDBConnection.@unitclass" />
     </reference>
     <reference referencedUin="design:view:::4865far5i6t_v">
       <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="424,341,167,151" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:udmMainApplication.TdmMainApplication" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:udmMainApplication.@unitclass" />
     </reference>
     <reference referencedUin="design:view:::dq1z859wggs_v">
       <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="315,369,100,119" />
       <reference referencedUin="design:view:::7ccm77nf14g_v" />
     </reference>
-    <reference referencedUin="design:view:::hmkdc0z4s1mkaiq5h_v">
+    <reference referencedUin="design:view:::im1074apqxk_v">
       <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="211,350,100,314" />
       <reference referencedUin="uml:package:JanuaCore:src:JOrm.WorkFlow" />
       <reference referencedUin="design:view:::6l8et9wr2cg_v" />
       <reference referencedUin="design:view:::ohosuvwvds_v" />
@@ -76,9 +85,13 @@
       <reference referencedUin="design:view:::3lhuind5kwj_v" />
       <reference referencedUin="design:view:::yllz4g7wccg_v" />
       <reference referencedUin="design:view:::yrg9goqdeuq_v" />
+      <reference referencedUin="design:view:::niy2urqihpocxa14h_v" />
+      <reference referencedUin="design:view:::ut82c9huhqoc16l6p_v" />
+      <reference referencedUin="design:view:::wxr1ddiwsqotsmmqs_v" />
     </reference>
     <reference referencedUin="design:view:::ux7j04w2pcf_v">
       <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="52,350,151,211" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:Writers.TJsonStringWriter" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:Writers.TJsonCodeWriter" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:Writers.@unitclass" />
@@ -88,6 +101,7 @@
     </reference>
     <reference referencedUin="design:view:::n2ul2y2fuaj_v">
       <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="102,580,100,644" />
       <reference referencedUin="design:view:::j4phn70drjj_v" />
       <reference referencedUin="design:view:::ihnx7p00dje_v" />
       <reference referencedUin="design:view:::7332rop7fep_v" />
@@ -96,7 +110,7 @@
       <reference referencedUin="design:view:::45b0mrwb90j_v" />
       <reference referencedUin="design:view:::63t7aq4ce6f_v" />
       <reference referencedUin="design:view:::rsru26hf2ls_v" />
-      <reference referencedUin="design:view:::5gbc2u48owm5ai5mh_v" />
+      <reference referencedUin="design:view:::rq2vd4pjlas_v" />
       <reference referencedUin="design:view:::0ucpkikg2en_v" />
       <reference referencedUin="design:view:::03g9mggjx2q_v" />
       <reference referencedUin="design:view:::192nmxucdhl_v" />
@@ -126,9 +140,12 @@
       <reference referencedUin="design:view:::z04947t56wh_v" />
       <reference referencedUin="design:view:::ztrrk02ydls_v" />
       <reference referencedUin="design:view:::x1dosb8t7uh_v" />
+      <reference referencedUin="design:view:::5gbc2u48owm5ai5mh_v" />
+      <reference referencedUin="design:view:::y6m2l6lcmom_v" />
     </reference>
     <reference referencedUin="design:view:::a647inv98sm_v">
       <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="662,1,182,151" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:JanuaServiceTrattative.TJanuaServiceTrattativa" />
       <reference referencedUin="delphi:e_class:src:JanuaCore:JanuaServiceTrattative.@unitclass" />
     </reference>
@@ -137,7 +154,7 @@
     </reference>
     <reference referencedUin="design:view:::z3gdlksojsq_v">
       <property name="$shortcutReference" value="true" />
-      <reference referencedUin="design:view:::niy2urqihpocxa14h_v" />
+      <reference referencedUin="uml:package:JanuaCore:src:JOrm.WorkFlow" />
       <reference referencedUin="design:view:::ut82c9huhqoc16l6p_v" />
       <reference referencedUin="design:view:::wxr1ddiwsqotsmmqs_v" />
     </reference>
@@ -149,6 +166,18 @@
     </reference>
     <reference referencedUin="design:view:::davmjc867g4guex8g_v">
       <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="design:view:::hmkdc0z4s1mkaiq5h_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="662,171,100,149" />
+      <reference referencedUin="design:view:::9mw5lnxomue_v" />
+      <reference referencedUin="design:view:::5tr97co7ddp_v" />
+      <reference referencedUin="design:view:::equ1d8oo8xh_v" />
+    </reference>
+    <reference referencedUin="design:view:::3cp3hoie0wt_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="662,339,100,119" />
+      <reference referencedUin="design:view:::wpnwk8j897n_v" />
     </reference>
   </view>
 </nodeSet>

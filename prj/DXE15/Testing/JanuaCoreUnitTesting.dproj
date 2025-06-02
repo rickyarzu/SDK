@@ -208,6 +208,9 @@
         <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_3)'!=''">
+        <DCC_Define>TESTINSIGHT;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_3_iOSDevice64)'!=''">
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
     </PropertyGroup>
@@ -238,7 +241,6 @@
             <Form>dmFDacVirtualTest</Form>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\januacore\Test\Janua.Core.Types.Test.pas"/>
         <DCCReference Include="..\..\..\src\januacore\Test\Janua.Orm.Test.Impl.pas"/>
         <DCCReference Include="..\..\..\src\januacore\Test\Janua.Orm.Test.Intf.pas"/>
         <DCCReference Include="..\..\..\src\januacore\Test\Janua.Orm.Test.pas"/>
@@ -262,6 +264,8 @@
         <DCCReference Include="..\..\..\src\januacore\Test\Janua.Http.WebMock.Test.pas"/>
         <DCCReference Include="..\..\..\src\januacore\Test\Janua.Rest.TestClasses.pas"/>
         <DCCReference Include="..\..\..\src\januacore\Test\Janua.Rest.UnitTest.Client.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\Test\Janua.Http.Types.Test.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\Test\Janua.Core.Types.Test.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaeExeDXE15.optset</DependentOn>
@@ -288,10 +292,10 @@
                     <Source Name="MainSource">JanuaCoreUnitTesting.dpr</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaRestWeb.bpl">File C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaRestWeb.bpl not found</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpll\JvCustomDesign290.bpl">File C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpll\JvCustomDesign290.bpl not found</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="5">
@@ -312,8 +316,13 @@
                 </DeployFile>
                 <DeployFile LocalName="c:\januaproject\bin\Win32\Debug\JanuaCoreUnitTesting.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\JanuaCoreUnitTesting.exe" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\JanuaCoreUnitTesting.rsm" Configuration="Debug" Class="DebugSymbols"/>
                 <DeployFile LocalName="c:\januaproject\bin\Win64\Test\JanuaCoreUnitTesting.exe" Configuration="Test" Class="ProjectOutput"/>
+                <DeployFile LocalName="c:\januaproject\bin\Win64\Test\JanuaCoreUnitTesting.exe" Configuration="Test" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>JanuaCoreUnitTesting.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="OSX32">
                         <Operation>1</Operation>
