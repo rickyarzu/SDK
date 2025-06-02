@@ -1,10 +1,11 @@
 inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
-  Height = 975
-  Width = 1267
+  Height = 880
+  Width = 1268
   inherited JanuaUniConnection1: TJanuaUniConnection
     SpecificOptions.Strings = (
       'InterBase.UseUnicode=True')
     Options.DisconnectedMode = True
+    Pooling = True
     Left = 128
     EncryptedPassword = '92FF9EFF8CFF8BFF9AFF8DFF94FF9AFF86FF'
   end
@@ -1319,14 +1320,9 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       'UPDATE INTERVENTI_ATTREZZATURE'
       'SET'
       
-        '  CHIAVE = :CHIAVE, STATINO = :STATINO, ATTREZZATURA = :ATTREZZA' +
-        'TURA, TIPO_ATTREZZATURA = :TIPO_ATTREZZATURA, ANOMALIA = :ANOMAL' +
-        'IA, TIPO = :TIPO, DATA_CONTROLLO = :DATA_CONTROLLO, DATA_CONSEGN' +
-        'A = :DATA_CONSEGNA, PERIODI_NON_ORDINARI = :PERIODI_NON_ORDINARI' +
-        ', DATA_CONTROLLO_NEGATO = :DATA_CONTROLLO_NEGATO, ORARIO_CONTROL' +
-        'LO = :ORARIO_CONTROLLO, CONTROLLATO = :CONTROLLATO, ANOMALIA_ON_' +
-        'DOWNLOAD = :ANOMALIA_ON_DOWNLOAD, ANOMALIA_RISOLTA = :ANOMALIA_R' +
-        'ISOLTA, TECNICO_CONTROLLO = :TECNICO_CONTROLLO'
+        '  ORARIO_CONTROLLO = :ORARIO_CONTROLLO, CONTROLLATO = :CONTROLLA' +
+        'TO, ANOMALIA_ON_DOWNLOAD = :ANOMALIA_ON_DOWNLOAD, ANOMALIA_RISOL' +
+        'TA = :ANOMALIA_RISOLTA, TECNICO_CONTROLLO = :TECNICO_CONTROLLO'
       'WHERE'
       '  CHIAVE = :Old_CHIAVE')
     SQLLock.Strings = (
@@ -1336,11 +1332,8 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       'FOR UPDATE WITH LOCK')
     SQLRefresh.Strings = (
       
-        'SELECT CHIAVE, STATINO, ATTREZZATURA, TIPO_ATTREZZATURA, ANOMALI' +
-        'A, TIPO, DATA_CONTROLLO, DATA_CONSEGNA, PERIODI_NON_ORDINARI, DA' +
-        'TA_CONTROLLO_NEGATO, ORARIO_CONTROLLO, CONTROLLATO, ANOMALIA_ON_' +
-        'DOWNLOAD, ANOMALIA_RISOLTA, TECNICO_CONTROLLO FROM INTERVENTI_AT' +
-        'TREZZATURE'
+        'SELECT ORARIO_CONTROLLO, CONTROLLATO, ANOMALIA_ON_DOWNLOAD, ANOM' +
+        'ALIA_RISOLTA, TECNICO_CONTROLLO FROM INTERVENTI_ATTREZZATURE'
       'WHERE'
       '  CHIAVE = :CHIAVE')
     SQLRecCount.Strings = (
@@ -1858,11 +1851,9 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       'UPDATE INTERVENTI_ATTREZZATURE'
       'SET'
       
-        '  CHIAVE = :CHIAVE, STATINO = :STATINO, ATTREZZATURA = :ATTREZZA' +
-        'TURA, TIPO_ATTREZZATURA = :TIPO_ATTREZZATURA, ANOMALIA = :ANOMAL' +
-        'IA, TIPO = :TIPO, DATA_CONTROLLO = :DATA_CONTROLLO, DATA_CONSEGN' +
-        'A = :DATA_CONSEGNA, PERIODI_NON_ORDINARI = :PERIODI_NON_ORDINARI' +
-        ', DATA_CONTROLLO_NEGATO = :DATA_CONTROLLO_NEGATO'
+        '  ORARIO_CONTROLLO = :ORARIO_CONTROLLO, CONTROLLATO = :CONTROLLA' +
+        'TO, ANOMALIA_ON_DOWNLOAD = :ANOMALIA_ON_DOWNLOAD, ANOMALIA_RISOL' +
+        'TA = :ANOMALIA_RISOLTA, TECNICO_CONTROLLO = :TECNICO_CONTROLLO'
       'WHERE'
       '  CHIAVE = :Old_CHIAVE')
     SQLLock.Strings = (
@@ -1872,9 +1863,8 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       'FOR UPDATE WITH LOCK')
     SQLRefresh.Strings = (
       
-        'SELECT CHIAVE, STATINO, ATTREZZATURA, TIPO_ATTREZZATURA, ANOMALI' +
-        'A, TIPO, DATA_CONTROLLO, DATA_CONSEGNA, PERIODI_NON_ORDINARI, DA' +
-        'TA_CONTROLLO_NEGATO FROM INTERVENTI_ATTREZZATURE'
+        'SELECT ORARIO_CONTROLLO, CONTROLLATO, ANOMALIA_ON_DOWNLOAD, ANOM' +
+        'ALIA_RISOLTA, TECNICO_CONTROLLO FROM INTERVENTI_ATTREZZATURE'
       'WHERE'
       '  CHIAVE = :CHIAVE')
     SQLRecCount.Strings = (
@@ -1895,9 +1885,7 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       end>
     Connection = JanuaUniConnection1
     SQL.Strings = (
-      
-        'select IAT.CHIAVE, STATINO, ATTREZZATURA, TIPO_ATTREZZATURA,  IA' +
-        'T.ANOMALIA, TIPO, DATA_CONTROLLO, DATA_CONSEGNA,'
+      'select IAT.*, '
       
         '       PERIODI_NON_ORDINARI, DATA_CONTROLLO_NEGATO, DESCRIZIONE,' +
         ' TIPO_STAZIONE, TIPO_BATTERIE, MARCA_POMPA_JOCKEY, TIPO_POMPA_JO' +
@@ -1911,7 +1899,6 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       
         '       ANOMALIA_APPROVATA, NOTE, SOSPESO, FILIALE, STATO, RINNOV' +
         'ATO_DA, PREC_ANOMALIA, ID_NFC'
-      ''
       
         'FROM interventi_attrezzature IAT JOIN GRUPPO_PRESSURIZZAZIONE_CL' +
         'IENTI GPA ON GPA.chiave = IAT.attrezzatura'
@@ -2083,6 +2070,26 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       ReadOnly = True
       Size = 100
     end
+    object qryInterventiGruppiORARIO_CONTROLLO: TTimeField
+      FieldName = 'ORARIO_CONTROLLO'
+    end
+    object qryInterventiGruppiCONTROLLATO: TWideStringField
+      FieldName = 'CONTROLLATO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiGruppiANOMALIA_ON_DOWNLOAD: TWideStringField
+      FieldName = 'ANOMALIA_ON_DOWNLOAD'
+      Size = 256
+    end
+    object qryInterventiGruppiANOMALIA_RISOLTA: TWideStringField
+      FieldName = 'ANOMALIA_RISOLTA'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiGruppiTECNICO_CONTROLLO: TIntegerField
+      FieldName = 'TECNICO_CONTROLLO'
+    end
   end
   object dsInterventiGruppi: TUniDataSource
     DataSet = qryInterventiGruppi
@@ -2090,6 +2097,44 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     Top = 672
   end
   object qryInterventiPorte: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO INTERVENTI_ATTREZZATURE'
+      
+        '  (ORARIO_CONTROLLO, CONTROLLATO, ANOMALIA_ON_DOWNLOAD, ANOMALIA' +
+        '_RISOLTA, TECNICO_CONTROLLO)'
+      'VALUES'
+      
+        '  (:ORARIO_CONTROLLO, :CONTROLLATO, :ANOMALIA_ON_DOWNLOAD, :ANOM' +
+        'ALIA_RISOLTA, :TECNICO_CONTROLLO)')
+    SQLDelete.Strings = (
+      'DELETE FROM INTERVENTI_ATTREZZATURE'
+      'WHERE'
+      '  CHIAVE = :Old_CHIAVE')
+    SQLUpdate.Strings = (
+      'UPDATE INTERVENTI_ATTREZZATURE'
+      'SET'
+      
+        '  ORARIO_CONTROLLO = :ORARIO_CONTROLLO, CONTROLLATO = :CONTROLLA' +
+        'TO, ANOMALIA_ON_DOWNLOAD = :ANOMALIA_ON_DOWNLOAD, ANOMALIA_RISOL' +
+        'TA = :ANOMALIA_RISOLTA, TECNICO_CONTROLLO = :TECNICO_CONTROLLO'
+      'WHERE'
+      '  CHIAVE = :Old_CHIAVE')
+    SQLLock.Strings = (
+      'SELECT NULL FROM INTERVENTI_ATTREZZATURE'
+      'WHERE'
+      'CHIAVE = :Old_CHIAVE'
+      'FOR UPDATE WITH LOCK')
+    SQLRefresh.Strings = (
+      
+        'SELECT ORARIO_CONTROLLO, CONTROLLATO, ANOMALIA_ON_DOWNLOAD, ANOM' +
+        'ALIA_RISOLTA, TECNICO_CONTROLLO FROM INTERVENTI_ATTREZZATURE'
+      'WHERE'
+      '  CHIAVE = :CHIAVE')
+    SQLRecCount.Strings = (
+      'SELECT COUNT(*) FROM ('
+      'SELECT 1 AS C  FROM INTERVENTI_ATTREZZATURE'
+      ''
+      ') q')
     DataTypeMap = <
       item
         FieldName = 'ANOMALIA'
@@ -2109,11 +2154,8 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     Connection = JanuaUniConnection1
     SQL.Strings = (
       
-        'select IAT.CHIAVE, STATINO, PC.UBICAZIONE,  ATTREZZATURA,  IAT.A' +
-        'NOMALIA, IAT.TIPO, DATA_CONTROLLO, DATA_CONSEGNA,'
-      
-        '       PERIODI_NON_ORDINARI, DATA_CONTROLLO_NEGATO, CLIENTE, FIL' +
-        'IALE, PC.TIPO, MATRICOLA, ANNO_COSTRUZIONE,'
+        'select UBICAZIONE, IAT.*,  CLIENTE, FILIALE, PC.TIPO, MATRICOLA,' +
+        ' ANNO_COSTRUZIONE,'
       '       ANTE, MARCA, MARCA_MANIGLIONE, TIPO_MANIGLIONE,'
       
         '       TIPO_SERRATURA_ANTA_PRINCIPALE, TIPO_SERRATURA_ANTA_SECON' +
@@ -2127,7 +2169,7 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
         'ave = IAT.attrezzatura'
       'WHERE IAT.tipo_attrezzatura = '#39'P'#39' and STATINO = :STATINO'
       'ORDER BY IAT.statino desc;')
-    MasterSource = dsStatiniIdranti
+    MasterSource = dsStatiniPorte
     MasterFields = 'STATINO'
     DetailFields = 'STATINO'
     Left = 320
@@ -2287,6 +2329,31 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       FieldName = 'JGUID'
       ReadOnly = True
     end
+    object qryInterventiPorteTIPO_ATTREZZATURA: TWideStringField
+      FieldName = 'TIPO_ATTREZZATURA'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiPorteORARIO_CONTROLLO: TTimeField
+      FieldName = 'ORARIO_CONTROLLO'
+    end
+    object qryInterventiPorteCONTROLLATO: TWideStringField
+      FieldName = 'CONTROLLATO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiPorteANOMALIA_ON_DOWNLOAD: TWideStringField
+      FieldName = 'ANOMALIA_ON_DOWNLOAD'
+      Size = 256
+    end
+    object qryInterventiPorteANOMALIA_RISOLTA: TWideStringField
+      FieldName = 'ANOMALIA_RISOLTA'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiPorteTECNICO_CONTROLLO: TIntegerField
+      FieldName = 'TECNICO_CONTROLLO'
+    end
   end
   object dsInterventiPorte: TUniDataSource
     DataSet = qryInterventiPorte
@@ -2441,10 +2508,84 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
   end
   object dsInterventiSprinkler: TUniDataSource
     DataSet = qryInterventiSprinkler
-    Left = 976
+    Left = 984
     Top = 672
   end
   object qryInterventiEstintori: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO INTERVENTI_ESTINTORI'
+      
+        '  (ANNO_COSTRUZIONE, ANOMALIA_APPROVATA, AGGIUNTODAMOBILE, ANOMA' +
+        'LIAONDOWNLOAD, ANOMALIARISOLTA, CONSEGNATO, CONTROLLATO, DATA_LA' +
+        'VORAZIONE, MARCA, MATRICOLA, MOTIVOCONTROLLONEGATO, MOTIVORITIRO' +
+        ', NONCONTROLLATO, ORARIOCONSEGNA, ORARIOCONTROLLO, ORARIOCONTROL' +
+        'LONEGATO, ORARIORITIRO, ORARIOSMALTIMENTO, PERIODICITA_COLLAUDO,' +
+        ' PERIODICITA_REVISIONE, PROGRESSIVO, RESTITUITO, RITIRATO, SMALT' +
+        'ITO, TIPO_ESTINTORE, TIPO_INTERVENTO, TECNICOCONSEGNA, TECNICOCO' +
+        'NTROLLO, TECNICOCONTROLLONEGATO, TECNICORESTITUZIONE, TECNICORIT' +
+        'IRO, TECNICOSMALTIMENTO)'
+      'VALUES'
+      
+        '  (:ANNO_COSTRUZIONE_1, :ANOMALIA_APPROVATA, :AGGIUNTODAMOBILE, ' +
+        ':ANOMALIAONDOWNLOAD, :ANOMALIARISOLTA, :CONSEGNATO, :CONTROLLATO' +
+        ', :DATA_LAVORAZIONE, :MARCA_1, :MATRICOLA_1, :MOTIVOCONTROLLONEG' +
+        'ATO, :MOTIVORITIRO, :NONCONTROLLATO, :ORARIOCONSEGNA, :ORARIOCON' +
+        'TROLLO, :ORARIOCONTROLLONEGATO, :ORARIORITIRO, :ORARIOSMALTIMENT' +
+        'O, :PERIODICITA_COLLAUDO, :PERIODICITA_REVISIONE, :PROGRESSIVO_1' +
+        ', :RESTITUITO, :RITIRATO, :SMALTITO, :TIPO_ESTINTORE, :TIPO_INTE' +
+        'RVENTO, :TECNICOCONSEGNA, :TECNICOCONTROLLO, :TECNICOCONTROLLONE' +
+        'GATO, :TECNICORESTITUZIONE, :TECNICORITIRO, :TECNICOSMALTIMENTO)')
+    SQLDelete.Strings = (
+      'DELETE FROM INTERVENTI_ESTINTORI'
+      'WHERE'
+      '  CHIAVE = :Old_CHIAVE')
+    SQLUpdate.Strings = (
+      'UPDATE INTERVENTI_ESTINTORI'
+      'SET'
+      
+        '  ANNO_COSTRUZIONE = :ANNO_COSTRUZIONE_1, ANOMALIA_APPROVATA = :' +
+        'ANOMALIA_APPROVATA, AGGIUNTODAMOBILE = :AGGIUNTODAMOBILE, ANOMAL' +
+        'IAONDOWNLOAD = :ANOMALIAONDOWNLOAD, ANOMALIARISOLTA = :ANOMALIAR' +
+        'ISOLTA, CONSEGNATO = :CONSEGNATO, CONTROLLATO = :CONTROLLATO, DA' +
+        'TA_LAVORAZIONE = :DATA_LAVORAZIONE, MARCA = :MARCA_1, MATRICOLA ' +
+        '= :MATRICOLA_1, MOTIVOCONTROLLONEGATO = :MOTIVOCONTROLLONEGATO, ' +
+        'MOTIVORITIRO = :MOTIVORITIRO, NONCONTROLLATO = :NONCONTROLLATO, ' +
+        'ORARIOCONSEGNA = :ORARIOCONSEGNA, ORARIOCONTROLLO = :ORARIOCONTR' +
+        'OLLO, ORARIOCONTROLLONEGATO = :ORARIOCONTROLLONEGATO, ORARIORITI' +
+        'RO = :ORARIORITIRO, ORARIOSMALTIMENTO = :ORARIOSMALTIMENTO, PERI' +
+        'ODICITA_COLLAUDO = :PERIODICITA_COLLAUDO, PERIODICITA_REVISIONE ' +
+        '= :PERIODICITA_REVISIONE, PROGRESSIVO = :PROGRESSIVO_1, RESTITUI' +
+        'TO = :RESTITUITO, RITIRATO = :RITIRATO, SMALTITO = :SMALTITO, TI' +
+        'PO_ESTINTORE = :TIPO_ESTINTORE, TIPO_INTERVENTO = :TIPO_INTERVEN' +
+        'TO, TECNICOCONSEGNA = :TECNICOCONSEGNA, TECNICOCONTROLLO = :TECN' +
+        'ICOCONTROLLO, TECNICOCONTROLLONEGATO = :TECNICOCONTROLLONEGATO, ' +
+        'TECNICORESTITUZIONE = :TECNICORESTITUZIONE, TECNICORITIRO = :TEC' +
+        'NICORITIRO, TECNICOSMALTIMENTO = :TECNICOSMALTIMENTO'
+      'WHERE'
+      '  CHIAVE = :Old_CHIAVE')
+    SQLLock.Strings = (
+      'SELECT NULL FROM INTERVENTI_ESTINTORI'
+      'WHERE'
+      'CHIAVE = :Old_CHIAVE AND CHIAVE = :Old_CHIAVE'
+      'FOR UPDATE WITH LOCK')
+    SQLRefresh.Strings = (
+      
+        'SELECT ANNO_COSTRUZIONE, ANOMALIA_APPROVATA, AGGIUNTODAMOBILE, A' +
+        'NOMALIAONDOWNLOAD, ANOMALIARISOLTA, CONSEGNATO, CONTROLLATO, DAT' +
+        'A_LAVORAZIONE, MARCA, MATRICOLA, MOTIVOCONTROLLONEGATO, MOTIVORI' +
+        'TIRO, NONCONTROLLATO, ORARIOCONSEGNA, ORARIOCONTROLLO, ORARIOCON' +
+        'TROLLONEGATO, ORARIORITIRO, ORARIOSMALTIMENTO, PERIODICITA_COLLA' +
+        'UDO, PERIODICITA_REVISIONE, PROGRESSIVO, RESTITUITO, RITIRATO, S' +
+        'MALTITO, TIPO_ESTINTORE, TIPO_INTERVENTO, TECNICOCONSEGNA, TECNI' +
+        'COCONTROLLO, TECNICOCONTROLLONEGATO, TECNICORESTITUZIONE, TECNIC' +
+        'ORITIRO, TECNICOSMALTIMENTO FROM INTERVENTI_ESTINTORI'
+      'WHERE'
+      '  CHIAVE = :CHIAVE')
+    SQLRecCount.Strings = (
+      'SELECT COUNT(*) FROM ('
+      'SELECT 1 AS C  FROM INTERVENTI_ESTINTORI'
+      ''
+      ') q')
     DataTypeMap = <
       item
         FieldName = 'ANOMALIA'
@@ -2461,12 +2602,7 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       
         'select EC.progressivo, EC.matricola, CATE.descrizione, CATE.clas' +
         'se_fuoco, EC.ubicazione, EC.anno_costruzione, ME.DESCRIZIONE AS ' +
-        'MARCA,  IE.CHIAVE, IE.STATINO, ESTINTORE, IE.TIPO TIPO_I,  IE.AN' +
-        'OMALIA,'
-      
-        '      RESET_DATA_COLLAUDO, RESET_DATA_REVISIONE, DATA_CONTROLLO,' +
-        ' DATA_RITIRO, DATA_SMALTIMENTO, DATA_RESTITUZIONE, DATA_CONSEGNA' +
-        ', DATA_CONTROLLO_NEGATO, DESCRIZIONE_ALTERNATIVA'
+        'MARCA,  IE.*'
       
         'from INTERVENTI_ESTINTORI IE  JOIN estintori_clienti EC ON IE.es' +
         'tintore = EC.chiave'
@@ -2500,17 +2636,14 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     object qryInterventiEstintoriDESCRIZIONE: TWideStringField
       DisplayWidth = 160
       FieldName = 'DESCRIZIONE'
-      ReadOnly = True
       Size = 255
     end
     object qryInterventiEstintoriANOMALIA: TWideStringField
       FieldName = 'ANOMALIA'
-      ReadOnly = True
       Size = 400
     end
     object qryInterventiEstintoriCLASSE_FUOCO: TWideStringField
       FieldName = 'CLASSE_FUOCO'
-      ReadOnly = True
       Size = 30
     end
     object qryInterventiEstintoriANNO_COSTRUZIONE: TSmallintField
@@ -2519,68 +2652,179 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     object qryInterventiEstintoriMARCA: TWideStringField
       DisplayWidth = 120
       FieldName = 'MARCA'
-      ReadOnly = True
       Size = 255
     end
     object qryInterventiEstintoriCHIAVE: TIntegerField
       FieldName = 'CHIAVE'
-      ReadOnly = True
       Required = True
     end
     object qryInterventiEstintoriSTATINO: TIntegerField
       FieldName = 'STATINO'
-      ReadOnly = True
     end
     object qryInterventiEstintoriESTINTORE: TIntegerField
       FieldName = 'ESTINTORE'
-      ReadOnly = True
-    end
-    object qryInterventiEstintoriTIPO_I: TWideStringField
-      FieldName = 'TIPO_I'
-      ReadOnly = True
-      FixedChar = True
-      Size = 1
     end
     object qryInterventiEstintoriRESET_DATA_COLLAUDO: TWideStringField
       FieldName = 'RESET_DATA_COLLAUDO'
-      ReadOnly = True
       FixedChar = True
       Size = 1
     end
     object qryInterventiEstintoriRESET_DATA_REVISIONE: TWideStringField
       FieldName = 'RESET_DATA_REVISIONE'
-      ReadOnly = True
       FixedChar = True
       Size = 1
     end
     object qryInterventiEstintoriDATA_CONTROLLO: TDateField
       FieldName = 'DATA_CONTROLLO'
-      ReadOnly = True
     end
     object qryInterventiEstintoriDATA_RITIRO: TDateField
       FieldName = 'DATA_RITIRO'
-      ReadOnly = True
     end
     object qryInterventiEstintoriDATA_SMALTIMENTO: TDateField
       FieldName = 'DATA_SMALTIMENTO'
-      ReadOnly = True
     end
     object qryInterventiEstintoriDATA_RESTITUZIONE: TDateField
       FieldName = 'DATA_RESTITUZIONE'
-      ReadOnly = True
     end
     object qryInterventiEstintoriDATA_CONSEGNA: TDateField
       FieldName = 'DATA_CONSEGNA'
-      ReadOnly = True
     end
     object qryInterventiEstintoriDATA_CONTROLLO_NEGATO: TDateField
       FieldName = 'DATA_CONTROLLO_NEGATO'
-      ReadOnly = True
     end
     object qryInterventiEstintoriDESCRIZIONE_ALTERNATIVA: TWideStringField
       FieldName = 'DESCRIZIONE_ALTERNATIVA'
-      ReadOnly = True
       Size = 255
+    end
+    object qryInterventiEstintoriTIPO: TWideStringField
+      FieldName = 'TIPO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiEstintoriANOMALIA_APPROVATA: TWideStringField
+      FieldName = 'ANOMALIA_APPROVATA'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiEstintoriAGGIUNTODAMOBILE: TWideStringField
+      FieldName = 'AGGIUNTODAMOBILE'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiEstintoriANOMALIAONDOWNLOAD: TWideStringField
+      FieldName = 'ANOMALIAONDOWNLOAD'
+      Size = 255
+    end
+    object qryInterventiEstintoriANOMALIARISOLTA: TWideStringField
+      FieldName = 'ANOMALIARISOLTA'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiEstintoriCONSEGNATO: TWideStringField
+      FieldName = 'CONSEGNATO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiEstintoriCONTROLLATO: TWideStringField
+      FieldName = 'CONTROLLATO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiEstintoriDATA_LAVORAZIONE: TDateField
+      FieldName = 'DATA_LAVORAZIONE'
+    end
+    object qryInterventiEstintoriMOTIVOCONTROLLONEGATO: TWideStringField
+      FieldName = 'MOTIVOCONTROLLONEGATO'
+      Size = 255
+    end
+    object qryInterventiEstintoriMOTIVORITIRO: TWideStringField
+      FieldName = 'MOTIVORITIRO'
+      Size = 255
+    end
+    object qryInterventiEstintoriNONCONTROLLATO: TWideStringField
+      FieldName = 'NONCONTROLLATO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiEstintoriORARIOCONSEGNA: TWideStringField
+      FieldName = 'ORARIOCONSEGNA'
+      Size = 255
+    end
+    object qryInterventiEstintoriORARIOCONTROLLO: TWideStringField
+      FieldName = 'ORARIOCONTROLLO'
+      Size = 255
+    end
+    object qryInterventiEstintoriORARIOCONTROLLONEGATO: TWideStringField
+      FieldName = 'ORARIOCONTROLLONEGATO'
+      Size = 255
+    end
+    object qryInterventiEstintoriORARIORITIRO: TWideStringField
+      FieldName = 'ORARIORITIRO'
+      Size = 255
+    end
+    object qryInterventiEstintoriORARIOSMALTIMENTO: TWideStringField
+      FieldName = 'ORARIOSMALTIMENTO'
+      Size = 255
+    end
+    object qryInterventiEstintoriPERIODICITA_COLLAUDO: TIntegerField
+      FieldName = 'PERIODICITA_COLLAUDO'
+    end
+    object qryInterventiEstintoriPERIODICITA_REVISIONE: TIntegerField
+      FieldName = 'PERIODICITA_REVISIONE'
+    end
+    object qryInterventiEstintoriRESTITUITO: TWideStringField
+      FieldName = 'RESTITUITO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiEstintoriRITIRATO: TWideStringField
+      FieldName = 'RITIRATO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiEstintoriSMALTITO: TWideStringField
+      FieldName = 'SMALTITO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiEstintoriTIPO_ESTINTORE: TIntegerField
+      FieldName = 'TIPO_ESTINTORE'
+    end
+    object qryInterventiEstintoriTIPO_INTERVENTO: TWideStringField
+      FieldName = 'TIPO_INTERVENTO'
+      Size = 255
+    end
+    object qryInterventiEstintoriTECNICOCONSEGNA: TIntegerField
+      FieldName = 'TECNICOCONSEGNA'
+    end
+    object qryInterventiEstintoriTECNICOCONTROLLO: TIntegerField
+      FieldName = 'TECNICOCONTROLLO'
+    end
+    object qryInterventiEstintoriTECNICOCONTROLLONEGATO: TIntegerField
+      FieldName = 'TECNICOCONTROLLONEGATO'
+    end
+    object qryInterventiEstintoriTECNICORESTITUZIONE: TIntegerField
+      FieldName = 'TECNICORESTITUZIONE'
+    end
+    object qryInterventiEstintoriTECNICORITIRO: TIntegerField
+      FieldName = 'TECNICORITIRO'
+    end
+    object qryInterventiEstintoriTECNICOSMALTIMENTO: TIntegerField
+      FieldName = 'TECNICOSMALTIMENTO'
+    end
+    object qryInterventiEstintoriANNO_COSTRUZIONE_1: TWideStringField
+      FieldName = 'ANNO_COSTRUZIONE_1'
+      Size = 255
+    end
+    object qryInterventiEstintoriMARCA_1: TIntegerField
+      FieldName = 'MARCA_1'
+    end
+    object qryInterventiEstintoriMATRICOLA_1: TWideStringField
+      FieldName = 'MATRICOLA_1'
+      Size = 255
+    end
+    object qryInterventiEstintoriPROGRESSIVO_1: TIntegerField
+      FieldName = 'PROGRESSIVO_1'
     end
   end
   object dsInterventiEstintori: TUniDataSource
@@ -2670,131 +2914,9 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
   object qrySintesiReport: TUniQuery
     Connection = JanuaUniConnection1
     SQL.Strings = (
-      'SELECT * FROM'
-      '('
-      'select'
-      '        0 AS POS'
-      '       , CATE.descrizione'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'O'#39' THEN 1 ELSE 0 END) AS ORDIN' +
-        'ARIO'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'R'#39' THEN 1 ELSE 0 END) AS REVIS' +
-        'IONE'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'C'#39' THEN 1 ELSE 0 END) AS COLLA' +
-        'UDO'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'-'#39' THEN 1 ELSE 0 END) AS SOSTI' +
-        'TUZIONE'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'@'#39' THEN 1 ELSE 0 END) AS RICAR' +
-        'ICA'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'A'#39' THEN 1 ELSE 0 END) AS RIPAR' +
-        'AZIONE'
-      '       , CAST(0 AS INTEGER) AS PRESSATURA'
-      '       , CAST(0 AS INTEGER) AS NUOVI'
-      '       , CAST(0 AS INTEGER) AS NON_ESEGUITE'
-      
-        'from INTERVENTI_ESTINTORI IE  JOIN estintori_clienti EC ON IE.es' +
-        'tintore = EC.chiave'
-      '      JOIN cat_estintori CATE ON CATE.chiave = EC.tipo_estintore'
-      '      WHERE STATINO = :STATINO'
-      '      GROUP BY CATE.descrizione'
-      'union'
-      'SELECT  1 AS POS,  TE.descrizione'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'O'#39' THEN 1 ELSE 0 END) AS ORDIN' +
-        'ARIO'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'R'#39' THEN 1 ELSE 0 END) AS REVIS' +
-        'IONE'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'C'#39' THEN 1 ELSE 0 END) AS COLLA' +
-        'UDO'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'-'#39' THEN 1 ELSE 0 END) AS SOSTI' +
-        'TUZIONE'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'@'#39' THEN 1 ELSE 0 END) AS RICAR' +
-        'ICA'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'A'#39' THEN 1 ELSE 0 END) AS RIPAR' +
-        'AZIONE'
-      '       , CAST(0 AS INTEGER) AS PRESSATURA'
-      '       , CAST(0 AS INTEGER) AS NUOVI'
-      
-        '       , SUM (CASE WHEN IE.tipo IS null THEN  1 ELSE 0 END) AS N' +
-        'ON_ESEGUITE'
-      'FROM'
-      
-        '   interventi_attrezzature IE JOIN tipo_attrezzature TE ON TE.ti' +
-        'po = IE.tipo_attrezzatura'
-      '   WHERE STATINO = :STATINO'
-      '   GROUP BY  TE.descrizione'
-      ''
-      'union'
-      'SELECT  2 AS POS, '#39'Idranti'#39' AS descrizione'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'O'#39' THEN 1 ELSE 0 END) AS ORDIN' +
-        'ARIO'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'R'#39' THEN 1 ELSE 0 END) AS REVIS' +
-        'IONE'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'C'#39' THEN 1 ELSE 0 END) AS COLLA' +
-        'UDO'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'-'#39' THEN 1 ELSE 0 END) AS SOSTI' +
-        'TUZIONE'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'@'#39' THEN 1 ELSE 0 END) AS RICAR' +
-        'ICA'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'A'#39' THEN 1 ELSE 0 END) AS RIPAR' +
-        'AZIONE'
-      '       , CAST(0 AS INTEGER) AS PRESSATURA'
-      '       , CAST(0 AS INTEGER) AS NUOVI'
-      
-        '       , SUM (CASE WHEN IE.tipo IS null THEN  1 ELSE 0 END) AS N' +
-        'ON_ESEGUITE'
-      '   FROM interventi_idranti  IE'
-      '   WHERE STATINO = :STATINO'
-      '  -- GROUP BY  TE.descrizione'
-      ''
-      'union'
-      'SELECT  3 AS POS, '#39'Impianti Elettrici'#39' AS descrizione'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'O'#39' THEN 1 ELSE 0 END) AS ORDIN' +
-        'ARIO'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'R'#39' THEN 1 ELSE 0 END) AS REVIS' +
-        'IONE'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'C'#39' THEN 1 ELSE 0 END) AS COLLA' +
-        'UDO'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'-'#39' THEN 1 ELSE 0 END) AS SOSTI' +
-        'TUZIONE'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'@'#39' THEN 1 ELSE 0 END) AS RICAR' +
-        'ICA'
-      
-        '       , SUM(CASE WHEN IE.TIPO = '#39'A'#39' THEN 1 ELSE 0 END) AS RIPAR' +
-        'AZIONE'
-      '       , CAST(0 AS INTEGER) AS PRESSATURA'
-      '       , CAST(0 AS INTEGER) AS NUOVI'
-      
-        '       , SUM (CASE WHEN IE.tipo IS null THEN  1 ELSE 0 END) AS N' +
-        'ON_ESEGUITE'
-      '   FROM interventi_impianti_elettrici  IE'
-      '   WHERE STATINO = :STATINO'
-      '  -- GROUP BY  TE.descrizione'
-      ''
-      ')'
-      'WHERE ORDINARIO IS NOT NULL'
-      'ORDER BY POS, DESCRIZIONE')
+      'SELECT * FROM  INTERVENTI_STATINI_DETTAGLIO '
+      'WHERE STATINO = :STATINO'
+      'ORDER BY  POS, DESCRIZIONE')
     Left = 1136
     Top = 456
     ParamData = <
@@ -2838,17 +2960,21 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       FieldName = 'RIPARAZIONE'
       ReadOnly = True
     end
-    object qrySintesiReportPRESSATURA: TIntegerField
-      FieldName = 'PRESSATURA'
-      ReadOnly = True
-    end
-    object qrySintesiReportNUOVI: TIntegerField
-      FieldName = 'NUOVI'
-      ReadOnly = True
-    end
     object qrySintesiReportNON_ESEGUITE: TLargeintField
       FieldName = 'NON_ESEGUITE'
       ReadOnly = True
+    end
+    object qrySintesiReportSTATINO: TIntegerField
+      FieldName = 'STATINO'
+    end
+    object qrySintesiReportCONTROLLI: TLargeintField
+      FieldName = 'CONTROLLI'
+    end
+    object qrySintesiReportPRESSATURA: TLargeintField
+      FieldName = 'PRESSATURA'
+    end
+    object qrySintesiReportNUOVI: TLargeintField
+      FieldName = 'NUOVI'
     end
   end
   object qryInterventiImpianti: TUniQuery
@@ -2985,6 +3111,61 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     Top = 672
   end
   object qryInterventiIdranti: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO INTERVENTI_IDRANTI'
+      
+        '  (ANOMALIAONDOWNLOAD, ANOMALIARISOLTA, CONSEGNATO, CONTROLLATO,' +
+        ' DATACONTROLLO, DATAPRESSATURA, DATARITIRO, ORARIOCONTROLLO, ORA' +
+        'RIORITIRO, PRESSATURAEFFETTUATA, RITIRATO, TECNICOCONTROLLO, TEC' +
+        'NICOPRESSATURA, TECNICORITIRO)'
+      'VALUES'
+      
+        '  (:ANOMALIAONDOWNLOAD, :ANOMALIARISOLTA, :CONSEGNATO, :CONTROLL' +
+        'ATO, :DATACONTROLLO, :DATAPRESSATURA, :DATARITIRO, :ORARIOCONTRO' +
+        'LLO, :ORARIORITIRO, :PRESSATURAEFFETTUATA, :RITIRATO, :TECNICOCO' +
+        'NTROLLO, :TECNICOPRESSATURA, :TECNICORITIRO)')
+    SQLDelete.Strings = (
+      'DELETE FROM INTERVENTI_IDRANTI'
+      'WHERE'
+      '  CHIAVE = :Old_CHIAVE')
+    SQLUpdate.Strings = (
+      'UPDATE INTERVENTI_IDRANTI'
+      'SET'
+      
+        '  ANOMALIAONDOWNLOAD = :ANOMALIAONDOWNLOAD, ANOMALIARISOLTA = :A' +
+        'NOMALIARISOLTA, CONSEGNATO = :CONSEGNATO, '
+      
+        '  CONTROLLATO = :CONTROLLATO, DATACONTROLLO = :DATACONTROLLO, DA' +
+        'TAPRESSATURA = :DATAPRESSATURA, '
+      
+        '  DATARITIRO = :DATARITIRO, ORARIOCONTROLLO = :ORARIOCONTROLLO, ' +
+        'ORARIORITIRO = :ORARIORITIRO, '
+      
+        '  PRESSATURAEFFETTUATA = :PRESSATURAEFFETTUATA, RITIRATO = :RITI' +
+        'RATO, TECNICOCONTROLLO = :TECNICOCONTROLLO, '
+      
+        '  TECNICOPRESSATURA = :TECNICOPRESSATURA, TECNICORITIRO = :TECNI' +
+        'CORITIRO'
+      'WHERE'
+      '  CHIAVE = :Old_CHIAVE')
+    SQLLock.Strings = (
+      'SELECT NULL FROM INTERVENTI_IDRANTI'
+      'WHERE'
+      'CHIAVE = :Old_CHIAVE'
+      'FOR UPDATE WITH LOCK')
+    SQLRefresh.Strings = (
+      
+        'SELECT ANOMALIAONDOWNLOAD, ANOMALIARISOLTA, CONSEGNATO, CONTROLL' +
+        'ATO, DATACONTROLLO, DATAPRESSATURA, DATARITIRO, ORARIOCONTROLLO,' +
+        ' ORARIORITIRO, PRESSATURAEFFETTUATA, RITIRATO, TECNICOCONTROLLO,' +
+        ' TECNICOPRESSATURA, TECNICORITIRO FROM INTERVENTI_IDRANTI'
+      'WHERE'
+      '  CHIAVE = :CHIAVE')
+    SQLRecCount.Strings = (
+      'SELECT COUNT(*) FROM ('
+      'SELECT 1 AS C  FROM INTERVENTI_IDRANTI'
+      ''
+      ') q')
     DataTypeMap = <
       item
         FieldName = 'ANOMALIA'
@@ -3004,8 +3185,8 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     Connection = JanuaUniConnection1
     SQL.Strings = (
       
-        'select ID_BOCCHELLO, B.UBICAZIONE, TB.DESCRIZIONE AS DES_BOCCHEL' +
-        'LO, TL.DESCRIZIONE AS TIPO_LANCIA,'
+        'select  ID.*, ID_BOCCHELLO, B.UBICAZIONE, TB.DESCRIZIONE AS DES_' +
+        'BOCCHELLO, TL.DESCRIZIONE AS TIPO_LANCIA,'
       
         '        IC.UBICAZIONE AS UBICAZIONE_IDRANTE, IC. DESCRIZIONE AS ' +
         'DESCRIZIONE_IDRANTE, IC.prova_dinamica, IC.ubicazione_attacco_mo' +
@@ -3085,10 +3266,6 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       FieldName = 'TIPO_ATTACCO_MOTOPOMPA'
       ReadOnly = True
       Size = 255
-    end
-    object qryInterventiIdrantiPROVA_DINAMICA_1: TIntegerField
-      FieldName = 'PROVA_DINAMICA_1'
-      ReadOnly = True
     end
     object qryInterventiIdrantiTIPO: TWideStringField
       FieldName = 'TIPO'
@@ -3204,6 +3381,61 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       FieldName = 'STATINO'
       ReadOnly = True
     end
+    object qryInterventiIdrantiANOMALIAONDOWNLOAD: TWideStringField
+      FieldName = 'ANOMALIAONDOWNLOAD'
+      Size = 255
+    end
+    object qryInterventiIdrantiANOMALIARISOLTA: TWideStringField
+      FieldName = 'ANOMALIARISOLTA'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiIdrantiCONSEGNATO: TWideStringField
+      FieldName = 'CONSEGNATO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiIdrantiCONTROLLATO: TWideStringField
+      FieldName = 'CONTROLLATO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiIdrantiDATACONTROLLO: TDateField
+      FieldName = 'DATACONTROLLO'
+    end
+    object qryInterventiIdrantiDATAPRESSATURA: TDateField
+      FieldName = 'DATAPRESSATURA'
+    end
+    object qryInterventiIdrantiDATARITIRO: TDateField
+      FieldName = 'DATARITIRO'
+    end
+    object qryInterventiIdrantiORARIOCONTROLLO: TWideStringField
+      FieldName = 'ORARIOCONTROLLO'
+      Size = 255
+    end
+    object qryInterventiIdrantiORARIORITIRO: TWideStringField
+      FieldName = 'ORARIORITIRO'
+      Size = 255
+    end
+    object qryInterventiIdrantiPRESSATURAEFFETTUATA: TWideStringField
+      FieldName = 'PRESSATURAEFFETTUATA'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiIdrantiRITIRATO: TWideStringField
+      FieldName = 'RITIRATO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiIdrantiTECNICOCONTROLLO: TIntegerField
+      FieldName = 'TECNICOCONTROLLO'
+    end
+    object qryInterventiIdrantiTECNICOPRESSATURA: TIntegerField
+      FieldName = 'TECNICOPRESSATURA'
+    end
+    object qryInterventiIdrantiTECNICORITIRO: TIntegerField
+      FieldName = 'TECNICORITIRO'
+    end
   end
   object dsInterventiIdranti: TUniDataSource
     DataSet = qryInterventiIdranti
@@ -3211,12 +3443,34 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     Top = 672
   end
   object qryInterventiFumi: TUniQuery
+    SQLUpdate.Strings = (
+      'UPDATE INTERVENTI_ATTREZZATURE'
+      'SET'
+      
+        '  ORARIO_CONTROLLO = :ORARIO_CONTROLLO, CONTROLLATO = :CONTROLLA' +
+        'TO, ANOMALIA_ON_DOWNLOAD = :ANOMALIA_ON_DOWNLOAD, ANOMALIA_RISOL' +
+        'TA = :ANOMALIA_RISOLTA, TECNICO_CONTROLLO = :TECNICO_CONTROLLO'
+      'WHERE'
+      '  CHIAVE = :Old_CHIAVE')
+    SQLLock.Strings = (
+      'SELECT NULL FROM INTERVENTI_ATTREZZATURE'
+      'WHERE'
+      'CHIAVE = :Old_CHIAVE'
+      'FOR UPDATE WITH LOCK')
+    SQLRefresh.Strings = (
+      
+        'SELECT ORARIO_CONTROLLO, CONTROLLATO, ANOMALIA_ON_DOWNLOAD, ANOM' +
+        'ALIA_RISOLTA, TECNICO_CONTROLLO FROM INTERVENTI_ATTREZZATURE'
+      'WHERE'
+      '  CHIAVE = :CHIAVE')
+    SQLRecCount.Strings = (
+      'SELECT COUNT(*) FROM ('
+      'SELECT 1 AS C  FROM INTERVENTI_ATTREZZATURE'
+      ''
+      ') q')
     Connection = JanuaUniConnection1
     SQL.Strings = (
-      
-        'select IAT.CHIAVE, STATINO,  FC.UBICAZIONE,  ATTREZZATURA,  IAT.' +
-        'ANOMALIA, IAT.TIPO, DATA_CONTROLLO, DATA_CONSEGNA,'
-      '       PERIODI_NON_ORDINARI, DATA_CONTROLLO_NEGATO,'
+      'select IAT.*,    FC.UBICAZIONE,  '
       
         '       FC.FILIALE, MARCA_CENTRALE, TIPO_CENTRALE, QUANTITA_BATTE' +
         'RIE, TIPO_BATTERIE, QUANTITA_RILEVATORI,'
@@ -3367,10 +3621,315 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       ReadOnly = True
       Size = 100
     end
+    object qryInterventiFumiTIPO_ATTREZZATURA: TWideStringField
+      FieldName = 'TIPO_ATTREZZATURA'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiFumiORARIO_CONTROLLO: TTimeField
+      FieldName = 'ORARIO_CONTROLLO'
+    end
+    object qryInterventiFumiCONTROLLATO: TWideStringField
+      FieldName = 'CONTROLLATO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiFumiANOMALIA_ON_DOWNLOAD: TWideStringField
+      FieldName = 'ANOMALIA_ON_DOWNLOAD'
+      Size = 256
+    end
+    object qryInterventiFumiANOMALIA_RISOLTA: TWideStringField
+      FieldName = 'ANOMALIA_RISOLTA'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiFumiTECNICO_CONTROLLO: TIntegerField
+      FieldName = 'TECNICO_CONTROLLO'
+    end
   end
   object dsInterventiFumi: TUniDataSource
     DataSet = qryInterventiFumi
     Left = 832
     Top = 672
+  end
+  object qElenco: TUniQuery
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'select V.*, '
+      'CHIAVE AS STATINO '
+      'from  '
+      'VISTA_RAPPORTINI_STAMPA V'
+      'where '
+      '(chiave = :chiave or :chiave = 0)'
+      'AND'
+      '(CONTRATTO LIKE :CONTRATTO)'
+      '--AND'
+      '--(AMMINISTRATORE LIKE :AMMINISTRATORE OR :AMMINISTRATORE = '#39#39')')
+    Left = 1016
+    Top = 208
+    ParamData = <
+      item
+        DataType = ftInteger
+        Name = 'chiave'
+        ParamType = ptInput
+        Value = 0
+      end
+      item
+        DataType = ftString
+        Name = 'CONTRATTO'
+        Value = '%CITY%'
+      end>
+    object qElencoCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
+    end
+    object qElencoAMMINISTRATORE: TWideStringField
+      FieldName = 'AMMINISTRATORE'
+      Size = 255
+    end
+    object qElencoCONTRATTO: TWideStringField
+      FieldName = 'CONTRATTO'
+      Size = 255
+    end
+    object qElencoLOCAZIONE: TWideStringField
+      FieldName = 'LOCAZIONE'
+      Size = 100
+    end
+    object qElencoNOME_TECNICO: TWideStringField
+      FieldName = 'NOME_TECNICO'
+      Size = 255
+    end
+    object qElencoINDIRIZZO_FILIALE: TWideStringField
+      FieldName = 'INDIRIZZO_FILIALE'
+      Size = 533
+    end
+    object qElencoCLIENTE: TIntegerField
+      FieldName = 'CLIENTE'
+    end
+    object qElencoFILIALE: TIntegerField
+      FieldName = 'FILIALE'
+    end
+    object qElencoTITOLO: TWideStringField
+      FieldName = 'TITOLO'
+      Size = 10
+    end
+    object qElencoRAGIONE_SOCIALE: TWideStringField
+      FieldName = 'RAGIONE_SOCIALE'
+      Size = 255
+    end
+    object qElencoINDIRIZZO: TWideStringField
+      FieldName = 'INDIRIZZO'
+      Size = 255
+    end
+    object qElencoCOMUNE: TWideStringField
+      FieldName = 'COMUNE'
+      Size = 255
+    end
+    object qElencoPROVINCIA: TWideStringField
+      FieldName = 'PROVINCIA'
+      FixedChar = True
+      Size = 2
+    end
+    object qElencoCAP: TWideStringField
+      FieldName = 'CAP'
+      Size = 10
+    end
+    object qElencoTELEFONO: TWideStringField
+      FieldName = 'TELEFONO'
+      Size = 255
+    end
+    object qElencoCELLULARE: TWideStringField
+      FieldName = 'CELLULARE'
+      Size = 255
+    end
+    object qElencoNOTE: TBlobField
+      FieldName = 'NOTE'
+    end
+    object qElencoORARIO_APERTURA_DAL1: TTimeField
+      FieldName = 'ORARIO_APERTURA_DAL1'
+    end
+    object qElencoORARIO_APERTURA_DAL2: TTimeField
+      FieldName = 'ORARIO_APERTURA_DAL2'
+    end
+    object qElencoORARIO_APERTURA_AL1: TTimeField
+      FieldName = 'ORARIO_APERTURA_AL1'
+    end
+    object qElencoORARIO_APERTURA_AL2: TTimeField
+      FieldName = 'ORARIO_APERTURA_AL2'
+    end
+    object qElencoCHIUSURA: TWideStringField
+      FieldName = 'CHIUSURA'
+      Size = 255
+    end
+    object qElencoFATTURA: TIntegerField
+      FieldName = 'FATTURA'
+    end
+    object qElencoDATA_INTERVENTO: TDateField
+      FieldName = 'DATA_INTERVENTO'
+    end
+    object qElencoGENERAZIONE_AUTOMATICA: TIntegerField
+      FieldName = 'GENERAZIONE_AUTOMATICA'
+    end
+    object qElencoTECNICO_INTERVENTO: TIntegerField
+      FieldName = 'TECNICO_INTERVENTO'
+    end
+    object qElencoSCANSIONE: TBlobField
+      FieldName = 'SCANSIONE'
+    end
+    object qElencoREGISTRO: TBlobField
+      FieldName = 'REGISTRO'
+    end
+    object qElencoNOTE_PER_IL_TECNICO: TBlobField
+      FieldName = 'NOTE_PER_IL_TECNICO'
+    end
+    object qElencoSOSPESO: TWideStringField
+      FieldName = 'SOSPESO'
+      FixedChar = True
+      Size = 1
+    end
+    object qElencoDA_ESPORTARE_SUL_WEB: TWideStringField
+      FieldName = 'DA_ESPORTARE_SUL_WEB'
+      FixedChar = True
+      Size = 1
+    end
+    object qElencoRESPONSABILE: TIntegerField
+      FieldName = 'RESPONSABILE'
+    end
+    object qElencoESPORTATO_SU_MOBILE: TWideStringField
+      FieldName = 'ESPORTATO_SU_MOBILE'
+      FixedChar = True
+      Size = 1
+    end
+    object qElencoNOTE_DAL_TECNICO: TBlobField
+      FieldName = 'NOTE_DAL_TECNICO'
+    end
+    object qElencoJSON_DA_MOBILE: TBlobField
+      FieldName = 'JSON_DA_MOBILE'
+    end
+    object qElencoPDF_STATINO: TBlobField
+      FieldName = 'PDF_STATINO'
+    end
+    object qElencoREGISTRO_IS_PDF: TWideStringField
+      FieldName = 'REGISTRO_IS_PDF'
+      FixedChar = True
+      Size = 1
+    end
+    object qElencoVERBALE_PROVA_DINAMICA: TBlobField
+      FieldName = 'VERBALE_PROVA_DINAMICA'
+    end
+    object qElencoVERBALE_MANICHETTE: TBlobField
+      FieldName = 'VERBALE_MANICHETTE'
+    end
+    object qElencoPREVENTIVO: TIntegerField
+      FieldName = 'PREVENTIVO'
+    end
+    object qElencoIGNORA_EVIDENZIAZIONE: TWideStringField
+      FieldName = 'IGNORA_EVIDENZIAZIONE'
+      FixedChar = True
+      Size = 1
+    end
+    object qElencoANNULLATO_DA_TABLET: TWideStringField
+      FieldName = 'ANNULLATO_DA_TABLET'
+      FixedChar = True
+      Size = 1
+    end
+    object qElencoMOBILEWARN_NUOVA_ATTREZZATURA: TWideStringField
+      FieldName = 'MOBILEWARN_NUOVA_ATTREZZATURA'
+      FixedChar = True
+      Size = 1
+    end
+    object qElencoMOBILEWARN_ORDINARIA_RITIRATA: TWideStringField
+      FieldName = 'MOBILEWARN_ORDINARIA_RITIRATA'
+      FixedChar = True
+      Size = 1
+    end
+    object qElencoMOBILEWARN_N_ORDIN_CONTROLLATA: TWideStringField
+      FieldName = 'MOBILEWARN_N_ORDIN_CONTROLLATA'
+      FixedChar = True
+      Size = 1
+    end
+    object qElencoMOBILEWARN_SMALTIMENTO: TWideStringField
+      FieldName = 'MOBILEWARN_SMALTIMENTO'
+      FixedChar = True
+      Size = 1
+    end
+    object qElencoSTATO_LAVORAZIONE: TWideStringField
+      FieldName = 'STATO_LAVORAZIONE'
+      FixedChar = True
+      Size = 1
+    end
+    object qElencoDATA_CHIUSURA_DA_SERVER: TDateField
+      FieldName = 'DATA_CHIUSURA_DA_SERVER'
+    end
+    object qElencoCHIUSURA_EXT: TWideStringField
+      FieldName = 'CHIUSURA_EXT'
+      Size = 50
+    end
+    object qElencoCHIUSURA_STATINO: TBlobField
+      FieldName = 'CHIUSURA_STATINO'
+    end
+    object qElencoMOBILEWARN_NON_ESEGUITI: TWideStringField
+      FieldName = 'MOBILEWARN_NON_ESEGUITI'
+      FixedChar = True
+      Size = 1
+    end
+    object qElencoPRESA_IN_CARICO: TWideStringField
+      FieldName = 'PRESA_IN_CARICO'
+      FixedChar = True
+      Size = 1
+    end
+    object qElencoFORNITURA: TWideStringField
+      FieldName = 'FORNITURA'
+      FixedChar = True
+      Size = 1
+    end
+    object qElencoAPPUNTAMENTO_DATA: TDateField
+      FieldName = 'APPUNTAMENTO_DATA'
+    end
+    object qElencoAPPUNTAMENTO_ORA: TTimeField
+      FieldName = 'APPUNTAMENTO_ORA'
+    end
+    object qElencoSTATO: TSmallintField
+      FieldName = 'STATO'
+    end
+    object qElencoJGUID: TBytesField
+      FieldName = 'JGUID'
+    end
+    object qElencoGCAL: TWideStringField
+      FieldName = 'GCAL'
+      FixedChar = True
+      Size = 1
+    end
+    object qElencoWANUMBER: TWideStringField
+      FieldName = 'WANUMBER'
+    end
+    object qElencoWA: TWideStringField
+      FieldName = 'WA'
+      FixedChar = True
+      Size = 1
+    end
+    object qElencoSTATO_IMMAGINE: TBlobField
+      FieldName = 'STATO_IMMAGINE'
+    end
+    object qElencoWA_ID: TWideStringField
+      FieldName = 'WA_ID'
+      Size = 128
+    end
+    object qElencoWA_IMAGE: TBlobField
+      FieldName = 'WA_IMAGE'
+    end
+    object qElencoWA_STATE: TSmallintField
+      FieldName = 'WA_STATE'
+    end
+    object qElencoMESE_INTERVENTO: TSmallintField
+      FieldName = 'MESE_INTERVENTO'
+    end
+    object qElencoNOME_MESE: TWideStringField
+      FieldName = 'NOME_MESE'
+      Size = 19
+    end
+    object qElencoSTATINO: TIntegerField
+      FieldName = 'STATINO'
+    end
   end
 end
