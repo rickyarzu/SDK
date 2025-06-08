@@ -417,6 +417,7 @@ contains
   Janua.Core.Json.DTO in '..\..\src\januacore\Janua.Core.Json.DTO.pas',
   Phoenix.Json.Config in '..\..\src\januacore\Phoenix.Json.Config.pas',
   Janua.Core.ContactViewer in '..\..\src\januacore\Janua.Core.ContactViewer.pas',
-  Janua.Cloud.dmOpenAI in '..\..\src\januacore\datamodule\Janua.Cloud.dmOpenAI.pas' {dmCloudOpenAI: TDataModule};
+  Janua.Cloud.dmOpenAI in '..\..\src\januacore\datamodule\Janua.Cloud.dmOpenAI.pas' {dmCloudOpenAI: TDataModule},
+  Janua.Core.DatabaseMapper in '..\..\src\januacore\Janua.Core.DatabaseMapper.pas';
 
 end.

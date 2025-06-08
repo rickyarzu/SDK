@@ -3664,7 +3664,8 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       'AND'
       '(CONTRATTO LIKE :CONTRATTO)'
       '--AND'
-      '--(AMMINISTRATORE LIKE :AMMINISTRATORE OR :AMMINISTRATORE = '#39#39')')
+      '--(AMMINISTRATORE LIKE :AMMINISTRATORE OR :AMMINISTRATORE = '#39#39')'
+      'order by Chiave DEsc')
     Left = 1016
     Top = 208
     ParamData = <

@@ -18,7 +18,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
     Top = 0
     Width = 1491
     Height = 855
-    ActivePage = RemoteDB
+    ActivePage = tabLab
     Align = alClient
     TabOrder = 0
     object tabLab: TTabSheet
@@ -28,7 +28,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         Top = 57
         Width = 1483
         Height = 768
-        ActivePage = tabLog
+        ActivePage = tabJsonConfigurazioni
         Align = alClient
         TabOrder = 0
         object tabJsonList: TTabSheet
@@ -1315,7 +1315,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           Caption = 'Test Rapportino'
           TabOrder = 1
           OnClick = btnTestReportClick
-          ExplicitLeft = 1350
         end
         object btnPreviewReport: TButton
           Left = 1097
@@ -1326,7 +1325,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           Caption = 'Rapportino Originale'
           TabOrder = 2
           OnClick = btnPreviewReportClick
-          ExplicitLeft = 1208
         end
         object btnJson: TButton
           Left = 1000
@@ -1337,7 +1335,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           Caption = 'Verifica Json'
           TabOrder = 3
           OnClick = btnJsonClick
-          ExplicitLeft = 1088
         end
         object btnLuci: TButton
           Left = 956
@@ -1348,7 +1345,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           Caption = 'Luci'
           TabOrder = 4
           OnClick = btnLuciClick
-          ExplicitLeft = 1044
         end
         object btnGruppi: TButton
           Left = 912
@@ -1359,7 +1355,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           Caption = 'Gruppi'
           TabOrder = 5
           OnClick = btnGruppiClick
-          ExplicitLeft = 1000
         end
         object btnPorte: TButton
           Left = 864
@@ -1370,7 +1365,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           Caption = 'Porte'
           TabOrder = 6
           OnClick = btnPorteClick
-          ExplicitLeft = 952
         end
         object btnFumi: TButton
           Left = 824
@@ -1381,7 +1375,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           Caption = 'Fumi'
           TabOrder = 7
           OnClick = btnFumiClick
-          ExplicitLeft = 912
         end
         object btnIdranti: TButton
           Left = 780
@@ -1392,7 +1385,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           Caption = 'Idranti'
           TabOrder = 8
           OnClick = btnIdrantiClick
-          ExplicitLeft = 868
         end
         object btnEstintori: TButton
           Left = 736
@@ -1403,7 +1395,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           Caption = 'Estintori'
           TabOrder = 9
           OnClick = btnEstintoriClick
-          ExplicitLeft = 824
         end
         object btnTestAllegati: TButton
           Left = 1350
@@ -1414,7 +1405,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           Caption = 'Test Allegati'
           TabOrder = 10
           OnClick = btnTestAllegatiClick
-          ExplicitLeft = 1402
         end
       end
       object PageControl4: TPageControl

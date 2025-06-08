@@ -3,7 +3,7 @@ unit Phoenix.Json.Config;
 interface
 
 uses
-  Pkg.Json.DTO, System.Generics.Collections, REST.Json.Types;
+  Pkg.Json.DTO, System.Generics.Collections, Janua.Core.Json.DTO, REST.Json.Types;
 
 {$M+}
 
@@ -260,7 +260,7 @@ type
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
   
-  TRoot = class(TJsonDTO)
+  TRoot = class(TJanuaJsonDTO)
   private
     [JSONName('Contratti'), JSONMarshalled(False)]
     FContrattiArray: TArray<TContratti>;

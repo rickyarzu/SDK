@@ -159,6 +159,10 @@ inherited dmPhoenixIBLab: TdmPhoenixIBLab
     object tbLabEstintoriDATA_LAVORAZIONE: TDateField
       FieldName = 'DATA_LAVORAZIONE'
     end
+    object tbLabEstintoriMOTIVO_RITIRO: TWideStringField
+      FieldName = 'MOTIVO_RITIRO'
+      Size = 128
+    end
   end
   object tbLabErrori: TUniTable
     TableName = 'LAB_ESTINTORI_ERROR'

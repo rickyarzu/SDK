@@ -30,6 +30,7 @@ type
     function _Release: Integer; stdcall;
   public
     function QueryInterface(const IID: TGUID; out Obj): HResult; virtual; stdcall;
+    // ************************************* Bindings Procedures ***********************************
   strict protected
     FBindManager: IJanuaBindManager;
     function GetBindManager: IJanuaBindManager;
@@ -47,7 +48,7 @@ type
     function GetSelf: TObject;
   public
     property AsObject: TObject read GetSelf;
-    constructor Create; overload;
+    constructor Create; override;
   end;
 
 implementation
@@ -76,6 +77,7 @@ end;
 
 constructor TJanuaJsonDTO.Create;
 begin
+  inherited;
   FBindManager := TJanuaBindManager.Create(self);
 end;
 
@@ -91,7 +93,7 @@ end;
 
 function TJanuaJsonDTO.GetSelf: TObject;
 begin
-  Result := Self
+  Result := self
 end;
 
 procedure TJanuaJsonDTO.LogError(const aProcName, aError: string);
