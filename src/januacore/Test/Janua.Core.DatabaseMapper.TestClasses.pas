@@ -2,13 +2,14 @@ unit Janua.Core.DatabaseMapper.TestClasses;
 
 interface
 
-uses System.Generics.Collections, REST.Json.Types,
-  Janua.Core.DatabaseMapper, Pkg.Json.DTO, Janua.Core.Json.DTO;
+uses System.Classes, System.Generics.Collections, REST.Json.Types, Data.DB,
+  Janua.Core.Commons, Janua.Core.DatabaseMapper, Pkg.Json.DTO, Janua.Core.Json.DTO;
+
+{$M+}
 
 type
-
   // Example class with custom mapping and JGUID support
-  TCustomer = class
+  TCustomer = class(TJanuaBindableClass)
   private
     [JSONName('customer_id')]
     FId: Integer;
@@ -51,120 +52,168 @@ type
     property Balance: Currency read FBalance write FBalance;
   end;
 
-  TCustomers = class
+  TCustomerManager = class(TJanuaJsonDTO)
   private
-    [JSONName('balance')]
-    FBalance: Double;
-    [SuppressZero, JSONName('birth_date')]
-    FBirth_Date: TDateTime;
-    [JSONName('customer_id')]
-    FCustomer_Id: Integer;
-    [JSONName('customer_name')]
-    FCustomer_Name: string;
-    [JSONName('email_address')]
-    FEmail_Address: string;
-    [JSONName('is_active')]
-    FIs_Active: Boolean;
-    [JSONName('jguid')]
-    FJGuid: string;
-  published
-    property Balance: Double read FBalance write FBalance;
-    property Birth_Date: TDateTime read FBirth_Date write FBirth_Date;
-    [KeyField('customer_id')]
-    [DBField('customer_id')]
-    property Customer_Id: Integer read FCustomer_Id write FCustomer_Id;
-    property Customer_Name: string read FCustomer_Name write FCustomer_Name;
-    property Email_Address: string read FEmail_Address write FEmail_Address;
-    property Is_Active: Boolean read FIs_Active write FIs_Active;
-    property JGuid: string read FJGuid write FJGuid;
-  end;
-
-  TJanuaCustomers = class(TJanuaJsonDTO)
-  private
-    [JSONName('Customers'), JSONMarshalled(False)]
+    [JSONName('customers') { , JSONMarshalled(False) } ]
     FCustomerArray: TArray<TCustomer>;
     [GenericListReflect]
     FCustomers: TObjectList<TCustomer>;
+    [JSONMarshalled(False)]
+    FCustomerList: TStringList;
+    [JSONMarshalled(False)]
+    FCustomerIndex: Integer;
+    [JSONMarshalled(False)]
+    FCurrentCustomer: TCustomer;
     function GetCustomers: TObjectList<TCustomer>;
+    procedure SetCustomerList(const Value: TStrings);
+    function GetCustomerList: TStrings;
+    procedure SetCustomerIndex(const Value: Integer);
+    procedure SetCurrentCustomer(const Value: TCustomer);
+    function GetCustomerText: string;
+    procedure RebuildList;
   protected
     function GetAsJson: string; override;
+    procedure SetAsJson(aJson: string); override;
   public
-    procedure AddCustomer(aCustomer: TCustomer);
-    property Customers: TObjectList<TCustomer> read GetCustomers;
-  public
+    Constructor Create; override;
+    procedure AddCustomer(aCustomer: TCustomer; aUpdateCustomer: Boolean = True);
+    procedure AddCustomersFromDataset(const aDataset: TDataset);
     destructor Destroy; override;
-  end;
-
-  TRoot = class(TJanuaJsonDTO)
-  private
-    [JSONName('customers'), JSONMarshalled(False)]
-    FCustomersArray: TArray<TCustomers>;
-    [GenericListReflect]
-    FCustomers: TObjectList<TCustomers>;
-    function GetCustomers: TObjectList<TCustomers>;
-  protected
-    function GetAsJson: string; override;
+    property CustomerList: TStrings read GetCustomerList write SetCustomerList;
+    property CustomerIndex: Integer read FCustomerIndex write SetCustomerIndex;
+    property CurrentCustomer: TCustomer read FCurrentCustomer write SetCurrentCustomer;
+    property CustomerText: string read GetCustomerText;
   published
-    property Customers: TObjectList<TCustomers> read GetCustomers;
-  public
-    procedure AddCustomer(aCustomer: TJanuaCustomers);
-    destructor Destroy; override;
+    property Customers: TObjectList<TCustomer> read GetCustomers;
   end;
 
 implementation
 
 uses Janua.Core.Json;
 
-{ TRoot }
-
-procedure TRoot.AddCustomer(aCustomer: TJanuaCustomers);
-begin
-
-end;
-
-destructor TRoot.Destroy;
-begin
-  GetCustomers.Free;
-  inherited;
-end;
-
-function TRoot.GetCustomers: TObjectList<TCustomers>;
-begin
-  Result := ObjectList<TCustomers>(FCustomers, FCustomersArray);
-end;
-
-function TRoot.GetAsJson: string;
-begin
-  RefreshArray<TCustomers>(FCustomers, FCustomersArray);
-  Result := inherited;
-end;
-
 { TCustomers }
 
-procedure TJanuaCustomers.AddCustomer(aCustomer: TCustomer);
+procedure TCustomerManager.AddCustomer(aCustomer: TCustomer; aUpdateCustomer: Boolean = True);
 begin
   var
   lIndex := Length(FCustomerArray);
   SetLength(FCustomerArray, lIndex + 1);
   FCustomerArray[lIndex] := aCustomer;
-  // FCustomers.Add(aCustomer);
+  if aUpdateCustomer then
+  begin
+    FCurrentCustomer.Assign(aCustomer);
+    FCustomerIndex := FCustomerList.AddObject(aCustomer.Name, aCustomer);
+  end;
 end;
 
-destructor TJanuaCustomers.Destroy;
+procedure TCustomerManager.AddCustomersFromDataset(const aDataset: TDataset);
 begin
+  if Assigned(aDataset) and (aDataset.RecordCount > 0) then
+  begin
+    aDataset.First;
+    While not aDataset.Eof do
+    begin
+      AddCustomer(TDatabaseMapper.CreateObjectFromQuery<TCustomer>(aDataset), False);
+      aDataset.Next;
+    end;
+  end;
+
+  RebuildList;
+end;
+
+constructor TCustomerManager.Create;
+begin
+  inherited;
+  FCustomerList := TStringList.Create;
+
+  FCustomerList.Sorted := True;
+  FCustomerList.Duplicates := dupError;
+
+  // Usa il metodo factory per creare l'istanza
+  FCurrentCustomer := TCustomer.Create;
+  FCustomerIndex := -1;
+end;
+
+destructor TCustomerManager.Destroy;
+begin
+  FCustomerList.Free;
   GetCustomers.Free;
   inherited;
 end;
 
-function TJanuaCustomers.GetAsJson: string;
+function TCustomerManager.GetAsJson: string;
 begin
   RefreshArray<TCustomer>(FCustomers, FCustomerArray);
   Result := inherited;
 end;
 
-function TJanuaCustomers.GetCustomers: TObjectList<TCustomer>;
+function TCustomerManager.GetCustomerList: TStrings;
+begin
+  Result := FCustomerList;
+end;
+
+function TCustomerManager.GetCustomers: TObjectList<TCustomer>;
 begin
   Result := ObjectList<TCustomer>(FCustomers, FCustomerArray);
+end;
+
+function TCustomerManager.GetCustomerText: string;
+begin
+  Result := FCustomerList.Text;
+end;
+
+procedure TCustomerManager.RebuildList;
+begin
+  FCustomerList.Clear;
+  for var I := 0 to Length(FCustomerArray) - 1 do
+    FCustomerList.AddObject(FCustomerArray[I].Name, FCustomerArray[I]);
+  FCustomerIndex := 0;
+  FCurrentCustomer.Assign(TCustomer(FCustomerList.Objects[0]));
+
+  var
+  Nome := TCustomer(FCustomerList.Objects[FCustomerIndex]).Name;
+  var
+  Id := TCustomer(FCustomerList.Objects[FCustomerIndex]).Id;
+
+  Notify('CustomerText');
+  Notify('CustomerIndex');
+
+  Nome := TCustomer(FCustomerList.Objects[FCustomerIndex]).Name;
+  Id := TCustomer(FCustomerList.Objects[FCustomerIndex]).Id;
+end;
+
+procedure TCustomerManager.SetAsJson(aJson: string);
+begin
+  inherited;
+  RebuildList;
+end;
+
+procedure TCustomerManager.SetCurrentCustomer(const Value: TCustomer);
+begin
+  FCurrentCustomer := Value;
+end;
+
+procedure TCustomerManager.SetCustomerIndex(const Value: Integer);
+begin
+  if (Value >= 0) and (FCustomerIndex <> Value) then
+  begin
+    TCustomer(FCustomerList.Objects[FCustomerIndex]).Assign(FCurrentCustomer);
+
+    FCustomerIndex := Value;
+
+    var
+    Nome := TCustomer(FCustomerList.Objects[FCustomerIndex]).Name;
+    var
+    Id := TCustomer(FCustomerList.Objects[FCustomerIndex]).Id;
+
+    FCurrentCustomer.Assign(TCustomer(FCustomerList.Objects[FCustomerIndex]));
+    FCurrentCustomer.NotifiyAllProperties;
+  end;
+end;
+
+procedure TCustomerManager.SetCustomerList(const Value: TStrings);
+begin
+  FCustomerList.Assign(Value);
 end;
 
 { TCustomer }
@@ -180,8 +229,6 @@ begin
   FIsActive := False;
   FBalance := 0;
 end;
-
-
 
 function TCustomer.GetChangeTracker: TChangeTracker;
 begin

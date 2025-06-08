@@ -33,6 +33,7 @@ object frmContactViewerFMX: TfrmContactViewerFMX
       Size.Width = 120.000000000000000000
       Size.Height = 17.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = 'Nome:'
     end
     object lblPhoneCaption: TLabel
@@ -42,6 +43,7 @@ object frmContactViewerFMX: TfrmContactViewerFMX
       Size.Width = 120.000000000000000000
       Size.Height = 17.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = 'Telefono:'
     end
     object lblEmailCaption: TLabel
@@ -51,6 +53,7 @@ object frmContactViewerFMX: TfrmContactViewerFMX
       Size.Width = 120.000000000000000000
       Size.Height = 17.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = 'Email:'
     end
     object lblCompanyCaption: TLabel
@@ -60,6 +63,7 @@ object frmContactViewerFMX: TfrmContactViewerFMX
       Size.Width = 120.000000000000000000
       Size.Height = 17.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = 'Azienda:'
     end
     object lblTitleCaption: TLabel
@@ -69,6 +73,7 @@ object frmContactViewerFMX: TfrmContactViewerFMX
       Size.Width = 120.000000000000000000
       Size.Height = 17.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = 'Ruolo:'
     end
     object lblAddressCaption: TLabel
@@ -78,6 +83,7 @@ object frmContactViewerFMX: TfrmContactViewerFMX
       Size.Width = 120.000000000000000000
       Size.Height = 17.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = 'Indirizzo:'
     end
     object btnClose: TButton

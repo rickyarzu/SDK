@@ -18,7 +18,7 @@ object frmVCLDemosDatabaseMapper: TfrmVCLDemosDatabaseMapper
     Top = 41
     Width = 1012
     Height = 684
-    ActivePage = scTabSheet3
+    ActivePage = scTabSheet1
     Align = alClient
     TabOrder = 0
     TabGlowEffect.Enabled = False
@@ -58,7 +58,7 @@ object frmVCLDemosDatabaseMapper: TfrmVCLDemosDatabaseMapper
         Left = 0
         Top = 0
         Width = 1004
-        Height = 654
+        Height = 440
         Align = alClient
         DataSource = UniDataSource1
         TabOrder = 0
@@ -67,6 +67,47 @@ object frmVCLDemosDatabaseMapper: TfrmVCLDemosDatabaseMapper
         TitleFont.Height = -12
         TitleFont.Name = 'Segoe UI'
         TitleFont.Style = []
+      end
+      object Panel2: TPanel
+        Left = 0
+        Top = 440
+        Width = 1004
+        Height = 214
+        Align = alBottom
+        Caption = 'Panel2'
+        TabOrder = 1
+        object ComboBox1: TComboBox
+          Left = 24
+          Top = 24
+          Width = 225
+          Height = 23
+          TabOrder = 0
+          Text = 'ComboBox1'
+        end
+        object Edit1: TEdit
+          Left = 312
+          Top = 24
+          Width = 385
+          Height = 23
+          TabOrder = 1
+          Text = 'Edit1'
+        end
+        object Edit2: TEdit
+          Left = 312
+          Top = 53
+          Width = 385
+          Height = 23
+          TabOrder = 2
+          Text = 'Edit1'
+        end
+        object Edit3: TEdit
+          Left = 312
+          Top = 88
+          Width = 385
+          Height = 23
+          TabOrder = 3
+          Text = 'Edit3'
+        end
       end
     end
     object scTabSheet2: TscTabSheet
@@ -160,7 +201,7 @@ object frmVCLDemosDatabaseMapper: TfrmVCLDemosDatabaseMapper
           '')
         MarkerList.UseDefaultMarkerImageIndex = False
         MarkerList.DefaultMarkerImageIndex = -1
-        MarkerList.ImageTransparentColor = -1
+        MarkerList.ImageTransparentColor = -16776961
         OleDropTarget = []
         PrintOptions.MarginLeft = 0
         PrintOptions.MarginRight = 0
@@ -192,10 +233,6 @@ object frmVCLDemosDatabaseMapper: TfrmVCLDemosDatabaseMapper
         UseStyler = True
         Version = '3.9.1.1'
         WordWrap = wwNone
-        ExplicitLeft = 376
-        ExplicitTop = 88
-        ExplicitWidth = 350
-        ExplicitHeight = 250
       end
     end
     object scTabSheet3: TscTabSheet
@@ -265,7 +302,6 @@ object frmVCLDemosDatabaseMapper: TfrmVCLDemosDatabaseMapper
           BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
           BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
           25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-        BorderColor = 10724259
         BorderStyle = bsSingle
         ClipboardFormats = [cfText]
         CodeFolding.Enabled = False
@@ -278,8 +314,6 @@ object frmVCLDemosDatabaseMapper: TfrmVCLDemosDatabaseMapper
         Gutter.Font.Height = -13
         Gutter.Font.Name = 'Courier New'
         Gutter.Font.Style = []
-        Gutter.BorderColor = 10724259
-        Gutter.GutterColor = clWhite
         Gutter.GutterColorTo = clBtnFace
         Gutter.LineNumberTextColor = clWindowText
         Font.Charset = DEFAULT_CHARSET
@@ -324,10 +358,6 @@ object frmVCLDemosDatabaseMapper: TfrmVCLDemosDatabaseMapper
         UseStyler = True
         Version = '3.9.1.1'
         WordWrap = wwNone
-        ExplicitLeft = 376
-        ExplicitTop = 88
-        ExplicitWidth = 350
-        ExplicitHeight = 250
       end
     end
   end
@@ -339,7 +369,6 @@ object frmVCLDemosDatabaseMapper: TfrmVCLDemosDatabaseMapper
     Align = alTop
     Caption = 'Panel1'
     TabOrder = 1
-    ExplicitWidth = 1004
     object btnCache: TButton
       Left = 1
       Top = 1

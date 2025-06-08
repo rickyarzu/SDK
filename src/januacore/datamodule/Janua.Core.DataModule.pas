@@ -175,7 +175,7 @@ constructor TJanuaCoreDataModule.Create(AOwner: TComponent);
 begin
   inherited;
   FLazyLoading := false;
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   if not Assigned(FParams) and not TJanuaApplicationFactory.TryGetInterface(IJanuaParams, FParams) then
     raise Exception.Create(ClassName + 'GetParams IJanuaParams not set');
 end;
@@ -217,7 +217,7 @@ end;
 function TJanuaCoreDataModule.GetBindManager: IJanuaBindManager;
 begin
   { if not Assigned(FBindManager) then
-    FBindManager := TJanuaBindManager.Create(self); }
+    FBindManager := TJanuaApplicationFactory.CreateBindManager(self); }
   Result := FBindManager
 end;
 

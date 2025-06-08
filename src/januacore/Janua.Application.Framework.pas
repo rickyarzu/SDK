@@ -78,6 +78,7 @@ type
   public
     class constructor Create;
   private
+    class var FBindManagerClass: TBindManagerClass;
     class var FLookupFactory: IJanuaLookupFactory;
     class var FLookupDatasets: IDictionary<string, IJanuaDBDataset>;
     class var FObjClasses: IDictionary<TGUID, TJanuaCoreInterfacedObjectClass>;
@@ -121,6 +122,9 @@ type
       out aObject: TComponent): Boolean;
     class function TryGetComponent(const IID: TGUID; const aOwner: TComponent; out Intf;
       const aRaise: Boolean = True): Boolean;
+    public
+      class property BindManagerClass: TBindManagerClass read FBindManagerClass write FBindManagerClass;
+      class function CreateBindManager(aObject: TObject): IJanuaBindManager;
   end;
 
   TJanuaApplicationSettings = record
@@ -951,10 +955,16 @@ begin
     FLookupDatasets := TCollections.CreateDictionary<string, IJanuaDBDataset>;
     FObjClasses := TCollections.CreateDictionary<TGUID, TJanuaCoreInterfacedObjectClass>;
     CmpClasses := TCollections.CreateDictionary<TGUID, TComponentClass>;
+    BindManagerClass := Janua.Core.Commons.TJanuaBindManager;
   except
     on e: Exception do
       raise Exception.Create('TJanuaApplicationFactory.Create ' + e.Message);
   end;
+end;
+
+class function TJanuaApplicationFactory.CreateBindManager(aObject: TObject): IJanuaBindManager;
+begin
+  Result := BindManagerClass.Create(aObject);
 end;
 
 class function TJanuaApplicationFactory.GetCmpClasses: IDictionary<TGUID, TComponentClass>;

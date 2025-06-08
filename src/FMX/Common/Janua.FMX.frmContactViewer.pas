@@ -49,7 +49,7 @@ implementation
 {$R *.fmx}
 
 uses
-  FMX.Platform, FMX.Memo.Types;
+  FMX.Platform;
 
 { TfrmContactViewerFMX }
 
