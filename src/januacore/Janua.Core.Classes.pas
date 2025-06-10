@@ -4014,7 +4014,7 @@ end;
 
 constructor TJanuaBindableObject.Create;
 begin
-  FBindManager := TJanuaBindManager.Create(self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(self);
   inherited;
   FLogProc := TJanuaApplication.LogProc;
 end;
@@ -4084,7 +4084,7 @@ end;
 constructor TJanuaInterfacedBindableObject.Create;
 begin
   inherited Create;
-  FBindManager := TJanuaBindManager.Create(self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(self);
 end;
 
 destructor TJanuaInterfacedBindableObject.Destroy;
@@ -4157,7 +4157,7 @@ end;
 constructor TJanuaBindableItem.Create;
 begin
   inherited;
-  FBindManager := TJanuaBindManager.Create(self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(self);
 end;
 
 destructor TJanuaBindableItem.Destroy;
@@ -4180,7 +4180,7 @@ end;
 function TJanuaBindableItem.GetBindManager: IJanuaBindManager;
 begin
   { if not Assigned(FBindManager) then
-    FBindManager := TJanuaBindManager.Create(self); }
+    FBindManager := TJanuaApplicationFactory.CreateBindManager(self); }
   Result := FBindManager
 end;
 
@@ -4234,7 +4234,7 @@ end;
 constructor TJanuaBindableComponent.Create(AOwner: TComponent);
 begin
   if not(csDesigning in ComponentState) then
-    FBindManager := TJanuaBindManager.Create(self);
+    FBindManager := TJanuaApplicationFactory.CreateBindManager(self);
   inherited;
 end;
 
@@ -4263,7 +4263,7 @@ end;
 function TJanuaBindableComponent.GetBindManager: IJanuaBindManager;
 begin
   { if not Assigned(FBindManager) then
-    FBindManager := TJanuaBindManager.Create(self); }
+    FBindManager := TJanuaApplicationFactory.CreateBindManager(self); }
   Result := FBindManager
 end;
 
@@ -4866,7 +4866,7 @@ end;
 constructor TJanuaBindablePersistent.Create;
 begin
   inherited;
-  FBindManager := TJanuaBindManager.Create(self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(self);
 end;
 
 function TJanuaBindablePersistent.GetBindManager: IJanuaBindManager;

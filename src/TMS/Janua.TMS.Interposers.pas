@@ -291,7 +291,7 @@ end;
 
 constructor TLUEdit.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 end;
 
@@ -315,7 +315,7 @@ end;
 function TLUEdit.GetBindManager: IJanuaBindManager;
 begin
   { if not Assigned(FBindManager) then
-    FBindManager := TJanuaBindManager.Create(Self); }
+    FBindManager := TJanuaApplicationFactory.CreateBindManager(Self); }
   Result := Self.FBindManager
 end;
 
@@ -416,7 +416,7 @@ end;
 
 constructor TMoneyEdit.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 end;
 
@@ -439,7 +439,7 @@ end;
 function TMoneyEdit.GetBindManager: IJanuaBindManager;
 begin
   { if not Assigned(FBindManager) then
-    FBindManager := TJanuaBindManager.Create(Self); }
+    FBindManager := TJanuaApplicationFactory.CreateBindManager(Self); }
   Result := Self.FBindManager
 end;
 
@@ -550,7 +550,7 @@ end;
 
 constructor TAdvMoneyEdit.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 end;
 
@@ -575,7 +575,7 @@ end;
 function TAdvMoneyEdit.GetBindManager: IJanuaBindManager;
 begin
   { if not Assigned(FBindManager) then
-    FBindManager := TJanuaBindManager.Create(Self); }
+    FBindManager := TJanuaApplicationFactory.CreateBindManager(Self); }
   Result := Self.FBindManager
 end;
 
@@ -685,7 +685,7 @@ end;
 
 constructor TAdvMemo.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 end;
 

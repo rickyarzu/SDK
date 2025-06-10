@@ -10,7 +10,7 @@ uses
   VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.Grids, VCL.DBGrids, CRGrid, VCL.ComCtrls,
   scControls, VCL.StdCtrls, VCL.ExtCtrls, AdvMemo, advmjson,
   // Januaproject
-  Janua.Core.DatabaseMapper, Janua.Core.DatabaseMapper.TestClasses, Janua.Core.Json;
+  Janua.Core.DatabaseMapper, Janua.Core.DatabaseMapper.TestClasses, Janua.Core.Json, Janua.VCL.Interposers;
 
 type
   TfrmVCLDemosDatabaseMapper = class(TForm)
@@ -44,20 +44,25 @@ type
     btnSerializeJson: TButton;
     scTabSheet3: TscTabSheet;
     AdvMemo2: TAdvMemo;
+    Panel2: TPanel;
+    ComboBox1: TComboBox;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure btnTestClick(Sender: TObject);
     procedure btnTestJsonClick(Sender: TObject);
     procedure btnSerializeJsonClick(Sender: TObject);
   private
-    FCustomers: TJanuaCustomers;
-    procedure SetCustomers(const Value: TJanuaCustomers);
+    FCustomers: TCustomerManager;
+    procedure SetCustomers(const Value: TCustomerManager);
     { Private declarations }
   public
     { Public declarations }
     procedure InitializeApplication;
     procedure LoadCustomers;
-    property Customers: TJanuaCustomers read FCustomers write SetCustomers;
+    property Customers: TCustomerManager read FCustomers write SetCustomers;
   end;
 
 var
@@ -73,7 +78,7 @@ begin
   var
   lJson := Customers.AsJson;
   var
-  lStatino := TRoot.Create;
+  lStatino := TCustomerManager.Create;
   try
     lStatino.AsJson := lJson;
     lJson := lStatino.AsJson;
@@ -95,7 +100,7 @@ end;
 
 procedure TfrmVCLDemosDatabaseMapper.FormCreate(Sender: TObject);
 begin
-  FCustomers := TJanuaCustomers.Create;
+  FCustomers := TCustomerManager.Create;
 end;
 
 procedure TfrmVCLDemosDatabaseMapper.FormDestroy(Sender: TObject);
@@ -111,27 +116,18 @@ begin
 end;
 
 procedure TfrmVCLDemosDatabaseMapper.LoadCustomers;
-var
-  DataSet: TDataSet;
-  Customer: TCustomer;
-  StartTime: TDateTime;
 begin
-  StartTime := Now;
-  DataSet := vtCustomers;
-
-  DataSet.Open;
-  DataSet.First;
-  while not DataSet.Eof do
-  begin
-    // RTTI information is now cached - much faster on subsequent calls
-    Customer := TDatabaseMapper.CreateObjectFromQuery<TCustomer>(DataSet);
-    FCustomers.AddCustomer(Customer);
-    DataSet.Next;
-  end;
+  FCustomers.AddCustomersFromDataset(vtCustomers);
+  ComboBox1.Text := FCustomers.CustomerText;
+  FCustomers.Bind('CustomerText', ComboBox1, 'Text', True);
+  ComboBox1.ItemIndex := FCustomers.CustomerIndex;
+  FCustomers.Bind('CustomerIndex', ComboBox1, 'ItemIndex');
+  Edit1.Text := FCustomers.CurrentCustomer.Name;
+  FCustomers.CurrentCustomer.Bind('Name', Edit1, 'Text');
 
 end;
 
-procedure TfrmVCLDemosDatabaseMapper.SetCustomers(const Value: TJanuaCustomers);
+procedure TfrmVCLDemosDatabaseMapper.SetCustomers(const Value: TCustomerManager);
 begin
   FCustomers := Value;
 end;

@@ -695,8 +695,7 @@ type
 implementation
 
 uses
-  Spring, VCL.Styles, VCL.Themes, Janua.VCL.Styles.ControlColor, Janua.Core.Functions, Janua.Core.Commons,
-  Janua.Application.Framework;
+  Spring, VCL.Styles, VCL.Themes, Janua.VCL.Styles.ControlColor, Janua.Core.Functions, Janua.Application.Framework;
 
 { TEdit }
 
@@ -751,7 +750,7 @@ end;
 
 constructor TEdit.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited Create(AOwner);
 end;
 
@@ -886,7 +885,7 @@ end;
 
 constructor TJvValidateEdit.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited Create(AOwner);
 end;
 
@@ -1020,7 +1019,7 @@ end;
 
 constructor TJvDateEdit.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 
 end;
@@ -1150,7 +1149,7 @@ end;
 
 constructor TSpinEdit.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 end;
 
@@ -1236,7 +1235,7 @@ end;
 
 constructor TLabel.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 end;
 
@@ -1334,7 +1333,7 @@ end;
 
 constructor TLabeledEdit.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 end;
 
@@ -1541,7 +1540,7 @@ end;
 
 constructor TDateTimePicker.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 end;
 
@@ -1657,7 +1656,7 @@ end;
 
 constructor TCheckBox.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 end;
 
@@ -1746,7 +1745,7 @@ end;
 
 constructor TMemo.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 end;
 
@@ -1857,7 +1856,7 @@ end;
 
 constructor TComboBox.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 end;
 
@@ -1992,7 +1991,7 @@ end;
 
 constructor TJvCalcEdit.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 end;
 
@@ -2083,7 +2082,7 @@ end;
 
 constructor TJvDBLookupCombo.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited Create(AOwner);
   FBindCount := 0;
 end;
@@ -2165,7 +2164,7 @@ end;
 
 constructor TAction.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 end;
 
@@ -2252,7 +2251,7 @@ end;
 
 constructor TRadioGroup.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 
 end;
