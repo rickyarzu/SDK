@@ -5285,8 +5285,8 @@ FROM
 		</query>
 	</layout>
 	<layout name="_Statini" id="Layout_5f5" show_column_type="y" show_relation="columns" >
-		<entity schema="Default" name="ANOMALIE_PREVENTIVATE" color="3986C1" x="864" y="128" />
-		<entity schema="Default" name="CAT_ESTINTORI" color="3986C1" x="1616" y="960" >
+		<entity schema="Default" name="ANOMALIE_PREVENTIVATE" color="3986C1" x="880" y="128" />
+		<entity schema="Default" name="CAT_ESTINTORI" color="3986C1" x="1632" y="960" >
 			<column name="CHIAVE" />
 			<column name="DESCRIZIONE" />
 			<column name="CLASSE_FUOCO" />
@@ -5300,7 +5300,8 @@ FROM
 			<column name="PREZZO_SMALTIMENTO" />
 			<column name="SOSPESO" />
 		</entity>
-		<entity schema="Default" name="CLIENTI" color="3986C1" x="1568" y="272" >
+		<entity schema="Default" name="CHECKLIST_ATTREZZATURE" color="3986C1" x="48" y="640" />
+		<entity schema="Default" name="CLIENTI" color="3986C1" x="1584" y="272" >
 			<column name="CHIAVE" />
 			<column name="VISITA_FATTURAZIONE_ORDINARIA" />
 			<column name="PARTITA_IVA" />
@@ -5341,8 +5342,8 @@ FROM
 			<column name="ABI" />
 			<column name="CAB" />
 		</entity>
-		<entity schema="Default" name="ESTINTORI_CLIENTI" color="3986C1" x="1200" y="848" />
-		<entity schema="Default" name="FILIALI_CLIENTI" color="3986C1" x="1200" y="464" >
+		<entity schema="Default" name="ESTINTORI_CLIENTI" color="3986C1" x="1216" y="848" />
+		<entity schema="Default" name="FILIALI_CLIENTI" color="3986C1" x="1216" y="464" >
 			<column name="CHIAVE" />
 			<column name="CLIENTE" />
 			<column name="NOME" />
@@ -5360,12 +5361,12 @@ FROM
 			<column name="REF_CELLULARE" />
 			<column name="COMUNE" />
 		</entity>
-		<entity schema="Default" name="INTERVENTI_ATTREZZATURE" color="3986C1" x="48" y="48" />
-		<entity schema="Default" name="INTERVENTI_ESTINTORI" color="3986C1" x="816" y="832" />
-		<entity schema="Default" name="INTERVENTI_IDRANTI" color="3986C1" x="48" y="864" />
-		<entity schema="Default" name="INTERVENTI_IMPIANTI_ELETTRICI" color="3986C1" x="400" y="976" />
-		<entity schema="Default" name="MARCHE_ESTINTORI" color="3986C1" x="768" y="1120" />
-		<entity schema="Default" name="PREVENTIVI" color="3986C1" x="848" y="272" >
+		<entity schema="Default" name="INTERVENTI_ATTREZZATURE" color="3986C1" x="48" y="208" />
+		<entity schema="Default" name="INTERVENTI_ESTINTORI" color="3986C1" x="832" y="832" />
+		<entity schema="Default" name="INTERVENTI_IDRANTI" color="3986C1" x="64" y="848" />
+		<entity schema="Default" name="INTERVENTI_IMPIANTI_ELETTRICI" color="3986C1" x="416" y="976" />
+		<entity schema="Default" name="MARCHE_ESTINTORI" color="3986C1" x="784" y="1120" />
+		<entity schema="Default" name="PREVENTIVI" color="3986C1" x="864" y="272" >
 			<column name="CHIAVE" />
 			<column name="ID_PREVENTIVO" />
 			<column name="ANNO_PREVENTIVO" />
@@ -5378,11 +5379,11 @@ FROM
 			<column name="STATO" />
 			<column name="INVIO_MAIL" />
 		</entity>
-		<entity schema="Default" name="PRODOTTI_STATINI" color="3986C1" x="48" y="640" />
-		<entity schema="Default" name="PROGRAMMAZIONE_STATINI" color="3986C1" x="48" y="432" />
-		<entity schema="Default" name="SCANSIONI_STATINI" color="3986C1" x="48" y="272" />
-		<entity schema="Default" name="STATINI" color="3986C1" x="400" y="48" />
-		<entity schema="Default" name="STATINI_DA_TABLET" color="3986C1" x="1216" y="144" >
+		<entity schema="Default" name="PRODOTTI_STATINI" color="3986C1" x="624" y="1232" />
+		<entity schema="Default" name="PROGRAMMAZIONE_STATINI" color="3986C1" x="192" y="1200" />
+		<entity schema="Default" name="SCANSIONI_STATINI" color="3986C1" x="80" y="48" />
+		<entity schema="Default" name="STATINI" color="3986C1" x="416" y="48" />
+		<entity schema="Default" name="STATINI_DA_TABLET" color="3986C1" x="1232" y="144" >
 			<column name="CHIAVE" />
 			<column name="ID_DOCUMENTO" />
 			<column name="BODY" />
@@ -5395,8 +5396,9 @@ FROM
 			<column name="PROBLEMA_RISCONTRATO" />
 			<column name="DATA_RICHIESTA" />
 		</entity>
-		<entity schema="Default" name="TECNICI" color="3986C1" x="1648" y="48" />
-		<entity schema="Default" name="VOCI_PREVENTIVI" color="3986C1" x="848" y="544" />
+		<entity schema="Default" name="STATO_CHECKLIST_ATTREZZATURE" color="3986C1" x="48" y="464" />
+		<entity schema="Default" name="TECNICI" color="3986C1" x="1664" y="48" />
+		<entity schema="Default" name="VOCI_PREVENTIVI" color="3986C1" x="864" y="544" />
 		<script name="ANOMALIE_PREVENTIVATE" id="Editor_1faa" language="SQL" >
 			<string><![CDATA[SELECT PREVENTIVO, ATTREZZATURA, ANOMALIA
 FROM
