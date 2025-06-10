@@ -1,7 +1,7 @@
-object h: Th
+object DMVCPhoenixReport: TDMVCPhoenixReport
   OnCreate = WebModuleCreate
   OnDestroy = WebModuleDestroy
   Actions = <>
-  Height = 470
-  Width = 626
+  Height = 552
+  Width = 648
 end

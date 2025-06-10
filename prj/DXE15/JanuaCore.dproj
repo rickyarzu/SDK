@@ -641,6 +641,7 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\src\januacore\Janua.Core.DatabaseMapper.pas"/>
+        <DCCReference Include="..\..\src\januacore\Janua.Core.Iterator.pas"/>
         <None Include="ModelSupport_JanuaCore\default.txvpck"/>
         <None Include="ModelSupport_JanuaCore\Delphi\default.txvpck"/>
         <None Include="ModelSupport_JanuaCore\Janua\default.txvpck"/>

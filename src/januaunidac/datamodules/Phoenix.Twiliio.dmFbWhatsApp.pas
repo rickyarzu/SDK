@@ -107,6 +107,9 @@ type
     qryMessageListID: TIntegerField;
     qryMessageListUPD_ID: TLargeintField;
     qryLkpMessageStatusWA_STATE: TSmallintField;
+    qryMaxTwilioLog: TUniQuery;
+    qryMaxTwilioLogMAXID: TLargeintField;
+    qryNextVal: TUniQuery;
     procedure PgErgoConnectionBeforeConnect(Sender: TObject);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryMessageListCalcFields(DataSet: TDataSet);
@@ -146,6 +149,10 @@ begin
   qryLkpMessageStatus.Connection := FbPhoenixConnection;
   qryStatini.Connection := FbPhoenixConnection;
   qryStatini.Open;
+  qryMaxTwilioLog.Close;
+  qryMaxTwilioLog.Open;
+  qryMaxTwilioLogMAXID.AsInteger;
+  qryPhoenixTwilioLog.Open;
 end;
 
 procedure TdmFbTwilioWhatsApp.FallBack(const aFallback: string);

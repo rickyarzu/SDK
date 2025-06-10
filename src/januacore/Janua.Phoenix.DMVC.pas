@@ -52,7 +52,7 @@ uses
 procedure TPhoenixController.Index;
 begin
   //use Context property to access to the HTTP request and response 
-  Render('Hello DelphiMVCFramework World');
+  Render('Asso Server Hello ;)');
 end;
 
 procedure TPhoenixController.GetReversedString(const Value: String);
