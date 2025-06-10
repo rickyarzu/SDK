@@ -2,8 +2,11 @@ unit Janua.Core.DatabaseMapper.TestClasses;
 
 interface
 
-uses System.Classes, System.Generics.Collections, REST.Json.Types, Data.DB,
-  Janua.Core.Commons, Janua.Core.DatabaseMapper, Pkg.Json.DTO, Janua.Core.Json.DTO;
+uses System.Classes, System.Generics.Collections, Data.DB,
+  // Json
+  Pkg.Json.DTO, REST.Json.Types,
+  // Janua
+  Janua.Core.Commons, Janua.Core.DatabaseMapper, Janua.Core.Iterator, Janua.Core.Json.DTO;
 
 {$M+}
 
@@ -83,6 +86,25 @@ type
     property CustomerIndex: Integer read FCustomerIndex write SetCustomerIndex;
     property CurrentCustomer: TCustomer read FCurrentCustomer write SetCurrentCustomer;
     property CustomerText: string read GetCustomerText;
+  published
+    property Customers: TObjectList<TCustomer> read GetCustomers;
+  end;
+
+  TCustomerManagerIterator = class(TJanuaJsonDTO)
+  private
+    [JSONName('customers') { , JSONMarshalled(False) } ]
+    FCustomerArray: TArray<TCustomer>;
+    [GenericListReflect]
+    FCustomers: TObjectList<TCustomer>;
+    [JSONMarshalled(False)]
+    FCustIterator: TJanuaBindableIterator<TCustomer>;
+    function GetCustomers: TObjectList<TCustomer>;
+  protected
+    procedure RebuildList; Virtual;
+    function GetAsJson: string; override;
+    procedure SetAsJson(aJson: string); override;
+  public
+    Constructor Create; override;
   published
     property Customers: TObjectList<TCustomer> read GetCustomers;
   end;
@@ -233,6 +255,35 @@ end;
 function TCustomer.GetChangeTracker: TChangeTracker;
 begin
 
+end;
+
+{ TCustomerManagerIterator }
+
+constructor TCustomerManagerIterator.Create;
+begin
+  inherited;
+  FCustIterator := TJanuaBindableIterator<TCustomer>.Create(imCopy);
+end;
+
+function TCustomerManagerIterator.GetAsJson: string;
+begin
+  inherited;
+end;
+
+function TCustomerManagerIterator.GetCustomers: TObjectList<TCustomer>;
+begin
+
+end;
+
+procedure TCustomerManagerIterator.RebuildList;
+begin
+  FCustIterator.Initialize('Name', GetCustomers);
+end;
+
+procedure TCustomerManagerIterator.SetAsJson(aJson: string);
+begin
+  inherited;
+  RebuildList;
 end;
 
 end.
