@@ -266,6 +266,7 @@
         <DCCReference Include="..\..\..\src\januacore\Test\Janua.Rest.UnitTest.Client.pas"/>
         <DCCReference Include="..\..\..\src\januacore\Test\Janua.Http.Types.Test.pas"/>
         <DCCReference Include="..\..\..\src\januacore\Test\Janua.Core.Types.Test.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\Test\Janua.Test.Mocks.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaeExeDXE15.optset</DependentOn>
