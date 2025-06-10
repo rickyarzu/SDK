@@ -118,6 +118,14 @@ type
     constructor Create(AMode: TIteratorMode = imCopy);
   end;
 
+  // Specialized iterator for TPersistent descendants with Assign support
+  TJanuaBindableIterator<T: TJanuaBindableClass, constructor> = class(TJanuaObjectIterator<T>)
+  protected
+    function CreateInstance: T; override;
+  public
+    constructor Create(AMode: TIteratorMode = imCopy);
+  end;
+
   EJanuaIteratorException = class(Exception);
 
 implementation
@@ -547,6 +555,20 @@ begin
 end;
 
 function TJanuaPersistentIterator<T>.CreateInstance: T;
+begin
+  // Use the constructor constraint to create instance
+  Result := T.Create;
+end;
+
+{ TJanuaBindableIterator<T> }
+
+constructor TJanuaBindableIterator<T>.Create(AMode: TIteratorMode);
+begin
+  // For TJanuaBindableClass descendants, default to copy mode
+  inherited Create(AMode);
+end;
+
+function TJanuaBindableIterator<T>.CreateInstance: T;
 begin
   // Use the constructor constraint to create instance
   Result := T.Create;
