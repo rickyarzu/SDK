@@ -701,15 +701,42 @@ procedure GoogleRestore; stdcall; external 'PhoenixLib32_r10.dll' index 8;
 procedure TestDLL; stdcall; external 'PhoenixLib32_r10.dll' index 9;
 {$ENDIF}
 {$IFDEF WIN64}
-function InitializeDLL: string; stdcall; external 'PhoenixLib32_r9.64.dll' index 1;
-function CreateGoogleEventDLL(aEvent: string): string; stdcall; external 'PhoenixLib32_r9.64.dll' index 2;
-function UpdateGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.64.dll' index 3;
-function DeleteGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.64.dll' index 4;
-function ConfirmGoogleEventDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.64.dll' index 5;
-function UpdateGoogleDLL: string; stdcall; external 'PhoenixLib32_r9.64.dll' index 6;
-function WhatsAppSentDLL(aJson: string): string; stdcall; external 'PhoenixLib32_r9.64.dll' index 7;
-procedure GoogleRestore; stdcall; external 'PhoenixLib32_r9.64.dll' index 8;
-procedure TestDLL; stdcall; external 'PhoenixLib32_r10.dll' index 9;
+function InitializeDLL: string; //stdcall; external 'PhoenixLib32_r10.64.dll' index 1;
+begin
+
+end;
+function CreateGoogleEventDLL(aEvent: string): string; //stdcall; external 'PhoenixLib32_r10.64.dll' index 2;
+begin
+
+end;
+function UpdateGoogleEventDLL(aJson: string): string; //stdcall; external 'PhoenixLib32_r10.64.dll' index 3;
+begin
+
+end;
+function DeleteGoogleEventDLL(aJson: string): string; //stdcall; external 'PhoenixLib32_r10.64.dll' index 4;
+begin
+
+end;
+function ConfirmGoogleEventDLL(aJson: string): string; //stdcall; external 'PhoenixLib32_r10.64.dll' index 5;
+begin
+
+end;
+function UpdateGoogleDLL: string; stdcall; //external 'PhoenixLib32_r10.64.dll' index 6;
+begin
+
+end;
+function WhatsAppSentDLL(aJson: string): string; //stdcall; external 'PhoenixLib32_r10.64.dll' index 7;
+begin
+
+end;
+procedure GoogleRestore; stdcall; //external 'PhoenixLib32_r10.64.dll' index 8;
+begin
+
+end;
+procedure TestDLL; stdcall; //external 'PhoenixLib32_r10.dll' index 9;
+begin
+
+end;
 {$ENDIF}
 
 var

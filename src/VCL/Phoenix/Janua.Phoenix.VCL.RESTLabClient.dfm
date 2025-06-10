@@ -10,6 +10,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  WindowState = wsMaximized
   OnCreate = FormCreate
   TextHeight = 15
   object PageControl1: TPageControl
@@ -17,7 +18,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
     Top = 0
     Width = 1491
     Height = 855
-    ActivePage = RemoteDB
+    ActivePage = tabLab
     Align = alClient
     TabOrder = 0
     object tabLab: TTabSheet
@@ -27,7 +28,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         Top = 57
         Width = 1483
         Height = 768
-        ActivePage = tabLog
+        ActivePage = tabJsonConfigurazioni
         Align = alClient
         TabOrder = 0
         object tabJsonList: TTabSheet
@@ -1268,8 +1269,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         Height = 57
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = 32
-        ExplicitTop = -6
         object DBText1: TDBText
           Left = 344
           Top = 24
@@ -1308,46 +1307,104 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           OnClick = btnApriTuttiClick
         end
         object btnTestReport: TButton
-          Left = 1344
+          Left = 1218
           Top = 1
-          Width = 138
+          Width = 132
           Height = 55
           Align = alRight
           Caption = 'Test Rapportino'
           TabOrder = 1
-          OnClick = btnApriTuttiClick
+          OnClick = btnTestReportClick
         end
         object btnPreviewReport: TButton
-          Left = 1208
+          Left = 1097
           Top = 1
-          Width = 136
+          Width = 121
           Height = 55
           Align = alRight
           Caption = 'Rapportino Originale'
           TabOrder = 2
           OnClick = btnPreviewReportClick
-          ExplicitLeft = 1184
         end
         object btnJson: TButton
-          Left = 1088
+          Left = 1000
           Top = 1
-          Width = 120
+          Width = 97
           Height = 55
           Align = alRight
           Caption = 'Verifica Json'
           TabOrder = 3
           OnClick = btnJsonClick
-          ExplicitLeft = 1048
         end
         object btnLuci: TButton
-          Left = 1032
+          Left = 956
           Top = 1
-          Width = 56
+          Width = 44
           Height = 55
           Align = alRight
           Caption = 'Luci'
           TabOrder = 4
           OnClick = btnLuciClick
+        end
+        object btnGruppi: TButton
+          Left = 912
+          Top = 1
+          Width = 44
+          Height = 55
+          Align = alRight
+          Caption = 'Gruppi'
+          TabOrder = 5
+          OnClick = btnGruppiClick
+        end
+        object btnPorte: TButton
+          Left = 864
+          Top = 1
+          Width = 48
+          Height = 55
+          Align = alRight
+          Caption = 'Porte'
+          TabOrder = 6
+          OnClick = btnPorteClick
+        end
+        object btnFumi: TButton
+          Left = 824
+          Top = 1
+          Width = 40
+          Height = 55
+          Align = alRight
+          Caption = 'Fumi'
+          TabOrder = 7
+          OnClick = btnFumiClick
+        end
+        object btnIdranti: TButton
+          Left = 780
+          Top = 1
+          Width = 44
+          Height = 55
+          Align = alRight
+          Caption = 'Idranti'
+          TabOrder = 8
+          OnClick = btnIdrantiClick
+        end
+        object btnEstintori: TButton
+          Left = 736
+          Top = 1
+          Width = 44
+          Height = 55
+          Align = alRight
+          Caption = 'Estintori'
+          TabOrder = 9
+          OnClick = btnEstintoriClick
+        end
+        object btnTestAllegati: TButton
+          Left = 1350
+          Top = 1
+          Width = 132
+          Height = 55
+          Align = alRight
+          Caption = 'Test Allegati'
+          TabOrder = 10
+          OnClick = btnTestAllegatiClick
         end
       end
       object PageControl4: TPageControl
@@ -1355,7 +1412,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         Top = 57
         Width = 1483
         Height = 605
-        ActivePage = tabTestLuci
+        ActivePage = tabInterventiRiepilogo
         Align = alClient
         TabOrder = 1
         object tabTestLuci: TTabSheet
@@ -3189,8 +3246,14 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
               end
               item
                 Expanded = False
+                FieldName = 'ANOMALIA_ON_DOWNLOAD'
+                Width = 300
+                Visible = True
+              end
+              item
+                Expanded = False
                 FieldName = 'DESCRIZIONE'
-                Width = 1534
+                Width = 400
                 Visible = True
               end
               item
@@ -3427,6 +3490,471 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         object tabInterventiRiepilogo: TTabSheet
           Caption = 'Interventi Riepilogo'
           ImageIndex = 9
+          object pnlStatiniTop: TPanel
+            Left = 0
+            Top = 0
+            Width = 1475
+            Height = 57
+            Align = alTop
+            TabOrder = 0
+            object lbIDChiave: TLabel
+              Left = 56
+              Top = 16
+              Width = 58
+              Height = 15
+              Caption = 'ID / Chiave'
+            end
+            object lbContratto: TLabel
+              Left = 275
+              Top = 16
+              Width = 51
+              Height = 15
+              Caption = 'Contratto'
+            end
+            object edChiave: TEdit
+              Left = 128
+              Top = 16
+              Width = 141
+              Height = 23
+              TabOrder = 0
+            end
+            object edLista: TButton
+              Left = 595
+              Top = 16
+              Width = 75
+              Height = 25
+              Caption = 'Lista'
+              TabOrder = 1
+              OnClick = edListaClick
+            end
+            object edContratto: TEdit
+              Left = 340
+              Top = 16
+              Width = 237
+              Height = 23
+              CharCase = ecUpperCase
+              TabOrder = 2
+            end
+          end
+          object EnhCRDBGrid17: TEnhCRDBGrid
+            Left = 0
+            Top = 57
+            Width = 1475
+            Height = 518
+            Align = alClient
+            DataSource = dsStatini
+            TabOrder = 1
+            TitleFont.Charset = DEFAULT_CHARSET
+            TitleFont.Color = clWindowText
+            TitleFont.Height = -12
+            TitleFont.Name = 'Segoe UI'
+            TitleFont.Style = []
+            HighlightBGColor = clBlack
+            HighlightFont.Charset = DEFAULT_CHARSET
+            HighlightFont.Color = clWindowText
+            HighlightFont.Height = -12
+            HighlightFont.Name = 'Segoe UI'
+            HighlightFont.Style = []
+            Columns = <
+              item
+                Expanded = False
+                FieldName = 'CHIAVE'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'AMMINISTRATORE'
+                Width = 300
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'CONTRATTO'
+                Width = 300
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'LOCAZIONE'
+                Title.Caption = 'Filiale'
+                Width = 300
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'NOME_TECNICO'
+                Width = 200
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'INDIRIZZO_FILIALE'
+                Title.Caption = 'Indirizzo da Visitare'
+                Width = 400
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'CLIENTE'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'FILIALE'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'TITOLO'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'RAGIONE_SOCIALE'
+                Width = 1534
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'INDIRIZZO'
+                Width = 1534
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'COMUNE'
+                Width = 1534
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'PROVINCIA'
+                Width = 65
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'CAP'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'TELEFONO'
+                Width = 1534
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'CELLULARE'
+                Width = 1534
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'NOTE'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ORARIO_APERTURA_DAL1'
+                Width = 142
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ORARIO_APERTURA_DAL2'
+                Width = 142
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ORARIO_APERTURA_AL1'
+                Width = 134
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ORARIO_APERTURA_AL2'
+                Width = 134
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'CHIUSURA'
+                Width = 1534
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'FATTURA'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DATA_INTERVENTO'
+                Width = 107
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'GENERAZIONE_AUTOMATICA'
+                Width = 162
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'TECNICO_INTERVENTO'
+                Width = 126
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'SCANSIONE'
+                Width = 68
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'REGISTRO'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'NOTE_PER_IL_TECNICO'
+                Width = 127
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'SOSPESO'
+                Width = 53
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DA_ESPORTARE_SUL_WEB'
+                Width = 141
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'RESPONSABILE'
+                Width = 84
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ESPORTATO_SU_MOBILE'
+                Width = 134
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'NOTE_DAL_TECNICO'
+                Width = 115
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'JSON_DA_MOBILE'
+                Width = 100
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'PDF_STATINO'
+                Width = 77
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'REGISTRO_IS_PDF'
+                Width = 96
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'VERBALE_PROVA_DINAMICA'
+                Width = 157
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'VERBALE_MANICHETTE'
+                Width = 128
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'PREVENTIVO'
+                Width = 71
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'IGNORA_EVIDENZIAZIONE'
+                Width = 144
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'ANNULLATO_DA_TABLET'
+                Width = 138
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'MOBILEWARN_NUOVA_ATTREZZATURA'
+                Width = 216
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'MOBILEWARN_ORDINARIA_RITIRATA'
+                Width = 201
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'MOBILEWARN_N_ORDIN_CONTROLLATA'
+                Width = 223
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'MOBILEWARN_SMALTIMENTO'
+                Width = 167
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'STATO_LAVORAZIONE'
+                Width = 123
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DATA_CHIUSURA_DA_SERVER'
+                Width = 161
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'CHIUSURA_EXT'
+                Width = 304
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'CHIUSURA_STATINO'
+                Width = 113
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'MOBILEWARN_NON_ESEGUITI'
+                Width = 164
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'PRESA_IN_CARICO'
+                Width = 103
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'FORNITURA'
+                Width = 67
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'APPUNTAMENTO_DATA'
+                Width = 133
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'APPUNTAMENTO_ORA'
+                Width = 127
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'STATO'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'JGUID'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'GCAL'
+                Width = 34
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'WANUMBER'
+                Width = 124
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'WA'
+                Width = 23
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'STATO_IMMAGINE'
+                Width = 103
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'WA_ID'
+                Width = 772
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'WA_IMAGE'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'WA_STATE'
+                Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'MESE_INTERVENTO'
+                Width = 106
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'NOME_MESE'
+                Width = 118
+                Visible = True
+              end>
+          end
         end
       end
       object Panel6: TPanel
@@ -3467,6 +3995,12 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
               Expanded = False
               FieldName = 'DESCRIZIONE'
               Width = 395
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'CONTROLLI'
+              Width = 94
               Visible = True
             end
             item
@@ -3635,5 +4169,10 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
     DataSet = dmFbPhoenixJsonReport.qryStatiniLuci
     Left = 604
     Top = 178
+  end
+  object dsStatini: TDataSource
+    DataSet = dmFbPhoenixJsonReport.qElenco
+    Left = 296
+    Top = 341
   end
 end

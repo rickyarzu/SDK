@@ -27,10 +27,12 @@ begin
   TJanuaApplication.ApplicationType := TJanuaApplicationType.jatWinService;
   TJanuaWhatsAppWebBrokerUniDACApplication.ApplicationSetup('whatsapp.januservers.com');
   Application.CreateForm(TfrmVCLWebBrokerWhatsApp, frmVCLWebBrokerWhatsApp);
+  {
   Application.CreateForm(TdmFbStorage, dmFbStorage);
   Application.CreateForm(TdmFbTwilioWhatsApp, dmFbTwilioWhatsApp);
   Application.CreateForm(TdmPgTwilioWhatsApp, dmPgTwilioWhatsApp);
   Application.CreateForm(TdmPgStorage, dmPgStorage);
+  }
   Application.Run;
 
 end.

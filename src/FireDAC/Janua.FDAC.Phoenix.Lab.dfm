@@ -190,6 +190,11 @@ inherited dmFDACPhoenixLab: TdmFDACPhoenixLab
       FieldName = 'DATA_LAVORAZIONE'
       Origin = 'DATA_LAVORAZIONE'
     end
+    object tbLabEstintoriMOTIVO_RITIRO: TStringField
+      FieldName = 'MOTIVO_RITIRO'
+      Origin = 'MOTIVO_RITIRO'
+      Size = 128
+    end
   end
   object tbLabErrori: TFDTable
     IndexFieldNames = 'STATINO;ESTINTORE'

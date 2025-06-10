@@ -180,7 +180,7 @@ type
     procedure SetItems(Index: Integer; Value: T);
   public
     FArray: Tarray<T>;
-    property ItemArray[Index: Integer]: T read GetItems { write SetItems }; default;
+    property ItemArray[Index: Integer]: T read GetItems  write SetItems; default;
     property Count: Integer read GetCount;
     property HasValues: boolean read GetHasValues;
     property Items: Tarray<T> read FArray;
@@ -5376,19 +5376,14 @@ end;
 
 procedure TJanuaArray<T>.Replace(aItem: T; aPosition: Integer);
 begin
-  if aPosition < self.Count then
+  if aPosition < Count then
     FArray[aPosition] := aItem;
 end;
 
 procedure TJanuaArray<T>.SetItems(Index: Integer; Value: T);
 begin
   if IsManagedType(T) then
-  begin
-    {
-      if GetCount > Index then
-      FArray[Index] := T
-    }
-  end;
+    Replace(Value, Index);
 end;
 
 { TLocalCoordinates }

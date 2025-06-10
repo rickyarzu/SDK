@@ -159,6 +159,10 @@ inherited dmPhoenixIBLab: TdmPhoenixIBLab
     object tbLabEstintoriDATA_LAVORAZIONE: TDateField
       FieldName = 'DATA_LAVORAZIONE'
     end
+    object tbLabEstintoriMOTIVO_RITIRO: TWideStringField
+      FieldName = 'MOTIVO_RITIRO'
+      Size = 128
+    end
   end
   object tbLabErrori: TUniTable
     TableName = 'LAB_ESTINTORI_ERROR'
@@ -423,12 +427,12 @@ inherited dmPhoenixIBLab: TdmPhoenixIBLab
         'one, s.data_chiusura_da_server'
       'order by l.statino desc')
     Left = 368
-    Top = 56
+    Top = 64
   end
   object dsMasterStatini: TUniDataSource
     DataSet = qryMasterStatini
     Left = 368
-    Top = 120
+    Top = 128
   end
   object qryDetailLabEstintori: TUniQuery
     Connection = JanuaUniConnection1
@@ -438,7 +442,7 @@ inherited dmPhoenixIBLab: TdmPhoenixIBLab
     MasterFields = 'STATINO'
     DetailFields = 'STATINO'
     Left = 368
-    Top = 192
+    Top = 200
     ParamData = <
       item
         DataType = ftInteger
@@ -456,7 +460,7 @@ inherited dmPhoenixIBLab: TdmPhoenixIBLab
       '(SELECT 1 FROM whatsapp_numbers N WHERE N.wanumber = S.wanumber)'
       'GROUP BY S.wanumber')
     Left = 368
-    Top = 272
+    Top = 280
   end
   object qryReportPlanner: TUniQuery
     SQLInsert.Strings = (

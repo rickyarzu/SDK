@@ -48,19 +48,28 @@ inherited dmFbTwilioWhatsApp: TdmFbTwilioWhatsApp
       item
         FieldName = 'JGUID'
         FieldType = ftGuid
+      end
+      item
+        FieldName = 'JSON_CONTENT'
+        FieldType = ftWideMemo
+      end
+      item
+        FieldName = 'BODY_RECEIVED'
+        FieldType = ftWideMemo
       end>
+    Connection = FbPhoenixConnection
     SQL.Strings = (
       'SELECT * FROM twilio_log'
       'where id > :max_id'
       'ORDER BY id ASC ')
     Left = 72
-    Top = 160
+    Top = 272
     ParamData = <
       item
         DataType = ftInteger
         Name = 'max_id'
         ParamType = ptInput
-        Value = 0
+        Value = 3480
       end>
     object qryPhoenixTwilioLogID: TLargeintField
       FieldName = 'ID'
@@ -653,5 +662,67 @@ inherited dmFbTwilioWhatsApp: TdmFbTwilioWhatsApp
     DataSet = qryStatini
     Left = 264
     Top = 160
+  end
+  object qryMaxTwilioLog: TUniQuery
+    SQLInsert.Strings = (
+      'INSERT INTO TWILIO_LOG'
+      
+        '  (ID, STATO, JGUID, WANUMBER, MANAGED, INSERT_DATE, UPDATE_DATE' +
+        ', JSON_CONTENT, BODY_RECEIVED, ACTION)'
+      'VALUES'
+      
+        '  (:ID, :STATO, :JGUID, :WANUMBER, :MANAGED, :INSERT_DATE, :UPDA' +
+        'TE_DATE, :JSON_CONTENT, :BODY_RECEIVED, :ACTION)')
+    SQLDelete.Strings = (
+      'DELETE FROM TWILIO_LOG'
+      'WHERE'
+      '  ID = :Old_ID')
+    SQLUpdate.Strings = (
+      'UPDATE TWILIO_LOG'
+      'SET'
+      
+        '  ID = :ID, STATO = :STATO, JGUID = :JGUID, WANUMBER = :WANUMBER' +
+        ', MANAGED = :MANAGED, INSERT_DATE = :INSERT_DATE, UPDATE_DATE = ' +
+        ':UPDATE_DATE, JSON_CONTENT = :JSON_CONTENT, BODY_RECEIVED = :BOD' +
+        'Y_RECEIVED, ACTION = :ACTION'
+      'WHERE'
+      '  ID = :Old_ID')
+    SQLLock.Strings = (
+      'SELECT NULL FROM TWILIO_LOG'
+      'WHERE'
+      'ID = :Old_ID'
+      'FOR UPDATE WITH LOCK')
+    SQLRefresh.Strings = (
+      
+        'SELECT ID, STATO, JGUID, WANUMBER, MANAGED, INSERT_DATE, UPDATE_' +
+        'DATE, JSON_CONTENT, BODY_RECEIVED, ACTION FROM TWILIO_LOG'
+      'WHERE'
+      '  ID = :ID')
+    SQLRecCount.Strings = (
+      'SELECT COUNT(*) FROM ('
+      'SELECT 1 AS C  FROM TWILIO_LOG'
+      ''
+      ') q')
+    DataTypeMap = <
+      item
+        FieldName = 'JGUID'
+        FieldType = ftGuid
+      end>
+    Connection = FbPhoenixConnection
+    SQL.Strings = (
+      'SELECT max(id) as MaxID FROM twilio_log')
+    Left = 72
+    Top = 152
+    object qryMaxTwilioLogMAXID: TLargeintField
+      FieldName = 'MAXID'
+      ReadOnly = True
+    end
+  end
+  object qryNextVal: TUniQuery
+    Connection = FbPhoenixConnection
+    SQL.Strings = (
+      'SELECT NEXT VALUE FOR GEN_WAPP FROM RDB$DATABASE;')
+    Left = 72
+    Top = 216
   end
 end

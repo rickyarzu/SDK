@@ -543,7 +543,7 @@ end;
 
 constructor TUniEdit.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited Create(AOwner);
   Initialize;
 end;
@@ -713,7 +713,7 @@ end;
 
 constructor TUniCheckBox.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited Create(AOwner);
   Initialize;
   OnClick := JanuaOnClick;
@@ -910,7 +910,7 @@ end;
 
 constructor TUniDateTimePicker.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   OnChange := NotifyOnChange;
   inherited;
 end;
@@ -1120,7 +1120,7 @@ end;
 
 constructor TUniComboBox.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 end;
 
@@ -1295,7 +1295,7 @@ end;
 
 constructor TUniMemo.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 end;
 
@@ -1426,7 +1426,7 @@ end;
 
 constructor TUniFSToggle.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 
 end;
@@ -1558,7 +1558,7 @@ end;
 
 constructor TUniRadioGroup.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 end;
 
@@ -1743,7 +1743,7 @@ end;
 
 constructor TUniFSCombobox.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited;
 end;
 

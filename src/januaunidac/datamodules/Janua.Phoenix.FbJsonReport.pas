@@ -504,7 +504,6 @@ type
     qryInterventiEstintoriCHIAVE: TIntegerField;
     qryInterventiEstintoriSTATINO: TIntegerField;
     qryInterventiEstintoriESTINTORE: TIntegerField;
-    qryInterventiEstintoriTIPO_I: TWideStringField;
     qryInterventiEstintoriRESET_DATA_COLLAUDO: TWideStringField;
     qryInterventiEstintoriRESET_DATA_REVISIONE: TWideStringField;
     qryInterventiEstintoriDATA_CONTROLLO: TDateField;
@@ -536,8 +535,6 @@ type
     qrySintesiReportSOSTITUZIONE: TLargeintField;
     qrySintesiReportRICARICA: TLargeintField;
     qrySintesiReportRIPARAZIONE: TLargeintField;
-    qrySintesiReportPRESSATURA: TIntegerField;
-    qrySintesiReportNUOVI: TIntegerField;
     qrySintesiReportNON_ESEGUITE: TLargeintField;
     qryInterventiImpianti: TUniQuery;
     qryInterventiImpiantiDESCRIZIONE: TWideStringField;
@@ -577,7 +574,6 @@ type
     qryInterventiIdrantiDESCRIZIONE_IDRANTE: TWideStringField;
     qryInterventiIdrantiPROVA_DINAMICA: TIntegerField;
     qryInterventiIdrantiTIPO_ATTACCO_MOTOPOMPA: TWideStringField;
-    qryInterventiIdrantiPROVA_DINAMICA_1: TIntegerField;
     qryInterventiIdrantiTIPO: TWideStringField;
     qryInterventiIdrantiDESCRIZIONE_ALTERNATIVA: TWideStringField;
     qryInterventiIdrantiRESET_DATA_COLLAUDO: TWideStringField;
@@ -645,6 +641,142 @@ type
     qryInterventiLuciANOMALIA_ON_DOWNLOAD: TWideStringField;
     qryInterventiLuciANOMALIA_RISOLTA: TWideStringField;
     qryInterventiLuciTECNICO_CONTROLLO: TIntegerField;
+    qryInterventiGruppiORARIO_CONTROLLO: TTimeField;
+    qryInterventiGruppiCONTROLLATO: TWideStringField;
+    qryInterventiGruppiANOMALIA_ON_DOWNLOAD: TWideStringField;
+    qryInterventiGruppiANOMALIA_RISOLTA: TWideStringField;
+    qryInterventiGruppiTECNICO_CONTROLLO: TIntegerField;
+    qryInterventiPorteTIPO_ATTREZZATURA: TWideStringField;
+    qryInterventiPorteORARIO_CONTROLLO: TTimeField;
+    qryInterventiPorteCONTROLLATO: TWideStringField;
+    qryInterventiPorteANOMALIA_ON_DOWNLOAD: TWideStringField;
+    qryInterventiPorteANOMALIA_RISOLTA: TWideStringField;
+    qryInterventiPorteTECNICO_CONTROLLO: TIntegerField;
+    qryInterventiFumiTIPO_ATTREZZATURA: TWideStringField;
+    qryInterventiFumiORARIO_CONTROLLO: TTimeField;
+    qryInterventiFumiCONTROLLATO: TWideStringField;
+    qryInterventiFumiANOMALIA_ON_DOWNLOAD: TWideStringField;
+    qryInterventiFumiANOMALIA_RISOLTA: TWideStringField;
+    qryInterventiFumiTECNICO_CONTROLLO: TIntegerField;
+    qElenco: TUniQuery;
+    qElencoCHIAVE: TIntegerField;
+    qryInterventiIdrantiANOMALIAONDOWNLOAD: TWideStringField;
+    qryInterventiIdrantiANOMALIARISOLTA: TWideStringField;
+    qryInterventiIdrantiCONSEGNATO: TWideStringField;
+    qryInterventiIdrantiCONTROLLATO: TWideStringField;
+    qryInterventiIdrantiDATACONTROLLO: TDateField;
+    qryInterventiIdrantiDATAPRESSATURA: TDateField;
+    qryInterventiIdrantiDATARITIRO: TDateField;
+    qryInterventiIdrantiORARIOCONTROLLO: TWideStringField;
+    qryInterventiIdrantiORARIORITIRO: TWideStringField;
+    qryInterventiIdrantiPRESSATURAEFFETTUATA: TWideStringField;
+    qryInterventiIdrantiRITIRATO: TWideStringField;
+    qryInterventiIdrantiTECNICOCONTROLLO: TIntegerField;
+    qryInterventiIdrantiTECNICOPRESSATURA: TIntegerField;
+    qryInterventiIdrantiTECNICORITIRO: TIntegerField;
+    qrySintesiReportSTATINO: TIntegerField;
+    qrySintesiReportCONTROLLI: TLargeintField;
+    qrySintesiReportPRESSATURA: TLargeintField;
+    qrySintesiReportNUOVI: TLargeintField;
+    qryInterventiEstintoriTIPO: TWideStringField;
+    qryInterventiEstintoriANOMALIA_APPROVATA: TWideStringField;
+    qryInterventiEstintoriAGGIUNTODAMOBILE: TWideStringField;
+    qryInterventiEstintoriANOMALIAONDOWNLOAD: TWideStringField;
+    qryInterventiEstintoriANOMALIARISOLTA: TWideStringField;
+    qryInterventiEstintoriCONSEGNATO: TWideStringField;
+    qryInterventiEstintoriCONTROLLATO: TWideStringField;
+    qryInterventiEstintoriDATA_LAVORAZIONE: TDateField;
+    qryInterventiEstintoriMOTIVOCONTROLLONEGATO: TWideStringField;
+    qryInterventiEstintoriMOTIVORITIRO: TWideStringField;
+    qryInterventiEstintoriNONCONTROLLATO: TWideStringField;
+    qryInterventiEstintoriORARIOCONSEGNA: TWideStringField;
+    qryInterventiEstintoriORARIOCONTROLLO: TWideStringField;
+    qryInterventiEstintoriORARIOCONTROLLONEGATO: TWideStringField;
+    qryInterventiEstintoriORARIORITIRO: TWideStringField;
+    qryInterventiEstintoriORARIOSMALTIMENTO: TWideStringField;
+    qryInterventiEstintoriPERIODICITA_COLLAUDO: TIntegerField;
+    qryInterventiEstintoriPERIODICITA_REVISIONE: TIntegerField;
+    qryInterventiEstintoriRESTITUITO: TWideStringField;
+    qryInterventiEstintoriRITIRATO: TWideStringField;
+    qryInterventiEstintoriSMALTITO: TWideStringField;
+    qryInterventiEstintoriTIPO_ESTINTORE: TIntegerField;
+    qryInterventiEstintoriTIPO_INTERVENTO: TWideStringField;
+    qryInterventiEstintoriTECNICOCONSEGNA: TIntegerField;
+    qryInterventiEstintoriTECNICOCONTROLLO: TIntegerField;
+    qryInterventiEstintoriTECNICOCONTROLLONEGATO: TIntegerField;
+    qryInterventiEstintoriTECNICORESTITUZIONE: TIntegerField;
+    qryInterventiEstintoriTECNICORITIRO: TIntegerField;
+    qryInterventiEstintoriTECNICOSMALTIMENTO: TIntegerField;
+    qryInterventiEstintoriANNO_COSTRUZIONE_1: TWideStringField;
+    qryInterventiEstintoriMARCA_1: TIntegerField;
+    qryInterventiEstintoriMATRICOLA_1: TWideStringField;
+    qryInterventiEstintoriPROGRESSIVO_1: TIntegerField;
+    qElencoAMMINISTRATORE: TWideStringField;
+    qElencoCONTRATTO: TWideStringField;
+    qElencoLOCAZIONE: TWideStringField;
+    qElencoNOME_TECNICO: TWideStringField;
+    qElencoINDIRIZZO_FILIALE: TWideStringField;
+    qElencoCLIENTE: TIntegerField;
+    qElencoFILIALE: TIntegerField;
+    qElencoTITOLO: TWideStringField;
+    qElencoRAGIONE_SOCIALE: TWideStringField;
+    qElencoINDIRIZZO: TWideStringField;
+    qElencoCOMUNE: TWideStringField;
+    qElencoPROVINCIA: TWideStringField;
+    qElencoCAP: TWideStringField;
+    qElencoTELEFONO: TWideStringField;
+    qElencoCELLULARE: TWideStringField;
+    qElencoNOTE: TBlobField;
+    qElencoORARIO_APERTURA_DAL1: TTimeField;
+    qElencoORARIO_APERTURA_DAL2: TTimeField;
+    qElencoORARIO_APERTURA_AL1: TTimeField;
+    qElencoORARIO_APERTURA_AL2: TTimeField;
+    qElencoCHIUSURA: TWideStringField;
+    qElencoFATTURA: TIntegerField;
+    qElencoDATA_INTERVENTO: TDateField;
+    qElencoGENERAZIONE_AUTOMATICA: TIntegerField;
+    qElencoTECNICO_INTERVENTO: TIntegerField;
+    qElencoSCANSIONE: TBlobField;
+    qElencoREGISTRO: TBlobField;
+    qElencoNOTE_PER_IL_TECNICO: TBlobField;
+    qElencoSOSPESO: TWideStringField;
+    qElencoDA_ESPORTARE_SUL_WEB: TWideStringField;
+    qElencoRESPONSABILE: TIntegerField;
+    qElencoESPORTATO_SU_MOBILE: TWideStringField;
+    qElencoNOTE_DAL_TECNICO: TBlobField;
+    qElencoJSON_DA_MOBILE: TBlobField;
+    qElencoPDF_STATINO: TBlobField;
+    qElencoREGISTRO_IS_PDF: TWideStringField;
+    qElencoVERBALE_PROVA_DINAMICA: TBlobField;
+    qElencoVERBALE_MANICHETTE: TBlobField;
+    qElencoPREVENTIVO: TIntegerField;
+    qElencoIGNORA_EVIDENZIAZIONE: TWideStringField;
+    qElencoANNULLATO_DA_TABLET: TWideStringField;
+    qElencoMOBILEWARN_NUOVA_ATTREZZATURA: TWideStringField;
+    qElencoMOBILEWARN_ORDINARIA_RITIRATA: TWideStringField;
+    qElencoMOBILEWARN_N_ORDIN_CONTROLLATA: TWideStringField;
+    qElencoMOBILEWARN_SMALTIMENTO: TWideStringField;
+    qElencoSTATO_LAVORAZIONE: TWideStringField;
+    qElencoDATA_CHIUSURA_DA_SERVER: TDateField;
+    qElencoCHIUSURA_EXT: TWideStringField;
+    qElencoCHIUSURA_STATINO: TBlobField;
+    qElencoMOBILEWARN_NON_ESEGUITI: TWideStringField;
+    qElencoPRESA_IN_CARICO: TWideStringField;
+    qElencoFORNITURA: TWideStringField;
+    qElencoAPPUNTAMENTO_DATA: TDateField;
+    qElencoAPPUNTAMENTO_ORA: TTimeField;
+    qElencoSTATO: TSmallintField;
+    qElencoJGUID: TBytesField;
+    qElencoGCAL: TWideStringField;
+    qElencoWANUMBER: TWideStringField;
+    qElencoWA: TWideStringField;
+    qElencoSTATO_IMMAGINE: TBlobField;
+    qElencoWA_ID: TWideStringField;
+    qElencoWA_IMAGE: TBlobField;
+    qElencoWA_STATE: TSmallintField;
+    qElencoMESE_INTERVENTO: TSmallintField;
+    qElencoNOME_MESE: TWideStringField;
+    qElencoSTATINO: TIntegerField;
   private
     FJsonPretty: string;
     FOriginal: string;
@@ -667,7 +799,17 @@ type
     procedure ElaborateJson(const aStatino: integer);
     procedure UpdateFromClass(const aClass: TStatino);
     procedure UpdateLuci(const aClass: TStatino);
+    procedure UpdateGruppi(const aClass: TStatino);
+    procedure UpdatePorte(const aClass: TStatino);
+    procedure UpdateFumi(const aClass: TStatino);
+    procedure UpdateIdranti(const aClass: TStatino);
+    procedure UpdateEstintori(const aClass: TStatino);
     procedure UpdateAllLuci;
+    procedure UpdateAllGruppi;
+    procedure UpdateAllPorte;
+    procedure UpdateAllFumi;
+    procedure UpdateAllIdranti;
+    procedure UpdateAllEstintori;
     property JsonPretty: string read FJsonPretty write SetJsonPretty;
     property Original: string read FOriginal write SetOriginal;
     property TestBack: string read FTestBack write SetTestBack;
@@ -1117,6 +1259,89 @@ begin
   FTestBack := Value;
 end;
 
+procedure TdmFbPhoenixJsonReport.UpdateAllEstintori;
+begin
+  if not qryStatiniEstintori.Active then
+    qryStatiniEstintori.Open;
+
+  qryStatiniEstintori.First;
+  dsStatiniEstintori.Enabled := False;
+  dsInterventiEstintori.Enabled := False;
+  While not qryStatiniEstintori.Eof do
+  begin
+    var
+    lStatino := TStatino.Create;
+    var
+    lJson := ReplacePhoenixJson(qryStatiniEstintoriJSON_DA_MOBILE.AsString);
+    try
+      lStatino.AsJson := lJson;
+      qryInterventiEstintori.Close;
+      self.qryInterventiEstintori.Params[0].AsInteger := qryStatiniEstintoriSTATINO.AsInteger;
+      qryInterventiEstintori.Open;
+      UpdateEstintori(lStatino);
+      lStatino.Free;
+    except
+      on e: exception do
+      begin
+        lStatino.Free;
+      end;
+      // per ora non fa nulla
+    end;
+    qryStatiniEstintori.Next;
+  end;
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateAllFumi;
+begin
+  qryStatiniFumo.First;
+  While not qryStatiniFumo.Eof do
+  begin
+    var
+    lStatino := TStatino.Create;
+    var
+    lJson := ReplacePhoenixJson(qryStatiniFumoJSON_DA_MOBILE.AsString);
+    try
+      lStatino.AsJson := lJson;
+      UpdateFumi(lStatino);
+    except
+      on e: exception do
+      begin
+
+      end;
+      // per ora non fa nulla
+    end;
+    qryStatiniFumo.Next;
+  end;
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateAllGruppi;
+begin
+  qryStatiniGruppi.First;
+  While not qryStatiniGruppi.Eof do
+  begin
+    var
+    lStatino := TStatino.Create;
+    var
+    lJson := ReplacePhoenixJson(qryStatiniGruppiJSON_DA_MOBILE.AsString);
+    try
+      lStatino.AsJson := lJson;
+      UpdateGruppi(lStatino);
+    except
+      on e: exception do
+      begin
+
+      end;
+      // per ora non fa nulla
+    end;
+    qryStatiniGruppi.Next;
+  end;
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateAllIdranti;
+begin
+
+end;
+
 procedure TdmFbPhoenixJsonReport.UpdateAllLuci;
 begin
   qryStatiniLuci.First;
@@ -1131,15 +1356,157 @@ begin
       UpdateLuci(lStatino);
     except
       on e: exception do
-        // per ora non fa nulla
+      begin
+
+      end;
+      // per ora non fa nulla
     end;
     qryStatiniLuci.Next;
   end;
 end;
 
+procedure TdmFbPhoenixJsonReport.UpdateAllPorte;
+begin
+  qryStatiniPorte.First;
+  While not qryStatiniPorte.Eof do
+  begin
+    var
+    lStatino := TStatino.Create;
+    var
+    lJson := ReplacePhoenixJson(qryStatiniPorteJSON_DA_MOBILE.AsString);
+    try
+      lStatino.AsJson := lJson;
+      UpdatePorte(lStatino);
+    except
+      on e: exception do
+      begin
+
+      end;
+      // per ora non fa nulla
+    end;
+    qryStatiniPorte.Next;
+  end;
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateEstintori(const aClass: TStatino);
+var
+  lEstintori: TEstintori;
+begin
+  if aClass.Estintori.Count > 0 then
+    for lEstintori in aClass.Estintori do
+      if qryInterventiEstintori.Locate('ESTINTORE', lEstintori.Chiave, []) then
+      begin
+        try
+          qryInterventiEstintori.Edit;
+          qryInterventiEstintoriANOMALIA_APPROVATA.Value := BoolToStr(lEstintori.ANOMALIAAPPROVATA);
+          qryInterventiEstintoriAGGIUNTODAMOBILE.Value := BoolToStr(lEstintori.AggiuntoDaMobile);
+          qryInterventiEstintoriANOMALIAONDOWNLOAD.Value := lEstintori.AnomaliaOnDownload;
+          qryInterventiEstintoriANOMALIARISOLTA.Value := BoolToStr(lEstintori.AnomaliaRisolta);
+          qryInterventiEstintoriCONSEGNATO.Value := BoolToStr(lEstintori.Consegnato);
+          qryInterventiEstintoriCONTROLLATO.Value := BoolToStr(lEstintori.Controllato);
+          qryInterventiEstintoriDATA_LAVORAZIONE.Value := lEstintori.DATALAVORAZIONE;
+          qryInterventiEstintoriMOTIVOCONTROLLONEGATO.Value := lEstintori.MotivoControlloNegato;
+          qryInterventiEstintoriMOTIVORITIRO.Value := lEstintori.MotivoRitiro;
+          qryInterventiEstintoriNONCONTROLLATO.Value := BoolToStr(lEstintori.NonControllato);
+          qryInterventiEstintoriORARIOCONSEGNA.Value := lEstintori.OrarioConsegna;
+          qryInterventiEstintoriORARIOCONTROLLO.Value := lEstintori.OrarioControllo;
+          qryInterventiEstintoriORARIOCONTROLLONEGATO.Value := lEstintori.OrarioControlloNegato;
+          qryInterventiEstintoriORARIORITIRO.Value := lEstintori.OrarioRitiro;
+          qryInterventiEstintoriORARIOSMALTIMENTO.Value := lEstintori.OrarioSmaltimento;
+          qryInterventiEstintoriPERIODICITA_COLLAUDO.Value := lEstintori.PERIODICITACOLLAUDO;
+          qryInterventiEstintoriPERIODICITA_REVISIONE.Value := lEstintori.PERIODICITAREVISIONE;
+          qryInterventiEstintoriRESTITUITO.Value := BoolToStr(lEstintori.Restituito);
+          qryInterventiEstintoriRITIRATO.Value := BoolToStr(lEstintori.Ritirato);
+          qryInterventiEstintoriSMALTITO.Value := BoolToStr(lEstintori.Smaltito);
+          qryInterventiEstintoriTIPO_ESTINTORE.Value := lEstintori.TIPOESTINTORE;
+          qryInterventiEstintoriTIPO_INTERVENTO.Value := lEstintori.TIPOINTERVENTO;
+          qryInterventiEstintoriTECNICOCONSEGNA.Value := lEstintori.TecnicoConsegna;
+          qryInterventiEstintoriTECNICOCONTROLLO.Value := lEstintori.TecnicoControllo;
+          qryInterventiEstintoriTECNICOCONTROLLONEGATO.Value := lEstintori.TecnicoControlloNegato;
+          qryInterventiEstintoriTECNICORESTITUZIONE.Value := lEstintori.TecnicoRestituzione;
+          qryInterventiEstintoriTECNICORITIRO.Value := lEstintori.TecnicoRitiro;
+          qryInterventiEstintoriTECNICOSMALTIMENTO.Value := lEstintori.TecnicoSmaltimento;
+          qryInterventiEstintoriANNO_COSTRUZIONE_1.Value := lEstintori.ANNOCOSTRUZIONE;
+          qryInterventiEstintoriMARCA_1.Value := lEstintori.MARCA;
+          qryInterventiEstintoriMATRICOLA_1.Value := lEstintori.MATRICOLA;
+          qryInterventiEstintoriPROGRESSIVO_1.Value := lEstintori.PROGRESSIVO;
+          qryInterventiEstintori.Post;
+        except
+          on e: exception do
+            qryInterventiEstintori.Cancel;
+        end;
+      end;
+
+end;
+
 procedure TdmFbPhoenixJsonReport.UpdateFromClass(const aClass: TStatino);
 begin
   UpdateLuci(aClass);
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateFumi(const aClass: TStatino);
+var
+  lFumi: TRilevatoriFumo;
+begin
+  if aClass.RilevatoriFumo.Count > 0 then
+    for lFumi in aClass.RilevatoriFumo do
+      if qryInterventiFumi.Locate('ATTREZZATURA', lFumi.Chiave, []) then
+      begin
+        try
+          qryInterventiFumi.Edit;
+          qryInterventiFumiCONTROLLATO.AsString := BoolToStr(lFumi.Controllato);
+          qryInterventiFumiANOMALIA_ON_DOWNLOAD.AsString := lFumi.AnomaliaOnDownload;
+          qryInterventiFumiANOMALIA_RISOLTA.AsString := BoolToStr(lFumi.AnomaliaRisolta);
+          qryInterventiFumiTECNICO_CONTROLLO.AsInteger := lFumi.TecnicoControllo;
+          qryInterventiFumi.Post;
+        except
+          on e: exception do
+            qryInterventiFumi.Cancel;
+        end;
+      end;
+
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateGruppi(const aClass: TStatino);
+var
+  lGruppi: TGruppiPressurizzazione;
+begin
+  if aClass.GruppiPressurizzazione.Count > 0 then
+    for lGruppi in aClass.GruppiPressurizzazione do
+      if qryInterventiGruppi.Locate('ATTREZZATURA', lGruppi.Chiave, []) then
+      begin
+        try
+          qryInterventiGruppi.Edit;
+          qryInterventiGruppiCONTROLLATO.AsString := BoolToStr(lGruppi.Controllato);
+          qryInterventiGruppiANOMALIA_ON_DOWNLOAD.AsString := lGruppi.AnomaliaOnDownload;
+          qryInterventiGruppiANOMALIA_RISOLTA.AsString := BoolToStr(lGruppi.AnomaliaRisolta);
+          qryInterventiGruppiTECNICO_CONTROLLO.AsInteger := lGruppi.TecnicoControllo;
+          qryInterventiGruppi.Post;
+        except
+          on e: exception do
+            qryInterventiGruppi.Cancel;
+        end;
+      end;
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateIdranti(const aClass: TStatino);
+var
+  lBocc: TBocchelli;
+  lId: TIdranti;
+begin
+  if aClass.Idranti.Count > 0 then
+    for lId in aClass.Idranti do
+      if qryInterventiLuci.Locate('ATTREZZATURA', lBocc.Chiave, []) then
+      begin
+        try
+          qryInterventiLuci.Edit;
+
+          qryInterventiLuci.Post;
+        except
+          on e: exception do
+            qryInterventiLuci.Cancel;
+        end;
+      end;
 end;
 
 procedure TdmFbPhoenixJsonReport.UpdateLuci(const aClass: TStatino);
@@ -1162,6 +1529,29 @@ begin
             qryInterventiLuci.Cancel;
         end;
       end;
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdatePorte(const aClass: TStatino);
+var
+  lPorte: TPorte;
+begin
+  if aClass.Porte.Count > 0 then
+    for lPorte in aClass.Porte do
+      if qryInterventiPorte.Locate('ATTREZZATURA', lPorte.Chiave, []) then
+      begin
+        try
+          qryInterventiPorte.Edit;
+          qryInterventiPorteCONTROLLATO.AsString := BoolToStr(lPorte.Controllato);
+          qryInterventiPorteANOMALIA_ON_DOWNLOAD.AsString := lPorte.AnomaliaOnDownload;
+          qryInterventiPorteANOMALIA_RISOLTA.AsString := BoolToStr(lPorte.AnomaliaRisolta);
+          qryInterventiPorteTECNICO_CONTROLLO.AsInteger := lPorte.TecnicoControllo;
+          qryInterventiPorte.Post;
+        except
+          on e: exception do
+            qryInterventiPorte.Cancel;
+        end;
+      end;
+
 end;
 
 end.

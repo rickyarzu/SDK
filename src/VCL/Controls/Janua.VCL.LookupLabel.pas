@@ -150,7 +150,7 @@ end;
 
 constructor TJanuaLookupLabel.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(self);
   inherited;
 end;
 

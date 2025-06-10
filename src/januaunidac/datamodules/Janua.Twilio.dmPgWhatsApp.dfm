@@ -2,9 +2,13 @@ inherited dmPgTwilioWhatsApp: TdmPgTwilioWhatsApp
   Height = 255
   Width = 442
   inherited PgErgoConnection: TJanuaUniConnection
-    Port = 5432
-    Server = 'pg.januaservers.com'
+    Left = 82
+    Top = 21
     EncryptedPassword = 'CCFF8DFF98FFCFFF92FFCCFF8DFF9CFFCBFF8BFFCFFF8DFF'
+  end
+  inherited PgUniProv: TPostgreSQLUniProvider
+    Left = 82
+    Top = 88
   end
   object qryTwilioLog: TUniQuery
     SQLInsert.Strings = (
@@ -53,7 +57,7 @@ inherited dmPgTwilioWhatsApp: TdmPgTwilioWhatsApp
     SQL.Strings = (
       'SELECT * FROM cloud.twilio_log'
       'ORDER BY id ASC ')
-    Left = 72
+    Left = 80
     Top = 152
     object qryTwilioLogid: TLargeintField
       FieldName = 'id'

@@ -14,7 +14,7 @@ uses
   IdContext,
   IdHTTPWebBrokerBridge,
   Janua.Phoenix.DMVC in '..\..\..\src\januacore\Janua.Phoenix.DMVC.pas',
-  Janua.DMVC.WebModulePhoenix in '..\..\..\src\januawebrest\Janua.DMVC.WebModulePhoenix.pas' {PhoenixWebModule: TWebModule},
+  Janua.DMVC.WebModulePhoenix in '..\..\..\src\januawebrest\Janua.DMVC.WebModulePhoenix.pas' {h: TWebModule},
   Janua.FDAC.Phoenix.Reports in '..\..\..\src\FireDAC\Janua.FDAC.Phoenix.Reports.pas' {dmFDACPhoenixReports: TDataModule};
 
 {$R *.res}
@@ -61,7 +61,7 @@ begin
     if WebRequestHandler <> nil then
       WebRequestHandler.WebModuleClass := WebModuleClass;
     WebRequestHandlerProc.MaxConnections := 1024;
-    RunServer(8091);
+    RunServer(9513);
   except
     on E: Exception do
       Writeln(E.ClassName, ': ', E.Message);

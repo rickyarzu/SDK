@@ -3,7 +3,8 @@ unit Janua.Phoenix.VCL.RESTLabClient;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, System.JSON, Data.DB,
+  Winapi.Windows, Winapi.Messages, Winapi.ShellAPI, System.SysUtils, System.Variants, System.Classes,
+  System.JSON, Data.DB,
   // VCL
   VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.StdCtrls, VCL.Mask, VCL.ExtCtrls, VCL.ComCtrls,
   VCL.Grids, VCL.DBGrids, VCL.Buttons, VCL.DBCtrls, VCL.ExtDlgs,
@@ -103,6 +104,20 @@ type
     EnhCRDBGrid15: TEnhCRDBGrid;
     EnhCRDBGrid16: TEnhCRDBGrid;
     btnLuci: TButton;
+    btnGruppi: TButton;
+    btnPorte: TButton;
+    btnFumi: TButton;
+    pnlStatiniTop: TPanel;
+    edChiave: TEdit;
+    lbIDChiave: TLabel;
+    EnhCRDBGrid17: TEnhCRDBGrid;
+    dsStatini: TDataSource;
+    edLista: TButton;
+    btnIdranti: TButton;
+    btnEstintori: TButton;
+    lbContratto: TLabel;
+    edContratto: TEdit;
+    btnTestAllegati: TButton;
     procedure btnRestCallClick(Sender: TObject);
     procedure btnOpenClick(Sender: TObject);
     procedure btnSaveJsonClick(Sender: TObject);
@@ -116,6 +131,14 @@ type
     procedure btnPreviewReportClick(Sender: TObject);
     procedure btnJsonClick(Sender: TObject);
     procedure btnLuciClick(Sender: TObject);
+    procedure btnGruppiClick(Sender: TObject);
+    procedure btnPorteClick(Sender: TObject);
+    procedure btnFumiClick(Sender: TObject);
+    procedure btnTestReportClick(Sender: TObject);
+    procedure edListaClick(Sender: TObject);
+    procedure btnIdrantiClick(Sender: TObject);
+    procedure btnEstintoriClick(Sender: TObject);
+    procedure btnTestAllegatiClick(Sender: TObject);
   private
     FdmFDACPhoenixLab: TdmPhoenixIBLab;
     { Private declarations }
@@ -148,6 +171,26 @@ uses
 procedure TfrmPhoenixVCLRESTLabClient.btnApriTuttiClick(Sender: TObject);
 begin
   dmFbPhoenixJsonReport.ApriTuttiIUniQuery
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.btnEstintoriClick(Sender: TObject);
+begin
+  dmFbPhoenixJsonReport.UpdateAllEstintori
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.btnFumiClick(Sender: TObject);
+begin
+  dmFbPhoenixJsonReport.UpdateAllFumi
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.btnGruppiClick(Sender: TObject);
+begin
+  dmFbPhoenixJsonReport.UpdateAllGruppi;
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.btnIdrantiClick(Sender: TObject);
+begin
+  dmFbPhoenixJsonReport.UpdateAllIdranti;
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.btnJsonClick(Sender: TObject);
@@ -196,6 +239,11 @@ begin
   FdmFDACPhoenixLab.Refresh;
 end;
 
+procedure TfrmPhoenixVCLRESTLabClient.btnPorteClick(Sender: TObject);
+begin
+  dmFbPhoenixJsonReport.UpdateAllPorte
+end;
+
 procedure TfrmPhoenixVCLRESTLabClient.btnPreviewReportClick(Sender: TObject);
 var
   ADialog: TDLG_STATINO;
@@ -228,11 +276,57 @@ begin
     memJsonResponse.Lines.SaveToFile(self.SaveTextFileDialog1.FileName)
 end;
 
+procedure TfrmPhoenixVCLRESTLabClient.btnTestAllegatiClick(Sender: TObject);
+begin
+  if not Assigned(dmPhoenixFbReport) then
+    dmPhoenixFbReport := TdmPhoenixFbReport.Create(self);
+
+  dmPhoenixFbReport.OpenReport(dsStatino.DataSet.FieldByName('STATINO').AsInteger);
+
+  if dmPhoenixFbReport.qrpCheckList.RecordCount = 0 then
+    ShowMessage('Non ci sono Allegati per questo Rapportino')
+  else
+  begin
+    var
+    PDFFileName := 'c:\Phoenix\Temp\ALL_' + dsStatino.DataSet.FieldByName('STATINO').AsString + '.pdf';
+
+    var
+    rp := TqrpPhoenixReportContainer.Create(self);
+    try
+      // rp.qrpPhoenixReport.Preview;
+      rp.ExportToPDF(PDFFileName);
+      ShellExecute(0, 'open', PChar(PDFFileName), nil, nil, SW_SHOWNORMAL);
+    finally
+      rp.Free;
+    end;
+  end;
+end;
+
 procedure TfrmPhoenixVCLRESTLabClient.btnTestConfiguraziniClick(Sender: TObject);
 begin
   TMOBExporting.Test := True;
   MOBExportingConfigurazioni(MAIN_FORM.QRY_GENERIC);
   memJsonConfigurazioni.Lines.Text := TMOBExporting.Configurazioni;
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.btnTestReportClick(Sender: TObject);
+begin
+  if not Assigned(dmPhoenixFbReport) then
+    dmPhoenixFbReport := TdmPhoenixFbReport.Create(self);
+
+  dmPhoenixFbReport.OpenReport(dsStatino.DataSet.FieldByName('STATINO').AsInteger);
+  var
+  PDFFileName := 'c:\Phoenix\Temp\' + dsStatino.DataSet.FieldByName('STATINO').AsString + '.pdf';
+
+  var
+  rp := TqrpPhoenixReportContainer.Create(self);
+  try
+    // rp.qrpPhoenixReport.Preview;
+    rp.ExportToPDF(PDFFileName);
+    ShellExecute(0, 'open', PChar(PDFFileName), nil, nil, SW_SHOWNORMAL);
+  finally
+    rp.Free;
+  end;
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.btnUpdateDataClick(Sender: TObject);
@@ -280,6 +374,33 @@ begin
   memTmpConfigurazioni.Lines.Text := lJson;
   lJsonObject := Janua.Core.JSON.JsonParse(lJson);
   memConfigurazioni.Lines.Text := JsonPretty(lJsonObject);
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.edListaClick(Sender: TObject);
+begin
+  dmFbPhoenixJsonReport.qElenco.Close;
+  if edChiave.Text <> '' then
+  begin
+    dmFbPhoenixJsonReport.qElenco.Params[0].AsString := edChiave.Text;
+  end
+  else
+  begin
+    dmFbPhoenixJsonReport.qElenco.Params[0].AsInteger := 0;
+  end;
+
+  if self.edContratto.Text <> '' then
+  begin
+    dmFbPhoenixJsonReport.qElenco.Params[1].AsString := '%' + StringReplace(edContratto.Text, ' ', '%',
+      [rfReplaceAll]) + '%';
+  end
+  else
+  begin
+    dmFbPhoenixJsonReport.qElenco.Params[1].AsString := '%';
+  end;
+
+  dmFbPhoenixJsonReport.qElenco.Open;
+  dsStatino.DataSet := dsStatini.DataSet;
+  dmFbPhoenixJsonReport.OpenSintesiReport(dsStatini.DataSet);
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.ElaborateJson;

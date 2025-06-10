@@ -111,6 +111,7 @@ type
     qryReportPlannerAPPUNTAMENTO_DATA: TDateField;
     qryReportPlannerAPPUNTAMENTO_ORA: TTimeField;
     JvImageList1: TJvImageList;
+    tbLabEstintoriMOTIVO_RITIRO: TWideStringField;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
     procedure qryReportPlannerBeforePost(DataSet: TDataSet);
@@ -385,6 +386,12 @@ begin
       // TecnicoRitiro
       JsonValue(lSpecifica, 'TecnicoRitiro', lInt);
       tbLabEstintoriTECNIOO_RITIRO.AsInteger := lInt;
+      // TecnicoRitiro
+      JsonValue(lSpecifica, 'MotivoRitiro', lStr);
+      if lStr <> '' then
+      begin
+        tbLabEstintoriMOTIVO_RITIRO.AsString := lStr;
+      end;
       // Consegnato
       JsonValue(lSpecifica, 'Consegnato', lBool);
       tbLabEstintoriCONSEGNATO.AsBoolean := lBool;
@@ -513,11 +520,11 @@ begin
       end;
 
       {
-      if not(qryReportPlannerAPPUNTAMENTO_DATA.IsNull or (qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime = 0.0))
+        if not(qryReportPlannerAPPUNTAMENTO_DATA.IsNull or (qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime = 0.0))
         and (qryReportPlannerAPPUNTAMENTO_DATA.AsDateTime < Date) then
-      begin
+        begin
         Image := red;
-      end;
+        end;
       }
 
       LoadImageFromImageList(Image);

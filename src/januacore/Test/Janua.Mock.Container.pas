@@ -102,7 +102,7 @@ type
 
 implementation
 
-uses Janua.Application.Framework, Janua.Core.Commons;
+uses Janua.Application.Framework{, Janua.Core.Commons};
 
 
 { TJanuaMockContainer }
@@ -115,7 +115,7 @@ end;
 
 constructor TJanuaMockContainer.Create(AOwner: TComponent);
 begin
-  TJanuaBindManager.Create(self);
+  TJanuaApplicationFactory.CreateBindManager(self);
   inherited;
 end;
 
