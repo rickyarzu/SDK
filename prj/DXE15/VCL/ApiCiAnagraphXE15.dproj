@@ -7,7 +7,7 @@
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>
-        <ProjectVersion>20.2</ProjectVersion>
+        <ProjectVersion>20.3</ProjectVersion>
         <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <ProjectName Condition="'$(ProjectName)'==''">ApiCiAnagraphXE15</ProjectName>
     </PropertyGroup>
@@ -247,7 +247,7 @@
         <DCCReference Include="..\..\..\Testing\src\udlgTestVCLMasterDetailTestDBOrmSync.pas">
             <Form>dlgVclMasterDetailTestDBOrmSync</Form>
         </DCCReference>
-        <DCCReference Include="..\..\..\Testing\src\udlgTestVCLMasterRecordSetOrmSync.pas">
+        <DCCReference Include="..\..\..\src\VCL\Test\Janua.Test.VCL.dlgMasterRecordSetOrmSync.pas">
             <Form>dlgTestVCLMasterRecordSetOrmSync</Form>
         </DCCReference>
         <DCCReference Include="..\..\..\src\VCL\Forms\Janua.VCL.MVVM.frameNavigator.pas">
@@ -465,6 +465,16 @@
                     </Platform>
                     <Platform Name="Android64">
                         <RemoteDir>res\values-v31</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV35">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v35</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-v35</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>

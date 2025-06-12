@@ -53,7 +53,7 @@ object frameFMXImageDraw: TframeFMXImageDraw
       TextSettings.Trimming = None
       OnClick = btnAddNotesClick
     end
-    object btnOffSet: TButton
+    object btnTestOffset: TButton
       Align = Client
       Size.Width = 143.000000000000000000
       Size.Height = 58.000000000000000000
@@ -61,7 +61,7 @@ object frameFMXImageDraw: TframeFMXImageDraw
       TabOrder = 0
       Text = 'Calibratura'
       TextSettings.Trimming = None
-      OnClick = btnAddNotesClick
+      OnClick = btnTestOffsetClick
     end
   end
   object Timer1: TTimer
@@ -7790,7 +7790,7 @@ object frameFMXImageDraw: TframeFMXImageDraw
               'Z:\GitHub\framework\JanuaProject\20 Applications\20.02 CarServic' +
               'e\Immagini\Vehicle-Hire-Forms-700x990.png'
           end>
-        Align = Client
+        Align = Top
         Size.Width = 464.000000000000000000
         Size.Height = 278.000000000000000000
         Size.PlatformDefault = False

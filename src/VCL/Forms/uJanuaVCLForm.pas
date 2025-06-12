@@ -301,7 +301,7 @@ begin
   inherited Create(AOwner);
   FBindControlsList := TJanuaApplication.BindEngine.NewBindControlsList;
   FIsSetup := false;
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   Self.Font.Name := 'Segoe UI';
   Self.Font.Size := 10;
 end;
@@ -379,7 +379,7 @@ end;
 function TJanuaVCLFormModel.GetBindManager: IJanuaBindManager;
 begin
   { if not Assigned(FBindManager) then
-    FBindManager := TJanuaBindManager.Create(self); }
+    FBindManager := TJanuaApplicationFactory.CreateBindManager(self); }
   Result := FBindManager
 end;
 

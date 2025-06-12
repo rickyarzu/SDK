@@ -81,7 +81,7 @@ object frmVCLWebBrokerServer: TfrmVCLWebBrokerServer
     Settings.EnableContextMenu = True
     Settings.EnableShowDebugConsole = True
     Settings.EnableAcceleratorKeys = True
-    Settings.AllowExternalDrop = True
+    Settings.AllowExternalDrop = False
     Settings.UsePopupMenuAsContextMenu = False
   end
 end

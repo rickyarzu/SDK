@@ -149,7 +149,7 @@
         </DCCReference>
         <DCCReference Include="..\..\..\src\januacore\Janua.Phoenix.DMVC.pas"/>
         <DCCReference Include="..\..\..\src\januawebrest\Janua.DMVC.WebModulePhoenix.pas">
-            <Form>PhoenixWebModule</Form>
+            <Form>h</Form>
             <FormType>dfm</FormType>
             <DesignClass>TWebModule</DesignClass>
         </DCCReference>
@@ -213,7 +213,7 @@
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp290.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
-            <Deployment Version="5">
+            <Deployment Version="4">
                 <DeployFile LocalName="Win32\Debug\PhoenixVCLLab.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\PhoenixVCLLab.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="c:\januaproject\bin\Win64\Release\PhoenixVCLLab.exe" Configuration="Release" Class="ProjectOutput"/>
@@ -229,6 +229,16 @@
                     </Platform>
                     <Platform Name="Win32">
                         <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClasses">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>64</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>64</Operation>
                     </Platform>
                 </DeployClass>
                 <DeployClass Name="AndroidFileProvider">
@@ -861,9 +871,6 @@
                         <Operation>1</Operation>
                     </Platform>
                     <Platform Name="Win64">
-                        <Operation>1</Operation>
-                    </Platform>
-                    <Platform Name="Win64x">
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>

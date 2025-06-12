@@ -4,5 +4,183 @@
     <property name="$defaultDiagram" value="true" />
     <property name="$metaclass" value="Package Diagram" />
     <property name="$name" value="default" />
+    <reference referencedUin="design:view:::gnb4v0xtont_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,157,378" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaOrderByField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaEntityNames" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaEntity" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TRecordUnits" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaFieldKind" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TRecordSetState" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TDatasetPagination" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaGridFieldDef" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TOrderByCompare" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaRecordState" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TRecordUnitConf" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TOrderByEnum" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaGridColumnField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaDBFieldDef" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaEntities" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TRecordUnitFile" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Types.TJanuaOperator" />
+    </reference>
+    <reference referencedUin="design:view:::3y0saqz55pk_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="186,1,100,119" />
+      <reference referencedUin="design:view:::5i8bgrbsdrr_v" />
+    </reference>
+    <reference referencedUin="design:view:::4zmbxzbaojo_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="186,139,111,134" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Generator.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::0mts3hz20cq_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="186,292,154,151" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Functions.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Functions.TJanuaOrmStringWriter" />
+    </reference>
+    <reference referencedUin="design:view:::1osk20py0uh_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="359,1,244,967" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IRecordCodeGen" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IFiedlFactory" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TJanuaRecordSets" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaSearchDatasetContainer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TJanuaDatasetEvent" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaBooleanField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TJanuaDBDatasets" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TFieldChangeEvent" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.ISetSerialization" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaDBCustomDataset" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TGUIDDict" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaSearchContainer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TGUIDUpdateProc" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IRemoteDatasetClient" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaDBFields" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaDynDBDataset" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TJanuaFields" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaRecordSetStorage" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaStringField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaRecordsetBindableComboControl" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaLookUp" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaOrderByFields" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaDateField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TMasterFields" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TSearchContainerType" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TDatasetList" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TRecList" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TValueList" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaBlobField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaSearchRadioContainer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IRemoteRecordClient" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TMasterField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TJanuaRecordEvent" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaVirtualDBDataset" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaUniDBDataset" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TJanuaRecordChangeEvent" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaDBField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaRecordSet" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaRecordField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaSearchListContainer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaIntegerField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaDBDatasetFactory" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaSmallIntField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IDatasetSerializer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IRecSerialization" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaDatasetField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaFiredacDBDataset" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaSQLDynDataset" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaDBDatasetRESTRemoter" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaParams" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TSetList" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaRecMetaSerialization" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaRecord" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaDateTimeField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaRecordStorage" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaDBStoredProcedure" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaSearchRecordSetContainer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaRecordEnumerator" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TKeyValue" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TJanuaRecords" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.TJanuaDBDataSetNotifyEvent" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Intf.IJanuaDBDataset" />
+    </reference>
+    <reference referencedUin="design:view:::fc3wjznnxaj_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="77,407,100,134" />
+      <reference referencedUin="design:view:::6rpiy803ais_v" />
+      <reference referencedUin="design:view:::cfwmkl8qi8j_v" />
+    </reference>
+    <reference referencedUin="design:view:::n6d4eicq4yo_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="150,560,200,770" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaDBField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaDateTimeField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaLargeIntField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaBooleanField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaParams" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaRecSerialization" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaDBDatasetClass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaSearchListContainer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaIntegerField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaHtmlField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaCurrencyField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaStringField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TSearchContainerClass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TFieldCharCase" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaDBFields" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaDoubleField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaRecordClass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaSetSerialization" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaSmallIntField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaBlobField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaCustomOrderByFields" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaExtendedField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaDBDataset" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaRecordIterator" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaRecordSet" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaSearchRadioContainer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaRecordSetClass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaGUIDField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaSearchDatasetContainer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaCustomRecord" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaXMLField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaRecMetaSerialization" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaJsonField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaSearchContainer" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaFieldClass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TNotifyProcedure" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaMemoField" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaRecord" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaOrmFactory" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Impl.TJanuaCustomField" />
+    </reference>
+    <reference referencedUin="design:view:::d7ikb2mcjnq_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="41,579,100,134" />
+      <reference referencedUin="design:view:::5lupoijp2vo_v" />
+      <reference referencedUin="design:view:::70r01eqmmko_v" />
+    </reference>
+    <reference referencedUin="design:view:::vdt6fust0ei_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="641,1,150,151" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Register.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Register.TJanuaOrmFramework" />
+    </reference>
+    <reference referencedUin="design:view:::usy1jj3f91n_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="641,171,187,196" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Firedac.TJanuaVtDataset" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Firedac.TJanuaFireDacOrderByFields" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Firedac.TJanuaVtStoredProcedure" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Firedac.TJanuaVtMemDataset" />
+      <reference referencedUin="delphi:e_class:src:JanuaCore:Janua.Orm.Firedac.@unitclass" />
+    </reference>
   </view>
 </nodeSet>

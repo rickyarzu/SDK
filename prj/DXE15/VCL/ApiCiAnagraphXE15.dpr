@@ -35,7 +35,7 @@ uses
   uframeTestRecordSetOrmSyncNavigator in '..\..\..\Testing\src\uframeTestRecordSetOrmSyncNavigator.pas' {frameVCLRecordSetOrmSyncNavigator: TFrame},
   ufrmVCLViewModelNavigator in '..\..\..\src\VCL\Forms\ufrmVCLViewModelNavigator.pas' {TfrmVCLViewModelNavigator},
   udlgTestVCLMasterDetailTestDBOrmSync in '..\..\..\Testing\src\udlgTestVCLMasterDetailTestDBOrmSync.pas' {dlgVclMasterDetailTestDBOrmSync},
-  udlgTestVCLMasterRecordSetOrmSync in '..\..\..\Testing\src\udlgTestVCLMasterRecordSetOrmSync.pas' {dlgTestVCLMasterRecordSetOrmSync},
+  Janua.Test.VCL.dlgMasterRecordSetOrmSync in '..\..\..\src\VCL\Test\Janua.Test.VCL.dlgMasterRecordSetOrmSync.pas' {dlgTestVCLMasterRecordSetOrmSync},
   Janua.VCL.MVVM.frameNavigator in '..\..\..\src\VCL\Forms\Janua.VCL.MVVM.frameNavigator.pas' {frameVCLMVVMNavigator: TFrame},
   Janua.Logistic.PgWarehouseList in '..\..\..\src\januaunidac\datamodules\Janua.Logistic.PgWarehouseList.pas' {dmPgWarehouseList: TDataModule},
   Janua.Anagraph.VCL.frameAddress in '..\..\..\src\VCL\Anagraph\Janua.Anagraph.VCL.frameAddress.pas' {Frame1: TFrame},

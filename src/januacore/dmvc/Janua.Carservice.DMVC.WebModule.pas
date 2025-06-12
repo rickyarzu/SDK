@@ -1,4 +1,4 @@
-unit Janua.Carservice.DMVC.CoreWebModule;
+unit Janua.Carservice.DMVC.WebModule;
 
 interface
 

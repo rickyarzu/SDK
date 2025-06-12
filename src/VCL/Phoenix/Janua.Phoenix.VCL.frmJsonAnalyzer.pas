@@ -129,11 +129,13 @@ type
     memJsonFinal: TAdvMemo;
     tabCompatible: TTabSheet;
     memCompatible: TAdvMemo;
+    btnOpenTables: TButton;
     procedure btnLoadJsonClick(Sender: TObject);
     procedure btnJsonPrettyClick(Sender: TObject);
     procedure btnJsonOnOffClick(Sender: TObject);
     procedure btnClipboardClick(Sender: TObject);
     procedure btnTestClick(Sender: TObject);
+    procedure btnOpenTablesClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -199,6 +201,13 @@ procedure TfrmPhoenixVCLJsonAnalyzer.btnLoadJsonClick(Sender: TObject);
 begin
   if OpenDialog1.Execute then
     self.AdvMemo1.Lines.LoadFromFile(OpenDialog1.FileName)
+end;
+
+procedure TfrmPhoenixVCLJsonAnalyzer.btnOpenTablesClick(Sender: TObject);
+begin
+  tbClienti.Open;
+  tbFiliali.Open;
+  tbStatini.Open;
 end;
 
 procedure TfrmPhoenixVCLJsonAnalyzer.btnTestClick(Sender: TObject);

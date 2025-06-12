@@ -318,13 +318,14 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
     TabOrder = 0
     NextPictureChanged = False
     PrevPictureChanged = False
+    TabFontHeight = -11
     object pgArticles: TAdvOfficePage
       Left = 60
       Top = 2
       Width = 1261
       Height = 731
       Caption = 'Articoli'
-      DoubleBuffered = True
+      DoubleBuffered = False
       ImageIndex = 0
       PageAppearance.BorderColor = clGray
       PageAppearance.Color = clWhite
@@ -359,7 +360,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
       TabAppearance.Font.Charset = DEFAULT_CHARSET
       TabAppearance.Font.Color = clWindowText
       TabAppearance.Font.Height = -11
-      TabAppearance.Font.Name = 'Tahoma'
+      TabAppearance.Font.Name = 'Segoe UI'
       TabAppearance.Font.Style = []
       TabAppearance.Gradient = ggVertical
       TabAppearance.GradientMirror = ggVertical
@@ -680,13 +681,14 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
         TabOrder = 0
         NextPictureChanged = False
         PrevPictureChanged = False
+        TabFontHeight = -11
         object Articoli: TAdvOfficePage
           Left = 1
           Top = 26
           Width = 983
           Height = 699
           Caption = 'Articoli'
-          DoubleBuffered = True
+          DoubleBuffered = False
           PageAppearance.BorderColor = clGray
           PageAppearance.Color = clWhite
           PageAppearance.ColorTo = clWhite
@@ -720,7 +722,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           TabAppearance.Font.Charset = DEFAULT_CHARSET
           TabAppearance.Font.Color = clWindowText
           TabAppearance.Font.Height = -11
-          TabAppearance.Font.Name = 'Tahoma'
+          TabAppearance.Font.Name = 'Segoe UI'
           TabAppearance.Font.Style = []
           TabAppearance.Gradient = ggVertical
           TabAppearance.GradientMirror = ggVertical
@@ -758,10 +760,8 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
             inherited AdvGlowButton1: TAdvGlowButton
               Appearance.BorderColor = 11382963
               Appearance.BorderColorHot = 11565130
-              Appearance.BorderColorCheckedHot = 11565130
               Appearance.BorderColorDown = 11565130
               Appearance.BorderColorChecked = 13744549
-              Appearance.BorderColorDisabled = 13948116
               Appearance.Color = clWhite
               Appearance.ColorTo = clWhite
               Appearance.ColorChecked = 13744549
@@ -781,9 +781,6 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
               Appearance.ColorMirrorCheckedTo = 13744549
               Appearance.ColorMirrorDisabled = clWhite
               Appearance.TextColorChecked = 3750459
-              Appearance.TextColorDown = 2303013
-              Appearance.TextColorHot = 2303013
-              Appearance.TextColorDisabled = 13948116
               UIStyle = tsOffice2019White
             end
             inherited AdvToolBarPager1: TAdvToolBarPager
@@ -809,12 +806,12 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                     Appearance.BorderColorHot = clBlack
                     Appearance.BorderColorDown = clBlack
                     Appearance.BorderColorChecked = clBlack
-                    Appearance.BorderColorDisabled = clNone
+                    Appearance.BorderColorDisabled = clGray
                     Appearance.Color = clWhite
+                    Appearance.ColorTo = clWhite
                     Appearance.ColorChecked = clBlack
                     Appearance.ColorCheckedTo = clBlack
-                    Appearance.ColorDisabled = clWhite
-                    Appearance.ColorDisabledTo = clWhite
+                    Appearance.ColorDisabled = clNone
                     Appearance.ColorDown = clBlack
                     Appearance.ColorDownTo = clBlack
                     Appearance.ColorHot = clBlack
@@ -827,8 +824,8 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                     Appearance.ColorMirrorDownTo = clBlack
                     Appearance.ColorMirrorChecked = clBlack
                     Appearance.ColorMirrorCheckedTo = clBlack
-                    Appearance.ColorMirrorDisabled = clWhite
-                    Appearance.ColorMirrorDisabledTo = clWhite
+                    Appearance.ColorMirrorDisabled = 11974326
+                    Appearance.ColorMirrorDisabledTo = 15921906
                     Appearance.GradientHot = ggRadial
                     Appearance.GradientMirrorHot = ggRadial
                     Appearance.GradientDown = ggRadial
@@ -846,12 +843,12 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                     Appearance.BorderColorHot = clBlack
                     Appearance.BorderColorDown = clBlack
                     Appearance.BorderColorChecked = clBlack
-                    Appearance.BorderColorDisabled = clNone
+                    Appearance.BorderColorDisabled = clGray
                     Appearance.Color = clWhite
+                    Appearance.ColorTo = clWhite
                     Appearance.ColorChecked = clBlack
                     Appearance.ColorCheckedTo = clBlack
-                    Appearance.ColorDisabled = clWhite
-                    Appearance.ColorDisabledTo = clWhite
+                    Appearance.ColorDisabled = clNone
                     Appearance.ColorDown = clBlack
                     Appearance.ColorDownTo = clBlack
                     Appearance.ColorHot = clBlack
@@ -864,8 +861,8 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                     Appearance.ColorMirrorDownTo = clBlack
                     Appearance.ColorMirrorChecked = clBlack
                     Appearance.ColorMirrorCheckedTo = clBlack
-                    Appearance.ColorMirrorDisabled = clWhite
-                    Appearance.ColorMirrorDisabledTo = clWhite
+                    Appearance.ColorMirrorDisabled = 11974326
+                    Appearance.ColorMirrorDisabledTo = 15921906
                     Appearance.GradientHot = ggRadial
                     Appearance.GradientMirrorHot = ggRadial
                     Appearance.GradientDown = ggRadial
@@ -881,12 +878,12 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                     Appearance.BorderColorHot = clBlack
                     Appearance.BorderColorDown = clBlack
                     Appearance.BorderColorChecked = clBlack
-                    Appearance.BorderColorDisabled = clNone
+                    Appearance.BorderColorDisabled = clGray
                     Appearance.Color = clWhite
+                    Appearance.ColorTo = clWhite
                     Appearance.ColorChecked = clBlack
                     Appearance.ColorCheckedTo = clBlack
-                    Appearance.ColorDisabled = clWhite
-                    Appearance.ColorDisabledTo = clWhite
+                    Appearance.ColorDisabled = clNone
                     Appearance.ColorDown = clBlack
                     Appearance.ColorDownTo = clBlack
                     Appearance.ColorHot = clBlack
@@ -899,8 +896,8 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                     Appearance.ColorMirrorDownTo = clBlack
                     Appearance.ColorMirrorChecked = clBlack
                     Appearance.ColorMirrorCheckedTo = clBlack
-                    Appearance.ColorMirrorDisabled = clWhite
-                    Appearance.ColorMirrorDisabledTo = clWhite
+                    Appearance.ColorMirrorDisabled = 11974326
+                    Appearance.ColorMirrorDisabledTo = 15921906
                     Appearance.GradientHot = ggRadial
                     Appearance.GradientMirrorHot = ggRadial
                     Appearance.GradientDown = ggRadial
@@ -928,9 +925,11 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
               ExplicitHeight = 333
               NextPictureChanged = False
               PrevPictureChanged = False
+              TabFontHeight = -11
               inherited AdvOfficePager11: TAdvOfficePage
                 Width = 796
                 Height = 305
+                DoubleBuffered = False
                 PageAppearance.BorderColor = clNone
                 PageAppearance.Color = clWhite
                 PageAppearance.ColorTo = clWhite
@@ -954,6 +953,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                 TabAppearance.ColorMirrorSelectedTo = clWhite
                 TabAppearance.ColorMirrorDisabled = 15658734
                 TabAppearance.ColorMirrorDisabledTo = clNone
+                TabAppearance.Font.Name = 'Segoe UI'
                 TabAppearance.TextColor = 4474440
                 TabAppearance.TextColorHot = 14916384
                 TabAppearance.TextColorSelected = 4474440
@@ -996,6 +996,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                 TabAppearance.ColorMirrorSelectedTo = clWhite
                 TabAppearance.ColorMirrorDisabled = 15658734
                 TabAppearance.ColorMirrorDisabledTo = clNone
+                TabAppearance.Font.Name = 'Segoe UI'
                 TabAppearance.TextColor = 4474440
                 TabAppearance.TextColorHot = 14916384
                 TabAppearance.TextColorSelected = 4474440
@@ -1008,11 +1009,6 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                 inherited AdvMemo1: TAdvMemo
                   Width = 792
                   Height = 301
-                  BorderColor = 10724259
-                  Gutter.BorderColor = 10724259
-                  Gutter.GutterColor = clWhite
-                  Gutter.GutterColorTo = clWhite
-                  Gutter.LineNumberTextColor = 3881787
                   UIStyle = tsOffice2019White
                   ExplicitWidth = 792
                   ExplicitHeight = 301
@@ -1021,6 +1017,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
               inherited AdvOfficePage1: TAdvOfficePage
                 Width = 796
                 Height = 305
+                DoubleBuffered = False
                 PageAppearance.BorderColor = clNone
                 PageAppearance.Color = clWhite
                 PageAppearance.ColorTo = clWhite
@@ -1044,6 +1041,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                 TabAppearance.ColorMirrorSelectedTo = clWhite
                 TabAppearance.ColorMirrorDisabled = 15658734
                 TabAppearance.ColorMirrorDisabledTo = clNone
+                TabAppearance.Font.Name = 'Segoe UI'
                 TabAppearance.TextColor = 4474440
                 TabAppearance.TextColorHot = 14916384
                 TabAppearance.TextColorSelected = 4474440
@@ -1058,8 +1056,8 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                   Height = 301
                   ExplicitLeft = 2
                   ExplicitTop = 2
-                  ExplicitWidth = 1138
-                  ExplicitHeight = 381
+                  ExplicitWidth = 792
+                  ExplicitHeight = 301
                   ControlData = {
                     4C000000DB5100001C1F00000000000000000000000000000000000000000000
                     000000004C000000000000000000000001000000E0D057007335CF11AE690800
@@ -1135,10 +1133,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
               GroupAppearance.TabAppearance.BorderColorDisabled = clGray
               GroupAppearance.TabAppearance.BorderColorDown = 14404026
               GroupAppearance.TabAppearance.Color = clWhite
-              GroupAppearance.TabAppearance.ColorDisabled = 16119285
-              GroupAppearance.TabAppearance.ColorDisabledTo = 16119285
-              GroupAppearance.TabAppearance.ColorMirrorDisabled = 16119285
-              GroupAppearance.TabAppearance.ColorMirrorDisabledTo = 16119285
+              GroupAppearance.TabAppearance.ColorDisabled = clWhitesmoke
+              GroupAppearance.TabAppearance.ColorDisabledTo = clWhitesmoke
+              GroupAppearance.TabAppearance.ColorMirrorDisabled = clWhitesmoke
+              GroupAppearance.TabAppearance.ColorMirrorDisabledTo = clWhitesmoke
               GroupAppearance.TabAppearance.TextColorDisabled = clGray
               GroupAppearance.TabAppearance.ShadowColor = 16115676
               GroupAppearance.TabAppearance.HighLightColor = clNone
@@ -1339,8 +1337,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                   TabOrder = 0
                   Appearance.BorderColor = 15000546
                   Appearance.BorderColorHot = 16371364
+                  Appearance.BorderColorCheckedHot = 11565130
                   Appearance.BorderColorDown = 14983778
                   Appearance.BorderColorChecked = 14327846
+                  Appearance.BorderColorDisabled = 13948116
                   Appearance.Color = 16250613
                   Appearance.ColorTo = clNone
                   Appearance.ColorChecked = 14327846
@@ -1367,6 +1367,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                   Appearance.GradientMirrorDown = ggVertical
                   Appearance.GradientChecked = ggVertical
                   Appearance.TextColorChecked = clWhite
+                  Appearance.TextColorDown = 2303013
+                  Appearance.TextColorHot = 2303013
+                  Appearance.TextColorDisabled = 13948116
                 end
                 object btnNewArticle: TAdvGlowButton
                   Left = 1
@@ -1384,8 +1387,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                   TabOrder = 1
                   Appearance.BorderColor = 15000546
                   Appearance.BorderColorHot = 16371364
+                  Appearance.BorderColorCheckedHot = 11565130
                   Appearance.BorderColorDown = 14983778
                   Appearance.BorderColorChecked = 14327846
+                  Appearance.BorderColorDisabled = 13948116
                   Appearance.Color = 16250613
                   Appearance.ColorTo = clNone
                   Appearance.ColorChecked = 14327846
@@ -1412,6 +1417,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                   Appearance.GradientMirrorDown = ggVertical
                   Appearance.GradientChecked = ggVertical
                   Appearance.TextColorChecked = clWhite
+                  Appearance.TextColorDown = 2303013
+                  Appearance.TextColorHot = 2303013
+                  Appearance.TextColorDisabled = 13948116
                 end
                 object btnPublish: TAdvGlowButton
                   Left = 193
@@ -1430,8 +1438,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                   TabOrder = 2
                   Appearance.BorderColor = 15000546
                   Appearance.BorderColorHot = 16371364
+                  Appearance.BorderColorCheckedHot = 11565130
                   Appearance.BorderColorDown = 14983778
                   Appearance.BorderColorChecked = 14327846
+                  Appearance.BorderColorDisabled = 13948116
                   Appearance.Color = 16250613
                   Appearance.ColorTo = clNone
                   Appearance.ColorChecked = 14327846
@@ -1458,6 +1468,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                   Appearance.GradientMirrorDown = ggVertical
                   Appearance.GradientChecked = ggVertical
                   Appearance.TextColorChecked = clWhite
+                  Appearance.TextColorDown = 2303013
+                  Appearance.TextColorHot = 2303013
+                  Appearance.TextColorDisabled = 13948116
                   DropDownButton = True
                   DropDownMenu = popPublishArticle
                 end
@@ -1477,8 +1490,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                   TabOrder = 3
                   Appearance.BorderColor = 15000546
                   Appearance.BorderColorHot = 16371364
+                  Appearance.BorderColorCheckedHot = 11565130
                   Appearance.BorderColorDown = 14983778
                   Appearance.BorderColorChecked = 14327846
+                  Appearance.BorderColorDisabled = 13948116
                   Appearance.Color = 16250613
                   Appearance.ColorTo = clNone
                   Appearance.ColorChecked = 14327846
@@ -1505,6 +1520,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                   Appearance.GradientMirrorDown = ggVertical
                   Appearance.GradientChecked = ggVertical
                   Appearance.TextColorChecked = clWhite
+                  Appearance.TextColorDown = 2303013
+                  Appearance.TextColorHot = 2303013
+                  Appearance.TextColorDisabled = 13948116
                   DropDownButton = True
                   DropDownMenu = PopAllegati
                 end
@@ -1524,8 +1542,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                   TabOrder = 4
                   Appearance.BorderColor = 15000546
                   Appearance.BorderColorHot = 16371364
+                  Appearance.BorderColorCheckedHot = 11565130
                   Appearance.BorderColorDown = 14983778
                   Appearance.BorderColorChecked = 14327846
+                  Appearance.BorderColorDisabled = 13948116
                   Appearance.Color = 16250613
                   Appearance.ColorTo = clNone
                   Appearance.ColorChecked = 14327846
@@ -1552,6 +1572,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                   Appearance.GradientMirrorDown = ggVertical
                   Appearance.GradientChecked = ggVertical
                   Appearance.TextColorChecked = clWhite
+                  Appearance.TextColorDown = 2303013
+                  Appearance.TextColorHot = 2303013
+                  Appearance.TextColorDisabled = 13948116
                   DropDownButton = True
                   DropDownMenu = PopVediAllegati
                 end
@@ -1571,8 +1594,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                   TabOrder = 5
                   Appearance.BorderColor = 15000546
                   Appearance.BorderColorHot = 16371364
+                  Appearance.BorderColorCheckedHot = 11565130
                   Appearance.BorderColorDown = 14983778
                   Appearance.BorderColorChecked = 14327846
+                  Appearance.BorderColorDisabled = 13948116
                   Appearance.Color = 16250613
                   Appearance.ColorTo = clNone
                   Appearance.ColorChecked = 14327846
@@ -1599,6 +1624,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                   Appearance.GradientMirrorDown = ggVertical
                   Appearance.GradientChecked = ggVertical
                   Appearance.TextColorChecked = clWhite
+                  Appearance.TextColorDown = 2303013
+                  Appearance.TextColorHot = 2303013
+                  Appearance.TextColorDisabled = 13948116
                   DropDownButton = True
                   DropDownMenu = popEliminaAllegati
                 end
@@ -1618,8 +1646,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                   TabOrder = 6
                   Appearance.BorderColor = 15000546
                   Appearance.BorderColorHot = 16371364
+                  Appearance.BorderColorCheckedHot = 11565130
                   Appearance.BorderColorDown = 14983778
                   Appearance.BorderColorChecked = 14327846
+                  Appearance.BorderColorDisabled = 13948116
                   Appearance.Color = 16250613
                   Appearance.ColorTo = clNone
                   Appearance.ColorChecked = 14327846
@@ -1646,6 +1676,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
                   Appearance.GradientMirrorDown = ggVertical
                   Appearance.GradientChecked = ggVertical
                   Appearance.TextColorChecked = clWhite
+                  Appearance.TextColorDown = 2303013
+                  Appearance.TextColorHot = 2303013
+                  Appearance.TextColorDisabled = 13948116
                 end
               end
               object edTitle: TEdit
@@ -1731,7 +1764,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
               BorderStyle = bsSingle
               Ctl3D = True
               DateTime = 43473.726562500000000000
-              Version = '1.3.6.2'
+              Version = '1.3.6.7'
               LabelFont.Charset = DEFAULT_CHARSET
               LabelFont.Color = clWindowText
               LabelFont.Height = -11
@@ -1754,7 +1787,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
               BorderStyle = bsSingle
               Ctl3D = True
               DateTime = 43473.726562500000000000
-              Version = '1.3.6.2'
+              Version = '1.3.6.7'
               LabelFont.Charset = DEFAULT_CHARSET
               LabelFont.Color = clWindowText
               LabelFont.Height = -11
@@ -1885,7 +1918,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           Width = 983
           Height = 699
           Caption = 'Anteprima'
-          DoubleBuffered = True
+          DoubleBuffered = False
           PageAppearance.BorderColor = clGray
           PageAppearance.Color = clWhite
           PageAppearance.ColorTo = clWhite
@@ -1920,7 +1953,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           TabAppearance.Font.Charset = DEFAULT_CHARSET
           TabAppearance.Font.Color = clWindowText
           TabAppearance.Font.Height = -11
-          TabAppearance.Font.Name = 'Tahoma'
+          TabAppearance.Font.Name = 'Segoe UI'
           TabAppearance.Font.Style = []
           TabAppearance.Gradient = ggVertical
           TabAppearance.GradientMirror = ggVertical
@@ -1951,7 +1984,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           Width = 983
           Height = 699
           Caption = 'Html'
-          DoubleBuffered = True
+          DoubleBuffered = False
           PageAppearance.BorderColor = clGray
           PageAppearance.Color = clWhite
           PageAppearance.ColorTo = clWhite
@@ -1986,7 +2019,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           TabAppearance.Font.Charset = DEFAULT_CHARSET
           TabAppearance.Font.Color = clWindowText
           TabAppearance.Font.Height = -11
-          TabAppearance.Font.Name = 'Tahoma'
+          TabAppearance.Font.Name = 'Segoe UI'
           TabAppearance.Font.Style = []
           TabAppearance.Gradient = ggVertical
           TabAppearance.GradientMirror = ggVertical
@@ -2027,6 +2060,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
             AutoCompletion.StartToken = '(.'
             AutoCorrect.Active = True
             AutoHintParameterPosition = hpBelowCode
+            BkColor = clWindow
             BookmarkGlyph.Data = {
               36050000424D3605000000000000360400002800000010000000100000000100
               0800000000000001000000000000000000000001000000000000000000000000
@@ -2070,7 +2104,6 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
               BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
               BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
               25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-            BorderColor = 15000546
             BorderStyle = bsSingle
             ClipboardFormats = [cfText]
             CodeFolding.Enabled = False
@@ -2083,9 +2116,8 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
             Gutter.Font.Height = -13
             Gutter.Font.Name = 'Courier New'
             Gutter.Font.Style = []
-            Gutter.BorderColor = 15000546
-            Gutter.GutterColor = 16250613
-            Gutter.GutterColorTo = 16250613
+            Gutter.GutterColorTo = clBtnFace
+            Gutter.LineNumberTextColor = clWindowText
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
             Font.Height = -13
@@ -2106,8 +2138,8 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
             PrintOptions.PrintLineNumbers = False
             RightMarginColor = 14869218
             ScrollHint = False
-            SelColor = clWhite
-            SelBkColor = clNavy
+            SelColor = clHighlightText
+            SelBkColor = clHighlight
             ShowRightMargin = True
             SmartTabs = False
             SyntaxStyles = AdvHTMLMemoStyler1
@@ -2126,7 +2158,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.7.10.0'
+            Version = '3.9.1.7'
             WordWrap = wwNone
           end
         end
@@ -2136,7 +2168,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           Width = 983
           Height = 699
           Caption = 'Test Immagine'
-          DoubleBuffered = True
+          DoubleBuffered = False
           PageAppearance.BorderColor = clGray
           PageAppearance.Color = clWhite
           PageAppearance.ColorTo = clWhite
@@ -2171,7 +2203,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           TabAppearance.Font.Charset = DEFAULT_CHARSET
           TabAppearance.Font.Color = clWindowText
           TabAppearance.Font.Height = -11
-          TabAppearance.Font.Name = 'Tahoma'
+          TabAppearance.Font.Name = 'Segoe UI'
           TabAppearance.Font.Style = []
           TabAppearance.Gradient = ggVertical
           TabAppearance.GradientMirror = ggVertical
@@ -2241,7 +2273,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           Width = 983
           Height = 699
           Caption = 'Anteprima PDF'
-          DoubleBuffered = True
+          DoubleBuffered = False
           PageAppearance.BorderColor = clGray
           PageAppearance.Color = clWhite
           PageAppearance.ColorTo = clWhite
@@ -2276,7 +2308,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           TabAppearance.Font.Charset = DEFAULT_CHARSET
           TabAppearance.Font.Color = clWindowText
           TabAppearance.Font.Height = -11
-          TabAppearance.Font.Name = 'Tahoma'
+          TabAppearance.Font.Name = 'Segoe UI'
           TabAppearance.Font.Style = []
           TabAppearance.Gradient = ggVertical
           TabAppearance.GradientMirror = ggVertical
@@ -2323,8 +2355,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
               TabOrder = 0
               Appearance.BorderColor = 15000546
               Appearance.BorderColorHot = 16371364
+              Appearance.BorderColorCheckedHot = 11565130
               Appearance.BorderColorDown = 14983778
               Appearance.BorderColorChecked = 14327846
+              Appearance.BorderColorDisabled = 13948116
               Appearance.Color = 16250613
               Appearance.ColorTo = clNone
               Appearance.ColorChecked = 14327846
@@ -2351,6 +2385,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
               Appearance.GradientMirrorDown = ggVertical
               Appearance.GradientChecked = ggVertical
               Appearance.TextColorChecked = clWhite
+              Appearance.TextColorDown = 2303013
+              Appearance.TextColorHot = 2303013
+              Appearance.TextColorDisabled = 13948116
             end
             object AdvRichEditorPDFIO1: TAdvRichEditorPDFIO
               Left = 550
@@ -2398,8 +2435,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
               TabOrder = 2
               Appearance.BorderColor = 15000546
               Appearance.BorderColorHot = 16371364
+              Appearance.BorderColorCheckedHot = 11565130
               Appearance.BorderColorDown = 14983778
               Appearance.BorderColorChecked = 14327846
+              Appearance.BorderColorDisabled = 13948116
               Appearance.Color = 16250613
               Appearance.ColorTo = clNone
               Appearance.ColorChecked = 14327846
@@ -2426,6 +2465,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
               Appearance.GradientMirrorDown = ggVertical
               Appearance.GradientChecked = ggVertical
               Appearance.TextColorChecked = clWhite
+              Appearance.TextColorDown = 2303013
+              Appearance.TextColorHot = 2303013
+              Appearance.TextColorDisabled = 13948116
             end
           end
         end
@@ -2542,7 +2584,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
       Width = 1261
       Height = 731
       Caption = 'Immagini'
-      DoubleBuffered = True
+      DoubleBuffered = False
       ImageIndex = 4
       PageAppearance.BorderColor = clGray
       PageAppearance.Color = clWhite
@@ -2577,7 +2619,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
       TabAppearance.Font.Charset = DEFAULT_CHARSET
       TabAppearance.Font.Color = clWindowText
       TabAppearance.Font.Height = -11
-      TabAppearance.Font.Name = 'Tahoma'
+      TabAppearance.Font.Name = 'Segoe UI'
       TabAppearance.Font.Style = []
       TabAppearance.Gradient = ggVertical
       TabAppearance.GradientMirror = ggVertical
@@ -2718,7 +2760,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           GlyphCustomSize = 0
           Orientation = noHorizontal
           TabOrder = 1
-          Version = '1.2.1.0'
+          Version = '1.3.0.1'
         end
         object btnImageNewUpload: TAdvGlowButton
           Left = 249
@@ -2735,8 +2777,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           TabOrder = 2
           Appearance.BorderColor = 15000546
           Appearance.BorderColorHot = 16371364
+          Appearance.BorderColorCheckedHot = 11565130
           Appearance.BorderColorDown = 14983778
           Appearance.BorderColorChecked = 14327846
+          Appearance.BorderColorDisabled = 13948116
           Appearance.Color = 16250613
           Appearance.ColorTo = clNone
           Appearance.ColorChecked = 14327846
@@ -2763,6 +2807,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           Appearance.GradientMirrorDown = ggVertical
           Appearance.GradientChecked = ggVertical
           Appearance.TextColorChecked = clWhite
+          Appearance.TextColorDown = 2303013
+          Appearance.TextColorHot = 2303013
+          Appearance.TextColorDisabled = 13948116
         end
       end
     end
@@ -2772,7 +2819,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
       Width = 1261
       Height = 731
       Caption = ' e-mail'
-      DoubleBuffered = True
+      DoubleBuffered = False
       ImageIndex = 3
       PageAppearance.BorderColor = clGray
       PageAppearance.Color = clWhite
@@ -2807,7 +2854,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
       TabAppearance.Font.Charset = DEFAULT_CHARSET
       TabAppearance.Font.Color = clWindowText
       TabAppearance.Font.Height = -11
-      TabAppearance.Font.Name = 'Tahoma'
+      TabAppearance.Font.Name = 'Segoe UI'
       TabAppearance.Font.Style = []
       TabAppearance.Gradient = ggVertical
       TabAppearance.GradientMirror = ggVertical
@@ -2854,8 +2901,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           TabOrder = 0
           Appearance.BorderColor = 15000546
           Appearance.BorderColorHot = 16371364
+          Appearance.BorderColorCheckedHot = 11565130
           Appearance.BorderColorDown = 14983778
           Appearance.BorderColorChecked = 14327846
+          Appearance.BorderColorDisabled = 13948116
           Appearance.Color = 16250613
           Appearance.ColorTo = clNone
           Appearance.ColorChecked = 14327846
@@ -2882,6 +2931,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           Appearance.GradientMirrorDown = ggVertical
           Appearance.GradientChecked = ggVertical
           Appearance.TextColorChecked = clWhite
+          Appearance.TextColorDown = 2303013
+          Appearance.TextColorHot = 2303013
+          Appearance.TextColorDisabled = 13948116
         end
         object DBAdvGlowNavigator1: TDBAdvGlowNavigator
           Left = 209
@@ -2915,7 +2967,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           GlyphCustomSize = 0
           Orientation = noHorizontal
           TabOrder = 1
-          Version = '1.2.1.0'
+          Version = '1.3.0.1'
         end
         object AdvGlowButton4: TAdvGlowButton
           Left = 1
@@ -2933,8 +2985,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           TabOrder = 2
           Appearance.BorderColor = 15000546
           Appearance.BorderColorHot = 16371364
+          Appearance.BorderColorCheckedHot = 11565130
           Appearance.BorderColorDown = 14983778
           Appearance.BorderColorChecked = 14327846
+          Appearance.BorderColorDisabled = 13948116
           Appearance.Color = 16250613
           Appearance.ColorTo = clNone
           Appearance.ColorChecked = 14327846
@@ -2961,6 +3015,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           Appearance.GradientMirrorDown = ggVertical
           Appearance.GradientChecked = ggVertical
           Appearance.TextColorChecked = clWhite
+          Appearance.TextColorDown = 2303013
+          Appearance.TextColorHot = 2303013
+          Appearance.TextColorDisabled = 13948116
         end
       end
       object CRDBGrid1: TCRDBGrid
@@ -3022,7 +3079,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
       Width = 1261
       Height = 731
       Caption = 'Allegati'
-      DoubleBuffered = True
+      DoubleBuffered = False
       ImageIndex = 5
       PageAppearance.BorderColor = clGray
       PageAppearance.Color = clWhite
@@ -3057,7 +3114,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
       TabAppearance.Font.Charset = DEFAULT_CHARSET
       TabAppearance.Font.Color = clWindowText
       TabAppearance.Font.Height = -11
-      TabAppearance.Font.Name = 'Tahoma'
+      TabAppearance.Font.Name = 'Segoe UI'
       TabAppearance.Font.Style = []
       TabAppearance.Gradient = ggVertical
       TabAppearance.GradientMirror = ggVertical
@@ -3122,7 +3179,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           GlyphCustomSize = 0
           Orientation = noHorizontal
           TabOrder = 0
-          Version = '1.2.1.0'
+          Version = '1.3.0.1'
         end
         object btnLoadResource: TAdvGlowButton
           Left = 668
@@ -3139,8 +3196,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           TabOrder = 1
           Appearance.BorderColor = 15000546
           Appearance.BorderColorHot = 16371364
+          Appearance.BorderColorCheckedHot = 11565130
           Appearance.BorderColorDown = 14983778
           Appearance.BorderColorChecked = 14327846
+          Appearance.BorderColorDisabled = 13948116
           Appearance.Color = 16250613
           Appearance.ColorTo = clNone
           Appearance.ColorChecked = 14327846
@@ -3167,6 +3226,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           Appearance.GradientMirrorDown = ggVertical
           Appearance.GradientChecked = ggVertical
           Appearance.TextColorChecked = clWhite
+          Appearance.TextColorDown = 2303013
+          Appearance.TextColorHot = 2303013
+          Appearance.TextColorDisabled = 13948116
         end
         object btnLoadResourceFolder: TAdvGlowButton
           Left = 757
@@ -3183,8 +3245,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           TabOrder = 2
           Appearance.BorderColor = 15000546
           Appearance.BorderColorHot = 16371364
+          Appearance.BorderColorCheckedHot = 11565130
           Appearance.BorderColorDown = 14983778
           Appearance.BorderColorChecked = 14327846
+          Appearance.BorderColorDisabled = 13948116
           Appearance.Color = 16250613
           Appearance.ColorTo = clNone
           Appearance.ColorChecked = 14327846
@@ -3211,6 +3275,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           Appearance.GradientMirrorDown = ggVertical
           Appearance.GradientChecked = ggVertical
           Appearance.TextColorChecked = clWhite
+          Appearance.TextColorDown = 2303013
+          Appearance.TextColorHot = 2303013
+          Appearance.TextColorDisabled = 13948116
         end
         object edSearchBlob: TSearchBox
           Left = 3
@@ -3237,8 +3304,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           TabOrder = 4
           Appearance.BorderColor = 15000546
           Appearance.BorderColorHot = 16371364
+          Appearance.BorderColorCheckedHot = 11565130
           Appearance.BorderColorDown = 14983778
           Appearance.BorderColorChecked = 14327846
+          Appearance.BorderColorDisabled = 13948116
           Appearance.Color = 16250613
           Appearance.ColorTo = clNone
           Appearance.ColorChecked = 14327846
@@ -3265,6 +3334,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           Appearance.GradientMirrorDown = ggVertical
           Appearance.GradientChecked = ggVertical
           Appearance.TextColorChecked = clWhite
+          Appearance.TextColorDown = 2303013
+          Appearance.TextColorHot = 2303013
+          Appearance.TextColorDisabled = 13948116
         end
       end
       object DBCtrlGrid5: TDBCtrlGrid
@@ -3339,7 +3411,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
       Width = 1261
       Height = 731
       Caption = 'Anagrafiche'
-      DoubleBuffered = True
+      DoubleBuffered = False
       ImageIndex = 1
       PageAppearance.BorderColor = clGray
       PageAppearance.Color = clWhite
@@ -3374,7 +3446,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
       TabAppearance.Font.Charset = DEFAULT_CHARSET
       TabAppearance.Font.Color = clWindowText
       TabAppearance.Font.Height = -11
-      TabAppearance.Font.Name = 'Tahoma'
+      TabAppearance.Font.Name = 'Segoe UI'
       TabAppearance.Font.Style = []
       TabAppearance.Gradient = ggVertical
       TabAppearance.GradientMirror = ggVertical
@@ -3405,7 +3477,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
       Width = 1261
       Height = 731
       Caption = 'Banner'
-      DoubleBuffered = True
+      DoubleBuffered = False
       ImageIndex = 8
       PageAppearance.BorderColor = clGray
       PageAppearance.Color = clWhite
@@ -3440,7 +3512,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
       TabAppearance.Font.Charset = DEFAULT_CHARSET
       TabAppearance.Font.Color = clWindowText
       TabAppearance.Font.Height = -11
-      TabAppearance.Font.Name = 'Tahoma'
+      TabAppearance.Font.Name = 'Segoe UI'
       TabAppearance.Font.Style = []
       TabAppearance.Gradient = ggVertical
       TabAppearance.GradientMirror = ggVertical
@@ -3519,7 +3591,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           GlyphCustomSize = 0
           Orientation = noHorizontal
           TabOrder = 1
-          Version = '1.2.1.0'
+          Version = '1.3.0.1'
         end
         object btnBannerNew: TAdvGlowButton
           Left = 524
@@ -3536,8 +3608,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           TabOrder = 2
           Appearance.BorderColor = 15000546
           Appearance.BorderColorHot = 16371364
+          Appearance.BorderColorCheckedHot = 11565130
           Appearance.BorderColorDown = 14983778
           Appearance.BorderColorChecked = 14327846
+          Appearance.BorderColorDisabled = 13948116
           Appearance.Color = 16250613
           Appearance.ColorTo = clNone
           Appearance.ColorChecked = 14327846
@@ -3564,6 +3638,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           Appearance.GradientMirrorDown = ggVertical
           Appearance.GradientChecked = ggVertical
           Appearance.TextColorChecked = clWhite
+          Appearance.TextColorDown = 2303013
+          Appearance.TextColorHot = 2303013
+          Appearance.TextColorDisabled = 13948116
         end
         object btnBannerDelete: TAdvGlowButton
           Left = 630
@@ -3580,8 +3657,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           TabOrder = 3
           Appearance.BorderColor = 15000546
           Appearance.BorderColorHot = 16371364
+          Appearance.BorderColorCheckedHot = 11565130
           Appearance.BorderColorDown = 14983778
           Appearance.BorderColorChecked = 14327846
+          Appearance.BorderColorDisabled = 13948116
           Appearance.Color = 16250613
           Appearance.ColorTo = clNone
           Appearance.ColorChecked = 14327846
@@ -3608,6 +3687,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           Appearance.GradientMirrorDown = ggVertical
           Appearance.GradientChecked = ggVertical
           Appearance.TextColorChecked = clWhite
+          Appearance.TextColorDown = 2303013
+          Appearance.TextColorHot = 2303013
+          Appearance.TextColorDisabled = 13948116
         end
         object btnBannerSave: TAdvGlowButton
           Left = 736
@@ -3624,8 +3706,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           TabOrder = 4
           Appearance.BorderColor = 15000546
           Appearance.BorderColorHot = 16371364
+          Appearance.BorderColorCheckedHot = 11565130
           Appearance.BorderColorDown = 14983778
           Appearance.BorderColorChecked = 14327846
+          Appearance.BorderColorDisabled = 13948116
           Appearance.Color = 16250613
           Appearance.ColorTo = clNone
           Appearance.ColorChecked = 14327846
@@ -3652,6 +3736,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           Appearance.GradientMirrorDown = ggVertical
           Appearance.GradientChecked = ggVertical
           Appearance.TextColorChecked = clWhite
+          Appearance.TextColorDown = 2303013
+          Appearance.TextColorHot = 2303013
+          Appearance.TextColorDisabled = 13948116
         end
       end
       object grdBanners: TEnhCRDBGrid
@@ -3882,7 +3969,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
           BorderStyle = bsSingle
           Ctl3D = True
           DateTime = 43501.301909722220000000
-          Version = '1.3.6.2'
+          Version = '1.3.6.7'
           LabelFont.Charset = DEFAULT_CHARSET
           LabelFont.Color = clWindowText
           LabelFont.Height = -11
@@ -3930,7 +4017,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
         BorderStyle = bsSingle
         Ctl3D = True
         DateTime = 43501.301909722220000000
-        Version = '1.3.6.2'
+        Version = '1.3.6.7'
         LabelFont.Charset = DEFAULT_CHARSET
         LabelFont.Color = clWindowText
         LabelFont.Height = -11
@@ -7278,8 +7365,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
       TabOrder = 0
       Appearance.BorderColor = 15000546
       Appearance.BorderColorHot = 16371364
+      Appearance.BorderColorCheckedHot = 11565130
       Appearance.BorderColorDown = 14983778
       Appearance.BorderColorChecked = 14327846
+      Appearance.BorderColorDisabled = 13948116
       Appearance.Color = 16250613
       Appearance.ColorTo = clNone
       Appearance.ColorChecked = 14327846
@@ -7306,6 +7395,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
       Appearance.GradientMirrorDown = ggVertical
       Appearance.GradientChecked = ggVertical
       Appearance.TextColorChecked = clWhite
+      Appearance.TextColorDown = 2303013
+      Appearance.TextColorHot = 2303013
+      Appearance.TextColorDisabled = 13948116
       GroupIndex = 1
     end
     object AdvGlowButton9: TAdvGlowButton
@@ -7324,8 +7416,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
       TabOrder = 1
       Appearance.BorderColor = 15000546
       Appearance.BorderColorHot = 16371364
+      Appearance.BorderColorCheckedHot = 11565130
       Appearance.BorderColorDown = 14983778
       Appearance.BorderColorChecked = 14327846
+      Appearance.BorderColorDisabled = 13948116
       Appearance.Color = 16250613
       Appearance.ColorTo = clNone
       Appearance.ColorChecked = 14327846
@@ -7352,6 +7446,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
       Appearance.GradientMirrorDown = ggVertical
       Appearance.GradientChecked = ggVertical
       Appearance.TextColorChecked = clWhite
+      Appearance.TextColorDown = 2303013
+      Appearance.TextColorHot = 2303013
+      Appearance.TextColorDisabled = 13948116
       GroupIndex = 1
     end
     object AdvGlowButton10: TAdvGlowButton
@@ -7370,8 +7467,10 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
       TabOrder = 2
       Appearance.BorderColor = 15000546
       Appearance.BorderColorHot = 16371364
+      Appearance.BorderColorCheckedHot = 11565130
       Appearance.BorderColorDown = 14983778
       Appearance.BorderColorChecked = 14327846
+      Appearance.BorderColorDisabled = 13948116
       Appearance.Color = 16250613
       Appearance.ColorTo = clNone
       Appearance.ColorChecked = 14327846
@@ -7398,6 +7497,9 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
       Appearance.GradientMirrorDown = ggVertical
       Appearance.GradientChecked = ggVertical
       Appearance.TextColorChecked = clWhite
+      Appearance.TextColorDown = 2303013
+      Appearance.TextColorHot = 2303013
+      Appearance.TextColorDisabled = 13948116
       Down = True
       GroupIndex = 1
     end
@@ -7413,7 +7515,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
     Top = 56
   end
   object AdvMainMenu1: TAdvMainMenu
-    Version = '2.7.1.8'
+    Version = '2.7.1.13'
     Left = 72
     Top = 288
     object Login1: TMenuItem
@@ -7456,7 +7558,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
     end
   end
   object popMainMenu: TAdvPopupMenu
-    Version = '2.7.1.8'
+    Version = '2.7.1.13'
     UIStyle = tsCustom
     Left = 88
     Top = 456
@@ -7482,6 +7584,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
     Top = 304
   end
   object AdvHTMLMemoStyler1: TAdvHTMLMemoStyler
+    AutoFormat = False
     LineComment = '//'
     MultiCommentLeft = '<!--'
     MultiCommentRight = '-->'
@@ -7803,7 +7906,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
     Top = 344
   end
   object PopAllegati: TAdvPopupMenu
-    Version = '2.7.1.8'
+    Version = '2.7.1.13'
     UIStyle = tsCustom
     Left = 88
     Top = 544
@@ -7833,7 +7936,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
     Top = 56
   end
   object PopVediAllegati: TAdvPopupMenu
-    Version = '2.7.1.8'
+    Version = '2.7.1.13'
     UIStyle = tsCustom
     Left = 176
     Top = 552
@@ -7845,7 +7948,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
     end
   end
   object popEliminaAllegati: TAdvPopupMenu
-    Version = '2.7.1.8'
+    Version = '2.7.1.13'
     UIStyle = tsCustom
     Left = 168
     Top = 480
@@ -9470,7 +9573,7 @@ object frmVCLCmsEditor: TfrmVCLCmsEditor
     Top = 368
   end
   object popPublishArticle: TAdvPopupMenu
-    Version = '2.7.1.8'
+    Version = '2.7.1.13'
     UIStyle = tsCustom
     Left = 88
     Top = 736

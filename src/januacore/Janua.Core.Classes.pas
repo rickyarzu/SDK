@@ -7,10 +7,10 @@ interface
 uses
 
 {$IFDEF delphixe}
-  // System Procedures ............................................................
+  // System Procedures .......................................................................................
   System.SysUtils, System.Classes, System.Rtti, System.UITypes, System.SyncObjs,
   System.IOUtils, System.Variants, System.StrUtils, System.TypInfo, System.Generics.Collections, System.Types,
-  // Custom Units ......................................................................................................
+  // Custom Units ............................................................................................
 {$ELSE}
   Process,
 {$ENDIF delphixe}
@@ -325,7 +325,7 @@ type
     property Active: Boolean read FActive write SetActive stored false default false;
   end;
 
-  TJanuaCustomPersistent = class(TPersistent)
+  TJanuaCustomPersistent = class(TInterfacedPersistent)
   private
     procedure SetName(const Value: string);
   protected
@@ -405,12 +405,15 @@ type
     property lastMessage: string read FLastMessage write SetLastMessage stored false;
   end;
 
-  TJanuaBindablePersistent = class(TJanuaPersistent)
+  TJanuaBindablePersistent = class(TJanuaPersistent, IJanuaBindable)
     // ************************************* Bindings Procedures ***********************************
   strict protected
     FBindManager: IJanuaBindManager;
     function GetBindManager: IJanuaBindManager;
+  protected
+    function GetSelf: TObject;
   public
+    procedure ClearBindings;
     property BindManager: IJanuaBindManager read GetBindManager;
   public
     constructor Create; override;
@@ -419,6 +422,7 @@ type
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
       const AReadOnly: Boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput,
       jbcEvaluate]);
+    property AsObject: TObject read GetSelf;
   end;
 
 type
@@ -432,8 +436,6 @@ type
   public
     property LogProc: TMessageLogProc read GetLogProc write SetLogProc;
     // ************************************* Bindings Procedures ***********************************
-  protected
-    function GetSelf: TObject;
   public
     procedure AttachObserver(const aObserver: TObject; aProc: TProc);
     procedure Detach(const aObserved: TObject);
@@ -4012,7 +4014,7 @@ end;
 
 constructor TJanuaBindableObject.Create;
 begin
-  FBindManager := TJanuaBindManager.Create(self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(self);
   inherited;
   FLogProc := TJanuaApplication.LogProc;
 end;
@@ -4043,11 +4045,6 @@ end;
 function TJanuaBindableObject.GetLogProc: TMessageLogProc;
 begin
   Result := FLogProc
-end;
-
-function TJanuaBindableObject.GetSelf: TObject;
-begin
-  Result := self
 end;
 
 procedure TJanuaBindableObject.LogError(const aProcName, aError: string);
@@ -4087,7 +4084,7 @@ end;
 constructor TJanuaInterfacedBindableObject.Create;
 begin
   inherited Create;
-  FBindManager := TJanuaBindManager.Create(self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(self);
 end;
 
 destructor TJanuaInterfacedBindableObject.Destroy;
@@ -4160,7 +4157,7 @@ end;
 constructor TJanuaBindableItem.Create;
 begin
   inherited;
-  FBindManager := TJanuaBindManager.Create(self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(self);
 end;
 
 destructor TJanuaBindableItem.Destroy;
@@ -4183,7 +4180,7 @@ end;
 function TJanuaBindableItem.GetBindManager: IJanuaBindManager;
 begin
   { if not Assigned(FBindManager) then
-    FBindManager := TJanuaBindManager.Create(self); }
+    FBindManager := TJanuaApplicationFactory.CreateBindManager(self); }
   Result := FBindManager
 end;
 
@@ -4237,7 +4234,7 @@ end;
 constructor TJanuaBindableComponent.Create(AOwner: TComponent);
 begin
   if not(csDesigning in ComponentState) then
-    FBindManager := TJanuaBindManager.Create(self);
+    FBindManager := TJanuaApplicationFactory.CreateBindManager(self);
   inherited;
 end;
 
@@ -4266,7 +4263,7 @@ end;
 function TJanuaBindableComponent.GetBindManager: IJanuaBindManager;
 begin
   { if not Assigned(FBindManager) then
-    FBindManager := TJanuaBindManager.Create(self); }
+    FBindManager := TJanuaApplicationFactory.CreateBindManager(self); }
   Result := FBindManager
 end;
 
@@ -4860,15 +4857,26 @@ begin
   end;
 end;
 
+procedure TJanuaBindablePersistent.ClearBindings;
+begin
+  if Assigned(FBindManager) then
+    FBindManager.ClearBindings
+end;
+
 constructor TJanuaBindablePersistent.Create;
 begin
   inherited;
-  FBindManager := TJanuaBindManager.Create(self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(self);
 end;
 
 function TJanuaBindablePersistent.GetBindManager: IJanuaBindManager;
 begin
   Result := FBindManager
+end;
+
+function TJanuaBindablePersistent.GetSelf: TObject;
+begin
+  Result := self;
 end;
 
 procedure TJanuaBindablePersistent.NotifiyAllProperties;

@@ -9,7 +9,7 @@ uses
   MVCFramework;
 
 type
-  TPhoenixWebModule = class(TWebModule)
+  Th = class(TWebModule)
     procedure WebModuleCreate(Sender: TObject);
     procedure WebModuleDestroy(Sender: TObject);
   private
@@ -19,7 +19,7 @@ type
   end;
 
 var
-  WebModuleClass: TComponentClass = TPhoenixWebModule;
+  WebModuleClass: TComponentClass = Th;
 
 implementation
 
@@ -38,13 +38,13 @@ uses
   MVCFramework.Middleware.ETag, 
   MVCFramework.Middleware.Compression;
 
-procedure TPhoenixWebModule.WebModuleCreate(Sender: TObject);
+procedure Th.WebModuleCreate(Sender: TObject);
 begin
   FMVC := TMVCEngine.Create(Self,
     procedure(Config: TMVCConfig)
     begin
       // session timeout (0 means session cookie)
-      Config[TMVCConfigKey.SessionTimeout] := '0';
+      // Config[TMVCConfigKey.SessionTimeout] := '0';
       //default content-type
       Config[TMVCConfigKey.DefaultContentType] := TMVCConstants.DEFAULT_CONTENT_TYPE;
       //default content charset
@@ -94,7 +94,7 @@ begin
    
 end;
 
-procedure TPhoenixWebModule.WebModuleDestroy(Sender: TObject);
+procedure Th.WebModuleDestroy(Sender: TObject);
 begin
   FMVC.Free;
 end;

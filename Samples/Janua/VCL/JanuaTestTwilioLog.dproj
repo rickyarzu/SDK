@@ -131,13 +131,13 @@
             <Form>frmVCLJanuaTestTwilioLog</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Phoenix.PgTwilioSync.pas">
-            <Form>dmPgTWilioSync</Form>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Phoenix.Twiliio.dmFbWhatsApp.pas">
+            <Form>dmFbTwilioWhatsApp</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\..\..\src\januaunidac\datamodules\udmPgStorage.pas">
-            <Form>dmPgStorage</Form>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\udmFbStorage.pas">
+            <Form>dmFbStorage</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>

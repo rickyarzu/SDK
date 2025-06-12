@@ -31,7 +31,11 @@ uses System.Types, System.StrUtils,
   // Test.VCL
   Janua.Test.ViewModel.Intf,
   // Janua Core & DB
-  Janua.Application.Framework, Janua.Controls.Forms.Impl, Janua.Uni.Framework,
+  Janua.Application.Framework,
+  // Abstract Layer for Controls and Forms, used to communicate with real forms or Mocks
+  Janua.Controls.Forms.Impl,
+  // UniDAC Framework and Settings
+  Janua.Uni.Framework,
   Janua.ViewModels.Framework, Janua.ViewModels.Application, Janua.Orm.Register;
 
 { TJanuaWebBrokerUniDACApplication }

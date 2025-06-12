@@ -2,7 +2,7 @@
     <PropertyGroup>
         <ProjectGuid>{96D17257-AF74-48CB-9893-7BCCB56A069D}</ProjectGuid>
         <MainSource>dmvcframeworkRT.dpk</MainSource>
-        <ProjectVersion>20.2</ProjectVersion>
+        <ProjectVersion>20.3</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
@@ -269,7 +269,7 @@
         <DCCReference Include="..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.URLEncoded.pas"/>
         <DCCReference Include="..\..\..\lib\delphimvcframework\sources\MVCFramework.Serializer.Text.pas"/>
         <DCCReference Include="..\..\..\lib\delphimvcframework\sources\MVCFramework.Container.pas"/>
-        <DCCReference Include="Z:\lib\delphimvcframework\sources\sqids.pas"/>
+        <DCCReference Include="C:\lib\delphimvcframework\sources\sqids.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\..\prj\DXE14\JanuaLibDXE14.optset</DependentOn>
@@ -323,7 +323,6 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\Redist\osx64\libcgsqlite3.dylib" Class="DependencyModule"/>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\dmvcframeworkRT280.bpl" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\dmvcframeworkRT280.bpl" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\dmvcframeworkRT280.bpl" Configuration="Release" Class="ProjectOutput"/>
                 <DeployClass Name="AdditionalDebugSymbols">
@@ -433,6 +432,16 @@
                     </Platform>
                     <Platform Name="Android64">
                         <RemoteDir>res\values-v31</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV35">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v35</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-v35</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>

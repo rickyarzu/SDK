@@ -40,8 +40,6 @@ type
     qryWebHookMANAGED: TWideStringField;
     qryWebHookINSERT_DATE: TDateTimeField;
     qryWebHookUPDATE_DATE: TDateTimeField;
-    qryWebHookJSON_CONTENT: TBlobField;
-    qryWebHookBODY_RECEIVED: TBlobField;
     qryWebHookACTION: TWideStringField;
     spInsertMessage: TUniStoredProc;
     qryMessageList: TUniQuery;
@@ -64,7 +62,6 @@ type
     qryMessageStatusMANAGED: TWideStringField;
     qryMessageStatusINSERT_DATE: TDateTimeField;
     qryMessageStatusUPDATE_DATE: TDateTimeField;
-    qryMessageStatusJSON_CONTENT: TBlobField;
     qryMessageStatusBODY_RECEIVED: TWideMemoField;
     qryMessageStatusACTION: TWideStringField;
     qryMessageStatusmemTwilioJson: TStringField;
@@ -148,6 +145,9 @@ type
     qryMessageListID: TIntegerField;
     qryMessageListUPD_ID: TLargeintField;
     qryLkpMessageStatusWA_STATE: TSmallintField;
+    qryWebHookJSON_CONTENT: TWideMemoField;
+    qryWebHookBODY_RECEIVED: TWideMemoField;
+    qryMessageStatusJSON_CONTENT: TWideMemoField;
     procedure PgErgoConnectionBeforeConnect(Sender: TObject);
     procedure DataModuleCreate(Sender: TObject);
     procedure qryPhoenixLogCloneCalcFields(DataSet: TDataSet);
@@ -316,7 +316,8 @@ begin
     qryWebHook.First;
     While not qryWebHook.Eof do
     begin
-      lWebHook.SetFromString(qryWebHookBODY_RECEIVED.AsString);
+      // lWebHook.SetFromString(qryWebHookBODY_RECEIVED.AsString);
+      lWebHook.SetAsJson(qryWebHookJSON_CONTENT.AsWideString);
       // :WANUMBER, :WAMESSAGE, :ID, :WAREAD, :IN_OUT, :STATE, :INSERT_DATE,
       // :READ_DATE, :WA_STATE, :WA_ID, :REPORT_ID
       spInsertMessage.ParamByName('WANUMBER').AsString := lWebHook.From;

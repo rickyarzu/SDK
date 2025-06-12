@@ -615,26 +615,14 @@ object dmCMSViewModel: TdmCMSViewModel
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    sTo = 'rickyarzu@gmail.com'
-    sCC = ''
-    sBcc = ''
-    sAttach = ''
-    sText = 'Test Email'#13#10
-    sSubject = ''
-    sFrom = 'Test Januaproject'
-    sFromAddr = 'rickyarzu@gmail.com'
     Sent = False
-    TestingFileName = 'MailAndFax'
     MailPassword = 'T4nt0v4l4g4t.'
     MailUsername = 'rickyarzu@gmail.com'
     MailServer = 'smtp.gmail.com'
-    MailEncoding = jmeHTML
     VerifiedServer = False
     ServerIP = '108.177.122.109'
     CustomMailTest = False
     MailEncryption = jmsNone
-    MsgText.Strings = (
-      'Test Email')
     Encryption = False
     Left = 88
     Top = 224
@@ -695,7 +683,7 @@ object dmCMSViewModel: TdmCMSViewModel
     Left = 91
     Top = 360
     Content = {
-      414442530F000000C7010000FF00010001FF02FF0304001C0000006600640041
+      4144425310000000C7010000FF00010001FF02FF0304001C0000006600640041
       0072007400690063006C0065005300740061007400650005000A000000540061
       0062006C006500060000000000070000080032000000090000FF0AFF0B04000A
       0000007300740061007400650005000A000000730074006100740065000C0001

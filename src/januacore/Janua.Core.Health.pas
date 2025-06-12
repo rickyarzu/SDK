@@ -7620,9 +7620,9 @@ begin
   Container.Add(frame);
 
   Conf := frame.Conf;
-  // ricorda la configurazione per ereditarla con il prossimo Frame.
+  // remembers frame configuration for next inherited frame
 
-  // un form contiene uno o più frames (nel test ne metteremo 2)
+  // one form can contain more than one frame (Two Frames in the test).
   frame.Create('notes_frame', 'Inserisci qui le note per la tua prenotazione',
     'qui puoi inserire delle annotazioni per la tua prenotazione, tipo di visita, indicazioni ...');
   frame.IsPortlet := False;

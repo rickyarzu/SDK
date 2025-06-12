@@ -139,7 +139,7 @@ contains
   Janua.Uni.SessionSource in '..\..\src\januaunidac\Janua.Uni.SessionSource.pas',
   Janua.Shipping.Refund in '..\..\src\janualegacy\Janua.Shipping.Refund.pas',
   Janua.Shipping.RefundAgentStatement in '..\..\src\janualegacy\Janua.Shipping.RefundAgentStatement.pas',
-  udmPgStorage in '..\..\src\januaunidac\datamodules\udmPgStorage.pas' {dmPgStorage: TDataModule},
+  udmFbStorage in '..\..\src\januaunidac\datamodules\udmFbStorage.pas' {dmFbStorage: TDataModule},
   Janua.Anagraph.Postgres.Storage in '..\..\src\januaunidac\datamodules\Janua.Anagraph.Postgres.Storage.pas' {dmJanuaPgAnagraphStorage: TDataModule},
   udmJanuaPgDocumentsStorage in '..\..\src\januaunidac\datamodules\udmJanuaPgDocumentsStorage.pas' {dmJanuaPgDocumentsStorage: TDataModule},
   udmJanuaPgItemsStorage in '..\..\src\januaunidac\datamodules\udmJanuaPgItemsStorage.pas' {dmJanuaPgItemsStorage: TDataModule},
@@ -168,8 +168,9 @@ contains
   Janua.CarService.PgRemoteDrivers in '..\..\src\januaunidac\datamodules\Janua.CarService.PgRemoteDrivers.pas' {dmCarServicePgRemoteDrivers: TDataModule},
   Janua.Carservice.PgCustomers in '..\..\src\januaunidac\datamodules\Janua.Carservice.PgCustomers.pas' {dmPgCustomers: TDataModule},
   Janua.Firebird.dmStorage in '..\..\src\januaunidac\datamodules\Janua.Firebird.dmStorage.pas' {dmJanuaFBStorage: TDataModule},
-  Janua.Firebird.Impl in '..\..\src\januaunidac\Janua.Firebird.Impl.pas',
   Janua.Commons.pgCountriesLocal in '..\..\src\januaunidac\datamodules\Janua.Commons.pgCountriesLocal.pas' {dmPgCountriesLocal: TDataModule},
-  Janua.Postgres.JPublic in '..\..\src\januaunidac\Janua.Postgres.JPublic.pas';
+  Janua.Postgres.JPublic in '..\..\src\januaunidac\Janua.Postgres.JPublic.pas',
+  Janua.Firebird.Impl in '..\..\src\januaunidac\Janua.Firebird.Impl.pas',
+  udmPgStorage in '..\..\src\januaunidac\datamodules\udmPgStorage.pas' {dmPgStorage: TDataModule};
 
 end.

@@ -750,7 +750,8 @@ end;
 
 constructor TJWebBrowserCookies.Create(aWidth, aHeigth: Single);
 begin
-
+  Width := aWidth;
+  Heigth := aHeigth;
 end;
 
 procedure TJWebBrowserCookies.DeSerialize(const aJson: string);

@@ -235,7 +235,7 @@ constructor TJanuaVCLFrameModel.Create(AOwner: TComponent);
 begin
   inherited;
   FJActive := false;
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
 end;
 
 procedure TJanuaVCLFrameModel.DeActivate;

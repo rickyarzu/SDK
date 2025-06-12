@@ -456,7 +456,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     Size.Height = 42.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 11
-    Viewport.Width = 340.000000000000000000
-    Viewport.Height = 38.000000000000000000
+    Viewport.Width = 344.000000000000000000
+    Viewport.Height = 42.000000000000000000
   end
 end

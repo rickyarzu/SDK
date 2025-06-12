@@ -3,10 +3,10 @@ unit Janua.Core.DataModule;
 interface
 
 uses
-  Janua.Core.Types, System.SysUtils, System.Classes, Spring.Collections, System.Bindings.Helper,
+  System.SysUtils, System.Classes, Spring.Collections, System.Bindings.Helper,
   // JanuaProject
   Janua.Bindings.Intf, Janua.Controls.Intf, Janua.Controls.Forms.Intf, Janua.Core.Classes.Intf,
-  Janua.Orm.Intf;
+  Janua.Core.Types, Janua.Orm.Intf;
 
 type
   TJanuaCoreDataModule = class(TDataModule, IJanuaDataModule, IJanuaBindable)
@@ -175,7 +175,7 @@ constructor TJanuaCoreDataModule.Create(AOwner: TComponent);
 begin
   inherited;
   FLazyLoading := false;
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   if not Assigned(FParams) and not TJanuaApplicationFactory.TryGetInterface(IJanuaParams, FParams) then
     raise Exception.Create(ClassName + 'GetParams IJanuaParams not set');
 end;
@@ -217,7 +217,7 @@ end;
 function TJanuaCoreDataModule.GetBindManager: IJanuaBindManager;
 begin
   { if not Assigned(FBindManager) then
-    FBindManager := TJanuaBindManager.Create(self); }
+    FBindManager := TJanuaApplicationFactory.CreateBindManager(self); }
   Result := FBindManager
 end;
 

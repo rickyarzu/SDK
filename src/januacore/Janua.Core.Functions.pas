@@ -487,8 +487,7 @@ uses
   FileUtil, Types, DateUtils,
 {$ENDIF DELPHIXE}
   // Encrypt DECCipher Algoritms
-  DECCipherBase, DECCipherModes, DECCipherFormats, DECCiphers, DECBaseClass,
-  DECHashInterface, DECHashBase, DECFormatBase, DECHash,
+  Janua.Core.Crypt,
   // Janua Core Libraries and Application Framework
   Janua.Core.JSON, Janua.Controls.Dialogs.Intf, Janua.Application.Framework;
 
@@ -733,26 +732,12 @@ end;
 
 function DECGOSTEncrypt(const AStr: string): string;
 begin
-  Result := AStr;
-  with TCipher_Gost.Create do
-    try
-      // Init(THash_SHA1.KDFx(AStr, '', Context.KeySize));
-      Result := EncodeString64(Result);
-    finally
-      Free;
-    end;
+  Result := TJanuaCriptEncode.DECGOSTEncrypt(AStr)
 end;
 
 function DECGOSTDecrypt(const AStr: string): string;
 begin
-  Result := AStr;
-  with TCipher_Gost.Create do
-    try
-      // Init(THash_SHA1.KDFx('Encryption Key', '', Context.KeySize));
-      Result := DecodeString64(Result);
-    finally
-      Free;
-    end;
+  Result := TJanuaCriptEncode.DECGOSTDecrypt(AStr)
 end;
 
 function NormalizeOpenStreetAddress(const aAddress: string; convertcommas: boolean = true): string; inline;
@@ -1337,17 +1322,8 @@ begin
 end;
 
 function Sha256DEC(const aString: string): string;
-var
-  Hash: TDECHash;
-  HashClass: TDECHashClass;
-  InputFormatting: TDECFormatClass;
-  OutputFormatting: TDECFormatClass;
-  SaltFormatting: TDECFormatClass;
-  InputBuffer: TBytes;
-  OutputBuffer: TBytes;
 begin
-  InputFormatting := TDECFormat.ClassByName('THash_SHA_256');
-
+  Result := TJanuaCriptEncode.Sha256DEC(aString)
 end;
 
 function Sha256(const aString: string): string;
@@ -1378,52 +1354,13 @@ begin
 end;
 
 function DecodeString64(const Input: string): string;
-{$IFNDEF FPC}
-var
-  InStr, OutStr: TStringStream;
 begin
-  InStr := TStringStream.Create(Input);
-  try
-    OutStr := TStringStream.Create('', TEncoding.UTF8);
-    try
-      DecodeStream(InStr, OutStr);
-      Result := OutStr.DataString;
-    finally
-      OutStr.Free;
-    end;
-  finally
-    InStr.Free;
-  end;
-{$ELSE}
-
-begin
-  Result := Decode64UTF8(Input);
-{$ENDIF FPC}
+  Result := TJanuaCriptEncode.DecodeString64(Input)
 end;
 
 function EncodeString64(const Input: string): string;
-{$IFNDEF FPC}
-var
-  InStr, OutStr: TStringStream;
 begin
-  // requires Soap.EncdDecd
-  InStr := TStringStream.Create(Input, TEncoding.UTF8);
-  try
-    OutStr := TStringStream.Create('');
-    try
-      EncodeStream(InStr, OutStr);
-      Result := OutStr.DataString;
-    finally
-      OutStr.Free;
-    end;
-  finally
-    InStr.Free;
-  end;
-{$ELSE}
-
-begin
-  Result := Encode64UTF8(Input);
-{$ENDIF FPC}
+  Result := TJanuaCriptEncode.EncodeString64(Input)
 end;
 
 function URLEncode64(const aString: string): string;
@@ -1442,60 +1379,13 @@ end;
 // ********************************************** Encrypt Decrypt Functions ***********************************
 
 function EncryptDES3(const AStr: string): string;
-var
-  Cipher: TCipher_3DES;
-  CipherKey: RawByteString;
-  IV: RawByteString;
-  Input, Output: TBytes;
 begin
-  if AStr <> '' then
-  begin
-    Cipher := TCipher_3DES.Create;
-    try
-      CipherKey := TJanuaApplication.Settings.CipherKey;
-      IV := #0#0#0#0#0#0#0#0;
-      Cipher.Init(CipherKey, IV, 0);
-      Cipher.Mode := cmCBCx;
-      Input := System.SysUtils.BytesOf(AStr);
-      Output := Cipher.EncodeBytes(Input);
-{$IF defined(MSWINDOWS)}
-      Result := EncodeString64(System.SysUtils.StringOf(Output));
-{$ELSE}
-      Result := TNetEncoding.base64.EncodeBytesToString(Output);
-{$ENDIF}
-    finally
-      Cipher.Free
-    end;
-  end;
+  Result := TJanuaCriptEncode.EncryptDES3(AStr);
 end;
 
 function DecryptDES3(const AStr: string): string;
-var
-  Cipher: TCipher_3DES;
-  CipherKey: RawByteString;
-  IV: RawByteString;
-  Input, Output: TBytes;
 begin
-  if AStr <> '' then
-  begin
-    Cipher := TCipher_3DES.Create;
-    try
-      CipherKey := TJanuaApplication.Settings.CipherKey;
-      IV := #0#0#0#0#0#0#0#0;
-      Cipher.Init(CipherKey, IV, 0);
-      Cipher.Mode := cmCBCx;
-{$IF defined(MSWINDOWS)}
-      Input := System.SysUtils.BytesOf(DecodeString64(AStr));
-{$ELSE}
-      Input := TNetEncoding.base64.DecodeStringToBytes(AStr);
-{$ENDIF}
-      Output := Cipher.DecodeBytes(Input);
-      Result := System.SysUtils.StringOf(Output);
-    finally
-      Cipher.Free
-    end;
-  end;
-
+  Result := TJanuaCriptEncode.DecryptDES3(AStr);
 end;
 
 // GUID
@@ -4163,9 +4053,7 @@ begin
       Result := Result + LC;
 end;
 
-function EncodeURIComponent(
-
-  const ASrc: string): UTF8String;
+function EncodeURIComponent(const ASrc: string): UTF8String;
 const
   HexMap: UTF8String = '0123456789ABCDEF';
 

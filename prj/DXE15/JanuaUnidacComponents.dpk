@@ -35,6 +35,7 @@ requires
 
 contains
   Janua.Uni.Register in '..\..\src\januaunidac\Janua.Uni.Register.pas',
-  Janua.Oracle.Register in '..\..\src\januaunidac\Janua.Oracle.Register.pas';
+  Janua.Oracle.Register in '..\..\src\januaunidac\Janua.Oracle.Register.pas',
+  Janua.Postgres.Register in '..\..\src\januaunidac\Janua.Postgres.Register.pas';
 
 end.

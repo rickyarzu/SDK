@@ -3,67 +3,16 @@ unit Janua.Phoenix.FbJsonReport;
 interface
 
 uses
-  System.SysUtils, System.Classes, Janua.Phoenix.dmIBModel, Janua.Interbase.dmModel, UniProvider,
-  InterBaseUniProvider, Data.DB, DBAccess, Uni, Janua.Unidac.Connection, MemDS;
+  System.SysUtils, System.Classes,
+  // DAC
+  UniProvider, InterBaseUniProvider, Data.DB, DBAccess, Uni, MemDS,
+  // Phoenix
+  Phoenix.JSON.Config, Phoenix.JSON.Statini,
+  Janua.Phoenix.dmIBModel, Janua.Interbase.dmModel, Janua.Unidac.Connection;
 
 type
   TdmFbPhoenixJsonReport = class(TdmJanuaInterbaseModel)
     qryStatini: TUniQuery;
-    qryStatiniCHIAVE: TIntegerField;
-    qryStatiniCLIENTE: TIntegerField;
-    qryStatiniFILIALE: TIntegerField;
-    qryStatiniTITOLO: TStringField;
-    qryStatiniRAGIONE_SOCIALE: TStringField;
-    qryStatiniINDIRIZZO: TStringField;
-    qryStatiniCOMUNE: TStringField;
-    qryStatiniPROVINCIA: TStringField;
-    qryStatiniCAP: TStringField;
-    qryStatiniTELEFONO: TStringField;
-    qryStatiniCELLULARE: TStringField;
-    qryStatiniNOTE: TBlobField;
-    qryStatiniORARIO_APERTURA_DAL1: TTimeField;
-    qryStatiniORARIO_APERTURA_DAL2: TTimeField;
-    qryStatiniORARIO_APERTURA_AL1: TTimeField;
-    qryStatiniORARIO_APERTURA_AL2: TTimeField;
-    qryStatiniCHIUSURA: TStringField;
-    qryStatiniFATTURA: TIntegerField;
-    qryStatiniDATA_INTERVENTO: TDateField;
-    qryStatiniGENERAZIONE_AUTOMATICA: TIntegerField;
-    qryStatiniTECNICO_INTERVENTO: TIntegerField;
-    qryStatiniSCANSIONE: TBlobField;
-    qryStatiniREGISTRO: TBlobField;
-    qryStatiniNOTE_PER_IL_TECNICO: TBlobField;
-    qryStatiniSOSPESO: TStringField;
-    qryStatiniDA_ESPORTARE_SUL_WEB: TStringField;
-    qryStatiniRESPONSABILE: TIntegerField;
-    qryStatiniESPORTATO_SU_MOBILE: TStringField;
-    qryStatiniNOTE_DAL_TECNICO: TBlobField;
-    qryStatiniJSON_DA_MOBILE: TBlobField;
-    qryStatiniPDF_STATINO: TBlobField;
-    qryStatiniREGISTRO_IS_PDF: TStringField;
-    qryStatiniVERBALE_PROVA_DINAMICA: TBlobField;
-    qryStatiniVERBALE_MANICHETTE: TBlobField;
-    qryStatiniPREVENTIVO: TIntegerField;
-    qryStatiniIGNORA_EVIDENZIAZIONE: TStringField;
-    qryStatiniANNULLATO_DA_TABLET: TStringField;
-    qryStatiniMOBILEWARN_NUOVA_ATTREZZATURA: TStringField;
-    qryStatiniMOBILEWARN_ORDINARIA_RITIRATA: TStringField;
-    qryStatiniMOBILEWARN_N_ORDIN_CONTROLLATA: TStringField;
-    qryStatiniMOBILEWARN_SMALTIMENTO: TStringField;
-    qryStatiniSTATO_LAVORAZIONE: TStringField;
-    qryStatiniDATA_CHIUSURA_DA_SERVER: TDateField;
-    qryStatiniCHIUSURA_EXT: TStringField;
-    qryStatiniCHIUSURA_STATINO: TBlobField;
-    qryStatiniMOBILEWARN_NON_ESEGUITI: TStringField;
-    qryStatiniPRESA_IN_CARICO: TStringField;
-    qryStatiniFORNITURA: TStringField;
-    qryStatiniAPPUNTAMENTO_DATA: TDateField;
-    qryStatiniAPPUNTAMENTO_ORA: TTimeField;
-    qryStatiniSTATO: TSmallintField;
-    qryStatiniJGUID: TBytesField;
-    qryStatiniGCAL: TStringField;
-    qryStatiniWANUMBER: TStringField;
-    qryStatiniWA: TStringField;
     tbLuci: TUniTable;
     tbEstintori: TUniTable;
     tbIdranti: TUniTable;
@@ -101,6 +50,733 @@ type
     tbImpiantiSTATO: TStringField;
     tbImpiantiTIPO_VISITA: TStringField;
     tbImpiantiUBICAZIONE: TStringField;
+    tbPorteSTATINO: TIntegerField;
+    tbPorteANNO_COSTRUZIONE: TIntegerField;
+    tbPorteANOMALIA: TStringField;
+    tbPorteANOMALIA_APPROVATA: TStringField;
+    tbPorteANTE: TStringField;
+    tbPorteANOMALIAONDOWNLOAD: TStringField;
+    tbPorteANOMALIARISOLTA: TStringField;
+    tbPorteCHIAVE: TIntegerField;
+    tbPorteCONSEGNATO: TStringField;
+    tbPorteCONTROLLATO: TStringField;
+    tbPorteDIMENSIONE: TStringField;
+    tbPorteDATACONTROLLO: TDateField;
+    tbPorteID_NFC: TStringField;
+    tbPorteMARCA: TIntegerField;
+    tbPorteMARCA_MANIGLIONE: TIntegerField;
+    tbPorteMATRICOLA: TStringField;
+    tbPorteNOTE_TECNICO: TStringField;
+    tbPorteORARIOCONTROLLO: TStringField;
+    tbPortePROGRESSIVO: TIntegerField;
+    tbPorteSTATO: TStringField;
+    tbPorteTIPO: TIntegerField;
+    tbPorteTIPO_GUARNIZIONE: TIntegerField;
+    tbPorteTIPO_INSTALLAZIONE: TIntegerField;
+    tbPorteTIPO_INTERVENTO: TStringField;
+    tbPorteTIPO_MANIGLIA_ESTERNA: TIntegerField;
+    tbPorteTIPO_MANIGLIONE: TIntegerField;
+    tbPorteTIPO_SERRATURA_ANTA_PRINCIPALE: TIntegerField;
+    tbPorteTIPO_SERRATURA_ANTA_SECONDARIA: TIntegerField;
+    tbPorteTECNICOCONTROLLO: TIntegerField;
+    tbPorteUBICAZIONE: TStringField;
+    tbGruppiSTATINO: TIntegerField;
+    tbGruppiANOMALIA: TStringField;
+    tbGruppiANOMALIA_APPROVATA: TStringField;
+    tbGruppiANOMALIAONDOWNLOAD: TStringField;
+    tbGruppiANOMALIARISOLTA: TStringField;
+    tbGruppiCHIAVE: TIntegerField;
+    tbGruppiCONTROLLATO: TStringField;
+    tbGruppiDESCRIZIONE: TStringField;
+    tbGruppiDATACONTROLLO: TDateField;
+    tbGruppiID_NFC: TStringField;
+    tbGruppiMARCA_MISURATORE_PORTATA: TStringField;
+    tbGruppiMARCA_MOTOPOMPA: TStringField;
+    tbGruppiMARCA_POMPA_JOCKEY: TStringField;
+    tbGruppiMARCA_POMPA_PORTATA: TStringField;
+    tbGruppiMODELLO_MISURATORE_PORTATA: TStringField;
+    tbGruppiMODELLO_MOTOPOMPA: TStringField;
+    tbGruppiMODELLO_POMPA_JOCKEY: TStringField;
+    tbGruppiMODELLO_POMPA_PORTATA: TStringField;
+    tbGruppiNOTE: TStringField;
+    tbGruppiNONCONTROLLATO: TStringField;
+    tbGruppiORARIOCONTROLLO: TStringField;
+    tbGruppiSTATO: TStringField;
+    tbGruppiTIPO_BATTERIE: TStringField;
+    tbGruppiTIPO_INTERVENTO: TStringField;
+    tbGruppiTIPO_MOTOPOMPA: TStringField;
+    tbGruppiTIPO_POMPA_JOCKEY: TStringField;
+    tbGruppiTIPO_POMPA_PORTATA: TStringField;
+    tbGruppiTIPO_STAZIONE: TStringField;
+    tbGruppiTIPO_VISITA: TStringField;
+    tbGruppiTECNICOCONTROLLO: TIntegerField;
+    tbGruppiVASI_ESPANSIONE: TStringField;
+    tbIdrantiSTATINO: TIntegerField;
+    tbIdrantiCHIAVE: TIntegerField;
+    tbIdrantiDESCRIZIONE: TStringField;
+    tbIdrantiPROVA_DINAMICA: TIntegerField;
+    tbIdrantiQUANDO_PROVA_DINAMICA: TStringField;
+    tbIdrantiSTATO: TStringField;
+    tbIdrantiSUGGERIMENTOLUNGHMANICHETTA: TStringField;
+    tbIdrantiSUGGERIMENTOTIPIBOCCHELLI: TStringField;
+    tbIdrantiTIPO: TStringField;
+    tbIdrantiTIPO_ATTACCO_MOTOPOMPA: TStringField;
+    tbIdrantiUBICAZIONE: TStringField;
+    tbIdrantiUBICAZIONE_ATTACCO_MOTOPOMPA: TStringField;
+    tbIdrantiVALVOLA_INTERCETTAZIONE: TStringField;
+    tbBocchelliSTATINO: TIntegerField;
+    tbBocchelliIDRANTE: TIntegerField;
+    tbBocchelliANNO_MANICHETTA: TStringField;
+    tbBocchelliANNO_PRESSATURA: TStringField;
+    tbBocchelliANNO_STARTUP: TIntegerField;
+    tbBocchelliANOMALIA: TStringField;
+    tbBocchelliANOMALIA_APPROVATA: TStringField;
+    tbBocchelliANOMALIAONDOWNLOAD: TStringField;
+    tbBocchelliANOMALIARISOLTA: TStringField;
+    tbBocchelliCHIAVE: TIntegerField;
+    tbBocchelliCONSEGNATO: TStringField;
+    tbBocchelliCONTROLLATO: TStringField;
+    tbBocchelliDATACONTROLLO: TDateField;
+    tbBocchelliDATAPRESSATURA: TDateField;
+    tbBocchelliDATARITIRO: TDateField;
+    tbBocchelliID_BOCCHELLO: TIntegerField;
+    tbBocchelliID_NFC: TStringField;
+    tbBocchelliLUNGHEZZA_MANICHETTA: TIntegerField;
+    tbBocchelliMESE_PRESSATURA: TStringField;
+    tbBocchelliMESE_STARTUP: TIntegerField;
+    tbBocchelliNOTE_TECNICO: TStringField;
+    tbBocchelliORARIOCONTROLLO: TStringField;
+    tbBocchelliORARIORITIRO: TStringField;
+    tbBocchelliPRESSATURAEFFETTUATA: TStringField;
+    tbBocchelliRITIRATO: TStringField;
+    tbBocchelliSTATO: TStringField;
+    tbBocchelliTIPO_BOCCHELLO: TIntegerField;
+    tbBocchelliTIPO_INTERVENTO: TStringField;
+    tbBocchelliTIPO_LANCIA: TIntegerField;
+    tbBocchelliTECNICOCONTROLLO: TIntegerField;
+    tbBocchelliTECNICOPRESSATURA: TIntegerField;
+    tbBocchelliTECNICORITIRO: TIntegerField;
+    tbBocchelliUBICAZIONE: TStringField;
+    tbLuciSTATINO: TIntegerField;
+    tbLuciANOMALIA: TStringField;
+    tbLuciANOMALIA_APPROVATA: TStringField;
+    tbLuciAUTONOMIA: TIntegerField;
+    tbLuciANOMALIAONDOWNLOAD: TStringField;
+    tbLuciANOMALIARISOLTA: TStringField;
+    tbLuciCHIAVE: TIntegerField;
+    tbLuciCONSEGNATO: TStringField;
+    tbLuciCONTROLLATO: TStringField;
+    tbLuciDATACONTROLLO: TDateField;
+    tbLuciID_NFC: TStringField;
+    tbLuciMARCA: TIntegerField;
+    tbLuciMODELLO: TStringField;
+    tbLuciNOTE_TECNICO: TStringField;
+    tbLuciORARIOCONTROLLO: TStringField;
+    tbLuciPROGRESSIVO: TIntegerField;
+    tbLuciSTATO: TStringField;
+    tbLuciTIPO_INTERVENTO: TStringField;
+    tbLuciTIPO_LUCE: TIntegerField;
+    tbLuciTECNICOCONTROLLO: TIntegerField;
+    tbLuciUBICAZIONE: TStringField;
+    tbEstintoriSTATINO: TIntegerField;
+    tbEstintoriANNO_COSTRUZIONE: TStringField;
+    tbEstintoriANOMALIA: TStringField;
+    tbEstintoriANOMALIA_APPROVATA: TStringField;
+    tbEstintoriAGGIUNTODAMOBILE: TStringField;
+    tbEstintoriANOMALIAONDOWNLOAD: TStringField;
+    tbEstintoriANOMALIARISOLTA: TStringField;
+    tbEstintoriCHIAVE: TIntegerField;
+    tbEstintoriCONSEGNATO: TStringField;
+    tbEstintoriCONTROLLATO: TStringField;
+    tbEstintoriDATA_LAVORAZIONE: TDateField;
+    tbEstintoriDATA_STARTUP_COL: TStringField;
+    tbEstintoriDATA_STARTUP_REV: TStringField;
+    tbEstintoriDATACONSEGNA: TDateField;
+    tbEstintoriDATACONTROLLO: TDateField;
+    tbEstintoriDATACONTROLLONEGATO: TDateField;
+    tbEstintoriDATARESTITUZIONE: TDateField;
+    tbEstintoriDATARITIRO: TDateField;
+    tbEstintoriDATASMALTIMENTO: TDateField;
+    tbEstintoriID_NFC: TStringField;
+    tbEstintoriMARCA: TIntegerField;
+    tbEstintoriMATRICOLA: TStringField;
+    tbEstintoriMOTIVOCONTROLLONEGATO: TStringField;
+    tbEstintoriMOTIVORITIRO: TStringField;
+    tbEstintoriNOTE_TECNICO: TStringField;
+    tbEstintoriNONCONTROLLATO: TStringField;
+    tbEstintoriORARIOCONSEGNA: TStringField;
+    tbEstintoriORARIOCONTROLLO: TStringField;
+    tbEstintoriORARIOCONTROLLONEGATO: TStringField;
+    tbEstintoriORARIORITIRO: TStringField;
+    tbEstintoriORARIOSMALTIMENTO: TStringField;
+    tbEstintoriPERIODICITA_COLLAUDO: TIntegerField;
+    tbEstintoriPERIODICITA_REVISIONE: TIntegerField;
+    tbEstintoriPROGRESSIVO: TIntegerField;
+    tbEstintoriRESTITUITO: TStringField;
+    tbEstintoriRITIRATO: TStringField;
+    tbEstintoriSTATO: TStringField;
+    tbEstintoriSMALTITO: TStringField;
+    tbEstintoriTIPO_ESTINTORE: TIntegerField;
+    tbEstintoriTIPO_INTERVENTO: TStringField;
+    tbEstintoriTECNICOCONSEGNA: TIntegerField;
+    tbEstintoriTECNICOCONTROLLO: TIntegerField;
+    tbEstintoriTECNICOCONTROLLONEGATO: TIntegerField;
+    tbEstintoriTECNICORESTITUZIONE: TIntegerField;
+    tbEstintoriTECNICORITIRO: TIntegerField;
+    tbEstintoriTECNICOSMALTIMENTO: TIntegerField;
+    tbEstintoriUBICAZIONE: TStringField;
+    tbRilFumoSTATINO: TIntegerField;
+    tbRilFumoANOMALIA: TStringField;
+    tbRilFumoANOMALIA_APPROVATA: TStringField;
+    tbRilFumoANOMALIAONDOWNLOAD: TStringField;
+    tbRilFumoANOMALIARISOLTA: TStringField;
+    tbRilFumoCHIAVE: TIntegerField;
+    tbRilFumoCONTROLLATO: TStringField;
+    tbRilFumoDESCRIZIONE: TStringField;
+    tbRilFumoDATACONTROLLO: TDateField;
+    tbRilFumoID_NFC: TStringField;
+    tbRilFumoMARCA_CENTRALE: TStringField;
+    tbRilFumoMARCA_RIL_LINEARI: TStringField;
+    tbRilFumoNOTE_TECNICO: TStringField;
+    tbRilFumoNONCONTROLLATO: TStringField;
+    tbRilFumoORARIOCONTROLLO: TStringField;
+    tbRilFumoQUANTITA_BATTERIE: TStringField;
+    tbRilFumoQUANTITA_PANNELLI_OTT_ACUST: TStringField;
+    tbRilFumoQUANTITA_PULSANTI: TStringField;
+    tbRilFumoQUANTITA_RILEVATORI: TStringField;
+    tbRilFumoQUANTITA_RIL_LINEARI: TStringField;
+    tbRilFumoSTATO: TStringField;
+    tbRilFumoTIPI_RILEVATORI_LINEARI_FUMI: TStringField;
+    tbRilFumoTIPO_BATTERIE: TDateField;
+    tbRilFumoTIPO_CENTRALE: TStringField;
+    tbRilFumoTIPO_INTERVENTO: TStringField;
+    tbRilFumoTIPO_RILEVATORI: TStringField;
+    tbRilFumoTIPO_RIL_LINEARI: TStringField;
+    tbRilFumoTECNICOCONTROLLO: TIntegerField;
+    tbRilFumoUBICAZIONE: TStringField;
+    qryStatiniLuci: TUniQuery;
+    qryCheckListLuci: TUniQuery;
+    qryInterventiLuci: TUniQuery;
+    dsStatiniLuci: TUniDataSource;
+    dsInterventiLuci: TUniDataSource;
+    dsCheckListLuci: TUniDataSource;
+    qryStatiniCHIAVE: TIntegerField;
+    qryStatiniCLIENTE: TIntegerField;
+    qryStatiniFILIALE: TIntegerField;
+    qryStatiniTITOLO: TWideStringField;
+    qryStatiniRAGIONE_SOCIALE: TWideStringField;
+    qryStatiniINDIRIZZO: TWideStringField;
+    qryStatiniCOMUNE: TWideStringField;
+    qryStatiniPROVINCIA: TWideStringField;
+    qryStatiniCAP: TWideStringField;
+    qryStatiniTELEFONO: TWideStringField;
+    qryStatiniCELLULARE: TWideStringField;
+    qryStatiniNOTE: TBlobField;
+    qryStatiniORARIO_APERTURA_DAL1: TTimeField;
+    qryStatiniORARIO_APERTURA_DAL2: TTimeField;
+    qryStatiniORARIO_APERTURA_AL1: TTimeField;
+    qryStatiniORARIO_APERTURA_AL2: TTimeField;
+    qryStatiniCHIUSURA: TWideStringField;
+    qryStatiniFATTURA: TIntegerField;
+    qryStatiniDATA_INTERVENTO: TDateField;
+    qryStatiniGENERAZIONE_AUTOMATICA: TIntegerField;
+    qryStatiniTECNICO_INTERVENTO: TIntegerField;
+    qryStatiniSCANSIONE: TBlobField;
+    qryStatiniREGISTRO: TBlobField;
+    qryStatiniNOTE_PER_IL_TECNICO: TBlobField;
+    qryStatiniSOSPESO: TWideStringField;
+    qryStatiniDA_ESPORTARE_SUL_WEB: TWideStringField;
+    qryStatiniRESPONSABILE: TIntegerField;
+    qryStatiniESPORTATO_SU_MOBILE: TWideStringField;
+    qryStatiniNOTE_DAL_TECNICO: TBlobField;
+    qryStatiniJSON_DA_MOBILE: TBlobField;
+    qryStatiniPDF_STATINO: TBlobField;
+    qryStatiniREGISTRO_IS_PDF: TWideStringField;
+    qryStatiniVERBALE_PROVA_DINAMICA: TBlobField;
+    qryStatiniVERBALE_MANICHETTE: TBlobField;
+    qryStatiniPREVENTIVO: TIntegerField;
+    qryStatiniIGNORA_EVIDENZIAZIONE: TWideStringField;
+    qryStatiniANNULLATO_DA_TABLET: TWideStringField;
+    qryStatiniMOBILEWARN_NUOVA_ATTREZZATURA: TWideStringField;
+    qryStatiniMOBILEWARN_ORDINARIA_RITIRATA: TWideStringField;
+    qryStatiniMOBILEWARN_N_ORDIN_CONTROLLATA: TWideStringField;
+    qryStatiniMOBILEWARN_SMALTIMENTO: TWideStringField;
+    qryStatiniSTATO_LAVORAZIONE: TWideStringField;
+    qryStatiniDATA_CHIUSURA_DA_SERVER: TDateField;
+    qryStatiniCHIUSURA_EXT: TWideStringField;
+    qryStatiniCHIUSURA_STATINO: TBlobField;
+    qryStatiniMOBILEWARN_NON_ESEGUITI: TWideStringField;
+    qryStatiniPRESA_IN_CARICO: TWideStringField;
+    qryStatiniFORNITURA: TWideStringField;
+    qryStatiniAPPUNTAMENTO_DATA: TDateField;
+    qryStatiniAPPUNTAMENTO_ORA: TTimeField;
+    qryStatiniSTATO: TSmallintField;
+    qryStatiniJGUID: TBytesField;
+    qryStatiniGCAL: TWideStringField;
+    qryStatiniWANUMBER: TWideStringField;
+    qryStatiniWA: TWideStringField;
+    qryStatiniSTATO_IMMAGINE: TBlobField;
+    qryStatiniWA_ID: TWideStringField;
+    qryStatiniWA_IMAGE: TBlobField;
+    qryStatiniWA_STATE: TSmallintField;
+    qryStatiniLuciSTATINO: TIntegerField;
+    qryStatiniLuciRAGIONE_SOCIALE: TWideStringField;
+    qryStatiniLuciINDIRIZZO: TWideStringField;
+    qryStatiniLuciDATA_INTERVENTO: TDateField;
+    qryStatiniLuciJSON_DA_MOBILE: TWideMemoField;
+    qryInterventiLuciCHIAVE: TIntegerField;
+    qryInterventiLuciSTATINO: TIntegerField;
+    qryInterventiLuciATTREZZATURA: TIntegerField;
+    qryInterventiLuciTIPO_ATTREZZATURA: TWideStringField;
+    qryInterventiLuciUBICAZIONE: TWideStringField;
+    qryInterventiLuciPROGRESSIVO: TIntegerField;
+    qryInterventiLuciANOMALIA: TWideStringField;
+    qryInterventiLuciTIPO: TWideStringField;
+    qryInterventiLuciDATA_CONTROLLO: TDateField;
+    qryInterventiLuciDATA_CONSEGNA: TDateField;
+    qryInterventiLuciPERIODI_NON_ORDINARI: TWideStringField;
+    qryInterventiLuciDATA_CONTROLLO_NEGATO: TDateField;
+    qryInterventiLuciCLIENTE: TIntegerField;
+    qryInterventiLuciFILIALE: TIntegerField;
+    qryInterventiLuciTIPO_LUCE: TIntegerField;
+    qryInterventiLuciMARCA: TIntegerField;
+    qryInterventiLuciANOMALIA_APPROVATA: TWideStringField;
+    qryInterventiLuciMODELLO: TWideStringField;
+    qryInterventiLuciAUTONOMIA: TSmallintField;
+    qryInterventiLuciPREC_ANOMALIA: TBlobField;
+    qryInterventiLuciDES_TIPO_LUCE: TWideStringField;
+    qryInterventiLuciDES_MARCA_LUCE: TWideStringField;
+    qryCheckListLuciATTREZZATURA: TIntegerField;
+    qryCheckListLuciCHECKLIST: TIntegerField;
+    qryCheckListLuciDESCRIZIONE: TWideStringField;
+    qryCheckListLuciTIPOLOGIA: TWideStringField;
+    qryCheckListLuciORDINAMENTO: TSmallintField;
+    qryCheckListLuciANOMALIE_CORRELATE: TBlobField;
+    qryCheckListLuciSOTTOCATEGORIA: TIntegerField;
+    qryStatiniEstintori: TUniQuery;
+    qryStatiniFumo: TUniQuery;
+    qryStatiniFumoSTATINO: TIntegerField;
+    qryStatiniFumoRAGIONE_SOCIALE: TWideStringField;
+    qryStatiniFumoINDIRIZZO: TWideStringField;
+    qryStatiniFumoDATA_INTERVENTO: TDateField;
+    qryStatiniFumoJSON_DA_MOBILE: TWideMemoField;
+    qryStatiniEstintoriSTATINO: TIntegerField;
+    qryStatiniEstintoriRAGIONE_SOCIALE: TWideStringField;
+    qryStatiniEstintoriINDIRIZZO: TWideStringField;
+    qryStatiniEstintoriDATA_INTERVENTO: TDateField;
+    qryStatiniEstintoriJSON_DA_MOBILE: TWideMemoField;
+    qryStatiniIdranti: TUniQuery;
+    qryStatiniPorte: TUniQuery;
+    qryStatiniImpianti: TUniQuery;
+    qryStatiniImpiantiSTATINO: TIntegerField;
+    qryStatiniImpiantiRAGIONE_SOCIALE: TWideStringField;
+    qryStatiniImpiantiINDIRIZZO: TWideStringField;
+    qryStatiniImpiantiDATA_INTERVENTO: TDateField;
+    qryStatiniImpiantiJSON_DA_MOBILE: TWideMemoField;
+    qryStatiniGruppi: TUniQuery;
+    qryStatiniGruppiSTATINO: TIntegerField;
+    qryStatiniGruppiRAGIONE_SOCIALE: TWideStringField;
+    qryStatiniGruppiINDIRIZZO: TWideStringField;
+    qryStatiniGruppiDATA_INTERVENTO: TDateField;
+    qryStatiniGruppiJSON_DA_MOBILE: TWideMemoField;
+    dsStatiniGruppi: TUniDataSource;
+    dsStatiniImpianti: TUniDataSource;
+    dsStatiniPorte: TUniDataSource;
+    dsStatiniIdranti: TUniDataSource;
+    dsStatiniEstintori: TUniDataSource;
+    dsStatiniFumo: TUniDataSource;
+    qryStatiniSprinkler: TUniQuery;
+    IntegerField1: TIntegerField;
+    WideStringField1: TWideStringField;
+    WideStringField2: TWideStringField;
+    DateField1: TDateField;
+    WideMemoField1: TWideMemoField;
+    DSStatiniSprinkler: TUniDataSource;
+    qryInterventiGruppi: TUniQuery;
+    qryInterventiGruppiCHIAVE: TIntegerField;
+    qryInterventiGruppiSTATINO: TIntegerField;
+    qryInterventiGruppiATTREZZATURA: TIntegerField;
+    qryInterventiGruppiTIPO_ATTREZZATURA: TWideStringField;
+    qryInterventiGruppiANOMALIA: TWideStringField;
+    qryInterventiGruppiTIPO: TWideStringField;
+    qryInterventiGruppiDATA_CONTROLLO: TDateField;
+    qryInterventiGruppiDATA_CONSEGNA: TDateField;
+    qryInterventiGruppiPERIODI_NON_ORDINARI: TWideStringField;
+    qryInterventiGruppiDATA_CONTROLLO_NEGATO: TDateField;
+    qryInterventiGruppiDESCRIZIONE: TWideStringField;
+    qryInterventiGruppiTIPO_STAZIONE: TWideStringField;
+    qryInterventiGruppiTIPO_BATTERIE: TIntegerField;
+    qryInterventiGruppiMARCA_POMPA_JOCKEY: TWideStringField;
+    qryInterventiGruppiTIPO_POMPA_JOCKEY: TWideStringField;
+    qryInterventiGruppiMODELLO_POMPA_JOCKEY: TWideStringField;
+    qryInterventiGruppiMARCA_POMPA_PORTATA: TWideStringField;
+    qryInterventiGruppiTIPO_POMPA_PORTATA: TWideStringField;
+    qryInterventiGruppiMODELLO_POMPA_PORTATA: TWideStringField;
+    qryInterventiGruppiMARCA_MOTOPOMPA: TWideStringField;
+    qryInterventiGruppiTIPO_MOTOPOMPA: TWideStringField;
+    qryInterventiGruppiMODELLO_MOTOPOMPA: TWideStringField;
+    qryInterventiGruppiVASI_ESPANSIONE: TWideStringField;
+    qryInterventiGruppiMARCA_MISURATORE_PORTATA: TWideStringField;
+    qryInterventiGruppiMODELLO_MISURATORE_PORTATA: TWideStringField;
+    qryInterventiGruppiANOMALIA_APPROVATA: TWideStringField;
+    qryInterventiGruppiNOTE: TBlobField;
+    qryInterventiGruppiSOSPESO: TWideStringField;
+    qryInterventiGruppiFILIALE: TIntegerField;
+    qryInterventiGruppiSTATO: TWideStringField;
+    qryInterventiGruppiRINNOVATO_DA: TIntegerField;
+    qryInterventiGruppiPREC_ANOMALIA: TBlobField;
+    qryInterventiGruppiID_NFC: TWideStringField;
+    dsInterventiGruppi: TUniDataSource;
+    qryInterventiPorte: TUniQuery;
+    dsInterventiPorte: TUniDataSource;
+    qryInterventiPorteCHIAVE: TIntegerField;
+    qryInterventiPorteSTATINO: TIntegerField;
+    qryInterventiPorteATTREZZATURA: TIntegerField;
+    qryInterventiPorteANOMALIA: TWideStringField;
+    qryInterventiPorteTIPO: TWideStringField;
+    qryInterventiPorteDATA_CONTROLLO: TDateField;
+    qryInterventiPorteDATA_CONSEGNA: TDateField;
+    qryInterventiPortePERIODI_NON_ORDINARI: TWideStringField;
+    qryInterventiPorteDATA_CONTROLLO_NEGATO: TDateField;
+    qryInterventiPorteCLIENTE: TIntegerField;
+    qryInterventiPorteFILIALE: TIntegerField;
+    qryInterventiPorteTIPO_1: TIntegerField;
+    qryInterventiPorteMATRICOLA: TWideStringField;
+    qryInterventiPorteANNO_COSTRUZIONE: TSmallintField;
+    qryInterventiPorteANTE: TWideStringField;
+    qryInterventiPorteMARCA: TIntegerField;
+    qryInterventiPorteMARCA_MANIGLIONE: TIntegerField;
+    qryInterventiPorteTIPO_MANIGLIONE: TIntegerField;
+    qryInterventiPorteTIPO_SERRATURA_ANTA_PRINCIPALE: TIntegerField;
+    qryInterventiPorteTIPO_SERRATURA_ANTA_SECONDARIA: TIntegerField;
+    qryInterventiPorteTIPO_MANIGLIA_ESTERNA: TIntegerField;
+    qryInterventiPorteTIPO_GUARNIZIONE: TIntegerField;
+    qryInterventiPortePROGRESSIVO: TIntegerField;
+    qryInterventiPorteSTATO: TWideStringField;
+    qryInterventiPorteRINNOVATO_DA: TIntegerField;
+    qryInterventiPorteANOMALIA_APPROVATA: TWideStringField;
+    qryInterventiPorteANOMALIA_1: TWideMemoField;
+    qryInterventiPorteTIPO_INSTALLAZIONE: TIntegerField;
+    qryInterventiPorteDIMENSIONE: TWideStringField;
+    qryInterventiPortePREC_ANOMALIA: TBlobField;
+    qryInterventiPorteNOTE_TECNICO: TWideStringField;
+    qryInterventiPorteID_NFC: TWideStringField;
+    qryInterventiPorteJGUID: TBytesField;
+    qryInterventiPorteUBICAZIONE: TWideStringField;
+    qryStatiniPorteSTATINO: TIntegerField;
+    qryStatiniPorteRAGIONE_SOCIALE: TWideStringField;
+    qryStatiniPorteINDIRIZZO: TWideStringField;
+    qryStatiniPorteDATA_INTERVENTO: TDateField;
+    qryStatiniPorteJSON_DA_MOBILE: TWideMemoField;
+    qryInterventiSprinkler: TUniQuery;
+    qryInterventiSprinklerCHIAVE: TIntegerField;
+    qryInterventiSprinklerSTATINO: TIntegerField;
+    qryInterventiSprinklerATTREZZATURA: TIntegerField;
+    qryInterventiSprinklerANOMALIA: TWideStringField;
+    qryInterventiSprinklerTIPO: TWideStringField;
+    qryInterventiSprinklerDATA_CONTROLLO: TDateField;
+    qryInterventiSprinklerDATA_CONSEGNA: TDateField;
+    qryInterventiSprinklerPERIODI_NON_ORDINARI: TWideStringField;
+    qryInterventiSprinklerDATA_CONTROLLO_NEGATO: TDateField;
+    qryInterventiSprinklerMARCA: TIntegerField;
+    qryInterventiSprinklerTARATURA_VALVOLE: TSmallintField;
+    qryInterventiSprinklerVALVOLE_RICAMBIO: TWideStringField;
+    qryInterventiSprinklerUBICAZIONE_1: TBlobField;
+    qryInterventiSprinklerTIPO_1: TIntegerField;
+    qryInterventiSprinklerSTATO: TWideStringField;
+    qryInterventiSprinklerRINNOVATO_DA: TIntegerField;
+    qryInterventiSprinklerANOMALIA_APPROVATA: TWideStringField;
+    qryInterventiSprinklerMODELLO: TWideStringField;
+    qryInterventiSprinklerCOMPRESSORE: TWideStringField;
+    qryInterventiSprinklerNOTE: TBlobField;
+    qryInterventiSprinklerQUANTITA_VALVOLE: TWideStringField;
+    qryInterventiSprinklerDESCRIZIONE: TWideStringField;
+    qryInterventiSprinklerPREC_ANOMALIA: TBlobField;
+    qryInterventiSprinklerUBICAZIONE: TWideStringField;
+    dsInterventiSprinkler: TUniDataSource;
+    qryInterventiEstintori: TUniQuery;
+    qryInterventiEstintoriPROGRESSIVO: TIntegerField;
+    qryInterventiEstintoriMATRICOLA: TWideStringField;
+    qryInterventiEstintoriDESCRIZIONE: TWideStringField;
+    qryInterventiEstintoriCLASSE_FUOCO: TWideStringField;
+    qryInterventiEstintoriANNO_COSTRUZIONE: TSmallintField;
+    qryInterventiEstintoriMARCA: TWideStringField;
+    qryInterventiEstintoriCHIAVE: TIntegerField;
+    qryInterventiEstintoriSTATINO: TIntegerField;
+    qryInterventiEstintoriESTINTORE: TIntegerField;
+    qryInterventiEstintoriRESET_DATA_COLLAUDO: TWideStringField;
+    qryInterventiEstintoriRESET_DATA_REVISIONE: TWideStringField;
+    qryInterventiEstintoriDATA_CONTROLLO: TDateField;
+    qryInterventiEstintoriDATA_RITIRO: TDateField;
+    qryInterventiEstintoriDATA_SMALTIMENTO: TDateField;
+    qryInterventiEstintoriDATA_RESTITUZIONE: TDateField;
+    qryInterventiEstintoriDATA_CONSEGNA: TDateField;
+    qryInterventiEstintoriDATA_CONTROLLO_NEGATO: TDateField;
+    qryInterventiEstintoriDESCRIZIONE_ALTERNATIVA: TWideStringField;
+    dsInterventiEstintori: TUniDataSource;
+    qryInterventiEstintoriANOMALIA: TWideStringField;
+    qryInterventiEstintoriUBICAZIONE: TWideStringField;
+    qryEstintoriSintesi: TUniQuery;
+    dsEstintoriSintesi: TUniDataSource;
+    qryEstintoriSintesiDESCRIZIONE: TWideStringField;
+    qryEstintoriSintesiORDINARIO: TLargeintField;
+    qryEstintoriSintesiREVISIONE: TLargeintField;
+    qryEstintoriSintesiCOLLAUDO: TLargeintField;
+    qryEstintoriSintesiSOSTITUZIONE: TLargeintField;
+    qryEstintoriSintesiRICARICA: TLargeintField;
+    qryEstintoriSintesiRIPARAZIONE: TLargeintField;
+    dsSintesiReport: TUniDataSource;
+    qrySintesiReport: TUniQuery;
+    qrySintesiReportPOS: TIntegerField;
+    qrySintesiReportDESCRIZIONE: TWideStringField;
+    qrySintesiReportORDINARIO: TLargeintField;
+    qrySintesiReportREVISIONE: TLargeintField;
+    qrySintesiReportCOLLAUDO: TLargeintField;
+    qrySintesiReportSOSTITUZIONE: TLargeintField;
+    qrySintesiReportRICARICA: TLargeintField;
+    qrySintesiReportRIPARAZIONE: TLargeintField;
+    qrySintesiReportNON_ESEGUITE: TLargeintField;
+    qryInterventiImpianti: TUniQuery;
+    qryInterventiImpiantiDESCRIZIONE: TWideStringField;
+    qryInterventiImpiantiMODELLO: TWideStringField;
+    qryInterventiImpiantiUBICAZIONE: TBlobField;
+    qryInterventiImpiantiCHIAVE: TIntegerField;
+    qryInterventiImpiantiSTATINO: TIntegerField;
+    qryInterventiImpiantiELEMENTO_IMPIANTO_ELETTRICO: TIntegerField;
+    qryInterventiImpiantiANOMALIA: TBlobField;
+    qryInterventiImpiantiDATA_CONTROLLO: TDateField;
+    qryInterventiImpiantiTIPO: TWideStringField;
+    qryInterventiImpiantiDATA_CONSEGNA: TDateField;
+    qryInterventiImpiantiDESCRIZIONE_ALTERNATIVA: TWideStringField;
+    qryInterventiImpiantiDATA_CONTROLLO_NEGATO: TDateField;
+    qryInterventiImpiantiIMPIANTO: TIntegerField;
+    qryInterventiImpiantiPROGRESSIVO: TIntegerField;
+    qryInterventiImpiantiTIPO_EL: TIntegerField;
+    qryInterventiImpiantiMARCA: TIntegerField;
+    qryInterventiImpiantiRINNOVATO_DA: TIntegerField;
+    qryInterventiImpiantiANOMALIA_APPROVATA: TWideStringField;
+    qryInterventiImpiantiSTATO: TWideStringField;
+    qryInterventiImpiantiPREC_ANOMALIA: TBlobField;
+    qryInterventiImpiantiNOTE_TECNICO: TBlobField;
+    qryInterventiImpiantiID_NFC: TWideStringField;
+    dsInterventiImpianti: TUniDataSource;
+    qryStatiniIdrantiSTATINO: TIntegerField;
+    qryStatiniIdrantiRAGIONE_SOCIALE: TWideStringField;
+    qryStatiniIdrantiINDIRIZZO: TWideStringField;
+    qryStatiniIdrantiDATA_INTERVENTO: TDateField;
+    qryStatiniIdrantiJSON_DA_MOBILE: TWideMemoField;
+    qryInterventiIdranti: TUniQuery;
+    qryInterventiIdrantiID_BOCCHELLO: TIntegerField;
+    qryInterventiIdrantiUBICAZIONE: TWideStringField;
+    qryInterventiIdrantiDES_BOCCHELLO: TWideStringField;
+    qryInterventiIdrantiTIPO_LANCIA: TWideStringField;
+    qryInterventiIdrantiUBICAZIONE_IDRANTE: TBlobField;
+    qryInterventiIdrantiDESCRIZIONE_IDRANTE: TWideStringField;
+    qryInterventiIdrantiPROVA_DINAMICA: TIntegerField;
+    qryInterventiIdrantiTIPO_ATTACCO_MOTOPOMPA: TWideStringField;
+    qryInterventiIdrantiTIPO: TWideStringField;
+    qryInterventiIdrantiDESCRIZIONE_ALTERNATIVA: TWideStringField;
+    qryInterventiIdrantiRESET_DATA_COLLAUDO: TWideStringField;
+    qryInterventiIdrantiANOMALIA: TWideStringField;
+    qryInterventiIdrantiDATA_CONTROLLO: TDateField;
+    qryInterventiIdrantiDATA_RITIRO: TDateField;
+    qryInterventiIdrantiDATA_SMALTIMENTO: TDateField;
+    qryInterventiIdrantiDATA_RESTITUZIONE: TDateField;
+    qryInterventiIdrantiDATA_CONSEGNA: TDateField;
+    qryInterventiIdrantiDATA_PRESSATURA: TDateField;
+    qryInterventiIdrantiDATA_CONTROLLO_NEGATO: TDateField;
+    qryInterventiIdrantiIDRANTE: TIntegerField;
+    qryInterventiIdrantiTIPO_BOCCHELLO: TIntegerField;
+    qryInterventiIdrantiTIPO_LANCIA_1: TIntegerField;
+    qryInterventiIdrantiLUNGHEZZA_MANICHETTA: TIntegerField;
+    qryInterventiIdrantiMESE_STARTUP: TSmallintField;
+    qryInterventiIdrantiANNO_STARTUP: TSmallintField;
+    qryInterventiIdrantiANNO_MANICHETTA: TSmallintField;
+    qryInterventiIdrantiRINNOVATO_DA: TIntegerField;
+    qryInterventiIdrantiANOMALIA_APPROVATA: TWideStringField;
+    qryInterventiIdrantiANOMALIA_1: TWideMemoField;
+    qryInterventiIdrantiSTATO: TWideStringField;
+    qryInterventiIdrantiPREC_ANOMALIA: TBlobField;
+    qryInterventiIdrantiNOTE_TECNICO: TWideStringField;
+    qryInterventiIdrantiMESE_PRESSATURA: TSmallintField;
+    qryInterventiIdrantiANNO_PRESSATURA: TSmallintField;
+    qryInterventiIdrantiBOCCHELLO: TIntegerField;
+    qryInterventiIdrantiCHIAVE: TIntegerField;
+    qryInterventiIdrantiSTATINO: TIntegerField;
+    dsInterventiIdranti: TUniDataSource;
+    qryInterventiFumi: TUniQuery;
+    dsInterventiFumi: TUniDataSource;
+    qryInterventiFumiCHIAVE: TIntegerField;
+    qryInterventiFumiSTATINO: TIntegerField;
+    qryInterventiFumiUBICAZIONE: TBlobField;
+    qryInterventiFumiATTREZZATURA: TIntegerField;
+    qryInterventiFumiANOMALIA: TBlobField;
+    qryInterventiFumiTIPO: TWideStringField;
+    qryInterventiFumiDATA_CONTROLLO: TDateField;
+    qryInterventiFumiDATA_CONSEGNA: TDateField;
+    qryInterventiFumiPERIODI_NON_ORDINARI: TWideStringField;
+    qryInterventiFumiDATA_CONTROLLO_NEGATO: TDateField;
+    qryInterventiFumiFILIALE: TIntegerField;
+    qryInterventiFumiMARCA_CENTRALE: TIntegerField;
+    qryInterventiFumiTIPO_CENTRALE: TIntegerField;
+    qryInterventiFumiQUANTITA_BATTERIE: TIntegerField;
+    qryInterventiFumiTIPO_BATTERIE: TIntegerField;
+    qryInterventiFumiQUANTITA_RILEVATORI: TIntegerField;
+    qryInterventiFumiTIPO_RILEVATORI: TIntegerField;
+    qryInterventiFumiQUANTITA_RIL_LINEARI: TIntegerField;
+    qryInterventiFumiTIPO_RIL_LINEARI: TIntegerField;
+    qryInterventiFumiMARCA_RIL_LINEARI: TIntegerField;
+    qryInterventiFumiQUANTITA_PULSANTI: TIntegerField;
+    qryInterventiFumiQUANTITA_PANNELLI_OTT_ACUST: TIntegerField;
+    qryInterventiFumiSTATO: TWideStringField;
+    qryInterventiFumiRINNOVATO_DA: TIntegerField;
+    qryInterventiFumiANOMALIA_APPROVATA: TWideStringField;
+    qryInterventiFumiANOMALIA_1: TBlobField;
+    qryInterventiFumiDESCRIZIONE: TWideStringField;
+    qryInterventiFumiPREC_ANOMALIA: TBlobField;
+    qryInterventiFumiNOTE_TECNICO: TBlobField;
+    qryInterventiFumiID_NFC: TWideStringField;
+    qryInterventiLuciORARIO_CONTROLLO: TTimeField;
+    qryInterventiLuciCONTROLLATO: TWideStringField;
+    qryInterventiLuciANOMALIA_ON_DOWNLOAD: TWideStringField;
+    qryInterventiLuciANOMALIA_RISOLTA: TWideStringField;
+    qryInterventiLuciTECNICO_CONTROLLO: TIntegerField;
+    qryInterventiGruppiORARIO_CONTROLLO: TTimeField;
+    qryInterventiGruppiCONTROLLATO: TWideStringField;
+    qryInterventiGruppiANOMALIA_ON_DOWNLOAD: TWideStringField;
+    qryInterventiGruppiANOMALIA_RISOLTA: TWideStringField;
+    qryInterventiGruppiTECNICO_CONTROLLO: TIntegerField;
+    qryInterventiPorteTIPO_ATTREZZATURA: TWideStringField;
+    qryInterventiPorteORARIO_CONTROLLO: TTimeField;
+    qryInterventiPorteCONTROLLATO: TWideStringField;
+    qryInterventiPorteANOMALIA_ON_DOWNLOAD: TWideStringField;
+    qryInterventiPorteANOMALIA_RISOLTA: TWideStringField;
+    qryInterventiPorteTECNICO_CONTROLLO: TIntegerField;
+    qryInterventiFumiTIPO_ATTREZZATURA: TWideStringField;
+    qryInterventiFumiORARIO_CONTROLLO: TTimeField;
+    qryInterventiFumiCONTROLLATO: TWideStringField;
+    qryInterventiFumiANOMALIA_ON_DOWNLOAD: TWideStringField;
+    qryInterventiFumiANOMALIA_RISOLTA: TWideStringField;
+    qryInterventiFumiTECNICO_CONTROLLO: TIntegerField;
+    qElenco: TUniQuery;
+    qElencoCHIAVE: TIntegerField;
+    qryInterventiIdrantiANOMALIAONDOWNLOAD: TWideStringField;
+    qryInterventiIdrantiANOMALIARISOLTA: TWideStringField;
+    qryInterventiIdrantiCONSEGNATO: TWideStringField;
+    qryInterventiIdrantiCONTROLLATO: TWideStringField;
+    qryInterventiIdrantiDATACONTROLLO: TDateField;
+    qryInterventiIdrantiDATAPRESSATURA: TDateField;
+    qryInterventiIdrantiDATARITIRO: TDateField;
+    qryInterventiIdrantiORARIOCONTROLLO: TWideStringField;
+    qryInterventiIdrantiORARIORITIRO: TWideStringField;
+    qryInterventiIdrantiPRESSATURAEFFETTUATA: TWideStringField;
+    qryInterventiIdrantiRITIRATO: TWideStringField;
+    qryInterventiIdrantiTECNICOCONTROLLO: TIntegerField;
+    qryInterventiIdrantiTECNICOPRESSATURA: TIntegerField;
+    qryInterventiIdrantiTECNICORITIRO: TIntegerField;
+    qrySintesiReportSTATINO: TIntegerField;
+    qrySintesiReportCONTROLLI: TLargeintField;
+    qrySintesiReportPRESSATURA: TLargeintField;
+    qrySintesiReportNUOVI: TLargeintField;
+    qryInterventiEstintoriTIPO: TWideStringField;
+    qryInterventiEstintoriANOMALIA_APPROVATA: TWideStringField;
+    qryInterventiEstintoriAGGIUNTODAMOBILE: TWideStringField;
+    qryInterventiEstintoriANOMALIAONDOWNLOAD: TWideStringField;
+    qryInterventiEstintoriANOMALIARISOLTA: TWideStringField;
+    qryInterventiEstintoriCONSEGNATO: TWideStringField;
+    qryInterventiEstintoriCONTROLLATO: TWideStringField;
+    qryInterventiEstintoriDATA_LAVORAZIONE: TDateField;
+    qryInterventiEstintoriMOTIVOCONTROLLONEGATO: TWideStringField;
+    qryInterventiEstintoriMOTIVORITIRO: TWideStringField;
+    qryInterventiEstintoriNONCONTROLLATO: TWideStringField;
+    qryInterventiEstintoriORARIOCONSEGNA: TWideStringField;
+    qryInterventiEstintoriORARIOCONTROLLO: TWideStringField;
+    qryInterventiEstintoriORARIOCONTROLLONEGATO: TWideStringField;
+    qryInterventiEstintoriORARIORITIRO: TWideStringField;
+    qryInterventiEstintoriORARIOSMALTIMENTO: TWideStringField;
+    qryInterventiEstintoriPERIODICITA_COLLAUDO: TIntegerField;
+    qryInterventiEstintoriPERIODICITA_REVISIONE: TIntegerField;
+    qryInterventiEstintoriRESTITUITO: TWideStringField;
+    qryInterventiEstintoriRITIRATO: TWideStringField;
+    qryInterventiEstintoriSMALTITO: TWideStringField;
+    qryInterventiEstintoriTIPO_ESTINTORE: TIntegerField;
+    qryInterventiEstintoriTIPO_INTERVENTO: TWideStringField;
+    qryInterventiEstintoriTECNICOCONSEGNA: TIntegerField;
+    qryInterventiEstintoriTECNICOCONTROLLO: TIntegerField;
+    qryInterventiEstintoriTECNICOCONTROLLONEGATO: TIntegerField;
+    qryInterventiEstintoriTECNICORESTITUZIONE: TIntegerField;
+    qryInterventiEstintoriTECNICORITIRO: TIntegerField;
+    qryInterventiEstintoriTECNICOSMALTIMENTO: TIntegerField;
+    qryInterventiEstintoriANNO_COSTRUZIONE_1: TWideStringField;
+    qryInterventiEstintoriMARCA_1: TIntegerField;
+    qryInterventiEstintoriMATRICOLA_1: TWideStringField;
+    qryInterventiEstintoriPROGRESSIVO_1: TIntegerField;
+    qElencoAMMINISTRATORE: TWideStringField;
+    qElencoCONTRATTO: TWideStringField;
+    qElencoLOCAZIONE: TWideStringField;
+    qElencoNOME_TECNICO: TWideStringField;
+    qElencoINDIRIZZO_FILIALE: TWideStringField;
+    qElencoCLIENTE: TIntegerField;
+    qElencoFILIALE: TIntegerField;
+    qElencoTITOLO: TWideStringField;
+    qElencoRAGIONE_SOCIALE: TWideStringField;
+    qElencoINDIRIZZO: TWideStringField;
+    qElencoCOMUNE: TWideStringField;
+    qElencoPROVINCIA: TWideStringField;
+    qElencoCAP: TWideStringField;
+    qElencoTELEFONO: TWideStringField;
+    qElencoCELLULARE: TWideStringField;
+    qElencoNOTE: TBlobField;
+    qElencoORARIO_APERTURA_DAL1: TTimeField;
+    qElencoORARIO_APERTURA_DAL2: TTimeField;
+    qElencoORARIO_APERTURA_AL1: TTimeField;
+    qElencoORARIO_APERTURA_AL2: TTimeField;
+    qElencoCHIUSURA: TWideStringField;
+    qElencoFATTURA: TIntegerField;
+    qElencoDATA_INTERVENTO: TDateField;
+    qElencoGENERAZIONE_AUTOMATICA: TIntegerField;
+    qElencoTECNICO_INTERVENTO: TIntegerField;
+    qElencoSCANSIONE: TBlobField;
+    qElencoREGISTRO: TBlobField;
+    qElencoNOTE_PER_IL_TECNICO: TBlobField;
+    qElencoSOSPESO: TWideStringField;
+    qElencoDA_ESPORTARE_SUL_WEB: TWideStringField;
+    qElencoRESPONSABILE: TIntegerField;
+    qElencoESPORTATO_SU_MOBILE: TWideStringField;
+    qElencoNOTE_DAL_TECNICO: TBlobField;
+    qElencoJSON_DA_MOBILE: TBlobField;
+    qElencoPDF_STATINO: TBlobField;
+    qElencoREGISTRO_IS_PDF: TWideStringField;
+    qElencoVERBALE_PROVA_DINAMICA: TBlobField;
+    qElencoVERBALE_MANICHETTE: TBlobField;
+    qElencoPREVENTIVO: TIntegerField;
+    qElencoIGNORA_EVIDENZIAZIONE: TWideStringField;
+    qElencoANNULLATO_DA_TABLET: TWideStringField;
+    qElencoMOBILEWARN_NUOVA_ATTREZZATURA: TWideStringField;
+    qElencoMOBILEWARN_ORDINARIA_RITIRATA: TWideStringField;
+    qElencoMOBILEWARN_N_ORDIN_CONTROLLATA: TWideStringField;
+    qElencoMOBILEWARN_SMALTIMENTO: TWideStringField;
+    qElencoSTATO_LAVORAZIONE: TWideStringField;
+    qElencoDATA_CHIUSURA_DA_SERVER: TDateField;
+    qElencoCHIUSURA_EXT: TWideStringField;
+    qElencoCHIUSURA_STATINO: TBlobField;
+    qElencoMOBILEWARN_NON_ESEGUITI: TWideStringField;
+    qElencoPRESA_IN_CARICO: TWideStringField;
+    qElencoFORNITURA: TWideStringField;
+    qElencoAPPUNTAMENTO_DATA: TDateField;
+    qElencoAPPUNTAMENTO_ORA: TTimeField;
+    qElencoSTATO: TSmallintField;
+    qElencoJGUID: TBytesField;
+    qElencoGCAL: TWideStringField;
+    qElencoWANUMBER: TWideStringField;
+    qElencoWA: TWideStringField;
+    qElencoSTATO_IMMAGINE: TBlobField;
+    qElencoWA_ID: TWideStringField;
+    qElencoWA_IMAGE: TBlobField;
+    qElencoWA_STATE: TSmallintField;
+    qElencoMESE_INTERVENTO: TSmallintField;
+    qElencoNOME_MESE: TWideStringField;
+    qElencoSTATINO: TIntegerField;
   private
     FJsonPretty: string;
     FOriginal: string;
@@ -114,10 +790,26 @@ type
     procedure SetFoundReplace(const Value: string);
     procedure SetJsonFinal(const Value: string);
     procedure SetJsonCompatible(const Value: string);
+    function BoolToStr(const aBoolean: boolean): string;
     { Private declarations }
   public
     { Public declarations }
+    procedure OpenSintesiReport(const aDataset: TDataset);
+    procedure ApriTuttiIUniQuery;
     procedure ElaborateJson(const aStatino: integer);
+    procedure UpdateFromClass(const aClass: TStatino);
+    procedure UpdateLuci(const aClass: TStatino);
+    procedure UpdateGruppi(const aClass: TStatino);
+    procedure UpdatePorte(const aClass: TStatino);
+    procedure UpdateFumi(const aClass: TStatino);
+    procedure UpdateIdranti(const aClass: TStatino);
+    procedure UpdateEstintori(const aClass: TStatino);
+    procedure UpdateAllLuci;
+    procedure UpdateAllGruppi;
+    procedure UpdateAllPorte;
+    procedure UpdateAllFumi;
+    procedure UpdateAllIdranti;
+    procedure UpdateAllEstintori;
     property JsonPretty: string read FJsonPretty write SetJsonPretty;
     property Original: string read FOriginal write SetOriginal;
     property TestBack: string read FTestBack write SetTestBack;
@@ -131,11 +823,36 @@ var
 
 implementation
 
-uses Phoenix.Json.Statini, Janua.Core.Json, System.StrUtils;
+uses System.StrUtils, Janua.Core.Functions, Janua.Core.JSON;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
 { TdmFbPhoenixJsonReport }
+
+procedure TdmFbPhoenixJsonReport.ApriTuttiIUniQuery;
+var
+  i: integer;
+  Componente: TComponent;
+begin
+  // Loop attraverso tutti i componenti del DataModule
+  for i := 0 to ComponentCount - 1 do
+  begin
+    Componente := Components[i];
+
+    // Controlla se il componente è di tipo TUniQuery
+    if Componente is TUniQuery then
+    begin
+      // Cast del componente a TUniQuery e aprilo
+      TUniQuery(Componente).Open;
+    end;
+  end;
+
+end;
+
+function TdmFbPhoenixJsonReport.BoolToStr(const aBoolean: boolean): string;
+begin
+  Result := IfThen(aBoolean, 'T', 'F');
+end;
 
 procedure TdmFbPhoenixJsonReport.ElaborateJson(const aStatino: integer);
 var
@@ -155,9 +872,9 @@ begin
 
   var
   lJson := qryStatiniJSON_DA_MOBILE.AsString;
-  FOriginal := Janua.Core.Json.JsonPretty(lJson);
+  FOriginal := Janua.Core.JSON.JsonPretty(lJson);
   lJson := ReplacePhoenixJson(lJson);
-  FJsonPretty := Janua.Core.Json.JsonPretty(lJson);
+  FJsonPretty := Janua.Core.JSON.JsonPretty(lJson);
 
   FFoundReplace := GlobalParams;
 
@@ -494,10 +1211,22 @@ begin
     end;
 
   FJsonFinal := lStatino.AsJson;
-  FJsonFinal := Janua.Core.Json.JsonPretty(FJsonFinal);
+  FJsonFinal := Janua.Core.JSON.JsonPretty(FJsonFinal);
 
   FJsonCompatible := ReplaceJsonToPhoenix(FJsonFinal);
 
+end;
+
+procedure TdmFbPhoenixJsonReport.OpenSintesiReport(const aDataset: TDataset);
+begin
+  var
+  aField := aDataset.FindField('STATINO');
+  if Assigned(aField) and (qrySintesiReport.ParamByName('STATINO').AsInteger <> aField.AsInteger) then
+  begin
+    qrySintesiReport.Close;
+    qrySintesiReport.ParamByName('STATINO').AsInteger := aField.AsInteger;
+    qrySintesiReport.Open;
+  end;
 end;
 
 procedure TdmFbPhoenixJsonReport.SetFoundReplace(const Value: string);
@@ -528,6 +1257,301 @@ end;
 procedure TdmFbPhoenixJsonReport.SetTestBack(const Value: string);
 begin
   FTestBack := Value;
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateAllEstintori;
+begin
+  if not qryStatiniEstintori.Active then
+    qryStatiniEstintori.Open;
+
+  qryStatiniEstintori.First;
+  dsStatiniEstintori.Enabled := False;
+  dsInterventiEstintori.Enabled := False;
+  While not qryStatiniEstintori.Eof do
+  begin
+    var
+    lStatino := TStatino.Create;
+    var
+    lJson := ReplacePhoenixJson(qryStatiniEstintoriJSON_DA_MOBILE.AsString);
+    try
+      lStatino.AsJson := lJson;
+      qryInterventiEstintori.Close;
+      self.qryInterventiEstintori.Params[0].AsInteger := qryStatiniEstintoriSTATINO.AsInteger;
+      qryInterventiEstintori.Open;
+      UpdateEstintori(lStatino);
+      lStatino.Free;
+    except
+      on e: exception do
+      begin
+        lStatino.Free;
+      end;
+      // per ora non fa nulla
+    end;
+    qryStatiniEstintori.Next;
+  end;
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateAllFumi;
+begin
+  qryStatiniFumo.First;
+  While not qryStatiniFumo.Eof do
+  begin
+    var
+    lStatino := TStatino.Create;
+    var
+    lJson := ReplacePhoenixJson(qryStatiniFumoJSON_DA_MOBILE.AsString);
+    try
+      lStatino.AsJson := lJson;
+      UpdateFumi(lStatino);
+    except
+      on e: exception do
+      begin
+
+      end;
+      // per ora non fa nulla
+    end;
+    qryStatiniFumo.Next;
+  end;
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateAllGruppi;
+begin
+  qryStatiniGruppi.First;
+  While not qryStatiniGruppi.Eof do
+  begin
+    var
+    lStatino := TStatino.Create;
+    var
+    lJson := ReplacePhoenixJson(qryStatiniGruppiJSON_DA_MOBILE.AsString);
+    try
+      lStatino.AsJson := lJson;
+      UpdateGruppi(lStatino);
+    except
+      on e: exception do
+      begin
+
+      end;
+      // per ora non fa nulla
+    end;
+    qryStatiniGruppi.Next;
+  end;
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateAllIdranti;
+begin
+
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateAllLuci;
+begin
+  qryStatiniLuci.First;
+  While not qryStatiniLuci.Eof do
+  begin
+    var
+    lStatino := TStatino.Create;
+    var
+    lJson := ReplacePhoenixJson(qryStatiniLuciJSON_DA_MOBILE.AsString);
+    try
+      lStatino.AsJson := lJson;
+      UpdateLuci(lStatino);
+    except
+      on e: exception do
+      begin
+
+      end;
+      // per ora non fa nulla
+    end;
+    qryStatiniLuci.Next;
+  end;
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateAllPorte;
+begin
+  qryStatiniPorte.First;
+  While not qryStatiniPorte.Eof do
+  begin
+    var
+    lStatino := TStatino.Create;
+    var
+    lJson := ReplacePhoenixJson(qryStatiniPorteJSON_DA_MOBILE.AsString);
+    try
+      lStatino.AsJson := lJson;
+      UpdatePorte(lStatino);
+    except
+      on e: exception do
+      begin
+
+      end;
+      // per ora non fa nulla
+    end;
+    qryStatiniPorte.Next;
+  end;
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateEstintori(const aClass: TStatino);
+var
+  lEstintori: TEstintori;
+begin
+  if aClass.Estintori.Count > 0 then
+    for lEstintori in aClass.Estintori do
+      if qryInterventiEstintori.Locate('ESTINTORE', lEstintori.Chiave, []) then
+      begin
+        try
+          qryInterventiEstintori.Edit;
+          qryInterventiEstintoriANOMALIA_APPROVATA.Value := BoolToStr(lEstintori.ANOMALIAAPPROVATA);
+          qryInterventiEstintoriAGGIUNTODAMOBILE.Value := BoolToStr(lEstintori.AggiuntoDaMobile);
+          qryInterventiEstintoriANOMALIAONDOWNLOAD.Value := lEstintori.AnomaliaOnDownload;
+          qryInterventiEstintoriANOMALIARISOLTA.Value := BoolToStr(lEstintori.AnomaliaRisolta);
+          qryInterventiEstintoriCONSEGNATO.Value := BoolToStr(lEstintori.Consegnato);
+          qryInterventiEstintoriCONTROLLATO.Value := BoolToStr(lEstintori.Controllato);
+          qryInterventiEstintoriDATA_LAVORAZIONE.Value := lEstintori.DATALAVORAZIONE;
+          qryInterventiEstintoriMOTIVOCONTROLLONEGATO.Value := lEstintori.MotivoControlloNegato;
+          qryInterventiEstintoriMOTIVORITIRO.Value := lEstintori.MotivoRitiro;
+          qryInterventiEstintoriNONCONTROLLATO.Value := BoolToStr(lEstintori.NonControllato);
+          qryInterventiEstintoriORARIOCONSEGNA.Value := lEstintori.OrarioConsegna;
+          qryInterventiEstintoriORARIOCONTROLLO.Value := lEstintori.OrarioControllo;
+          qryInterventiEstintoriORARIOCONTROLLONEGATO.Value := lEstintori.OrarioControlloNegato;
+          qryInterventiEstintoriORARIORITIRO.Value := lEstintori.OrarioRitiro;
+          qryInterventiEstintoriORARIOSMALTIMENTO.Value := lEstintori.OrarioSmaltimento;
+          qryInterventiEstintoriPERIODICITA_COLLAUDO.Value := lEstintori.PERIODICITACOLLAUDO;
+          qryInterventiEstintoriPERIODICITA_REVISIONE.Value := lEstintori.PERIODICITAREVISIONE;
+          qryInterventiEstintoriRESTITUITO.Value := BoolToStr(lEstintori.Restituito);
+          qryInterventiEstintoriRITIRATO.Value := BoolToStr(lEstintori.Ritirato);
+          qryInterventiEstintoriSMALTITO.Value := BoolToStr(lEstintori.Smaltito);
+          qryInterventiEstintoriTIPO_ESTINTORE.Value := lEstintori.TIPOESTINTORE;
+          qryInterventiEstintoriTIPO_INTERVENTO.Value := lEstintori.TIPOINTERVENTO;
+          qryInterventiEstintoriTECNICOCONSEGNA.Value := lEstintori.TecnicoConsegna;
+          qryInterventiEstintoriTECNICOCONTROLLO.Value := lEstintori.TecnicoControllo;
+          qryInterventiEstintoriTECNICOCONTROLLONEGATO.Value := lEstintori.TecnicoControlloNegato;
+          qryInterventiEstintoriTECNICORESTITUZIONE.Value := lEstintori.TecnicoRestituzione;
+          qryInterventiEstintoriTECNICORITIRO.Value := lEstintori.TecnicoRitiro;
+          qryInterventiEstintoriTECNICOSMALTIMENTO.Value := lEstintori.TecnicoSmaltimento;
+          qryInterventiEstintoriANNO_COSTRUZIONE_1.Value := lEstintori.ANNOCOSTRUZIONE;
+          qryInterventiEstintoriMARCA_1.Value := lEstintori.MARCA;
+          qryInterventiEstintoriMATRICOLA_1.Value := lEstintori.MATRICOLA;
+          qryInterventiEstintoriPROGRESSIVO_1.Value := lEstintori.PROGRESSIVO;
+          qryInterventiEstintori.Post;
+        except
+          on e: exception do
+            qryInterventiEstintori.Cancel;
+        end;
+      end;
+
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateFromClass(const aClass: TStatino);
+begin
+  UpdateLuci(aClass);
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateFumi(const aClass: TStatino);
+var
+  lFumi: TRilevatoriFumo;
+begin
+  if aClass.RilevatoriFumo.Count > 0 then
+    for lFumi in aClass.RilevatoriFumo do
+      if qryInterventiFumi.Locate('ATTREZZATURA', lFumi.Chiave, []) then
+      begin
+        try
+          qryInterventiFumi.Edit;
+          qryInterventiFumiCONTROLLATO.AsString := BoolToStr(lFumi.Controllato);
+          qryInterventiFumiANOMALIA_ON_DOWNLOAD.AsString := lFumi.AnomaliaOnDownload;
+          qryInterventiFumiANOMALIA_RISOLTA.AsString := BoolToStr(lFumi.AnomaliaRisolta);
+          qryInterventiFumiTECNICO_CONTROLLO.AsInteger := lFumi.TecnicoControllo;
+          qryInterventiFumi.Post;
+        except
+          on e: exception do
+            qryInterventiFumi.Cancel;
+        end;
+      end;
+
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateGruppi(const aClass: TStatino);
+var
+  lGruppi: TGruppiPressurizzazione;
+begin
+  if aClass.GruppiPressurizzazione.Count > 0 then
+    for lGruppi in aClass.GruppiPressurizzazione do
+      if qryInterventiGruppi.Locate('ATTREZZATURA', lGruppi.Chiave, []) then
+      begin
+        try
+          qryInterventiGruppi.Edit;
+          qryInterventiGruppiCONTROLLATO.AsString := BoolToStr(lGruppi.Controllato);
+          qryInterventiGruppiANOMALIA_ON_DOWNLOAD.AsString := lGruppi.AnomaliaOnDownload;
+          qryInterventiGruppiANOMALIA_RISOLTA.AsString := BoolToStr(lGruppi.AnomaliaRisolta);
+          qryInterventiGruppiTECNICO_CONTROLLO.AsInteger := lGruppi.TecnicoControllo;
+          qryInterventiGruppi.Post;
+        except
+          on e: exception do
+            qryInterventiGruppi.Cancel;
+        end;
+      end;
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateIdranti(const aClass: TStatino);
+var
+  lBocc: TBocchelli;
+  lId: TIdranti;
+begin
+  if aClass.Idranti.Count > 0 then
+    for lId in aClass.Idranti do
+      if qryInterventiLuci.Locate('ATTREZZATURA', lBocc.Chiave, []) then
+      begin
+        try
+          qryInterventiLuci.Edit;
+
+          qryInterventiLuci.Post;
+        except
+          on e: exception do
+            qryInterventiLuci.Cancel;
+        end;
+      end;
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdateLuci(const aClass: TStatino);
+var
+  lLuci: TLuci;
+begin
+  if aClass.Luci.Count > 0 then
+    for lLuci in aClass.Luci do
+      if qryInterventiLuci.Locate('ATTREZZATURA', lLuci.Chiave, []) then
+      begin
+        try
+          qryInterventiLuci.Edit;
+          qryInterventiLuciCONTROLLATO.AsString := BoolToStr(lLuci.Controllato);
+          qryInterventiLuciANOMALIA_ON_DOWNLOAD.AsString := lLuci.AnomaliaOnDownload;
+          qryInterventiLuciANOMALIA_RISOLTA.AsString := BoolToStr(lLuci.AnomaliaRisolta);
+          qryInterventiLuciTECNICO_CONTROLLO.AsInteger := lLuci.TecnicoControllo;
+          qryInterventiLuci.Post;
+        except
+          on e: exception do
+            qryInterventiLuci.Cancel;
+        end;
+      end;
+end;
+
+procedure TdmFbPhoenixJsonReport.UpdatePorte(const aClass: TStatino);
+var
+  lPorte: TPorte;
+begin
+  if aClass.Porte.Count > 0 then
+    for lPorte in aClass.Porte do
+      if qryInterventiPorte.Locate('ATTREZZATURA', lPorte.Chiave, []) then
+      begin
+        try
+          qryInterventiPorte.Edit;
+          qryInterventiPorteCONTROLLATO.AsString := BoolToStr(lPorte.Controllato);
+          qryInterventiPorteANOMALIA_ON_DOWNLOAD.AsString := lPorte.AnomaliaOnDownload;
+          qryInterventiPorteANOMALIA_RISOLTA.AsString := BoolToStr(lPorte.AnomaliaRisolta);
+          qryInterventiPorteTECNICO_CONTROLLO.AsInteger := lPorte.TecnicoControllo;
+          qryInterventiPorte.Post;
+        except
+          on e: exception do
+            qryInterventiPorte.Cancel;
+        end;
+      end;
+
 end;
 
 end.

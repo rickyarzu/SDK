@@ -147,6 +147,7 @@ type
     sqlUpdateRitirati: TFDCommand;
     spSetStatoStatini: TFDStoredProc;
     sqlDataStatini: TFDCommand;
+    tbLabEstintoriMOTIVO_RITIRO: TStringField;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
   private
@@ -389,6 +390,14 @@ begin
       // TecnicoRitiro
       JsonValue(lSpecifica, 'TecnicoRitiro', lInt);
       tbLabEstintoriTECNIOO_RITIRO.AsInteger := lInt;
+
+      // MotivoRitiro
+      JsonValue(lSpecifica, 'MotivoRitiro', lStr);
+      if lStr <> '' then
+      begin
+        tbLabEstintoriMOTIVO_RITIRO.AsString := lStr;
+      end;
+
       // Consegnato
       JsonValue(lSpecifica, 'Consegnato', lBool);
       tbLabEstintoriCONSEGNATO.AsBoolean := lBool;
@@ -604,6 +613,9 @@ begin
         // TecnicoRitiro
         JsonValue(lSpecifica, 'TecnicoRitiro', lStr);
         tbLabErroriTECNIOO_RITIRO.AsString := lStr;
+        // MotivoRitiro
+        JsonValue(lSpecifica, 'MotivoRitiro', lStr);
+
         // Consegnato
         JsonValue(lSpecifica, 'Consegnato', lStr);
         tbLabErroriCONSEGNATO.AsString := lStr;

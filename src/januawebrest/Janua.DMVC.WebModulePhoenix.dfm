@@ -1,7 +1,7 @@
-object PhoenixWebModule: TPhoenixWebModule
+object h: Th
   OnCreate = WebModuleCreate
   OnDestroy = WebModuleDestroy
   Actions = <>
-  Height = 230
-  Width = 415
+  Height = 470
+  Width = 626
 end

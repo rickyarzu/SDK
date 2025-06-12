@@ -21,7 +21,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     Top = 0
     Width = 1448
     Height = 1001
-    ActivePage = tabGoogleCalendarReport
+    ActivePage = tabTicketsList
     Align = alClient
     TabOrder = 0
     object tabTicketsList: TTabSheet
@@ -774,9 +774,42 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
               Top = 2
               ExplicitTop = 2
             end
+            inherited dsCustomers: TUniDataSource
+              Left = 48
+              Top = 208
+            end
+            inherited dsTechnicians: TUniDataSource
+              Left = 48
+              Top = 272
+            end
+            inherited dsCAP: TUniDataSource
+              Left = 120
+              Top = 232
+            end
+            inherited Timer1: TTimer
+              Left = 424
+              Top = 256
+            end
+            inherited PopupItems: TPopupMenu
+              Left = 320
+              Top = 443
+            end
+            inherited TimerEventUpdate: TTimer
+              Left = 320
+              Top = 224
+            end
             inherited WATimer: TTimer
               Interval = 60000
               OnTimer = frameVCLPhoenixPlanneReportWATimerTimer
+              Left = 320
+              Top = 368
+            end
+            inherited PictureContainer1: TPictureContainer
+              Left = 131
+              Top = 553
+            end
+            inherited imgListStatus: TImageList
+              Top = 297
             end
           end
         end
@@ -895,6 +928,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
               inherited TMSFNCChat1: TTMSFNCChat
                 Width = 400
                 Height = 817
+                DoubleBuffered = True
                 ExplicitWidth = 400
                 ExplicitHeight = 817
               end
@@ -946,7 +980,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
           TabBackGroundColor = clBtnFace
           TabMargin.RightMargin = 0
           TabOverlap = 0
-          Version = '2.1.0.0'
+          Version = '2.0.5.0'
           PersistPagesState.Location = plRegistry
           PersistPagesState.Enabled = False
           TabOrder = 1
@@ -1158,6 +1192,7 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
               inherited btnSearch: TBitBtn
                 Left = 667
                 Top = 890
+                DoubleBuffered = True
                 ImageIndex = 16
                 ImageName = '017-clock'
                 ExplicitLeft = 667
@@ -1377,22 +1412,22 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
   end
   object dsTechnicians: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryTech
-    Left = 192
-    Top = 440
+    Left = 128
+    Top = 360
   end
   object dsCustomers: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryCustomers
-    Left = 88
-    Top = 472
+    Left = 56
+    Top = 400
   end
   object dsCAP: TUniDataSource
     DataSet = dmVCLPhoenixPlannerController.qryCAP
-    Left = 192
-    Top = 520
+    Left = 128
+    Top = 432
   end
   object PopupMenu1: TPopupMenu
-    Left = 504
-    Top = 408
+    Left = 424
+    Top = 456
     object Modifica1: TMenuItem
       Action = dmVCLPhoenixPlannerController.actNewMeeting
     end
@@ -1418,12 +1453,12 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     end
   end
   object ColorDialog1: TColorDialog
-    Left = 880
-    Top = 312
+    Left = 1128
+    Top = 336
   end
   object ItemPopup: TPopupMenu
-    Left = 744
-    Top = 312
+    Left = 1024
+    Top = 240
     object Color1: TMenuItem
       Caption = '++'
     end
@@ -1435,8 +1470,8 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
     end
   end
   object ImageList1: TImageList
-    Left = 808
-    Top = 280
+    Left = 1024
+    Top = 304
     Bitmap = {
       494C010105000900040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
@@ -1711,30 +1746,30 @@ object frmPhoenixVCLReportPlanner: TfrmPhoenixVCLReportPlanner
   end
   object dsDayCalendar: TDataSource
     DataSet = dmVCLPhoenixPlannerController.qryPlannerEvents
-    Left = 752
-    Top = 216
+    Left = 944
+    Top = 264
   end
   object dsTech: TDataSource
     DataSet = dmVCLPhoenixPlannerController.qryPlannerEvents
-    Left = 664
-    Top = 256
+    Left = 952
+    Top = 400
   end
   object dsTechCalendar: TDataSource
     DataSet = dmVCLPhoenixPlannerController.qryTechPlanned
-    Left = 743
-    Top = 382
+    Left = 943
+    Top = 334
   end
   object Timer1: TTimer
     Enabled = False
     Interval = 2000
     OnTimer = Timer1Timer
-    Left = 908
-    Top = 154
+    Left = 1132
+    Top = 266
   end
   object Timer2: TTimer
     Interval = 600000
     OnTimer = Timer2Timer
-    Left = 380
-    Top = 450
+    Left = 428
+    Top = 386
   end
 end

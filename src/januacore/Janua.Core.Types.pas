@@ -22,7 +22,8 @@ const
   cInvalidDate = cNullDate + 1;
 
 type
-  TJanuaShape = (jsCircle, jsEllipse, jsSquare, jsRectangle, jsStar, jsPentagon, jsHexagon, jsDiamond);
+  TJanuaShape = (jsCircle, jsEllipse, jsSquare, jsRectangle, jsStar, jsPentagon, jsHexagon, jsDiamond,
+    jsDrawing);
 
   TJanuaPoint = record
     X: Single;
@@ -45,8 +46,10 @@ type
   public
     Points: Tarray<TJanuaPoint>;
     property Count: Integer read GetCount;
+    // <summary> All the points that make up the drawing </summary>
     property Items[Index: Integer]: TJanuaPoint read GetItem write SetItem; default;
     property Notes: string read FNotes write SetNotes;
+    // <summary> Default 'Radius' for circles and ellipses </summary>
     property Radius: Single read FRadius write SetRadius;
     property Shape: TJanuaShape read FShape write SetShape;
   public
@@ -90,8 +93,12 @@ type
     procedure AddDraw(aDraw: TJanuaDraw);
     /// <summary> Deletes the last inserted Draw  </summary>
     procedure DelDraw;
-    /// <summary> Serialize the record to a json object  </summary>
+    /// <summary> Serialize the record to a json string  </summary>
     function Serialize: string;
+    /// <summary> Serialize the record to a TJsonobject  </summary>
+    function SerializeJsonO: TJsonObject;
+    /// <summary> Serialize the record from a TJsonobject and eventualli frees it </summary>
+    procedure DeSerializeJsonO(const aObject: TJsonObject; const aFree: boolean = True);
     /// <summary> Deserialize the record to a json object  </summary>
     procedure DeSerialize(const aJson: string);
   end;
@@ -167,15 +174,15 @@ type
 
   TJanuaArray<T> = record
   strict private
-    function GetHasValues: Boolean;
+    function GetHasValues: boolean;
     function GetCount: Integer;
     function GetItems(Index: Integer): T;
     procedure SetItems(Index: Integer; Value: T);
   public
     FArray: Tarray<T>;
-    property ItemArray[Index: Integer]: T read GetItems { write SetItems }; default;
+    property ItemArray[Index: Integer]: T read GetItems  write SetItems; default;
     property Count: Integer read GetCount;
-    property HasValues: Boolean read GetHasValues;
+    property HasValues: boolean read GetHasValues;
     property Items: Tarray<T> read FArray;
     function Inc: Integer;
     procedure Clear;
@@ -247,10 +254,10 @@ type
     TBaseMesure = {$IFDEF LINUX} TTimeSpec; {$ELSE} Int64; {$ENDIF LINUX}
   strict private
     class var FFrequency: Int64;
-    class var FIsHighResolution: Boolean;
+    class var FIsHighResolution: boolean;
   strict private
     FElapsed: Int64;
-    FRunning: Boolean;
+    FRunning: boolean;
     FStartPosition: TBaseMesure;
   strict private
     procedure CheckInitialization(); inline;
@@ -260,13 +267,13 @@ type
     class function Create(): TStopWatch; static;
     class function StartNew(): TStopWatch; static;
     class property Frequency: Int64 read FFrequency;
-    class property IsHighResolution: Boolean read FIsHighResolution;
+    class property IsHighResolution: boolean read FIsHighResolution;
     procedure Reset();
     procedure Start();
     procedure Stop();
     property ElapsedMilliseconds: Int64 read GetElapsedMilliseconds;
     property ElapsedTicks: Int64 read GetElapsedTicks;
-    property IsRunning: Boolean read FRunning;
+    property IsRunning: boolean read FRunning;
   end;
 
 resourcestring
@@ -290,7 +297,7 @@ type
     /// <summary> Appends an array of Variants converted to SQL Strings uses format Pascal function </summary>
     function AppendVars(aSQL: string; const aVars: array of variant): IStringBuilder;
     /// <summary> Compatible with Original TStringBuilder function </summary>
-    function Append(const Value: Boolean): IStringBuilder; overload;
+    function Append(const Value: boolean): IStringBuilder; overload;
     function Append(const Value: Byte): IStringBuilder; overload;
     function Append(const Value: Char): IStringBuilder; overload;
     function Append(const Value: Currency): IStringBuilder; overload;
@@ -330,7 +337,7 @@ type
     function Text: string;
     function AppendSQL(aSQL: string): IStringBuilder;
     function AppendVars(aSQL: string; const aVars: array of variant): IStringBuilder;
-    function Append(const Value: Boolean): IStringBuilder; overload;
+    function Append(const Value: boolean): IStringBuilder; overload;
     function Append(const Value: Byte): IStringBuilder; overload;
     function Append(const Value: Char): IStringBuilder; overload;
     function Append(const Value: Currency): IStringBuilder; overload;
@@ -564,8 +571,8 @@ type
     /// </summary>
     class procedure RaiseArgumentNullException(const argumentName: string); overload; static;
   public
-    class procedure CheckTrue(condition: Boolean; const msg: string = ''); static; inline;
-    class procedure CheckFalse(condition: Boolean; const msg: string = ''); static; inline;
+    class procedure CheckTrue(condition: boolean; const msg: string = ''); static; inline;
+    class procedure CheckFalse(condition: boolean; const msg: string = ''); static; inline;
     class procedure CheckNotNull(const aObjectValue: TObject; const aObjectMessage: string);
   end;
 {$ENDIF}
@@ -597,7 +604,7 @@ type
   TJanuaBlob = record
   private
     FBlob: TBytes;
-    FIsUnicode: Boolean;
+    FIsUnicode: boolean;
     function GetAsBytes: TBytes;
     function GetEncoded64: string;
     procedure SetEncoded64(const Value: string);
@@ -605,8 +612,8 @@ type
     procedure Setup;
     function GetAsByteDynArray: TByteDynArray;
     procedure SetAsByteDynArray(const Value: TByteDynArray);
-    function GetAsBoolean: Boolean;
-    procedure SetAsBoolean(const Value: Boolean);
+    function GetAsBoolean: boolean;
+    procedure SetAsBoolean(const Value: boolean);
     function GetAsInteger: Integer;
     procedure SetAsInteger(const Value: Integer);
     function GetAsSmallint: Smallint;
@@ -616,7 +623,7 @@ type
   public
     Constructor Create(aFileName: string); overload;
     Constructor Create(aStream: TStream); overload;
-    Constructor Create(aIsUnicode: Boolean); overload;
+    Constructor Create(aIsUnicode: boolean); overload;
     procedure LoadFromStream(aStream: TStream);
     procedure SaveToStream(aStream: TStream);
     procedure LoadFromFile(aFile: string);
@@ -626,7 +633,7 @@ type
     procedure Assign(aBytes: TBytes); overload;
     function size: Int64;
     procedure SetNil;
-    function IsEqual(aBlob: TJanuaBlob): Boolean;
+    function IsEqual(aBlob: TJanuaBlob): boolean;
   public
     property Encoded64: string read GetEncoded64 write SetEncoded64;
     property AsInteger: Integer read GetAsInteger Write SetAsInteger;
@@ -634,7 +641,7 @@ type
     property AsLargeInt: Largeint read GetAsLargeint write SetAsLargeint;
     property AsBytes: TBytes read GetAsBytes write SetAsBytes;
     property AsByteDynArray: TByteDynArray read GetAsByteDynArray write SetAsByteDynArray;
-    property AsBoolean: Boolean read GetAsBoolean write SetAsBoolean;
+    property AsBoolean: boolean read GetAsBoolean write SetAsBoolean;
   end;
 
 type
@@ -815,14 +822,14 @@ type
   TLocalCoordinates = class
   strict private
     FCoordinates: TJanuaRecordCoordinates;
-    FIsUpdating: Boolean;
+    FIsUpdating: boolean;
     procedure SetCoordinates(const Value: TJanuaRecordCoordinates);
-    procedure SetIsUpdating(const Value: Boolean);
+    procedure SetIsUpdating(const Value: boolean);
   public
     constructor Create; overload;
   public
     property Coordinates: TJanuaRecordCoordinates read FCoordinates write SetCoordinates;
-    property IsUpdating: Boolean read FIsUpdating write SetIsUpdating;
+    property IsUpdating: boolean read FIsUpdating write SetIsUpdating;
   end;
 
   // Organizations sono le organizzazioni della sanità di solito organizzazioni
@@ -933,7 +940,7 @@ type
     Items: TLogArray;
     ItemIndex: Integer;
   private
-    FWatchStarted: Boolean;
+    FWatchStarted: boolean;
     sw: TStopWatch;
     FDefaultClass: TObject;
     FDefaultProcedure: string;
@@ -963,11 +970,11 @@ type
     /// <summary> Appends another log to the main log, should be used to trace 'local' object log </summary>
     procedure Append(aLog: TJanuaLogRecords);
   public
-    property WatchStarted: Boolean read FWatchStarted;
+    property WatchStarted: boolean read FWatchStarted;
     property DefaultClass: TObject read FDefaultClass write FDefaultClass;
     property DefaultProcedure: string read FDefaultProcedure write FDefaultProcedure;
   public
-    constructor Create(const aWatchStarted: Boolean);
+    constructor Create(const aWatchStarted: boolean);
   end;
 
   // Declare an event type. It looks allot like a normal method declaration except
@@ -987,9 +994,9 @@ type
     LinuxHome: string;
     Title: String;
     LastErrorMessage: string;
-    CustomServer: Boolean;
-    ResolveToFile: Boolean;
-    UseCurrentDir: Boolean;
+    CustomServer: boolean;
+    ResolveToFile: boolean;
+    UseCurrentDir: boolean;
     HomeDirectory: TJanuaOSHomeDir;
   public
     procedure Initialize;
@@ -999,6 +1006,12 @@ type
 type
   TJanuaServerRecordConf = record
   private
+    function GetAsJson: string;
+    function GetasJsonPretty: string;
+    function GetAsJsonObject: TJsonObject;
+    procedure SetasJson(const Value: string);
+    procedure SetasJsonObject(const Value: TJsonObject);
+    procedure setasJsonPretty(const Value: string);
     function GetEngineName: string;
     procedure SetEngineName(const Value: string);
   public
@@ -1007,21 +1020,23 @@ type
     Password: string;
     Port: Word;
     DatabaseName: string;
-    Direct: Boolean;
+    Direct: boolean;
     Address: string;
-    Success: Boolean;
+    Success: boolean;
     IP: string;
     TestMessage: string;
     DBEngine: TJanuaDBEngine;
-    Pooling: Boolean;
+    Pooling: boolean;
     ItemIndex: Integer;
+    Token: string;
   public
     procedure Initialize;
     constructor Create(const aAddress: string); overload;
+    constructor Create(const aObject: TJsonObject); overload;
     function Conf: String;
-    function TestAddress: Boolean;
+    function TestAddress: boolean;
     function GetConfiguration: string;
-    function Equals(aConf: TJanuaServerRecordConf): Boolean;
+    function Equals(aConf: TJanuaServerRecordConf): boolean;
     procedure LoadFromFile(aFileName: string);
     procedure SaveToFile(aFileName: string);
     procedure Assign(aConf: TJanuaServerRecordConf);
@@ -1029,11 +1044,14 @@ type
     constructor Create(aDBEngine: TJanuaDBEngine); overload;
   public
     property EngineName: string read GetEngineName write SetEngineName;
+    property AsJsonObject: TJsonObject read GetAsJsonObject write SetasJsonObject;
+    property AsJson: string read GetAsJson write SetasJson;
+    property asJsonPretty: string read GetasJsonPretty write setasJsonPretty;
   end;
 
 type
   TJanuaServerRecordConfs = record
-    Items: TDictionary<string, TJanuaServerRecordConf>;
+    Items: TDictionary<TJanuaDBEngine, TJanuaServerRecordConf>;
   private
     FasJsonObject: TJsonObject;
     function GetAsJson: string;
@@ -1047,15 +1065,15 @@ type
     constructor Create(aItem: TJanuaServerRecordConf); overload;
     function Count: Integer;
     procedure Add(aItem: TJanuaServerRecordConf); overload;
-    procedure Add(aName: string; aItem: TJanuaServerRecordConf); overload;
-    function find(aItem: TJanuaServerRecordConf): Boolean; overload;
-    function find(aName: string): Boolean; overload;
+    procedure Add(aEngine: TJanuaDBEngine; aItem: TJanuaServerRecordConf); overload;
+    function find(aItem: TJanuaServerRecordConf): boolean; overload;
+    function find(aEngine: TJanuaDBEngine): boolean; overload;
     procedure delete(aItem: TJanuaServerRecordConf); overload;
-    procedure delete(aName: string); overload;
+    procedure delete(aEngine: TJanuaDBEngine); overload;
     property AsJsonObject: TJsonObject read FasJsonObject write SetasJsonObject;
     property AsJson: string read GetAsJson write SetasJson;
     property asJsonPretty: string read GetasJsonPretty write setasJsonPretty;
-    function Equals(aConf: TJanuaServerRecordConfs): Boolean;
+    function Equals(aConf: TJanuaServerRecordConfs): boolean;
     function AsText: string;
   end;
 
@@ -1079,7 +1097,7 @@ type
     /// -- This column tell us if this schema is linked to a person as a
     /// personal schema to store owner's data, password, and profiles
     /// </summary>
-    personal: Boolean;
+    personal: boolean;
     db_schema_key: string;
     country_id: Shortint;
     language_id: Shortint;
@@ -1102,8 +1120,8 @@ type
     Social_Kind: string;
     UserSchemas: array of TJanuaRecordSchema;
     SelectedSchema: TJanuaRecordSchema;
-    isPublic: Boolean;
-    CustomServer: Boolean;
+    isPublic: boolean;
+    CustomServer: boolean;
     CustomServerUrl: string;
     CustomServerPort: string;
     CustomServerSchema: string;
@@ -1111,12 +1129,12 @@ type
     CustomServerUser: string;
   private
     procedure SetasJsonObject(aJsonObject: TJsonObject);
-    function getAsJsonObject: TJsonObject;
+    function GetAsJsonObject: TJsonObject;
     procedure SetKey(const Value: string);
     function GetAsJson: string;
   public
     property Key: string read FKey write SetKey;
-    property AsJsonObject: TJsonObject read getAsJsonObject write SetasJsonObject;
+    property AsJsonObject: TJsonObject read GetAsJsonObject write SetasJsonObject;
     property AsJson: string read GetAsJson;
   public
     function ToString: string;
@@ -1134,7 +1152,7 @@ type
     /// <returns>
     /// False means not found, True means it is now Set ....
     /// </returns>
-    function setSchemaByID(aID: Integer): Boolean;
+    function setSchemaByID(aID: Integer): boolean;
     function asJsonPretty: string;
   end;
 
@@ -1200,17 +1218,17 @@ type
   strict private
     class function TypeInfo: PTypeInfo; inline; static;
   public
-    class function IsSet: Boolean; static;
+    class function IsSet: boolean; static;
     class function Cardinality(const Value: T): Integer; static;
   end;
 
 type
   TEnumConvertor<T: record > = record
-    class function TryFromInteger(aOrdValue: Integer; var EnumValue: T): Boolean; static;
-    class function TryFromStringArray(S: string; const a: array of string; var EnumValue: T): Boolean; static;
+    class function TryFromInteger(aOrdValue: Integer; var EnumValue: T): boolean; static;
+    class function TryFromStringArray(S: string; const a: array of string; var EnumValue: T): boolean; static;
     /// <summary> tries to retrieve enumerator from a string array </summary>
     /// <example> if TEnumConvertor<TJanuaFieldType>.TryFromString(LSType, LType) then </example>
-    class function TryFromString(const Str: string; var EnumValue: T): Boolean; static;
+    class function TryFromString(const Str: string; var EnumValue: T): boolean; static;
     class function ToString(Value: T): string; static;
   end;
 
@@ -1397,7 +1415,7 @@ type
     ValueType: TJanuaConfType;
   private
     iValue: Integer;
-    bValue: Boolean;
+    bValue: boolean;
     lValue: Int64;
     dValue: Double;
     dtValue: TDate;
@@ -1407,7 +1425,7 @@ type
     FsValue: string;
     function GetAsInteger: Integer;
     function getAsString: string;
-    function getAsJsonObject: TJsonObject;
+    function GetAsJsonObject: TJsonObject;
     procedure SetAsInteger(const Value: Integer);
     procedure SetasJsonObject(const Value: TJsonObject);
     procedure setAsString(const Value: string);
@@ -1415,12 +1433,12 @@ type
   public
     property AsInteger: Integer read GetAsInteger write SetAsInteger;
     property AsString: string read getAsString write setAsString;
-    property AsJsonObject: TJsonObject read getAsJsonObject write SetasJsonObject;
+    property AsJsonObject: TJsonObject read GetAsJsonObject write SetasJsonObject;
     property sValue: string read FsValue write SetsValue;
   public
     procedure Clear;
     constructor Create; overload;
-    constructor Create(const aKey: string; aValue: Boolean); overload;
+    constructor Create(const aKey: string; aValue: boolean); overload;
     constructor Create(const aKey, aValue: string); overload;
     constructor Create(const aKey: string; aValue: Int64); overload;
     constructor Create(const aKey: string; aValue: Integer); overload;
@@ -1439,7 +1457,7 @@ type
   protected
     function GetItems: IDictionary<string, TJanuaConfValue>;
   private
-    function getAsJsonObject: TJsonObject;
+    function GetAsJsonObject: TJsonObject;
     procedure SetasJsonObject(const Value: TJsonObject);
   public
     property Items: IDictionary<string, TJanuaConfValue> read GetItems;
@@ -1451,7 +1469,7 @@ type
     procedure AddItem(const aKey: string; aValue: Integer); overload;
     procedure AddDate(const aKey: string; aValue: TDate); overload;
     procedure AddItem(const aKey: string; aValue: TDateTime); overload;
-    procedure AddItem(const aKey: string; aValue: Boolean); overload;
+    procedure AddItem(const aKey: string; aValue: boolean); overload;
     procedure AddItem(const aKey: string; aValue: TJsonObject); overload;
     procedure AddItem(const aKey: string; aValue: TJanuaServerRecordConfs); overload;
     procedure SetItem(const aKey, aValue: string); overload;
@@ -1459,7 +1477,7 @@ type
     procedure SetItem(const aKey: string; aValue: Integer); overload;
     procedure SetItem(const aKey: string; aValue: TDate); overload;
     procedure SetItem(const aKey: string; aValue: TDateTime); overload;
-    procedure SetItem(const aKey: string; aValue: Boolean); overload;
+    procedure SetItem(const aKey: string; aValue: boolean); overload;
     procedure SetItem(const aKey: string; aValue: TJsonObject); overload;
     procedure SetItem(const aKey: string; aValue: TJanuaServerRecordConfs); overload;
   public
@@ -1469,9 +1487,9 @@ type
     constructor Create(const aKey: string; aItem: TJanuaConfValue); overload;
     constructor Create(aJsonObject: TJsonObject); overload;
     destructor Destroy; override;
-    function FindValue(const aKey: string): Boolean;
+    function FindValue(const aKey: string): boolean;
   public
-    property AsJsonObject: TJsonObject read getAsJsonObject write SetasJsonObject;
+    property AsJsonObject: TJsonObject read GetAsJsonObject write SetasJsonObject;
   end;
 
 type
@@ -1483,7 +1501,7 @@ type
   public
     function AsJsonObject: TJsonObject;
     procedure LoadFromDataset(aDataset: TDataset);
-    function SaveToDataset(aDataset: TDataset): Boolean;
+    function SaveToDataset(aDataset: TDataset): boolean;
   end;
 
 type
@@ -1492,11 +1510,11 @@ type
     FKeys: IDictionary<string, TJanuaConfKey>;
     FileName: TFileName;
     LastErrorMessage: string;
-    HasErrors: Boolean;
-    FIsLoaded: Boolean;
+    HasErrors: boolean;
+    FIsLoaded: boolean;
   private
     function GetKeys: IDictionary<string, TJanuaConfKey>;
-    function getAsJsonObject: TJsonObject;
+    function GetAsJsonObject: TJsonObject;
     procedure SetasJsonObject(const Value: TJsonObject);
     procedure ClearKeys;
   public
@@ -1506,15 +1524,15 @@ type
   public
     procedure Initialize(const aFileName: string);
     procedure Clear;
-    function isLoaded: Boolean;
+    function isLoaded: boolean;
     procedure UnLoad;
     procedure LoadConfiguration; overload;
     procedure LoadConfiguration(aFileName: TFileName); overload;
     procedure SaveConfiguration; overload;
     procedure SaveConfiguration(aFileName: TFileName); overload;
     function Count: Integer;
-    function FindValue(aKey, aValue: string): Boolean;
-    function FindKey(const aKey: string): Boolean;
+    function FindValue(aKey, aValue: string): boolean;
+    function FindKey(const aKey: string): boolean;
     procedure AddKey(sKey: string); overload;
     procedure AddKey(const aKey: TJanuaConfKey); overload;
     procedure AddKey(const aKey: TJsonObject); overload;
@@ -1523,7 +1541,7 @@ type
     function AsJson: string;
     function AsJsonString: string;
     function setValue(aKey, aName, aDefault: string): string; overload;
-    function setValue(aKey, aName: string; aDefault: Boolean): Boolean; overload;
+    function setValue(aKey, aName: string; aDefault: boolean): boolean; overload;
     function setValue(aKey, aName: string; aDefault: Integer): Integer; overload;
     function setValue(aKey, aName: string; aDefault: Int64): Int64; overload;
     function setValue(aKey, aName: string; aDefault: Double): Double; overload;
@@ -1533,7 +1551,7 @@ type
     function setValue(aKey, aName: string; aDefault: TJanuaServerRecordConfs)
       : TJanuaServerRecordConfs; overload;
     function getValue(aKey, aName, aDefault: string): string; overload;
-    function getValue(aKey, aName: string; aDefault: Boolean): Boolean; overload;
+    function getValue(aKey, aName: string; aDefault: boolean): boolean; overload;
     function getValue(aKey, aName: string; aDefault: Integer): Integer; overload;
     function getValue(aKey, aName: string; aDefault: Int64): Int64; overload;
     function getValue(aKey, aName: string; aDefault: Double): Double; overload;
@@ -1543,7 +1561,7 @@ type
     function getValue(aKey, aName: string; aDefault: TJanuaServerRecordConfs)
       : TJanuaServerRecordConfs; overload;
   public
-    property AsJsonObject: TJsonObject read getAsJsonObject write SetasJsonObject;
+    property AsJsonObject: TJsonObject read GetAsJsonObject write SetasJsonObject;
   end;
 
 {$ENDREGION 'Configuration'}
@@ -1552,7 +1570,7 @@ type
 
   // ------------------- Janua Core OS Definitions -------------------------------
 
-function CheckDigitBarcode(var aBarcode: string; aBarcodeType: TJanuaBarcodeType): Boolean;
+function CheckDigitBarcode(var aBarcode: string; aBarcodeType: TJanuaBarcodeType): boolean;
 function GetCardinality(const PSet: PByteArray; const SizeOfSet (* in bytes *) : Integer): Integer; inline;
 
 // Interface RTTI
@@ -1560,12 +1578,12 @@ function GetCardinality(const PSet: PByteArray; const SizeOfSet (* in bytes *) :
 procedure RegisterInterface(InterfaceType: PTypeInfo);
 function GetInterfaceType(Guid: TGUID): PTypeInfo;
 function GetInterfaceName(Guid: TGUID): string;
-function TryGetInterfaceType(Guid: TGUID; out aTypeInfo: PTypeInfo): Boolean;
+function TryGetInterfaceType(Guid: TGUID; out aTypeInfo: PTypeInfo): boolean;
 //
 function JanuaSupports(const Instance: IInterface; const IID: TGUID; out Intf; const aName: string = '';
-  const aRaise: Boolean = True): Boolean; overload;
-function JanuaSupports(const Instance: TObject; const IID: TGUID; out Intf; CONST aRaise: Boolean = True)
-  : Boolean; overload;
+  const aRaise: boolean = True): boolean; overload;
+function JanuaSupports(const Instance: TObject; const IID: TGUID; out Intf; CONST aRaise: boolean = True)
+  : boolean; overload;
 
 const
   sl = sLineBreak;
@@ -1586,21 +1604,22 @@ uses
   StrUtils, Math, DateUtils,
 {$ENDIF}
   IdIcmpClient,
-  Janua.Core.Json;
+  // Janua.Core.Functions,
+  Janua.Core.Crypt, Janua.Core.Json;
 
 var
   FIntfDictioary: TDictionary<TGUID, PTypeInfo>;
 
 function JanuaSupports(const Instance: IInterface; const IID: TGUID; out Intf; const aName: string;
-  const aRaise: Boolean): Boolean; overload;
+  const aRaise: boolean): boolean; overload;
 begin
   Result := Supports(Instance, IID, Intf);
   if not Result and aRaise then
     raise Exception.Create(aName + ' Interface not supported ' + GetInterfaceName(IID));
 end;
 
-function JanuaSupports(const Instance: TObject; const IID: TGUID; out Intf; const aRaise: Boolean = True)
-  : Boolean; overload;
+function JanuaSupports(const Instance: TObject; const IID: TGUID; out Intf; const aRaise: boolean = True)
+  : boolean; overload;
 begin
   Result := Supports(Instance, IID, Intf);
   if not Result and aRaise then
@@ -1618,7 +1637,7 @@ begin
     Result := nil;
 end;
 
-function TryGetInterfaceType(Guid: TGUID; out aTypeInfo: PTypeInfo): Boolean;
+function TryGetInterfaceType(Guid: TGUID; out aTypeInfo: PTypeInfo): boolean;
 begin
   Result := FIntfDictioary.TryGetValue(Guid, aTypeInfo)
 end;
@@ -1723,7 +1742,7 @@ begin
 end;
 {$ENDIF}
 
-function Ping(const aServer: string): Boolean;
+function Ping(const aServer: string): boolean;
 var
   ICMP: TIdIcmpClient;
   Rec: Integer;
@@ -1747,7 +1766,7 @@ begin
   end;
 end;
 
-function CheckDigitBarcode(var aBarcode: string; aBarcodeType: TJanuaBarcodeType): Boolean;
+function CheckDigitBarcode(var aBarcode: string; aBarcodeType: TJanuaBarcodeType): boolean;
 var
   numero, totale_pari, totale_dispari, totale, multiplo: Integer;
   check_digit, stringa: string;
@@ -1973,7 +1992,7 @@ begin
   Result := self;
 end;
 
-function TJanuaStringBuilder.Append(const Value: Boolean): IStringBuilder;
+function TJanuaStringBuilder.Append(const Value: boolean): IStringBuilder;
 begin
 {$IFDEF DELPHIXE}
   FBuilder.Append(Value);
@@ -2288,12 +2307,12 @@ begin
 
 end;
 
-class procedure Guard.CheckTrue(condition: Boolean; const msg: string);
+class procedure Guard.CheckTrue(condition: boolean; const msg: string);
 begin
 
 end;
 
-class procedure Guard.CheckFalse(condition: Boolean; const msg: string);
+class procedure Guard.CheckFalse(condition: boolean; const msg: string);
 begin
 
 end;
@@ -2401,7 +2420,7 @@ end;
 procedure TJanuaLogRecord.SaveToDataset(aDataset: TDataset);
 var
   LField: TField;
-  function CheckField(const aName: string): Boolean;
+  function CheckField(const aName: string): boolean;
   begin
     Result := false;
     try
@@ -2589,7 +2608,7 @@ begin
   Result := Length(Items);
 end;
 
-constructor TJanuaLogRecords.Create(const aWatchStarted: Boolean);
+constructor TJanuaLogRecords.Create(const aWatchStarted: boolean);
 begin
   if aWatchStarted then
     sw.Start;
@@ -2705,7 +2724,7 @@ begin
   Result := System.TypeInfo(T);
 end;
 
-class function TEnumSet<T>.IsSet: Boolean;
+class function TEnumSet<T>.IsSet: boolean;
 begin
   Result := TypeInfo.Kind = tkSet;
 end;
@@ -2871,7 +2890,7 @@ begin
   Result := GetEnumName(TypeInfo(T), IntValue)
 end;
 
-class function TEnumConvertor<T>.TryFromInteger(aOrdValue: Integer; var EnumValue: T): Boolean;
+class function TEnumConvertor<T>.TryFromInteger(aOrdValue: Integer; var EnumValue: T): boolean;
 var
   // Pointer to Type Info
   aInfo: PTypeInfo;
@@ -2892,7 +2911,7 @@ end;
 
 { TEnumArrayConvertor<T, S> }
 
-class function TEnumConvertor<T>.TryFromString(const Str: string; var EnumValue: T): Boolean;
+class function TEnumConvertor<T>.TryFromString(const Str: string; var EnumValue: T): boolean;
 var
   Info: PTypeInfo;
   IntValue: Integer;
@@ -2904,7 +2923,7 @@ begin
 end;
 
 class function TEnumConvertor<T>.TryFromStringArray(S: string; const a: array of string;
-  var EnumValue: T): Boolean;
+  var EnumValue: T): boolean;
 var
   // Pointer to Type Info
   tInfo: PTypeInfo;
@@ -3014,7 +3033,7 @@ begin
   SetLength(FBlob, 0);
 end;
 
-constructor TJanuaBlob.Create(aIsUnicode: Boolean);
+constructor TJanuaBlob.Create(aIsUnicode: boolean);
 begin
   Setup;
   FIsUnicode := aIsUnicode;
@@ -3026,7 +3045,7 @@ begin
   LoadFromStream(aStream);
 end;
 
-function TJanuaBlob.GetAsBoolean: Boolean;
+function TJanuaBlob.GetAsBoolean: boolean;
 begin
   Result := (Length(FBlob) = 1) and (FBlob[1] = 1);
 end;
@@ -3129,7 +3148,7 @@ begin
   end;
 end;
 
-function TJanuaBlob.IsEqual(aBlob: TJanuaBlob): Boolean;
+function TJanuaBlob.IsEqual(aBlob: TJanuaBlob): boolean;
 var
   p1, p2: PByteArray;
   a, b: TByteDynArray;
@@ -3181,7 +3200,7 @@ begin
     aStream.WriteBuffer(FBlob[0], Length(FBlob));
 end;
 
-procedure TJanuaBlob.SetAsBoolean(const Value: Boolean);
+procedure TJanuaBlob.SetAsBoolean(const Value: boolean);
 begin
 
 end;
@@ -3295,16 +3314,60 @@ begin
   DBEngine := aDBEngine;
 end;
 
+constructor TJanuaServerRecordConf.Create(const aObject: TJsonObject);
+begin
+  Initialize;
+  SetasJsonObject(aObject);
+end;
+
 constructor TJanuaServerRecordConf.Create(aConf: TJanuaServerRecordConf);
 begin
   Initialize;
   Assign(aConf);
 end;
 
-function TJanuaServerRecordConf.Equals(aConf: TJanuaServerRecordConf): Boolean;
+function TJanuaServerRecordConf.Equals(aConf: TJanuaServerRecordConf): boolean;
 begin
   Result := (Port = aConf.Port) and (DatabaseName = aConf.DatabaseName) and (Password = aConf.Password) and
     (Direct = aConf.Direct) and (Address = aConf.Address) and (Username = aConf.Username);
+end;
+
+function TJanuaServerRecordConf.GetAsJson: string;
+begin
+  var
+  lJson := GetAsJsonObject;
+  Result := lJson.ToJSON();
+  lJson.Free;
+end;
+
+function TJanuaServerRecordConf.GetAsJsonObject: TJsonObject;
+begin
+  Result := TJsonObject.Create;
+  Janua.Core.Json.JsonPair(Result, 'username', Username);
+  Janua.Core.Json.JsonPair(Result, 'schema', Schema);
+  var
+  lValue := TJanuaCriptEncode.EncryptDES3(Password);
+  Janua.Core.Json.JsonPair(Result, 'password', lValue);
+  Janua.Core.Json.JsonPair(Result, 'port', Port);
+  Janua.Core.Json.JsonPair(Result, 'databaseName', DatabaseName);
+  Janua.Core.Json.JsonPair(Result, 'direct', Direct);
+  Janua.Core.Json.JsonPair(Result, 'address', Address);
+  Janua.Core.Json.JsonPair(Result, 'pooling', Pooling);
+  // Token
+  Janua.Core.Json.JsonPair(Result, 'token', Token);
+  // JanuaDBEngineCode  TJanuaDBEngine
+  var
+  lDBEngine := JanuaDBEngineCode[DBEngine];
+  // TEnumConvertor<TJanuaDBEngine>.ToString(Value: T) TJanuaDBEngine;
+  Janua.Core.Json.JsonPair(Result, 'dbengine', lDBEngine);
+end;
+
+function TJanuaServerRecordConf.GetasJsonPretty: string;
+begin
+  var
+  lJson := GetAsJsonObject;
+  Result := JsonObjectToPretty(lJson);
+  lJson.Free;
 end;
 
 function TJanuaServerRecordConf.GetConfiguration: string;
@@ -3393,6 +3456,43 @@ begin
   end;
 end;
 
+procedure TJanuaServerRecordConf.SetasJson(const Value: string);
+begin
+  var
+  aObject := JsonParse(Value);
+  if Assigned(aObject) then
+    SetasJsonObject(aObject)
+end;
+
+procedure TJanuaServerRecordConf.SetasJsonObject(const Value: TJsonObject);
+begin
+  JsonValue(Value, 'port', Port);
+  JsonValue(Value, 'databasename', DatabaseName);
+  var
+  lPassword := '';
+  JsonValue(Value, 'password', lPassword);
+  Password := TJanuaCriptEncode.DecryptDES3(lPassword);
+  JsonValue(Value, 'direct', Direct);
+  JsonValue(Value, 'address', Address);
+  JsonValue(Value, 'username', Username);
+  JsonValue(Value, 'schema', Schema);
+  var
+  lEngine := '';
+  JsonValue(Value, 'dbengine', lEngine);
+
+  if not lEngine.IsEmpty then
+    TEnumConvertor<TJanuaDBEngine>.TryFromStringArray(lEngine, JanuaDBEngineCode, DBEngine);
+
+end;
+
+procedure TJanuaServerRecordConf.setasJsonPretty(const Value: string);
+begin
+  var
+  aObject := JsonParse(Value);
+  if Assigned(aObject) then
+    SetasJsonObject(aObject)
+end;
+
 procedure TJanuaServerRecordConf.SetEngineName(const Value: string);
 var
   aEngine: TJanuaDBEngine;
@@ -3402,7 +3502,7 @@ begin
     DBEngine := aEngine
 end;
 
-function TJanuaServerRecordConf.TestAddress: Boolean;
+function TJanuaServerRecordConf.TestAddress: boolean;
 begin
   Result := false;
   IP := GetIPFromHost(Address);
@@ -3423,12 +3523,12 @@ end;
 
 procedure TJanuaServerRecordConfs.Add(aItem: TJanuaServerRecordConf);
 begin
-  Items.Add(aItem.GetEngineName, aItem)
+  Items.Add(aItem.DBEngine, aItem)
 end;
 
-procedure TJanuaServerRecordConfs.Add(aName: string; aItem: TJanuaServerRecordConf);
+procedure TJanuaServerRecordConfs.Add(aEngine: TJanuaDBEngine; aItem: TJanuaServerRecordConf);
 begin
-  Items.Add(aName, aItem)
+  Items.Add(aEngine, aItem)
 end;
 
 function TJanuaServerRecordConfs.AsText: string;
@@ -3448,22 +3548,22 @@ end;
 constructor TJanuaServerRecordConfs.Create(aItem: TJanuaServerRecordConf);
 begin
   // Do Something
-  Items.Add(aItem.EngineName, aItem)
+  Items.Add(aItem.DBEngine, aItem)
 end;
 
-procedure TJanuaServerRecordConfs.delete(aName: string);
+procedure TJanuaServerRecordConfs.delete(aEngine: TJanuaDBEngine);
 begin
-  if Items.ContainsKey(aName) then
-    Items.Remove(aName)
+  if Items.ContainsKey(aEngine) then
+    Items.Remove(aEngine)
 end;
 
 procedure TJanuaServerRecordConfs.delete(aItem: TJanuaServerRecordConf);
 begin
-  if Items.ContainsKey(aItem.GetEngineName) then
-    Items.Remove(aItem.GetEngineName)
+  if Items.ContainsKey(aItem.DBEngine) then
+    Items.Remove(aItem.DBEngine)
 end;
 
-function TJanuaServerRecordConfs.Equals(aConf: TJanuaServerRecordConfs): Boolean;
+function TJanuaServerRecordConfs.Equals(aConf: TJanuaServerRecordConfs): boolean;
 var
   aPair: TPair<string, TJanuaServerRecordConf>;
 begin
@@ -3473,24 +3573,23 @@ begin
     for var aKey in Items.Keys do
       Result := Result and aConf.find(aKey)
   end;
-
 end;
 
 class operator TJanuaServerRecordConfs.Finalize(var Dest: TJanuaServerRecordConfs);
 begin
-
+  Dest.Items := TDictionary<TJanuaDBEngine, TJanuaServerRecordConf>.Create;
 end;
 
-function TJanuaServerRecordConfs.find(aName: string): Boolean;
+function TJanuaServerRecordConfs.find(aEngine: TJanuaDBEngine): boolean;
 begin
-
+  Result := Items.ContainsKey(aEngine)
 end;
 
-function TJanuaServerRecordConfs.find(aItem: TJanuaServerRecordConf): Boolean;
+function TJanuaServerRecordConfs.find(aItem: TJanuaServerRecordConf): boolean;
 var
   lItem: TJanuaServerRecordConf;
 begin
-  Result := Items.ContainsKey(aItem.GetEngineName)
+  Result := Items.ContainsKey(aItem.DBEngine)
 end;
 
 function TJanuaServerRecordConfs.GetAsJson: string;
@@ -3613,7 +3712,7 @@ end;
 procedure TJanuaProperty.SetName(const Value: string);
 var
   a: TJanuaFieldType;
-  Found: Boolean;
+  Found: boolean;
 begin
   Found := false;
   if Value <> '' then
@@ -3634,7 +3733,7 @@ end;
 {$REGION 'JanuaServerSession'}
 { TJanuaServerSession }
 
-function TJanuaServerSession.getAsJsonObject: TJsonObject;
+function TJanuaServerSession.GetAsJsonObject: TJsonObject;
 begin
   Result := TJsonObject.Create;
   Janua.Core.Json.JsonPair(Result, 'key', Key);
@@ -3731,7 +3830,7 @@ begin
   end;
 end;
 
-function TJanuaServerSession.setSchemaByID(aID: Integer): Boolean;
+function TJanuaServerSession.setSchemaByID(aID: Integer): boolean;
 var
   aSchema: TJanuaRecordSchema;
 begin
@@ -3901,19 +4000,19 @@ begin
   inherited;
 end;
 
-function TJanuaConfiguration.FindKey(const aKey: string): Boolean;
+function TJanuaConfiguration.FindKey(const aKey: string): boolean;
 begin
   Result := Keys.ContainsKey(aKey.ToLower)
 end;
 
-function TJanuaConfiguration.FindValue(aKey, aValue: string): Boolean;
+function TJanuaConfiguration.FindValue(aKey, aValue: string): boolean;
 begin
   Result := false;
   if FindKey(aKey) then
     Result := Keys[aKey.ToLower].FindValue(aValue.ToLower)
 end;
 
-function TJanuaConfiguration.getAsJsonObject: TJsonObject;
+function TJanuaConfiguration.GetAsJsonObject: TJsonObject;
 var
   aArray: TJsonArray;
   aPair: TPair<string, TJanuaConfKey>;
@@ -4071,12 +4170,12 @@ begin
   end;
 end;
 
-function TJanuaConfiguration.isLoaded: Boolean;
+function TJanuaConfiguration.isLoaded: boolean;
 begin
   Result := FIsLoaded;
 end;
 
-function TJanuaConfiguration.getValue(aKey, aName: string; aDefault: Boolean): Boolean;
+function TJanuaConfiguration.getValue(aKey, aName: string; aDefault: boolean): boolean;
 var
   cKey: TJanuaConfKey;
 begin
@@ -4419,7 +4518,7 @@ begin
   Clear;
 end;
 
-function TJanuaConfiguration.setValue(aKey, aName: string; aDefault: Boolean): Boolean;
+function TJanuaConfiguration.setValue(aKey, aName: string; aDefault: boolean): boolean;
 var
   cKey: TJanuaConfKey;
   lKey, lName: string;
@@ -4746,7 +4845,7 @@ begin
   ValueType := TJanuaConfType.jcfDateTime
 end;
 
-constructor TJanuaConfValue.Create(const aKey: string; aValue: Boolean);
+constructor TJanuaConfValue.Create(const aKey: string; aValue: boolean);
 begin
   Clear;
   Key := aKey;
@@ -4759,12 +4858,10 @@ begin
   Result := iValue;
 end;
 
-function TJanuaConfValue.getAsJsonObject: TJsonObject;
+function TJanuaConfValue.GetAsJsonObject: TJsonObject;
 begin
   Result := TJsonObject.Create;
-
   Janua.Core.Json.JsonPair(Result, 'key', Key);
-
   Janua.Core.Json.JsonPair(Result, 'type', JanuaConfType[ValueType]);
 
   case ValueType of
@@ -5002,14 +5099,14 @@ begin
   Key := aKey;
 end;
 
-function TJanuaConfKey.FindValue(const aKey: string): Boolean;
+function TJanuaConfKey.FindValue(const aKey: string): boolean;
 var
   i: Integer;
 begin
   Result := Items.ContainsKey(aKey.ToLower)
 end;
 
-function TJanuaConfKey.getAsJsonObject: TJsonObject;
+function TJanuaConfKey.GetAsJsonObject: TJsonObject;
 var
   aPair: TPair<string, TJanuaConfValue>;
   aArray: TJsonArray;
@@ -5078,7 +5175,7 @@ begin
     Items[aKey.ToLower].sValue := Janua.Core.Json.JsonPretty(aValue);
 end;
 
-procedure TJanuaConfKey.SetItem(const aKey: string; aValue: Boolean);
+procedure TJanuaConfKey.SetItem(const aKey: string; aValue: boolean);
 begin
   if FindValue(aKey) then
     Items[aKey.ToLower].bValue := aValue;
@@ -5115,7 +5212,7 @@ begin
     Items[aKey.ToLower].dtValue := aValue;
 end;
 
-procedure TJanuaConfKey.AddItem(const aKey: string; aValue: Boolean);
+procedure TJanuaConfKey.AddItem(const aKey: string; aValue: boolean);
 var
   aItem: TJanuaConfValue;
 begin
@@ -5196,7 +5293,7 @@ begin
   Privacy := aDataset.FieldByName('privacy').AsString;
 end;
 
-function TJanuaDisclaimer.SaveToDataset(aDataset: TDataset): Boolean;
+function TJanuaDisclaimer.SaveToDataset(aDataset: TDataset): boolean;
 begin
   aDataset.Edit;
   Terms := aDataset.FieldByName('terms').AsString;
@@ -5244,7 +5341,7 @@ begin
   Result := Length(FArray)
 end;
 
-function TJanuaArray<T>.GetHasValues: Boolean;
+function TJanuaArray<T>.GetHasValues: boolean;
 begin
   Result := GetCount > 0
 end;
@@ -5279,19 +5376,14 @@ end;
 
 procedure TJanuaArray<T>.Replace(aItem: T; aPosition: Integer);
 begin
-  if aPosition < self.Count then
+  if aPosition < Count then
     FArray[aPosition] := aItem;
 end;
 
 procedure TJanuaArray<T>.SetItems(Index: Integer; Value: T);
 begin
   if IsManagedType(T) then
-  begin
-    {
-      if GetCount > Index then
-      FArray[Index] := T
-    }
-  end;
+    Replace(Value, Index);
 end;
 
 { TLocalCoordinates }
@@ -5308,7 +5400,7 @@ begin
   FCoordinates := Value;
 end;
 
-procedure TLocalCoordinates.SetIsUpdating(const Value: Boolean);
+procedure TLocalCoordinates.SetIsUpdating(const Value: boolean);
 begin
   FIsUpdating := Value;
 end;
@@ -5423,6 +5515,16 @@ begin
   self := TJanuaJson.DeserializeSimple<TJanuaImageDraws>(aJson);
 end;
 
+procedure TJanuaImageDraws.DeSerializeJsonO(const aObject: TJsonObject; const aFree: boolean);
+begin
+  if Assigned(aObject) then
+  begin
+    self := TJanuaJson.DeserializeSimple<TJanuaImageDraws>(aObject);
+    if aFree then
+      aObject.Free;
+  end;
+end;
+
 function TJanuaImageDraws.GetCount: Integer;
 begin
   Result := Length(Draws);
@@ -5439,6 +5541,11 @@ end;
 function TJanuaImageDraws.Serialize: string;
 begin
   Result := TJanuaJson.SerializeSimple<TJanuaImageDraws>(self);
+end;
+
+function TJanuaImageDraws.SerializeJsonO: TJsonObject;
+begin
+  Result := TJsonObject(TJanuaJson.SerializeJsonObject<TJanuaImageDraws>(self))
 end;
 
 procedure TJanuaImageDraws.SetItem(Index: Integer; Value: TJanuaDraw);

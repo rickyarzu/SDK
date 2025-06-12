@@ -2,15 +2,6 @@ inherited dmJanuaPgDocumentsStorage: TdmJanuaPgDocumentsStorage
   Height = 420
   Width = 434
   inherited PgErgoConnection: TJanuaUniConnection
-    DataTypeMap = <
-      item
-        DBType = 521
-        FieldType = ftDateTime
-      end
-      item
-        DBType = 520
-        FieldType = ftDateTime
-      end>
     Pooling = False
     Left = 184
     EncryptedPassword = 'CCFF8DFF98FFCFFF92FFCCFF8DFF9CFFCBFF8BFFCFFF8DFF'

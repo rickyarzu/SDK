@@ -38,7 +38,7 @@ uses System.Types,
   // Documents
   uqrpTMLabels,
   // Master Detail Recordset
-  Janua.Test.ViewModel.Intf, udlgTestVCLMasterRecordSetOrmSync, Janua.Test.VCL.dlgViewModelDetail,
+  Janua.Test.ViewModel.Intf, Janua.Test.VCL.dlgMasterRecordSetOrmSync, Janua.Test.VCL.dlgViewModelDetail,
   udlgTestVCLMasterDetailTestDBOrmSync,
   // Other uApplicationSetup
   Janua.TMLogistic.VCLApplication;

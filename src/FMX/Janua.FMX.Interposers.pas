@@ -109,7 +109,7 @@ end;
 
 constructor TEdit.Create(AOwner: TComponent);
 begin
-  FBindManager := TJanuaBindManager.Create(Self);
+  FBindManager := TJanuaApplicationFactory.CreateBindManager(Self);
   inherited Create(AOwner);
   Initialize;
 end;

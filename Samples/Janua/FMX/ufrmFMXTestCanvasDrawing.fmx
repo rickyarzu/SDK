@@ -105,6 +105,8 @@ object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
       StyleLookup = ''
       TabOrder = 0
       Text = 'Frame Test'
+      ExplicitSize.cx = 77.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
       inline frameFMXImageDraw1: TframeFMXImageDraw
         Align = Top
         Size.Width = 677.000000000000000000
@@ -112,6 +114,23 @@ object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
         Size.PlatformDefault = False
         inherited pnlButtons: TPanel
           Size.Width = 677.000000000000000000
+          inherited btnClear: TButton
+            Size.Height = 58.000000000000000000
+          end
+          inherited btnRedraw: TButton
+            Size.Height = 58.000000000000000000
+          end
+          inherited btnDelLast: TButton
+            Size.Height = 58.000000000000000000
+          end
+          inherited btnAddNotes: TButton
+            Size.Height = 58.000000000000000000
+          end
+          inherited btnTestOffset: TButton
+            Align = Client
+            Size.Width = 356.000000000000000000
+            OnClick = frameFMXImageDraw1btnTestOffsetClick
+          end
         end
         inherited Rectangle1: TRectangle
           Size.Width = 677.000000000000000000
@@ -123,7 +142,7 @@ object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
               MultiResBitmap.Height = 383
               MultiResBitmap.Width = 637
               Size.Width = 677.000000000000000000
-              Size.Height = 504.000000000000000000
+              Size.Height = 409.000000000000000000
             end
           end
         end
@@ -141,6 +160,8 @@ object frmFMXTestCanvasDrawing: TfrmFMXTestCanvasDrawing
       StyleLookup = ''
       TabOrder = 0
       Text = 'TestDrawCircle'
+      ExplicitSize.cx = 98.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
       object imgCar: TImage
         MultiResBitmap.Height = 383
         MultiResBitmap.Width = 637

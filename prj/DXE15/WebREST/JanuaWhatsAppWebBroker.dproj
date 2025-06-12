@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{E4046C38-22A2-4603-8691-017AE6881D9B}</ProjectGuid>
-        <ProjectVersion>20.2</ProjectVersion>
+        <ProjectVersion>20.3</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
@@ -146,6 +146,21 @@
             <Form>frmVCLWebBrokerWhatsApp</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\udmPgStorage.pas">
+            <Form>dmPgStorage</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Phoenix.PgTwilioSync.pas">
+            <Form>dmPgTWilioSync</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\januaunidac\datamodules\Janua.Twilio.dmPgWhatsApp.pas">
+            <Form>dmPgTwilioWhatsApp</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaeExeDXE15.optset</DependentOn>
@@ -170,8 +185,13 @@
             </Delphi.Personality>
             <Deployment Version="5">
                 <DeployFile LocalName="Win32\Debug\JanuaWhatsAppWebBroker.exe" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="c:\januaproject\bin\Win32\Debug\JanuaWhatsAppWebBroker.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>JanuaWhatsAppWebBroker.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\JanuaWhatsAppWebBroker.exe" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="c:\januaproject\bin\Win64\Debug\JanuaWhatsAppWebBroker.rsm" Configuration="Debug" Class="DebugSymbols"/>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="iOSSimulator">
                         <Operation>1</Operation>
@@ -283,6 +303,16 @@
                     </Platform>
                     <Platform Name="Android64">
                         <RemoteDir>res\values-v31</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV35">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v35</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-v35</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>

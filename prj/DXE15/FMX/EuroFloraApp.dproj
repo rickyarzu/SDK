@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{72B6F18A-BB4F-44B4-BD1D-74296E49261E}</ProjectGuid>
-        <ProjectVersion>20.2</ProjectVersion>
+        <ProjectVersion>20.3</ProjectVersion>
         <FrameworkType>FMX</FrameworkType>
         <MainSource>EuroFloraApp.dpr</MainSource>
         <Base>True</Base>
@@ -196,7 +196,7 @@
         <Android_LauncherIcon48>Z:\Resources\Euroflora\Android\Android icons %\icon_mdpi.png</Android_LauncherIcon48>
         <EnabledSysJars>android-support-v4.dex.jar;cloud-messaging.dex.jar;fmx.dex.jar;google-analytics-v2.dex.jar;google-play-billing.dex.jar;google-play-licensing.dex.jar;google-play-services-ads-7.0.0.dex.jar;google-play-services-analytics-7.0.0.dex.jar;google-play-services-base-7.0.0.dex.jar;google-play-services-gcm-7.0.0.dex.jar;google-play-services-identity-7.0.0.dex.jar;google-play-services-maps-7.0.0.dex.jar;google-play-services-panorama-7.0.0.dex.jar;google-play-services-plus-7.0.0.dex.jar;google-play-services-wallet-7.0.0.dex.jar</EnabledSysJars>
         <Android_SplashImage426>..\..\..\..\..\Resources\Euroflora\Android\426x320-9patch.9.png</Android_SplashImage426>
-        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
+        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;minSdkVersion=23;targetSdkVersion=35</VerInfo_Keys>
         <Android_LauncherIcon36>Z:\Resources\Euroflora\Android\Android icons %\icon_sdpi.png</Android_LauncherIcon36>
         <Android_LauncherIcon96>Z:\Resources\Euroflora\Android\Android icons %\icon_xhdpi.png</Android_LauncherIcon96>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -217,9 +217,10 @@
         <Android_NotificationIcon72>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png</Android_NotificationIcon72>
         <Android_NotificationIcon96>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png</Android_NotificationIcon96>
         <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+        <VerInfo_InstallLocation>preferExternal</VerInfo_InstallLocation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android64)'!=''">
-        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
+        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;minSdkVersion=23;targetSdkVersion=35</VerInfo_Keys>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <Base_Android>true</Base_Android>
@@ -250,6 +251,7 @@
         <Android_NotificationIcon72>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png</Android_NotificationIcon72>
         <Android_NotificationIcon96>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png</Android_NotificationIcon96>
         <Android_LauncherIcon192>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png</Android_LauncherIcon192>
+        <VerInfo_InstallLocation>preferExternal</VerInfo_InstallLocation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_iOSDevice64)'!=''">
         <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
@@ -364,7 +366,7 @@
         <AUP_ACCESS_NETWORK_STATE>true</AUP_ACCESS_NETWORK_STATE>
         <EL_Maps>true</EL_Maps>
         <VerInfo_Build>7</VerInfo_Build>
-        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=7;versionName=1.0.7;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
+        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=7;versionName=1.0.7;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;minSdkVersion=23;targetSdkVersion=35</VerInfo_Keys>
         <DCC_UseMSBuildExternally>true</DCC_UseMSBuildExternally>
         <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
         <DCC_RangeChecking>true</DCC_RangeChecking>
@@ -375,6 +377,7 @@
         <DCC_Optimize>true</DCC_Optimize>
         <BT_BuildType>AppStore</BT_BuildType>
         <PF_KeyStorePass>857C47DB5F9007DACF7CE566A4437BA0E4120855A007979E97FF0FD68E643CD0DB48A3D6E35F1C31C1B0572FFA95C375BABB3651043C2288165745F0E5F4228DC949F31ED506FADDBFCAAF0D071E1D0F92013E44C3197242</PF_KeyStorePass>
+        <VerInfo_InstallLocation>preferExternal</VerInfo_InstallLocation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Android64)'!=''">
         <Cfg_1_Android>true</Cfg_1_Android>
@@ -383,7 +386,7 @@
         <AUP_ACCESS_NETWORK_STATE>true</AUP_ACCESS_NETWORK_STATE>
         <EL_Maps>true</EL_Maps>
         <VerInfo_Build>7</VerInfo_Build>
-        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=7;versionName=1.0.7;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
+        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=7;versionName=1.0.7;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;minSdkVersion=23;targetSdkVersion=35</VerInfo_Keys>
         <DCC_UseMSBuildExternally>true</DCC_UseMSBuildExternally>
         <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
         <DCC_RangeChecking>true</DCC_RangeChecking>
@@ -394,6 +397,7 @@
         <DCC_Optimize>true</DCC_Optimize>
         <BT_BuildType>AppStore</BT_BuildType>
         <PF_KeyStorePass>857C47DB5F9007DACF7CE566A4437BA0E4120855A007979E97FF0FD68E643CD0DB48A3D6E35F1C31C1B0572FFA95C375BABB3651043C2288165745F0E5F4228DC949F31ED506FADDBFCAAF0D071E1D0F92013E44C3197242</PF_KeyStorePass>
+        <VerInfo_InstallLocation>preferExternal</VerInfo_InstallLocation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_iOSDevice64)'!=''">
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -448,7 +452,7 @@
         <VerInfo_Build>3</VerInfo_Build>
         <DCC_UseMSBuildExternally>true</DCC_UseMSBuildExternally>
         <PF_KeyStorePass>857C47DB5F9007DACF7C7131D12CE37981B20541A00D978D97E60FBE8E6C3C8ADB57A3DEE3551C63C1E35725FAC7C317BA95360204642291163A459CE5B722BEC916F341D513FACCBFF83B4472328598F78F330AC3197242</PF_KeyStorePass>
-        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=3;versionName=1.0.1;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
+        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=3;versionName=1.0.1;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;minSdkVersion=23;targetSdkVersion=35</VerInfo_Keys>
         <DCC_Optimize>false</DCC_Optimize>
         <DCC_DebugDCUs>true</DCC_DebugDCUs>
         <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
@@ -458,6 +462,7 @@
         <DCC_LocalDebugSymbols>true</DCC_LocalDebugSymbols>
         <DCC_DebugInformation>2</DCC_DebugInformation>
         <BT_BuildType>AppStore</BT_BuildType>
+        <VerInfo_InstallLocation>preferExternal</VerInfo_InstallLocation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Android64)'!=''">
         <Cfg_2_Android>true</Cfg_2_Android>
@@ -466,7 +471,7 @@
         <VerInfo_Build>3</VerInfo_Build>
         <DCC_UseMSBuildExternally>true</DCC_UseMSBuildExternally>
         <PF_KeyStorePass>857C47DB5F9007DACF7C7131D12CE37981B20541A00D978D97E60FBE8E6C3C8ADB57A3DEE3551C63C1E35725FAC7C317BA95360204642291163A459CE5B722BEC916F341D513FACCBFF83B4472328598F78F330AC3197242</PF_KeyStorePass>
-        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=3;versionName=1.0.1;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;minSdkVersion=23;targetSdkVersion=34</VerInfo_Keys>
+        <VerInfo_Keys>package=com.ergomercator.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=3;versionName=1.0.1;persistent=False;restoreAnyVersion=False;installLocation=preferExternal;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;apiKey=AIzaSyDaRjs-9ynGPpQ3Naxn_dwDcZZrg-lyC9c;minSdkVersion=23;targetSdkVersion=35</VerInfo_Keys>
         <DCC_Optimize>false</DCC_Optimize>
         <DCC_DebugDCUs>true</DCC_DebugDCUs>
         <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
@@ -476,6 +481,7 @@
         <DCC_LocalDebugSymbols>true</DCC_LocalDebugSymbols>
         <DCC_DebugInformation>2</DCC_DebugInformation>
         <BT_BuildType>AppStore</BT_BuildType>
+        <VerInfo_InstallLocation>preferExternal</VerInfo_InstallLocation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_iOSDevice64)'!=''">
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -883,6 +889,16 @@
                     </Platform>
                     <Platform Name="Android64">
                         <RemoteDir>res\values-v31</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV35">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v35</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-v35</RemoteDir>
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>

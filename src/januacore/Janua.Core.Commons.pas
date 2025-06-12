@@ -3,7 +3,7 @@ unit Janua.Core.Commons;
 interface
 
 uses
-  System.SysUtils, System.Classes, System.TypInfo, Spring, Spring.Collections,
+  System.Rtti, System.SysUtils, System.Classes, System.TypInfo, Spring, Spring.Collections,
   // Janua
   Janua.Core.Types, Janua.Bindings.Intf;
 
@@ -20,49 +20,96 @@ type
   end;
 
 type
-  TJanuaBindManager = class(TInterfacedObject, IJanuaBindManager)
+  TCustomBindManager = class abstract(TInterfacedObject, IJanuaBindManager)
+  protected
+    function GetHasBindings: Boolean; virtual; abstract;
+    function GetBindCount: Integer; virtual; abstract;
+  public
+    constructor Create(AOwner: TObject); overload; virtual; abstract;
+    /// <summary>
+    /// Janua Binding Framework. This procedure binds a Field from the record to a property of 'any' Object.
+    /// </summary>
+    procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
+      const AReadOnly: Boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput,
+      jbcEvaluate]); virtual; abstract;
+    /// <summary> Clears all Bindings to all properties of the object </summary>
+    procedure ClearBindings; virtual; abstract;
+    procedure Notify(const AProperty: string); virtual; abstract;
+    procedure UnBind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string);
+      virtual; abstract;
+    procedure IncBindCount; virtual; abstract;
+    procedure DecBindCount; virtual; abstract;
+    procedure NotifyAll; virtual; abstract;
+  public
+    property HasBindings: Boolean read GetHasBindings;
+    property BindCount: Integer read GetBindCount;
+  end;
+
+  TJanuaBindManager = class(TCustomBindManager, IJanuaBindManager)
   private
     FBindCount: Integer;
     FOwner: TObject;
     FBindedProperties: IList<string>;
   protected
-    function GetHasBindings: Boolean;
-    function GetBindCount: Integer;
+    function GetHasBindings: Boolean; override;
+    function GetBindCount: Integer; override;
   public
-    constructor Create(AOwner: TObject); overload;
+    constructor Create(AOwner: TObject); override;
     destructor Destroy; override;
     /// <summary>
     /// Janua Binding Framework. This procedure binds a Field from the record to a property of 'any' Object.
     /// </summary>
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
       const AReadOnly: Boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput,
-      jbcEvaluate]);
+      jbcEvaluate]); override;
     /// <summary> Clears all Bindings to all properties of the object </summary>
-    procedure ClearBindings;
-    procedure Notify(const AProperty: string);
-    procedure UnBind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string);
-    procedure IncBindCount;
-    procedure DecBindCount;
-    procedure NotifyAll;
+    procedure ClearBindings; override;
+    procedure Notify(const AProperty: string); override;
+    procedure UnBind(const AProperty: string; const ABindToObject: TObject;
+      const ABindToProperty: string); override;
+    procedure IncBindCount; override;
+    procedure DecBindCount; override;
+    procedure NotifyAll; override;
   public
     property HasBindings: Boolean read GetHasBindings;
     property BindCount: Integer read GetBindCount;
   end;
 
-  TJanuaBindableClass = class(TObject)
+  TJanuaBindableClass = class(TObject, IJanuaBindable)
+  public
+    class procedure CopyProperties(ASource, ADestination: TObject);
+    // ********************************* Interface Suppport **************************************************
+  private
+    FOwnerInterface: IInterface;
+  protected
+    { IInterface }
+    function _AddRef: Integer; stdcall;
+    function _Release: Integer; stdcall;
+  public
+    function QueryInterface(const IID: TGUID; out Obj): HResult; virtual; stdcall;
+    procedure AfterConstruction; override;
+    // ************************************* Bindings Procedures ***********************************
   strict protected
     FBindManager: IJanuaBindManager;
     function GetBindManager: IJanuaBindManager;
   public
     property BindManager: IJanuaBindManager read GetBindManager;
   public
-    constructor Create; overload;
+    procedure ClearBindings;
     procedure NotifiyAllProperties;
     procedure Notify(const AProperty: string);
     procedure Bind(const AProperty: string; const ABindToObject: TObject; const ABindToProperty: string;
       const AReadOnly: Boolean = false; const ACreateOptions: TJanuaBindCreateOptions = [jbcNotifyOutput,
       jbcEvaluate]);
+    // *********************************************************************************************
+  protected
+    function GetSelf: TObject;
+  public
+    constructor Create; overload;
+    procedure Assign(aObject: TJanuaBindableClass);
   end;
+
+
 
 type
   TJanuaCustomComponent = class(TComponent)
@@ -101,6 +148,7 @@ type
 
   TJanuaCoreInterfacedObjectClass = class of TJanuaCoreInterfacedObject;
   TJanuaCustomComponentClass = class of TJanuaCustomComponent;
+  TBindManagerClass = class of TCustomBindManager;
 
 implementation
 
@@ -345,6 +393,18 @@ end;
 
 { Spring, Spring.Collections, }
 
+procedure TJanuaBindableClass.AfterConstruction;
+begin
+  inherited;
+
+end;
+
+procedure TJanuaBindableClass.Assign(aObject: TJanuaBindableClass);
+begin
+  if Assigned(aObject) then
+    CopyProperties(aObject, self);
+end;
+
 procedure TJanuaBindableClass.Bind(const AProperty: string; const ABindToObject: TObject;
   const ABindToProperty: string; const AReadOnly: Boolean; const ACreateOptions: TJanuaBindCreateOptions);
 begin
@@ -354,6 +414,58 @@ begin
   except
     on E: Exception do
       Raise Exception.Create(ClassName + '.Bind Error:' + E.Message);
+  end;
+end;
+
+procedure TJanuaBindableClass.ClearBindings;
+begin
+  if Assigned(FBindManager) then
+    FBindManager.ClearBindings
+end;
+
+class procedure TJanuaBindableClass.CopyProperties(ASource, ADestination: TObject);
+var
+  Context: TRttiContext;
+  SourceType, DestType: TRttiType;
+  SourceProp, DestProp: TRttiProperty;
+  SourceValue: TValue;
+begin
+  if (ASource = nil) or (ADestination = nil) then
+    Exit;
+
+  Context := TRttiContext.Create;
+  try
+    SourceType := Context.GetType(ASource.ClassType);
+    DestType := Context.GetType(ADestination.ClassType);
+
+    // Itera attraverso tutte le proprietà dell'oggetto sorgente
+    for SourceProp in SourceType.GetProperties do
+    begin
+      // Verifica che la proprietà sia leggibile
+      if not SourceProp.IsReadable then
+        Continue;
+
+      // Cerca una proprietà con lo stesso nome nell'oggetto destinazione
+      DestProp := DestType.GetProperty(SourceProp.Name);
+
+      // Se esiste e ha le caratteristiche giuste
+      if (DestProp <> nil) and DestProp.IsWritable and
+        (DestProp.PropertyType.Handle = SourceProp.PropertyType.Handle) then
+      begin
+        try
+          // Legge il valore dalla sorgente
+          SourceValue := SourceProp.GetValue(ASource);
+
+          // Scrive il valore nella destinazione
+          DestProp.SetValue(ADestination, SourceValue);
+        except
+          // Ignora errori su singole proprietà
+          // Utile per proprietà che potrebbero avere setter speciali
+        end;
+      end;
+    end;
+  finally
+    Context.Free;
   end;
 end;
 
@@ -367,6 +479,11 @@ begin
   Result := FBindManager
 end;
 
+function TJanuaBindableClass.GetSelf: TObject;
+begin
+  Result := self
+end;
+
 procedure TJanuaBindableClass.NotifiyAllProperties;
 begin
   FBindManager.NotifyAll
@@ -375,6 +492,24 @@ end;
 procedure TJanuaBindableClass.Notify(const AProperty: string);
 begin
   FBindManager.Notify(AProperty);
+end;
+
+function TJanuaBindableClass.QueryInterface(const IID: TGUID; out Obj): HResult;
+begin
+  if GetInterface(IID, Obj) then
+    Result := S_OK
+  else
+    Result := E_NOINTERFACE;
+end;
+
+function TJanuaBindableClass._AddRef: Integer;
+begin
+  Result := -1; // Non facciamo reference counting
+end;
+
+function TJanuaBindableClass._Release: Integer;
+begin
+  Result := -1; // Non facciamo reference counting
 end;
 
 end.
