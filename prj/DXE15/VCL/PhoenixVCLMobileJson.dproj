@@ -129,7 +129,7 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="..\..\..\src\januacore\Phoenix.Json.Statini.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\Phoenix.Json.Statini.DTO.pas"/>
         <DCCReference Include="..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.frmJsonAnalyzer.pas">
             <Form>frmPhoenixVCLJsonAnalyzer</Form>
             <FormType>dfm</FormType>
