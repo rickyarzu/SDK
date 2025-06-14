@@ -9,7 +9,6 @@ uses
   TestInsight.DUnitX,
   {$ELSE}
   DUnitX.Loggers.Console,
-  DUnitX.Loggers.XML.NUnit,
   {$ENDIF }
   DUnitX.TestFramework,
   Janua.Orm.Register,
@@ -41,7 +40,8 @@ uses
   Janua.Rest.TestClasses in '..\..\..\src\januacore\Test\Janua.Rest.TestClasses.pas',
   Janua.Rest.UnitTest.Client in '..\..\..\src\januacore\Test\Janua.Rest.UnitTest.Client.pas',
   Janua.Http.Types.Test in '..\..\..\src\januacore\Test\Janua.Http.Types.Test.pas',
-  Janua.Core.Types.Test in '..\..\..\src\januacore\Test\Janua.Core.Types.Test.pas';
+  Janua.Core.Types.Test in '..\..\..\src\januacore\Test\Janua.Core.Types.Test.pas',
+  Janua.Test.Mocks in '..\..\..\src\januacore\Test\Janua.Test.Mocks.pas';
 
 { keep comment here to protect the following conditional from being removed by the IDE when adding a unit }
 {$IFNDEF TESTINSIGHT}

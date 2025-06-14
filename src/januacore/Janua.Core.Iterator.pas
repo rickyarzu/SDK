@@ -5,11 +5,13 @@ interface
 uses System.SysUtils, System.Classes, System.Generics.Collections, System.Rtti, System.TypInfo,
   // Spring
   Spring, Spring.Collections,
+  // DAta
+  Data.DB,
   // Janua
   Janua.Core.Commons;
 
 type
-//------------------------------------------------------------------------------------------------------------
+  // ------------------------------------------------------------------------------------------------------------
   // Iterator mode enumeration
   TIteratorMode = (imReference, imCopy);
 
@@ -36,7 +38,7 @@ type
   end;
 
   // Base iterator for any class type
-  TJanuaObjectIterator<T: class> = class(TJanuaBindableClass)
+  TJanuaObjectIterator<T: class, constructor> = class(TJanuaBindableClass)
   private
     FList: TStringList;
     FPropertyRTTI: TRttiProperty;
@@ -45,6 +47,7 @@ type
     FMode: TIteratorMode;
     FCurrentCopy: T;
     FRttiCache: TRttiCache;
+    FIsUpdating: Boolean;
 
     procedure SetItemIndex(const Value: Integer);
     function GetCurrent: T;
@@ -55,6 +58,7 @@ type
     function GetHasPrevious: Boolean;
     function GetItem(Index: Integer): T;
     procedure UpdateCurrentCopy;
+    function GetText: String;
   protected
     function CreateInstance: T; virtual;
     procedure InitializeRttiCache;
@@ -65,6 +69,8 @@ type
     // Initialize the iterator with property name and array of objects
     procedure Initialize(const PropertyName: string; const ObjectArray: TArray<T>); overload;
     procedure Initialize(const PropertyName: string; const ObjectList: TList<T>); overload;
+    procedure Initialize(const PropertyName: string; const aDataset: TDataset); overload;
+    procedure Initialize(const PropertyName: string; const aDataset: TDataset; aArray: TArray<T>); overload;
 
     // Iterator navigation methods
     procedure MoveFirst;
@@ -97,6 +103,9 @@ type
     // Get all property values as array
     function GetPropertyValues: TArray<string>;
 
+    procedure BeginUpdate;
+    procedure EndUpdate;
+
     // Properties
     property ItemIndex: Integer read FItemIndex write SetItemIndex;
     property Current: T read GetCurrent;
@@ -108,6 +117,9 @@ type
     property HasPrevious: Boolean read GetHasPrevious;
     property PropertyName: string read FPropertyName;
     property Mode: TIteratorMode read FMode;
+    property Text: String read GetText;
+    property IsUpdating: Boolean read FIsUpdating;
+
   end;
 
   // Specialized iterator for TPersistent descendants with Assign support
@@ -130,6 +142,8 @@ type
 
 implementation
 
+uses Janua.Core.DatabaseMapper;
+
 { TRttiCache }
 
 constructor TRttiCache.Create(ATypeInfo: PTypeInfo);
@@ -142,12 +156,10 @@ begin
 
   FType := FContext.GetType(ATypeInfo);
   if FType = nil then
-    raise EJanuaIteratorException.CreateFmt(
-      'Cannot obtain RTTI information for type', []);
+    raise EJanuaIteratorException.CreateFmt('Cannot obtain RTTI information for type', []);
 
   // Check if type inherits from TPersistent
-  FIsTPersistent := FType.IsInstance and
-    FType.AsInstance.MetaclassType.InheritsFrom(TPersistent);
+  FIsTPersistent := FType.IsInstance and FType.AsInstance.MetaclassType.InheritsFrom(TPersistent);
 
   // Cache Assign method if available
   FAssignMethod := FType.GetMethod('Assign');
@@ -200,8 +212,8 @@ begin
   begin
     FCurrentCopy := CreateInstance;
     if FCurrentCopy = nil then
-      raise EJanuaIteratorException.Create(
-        'Copy mode requires type with parameterless constructor or use TJanuaPersistentIterator');
+      raise EJanuaIteratorException.Create
+        ('Copy mode requires type with parameterless constructor or use TJanuaPersistentIterator');
   end;
 end;
 
@@ -212,6 +224,40 @@ begin
     FCurrentCopy.Free;
   FRttiCache.Free;
   inherited;
+end;
+
+procedure TJanuaObjectIterator<T>.EndUpdate;
+begin
+
+end;
+
+procedure TJanuaObjectIterator<T>.Initialize(const PropertyName: string; const aDataset: TDataset);
+var
+  lArray: TArray<T>;
+begin
+  Initialize(PropertyName, aDataset, lArray);
+
+end;
+
+procedure TJanuaObjectIterator<T>.Initialize(const PropertyName: string; const aDataset: TDataset;
+  aArray: TArray<T>);
+var
+ aResult: T;
+begin
+  var
+  lIndex := 0;
+  if Assigned(aDataset) and (aDataset.RecordCount > 0) then
+  begin
+    aDataset.First;
+    While not aDataset.Eof do
+    begin
+      SetLength(aArray, lIndex + 1);
+      aArray[lIndex] := TDatabaseMapper.CreateObjectFromQuery<T>(aDataset);
+      Inc(lIndex);
+      aDataset.Next;
+    end;
+    Initialize(PropertyName, aArray);
+  end;
 end;
 
 procedure TJanuaObjectIterator<T>.InitializeRttiCache;
@@ -256,13 +302,12 @@ begin
       FRttiCache.AssignMethod.Invoke(FCurrentCopy, [SourceObj]);
     end
     else
-      raise EJanuaIteratorException.Create(
-        'Copy mode requires type to implement Assign method. Use TJanuaPersistentIterator for TPersistent types');
+      raise EJanuaIteratorException.Create
+        ('Copy mode requires type to implement Assign method. Use TJanuaPersistentIterator for TPersistent types');
   end;
 end;
 
-procedure TJanuaObjectIterator<T>.Initialize(const PropertyName: string;
-  const ObjectArray: TArray<T>);
+procedure TJanuaObjectIterator<T>.Initialize(const PropertyName: string; const ObjectArray: TArray<T>);
 var
   i: Integer;
   PropertyValue: string;
@@ -278,14 +323,12 @@ begin
   // Get property from cache
   FPropertyRTTI := FRttiCache.GetProperty(PropertyName);
   if FPropertyRTTI = nil then
-    raise EJanuaIteratorException.CreateFmt(
-      'Property "%s" not found in type %s',
+    raise EJanuaIteratorException.CreateFmt('Property "%s" not found in type %s',
       [PropertyName, T.ClassName]);
 
   // Verify that the property is readable
   if not FPropertyRTTI.IsReadable then
-    raise EJanuaIteratorException.CreateFmt(
-      'Property "%s" is not readable', [PropertyName]);
+    raise EJanuaIteratorException.CreateFmt('Property "%s" is not readable', [PropertyName]);
 
   // Add all objects to the internal list
   for i := 0 to Length(ObjectArray) - 1 do
@@ -309,8 +352,7 @@ begin
   end;
 end;
 
-procedure TJanuaObjectIterator<T>.Initialize(const PropertyName: string;
-  const ObjectList: TList<T>);
+procedure TJanuaObjectIterator<T>.Initialize(const PropertyName: string; const ObjectList: TList<T>);
 var
   TempArray: TArray<T>;
 begin
@@ -326,8 +368,7 @@ begin
     UpdateCurrentCopy;
   end
   else
-    raise EJanuaIteratorException.CreateFmt(
-      'ItemIndex %d is out of range. Valid range: -1..%d',
+    raise EJanuaIteratorException.CreateFmt('ItemIndex %d is out of range. Valid range: -1..%d',
       [Value, FList.Count - 1]);
 end;
 
@@ -353,7 +394,8 @@ begin
     if FMode = imCopy then
     begin
       // Temporarily update current copy for the requested index
-      var OldIndex := FItemIndex;
+      var
+      OldIndex := FItemIndex;
       try
         FItemIndex := Index;
         UpdateCurrentCopy;
@@ -367,8 +409,7 @@ begin
       Result := T(FList.Objects[Index]);
   end
   else
-    raise EJanuaIteratorException.CreateFmt(
-      'Index %d is out of range. Valid range: 0..%d',
+    raise EJanuaIteratorException.CreateFmt('Index %d is out of range. Valid range: 0..%d',
       [Index, FList.Count - 1]);
 end;
 
@@ -489,8 +530,7 @@ begin
     raise EJanuaIteratorException.Create('Cannot add nil object');
 
   if FPropertyRTTI = nil then
-    raise EJanuaIteratorException.Create(
-      'Iterator not initialized. Call Initialize method first');
+    raise EJanuaIteratorException.Create('Iterator not initialized. Call Initialize method first');
 
   // Extract property value
   PropertyValue := FPropertyRTTI.GetValue(TObject(AObject)).ToString;
@@ -520,6 +560,11 @@ begin
   end;
 end;
 
+procedure TJanuaObjectIterator<T>.BeginUpdate;
+begin
+
+end;
+
 procedure TJanuaObjectIterator<T>.Clear;
 begin
   FList.Clear;
@@ -544,6 +589,11 @@ begin
   SetLength(Result, FList.Count);
   for i := 0 to FList.Count - 1 do
     Result[i] := FList[i];
+end;
+
+function TJanuaObjectIterator<T>.GetText: String;
+begin
+  Result := FList.Text;
 end;
 
 { TJanuaPersistentIterator<T> }
