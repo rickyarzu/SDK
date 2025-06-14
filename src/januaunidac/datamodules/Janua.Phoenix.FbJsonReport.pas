@@ -7,7 +7,7 @@ uses
   // DAC
   UniProvider, InterBaseUniProvider, Data.DB, DBAccess, Uni, MemDS,
   // Phoenix
-  Phoenix.JSON.Config, Phoenix.JSON.Statini,
+  Phoenix.JSON.Config.DTO, Phoenix.Json.Statini.DTO,
   Janua.Phoenix.dmIBModel, Janua.Interbase.dmModel, Janua.Unidac.Connection;
 
 type
@@ -777,6 +777,66 @@ type
     qElencoMESE_INTERVENTO: TSmallintField;
     qElencoNOME_MESE: TWideStringField;
     qElencoSTATINO: TIntegerField;
+    qryStatiniNonCompilati: TUniQuery;
+    IntegerField2: TIntegerField;
+    IntegerField3: TIntegerField;
+    IntegerField4: TIntegerField;
+    WideStringField3: TWideStringField;
+    WideStringField4: TWideStringField;
+    WideStringField5: TWideStringField;
+    WideStringField6: TWideStringField;
+    WideStringField7: TWideStringField;
+    WideStringField8: TWideStringField;
+    WideStringField9: TWideStringField;
+    WideStringField10: TWideStringField;
+    BlobField1: TBlobField;
+    TimeField1: TTimeField;
+    TimeField2: TTimeField;
+    TimeField3: TTimeField;
+    TimeField4: TTimeField;
+    WideStringField11: TWideStringField;
+    IntegerField5: TIntegerField;
+    DateField2: TDateField;
+    IntegerField6: TIntegerField;
+    IntegerField7: TIntegerField;
+    BlobField2: TBlobField;
+    BlobField3: TBlobField;
+    BlobField4: TBlobField;
+    WideStringField12: TWideStringField;
+    WideStringField13: TWideStringField;
+    IntegerField8: TIntegerField;
+    WideStringField14: TWideStringField;
+    BlobField5: TBlobField;
+    BlobField6: TBlobField;
+    BlobField7: TBlobField;
+    WideStringField15: TWideStringField;
+    BlobField8: TBlobField;
+    BlobField9: TBlobField;
+    IntegerField9: TIntegerField;
+    WideStringField16: TWideStringField;
+    WideStringField17: TWideStringField;
+    WideStringField18: TWideStringField;
+    WideStringField19: TWideStringField;
+    WideStringField20: TWideStringField;
+    WideStringField21: TWideStringField;
+    WideStringField22: TWideStringField;
+    DateField3: TDateField;
+    WideStringField23: TWideStringField;
+    BlobField10: TBlobField;
+    WideStringField24: TWideStringField;
+    WideStringField25: TWideStringField;
+    WideStringField26: TWideStringField;
+    DateField4: TDateField;
+    TimeField5: TTimeField;
+    SmallintField1: TSmallintField;
+    BytesField1: TBytesField;
+    WideStringField27: TWideStringField;
+    WideStringField28: TWideStringField;
+    WideStringField29: TWideStringField;
+    BlobField11: TBlobField;
+    WideStringField30: TWideStringField;
+    BlobField12: TBlobField;
+    SmallintField2: TSmallintField;
   private
     FJsonPretty: string;
     FOriginal: string;

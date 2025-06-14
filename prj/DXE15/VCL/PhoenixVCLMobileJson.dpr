@@ -2,7 +2,7 @@ program PhoenixVCLMobileJson;
 
 uses
   Vcl.Forms,
-  Phoenix.Json.Statini in '..\..\..\src\januacore\Phoenix.Json.Statini.pas',
+  Phoenix.Json.Statini.DTO in '..\..\..\src\januacore\Phoenix.Json.Statini.DTO.pas',
   Janua.Phoenix.VCL.frmJsonAnalyzer in '..\..\..\src\VCL\Phoenix\Janua.Phoenix.VCL.frmJsonAnalyzer.pas' {frmPhoenixVCLJsonAnalyzer},
   Z.Json.Statini.Legacy in '..\..\..\src\januacore\Z.Json.Statini.Legacy.pas',
   Janua.Phoenix.FbJsonReport in '..\..\..\src\januaunidac\datamodules\Janua.Phoenix.FbJsonReport.pas' {dmFbPhoenixJsonReport: TDataModule},
