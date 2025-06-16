@@ -3933,4 +3933,234 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       FieldName = 'STATINO'
     end
   end
+  object qryStatiniNonCompilati: TUniQuery
+    Connection = JanuaUniConnection1
+    SQL.Strings = (
+      'select * from statini where stato < 9'
+      'order by RAGIONE_SOCIALE')
+    Left = 568
+    Top = 96
+    object IntegerField2: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
+    end
+    object IntegerField3: TIntegerField
+      FieldName = 'CLIENTE'
+    end
+    object IntegerField4: TIntegerField
+      FieldName = 'FILIALE'
+    end
+    object WideStringField3: TWideStringField
+      FieldName = 'TITOLO'
+      Size = 10
+    end
+    object WideStringField4: TWideStringField
+      FieldName = 'RAGIONE_SOCIALE'
+      Size = 255
+    end
+    object WideStringField5: TWideStringField
+      FieldName = 'INDIRIZZO'
+      Size = 255
+    end
+    object WideStringField6: TWideStringField
+      FieldName = 'COMUNE'
+      Size = 255
+    end
+    object WideStringField7: TWideStringField
+      FieldName = 'PROVINCIA'
+      FixedChar = True
+      Size = 2
+    end
+    object WideStringField8: TWideStringField
+      FieldName = 'CAP'
+      Size = 10
+    end
+    object WideStringField9: TWideStringField
+      FieldName = 'TELEFONO'
+      Size = 255
+    end
+    object WideStringField10: TWideStringField
+      FieldName = 'CELLULARE'
+      Size = 255
+    end
+    object BlobField1: TBlobField
+      FieldName = 'NOTE'
+    end
+    object TimeField1: TTimeField
+      FieldName = 'ORARIO_APERTURA_DAL1'
+    end
+    object TimeField2: TTimeField
+      FieldName = 'ORARIO_APERTURA_DAL2'
+    end
+    object TimeField3: TTimeField
+      FieldName = 'ORARIO_APERTURA_AL1'
+    end
+    object TimeField4: TTimeField
+      FieldName = 'ORARIO_APERTURA_AL2'
+    end
+    object WideStringField11: TWideStringField
+      FieldName = 'CHIUSURA'
+      Size = 255
+    end
+    object IntegerField5: TIntegerField
+      FieldName = 'FATTURA'
+    end
+    object DateField2: TDateField
+      FieldName = 'DATA_INTERVENTO'
+    end
+    object IntegerField6: TIntegerField
+      FieldName = 'GENERAZIONE_AUTOMATICA'
+    end
+    object IntegerField7: TIntegerField
+      FieldName = 'TECNICO_INTERVENTO'
+    end
+    object BlobField2: TBlobField
+      FieldName = 'SCANSIONE'
+    end
+    object BlobField3: TBlobField
+      FieldName = 'REGISTRO'
+    end
+    object BlobField4: TBlobField
+      FieldName = 'NOTE_PER_IL_TECNICO'
+    end
+    object WideStringField12: TWideStringField
+      FieldName = 'SOSPESO'
+      FixedChar = True
+      Size = 1
+    end
+    object WideStringField13: TWideStringField
+      FieldName = 'DA_ESPORTARE_SUL_WEB'
+      FixedChar = True
+      Size = 1
+    end
+    object IntegerField8: TIntegerField
+      FieldName = 'RESPONSABILE'
+    end
+    object WideStringField14: TWideStringField
+      FieldName = 'ESPORTATO_SU_MOBILE'
+      FixedChar = True
+      Size = 1
+    end
+    object BlobField5: TBlobField
+      FieldName = 'NOTE_DAL_TECNICO'
+    end
+    object BlobField6: TBlobField
+      FieldName = 'JSON_DA_MOBILE'
+    end
+    object BlobField7: TBlobField
+      FieldName = 'PDF_STATINO'
+    end
+    object WideStringField15: TWideStringField
+      FieldName = 'REGISTRO_IS_PDF'
+      FixedChar = True
+      Size = 1
+    end
+    object BlobField8: TBlobField
+      FieldName = 'VERBALE_PROVA_DINAMICA'
+    end
+    object BlobField9: TBlobField
+      FieldName = 'VERBALE_MANICHETTE'
+    end
+    object IntegerField9: TIntegerField
+      FieldName = 'PREVENTIVO'
+    end
+    object WideStringField16: TWideStringField
+      FieldName = 'IGNORA_EVIDENZIAZIONE'
+      FixedChar = True
+      Size = 1
+    end
+    object WideStringField17: TWideStringField
+      FieldName = 'ANNULLATO_DA_TABLET'
+      FixedChar = True
+      Size = 1
+    end
+    object WideStringField18: TWideStringField
+      FieldName = 'MOBILEWARN_NUOVA_ATTREZZATURA'
+      FixedChar = True
+      Size = 1
+    end
+    object WideStringField19: TWideStringField
+      FieldName = 'MOBILEWARN_ORDINARIA_RITIRATA'
+      FixedChar = True
+      Size = 1
+    end
+    object WideStringField20: TWideStringField
+      FieldName = 'MOBILEWARN_N_ORDIN_CONTROLLATA'
+      FixedChar = True
+      Size = 1
+    end
+    object WideStringField21: TWideStringField
+      FieldName = 'MOBILEWARN_SMALTIMENTO'
+      FixedChar = True
+      Size = 1
+    end
+    object WideStringField22: TWideStringField
+      FieldName = 'STATO_LAVORAZIONE'
+      FixedChar = True
+      Size = 1
+    end
+    object DateField3: TDateField
+      FieldName = 'DATA_CHIUSURA_DA_SERVER'
+    end
+    object WideStringField23: TWideStringField
+      FieldName = 'CHIUSURA_EXT'
+      Size = 50
+    end
+    object BlobField10: TBlobField
+      FieldName = 'CHIUSURA_STATINO'
+    end
+    object WideStringField24: TWideStringField
+      FieldName = 'MOBILEWARN_NON_ESEGUITI'
+      FixedChar = True
+      Size = 1
+    end
+    object WideStringField25: TWideStringField
+      FieldName = 'PRESA_IN_CARICO'
+      FixedChar = True
+      Size = 1
+    end
+    object WideStringField26: TWideStringField
+      FieldName = 'FORNITURA'
+      FixedChar = True
+      Size = 1
+    end
+    object DateField4: TDateField
+      FieldName = 'APPUNTAMENTO_DATA'
+    end
+    object TimeField5: TTimeField
+      FieldName = 'APPUNTAMENTO_ORA'
+    end
+    object SmallintField1: TSmallintField
+      FieldName = 'STATO'
+    end
+    object BytesField1: TBytesField
+      FieldName = 'JGUID'
+    end
+    object WideStringField27: TWideStringField
+      FieldName = 'GCAL'
+      FixedChar = True
+      Size = 1
+    end
+    object WideStringField28: TWideStringField
+      FieldName = 'WANUMBER'
+    end
+    object WideStringField29: TWideStringField
+      FieldName = 'WA'
+      FixedChar = True
+      Size = 1
+    end
+    object BlobField11: TBlobField
+      FieldName = 'STATO_IMMAGINE'
+    end
+    object WideStringField30: TWideStringField
+      FieldName = 'WA_ID'
+      Size = 128
+    end
+    object BlobField12: TBlobField
+      FieldName = 'WA_IMAGE'
+    end
+    object SmallintField2: TSmallintField
+      FieldName = 'WA_STATE'
+    end
+  end
 end

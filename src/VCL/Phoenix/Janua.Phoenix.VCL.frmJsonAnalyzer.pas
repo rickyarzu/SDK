@@ -147,7 +147,7 @@ var
 
 implementation
 
-uses Janua.Core.JSON, Phoenix.JSON.Statini, Janua.Phoenix.FbJsonReport;
+uses Janua.Core.JSON, Phoenix.Json.Statini.DTO, Janua.Phoenix.FbJsonReport;
 
 {$R *.dfm}
 

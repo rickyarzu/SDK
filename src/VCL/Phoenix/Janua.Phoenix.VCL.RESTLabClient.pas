@@ -11,7 +11,7 @@ uses
   // TMS
   AdvMemo, advmjson, JvExDBGrids, JvDBGrid,
   // Phoenix
-  Phoenix.JSON.Config, Phoenix.JSON.Statini,
+  Phoenix.JSON.Config.DTO, Phoenix.JSON.Statini.DTO,
   // Forms
   uJanuaVclForm, Janua.Controls.Forms.Impl, Janua.VCL.Controls.Forms.Impl, Janua.Controls.Forms.Intf,
   // Janua
@@ -118,6 +118,26 @@ type
     lbContratto: TLabel;
     edContratto: TEdit;
     btnTestAllegati: TButton;
+    tabExportConf: TTabSheet;
+    memExportConf: TAdvMemo;
+    btnConf: TButton;
+    memExportConfAdapted: TAdvMemo;
+    memFinalConf: TAdvMemo;
+    tabExportUtenti: TTabSheet;
+    memUtenti: TAdvMemo;
+    memUtentiTranslated: TAdvMemo;
+    memUtentiFinal: TAdvMemo;
+    tabMagazzino: TTabSheet;
+    memMagazzino: TAdvMemo;
+    memMagazzinoTranslated: TAdvMemo;
+    memMagazzinoFinal: TAdvMemo;
+    tabRapportini: TTabSheet;
+    EnhCRDBGrid18: TEnhCRDBGrid;
+    dsStatiniNC: TDataSource;
+    btnTestNewReport: TButton;
+    memReport: TAdvMemo;
+    memReportElaborato: TAdvMemo;
+    memReportFinale: TAdvMemo;
     procedure btnRestCallClick(Sender: TObject);
     procedure btnOpenClick(Sender: TObject);
     procedure btnSaveJsonClick(Sender: TObject);
@@ -139,6 +159,9 @@ type
     procedure btnIdrantiClick(Sender: TObject);
     procedure btnEstintoriClick(Sender: TObject);
     procedure btnTestAllegatiClick(Sender: TObject);
+    procedure btnConfClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure btnTestNewReportClick(Sender: TObject);
   private
     FdmFDACPhoenixLab: TdmPhoenixIBLab;
     { Private declarations }
@@ -159,8 +182,9 @@ implementation
 uses
   uQrpPhoenixReport, Janua.Phoenix.VCL.ReportController, Janua.Interbase.dmModel, Janua.Phoenix.FbReport,
   // Phoenix
-  DlgShowContratto, DlgNuovoStatino, Globale, ZFIBPlusNodoGenerico2,
+  DlgShowContratto, DlgNuovoStatino, Globale, ZFIBPlusNodoGenerico2, udmPhoenixFirebirdAppBackend,
   // Janua
+  Phoenix.JSON.Tecnici.DTO, Phoenix.JSON.Prodotti.DTO,
   Janua.Phoenix.dmIBReportPlanner, Janua.VCL.Functions, Janua.Core.AsyncTask,
   Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Phoenix.VCL.dlgModificaStatino,
   Janua.Application.Framework, Janua.REST.Client, Janua.Core.JSON, MainUnit, EsportazioneSuMobile,
@@ -171,6 +195,40 @@ uses
 procedure TfrmPhoenixVCLRESTLabClient.btnApriTuttiClick(Sender: TObject);
 begin
   dmFbPhoenixJsonReport.ApriTuttiIUniQuery
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.btnConfClick(Sender: TObject);
+begin
+  var
+  sConf := EsportazioneSuMobile.GetExportConfMobileJson(MAIN_FORM.QRY_GENERIC);
+  sConf := JsonPretty(sConf);
+  memExportConf.Lines.Text := sConf;
+  sConf := ReplacePhoenixJson(sConf);
+  memExportConfAdapted.Lines.Text := sConf;
+  var
+  lConf := TConfRoot.Create;
+  lConf.AsJson := sConf;
+  memFinalConf.Lines.Text := JsonPretty(lConf.AsJson);
+
+  sConf := EsportazioneSuMobile.GetUtentiJson(MAIN_FORM.QRY_GENERIC);
+  sConf := JsonPretty(sConf);
+  memUtenti.Lines.Text := sConf;
+  sConf := ReplacePhoenixJson(sConf);
+  memUtentiTranslated.Lines.Text := sConf;
+  var
+  lTec := TTecniciRoot.Create;
+  lTec.AsJson := sConf;
+  memUtentiFinal.Lines.Text := JsonPretty(lTec.AsJson);
+
+  sConf := EsportazioneSuMobile.GetMagazzinoJson(MAIN_FORM.QRY_GENERIC);
+  sConf := JsonPretty(sConf);
+  memMagazzino.Lines.Text := sConf;
+  sConf := ReplacePhoenixJson(sConf);
+  memMagazzinoTranslated.Lines.Text := sConf;
+  var
+  lProd := TProdottiRoot.Create;
+  lProd.AsJson := sConf;
+  memMagazzinoFinal.Lines.Text := JsonPretty(lProd.AsJson);
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.btnEstintoriClick(Sender: TObject);
@@ -307,6 +365,24 @@ begin
   TMOBExporting.Test := True;
   MOBExportingConfigurazioni(MAIN_FORM.QRY_GENERIC);
   memJsonConfigurazioni.Lines.Text := TMOBExporting.Configurazioni;
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.btnTestNewReportClick(Sender: TObject);
+begin
+  var
+  sConf := '';
+  var
+  lParam := dmFbPhoenixJsonReport.qryStatiniNonCompilatiCHIAVE.AsInteger;
+  MOBExportStatino(MAIN_FORM.QRY_GENERIC, False, sConf);
+  sConf := EsportazioneSuMobile.GetMagazzinoJson(MAIN_FORM.QRY_GENERIC);
+  sConf := JsonPretty(sConf);
+  memMagazzino.Lines.Text := sConf;
+  sConf := ReplacePhoenixJson(sConf);
+  memMagazzinoTranslated.Lines.Text := sConf;
+  var
+  lProd := TProdottiRoot.Create;
+  lProd.AsJson := sConf;
+  memMagazzinoFinal.Lines.Text := JsonPretty(lProd.AsJson);
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.btnTestReportClick(Sender: TObject);
@@ -447,6 +523,12 @@ begin
   Application.CreateForm(TfrmJsonPreview, frmJsonPreview);
   Application.CreateForm(TdmPhoenixFbReport, dmPhoenixFbReport);
   Application.CreateForm(TdmVCLPhoenixReportController, dmVCLPhoenixReportController);
+  Application.CreateForm(TdmPhoenixAppBackend, dmPhoenixAppBackend);
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.FormShow(Sender: TObject);
+begin
+  dmFbPhoenixJsonReport.qryStatiniNonCompilati.Open;
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.SetdmFDACPhoenixLab(const Value: TdmPhoenixIBLab);

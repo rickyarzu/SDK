@@ -1,0 +1,261 @@
+object MainForm: TMainForm
+  Left = 0
+  Top = 0
+  Caption = 'Gestione Interventi Antincendio'
+  ClientHeight = 600
+  ClientWidth = 400
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Orientations = [Portrait, Landscape, InvertedPortrait, InvertedLandscape]
+  FormFactor.Devices = [Desktop, iPhone, iPad]
+  DesignerMasterStyle = 0
+  object MainLayout: TLayout
+    Align = Client
+    Size.Width = 400.000000000000000000
+    Size.Height = 600.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object HeaderLayout: TLayout
+      Align = Top
+      Size.Width = 400.000000000000000000
+      Size.Height = 120.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object ToolBar1: TToolBar
+        Size.Width = 400.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object LoadButton: TButton
+          Align = Left
+          StyledSettings = [Family, Style, FontColor]
+          Size.Width = 80.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Carica'
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Trimming = None
+        end
+        object SaveButton: TButton
+          Align = Left
+          StyledSettings = [Family, Style, FontColor]
+          Position.X = 80.000000000000000000
+          Size.Width = 80.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'Salva'
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Trimming = None
+        end
+        object HomeButton: TButton
+          Align = Right
+          StyledSettings = [Family, Style, FontColor]
+          Position.X = 320.000000000000000000
+          Size.Width = 80.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'Home'
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Trimming = None
+        end
+      end
+      object TitleLabel: TLabel
+        Align = Top
+        StyledSettings = [Family, FontColor]
+        Position.Y = 40.000000000000000000
+        Size.Width = 400.000000000000000000
+        Size.Height = 35.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 18.000000000000000000
+        TextSettings.HorzAlign = Center
+        Text = 'Statino Antincendio'
+        TabOrder = 1
+      end
+      object StatusLabel: TLabel
+        Align = Top
+        StyledSettings = [Family, Size, Style]
+        Position.Y = 75.000000000000000000
+        Size.Width = 400.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.FontColor = claGray
+        TextSettings.HorzAlign = Center
+        Text = 'Pronto'
+        TabOrder = 2
+      end
+    end
+    object ContentLayout: TLayout
+      Align = Client
+      Size.Width = 400.000000000000000000
+      Size.Height = 480.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object TabControl1: TTabControl
+        Align = Client
+        Size.Width = 400.000000000000000000
+        Size.Height = 480.000000000000000000
+        Size.PlatformDefault = False
+        TabIndex = 0
+        TabOrder = 0
+        TabPosition = Top
+        Sizes = (
+          400s
+          454s
+          400s
+          454s
+          400s
+          454s
+          400s
+          454s
+          400s
+          454s
+          400s
+          454s
+          400s
+          454s
+          400s
+          454s
+          400s
+          454s)
+        object TabEstintori: TTabItem
+          CustomIcon = <
+            item
+            end>
+          TextSettings.Trimming = None
+          IsSelected = True
+          Size.Width = 64.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Estintori'
+          ExplicitSize.cx = 50.000000000000000000
+          ExplicitSize.cy = 50.000000000000000000
+        end
+        object TabSprinkler: TTabItem
+          CustomIcon = <
+            item
+            end>
+          TextSettings.Trimming = None
+          IsSelected = False
+          Size.Width = 67.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Sprinkler'
+          ExplicitSize.cx = 50.000000000000000000
+          ExplicitSize.cy = 50.000000000000000000
+        end
+        object TabPorte: TTabItem
+          CustomIcon = <
+            item
+            end>
+          TextSettings.Trimming = None
+          IsSelected = False
+          Size.Width = 48.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Porte'
+          ExplicitSize.cx = 50.000000000000000000
+          ExplicitSize.cy = 50.000000000000000000
+        end
+        object TabLuci: TTabItem
+          CustomIcon = <
+            item
+            end>
+          TextSettings.Trimming = None
+          IsSelected = False
+          Size.Width = 41.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Luci'
+          ExplicitSize.cx = 50.000000000000000000
+          ExplicitSize.cy = 50.000000000000000000
+        end
+        object TabRilevatoriFumo: TTabItem
+          CustomIcon = <
+            item
+            end>
+          TextSettings.Trimming = None
+          IsSelected = False
+          Size.Width = 70.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Rilevatori'
+          ExplicitSize.cx = 50.000000000000000000
+          ExplicitSize.cy = 50.000000000000000000
+        end
+        object TabGruppiPressurizzazione: TTabItem
+          CustomIcon = <
+            item
+            end>
+          TextSettings.Trimming = None
+          IsSelected = False
+          Size.Width = 57.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Gruppi'
+          ExplicitSize.cx = 50.000000000000000000
+          ExplicitSize.cy = 50.000000000000000000
+        end
+        object TabIdranti: TTabItem
+          CustomIcon = <
+            item
+            end>
+          TextSettings.Trimming = None
+          IsSelected = False
+          Size.Width = 55.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Idranti'
+          ExplicitSize.cx = 50.000000000000000000
+          ExplicitSize.cy = 50.000000000000000000
+        end
+        object TabImpiantiElettrici: TTabItem
+          CustomIcon = <
+            item
+            end>
+          TextSettings.Trimming = None
+          IsSelected = False
+          Size.Width = 64.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Impianti'
+          ExplicitSize.cx = 50.000000000000000000
+          ExplicitSize.cy = 50.000000000000000000
+        end
+        object TabProdotti: TTabItem
+          CustomIcon = <
+            item
+            end>
+          TextSettings.Trimming = None
+          IsSelected = False
+          Size.Width = 64.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Prodotti'
+          ExplicitSize.cx = 50.000000000000000000
+          ExplicitSize.cy = 50.000000000000000000
+        end
+      end
+    end
+  end
+end
