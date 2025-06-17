@@ -4506,10 +4506,6 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
                 Lines.Strings = (
                   'memLista')
                 TabOrder = 2
-                ExplicitLeft = 1288
-                ExplicitTop = 80
-                ExplicitWidth = 185
-                ExplicitHeight = 89
               end
             end
             object TabSheet6: TTabSheet

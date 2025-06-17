@@ -22,19 +22,19 @@ type
     FRAGIONESOCIALE: string;
     [JSONName('RESPONSABILE')]
     FRESPONSABILE: Integer;
+
   published
     [KeyField('CHIAVE')]
     [DBField('CHIAVE')]
     property CHIAVE: Integer read FCHIAVE write FCHIAVE;
-
     [DBField('RAGIONE_SOCIALE')]
     property RAGIONESOCIALE: string read FRAGIONESOCIALE write FRAGIONESOCIALE;
-
     [DBField('INDIRIZZO')]
     property INDIRIZZO: string read FINDIRIZZO write FINDIRIZZO;
-
     [DBField('RESPONSABILE')]
     property RESPONSABILE: Integer read FRESPONSABILE write FRESPONSABILE;
+
+
   end;
 
   TRSRoot = class(TJsonDTO)
@@ -63,19 +63,50 @@ type
     FINDIRIZZO: string;
     [JSONName('RESPONSABILE')]
     FRESPONSABILE: Integer;
+    // Interventi
+    [JSONName('ESTINTORI_ORDINARIO')]
+    FESTINTORIORDINARIO: Integer;
+    [JSONName('ESTINTORI_STRAORDINARIO')]
+    FESTINTORISTRAORDINARIO: Integer;
+    [JSONName('FUMI')]
+    FFUMI: Integer;
+    [JSONName('GRUPPI_ELETTR')]
+    FGRUPPIELETTR: Integer;
+    [JSONName('IDRANTI')]
+    FIDRANTI: Integer;
+    [JSONName('IMPIANTI_EL')]
+    FIMPIANTIEL: Integer;
+    [JSONName('LUCI')]
+    FLUCI: Integer;
+    [JSONName('SPRINKLER')]
+    FSPRINKLER: Integer;
   published
     [KeyField('CHIAVE')]
     [DBField('CHIAVE')]
     property CHIAVE: Integer read FCHIAVE write FCHIAVE;
-
     [DBField('RAGIONE_SOCIALE')]
     property RAGIONESOCIALE: string read FRAGIONESOCIALE write FRAGIONESOCIALE;
-
     [DBField('INDIRIZZO')]
     property INDIRIZZO: string read FINDIRIZZO write FINDIRIZZO;
-
     [DBField('RESPONSABILE')]
     property RESPONSABILE: Integer read FRESPONSABILE write FRESPONSABILE;
+    // Interventi
+    [DBField('ESTINTORI_ORDINARIO')]
+    property ESTINTORIORDINARIO: Integer read FESTINTORIORDINARIO write FESTINTORIORDINARIO;
+    [DBField('ESTINTORI_STRAORDINARIO')]
+    property ESTINTORISTRAORDINARIO: Integer read FESTINTORISTRAORDINARIO write FESTINTORISTRAORDINARIO;
+    [DBField('FUMI')]
+    property FUMI: Integer read FFUMI write FFUMI;
+    [DBField('GRUPPI_ELETTR')]
+    property GRUPPIELETTR: Integer read FGRUPPIELETTR write FGRUPPIELETTR;
+    [DBField('IDRANTI')]
+    property IDRANTI: Integer read FIDRANTI write FIDRANTI;
+    [DBField('IMPIANTI_EL')]
+    property IMPIANTIEL: Integer read FIMPIANTIEL write FIMPIANTIEL;
+    [DBField('LUCI')]
+    property LUCI: Integer read FLUCI write FLUCI;
+    [DBField('SPRINKLER')]
+    property SPRINKLER: Integer read FSPRINKLER write FSPRINKLER;
   end;
 
   TLSStatinoRoot = class(TJanuaJsonDTO)

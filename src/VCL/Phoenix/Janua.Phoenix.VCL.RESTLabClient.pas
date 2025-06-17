@@ -666,7 +666,7 @@ begin
   end;
 
   var
-  aRoot := TRSRoot.Create;
+  aRoot := {TRSRoot}TLSStatinoRoot.Create;
   aRoot.AsJson := memReportList.Lines.Text;
 
   // lStatino.AsJson := memReportList.Lines.Text;
