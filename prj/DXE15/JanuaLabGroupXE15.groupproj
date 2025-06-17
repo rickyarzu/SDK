@@ -144,6 +144,9 @@
         <Projects Include="Testing\JanuaUniDACUnitTesting.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="..\..\Samples\Janua\FMX\JanuaTestRapportino.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -575,14 +578,23 @@
     <Target Name="JanuaUniDACUnitTesting:Make">
         <MSBuild Projects="Testing\JanuaUniDACUnitTesting.dproj" Targets="Make"/>
     </Target>
+    <Target Name="JanuaTestRapportino">
+        <MSBuild Projects="..\..\Samples\Janua\FMX\JanuaTestRapportino.dproj"/>
+    </Target>
+    <Target Name="JanuaTestRapportino:Clean">
+        <MSBuild Projects="..\..\Samples\Janua\FMX\JanuaTestRapportino.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaTestRapportino:Make">
+        <MSBuild Projects="..\..\Samples\Janua\FMX\JanuaTestRapportino.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="Ean;gtRtl;gtCompression;gtCrypt;gtFilters;gtFont;gtDocEng;DCLgtAdvGridExp;DCLgtDocEng;DCLgtDocProd;DCLgtQRExp;TMSWebGMapsPkg;TMSWebGMapsPkgDE;TMSWebOSMapsPkg;TMSWebOSMapsPkgDE;OmniThreadLibraryRuntime;OmniThreadLibraryDesigntime;JOSE;TRCGooglePlaces_r;TRCGooglePlaces_d;VCLThemeSelector;VisualStyles;PlanAddons;ZipMasterR;FIBPlus;FIBPlusEditors;JanuaCoreThirdParty;JanuaRestRequestLib;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaRestWeb;JanuaThirdPartyVCL;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaUniGUI;Janua_UNI_TMLogistic;ZLibrariesWin;ZComponentsVCL;JanuaCoreUnitTesting;JanuaUniDACUnitTesting"/>
+        <CallTarget Targets="Ean;gtRtl;gtCompression;gtCrypt;gtFilters;gtFont;gtDocEng;DCLgtAdvGridExp;DCLgtDocEng;DCLgtDocProd;DCLgtQRExp;TMSWebGMapsPkg;TMSWebGMapsPkgDE;TMSWebOSMapsPkg;TMSWebOSMapsPkgDE;OmniThreadLibraryRuntime;OmniThreadLibraryDesigntime;JOSE;TRCGooglePlaces_r;TRCGooglePlaces_d;VCLThemeSelector;VisualStyles;PlanAddons;ZipMasterR;FIBPlus;FIBPlusEditors;JanuaCoreThirdParty;JanuaRestRequestLib;JanuaCore;JanuaMVVM;JanuaCoreComponents;JanuaUnidacComponentsD;JanuaUnidac;JanuaUnidacComponents;JanuaRestWeb;JanuaThirdPartyVCL;JanuaVCLControls;JanuaVCLComponents;JanuaTmsControls;JanuaFMXControls;JanuaVCLMVVM;JanuaUniGUI;Janua_UNI_TMLogistic;ZLibrariesWin;ZComponentsVCL;JanuaCoreUnitTesting;JanuaUniDACUnitTesting;JanuaTestRapportino"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Ean:Clean;gtRtl:Clean;gtCompression:Clean;gtCrypt:Clean;gtFilters:Clean;gtFont:Clean;gtDocEng:Clean;DCLgtAdvGridExp:Clean;DCLgtDocEng:Clean;DCLgtDocProd:Clean;DCLgtQRExp:Clean;TMSWebGMapsPkg:Clean;TMSWebGMapsPkgDE:Clean;TMSWebOSMapsPkg:Clean;TMSWebOSMapsPkgDE:Clean;OmniThreadLibraryRuntime:Clean;OmniThreadLibraryDesigntime:Clean;JOSE:Clean;TRCGooglePlaces_r:Clean;TRCGooglePlaces_d:Clean;VCLThemeSelector:Clean;VisualStyles:Clean;PlanAddons:Clean;ZipMasterR:Clean;FIBPlus:Clean;FIBPlusEditors:Clean;JanuaCoreThirdParty:Clean;JanuaRestRequestLib:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaRestWeb:Clean;JanuaThirdPartyVCL:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaUniGUI:Clean;Janua_UNI_TMLogistic:Clean;ZLibrariesWin:Clean;ZComponentsVCL:Clean;JanuaCoreUnitTesting:Clean;JanuaUniDACUnitTesting:Clean"/>
+        <CallTarget Targets="Ean:Clean;gtRtl:Clean;gtCompression:Clean;gtCrypt:Clean;gtFilters:Clean;gtFont:Clean;gtDocEng:Clean;DCLgtAdvGridExp:Clean;DCLgtDocEng:Clean;DCLgtDocProd:Clean;DCLgtQRExp:Clean;TMSWebGMapsPkg:Clean;TMSWebGMapsPkgDE:Clean;TMSWebOSMapsPkg:Clean;TMSWebOSMapsPkgDE:Clean;OmniThreadLibraryRuntime:Clean;OmniThreadLibraryDesigntime:Clean;JOSE:Clean;TRCGooglePlaces_r:Clean;TRCGooglePlaces_d:Clean;VCLThemeSelector:Clean;VisualStyles:Clean;PlanAddons:Clean;ZipMasterR:Clean;FIBPlus:Clean;FIBPlusEditors:Clean;JanuaCoreThirdParty:Clean;JanuaRestRequestLib:Clean;JanuaCore:Clean;JanuaMVVM:Clean;JanuaCoreComponents:Clean;JanuaUnidacComponentsD:Clean;JanuaUnidac:Clean;JanuaUnidacComponents:Clean;JanuaRestWeb:Clean;JanuaThirdPartyVCL:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaTmsControls:Clean;JanuaFMXControls:Clean;JanuaVCLMVVM:Clean;JanuaUniGUI:Clean;Janua_UNI_TMLogistic:Clean;ZLibrariesWin:Clean;ZComponentsVCL:Clean;JanuaCoreUnitTesting:Clean;JanuaUniDACUnitTesting:Clean;JanuaTestRapportino:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Ean:Make;gtRtl:Make;gtCompression:Make;gtCrypt:Make;gtFilters:Make;gtFont:Make;gtDocEng:Make;DCLgtAdvGridExp:Make;DCLgtDocEng:Make;DCLgtDocProd:Make;DCLgtQRExp:Make;TMSWebGMapsPkg:Make;TMSWebGMapsPkgDE:Make;TMSWebOSMapsPkg:Make;TMSWebOSMapsPkgDE:Make;OmniThreadLibraryRuntime:Make;OmniThreadLibraryDesigntime:Make;JOSE:Make;TRCGooglePlaces_r:Make;TRCGooglePlaces_d:Make;VCLThemeSelector:Make;VisualStyles:Make;PlanAddons:Make;ZipMasterR:Make;FIBPlus:Make;FIBPlusEditors:Make;JanuaCoreThirdParty:Make;JanuaRestRequestLib:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaRestWeb:Make;JanuaThirdPartyVCL:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaUniGUI:Make;Janua_UNI_TMLogistic:Make;ZLibrariesWin:Make;ZComponentsVCL:Make;JanuaCoreUnitTesting:Make;JanuaUniDACUnitTesting:Make"/>
+        <CallTarget Targets="Ean:Make;gtRtl:Make;gtCompression:Make;gtCrypt:Make;gtFilters:Make;gtFont:Make;gtDocEng:Make;DCLgtAdvGridExp:Make;DCLgtDocEng:Make;DCLgtDocProd:Make;DCLgtQRExp:Make;TMSWebGMapsPkg:Make;TMSWebGMapsPkgDE:Make;TMSWebOSMapsPkg:Make;TMSWebOSMapsPkgDE:Make;OmniThreadLibraryRuntime:Make;OmniThreadLibraryDesigntime:Make;JOSE:Make;TRCGooglePlaces_r:Make;TRCGooglePlaces_d:Make;VCLThemeSelector:Make;VisualStyles:Make;PlanAddons:Make;ZipMasterR:Make;FIBPlus:Make;FIBPlusEditors:Make;JanuaCoreThirdParty:Make;JanuaRestRequestLib:Make;JanuaCore:Make;JanuaMVVM:Make;JanuaCoreComponents:Make;JanuaUnidacComponentsD:Make;JanuaUnidac:Make;JanuaUnidacComponents:Make;JanuaRestWeb:Make;JanuaThirdPartyVCL:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaTmsControls:Make;JanuaFMXControls:Make;JanuaVCLMVVM:Make;JanuaUniGUI:Make;Janua_UNI_TMLogistic:Make;ZLibrariesWin:Make;ZComponentsVCL:Make;JanuaCoreUnitTesting:Make;JanuaUniDACUnitTesting:Make;JanuaTestRapportino:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
     <ItemGroup Condition="'$(BuildGroup)'=='Build All iOS'">
@@ -843,6 +855,12 @@
             <Configurations/>
             <Platforms/>
             <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaTestRapportino.dproj">
+            <ProjectGuid>{2DB4B8D0-D8D7-469A-8D34-E4326BAB80FB}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\JanuaRestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
@@ -1126,6 +1144,12 @@
             <ProjectGuid>{1169F6B9-70D9-4453-9CC4-4BB390A8C8BB}</ProjectGuid>
             <Configurations/>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaTestRapportino.dproj">
+            <ProjectGuid>{2DB4B8D0-D8D7-469A-8D34-E4326BAB80FB}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\JanuaRestRequestLib.dproj">
@@ -1412,6 +1436,12 @@
             <Platforms/>
             <Enabled>True</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaTestRapportino.dproj">
+            <ProjectGuid>{2DB4B8D0-D8D7-469A-8D34-E4326BAB80FB}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\JanuaRestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
@@ -1694,6 +1724,12 @@
             <ProjectGuid>{1169F6B9-70D9-4453-9CC4-4BB390A8C8BB}</ProjectGuid>
             <Configurations>Debug;Release</Configurations>
             <Platforms>Win32;Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaTestRapportino.dproj">
+            <ProjectGuid>{2DB4B8D0-D8D7-469A-8D34-E4326BAB80FB}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\JanuaRestRequestLib.dproj">
@@ -1980,6 +2016,12 @@
             <Platforms>Win32;Win64</Platforms>
             <Enabled>True</Enabled>
         </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaTestRapportino.dproj">
+            <ProjectGuid>{2DB4B8D0-D8D7-469A-8D34-E4326BAB80FB}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\JanuaRestRequestLib.dproj">
             <ProjectGuid>{92AD130E-0525-4104-B193-01C3F2AB1849}</ProjectGuid>
             <Configurations>Debug</Configurations>
@@ -2262,6 +2304,12 @@
             <ProjectGuid>{1169F6B9-70D9-4453-9CC4-4BB390A8C8BB}</ProjectGuid>
             <Configurations/>
             <Platforms/>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="..\..\Samples\Janua\FMX\JanuaTestRapportino.dproj">
+            <ProjectGuid>{2DB4B8D0-D8D7-469A-8D34-E4326BAB80FB}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32</Platforms>
             <Enabled>False</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="..\..\Components\pkg120\JanuaRestRequestLib.dproj">

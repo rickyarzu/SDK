@@ -66,7 +66,7 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
     Width = 748
     Height = 578
     Hint = ''
-    ActivePage = pgTimeSelection
+    ActivePage = pgPaymentPage
     TabBarVisible = False
     Align = alClient
     TabOrder = 1
@@ -1364,7 +1364,6 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
             Anchors = [akLeft, akTop, akRight, akBottom]
             TabOrder = 0
             Background.Picture.Data = {00}
-            ExplicitTop = 1
             ExplicitWidth = 340
             ExplicitHeight = 404
             inherited ulbPickupDate: TUniLabel
@@ -1377,15 +1376,21 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
               ExplicitHeight = 249
               inherited frameCarServiceSlotSelection1: TframeCarServiceSlotSelection
                 Height = 249
-                ExplicitHeight = 217
+                ExplicitHeight = 249
                 inherited pnlTimeSelect1: TUniSimplePanel
+                  ExplicitLeft = 3
+                  ExplicitTop = 3
+                  ExplicitWidth = 308
                   inherited frameTimeSelect1: TframeTimeSelect
                     AlignWithMargins = True
                     Left = 3
                     Top = 3
                     Width = 302
                     Height = 26
-                    ExplicitWidth = 314
+                    ExplicitLeft = 3
+                    ExplicitTop = 3
+                    ExplicitWidth = 302
+                    ExplicitHeight = 26
                     inherited imgBooked: TUniImage
                       AlignWithMargins = True
                       Left = 248
@@ -1393,11 +1398,15 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
                       Margins.Top = 1
                       Margins.Bottom = 1
                       Align = alRight
+                      ExplicitLeft = 248
                       ExplicitHeight = 24
                     end
                   end
                 end
                 inherited pnlTimeSelect5: TUniSimplePanel
+                  ExplicitLeft = 3
+                  ExplicitTop = 155
+                  ExplicitWidth = 308
                   inherited frameTimeSelect5: TframeTimeSelect
                     AlignWithMargins = True
                     Left = 3
@@ -1407,7 +1416,9 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
                     Align = alClient
                     Anchors = [akLeft, akTop, akRight, akBottom]
                     ExplicitLeft = 3
-                    ExplicitWidth = 314
+                    ExplicitTop = 3
+                    ExplicitWidth = 302
+                    ExplicitHeight = 26
                     inherited imgBooked: TUniImage
                       AlignWithMargins = True
                       Left = 248
@@ -1415,17 +1426,25 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
                       Margins.Top = 1
                       Margins.Bottom = 1
                       Align = alRight
+                      ExplicitLeft = 248
+                      ExplicitHeight = 24
                     end
                   end
                 end
                 inherited pnlTimeSelect4: TUniSimplePanel
+                  ExplicitLeft = 3
+                  ExplicitTop = 117
+                  ExplicitWidth = 308
                   inherited frameTimeSelect4: TframeTimeSelect
                     AlignWithMargins = True
                     Left = 3
                     Top = 3
                     Width = 302
                     Height = 26
-                    ExplicitWidth = 314
+                    ExplicitLeft = 3
+                    ExplicitTop = 3
+                    ExplicitWidth = 302
+                    ExplicitHeight = 26
                     inherited imgBooked: TUniImage
                       AlignWithMargins = True
                       Left = 248
@@ -1433,17 +1452,25 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
                       Margins.Top = 1
                       Margins.Bottom = 1
                       Align = alRight
+                      ExplicitLeft = 248
+                      ExplicitHeight = 24
                     end
                   end
                 end
                 inherited pnlTimeSelect3: TUniSimplePanel
+                  ExplicitLeft = 3
+                  ExplicitTop = 79
+                  ExplicitWidth = 308
                   inherited frameTimeSelect3: TframeTimeSelect
                     AlignWithMargins = True
                     Left = 3
                     Top = 3
                     Width = 302
                     Height = 26
-                    ExplicitWidth = 314
+                    ExplicitLeft = 3
+                    ExplicitTop = 3
+                    ExplicitWidth = 302
+                    ExplicitHeight = 26
                     inherited imgBooked: TUniImage
                       AlignWithMargins = True
                       Left = 248
@@ -1451,17 +1478,25 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
                       Margins.Top = 1
                       Margins.Bottom = 1
                       Align = alRight
+                      ExplicitLeft = 248
+                      ExplicitHeight = 24
                     end
                   end
                 end
                 inherited pnlTimeSelect2: TUniSimplePanel
+                  ExplicitLeft = 3
+                  ExplicitTop = 41
+                  ExplicitWidth = 308
                   inherited frameTimeSelect2: TframeTimeSelect
                     AlignWithMargins = True
                     Left = 3
                     Top = 3
                     Width = 302
                     Height = 26
-                    ExplicitWidth = 314
+                    ExplicitLeft = 3
+                    ExplicitTop = 3
+                    ExplicitWidth = 302
+                    ExplicitHeight = 26
                     inherited imgBooked: TUniImage
                       AlignWithMargins = True
                       Left = 248
@@ -1469,17 +1504,25 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
                       Margins.Top = 1
                       Margins.Bottom = 1
                       Align = alRight
+                      ExplicitLeft = 248
+                      ExplicitHeight = 24
                     end
                   end
                 end
                 inherited pnlTimeSelect6: TUniSimplePanel
+                  ExplicitLeft = 3
+                  ExplicitTop = 193
+                  ExplicitWidth = 308
                   inherited frameTimeSelect6: TframeTimeSelect
                     AlignWithMargins = True
                     Left = 3
                     Top = 3
                     Width = 302
                     Height = 26
-                    ExplicitWidth = 314
+                    ExplicitLeft = 3
+                    ExplicitTop = 3
+                    ExplicitWidth = 302
+                    ExplicitHeight = 26
                     inherited imgBooked: TUniImage
                       AlignWithMargins = True
                       Left = 248
@@ -1487,6 +1530,8 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
                       Margins.Top = 1
                       Margins.Bottom = 1
                       Align = alRight
+                      ExplicitLeft = 248
+                      ExplicitHeight = 24
                     end
                   end
                 end
@@ -1520,6 +1565,7 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
             ExplicitHeight = 404
             inherited ulbPickupDate: TUniLabel
               Width = 327
+              Caption = 'Seleziona Ora Restituzione'
               ExplicitWidth = 327
             end
             inherited pnlCarServiceSlotSelection: TUniSimplePanel
@@ -1527,15 +1573,21 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
               ExplicitHeight = 249
               inherited frameCarServiceSlotSelection1: TframeCarServiceSlotSelection
                 Height = 249
-                ExplicitHeight = 217
+                ExplicitHeight = 249
                 inherited pnlTimeSelect1: TUniSimplePanel
+                  ExplicitLeft = 3
+                  ExplicitTop = 3
+                  ExplicitWidth = 308
                   inherited frameTimeSelect1: TframeTimeSelect
                     AlignWithMargins = True
                     Left = 3
                     Top = 3
                     Width = 302
                     Height = 26
-                    ExplicitWidth = 314
+                    ExplicitLeft = 3
+                    ExplicitTop = 3
+                    ExplicitWidth = 302
+                    ExplicitHeight = 26
                     inherited imgBooked: TUniImage
                       AlignWithMargins = True
                       Left = 248
@@ -1543,6 +1595,8 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
                       Margins.Top = 1
                       Margins.Bottom = 1
                       Align = alRight
+                      ExplicitLeft = 248
+                      ExplicitHeight = 24
                     end
                     inherited ulbDeliveryTime: TUniLabel
                       Top = 13
@@ -1551,6 +1605,9 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
                   end
                 end
                 inherited pnlTimeSelect5: TUniSimplePanel
+                  ExplicitLeft = 3
+                  ExplicitTop = 155
+                  ExplicitWidth = 308
                   inherited frameTimeSelect5: TframeTimeSelect
                     AlignWithMargins = True
                     Left = 3
@@ -1561,7 +1618,9 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
                     Anchors = [akLeft, akTop, akRight, akBottom]
                     TabStop = True
                     ExplicitLeft = 3
-                    ExplicitWidth = 314
+                    ExplicitTop = 3
+                    ExplicitWidth = 302
+                    ExplicitHeight = 26
                     inherited imgBooked: TUniImage
                       AlignWithMargins = True
                       Left = 248
@@ -1569,18 +1628,25 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
                       Margins.Top = 1
                       Margins.Bottom = 1
                       Align = alRight
+                      ExplicitLeft = 248
+                      ExplicitHeight = 24
                     end
                   end
                 end
                 inherited pnlTimeSelect4: TUniSimplePanel
-                  ExplicitTop = 98
+                  ExplicitLeft = 3
+                  ExplicitTop = 117
+                  ExplicitWidth = 308
                   inherited frameTimeSelect4: TframeTimeSelect
                     AlignWithMargins = True
                     Left = 3
                     Top = 3
                     Width = 302
                     Height = 26
-                    ExplicitWidth = 314
+                    ExplicitLeft = 3
+                    ExplicitTop = 3
+                    ExplicitWidth = 302
+                    ExplicitHeight = 26
                     inherited imgBooked: TUniImage
                       AlignWithMargins = True
                       Left = 248
@@ -1588,17 +1654,25 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
                       Margins.Top = 1
                       Margins.Bottom = 1
                       Align = alRight
+                      ExplicitLeft = 248
+                      ExplicitHeight = 24
                     end
                   end
                 end
                 inherited pnlTimeSelect3: TUniSimplePanel
+                  ExplicitLeft = 3
+                  ExplicitTop = 79
+                  ExplicitWidth = 308
                   inherited frameTimeSelect3: TframeTimeSelect
                     AlignWithMargins = True
                     Left = 3
                     Top = 3
                     Width = 302
                     Height = 26
-                    ExplicitWidth = 314
+                    ExplicitLeft = 3
+                    ExplicitTop = 3
+                    ExplicitWidth = 302
+                    ExplicitHeight = 26
                     inherited imgBooked: TUniImage
                       AlignWithMargins = True
                       Left = 248
@@ -1606,17 +1680,25 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
                       Margins.Top = 1
                       Margins.Bottom = 1
                       Align = alRight
+                      ExplicitLeft = 248
+                      ExplicitHeight = 24
                     end
                   end
                 end
                 inherited pnlTimeSelect2: TUniSimplePanel
+                  ExplicitLeft = 3
+                  ExplicitTop = 41
+                  ExplicitWidth = 308
                   inherited frameTimeSelect2: TframeTimeSelect
                     AlignWithMargins = True
                     Left = 3
                     Top = 3
                     Width = 302
                     Height = 26
-                    ExplicitWidth = 314
+                    ExplicitLeft = 3
+                    ExplicitTop = 3
+                    ExplicitWidth = 302
+                    ExplicitHeight = 26
                     inherited imgBooked: TUniImage
                       AlignWithMargins = True
                       Left = 248
@@ -1624,17 +1706,25 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
                       Margins.Top = 1
                       Margins.Bottom = 1
                       Align = alRight
+                      ExplicitLeft = 248
+                      ExplicitHeight = 24
                     end
                   end
                 end
                 inherited pnlTimeSelect6: TUniSimplePanel
+                  ExplicitLeft = 3
+                  ExplicitTop = 193
+                  ExplicitWidth = 308
                   inherited frameTimeSelect6: TframeTimeSelect
                     AlignWithMargins = True
                     Left = 3
                     Top = 3
                     Width = 302
                     Height = 26
-                    ExplicitWidth = 314
+                    ExplicitLeft = 3
+                    ExplicitTop = 3
+                    ExplicitWidth = 302
+                    ExplicitHeight = 26
                     inherited imgBooked: TUniImage
                       AlignWithMargins = True
                       Left = 248
@@ -1642,6 +1732,8 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
                       Margins.Top = 1
                       Margins.Bottom = 1
                       Align = alRight
+                      ExplicitLeft = 248
+                      ExplicitHeight = 24
                     end
                   end
                 end
@@ -2813,6 +2905,7 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
             ExplicitHeight = 544
             inherited UniContainerPanel1: TUniContainerPanel
               Width = 720
+              ExplicitTop = 73
               ExplicitWidth = 720
               inherited UniContainerPanel7: TUniContainerPanel
                 Width = 511
@@ -2825,6 +2918,7 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
             end
             inherited UniContainerPanel2: TUniContainerPanel
               Width = 720
+              ExplicitTop = 136
               ExplicitWidth = 720
               inherited UniContainerPanel8: TUniContainerPanel
                 Left = 632
@@ -2841,6 +2935,7 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
             end
             inherited UniContainerPanel3: TUniContainerPanel
               Width = 720
+              ExplicitTop = 192
               ExplicitWidth = 720
               inherited UniContainerPanel11: TUniContainerPanel
                 Width = 591
@@ -2853,6 +2948,7 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
             end
             inherited UniContainerPanel4: TUniContainerPanel
               Width = 720
+              ExplicitTop = 320
               ExplicitWidth = 720
               inherited UniContainerPanel13: TUniContainerPanel
                 Width = 535
@@ -2865,6 +2961,7 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
             end
             inherited UniContainerPanel5: TUniContainerPanel
               Width = 720
+              ExplicitTop = 383
               ExplicitWidth = 720
               inherited UniContainerPanel14: TUniContainerPanel
                 Width = 632
@@ -2978,7 +3075,7 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
                 inherited cntframeTimeTablePickup: TUniContainerPanel
                   Width = 728
                   ExplicitWidth = 728
-                  inherited frameTimeTableDelivery: TframeCarServiceUniGUITimeTable
+                  inherited frameTimeTablePickup: TframeCarServiceUniGUITimeTable
                     Width = 728
                     ExplicitWidth = 728
                     inherited cntTimeTable: TUniContainerPanel
@@ -3026,7 +3123,7 @@ object dlgUniGUIBookingFrameWizard: TdlgUniGUIBookingFrameWizard
                 inherited cntTimeTableDelivery: TUniContainerPanel
                   Width = 728
                   ExplicitWidth = 728
-                  inherited frameTimeTablePickup: TframeCarServiceUniGUITimeTable
+                  inherited frameTimeTableDelivery: TframeCarServiceUniGUITimeTable
                     Width = 728
                     ExplicitWidth = 728
                     inherited cntTimeTable: TUniContainerPanel
