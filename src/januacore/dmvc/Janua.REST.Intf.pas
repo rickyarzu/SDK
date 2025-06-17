@@ -34,6 +34,7 @@ type
     function GetFullUrl: string;
     function GetBaseUrl: string;
     // Properties
+    property MimeType: TJanuaMimeType read GetMimeType write SetMimeType;
     property UserParam: string read GetUserParam write SetUserParam;
     property PasswordParam: string read GetPasswordParam write SetPasswordParam;
     property Content: string read GetContent write SetContent;

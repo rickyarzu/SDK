@@ -776,7 +776,7 @@ type
 
   TRilevatoriFumo = class
   private
-  [JSONName('ANOMALIA')]
+    [JSONName('ANOMALIA')]
     FANOMALIA: string;
     [JSONName('ANOMALIA_APPROVATA')]
     FANOMALIAAPPROVATA: Boolean;
@@ -975,7 +975,7 @@ type
     [JSONName('DataControllo')]
     [SuppressZero]
     FDataControllo: TDateTime;
-     [JSONName('DataControlloNegato')]
+    [JSONName('DataControlloNegato')]
     [SuppressZero]
     FDataControlloNegato: TDateTime;
     [JSONName('DataRestituzione')]
@@ -1241,65 +1241,65 @@ type
     FAccessori: TAccessori;
 
     // Lista Fatture Arretrate
-    [JSONName('FattureArretrate'), JSONMarshalled(False)]
+    [JSONName('fatturearretrate'), JSONMarshalled(False)]
     FFattureArretrateArray: TArray<TFattureArretrate>;
     [GenericListReflect]
     FFattureArretrate: TObjectList<TFattureArretrate>;
 
     // Lista Estintori
-    [JSONName('Estintori'), JSONMarshalled(False)]
+    [JSONName('estintori'), JSONMarshalled(False)]
     FEstintoriArray: TArray<TEstintori>;
     [GenericListReflect]
     FEstintori: TObjectList<TEstintori>;
     // [JSONName('Estintori'), GenericListReflect]
 
     // Lista Luci
-    [JSONName('Luci'), JSONMarshalled(False)]
+    [JSONName('luci'), JSONMarshalled(False)]
     FLuciArray: TArray<TLuci>;
     [GenericListReflect]
     FLuci: TObjectList<TLuci>;
     // [JSONName('Luci'), GenericListReflect]
 
     // Lista Idranti
-    [JSONName('Idranti'), JSONMarshalled(False)]
+    [JSONName('idranti'), JSONMarshalled(False)]
     FIdrantiArray: TArray<TIdranti>;
     [GenericListReflect]
     FIdranti: TObjectList<TIdranti>;
 
     // Lista Impianti Elettrici
-    [JSONName('ImpiantiElettrici'), JSONMarshalled(False)]
+    [JSONName('impiantielettrici'), JSONMarshalled(False)]
     FImpiantiElettriciArray: TArray<TImpiantiElettrici>;
     [GenericListReflect]
     FImpiantiElettrici: TObjectList<TImpiantiElettrici>;
     // [JSONName('ImpiantiElettrici'), GenericListReflect]
 
     // Lista Porte
-    [JSONName('Porte'), JSONMarshalled(False)]
+    [JSONName('porte'), JSONMarshalled(False)]
     FPorteArray: TArray<TPorte>;
     [GenericListReflect]
     FPorte: TObjectList<TPorte>;
     // [JSONName('Porte'), GenericListReflect]
 
-    [JSONName('Prodotti'), JSONMarshalled(False)]
+    [JSONName('prodotti'), JSONMarshalled(False)]
     FProdottiArray: TArray<TProdotti>;
     [GenericListReflect]
     FProdotti: TObjectList<TProdotti>;
     // [JSONName('Prodotti'), GenericListReflect]
 
-    [JSONName('RilevatoriFumo'), JSONMarshalled(False)]
+    [JSONName('rilevatorifumo'), JSONMarshalled(False)]
     FRilevatoriFumoArray: TArray<TRilevatoriFumo>;
     [GenericListReflect]
     FRilevatoriFumo: TObjectList<TRilevatoriFumo>;
     // [JSONName('RilevatoriFumo'), GenericListReflect]
 
     // Lista Sprinkler
-    [JSONName('Sprinkler'), JSONMarshalled(False)]
+    [JSONName('sprinkler'), JSONMarshalled(False)]
     FSprinklerArray: TArray<TSprinkler>;
     [GenericListReflect]
     FSprinkler: TObjectList<TSprinkler>;
 
     // Lista Gruppi di Pressurizzazione
-    [JSONName('GruppiPressurizzazione'), JSONMarshalled(False)]
+    [JSONName('gruppipressurizzazione'), JSONMarshalled(False)]
     FGruppiPressurizzazioneArray: TArray<TGruppiPressurizzazione>;
     [GenericListReflect]
     FGruppiPressurizzazione: TObjectList<TGruppiPressurizzazione>;
@@ -1417,6 +1417,12 @@ type
 function ReplacePhoenixJson(const aJson: string): string;
 function ReplaceJsonToPhoenix(const aJson: string): string;
 
+const
+  ArrayPhoenix: TArray<string> = ['Estintori', 'FattureArretrate', 'Luci', 'Idranti', 'ImpiantiElettrici', '',
+    'Porte', 'Prodotti', 'RilevatoriFumo', 'Sprinkler', 'GruppiPressurizzazione', '', '', '', '', ''];
+  ArrayDTO: TArray<string> = ['estintori', 'fatturearretrate', 'luci', 'idranti', 'impiantielettrici', '', '',
+    'porte', 'prodotti', 'rilevatoriFumo', 'sprinkler', 'gruppipressurizzazione', '', '', '', ''];
+
 var
   GlobalParams: string;
 
@@ -1429,7 +1435,11 @@ begin
   Result := aJson;
   GlobalParams := GlobalParams + sLineBreak + '-------------------' + sLineBreak;
 
-  for var I := 2010 to 2030 do
+  for var I := Low(ArrayDTO) to High(ArrayDTO) do
+    if not ArrayDTO[I].IsEmpty then
+      StringReplace(Result, '"' + ArrayDTO[I] + '"', '"' + ArrayPhoenix[I] + '"', [rfReplaceAll]);
+
+  for var I := 2001 to 2030 do
   begin
     var
     vComparer := '"' + I.ToString + '-';
@@ -1447,6 +1457,7 @@ begin
       K := J - 1;
       vReplacer := vReplacer + Lpad(K.ToString, 2, '0');
       Result := StringReplace(Result, vReplaced, vReplacer, [rfReplaceAll]);
+
       if vTest > 0 then
         GlobalParams := GlobalParams + (vReplaced + ' - ' + vReplacer + ' Found: ' + vTest.ToString) +
           sLineBreak;
@@ -1462,29 +1473,47 @@ function ReplacePhoenixJson(const aJson: string): string;
 begin
   Result := aJson;
   GlobalParams := '';
+
+  for var I := Low(ArrayPhoenix) to High(ArrayPhoenix) do
+    if not ArrayPhoenix[I].IsEmpty and (Pos('"' + ArrayPhoenix[I] + '"', Result ) > 0) then
+      Result := StringReplace(Result, '"' + ArrayPhoenix[I] + '"', '"' + ArrayDTO[I] + '"', [rfReplaceAll, rfIgnoreCase]);
+
   for var I := 2001 to 2030 do
   begin
     var
     vComparer := '"' + I.ToString + '-';
-    for var J := 0 to 11 do
+    for var J := 11 downto 0 do
     begin
-      var
-      l := 11 - J;
       var
       vReplacer := vComparer;
       var
-      vReplaced := vComparer + Lpad(l.ToString, 2, '0');
+      vReplaced := vComparer + Lpad(J.ToString, 2, '0');
 
       var
       vTest := POS(vReplaced, Result);
 
       var
-      K := l + 1;
+      K := J + 1;
       vReplacer := vReplacer + Lpad(K.ToString, 2, '0');
       Result := StringReplace(Result, vReplaced, vReplacer, [rfReplaceAll]);
       if vTest > 0 then
         GlobalParams := GlobalParams + (vReplaced + ' - ' + vReplacer + ' Found: ' + vTest.ToString) +
           sLineBreak;
+
+      if not(J in [10, 11]) then
+      begin
+        // vReplacer := vReplacer + K.ToString + '-';
+        vReplaced := vComparer + J.ToString + '-';
+        vReplacer := vReplacer + '-';
+        vTest := POS(vReplaced, Result);
+        if vTest > 0 then
+        begin
+          Result := StringReplace(Result, vReplaced, vReplacer, [rfReplaceAll]);
+          GlobalParams := GlobalParams + (vReplaced + ' - ' + vReplacer + ' Found: ' + vTest.ToString) +
+            sLineBreak;
+        end;
+      end;
+
     end;
   end;
 end;

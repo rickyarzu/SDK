@@ -9,7 +9,7 @@ uses
   MVCFramework;
 
 type
-  Th = class(TWebModule)
+  TwmPhoenixDMVC = class(TWebModule)
     procedure WebModuleCreate(Sender: TObject);
     procedure WebModuleDestroy(Sender: TObject);
   private
@@ -19,7 +19,7 @@ type
   end;
 
 var
-  WebModuleClass: TComponentClass = Th;
+  WebModuleClass: TComponentClass = TwmPhoenixDMVC;
 
 implementation
 
@@ -38,7 +38,7 @@ uses
   MVCFramework.Middleware.ETag, 
   MVCFramework.Middleware.Compression;
 
-procedure Th.WebModuleCreate(Sender: TObject);
+procedure TwmPhoenixDMVC.WebModuleCreate(Sender: TObject);
 begin
   FMVC := TMVCEngine.Create(Self,
     procedure(Config: TMVCConfig)
@@ -94,7 +94,7 @@ begin
    
 end;
 
-procedure Th.WebModuleDestroy(Sender: TObject);
+procedure TwmPhoenixDMVC.WebModuleDestroy(Sender: TObject);
 begin
   FMVC.Free;
 end;
