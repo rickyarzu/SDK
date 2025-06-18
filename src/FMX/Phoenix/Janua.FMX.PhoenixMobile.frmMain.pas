@@ -47,7 +47,7 @@ type
     Layout4: TLayout;
     rgSelectSearch: TTMSFMXRadioGroup;
     Layout5: TLayout;
-    VertScrollBox1: TVertScrollBox;
+    VertScrollBoxReports: TVertScrollBox;
     actSincroDB: TAction;
     procedure FormCreate(Sender: TObject);
     procedure TitleActionUpdate(Sender: TObject);
@@ -130,15 +130,32 @@ end;
 
 procedure TfrmFMXPhoenixMobileMain.CallBackEvent(Sender: TObject);
 begin
-var
+  var
   lCount := dmFMXPhoenixAppMobileController.StatiniLIst.statini.Count;
+  var
+  lTop := 0.0;
   if lCount > 0 then
   begin
-    for var I := 0 to lCount -1 do
-    begin
+    if FListFrames.Count > 0 then
+      for var I := FListFrames.Count downto 0 do
+        FListFrames[I].Free;
 
+    FListFrames.Clear;
+
+    for var I := 0 to lCount - 1 do
+    begin
+      var
+      aFrame := TframeReportItem.Create(self);
+      aFrame.Name := 'frameReportList' + I.ToString;
+      FListFrames.Add(aFrame);
+      aFrame.Align := TAlignLayout.Top;
+      aFrame.Position.Y := lTop;
+      lTop := lTop + aFrame.Height;
+      aFrame.Statino := dmFMXPhoenixAppMobileController.StatiniLIst.statini[I];
+      aFrame.Parent := VertScrollBoxReports;
+      aFrame.Visible := True;
     end;
-     // statini: TObjectList<TLSStatino>
+    // statini: TObjectList<TLSStatino>
   end;
 
 end;
@@ -147,7 +164,7 @@ procedure TfrmFMXPhoenixMobileMain.FormCreate(Sender: TObject);
 begin
   { This defines the default active tab at runtime }
   TabControl1.First(TTabTransition.None);
-  FListFrames:= TObjectList<TframeReportItem>.Create;
+  FListFrames := TObjectList<TframeReportItem>.Create;
   dmFMXPhoenixAppMobileController.AfterStatiniLoad := CallBackEvent;
 end;
 

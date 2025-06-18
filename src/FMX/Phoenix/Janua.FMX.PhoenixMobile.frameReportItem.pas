@@ -42,7 +42,7 @@ implementation
 
 {$R *.fmx}
 
-uses Janua.FMX.PhoenixMobile.Resources, Janua.FMX.PhoenixMobile.dmAppMobileController;
+uses System.StrUtils, Janua.FMX.PhoenixMobile.Resources, Janua.FMX.PhoenixMobile.dmAppMobileController;
 
 { TframeReportItem }
 
@@ -60,6 +60,58 @@ end;
 procedure TframeReportItem.SetStatino(const Value: TLSStatino);
 begin
   FStatino := Value;
+  if Assigned(FStatino) then
+  begin
+    lbRagioneSociale.Text := FStatino.RagioneSociale;
+    lbAddress.Text := FStatino.INDIRIZZO;
+    var
+    lText := '';
+    {
+      FESTINTORIORDINARIO: Integer;
+      FESTINTORISTRAORDINARIO: Integer;
+      FFUMI: Integer;
+      FGRUPPIELETTR: Integer;
+      FIDRANTI: Integer;
+      FIMPIANTIEL: Integer;
+      FLUCI: Integer;
+      FSPRINKLER: Integer; }
+    var
+    lTest1 := FStatino.ESTINTORIORDINARIO;
+    lText := lText + IfThen(lTest1 > 0, 'Estintori Ordinari: ' + lTest1.ToString, '');
+    var
+    lTest := FStatino.ESTINTORISTRAORDINARIO;
+    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', 'Estintori') + ', Straordinari: ' +
+      lTest.ToString, '');
+    lTest1 := lTest1 + lTest;
+
+    lTest := FStatino.FUMI;
+    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Ril. Incendi: ' +
+      lTest.ToString, '');
+    lTest1 := lTest1 + lTest;
+
+    lTest := FStatino.GRUPPIELETTR;
+    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Grp. Elettr.: ' +
+      lTest.ToString, '');
+    lTest1 := lTest1 + lTest;
+
+    lTest := FStatino.IDRANTI;
+    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Idranti: ' +
+      lTest.ToString, '');
+    lTest1 := lTest1 + lTest;
+
+    lTest := FStatino.LUCI;
+    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Luci: ' +
+      lTest.ToString, '');
+    lTest1 := lTest1 + lTest;
+
+    lTest := FStatino.SPRINKLER;
+    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Sprinkler: ' +
+      lTest.ToString, '');
+    lTest1 := lTest1 + lTest;
+
+
+    lbEstinguishers.Text := lText;
+  end;
 end;
 
 end.

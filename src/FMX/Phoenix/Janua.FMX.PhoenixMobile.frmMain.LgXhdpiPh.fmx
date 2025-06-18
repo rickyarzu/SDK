@@ -88,7 +88,7 @@ inherited frmFMXPhoenixMobileMain_LgXhdpiPh: TfrmFMXPhoenixMobileMain_LgXhdpiPh
       inherited Layout5: TLayout
         Size.Width = 450.000000000000000000
         Size.Height = 495.000000000000000000
-        inherited VertScrollBox1: TVertScrollBox
+        inherited VertScrollBoxReports: TVertScrollBox
           Size.Width = 450.000000000000000000
           Size.Height = 495.000000000000000000
           Viewport.Width = 50.000000000000000000

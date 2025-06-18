@@ -103,7 +103,7 @@ inherited frmFMXPhoenixMobileMain_iPhone4in: TfrmFMXPhoenixMobileMain_iPhone4in
       inherited Layout5: TLayout
         Size.Width = 320.000000000000000000
         Size.Height = 356.000000000000000000
-        inherited VertScrollBox1: TVertScrollBox
+        inherited VertScrollBoxReports: TVertScrollBox
           Size.Width = 320.000000000000000000
           Size.Height = 356.000000000000000000
           Viewport.Width = 50.000000000000000000
