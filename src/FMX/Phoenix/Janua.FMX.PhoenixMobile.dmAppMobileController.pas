@@ -156,8 +156,8 @@ begin
   // Apri con l'app scelta dall'utente
   if Intent.resolveActivity(TAndroidHelper.Context.getPackageManager) <> nil then
     TAndroidHelper.Activity.startActivity(Intent)
-  else
-    ShowMessage('Nessuna app di mappe disponibile');
+ // else
+ //   ShowMessage('Nessuna app di mappe disponibile');
 {$ENDIF}
 {$IFDEF IOS}
 {$ENDIF}
