@@ -1,6 +1,6 @@
 object frameReportItem: TframeReportItem
   Size.Width = 352.000000000000000000
-  Size.Height = 160.000000000000000000
+  Size.Height = 149.000000000000000000
   Size.PlatformDefault = False
   object Rectangle1: TRectangle
     Align = Top
@@ -21,6 +21,7 @@ object frameReportItem: TframeReportItem
       TextSettings.Trimming = None
       Text = 'ASSO ANTINCENDIO - Da Archiviare'
       TabOrder = 0
+      OnClick = NotifyClick
     end
   end
   object lbRagioneSociale: TLabel
@@ -51,6 +52,7 @@ object frameReportItem: TframeReportItem
     TextSettings.Trimming = None
     Text = 'Sede: Via Carnia 129r Teglia (GE) - Tel. 01060118258'
     TabOrder = 2
+    OnClick = NotifyClick
   end
   object lbEstinguishers: TLabel
     Align = Top
@@ -60,7 +62,7 @@ object frameReportItem: TframeReportItem
     Position.X = 3.000000000000000000
     Position.Y = 74.000000000000000000
     Size.Width = 346.000000000000000000
-    Size.Height = 48.000000000000000000
+    Size.Height = 39.000000000000000000
     Size.PlatformDefault = False
     TextSettings.VertAlign = Leading
     TextSettings.Trimming = None
@@ -68,11 +70,12 @@ object frameReportItem: TframeReportItem
       'ESTINTORI: 8 ordinarie - IDRANTI: 1 ordinarie - PORTE: 3 ordinar' +
       'ie'
     TabOrder = 1
+    OnClick = NotifyClick
   end
   object Layout1: TLayout
     Align = Client
     Size.Width = 352.000000000000000000
-    Size.Height = 38.000000000000000000
+    Size.Height = 36.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 4
     object btnGoogleMaps: TTMSFMXImage
@@ -80,7 +83,7 @@ object frameReportItem: TframeReportItem
       Position.X = 284.000000000000000000
       ClipChildren = True
       Size.Width = 32.000000000000000000
-      Size.Height = 38.000000000000000000
+      Size.Height = 36.000000000000000000
       Size.PlatformDefault = False
       Margins.Left = 4.000000000000000000
       StrokeThickness = 1.000000000000000000
@@ -105,7 +108,7 @@ object frameReportItem: TframeReportItem
       Position.X = 320.000000000000000000
       ClipChildren = True
       Size.Width = 32.000000000000000000
-      Size.Height = 38.000000000000000000
+      Size.Height = 36.000000000000000000
       Size.PlatformDefault = False
       Margins.Left = 4.000000000000000000
       StrokeThickness = 1.000000000000000000

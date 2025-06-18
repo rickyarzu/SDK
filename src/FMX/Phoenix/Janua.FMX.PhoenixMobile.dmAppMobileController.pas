@@ -24,9 +24,13 @@ type
   private
     FStatiniLIst: TLSStatinoRoot;
     FAfterStatiniLoad: TNotifyEvent;
+    FStatino: TStatino;
+    FConf: TConfRoot;
     procedure SetFullUrl(const Value: string);
     procedure SetStatiniLIst(const Value: TLSStatinoRoot);
     procedure SetAfterStatiniLoad(const Value: TNotifyEvent);
+    procedure SetStatino(const Value: TStatino);
+    procedure SetConf(const Value: TConfRoot);
     { Private declarations }
   protected
     FServer: string;
@@ -36,10 +40,14 @@ type
     { Public declarations }
     procedure OpenMap(const aAddress: string);
     procedure OpenDaily;
+    procedure OpenStatino(const aStatino: Integer);
+    procedure OpenConf;
   public
     property FullUrl: string read FFullUrl write SetFullUrl;
     property StatiniLIst: TLSStatinoRoot read FStatiniLIst write SetStatiniLIst;
     property AfterStatiniLoad: TNotifyEvent read FAfterStatiniLoad write SetAfterStatiniLoad;
+    property Statino: TStatino read FStatino write SetStatino;
+    property Conf: TConfRoot read FConf write SetConf;
   end;
 
 var
@@ -56,6 +64,32 @@ begin
   FServer := 'http://asso.januaservers.com';
   FPort := 9513;
   FStatiniLIst := TLSStatinoRoot.Create;
+  FStatino := TStatino.Create;
+  FConf := TConfRoot.Create;
+end;
+
+procedure TdmFMXPhoenixAppMobileController.OpenConf;
+var
+  lClient: IJanuaRESTClient;
+begin
+  // IJanuaRESTClient
+  lClient := TJanuaRESTClient.Create;
+  lClient.ServerURL := FServer;
+  lClient.ServerPort := FPort;
+  lClient.SetMimeType(jmtTextPlain);
+  lClient.ApiUrl := 'api/conf';
+  var
+  lTestUrl := lClient.GetFullUrl;
+
+  // function Execute(aMethod: TJanuaHttpMethod; aUrlParams: TStringArray = []): Boolean;
+  if lClient.Execute(TJanuaHttpMethod.jhmGet) then
+  begin
+    var
+    sConf := lClient.Content;
+    FConf.AsJson := sConf;
+  end;
+
+
 end;
 
 procedure TdmFMXPhoenixAppMobileController.OpenDaily;
@@ -112,9 +146,19 @@ begin
 {$ENDIF}
 end;
 
+procedure TdmFMXPhoenixAppMobileController.OpenStatino(const aStatino: Integer);
+begin
+
+end;
+
 procedure TdmFMXPhoenixAppMobileController.SetAfterStatiniLoad(const Value: TNotifyEvent);
 begin
   FAfterStatiniLoad := Value;
+end;
+
+procedure TdmFMXPhoenixAppMobileController.SetConf(const Value: TConfRoot);
+begin
+  FConf := Value;
 end;
 
 procedure TdmFMXPhoenixAppMobileController.SetFullUrl(const Value: string);
@@ -127,6 +171,11 @@ begin
   FStatiniLIst := Value;
 end;
 
+procedure TdmFMXPhoenixAppMobileController.SetStatino(const Value: TStatino);
+begin
+  FStatino := Value;
+end;
+
 procedure TdmFMXPhoenixAppMobileController.Timer1Timer(Sender: TObject);
 begin
   TimerDaily.Enabled := False;
@@ -134,6 +183,8 @@ begin
     OpenDaily;
     if Assigned(FAfterStatiniLoad) then
       FAfterStatiniLoad(Self);
+
+    OpenConf;
   except
     on e: exception do
     begin
