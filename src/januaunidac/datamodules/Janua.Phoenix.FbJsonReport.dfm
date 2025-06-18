@@ -3940,226 +3940,226 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       'order by RAGIONE_SOCIALE')
     Left = 568
     Top = 96
-    object IntegerField2: TIntegerField
+    object qryStatiniNonCompilatiCHIAVE: TIntegerField
       FieldName = 'CHIAVE'
       Required = True
     end
-    object IntegerField3: TIntegerField
+    object qryStatiniNonCompilatiCLIENTE: TIntegerField
       FieldName = 'CLIENTE'
     end
-    object IntegerField4: TIntegerField
+    object qryStatiniNonCompilatiFILIALE: TIntegerField
       FieldName = 'FILIALE'
     end
-    object WideStringField3: TWideStringField
+    object qryStatiniNonCompilatiTITOLO: TWideStringField
       FieldName = 'TITOLO'
       Size = 10
     end
-    object WideStringField4: TWideStringField
+    object qryStatiniNonCompilatiRAGIONE_SOCIALE: TWideStringField
       FieldName = 'RAGIONE_SOCIALE'
       Size = 255
     end
-    object WideStringField5: TWideStringField
+    object qryStatiniNonCompilatiINDIRIZZO: TWideStringField
       FieldName = 'INDIRIZZO'
       Size = 255
     end
-    object WideStringField6: TWideStringField
+    object qryStatiniNonCompilatiCOMUNE: TWideStringField
       FieldName = 'COMUNE'
       Size = 255
     end
-    object WideStringField7: TWideStringField
+    object qryStatiniNonCompilatiPROVINCIA: TWideStringField
       FieldName = 'PROVINCIA'
       FixedChar = True
       Size = 2
     end
-    object WideStringField8: TWideStringField
+    object qryStatiniNonCompilatiCAP: TWideStringField
       FieldName = 'CAP'
       Size = 10
     end
-    object WideStringField9: TWideStringField
+    object qryStatiniNonCompilatiTELEFONO: TWideStringField
       FieldName = 'TELEFONO'
       Size = 255
     end
-    object WideStringField10: TWideStringField
+    object qryStatiniNonCompilatiCELLULARE: TWideStringField
       FieldName = 'CELLULARE'
       Size = 255
     end
-    object BlobField1: TBlobField
+    object qryStatiniNonCompilatiNOTE: TBlobField
       FieldName = 'NOTE'
     end
-    object TimeField1: TTimeField
+    object qryStatiniNonCompilatiORARIO_APERTURA_DAL1: TTimeField
       FieldName = 'ORARIO_APERTURA_DAL1'
     end
-    object TimeField2: TTimeField
+    object qryStatiniNonCompilatiORARIO_APERTURA_DAL2: TTimeField
       FieldName = 'ORARIO_APERTURA_DAL2'
     end
-    object TimeField3: TTimeField
+    object qryStatiniNonCompilatiORARIO_APERTURA_AL1: TTimeField
       FieldName = 'ORARIO_APERTURA_AL1'
     end
-    object TimeField4: TTimeField
+    object qryStatiniNonCompilatiORARIO_APERTURA_AL2: TTimeField
       FieldName = 'ORARIO_APERTURA_AL2'
     end
-    object WideStringField11: TWideStringField
+    object qryStatiniNonCompilatiCHIUSURA: TWideStringField
       FieldName = 'CHIUSURA'
       Size = 255
     end
-    object IntegerField5: TIntegerField
+    object qryStatiniNonCompilatiFATTURA: TIntegerField
       FieldName = 'FATTURA'
     end
-    object DateField2: TDateField
+    object qryStatiniNonCompilatiDATA_INTERVENTO: TDateField
       FieldName = 'DATA_INTERVENTO'
     end
-    object IntegerField6: TIntegerField
+    object qryStatiniNonCompilatiGENERAZIONE_AUTOMATICA: TIntegerField
       FieldName = 'GENERAZIONE_AUTOMATICA'
     end
-    object IntegerField7: TIntegerField
+    object qryStatiniNonCompilatiTECNICO_INTERVENTO: TIntegerField
       FieldName = 'TECNICO_INTERVENTO'
     end
-    object BlobField2: TBlobField
+    object qryStatiniNonCompilatiSCANSIONE: TBlobField
       FieldName = 'SCANSIONE'
     end
-    object BlobField3: TBlobField
+    object qryStatiniNonCompilatiREGISTRO: TBlobField
       FieldName = 'REGISTRO'
     end
-    object BlobField4: TBlobField
+    object qryStatiniNonCompilatiNOTE_PER_IL_TECNICO: TBlobField
       FieldName = 'NOTE_PER_IL_TECNICO'
     end
-    object WideStringField12: TWideStringField
+    object qryStatiniNonCompilatiSOSPESO: TWideStringField
       FieldName = 'SOSPESO'
       FixedChar = True
       Size = 1
     end
-    object WideStringField13: TWideStringField
+    object qryStatiniNonCompilatiDA_ESPORTARE_SUL_WEB: TWideStringField
       FieldName = 'DA_ESPORTARE_SUL_WEB'
       FixedChar = True
       Size = 1
     end
-    object IntegerField8: TIntegerField
+    object qryStatiniNonCompilatiRESPONSABILE: TIntegerField
       FieldName = 'RESPONSABILE'
     end
-    object WideStringField14: TWideStringField
+    object qryStatiniNonCompilatiESPORTATO_SU_MOBILE: TWideStringField
       FieldName = 'ESPORTATO_SU_MOBILE'
       FixedChar = True
       Size = 1
     end
-    object BlobField5: TBlobField
+    object qryStatiniNonCompilatiNOTE_DAL_TECNICO: TBlobField
       FieldName = 'NOTE_DAL_TECNICO'
     end
-    object BlobField6: TBlobField
+    object qryStatiniNonCompilatiJSON_DA_MOBILE: TBlobField
       FieldName = 'JSON_DA_MOBILE'
     end
-    object BlobField7: TBlobField
+    object qryStatiniNonCompilatiPDF_STATINO: TBlobField
       FieldName = 'PDF_STATINO'
     end
-    object WideStringField15: TWideStringField
+    object qryStatiniNonCompilatiREGISTRO_IS_PDF: TWideStringField
       FieldName = 'REGISTRO_IS_PDF'
       FixedChar = True
       Size = 1
     end
-    object BlobField8: TBlobField
+    object qryStatiniNonCompilatiVERBALE_PROVA_DINAMICA: TBlobField
       FieldName = 'VERBALE_PROVA_DINAMICA'
     end
-    object BlobField9: TBlobField
+    object qryStatiniNonCompilatiVERBALE_MANICHETTE: TBlobField
       FieldName = 'VERBALE_MANICHETTE'
     end
-    object IntegerField9: TIntegerField
+    object qryStatiniNonCompilatiPREVENTIVO: TIntegerField
       FieldName = 'PREVENTIVO'
     end
-    object WideStringField16: TWideStringField
+    object qryStatiniNonCompilatiIGNORA_EVIDENZIAZIONE: TWideStringField
       FieldName = 'IGNORA_EVIDENZIAZIONE'
       FixedChar = True
       Size = 1
     end
-    object WideStringField17: TWideStringField
+    object qryStatiniNonCompilatiANNULLATO_DA_TABLET: TWideStringField
       FieldName = 'ANNULLATO_DA_TABLET'
       FixedChar = True
       Size = 1
     end
-    object WideStringField18: TWideStringField
+    object qryStatiniNonCompilatiMOBILEWARN_NUOVA_ATTREZZATURA: TWideStringField
       FieldName = 'MOBILEWARN_NUOVA_ATTREZZATURA'
       FixedChar = True
       Size = 1
     end
-    object WideStringField19: TWideStringField
+    object qryStatiniNonCompilatiMOBILEWARN_ORDINARIA_RITIRATA: TWideStringField
       FieldName = 'MOBILEWARN_ORDINARIA_RITIRATA'
       FixedChar = True
       Size = 1
     end
-    object WideStringField20: TWideStringField
+    object qryStatiniNonCompilatiMOBILEWARN_N_ORDIN_CONTROLLATA: TWideStringField
       FieldName = 'MOBILEWARN_N_ORDIN_CONTROLLATA'
       FixedChar = True
       Size = 1
     end
-    object WideStringField21: TWideStringField
+    object qryStatiniNonCompilatiMOBILEWARN_SMALTIMENTO: TWideStringField
       FieldName = 'MOBILEWARN_SMALTIMENTO'
       FixedChar = True
       Size = 1
     end
-    object WideStringField22: TWideStringField
+    object qryStatiniNonCompilatiSTATO_LAVORAZIONE: TWideStringField
       FieldName = 'STATO_LAVORAZIONE'
       FixedChar = True
       Size = 1
     end
-    object DateField3: TDateField
+    object qryStatiniNonCompilatiDATA_CHIUSURA_DA_SERVER: TDateField
       FieldName = 'DATA_CHIUSURA_DA_SERVER'
     end
-    object WideStringField23: TWideStringField
+    object qryStatiniNonCompilatiCHIUSURA_EXT: TWideStringField
       FieldName = 'CHIUSURA_EXT'
       Size = 50
     end
-    object BlobField10: TBlobField
+    object qryStatiniNonCompilatiCHIUSURA_STATINO: TBlobField
       FieldName = 'CHIUSURA_STATINO'
     end
-    object WideStringField24: TWideStringField
+    object qryStatiniNonCompilatiMOBILEWARN_NON_ESEGUITI: TWideStringField
       FieldName = 'MOBILEWARN_NON_ESEGUITI'
       FixedChar = True
       Size = 1
     end
-    object WideStringField25: TWideStringField
+    object qryStatiniNonCompilatiPRESA_IN_CARICO: TWideStringField
       FieldName = 'PRESA_IN_CARICO'
       FixedChar = True
       Size = 1
     end
-    object WideStringField26: TWideStringField
+    object qryStatiniNonCompilatiFORNITURA: TWideStringField
       FieldName = 'FORNITURA'
       FixedChar = True
       Size = 1
     end
-    object DateField4: TDateField
+    object qryStatiniNonCompilatiAPPUNTAMENTO_DATA: TDateField
       FieldName = 'APPUNTAMENTO_DATA'
     end
-    object TimeField5: TTimeField
+    object qryStatiniNonCompilatiAPPUNTAMENTO_ORA: TTimeField
       FieldName = 'APPUNTAMENTO_ORA'
     end
-    object SmallintField1: TSmallintField
+    object qryStatiniNonCompilatiSTATO: TSmallintField
       FieldName = 'STATO'
     end
-    object BytesField1: TBytesField
+    object qryStatiniNonCompilatiJGUID: TBytesField
       FieldName = 'JGUID'
     end
-    object WideStringField27: TWideStringField
+    object qryStatiniNonCompilatiGCAL: TWideStringField
       FieldName = 'GCAL'
       FixedChar = True
       Size = 1
     end
-    object WideStringField28: TWideStringField
+    object qryStatiniNonCompilatiWANUMBER: TWideStringField
       FieldName = 'WANUMBER'
     end
-    object WideStringField29: TWideStringField
+    object qryStatiniNonCompilatiWA: TWideStringField
       FieldName = 'WA'
       FixedChar = True
       Size = 1
     end
-    object BlobField11: TBlobField
+    object qryStatiniNonCompilatiSTATO_IMMAGINE: TBlobField
       FieldName = 'STATO_IMMAGINE'
     end
-    object WideStringField30: TWideStringField
+    object qryStatiniNonCompilatiWA_ID: TWideStringField
       FieldName = 'WA_ID'
       Size = 128
     end
-    object BlobField12: TBlobField
+    object qryStatiniNonCompilatiWA_IMAGE: TBlobField
       FieldName = 'WA_IMAGE'
     end
-    object SmallintField2: TSmallintField
+    object qryStatiniNonCompilatiWA_STATE: TSmallintField
       FieldName = 'WA_STATE'
     end
   end

@@ -1,4 +1,4 @@
-object h: Th
+object wmPhoenixDMVC: TwmPhoenixDMVC
   OnCreate = WebModuleCreate
   OnDestroy = WebModuleDestroy
   Actions = <>

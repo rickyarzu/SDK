@@ -15,8 +15,8 @@ uses
 
 type
   TframeUniGUICarServiceAddressSelect = class(TUniFrame { TAddressSelectUniGUICController } )
-    frameTimeTablePickup: TframeCarServiceUniGUITimeTable;
     frameTimeTableDelivery: TframeCarServiceUniGUITimeTable;
+    frameTimeTablePickup: TframeCarServiceUniGUITimeTable;
     cntAddressSelect: TUniContainerPanel;
     UniContainerPanel1: TUniContainerPanel;
     cboAddressSelection: TUniFSComboBox;

@@ -13,9 +13,10 @@ uses
   Web.WebBroker,
   IdContext,
   IdHTTPWebBrokerBridge,
-  Janua.Phoenix.DMVC in '..\..\..\src\januacore\Janua.Phoenix.DMVC.pas',
-  Janua.DMVC.WebModulePhoenix in '..\..\..\src\januawebrest\Janua.DMVC.WebModulePhoenix.pas' {h: TWebModule},
-  Janua.FDAC.Phoenix.Reports in '..\..\..\src\FireDAC\Janua.FDAC.Phoenix.Reports.pas' {dmFDACPhoenixReports: TDataModule};
+  Janua.Phoenix.DMVC in '..\..\..\src\januacore\dmvc\Janua.Phoenix.DMVC.pas',
+  Janua.DMVC.WebModulePhoenix in '..\..\..\src\januawebrest\Janua.DMVC.WebModulePhoenix.pas' {wmPhoenixDMVC: TWebModule},
+  Janua.FDAC.Phoenix.Reports in '..\..\..\src\FireDAC\Janua.FDAC.Phoenix.Reports.pas' {dmFDACPhoenixReports: TDataModule},
+  udmPhoenixReportsCaches in '..\..\..\..\Phoenix\Phoenix\SW\PhoenixMain\udmPhoenixReportsCaches.pas' {dmPhoenixReportsCaches: TDataModule};
 
 {$R *.res}
 

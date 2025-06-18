@@ -506,12 +506,12 @@ Coordinates=3864,1552,121,58
 [memReport]
 Coordinates=3577,2082,81,36
 
-[memReportFinale]
-Coordinates=3450,2082,117,36
-
-[memReportElaborato]
-Coordinates=3304,2082,136,36
-
 []
 Coordinates=2172,276,91,36
+
+[memReportTranslated]
+Coordinates=3304,2082,136,36
+
+[memReportFinal]
+Coordinates=3450,2082,117,36
 
