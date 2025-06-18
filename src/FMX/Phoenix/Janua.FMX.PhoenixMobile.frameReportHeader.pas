@@ -161,8 +161,8 @@ begin
   begin
     txtReportSummay.Text := '<b>Intervento N°: </b> ' + FStatino.CHIAVE.ToString +
       ' <br /><b>Mese Emissione: </b>  <br /><b>Amministratore: </b> ' + FStatino.NOMEAMMINISTRATORE +
-      '<br />' + '<b>Contratto: </b>' + FStatino.RAGIONESOCIALE + '<br /><b>Filiale: </b>' +
-      FStatino.DESCRIZIONECONTRATTO + '<br />'
+      '<br />' + '<b>Contratto: </b>' + FStatino.DESCRIZIONECONTRATTO + '<br /><b>Filiale: </b>' +
+      FStatino.NOMEFILIALE  + '<br />'
   end;
 end;
 
