@@ -180,10 +180,7 @@ begin
   begin
     var
     sConf := lClient.Content;
-
-    var
-    lConf := TStatino.Create;
-    lConf.AsJson := sConf;
+    FStatino.AsJson := sConf;
   end;
 
 end;

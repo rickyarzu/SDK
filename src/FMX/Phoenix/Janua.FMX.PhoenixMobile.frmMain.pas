@@ -192,6 +192,7 @@ end;
 
 procedure TfrmFMXPhoenixMobileMain.ReportClick(Sender: TObject);
 begin
+  frameFMXPhoenixMobileReportHeader1.Statino := dmFMXPhoenixAppMobileController.Statino;
   TabControl1.Next(TTabTransition.Slide);
 end;
 

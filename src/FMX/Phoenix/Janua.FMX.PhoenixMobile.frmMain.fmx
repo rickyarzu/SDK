@@ -17,7 +17,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
     Size.Height = 728.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 49.000000000000000000
-    TabIndex = 2
+    TabIndex = 0
     TabOrder = 0
     TabPosition = None
     Sizes = (
@@ -32,7 +32,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -317,7 +317,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -377,8 +377,8 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             Size.Width = 378.000000000000000000
             Size.Height = 44.000000000000000000
             TabOrder = 7
-            Viewport.Width = 378.000000000000000000
-            Viewport.Height = 44.000000000000000000
+            Viewport.Width = 370.000000000000000000
+            Viewport.Height = 36.000000000000000000
           end
         end
         inherited rcReportSummary: TRectangle
