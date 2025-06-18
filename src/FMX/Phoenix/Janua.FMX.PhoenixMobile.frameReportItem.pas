@@ -29,11 +29,13 @@ type
   private
     FStatino: TLSStatino;
     FOnItemClick: TNotifyEvent;
+    FClicked: Boolean;
     procedure SetStatino(const Value: TLSStatino);
     procedure SetOnItemClick(const Value: TNotifyEvent);
     { Private declarations }
   public
     { Public declarations }
+    constructor Create(AOwner: TComponent); override;
     property Statino: TLSStatino read FStatino write SetStatino;
     property OnItemClick: TNotifyEvent read FOnItemClick write SetOnItemClick;
   end;
@@ -46,10 +48,24 @@ uses System.StrUtils, Janua.FMX.PhoenixMobile.Resources, Janua.FMX.PhoenixMobile
 
 { TframeReportItem }
 
+constructor TframeReportItem.Create(AOwner: TComponent);
+begin
+  inherited;
+  FClicked := False;
+end;
+
 procedure TframeReportItem.NotifyClick(Sender: TObject);
 begin
-  if Assigned(FOnItemClick) then
-    FOnItemClick(self);
+  if Assigned(FStatino) and not FClicked then
+    try
+      FClicked := True;
+      dmFMXPhoenixAppMobileController.SelectedRow := FStatino;
+      dmFMXPhoenixAppMobileController.OpenStatino(FStatino.CHIAVE);
+      if Assigned(FOnItemClick) then
+        FOnItemClick(self);
+    finally
+      FClicked := False;
+    end;
 end;
 
 procedure TframeReportItem.SetOnItemClick(const Value: TNotifyEvent);
@@ -59,6 +75,7 @@ end;
 
 procedure TframeReportItem.SetStatino(const Value: TLSStatino);
 begin
+  FClicked := False;
   FStatino := Value;
   if Assigned(FStatino) then
   begin
@@ -95,20 +112,16 @@ begin
     lTest1 := lTest1 + lTest;
 
     lTest := FStatino.IDRANTI;
-    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Idranti: ' +
-      lTest.ToString, '');
+    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Idranti: ' + lTest.ToString, '');
     lTest1 := lTest1 + lTest;
 
     lTest := FStatino.LUCI;
-    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Luci: ' +
-      lTest.ToString, '');
+    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Luci: ' + lTest.ToString, '');
     lTest1 := lTest1 + lTest;
 
     lTest := FStatino.SPRINKLER;
-    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Sprinkler: ' +
-      lTest.ToString, '');
+    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Sprinkler: ' + lTest.ToString, '');
     lTest1 := lTest1 + lTest;
-
 
     lbEstinguishers.Text := lText;
   end;

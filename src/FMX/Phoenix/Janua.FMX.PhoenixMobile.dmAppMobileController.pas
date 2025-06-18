@@ -3,7 +3,7 @@ unit Janua.FMX.PhoenixMobile.dmAppMobileController;
 interface
 
 uses
-  System.SysUtils, System.Classes, System.NetEncoding,
+  System.SysUtils, System.Classes, System.NetEncoding, System.Generics.Collections,
 {$IFDEF ANDROID}
   Androidapi.JNI.Net,
   Androidapi.JNI.GraphicsContentViewText,
@@ -26,11 +26,15 @@ type
     FAfterStatiniLoad: TNotifyEvent;
     FStatino: TStatino;
     FConf: TConfRoot;
+    FSelectedRow: TLSStatino;
+    FDictContratti: TDictionary<integer, TContratti>;
     procedure SetFullUrl(const Value: string);
     procedure SetStatiniLIst(const Value: TLSStatinoRoot);
     procedure SetAfterStatiniLoad(const Value: TNotifyEvent);
     procedure SetStatino(const Value: TStatino);
     procedure SetConf(const Value: TConfRoot);
+    procedure SetSelectedRow(const Value: TLSStatino);
+    procedure SetDictContratti(const Value: TDictionary<integer, TContratti>);
     { Private declarations }
   protected
     FServer: string;
@@ -40,14 +44,17 @@ type
     { Public declarations }
     procedure OpenMap(const aAddress: string);
     procedure OpenDaily;
-    procedure OpenStatino(const aStatino: Integer);
+    procedure OpenStatino(const aStatino: integer);
     procedure OpenConf;
+    function FindContratto(const aContratto: integer; out oContratto: TContratti): Boolean;
   public
     property FullUrl: string read FFullUrl write SetFullUrl;
     property StatiniLIst: TLSStatinoRoot read FStatiniLIst write SetStatiniLIst;
     property AfterStatiniLoad: TNotifyEvent read FAfterStatiniLoad write SetAfterStatiniLoad;
     property Statino: TStatino read FStatino write SetStatino;
     property Conf: TConfRoot read FConf write SetConf;
+    property SelectedRow: TLSStatino read FSelectedRow write SetSelectedRow;
+    property DictContratti: TDictionary<integer, TContratti> read FDictContratti write SetDictContratti;
   end;
 
 var
@@ -66,11 +73,19 @@ begin
   FStatiniLIst := TLSStatinoRoot.Create;
   FStatino := TStatino.Create;
   FConf := TConfRoot.Create;
+  FDictContratti := TDictionary<integer, TContratti>.Create;
+end;
+
+function TdmFMXPhoenixAppMobileController.FindContratto(const aContratto: integer;
+  out oContratto: TContratti): Boolean;
+begin
+  Result := FDictContratti.TryGetValue(aContratto, oContratto);
 end;
 
 procedure TdmFMXPhoenixAppMobileController.OpenConf;
 var
   lClient: IJanuaRESTClient;
+  lContratto: TContratti;
 begin
   // IJanuaRESTClient
   lClient := TJanuaRESTClient.Create;
@@ -87,8 +102,10 @@ begin
     var
     sConf := lClient.Content;
     FConf.AsJson := sConf;
+    FDictContratti.Clear;
+    for lContratto in FConf.Contratti do
+      FDictContratti.Add(lContratto.CHIAVE, lContratto);
   end;
-
 
 end;
 
@@ -146,8 +163,28 @@ begin
 {$ENDIF}
 end;
 
-procedure TdmFMXPhoenixAppMobileController.OpenStatino(const aStatino: Integer);
+procedure TdmFMXPhoenixAppMobileController.OpenStatino(const aStatino: integer);
+var
+  lClient: IJanuaRESTClient;
 begin
+  lClient := TJanuaRESTClient.Create;
+  lClient.ServerURL := FServer;
+  lClient.ServerPort := FPort;
+  lClient.SetMimeType(jmtTextPlain);
+  lClient.ApiUrl := 'api/report';
+  var
+  vTest := lClient.GetFullUrl;
+
+  // function Execute(aMethod: TJanuaHttpMethod; aUrlParams: TStringArray = []): Boolean;
+  if lClient.Execute(TJanuaHttpMethod.jhmGet, [aStatino.ToString]) then
+  begin
+    var
+    sConf := lClient.Content;
+
+    var
+    lConf := TStatino.Create;
+    lConf.AsJson := sConf;
+  end;
 
 end;
 
@@ -161,9 +198,19 @@ begin
   FConf := Value;
 end;
 
+procedure TdmFMXPhoenixAppMobileController.SetDictContratti(const Value: TDictionary<integer, TContratti>);
+begin
+  FDictContratti := Value;
+end;
+
 procedure TdmFMXPhoenixAppMobileController.SetFullUrl(const Value: string);
 begin
   FFullUrl := Value;
+end;
+
+procedure TdmFMXPhoenixAppMobileController.SetSelectedRow(const Value: TLSStatino);
+begin
+  FSelectedRow := Value;
 end;
 
 procedure TdmFMXPhoenixAppMobileController.SetStatiniLIst(const Value: TLSStatinoRoot);

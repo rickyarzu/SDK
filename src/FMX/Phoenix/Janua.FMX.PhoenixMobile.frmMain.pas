@@ -8,10 +8,11 @@ uses
   // FMX
   FMX.Types, FMX.Controls, FMX.Graphics, FMX.Forms, FMX.Dialogs, FMX.TabControl, FMX.ActnList,
   FMX.Objects, FMX.StdCtrls, FMX.Controls.Presentation, FMX.ListView.Types, FMX.ListView.Appearances,
-  FMX.ListView.Adapters.Base, FMX.ListView,
+  FMX.ListView.Adapters.Base, FMX.ListView, FMX.Layouts, FMX.Edit, FMX.TMSBaseControl, FMX.TMSBaseGroup,
+  FMX.TMSRadioGroup,
   // Janua
   Janua.FMX.PhoenixMobile.Resources, Janua.FMX.ListViewMenu, Janua.Core.Commons, Janua.Core.Classes,
-  FMX.Layouts, FMX.Edit, FMX.TMSBaseControl, FMX.TMSBaseGroup, FMX.TMSRadioGroup,
+
   Janua.FMX.FormControls, Janua.FMX.PhoenixMobile.frameReportItem, Janua.FMX.PhoenixMobile.frameReportHeader;
 
 type
@@ -154,6 +155,7 @@ begin
       aFrame.Statino := dmFMXPhoenixAppMobileController.StatiniLIst.statini[I];
       aFrame.Parent := VertScrollBoxReports;
       aFrame.Visible := True;
+      aFrame.OnItemClick := ReportClick;
     end;
     // statini: TObjectList<TLSStatino>
   end;
@@ -190,7 +192,7 @@ end;
 
 procedure TfrmFMXPhoenixMobileMain.ReportClick(Sender: TObject);
 begin
-
+  TabControl1.Next(TTabTransition.Slide);
 end;
 
 end.

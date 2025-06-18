@@ -8,8 +8,11 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls, FMX.Controls.Presentation,
   FMX.Layouts, FMX.TMSBaseControl, FMX.TMSDateTimeEdit, FMX.Ani, FMX.Objects, FMX.TMSBitmap, FMX.Memo.Types,
   FMX.ScrollBox, FMX.Memo, FMX.TMSHTMLText,
+  // DTO
+  Phoenix.JSON.Tecnici.DTO, Phoenix.JSON.Prodotti.DTO, DTO.Phoenix.ReportList, Phoenix.JSON.Config.DTO,
+  Phoenix.JSON.Statini.DTO,
   // Janua
-  Janua.Core.Classes, Janua.FMX.FormControls, Janua.Core.Commons;
+  Janua.REST.Client, Janua.Core.Classes, Janua.FMX.FormControls, Janua.Core.Commons;
 
 type
   TframeFMXPhoenixMobileReportHeader = class(TFrame)
@@ -133,15 +136,34 @@ type
     BitmapAnimation44: TBitmapAnimation;
     BitmapAnimation45: TBitmapAnimation;
   private
+    FStatino: TStatino;
+    procedure SetStatino(const Value: TStatino);
     { Private declarations }
   public
     { Public declarations }
+    property Statino: TStatino read FStatino write SetStatino;
   end;
 
 implementation
 
 {$R *.fmx}
 
-uses Janua.FMX.PhoenixMobile.Resources;
+uses Janua.FMX.PhoenixMobile.Resources, Janua.FMX.PhoenixMobile.dmAppMobileController;
+
+{ TframeFMXPhoenixMobileReportHeader }
+
+procedure TframeFMXPhoenixMobileReportHeader.SetStatino(const Value: TStatino);
+var
+  oContratto: TContratti;
+begin
+  FStatino := Value;
+  if Assigned(FStatino) then
+  begin
+    txtReportSummay.Text := '<b>Intervento N°: </b> ' + FStatino.CHIAVE.ToString +
+      ' <br /><b>Mese Emissione: </b>  <br /><b>Amministratore: </b> ' + FStatino.NOMEAMMINISTRATORE +
+      '<br />' + '<b>Contratto: </b>' + FStatino.RAGIONESOCIALE + '<br /><b>Filiale: </b>' +
+      FStatino.DESCRIZIONECONTRATTO + '<br />'
+  end;
+end;
 
 end.

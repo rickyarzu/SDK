@@ -2,6 +2,7 @@ object frameReportItem: TframeReportItem
   Size.Width = 352.000000000000000000
   Size.Height = 149.000000000000000000
   Size.PlatformDefault = False
+  OnClick = NotifyClick
   object Rectangle1: TRectangle
     Align = Top
     Fill.Color = claAquamarine

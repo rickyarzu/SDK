@@ -132,6 +132,7 @@ inherited frmFMXPhoenixMobileMain_iPhone4in: TfrmFMXPhoenixMobileMain_iPhone4in
             inherited Switch1: TSwitch
               Position.X = 265.000000000000000000
               Size.Width = 55.000000000000000000
+              Size.Height = 30.000000000000000000
             end
           end
           inherited Layout3: TLayout
