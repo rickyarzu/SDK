@@ -21,10 +21,10 @@
         <Projects Include="JanuaRestWeb.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="JanuaFMXControls.dproj">
+        <Projects Include="JanuaRestWebComponents.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="JanuaRestWebComponents.dproj">
+        <Projects Include="JanuaFMXControls.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="JanuaUniGUI.dproj">
@@ -113,15 +113,6 @@
     <Target Name="JanuaRestWeb:Make">
         <MSBuild Projects="JanuaRestWeb.dproj" Targets="Make"/>
     </Target>
-    <Target Name="JanuaFMXControls">
-        <MSBuild Projects="JanuaFMXControls.dproj"/>
-    </Target>
-    <Target Name="JanuaFMXControls:Clean">
-        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="JanuaFMXControls:Make">
-        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Make"/>
-    </Target>
     <Target Name="JanuaRestWebComponents">
         <MSBuild Projects="JanuaRestWebComponents.dproj"/>
     </Target>
@@ -130,6 +121,15 @@
     </Target>
     <Target Name="JanuaRestWebComponents:Make">
         <MSBuild Projects="JanuaRestWebComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JanuaFMXControls">
+        <MSBuild Projects="JanuaFMXControls.dproj"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Clean">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JanuaFMXControls:Make">
+        <MSBuild Projects="JanuaFMXControls.dproj" Targets="Make"/>
     </Target>
     <Target Name="JanuaUniGUI">
         <MSBuild Projects="JanuaUniGUI.dproj"/>
@@ -204,21 +204,21 @@
         <MSBuild Projects="Testing\JanuaCoreUnitTesting.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="JanuaCoreThirdParty;JanuaCore;JanuaCoreComponents;JanuaMVVM;JanuaUnidac;JanuaRestWeb;JanuaFMXControls;JanuaRestWebComponents;JanuaUniGUI;JanuaVCLControls;JanuaVCLComponents;JanuaVCLChatGPTTest;SimpleChat;JanuaOpenAISimpleChat;JanuaWhatsAppWebBroker;JanuaCoreUnitTesting"/>
+        <CallTarget Targets="JanuaCoreThirdParty;JanuaCore;JanuaCoreComponents;JanuaMVVM;JanuaUnidac;JanuaRestWeb;JanuaRestWebComponents;JanuaFMXControls;JanuaUniGUI;JanuaVCLControls;JanuaVCLComponents;JanuaVCLChatGPTTest;SimpleChat;JanuaOpenAISimpleChat;JanuaWhatsAppWebBroker;JanuaCoreUnitTesting"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="JanuaCoreThirdParty:Clean;JanuaCore:Clean;JanuaCoreComponents:Clean;JanuaMVVM:Clean;JanuaUnidac:Clean;JanuaRestWeb:Clean;JanuaFMXControls:Clean;JanuaRestWebComponents:Clean;JanuaUniGUI:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaVCLChatGPTTest:Clean;SimpleChat:Clean;JanuaOpenAISimpleChat:Clean;JanuaWhatsAppWebBroker:Clean;JanuaCoreUnitTesting:Clean"/>
+        <CallTarget Targets="JanuaCoreThirdParty:Clean;JanuaCore:Clean;JanuaCoreComponents:Clean;JanuaMVVM:Clean;JanuaUnidac:Clean;JanuaRestWeb:Clean;JanuaRestWebComponents:Clean;JanuaFMXControls:Clean;JanuaUniGUI:Clean;JanuaVCLControls:Clean;JanuaVCLComponents:Clean;JanuaVCLChatGPTTest:Clean;SimpleChat:Clean;JanuaOpenAISimpleChat:Clean;JanuaWhatsAppWebBroker:Clean;JanuaCoreUnitTesting:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaCoreComponents:Make;JanuaMVVM:Make;JanuaUnidac:Make;JanuaRestWeb:Make;JanuaFMXControls:Make;JanuaRestWebComponents:Make;JanuaUniGUI:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaVCLChatGPTTest:Make;SimpleChat:Make;JanuaOpenAISimpleChat:Make;JanuaWhatsAppWebBroker:Make;JanuaCoreUnitTesting:Make"/>
+        <CallTarget Targets="JanuaCoreThirdParty:Make;JanuaCore:Make;JanuaCoreComponents:Make;JanuaMVVM:Make;JanuaUnidac:Make;JanuaRestWeb:Make;JanuaRestWebComponents:Make;JanuaFMXControls:Make;JanuaUniGUI:Make;JanuaVCLControls:Make;JanuaVCLComponents:Make;JanuaVCLChatGPTTest:Make;SimpleChat:Make;JanuaOpenAISimpleChat:Make;JanuaWhatsAppWebBroker:Make;JanuaCoreUnitTesting:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
-    <ItemGroup Condition="'$(BuildGroup)'=='Lib'">
-        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
-            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
+    <ItemGroup Condition="'$(BuildGroup)'=='Lib Win 32/64'">
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUniGUI.dproj">
             <ProjectGuid>{1E33FBF4-B5F5-4F40-9570-C994F04ACB86}</ProjectGuid>
@@ -240,9 +240,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaCore.dproj">
             <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaFMXControls.dproj">
             <ProjectGuid>{2C451D9D-4344-407D-A0FB-FCB990D07888}</ProjectGuid>
@@ -258,9 +258,9 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaMVVM.dproj">
             <ProjectGuid>{3293824C-E4B5-4DD5-AED2-ED589BF9E7C9}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLControls.dproj">
             <ProjectGuid>{9D24E1C0-6B4F-432C-96F1-267B44C19DFE}</ProjectGuid>
@@ -270,21 +270,21 @@
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaRestWeb.dproj">
             <ProjectGuid>{660FC37D-A5AA-4681-85AC-FACA7829E746}</ProjectGuid>
-            <Configurations>Debug</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaRestWebComponents.dproj">
             <ProjectGuid>{B40E5E9E-AA7D-4CF4-8387-BD3B5234037B}</ProjectGuid>
-            <Configurations>Release</Configurations>
-            <Platforms>Win32</Platforms>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaUnidac.dproj">
             <ProjectGuid>{29917791-FE41-4F8F-BA7C-88186805C375}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
         <BuildGroupProject Include="JanuaVCLComponents.dproj">
             <ProjectGuid>{11B3312C-B1C2-49A4-800C-5A227CBC94C4}</ProjectGuid>
@@ -304,16 +304,16 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaCoreComponents.dproj">
-            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
-            <Configurations/>
-            <Platforms/>
-            <Enabled>False</Enabled>
+        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+            <Configurations>Debug;Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
         </BuildGroupProject>
     </ItemGroup>
-    <ItemGroup Condition="'$(BuildGroup)'=='Lib Win 32/64'">
-        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
-            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
+    <ItemGroup Condition="'$(BuildGroup)'=='Lib'">
+        <BuildGroupProject Include="JanuaCoreComponents.dproj">
+            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
@@ -402,8 +402,8 @@
             <Platforms/>
             <Enabled>False</Enabled>
         </BuildGroupProject>
-        <BuildGroupProject Include="JanuaCoreComponents.dproj">
-            <ProjectGuid>{2AAFE924-515E-4C67-A112-37B86ED64C3D}</ProjectGuid>
+        <BuildGroupProject Include="JanuaCoreThirdParty.dproj">
+            <ProjectGuid>{7BB35E06-B1E2-470D-BCF6-56F754BF0850}</ProjectGuid>
             <Configurations/>
             <Platforms/>
             <Enabled>False</Enabled>
