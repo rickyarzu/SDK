@@ -236,9 +236,12 @@ uses
   ufrmPhoenixJsonPreview, udmPhoenixReportsCaches,
   // Janua
   Phoenix.JSON.Tecnici.DTO, Phoenix.JSON.Prodotti.DTO, Janua.REST.Client, DTO.Phoenix.ReportList,
-  Janua.Phoenix.dmIBReportPlanner, Janua.VCL.Functions, Janua.Core.AsyncTask,
+  Janua.Phoenix.dmIBReportPlanner, Janua.VCL.Functions,
+
+  Janua.Core.AsyncTask, Janua.Application.Framework, Janua.Core.JSON,
+
   Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Phoenix.VCL.dlgModificaStatino,
-  Janua.Application.Framework, Janua.Core.JSON, MainUnit, EsportazioneSuMobile,
+   MainUnit, EsportazioneSuMobile,
   Janua.Phoenix.FbJsonReport;
 
 {$R *.dfm}
