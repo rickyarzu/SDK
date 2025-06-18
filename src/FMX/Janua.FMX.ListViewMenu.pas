@@ -524,11 +524,11 @@ end;
 
 procedure TJanuaFMXListViewMenu.ListViewFairItemClick(const Sender: TObject; const AItem: TListViewItem);
 begin
-  if Assigned(self.FBeforeItemClick) then
+  if Assigned(FBeforeItemClick) then
     FBeforeItemClick(Sender);
 
-  if (AItem.Tag > -1) and (AItem.Tag < self.FListElements.Count) then
-    self.FListElements[AItem.Tag].DoClick;
+  if (AItem.Tag > -1) and (AItem.Tag < FListElements.Count) then
+    FListElements[AItem.Tag].DoClick;
 
   if Assigned(self.FAfterItemClick) then
     FAfterItemClick(Sender);
@@ -633,7 +633,7 @@ procedure TJanuaFMXListViewMenu.SetListView(const Value: TListView);
 begin
   FListView := Value;
   if Assigned(self.FListView) then
-    self.FListView.OnItemClick := self.ListViewFairItemClick;
+    FListView.OnItemClick := ListViewFairItemClick;
 end;
 
 procedure TJanuaFMXListViewMenu.SetLocalMapItem(const Value: TJanuaFMXListElement);
@@ -958,14 +958,22 @@ end;
 procedure TJanuaFMXListViewMenuController.InternalDeactivate;
 begin
   inherited;
+  FListView.OnClick := nil;
   if Assigned(self.FListView) then
-    self.FListView.Items.Clear;
+    FListView.Items.Clear;
 end;
 
 procedure TJanuaFMXListViewMenuController.ListViewFairItemClick(const Sender: TObject;
   const AItem: TListViewItem);
 begin
 
+  if (AItem.Tag > -1) and (AItem.Tag < MenuItems.Count) then
+    MenuItems.Items[AItem.Tag].DoClick;
+  {
+  if Assigned(self.FAfterItemClick) then
+    FAfterItemClick(Sender);
+  }
+  // MenuItems.Items[AItem.Tag];
 end;
 
 procedure TJanuaFMXListViewMenuController.SetImageIndex(const Value: TImageIndex);
@@ -982,6 +990,7 @@ end;
 procedure TJanuaFMXListViewMenuController.SetListView(const Value: TListView);
 begin
   FListView := Value;
+  FListView.OnItemClick := ListViewFairItemClick;
 end;
 
 procedure TJanuaFMXListViewMenuController.SetMenuItems(const Value: TFMXMenuCollection);

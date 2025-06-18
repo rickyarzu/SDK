@@ -78,15 +78,17 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
           Size.Height = 48.000000000000000000
           Size.PlatformDefault = False
           object btnNext: TSpeedButton
-            Action = NextTabAction1
             Align = MostRight
+            StyledSettings = [Family, Size]
+            IconTintColor = claSeashell
             Images = dmJanuaFMXPhoenixMobileResources.ImageList512
-            ImageIndex = 19
+            ImageIndex = 9
             Position.X = 336.000000000000000000
             Size.Width = 48.000000000000000000
             Size.Height = 48.000000000000000000
             Size.PlatformDefault = False
-            StyleLookup = 'nexttoolbutton'
+            StyleLookup = 'refreshtoolbutton'
+            Text = 'Next'
             TextSettings.Trimming = None
           end
           object Layout1: TLayout
@@ -126,7 +128,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
               TextSettings.FontColor = claWhite
               TextSettings.HorzAlign = Trailing
               TextSettings.Trimming = None
-              Text = 'Riccardo Arduino'
+              Text = 'Vercellino Fabrizio'
               TabOrder = 2
             end
           end
@@ -291,6 +293,22 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
               Version = '1.0.2.6'
             end
           end
+        end
+      end
+      object Layout5: TLayout
+        Align = Client
+        Size.Width = 384.000000000000000000
+        Size.Height = 528.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        object VertScrollBox1: TVertScrollBox
+          Align = Client
+          Size.Width = 384.000000000000000000
+          Size.Height = 528.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Viewport.Width = 384.000000000000000000
+          Viewport.Height = 528.000000000000000000
         end
       end
     end
@@ -525,6 +543,10 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
       Category = 'Tab'
       TabControl = TabControl1
     end
+    object actSincroDB: TAction
+      Category = 'Tab'
+      Text = 'actSincroDB'
+    end
   end
   object jlvMenuController: TJanuaFMXListViewMenuController
     Enabled = False
@@ -537,6 +559,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
       item
         Images = dmJanuaFMXPhoenixMobileResources.ImageList512
         Title = 'Rapporti di Manutenziona Ordinaria'
+        OnClick = jlvMenuControllerMenuItems0Click
         ImageIndex = 17
       end
       item

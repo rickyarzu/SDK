@@ -4,14 +4,15 @@ interface
 
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, System.Actions,
+  System.Generics.Collections,
   // FMX
   FMX.Types, FMX.Controls, FMX.Graphics, FMX.Forms, FMX.Dialogs, FMX.TabControl, FMX.ActnList,
   FMX.Objects, FMX.StdCtrls, FMX.Controls.Presentation, FMX.ListView.Types, FMX.ListView.Appearances,
   FMX.ListView.Adapters.Base, FMX.ListView,
   // Janua
-  Janua.FMX.PhoenixMobile.Resources, Janua.FMX.ListViewMenu, Janua.Core.Commons,  Janua.Core.Classes, FMX.Layouts,
-  Janua.FMX.FormControls, Janua.FMX.PhoenixMobile.frameReportItem, Janua.FMX.PhoenixMobile.frameReportHeader,
-  FMX.Edit, FMX.TMSBaseControl, FMX.TMSBaseGroup, FMX.TMSRadioGroup;
+  Janua.FMX.PhoenixMobile.Resources, Janua.FMX.ListViewMenu, Janua.Core.Commons, Janua.Core.Classes,
+  FMX.Layouts, FMX.Edit, FMX.TMSBaseControl, FMX.TMSBaseGroup, FMX.TMSRadioGroup,
+  Janua.FMX.FormControls, Janua.FMX.PhoenixMobile.frameReportItem, Janua.FMX.PhoenixMobile.frameReportHeader;
 
 type
   TfrmFMXPhoenixMobileMain = class(TForm)
@@ -45,17 +46,24 @@ type
     Rectangle3: TRectangle;
     Layout4: TLayout;
     rgSelectSearch: TTMSFMXRadioGroup;
+    Layout5: TLayout;
+    VertScrollBox1: TVertScrollBox;
+    actSincroDB: TAction;
     procedure FormCreate(Sender: TObject);
     procedure TitleActionUpdate(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure btnTestClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure jlvMenuControllerMenuItems0Click(Sender: TObject);
   private
     { Private declarations }
     FTestMenu: TJanuaFMXListViewMenuController;
     FdmJanuaFMXPhoenixMobileResources: TdmJanuaFMXPhoenixMobileResources;
+    FListFrames: TObjectList<TframeReportItem>;
   public
     { Public declarations }
+    procedure ReportClick(Sender: TObject);
+    procedure CallBackEvent(Sender: TObject);
   end;
 
 var
@@ -63,7 +71,7 @@ var
 
 implementation
 
-uses Spring;
+uses Spring, Janua.FMX.PhoenixMobile.dmAppMobileController;
 
 {$R *.fmx}
 {$R *.LgXhdpiPh.fmx ANDROID}
@@ -120,10 +128,27 @@ begin
   FTestMenu.DrawListView;
 end;
 
+procedure TfrmFMXPhoenixMobileMain.CallBackEvent(Sender: TObject);
+begin
+var
+  lCount := dmFMXPhoenixAppMobileController.StatiniLIst.statini.Count;
+  if lCount > 0 then
+  begin
+    for var I := 0 to lCount -1 do
+    begin
+
+    end;
+     // statini: TObjectList<TLSStatino>
+  end;
+
+end;
+
 procedure TfrmFMXPhoenixMobileMain.FormCreate(Sender: TObject);
 begin
   { This defines the default active tab at runtime }
   TabControl1.First(TTabTransition.None);
+  FListFrames:= TObjectList<TframeReportItem>.Create;
+  dmFMXPhoenixAppMobileController.AfterStatiniLoad := CallBackEvent;
 end;
 
 procedure TfrmFMXPhoenixMobileMain.FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
@@ -139,6 +164,16 @@ end;
 procedure TfrmFMXPhoenixMobileMain.FormShow(Sender: TObject);
 begin
   jlvMenuController.DrawListView
+end;
+
+procedure TfrmFMXPhoenixMobileMain.jlvMenuControllerMenuItems0Click(Sender: TObject);
+begin
+  TabControl1.Next(TTabTransition.Slide);
+end;
+
+procedure TfrmFMXPhoenixMobileMain.ReportClick(Sender: TObject);
+begin
+
 end;
 
 end.

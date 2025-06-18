@@ -13,6 +13,8 @@ inherited frmFMXPhoenixMobileMain_iPhone55in: TfrmFMXPhoenixMobileMain_iPhone55i
       414s
       716s)
     inherited TabItem1: TTabItem
+      Size.Width = 11.000000000000000000
+      Size.Height = 11.000000000000000000
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
       inherited ListViewMain: TListView
@@ -24,16 +26,19 @@ inherited frmFMXPhoenixMobileMain_iPhone55in: TfrmFMXPhoenixMobileMain_iPhone55i
         inherited Rectangle1: TRectangle
           Size.Width = 414.000000000000000000
           inherited btnNext: TSpeedButton
-            Position.X = 366.000000000000000000
+            Position.X = 370.000000000000000000
+            Position.Y = 2.000000000000000000
+            Size.Width = 44.000000000000000000
+            Size.Height = 44.000000000000000000
           end
           inherited Layout1: TLayout
-            Size.Width = 346.000000000000000000
+            Size.Width = 350.000000000000000000
             inherited lbUtente: TLabel
-              Size.Width = 346.000000000000000000
+              Size.Width = 350.000000000000000000
               TextSettings.Font.StyleExt = {00070000000000000004000000}
             end
             inherited Label1: TLabel
-              Position.X = 58.000000000000000000
+              Position.X = 62.000000000000000000
               TextSettings.Font.StyleExt = {00070000000000000004000000}
             end
           end
@@ -84,6 +89,16 @@ inherited frmFMXPhoenixMobileMain_iPhone55in: TfrmFMXPhoenixMobileMain_iPhone55i
               ItemFont.StyleExt = {00070000000000000004000000}
             end
           end
+        end
+      end
+      inherited Layout5: TLayout
+        Size.Width = 414.000000000000000000
+        Size.Height = 520.000000000000000000
+        inherited VertScrollBox1: TVertScrollBox
+          Size.Width = 414.000000000000000000
+          Size.Height = 520.000000000000000000
+          Viewport.Width = 50.000000000000000000
+          Viewport.Height = 50.000000000000000000
         end
       end
     end

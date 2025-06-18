@@ -23,8 +23,10 @@ type
     procedure Timer1Timer(Sender: TObject);
   private
     FStatiniLIst: TLSStatinoRoot;
+    FAfterStatiniLoad: TNotifyEvent;
     procedure SetFullUrl(const Value: string);
     procedure SetStatiniLIst(const Value: TLSStatinoRoot);
+    procedure SetAfterStatiniLoad(const Value: TNotifyEvent);
     { Private declarations }
   protected
     FServer: string;
@@ -37,6 +39,7 @@ type
   public
     property FullUrl: string read FFullUrl write SetFullUrl;
     property StatiniLIst: TLSStatinoRoot read FStatiniLIst write SetStatiniLIst;
+    property AfterStatiniLoad: TNotifyEvent read FAfterStatiniLoad write SetAfterStatiniLoad;
   end;
 
 var
@@ -72,9 +75,7 @@ begin
   begin
     var
     sConf := lClient.Content;
-    var
-    lConf := TLSStatinoRoot.Create;
-    lConf.AsJson := sConf;
+    FStatiniLIst.AsJson := sConf;
     {
       memReportListElaborated.Lines.Text := JsonPretty(lConf.AsJson);
       memLista.Lines.Text := lConf.Iterator.Text;
@@ -111,6 +112,11 @@ begin
 {$ENDIF}
 end;
 
+procedure TdmFMXPhoenixAppMobileController.SetAfterStatiniLoad(const Value: TNotifyEvent);
+begin
+  FAfterStatiniLoad := Value;
+end;
+
 procedure TdmFMXPhoenixAppMobileController.SetFullUrl(const Value: string);
 begin
   FFullUrl := Value;
@@ -124,7 +130,17 @@ end;
 procedure TdmFMXPhoenixAppMobileController.Timer1Timer(Sender: TObject);
 begin
   TimerDaily.Enabled := False;
-  OpenDaily;
+  try
+    OpenDaily;
+    if Assigned(FAfterStatiniLoad) then
+      FAfterStatiniLoad(Self);
+  except
+    on e: exception do
+    begin
+      TimerDaily.Interval := 60000;
+      TimerDaily.Enabled := True;
+    end;
+  end;
 end;
 
 end.

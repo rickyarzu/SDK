@@ -212,6 +212,7 @@ type
     procedure btnAltreCacheClick(Sender: TObject);
     procedure btnReportListClick(Sender: TObject);
     procedure btnTestListClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
     FdmFDACPhoenixLab: TdmPhoenixIBLab;
     FServer: string;
@@ -241,7 +242,7 @@ uses
   Janua.Core.AsyncTask, Janua.Application.Framework, Janua.Core.JSON,
 
   Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Phoenix.VCL.dlgModificaStatino,
-   MainUnit, EsportazioneSuMobile,
+  MainUnit, EsportazioneSuMobile,
   Janua.Phoenix.FbJsonReport;
 
 {$R *.dfm}
@@ -585,8 +586,7 @@ procedure TfrmPhoenixVCLRESTLabClient.btnStartDMVCClick(Sender: TObject);
 var
   lClient: IJanuaRESTClient;
 begin
-  dmTestPhoenixDMVC.RunServer(self.spPort.Value);
-  FServer := 'http://localhost';
+  dmTestPhoenixDMVC.RunServer(spPort.Value);
   // IJanuaRESTClient
   lClient := TJanuaRESTClient.Create;
   { function GetFullUrl: string;
@@ -602,6 +602,7 @@ begin
     property ApiUrl: string read GetAPIUrl write SetAPIUrl;
     property AuthenticationType: TAuthenticationType read GetAuthenticationType write SetAuthenticationType;
   }
+  FServer := 'http://localhost';
   lClient.ServerURL := FServer;
   lClient.ServerPort := spPort.Value;
   lClient.SetMimeType(jmtTextPlain);
@@ -669,7 +670,7 @@ begin
   end;
 
   var
-  aRoot := {TRSRoot}TLSStatinoRoot.Create;
+  aRoot := { TRSRoot } TLSStatinoRoot.Create;
   aRoot.AsJson := memReportList.Lines.Text;
 
   // lStatino.AsJson := memReportList.Lines.Text;
@@ -865,7 +866,17 @@ begin
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.FormCreate(Sender: TObject);
+var
+  lClient: IJanuaRESTClient;
 begin
+  // IJanuaRESTClient
+  lClient := TJanuaRESTClient.Create;
+  FServer := 'http://localhost';
+  lClient.ServerURL := FServer;
+  lClient.ServerPort := spPort.Value;
+  lClient.ApiUrl := 'api';
+  lbGetResult.Caption := lClient.GetFullUrl;
+
   FdmFDACPhoenixLab := TdmPhoenixIBLab.Create(self);
   Application.CreateForm(TdmFbPhoenixJsonReport, dmFbPhoenixJsonReport);
   dsStatino.DataSet := dmFbPhoenixJsonReport.qryStatiniLuci;
@@ -876,6 +887,12 @@ begin
   // dmTestPhoenixDMVC
   Application.CreateForm(TdmTestPhoenixDMVC, dmTestPhoenixDMVC);
   Application.CreateForm(TdmPhoenixReportsCaches, dmPhoenixReportsCaches);
+
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.FormDestroy(Sender: TObject);
+begin
+  dmTestPhoenixDMVC.StopServer;
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.FormShow(Sender: TObject);

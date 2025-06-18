@@ -23,7 +23,7 @@ object frameReportItem: TframeReportItem
       TabOrder = 0
     end
   end
-  object Label2: TLabel
+  object lbRagioneSociale: TLabel
     Align = Top
     Margins.Left = 3.000000000000000000
     Margins.Top = 2.000000000000000000
@@ -35,7 +35,8 @@ object frameReportItem: TframeReportItem
     Size.PlatformDefault = False
     TextSettings.Trimming = None
     Text = 'CONTRATTO: ASSO ANTINCENDIO CONTRATTO 2021'
-    TabOrder = 5
+    TabOrder = 3
+    OnClick = NotifyClick
   end
   object lbAddress: TLabel
     Align = Top
@@ -49,62 +50,37 @@ object frameReportItem: TframeReportItem
     Size.PlatformDefault = False
     TextSettings.Trimming = None
     Text = 'Sede: Via Carnia 129r Teglia (GE) - Tel. 01060118258'
-    TabOrder = 4
+    TabOrder = 2
   end
   object lbEstinguishers: TLabel
     Align = Top
     Margins.Left = 3.000000000000000000
-    Margins.Top = 2.000000000000000000
+    Margins.Top = 3.000000000000000000
     Margins.Right = 3.000000000000000000
     Position.X = 3.000000000000000000
-    Position.Y = 73.000000000000000000
+    Position.Y = 74.000000000000000000
     Size.Width = 346.000000000000000000
-    Size.Height = 17.000000000000000000
+    Size.Height = 48.000000000000000000
     Size.PlatformDefault = False
+    TextSettings.VertAlign = Leading
     TextSettings.Trimming = None
-    Text = 'ESTINTORI: 8 ordinarie'
-    TabOrder = 3
-  end
-  object Label3: TLabel
-    Align = Top
-    Margins.Left = 3.000000000000000000
-    Margins.Top = 2.000000000000000000
-    Margins.Right = 3.000000000000000000
-    Position.X = 3.000000000000000000
-    Position.Y = 92.000000000000000000
-    Size.Width = 346.000000000000000000
-    Size.Height = 17.000000000000000000
-    Size.PlatformDefault = False
-    TextSettings.Trimming = None
-    Text = 'IDRANTI: 1 ordinarie'
-    TabOrder = 2
-  end
-  object lbDoors: TLabel
-    Align = Top
-    Margins.Left = 3.000000000000000000
-    Margins.Top = 2.000000000000000000
-    Margins.Right = 3.000000000000000000
-    Position.X = 3.000000000000000000
-    Position.Y = 111.000000000000000000
-    Size.Width = 346.000000000000000000
-    Size.Height = 17.000000000000000000
-    Size.PlatformDefault = False
-    TextSettings.Trimming = None
-    Text = 'PORTE: 3 ordinarie'
+    Text = 
+      'ESTINTORI: 8 ordinarie - IDRANTI: 1 ordinarie - PORTE: 3 ordinar' +
+      'ie'
     TabOrder = 1
   end
   object Layout1: TLayout
     Align = Client
     Size.Width = 352.000000000000000000
-    Size.Height = 32.000000000000000000
+    Size.Height = 38.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 6
+    TabOrder = 4
     object btnGoogleMaps: TTMSFMXImage
       Align = Right
       Position.X = 284.000000000000000000
       ClipChildren = True
       Size.Width = 32.000000000000000000
-      Size.Height = 32.000000000000000000
+      Size.Height = 38.000000000000000000
       Size.PlatformDefault = False
       Margins.Left = 4.000000000000000000
       StrokeThickness = 1.000000000000000000
@@ -129,7 +105,7 @@ object frameReportItem: TframeReportItem
       Position.X = 320.000000000000000000
       ClipChildren = True
       Size.Width = 32.000000000000000000
-      Size.Height = 32.000000000000000000
+      Size.Height = 38.000000000000000000
       Size.PlatformDefault = False
       Margins.Left = 4.000000000000000000
       StrokeThickness = 1.000000000000000000
