@@ -115,7 +115,6 @@ inherited frmFMXPhoenixMobileMain_iPhone4in: TfrmFMXPhoenixMobileMain_iPhone4in
             end
             inherited Switch1: TSwitch
               Position.X = 276.000000000000000000
-              Size.Height = 30.000000000000000000
             end
           end
           inherited Layout3: TLayout
@@ -321,16 +320,10 @@ inherited frmFMXPhoenixMobileMain_iPhone4in: TfrmFMXPhoenixMobileMain_iPhone4in
       end
     end
   end
-  inherited Timer1: TTimer [1]
-  end
-  inherited ActionList1: TActionList [2]
-  end
-  inherited jlvMenuController: TJanuaFMXListViewMenuController [3]
+  inherited jlvMenuController: TJanuaFMXListViewMenuController
     MenuItems = <
       item
         Images = dmJanuaFMXPhoenixMobileResources.ImageList512
       end>
-  end
-  inherited JanuaFmxBadge1: TJanuaFmxBadge [4]
   end
 end

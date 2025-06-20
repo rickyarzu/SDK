@@ -103,8 +103,16 @@ end;
 
 procedure TdmFMXPhoenixAppMobileController.DataModuleCreate(Sender: TObject);
 begin
-  FServer := 'http://asso.januaservers.com';
-  FPort := 9513;
+  FServer := 'https://asso.januaservers.com';
+  FPort := 0;
+
+  // custom local Debug magari lo metto Ifdef ...
+
+  (*
+    FServer := 'http://asso.januaservers.com';
+    FPort := 9513;
+  *)
+
   FStatiniLIst := TLSStatinoRoot.Create;
   FStatino := TStatino.Create;
   FConf := TConfRoot.Create;
@@ -210,8 +218,8 @@ begin
   // Apri con l'app scelta dall'utente
   if Intent.resolveActivity(TAndroidHelper.Context.getPackageManager) <> nil then
     TAndroidHelper.Activity.startActivity(Intent)
-  else
-    ShowMessage('Nessuna app di mappe disponibile');
+//  else
+//    ShowMessage('Nessuna app di mappe disponibile');
 {$ENDIF}
 {$IFDEF IOS}
 {$ENDIF}
@@ -343,7 +351,7 @@ begin
 
     OpenConf;
   except
-    on e: exception do
+    on E: Exception do
     begin
       TimerDaily.Interval := 60000;
       TimerDaily.Enabled := True;

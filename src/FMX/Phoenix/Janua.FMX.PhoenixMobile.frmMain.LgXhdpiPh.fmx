@@ -109,7 +109,6 @@ inherited frmFMXPhoenixMobileMain_LgXhdpiPh: TfrmFMXPhoenixMobileMain_LgXhdpiPh
             end
             inherited Switch1: TSwitch
               Position.X = 406.000000000000000000
-              Size.Height = 30.000000000000000000
             end
           end
           inherited Layout3: TLayout
@@ -258,6 +257,9 @@ inherited frmFMXPhoenixMobileMain_LgXhdpiPh: TfrmFMXPhoenixMobileMain_LgXhdpiPh
           Size.Width = 446.000000000000000000
           inherited rctTerminate: TRectangle
             Size.Width = 446.000000000000000000
+            inherited Label2: TLabel
+              Size.Width = 357.882293701171900000
+            end
           end
         end
       end
@@ -309,18 +311,16 @@ inherited frmFMXPhoenixMobileMain_LgXhdpiPh: TfrmFMXPhoenixMobileMain_LgXhdpiPh
       end
     end
   end
-  inherited Timer1: TTimer [1]
-  end
-  inherited ActionList1: TActionList [2]
+  inherited ActionList1: TActionList
     Top = 256
   end
-  inherited jlvMenuController: TJanuaFMXListViewMenuController [3]
+  inherited jlvMenuController: TJanuaFMXListViewMenuController
     MenuItems = <
       item
         Images = dmJanuaFMXPhoenixMobileResources.ImageList512
       end>
   end
-  inherited JanuaFmxBadge1: TJanuaFmxBadge [4]
+  inherited JanuaFmxBadge1: TJanuaFmxBadge
     Left = 152
     Top = 360
   end

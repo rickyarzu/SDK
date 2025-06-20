@@ -349,9 +349,8 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             end
             inherited Switch1: TSwitch
               Position.X = 340.000000000000000000
-              Position.Y = 2.000000000000000000
               Size.Width = 44.000000000000000000
-              Size.Height = 26.000000000000000000
+              Size.Height = 30.000000000000000000
             end
           end
           inherited Layout3: TLayout
@@ -705,6 +704,12 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
       end
     end
   end
+  object Timer1: TTimer
+    Interval = 100
+    OnTimer = Timer1Timer
+    Left = 248
+    Top = 120
+  end
   object ActionList1: TActionList
     Left = 72
     Top = 248
@@ -771,7 +776,6 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
         Title = 'Comunicazioni da Ufficio'
         ImageIndex = 22
       end>
-    ListView = ListViewMain
     ImageIndex = 0
     Left = 160
     Top = 224
@@ -788,11 +792,5 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
     VertTextMargin = 2
     Left = 160
     Top = 152
-  end
-  object Timer1: TTimer
-    Interval = 100
-    OnTimer = Timer1Timer
-    Left = 248
-    Top = 120
   end
 end

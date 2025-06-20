@@ -100,21 +100,36 @@ uses Spring, Janua.FMX.PhoenixMobile.dmAppMobileController;
 procedure TfrmFMXPhoenixMobileMain.Timer1Timer(Sender: TObject);
 begin
   Timer1.Enabled := False;
+  FTestMenu := TJanuaFMXListViewMenuController.Create(self);
+  var
+  lItem := FTestMenu.MenuItems.Add;
+  lItem.ImageIndex := 17;
+  lItem.Title := 'Rapporti di Manutenziona Ordinaria';
+  lItem.OnClick := jlvMenuControllerMenuItems0Click;
   FdmJanuaFMXPhoenixMobileResources := TdmJanuaFMXPhoenixMobileResources.Create(self);
   ListViewMain.Images := FdmJanuaFMXPhoenixMobileResources.ImageList512;
-  FTestMenu := TJanuaFMXListViewMenuController.Create(self);
+  FTestMenu.ListView := ListViewMain;
+  FTestMenu.DrawListView;
 
-  for var I := 0 to jlvMenuController.MenuItems.Count - 1 do
-  begin
+  (*
+
+    Timer1.Enabled := False;
+    FdmJanuaFMXPhoenixMobileResources := TdmJanuaFMXPhoenixMobileResources.Create(self);
+    ListViewMain.Images := FdmJanuaFMXPhoenixMobileResources.ImageList512;
+    FTestMenu := TJanuaFMXListViewMenuController.Create(self);
+
+    for var I := 0 to jlvMenuController.MenuItems.Count - 1 do
+    begin
     var
     lItem := FTestMenu.MenuItems.Add;
     lItem.ImageIndex := jlvMenuController.MenuItems[I].ImageIndex;
     lItem.Title := jlvMenuController.MenuItems[I].Title;
     lItem.OnClick := jlvMenuController.MenuItems[I].OnClick;
-  end;
+    end;
 
-  FTestMenu.ListView := ListViewMain;
-  FTestMenu.DrawListView;
+    FTestMenu.ListView := ListViewMain;
+    FTestMenu.DrawListView;
+  *)
 end;
 
 procedure TfrmFMXPhoenixMobileMain.TitleActionUpdate(Sender: TObject);
@@ -220,7 +235,7 @@ end;
 
 procedure TfrmFMXPhoenixMobileMain.FormShow(Sender: TObject);
 begin
- // jlvMenuController.DrawListView
+  // jlvMenuController.DrawListView
 end;
 
 procedure TfrmFMXPhoenixMobileMain.frameFMXPhoenixMobileReportHeader1btnFireExtinguishersClick
