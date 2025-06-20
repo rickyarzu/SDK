@@ -80,6 +80,8 @@ type
     FLUCI: Integer;
     [JSONName('SPRINKLER')]
     FSPRINKLER: Integer;
+    [JSONName('PORTE')]
+    FPORTE: Integer;
   published
     [KeyField('CHIAVE')]
     [DBField('CHIAVE')]
@@ -107,6 +109,8 @@ type
     property LUCI: Integer read FLUCI write FLUCI;
     [DBField('SPRINKLER')]
     property SPRINKLER: Integer read FSPRINKLER write FSPRINKLER;
+    [DBField('PORTE')]
+    property PORTE: Integer read FPORTE write FPORTE;
   end;
 
   TLSStatinoRoot = class(TJanuaJsonDTO)
@@ -167,6 +171,7 @@ end;
 destructor TLSStatinoRoot.Destroy;
 begin
   GetStatini.Free;
+  FIterator.Free;
   inherited;
 end;
 

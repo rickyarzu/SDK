@@ -1,6 +1,6 @@
 object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
   Size.Width = 344.000000000000000000
-  Size.Height = 316.000000000000000000
+  Size.Height = 358.000000000000000000
   Size.PlatformDefault = False
   object rctMatr: TRectangle
     Align = Top
@@ -291,32 +291,34 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     Align = Top
     Position.Y = 221.000000000000000000
     Size.Width = 344.000000000000000000
-    Size.Height = 28.000000000000000000
+    Size.Height = 24.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 8
     object ckbEseg: TTMSFNCRadioButton
       Color = claNull
       Align = Left
-      Margins.Left = 4.000000000000000000
-      Position.X = 4.000000000000000000
-      Size.Width = 50.000000000000000000
-      Size.Height = 28.000000000000000000
+      Margins.Left = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 11
+      OnClick = ckbEsegClick
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
+      Text = ' '
     end
     object ckbRitir: TTMSFNCRadioButton
       Color = claNull
       Align = Left
-      Margins.Left = 4.000000000000000000
+      Margins.Left = 8.000000000000000000
       Position.X = 58.000000000000000000
       Size.Width = 50.000000000000000000
-      Size.Height = 28.000000000000000000
+      Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 10
+      OnClick = ckbRitirClick
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
+      Text = ' '
     end
     object ckbSmalt: TTMSFNCRadioButton
       Color = claNull
@@ -324,11 +326,12 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Margins.Left = 4.000000000000000000
       Position.X = 112.000000000000000000
       Size.Width = 50.000000000000000000
-      Size.Height = 28.000000000000000000
+      Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 9
+      OnClick = ckbSmaltClick
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
+      Text = ' '
     end
     object ckbRest: TTMSFNCRadioButton
       Color = claNull
@@ -336,23 +339,25 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Margins.Left = 4.000000000000000000
       Position.X = 166.000000000000000000
       Size.Width = 50.000000000000000000
-      Size.Height = 28.000000000000000000
+      Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 8
+      OnClick = ckbRestClick
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
+      Text = ' '
     end
     object ckbNonEseg: TTMSFNCRadioButton
       Color = claNull
       Align = Left
-      Margins.Left = 4.000000000000000000
-      Position.X = 220.000000000000000000
+      Margins.Left = 14.000000000000000000
+      Position.X = 230.000000000000000000
       Size.Width = 44.000000000000000000
-      Size.Height = 28.000000000000000000
+      Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 7
+      OnClick = ckbNonEsegClick
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
+      Text = ' '
     end
   end
   object Rectangle4: TRectangle
@@ -428,9 +433,9 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     end
   end
   object Rectangle5: TRectangle
-    Align = Top
+    Align = Bottom
     Fill.Color = claAquamarine
-    Position.Y = 249.000000000000000000
+    Position.Y = 291.000000000000000000
     Size.Width = 344.000000000000000000
     Size.Height = 25.000000000000000000
     Size.PlatformDefault = False
@@ -451,12 +456,43 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
   object memAnomalia: TMemo
     Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
     DataDetectorTypes = []
-    Align = Client
+    Align = Bottom
+    Position.Y = 316.000000000000000000
     Size.Width = 344.000000000000000000
     Size.Height = 42.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 11
-    Viewport.Width = 344.000000000000000000
-    Viewport.Height = 42.000000000000000000
+    Viewport.Width = 340.000000000000000000
+    Viewport.Height = 38.000000000000000000
+  end
+  object Rectangle6: TRectangle
+    Align = Top
+    Fill.Color = claAquamarine
+    Position.Y = 245.000000000000000000
+    Size.Width = 344.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    object lbSpecification: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 2.000000000000000000
+      Position.X = 2.000000000000000000
+      Size.Width = 319.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
+      Text = 'SPECIFICA'
+      TabOrder = 0
+    end
+  end
+  object edSpecifica: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Align = Top
+    TabOrder = 13
+    Position.Y = 270.000000000000000000
+    Size.Width = 344.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
   end
 end

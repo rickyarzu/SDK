@@ -324,9 +324,6 @@ Coordinates=724,501,69,36
 [btnFireDoors]
 Coordinates=858,1,67,36
 
-[btn]
-Coordinates=1200,331,111,36
-
 [btnSprinklers]
 Coordinates=863,575,111,36
 
@@ -335,4 +332,7 @@ Coordinates=982,575,111,36
 
 [rcReportSummary]
 Coordinates=392,328,80,36
+
+[btnLuci]
+Coordinates=1200,331,111,36
 

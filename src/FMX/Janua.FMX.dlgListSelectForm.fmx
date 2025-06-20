@@ -1,0 +1,35 @@
+object dlgFMXListSelectForm: TdlgFMXListSelectForm
+  Left = 0
+  Top = 0
+  Caption = 'Form6'
+  ClientHeight = 478
+  ClientWidth = 258
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object ListViewMain: TListView
+    ItemAppearanceClassName = 'TImageListItemAppearance'
+    ItemEditAppearanceClassName = 'TImageListItemDeleteAppearance'
+    HeaderAppearanceClassName = 'TListHeaderObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
+    Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+    Align = Client
+    Size.Width = 258.000000000000000000
+    Size.Height = 478.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    ItemAppearance.ItemHeight = 54
+    ItemAppearanceObjects.ItemObjects.Text.Font.Family = 'Arial'
+    ItemAppearanceObjects.ItemObjects.Text.Font.Size = 14.000000000000000000
+    ItemAppearanceObjects.ItemObjects.Text.Width = 313.000000000000000000
+    ItemAppearanceObjects.ItemObjects.Text.Height = 50.000000000000000000
+    ItemAppearanceObjects.ItemObjects.Text.PlaceOffset.X = 6.000000000000000000
+    ItemAppearanceObjects.ItemObjects.Text.PlaceOffset.Y = 4.000000000000000000
+    ItemAppearanceObjects.ItemObjects.Image.Width = 13.000000000000000000
+    ItemAppearanceObjects.ItemObjects.Image.Height = 22.000000000000000000
+    ItemAppearanceObjects.ItemObjects.Image.PlaceOffset.X = 2.000000000000000000
+    ItemAppearanceObjects.ItemObjects.Image.PlaceOffset.Y = 2.000000000000000000
+    OnItemClick = ListViewMainItemClick
+  end
+end

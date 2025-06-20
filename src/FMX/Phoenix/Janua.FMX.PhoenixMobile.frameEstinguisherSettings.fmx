@@ -714,8 +714,8 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Size.Height = 36.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 19
-      Viewport.Width = 310.000000000000000000
-      Viewport.Height = 36.000000000000000000
+      Viewport.Width = 306.000000000000000000
+      Viewport.Height = 32.000000000000000000
     end
     object layState: TLayout
       Align = Top
@@ -804,8 +804,8 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Size.Height = 36.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 18
-      Viewport.Width = 310.000000000000000000
-      Viewport.Height = 36.000000000000000000
+      Viewport.Width = 306.000000000000000000
+      Viewport.Height = 32.000000000000000000
     end
   end
 end

@@ -17,6 +17,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'NR.'
       TabOrder = 3
     end
@@ -29,6 +30,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'SCAD. COLL.'
       TabOrder = 2
     end
@@ -41,6 +43,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       TabOrder = 0
     end
     object lbIntervento: TLabel
@@ -51,6 +54,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'INTERVENTO'
       TabOrder = 1
     end
@@ -70,6 +74,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Width = 80.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = '1'
       TabOrder = 2
     end
@@ -81,6 +86,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Width = 109.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = '03/2022'
       TabOrder = 1
     end
@@ -105,6 +111,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Width = 129.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = 'Ordinario'
       TabOrder = 0
     end
@@ -125,6 +132,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'TIPO'
       TabOrder = 0
     end
@@ -143,6 +151,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Width = 360.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = 'ATT. VVF DIMANDATA 2" 1X70 FIL'
       TabOrder = 0
     end
@@ -163,6 +172,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'UBICAZIONE'
       TabOrder = 0
     end
@@ -181,6 +191,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Width = 360.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
+      TextSettings.Trimming = None
       Text = 'Ingresso Ufficio'
       TabOrder = 0
     end
@@ -202,7 +213,6 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 11
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
     end
     object ckbRitir: TTMSFNCRadioButton
       Color = claNull
@@ -214,7 +224,6 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 10
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
     end
     object ckbSmalt: TTMSFNCRadioButton
       Color = claNull
@@ -226,7 +235,6 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 9
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
     end
     object ckbSmaltim: TTMSFNCRadioButton
       Color = claNull
@@ -238,7 +246,6 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 8
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
     end
     object ckbNonEseg: TTMSFNCRadioButton
       Color = claNull
@@ -250,7 +257,6 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 7
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
     end
   end
   object Rectangle4: TRectangle
@@ -269,6 +275,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'CONTR'
       TabOrder = 4
     end
@@ -280,6 +287,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'PRESS'
       TabOrder = 3
     end
@@ -292,6 +300,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'COLL'
       TabOrder = 2
     end
@@ -304,6 +313,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'NON ESEG.'
       TabOrder = 1
     end
@@ -316,6 +326,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'SMALTIM'
       TabOrder = 0
     end
@@ -336,6 +347,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'ANOMALIA'
       TabOrder = 0
     end
@@ -366,6 +378,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
       Text = 'Data precedente pressatura sconosciuta'
       TabOrder = 0
     end

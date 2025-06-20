@@ -2,7 +2,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
   Left = 0
   Top = 0
   Caption = 'HeaderFooter'
-  ClientHeight = 728
+  ClientHeight = 736
   ClientWidth = 384
   FormFactor.Width = 1440
   FormFactor.Height = 900
@@ -14,7 +14,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
     Align = Client
     FullSize = True
     Size.Width = 384.000000000000000000
-    Size.Height = 728.000000000000000000
+    Size.Height = 736.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 49.000000000000000000
     TabIndex = 0
@@ -22,12 +22,14 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
     TabPosition = None
     Sizes = (
       384s
-      728s
+      736s
       384s
-      728s
+      736s
       384s
-      728s)
-    object TabItem1: TTabItem
+      736s
+      384s
+      736s)
+    object tab01Menu: TTabItem
       CustomIcon = <
         item
         end>
@@ -49,7 +51,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
         Images = dmJanuaFMXPhoenixMobileResources.ImageList512
         Align = Client
         Size.Width = 384.000000000000000000
-        Size.Height = 680.000000000000000000
+        Size.Height = 688.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         ItemAppearance.ItemHeight = 54
@@ -134,7 +136,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
         end
       end
     end
-    object TabItem2: TTabItem
+    object tab02ReportList: TTabItem
       CustomIcon = <
         item
         end>
@@ -201,15 +203,17 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
           end
           object SpeedButton1: TSpeedButton
             Action = NextTabAction1
-            Align = MostRight
-            Images = dmJanuaFMXPhoenixMobileResources.ImageList512
+            Align = MostLeft
+            StyledSettings = []
+            IconTintColor = claSnow
             ImageIndex = 19
-            Position.X = 336.000000000000000000
             Size.Width = 48.000000000000000000
             Size.Height = 48.000000000000000000
             Size.PlatformDefault = False
-            StyleLookup = 'nexttoolbutton'
+            StyleLookup = 'priortoolbutton'
+            TextSettings.FontColor = claIvory
             TextSettings.Trimming = None
+            OnClick = SpeedButton1Click
           end
         end
       end
@@ -297,21 +301,21 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
       object Layout5: TLayout
         Align = Client
         Size.Width = 384.000000000000000000
-        Size.Height = 528.000000000000000000
+        Size.Height = 536.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
         object VertScrollBoxReports: TVertScrollBox
           Align = Client
           Size.Width = 384.000000000000000000
-          Size.Height = 528.000000000000000000
+          Size.Height = 536.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
           Viewport.Width = 384.000000000000000000
-          Viewport.Height = 528.000000000000000000
+          Viewport.Height = 536.000000000000000000
         end
       end
     end
-    object TabItem3: TTabItem
+    object tab03Report: TTabItem
       CustomIcon = <
         item
         end>
@@ -328,7 +332,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
       inline frameFMXPhoenixMobileReportHeader1: TframeFMXPhoenixMobileReportHeader
         Align = Client
         Size.Width = 384.000000000000000000
-        Size.Height = 728.000000000000000000
+        Size.Height = 688.000000000000000000
         Size.PlatformDefault = False
         inherited lbScheduling: TLabel
           Size.Width = 374.000000000000000000
@@ -494,9 +498,50 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
         inherited Layout16: TLayout
           Position.Y = 531.000000000000000000
           Size.Width = 380.000000000000000000
+          Size.Height = 48.000000000000000000
+          inherited btnFireHydrants: TTMSFMXImage
+            Position.X = 47.000000000000000000
+            Size.Width = 44.000000000000000000
+            Size.Height = 44.000000000000000000
+          end
+          inherited btnFireExtinguishers: TTMSFMXImage
+            Size.Width = 44.000000000000000000
+            Size.Height = 44.000000000000000000
+            OnClick = frameFMXPhoenixMobileReportHeader1btnFireExtinguishersClick
+          end
+          inherited btnFireDoors: TTMSFMXImage
+            Position.X = 93.000000000000000000
+            Size.Width = 44.000000000000000000
+            Size.Height = 44.000000000000000000
+          end
+          inherited btnElectricalSystems: TTMSFMXImage
+            Position.X = 231.000000000000000000
+            Size.Width = 44.000000000000000000
+            Size.Height = 44.000000000000000000
+          end
+          inherited btnSprinklers: TTMSFMXImage
+            Position.X = 185.000000000000000000
+            Size.Width = 44.000000000000000000
+            Size.Height = 44.000000000000000000
+          end
+          inherited btnLuci: TTMSFMXImage
+            Position.X = 139.000000000000000000
+            Size.Width = 44.000000000000000000
+            Size.Height = 44.000000000000000000
+          end
+          inherited btnSmokeDetectors: TTMSFMXImage
+            Position.X = 277.000000000000000000
+            Size.Width = 44.000000000000000000
+            Size.Height = 44.000000000000000000
+          end
+          inherited btnPressurizationGroup: TTMSFMXImage
+            Position.X = 323.000000000000000000
+            Size.Width = 44.000000000000000000
+            Size.Height = 44.000000000000000000
+          end
         end
         inherited Layout17: TLayout
-          Position.Y = 573.000000000000000000
+          Position.Y = 583.000000000000000000
           Size.Width = 380.000000000000000000
           inherited lbSend: TLabel
             StyledSettings = [FontColor]
@@ -511,7 +556,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
           end
         end
         inherited btnTerminate: TButton
-          Position.Y = 615.000000000000000000
+          Position.Y = 625.000000000000000000
           Size.Width = 380.000000000000000000
           TabOrder = 10
           inherited rctTerminate: TRectangle
@@ -523,12 +568,146 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             end
           end
         end
+        inherited JanuaFmxBadge1: TJanuaFmxBadge
+          Left = 160
+          Top = 288
+        end
+      end
+      object ToolBar2: TToolBar
+        Anchors = []
+        Size.Width = 384.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Rectangle4: TRectangle
+          Align = Client
+          Fill.Color = claGreen
+          Size.Width = 384.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          object Layout6: TLayout
+            Align = Client
+            Size.Width = 336.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            object lbRapportino: TLabel
+              Action = TitleAction
+              Align = MostTop
+              StyledSettings = [Family, Size]
+              Size.Width = 336.000000000000000000
+              Size.Height = 25.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              TextSettings.HorzAlign = Center
+              TextSettings.Trimming = None
+              Text = 'Rapportino'
+              TabOrder = 2
+            end
+          end
+          object SpeedButton2: TSpeedButton
+            Action = NextTabAction1
+            Align = MostLeft
+            StyledSettings = []
+            IconTintColor = claSnow
+            ImageIndex = -1
+            Size.Width = 48.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'priortoolbutton'
+            TextSettings.FontColor = claIvory
+            TextSettings.Trimming = None
+            OnClick = SpeedButton2Click
+          end
+        end
+      end
+    end
+    object tab04EstingushersList: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object ToolBar3: TToolBar
+        Anchors = []
+        Size.Width = 384.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Rectangle5: TRectangle
+          Align = Client
+          Fill.Color = claGreen
+          Size.Width = 384.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          object Layout7: TLayout
+            Align = Client
+            Size.Width = 336.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            object lbEstingushersList: TLabel
+              Action = TitleAction
+              Align = MostTop
+              StyledSettings = [Family, Size]
+              Size.Width = 336.000000000000000000
+              Size.Height = 25.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              TextSettings.HorzAlign = Center
+              TextSettings.Trimming = None
+              Text = 'Lista Estintori'
+              TabOrder = 2
+            end
+          end
+          object SpeedButton3: TSpeedButton
+            Action = NextTabAction1
+            Align = MostLeft
+            StyledSettings = []
+            IconTintColor = claSnow
+            ImageIndex = -1
+            Size.Width = 48.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'priortoolbutton'
+            TextSettings.FontColor = claIvory
+            TextSettings.Trimming = None
+          end
+        end
+      end
+      inline frameFMXPhoenixReportListEstinguishers1: TframeFMXPhoenixReportListEstinguishers
+        Align = Client
+        Size.Width = 384.000000000000000000
+        Size.Height = 688.000000000000000000
+        Size.PlatformDefault = False
+        inherited rcReportSummary: TRectangle
+          Size.Width = 384.000000000000000000
+          inherited txtReportSummay: TTMSFMXHTMLText
+            Size.Width = 380.000000000000000000
+          end
+        end
+        inherited VertScBoxEstinguishers: TVertScrollBox
+          Size.Width = 384.000000000000000000
+          Viewport.Width = 384.000000000000000000
+          Viewport.Height = 580.000000000000000000
+        end
       end
     end
   end
   object ActionList1: TActionList
-    Left = 104
-    Top = 408
+    Left = 72
+    Top = 248
     object TitleAction: TControlAction
       Category = 'Tab'
       Text = 'TitleAction'
@@ -595,7 +774,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
     ListView = ListViewMain
     ImageIndex = 0
     Left = 160
-    Top = 288
+    Top = 224
   end
   object JanuaFmxBadge1: TJanuaFmxBadge
     Enabled = False
@@ -603,11 +782,17 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
     LogToFile = False
     Language = jlaNone
     TestMode = False
-    Badge = 11
+    Badge = 0
     ShowBadge = True
     BadgeItem = btnNext
     VertTextMargin = 2
     Left = 160
-    Top = 232
+    Top = 152
+  end
+  object Timer1: TTimer
+    Interval = 100
+    OnTimer = Timer1Timer
+    Left = 248
+    Top = 120
   end
 end
