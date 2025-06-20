@@ -109,6 +109,7 @@ inherited frmFMXPhoenixMobileMain_LgXhdpiPh: TfrmFMXPhoenixMobileMain_LgXhdpiPh
             end
             inherited Switch1: TSwitch
               Position.X = 406.000000000000000000
+              Size.Height = 30.000000000000000000
             end
           end
           inherited Layout3: TLayout

@@ -8,7 +8,7 @@ uses
   FMX.Controls.Presentation, FMX.Objects, FMX.ListBox, FMX.Ani, FMX.TMSBaseControl, FMX.TMSBitmap;
 
 type
-  TFrame4 = class(TFrame)
+  TframeFMXReportListFireHoses = class(TFrame)
     Layout1: TLayout;
     Rectangle5: TRectangle;
     lbAnomali: TLabel;

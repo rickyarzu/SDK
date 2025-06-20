@@ -10,9 +10,9 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     Size.PlatformDefault = False
     object lbNR: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
-      Margins.Left = 2.000000000000000000
-      Position.X = 2.000000000000000000
+      StyledSettings = [Family, FontColor]
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
       Size.Width = 80.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
@@ -23,9 +23,9 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     end
     object lbtMatrYear: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
+      StyledSettings = [Family, FontColor]
       Margins.Left = 2.000000000000000000
-      Position.X = 84.000000000000000000
+      Position.X = 86.000000000000000000
       Size.Width = 109.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
@@ -38,7 +38,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Align = Left
       StyledSettings = [Family, Size, FontColor]
       Margins.Left = 2.000000000000000000
-      Position.X = 195.000000000000000000
+      Position.X = 197.000000000000000000
       Size.Width = 38.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
@@ -48,9 +48,9 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     end
     object lbIntervento: TLabel
       Align = Client
-      StyledSettings = [Family, Size, FontColor]
+      StyledSettings = [Family, FontColor]
       Margins.Left = 2.000000000000000000
-      Size.Width = 109.000000000000000000
+      Size.Width = 107.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -69,8 +69,8 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     object txtNR: TLabel
       Align = Left
       StyledSettings = [Family, Size, FontColor]
-      Margins.Left = 2.000000000000000000
-      Position.X = 2.000000000000000000
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
       Size.Width = 80.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
@@ -82,7 +82,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Align = Left
       StyledSettings = [Family, Size, FontColor]
       Margins.Left = 2.000000000000000000
-      Position.X = 84.000000000000000000
+      Position.X = 86.000000000000000000
       Size.Width = 109.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
@@ -94,7 +94,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Align = Left
       CanFocus = True
       GroupName = ''
-      Position.X = 193.000000000000000000
+      Position.X = 195.000000000000000000
       Size.Width = 38.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
@@ -108,7 +108,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Align = Client
       StyledSettings = [Family, Size, FontColor]
       Margins.Left = 2.000000000000000000
-      Size.Width = 111.000000000000000000
+      Size.Width = 109.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Trimming = None
@@ -125,9 +125,9 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     Size.PlatformDefault = False
     object lbTipo: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
-      Margins.Left = 2.000000000000000000
-      Position.X = 2.000000000000000000
+      StyledSettings = [Family, FontColor]
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
       Size.Width = 80.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
@@ -147,8 +147,8 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     object txtTipo: TLabel
       Align = Client
       StyledSettings = [Family, Size, FontColor]
-      Margins.Left = 2.000000000000000000
-      Size.Width = 342.000000000000000000
+      Margins.Left = 4.000000000000000000
+      Size.Width = 340.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Trimming = None
@@ -165,9 +165,9 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     Size.PlatformDefault = False
     object lbProssRev: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
-      Margins.Left = 2.000000000000000000
-      Position.X = 2.000000000000000000
+      StyledSettings = [Family, FontColor]
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
       Size.Width = 90.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
@@ -178,9 +178,9 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     end
     object lbProssColl: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
+      StyledSettings = [Family, FontColor]
       Margins.Left = 2.000000000000000000
-      Position.X = 94.000000000000000000
+      Position.X = 96.000000000000000000
       Size.Width = 109.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
@@ -191,9 +191,9 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     end
     object lbAnnoSost: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
+      StyledSettings = [Family, FontColor]
       Margins.Left = 2.000000000000000000
-      Position.X = 205.000000000000000000
+      Position.X = 207.000000000000000000
       Size.Width = 92.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
@@ -213,8 +213,8 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     object lbProssReve: TLabel
       Align = Left
       StyledSettings = [Family, Size, FontColor]
-      Margins.Left = 2.000000000000000000
-      Position.X = 2.000000000000000000
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
       Size.Width = 90.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
@@ -226,7 +226,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Align = Left
       StyledSettings = [Family, Size, FontColor]
       Margins.Left = 2.000000000000000000
-      Position.X = 94.000000000000000000
+      Position.X = 96.000000000000000000
       Size.Width = 109.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
@@ -238,7 +238,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Align = Left
       StyledSettings = [Family, Size, FontColor]
       Margins.Left = 2.000000000000000000
-      Position.X = 205.000000000000000000
+      Position.X = 207.000000000000000000
       Size.Width = 80.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
@@ -256,9 +256,9 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     Size.PlatformDefault = False
     object lbLocation: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
-      Margins.Left = 2.000000000000000000
-      Position.X = 2.000000000000000000
+      StyledSettings = [Family, FontColor]
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
       Size.Width = 319.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
@@ -278,8 +278,8 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     object txtLocation: TLabel
       Align = Client
       StyledSettings = [Family, Size, FontColor]
-      Margins.Left = 2.000000000000000000
-      Size.Width = 342.000000000000000000
+      Margins.Left = 4.000000000000000000
+      Size.Width = 340.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Trimming = None
@@ -369,7 +369,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     Size.PlatformDefault = False
     object lbExecuted: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
+      StyledSettings = [Family, FontColor]
       Margins.Left = 4.000000000000000000
       Position.X = 4.000000000000000000
       Size.Width = 50.000000000000000000
@@ -382,7 +382,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     end
     object lbRitir: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
+      StyledSettings = [Family, FontColor]
       Position.X = 54.000000000000000000
       Size.Width = 52.000000000000000000
       Size.Height = 25.000000000000000000
@@ -394,7 +394,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     end
     object lbSmalt: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
+      StyledSettings = [Family, FontColor]
       Margins.Left = 2.000000000000000000
       Position.X = 108.000000000000000000
       Size.Width = 54.000000000000000000
@@ -407,7 +407,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     end
     object lbNonEseg: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
+      StyledSettings = [Family, FontColor]
       Margins.Left = 2.000000000000000000
       Position.X = 220.000000000000000000
       Size.Width = 87.000000000000000000
@@ -420,7 +420,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     end
     object lbRest: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
+      StyledSettings = [Family, FontColor]
       Margins.Left = 2.000000000000000000
       Position.X = 164.000000000000000000
       Size.Width = 54.000000000000000000
@@ -441,9 +441,9 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     Size.PlatformDefault = False
     object lbAnomali: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
-      Margins.Left = 2.000000000000000000
-      Position.X = 2.000000000000000000
+      StyledSettings = [Family, FontColor]
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
       Size.Width = 319.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
@@ -461,7 +461,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     Size.Width = 344.000000000000000000
     Size.Height = 42.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 11
+    TabOrder = 10
     Viewport.Width = 340.000000000000000000
     Viewport.Height = 38.000000000000000000
   end
@@ -474,9 +474,9 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
     Size.PlatformDefault = False
     object lbSpecification: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
-      Margins.Left = 2.000000000000000000
-      Position.X = 2.000000000000000000
+      StyledSettings = [Family, FontColor]
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
       Size.Width = 319.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False

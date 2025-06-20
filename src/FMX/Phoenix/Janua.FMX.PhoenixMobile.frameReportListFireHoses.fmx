@@ -1,4 +1,4 @@
-object Frame4: TFrame4
+object frameFMXReportListFireHoses: TframeFMXReportListFireHoses
   Size.Width = 381.000000000000000000
   Size.Height = 582.000000000000000000
   Size.PlatformDefault = False
@@ -129,6 +129,7 @@ object Frame4: TFrame4
     Size.PlatformDefault = False
     TabOrder = 6
     Text = 'Specifica Impianto'
+    TextSettings.Trimming = None
   end
   object btnVerbale: TButton
     Align = Top
@@ -143,6 +144,7 @@ object Frame4: TFrame4
     Size.PlatformDefault = False
     TabOrder = 5
     Text = 'Verbale Prova Dinamica'
+    TextSettings.Trimming = None
   end
   object Layout5: TLayout
     Align = Top
@@ -246,5 +248,6 @@ object Frame4: TFrame4
     Size.PlatformDefault = False
     TabOrder = 4
     Text = 'Verbale Collaudo Manichette'
+    TextSettings.Trimming = None
   end
 end
