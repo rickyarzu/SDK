@@ -23,6 +23,7 @@ type
     { Private declarations }
   public
     { Public declarations }
+    procedure Setup; override;
   end;
 
 var
@@ -31,5 +32,13 @@ var
 implementation
 
 {$R *.fmx}
+
+{ TframeFMXPhoenixReportListSmokeDetection }
+
+procedure TframeFMXPhoenixReportListSmokeDetection.Setup;
+begin
+  inherited;
+
+end;
 
 end.

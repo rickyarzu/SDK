@@ -159,7 +159,7 @@ type
     property SPURGOIMPIANTO: Boolean read FSPURGOIMPIANTO write FSPURGOIMPIANTO;
   end;
 
-  TBocchelli = class
+  TBocchelli = class(TJanuaBindableClass)
   private
     [JSONName('ANNO_MANICHETTA')]
     FANNOMANICHETTA: string;

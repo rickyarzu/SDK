@@ -10,9 +10,9 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
     Size.PlatformDefault = False
     object lbNR: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
-      Margins.Left = 2.000000000000000000
-      Position.X = 2.000000000000000000
+      StyledSettings = [Family, FontColor]
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
       Size.Width = 80.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
@@ -23,9 +23,9 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
     end
     object lbScadColl: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
+      StyledSettings = [Family, FontColor]
       Margins.Left = 2.000000000000000000
-      Position.X = 84.000000000000000000
+      Position.X = 86.000000000000000000
       Size.Width = 109.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
@@ -38,7 +38,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Align = Left
       StyledSettings = [Family, Size, FontColor]
       Margins.Left = 2.000000000000000000
-      Position.X = 195.000000000000000000
+      Position.X = 197.000000000000000000
       Size.Width = 38.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
@@ -48,9 +48,9 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
     end
     object lbIntervento: TLabel
       Align = Client
-      StyledSettings = [Family, Size, FontColor]
+      StyledSettings = [Family, FontColor]
       Margins.Left = 2.000000000000000000
-      Size.Width = 127.000000000000000000
+      Size.Width = 125.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -69,8 +69,8 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
     object txtNR: TLabel
       Align = Left
       StyledSettings = [Family, Size, FontColor]
-      Margins.Left = 2.000000000000000000
-      Position.X = 2.000000000000000000
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
       Size.Width = 80.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
@@ -82,7 +82,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Align = Left
       StyledSettings = [Family, Size, FontColor]
       Margins.Left = 2.000000000000000000
-      Position.X = 84.000000000000000000
+      Position.X = 86.000000000000000000
       Size.Width = 109.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
@@ -94,7 +94,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Align = Left
       CanFocus = True
       GroupName = ''
-      Position.X = 193.000000000000000000
+      Position.X = 195.000000000000000000
       Size.Width = 38.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
@@ -108,7 +108,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Align = Client
       StyledSettings = [Family, Size, FontColor]
       Margins.Left = 2.000000000000000000
-      Size.Width = 129.000000000000000000
+      Size.Width = 127.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Trimming = None
@@ -125,7 +125,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
     Size.PlatformDefault = False
     object lbTipo: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
+      StyledSettings = [Family, FontColor]
       Margins.Left = 2.000000000000000000
       Position.X = 2.000000000000000000
       Size.Width = 80.000000000000000000
@@ -165,9 +165,9 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
     Size.PlatformDefault = False
     object lbLocation: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
-      Margins.Left = 2.000000000000000000
-      Position.X = 2.000000000000000000
+      StyledSettings = [Family, FontColor]
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
       Size.Width = 319.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
@@ -213,6 +213,8 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 11
       GroupName = '1'
+      Text = ' '
+      OnChange = ckbContrChange
     end
     object ckbRitir: TTMSFNCRadioButton
       Color = claNull
@@ -224,6 +226,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 10
       GroupName = '1'
+      Text = ' '
     end
     object ckbSmalt: TTMSFNCRadioButton
       Color = claNull
@@ -235,6 +238,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 9
       GroupName = '1'
+      Text = ' '
     end
     object ckbSmaltim: TTMSFNCRadioButton
       Color = claNull
@@ -246,6 +250,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 8
       GroupName = '1'
+      Text = ' '
     end
     object ckbNonEseg: TTMSFNCRadioButton
       Color = claNull
@@ -257,6 +262,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 7
       GroupName = '1'
+      Text = ' '
     end
   end
   object Rectangle4: TRectangle
@@ -268,7 +274,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
     Size.PlatformDefault = False
     object lbContr: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
+      StyledSettings = [Family, FontColor]
       Margins.Left = 4.000000000000000000
       Position.X = 4.000000000000000000
       Size.Width = 61.000000000000000000
@@ -281,7 +287,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
     end
     object lbPress: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
+      StyledSettings = [Family, FontColor]
       Position.X = 65.000000000000000000
       Size.Width = 52.000000000000000000
       Size.Height = 25.000000000000000000
@@ -293,7 +299,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
     end
     object lbColl: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
+      StyledSettings = [Family, FontColor]
       Margins.Left = 2.000000000000000000
       Position.X = 119.000000000000000000
       Size.Width = 54.000000000000000000
@@ -306,7 +312,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
     end
     object lbNonEseg: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
+      StyledSettings = [Family, FontColor]
       Margins.Left = 2.000000000000000000
       Position.X = 251.000000000000000000
       Size.Width = 87.000000000000000000
@@ -319,7 +325,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
     end
     object lbSmaltim: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
+      StyledSettings = [Family, FontColor]
       Margins.Left = 2.000000000000000000
       Position.X = 175.000000000000000000
       Size.Width = 74.000000000000000000
@@ -340,9 +346,9 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
     Size.PlatformDefault = False
     object lbAnomali: TLabel
       Align = Left
-      StyledSettings = [Family, Size, FontColor]
-      Margins.Left = 2.000000000000000000
-      Position.X = 2.000000000000000000
+      StyledSettings = [Family, FontColor]
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
       Size.Width = 319.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False

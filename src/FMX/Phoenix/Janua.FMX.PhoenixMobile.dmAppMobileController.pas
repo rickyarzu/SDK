@@ -34,6 +34,7 @@ type
     FStatinoIndex: integer;
     FDictEstintori: TDictionary<integer, Tcatestintori>;
     FCatEstintori: TCatEstintoriRoot;
+    FDictBocchelli: TDictionary<integer, TTIPOBOCCHELLI>;
     procedure SetFullUrl(const Value: string);
     procedure SetStatiniLIst(const Value: TLSStatinoRoot);
     procedure SetAfterStatiniLoad(const Value: TNotifyEvent);
@@ -44,6 +45,7 @@ type
     procedure SetStatinoIndex(const Value: integer);
     procedure SetDictEstintori(const Value: TDictionary<integer, Tcatestintori>);
     procedure SetCatEstintori(const Value: TCatEstintoriRoot);
+    procedure SetDictBocchelli(const Value: TDictionary<integer, TTIPOBOCCHELLI>);
     { Private declarations }
   protected
     FServer: string;
@@ -57,6 +59,7 @@ type
     procedure OpenConf;
     function FindContratto(const aContratto: integer; out oContratto: TContratti): Boolean;
     function FindCatEstintore(const aTipo: integer; out aCatEstintore: Tcatestintori): Boolean;
+    function FindBocchello(const aTipo: integer; out aBocchello: TTIPOBOCCHELLI): Boolean;
     function CreateClient: IJanuaRESTClient;
     function ProcessDateWithMonthCalculation(const AInputDate: string; const AMonthsToAdd: integer;
       out AOriginalYear, AOriginalMonth: Word; out ANewDate: TDateTime; out ANewMonthYear: string): Boolean;
@@ -69,8 +72,10 @@ type
     property SelectedRow: TLSStatino read FSelectedRow write SetSelectedRow;
     property DictContratti: TDictionary<integer, TContratti> read FDictContratti write SetDictContratti;
     property DictEstintori: TDictionary<integer, Tcatestintori> read FDictEstintori write SetDictEstintori;
+    property DictBocchelli: TDictionary<integer, TTIPOBOCCHELLI> read FDictBocchelli write SetDictBocchelli;
     property StatinoIndex: integer read FStatinoIndex write SetStatinoIndex;
     property CatEstintori: TCatEstintoriRoot read FCatEstintori write SetCatEstintori;
+
   end;
 
   (*
@@ -120,6 +125,15 @@ begin
 
   FDictEstintori := TDictionary<integer, Tcatestintori>.Create;
   FCatEstintori := TCatEstintoriRoot.Create;
+
+  FDictBocchelli := TDictionary<integer, TTIPOBOCCHELLI>.Create;
+
+end;
+
+function TdmFMXPhoenixAppMobileController.FindBocchello(const aTipo: integer;
+  out aBocchello: TTIPOBOCCHELLI): Boolean;
+begin
+  Result := FDictBocchelli.TryGetValue(aTipo, aBocchello);
 end;
 
 function TdmFMXPhoenixAppMobileController.FindCatEstintore(const aTipo: integer;
@@ -218,8 +232,8 @@ begin
   // Apri con l'app scelta dall'utente
   if Intent.resolveActivity(TAndroidHelper.Context.getPackageManager) <> nil then
     TAndroidHelper.Activity.startActivity(Intent)
-//  else
-//    ShowMessage('Nessuna app di mappe disponibile');
+    // else
+    // ShowMessage('Nessuna app di mappe disponibile');
 {$ENDIF}
 {$IFDEF IOS}
 {$ENDIF}
@@ -304,6 +318,12 @@ end;
 procedure TdmFMXPhoenixAppMobileController.SetConf(const Value: TConfRoot);
 begin
   FConf := Value;
+end;
+
+procedure TdmFMXPhoenixAppMobileController.SetDictBocchelli
+  (const Value: TDictionary<integer, TTIPOBOCCHELLI>);
+begin
+  FDictBocchelli := Value;
 end;
 
 procedure TdmFMXPhoenixAppMobileController.SetDictContratti(const Value: TDictionary<integer, TContratti>);

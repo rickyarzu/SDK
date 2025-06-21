@@ -14,6 +14,8 @@ inherited frmFMXPhoenixMobileMain_LgXhdpiPh: TfrmFMXPhoenixMobileMain_LgXhdpiPh
       450s
       695s
       450s
+      695s
+      450s
       695s)
     inherited tab01Menu: TTabItem
       ExplicitSize.cx = 8.000000000000000000
@@ -109,7 +111,6 @@ inherited frmFMXPhoenixMobileMain_LgXhdpiPh: TfrmFMXPhoenixMobileMain_LgXhdpiPh
             end
             inherited Switch1: TSwitch
               Position.X = 406.000000000000000000
-              Size.Height = 30.000000000000000000
             end
           end
           inherited Layout3: TLayout
@@ -297,17 +298,45 @@ inherited frmFMXPhoenixMobileMain_LgXhdpiPh: TfrmFMXPhoenixMobileMain_LgXhdpiPh
       inherited frameFMXPhoenixReportListEstinguishers1: TframeFMXPhoenixReportListEstinguishers
         Size.Width = 450.000000000000000000
         Size.Height = 647.000000000000000000
-        inherited rcReportSummary: TRectangle
+        inherited VertScBox: TVertScrollBox
           Size.Width = 450.000000000000000000
-          inherited txtReportSummay: TTMSFMXHTMLText
-            Size.Width = 446.000000000000000000
+          Size.Height = 647.000000000000000000
+          Viewport.Width = 376.000000000000000000
+          Viewport.Height = 588.000000000000000000
+        end
+      end
+    end
+    inherited tab05FireHoseLisst: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited frameFMXReportListFireHoses1: TframeFMXReportListFireHoses
+        Size.Width = 450.000000000000000000
+        Size.Height = 647.000000000000000000
+        inherited VertScBox: TVertScrollBox
+          Size.Width = 450.000000000000000000
+          Size.Height = 647.000000000000000000
+          Viewport.Width = 384.000000000000000000
+          Viewport.Height = 688.000000000000000000
+          inherited Layout6: TLayout
+            inherited Rectangle1: TRectangle
+              inherited lbManichette: TLabel
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
           end
         end
-        inherited VertScBoxEstinguishers: TVertScrollBox
+      end
+      inherited ToolBar4: TToolBar
+        Size.Width = 450.000000000000000000
+        inherited Rectangle6: TRectangle
           Size.Width = 450.000000000000000000
-          Size.Height = 547.000000000000000000
-          Viewport.Width = 384.000000000000000000
-          Viewport.Height = 580.000000000000000000
+          inherited Layout8: TLayout
+            Size.Width = 450.000000000000000000
+            inherited lbIdranti: TLabel
+              Position.X = 120.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
         end
       end
     end

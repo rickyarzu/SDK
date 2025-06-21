@@ -14,7 +14,8 @@ uses
   Janua.FMX.PhoenixMobile.Resources, Janua.FMX.ListViewMenu, Janua.Core.Commons, Janua.Core.Classes,
 
   Janua.FMX.FormControls, Janua.FMX.PhoenixMobile.frameReportItem, Janua.FMX.PhoenixMobile.frameReportHeader,
-  Janua.FMX.PhoenixMobile.frameReportListModel, Janua.FMX.PhoenixMobile.frameReportListEstinguishers;
+  Janua.FMX.PhoenixMobile.frameReportListModel, Janua.FMX.PhoenixMobile.frameReportListEstinguishers,
+  Janua.FMX.PhoenixMobile.frameReportListFireHoses;
 
 type
   TfrmFMXPhoenixMobileMain = class(TForm)
@@ -64,6 +65,13 @@ type
     SpeedButton3: TSpeedButton;
     frameFMXPhoenixReportListEstinguishers1: TframeFMXPhoenixReportListEstinguishers;
     Timer1: TTimer;
+    tab05FireHoseLisst: TTabItem;
+    frameFMXReportListFireHoses1: TframeFMXReportListFireHoses;
+    ToolBar4: TToolBar;
+    Rectangle6: TRectangle;
+    Layout8: TLayout;
+    lbIdranti: TLabel;
+    SpeedButton4: TSpeedButton;
     procedure FormCreate(Sender: TObject);
     procedure TitleActionUpdate(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
@@ -74,6 +82,7 @@ type
     procedure SpeedButton2Click(Sender: TObject);
     procedure frameFMXPhoenixMobileReportHeader1btnFireExtinguishersClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
+    procedure frameFMXPhoenixMobileReportHeader1btnFireHydrantsClick(Sender: TObject);
   private
     { Private declarations }
     FTestMenu: TJanuaFMXListViewMenuController;
@@ -243,6 +252,12 @@ procedure TfrmFMXPhoenixMobileMain.frameFMXPhoenixMobileReportHeader1btnFireExti
 begin
   frameFMXPhoenixReportListEstinguishers1.Statino := dmFMXPhoenixAppMobileController.Statino;
   TabControl1.Next(TTabTransition.Slide);
+end;
+
+procedure TfrmFMXPhoenixMobileMain.frameFMXPhoenixMobileReportHeader1btnFireHydrantsClick(Sender: TObject);
+begin
+  frameFMXReportListFireHoses1.Statino := dmFMXPhoenixAppMobileController.Statino;
+  TabControl1.GotoVisibleTab(4, TTabTransition.Slide);
 end;
 
 procedure TfrmFMXPhoenixMobileMain.jlvMenuControllerMenuItems0Click(Sender: TObject);

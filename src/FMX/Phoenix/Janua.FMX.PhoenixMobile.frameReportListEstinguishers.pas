@@ -13,16 +13,12 @@ uses
 
 type
   TframeFMXPhoenixReportListEstinguishers = class(TframeFMXPhoenixReportListModel)
-    VertScBoxEstinguishers: TVertScrollBox;
   private
-    FStatino: TStatino;
     FEstinguishers: TObjectList<TframeFMXMobileEstinguisher>;
-    procedure SetStatino(const Value: TStatino);
     procedure SetEstinguishers(const Value: TObjectList<TframeFMXMobileEstinguisher>);
     { Private declarations }
   public
     { Public declarations }
-    property Statino: TStatino read FStatino write SetStatino;
     property Estinguishers: TObjectList<TframeFMXMobileEstinguisher> read FEstinguishers
       write SetEstinguishers;
   public
@@ -39,6 +35,7 @@ implementation
 {$R *.fmx}
 
 uses Janua.FMX.PhoenixMobile.dmAppMobileController;
+
 { TframeFMXPhoenixReportListEstinguishers }
 
 constructor TframeFMXPhoenixReportListEstinguishers.Create(AOwner: TComponent);
@@ -59,28 +56,13 @@ begin
   FEstinguishers := Value;
 end;
 
-procedure TframeFMXPhoenixReportListEstinguishers.SetStatino(const Value: TStatino);
-begin
-  if FStatino <> Value then
-  begin
-    FStatino := Value;
-    if Assigned(FStatino) then
-    begin
-      txtReportSummay.Text := '<b>Intervento N°: </b> ' + FStatino.CHIAVE.ToString +
-        ' <br /><b>Mese Emissione: </b>  <br /><b>Amministratore: </b> ' + FStatino.NOMEAMMINISTRATORE +
-        '<br />' + '<b>Contratto: </b>' + FStatino.DESCRIZIONECONTRATTO + '<br /><b>Filiale: </b>' +
-        FStatino.NOMEFILIALE + '<br />';
-    end;
-    Setup
-  end;
-end;
-
 procedure TframeFMXPhoenixReportListEstinguishers.Setup;
 begin
+  inherited;
   var
   lCount := FStatino.Estintori.Count;
   var
-  lTop := 0.0;
+  lTop := rcReportSummary.Height + rcReportSummary.Position.Y + 1;
   if lCount > 0 then
   begin
     if FEstinguishers.Count > 0 then
@@ -99,13 +81,10 @@ begin
       aFrame.Position.Y := lTop;
       lTop := lTop + aFrame.Height;
       aFrame.Estintore := FStatino.Estintori[I];
-      aFrame.Parent := VertScBoxEstinguishers;
+      aFrame.Parent := self.VertScBox;
       aFrame.Visible := True;
-      // aFrame.OnItemClick := ReportClick;
-    end;
-    // statini: TObjectList<TLSStatino>
+    end
   end;
-
 end;
 
 end.
