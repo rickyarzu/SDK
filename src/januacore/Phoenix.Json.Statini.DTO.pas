@@ -225,6 +225,18 @@ type
     FTecnicoRitiro: Integer;
     [JSONName('UBICAZION')]
     FUBICAZIONE: string;
+    [JSONName('Smaltito')]
+    FSmaltito: Boolean;
+    [JSONName('DataSmaltimento')]
+    [SuppressZero]
+    FDataSmaltimento: TDateTime;
+    [JSONName('OrarioSmaltimento')]
+    FOrarioSmaltimento: string;
+    [JSONName('TecnicoSmaltimento')]
+    FTecnicoSmaltimento: Integer;
+    FTercnicoSmaltimento: Integer;
+
+
   published
     property ANNOMANICHETTA: string read FANNOMANICHETTA write FANNOMANICHETTA;
     property ANNOPRESSATURA: string read FANNOPRESSATURA write FANNOPRESSATURA;
@@ -257,6 +269,10 @@ type
     property TecnicoPressatura: Integer read FTecnicoPressatura write FTecnicoPressatura;
     property TecnicoRitiro: Integer read FTecnicoRitiro write FTecnicoRitiro;
     property UBICAZIONE: string read FUBICAZIONE write FUBICAZIONE;
+    property Smaltito: Boolean read FSmaltito write FSmaltito;
+    property DataSmaltimento: TDateTime read FDataSmaltimento write FDataSmaltimento;
+    property OrarioSmaltimento: string read FOrarioSmaltimento write FOrarioSmaltimento;
+    property TecnicoSmaltimento: Integer read FTercnicoSmaltimento write FTecnicoSmaltimento ;
   end;
 
   TIdranti = class(TJsonDTO)
@@ -1475,8 +1491,9 @@ begin
   GlobalParams := '';
 
   for var I := Low(ArrayPhoenix) to High(ArrayPhoenix) do
-    if not ArrayPhoenix[I].IsEmpty and (Pos('"' + ArrayPhoenix[I] + '"', Result ) > 0) then
-      Result := StringReplace(Result, '"' + ArrayPhoenix[I] + '"', '"' + ArrayDTO[I] + '"', [rfReplaceAll, rfIgnoreCase]);
+    if not ArrayPhoenix[I].IsEmpty and (POS('"' + ArrayPhoenix[I] + '"', Result) > 0) then
+      Result := StringReplace(Result, '"' + ArrayPhoenix[I] + '"', '"' + ArrayDTO[I] + '"',
+        [rfReplaceAll, rfIgnoreCase]);
 
   for var I := 2001 to 2030 do
   begin
@@ -1679,5 +1696,6 @@ begin
   RefreshArray<TSprinkler>(FSprinkler, FSprinklerArray);
   Result := inherited;
 end;
+
 
 end.

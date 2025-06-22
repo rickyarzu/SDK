@@ -4927,13 +4927,21 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           TabOrder = 10
           OnClick = btnTestAllegatiClick
         end
+        object edIdranti: TJvComboEdit
+          Left = 552
+          Top = 16
+          Width = 145
+          Height = 23
+          TabOrder = 11
+          Text = '2289800'
+        end
       end
       object PageControl4: TPageControl
         Left = 0
         Top = 57
         Width = 1483
         Height = 605
-        ActivePage = tabTestLuci
+        ActivePage = tabIdranti
         Align = alClient
         TabOrder = 1
         object tabTestLuci: TTabSheet
@@ -6407,13 +6415,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
               end
               item
                 Expanded = False
-                FieldName = 'DES_BOCCHELLO'
-                Width = 389
-                Visible = True
-              end
-              item
-                Expanded = False
-                FieldName = 'TIPO_LANCIA'
+                FieldName = 'TIPO_LANCIA_2'
                 Width = 300
                 Visible = True
               end
@@ -6620,6 +6622,12 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
                 Expanded = False
                 FieldName = 'STATINO'
                 Width = 64
+                Visible = True
+              end
+              item
+                Expanded = False
+                FieldName = 'DESCRIZIONE_IDRANTE'
+                Width = 200
                 Visible = True
               end>
           end

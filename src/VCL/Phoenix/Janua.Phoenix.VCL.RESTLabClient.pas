@@ -16,7 +16,7 @@ uses
   uJanuaVclForm, Janua.Controls.Forms.Impl, Janua.VCL.Controls.Forms.Impl, Janua.Controls.Forms.Intf,
   // Janua
   Janua.Core.Classes, Janua.REST.Types, Janua.Core.Types, Janua.Http.Types, Janua.REST.Intf,
-  Janua.Phoenix.dmIBLabSync, CRGrid, Janua.VCL.EnhCRDBGrid, VCL.Samples.Spin;
+  Janua.Phoenix.dmIBLabSync, CRGrid, Janua.VCL.EnhCRDBGrid, VCL.Samples.Spin, JvExMask, JvToolEdit;
 
 type
   TfrmPhoenixVCLRESTLabClient = class(TJanuaVCLFormModel, IJanuaForm)
@@ -178,6 +178,7 @@ type
     memReportListElaborated: TAdvMemo;
     btnTestList: TButton;
     memLista: TMemo;
+    edIdranti: TJvComboEdit;
     procedure btnRestCallClick(Sender: TObject);
     procedure btnOpenClick(Sender: TObject);
     procedure btnSaveJsonClick(Sender: TObject);
