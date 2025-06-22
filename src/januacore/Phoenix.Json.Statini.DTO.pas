@@ -269,7 +269,7 @@ type
     property Smaltito: Boolean read FSmaltito write FSmaltito;
     property DataSmaltimento: TDateTime read FDataSmaltimento write FDataSmaltimento;
     property OrarioSmaltimento: string read FOrarioSmaltimento write FOrarioSmaltimento;
-    property TecnicoSmaltimento: Integer read FTercnicoSmaltimento write FTecnicoSmaltimento ;
+    property TecnicoSmaltimento: Integer read FTercnicoSmaltimento write FTecnicoSmaltimento;
   end;
 
   TIdranti = class(TJsonDTO)
@@ -1693,6 +1693,5 @@ begin
   RefreshArray<TSprinkler>(FSprinkler, FSprinklerArray);
   Result := inherited;
 end;
-
 
 end.

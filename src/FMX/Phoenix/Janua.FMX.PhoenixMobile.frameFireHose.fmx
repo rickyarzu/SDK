@@ -201,6 +201,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 11
+      OnClick = ckbContrClick
       GroupName = '1'
       Text = '  '
     end
@@ -213,6 +214,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 10
+      OnClick = ckbChargingClick
       GroupName = '1'
       Text = '  '
     end

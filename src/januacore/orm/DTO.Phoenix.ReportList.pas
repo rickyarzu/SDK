@@ -344,5 +344,3 @@ end.
   RebuildList;
   end;
 *)
-
-  end.

@@ -51,6 +51,8 @@ type
     Layout2: TLayout;
     lbDataPressatura: TLabel;
     procedure ckbContrChange(Sender: TObject);
+    procedure ckbContrClick(Sender: TObject);
+    procedure ckbChargingClick(Sender: TObject);
   private
     FIdrante: TIdranti;
     FBocchello: TBocchelli;
@@ -70,9 +72,28 @@ implementation
 uses Janua.FMX.PhoenixMobile.dmAppMobileController;
 { TframeFMXMobileFireHose }
 
+procedure TframeFMXMobileFireHose.ckbChargingClick(Sender: TObject);
+begin
+  if ckbCharging.Checked then
+  begin
+     FBocchello.DataPressatura := Date;
+     FBocchello.TecnicoPressatura :=  dmFMXPhoenixAppMobileController.SelectedRow.RESPONSABILE;
+  end;
+end;
+
 procedure TframeFMXMobileFireHose.ckbContrChange(Sender: TObject);
 begin
   FBocchello.Controllato := ckbContr.Checked;
+end;
+
+procedure TframeFMXMobileFireHose.ckbContrClick(Sender: TObject);
+begin
+  if ckbContr.Checked then
+  begin
+     FBocchello.TIPOINTERVENTO := 'O';
+     FBocchello.Controllato := True;
+     FBocchello.TecnicoControllo := dmFMXPhoenixAppMobileController.SelectedRow.RESPONSABILE;
+  end;
 end;
 
 procedure TframeFMXMobileFireHose.SetBocchello(const Value: TBocchelli);
@@ -87,9 +108,14 @@ begin
 
       txtNR.Text := FBocchello.IDBOCCHELLO.ToString;
       txtScadColl.Text := FBocchello.ANNOSTARTUP.ToString;
-      if FBocchello.TIPOINTERVENTO = 'O' then
+      var
+      lOrdinario := FBocchello.TIPOINTERVENTO = 'O';
+      var
+      lCollaudo := FBocchello.TIPOINTERVENTO = 'C';
+
+      if lOrdinario then
         txtIntervento.Text := 'Ordinario'
-      else if FBocchello.TIPOINTERVENTO = 'C' then
+      else if lCollaudo then
         txtIntervento.Text := 'Collaudo';
 
       var
@@ -100,10 +126,11 @@ begin
       txtTipo.Text := IFThen(vTest, sTipo.Descrizione, '');
 
       txtLocation.Text := FBocchello.UBICAZIONE;
-      ckbContr.Checked := FBocchello.Controllato;
+      ckbContr.Checked := FBocchello.Controllato and lOrdinario;
       ckbCharging.Checked := FBocchello.PressaturaEffettuata;
-      ckbTesting.Checked := FBocchello.Ritirato;
-      ckbDisposal.Checked := FBocchello.DataRitiro <> 0.0;
+      ckbTesting.Checked := FBocchello.Controllato and lCollaudo;
+      ckbDisposal.Checked := FBocchello.Smaltito;
+
       memAnomalia.Text := FBocchello.ANOMALIA;
       // FBocchello.
     end;
