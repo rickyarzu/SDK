@@ -20,7 +20,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
     Top = 0
     Width = 1491
     Height = 855
-    ActivePage = tabLab
+    ActivePage = RemoteDB
     Align = alClient
     TabOrder = 0
     object tabLab: TTabSheet
@@ -30,7 +30,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         Top = 57
         Width = 1483
         Height = 768
-        ActivePage = tabTestRESTAPI
+        ActivePage = tabExportConf
         Align = alClient
         TabOrder = 0
         object tabJsonList: TTabSheet
