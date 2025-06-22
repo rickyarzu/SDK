@@ -13,9 +13,7 @@ uses
   // Janua
   Janua.FMX.PhoenixMobile.Resources, Janua.FMX.ListViewMenu, Janua.Core.Commons, Janua.Core.Classes,
 
-  Janua.FMX.FormControls, Janua.FMX.PhoenixMobile.frameReportItem, Janua.FMX.PhoenixMobile.frameReportHeader,
-  Janua.FMX.PhoenixMobile.frameReportListModel, Janua.FMX.PhoenixMobile.frameReportListEstinguishers,
-  Janua.FMX.PhoenixMobile.frameReportListFireHoses;
+  Janua.FMX.FormControls, Janua.FMX.PhoenixMobile.frameReportItem, Janua.FMX.PhoenixMobile.frameReportHeader;
 
 type
   TfrmFMXPhoenixMobileMain = class(TForm)
@@ -26,8 +24,8 @@ type
     TopToolBar: TToolBar;
     btnNext: TSpeedButton;
     TabControl1: TTabControl;
-    tab01Menu: TTabItem;
-    tab02ReportList: TTabItem;
+    TabItem1: TTabItem;
+    TabItem2: TTabItem;
     ListViewMain: TListView;
     jlvMenuController: TJanuaFMXListViewMenuController;
     Rectangle1: TRectangle;
@@ -41,7 +39,7 @@ type
     lbDate: TLabel;
     JanuaFmxBadge1: TJanuaFmxBadge;
     SpeedButton1: TSpeedButton;
-    tab03Report: TTabItem;
+    TabItem3: TTabItem;
     frameFMXPhoenixMobileReportHeader1: TframeFMXPhoenixMobileReportHeader;
     edLocation: TEdit;
     ClearEditButton1: TClearEditButton;
@@ -52,37 +50,12 @@ type
     Layout5: TLayout;
     VertScrollBoxReports: TVertScrollBox;
     actSincroDB: TAction;
-    ToolBar2: TToolBar;
-    Rectangle4: TRectangle;
-    Layout6: TLayout;
-    lbRapportino: TLabel;
-    SpeedButton2: TSpeedButton;
-    tab04EstingushersList: TTabItem;
-    ToolBar3: TToolBar;
-    Rectangle5: TRectangle;
-    Layout7: TLayout;
-    lbEstingushersList: TLabel;
-    SpeedButton3: TSpeedButton;
-    frameFMXPhoenixReportListEstinguishers1: TframeFMXPhoenixReportListEstinguishers;
-    Timer1: TTimer;
-    tab05FireHoseLisst: TTabItem;
-    frameFMXReportListFireHoses1: TframeFMXReportListFireHoses;
-    ToolBar4: TToolBar;
-    Rectangle6: TRectangle;
-    Layout8: TLayout;
-    lbIdranti: TLabel;
-    SpeedButton4: TSpeedButton;
     procedure FormCreate(Sender: TObject);
     procedure TitleActionUpdate(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure btnTestClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure jlvMenuControllerMenuItems0Click(Sender: TObject);
-    procedure SpeedButton1Click(Sender: TObject);
-    procedure SpeedButton2Click(Sender: TObject);
-    procedure frameFMXPhoenixMobileReportHeader1btnFireExtinguishersClick(Sender: TObject);
-    procedure Timer1Timer(Sender: TObject);
-    procedure frameFMXPhoenixMobileReportHeader1btnFireHydrantsClick(Sender: TObject);
   private
     { Private declarations }
     FTestMenu: TJanuaFMXListViewMenuController;
@@ -105,41 +78,6 @@ uses Spring, Janua.FMX.PhoenixMobile.dmAppMobileController;
 {$R *.LgXhdpiPh.fmx ANDROID}
 {$R *.iPhone4in.fmx IOS}
 {$R *.iPhone55in.fmx IOS}
-
-procedure TfrmFMXPhoenixMobileMain.Timer1Timer(Sender: TObject);
-begin
-  Timer1.Enabled := False;
-  FTestMenu := TJanuaFMXListViewMenuController.Create(self);
-  var
-  lItem := FTestMenu.MenuItems.Add;
-  lItem.ImageIndex := 17;
-  lItem.Title := 'Rapporti di Manutenziona Ordinaria';
-  lItem.OnClick := jlvMenuControllerMenuItems0Click;
-  FdmJanuaFMXPhoenixMobileResources := TdmJanuaFMXPhoenixMobileResources.Create(self);
-  ListViewMain.Images := FdmJanuaFMXPhoenixMobileResources.ImageList512;
-  FTestMenu.ListView := ListViewMain;
-  FTestMenu.DrawListView;
-
-  (*
-
-    Timer1.Enabled := False;
-    FdmJanuaFMXPhoenixMobileResources := TdmJanuaFMXPhoenixMobileResources.Create(self);
-    ListViewMain.Images := FdmJanuaFMXPhoenixMobileResources.ImageList512;
-    FTestMenu := TJanuaFMXListViewMenuController.Create(self);
-
-    for var I := 0 to jlvMenuController.MenuItems.Count - 1 do
-    begin
-    var
-    lItem := FTestMenu.MenuItems.Add;
-    lItem.ImageIndex := jlvMenuController.MenuItems[I].ImageIndex;
-    lItem.Title := jlvMenuController.MenuItems[I].Title;
-    lItem.OnClick := jlvMenuController.MenuItems[I].OnClick;
-    end;
-
-    FTestMenu.ListView := ListViewMain;
-    FTestMenu.DrawListView;
-  *)
-end;
 
 procedure TfrmFMXPhoenixMobileMain.TitleActionUpdate(Sender: TObject);
 begin
@@ -244,20 +182,7 @@ end;
 
 procedure TfrmFMXPhoenixMobileMain.FormShow(Sender: TObject);
 begin
-  // jlvMenuController.DrawListView
-end;
-
-procedure TfrmFMXPhoenixMobileMain.frameFMXPhoenixMobileReportHeader1btnFireExtinguishersClick
-  (Sender: TObject);
-begin
-  frameFMXPhoenixReportListEstinguishers1.Statino := dmFMXPhoenixAppMobileController.Statino;
-  TabControl1.Next(TTabTransition.Slide);
-end;
-
-procedure TfrmFMXPhoenixMobileMain.frameFMXPhoenixMobileReportHeader1btnFireHydrantsClick(Sender: TObject);
-begin
-  frameFMXReportListFireHoses1.Statino := dmFMXPhoenixAppMobileController.Statino;
-  TabControl1.GotoVisibleTab(4, TTabTransition.Slide);
+  jlvMenuController.DrawListView
 end;
 
 procedure TfrmFMXPhoenixMobileMain.jlvMenuControllerMenuItems0Click(Sender: TObject);
@@ -269,16 +194,6 @@ procedure TfrmFMXPhoenixMobileMain.ReportClick(Sender: TObject);
 begin
   frameFMXPhoenixMobileReportHeader1.Statino := dmFMXPhoenixAppMobileController.Statino;
   TabControl1.Next(TTabTransition.Slide);
-end;
-
-procedure TfrmFMXPhoenixMobileMain.SpeedButton1Click(Sender: TObject);
-begin
-  TabControl1.Previous(TTabTransition.Slide);
-end;
-
-procedure TfrmFMXPhoenixMobileMain.SpeedButton2Click(Sender: TObject);
-begin
-  TabControl1.Previous(TTabTransition.Slide);
 end;
 
 end.

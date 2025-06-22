@@ -369,6 +369,7 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
       Size.PlatformDefault = False
       TabOrder = 2
       Appearance.ButtonShape = bsRectangle
+      Appearance.ValueFont.Name = 'Segoe UI'
       EditFieldKeyboardType = Default
     end
   end
@@ -458,6 +459,7 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
       Size.PlatformDefault = False
       TabOrder = 2
       Appearance.ButtonShape = bsRectangle
+      Appearance.ValueFont.Name = 'Segoe UI'
       EditFieldKeyboardType = Default
     end
   end
@@ -609,6 +611,7 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
       Size.PlatformDefault = False
       TabOrder = 2
       Appearance.ButtonShape = bsRectangle
+      Appearance.ValueFont.Name = 'Segoe UI'
       EditFieldKeyboardType = Default
     end
   end

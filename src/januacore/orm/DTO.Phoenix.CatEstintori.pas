@@ -9,7 +9,7 @@ uses
 {$M+}
 
 type
-  Tcatestintori = class(TJanuaBindableClass)
+  Tcatestintori = class(TJanuaBindableClass) // added TJanuaBindableClass
   private
     [JSONName('CHIAVE')]
     FCHIAVE: Integer;
@@ -111,7 +111,7 @@ procedure TCatEstintoriRoot.LoadFromDataset(const aDataset: TDataset);
 begin
   if aDataset.RecordCount > 0 then
   begin
-    FIterator.Initialize('DESCRCOMPATTA', aDataset, FestintoriArray);
+    FIterator.Initialize('DESCR_COMPATTA', aDataset, FestintoriArray);
     var
     vTest := Length(FestintoriArray);
   end;
@@ -120,7 +120,7 @@ end;
 
 procedure TCatEstintoriRoot.RebuildList;
 begin
-  FIterator.Initialize('DESCRCOMPATTA', Getestintori);
+  FIterator.Initialize('RAGIONESOCIALE', Getestintori);
 end;
 
 procedure TCatEstintoriRoot.SetAsJson(aValue: string);

@@ -835,12 +835,13 @@ procedure TJanuaFMXMenuItem.DrawListView(aListView: TListView; ItemIndex: Intege
 begin
   if Assigned(aListView) then
   begin
-    var
-    AItem := aListView.Items.Add;
-    AItem.Tag := ItemIndex;
-    AItem.Text := self.FTitle;
-    // Detail := Format('%d kg of paper', [1000 + Random(1234)]);
-    AItem.ImageIndex := self.ImageIndex;
+    with aListView.Items.Add do
+    begin
+      Tag := ItemIndex;
+      Text := self.FTitle;
+      // Detail := Format('%d kg of paper', [1000 + Random(1234)]);
+      ImageIndex := self.ImageIndex;
+    end;
   end;
 end;
 
@@ -969,7 +970,7 @@ begin
   if (AItem.Tag > -1) and (AItem.Tag < MenuItems.Count) then
     MenuItems.Items[AItem.Tag].DoClick;
   {
-    if Assigned(self.FAfterItemClick) then
+  if Assigned(self.FAfterItemClick) then
     FAfterItemClick(Sender);
   }
   // MenuItems.Items[AItem.Tag];

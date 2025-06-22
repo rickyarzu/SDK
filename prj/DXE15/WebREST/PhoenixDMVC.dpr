@@ -17,8 +17,7 @@ uses
   Janua.DMVC.WebModulePhoenix in '..\..\..\src\januawebrest\Janua.DMVC.WebModulePhoenix.pas' {wmPhoenixDMVC: TWebModule},
   Janua.FDAC.Phoenix.Reports in '..\..\..\src\FireDAC\Janua.FDAC.Phoenix.Reports.pas' {dmFDACPhoenixReports: TDataModule},
   udmPhoenixReportsCaches in '..\..\..\..\Phoenix\Phoenix\SW\PhoenixMain\udmPhoenixReportsCaches.pas' {dmPhoenixReportsCaches: TDataModule},
-  Globale in '..\..\..\..\Phoenix\DelphiXE\Globale.pas',
-  DTO.Phoenix.CatEstintori in '..\..\..\src\januacore\orm\DTO.Phoenix.CatEstintori.pas';
+  Globale in '..\..\..\..\Phoenix\DelphiXE\Globale.pas';
 
 {$R *.res}
 

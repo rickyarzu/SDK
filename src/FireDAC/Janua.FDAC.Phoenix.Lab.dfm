@@ -4,6 +4,7 @@ inherited dmFDACPhoenixLab: TdmFDACPhoenixLab
   Height = 476
   Width = 542
   inherited FDConnectionPhoenix: TFDConnection
+    Connected = True
     LoginDialog = nil
     LoginPrompt = False
   end
