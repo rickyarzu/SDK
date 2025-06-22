@@ -17,6 +17,8 @@ inherited frmFMXPhoenixMobileMain_iPhone4in: TfrmFMXPhoenixMobileMain_iPhone4in
       320s
       548s)
     inherited tab01Menu: TTabItem
+      Size.Width = 11.000000000000000000
+      Size.Height = 11.000000000000000000
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
       inherited ListViewMain: TListView

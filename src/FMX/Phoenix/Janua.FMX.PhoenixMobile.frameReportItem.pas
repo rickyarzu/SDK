@@ -12,7 +12,7 @@ uses
 type
   TframeReportItem = class(TFrame)
     Rectangle1: TRectangle;
-    Label1: TLabel;
+    lbAdministrator: TLabel;
     lbRagioneSociale: TLabel;
     lbAddress: TLabel;
     lbEstinguishers: TLabel;
@@ -80,19 +80,13 @@ begin
   if Assigned(FStatino) then
   begin
 
+    lbAdministrator.Text := FStatino.AMMINISTRATORE;
+
     lbRagioneSociale.Text := 'CONTRATTO:' + FStatino.RagioneSociale;
     lbAddress.Text := FStatino.INDIRIZZO;
     var
     lText := '';
-    {
-      FESTINTORIORDINARIO: Integer;
-      FESTINTORISTRAORDINARIO: Integer;
-      FFUMI: Integer;
-      FGRUPPIELETTR: Integer;
-      FIDRANTI: Integer;
-      FIMPIANTIEL: Integer;
-      FLUCI: Integer;
-      FSPRINKLER: Integer; }
+
     var
     lTest1 := FStatino.ESTINTORIORDINARIO;
     lText := lText + IfThen(lTest1 > 0, 'Estintori Ordinari: ' + lTest1.ToString, '');

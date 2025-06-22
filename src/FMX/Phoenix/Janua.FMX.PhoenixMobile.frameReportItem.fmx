@@ -9,7 +9,7 @@ object frameReportItem: TframeReportItem
     Size.Width = 352.000000000000000000
     Size.Height = 24.000000000000000000
     Size.PlatformDefault = False
-    object Label1: TLabel
+    object lbAdministrator: TLabel
       Align = Center
       Anchors = [akLeft, akRight]
       AutoSize = True
@@ -82,9 +82,9 @@ object frameReportItem: TframeReportItem
     TabOrder = 4
     object btnGoogleMaps: TTMSFMXImage
       Align = Right
-      Position.X = 284.000000000000000000
+      Position.X = 280.000000000000000000
       ClipChildren = True
-      Size.Width = 32.000000000000000000
+      Size.Width = 36.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
       Margins.Left = 4.000000000000000000

@@ -572,7 +572,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
         end
         inherited JanuaFmxBadge1: TJanuaFmxBadge
           Left = 160
-          Top = 288
+          Top = 304
         end
       end
       object ToolBar2: TToolBar
