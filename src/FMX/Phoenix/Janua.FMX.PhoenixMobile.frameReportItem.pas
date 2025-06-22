@@ -79,8 +79,7 @@ begin
   FStatino := Value;
   if Assigned(FStatino) then
   begin
-
-    lbRagioneSociale.Text := 'CONTRATTO:' + FStatino.RagioneSociale;
+    lbRagioneSociale.Text := FStatino.RagioneSociale;
     lbAddress.Text := FStatino.INDIRIZZO;
     var
     lText := '';
@@ -108,7 +107,7 @@ begin
     lTest1 := lTest1 + lTest;
 
     lTest := FStatino.GRUPPIELETTR;
-    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', G.P.A. : ' +
+    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Grp. Elettr.: ' +
       lTest.ToString, '');
     lTest1 := lTest1 + lTest;
 
@@ -122,10 +121,6 @@ begin
 
     lTest := FStatino.SPRINKLER;
     lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Sprinkler: ' + lTest.ToString, '');
-    lTest1 := lTest1 + lTest;
-
-    lTest := FStatino.PORTE;
-    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Porte: ' + lTest.ToString, '');
     lTest1 := lTest1 + lTest;
 
     lbEstinguishers.Text := lText;

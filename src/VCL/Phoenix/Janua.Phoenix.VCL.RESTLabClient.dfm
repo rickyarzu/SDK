@@ -20,7 +20,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
     Top = 0
     Width = 1491
     Height = 855
-    ActivePage = tabLab
+    ActivePage = RemoteDB
     Align = alClient
     TabOrder = 0
     object tabLab: TTabSheet
@@ -30,7 +30,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
         Top = 57
         Width = 1483
         Height = 768
-        ActivePage = tabJsonConfigurazioni
+        ActivePage = tabExportConf
         Align = alClient
         TabOrder = 0
         object tabJsonList: TTabSheet
@@ -152,7 +152,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
           object pnlListaEstintori: TPanel
@@ -297,7 +297,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
         end
@@ -671,7 +671,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
           object memConfigurazioniHead: TAdvMemo
@@ -789,7 +789,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
           object memTmpConfigurazioni: TAdvMemo
@@ -906,7 +906,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = False
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
         end
@@ -1163,7 +1163,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
           object memExportConfAdapted: TAdvMemo
@@ -1282,7 +1282,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
           object memFinalConf: TAdvMemo
@@ -1401,7 +1401,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
         end
@@ -1524,7 +1524,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
           object memUtentiTranslated: TAdvMemo
@@ -1643,7 +1643,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
           object memUtentiFinal: TAdvMemo
@@ -1762,7 +1762,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
         end
@@ -1885,7 +1885,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
           object memMagazzinoTranslated: TAdvMemo
@@ -2004,7 +2004,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
           object memMagazzinoFinal: TAdvMemo
@@ -2123,7 +2123,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
         end
@@ -2298,7 +2298,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
           object memReportTranslated: TAdvMemo
@@ -2417,7 +2417,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
           object memReportFinal: TAdvMemo
@@ -2536,7 +2536,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
         end
@@ -2659,7 +2659,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
           object memTestUtenti: TAdvMemo
@@ -2778,7 +2778,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
           object memTestReport: TAdvMemo
@@ -2897,7 +2897,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
           object memTestProdotti: TAdvMemo
@@ -3016,7 +3016,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
           object memTestTranslated: TAdvMemo
@@ -3135,7 +3135,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
         end
@@ -3235,7 +3235,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             Top = 49
             Width = 1475
             Height = 689
-            ActivePage = tabConf
+            ActivePage = tabRapportiniGiorno
             Align = alClient
             TabOrder = 1
             object tabConf: TTabSheet
@@ -3356,7 +3356,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
                 UrlStyle.BkColor = clWhite
                 UrlStyle.Style = [fsUnderline]
                 UseStyler = True
-                Version = '3.9.1.7'
+                Version = '3.9.1.1'
                 WordWrap = wwNone
               end
               object memJsonConfElaborated: TAdvMemo
@@ -3475,7 +3475,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
                 UrlStyle.BkColor = clWhite
                 UrlStyle.Style = [fsUnderline]
                 UseStyler = True
-                Version = '3.9.1.7'
+                Version = '3.9.1.1'
                 WordWrap = wwNone
               end
             end
@@ -3598,7 +3598,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
                 UrlStyle.BkColor = clWhite
                 UrlStyle.Style = [fsUnderline]
                 UseStyler = True
-                Version = '3.9.1.7'
+                Version = '3.9.1.1'
                 WordWrap = wwNone
               end
               object memUtentiRestObject: TAdvMemo
@@ -3717,7 +3717,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
                 UrlStyle.BkColor = clWhite
                 UrlStyle.Style = [fsUnderline]
                 UseStyler = True
-                Version = '3.9.1.7'
+                Version = '3.9.1.1'
                 WordWrap = wwNone
               end
             end
@@ -3840,7 +3840,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
                 UrlStyle.BkColor = clWhite
                 UrlStyle.Style = [fsUnderline]
                 UseStyler = True
-                Version = '3.9.1.7'
+                Version = '3.9.1.1'
                 WordWrap = wwNone
               end
               object memProdottiRestObject: TAdvMemo
@@ -3959,7 +3959,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
                 UrlStyle.BkColor = clWhite
                 UrlStyle.Style = [fsUnderline]
                 UseStyler = True
-                Version = '3.9.1.7'
+                Version = '3.9.1.1'
                 WordWrap = wwNone
               end
             end
@@ -4134,7 +4134,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
                 UrlStyle.BkColor = clWhite
                 UrlStyle.Style = [fsUnderline]
                 UseStyler = True
-                Version = '3.9.1.7'
+                Version = '3.9.1.1'
                 WordWrap = wwNone
               end
               object memStatinoRESTObject: TAdvMemo
@@ -4253,7 +4253,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
                 UrlStyle.BkColor = clWhite
                 UrlStyle.Style = [fsUnderline]
                 UseStyler = True
-                Version = '3.9.1.7'
+                Version = '3.9.1.1'
                 WordWrap = wwNone
               end
             end
@@ -4376,7 +4376,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
                 UrlStyle.BkColor = clWhite
                 UrlStyle.Style = [fsUnderline]
                 UseStyler = True
-                Version = '3.9.1.7'
+                Version = '3.9.1.1'
                 WordWrap = wwNone
               end
               object memReportListElaborated: TAdvMemo
@@ -4495,7 +4495,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
                 UrlStyle.BkColor = clWhite
                 UrlStyle.Style = [fsUnderline]
                 UseStyler = True
-                Version = '3.9.1.7'
+                Version = '3.9.1.1'
                 WordWrap = wwNone
               end
               object memLista: TMemo
@@ -4543,9 +4543,9 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
           Top = 18
           Width = 153
           Height = 23
-          EditLabel.Width = 50
+          EditLabel.Width = 66
           EditLabel.Height = 15
-          EditLabel.Caption = 'Password'
+          EditLabel.Caption = 'edUsername'
           TabOrder = 1
           Text = '***!PhoenixFly'
         end
@@ -4770,7 +4770,7 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.7'
+            Version = '3.9.1.1'
             WordWrap = wwNone
           end
         end
@@ -7700,93 +7700,5 @@ object frmPhoenixVCLRESTLabClient: TfrmPhoenixVCLRESTLabClient
     DataSet = dmFbPhoenixJsonReport.qryStatiniNonCompilati
     Left = 192
     Top = 429
-  end
-  object AdvJSONMemoStyler2: TAdvJSONMemoStyler
-    CommentStyle.TextColor = clNavy
-    CommentStyle.BkColor = clWhite
-    CommentStyle.Style = [fsItalic]
-    NumberStyle.TextColor = clFuchsia
-    NumberStyle.BkColor = clWhite
-    NumberStyle.Style = [fsBold]
-    HighlightStyle.TextColor = clWhite
-    HighlightStyle.BkColor = clRed
-    HighlightStyle.Style = [fsBold]
-    AllStyles = <
-      item
-        KeyWords.Strings = (
-          'NULL'
-          'TRUE'
-          'FALSE')
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clGreen
-        Font.Height = -11
-        Font.Name = 'Courier New'
-        Font.Style = [fsBold]
-        BGColor = clWhite
-        StyleType = stKeyword
-        BracketStart = #0
-        BracketEnd = #0
-        Info = 'JSON Standard Default'
-      end
-      item
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlue
-        Font.Height = -11
-        Font.Name = 'Courier New'
-        Font.Style = []
-        BGColor = clWhite
-        StyleType = stBracket
-        BracketStart = #39
-        BracketEnd = #39
-        Info = 'Simple Quote'
-      end
-      item
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlue
-        Font.Height = -11
-        Font.Name = 'Courier New'
-        Font.Style = []
-        BGColor = clWhite
-        StyleType = stBracket
-        BracketStart = '"'
-        BracketEnd = '"'
-        Info = 'Double Quote'
-      end
-      item
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -11
-        Font.Name = 'Courier New'
-        Font.Style = []
-        BGColor = clWhite
-        StyleType = stSymbol
-        BracketStart = #0
-        BracketEnd = #0
-        Symbols = ',:(){}[]='
-        Info = 'Symbols'
-      end>
-    HintParameter.TextColor = clBlack
-    HintParameter.BkColor = clInfoBk
-    HintParameter.HintCharStart = '('
-    HintParameter.HintCharEnd = ')'
-    HintParameter.HintCharDelimiter = ';'
-    HintParameter.HintClassDelimiter = '.'
-    HintParameter.HintCharWriteDelimiter = ','
-    HexIdentifier = '0x'
-    Description = 'JSON'
-    Filter = 'JSON Files (*.json)|*.json'
-    DefaultExtension = '.json'
-    StylerName = 'JSON'
-    Extensions = 'json'
-    RegionDefinitions = <
-      item
-        Identifier = '{'
-        RegionStart = '{'
-        RegionEnd = '}'
-        RegionType = rtClosed
-        ShowComments = False
-      end>
-    Left = 108
-    Top = 275
   end
 end

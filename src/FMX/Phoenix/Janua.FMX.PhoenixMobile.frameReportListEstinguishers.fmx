@@ -1,6 +1,2 @@
 inherited frameFMXPhoenixReportListEstinguishers: TframeFMXPhoenixReportListEstinguishers
-  inherited VertScBox: TVertScrollBox
-    Viewport.Width = 376.000000000000000000
-    Viewport.Height = 688.000000000000000000
-  end
 end

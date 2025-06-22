@@ -3,8 +3,7 @@ unit Phoenix.Json.Statini.DTO;
 interface
 
 uses
-  Janua.Core.Json, Janua.Core.Classes, Janua.Core.Commons,
-  System.Generics.Collections, REST.Json.Types, Pkg.Json.DTO, Janua.Core.Json.DTO;
+  Janua.Core.Json, System.Generics.Collections, REST.Json.Types, Pkg.Json.DTO, Janua.Core.Json.DTO;
 
 {$M+}
 
@@ -160,7 +159,7 @@ type
     property SPURGOIMPIANTO: Boolean read FSPURGOIMPIANTO write FSPURGOIMPIANTO;
   end;
 
-  TBocchelli = class(TJanuaBindableClass)
+  TBocchelli = class
   private
     [JSONName('ANNO_MANICHETTA')]
     FANNOMANICHETTA: string;

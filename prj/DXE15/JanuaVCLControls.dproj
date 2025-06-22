@@ -237,7 +237,6 @@
             <Form>frmContactViewerVCL</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="..\..\src\JanuaLegacy\JvxSpeedButton.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaLibDXE15.optset</DependentOn>

@@ -3,7 +3,7 @@ object dmFMXPhoenixAppMobileController: TdmFMXPhoenixAppMobileController
   Height = 480
   Width = 640
   object TimerDaily: TTimer
-    Interval = 100
+    Interval = 5000
     OnTimer = Timer1Timer
     Left = 368
     Top = 128

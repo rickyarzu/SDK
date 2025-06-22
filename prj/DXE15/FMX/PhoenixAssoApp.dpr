@@ -12,11 +12,10 @@ uses
   Janua.FMX.PhoenixMobile.frameEstinguisher in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameEstinguisher.pas' {frameFMXMobileEstinguisher: TFrame},
   Janua.FMX.PhoenixMobile.frameEstinguisherSettings in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameEstinguisherSettings.pas' {frameFMXPhoenixMobileEstinguisherSetting: TFrame},
   Janua.FMX.PhoenixMobile.frameFireHose in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameFireHose.pas' {frameFMXMobileFireHose: TFrame},
-  Janua.FMX.PhoenixMobile.frameReportListFireHoses in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListFireHoses.pas' {frameFMXReportListFireHoses: TFrame},
+  Janua.FMX.PhoenixMobile.frameReportListFireHoses in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListFireHoses.pas' {Frame4: TFrame},
   Janua.FMX.PhoenixMobile.frameReportListSmokeDetection in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListSmokeDetection.pas' {frameFMXPhoenixReportListSmokeDetection: TFrame},
   Janua.FMX.PhoenixMobile.frameSmokeDetectionSettings in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameSmokeDetectionSettings.pas' {frameFMXPhoenixSmokeDetectionSetting: TFrame},
-  Janua.FMX.PhoenixMobile.dmAppMobileController in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.dmAppMobileController.pas' {dmFMXPhoenixAppMobileController: TDataModule},
-  Janua.FMX.dlgListSelectForm in '..\..\..\src\FMX\Janua.FMX.dlgListSelectForm.pas' {dlgFMXListSelectForm};
+  Janua.FMX.PhoenixMobile.dmAppMobileController in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.dmAppMobileController.pas' {dmFMXPhoenixAppMobileController: TDataModule};
 
 {$R *.res}
 
@@ -25,6 +24,5 @@ begin
   Application.CreateForm(TdmFMXPhoenixAppMobileController, dmFMXPhoenixAppMobileController);
   Application.CreateForm(TfrmFMXPhoenixMobileMain, frmFMXPhoenixMobileMain);
   Application.CreateForm(TdmJanuaFMXPhoenixMobileResources, dmJanuaFMXPhoenixMobileResources);
-  Application.CreateForm(TdlgFMXListSelectForm, dlgFMXListSelectForm);
   Application.Run;
 end.

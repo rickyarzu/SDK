@@ -34,7 +34,6 @@ type
     [DBField('RESPONSABILE')]
     property RESPONSABILE: Integer read FRESPONSABILE write FRESPONSABILE;
 
-
   end;
 
   TRSRoot = class(TJsonDTO)
@@ -57,6 +56,8 @@ type
   private
     [JSONName('CHIAVE')]
     FCHIAVE: Integer;
+    [JSONName('AMMINISTRATORE')]
+    FAMMINISTRATORE: string;
     [JSONName('RAGIONE_SOCIALE')]
     FRAGIONESOCIALE: string;
     [JSONName('INDIRIZZO')]
@@ -86,6 +87,8 @@ type
     [KeyField('CHIAVE')]
     [DBField('CHIAVE')]
     property CHIAVE: Integer read FCHIAVE write FCHIAVE;
+    [DBField('AMMINISTRATORE')]
+    property AMMINISTRATORE: string read FAMMINISTRATORE write FAMMINISTRATORE;
     [DBField('RAGIONE_SOCIALE')]
     property RAGIONESOCIALE: string read FRAGIONESOCIALE write FRAGIONESOCIALE;
     [DBField('INDIRIZZO')]
@@ -118,7 +121,7 @@ type
     [JSONName('statini'), JSONMarshalled(False)]
     FStatiniArray: TArray<TLSStatino>;
     [GenericListReflect]
-    Fstatini: TObjectList<TLSStatino>;
+    FStatini: TObjectList<TLSStatino>;
     [JSONMarshalled(False)]
     FIterator: TJanuaBindableIterator<TLSStatino>;
     [JSONMarshalled(False)]
@@ -128,7 +131,7 @@ type
     function GetAsJson: string; override;
     procedure SetAsJson(aValue: string); override;
   published
-    property statini: TObjectList<TLSStatino> read GetStatini;
+    property Statini: TObjectList<TLSStatino> read GetStatini;
   public
     property Iterator: TJanuaBindableIterator<TLSStatino> read FIterator;
     destructor Destroy; override;
@@ -171,13 +174,12 @@ end;
 destructor TLSStatinoRoot.Destroy;
 begin
   GetStatini.Free;
-  FIterator.Free;
   inherited;
 end;
 
 function TLSStatinoRoot.GetStatini: TObjectList<TLSStatino>;
 begin
-  Result := ObjectList<TLSStatino>(Fstatini, FStatiniArray);
+  Result := ObjectList<TLSStatino>(FStatini, FStatiniArray);
 end;
 
 procedure TLSStatinoRoot.LoadFromDataset(const aDataset: TDataset);
@@ -201,7 +203,7 @@ end;
 
 function TLSStatinoRoot.GetAsJson: string;
 begin
-  RefreshArray<TLSStatino>(Fstatini, FStatiniArray);
+  RefreshArray<TLSStatino>(FStatini, FStatiniArray);
   Result := inherited;
 end;
 

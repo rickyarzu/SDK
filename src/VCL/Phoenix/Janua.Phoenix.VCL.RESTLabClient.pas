@@ -9,14 +9,14 @@ uses
   VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.StdCtrls, VCL.Mask, VCL.ExtCtrls, VCL.ComCtrls,
   VCL.Grids, VCL.DBGrids, VCL.Buttons, VCL.DBCtrls, VCL.ExtDlgs,
   // TMS
-  AdvMemo, advmjson,
+  AdvMemo, advmjson, JvExDBGrids, JvDBGrid,
   // Phoenix
   Phoenix.JSON.Config.DTO, Phoenix.JSON.Statini.DTO, udmTestPhoenixDMVC,
   // Forms
   uJanuaVclForm, Janua.Controls.Forms.Impl, Janua.VCL.Controls.Forms.Impl, Janua.Controls.Forms.Intf,
   // Janua
   Janua.Core.Classes, Janua.REST.Types, Janua.Core.Types, Janua.Http.Types, Janua.REST.Intf,
-  Janua.Phoenix.dmIBLabSync, CRGrid, Janua.VCL.EnhCRDBGrid, VCL.Samples.Spin, JvExDBGrids, JvDBGrid;
+  Janua.Phoenix.dmIBLabSync, CRGrid, Janua.VCL.EnhCRDBGrid, VCL.Samples.Spin;
 
 type
   TfrmPhoenixVCLRESTLabClient = class(TJanuaVCLFormModel, IJanuaForm)
@@ -178,7 +178,6 @@ type
     memReportListElaborated: TAdvMemo;
     btnTestList: TButton;
     memLista: TMemo;
-    AdvJSONMemoStyler2: TAdvJSONMemoStyler;
     procedure btnRestCallClick(Sender: TObject);
     procedure btnOpenClick(Sender: TObject);
     procedure btnSaveJsonClick(Sender: TObject);
