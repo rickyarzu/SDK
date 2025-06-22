@@ -973,12 +973,6 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     DetailFields = 'STATINO'
     Left = 56
     Top = 200
-    ParamData = <
-      item
-        DataType = ftUnknown
-        Name = 'CHIAVE'
-        Value = nil
-      end>
     object tbGruppiSTATINO: TIntegerField
       FieldName = 'STATINO'
     end
@@ -1188,12 +1182,6 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     DetailFields = 'STATINO'
     Left = 176
     Top = 200
-    ParamData = <
-      item
-        DataType = ftUnknown
-        Name = 'CHIAVE'
-        Value = nil
-      end>
     object tbImpiantiSTATINO: TIntegerField
       FieldName = 'STATINO'
     end
@@ -1499,11 +1487,6 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     object qryInterventiLuciDATA_CONTROLLO_NEGATO: TDateField
       FieldName = 'DATA_CONTROLLO_NEGATO'
     end
-    object qryInterventiLuciCHIAVE_1: TIntegerField
-      FieldName = 'CHIAVE_1'
-      ReadOnly = True
-      Required = True
-    end
     object qryInterventiLuciCLIENTE: TIntegerField
       FieldName = 'CLIENTE'
       ReadOnly = True
@@ -1546,11 +1529,6 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       FixedChar = True
       Size = 1
     end
-    object qryInterventiLuciANOMALIA_1: TWideMemoField
-      FieldName = 'ANOMALIA_1'
-      ReadOnly = True
-      BlobType = ftWideMemo
-    end
     object qryInterventiLuciMODELLO: TWideStringField
       FieldName = 'MODELLO'
       ReadOnly = True
@@ -1586,6 +1564,21 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       FieldName = 'DES_MARCA_LUCE'
       ReadOnly = True
       Size = 255
+    end
+    object qryInterventiLuciANOMALIA_RISOLTA_TABLET: TWideStringField
+      FieldName = 'ANOMALIA_RISOLTA_TABLET'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiLuciCHIAVE_1: TIntegerField
+      FieldName = 'CHIAVE_1'
+      ReadOnly = True
+      Required = True
+    end
+    object qryInterventiLuciANOMALIA_1: TWideMemoField
+      FieldName = 'ANOMALIA_1'
+      ReadOnly = True
+      BlobType = ftWideMemo
     end
   end
   object dsStatiniLuci: TUniDataSource
@@ -1693,6 +1686,7 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       end>
     Connection = JanuaUniConnection1
     SQL.Strings = (
+      ''
       
         'SELECT DISTINCT STATINO, S.ragione_sociale, S.indirizzo, S.data_' +
         'intervento, s.json_da_mobile'
@@ -1700,6 +1694,9 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
         'From INTERVENTI_IDRANTI IAT JOIN STATINI S ON S.chiave = IAT.sta' +
         'tino'
       'WHERE  s.stato = 9'
+      'and data_smaltimento is not null'
+      '--and data_pressatura is not null'
+      'and data_ritiro is not null'
       'ORDER BY STATINO DESC;')
     Left = 448
     Top = 456
@@ -2463,10 +2460,6 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     object qryInterventiPorteTIPO_GUARNIZIONE: TIntegerField
       FieldName = 'TIPO_GUARNIZIONE'
     end
-    object qryInterventiPorteUBICAZIONE_1: TWideMemoField
-      FieldName = 'UBICAZIONE_1'
-      BlobType = ftWideMemo
-    end
     object qryInterventiPortePROGRESSIVO: TIntegerField
       FieldName = 'PROGRESSIVO'
     end
@@ -2509,6 +2502,16 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     object qryInterventiPorteJGUID: TBytesField
       FieldName = 'JGUID'
     end
+    object qryInterventiPorteANOMALIA_RISOLTA_TABLET: TWideStringField
+      FieldName = 'ANOMALIA_RISOLTA_TABLET'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiPorteUBICAZIONE: TWideStringField
+      FieldName = 'UBICAZIONE'
+      ReadOnly = True
+      Size = 300
+    end
   end
   object dsInterventiPorte: TUniDataSource
     DataSet = qryInterventiPorte
@@ -2519,16 +2522,14 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     SQLInsert.Strings = (
       'INSERT INTO INTERVENTI_ATTREZZATURE'
       
-        '  (ANOMALIA_ON_DOWNLOAD, TECNICO_CONTROLLO, ANOMALIAONDOWNLOAD, ' +
-        'ANOMALIARISOLTA, CONTROLLATO, DATACONTROLLO, NONCONTROLLATO, ORA' +
-        'RIOCONTROLLO, TIPO_INTERVENTO, TIPO_VISITA, TECNICOCONTROLLO, CO' +
-        'NSEGNATO)'
+        '  (ANOMALIAONDOWNLOAD, ANOMALIARISOLTA, CONTROLLATO, DATACONTROL' +
+        'LO, NONCONTROLLATO, ORARIOCONTROLLO, TIPO_INTERVENTO, TIPO_VISIT' +
+        'A, TECNICOCONTROLLO, CONSEGNATO)'
       'VALUES'
       
-        '  (:ANOMALIA_ON_DOWNLOAD, :TECNICO_CONTROLLO, :ANOMALIAONDOWNLOA' +
-        'D, :ANOMALIARISOLTA, :CONTROLLATO, :DATACONTROLLO, :NONCONTROLLA' +
-        'TO, :ORARIOCONTROLLO, :TIPO_INTERVENTO, :TIPO_VISITA, :TECNICOCO' +
-        'NTROLLO, :CONSEGNATO)')
+        '  (:ANOMALIAONDOWNLOAD, :ANOMALIARISOLTA, :CONTROLLATO, :DATACON' +
+        'TROLLO, :NONCONTROLLATO, :ORARIOCONTROLLO, :TIPO_INTERVENTO, :TI' +
+        'PO_VISITA, :TECNICOCONTROLLO, :CONSEGNATO)')
     SQLDelete.Strings = (
       'DELETE FROM INTERVENTI_ATTREZZATURE'
       'WHERE'
@@ -2537,13 +2538,12 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       'UPDATE INTERVENTI_ATTREZZATURE'
       'SET'
       
-        '  ANOMALIA_ON_DOWNLOAD = :ANOMALIA_ON_DOWNLOAD, TECNICO_CONTROLL' +
-        'O = :TECNICO_CONTROLLO, ANOMALIAONDOWNLOAD = :ANOMALIAONDOWNLOAD' +
-        ', ANOMALIARISOLTA = :ANOMALIARISOLTA, CONTROLLATO = :CONTROLLATO' +
-        ', DATACONTROLLO = :DATACONTROLLO, NONCONTROLLATO = :NONCONTROLLA' +
-        'TO, ORARIOCONTROLLO = :ORARIOCONTROLLO, TIPO_INTERVENTO = :TIPO_' +
-        'INTERVENTO, TIPO_VISITA = :TIPO_VISITA, TECNICOCONTROLLO = :TECN' +
-        'ICOCONTROLLO, CONSEGNATO = :CONSEGNATO'
+        '  ANOMALIAONDOWNLOAD = :ANOMALIAONDOWNLOAD, ANOMALIARISOLTA = :A' +
+        'NOMALIARISOLTA, CONTROLLATO = :CONTROLLATO, DATACONTROLLO = :DAT' +
+        'ACONTROLLO, NONCONTROLLATO = :NONCONTROLLATO, ORARIOCONTROLLO = ' +
+        ':ORARIOCONTROLLO, TIPO_INTERVENTO = :TIPO_INTERVENTO, TIPO_VISIT' +
+        'A = :TIPO_VISITA, TECNICOCONTROLLO = :TECNICOCONTROLLO, CONSEGNA' +
+        'TO = :CONSEGNATO'
       'WHERE'
       '  CHIAVE = :Old_CHIAVE')
     SQLLock.Strings = (
@@ -2553,10 +2553,9 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       'FOR UPDATE WITH LOCK')
     SQLRefresh.Strings = (
       
-        'SELECT ANOMALIA_ON_DOWNLOAD, TECNICO_CONTROLLO, ANOMALIAONDOWNLO' +
-        'AD, ANOMALIARISOLTA, CONTROLLATO, DATACONTROLLO, NONCONTROLLATO,' +
-        ' ORARIOCONTROLLO, TIPO_INTERVENTO, TIPO_VISITA, TECNICOCONTROLLO' +
-        ', CONSEGNATO FROM INTERVENTI_ATTREZZATURE'
+        'SELECT ANOMALIAONDOWNLOAD, ANOMALIARISOLTA, CONTROLLATO, DATACON' +
+        'TROLLO, NONCONTROLLATO, ORARIOCONTROLLO, TIPO_INTERVENTO, TIPO_V' +
+        'ISITA, TECNICOCONTROLLO, CONSEGNATO FROM INTERVENTI_ATTREZZATURE'
       'WHERE'
       '  CHIAVE = :CHIAVE')
     SQLRecCount.Strings = (
@@ -2656,14 +2655,6 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       FixedChar = True
       Size = 1
     end
-    object qryInterventiSprinklerUBICAZIONE_1: TBlobField
-      FieldName = 'UBICAZIONE_1'
-      ReadOnly = True
-    end
-    object qryInterventiSprinklerTIPO_1: TIntegerField
-      FieldName = 'TIPO_1'
-      ReadOnly = True
-    end
     object qryInterventiSprinklerSTATO: TWideStringField
       FieldName = 'STATO'
       ReadOnly = True
@@ -2697,6 +2688,96 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     end
     object qryInterventiSprinklerPREC_ANOMALIA: TBlobField
       FieldName = 'PREC_ANOMALIA'
+      ReadOnly = True
+    end
+    object qryInterventiSprinklerTIPO_ATTREZZATURA: TWideStringField
+      FieldName = 'TIPO_ATTREZZATURA'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiSprinklerANOMALIA_ON_DOWNLOAD: TWideStringField
+      FieldName = 'ANOMALIA_ON_DOWNLOAD'
+      Size = 256
+    end
+    object qryInterventiSprinklerTECNICO_CONTROLLO: TIntegerField
+      FieldName = 'TECNICO_CONTROLLO'
+    end
+    object qryInterventiSprinklerANOMALIAONDOWNLOAD: TWideStringField
+      FieldName = 'ANOMALIAONDOWNLOAD'
+      Size = 255
+    end
+    object qryInterventiSprinklerANOMALIARISOLTA: TWideStringField
+      FieldName = 'ANOMALIARISOLTA'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiSprinklerCONTROLLATO: TWideStringField
+      FieldName = 'CONTROLLATO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiSprinklerDATACONTROLLO: TDateField
+      FieldName = 'DATACONTROLLO'
+    end
+    object qryInterventiSprinklerNONCONTROLLATO: TWideStringField
+      FieldName = 'NONCONTROLLATO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiSprinklerORARIOCONTROLLO: TWideStringField
+      FieldName = 'ORARIOCONTROLLO'
+      Size = 255
+    end
+    object qryInterventiSprinklerTIPO_INTERVENTO: TWideStringField
+      FieldName = 'TIPO_INTERVENTO'
+      Size = 255
+    end
+    object qryInterventiSprinklerTIPO_VISITA: TWideStringField
+      FieldName = 'TIPO_VISITA'
+      Size = 255
+    end
+    object qryInterventiSprinklerTECNICOCONTROLLO: TIntegerField
+      FieldName = 'TECNICOCONTROLLO'
+    end
+    object qryInterventiSprinklerCONSEGNATO: TWideStringField
+      FieldName = 'CONSEGNATO'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiSprinklerANOMALIA_RISOLTA_TABLET: TWideStringField
+      FieldName = 'ANOMALIA_RISOLTA_TABLET'
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiSprinklerCHIAVE_1: TIntegerField
+      FieldName = 'CHIAVE_1'
+      ReadOnly = True
+      Required = True
+    end
+    object qryInterventiSprinklerCLIENTE: TIntegerField
+      FieldName = 'CLIENTE'
+      ReadOnly = True
+    end
+    object qryInterventiSprinklerFILIALE: TIntegerField
+      FieldName = 'FILIALE'
+      ReadOnly = True
+    end
+    object qryInterventiSprinklerTIPO_1: TIntegerField
+      FieldName = 'TIPO_1'
+      ReadOnly = True
+    end
+    object qryInterventiSprinklerANOMALIA_1: TWideMemoField
+      FieldName = 'ANOMALIA_1'
+      ReadOnly = True
+      BlobType = ftWideMemo
+    end
+    object qryInterventiSprinklerID_NFC: TWideStringField
+      FieldName = 'ID_NFC'
+      ReadOnly = True
+      Size = 100
+    end
+    object qryInterventiSprinklerJGUID: TBytesField
+      FieldName = 'JGUID'
       ReadOnly = True
     end
   end
@@ -3482,7 +3563,9 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       end>
     Connection = JanuaUniConnection1
     SQL.Strings = (
-      'select  ID.*, B.*, '
+      
+        'select  ID.*, B.*, TL.DESCRIZIONE AS TIPO_LANCIA, TB.DESCRIZIONE' +
+        ' AS DES_BOCCHELLO,  '
       
         '        IC.UBICAZIONE AS UBICAZIONE_IDRANTE, IC.DESCRIZIONE AS D' +
         'ESCRIZIONE_IDRANTE, IC.prova_dinamica, IC.ubicazione_attacco_mot' +
@@ -3506,158 +3589,66 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     Top = 600
     ParamData = <
       item
-        DataType = ftUnknown
+        DataType = ftInteger
         Name = 'STATINO'
+        ParamType = ptInput
         Value = nil
       end>
-    object qryInterventiIdrantiID_BOCCHELLO: TIntegerField
-      FieldName = 'ID_BOCCHELLO'
+    object qryInterventiIdrantiCHIAVE: TIntegerField
+      FieldName = 'CHIAVE'
+      Required = True
     end
-    object qryInterventiIdrantiUBICAZIONE: TWideStringField
-      FieldName = 'UBICAZIONE'
-      Size = 300
+    object qryInterventiIdrantiSTATINO: TIntegerField
+      FieldName = 'STATINO'
     end
-    object qryInterventiIdrantiDES_BOCCHELLO: TWideStringField
-      FieldName = 'DES_BOCCHELLO'
-      ReadOnly = True
-      Size = 255
-    end
-    object qryInterventiIdrantiTIPO_LANCIA: TWideStringField
-      FieldName = 'TIPO_LANCIA'
-      ReadOnly = True
-      Size = 255
-    end
-    object qryInterventiIdrantiUBICAZIONE_IDRANTE: TBlobField
-      FieldName = 'UBICAZIONE_IDRANTE'
-      ReadOnly = True
-    end
-    object qryInterventiIdrantiDESCRIZIONE_IDRANTE: TWideStringField
-      FieldName = 'DESCRIZIONE_IDRANTE'
-      ReadOnly = True
-      Size = 255
-    end
-    object qryInterventiIdrantiPROVA_DINAMICA: TIntegerField
-      FieldName = 'PROVA_DINAMICA'
-      ReadOnly = True
-    end
-    object qryInterventiIdrantiTIPO_ATTACCO_MOTOPOMPA: TWideStringField
-      FieldName = 'TIPO_ATTACCO_MOTOPOMPA'
-      ReadOnly = True
-      Size = 255
+    object qryInterventiIdrantiBOCCHELLO: TIntegerField
+      FieldName = 'BOCCHELLO'
     end
     object qryInterventiIdrantiTIPO: TWideStringField
       FieldName = 'TIPO'
-      ReadOnly = True
       FixedChar = True
       Size = 1
     end
     object qryInterventiIdrantiDESCRIZIONE_ALTERNATIVA: TWideStringField
       FieldName = 'DESCRIZIONE_ALTERNATIVA'
-      ReadOnly = True
       Size = 255
     end
     object qryInterventiIdrantiRESET_DATA_COLLAUDO: TWideStringField
       FieldName = 'RESET_DATA_COLLAUDO'
-      ReadOnly = True
       FixedChar = True
       Size = 1
     end
     object qryInterventiIdrantiANOMALIA: TWideStringField
       FieldName = 'ANOMALIA'
-      ReadOnly = True
       Size = 300
     end
     object qryInterventiIdrantiDATA_CONTROLLO: TDateField
       FieldName = 'DATA_CONTROLLO'
-      ReadOnly = True
     end
     object qryInterventiIdrantiDATA_RITIRO: TDateField
       FieldName = 'DATA_RITIRO'
-      ReadOnly = True
     end
     object qryInterventiIdrantiDATA_SMALTIMENTO: TDateField
       FieldName = 'DATA_SMALTIMENTO'
-      ReadOnly = True
     end
     object qryInterventiIdrantiDATA_RESTITUZIONE: TDateField
       FieldName = 'DATA_RESTITUZIONE'
-      ReadOnly = True
     end
     object qryInterventiIdrantiDATA_CONSEGNA: TDateField
       FieldName = 'DATA_CONSEGNA'
-      ReadOnly = True
     end
     object qryInterventiIdrantiDATA_PRESSATURA: TDateField
       FieldName = 'DATA_PRESSATURA'
-      ReadOnly = True
     end
     object qryInterventiIdrantiDATA_CONTROLLO_NEGATO: TDateField
       FieldName = 'DATA_CONTROLLO_NEGATO'
-      ReadOnly = True
     end
     object qryInterventiIdrantiIDRANTE: TIntegerField
       FieldName = 'IDRANTE'
     end
-    object qryInterventiIdrantiTIPO_BOCCHELLO: TIntegerField
-      FieldName = 'TIPO_BOCCHELLO'
-    end
-    object qryInterventiIdrantiTIPO_LANCIA_1: TIntegerField
-      FieldName = 'TIPO_LANCIA_1'
-    end
-    object qryInterventiIdrantiLUNGHEZZA_MANICHETTA: TIntegerField
-      FieldName = 'LUNGHEZZA_MANICHETTA'
-    end
-    object qryInterventiIdrantiMESE_STARTUP: TSmallintField
-      FieldName = 'MESE_STARTUP'
-    end
-    object qryInterventiIdrantiANNO_STARTUP: TSmallintField
-      FieldName = 'ANNO_STARTUP'
-    end
-    object qryInterventiIdrantiANNO_MANICHETTA: TSmallintField
+    object qryInterventiIdrantiANNO_MANICHETTA: TWideStringField
       FieldName = 'ANNO_MANICHETTA'
-    end
-    object qryInterventiIdrantiRINNOVATO_DA: TIntegerField
-      FieldName = 'RINNOVATO_DA'
-    end
-    object qryInterventiIdrantiANOMALIA_APPROVATA: TWideStringField
-      FieldName = 'ANOMALIA_APPROVATA'
-      FixedChar = True
-      Size = 1
-    end
-    object qryInterventiIdrantiANOMALIA_1: TWideMemoField
-      FieldName = 'ANOMALIA_1'
-      BlobType = ftWideMemo
-    end
-    object qryInterventiIdrantiSTATO: TWideStringField
-      FieldName = 'STATO'
-      FixedChar = True
-      Size = 1
-    end
-    object qryInterventiIdrantiPREC_ANOMALIA: TBlobField
-      FieldName = 'PREC_ANOMALIA'
-    end
-    object qryInterventiIdrantiNOTE_TECNICO: TWideStringField
-      FieldName = 'NOTE_TECNICO'
-      Size = 300
-    end
-    object qryInterventiIdrantiMESE_PRESSATURA: TSmallintField
-      FieldName = 'MESE_PRESSATURA'
-    end
-    object qryInterventiIdrantiANNO_PRESSATURA: TSmallintField
-      FieldName = 'ANNO_PRESSATURA'
-    end
-    object qryInterventiIdrantiBOCCHELLO: TIntegerField
-      FieldName = 'BOCCHELLO'
-      ReadOnly = True
-    end
-    object qryInterventiIdrantiCHIAVE: TIntegerField
-      FieldName = 'CHIAVE'
-      ReadOnly = True
-      Required = True
-    end
-    object qryInterventiIdrantiSTATINO: TIntegerField
-      FieldName = 'STATINO'
-      ReadOnly = True
+      Size = 255
     end
     object qryInterventiIdrantiANOMALIAONDOWNLOAD: TWideStringField
       FieldName = 'ANOMALIAONDOWNLOAD'
@@ -3687,6 +3678,10 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     object qryInterventiIdrantiDATARITIRO: TDateField
       FieldName = 'DATARITIRO'
     end
+    object qryInterventiIdrantiNOTE_TECNICO: TWideStringField
+      FieldName = 'NOTE_TECNICO'
+      Size = 300
+    end
     object qryInterventiIdrantiORARIOCONTROLLO: TWideStringField
       FieldName = 'ORARIOCONTROLLO'
       Size = 255
@@ -3705,6 +3700,13 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
       FixedChar = True
       Size = 1
     end
+    object qryInterventiIdrantiTIPO_INTERVENTO: TWideStringField
+      FieldName = 'TIPO_INTERVENTO'
+      Size = 255
+    end
+    object qryInterventiIdrantiTIPO_LANCIA: TIntegerField
+      FieldName = 'TIPO_LANCIA'
+    end
     object qryInterventiIdrantiTECNICOCONTROLLO: TIntegerField
       FieldName = 'TECNICOCONTROLLO'
     end
@@ -3714,14 +3716,113 @@ inherited dmFbPhoenixJsonReport: TdmFbPhoenixJsonReport
     object qryInterventiIdrantiTECNICORITIRO: TIntegerField
       FieldName = 'TECNICORITIRO'
     end
-    object qryInterventiIdrantiTIPO_INTERVENTO: TWideStringField
-      FieldName = 'TIPO_INTERVENTO'
-      Size = 255
+    object qryInterventiIdrantiCHIAVE_1: TIntegerField
+      FieldName = 'CHIAVE_1'
+      ReadOnly = True
+      Required = True
+    end
+    object qryInterventiIdrantiIDRANTE_1: TIntegerField
+      FieldName = 'IDRANTE_1'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiID_BOCCHELLO: TIntegerField
+      FieldName = 'ID_BOCCHELLO'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiTIPO_BOCCHELLO: TIntegerField
+      FieldName = 'TIPO_BOCCHELLO'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiTIPO_LANCIA_1: TIntegerField
+      FieldName = 'TIPO_LANCIA_1'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiLUNGHEZZA_MANICHETTA: TIntegerField
+      FieldName = 'LUNGHEZZA_MANICHETTA'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiUBICAZIONE: TWideStringField
+      FieldName = 'UBICAZIONE'
+      ReadOnly = True
+      Size = 300
+    end
+    object qryInterventiIdrantiMESE_STARTUP: TSmallintField
+      FieldName = 'MESE_STARTUP'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiANNO_STARTUP: TSmallintField
+      FieldName = 'ANNO_STARTUP'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiANNO_MANICHETTA_1: TSmallintField
+      FieldName = 'ANNO_MANICHETTA_1'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiRINNOVATO_DA: TIntegerField
+      FieldName = 'RINNOVATO_DA'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiANOMALIA_APPROVATA: TWideStringField
+      FieldName = 'ANOMALIA_APPROVATA'
+      ReadOnly = True
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiIdrantiANOMALIA_1: TWideMemoField
+      FieldName = 'ANOMALIA_1'
+      ReadOnly = True
+      BlobType = ftWideMemo
+    end
+    object qryInterventiIdrantiSTATO: TWideStringField
+      FieldName = 'STATO'
+      ReadOnly = True
+      FixedChar = True
+      Size = 1
+    end
+    object qryInterventiIdrantiPREC_ANOMALIA: TBlobField
+      FieldName = 'PREC_ANOMALIA'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiNOTE_TECNICO_1: TWideMemoField
+      FieldName = 'NOTE_TECNICO_1'
+      ReadOnly = True
+      BlobType = ftWideMemo
+    end
+    object qryInterventiIdrantiMESE_PRESSATURA: TSmallintField
+      FieldName = 'MESE_PRESSATURA'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiANNO_PRESSATURA: TSmallintField
+      FieldName = 'ANNO_PRESSATURA'
+      ReadOnly = True
     end
     object qryInterventiIdrantiID_NFC: TWideStringField
       FieldName = 'ID_NFC'
       ReadOnly = True
       Size = 100
+    end
+    object qryInterventiIdrantiTIPO_LANCIA_2: TWideStringField
+      FieldName = 'TIPO_LANCIA_2'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryInterventiIdrantiDES_BOCCHELLO: TWideStringField
+      FieldName = 'DES_BOCCHELLO'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryInterventiIdrantiUBICAZIONE_IDRANTE: TBlobField
+      FieldName = 'UBICAZIONE_IDRANTE'
+      ReadOnly = True
+    end
+    object qryInterventiIdrantiDESCRIZIONE_IDRANTE: TWideStringField
+      FieldName = 'DESCRIZIONE_IDRANTE'
+      ReadOnly = True
+      Size = 255
+    end
+    object qryInterventiIdrantiPROVA_DINAMICA: TIntegerField
+      FieldName = 'PROVA_DINAMICA'
+      ReadOnly = True
     end
     object qryInterventiIdrantiUBICAZIONE_ATTACCO_MOTOPOMPA: TWideStringField
       FieldName = 'UBICAZIONE_ATTACCO_MOTOPOMPA'
