@@ -18844,6 +18844,7 @@ inherited dmVCLPhoenixPlannerController: TdmVCLPhoenixPlannerController
       000000000000}
   end
   inherited vtGoogleCalendars: TVirtualTable
+    BeforePost = vtGoogleCalendarsBeforePost
     Left = 583
     Top = 16
     Data = {

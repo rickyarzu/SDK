@@ -345,9 +345,8 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             end
             inherited Switch1: TSwitch
               Position.X = 340.000000000000000000
-              Position.Y = 2.000000000000000000
               Size.Width = 44.000000000000000000
-              Size.Height = 26.000000000000000000
+              Size.Height = 30.000000000000000000
             end
           end
           inherited Layout3: TLayout

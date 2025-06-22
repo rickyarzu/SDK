@@ -13,8 +13,6 @@ inherited frmFMXPhoenixMobileMain_iPhone55in: TfrmFMXPhoenixMobileMain_iPhone55i
       414s
       716s)
     inherited TabItem1: TTabItem
-      Size.Width = 11.000000000000000000
-      Size.Height = 11.000000000000000000
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
       inherited ListViewMain: TListView
@@ -27,9 +25,7 @@ inherited frmFMXPhoenixMobileMain_iPhone55in: TfrmFMXPhoenixMobileMain_iPhone55i
           Size.Width = 414.000000000000000000
           inherited btnNext: TSpeedButton
             Position.X = 370.000000000000000000
-            Position.Y = 2.000000000000000000
             Size.Width = 44.000000000000000000
-            Size.Height = 44.000000000000000000
           end
           inherited Layout1: TLayout
             Size.Width = 350.000000000000000000
@@ -123,7 +119,6 @@ inherited frmFMXPhoenixMobileMain_iPhone55in: TfrmFMXPhoenixMobileMain_iPhone55i
             inherited Switch1: TSwitch
               Position.X = 359.000000000000000000
               Size.Width = 55.000000000000000000
-              Size.Height = 30.000000000000000000
             end
           end
           inherited Layout3: TLayout
