@@ -354,8 +354,6 @@ type
     qryInterventiSprinklerMARCA: TIntegerField;
     qryInterventiSprinklerTARATURA_VALVOLE: TSmallintField;
     qryInterventiSprinklerVALVOLE_RICAMBIO: TWideStringField;
-    qryInterventiSprinklerUBICAZIONE_1: TBlobField;
-    qryInterventiSprinklerTIPO_1: TIntegerField;
     qryInterventiSprinklerSTATO: TWideStringField;
     qryInterventiSprinklerRINNOVATO_DA: TIntegerField;
     qryInterventiSprinklerANOMALIA_APPROVATA: TWideStringField;
@@ -742,7 +740,6 @@ type
     qryInterventiLuciCONSEGNATO: TWideStringField;
     qryInterventiLuciPERIODI_NON_ORDINARI: TWideStringField;
     qryInterventiLuciDATA_CONTROLLO_NEGATO: TDateField;
-    qryInterventiLuciCHIAVE_1: TIntegerField;
     qryInterventiLuciCLIENTE: TIntegerField;
     qryInterventiLuciFILIALE: TIntegerField;
     qryInterventiLuciTIPO_LUCE: TIntegerField;
@@ -752,7 +749,6 @@ type
     qryInterventiLuciSTATO: TWideStringField;
     qryInterventiLuciRINNOVATO_DA: TIntegerField;
     qryInterventiLuciANOMALIA_APPROVATA: TWideStringField;
-    qryInterventiLuciANOMALIA_1: TWideMemoField;
     qryInterventiLuciMODELLO: TWideStringField;
     qryInterventiLuciAUTONOMIA: TSmallintField;
     qryInterventiLuciPREC_ANOMALIA: TBlobField;
@@ -906,6 +902,30 @@ type
     qryInterventiImpiantiPREC_ANOMALIA: TBlobField;
     qryInterventiImpiantiNOTE_TECNICO: TBlobField;
     qryInterventiImpiantiID_NFC: TWideStringField;
+    qryInterventiLuciANOMALIA_RISOLTA_TABLET: TWideStringField;
+    qryInterventiLuciCHIAVE_1: TIntegerField;
+    qryInterventiLuciANOMALIA_1: TWideMemoField;
+    qryInterventiSprinklerTIPO_ATTREZZATURA: TWideStringField;
+    qryInterventiSprinklerANOMALIA_ON_DOWNLOAD: TWideStringField;
+    qryInterventiSprinklerTECNICO_CONTROLLO: TIntegerField;
+    qryInterventiSprinklerANOMALIAONDOWNLOAD: TWideStringField;
+    qryInterventiSprinklerANOMALIARISOLTA: TWideStringField;
+    qryInterventiSprinklerCONTROLLATO: TWideStringField;
+    qryInterventiSprinklerDATACONTROLLO: TDateField;
+    qryInterventiSprinklerNONCONTROLLATO: TWideStringField;
+    qryInterventiSprinklerORARIOCONTROLLO: TWideStringField;
+    qryInterventiSprinklerTIPO_INTERVENTO: TWideStringField;
+    qryInterventiSprinklerTIPO_VISITA: TWideStringField;
+    qryInterventiSprinklerTECNICOCONTROLLO: TIntegerField;
+    qryInterventiSprinklerCONSEGNATO: TWideStringField;
+    qryInterventiSprinklerANOMALIA_RISOLTA_TABLET: TWideStringField;
+    qryInterventiSprinklerCHIAVE_1: TIntegerField;
+    qryInterventiSprinklerCLIENTE: TIntegerField;
+    qryInterventiSprinklerFILIALE: TIntegerField;
+    qryInterventiSprinklerTIPO_1: TIntegerField;
+    qryInterventiSprinklerANOMALIA_1: TWideMemoField;
+    qryInterventiSprinklerID_NFC: TWideStringField;
+    qryInterventiSprinklerJGUID: TBytesField;
   private
     FJsonPretty: string;
     FOriginal: string;
