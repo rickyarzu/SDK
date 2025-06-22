@@ -1,0 +1,43 @@
+package PhoenixCore;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$LIBSUFFIX AUTO}
+{$IMPLICITBUILD ON}
+
+requires
+  januacore,
+  rtl;
+
+contains
+  Phoenix.Json.Config.DTO in '..\..\src\januacore\Phoenix.Json.Config.DTO.pas',
+  Phoenix.Json.Tecnici.DTO in '..\..\src\januacore\Phoenix.Json.Tecnici.DTO.pas',
+  Phoenix.Json.Prodotti.DTO in '..\..\src\januacore\Phoenix.Json.Prodotti.DTO.pas',
+  DTO.Phoenix.CatEstintori in '..\..\src\januacore\orm\DTO.Phoenix.CatEstintori.pas',
+  DTO.Phoenix.ReportList in '..\..\src\januacore\orm\DTO.Phoenix.ReportList.pas',
+  PhoenixMocks in '..\..\src\januacore\custom\PhoenixMocks.pas';
+
+end.

@@ -35,8 +35,8 @@ type
     txtLocation: TLabel;
     Layout4: TLayout;
     ckbContr: TTMSFNCRadioButton;
-    ckbRitir: TTMSFNCRadioButton;
-    ckbSmalt: TTMSFNCRadioButton;
+    ckbCharging: TTMSFNCRadioButton;
+    ckbTesting: TTMSFNCRadioButton;
     ckbSmaltim: TTMSFNCRadioButton;
     ckbNonEseg: TTMSFNCRadioButton;
     Rectangle4: TRectangle;
@@ -99,8 +99,9 @@ begin
       txtTipo.Text := IFThen(dm.FindBocchello(FBocchello.TIPOBOCCHELLO, sTipo), sTipo.Descrizione, '');
 
       txtLocation.Text := FBocchello.UBICAZIONE;
-
       ckbContr.Checked := FBocchello.Controllato;
+      ckbCharging.Checked := FBocchello.PressaturaEffettuata;
+      ckbTesting.Checked := FBocchello.Controllato;
 
     end;
   end;

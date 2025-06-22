@@ -216,7 +216,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Text = ' '
       OnChange = ckbContrChange
     end
-    object ckbRitir: TTMSFNCRadioButton
+    object ckbCharging: TTMSFNCRadioButton
       Color = claNull
       Align = Left
       Margins.Left = 4.000000000000000000
@@ -228,7 +228,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       GroupName = '1'
       Text = ' '
     end
-    object ckbSmalt: TTMSFNCRadioButton
+    object ckbTesting: TTMSFNCRadioButton
       Color = claNull
       Align = Left
       Margins.Left = 4.000000000000000000

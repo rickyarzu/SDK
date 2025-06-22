@@ -79,6 +79,7 @@ contains
   udlgSelectMultiString in '..\..\src\VCL\Commons\udlgSelectMultiString.pas' {dlgSelectMultiString},
   Janua.VCL.CategoryButtonsFrame in '..\..\src\VCL\Commons\Janua.VCL.CategoryButtonsFrame.pas' {JanuaCategoryButtonsFrame: TFrame},
   Janua.VCL.DevIDE.FormDesigner.Intf in '..\..\src\VCL\DevIDE\Janua.VCL.DevIDE.FormDesigner.Intf.pas',
-  Janua.VCL.frmContactViewer in '..\..\src\VCL\Commons\Janua.VCL.frmContactViewer.pas' {frmContactViewerVCL};
+  Janua.VCL.frmContactViewer in '..\..\src\VCL\Commons\Janua.VCL.frmContactViewer.pas' {frmContactViewerVCL},
+  JvxSpeedButton in '..\..\src\JanuaLegacy\JvxSpeedButton.pas';
 
 end.

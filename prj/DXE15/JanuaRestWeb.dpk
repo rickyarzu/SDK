@@ -49,11 +49,9 @@ requires
   xmlrtl,
   rtl,
   bindengine,
-{$IFNDEF LINUX}
   IndyIPClient,
   IndyIPCommon,
   IndyIPServer,
-{$ENDIF}
   JanuaCoreThirdParty,
   JanuaCore,
   JanuaMVVM,
@@ -65,17 +63,15 @@ requires
   JanuaUnidac;
 
 contains
-  Janua.Carservice.DMVC.CustomerConfWebModule
-    in '..\..\src\januacore\dmvc\Janua.Carservice.DMVC.CustomerConfWebModule.pas',
+  Janua.Carservice.DMVC.CustomerConfWebModule in '..\..\src\januacore\dmvc\Janua.Carservice.DMVC.CustomerConfWebModule.pas',
   Janua.DMVC.Srv.Framework in '..\..\src\januacore\dmvc\Janua.DMVC.Srv.Framework.pas',
   Janua.System.DMVC.AuthCriteria in '..\..\src\januacore\dmvc\Janua.System.DMVC.AuthCriteria.pas',
   Janua.DMVC.Controller.Template in '..\..\src\januacore\dmvc\Janua.DMVC.Controller.Template.pas',
   Janua.DMVC.UniDACApplication in '..\..\src\januacore\dmvc\Janua.DMVC.UniDACApplication.pas',
   Janua.WebBroker.Server in '..\..\src\januacore\Datasnap\Janua.WebBroker.Server.pas',
   Janua.DMVC.WebBroker.Server in '..\..\src\januacore\dmvc\Janua.DMVC.WebBroker.Server.pas',
-  Janua.Carservice.Driver.DMVCController
-    in '..\..\src\januacore\dmvc\Janua.CarService.Driver.DMVCController.pas',
+  Janua.CarService.Driver.DMVCController in '..\..\src\januacore\dmvc\Janua.CarService.Driver.DMVCController.pas',
   Janua.System.Session.DMVC.Controller in '..\..\src\januacore\dmvc\Janua.System.Session.DMVC.Controller.pas',
-  Janua.Carservice.DMVC.www.CustConf in '..\..\src\januacore\dmvc\Janua.CarService.DMVC.www.CustConf.pas';
+  Janua.CarService.DMVC.www.CustConf in '..\..\src\januacore\dmvc\Janua.CarService.DMVC.www.CustConf.pas';
 
 end.
