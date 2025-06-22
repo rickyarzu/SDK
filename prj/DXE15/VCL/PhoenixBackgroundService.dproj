@@ -232,7 +232,7 @@
                     <Excluded_Packages Name="C:\Program Files (x86)\Neos Eureka S.r.l\EurekaLog 7\Packages\Studio29\EurekaLogExpert290.bpl">EurekaLog IDE Expert</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
-            <Deployment Version="4"/>
+            <Deployment Version="5"/>
             <Platforms>
                 <Platform value="Android">False</Platform>
                 <Platform value="Android64">False</Platform>

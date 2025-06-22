@@ -202,9 +202,9 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 11
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
+      Text = '  '
     end
-    object ckbRitir: TTMSFNCRadioButton
+    object ckbCharging: TTMSFNCRadioButton
       Color = claNull
       Align = Left
       Margins.Left = 4.000000000000000000
@@ -214,9 +214,9 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 10
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
+      Text = '  '
     end
-    object ckbSmalt: TTMSFNCRadioButton
+    object ckbTesting: TTMSFNCRadioButton
       Color = claNull
       Align = Left
       Margins.Left = 4.000000000000000000
@@ -226,9 +226,9 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 9
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
+      Text = '  '
     end
-    object ckbSmaltim: TTMSFNCRadioButton
+    object ckbDisposal: TTMSFNCRadioButton
       Color = claNull
       Align = Left
       Margins.Left = 8.000000000000000000
@@ -238,7 +238,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 8
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
+      Text = '  '
     end
     object ckbNonEseg: TTMSFNCRadioButton
       Color = claNull
@@ -250,7 +250,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.PlatformDefault = False
       TabOrder = 7
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
+      Text = '  '
     end
   end
   object Rectangle4: TRectangle
