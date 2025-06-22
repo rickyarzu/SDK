@@ -79,7 +79,8 @@ begin
   FStatino := Value;
   if Assigned(FStatino) then
   begin
-    lbRagioneSociale.Text := FStatino.RagioneSociale;
+
+    lbRagioneSociale.Text := 'CONTRATTO:' + FStatino.RagioneSociale;
     lbAddress.Text := FStatino.INDIRIZZO;
     var
     lText := '';
@@ -107,7 +108,7 @@ begin
     lTest1 := lTest1 + lTest;
 
     lTest := FStatino.GRUPPIELETTR;
-    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Grp. Elettr.: ' +
+    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', G.P.A. : ' +
       lTest.ToString, '');
     lTest1 := lTest1 + lTest;
 

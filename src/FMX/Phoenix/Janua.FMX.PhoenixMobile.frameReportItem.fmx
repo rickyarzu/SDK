@@ -5,7 +5,7 @@ object frameReportItem: TframeReportItem
   OnClick = NotifyClick
   object Rectangle1: TRectangle
     Align = Top
-    Fill.Color = claAquamarine
+    Fill.Color = claLightgreen
     Size.Width = 352.000000000000000000
     Size.Height = 24.000000000000000000
     Size.PlatformDefault = False
@@ -19,7 +19,6 @@ object frameReportItem: TframeReportItem
       Size.Height = 16.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
-      TextSettings.FontColor = claCadetblue
       TextSettings.Trimming = None
       Text = 'ASSO ANTINCENDIO - Da Archiviare'
       TabOrder = 0
