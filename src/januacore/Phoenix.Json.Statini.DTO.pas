@@ -234,9 +234,6 @@ type
     FOrarioSmaltimento: string;
     [JSONName('TecnicoSmaltimento')]
     FTecnicoSmaltimento: Integer;
-    FTercnicoSmaltimento: Integer;
-
-
   published
     property ANNOMANICHETTA: string read FANNOMANICHETTA write FANNOMANICHETTA;
     property ANNOPRESSATURA: string read FANNOPRESSATURA write FANNOPRESSATURA;
