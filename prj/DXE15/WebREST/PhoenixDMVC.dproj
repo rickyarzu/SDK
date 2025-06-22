@@ -120,6 +120,7 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\..\Phoenix\DelphiXE\Globale.pas"/>
+        <DCCReference Include="..\..\..\src\januacore\orm\DTO.Phoenix.CatEstintori.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaeExeDXE15.optset</DependentOn>

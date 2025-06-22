@@ -9,7 +9,7 @@ uses
 {$M+}
 
 type
-  Tcatestintori = class(TJanuaBindableClass)
+  Tcatestintori = class(TJanuaBindableClass) // added TJanuaBindableClass
   private
     [JSONName('CHIAVE')]
     FCHIAVE: Integer;
