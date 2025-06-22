@@ -123,6 +123,10 @@ begin
     lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Sprinkler: ' + lTest.ToString, '');
     lTest1 := lTest1 + lTest;
 
+    lTest := FStatino.PORTE;
+    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Porte: ' + lTest.ToString, '');
+    lTest1 := lTest1 + lTest;
+
     lbEstinguishers.Text := lText;
   end;
 end;
