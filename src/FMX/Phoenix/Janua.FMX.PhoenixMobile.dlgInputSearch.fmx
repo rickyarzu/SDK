@@ -1,0 +1,96 @@
+object dlgPhoenixInputSearch: TdlgPhoenixInputSearch
+  Left = 0
+  Top = 0
+  BorderStyle = Single
+  ClientHeight = 224
+  ClientWidth = 287
+  Position = ScreenCenter
+  FormStyle = Popup
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object SpinBox1: TSpinBox
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Align = Top
+    TabOrder = 0
+    Cursor = crIBeam
+    Value = 10.000000000000000000
+    Position.X = 10.000000000000000000
+    Position.Y = 37.000000000000000000
+    TextSettings.Font.Size = 14.000000000000000000
+    Margins.Left = 10.000000000000000000
+    Margins.Top = 10.000000000000000000
+    Margins.Right = 10.000000000000000000
+    Size.Width = 267.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    StyledSettings = [Family, Style, FontColor]
+  end
+  object lbInputNumber: TLabel
+    Align = Top
+    Margins.Left = 10.000000000000000000
+    Margins.Top = 10.000000000000000000
+    Margins.Right = 10.000000000000000000
+    Position.X = 10.000000000000000000
+    Position.Y = 10.000000000000000000
+    Size.Width = 267.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.HorzAlign = Center
+    Text = 'Numero Progressivo'
+    TabOrder = 2
+  end
+  object lbMatricol: TLabel
+    Align = Top
+    Margins.Left = 10.000000000000000000
+    Margins.Top = 10.000000000000000000
+    Margins.Right = 10.000000000000000000
+    Position.X = 10.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 267.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.HorzAlign = Center
+    Text = 'Matricola'
+    TabOrder = 1
+  end
+  object edMatricola: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Align = Top
+    TabOrder = 3
+    TextSettings.Font.Size = 14.000000000000000000
+    TextSettings.HorzAlign = Center
+    Position.X = 10.000000000000000000
+    Position.Y = 115.000000000000000000
+    Margins.Left = 10.000000000000000000
+    Margins.Top = 10.000000000000000000
+    Margins.Right = 10.000000000000000000
+    Size.Width = 267.000000000000000000
+    Size.Height = 38.000000000000000000
+    Size.PlatformDefault = False
+    StyledSettings = [Family, Style, FontColor]
+  end
+  object btnCancel: TButton
+    ModalResult = 2
+    Position.X = 192.000000000000000000
+    Position.Y = 168.000000000000000000
+    Size.Width = 87.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Text = 'Annulla'
+    TextSettings.Trimming = None
+  end
+  object btnOK: TButton
+    ModalResult = 1
+    Position.X = 97.000000000000000000
+    Position.Y = 168.000000000000000000
+    Size.Width = 87.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = 'Conferma'
+    TextSettings.Trimming = None
+  end
+end

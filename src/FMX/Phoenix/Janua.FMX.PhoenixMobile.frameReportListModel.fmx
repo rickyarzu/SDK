@@ -2,34 +2,43 @@ object frameFMXPhoenixReportListModel: TframeFMXPhoenixReportListModel
   Size.Width = 376.000000000000000000
   Size.Height = 688.000000000000000000
   Size.PlatformDefault = False
-  object rcReportSummary: TRectangle
-    Align = Top
-    Fill.Color = claAquamarine
-    Margins.Top = 2.000000000000000000
-    Margins.Bottom = 2.000000000000000000
-    Position.Y = 2.000000000000000000
+  object VertScBox: TVertScrollBox
+    Align = Client
     Size.Width = 376.000000000000000000
-    Size.Height = 96.000000000000000000
+    Size.Height = 688.000000000000000000
     Size.PlatformDefault = False
-    object txtReportSummay: TTMSFMXHTMLText
-      Align = Client
-      Margins.Left = 2.000000000000000000
+    TabOrder = 0
+    Viewport.Width = 376.000000000000000000
+    Viewport.Height = 688.000000000000000000
+    object rcReportSummary: TRectangle
+      Align = Top
+      Fill.Color = claAquamarine
       Margins.Top = 2.000000000000000000
-      Margins.Right = 2.000000000000000000
       Margins.Bottom = 2.000000000000000000
-      Size.Width = 372.000000000000000000
-      Size.Height = 92.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 376.000000000000000000
+      Size.Height = 96.000000000000000000
       Size.PlatformDefault = False
-      Text = 
-        '<b>Intervento N'#176': </b> 1950952 <br /><b>Mese Emissione: </b>  <b' +
-        'r /><b>Amministratore: </b> Asso Antincendio<br /><b>Contratto: ' +
-        '</b> Asso Antincendio prova Mobile 2021<br /><b>Filiale: </b> Se' +
-        'de <br />'
-      TextSettings.HorzAlign = Leading
-      TextSettings.VertAlign = Leading
-      PrefixStyle = NoPrefix
-      AdaptToStyle = False
-      Version = '1.5.5.4'
+      object txtReportSummay: TTMSFMXHTMLText
+        Align = Client
+        Margins.Left = 2.000000000000000000
+        Margins.Top = 2.000000000000000000
+        Margins.Right = 2.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Size.Width = 372.000000000000000000
+        Size.Height = 92.000000000000000000
+        Size.PlatformDefault = False
+        Text = 
+          '<b>Intervento N'#176': </b> 1950952 <br /><b>Mese Emissione: </b>  <b' +
+          'r /><b>Amministratore: </b> Asso Antincendio<br /><b>Contratto: ' +
+          '</b> Asso Antincendio prova Mobile 2021<br /><b>Filiale: </b> Se' +
+          'de <br />'
+        TextSettings.HorzAlign = Leading
+        TextSettings.VertAlign = Leading
+        PrefixStyle = NoPrefix
+        AdaptToStyle = False
+        Version = '1.5.5.4'
+      end
     end
   end
 end

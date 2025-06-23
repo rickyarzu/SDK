@@ -417,6 +417,10 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
+        <DCCReference Include="..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.dlgInputSearch.pas">
+            <Form>dlgPhoenixInputSearch</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaLibDXE15.optset</DependentOn>
@@ -514,6 +518,18 @@
                 <DeployFile LocalName="Android\Debug\styles-v21.xml" Configuration="Debug" Class="AndroidSplashStylesV21"/>
                 <DeployFile LocalName="Android\Debug\styles.xml" Configuration="Debug" Class="AndroidSplashStyles"/>
                 <DeployFile LocalName="Win64\Debug\PhoenixAssoApp.exe" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="Win64\Debug\PhoenixAssoApp.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>PhoenixAssoApp.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win64\Debug\PhoenixAssoApp.rsm" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win64">
+                        <RemoteName>PhoenixAssoApp.rsm</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Win64\Release\PhoenixAssoApp.exe" Configuration="Release" Class="ProjectOutput"/>
                 <DeployFile LocalName="Win64\Release\PhoenixAssoApp.exe" Configuration="Release" Class="ProjectOutput"/>
                 <DeployFile LocalName="c:\januaproject\bin\Android64\Debug\AndroidManifest.xml" Configuration="Debug" Class="ProjectAndroidManifest"/>
