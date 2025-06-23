@@ -123,7 +123,7 @@ type
     BitmapAnimation34: TBitmapAnimation;
     BitmapAnimation35: TBitmapAnimation;
     BitmapAnimation36: TBitmapAnimation;
-    btn: TTMSFMXImage;
+    btnLuci: TTMSFMXImage;
     BitmapAnimation37: TBitmapAnimation;
     BitmapAnimation38: TBitmapAnimation;
     BitmapAnimation39: TBitmapAnimation;
@@ -162,7 +162,39 @@ begin
     txtReportSummay.Text := '<b>Intervento N°: </b> ' + FStatino.CHIAVE.ToString +
       ' <br /><b>Mese Emissione: </b>  <br /><b>Amministratore: </b> ' + FStatino.NOMEAMMINISTRATORE +
       '<br />' + '<b>Contratto: </b>' + FStatino.DESCRIZIONECONTRATTO + '<br /><b>Filiale: </b>' +
-      FStatino.NOMEFILIALE  + '<br />'
+      FStatino.NOMEFILIALE + '<br />';
+    var
+    dm := dmFMXPhoenixAppMobileController;
+    var
+    vTest := (dm.SelectedRow.ESTINTORIORDINARIO + dm.SelectedRow.ESTINTORISTRAORDINARIO);
+
+    lbEstinguishersN.Text := vTest.ToString;
+    btnFireExtinguishers.Visible := vTest > 0;
+
+    lbIdrantiN.Text := dm.SelectedRow.IDRANTI.ToString;
+    btnFireHydrants.Visible := dm.SelectedRow.IDRANTI > 0;
+
+    lbPorteN.Text := dm.SelectedRow.PORTE.ToString;
+    btnFireDoors.Visible :=  dm.SelectedRow.PORTE > 0;
+
+    lbLuciEMN.Text := dm.SelectedRow.LUCI.ToString;
+    btnLuci.Visible :=  dm.SelectedRow.LUCI > 0;
+
+    lbSprinklerN.Text := dm.SelectedRow.SPRINKLER.ToString;
+    btnSprinklers.Visible :=  dm.SelectedRow.SPRINKLER > 0;
+
+    // lbRilFumoN - btnSmokeDetectors
+    lbRilFumoN.Text := dm.SelectedRow.FUMI.ToString;
+    btnSmokeDetectors.Visible :=  dm.SelectedRow.FUMI > 0;
+
+    // lbGruppiN - btnPressurizationGroup
+    lbGruppiN.Text := dm.SelectedRow.GRUPPIELETTR.ToString;
+    btnPressurizationGroup.Visible :=  dm.SelectedRow.GRUPPIELETTR > 0;
+
+    // lbImpElettriciN - btnElectricalSystems
+    lbImpElettriciN.Text := dm.SelectedRow.GRUPPIELETTR.ToString;
+    btnElectricalSystems.Visible :=  dm.SelectedRow.GRUPPIELETTR > 0;
+
   end;
 end;
 

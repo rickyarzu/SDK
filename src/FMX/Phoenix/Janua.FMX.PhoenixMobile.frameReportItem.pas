@@ -12,7 +12,7 @@ uses
 type
   TframeReportItem = class(TFrame)
     Rectangle1: TRectangle;
-    Label1: TLabel;
+    lbAdministrator: TLabel;
     lbRagioneSociale: TLabel;
     lbAddress: TLabel;
     lbEstinguishers: TLabel;
@@ -79,19 +79,14 @@ begin
   FStatino := Value;
   if Assigned(FStatino) then
   begin
-    lbRagioneSociale.Text := FStatino.RagioneSociale;
+
+    lbAdministrator.Text := FStatino.AMMINISTRATORE;
+
+    lbRagioneSociale.Text := 'CONTRATTO:' + FStatino.RagioneSociale;
     lbAddress.Text := FStatino.INDIRIZZO;
     var
     lText := '';
-    {
-      FESTINTORIORDINARIO: Integer;
-      FESTINTORISTRAORDINARIO: Integer;
-      FFUMI: Integer;
-      FGRUPPIELETTR: Integer;
-      FIDRANTI: Integer;
-      FIMPIANTIEL: Integer;
-      FLUCI: Integer;
-      FSPRINKLER: Integer; }
+
     var
     lTest1 := FStatino.ESTINTORIORDINARIO;
     lText := lText + IfThen(lTest1 > 0, 'Estintori Ordinari: ' + lTest1.ToString, '');
@@ -107,7 +102,7 @@ begin
     lTest1 := lTest1 + lTest;
 
     lTest := FStatino.GRUPPIELETTR;
-    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Grp. Elettr.: ' +
+    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', G.P.A. : ' +
       lTest.ToString, '');
     lTest1 := lTest1 + lTest;
 
@@ -121,6 +116,10 @@ begin
 
     lTest := FStatino.SPRINKLER;
     lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Sprinkler: ' + lTest.ToString, '');
+    lTest1 := lTest1 + lTest;
+
+    lTest := FStatino.PORTE;
+    lText := lText + IfThen(lTest > 0, IfThen(lTest1 > 0, '', ' - ') + ', Porte: ' + lTest.ToString, '');
     lTest1 := lTest1 + lTest;
 
     lbEstinguishers.Text := lText;

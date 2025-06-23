@@ -11,8 +11,14 @@ inherited frmFMXPhoenixMobileMain_iPhone55in: TfrmFMXPhoenixMobileMain_iPhone55i
       414s
       716s
       414s
+      716s
+      414s
+      716s
+      414s
       716s)
-    inherited TabItem1: TTabItem
+    inherited tab01Menu: TTabItem
+      Size.Width = 11.000000000000000000
+      Size.Height = 11.000000000000000000
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
       inherited ListViewMain: TListView
@@ -24,24 +30,23 @@ inherited frmFMXPhoenixMobileMain_iPhone55in: TfrmFMXPhoenixMobileMain_iPhone55i
         inherited Rectangle1: TRectangle
           Size.Width = 414.000000000000000000
           inherited btnNext: TSpeedButton
-            Position.X = 370.000000000000000000
-            Size.Width = 44.000000000000000000
+            Position.X = 366.000000000000000000
           end
           inherited Layout1: TLayout
-            Size.Width = 350.000000000000000000
+            Size.Width = 346.000000000000000000
             inherited lbUtente: TLabel
-              Size.Width = 350.000000000000000000
+              Size.Width = 346.000000000000000000
               TextSettings.Font.StyleExt = {00070000000000000004000000}
             end
             inherited Label1: TLabel
-              Position.X = 62.000000000000000000
+              Position.X = 58.000000000000000000
               TextSettings.Font.StyleExt = {00070000000000000004000000}
             end
           end
         end
       end
     end
-    inherited TabItem2: TTabItem
+    inherited tab02ReportList: TTabItem
       Size.Width = 11.000000000000000000
       Size.Height = 11.000000000000000000
       ExplicitSize.cx = 8.000000000000000000
@@ -61,13 +66,9 @@ inherited frmFMXPhoenixMobileMain_iPhone55in: TfrmFMXPhoenixMobileMain_iPhone55i
               TextSettings.Font.StyleExt = {00070000000000000004000000}
             end
           end
-          inherited SpeedButton1: TSpeedButton
-            Position.X = 366.000000000000000000
-          end
         end
       end
       inherited edLocation: TEdit
-        Opacity = 0.000000000000000000
         Size.Width = 414.000000000000000000
         Size.Height = 44.000000000000000000
       end
@@ -78,9 +79,7 @@ inherited frmFMXPhoenixMobileMain_iPhone55in: TfrmFMXPhoenixMobileMain_iPhone55i
           inherited Layout4: TLayout
             Size.Width = 414.000000000000000000
             inherited rgSelectSearch: TTMSFMXRadioGroup
-              Margins.Top = 2.000000000000000000
               Size.Width = 412.000000000000000000
-              Size.Height = 99.000000000000000000
               Font.StyleExt = {00070000000000000004000000}
               ItemFont.StyleExt = {00070000000000000004000000}
             end
@@ -93,19 +92,19 @@ inherited frmFMXPhoenixMobileMain_iPhone55in: TfrmFMXPhoenixMobileMain_iPhone55i
         inherited VertScrollBoxReports: TVertScrollBox
           Size.Width = 414.000000000000000000
           Size.Height = 520.000000000000000000
-          Viewport.Width = 50.000000000000000000
-          Viewport.Height = 50.000000000000000000
+          Viewport.Width = 384.000000000000000000
+          Viewport.Height = 528.000000000000000000
         end
       end
     end
-    inherited TabItem3: TTabItem
+    inherited tab03Report: TTabItem
       Size.Width = 11.000000000000000000
       Size.Height = 11.000000000000000000
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
       inherited frameFMXPhoenixMobileReportHeader1: TframeFMXPhoenixMobileReportHeader
         Size.Width = 414.000000000000000000
-        Size.Height = 716.000000000000000000
+        Size.Height = 668.000000000000000000
         inherited lbScheduling: TLabel
           Size.Width = 404.000000000000000000
         end
@@ -114,11 +113,10 @@ inherited frmFMXPhoenixMobileMain_iPhone55in: TfrmFMXPhoenixMobileMain_iPhone55i
           inherited Layout2: TLayout
             Size.Width = 414.000000000000000000
             inherited TMSFMXDateTimeEdit1: TTMSFMXDateTimeEdit
-              Position.X = 64.000000000000000000
+              Position.X = 70.000000000000000000
             end
             inherited Switch1: TSwitch
-              Position.X = 359.000000000000000000
-              Size.Width = 55.000000000000000000
+              Position.X = 370.000000000000000000
             end
           end
           inherited Layout3: TLayout
@@ -175,11 +173,9 @@ inherited frmFMXPhoenixMobileMain_iPhone55in: TfrmFMXPhoenixMobileMain_iPhone55i
         end
         inherited lbControlliOrdinari: TLabel
           Size.Width = 410.000000000000000000
-          TabOrder = 5
         end
         inherited Layout5: TLayout
           Size.Width = 414.000000000000000000
-          TabOrder = 6
           inherited Rectangle4: TRectangle
             Size.Width = 414.000000000000000000
             inherited TMSFMXHTMLText3: TTMSFMXHTMLText
@@ -254,11 +250,9 @@ inherited frmFMXPhoenixMobileMain_iPhone55in: TfrmFMXPhoenixMobileMain_iPhone55i
         end
         inherited Layout16: TLayout
           Size.Width = 410.000000000000000000
-          TabOrder = 4
         end
         inherited Layout17: TLayout
           Size.Width = 410.000000000000000000
-          TabOrder = 3
           inherited lbSend: TLabel
             TextSettings.Font.StyleExt = {00070000000000000004000000}
           end
@@ -269,11 +263,88 @@ inherited frmFMXPhoenixMobileMain_iPhone55in: TfrmFMXPhoenixMobileMain_iPhone55i
         end
         inherited btnTerminate: TButton
           Size.Width = 410.000000000000000000
-          TabOrder = 9
           inherited rctTerminate: TRectangle
             Size.Width = 410.000000000000000000
             inherited Label2: TLabel
               Size.Width = 357.882263183593800000
+            end
+          end
+        end
+      end
+      inherited ToolBar2: TToolBar
+        Size.Width = 414.000000000000000000
+        inherited Rectangle4: TRectangle
+          Size.Width = 414.000000000000000000
+          inherited Layout6: TLayout
+            Size.Width = 366.000000000000000000
+            inherited lbRapportino: TLabel
+              Size.Width = 366.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
+        end
+      end
+    end
+    inherited tab04EstingushersList: TTabItem
+      Size.Width = 11.000000000000000000
+      Size.Height = 11.000000000000000000
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited ToolBar3: TToolBar
+        Size.Width = 414.000000000000000000
+        inherited Rectangle5: TRectangle
+          Size.Width = 414.000000000000000000
+          inherited Layout7: TLayout
+            Size.Width = 366.000000000000000000
+            inherited lbEstingushersList: TLabel
+              Size.Width = 366.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
+        end
+      end
+      inherited frameFMXPhoenixReportListEstinguishers1: TframeFMXPhoenixReportListEstinguishers
+        Size.Width = 414.000000000000000000
+        Size.Height = 668.000000000000000000
+        inherited VertScBox: TVertScrollBox
+          Size.Width = 414.000000000000000000
+          Size.Height = 668.000000000000000000
+          Viewport.Width = 376.000000000000000000
+          Viewport.Height = 588.000000000000000000
+        end
+      end
+    end
+    inherited tab05FireHoseLisst: TTabItem
+      Size.Width = 11.000000000000000000
+      Size.Height = 11.000000000000000000
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited frameFMXReportListFireHoses1: TframeFMXReportListFireHoses
+        Size.Width = 414.000000000000000000
+        Size.Height = 668.000000000000000000
+        inherited VertScBox: TVertScrollBox
+          Size.Width = 414.000000000000000000
+          Size.Height = 668.000000000000000000
+          Viewport.Width = 384.000000000000000000
+          Viewport.Height = 688.000000000000000000
+          inherited Layout6: TLayout
+            inherited Rectangle1: TRectangle
+              inherited lbManichette: TLabel
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+          end
+        end
+      end
+      inherited ToolBar4: TToolBar
+        Size.Width = 414.000000000000000000
+        inherited Rectangle6: TRectangle
+          Size.Width = 414.000000000000000000
+          inherited Layout8: TLayout
+            Size.Width = 414.000000000000000000
+            inherited lbIdranti: TLabel
+              Position.X = 84.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
             end
           end
         end
