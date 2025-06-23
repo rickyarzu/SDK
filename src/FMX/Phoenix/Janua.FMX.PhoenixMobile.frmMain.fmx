@@ -17,7 +17,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
     Size.Height = 736.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 49.000000000000000000
-    TabIndex = 1
+    TabIndex = 4
     TabOrder = 0
     TabPosition = None
     Sizes = (
@@ -143,7 +143,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -703,6 +703,15 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
               Size.Width = 380.000000000000000000
             end
           end
+          inherited laySelectInsertNew: TLayout
+            Size.Width = 384.000000000000000000
+            inherited laySelect: TLayout
+              Size.Width = 223.000000000000000000
+              inherited lbSearch: TLabel
+                Size.Width = 161.000000000000000000
+              end
+            end
+          end
         end
       end
     end
@@ -711,7 +720,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -719,54 +728,6 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
       TabOrder = 0
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
-      inline frameFMXReportListFireHoses1: TframeFMXReportListFireHoses
-        Align = Client
-        Size.Width = 384.000000000000000000
-        Size.Height = 688.000000000000000000
-        Size.PlatformDefault = False
-        inherited VertScBox: TVertScrollBox
-          Size.Width = 384.000000000000000000
-          Size.Height = 688.000000000000000000
-          Viewport.Width = 384.000000000000000000
-          Viewport.Height = 688.000000000000000000
-          inherited rcReportSummary: TRectangle
-            Size.Width = 384.000000000000000000
-            inherited txtReportSummay: TTMSFMXHTMLText
-              Size.Width = 380.000000000000000000
-            end
-          end
-          inherited btnReportTestFirehose: TButton
-            Size.Width = 376.000000000000000000
-          end
-          inherited btnSpecificaImpianto: TButton
-            Size.Width = 376.000000000000000000
-          end
-          inherited btnVerbale: TButton
-            Size.Width = 376.000000000000000000
-          end
-          inherited Layout5: TLayout
-            Size.Width = 384.000000000000000000
-          end
-          inherited Layout6: TLayout
-            Size.Width = 384.000000000000000000
-            inherited Rectangle1: TRectangle
-              Size.Width = 376.000000000000000000
-              inherited lbManichette: TLabel
-                TextSettings.Font.StyleExt = {00070000000000000004000000}
-              end
-            end
-          end
-          inherited laySelectInsertNew: TLayout
-            Size.Width = 384.000000000000000000
-            inherited layInsertNew: TLayout
-              Size.Width = 143.000000000000000000
-              inherited lbInsertNew: TLabel
-                Size.Width = 81.000000000000000000
-              end
-            end
-          end
-        end
-      end
       object ToolBar4: TToolBar
         Anchors = []
         Size.Width = 384.000000000000000000
@@ -813,6 +774,54 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
               StyleLookup = 'priortoolbutton'
               TextSettings.FontColor = claIvory
               TextSettings.Trimming = None
+            end
+          end
+        end
+      end
+      inline frameFMXReportListFireHoses1: TframeFMXReportListFireHoses
+        Align = Client
+        Size.Width = 384.000000000000000000
+        Size.Height = 688.000000000000000000
+        Size.PlatformDefault = False
+        inherited VertScBox: TVertScrollBox
+          Size.Width = 384.000000000000000000
+          Size.Height = 688.000000000000000000
+          Viewport.Width = 384.000000000000000000
+          Viewport.Height = 688.000000000000000000
+          inherited rcReportSummary: TRectangle
+            Size.Width = 384.000000000000000000
+            inherited txtReportSummay: TTMSFMXHTMLText
+              Size.Width = 380.000000000000000000
+            end
+          end
+          inherited btnReportTestFirehose: TButton
+            Size.Width = 376.000000000000000000
+          end
+          inherited btnSpecificaImpianto: TButton
+            Size.Width = 376.000000000000000000
+          end
+          inherited btnVerbale: TButton
+            Size.Width = 376.000000000000000000
+          end
+          inherited Layout5: TLayout
+            Size.Width = 384.000000000000000000
+          end
+          inherited Layout6: TLayout
+            Size.Width = 384.000000000000000000
+            inherited Rectangle1: TRectangle
+              Size.Width = 376.000000000000000000
+              inherited lbManichette: TLabel
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+          end
+          inherited laySelectInsertNew: TLayout
+            Size.Width = 384.000000000000000000
+            inherited layInsertNew: TLayout
+              Size.Width = 143.000000000000000000
+              inherited lbInsertNew: TLabel
+                Size.Width = 81.000000000000000000
+              end
             end
           end
         end

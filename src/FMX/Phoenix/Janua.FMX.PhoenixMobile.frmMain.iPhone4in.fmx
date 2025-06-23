@@ -17,8 +17,6 @@ inherited frmFMXPhoenixMobileMain_iPhone4in: TfrmFMXPhoenixMobileMain_iPhone4in
       320s
       548s)
     inherited tab01Menu: TTabItem
-      Size.Width = 11.000000000000000000
-      Size.Height = 11.000000000000000000
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
       inherited ListViewMain: TListView
@@ -320,23 +318,6 @@ inherited frmFMXPhoenixMobileMain_iPhone4in: TfrmFMXPhoenixMobileMain_iPhone4in
       Size.Height = 11.000000000000000000
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
-      inherited frameFMXReportListFireHoses1: TframeFMXReportListFireHoses
-        Size.Width = 320.000000000000000000
-        Size.Height = 500.000000000000000000
-        inherited VertScBox: TVertScrollBox
-          Size.Width = 320.000000000000000000
-          Size.Height = 500.000000000000000000
-          Viewport.Width = 384.000000000000000000
-          Viewport.Height = 688.000000000000000000
-          inherited Layout6: TLayout
-            inherited Rectangle1: TRectangle
-              inherited lbManichette: TLabel
-                TextSettings.Font.StyleExt = {00070000000000000004000000}
-              end
-            end
-          end
-        end
-      end
       inherited ToolBar4: TToolBar
         Size.Width = 320.000000000000000000
         inherited Rectangle6: TRectangle
@@ -346,6 +327,23 @@ inherited frmFMXPhoenixMobileMain_iPhone4in: TfrmFMXPhoenixMobileMain_iPhone4in
             inherited lbIdranti: TLabel
               Position.X = -10.000000000000000000
               TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
+        end
+      end
+      inherited frameFMXReportListFireHoses1: TframeFMXReportListFireHoses
+        Size.Width = 320.000000000000000000
+        Size.Height = 500.000000000000000000
+        inherited VertScBox: TVertScrollBox
+          Size.Width = 320.000000000000000000
+          Size.Height = 500.000000000000000000
+          Viewport.Width = 372.000000000000000000
+          Viewport.Height = 630.000000000000000000
+          inherited Layout6: TLayout
+            inherited Rectangle1: TRectangle
+              inherited lbManichette: TLabel
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
             end
           end
         end

@@ -39,7 +39,7 @@ type
   public
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
-    procedure Setup;
+    procedure Setup; override;
   end;
 
 var
@@ -105,11 +105,43 @@ end;
 procedure TframeFMXPhoenixReportListEstinguishers.TMSFMXImage1Click(Sender: TObject);
 begin
   var
-    dlg: TdlgPhoenixInputSearch.Create(self);
+  dlg := TdlgPhoenixInputSearch.Create(nil);
   try
     if dlg.ShowModal = mrOk then
     begin
+      if dlg.ModalResult = mrOk then
+      begin
+        var
+        lRicerca := 0;
+        lRicerca := Trunc(dlg.SpinBox1.Value);
+        var
+        lFrame := FEstinguishers[0];
+        for var I := 0 to FEstinguishers.Count - 1 do
+        begin
+          if FEstinguishers[I].Estintore.PROGRESSIVO = lRicerca then
+            lFrame := FEstinguishers[I];
+        end;
+        // Calcola la posizione Y dell'immagine
+        var
+        TargetY := lFrame.Position.Y;
 
+        // Ottieni l'altezza della viewport per centrare l'immagine
+        var
+        ViewportHeight := VertScBox.Height;
+
+        // Centra l'immagine nella viewport (opzionale)
+        TargetY := TargetY - (ViewportHeight / 2) + (lFrame.Height / 2);
+
+        // Assicurati che non vada oltre i limiti
+        if TargetY < 0 then
+          TargetY := 0
+        else if TargetY > (VertScBox.ContentBounds.Height - ViewportHeight) then
+          TargetY := VertScBox.ContentBounds.Height - ViewportHeight;
+
+        // Anima lo scroll
+        VertScBox.AniCalculations.Animation := True;
+        VertScBox.ScrollTo(0, TargetY);
+      end;
     end;
   finally
     dlg.Free;

@@ -51,6 +51,9 @@ type
     procedure Setup; override;
   end;
 
+var
+  frameFMXReportListFireHoses: TframeFMXReportListFireHoses;
+
 implementation
 
 {$R *.fmx}

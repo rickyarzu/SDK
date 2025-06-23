@@ -66,12 +66,12 @@ type
     frameFMXPhoenixReportListEstinguishers1: TframeFMXPhoenixReportListEstinguishers;
     Timer1: TTimer;
     tab05FireHoseLisst: TTabItem;
-    frameFMXReportListFireHoses1: TframeFMXReportListFireHoses;
     ToolBar4: TToolBar;
     Rectangle6: TRectangle;
     Layout8: TLayout;
     lbIdranti: TLabel;
     SpeedButton4: TSpeedButton;
+    frameFMXReportListFireHoses1: TframeFMXReportListFireHoses;
     procedure FormCreate(Sender: TObject);
     procedure TitleActionUpdate(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
