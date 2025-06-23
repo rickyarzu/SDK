@@ -421,6 +421,31 @@
             <Form>dlgPhoenixInputSearch</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListLights.pas">
+            <Form>frameFMXPhoenixReportListLights</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListSprinklers.pas">
+            <Form>frameFMXPhoenixReportListSprinklers</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListFireDetection.pas">
+            <Form>frameFMXPhoenixReportListFireDetection</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameDoor.pas">
+            <Form>frameFMXMobileDoor</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListDoors.pas">
+            <Form>frameFMXPhoenixReportListModel1</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaLibDXE15.optset</DependentOn>

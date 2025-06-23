@@ -17,7 +17,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
     Size.Height = 736.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 49.000000000000000000
-    TabIndex = 4
+    TabIndex = 2
     TabOrder = 0
     TabPosition = None
     Sizes = (
@@ -204,7 +204,6 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             end
           end
           object SpeedButton1: TSpeedButton
-            Action = NextTabAction1
             Align = MostLeft
             StyledSettings = []
             IconTintColor = claSnow
@@ -212,7 +211,9 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             Size.Width = 48.000000000000000000
             Size.Height = 48.000000000000000000
             Size.PlatformDefault = False
-            StyleLookup = 'priortoolbutton'
+            Text = '<'
+            TextSettings.Font.Size = 26.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
             TextSettings.FontColor = claIvory
             TextSettings.Trimming = None
             OnClick = SpeedButton1Click
@@ -322,7 +323,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -351,8 +352,9 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             end
             inherited Switch1: TSwitch
               Position.X = 340.000000000000000000
+              Position.Y = 2.000000000000000000
               Size.Width = 44.000000000000000000
-              Size.Height = 30.000000000000000000
+              Size.Height = 26.000000000000000000
             end
           end
           inherited Layout3: TLayout
@@ -381,8 +383,8 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             Size.Width = 378.000000000000000000
             Size.Height = 44.000000000000000000
             TabOrder = 7
-            Viewport.Width = 378.000000000000000000
-            Viewport.Height = 44.000000000000000000
+            Viewport.Width = 370.000000000000000000
+            Viewport.Height = 36.000000000000000000
           end
         end
         inherited rcReportSummary: TRectangle
@@ -618,7 +620,9 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             Size.Width = 48.000000000000000000
             Size.Height = 48.000000000000000000
             Size.PlatformDefault = False
-            StyleLookup = 'priortoolbutton'
+            Text = '<'
+            TextSettings.Font.Size = 26.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
             TextSettings.FontColor = claIvory
             TextSettings.Trimming = None
             OnClick = SpeedButton2Click
@@ -720,7 +724,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -763,17 +767,17 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
               TabOrder = 2
             end
             object SpeedButton4: TSpeedButton
-              Action = NextTabAction1
               Align = Left
               StyledSettings = []
               IconTintColor = claSnow
-              ImageIndex = -1
               Size.Width = 48.000000000000000000
               Size.Height = 48.000000000000000000
               Size.PlatformDefault = False
-              StyleLookup = 'priortoolbutton'
+              Text = '<'
+              TextSettings.Font.Size = 26.000000000000000000
               TextSettings.FontColor = claIvory
               TextSettings.Trimming = None
+              OnClick = SpeedButton4Click
             end
           end
         end

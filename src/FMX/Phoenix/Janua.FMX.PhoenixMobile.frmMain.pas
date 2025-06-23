@@ -83,6 +83,7 @@ type
     procedure frameFMXPhoenixMobileReportHeader1btnFireExtinguishersClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure frameFMXPhoenixMobileReportHeader1btnFireHydrantsClick(Sender: TObject);
+    procedure SpeedButton4Click(Sender: TObject);
   private
     { Private declarations }
     FTestMenu: TJanuaFMXListViewMenuController;
@@ -279,6 +280,11 @@ end;
 procedure TfrmFMXPhoenixMobileMain.SpeedButton2Click(Sender: TObject);
 begin
   TabControl1.Previous(TTabTransition.Slide);
+end;
+
+procedure TfrmFMXPhoenixMobileMain.SpeedButton4Click(Sender: TObject);
+begin
+  TabControl1.GotoVisibleTab(1, TTabTransition.Slide);
 end;
 
 end.

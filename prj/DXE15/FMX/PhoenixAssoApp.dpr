@@ -16,7 +16,12 @@ uses
   Janua.FMX.PhoenixMobile.frameReportListSmokeDetection in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListSmokeDetection.pas' {frameFMXPhoenixReportListSmokeDetection: TFrame},
   Janua.FMX.PhoenixMobile.frameSmokeDetectionSettings in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameSmokeDetectionSettings.pas' {frameFMXPhoenixSmokeDetectionSetting: TFrame},
   Janua.FMX.PhoenixMobile.dmAppMobileController in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.dmAppMobileController.pas' {dmFMXPhoenixAppMobileController: TDataModule},
-  Janua.FMX.PhoenixMobile.dlgInputSearch in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.dlgInputSearch.pas' {dlgPhoenixInputSearch};
+  Janua.FMX.PhoenixMobile.dlgInputSearch in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.dlgInputSearch.pas' {dlgPhoenixInputSearch},
+  Janua.FMX.PhoenixMobile.frameReportListLights in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListLights.pas' {frameFMXPhoenixReportListLights: TFrame},
+  Janua.FMX.PhoenixMobile.frameReportListSprinklers in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListSprinklers.pas' {frameFMXPhoenixReportListSprinklers: TFrame},
+  Janua.FMX.PhoenixMobile.frameReportListFireDetection in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListFireDetection.pas' {frameFMXPhoenixReportListFireDetection: TFrame},
+  Janua.FMX.PhoenixMobile.frameDoor in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameDoor.pas' {frameFMXMobileDoor: TFrame},
+  Janua.FMX.PhoenixMobile.frameReportListDoors in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListDoors.pas' {frameFMXPhoenixReportListModel1: TFrame};
 
 {$R *.res}
 
@@ -25,6 +30,5 @@ begin
   Application.CreateForm(TdmFMXPhoenixAppMobileController, dmFMXPhoenixAppMobileController);
   Application.CreateForm(TfrmFMXPhoenixMobileMain, frmFMXPhoenixMobileMain);
   Application.CreateForm(TdmJanuaFMXPhoenixMobileResources, dmJanuaFMXPhoenixMobileResources);
-  Application.CreateForm(TdlgPhoenixInputSearch, dlgPhoenixInputSearch);
   Application.Run;
 end.

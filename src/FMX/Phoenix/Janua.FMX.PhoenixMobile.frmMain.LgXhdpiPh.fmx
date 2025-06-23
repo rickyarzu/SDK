@@ -63,6 +63,9 @@ inherited frmFMXPhoenixMobileMain_LgXhdpiPh: TfrmFMXPhoenixMobileMain_LgXhdpiPh
               TextSettings.Font.StyleExt = {00070000000000000004000000}
             end
           end
+          inherited SpeedButton1: TSpeedButton
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
         end
       end
       inherited edLocation: TEdit
@@ -111,6 +114,7 @@ inherited frmFMXPhoenixMobileMain_LgXhdpiPh: TfrmFMXPhoenixMobileMain_LgXhdpiPh
             end
             inherited Switch1: TSwitch
               Position.X = 406.000000000000000000
+              Size.Height = 30.000000000000000000
             end
           end
           inherited Layout3: TLayout
@@ -276,6 +280,9 @@ inherited frmFMXPhoenixMobileMain_LgXhdpiPh: TfrmFMXPhoenixMobileMain_LgXhdpiPh
               TextSettings.Font.StyleExt = {00070000000000000004000000}
             end
           end
+          inherited SpeedButton2: TSpeedButton
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
         end
       end
     end
@@ -317,6 +324,9 @@ inherited frmFMXPhoenixMobileMain_LgXhdpiPh: TfrmFMXPhoenixMobileMain_LgXhdpiPh
             Size.Width = 450.000000000000000000
             inherited lbIdranti: TLabel
               Position.X = 120.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+            inherited SpeedButton4: TSpeedButton
               TextSettings.Font.StyleExt = {00070000000000000004000000}
             end
           end

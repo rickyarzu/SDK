@@ -36,6 +36,7 @@ type
     { Public declarations }
     property Estinguishers: TObjectList<TframeFMXMobileEstinguisher> read FEstinguishers
       write SetEstinguishers;
+    procedure Search(Sender: TObject);
   public
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
@@ -65,6 +66,42 @@ begin
   inherited;
 end;
 
+procedure TframeFMXPhoenixReportListEstinguishers.Search(Sender: TObject);
+begin
+  var
+  dlg := dlgPhoenixInputSearch;
+  var
+  lRicerca := 0;
+  lRicerca := Trunc(dlg.SpinBox1.Value);
+  var
+  lFrame := FEstinguishers[0];
+  for var I := 0 to FEstinguishers.Count - 1 do
+  begin
+    if FEstinguishers[I].Estintore.PROGRESSIVO = lRicerca then
+      lFrame := FEstinguishers[I];
+  end;
+  // Calcola la posizione Y dell'immagine
+  var
+  TargetY := lFrame.Position.Y;
+
+  // Ottieni l'altezza della viewport per centrare l'immagine
+  var
+  ViewportHeight := VertScBox.Height;
+
+  // Centra l'immagine nella viewport (opzionale)
+  TargetY := TargetY - (ViewportHeight / 2) + (lFrame.Height / 2);
+
+  // Assicurati che non vada oltre i limiti
+  if TargetY < 0 then
+    TargetY := 0
+  else if TargetY > (VertScBox.ContentBounds.Height - ViewportHeight) then
+    TargetY := VertScBox.ContentBounds.Height - ViewportHeight;
+
+  // Anima lo scroll
+  VertScBox.AniCalculations.Animation := True;
+  VertScBox.ScrollTo(0, TargetY);
+end;
+
 procedure TframeFMXPhoenixReportListEstinguishers.SetEstinguishers
   (const Value: TObjectList<TframeFMXMobileEstinguisher>);
 begin
@@ -77,7 +114,7 @@ begin
   var
   lCount := FStatino.Estintori.Count;
   var
-  lTop := rcReportSummary.Height + rcReportSummary.Position.Y + 1;
+  lTop := laySelectInsertNew.Height + laySelectInsertNew.Position.Y + 1;
   if lCount > 0 then
   begin
     if FEstinguishers.Count > 0 then
@@ -104,49 +141,10 @@ end;
 
 procedure TframeFMXPhoenixReportListEstinguishers.TMSFMXImage1Click(Sender: TObject);
 begin
-  var
-  dlg := TdlgPhoenixInputSearch.Create(nil);
-  try
-    if dlg.ShowModal = mrOk then
-    begin
-      if dlg.ModalResult = mrOk then
-      begin
-        var
-        lRicerca := 0;
-        lRicerca := Trunc(dlg.SpinBox1.Value);
-        var
-        lFrame := FEstinguishers[0];
-        for var I := 0 to FEstinguishers.Count - 1 do
-        begin
-          if FEstinguishers[I].Estintore.PROGRESSIVO = lRicerca then
-            lFrame := FEstinguishers[I];
-        end;
-        // Calcola la posizione Y dell'immagine
-        var
-        TargetY := lFrame.Position.Y;
-
-        // Ottieni l'altezza della viewport per centrare l'immagine
-        var
-        ViewportHeight := VertScBox.Height;
-
-        // Centra l'immagine nella viewport (opzionale)
-        TargetY := TargetY - (ViewportHeight / 2) + (lFrame.Height / 2);
-
-        // Assicurati che non vada oltre i limiti
-        if TargetY < 0 then
-          TargetY := 0
-        else if TargetY > (VertScBox.ContentBounds.Height - ViewportHeight) then
-          TargetY := VertScBox.ContentBounds.Height - ViewportHeight;
-
-        // Anima lo scroll
-        VertScBox.AniCalculations.Animation := True;
-        VertScBox.ScrollTo(0, TargetY);
-      end;
-    end;
-  finally
-    dlg.Free;
-    dlg := nil;
-  end;
+  if not Assigned(dlgPhoenixInputSearch) then
+    Application.CreateForm(TdlgPhoenixInputSearch, dlgPhoenixInputSearch);
+  dlgPhoenixInputSearch.OnExecute := self.Search;
+  dlgPhoenixInputSearch.Show;
 
 end;
 

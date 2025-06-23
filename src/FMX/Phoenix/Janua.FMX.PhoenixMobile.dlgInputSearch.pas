@@ -15,10 +15,14 @@ type
     edMatricola: TEdit;
     btnCancel: TButton;
     btnOK: TButton;
+    procedure btnOKClick(Sender: TObject);
   private
+    FOnExecute: TNotifyEvent;
+    procedure SetOnExecute(const Value: TNotifyEvent);
     { Private declarations }
   public
     { Public declarations }
+    property OnExecute: TNotifyEvent read FOnExecute write SetOnExecute;
   end;
 
 var
@@ -27,5 +31,18 @@ var
 implementation
 
 {$R *.fmx}
+{ TdlgPhoenixInputSearch }
+
+procedure TdlgPhoenixInputSearch.btnOKClick(Sender: TObject);
+begin
+  Close;
+  if Assigned(FOnExecute) then
+    FOnExecute(Self);
+end;
+
+procedure TdlgPhoenixInputSearch.SetOnExecute(const Value: TNotifyEvent);
+begin
+  FOnExecute := Value;
+end;
 
 end.
