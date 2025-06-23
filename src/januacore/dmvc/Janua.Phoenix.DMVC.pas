@@ -49,6 +49,11 @@ type
     procedure GetConf;
 
     // Sample CRUD Actions for a "Customer" entity
+    [MVCPath('/catestintori')]
+    [MVCHTTPMethod([httpGET])]
+    procedure GetCatEstintori;
+
+    // Sample CRUD Actions for a "Customer" entity
     [MVCPath('/users')]
     [MVCHTTPMethod([httpGET])]
     procedure GetUsers;
@@ -57,6 +62,11 @@ type
     [MVCPath('/reports/($user_id)')]
     [MVCHTTPMethod([httpGET])]
     procedure GetReportList(user_id: Integer);
+
+    // Sample CRUD Actions for a "Customer" entity
+    [MVCPath('/reportsdataset/($format)/($user_id)')]
+    [MVCHTTPMethod([httpGET])]
+    procedure GetReportDataset(format: string; user_id: Integer);
 
     // Sample CRUD Actions for a "Customer" entity
     [MVCPath('/report/($id)')]
@@ -101,6 +111,21 @@ begin
     Context.Response.ContentType := TJanuaMimeString.APPLICATION_JSON;
     Context.Response.StatusCode := HTTP_STATUS.OK;
     Render(dm.GetStatinoCache(id));
+  finally
+    dm.Free;
+  end;
+
+end;
+
+procedure TPhoenixController.GetReportDataset(format: string; user_id: Integer);
+var
+  dm: TdmPhoenixReportsCaches;
+begin
+  dm := TdmPhoenixReportsCaches.Create(nil);
+  try
+    Context.Response.ContentType := TJanuaMimeString.APPLICATION_JSON;
+    Context.Response.StatusCode := HTTP_STATUS.OK;
+    Render(dm.GetDatasetStatiniTecnico(user_id, format));
   finally
     dm.Free;
   end;
@@ -178,6 +203,22 @@ begin
     Context.Response.ContentType := TJanuaMimeString.APPLICATION_JSON;
     Context.Response.StatusCode := HTTP_STATUS.OK;
     Render(dm.GetProdottiCache);
+  finally
+    dm.Free;
+  end;
+end;
+
+procedure TPhoenixController.GetCatEstintori;
+var
+  dm: TdmPhoenixReportsCaches;
+begin
+  dm := TdmPhoenixReportsCaches.Create(nil);
+  try
+    Context.Response.ContentType := TJanuaMimeString.APPLICATION_JSON;
+    Context.Response.StatusCode := HTTP_STATUS.OK;
+    var
+    vRender := dm.GetTipoEstintori;
+    Render(vRender);
   finally
     dm.Free;
   end;
