@@ -111,7 +111,7 @@ procedure TCatEstintoriRoot.LoadFromDataset(const aDataset: TDataset);
 begin
   if aDataset.RecordCount > 0 then
   begin
-    FIterator.Initialize('DESCR_COMPATTA', aDataset, FestintoriArray);
+    FIterator.Initialize('DESCRCOMPATTA', aDataset, FestintoriArray);
     var
     vTest := Length(FestintoriArray);
   end;
@@ -120,7 +120,7 @@ end;
 
 procedure TCatEstintoriRoot.RebuildList;
 begin
-  FIterator.Initialize('RAGIONESOCIALE', Getestintori);
+  FIterator.Initialize('DESCRCOMPATTA', Getestintori);
 end;
 
 procedure TCatEstintoriRoot.SetAsJson(aValue: string);
