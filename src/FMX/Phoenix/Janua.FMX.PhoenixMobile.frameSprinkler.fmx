@@ -9,7 +9,7 @@ object frameFMXMobileSprinkler: TframeFMXMobileSprinkler
     Size.Height = 45.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
-    object txtNR: TLabel
+    object txtCheckType: TLabel
       Align = Left
       StyledSettings = [Family, Size, FontColor]
       Margins.Left = 2.000000000000000000
@@ -34,7 +34,7 @@ object frameFMXMobileSprinkler: TframeFMXMobileSprinkler
       Version = '1.6.0.0'
       TabOrder = 1
     end
-    object ckbContr: TTMSFNCRadioButton
+    object ckbChecked: TTMSFNCRadioButton
       Color = claNull
       Align = Left
       Margins.Left = 4.000000000000000000
@@ -43,10 +43,11 @@ object frameFMXMobileSprinkler: TframeFMXMobileSprinkler
       Size.Height = 45.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 8
+      OnClick = ckbCheckedClick
       GroupName = '1'
       Text = '  '
     end
-    object ckbNonEseg: TTMSFNCRadioButton
+    object ckbNotChecked: TTMSFNCRadioButton
       Color = claNull
       Align = Left
       Margins.Left = 16.000000000000000000
@@ -55,18 +56,19 @@ object frameFMXMobileSprinkler: TframeFMXMobileSprinkler
       Size.Height = 45.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 7
+      OnClick = ckbNotCheckedClick
       GroupName = '1'
       Text = '  '
     end
   end
-  object Layout3: TLayout
+  object ly04Brand: TLayout
     Align = Top
     Position.Y = 140.000000000000000000
     Size.Width = 386.000000000000000000
     Size.Height = 29.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
-    object ComboBox1: TComboBox
+    object cboBrand: TComboBox
       Align = Client
       Items.Strings = (
         'Attiva'
@@ -81,14 +83,14 @@ object frameFMXMobileSprinkler: TframeFMXMobileSprinkler
       TabOrder = 0
     end
   end
-  object Layout4: TLayout
+  object ly04Model: TLayout
     Align = Top
     Position.Y = 194.000000000000000000
     Size.Width = 386.000000000000000000
     Size.Height = 28.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 8
-    object Edit1: TEdit
+    TabOrder = 11
+    object edModel: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       Align = Client
       TabOrder = 0
@@ -177,8 +179,8 @@ object frameFMXMobileSprinkler: TframeFMXMobileSprinkler
     object lbBrand: TLabel
       Align = Left
       StyledSettings = [Family, Size, FontColor]
-      Margins.Left = 2.000000000000000000
-      Position.X = 2.000000000000000000
+      Margins.Left = 6.000000000000000000
+      Position.X = 6.000000000000000000
       Size.Width = 319.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
@@ -218,8 +220,8 @@ object frameFMXMobileSprinkler: TframeFMXMobileSprinkler
     object lbTipoImpianto: TLabel
       Align = Left
       StyledSettings = [Family, Size, FontColor]
-      Margins.Left = 2.000000000000000000
-      Position.X = 2.000000000000000000
+      Margins.Left = 6.000000000000000000
+      Position.X = 6.000000000000000000
       Size.Width = 319.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
@@ -228,14 +230,14 @@ object frameFMXMobileSprinkler: TframeFMXMobileSprinkler
       TabOrder = 0
     end
   end
-  object Layout1: TLayout
+  object ly02State: TLayout
     Align = Top
     Position.Y = 70.000000000000000000
     Size.Width = 386.000000000000000000
     Size.Height = 45.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 6
-    object Label2: TLabel
+    object lbState: TLabel
       Align = Left
       StyledSettings = [Family, Size, FontColor]
       Margins.Left = 4.000000000000000000
@@ -246,17 +248,18 @@ object frameFMXMobileSprinkler: TframeFMXMobileSprinkler
       Text = 'STATO ATTREZZATURA'
       TabOrder = 0
     end
-    object laySelect: TLayout
+    object layStateSelect: TLayout
       Align = Client
       Size.Width = 231.000000000000000000
       Size.Height = 45.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
-      object cboSelect: TComboBox
+      object cboStateSelect: TComboBox
         Align = Client
         Items.Strings = (
           'Attiva'
           'Fuori Servizio')
+        ItemIndex = 0
         Margins.Left = 4.000000000000000000
         Margins.Top = 4.000000000000000000
         Margins.Right = 4.000000000000000000
@@ -265,10 +268,11 @@ object frameFMXMobileSprinkler: TframeFMXMobileSprinkler
         Size.Height = 37.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
+        OnClosePopup = cboStateSelectClosePopup
       end
     end
   end
-  object Layout2: TLayout
+  object ly05Type: TLayout
     Align = Top
     Position.Y = 247.000000000000000000
     Size.Width = 386.000000000000000000
@@ -288,6 +292,7 @@ object frameFMXMobileSprinkler: TframeFMXMobileSprinkler
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
+      OnClosePopup = cboSprinklerSystemTypeClosePopup
     end
   end
   object Rectangle1: TRectangle
@@ -300,8 +305,8 @@ object frameFMXMobileSprinkler: TframeFMXMobileSprinkler
     object lbQty: TLabel
       Align = Left
       StyledSettings = [Family, Size, FontColor]
-      Margins.Left = 2.000000000000000000
-      Position.X = 2.000000000000000000
+      Margins.Left = 6.000000000000000000
+      Position.X = 6.000000000000000000
       Size.Width = 151.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
@@ -334,14 +339,14 @@ object frameFMXMobileSprinkler: TframeFMXMobileSprinkler
       TabOrder = 0
     end
   end
-  object Layout5: TLayout
+  object ly06QtyType: TLayout
     Align = Top
     Position.Y = 301.000000000000000000
     Size.Width = 386.000000000000000000
     Size.Height = 28.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 7
-    object Edit2: TEdit
+    object edQtyType: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       Align = Client
       TabOrder = 1
@@ -363,7 +368,7 @@ object frameFMXMobileSprinkler: TframeFMXMobileSprinkler
       GroupName = '2'
       Text = '  '
     end
-    object Edit3: TEdit
+    object edCalibration: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       Align = Right
       TabOrder = 0
@@ -373,6 +378,122 @@ object frameFMXMobileSprinkler: TframeFMXMobileSprinkler
       Size.Width = 74.000000000000000000
       Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
+    end
+  end
+  object Rectangle2: TRectangle
+    Align = Top
+    Fill.Color = claAquamarine
+    Position.Y = 329.000000000000000000
+    Size.Width = 386.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    object Label5: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 6.000000000000000000
+      Position.X = 6.000000000000000000
+      Size.Width = 319.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'COMPRESSORE'
+      TabOrder = 0
+    end
+  end
+  object ly07Compressor: TLayout
+    Align = Top
+    Position.Y = 354.000000000000000000
+    Size.Width = 386.000000000000000000
+    Size.Height = 28.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+    object edCompressor: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Client
+      TabOrder = 0
+      Margins.Left = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Size.Width = 376.000000000000000000
+      Size.Height = 28.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object Rectangle6: TRectangle
+    Align = Top
+    Fill.Color = claAquamarine
+    Position.Y = 382.000000000000000000
+    Size.Width = 386.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    object lbLocation: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 6.000000000000000000
+      Position.X = 6.000000000000000000
+      Size.Width = 319.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'UBICAZIONE'
+      TabOrder = 0
+    end
+  end
+  object ly08Location: TLayout
+    Align = Top
+    Position.Y = 407.000000000000000000
+    Size.Width = 386.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 9
+    object edLocation: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Client
+      TabOrder = 0
+      Margins.Left = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Size.Width = 376.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object Rectangle7: TRectangle
+    Align = Top
+    Fill.Color = claAquamarine
+    Position.Y = 451.000000000000000000
+    Size.Width = 386.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    object lbAnomaly: TLabel
+      Align = Left
+      StyledSettings = [Family, Size, FontColor]
+      Margins.Left = 6.000000000000000000
+      Position.X = 6.000000000000000000
+      Size.Width = 319.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'ANOMALIA'
+      TabOrder = 0
+    end
+  end
+  object ly09Anomaly: TLayout
+    Align = Top
+    Position.Y = 476.000000000000000000
+    Size.Width = 386.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    object edAnomaly: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Client
+      TabOrder = 0
+      TextSettings.FontColor = claCrimson
+      Margins.Left = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Size.Width = 376.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      StyledSettings = [Family, Size, Style]
     end
   end
 end
