@@ -767,6 +767,8 @@ type
     FTecnicoControllo: Integer;
     [JSONName('UBICAZIONE')]
     FUBICAZIONE: string;
+    [JSONName('NonControllato')]
+    FNonControllato: Boolean;
   published
     property ANOMALIA: string read FANOMALIA write FANOMALIA;
     property ANOMALIAAPPROVATA: Boolean read FANOMALIAAPPROVATA write FANOMALIAAPPROVATA;
@@ -788,6 +790,7 @@ type
     property TIPOLUCE: Integer read FTIPOLUCE write FTIPOLUCE;
     property TecnicoControllo: Integer read FTecnicoControllo write FTecnicoControllo;
     property UBICAZIONE: string read FUBICAZIONE write FUBICAZIONE;
+    property NonControllato: Boolean read FNonControllato write FNonControllato;
   end;
 
   TRilevatoriFumo = class

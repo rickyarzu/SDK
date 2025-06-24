@@ -24,7 +24,6 @@ type
     BitmapAnimation1: TBitmapAnimation;
     BitmapAnimation2: TBitmapAnimation;
     BitmapAnimation3: TBitmapAnimation;
-    Label1: TLabel;
     Layout6: TLayout;
     Rectangle1: TRectangle;
     lbManichette: TLabel;

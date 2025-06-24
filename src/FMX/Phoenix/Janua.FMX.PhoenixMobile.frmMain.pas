@@ -15,7 +15,9 @@ uses
 
   Janua.FMX.FormControls, Janua.FMX.PhoenixMobile.frameReportItem, Janua.FMX.PhoenixMobile.frameReportHeader,
   Janua.FMX.PhoenixMobile.frameReportListModel, Janua.FMX.PhoenixMobile.frameReportListEstinguishers,
-  Janua.FMX.PhoenixMobile.frameReportListFireHoses;
+  Janua.FMX.PhoenixMobile.frameReportListFireHoses, Janua.FMX.PhoenixMobile.frameReportListDoors,
+  Janua.FMX.PhoenixMobile.frameReportListLights, Janua.FMX.PhoenixMobile.frameReportListSprinklers,
+  FMX.ListBox;
 
 type
   TfrmFMXPhoenixMobileMain = class(TForm)
@@ -72,6 +74,23 @@ type
     lbIdranti: TLabel;
     SpeedButton4: TSpeedButton;
     frameFMXReportListFireHoses1: TframeFMXReportListFireHoses;
+    tab06Doors: TTabItem;
+    ToolBar5: TToolBar;
+    Rectangle7: TRectangle;
+    Layout9: TLayout;
+    lbDoorsTitle: TLabel;
+    SpeedButton5: TSpeedButton;
+    frameFMXPhoenixReportListDoors1: TframeFMXPhoenixReportListDoors;
+    tab07Lights: TTabItem;
+    ToolBar6: TToolBar;
+    Rectangle8: TRectangle;
+    Layout10: TLayout;
+    lbTitleLights: TLabel;
+    SpeedButton6: TSpeedButton;
+    frameFMXPhoenixReportListLights1: TframeFMXPhoenixReportListLights;
+    tab08Sprinklers: TTabItem;
+    frameFMXPhoenixReportListSprinklers1: TframeFMXPhoenixReportListSprinklers;
+    cboSelect: TComboBox;
     procedure FormCreate(Sender: TObject);
     procedure TitleActionUpdate(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
@@ -84,6 +103,8 @@ type
     procedure Timer1Timer(Sender: TObject);
     procedure frameFMXPhoenixMobileReportHeader1btnFireHydrantsClick(Sender: TObject);
     procedure SpeedButton4Click(Sender: TObject);
+    procedure frameFMXPhoenixMobileReportHeader1btnFireDoorsClick(Sender: TObject);
+    procedure frameFMXPhoenixMobileReportHeader1btnLuciClick(Sender: TObject);
   private
     { Private declarations }
     FTestMenu: TJanuaFMXListViewMenuController;
@@ -248,6 +269,12 @@ begin
   // jlvMenuController.DrawListView
 end;
 
+procedure TfrmFMXPhoenixMobileMain.frameFMXPhoenixMobileReportHeader1btnFireDoorsClick(Sender: TObject);
+begin
+  frameFMXPhoenixReportListDoors1.Statino := dmFMXPhoenixAppMobileController.Statino;
+  TabControl1.GotoVisibleTab(5, TTabTransition.Slide);
+end;
+
 procedure TfrmFMXPhoenixMobileMain.frameFMXPhoenixMobileReportHeader1btnFireExtinguishersClick
   (Sender: TObject);
 begin
@@ -259,6 +286,12 @@ procedure TfrmFMXPhoenixMobileMain.frameFMXPhoenixMobileReportHeader1btnFireHydr
 begin
   frameFMXReportListFireHoses1.Statino := dmFMXPhoenixAppMobileController.Statino;
   TabControl1.GotoVisibleTab(4, TTabTransition.Slide);
+end;
+
+procedure TfrmFMXPhoenixMobileMain.frameFMXPhoenixMobileReportHeader1btnLuciClick(Sender: TObject);
+begin
+  frameFMXPhoenixReportListLights1.Statino := dmFMXPhoenixAppMobileController.Statino;
+  TabControl1.GotoVisibleTab(6, TTabTransition.Slide);
 end;
 
 procedure TfrmFMXPhoenixMobileMain.jlvMenuControllerMenuItems0Click(Sender: TObject);

@@ -28,6 +28,7 @@ inherited frameFMXPhoenixReportListEstinguishers: TframeFMXPhoenixReportListEsti
           Margins.Right = 2.000000000000000000
           Margins.Bottom = 2.000000000000000000
           StrokeThickness = 1.000000000000000000
+          Visible = False
           OnClick = TMSFMXImage1Click
           Version = '1.5.1.1'
           BitmapName = 'search'
@@ -51,10 +52,11 @@ inherited frameFMXPhoenixReportListEstinguishers: TframeFMXPhoenixReportListEsti
           Margins.Top = 4.000000000000000000
           Margins.Right = 8.000000000000000000
           Margins.Bottom = 4.000000000000000000
-          Size.Width = 153.000000000000000000
+          Size.Width = 199.000000000000000000
           Size.Height = 32.000000000000000000
           Size.PlatformDefault = False
           Text = 'Ricerca'
+          Visible = False
           TabOrder = 1
         end
       end

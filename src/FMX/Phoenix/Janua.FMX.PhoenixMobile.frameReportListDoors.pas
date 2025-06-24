@@ -10,10 +10,24 @@ uses
   Janua.FMX.PhoenixMobile.frameReportListModel, Janua.FMX.PhoenixMobile.frameDoor,
   // DTO
   Phoenix.JSON.Tecnici.DTO, Phoenix.JSON.Prodotti.DTO, DTO.Phoenix.ReportList,
-  Phoenix.JSON.Config.DTO, Phoenix.JSON.Statini.DTO, DTO.Phoenix.CatEstintori;
+  Phoenix.JSON.Config.DTO, Phoenix.JSON.Statini.DTO, DTO.Phoenix.CatEstintori, FMX.Controls.Presentation,
+  FMX.Ani, FMX.TMSBaseControl, FMX.TMSBitmap;
 
 type
-  TframeFMXPhoenixReportListModel1 = class(TframeFMXPhoenixReportListModel)
+  TframeFMXPhoenixReportListDoors = class(TframeFMXPhoenixReportListModel)
+    laySelectInsertNew: TLayout;
+    laySelect: TLayout;
+    TMSFMXImage1: TTMSFMXImage;
+    BitmapAnimation1: TBitmapAnimation;
+    BitmapAnimation2: TBitmapAnimation;
+    BitmapAnimation3: TBitmapAnimation;
+    lbSearch: TLabel;
+    layInsertNew: TLayout;
+    imgInsertNew: TTMSFMXImage;
+    BitmapAnimation13: TBitmapAnimation;
+    BitmapAnimation14: TBitmapAnimation;
+    BitmapAnimation15: TBitmapAnimation;
+    lbInsertNew: TLabel;
   private
     FDoors: TObjectList<TframeFMXMobileDoor>;
     procedure SetDoors(const Value: TObjectList<TframeFMXMobileDoor>);
@@ -25,7 +39,7 @@ type
   end;
 
 var
-  frameFMXPhoenixReportListModel1: TframeFMXPhoenixReportListModel1;
+  frameFMXPhoenixReportListDoors: TframeFMXPhoenixReportListDoors;
 
 implementation
 
@@ -33,12 +47,12 @@ implementation
 
 { TframeFMXPhoenixReportListModel1 }
 
-procedure TframeFMXPhoenixReportListModel1.SetDoors(const Value: TObjectList<TframeFMXMobileDoor>);
+procedure TframeFMXPhoenixReportListDoors.SetDoors(const Value: TObjectList<TframeFMXMobileDoor>);
 begin
   FDoors := Value;
 end;
 
-procedure TframeFMXPhoenixReportListModel1.Setup;
+procedure TframeFMXPhoenixReportListDoors.Setup;
 begin
   inherited;
   var

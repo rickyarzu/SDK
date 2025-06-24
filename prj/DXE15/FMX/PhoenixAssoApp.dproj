@@ -442,7 +442,17 @@
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListDoors.pas">
-            <Form>frameFMXPhoenixReportListModel1</Form>
+            <Form>frameFMXPhoenixReportListDoors</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameLight.pas">
+            <Form>frameFMXMobileLight</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameSprinkler.pas">
+            <Form>frameFMXMobileSprinkler</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>

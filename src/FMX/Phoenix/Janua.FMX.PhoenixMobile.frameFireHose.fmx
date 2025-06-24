@@ -350,8 +350,8 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
     Size.Height = 91.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 10
-    Viewport.Width = 358.000000000000000000
-    Viewport.Height = 87.000000000000000000
+    Viewport.Width = 362.000000000000000000
+    Viewport.Height = 91.000000000000000000
   end
   object Layout2: TLayout
     Align = Top

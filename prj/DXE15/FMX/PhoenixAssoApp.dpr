@@ -21,7 +21,9 @@ uses
   Janua.FMX.PhoenixMobile.frameReportListSprinklers in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListSprinklers.pas' {frameFMXPhoenixReportListSprinklers: TFrame},
   Janua.FMX.PhoenixMobile.frameReportListFireDetection in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListFireDetection.pas' {frameFMXPhoenixReportListFireDetection: TFrame},
   Janua.FMX.PhoenixMobile.frameDoor in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameDoor.pas' {frameFMXMobileDoor: TFrame},
-  Janua.FMX.PhoenixMobile.frameReportListDoors in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListDoors.pas' {frameFMXPhoenixReportListModel1: TFrame};
+  Janua.FMX.PhoenixMobile.frameReportListDoors in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListDoors.pas' {frameFMXPhoenixReportListDoors: TFrame},
+  Janua.FMX.PhoenixMobile.frameLight in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameLight.pas' {frameFMXMobileLight: TFrame},
+  Janua.FMX.PhoenixMobile.frameSprinkler in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameSprinkler.pas' {frameFMXMobileSprinkler: TFrame};
 
 {$R *.res}
 
