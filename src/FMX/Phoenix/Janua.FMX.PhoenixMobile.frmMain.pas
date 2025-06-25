@@ -94,7 +94,7 @@ type
     ToolBar7: TToolBar;
     Rectangle9: TRectangle;
     Layout11: TLayout;
-    lbLuci: TLabel;
+    lbSprinkler: TLabel;
     SpeedButton7: TSpeedButton;
     procedure FormCreate(Sender: TObject);
     procedure TitleActionUpdate(Sender: TObject);
@@ -110,6 +110,9 @@ type
     procedure SpeedButton4Click(Sender: TObject);
     procedure frameFMXPhoenixMobileReportHeader1btnFireDoorsClick(Sender: TObject);
     procedure frameFMXPhoenixMobileReportHeader1btnLuciClick(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
+    procedure SpeedButton5Click(Sender: TObject);
+    procedure SpeedButton6Click(Sender: TObject);
   private
     { Private declarations }
     FTestMenu: TJanuaFMXListViewMenuController;
@@ -242,6 +245,7 @@ begin
       aFrame.Position.Y := lTop;
       lTop := lTop + aFrame.Height;
       aFrame.Statino := dmFMXPhoenixAppMobileController.StatiniLIst.statini[I];
+      aFrame.tag := 1;
       aFrame.Parent := VertScrollBoxReports;
       aFrame.Visible := True;
       aFrame.OnItemClick := ReportClick;
@@ -306,6 +310,7 @@ end;
 
 procedure TfrmFMXPhoenixMobileMain.ReportClick(Sender: TObject);
 begin
+  dmFMXPhoenixAppMobileController.OpenStatino(TframeReportItem(Sender).Statino.CHIAVE);
   frameFMXPhoenixMobileReportHeader1.Statino := dmFMXPhoenixAppMobileController.Statino;
   TabControl1.Next(TTabTransition.Slide);
 end;
@@ -320,9 +325,24 @@ begin
   TabControl1.Previous(TTabTransition.Slide);
 end;
 
+procedure TfrmFMXPhoenixMobileMain.SpeedButton3Click(Sender: TObject);
+begin
+  TabControl1.GotoVisibleTab(2, TTabTransition.Slide);
+end;
+
 procedure TfrmFMXPhoenixMobileMain.SpeedButton4Click(Sender: TObject);
 begin
-  TabControl1.GotoVisibleTab(1, TTabTransition.Slide);
+  TabControl1.GotoVisibleTab(2, TTabTransition.Slide);
+end;
+
+procedure TfrmFMXPhoenixMobileMain.SpeedButton5Click(Sender: TObject);
+begin
+  TabControl1.GotoVisibleTab(2, TTabTransition.Slide);
+end;
+
+procedure TfrmFMXPhoenixMobileMain.SpeedButton6Click(Sender: TObject);
+begin
+  TabControl1.GotoVisibleTab(2, TTabTransition.Slide);
 end;
 
 end.

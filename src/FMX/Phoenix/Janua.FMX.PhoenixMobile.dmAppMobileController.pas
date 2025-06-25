@@ -4,6 +4,7 @@ interface
 
 uses
   System.SysUtils, System.Classes, System.NetEncoding, System.Generics.Collections, System.DateUtils,
+  System.StrUtils,
 {$IFDEF ANDROID}
   Androidapi.JNI.Net,
   Androidapi.JNI.GraphicsContentViewText,
@@ -314,6 +315,7 @@ begin
   begin
     var
     sConf := lClient.Content;
+    // Conf := StringReplace(sConf, '"idranti"', '"Idranti"', [rfReplaceAll]);
     FStatino.AsJson := sConf;
   end;
 

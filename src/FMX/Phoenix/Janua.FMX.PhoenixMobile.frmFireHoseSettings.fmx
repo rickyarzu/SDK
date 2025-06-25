@@ -8,63 +8,14 @@ object frmFMXFireHoseSettings: TfrmFMXFireHoseSettings
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   DesignerMasterStyle = 3
-  object ToolBarEstinguisher: TToolBar
-    Anchors = []
-    Size.Width = 328.000000000000000000
-    Size.Height = 48.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 0
-    object Rectangle9: TRectangle
-      Align = Client
-      Fill.Color = claGreen
-      Size.Width = 328.000000000000000000
-      Size.Height = 48.000000000000000000
-      Size.PlatformDefault = False
-      object Layout11: TLayout
-        Align = Client
-        Size.Width = 328.000000000000000000
-        Size.Height = 48.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 2
-        object lbLuci: TLabel
-          Align = MostRight
-          StyledSettings = [Family, Size]
-          Position.X = -2.000000000000000000
-          Size.Width = 330.000000000000000000
-          Size.Height = 48.000000000000000000
-          Size.PlatformDefault = False
-          StyleLookup = 'toollabel'
-          TextSettings.Font.StyleExt = {00070000000000000004000000}
-          TextSettings.FontColor = claWhite
-          TextSettings.HorzAlign = Center
-          TextSettings.Trimming = None
-          Text = 'SPECIFICA IDRANTE'
-          TabOrder = 2
-        end
-        object SpeedButton7: TSpeedButton
-          Align = Left
-          StyledSettings = []
-          IconTintColor = claSnow
-          Size.Width = 48.000000000000000000
-          Size.Height = 48.000000000000000000
-          Size.PlatformDefault = False
-          Text = '<'
-          TextSettings.Font.Size = 26.000000000000000000
-          TextSettings.FontColor = claIvory
-          TextSettings.Trimming = None
-          OnClick = SpeedButton7Click
-        end
-      end
-    end
-  end
   inline frameFMXPhoenixMobileFireHoseSetting1: TframeFMXPhoenixMobileFireHoseSetting
     Align = Client
     Size.Width = 328.000000000000000000
-    Size.Height = 621.000000000000000000
+    Size.Height = 628.000000000000000000
     Size.PlatformDefault = False
     inherited Layout1: TLayout
       Size.Width = 328.000000000000000000
-      Size.Height = 621.000000000000000000
+      Size.Height = 628.000000000000000000
       inherited Rectangle1: TRectangle
         Size.Width = 320.000000000000000000
         inherited lbSpecification: TLabel
@@ -163,6 +114,48 @@ object frmFMXFireHoseSettings: TfrmFMXFireHoseSettings
         Size.Width = 320.000000000000000000
         Viewport.Width = 312.000000000000000000
         Viewport.Height = 28.000000000000000000
+      end
+    end
+  end
+  object Rectangle9: TRectangle
+    Align = Top
+    Fill.Color = claGreen
+    Size.Width = 328.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    object Layout11: TLayout
+      Align = Client
+      Size.Width = 328.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object lbLuci: TLabel
+        Align = MostRight
+        StyledSettings = [Family, Size]
+        Position.X = -2.000000000000000000
+        Size.Width = 330.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'toollabel'
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claWhite
+        TextSettings.HorzAlign = Center
+        TextSettings.Trimming = None
+        Text = 'SPECIFICA IDRANTE'
+        TabOrder = 2
+      end
+      object SpeedButton7: TSpeedButton
+        Align = Left
+        StyledSettings = []
+        IconTintColor = claSnow
+        Size.Width = 48.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        Text = '<'
+        TextSettings.Font.Size = 26.000000000000000000
+        TextSettings.FontColor = claIvory
+        TextSettings.Trimming = None
+        OnClick = SpeedButton7Click
       end
     end
   end

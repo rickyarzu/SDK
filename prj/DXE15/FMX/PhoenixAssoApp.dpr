@@ -35,7 +35,7 @@ uses
 begin
   Application.Initialize;
   Application.CreateForm(TdmFMXPhoenixAppMobileController, dmFMXPhoenixAppMobileController);
-  Application.CreateForm(TdmJanuaFMXPhoenixMobileResources, dmJanuaFMXPhoenixMobileResources);
   Application.CreateForm(TfrmFMXPhoenixMobileMain, frmFMXPhoenixMobileMain);
+  Application.CreateForm(TdmJanuaFMXPhoenixMobileResources, dmJanuaFMXPhoenixMobileResources);
   Application.Run;
 end.

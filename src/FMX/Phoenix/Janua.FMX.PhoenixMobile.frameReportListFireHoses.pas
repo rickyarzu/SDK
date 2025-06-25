@@ -37,7 +37,6 @@ type
     BitmapAnimation15: TBitmapAnimation;
     lbInsertNew: TLabel;
   private
-    FStatino: TStatino;
     FFireHoses: TObjectList<TframeFMXMobileFireHose>;
     procedure SetFireHoses(const Value: TObjectList<TframeFMXMobileFireHose>);
   protected
@@ -90,7 +89,12 @@ begin
     cboSelect.Items.Clear;
     for var I := 0 to lCount - 1 do
       cboSelect.Items.AddObject(FStatino.Idranti[I].Descrizione, FStatino.Idranti[I]);
-    SetupIdrante(FStatino.Idranti[0]);
+
+    if FStatino.Idranti.Count > 0 then
+    begin
+      cboSelect.ItemIndex := 0;
+      SetupIdrante(FStatino.Idranti[0]);
+    end;
   end;
 end;
 
