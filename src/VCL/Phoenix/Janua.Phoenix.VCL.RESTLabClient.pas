@@ -445,17 +445,32 @@ end;
 procedure TfrmPhoenixVCLRESTLabClient.btnJsonClick(Sender: TObject);
 begin
   var
+  vTest := dsStatino.DataSet.FieldByName('STATINO').AsString;
+
+  var
   lJson := JsonPretty(dsStatino.DataSet.FieldByName('JSON_DA_MOBILE').AsString);
+  frmJsonPreview.memOriginal.Lines.Text := lJson;
   lJson := ReplacePhoenixJson(lJson);
+  // memReplaced
+  frmJsonPreview.memReplaced.Lines.Text := lJson;
   var
   lStatino := TStatino.Create;
-  lStatino.AsJson := lJson;
-  lJson := JsonPretty(lStatino.AsJson);
-  frmJsonPreview.AdvMemo1.Lines.Text := lJson;
+  TRY
+    lStatino.AsJson := lJson;
+    lJson := JsonPretty(lStatino.AsJson);
+    frmJsonPreview.AdvMemo1.Lines.Text := lJson;
+  except
+    on e: exception do
+    begin
+     frmJsonPreview.AdvMemo1.Lines.Text := e.Message;
+    end;
+
+  END;
+
   frmJsonPreview.ShowModal;
   dmFbPhoenixJsonReport.UpdateFromClass(lStatino);
 
-  {
+  { frmJsonPreview
     var
     lJson := tbStatiniJSON_DA_MOBILE.AsString;
     if lJson <> '' then
