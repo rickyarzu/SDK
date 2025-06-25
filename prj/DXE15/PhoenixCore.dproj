@@ -172,6 +172,16 @@
         <DCCReference Include="..\..\src\januacore\orm\DTO.Phoenix.CatEstintori.pas"/>
         <DCCReference Include="..\..\src\januacore\orm\DTO.Phoenix.ReportList.pas"/>
         <DCCReference Include="..\..\src\januacore\custom\PhoenixMocks.pas"/>
+        <None Include="ModelSupport_PhoenixCore\default.txaPackage"/>
+        <None Include="ModelSupport_PhoenixCore\default.txvpck"/>
+        <None Include="ModelSupport_PhoenixCore\Phoenix\default.txvpck"/>
+        <None Include="ModelSupport_PhoenixCore\PhoenixMocks\default.txvpck"/>
+        <None Include="ModelSupport_PhoenixCore\DTO\default.txvpck"/>
+        <None Include="ModelSupport_PhoenixCore\Phoenix\Json\default.txvpck"/>
+        <None Include="ModelSupport_PhoenixCore\DTO\Phoenix\default.txvpck"/>
+        <None Include="ModelSupport_PhoenixCore\DTO\Phoenix\CatEstintori\default.txvpck"/>
+        <None Include="ModelSupport_PhoenixCore\DTO\Phoenix\ReportList\default.txvpck"/>
+        <None Include="ModelSupport_PhoenixCore\DTO\Phoenix\CatEstintori\default.txaPackage"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>JanuaeExeDXE15.optset</DependentOn>
@@ -1086,6 +1096,7 @@
                 <Platform value="Win64">False</Platform>
                 <Platform value="Win64x">False</Platform>
             </Platforms>
+            <ModelSupport>True</ModelSupport>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>

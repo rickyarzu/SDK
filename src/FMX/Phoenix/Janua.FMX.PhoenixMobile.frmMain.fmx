@@ -17,10 +17,16 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
     Size.Height = 736.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 49.000000000000000000
-    TabIndex = 4
+    TabIndex = 7
     TabOrder = 0
     TabPosition = None
     Sizes = (
+      384s
+      736s
+      384s
+      736s
+      384s
+      736s
       384s
       736s
       384s
@@ -204,7 +210,6 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             end
           end
           object SpeedButton1: TSpeedButton
-            Action = NextTabAction1
             Align = MostLeft
             StyledSettings = []
             IconTintColor = claSnow
@@ -212,7 +217,9 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             Size.Width = 48.000000000000000000
             Size.Height = 48.000000000000000000
             Size.PlatformDefault = False
-            StyleLookup = 'priortoolbutton'
+            Text = '<'
+            TextSettings.Font.Size = 26.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
             TextSettings.FontColor = claIvory
             TextSettings.Trimming = None
             OnClick = SpeedButton1Click
@@ -515,6 +522,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             Position.X = 93.000000000000000000
             Size.Width = 44.000000000000000000
             Size.Height = 44.000000000000000000
+            OnClick = frameFMXPhoenixMobileReportHeader1btnFireDoorsClick
           end
           inherited btnElectricalSystems: TTMSFMXImage
             Position.X = 231.000000000000000000
@@ -530,6 +538,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             Position.X = 139.000000000000000000
             Size.Width = 44.000000000000000000
             Size.Height = 44.000000000000000000
+            OnClick = frameFMXPhoenixMobileReportHeader1btnLuciClick
           end
           inherited btnSmokeDetectors: TTMSFMXImage
             Position.X = 277.000000000000000000
@@ -618,7 +627,9 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             Size.Width = 48.000000000000000000
             Size.Height = 48.000000000000000000
             Size.PlatformDefault = False
-            StyleLookup = 'priortoolbutton'
+            Text = '<'
+            TextSettings.Font.Size = 26.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
             TextSettings.FontColor = claIvory
             TextSettings.Trimming = None
             OnClick = SpeedButton2Click
@@ -720,7 +731,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -763,17 +774,17 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
               TabOrder = 2
             end
             object SpeedButton4: TSpeedButton
-              Action = NextTabAction1
               Align = Left
               StyledSettings = []
               IconTintColor = claSnow
-              ImageIndex = -1
               Size.Width = 48.000000000000000000
               Size.Height = 48.000000000000000000
               Size.PlatformDefault = False
-              StyleLookup = 'priortoolbutton'
+              Text = '<'
+              TextSettings.Font.Size = 26.000000000000000000
               TextSettings.FontColor = claIvory
               TextSettings.Trimming = None
+              OnClick = SpeedButton4Click
             end
           end
         end
@@ -827,12 +838,288 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
         end
       end
     end
+    object tab06Doors: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object ToolBar5: TToolBar
+        Anchors = []
+        Size.Width = 384.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Rectangle7: TRectangle
+          Align = Client
+          Fill.Color = claGreen
+          Size.Width = 384.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          object Layout9: TLayout
+            Align = Client
+            Size.Width = 384.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            object lbDoorsTitle: TLabel
+              Action = TitleAction
+              Align = MostRight
+              StyledSettings = [Family, Size]
+              Position.X = 54.000000000000000000
+              Size.Width = 330.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              TextSettings.HorzAlign = Center
+              TextSettings.Trimming = None
+              Text = 'Porte'
+              TabOrder = 2
+            end
+            object SpeedButton5: TSpeedButton
+              Align = Left
+              StyledSettings = []
+              IconTintColor = claSnow
+              Size.Width = 48.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              Text = '<'
+              TextSettings.Font.Size = 26.000000000000000000
+              TextSettings.FontColor = claIvory
+              TextSettings.Trimming = None
+              OnClick = SpeedButton4Click
+            end
+          end
+        end
+      end
+      inline frameFMXPhoenixReportListDoors1: TframeFMXPhoenixReportListDoors
+        Align = Client
+        Size.Width = 384.000000000000000000
+        Size.Height = 688.000000000000000000
+        Size.PlatformDefault = False
+        inherited VertScBox: TVertScrollBox
+          Size.Width = 384.000000000000000000
+          Viewport.Width = 384.000000000000000000
+          Viewport.Height = 688.000000000000000000
+          inherited rcReportSummary: TRectangle
+            Size.Width = 384.000000000000000000
+            inherited txtReportSummay: TTMSFMXHTMLText
+              Size.Width = 380.000000000000000000
+            end
+          end
+          inherited laySelectInsertNew: TLayout
+            Size.Width = 384.000000000000000000
+            inherited laySelect: TLayout
+              Size.Width = 223.000000000000000000
+            end
+          end
+        end
+      end
+    end
+    object tab07Lights: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object ToolBar6: TToolBar
+        Anchors = []
+        Size.Width = 384.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Rectangle8: TRectangle
+          Align = Client
+          Fill.Color = claGreen
+          Size.Width = 384.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          object Layout10: TLayout
+            Align = Client
+            Size.Width = 384.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            object lbTitleLights: TLabel
+              Action = TitleAction
+              Align = MostRight
+              StyledSettings = [Family, Size]
+              Position.X = 54.000000000000000000
+              Size.Width = 330.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              TextSettings.HorzAlign = Center
+              TextSettings.Trimming = None
+              Text = 'Luci'
+              TabOrder = 2
+            end
+            object SpeedButton6: TSpeedButton
+              Align = Left
+              StyledSettings = []
+              IconTintColor = claSnow
+              Size.Width = 48.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              Text = '<'
+              TextSettings.Font.Size = 26.000000000000000000
+              TextSettings.FontColor = claIvory
+              TextSettings.Trimming = None
+              OnClick = SpeedButton4Click
+            end
+          end
+        end
+      end
+      inline frameFMXPhoenixReportListLights1: TframeFMXPhoenixReportListLights
+        Align = Client
+        Size.Width = 384.000000000000000000
+        Size.Height = 688.000000000000000000
+        Size.PlatformDefault = False
+        inherited VertScBox: TVertScrollBox
+          Size.Width = 384.000000000000000000
+          Viewport.Width = 384.000000000000000000
+          Viewport.Height = 688.000000000000000000
+          inherited rcReportSummary: TRectangle
+            Size.Width = 384.000000000000000000
+            inherited txtReportSummay: TTMSFMXHTMLText
+              Size.Width = 380.000000000000000000
+            end
+          end
+        end
+      end
+    end
+    object tab08Sprinklers: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inline frameFMXPhoenixReportListSprinklers1: TframeFMXPhoenixReportListSprinklers
+        Align = Client
+        Size.Width = 384.000000000000000000
+        Size.Height = 688.000000000000000000
+        Size.PlatformDefault = False
+        inherited VertScBox: TVertScrollBox
+          Size.Width = 384.000000000000000000
+          Viewport.Width = 384.000000000000000000
+          Viewport.Height = 688.000000000000000000
+          inherited rcReportSummary: TRectangle
+            Size.Width = 384.000000000000000000
+            inherited txtReportSummay: TTMSFMXHTMLText
+              Size.Width = 380.000000000000000000
+            end
+          end
+          inherited laySelectInsertNew: TLayout
+            Size.Width = 384.000000000000000000
+            inherited laySelect: TLayout
+              Size.Width = 264.000000000000000000
+              object cboSelect: TComboBox
+                Align = Client
+                Margins.Left = 4.000000000000000000
+                Margins.Top = 4.000000000000000000
+                Margins.Right = 4.000000000000000000
+                Margins.Bottom = 4.000000000000000000
+                Size.Width = 256.000000000000000000
+                Size.Height = 32.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 0
+              end
+            end
+            inherited layInsertNew: TLayout
+              Align = MostRight
+              Position.X = 264.000000000000000000
+              Size.Width = 120.000000000000000000
+              inherited lbInsertNew: TLabel
+                StyledSettings = [Family, Style, FontColor]
+                Size.Width = 58.000000000000000000
+                TextSettings.Font.Size = 11.000000000000000000
+              end
+            end
+          end
+        end
+      end
+      object ToolBar7: TToolBar
+        Anchors = []
+        Size.Width = 384.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Rectangle9: TRectangle
+          Align = Client
+          Fill.Color = claGreen
+          Size.Width = 384.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          object Layout11: TLayout
+            Align = Client
+            Size.Width = 384.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            object lbLuci: TLabel
+              Action = TitleAction
+              Align = MostRight
+              StyledSettings = [Family, Size]
+              Position.X = 54.000000000000000000
+              Size.Width = 330.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              TextSettings.HorzAlign = Center
+              TextSettings.Trimming = None
+              Text = 'Luci'
+              TabOrder = 2
+            end
+            object SpeedButton7: TSpeedButton
+              Align = Left
+              StyledSettings = []
+              IconTintColor = claSnow
+              Size.Width = 48.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              Text = '<'
+              TextSettings.Font.Size = 26.000000000000000000
+              TextSettings.FontColor = claIvory
+              TextSettings.Trimming = None
+              OnClick = SpeedButton4Click
+            end
+          end
+        end
+      end
+    end
   end
   object Timer1: TTimer
     Interval = 100
     OnTimer = Timer1Timer
-    Left = 248
-    Top = 120
+    Left = 240
+    Top = 224
   end
   object ActionList1: TActionList
     Left = 72

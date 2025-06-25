@@ -16,6 +16,12 @@ inherited frmFMXPhoenixMobileMain_LgXhdpiPh: TfrmFMXPhoenixMobileMain_LgXhdpiPh
       450s
       695s
       450s
+      695s
+      450s
+      695s
+      450s
+      695s
+      450s
       695s)
     inherited tab01Menu: TTabItem
       ExplicitSize.cx = 8.000000000000000000
@@ -62,6 +68,9 @@ inherited frmFMXPhoenixMobileMain_LgXhdpiPh: TfrmFMXPhoenixMobileMain_LgXhdpiPh
               Position.X = 114.000000000000000000
               TextSettings.Font.StyleExt = {00070000000000000004000000}
             end
+          end
+          inherited SpeedButton1: TSpeedButton
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
           end
         end
       end
@@ -276,6 +285,9 @@ inherited frmFMXPhoenixMobileMain_LgXhdpiPh: TfrmFMXPhoenixMobileMain_LgXhdpiPh
               TextSettings.Font.StyleExt = {00070000000000000004000000}
             end
           end
+          inherited SpeedButton2: TSpeedButton
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
         end
       end
     end
@@ -319,6 +331,9 @@ inherited frmFMXPhoenixMobileMain_LgXhdpiPh: TfrmFMXPhoenixMobileMain_LgXhdpiPh
               Position.X = 120.000000000000000000
               TextSettings.Font.StyleExt = {00070000000000000004000000}
             end
+            inherited SpeedButton4: TSpeedButton
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
           end
         end
       end
@@ -335,6 +350,83 @@ inherited frmFMXPhoenixMobileMain_LgXhdpiPh: TfrmFMXPhoenixMobileMain_LgXhdpiPh
               inherited lbManichette: TLabel
                 TextSettings.Font.StyleExt = {00070000000000000004000000}
               end
+            end
+          end
+        end
+      end
+    end
+    inherited tab06Doors: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited ToolBar5: TToolBar
+        Size.Width = 450.000000000000000000
+        inherited Rectangle7: TRectangle
+          Size.Width = 450.000000000000000000
+          inherited Layout9: TLayout
+            Size.Width = 450.000000000000000000
+            inherited lbDoorsTitle: TLabel
+              Position.X = 120.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
+        end
+      end
+      inherited frameFMXPhoenixReportListDoors1: TframeFMXPhoenixReportListDoors
+        Size.Width = 450.000000000000000000
+        Size.Height = 647.000000000000000000
+        inherited VertScBox: TVertScrollBox
+          Size.Width = 450.000000000000000000
+          Size.Height = 647.000000000000000000
+          Viewport.Width = 376.000000000000000000
+          Viewport.Height = 688.000000000000000000
+        end
+      end
+    end
+    inherited tab07Lights: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited ToolBar6: TToolBar
+        Size.Width = 450.000000000000000000
+        inherited Rectangle8: TRectangle
+          Size.Width = 450.000000000000000000
+          inherited Layout10: TLayout
+            Size.Width = 450.000000000000000000
+            inherited lbTitleLights: TLabel
+              Position.X = 120.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
+        end
+      end
+      inherited frameFMXPhoenixReportListLights1: TframeFMXPhoenixReportListLights
+        Size.Width = 450.000000000000000000
+        Size.Height = 647.000000000000000000
+        inherited VertScBox: TVertScrollBox
+          Size.Width = 450.000000000000000000
+          Size.Height = 647.000000000000000000
+          Viewport.Width = 376.000000000000000000
+          Viewport.Height = 688.000000000000000000
+        end
+      end
+    end
+    inherited tab08Sprinklers: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited frameFMXPhoenixReportListSprinklers1: TframeFMXPhoenixReportListSprinklers
+        Size.Width = 450.000000000000000000
+        Size.Height = 655.000000000000000000
+        inherited VertScBox: TVertScrollBox
+          Size.Width = 450.000000000000000000
+          Size.Height = 655.000000000000000000
+          Viewport.Width = 376.000000000000000000
+          Viewport.Height = 688.000000000000000000
+        end
+      end
+      inherited ToolBar7: TToolBar
+        inherited Rectangle9: TRectangle
+          inherited Layout11: TLayout
+            inherited lbLuci: TLabel
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
             end
           end
         end

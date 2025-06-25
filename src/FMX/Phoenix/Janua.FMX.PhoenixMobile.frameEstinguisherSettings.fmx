@@ -94,7 +94,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 8
-      object Edit1: TEdit
+      object edProgr: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Left
         TabOrder = 1
@@ -105,7 +105,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
       end
-      object Edit2: TEdit
+      object edMatr: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Left
         TabOrder = 0
@@ -381,7 +381,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 6
-      object ComboBox1: TComboBox
+      object cboBrand: TComboBox
         Align = Client
         Items.Strings = (
           '2018'
@@ -714,8 +714,8 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Size.Height = 36.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 19
-      Viewport.Width = 310.000000000000000000
-      Viewport.Height = 36.000000000000000000
+      Viewport.Width = 306.000000000000000000
+      Viewport.Height = 32.000000000000000000
     end
     object layState: TLayout
       Align = Top
@@ -804,8 +804,8 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Size.Height = 36.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 18
-      Viewport.Width = 310.000000000000000000
-      Viewport.Height = 36.000000000000000000
+      Viewport.Width = 306.000000000000000000
+      Viewport.Height = 32.000000000000000000
     end
   end
 end

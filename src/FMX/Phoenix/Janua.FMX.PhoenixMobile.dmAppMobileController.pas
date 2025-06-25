@@ -24,6 +24,7 @@ type
     TimerDaily: TTimer;
     procedure DataModuleCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
+    procedure DataModuleDestroy(Sender: TObject);
   private
     FStatiniLIst: TLSStatinoRoot;
     FAfterStatiniLoad: TNotifyEvent;
@@ -35,6 +36,7 @@ type
     FDictEstintori: TDictionary<integer, Tcatestintori>;
     FCatEstintori: TCatEstintoriRoot;
     FDictBocchelli: TDictionary<integer, TTIPOBOCCHELLI>;
+    FMonths: TList<string>;
     procedure SetFullUrl(const Value: string);
     procedure SetStatiniLIst(const Value: TLSStatinoRoot);
     procedure SetAfterStatiniLoad(const Value: TNotifyEvent);
@@ -46,6 +48,7 @@ type
     procedure SetDictEstintori(const Value: TDictionary<integer, Tcatestintori>);
     procedure SetCatEstintori(const Value: TCatEstintoriRoot);
     procedure SetDictBocchelli(const Value: TDictionary<integer, TTIPOBOCCHELLI>);
+    procedure SetMonths(const Value: TList<string>);
     { Private declarations }
   protected
     FServer: string;
@@ -63,7 +66,9 @@ type
     function CreateClient: IJanuaRESTClient;
     function ProcessDateWithMonthCalculation(const AInputDate: string; const AMonthsToAdd: integer;
       out AOriginalYear, AOriginalMonth: Word; out ANewDate: TDateTime; out ANewMonthYear: string): Boolean;
+    function JsonDateToDateTime(const aDateString: string): TDateTime;
   public
+    property Months: TList<string> read FMonths write SetMonths;
     property FullUrl: string read FFullUrl write SetFullUrl;
     property StatiniLIst: TLSStatinoRoot read FStatiniLIst write SetStatiniLIst;
     property AfterStatiniLoad: TNotifyEvent read FAfterStatiniLoad write SetAfterStatiniLoad;
@@ -72,7 +77,7 @@ type
     property SelectedRow: TLSStatino read FSelectedRow write SetSelectedRow;
     property DictContratti: TDictionary<integer, TContratti> read FDictContratti write SetDictContratti;
     property DictEstintori: TDictionary<integer, Tcatestintori> read FDictEstintori write SetDictEstintori;
-    property DictBocchelli: TDictionary<integer, TTIPOBOCCHELLI>  read FDictBocchelli write SetDictBocchelli;
+    property DictBocchelli: TDictionary<integer, TTIPOBOCCHELLI> read FDictBocchelli write SetDictBocchelli;
     property StatinoIndex: integer read FStatinoIndex write SetStatinoIndex;
     property CatEstintori: TCatEstintoriRoot read FCatEstintori write SetCatEstintori;
 
@@ -111,6 +116,8 @@ begin
   FServer := 'https://asso.januaservers.com';
   FPort := 0;
 
+  FMonths := TList<string>.Create;
+
   // custom local Debug magari lo metto Ifdef ...
 
   (*
@@ -125,6 +132,37 @@ begin
 
   FDictEstintori := TDictionary<integer, Tcatestintori>.Create;
   FCatEstintori := TCatEstintoriRoot.Create;
+
+  FMonths.Add('Gennaio');
+  FMonths.Add('Febbraio');
+  FMonths.Add('Marzo');
+  FMonths.Add('Aprile');
+  FMonths.Add('Maggio');
+  FMonths.Add('Giugno');
+  FMonths.Add('Luglio');
+  FMonths.Add('Agosto');
+  FMonths.Add('Settembre');
+  FMonths.Add('Ottobre');
+  FMonths.Add('Novembre');
+  FMonths.Add('Dicembre');
+
+end;
+
+procedure TdmFMXPhoenixAppMobileController.DataModuleDestroy(Sender: TObject);
+begin
+  FMonths.Free;
+
+  FStatiniLIst.Free;
+
+  FStatino.Free;
+
+  FConf.Free;
+
+  FDictContratti.Free;
+
+  FDictEstintori.Free;
+
+  FCatEstintori.Free;
 end;
 
 function TdmFMXPhoenixAppMobileController.FindBocchello(const aBocchello: integer;
@@ -143,6 +181,29 @@ function TdmFMXPhoenixAppMobileController.FindContratto(const aContratto: intege
   out oContratto: TContratti): Boolean;
 begin
   Result := FDictContratti.TryGetValue(aContratto, oContratto);
+end;
+
+function TdmFMXPhoenixAppMobileController.JsonDateToDateTime(const aDateString: string): TDateTime;
+begin
+  Result := 0.0;
+
+  try
+    // Configura il formato per date ISO (YYYY-MM-DD)
+    var
+    LFormatSettings := TFormatSettings.Create;
+    LFormatSettings.DateSeparator := '-';
+    LFormatSettings.ShortDateFormat := 'yyyy-mm-dd';
+
+    // Converte la stringa in TDateTime
+    Result := StrToDate(aDateString, LFormatSettings);
+
+  except
+    on E: Exception do
+    begin
+      // In caso di errore, inizializza i valori out
+      Result := 0.0;
+    end;
+  end;
 end;
 
 procedure TdmFMXPhoenixAppMobileController.OpenConf;
@@ -229,8 +290,8 @@ begin
   // Apri con l'app scelta dall'utente
   if Intent.resolveActivity(TAndroidHelper.Context.getPackageManager) <> nil then
     TAndroidHelper.Activity.startActivity(Intent)
-//  else
-//    ShowMessage('Nessuna app di mappe disponibile');
+    // else
+    // ShowMessage('Nessuna app di mappe disponibile');
 {$ENDIF}
 {$IFDEF IOS}
 {$ENDIF}
@@ -317,8 +378,8 @@ begin
   FConf := Value;
 end;
 
-procedure TdmFMXPhoenixAppMobileController.SetDictBocchelli(
-  const Value: TDictionary<integer, TTIPOBOCCHELLI>);
+procedure TdmFMXPhoenixAppMobileController.SetDictBocchelli
+  (const Value: TDictionary<integer, TTIPOBOCCHELLI>);
 begin
   FDictBocchelli := Value;
 end;
@@ -336,6 +397,11 @@ end;
 procedure TdmFMXPhoenixAppMobileController.SetFullUrl(const Value: string);
 begin
   FFullUrl := Value;
+end;
+
+procedure TdmFMXPhoenixAppMobileController.SetMonths(const Value: TList<string>);
+begin
+  FMonths := Value;
 end;
 
 procedure TdmFMXPhoenixAppMobileController.SetSelectedRow(const Value: TLSStatino);

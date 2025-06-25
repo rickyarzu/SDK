@@ -98,6 +98,7 @@ object frameFMXMobileEstinguisher: TframeFMXMobileEstinguisher
       Size.Width = 38.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
+      OnClick = TMSFMXSpeedButton1Click
       BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
       BitmapName = 'specification'
       ShowImage = True

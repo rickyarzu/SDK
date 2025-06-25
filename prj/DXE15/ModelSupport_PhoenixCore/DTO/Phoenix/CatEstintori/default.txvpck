@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="j513as290eeiqvg0g_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:PhoenixCore:DTO.Phoenix.CatEstintori.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:PhoenixCore:DTO.Phoenix.CatEstintori.TCatEstintoriRoot">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,273,267" />
+      <reference referencedUin="delphi:e_field:src:PhoenixCore:DTO.Phoenix.CatEstintori.TCatEstintoriRoot.FestintoriArray" />
+      <reference referencedUin="delphi:e_field:src:PhoenixCore:DTO.Phoenix.CatEstintori.TCatEstintoriRoot.Festintori" />
+      <reference referencedUin="delphi:e_field:src:PhoenixCore:DTO.Phoenix.CatEstintori.TCatEstintoriRoot.FIterator" />
+      <reference referencedUin="delphi:e_method:src:PhoenixCore:DTO.Phoenix.CatEstintori.TCatEstintoriRoot.Getestintori()" />
+      <reference referencedUin="delphi:e_property:src:PhoenixCore:DTO.Phoenix.CatEstintori.TCatEstintoriRoot.Iterator" />
+      <reference referencedUin="delphi:e_method:src:PhoenixCore:DTO.Phoenix.CatEstintori.TCatEstintoriRoot.GetAsJson()" />
+      <reference referencedUin="delphi:e_method:src:PhoenixCore:DTO.Phoenix.CatEstintori.TCatEstintoriRoot.SetAsJson(System.string)" />
+      <reference referencedUin="delphi:e_property:src:PhoenixCore:DTO.Phoenix.CatEstintori.TCatEstintoriRoot.estintori" />
+      <reference referencedUin="delphi:e_method:src:PhoenixCore:DTO.Phoenix.CatEstintori.TCatEstintoriRoot.RebuildList()" />
+      <reference referencedUin="delphi:e_method:src:PhoenixCore:DTO.Phoenix.CatEstintori.TCatEstintoriRoot.LoadFromDataset(DTO.Phoenix.CatEstintori.TDataset)" />
+      <reference referencedUin="delphi:e_method:src:PhoenixCore:DTO.Phoenix.CatEstintori.TCatEstintoriRoot.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:PhoenixCore:DTO.Phoenix.CatEstintori.TCatEstintoriRoot.Create()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="302,1,209,505" />
+      <reference referencedUin="delphi:e_field:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.FCHIAVE" />
+      <reference referencedUin="delphi:e_field:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.FCLASSEFUOCO" />
+      <reference referencedUin="delphi:e_field:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.FCO2" />
+      <reference referencedUin="delphi:e_field:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.FDESCRCOMPATTA" />
+      <reference referencedUin="delphi:e_field:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.FDESCRIZIONE" />
+      <reference referencedUin="delphi:e_field:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.FJGUId" />
+      <reference referencedUin="delphi:e_field:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.FPERIODICITACOLLAUDO" />
+      <reference referencedUin="delphi:e_field:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.FPERIODICITAREVISIONE" />
+      <reference referencedUin="delphi:e_field:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.FPREZZOCOLLAUDO" />
+      <reference referencedUin="delphi:e_field:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.FPREZZOREVISIONE" />
+      <reference referencedUin="delphi:e_field:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.FPREZZOSMALTIMENTO" />
+      <reference referencedUin="delphi:e_field:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.FPREZZOSOSTITUZIONE" />
+      <reference referencedUin="delphi:e_field:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.FSENZASCADENZA" />
+      <reference referencedUin="delphi:e_field:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.FSOSPESO" />
+      <reference referencedUin="delphi:e_property:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.CHIAVE" />
+      <reference referencedUin="delphi:e_property:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.CLASSEFUOCO" />
+      <reference referencedUin="delphi:e_property:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.CO2" />
+      <reference referencedUin="delphi:e_property:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.DESCRCOMPATTA" />
+      <reference referencedUin="delphi:e_property:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.DESCRIZIONE" />
+      <reference referencedUin="delphi:e_property:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.JGUId" />
+      <reference referencedUin="delphi:e_property:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.PERIODICITACOLLAUDO" />
+      <reference referencedUin="delphi:e_property:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.PERIODICITAREVISIONE" />
+      <reference referencedUin="delphi:e_property:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.PREZZOCOLLAUDO" />
+      <reference referencedUin="delphi:e_property:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.PREZZOREVISIONE" />
+      <reference referencedUin="delphi:e_property:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.PREZZOSMALTIMENTO" />
+      <reference referencedUin="delphi:e_property:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.PREZZOSOSTITUZIONE" />
+      <reference referencedUin="delphi:e_property:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.SENZASCADENZA" />
+      <reference referencedUin="delphi:e_property:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori.SOSPESO" />
+    </reference>
+  </view>
+</nodeSet>

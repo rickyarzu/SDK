@@ -53,6 +53,7 @@ type
     procedure ckbContrChange(Sender: TObject);
     procedure ckbContrClick(Sender: TObject);
     procedure ckbChargingClick(Sender: TObject);
+    procedure TMSFMXSpeedButton1Change(Sender: TObject);
   private
     FIdrante: TIdranti;
     FBocchello: TBocchelli;
@@ -69,15 +70,15 @@ implementation
 
 {$R *.fmx}
 
-uses Janua.FMX.PhoenixMobile.dmAppMobileController;
+uses Janua.FMX.PhoenixMobile.dmAppMobileController, Janua.FMX.PhoenixMobile.frmFireHoseSettings;
 { TframeFMXMobileFireHose }
 
 procedure TframeFMXMobileFireHose.ckbChargingClick(Sender: TObject);
 begin
   if ckbCharging.Checked then
   begin
-     FBocchello.DataPressatura := Date;
-     FBocchello.TecnicoPressatura :=  dmFMXPhoenixAppMobileController.SelectedRow.RESPONSABILE;
+    FBocchello.DataPressatura := Date;
+    FBocchello.TecnicoPressatura := dmFMXPhoenixAppMobileController.SelectedRow.RESPONSABILE;
   end;
 end;
 
@@ -90,17 +91,17 @@ procedure TframeFMXMobileFireHose.ckbContrClick(Sender: TObject);
 begin
   if ckbContr.Checked then
   begin
-     FBocchello.TIPOINTERVENTO := 'O';
-     FBocchello.Controllato := True;
-     FBocchello.TecnicoControllo := dmFMXPhoenixAppMobileController.SelectedRow.RESPONSABILE;
+    FBocchello.TIPOINTERVENTO := 'O';
+    FBocchello.Controllato := True;
+    FBocchello.TecnicoControllo := dmFMXPhoenixAppMobileController.SelectedRow.RESPONSABILE;
   end;
 end;
 
 procedure TframeFMXMobileFireHose.SetBocchello(const Value: TBocchelli);
 begin
-  FBocchello := Value;
   if FBocchello <> Value then
   begin
+    FBocchello := Value;
     if Assigned(FBocchello) then
     begin
       var
@@ -148,6 +149,20 @@ begin
     end;
   end;
 
+end;
+
+procedure TframeFMXMobileFireHose.TMSFMXSpeedButton1Change(Sender: TObject);
+begin
+  var
+  lFrm := TfrmFMXFireHoseSettings.Create(nil);
+  try
+    lFrm.frameFMXPhoenixMobileFireHoseSetting1.Bocchello := self.FBocchello;
+    lFrm.frameFMXPhoenixMobileFireHoseSetting1.Idrante := self.Idrante;
+    lFrm.ShowModal;
+  finally
+    lFrm.Free;
+    lFrm := nil;
+  end;
 end;
 
 end.

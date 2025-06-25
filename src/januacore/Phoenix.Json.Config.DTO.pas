@@ -52,226 +52,259 @@ type
     property RAGSOCAMMINISTRATORE: string read FRAGSOCAMMINISTRATORE write FRAGSOCAMMINISTRATORE;
     property TELEFONO1: string read FTELEFONO1 write FTELEFONO1;
   end;
-  
+
+  TCATESTINTORI = class
+  private
+    [JSONName('CLASSE_FUOCO')]
+    FCLASSEFUOCO: string;
+    [JSONName('CO2')]
+    FCO2: Boolean;
+    [JSONName('Chiave')]
+    FCHIAVE: Integer;
+    [JSONName('DESCR_COMPATTA')]
+    FDESCRCOMPATTA: string;
+    [JSONName('Descrizione')]
+    FDescrizione: string;
+    [JSONName('PERIODICITA_COLLAUDO')]
+    FPERIODICITACOLLAUDO: Integer;
+    [JSONName('PERIODICITA_REVISIONE')]
+    FPERIODICITAREVISIONE: Integer;
+  published
+    property CLASSEFUOCO: string read FCLASSEFUOCO write FCLASSEFUOCO;
+    property CO2: Boolean read FCO2 write FCO2;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
+    property DESCRCOMPATTA: string read FDESCRCOMPATTA write FDESCRCOMPATTA;
+    property Descrizione: string read FDescrizione write FDescrizione;
+    property PERIODICITACOLLAUDO: Integer read FPERIODICITACOLLAUDO write FPERIODICITACOLLAUDO;
+    property PERIODICITAREVISIONE: Integer read FPERIODICITAREVISIONE write FPERIODICITAREVISIONE;
+  end;
+
   TTIPOPORTE = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
     FTipologia: Integer;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
     property Tipologia: Integer read FTipologia write FTipologia;
   end;
-  
+
   TTIPIRILEVATORILINEARIFUMI = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TMARCHERILLINEARIFUMI = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TTIPICENTRALIFUMI = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TMARCHECENTRALIFUMI = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TTIPIELEMIMPIANTIELETTRICI = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TTIPOLANCIA = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TTIPOBOCCHELLI = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TTIPIMOTOPOMPEIDRANTI = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TMOTIVCONTROLLONEGATO = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TMOTIVRITIROESTINTORI = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TMARCHELUCI = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TTIPOLUCI = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TMARCHEMANIGLIONEPORTE = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TTIPIMANIGLIONIPORTE = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TTIPISERRATURE = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TMARCHEPORTE = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TMARCHEELEMIMPIANTIELETTRICI = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TMARCHESPRINKLER = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TTIPISPRINKLER = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TMARCHEESTINTORI = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TTIPIINSTALLAZIONEPORTE = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TTIPIBATTERIE = class
   private
-    FChiave: Integer;
+    FCHIAVE: Integer;
     FDescrizione: string;
   published
-    property Chiave: Integer read FChiave write FChiave;
+    property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Descrizione: string read FDescrizione write FDescrizione;
   end;
-  
+
   TConfRoot = class(TJanuaJsonDTO)
   private
     [JSONName('Contratti'), JSONMarshalled(False)]
     FContrattiArray: TArray<TContratti>;
     [GenericListReflect]
     FContratti: TObjectList<TContratti>;
+
+    [JSONName('CAT_ESTINTORI'), JSONMarshalled(False)]
+    FCATESTINTORIArray: TArray<TCATESTINTORI>;
+    [GenericListReflect]
+    FCATESTINTORI: TObjectList<TCATESTINTORI>;
+
     [JSONName('MARCHE_CENTRALI_FUMI'), JSONMarshalled(False)]
     FMARCHECENTRALIFUMIArray: TArray<TMARCHECENTRALIFUMI>;
     [GenericListReflect]
     FMARCHECENTRALIFUMI: TObjectList<TMARCHECENTRALIFUMI>;
+
     [JSONName('MARCHE_ELEM_IMPIANTI_ELETTRICI'), JSONMarshalled(False)]
     FMARCHEELEMIMPIANTIELETTRICIArray: TArray<TMARCHEELEMIMPIANTIELETTRICI>;
     [GenericListReflect]
@@ -384,12 +417,15 @@ type
     function GetTIPOLANCIA: TObjectList<TTIPOLANCIA>;
     function GetTIPOLUCI: TObjectList<TTIPOLUCI>;
     function GetTIPOPORTE: TObjectList<TTIPOPORTE>;
+    function GetCATESTINTORI: TObjectList<TCATESTINTORI>;
   protected
     function GetAsJson: string; override;
   published
     property Contratti: TObjectList<TContratti> read GetContratti;
+    property CATESTINTORI: TObjectList<TCATESTINTORI> read GetCATESTINTORI;
     property MARCHECENTRALIFUMI: TObjectList<TMARCHECENTRALIFUMI> read GetMARCHECENTRALIFUMI;
-    property MARCHEELEMIMPIANTIELETTRICI: TObjectList<TMARCHEELEMIMPIANTIELETTRICI> read GetMARCHEELEMIMPIANTIELETTRICI;
+    property MARCHEELEMIMPIANTIELETTRICI: TObjectList<TMARCHEELEMIMPIANTIELETTRICI>
+      read GetMARCHEELEMIMPIANTIELETTRICI;
     property MARCHEESTINTORI: TObjectList<TMARCHEESTINTORI> read GetMARCHEESTINTORI;
     property MARCHELUCI: TObjectList<TMARCHELUCI> read GetMARCHELUCI;
     property MARCHEMANIGLIONEPORTE: TObjectList<TMARCHEMANIGLIONEPORTE> read GetMARCHEMANIGLIONEPORTE;
@@ -400,11 +436,13 @@ type
     property MOTIVRITIROESTINTORI: TObjectList<TMOTIVRITIROESTINTORI> read GetMOTIVRITIROESTINTORI;
     property TIPIBATTERIE: TObjectList<TTIPIBATTERIE> read GetTIPIBATTERIE;
     property TIPICENTRALIFUMI: TObjectList<TTIPICENTRALIFUMI> read GetTIPICENTRALIFUMI;
-    property TIPIELEMIMPIANTIELETTRICI: TObjectList<TTIPIELEMIMPIANTIELETTRICI> read GetTIPIELEMIMPIANTIELETTRICI;
+    property TIPIELEMIMPIANTIELETTRICI: TObjectList<TTIPIELEMIMPIANTIELETTRICI>
+      read GetTIPIELEMIMPIANTIELETTRICI;
     property TIPIINSTALLAZIONEPORTE: TObjectList<TTIPIINSTALLAZIONEPORTE> read GetTIPIINSTALLAZIONEPORTE;
     property TIPIMANIGLIONIPORTE: TObjectList<TTIPIMANIGLIONIPORTE> read GetTIPIMANIGLIONIPORTE;
     property TIPIMOTOPOMPEIDRANTI: TObjectList<TTIPIMOTOPOMPEIDRANTI> read GetTIPIMOTOPOMPEIDRANTI;
-    property TIPIRILEVATORILINEARIFUMI: TObjectList<TTIPIRILEVATORILINEARIFUMI> read GetTIPIRILEVATORILINEARIFUMI;
+    property TIPIRILEVATORILINEARIFUMI: TObjectList<TTIPIRILEVATORILINEARIFUMI>
+      read GetTIPIRILEVATORILINEARIFUMI;
     property TIPISERRATURE: TObjectList<TTIPISERRATURE> read GetTIPISERRATURE;
     property TIPISPRINKLER: TObjectList<TTIPISPRINKLER> read GetTIPISPRINKLER;
     property TIPOBOCCHELLI: TObjectList<TTIPOBOCCHELLI> read GetTIPOBOCCHELLI;
@@ -414,7 +452,7 @@ type
   public
     destructor Destroy; override;
   end;
-  
+
 implementation
 
 { TConfRoot }
@@ -444,8 +482,14 @@ begin
   GetMARCHECENTRALIFUMI.Free;
   GetTIPICENTRALIFUMI.Free;
   GetMARCHERILLINEARIFUMI.Free;
+  GetCATESTINTORI.Free;
   GetContratti.Free;
   inherited;
+end;
+
+function TConfRoot.GetCATESTINTORI: TObjectList<TCATESTINTORI>;
+begin
+  Result := ObjectList<TCATESTINTORI>(FCATESTINTORI, FCATESTINTORIArray);
 end;
 
 function TConfRoot.GetContratti: TObjectList<TContratti>;
@@ -460,7 +504,8 @@ end;
 
 function TConfRoot.GetMARCHEELEMIMPIANTIELETTRICI: TObjectList<TMARCHEELEMIMPIANTIELETTRICI>;
 begin
-  Result := ObjectList<TMARCHEELEMIMPIANTIELETTRICI>(FMARCHEELEMIMPIANTIELETTRICI, FMARCHEELEMIMPIANTIELETTRICIArray);
+  Result := ObjectList<TMARCHEELEMIMPIANTIELETTRICI>(FMARCHEELEMIMPIANTIELETTRICI,
+    FMARCHEELEMIMPIANTIELETTRICIArray);
 end;
 
 function TConfRoot.GetMARCHEESTINTORI: TObjectList<TMARCHEESTINTORI>;
@@ -515,7 +560,8 @@ end;
 
 function TConfRoot.GetTIPIELEMIMPIANTIELETTRICI: TObjectList<TTIPIELEMIMPIANTIELETTRICI>;
 begin
-  Result := ObjectList<TTIPIELEMIMPIANTIELETTRICI>(FTIPIELEMIMPIANTIELETTRICI, FTIPIELEMIMPIANTIELETTRICIArray);
+  Result := ObjectList<TTIPIELEMIMPIANTIELETTRICI>(FTIPIELEMIMPIANTIELETTRICI,
+    FTIPIELEMIMPIANTIELETTRICIArray);
 end;
 
 function TConfRoot.GetTIPIINSTALLAZIONEPORTE: TObjectList<TTIPIINSTALLAZIONEPORTE>;
@@ -535,7 +581,8 @@ end;
 
 function TConfRoot.GetTIPIRILEVATORILINEARIFUMI: TObjectList<TTIPIRILEVATORILINEARIFUMI>;
 begin
-  Result := ObjectList<TTIPIRILEVATORILINEARIFUMI>(FTIPIRILEVATORILINEARIFUMI, FTIPIRILEVATORILINEARIFUMIArray);
+  Result := ObjectList<TTIPIRILEVATORILINEARIFUMI>(FTIPIRILEVATORILINEARIFUMI,
+    FTIPIRILEVATORILINEARIFUMIArray);
 end;
 
 function TConfRoot.GetTIPISERRATURE: TObjectList<TTIPISERRATURE>;

@@ -269,7 +269,7 @@ type
     property Smaltito: Boolean read FSmaltito write FSmaltito;
     property DataSmaltimento: TDateTime read FDataSmaltimento write FDataSmaltimento;
     property OrarioSmaltimento: string read FOrarioSmaltimento write FOrarioSmaltimento;
-    property TecnicoSmaltimento: Integer read FTecnicoSmaltimento write FTecnicoSmaltimento ;
+    property TecnicoSmaltimento: Integer read FTecnicoSmaltimento write FTecnicoSmaltimento;
   end;
 
   TIdranti = class(TJsonDTO)
@@ -548,6 +548,8 @@ type
     FMATRICOLA: string;
     [JSONName('NOTE_TECNICO')]
     FNOTETECNICO: string;
+    [JSONName('NonControllato')]
+    FNonControllato: Boolean;
     [JSONName('OrarioControllo')]
     FOrarioControllo: string;
     [JSONName('PROGRESSIVO')]
@@ -584,6 +586,7 @@ type
     property CHIAVE: Integer read FCHIAVE write FCHIAVE;
     property Consegnato: Boolean read FConsegnato write FConsegnato;
     property Controllato: Boolean read FControllato write FControllato;
+    property NonControllato: Boolean read FNonControllato write FNonControllato;
     property DIMENSIONE: string read FDIMENSIONE write FDIMENSIONE;
     property DataControllo: TDateTime read FDataControllo write FDataControllo; // TDateTime
     property IDNFC: string read FIDNFC write FIDNFC;
@@ -764,6 +767,8 @@ type
     FTecnicoControllo: Integer;
     [JSONName('UBICAZIONE')]
     FUBICAZIONE: string;
+    [JSONName('NonControllato')]
+    FNonControllato: Boolean;
   published
     property ANOMALIA: string read FANOMALIA write FANOMALIA;
     property ANOMALIAAPPROVATA: Boolean read FANOMALIAAPPROVATA write FANOMALIAAPPROVATA;
@@ -785,6 +790,7 @@ type
     property TIPOLUCE: Integer read FTIPOLUCE write FTIPOLUCE;
     property TecnicoControllo: Integer read FTecnicoControllo write FTecnicoControllo;
     property UBICAZIONE: string read FUBICAZIONE write FUBICAZIONE;
+    property NonControllato: Boolean read FNonControllato write FNonControllato;
   end;
 
   TRilevatoriFumo = class
