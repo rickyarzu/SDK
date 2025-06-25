@@ -53,6 +53,7 @@ type
     procedure ckbContrChange(Sender: TObject);
     procedure ckbContrClick(Sender: TObject);
     procedure ckbChargingClick(Sender: TObject);
+    procedure TMSFMXSpeedButton1Change(Sender: TObject);
   private
     FIdrante: TIdranti;
     FBocchello: TBocchelli;
@@ -69,7 +70,7 @@ implementation
 
 {$R *.fmx}
 
-uses Janua.FMX.PhoenixMobile.dmAppMobileController;
+uses Janua.FMX.PhoenixMobile.dmAppMobileController, Janua.FMX.PhoenixMobile.frmFireHoseSettings;
 { TframeFMXMobileFireHose }
 
 procedure TframeFMXMobileFireHose.ckbChargingClick(Sender: TObject);
@@ -148,6 +149,20 @@ begin
     end;
   end;
 
+end;
+
+procedure TframeFMXMobileFireHose.TMSFMXSpeedButton1Change(Sender: TObject);
+begin
+  var
+  lFrm := TfrmFMXFireHoseSettings.Create(nil);
+  try
+    lFrm.frameFMXPhoenixMobileFireHoseSetting1.Bocchello := self.FBocchello;
+    lFrm.frameFMXPhoenixMobileFireHoseSetting1.Idrante := self.Idrante;
+    lFrm.ShowModal;
+  finally
+    lFrm.Free;
+    lFrm := nil;
+  end;
 end;
 
 end.

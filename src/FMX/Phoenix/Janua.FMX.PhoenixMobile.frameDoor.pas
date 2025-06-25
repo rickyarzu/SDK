@@ -40,6 +40,7 @@ type
     lbNonEseg: TLabel;
     Rectangle5: TRectangle;
     lbAnomali: TLabel;
+    procedure TMSFMXSpeedButton1Change(Sender: TObject);
   private
     FDoor: TPorte;
     procedure SetDoor(const Value: TPorte);
@@ -53,7 +54,7 @@ implementation
 
 {$R *.fmx}
 
-uses Janua.FMX.PhoenixMobile.dmAppMobileController;
+uses Janua.FMX.PhoenixMobile.dmAppMobileController, Janua.FMX.PhoenixMobile.frmDoorSettings;
 
 { TFrame2 }
 
@@ -78,6 +79,19 @@ begin
       memAnomalia.Text := FDoor.ANOMALIA;
       // FDoor.
     end;
+  end;
+end;
+
+procedure TframeFMXMobileDoor.TMSFMXSpeedButton1Change(Sender: TObject);
+begin
+  var
+  lFrm := TfrmFMXDoorSettings.Create(nil);
+  try
+    lFrm.frameFMXPhoenixMobileDoorSetting1.Door := self.FDoor;
+    lFrm.ShowModal;
+  finally
+    lFrm.Free;
+    lFrm := nil;
   end;
 end;
 

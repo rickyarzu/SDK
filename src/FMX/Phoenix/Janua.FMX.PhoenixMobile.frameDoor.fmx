@@ -43,6 +43,7 @@ object frameFMXMobileDoor: TframeFMXMobileDoor
       BitmapName = 'specification'
       ShowImage = True
       Version = '1.6.0.0'
+      OnChange = TMSFMXSpeedButton1Change
       TabOrder = 3
     end
     object txtIntervento: TLabel

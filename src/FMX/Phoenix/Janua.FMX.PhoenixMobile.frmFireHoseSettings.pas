@@ -1,20 +1,20 @@
-unit Janua.FMX.PhoenixMobile.frmEstinguisherSettings;
+unit Janua.FMX.PhoenixMobile.frmFireHoseSettings;
 
 interface
 
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls, FMX.Layouts, FMX.Objects,
-  FMX.Controls.Presentation, Janua.FMX.PhoenixMobile.frameEstinguisherSettings;
+  FMX.Controls.Presentation, Janua.FMX.PhoenixMobile.frameFireHoseSettings;
 
 type
-  TfrmFMXEstinguisherSettings = class(TForm)
+  TfrmFMXFireHoseSettings = class(TForm)
     ToolBarEstinguisher: TToolBar;
     Rectangle9: TRectangle;
     Layout11: TLayout;
     lbLuci: TLabel;
     SpeedButton7: TSpeedButton;
-    frameFMXPhoenixMobileEstinguisherSetting1: TframeFMXPhoenixMobileEstinguisherSetting;
+    frameFMXPhoenixMobileFireHoseSetting1: TframeFMXPhoenixMobileFireHoseSetting;
     procedure SpeedButton7Click(Sender: TObject);
   private
     { Private declarations }
@@ -23,13 +23,13 @@ type
   end;
 
 var
-  frmFMXEstinguisherSettings: TfrmFMXEstinguisherSettings;
+  frmFMXFireHoseSettings: TfrmFMXFireHoseSettings;
 
 implementation
 
 {$R *.fmx}
 
-procedure TfrmFMXEstinguisherSettings.SpeedButton7Click(Sender: TObject);
+procedure TfrmFMXFireHoseSettings.SpeedButton7Click(Sender: TObject);
 begin
   Close;
 end;

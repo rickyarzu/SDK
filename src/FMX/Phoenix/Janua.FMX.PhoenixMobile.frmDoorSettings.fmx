@@ -1,0 +1,263 @@
+object frmFMXDoorSettings: TfrmFMXDoorSettings
+  Left = 0
+  Top = 0
+  ClientHeight = 627
+  ClientWidth = 306
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 3
+  object ToolBarEstinguisher: TToolBar
+    Anchors = []
+    Size.Width = 306.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Rectangle9: TRectangle
+      Align = Client
+      Fill.Color = claGreen
+      Size.Width = 306.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      object Layout11: TLayout
+        Align = Client
+        Size.Width = 306.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object lbLuci: TLabel
+          Align = MostRight
+          StyledSettings = [Family, Size]
+          Position.X = -24.000000000000000000
+          Size.Width = 330.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'toollabel'
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          TextSettings.Trimming = None
+          Text = 'SPECIFICA PORTA'
+          TabOrder = 2
+        end
+        object SpeedButton7: TSpeedButton
+          Align = Left
+          StyledSettings = []
+          IconTintColor = claSnow
+          Size.Width = 48.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          Text = '<'
+          TextSettings.Font.Size = 26.000000000000000000
+          TextSettings.FontColor = claIvory
+          TextSettings.Trimming = None
+          OnClick = SpeedButton7Click
+        end
+      end
+    end
+  end
+  inline frameFMXPhoenixMobileDoorSetting1: TframeFMXPhoenixMobileDoorSetting
+    Align = Client
+    Size.Width = 306.000000000000000000
+    Size.Height = 579.000000000000000000
+    Size.PlatformDefault = False
+    inherited VertScrollBox1: TVertScrollBox
+      Size.Width = 306.000000000000000000
+      Size.Height = 579.000000000000000000
+      Viewport.Width = 306.000000000000000000
+      Viewport.Height = 579.000000000000000000
+      inherited Layout1: TLayout
+        Size.Width = 306.000000000000000000
+        Size.Height = 579.000000000000000000
+        inherited Rectangle1: TRectangle
+          Size.Width = 298.000000000000000000
+          inherited lbSpecification: TLabel
+            Size.Width = 296.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+        inherited Layout2: TLayout
+          Size.Width = 298.000000000000000000
+          inherited lbAnno: TLabel
+            Size.Width = 101.000000000000000000
+          end
+        end
+        inherited Layout03: TLayout
+          Size.Width = 298.000000000000000000
+          inherited edProgr: TEdit
+            Size.Height = 32.000000000000000000
+          end
+          inherited edMatricola: TEdit
+            Size.Height = 32.000000000000000000
+          end
+          inherited cboYear: TComboBox
+            Size.Width = 101.000000000000000000
+            Size.Height = 32.000000000000000000
+          end
+        end
+        inherited Layout05: TLayout
+          Size.Width = 298.000000000000000000
+        end
+        inherited ly01Type: TLayout
+          Size.Width = 298.000000000000000000
+          inherited cboType: TComboBox
+            Size.Width = 290.000000000000000000
+            Size.Height = 32.000000000000000000
+          end
+        end
+        inherited Layout07: TLayout
+          Size.Width = 298.000000000000000000
+        end
+        inherited Layout8: TLayout
+          Size.Width = 298.000000000000000000
+        end
+        inherited Layout9: TLayout
+          Size.Width = 298.000000000000000000
+          inherited cboMarca: TComboBox
+            Size.Width = 290.000000000000000000
+            Size.Height = 32.000000000000000000
+          end
+        end
+        inherited Layout10: TLayout
+          Size.Width = 298.000000000000000000
+          inherited cboAnte: TComboBox
+            Size.Width = 290.000000000000000000
+            Size.Height = 32.000000000000000000
+          end
+        end
+        inherited Layout11: TLayout
+          Size.Width = 298.000000000000000000
+          inherited lbMisuraAnta: TLabel
+            Align = Client
+            Size.Width = 294.000000000000000000
+          end
+        end
+        inherited Layout12: TLayout
+          Size.Width = 298.000000000000000000
+          inherited edMisura: TEdit
+            Size.Width = 290.000000000000000000
+            Size.Height = 32.000000000000000000
+          end
+        end
+        inherited Layout13: TLayout
+          Size.Width = 298.000000000000000000
+          inherited Layout4: TLayout
+            Size.Width = 290.000000000000000000
+          end
+        end
+        inherited memLocation: TMemo
+          Size.Width = 298.000000000000000000
+          Viewport.Width = 298.000000000000000000
+          Viewport.Height = 36.000000000000000000
+        end
+        inherited layState: TLayout
+          Size.Width = 298.000000000000000000
+        end
+        inherited Layout14: TLayout
+          Size.Width = 298.000000000000000000
+          inherited cboStato: TComboBox
+            Size.Width = 290.000000000000000000
+            Size.Height = 32.000000000000000000
+          end
+        end
+        inherited Layout15: TLayout
+          Size.Width = 298.000000000000000000
+        end
+        inherited memNoteTecnico: TMemo
+          Size.Width = 298.000000000000000000
+          Viewport.Width = 298.000000000000000000
+          Viewport.Height = 36.000000000000000000
+        end
+        inherited Layout06: TLayout
+          Size.Width = 298.000000000000000000
+          inherited Label2: TLabel
+            Align = Client
+            Size.Width = 294.000000000000000000
+          end
+        end
+        inherited Layout16: TLayout
+          Size.Width = 298.000000000000000000
+          inherited cboMarcaManiglione: TComboBox
+            Size.Width = 290.000000000000000000
+            Size.Height = 32.000000000000000000
+          end
+        end
+        inherited Layout17: TLayout
+          Size.Width = 298.000000000000000000
+          inherited cboTipoManiglione: TComboBox
+            Size.Width = 290.000000000000000000
+            Size.Height = 32.000000000000000000
+          end
+        end
+        inherited Layout18: TLayout
+          Size.Width = 298.000000000000000000
+          inherited lbTipoManiglione: TLabel
+            Align = Client
+            Size.Width = 294.000000000000000000
+          end
+        end
+        inherited Layout19: TLayout
+          Size.Width = 298.000000000000000000
+          inherited cboTipoSerraturaAntaPrincipale: TComboBox
+            Size.Width = 290.000000000000000000
+            Size.Height = 32.000000000000000000
+          end
+        end
+        inherited Layout20: TLayout
+          Size.Width = 298.000000000000000000
+          inherited lbTipoSerratura: TLabel
+            Size.Width = 294.000000000000000000
+          end
+        end
+        inherited Layout21: TLayout
+          Size.Width = 298.000000000000000000
+          inherited cboTipoSerraturaAntaSecondaria: TComboBox
+            Size.Width = 290.000000000000000000
+          end
+        end
+        inherited Layout22: TLayout
+          Size.Width = 298.000000000000000000
+          inherited lbTipoSerraturaSecondaria: TLabel
+            Size.Width = 294.000000000000000000
+          end
+        end
+        inherited Layout23: TLayout
+          Size.Width = 298.000000000000000000
+          inherited lbManigliaEsterna: TLabel
+            Size.Width = 294.000000000000000000
+          end
+        end
+        inherited Layout3: TLayout
+          Size.Width = 298.000000000000000000
+          inherited cboManigliaEsterna: TComboBox
+            Size.Width = 290.000000000000000000
+          end
+        end
+        inherited Layout5: TLayout
+          Size.Width = 298.000000000000000000
+          inherited edMMGuarnizione: TEdit
+            Size.Width = 290.000000000000000000
+          end
+        end
+        inherited Layout6: TLayout
+          Size.Width = 298.000000000000000000
+          inherited lbMMGuarnizione: TLabel
+            Size.Width = 294.000000000000000000
+          end
+        end
+        inherited Layout7: TLayout
+          Size.Width = 298.000000000000000000
+          inherited cboTipoInstallazione: TComboBox
+            Size.Width = 290.000000000000000000
+          end
+        end
+        inherited Layout24: TLayout
+          Size.Width = 298.000000000000000000
+          inherited lbTipoInstallazione: TLabel
+            Size.Width = 294.000000000000000000
+          end
+        end
+      end
+    end
+  end
+end

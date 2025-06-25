@@ -1,4 +1,4 @@
-object Frame2: TFrame2
+object frameFMXPhoenixMobileFireHoseSetting: TframeFMXPhoenixMobileFireHoseSetting
   Size.Width = 341.000000000000000000
   Size.Height = 684.000000000000000000
   Size.PlatformDefault = False
@@ -92,7 +92,7 @@ object Frame2: TFrame2
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
       end
-      object cboYear: TComboBox
+      object cboType: TComboBox
         Align = Client
         Items.Strings = (
           '2018'
@@ -305,7 +305,7 @@ object Frame2: TFrame2
       Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 4
-      object cboYear2: TComboBox
+      object cboYear: TComboBox
         Align = Client
         Items.Strings = (
           '2018'
@@ -370,10 +370,11 @@ object Frame2: TFrame2
         Size.PlatformDefault = False
         TabOrder = 1
       end
-      object Edit1: TEdit
+      object edLength: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Left
         TabOrder = 0
+        Text = '0'
         Position.Y = 2.000000000000000000
         Margins.Top = 2.000000000000000000
         Margins.Bottom = 2.000000000000000000
@@ -589,6 +590,7 @@ object Frame2: TFrame2
         Items.Strings = (
           'Attiva'
           'Fuori Servizio')
+        ItemIndex = 0
         Margins.Left = 4.000000000000000000
         Margins.Top = 2.000000000000000000
         Margins.Right = 4.000000000000000000
