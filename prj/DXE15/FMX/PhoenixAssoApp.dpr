@@ -23,7 +23,10 @@ uses
   Janua.FMX.PhoenixMobile.frameDoor in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameDoor.pas' {frameFMXMobileDoor: TFrame},
   Janua.FMX.PhoenixMobile.frameReportListDoors in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameReportListDoors.pas' {frameFMXPhoenixReportListDoors: TFrame},
   Janua.FMX.PhoenixMobile.frameLight in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameLight.pas' {frameFMXMobileLight: TFrame},
-  Janua.FMX.PhoenixMobile.frameSprinkler in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameSprinkler.pas' {frameFMXMobileSprinkler: TFrame};
+  Janua.FMX.PhoenixMobile.frameSprinkler in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameSprinkler.pas' {frameFMXMobileSprinkler: TFrame},
+  Janua.FMX.PhoenixMobile.frameDoorSettings in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameDoorSettings.pas' {frameFMXPhoenixMobileDoorSetting: TFrame},
+  Janua.FMX.PhoenixMobile.frmEstinguisherSettings in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frmEstinguisherSettings.pas' {frmFMXEstinguisherSettings},
+  Janua.FMX.PhoenixMobile.frameFireHoseSettings in '..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameFireHoseSettings.pas' {Frame2: TFrame};
 
 {$R *.res}
 
@@ -32,5 +35,6 @@ begin
   Application.CreateForm(TdmFMXPhoenixAppMobileController, dmFMXPhoenixAppMobileController);
   Application.CreateForm(TfrmFMXPhoenixMobileMain, frmFMXPhoenixMobileMain);
   Application.CreateForm(TdmJanuaFMXPhoenixMobileResources, dmJanuaFMXPhoenixMobileResources);
+  Application.CreateForm(TfrmFMXEstinguisherSettings, frmFMXEstinguisherSettings);
   Application.Run;
 end.

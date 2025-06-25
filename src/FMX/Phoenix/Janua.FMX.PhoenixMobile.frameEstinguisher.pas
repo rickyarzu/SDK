@@ -63,6 +63,7 @@ type
     procedure ckbSmaltClick(Sender: TObject);
     procedure ckbRestClick(Sender: TObject);
     procedure ckbNonEsegClick(Sender: TObject);
+    procedure TMSFMXSpeedButton1Click(Sender: TObject);
   private
     FEstintore: TEstintori;
     procedure SetEstintore(const Value: TEstintori);
@@ -77,7 +78,7 @@ implementation
 {$R *.fmx}
 
 uses Janua.FMX.PhoenixMobile.Resources, Janua.FMX.PhoenixMobile.dmAppMobileController,
-  Janua.FMX.dlgListSelectForm;
+  Janua.FMX.dlgListSelectForm, Janua.FMX.PhoenixMobile.frmEstinguisherSettings;
 
 { TframeFMXMobileEstinguisher }
 
@@ -192,6 +193,18 @@ begin
 
   // FEstintore.TIPOINTERVENTO
 
+end;
+
+procedure TframeFMXMobileEstinguisher.TMSFMXSpeedButton1Click(Sender: TObject);
+begin
+  // Janua.FMX.PhoenixMobile.frmEstinguisherSettings
+  var lForm := TfrmFMXEstinguisherSettings.Create(nil);
+  try
+    lForm.frameFMXPhoenixMobileEstinguisherSetting1.Estintore := self.FEstintore;
+    lForm.ShowModal;
+  finally
+    lForm.Free;
+  end;
 end;
 
 end.

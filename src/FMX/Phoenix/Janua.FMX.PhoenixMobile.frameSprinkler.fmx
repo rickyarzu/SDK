@@ -236,7 +236,7 @@ object frameFMXMobileSprinkler: TframeFMXMobileSprinkler
     Size.Width = 386.000000000000000000
     Size.Height = 45.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 6
+    TabOrder = 5
     object lbState: TLabel
       Align = Left
       StyledSettings = [Family, Size, FontColor]
@@ -345,7 +345,7 @@ object frameFMXMobileSprinkler: TframeFMXMobileSprinkler
     Size.Width = 386.000000000000000000
     Size.Height = 28.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 7
+    TabOrder = 6
     object edQtyType: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       Align = Client

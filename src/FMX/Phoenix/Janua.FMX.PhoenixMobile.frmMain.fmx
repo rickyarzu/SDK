@@ -1022,13 +1022,12 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
       inline frameFMXPhoenixReportListSprinklers1: TframeFMXPhoenixReportListSprinklers
         Align = Client
         Size.Width = 384.000000000000000000
-        Size.Height = 736.000000000000000000
+        Size.Height = 688.000000000000000000
         Size.PlatformDefault = False
         inherited VertScBox: TVertScrollBox
           Size.Width = 384.000000000000000000
-          Size.Height = 736.000000000000000000
           Viewport.Width = 384.000000000000000000
-          Viewport.Height = 736.000000000000000000
+          Viewport.Height = 688.000000000000000000
           inherited rcReportSummary: TRectangle
             Size.Width = 384.000000000000000000
             inherited txtReportSummay: TTMSFMXHTMLText
@@ -1060,6 +1059,56 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
                 Size.Width = 58.000000000000000000
                 TextSettings.Font.Size = 11.000000000000000000
               end
+            end
+          end
+        end
+      end
+      object ToolBar7: TToolBar
+        Anchors = []
+        Size.Width = 384.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Rectangle9: TRectangle
+          Align = Client
+          Fill.Color = claGreen
+          Size.Width = 384.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          object Layout11: TLayout
+            Align = Client
+            Size.Width = 384.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            object lbLuci: TLabel
+              Action = TitleAction
+              Align = MostRight
+              StyledSettings = [Family, Size]
+              Position.X = 54.000000000000000000
+              Size.Width = 330.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'toollabel'
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              TextSettings.HorzAlign = Center
+              TextSettings.Trimming = None
+              Text = 'Luci'
+              TabOrder = 2
+            end
+            object SpeedButton7: TSpeedButton
+              Align = Left
+              StyledSettings = []
+              IconTintColor = claSnow
+              Size.Width = 48.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              Text = '<'
+              TextSettings.Font.Size = 26.000000000000000000
+              TextSettings.FontColor = claIvory
+              TextSettings.Trimming = None
+              OnClick = SpeedButton4Click
             end
           end
         end

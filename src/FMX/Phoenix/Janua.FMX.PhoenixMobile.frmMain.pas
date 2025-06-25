@@ -91,6 +91,11 @@ type
     tab08Sprinklers: TTabItem;
     frameFMXPhoenixReportListSprinklers1: TframeFMXPhoenixReportListSprinklers;
     cboSelect: TComboBox;
+    ToolBar7: TToolBar;
+    Rectangle9: TRectangle;
+    Layout11: TLayout;
+    lbLuci: TLabel;
+    SpeedButton7: TSpeedButton;
     procedure FormCreate(Sender: TObject);
     procedure TitleActionUpdate(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);

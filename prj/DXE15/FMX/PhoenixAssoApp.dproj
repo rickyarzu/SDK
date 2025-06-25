@@ -456,6 +456,20 @@
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
+        <DCCReference Include="..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameDoorSettings.pas">
+            <Form>frameFMXPhoenixMobileDoorSetting</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frmEstinguisherSettings.pas">
+            <Form>frmFMXEstinguisherSettings</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\..\src\FMX\Phoenix\Janua.FMX.PhoenixMobile.frameFireHoseSettings.pas">
+            <Form>Frame2</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
             <DependentOn>..\JanuaLibDXE15.optset</DependentOn>

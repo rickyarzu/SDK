@@ -1,11 +1,11 @@
-object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguisherSetting
-  Size.Width = 318.000000000000000000
-  Size.Height = 585.000000000000000000
+object Frame2: TFrame2
+  Size.Width = 341.000000000000000000
+  Size.Height = 684.000000000000000000
   Size.PlatformDefault = False
   object Layout1: TLayout
     Align = Client
-    Size.Width = 318.000000000000000000
-    Size.Height = 585.000000000000000000
+    Size.Width = 341.000000000000000000
+    Size.Height = 684.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object Rectangle1: TRectangle
@@ -17,20 +17,20 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
       Position.Y = 4.000000000000000000
-      Size.Width = 310.000000000000000000
+      Size.Width = 333.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       object lbSpecification: TLabel
         Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 2.000000000000000000
-        Size.Width = 308.000000000000000000
+        Size.Width = 331.000000000000000000
         Size.Height = 25.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.StyleExt = {00070000000000000004000000}
         TextSettings.HorzAlign = Center
         TextSettings.Trimming = None
-        Text = 'SPECIFICA ESTINTORE'
+        Text = 'SPECIFICA IDRANTE'
         TabOrder = 0
         TabStop = False
       end
@@ -42,10 +42,10 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
       Position.Y = 33.000000000000000000
-      Size.Width = 310.000000000000000000
+      Size.Width = 333.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 17
+      TabOrder = 14
       object lbProgr: TLabel
         Align = Left
         StyledSettings = [Family, Size, FontColor]
@@ -56,30 +56,17 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.PlatformDefault = False
         TextSettings.Trimming = None
         Text = 'Progr.'
-        TabOrder = 2
-      end
-      object lbMatricola: TLabel
-        Align = Left
-        StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 2.000000000000000000
-        Position.X = 92.000000000000000000
-        Size.Width = 93.000000000000000000
-        Size.Height = 24.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Trimming = None
-        Text = 'Matricola'
         TabOrder = 1
       end
-      object lbAnno: TLabel
-        Align = Left
+      object lbType: TLabel
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 8.000000000000000000
-        Position.X = 193.000000000000000000
-        Size.Width = 80.000000000000000000
+        Margins.Left = 2.000000000000000000
+        Size.Width = 241.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Trimming = None
-        Text = 'Anno'
+        Text = 'Tipo'
         TabOrder = 0
       end
     end
@@ -90,31 +77,18 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
       Position.Y = 61.000000000000000000
-      Size.Width = 310.000000000000000000
+      Size.Width = 333.000000000000000000
       Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 8
+      TabOrder = 7
       object edProgr: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Left
-        TabOrder = 1
+        TabOrder = 0
         Position.Y = 2.000000000000000000
         Margins.Top = 2.000000000000000000
         Margins.Bottom = 2.000000000000000000
         Size.Width = 81.000000000000000000
-        Size.Height = 24.000000000000000000
-        Size.PlatformDefault = False
-      end
-      object edMatr: TEdit
-        Touch.InteractiveGestures = [LongTap, DoubleTap]
-        Align = Left
-        TabOrder = 0
-        Position.X = 89.000000000000000000
-        Position.Y = 2.000000000000000000
-        Margins.Left = 8.000000000000000000
-        Margins.Top = 2.000000000000000000
-        Margins.Bottom = 2.000000000000000000
-        Size.Width = 96.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
       end
@@ -178,47 +152,10 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Margins.Top = 2.000000000000000000
         Margins.Right = 4.000000000000000000
         Margins.Bottom = 2.000000000000000000
-        Size.Width = 113.000000000000000000
+        Size.Width = 240.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 2
-      end
-    end
-    object Layout4: TLayout
-      Align = Top
-      Margins.Left = 4.000000000000000000
-      Margins.Right = 4.000000000000000000
-      Margins.Bottom = 4.000000000000000000
-      Position.X = 4.000000000000000000
-      Position.Y = 93.000000000000000000
-      Size.Width = 310.000000000000000000
-      Size.Height = 24.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 9
-      object lbAnnoSostituzione: TLabel
-        Align = Left
-        StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 2.000000000000000000
-        Position.X = 2.000000000000000000
-        Size.Width = 127.000000000000000000
-        Size.Height = 24.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
-        TextSettings.Trimming = None
-        Text = 'Anno Sostituzione'
         TabOrder = 1
-      end
-      object txtYearSubstituion: TLabel
-        Align = Left
-        StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 2.000000000000000000
-        Position.X = 131.000000000000000000
-        Size.Width = 93.000000000000000000
-        Size.Height = 24.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Trimming = None
-        Text = '2036'
-        TabOrder = 0
       end
     end
     object Layout5: TLayout
@@ -227,21 +164,21 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
-      Position.Y = 121.000000000000000000
-      Size.Width = 310.000000000000000000
+      Position.Y = 153.000000000000000000
+      Size.Width = 333.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 16
-      object lbTipo: TLabel
-        Align = Left
+      TabOrder = 13
+      object lbLancia: TLabel
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 4.000000000000000000
-        Position.X = 4.000000000000000000
-        Size.Width = 88.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Size.Width = 309.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Trimming = None
-        Text = 'Tipo'
+        Text = 'Lancia'
         TabOrder = 0
       end
     end
@@ -251,12 +188,12 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
-      Position.Y = 149.000000000000000000
-      Size.Width = 310.000000000000000000
+      Position.Y = 181.000000000000000000
+      Size.Width = 333.000000000000000000
       Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 7
-      object cboType: TComboBox
+      TabOrder = 6
+      object cboLancia: TComboBox
         Align = Client
         Items.Strings = (
           '2018'
@@ -316,33 +253,9 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Margins.Top = 2.000000000000000000
         Margins.Right = 4.000000000000000000
         Margins.Bottom = 2.000000000000000000
-        Size.Width = 302.000000000000000000
+        Size.Width = 325.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 0
-      end
-    end
-    object Layout7: TLayout
-      Align = Top
-      Margins.Left = 4.000000000000000000
-      Margins.Right = 4.000000000000000000
-      Margins.Bottom = 4.000000000000000000
-      Position.X = 4.000000000000000000
-      Position.Y = 181.000000000000000000
-      Size.Width = 310.000000000000000000
-      Size.Height = 24.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 10
-      object lbMarca: TLabel
-        Align = Left
-        StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 8.000000000000000000
-        Position.X = 8.000000000000000000
-        Size.Width = 88.000000000000000000
-        Size.Height = 24.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Trimming = None
-        Text = 'Marca'
         TabOrder = 0
       end
     end
@@ -352,12 +265,12 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
-      Position.Y = 241.000000000000000000
-      Size.Width = 310.000000000000000000
+      Position.Y = 213.000000000000000000
+      Size.Width = 333.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 15
-      object lbUltimaRevisione: TLabel
+      TabOrder = 12
+      object lbLength: TLabel
         Align = Left
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 4.000000000000000000
@@ -366,84 +279,18 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Trimming = None
-        Text = 'Ultima Revisione'
-        TabOrder = 0
+        Text = 'Lunghezza'
+        TabOrder = 1
       end
-    end
-    object Layout9: TLayout
-      Align = Top
-      Margins.Left = 4.000000000000000000
-      Margins.Right = 4.000000000000000000
-      Margins.Bottom = 4.000000000000000000
-      Position.X = 4.000000000000000000
-      Position.Y = 209.000000000000000000
-      Size.Width = 310.000000000000000000
-      Size.Height = 28.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 6
-      object cboBrand: TComboBox
+      object lbYear: TLabel
         Align = Client
-        Items.Strings = (
-          '2018'
-          '2019'
-          '2020'
-          '2021'
-          '2022'
-          '2023'
-          '2024'
-          '2025'
-          '2026'
-          '2027'
-          '2028'
-          '2029'
-          '2030'
-          '2031'
-          '2032'
-          '2033'
-          '2034'
-          '2035'
-          '2036'
-          '2037'
-          '2038'
-          '2039'
-          '2040'
-          '2041'
-          '2042'
-          '2043'
-          '2044'
-          '2045'
-          '2046'
-          '2047'
-          '2048'
-          '2049'
-          '2050'
-          '2051'
-          '2052'
-          '2053'
-          '2054'
-          '2055'
-          '2056'
-          '2057'
-          '2058'
-          '2059'
-          '2060'
-          '2061'
-          '2062'
-          '2063'
-          '2064'
-          '2065'
-          '2066'
-          '2067'
-          '2068'
-          '2069'
-          '2070')
-        Margins.Left = 4.000000000000000000
-        Margins.Top = 2.000000000000000000
-        Margins.Right = 4.000000000000000000
-        Margins.Bottom = 2.000000000000000000
-        Size.Width = 302.000000000000000000
+        StyledSettings = [Family, Size, FontColor]
+        Margins.Left = 8.000000000000000000
+        Size.Width = 196.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        TextSettings.Trimming = None
+        Text = 'Anno'
         TabOrder = 0
       end
     end
@@ -453,38 +300,12 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
-      Position.Y = 269.000000000000000000
-      Size.Width = 310.000000000000000000
+      Position.Y = 241.000000000000000000
+      Size.Width = 333.000000000000000000
       Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 4
-      object cboRevisionMonth: TComboBox
-        Align = Left
-        Items.Strings = (
-          'Gennaio'
-          'Febbraio'
-          'Marzo'
-          'Aprile'
-          'Maggio'
-          'Giugno'
-          'Luglio'
-          'Agosto'
-          'Settembre'
-          'Ottobre'
-          'Novembre'
-          'Dicembre')
-        Margins.Left = 4.000000000000000000
-        Margins.Top = 2.000000000000000000
-        Margins.Right = 4.000000000000000000
-        Margins.Bottom = 2.000000000000000000
-        Position.X = 4.000000000000000000
-        Position.Y = 2.000000000000000000
-        Size.Width = 157.000000000000000000
-        Size.Height = 24.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 1
-      end
-      object cboRevisionYear: TComboBox
+      object cboYear2: TComboBox
         Align = Client
         Items.Strings = (
           '2018'
@@ -540,14 +361,25 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
           '2068'
           '2069'
           '2070')
-        Margins.Left = 4.000000000000000000
+        Margins.Left = 8.000000000000000000
         Margins.Top = 2.000000000000000000
         Margins.Right = 4.000000000000000000
         Margins.Bottom = 2.000000000000000000
-        Size.Width = 137.000000000000000000
+        Size.Width = 192.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        TabOrder = 1
+      end
+      object Edit1: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Left
         TabOrder = 0
+        Position.Y = 2.000000000000000000
+        Margins.Top = 2.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Size.Width = 129.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
       end
     end
     object Layout11: TLayout
@@ -556,11 +388,11 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
-      Position.Y = 301.000000000000000000
-      Size.Width = 310.000000000000000000
+      Position.Y = 273.000000000000000000
+      Size.Width = 333.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 14
+      TabOrder = 11
       object loLastTest: TLabel
         Align = Left
         StyledSettings = [Family, Size, FontColor]
@@ -580,8 +412,8 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
-      Position.Y = 329.000000000000000000
-      Size.Width = 310.000000000000000000
+      Position.Y = 301.000000000000000000
+      Size.Width = 333.000000000000000000
       Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
@@ -671,7 +503,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Margins.Top = 2.000000000000000000
         Margins.Right = 4.000000000000000000
         Margins.Bottom = 2.000000000000000000
-        Size.Width = 137.000000000000000000
+        Size.Width = 160.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
@@ -683,11 +515,11 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
-      Position.Y = 361.000000000000000000
-      Size.Width = 310.000000000000000000
+      Position.Y = 333.000000000000000000
+      Size.Width = 333.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 13
+      TabOrder = 10
       object lbUbicazione: TLabel
         Align = Left
         StyledSettings = [Family, Size, FontColor]
@@ -709,12 +541,12 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
-      Position.Y = 389.000000000000000000
-      Size.Width = 310.000000000000000000
+      Position.Y = 361.000000000000000000
+      Size.Width = 333.000000000000000000
       Size.Height = 36.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 19
-      Viewport.Width = 306.000000000000000000
+      TabOrder = 16
+      Viewport.Width = 329.000000000000000000
       Viewport.Height = 32.000000000000000000
     end
     object layState: TLayout
@@ -723,11 +555,11 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
-      Position.Y = 429.000000000000000000
-      Size.Width = 310.000000000000000000
+      Position.Y = 93.000000000000000000
+      Size.Width = 333.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 12
+      TabOrder = 9
       object lbState: TLabel
         Align = Left
         StyledSettings = [Family, Size, FontColor]
@@ -747,8 +579,8 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
-      Position.Y = 457.000000000000000000
-      Size.Width = 310.000000000000000000
+      Position.Y = 121.000000000000000000
+      Size.Width = 333.000000000000000000
       Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 5
@@ -761,7 +593,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Margins.Top = 2.000000000000000000
         Margins.Right = 4.000000000000000000
         Margins.Bottom = 2.000000000000000000
-        Size.Width = 302.000000000000000000
+        Size.Width = 325.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
@@ -773,11 +605,11 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
-      Position.Y = 489.000000000000000000
-      Size.Width = 310.000000000000000000
+      Position.Y = 401.000000000000000000
+      Size.Width = 333.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 11
+      TabOrder = 8
       object lbNoteTecnico: TLabel
         Align = Left
         StyledSettings = [Family, Size, FontColor]
@@ -799,12 +631,12 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
-      Position.Y = 517.000000000000000000
-      Size.Width = 310.000000000000000000
+      Position.Y = 429.000000000000000000
+      Size.Width = 333.000000000000000000
       Size.Height = 36.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 18
-      Viewport.Width = 306.000000000000000000
+      TabOrder = 15
+      Viewport.Width = 329.000000000000000000
       Viewport.Height = 32.000000000000000000
     end
   end

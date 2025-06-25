@@ -1,5 +1,6 @@
 object dmFMXPhoenixAppMobileController: TdmFMXPhoenixAppMobileController
   OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
   Height = 480
   Width = 640
   object TimerDaily: TTimer

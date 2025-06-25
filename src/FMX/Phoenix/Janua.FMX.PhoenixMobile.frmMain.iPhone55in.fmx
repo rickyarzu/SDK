@@ -430,12 +430,21 @@ inherited frmFMXPhoenixMobileMain_iPhone55in: TfrmFMXPhoenixMobileMain_iPhone55i
       ExplicitSize.cy = 8.000000000000000000
       inherited frameFMXPhoenixReportListSprinklers1: TframeFMXPhoenixReportListSprinklers
         Size.Width = 414.000000000000000000
-        Size.Height = 716.000000000000000000
+        Size.Height = 676.000000000000000000
         inherited VertScBox: TVertScrollBox
           Size.Width = 414.000000000000000000
-          Size.Height = 716.000000000000000000
+          Size.Height = 676.000000000000000000
           Viewport.Width = 376.000000000000000000
           Viewport.Height = 688.000000000000000000
+        end
+      end
+      inherited ToolBar7: TToolBar
+        inherited Rectangle9: TRectangle
+          inherited Layout11: TLayout
+            inherited lbLuci: TLabel
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
         end
       end
     end
