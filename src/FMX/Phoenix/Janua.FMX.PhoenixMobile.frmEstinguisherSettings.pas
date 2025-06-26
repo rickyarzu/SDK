@@ -9,7 +9,6 @@ uses
 
 type
   TfrmFMXEstinguisherSettings = class(TForm)
-    ToolBarEstinguisher: TToolBar;
     Rectangle9: TRectangle;
     Layout11: TLayout;
     lbLuci: TLabel;

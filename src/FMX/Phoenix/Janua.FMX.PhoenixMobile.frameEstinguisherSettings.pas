@@ -59,6 +59,7 @@ type
     procedure SetEstintore(const Value: TEstintori);
     { Private declarations }
   public
+    procedure Refresh;
     property Estintore: TEstintori read FEstintore write SetEstintore;
   end;
 
@@ -68,6 +69,104 @@ implementation
 
 uses System.DateUtils, System.Math, System.StrUtils, Janua.FMX.PhoenixMobile.dmAppMobileController;
 { TframeFMXPhoenixMobileEstinguisherSetting }
+
+procedure TframeFMXPhoenixMobileEstinguisherSetting.Refresh;
+begin
+  var
+  dm := dmFMXPhoenixAppMobileController;
+
+  edProgr.Text := FEstintore.PROGRESSIVO.ToString;
+  edMatr.Text := FEstintore.MATRICOLA;
+  var
+  lYear := 0;
+
+  if not FEstintore.ANNOCOSTRUZIONE.IsEmpty then
+    lYear := FEstintore.ANNOCOSTRUZIONE.ToInteger()
+  else
+    lYear := YearOf(Now);
+
+  if cboYear.Items[0].ToInteger() <> lYear  then
+    cboYear.ItemIndex := lYear - cboYear.Items[0].ToInteger();
+
+
+   (*
+
+  // cboType
+  for var lListItem in dm.Conf.CatEstintori do
+  begin
+    cboType.Items.AddObject(lListItem.Descrizione, lListItem);
+    if lListItem.Chiave = FEstintore.TIPOESTINTORE then
+      cboType.ItemIndex := cboType.Items.Count - 1;
+  end;
+
+  // cboBrand
+  for var lListItem in dm.Conf.MARCHEESTINTORI do
+  begin
+    cboBrand.Items.AddObject(lListItem.Descrizione, lListItem);
+    if lListItem.Chiave = FEstintore.MARCA then
+      cboBrand.ItemIndex := cboBrand.Items.Count - 1;
+  end;
+
+  *)
+
+  // ****** Revisioine ******************************************
+
+  var
+    lRevisione: TDateTime := dm.JsonDateToDateTime(FEstintore.DATASTARTUPREV);
+
+  if lRevisione = 0.0 then
+    lRevisione := Date();
+
+  var
+  Year := YearOf(lRevisione); // Anno (es: 2025)
+  var
+  Month := MonthOf(lRevisione); // Mese (1-12)
+  var
+  Day := DayOf(lRevisione); // Giorno del mese (1-31)
+
+  // cboRevisionMonth
+  for var lMonth in dm.Months do
+    cboRevisionMonth.Items.Add(lMonth);
+
+  cboRevisionMonth.ItemIndex := Month - 1;
+
+  // cboRevisionYear
+  lYear := YearOf(lRevisione);
+
+  if cboRevisionYear.Items[0].ToInteger() <> lYear  then
+    cboRevisionYear.ItemIndex := lYear - cboRevisionYear.Items[0].ToInteger();
+
+
+  // ****** Collaudo ******************************************
+
+  var
+    lCollaudo: TDateTime := dm.JsonDateToDateTime(FEstintore.DATASTARTUPCOL);
+
+  if lCollaudo = 0.0 then
+    lCollaudo := Date();
+
+  Year := YearOf(lCollaudo); // Anno (es: 2025)
+  Month := MonthOf(lCollaudo); // Mese (1-12)
+  Day := DayOf(lCollaudo); // Giorno del mese (1-31)
+
+  // cboLastTestMonth
+  for var lMonth in dm.Months do
+    cboLastTestMonth.Items.Add(lMonth);
+
+  cboLastTestMonth.ItemIndex := Month - 1;
+
+  // cboRevisionYear
+  lYear := YearOf(lCollaudo);
+
+  if cboLastTestYear.Items[0].ToInteger() <> lYear  then
+    cboLastTestYear.ItemIndex := lYear - cboLastTestYear.Items[0].ToInteger();
+
+  memLocation.Text := FEstintore.UBICAZIONE;
+  memNoteTecnico.Text := FEstintore.NOTETECNICO;
+
+  cboStato.ItemIndex := IfThen(FEstintore.STATO = 'A', 0, 1);
+
+end;
 
 procedure TframeFMXPhoenixMobileEstinguisherSetting.SetEstintore(const Value: TEstintori);
 begin
@@ -145,9 +244,9 @@ begin
       if lCollaudo = 0.0 then
         lCollaudo := Date();
 
-            Year := YearOf(lCollaudo); // Anno (es: 2025)
-            Month := MonthOf(lCollaudo); // Mese (1-12)
-            Day := DayOf(lCollaudo); // Giorno del mese (1-31)
+      Year := YearOf(lCollaudo); // Anno (es: 2025)
+      Month := MonthOf(lCollaudo); // Mese (1-12)
+      Day := DayOf(lCollaudo); // Giorno del mese (1-31)
 
       // cboLastTestMonth
       for var lMonth in dm.Months do
@@ -164,6 +263,8 @@ begin
 
       memLocation.Text := FEstintore.UBICAZIONE;
       memNoteTecnico.Text := FEstintore.NOTETECNICO;
+
+      cboStato.ItemIndex := IfThen(FEstintore.STATO = 'A', 0, 1);
 
     end;
   end;

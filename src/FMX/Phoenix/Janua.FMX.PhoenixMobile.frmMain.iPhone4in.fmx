@@ -126,6 +126,7 @@ inherited frmFMXPhoenixMobileMain_iPhone4in: TfrmFMXPhoenixMobileMain_iPhone4in
             end
             inherited Switch1: TSwitch
               Position.X = 276.000000000000000000
+              Size.Height = 30.000000000000000000
             end
           end
           inherited Layout3: TLayout
@@ -314,6 +315,10 @@ inherited frmFMXPhoenixMobileMain_iPhone4in: TfrmFMXPhoenixMobileMain_iPhone4in
               TextSettings.Font.StyleExt = {00070000000000000004000000}
             end
           end
+          inherited SpeedButton3: TSpeedButton
+            Position.Y = 2.000000000000000000
+            Size.Height = 44.000000000000000000
+          end
         end
       end
       inherited frameFMXPhoenixReportListEstinguishers1: TframeFMXPhoenixReportListEstinguishers
@@ -442,7 +447,7 @@ inherited frmFMXPhoenixMobileMain_iPhone4in: TfrmFMXPhoenixMobileMain_iPhone4in
       inherited ToolBar7: TToolBar
         inherited Rectangle9: TRectangle
           inherited Layout11: TLayout
-            inherited lbLuci: TLabel
+            inherited lbSprinkler: TLabel
               TextSettings.Font.StyleExt = {00070000000000000004000000}
             end
           end

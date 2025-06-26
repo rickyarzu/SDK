@@ -17,7 +17,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
     Size.Height = 736.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 49.000000000000000000
-    TabIndex = 7
+    TabIndex = 1
     TabOrder = 0
     TabPosition = None
     Sizes = (
@@ -149,7 +149,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -358,8 +358,9 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             end
             inherited Switch1: TSwitch
               Position.X = 340.000000000000000000
+              Position.Y = 2.000000000000000000
               Size.Width = 44.000000000000000000
-              Size.Height = 30.000000000000000000
+              Size.Height = 26.000000000000000000
             end
           end
           inherited Layout3: TLayout
@@ -388,8 +389,8 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             Size.Width = 378.000000000000000000
             Size.Height = 44.000000000000000000
             TabOrder = 7
-            Viewport.Width = 378.000000000000000000
-            Viewport.Height = 44.000000000000000000
+            Viewport.Width = 370.000000000000000000
+            Viewport.Height = 36.000000000000000000
           end
         end
         inherited rcReportSummary: TRectangle
@@ -693,9 +694,13 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             Size.Width = 48.000000000000000000
             Size.Height = 48.000000000000000000
             Size.PlatformDefault = False
-            StyleLookup = 'priortoolbutton'
+            ParentShowHint = False
+            ShowHint = False
+            Text = '<'
+            TextSettings.Font.Size = 26.000000000000000000
             TextSettings.FontColor = claIvory
             TextSettings.Trimming = None
+            OnClick = SpeedButton3Click
           end
         end
       end
@@ -896,7 +901,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
               TextSettings.Font.Size = 26.000000000000000000
               TextSettings.FontColor = claIvory
               TextSettings.Trimming = None
-              OnClick = SpeedButton4Click
+              OnClick = SpeedButton5Click
             end
           end
         end
@@ -983,7 +988,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
               TextSettings.Font.Size = 26.000000000000000000
               TextSettings.FontColor = claIvory
               TextSettings.Trimming = None
-              OnClick = SpeedButton4Click
+              OnClick = SpeedButton6Click
             end
           end
         end
@@ -1011,7 +1016,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -1081,7 +1086,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             Size.Height = 48.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 2
-            object lbLuci: TLabel
+            object lbSprinkler: TLabel
               Action = TitleAction
               Align = MostRight
               StyledSettings = [Family, Size]
@@ -1094,7 +1099,7 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
               TextSettings.FontColor = claWhite
               TextSettings.HorzAlign = Center
               TextSettings.Trimming = None
-              Text = 'Luci'
+              Text = 'Sprinkler'
               TabOrder = 2
             end
             object SpeedButton7: TSpeedButton
