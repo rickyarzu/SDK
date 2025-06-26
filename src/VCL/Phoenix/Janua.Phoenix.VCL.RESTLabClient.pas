@@ -145,39 +145,38 @@ type
     memTestReport: TAdvMemo;
     memTestProdotti: TAdvMemo;
     memTestTranslated: TAdvMemo;
-    tabTestRESTAPI: TTabSheet;
-    pnlRestTop: TPanel;
-    spPort: TSpinEdit;
-    btnStartDMVC: TButton;
-    lbGetResult: TLabel;
+    btnBuildCache: TButton;
+    btnAltreCache: TButton;
     PageControl5: TPageControl;
     tabConf: TTabSheet;
-    tabUsers: TTabSheet;
-    tabProdotti: TTabSheet;
-    tabReport: TTabSheet;
-    tabRapportiniGiorno: TTabSheet;
-    TabSheet6: TTabSheet;
     memJsonConfResponse: TAdvMemo;
     memJsonConfElaborated: TAdvMemo;
-    btnGetRestConf: TButton;
+    tabUsers: TTabSheet;
     memUtentiREST: TAdvMemo;
     memUtentiRestObject: TAdvMemo;
-    btnUtenti: TButton;
+    tabProdotti: TTabSheet;
     memProdottiREST: TAdvMemo;
     memProdottiRestObject: TAdvMemo;
-    btnItems: TButton;
-    TabSheet1: TTabSheet;
+    tabReport: TTabSheet;
     EnhCRDBGrid19: TEnhCRDBGrid;
     memStatinoREST: TAdvMemo;
     memStatinoRESTObject: TAdvMemo;
-    btnReportREST: TButton;
-    btnBuildCache: TButton;
-    btnAltreCache: TButton;
+    tabRapportiniGiorno: TTabSheet;
     memReportList: TAdvMemo;
-    btnReportList: TButton;
     memReportListElaborated: TAdvMemo;
-    btnTestList: TButton;
     memLista: TMemo;
+    TabSheet6: TTabSheet;
+    TabSheet1: TTabSheet;
+    pnlRestTop: TPanel;
+    lbGetResult: TLabel;
+    spPort: TSpinEdit;
+    btnStartDMVC: TButton;
+    btnGetRestConf: TButton;
+    btnUtenti: TButton;
+    btnItems: TButton;
+    btnReportREST: TButton;
+    btnReportList: TButton;
+    btnTestList: TButton;
     edIdranti: TJvComboEdit;
     procedure btnRestCallClick(Sender: TObject);
     procedure btnOpenClick(Sender: TObject);
@@ -214,6 +213,7 @@ type
     procedure btnReportListClick(Sender: TObject);
     procedure btnTestListClick(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure edIdrantiButtonClick(Sender: TObject);
   private
     FdmFDACPhoenixLab: TdmPhoenixIBLab;
     FServer: string;
@@ -462,7 +462,7 @@ begin
   except
     on e: exception do
     begin
-     frmJsonPreview.AdvMemo1.Lines.Text := e.Message;
+      frmJsonPreview.AdvMemo1.Lines.Text := e.Message;
     end;
 
   END;
@@ -816,6 +816,13 @@ begin
   memTmpConfigurazioni.Lines.Text := lJson;
   lJsonObject := Janua.Core.JSON.JsonParse(lJson);
   memConfigurazioni.Lines.Text := JsonPretty(lJsonObject);
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.edIdrantiButtonClick(Sender: TObject);
+begin
+  dmFbPhoenixJsonReport.qryStatiniNonCompilati.Close;
+  dmFbPhoenixJsonReport.qryStatiniNonCompilati.Params[0].AsString := edIdranti.Text;
+  dmFbPhoenixJsonReport.qryStatiniNonCompilati.Open;
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.edListaClick(Sender: TObject);
