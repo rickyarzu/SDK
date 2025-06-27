@@ -13,12 +13,15 @@ type
     Layout11: TLayout;
     lbLuci: TLabel;
     SpeedButton7: TSpeedButton;
-    frameFMXPhoenixMobileDoorSetting1: TframeFMXPhoenixMobileDoorSetting;
+
     procedure SpeedButton7Click(Sender: TObject);
   private
+    FFRame: TframeFMXPhoenixMobileDoorSetting;
+    function GetFrame: TframeFMXPhoenixMobileDoorSetting;
     { Private declarations }
   public
     { Public declarations }
+    property frameFMXPhoenixMobileDoorSetting1: TframeFMXPhoenixMobileDoorSetting read GetFrame;
   end;
 
 var
@@ -28,8 +31,24 @@ implementation
 
 {$R *.fmx}
 
+function TfrmFMXDoorSettings.GetFrame: TframeFMXPhoenixMobileDoorSetting;
+begin
+  if not ASsigned(FFRame) then
+  begin
+    FFRame := TframeFMXPhoenixMobileDoorSetting.Create(self);
+    FFRame.Position.y := 100;
+    FFRame.Align := TAlignLayout.Client;
+    FFRame.Parent := Self;
+    FFRame.Visible := True;
+  end;
+
+  Result := FFRame
+end;
+
 procedure TfrmFMXDoorSettings.SpeedButton7Click(Sender: TObject);
 begin
+  FFRame.Free;
+  FFRame := nil;
   Close;
 end;
 

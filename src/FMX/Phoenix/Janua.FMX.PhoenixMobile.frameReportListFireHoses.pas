@@ -40,7 +40,7 @@ type
     FFireHoses: TObjectList<TframeFMXMobileFireHose>;
     procedure SetFireHoses(const Value: TObjectList<TframeFMXMobileFireHose>);
   protected
-    procedure SetupIdrante(const aIdrante: TIdranti);
+    procedure SetupIdrante(const aIdrante: TIdranti);  virtual;
   public
     property FireHoses: TObjectList<TframeFMXMobileFireHose> read FFireHoses write SetFireHoses;
   public

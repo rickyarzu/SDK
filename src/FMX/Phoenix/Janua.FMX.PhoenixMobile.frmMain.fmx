@@ -389,8 +389,8 @@ object frmFMXPhoenixMobileMain: TfrmFMXPhoenixMobileMain
             Size.Width = 378.000000000000000000
             Size.Height = 44.000000000000000000
             TabOrder = 7
-            Viewport.Width = 370.000000000000000000
-            Viewport.Height = 36.000000000000000000
+            Viewport.Width = 378.000000000000000000
+            Viewport.Height = 44.000000000000000000
           end
         end
         inherited rcReportSummary: TRectangle

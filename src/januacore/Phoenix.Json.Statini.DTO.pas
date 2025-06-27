@@ -962,7 +962,7 @@ type
     property VALVOLERICAMBIO: Boolean read FVALVOLERICAMBIO write FVALVOLERICAMBIO;
   end;
 
-  TEstintori = class
+  Testintori = class
   private
     [JSONName('ANNO_COSTRUZIONE')]
     FANNOCOSTRUZIONE: string;
@@ -1256,6 +1256,7 @@ type
     FTELEFONO: string;
     [JSONName('TERMINA_CLIENTE')]
     FTerminaCliente: Boolean;
+
     [JSONName('Accessori')]
     FAccessori: TAccessori;
 
@@ -1267,9 +1268,9 @@ type
 
     // Lista Estintori
     [JSONName('estintori'), JSONMarshalled(False)]
-    FEstintoriArray: TArray<TEstintori>;
+    FestintoriArray: TArray<Testintori>;
     [GenericListReflect]
-    FEstintori: TObjectList<TEstintori>;
+    Festintori: TObjectList<Testintori>;
     // [JSONName('Estintori'), GenericListReflect]
 
     // Lista Luci
@@ -1327,7 +1328,7 @@ type
     [JSONName('ZTmpInfo')]
     FZTmpInfo: TZTmpInfo;
 
-    function GetEstintori: TObjectList<TEstintori>;
+    function Getestintori: TObjectList<Testintori>;
     function GetFattureArretrate: TObjectList<TFattureArretrate>;
     function GetGruppiPressurizzazione: TObjectList<TGruppiPressurizzazione>;
     function GetIdranti: TObjectList<TIdranti>;
@@ -1363,7 +1364,7 @@ type
     property ESTINTORIRESTITUITI: Integer read FESTINTORIRESTITUITI write FESTINTORIRESTITUITI;
     property ESTINTORIRITIRATE: Integer read FESTINTORIRITIRATE write FESTINTORIRITIRATE;
     property ESTINTORISMALTITI: Integer read FESTINTORISMALTITI write FESTINTORISMALTITI;
-    property Estintori: TObjectList<TEstintori> read GetEstintori;
+    property estintori: TObjectList<Testintori> read Getestintori;
     property FDataDiscrepanza: TDateTime read FFDataDiscrepanza write FFDataDiscrepanza;
     property FORNITURA: Boolean read FFORNITURA write FFORNITURA;
     property FOrarioDiscrepanza: string read FFOrarioDiscrepanza write FFOrarioDiscrepanza;
@@ -1637,7 +1638,7 @@ end;
 
 function TStatino.GetEstintori: TObjectList<TEstintori>;
 begin
-  Result := ObjectList<TEstintori>(FEstintori, FEstintoriArray);
+  Result := ObjectList<Testintori>(Festintori, FestintoriArray);
 end;
 
 function TStatino.GetFattureArretrate: TObjectList<TFattureArretrate>;
@@ -1687,7 +1688,7 @@ end;
 
 function TStatino.GetAsJson: string;
 begin
-  RefreshArray<TEstintori>(FEstintori, FEstintoriArray);
+  RefreshArray<Testintori>(Festintori, FestintoriArray);
   RefreshArray<TFattureArretrate>(FFattureArretrate, FFattureArretrateArray);
   RefreshArray<TGruppiPressurizzazione>(FGruppiPressurizzazione, FGruppiPressurizzazioneArray);
   RefreshArray<TIdranti>(FIdranti, FIdrantiArray);

@@ -53,7 +53,7 @@ type
     procedure ckbContrChange(Sender: TObject);
     procedure ckbContrClick(Sender: TObject);
     procedure ckbChargingClick(Sender: TObject);
-    procedure TMSFMXSpeedButton1Change(Sender: TObject);
+    procedure TMSFMXSpeedButton1Click(Sender: TObject);
   private
     FIdrante: TIdranti;
     FBocchello: TBocchelli;
@@ -151,18 +151,15 @@ begin
 
 end;
 
-procedure TframeFMXMobileFireHose.TMSFMXSpeedButton1Change(Sender: TObject);
+procedure TframeFMXMobileFireHose.TMSFMXSpeedButton1Click(Sender: TObject);
 begin
   var
-  lFrm := TfrmFMXFireHoseSettings.Create(nil);
-  try
-    lFrm.frameFMXPhoenixMobileFireHoseSetting1.Bocchello := self.FBocchello;
-    lFrm.frameFMXPhoenixMobileFireHoseSetting1.Idrante := self.Idrante;
-    lFrm.ShowModal;
-  finally
-    lFrm.Free;
-    lFrm := nil;
-  end;
+  lFrm := frmFMXFireHoseSettings;
+
+  lFrm.frameFMXPhoenixMobileFireHoseSetting1.Bocchello := self.FBocchello;
+  lFrm.frameFMXPhoenixMobileFireHoseSetting1.Idrante := self.Idrante;
+  lFrm.Show;
+
 end;
 
 end.

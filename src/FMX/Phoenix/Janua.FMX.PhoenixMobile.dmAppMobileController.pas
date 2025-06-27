@@ -68,6 +68,10 @@ type
     function ProcessDateWithMonthCalculation(const AInputDate: string; const AMonthsToAdd: integer;
       out AOriginalYear, AOriginalMonth: Word; out ANewDate: TDateTime; out ANewMonthYear: string): Boolean;
     function JsonDateToDateTime(const aDateString: string): TDateTime;
+    function GetDocumentsPath: string;
+    procedure SaveJsonToFile(const AJson: string; const AFileName: string);
+    function LoadJsonFromFile(const AFileName: string): string;
+    function CheckFileExists(const AFileName: string): Boolean;
   public
     property Months: TList<string> read FMonths write SetMonths;
     property FullUrl: string read FFullUrl write SetFullUrl;
@@ -100,9 +104,18 @@ var
 
 implementation
 
+uses System.IOUtils, System.JSON;
+
 {%CLASSGROUP 'FMX.Controls.TControl'}
 {$R *.dfm}
 { TdmFMXPhoenixAppMobileController }
+
+function TdmFMXPhoenixAppMobileController.CheckFileExists(const AFileName: string): Boolean;
+begin
+  var
+  FilePath := TPath.Combine(GetDocumentsPath, AFileName);
+  Result := TFile.Exists(FilePath);
+end;
 
 function TdmFMXPhoenixAppMobileController.CreateClient: IJanuaRESTClient;
 begin
@@ -114,7 +127,7 @@ end;
 
 procedure TdmFMXPhoenixAppMobileController.DataModuleCreate(Sender: TObject);
 begin
-  FServer := 'https://asso.januaservers.com';
+  FServer := 'https://asso.januaservers.com/app/';
   FPort := 0;
 
   FMonths := TList<string>.Create;
@@ -133,6 +146,8 @@ begin
 
   FDictEstintori := TDictionary<integer, Tcatestintori>.Create;
   FCatEstintori := TCatEstintoriRoot.Create;
+
+  FDictBocchelli := TDictionary<integer, TTIPOBOCCHELLI>.Create;
 
   FMonths.Add('Gennaio');
   FMonths.Add('Febbraio');
@@ -164,6 +179,8 @@ begin
   FDictEstintori.Free;
 
   FCatEstintori.Free;
+
+  FDictBocchelli.Free;
 end;
 
 function TdmFMXPhoenixAppMobileController.FindBocchello(const aBocchello: integer;
@@ -182,6 +199,15 @@ function TdmFMXPhoenixAppMobileController.FindContratto(const aContratto: intege
   out oContratto: TContratti): Boolean;
 begin
   Result := FDictContratti.TryGetValue(aContratto, oContratto);
+end;
+
+function TdmFMXPhoenixAppMobileController.GetDocumentsPath: string;
+begin
+{$IFDEF ANDROID}
+  Result := TPath.GetDocumentsPath;
+{$ELSE}
+  Result := TPath.GetDocumentsPath;
+{$ENDIF}
 end;
 
 function TdmFMXPhoenixAppMobileController.JsonDateToDateTime(const aDateString: string): TDateTime;
@@ -207,6 +233,11 @@ begin
   end;
 end;
 
+function TdmFMXPhoenixAppMobileController.LoadJsonFromFile(const AFileName: string): string;
+begin
+
+end;
+
 procedure TdmFMXPhoenixAppMobileController.OpenConf;
 begin
   // IJanuaRESTClient
@@ -221,10 +252,14 @@ begin
   begin
     var
     sConf := lClient.Content;
+    SaveJsonToFile(sConf, 'conf.json');
     FConf.AsJson := sConf;
     FDictContratti.Clear;
     for var lContratto in FConf.Contratti do
       FDictContratti.Add(lContratto.CHIAVE, lContratto);
+
+    for var lBocchello in FConf.TIPOBOCCHELLI do
+      FDictBocchelli.Add(lBocchello.CHIAVE, lBocchello);
   end;
   lClient := nil;
   // FDictEstintori := TDictionary<integer, Tcatestintori>.Create;
@@ -315,9 +350,13 @@ begin
   begin
     var
     sConf := lClient.Content;
+    SaveJsonToFile(sConf, aStatino.ToString + '.json');
     // Conf := StringReplace(sConf, '"idranti"', '"Idranti"', [rfReplaceAll]);
     FStatino.AsJson := sConf;
-  end;
+    SaveJsonToFile(JsonPretty(FStatino.AsJson), aStatino.ToString + 'test.json');
+  end
+  else if CheckFileExists(aStatino.ToString + '.json') then
+    LoadJsonFromFile(aStatino.ToString + '.json');
 
 end;
 
@@ -363,6 +402,23 @@ begin
     end;
   end;
 
+end;
+
+procedure TdmFMXPhoenixAppMobileController.SaveJsonToFile(const AJson: string; const AFileName: string);
+begin
+  try
+    var
+    lFilePath := TPath.Combine(GetDocumentsPath, AFileName);
+
+    // Salva il file
+    TFile.WriteAllText(lFilePath, AJson, TEncoding.UTF8);
+
+  except
+    (*
+      on E: Exception do
+      ShowMessage('Errore nel salvare: ' + E.Message);
+    *)
+  end;
 end;
 
 procedure TdmFMXPhoenixAppMobileController.SetAfterStatiniLoad(const Value: TNotifyEvent);
@@ -432,7 +488,7 @@ begin
   try
     OpenDaily;
     if Assigned(FAfterStatiniLoad) then
-      FAfterStatiniLoad(Self);
+      FAfterStatiniLoad(self);
 
     OpenConf;
   except

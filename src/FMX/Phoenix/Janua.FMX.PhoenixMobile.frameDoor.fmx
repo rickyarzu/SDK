@@ -39,11 +39,11 @@ object frameFMXMobileDoor: TframeFMXMobileDoor
       Size.Width = 38.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
+      OnClick = TMSFMXSpeedButton1Click
       BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
       BitmapName = 'specification'
       ShowImage = True
       Version = '1.6.0.0'
-      OnChange = TMSFMXSpeedButton1Change
       TabOrder = 3
     end
     object txtIntervento: TLabel

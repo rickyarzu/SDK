@@ -13,12 +13,15 @@ type
     Layout11: TLayout;
     lbLuci: TLabel;
     SpeedButton7: TSpeedButton;
-    frameFMXPhoenixMobileEstinguisherSetting1: TframeFMXPhoenixMobileEstinguisherSetting;
+
     procedure SpeedButton7Click(Sender: TObject);
   private
+    FFRame: TframeFMXPhoenixMobileEstinguisherSetting;
+    function GetFrame: TframeFMXPhoenixMobileEstinguisherSetting;
     { Private declarations }
   public
-    { Public declarations }
+    property frameFMXPhoenixMobileEstinguisherSetting1: TframeFMXPhoenixMobileEstinguisherSetting
+      read GetFrame;
   end;
 
 var
@@ -28,8 +31,24 @@ implementation
 
 {$R *.fmx}
 
+function TfrmFMXEstinguisherSettings.GetFrame: TframeFMXPhoenixMobileEstinguisherSetting;
+begin
+  if not ASsigned(FFRame) then
+  begin
+    FFRame := TframeFMXPhoenixMobileEstinguisherSetting.Create(self);
+    FFRame.Position.y := 100;
+    FFRame.Align := TAlignLayout.Client;
+    FFRame.Parent := Self;
+    FFRame.Visible := True;
+  end;
+
+  Result := FFRame
+end;
+
 procedure TfrmFMXEstinguisherSettings.SpeedButton7Click(Sender: TObject);
 begin
+  FFRame.Free;
+  FFRame := nil;
   Close;
 end;
 

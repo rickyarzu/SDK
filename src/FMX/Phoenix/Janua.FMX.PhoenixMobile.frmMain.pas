@@ -129,7 +129,9 @@ var
 
 implementation
 
-uses Spring, Janua.FMX.PhoenixMobile.dmAppMobileController;
+uses Spring, Janua.FMX.PhoenixMobile.dmAppMobileController, Janua.FMX.PhoenixMobile.frameFireHoseSettings,
+  Janua.FMX.PhoenixMobile.frameDoorSettings, Janua.FMX.PhoenixMobile.frmDoorSettings,
+  Janua.FMX.PhoenixMobile.frmFireHoseSettings;
 
 {$R *.fmx}
 {$R *.LgXhdpiPh.fmx ANDROID}
@@ -261,6 +263,7 @@ begin
   TabControl1.First(TTabTransition.None);
   FListFrames := TObjectList<TframeReportItem>.Create;
   dmFMXPhoenixAppMobileController.AfterStatiniLoad := CallBackEvent;
+  Application.CreateForm(TfrmFMXFireHoseSettings, frmFMXFireHoseSettings);
 end;
 
 procedure TfrmFMXPhoenixMobileMain.FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;

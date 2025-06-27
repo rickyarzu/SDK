@@ -19,7 +19,7 @@ inherited frameFMXReportListFireHoses: TframeFMXReportListFireHoses
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
-      Position.Y = 313.000000000000000000
+      Position.Y = 317.000000000000000000
       Size.Width = 364.000000000000000000
       Size.Height = 36.000000000000000000
       Size.PlatformDefault = False
@@ -34,7 +34,7 @@ inherited frameFMXReportListFireHoses: TframeFMXReportListFireHoses
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
-      Position.Y = 144.000000000000000000
+      Position.Y = 148.000000000000000000
       Size.Width = 364.000000000000000000
       Size.Height = 36.000000000000000000
       Size.PlatformDefault = False
@@ -49,7 +49,7 @@ inherited frameFMXReportListFireHoses: TframeFMXReportListFireHoses
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
-      Position.Y = 188.000000000000000000
+      Position.Y = 192.000000000000000000
       Size.Width = 364.000000000000000000
       Size.Height = 36.000000000000000000
       Size.PlatformDefault = False
@@ -59,7 +59,7 @@ inherited frameFMXReportListFireHoses: TframeFMXReportListFireHoses
     end
     object Layout5: TLayout
       Align = Top
-      Position.Y = 269.000000000000000000
+      Position.Y = 273.000000000000000000
       Size.Width = 372.000000000000000000
       Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
@@ -103,7 +103,7 @@ inherited frameFMXReportListFireHoses: TframeFMXReportListFireHoses
     end
     object Layout6: TLayout
       Align = Top
-      Position.Y = 228.000000000000000000
+      Position.Y = 232.000000000000000000
       Size.Width = 372.000000000000000000
       Size.Height = 41.000000000000000000
       Size.PlatformDefault = False
@@ -119,10 +119,11 @@ inherited frameFMXReportListFireHoses: TframeFMXReportListFireHoses
         Size.Height = 37.000000000000000000
         Size.PlatformDefault = False
         object lbManichette: TLabel
-          Align = Center
+          Align = Client
           StyledSettings = [Family, Size, FontColor]
-          Margins.Left = 4.000000000000000000
-          Size.Width = 97.000000000000000000
+          Margins.Left = 10.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Size.Width = 344.000000000000000000
           Size.Height = 37.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -137,21 +138,21 @@ inherited frameFMXReportListFireHoses: TframeFMXReportListFireHoses
       Align = Top
       Position.Y = 100.000000000000000000
       Size.Width = 372.000000000000000000
-      Size.Height = 40.000000000000000000
+      Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
       object laySelect: TLayout
         Align = Left
         Size.Width = 241.000000000000000000
-        Size.Height = 40.000000000000000000
+        Size.Height = 44.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object cboSelect: TComboBox
           Align = Client
           Margins.Left = 4.000000000000000000
-          Margins.Top = 4.000000000000000000
+          Margins.Top = 6.000000000000000000
           Margins.Right = 4.000000000000000000
-          Margins.Bottom = 4.000000000000000000
+          Margins.Bottom = 6.000000000000000000
           Size.Width = 233.000000000000000000
           Size.Height = 32.000000000000000000
           Size.PlatformDefault = False
@@ -161,7 +162,7 @@ inherited frameFMXReportListFireHoses: TframeFMXReportListFireHoses
       object layInsertNew: TLayout
         Align = Client
         Size.Width = 131.000000000000000000
-        Size.Height = 40.000000000000000000
+        Size.Height = 44.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         object imgInsertNew: TTMSFMXImage
@@ -170,7 +171,7 @@ inherited frameFMXReportListFireHoses: TframeFMXReportListFireHoses
           Position.Y = 2.000000000000000000
           ClipChildren = True
           Size.Width = 42.000000000000000000
-          Size.Height = 36.000000000000000000
+          Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           Margins.Left = 2.000000000000000000
           Margins.Top = 2.000000000000000000
@@ -200,7 +201,7 @@ inherited frameFMXReportListFireHoses: TframeFMXReportListFireHoses
           Margins.Right = 8.000000000000000000
           Margins.Bottom = 4.000000000000000000
           Size.Width = 69.000000000000000000
-          Size.Height = 32.000000000000000000
+          Size.Height = 36.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Trimming = None
           Text = 'Inserisci Nuovo'

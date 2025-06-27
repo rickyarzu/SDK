@@ -40,7 +40,7 @@ type
     lbNonEseg: TLabel;
     Rectangle5: TRectangle;
     lbAnomali: TLabel;
-    procedure TMSFMXSpeedButton1Change(Sender: TObject);
+    procedure TMSFMXSpeedButton1Click(Sender: TObject);
   private
     FDoor: TPorte;
     procedure SetDoor(const Value: TPorte);
@@ -82,17 +82,13 @@ begin
   end;
 end;
 
-procedure TframeFMXMobileDoor.TMSFMXSpeedButton1Change(Sender: TObject);
+procedure TframeFMXMobileDoor.TMSFMXSpeedButton1Click(Sender: TObject);
 begin
-  var
-  lFrm := TfrmFMXDoorSettings.Create(nil);
-  try
-    lFrm.frameFMXPhoenixMobileDoorSetting1.Door := self.FDoor;
-    lFrm.ShowModal;
-  finally
-    lFrm.Free;
-    lFrm := nil;
-  end;
+  // frmFMXDoorSettings: TfrmFMXDoorSettings;
+  if not Assigned(frmFMXDoorSettings) then
+    Application.CreateForm(TfrmFMXDoorSettings, frmFMXDoorSettings);
+  frmFMXDoorSettings.frameFMXPhoenixMobileDoorSetting1.Door := self.FDoor;
+  frmFMXDoorSettings.Show;
 end;
 
 end.

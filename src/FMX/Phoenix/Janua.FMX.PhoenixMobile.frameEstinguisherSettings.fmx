@@ -97,7 +97,9 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       object edProgr: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Left
+        StyleLookup = 'editstyle'
         TabOrder = 1
+        Text = 'editstyle'
         Position.Y = 2.000000000000000000
         Margins.Top = 2.000000000000000000
         Margins.Bottom = 2.000000000000000000
@@ -108,7 +110,9 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       object edMatr: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Left
+        StyleLookup = 'editstyle'
         TabOrder = 0
+        Text = 'editstyle'
         Position.X = 89.000000000000000000
         Position.Y = 2.000000000000000000
         Margins.Left = 8.000000000000000000
@@ -196,11 +200,10 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Size.PlatformDefault = False
       TabOrder = 9
       object lbAnnoSostituzione: TLabel
-        Align = Left
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 2.000000000000000000
-        Position.X = 2.000000000000000000
-        Size.Width = 127.000000000000000000
+        Size.Width = 213.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -209,10 +212,10 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         TabOrder = 1
       end
       object txtYearSubstituion: TLabel
-        Align = Left
+        Align = Right
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 2.000000000000000000
-        Position.X = 131.000000000000000000
+        Position.X = 217.000000000000000000
         Size.Width = 93.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
@@ -233,11 +236,10 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Size.PlatformDefault = False
       TabOrder = 16
       object lbTipo: TLabel
-        Align = Left
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 4.000000000000000000
-        Position.X = 4.000000000000000000
-        Size.Width = 88.000000000000000000
+        Size.Width = 306.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Trimming = None
@@ -319,6 +321,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Width = 302.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = 'comboboxstyle'
         TabOrder = 0
       end
     end
@@ -334,11 +337,10 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Size.PlatformDefault = False
       TabOrder = 10
       object lbMarca: TLabel
-        Align = Left
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 8.000000000000000000
-        Position.X = 8.000000000000000000
-        Size.Width = 88.000000000000000000
+        Size.Width = 302.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Trimming = None
@@ -358,11 +360,10 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Size.PlatformDefault = False
       TabOrder = 15
       object lbUltimaRevisione: TLabel
-        Align = Left
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 4.000000000000000000
-        Position.X = 4.000000000000000000
-        Size.Width = 125.000000000000000000
+        Size.Width = 306.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Trimming = None
@@ -444,6 +445,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Width = 302.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = 'comboboxstyle'
         TabOrder = 0
       end
     end
@@ -482,6 +484,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Width = 157.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = 'comboboxstyle'
         TabOrder = 1
       end
       object cboRevisionYear: TComboBox
@@ -547,6 +550,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Width = 137.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = 'comboboxstyle'
         TabOrder = 0
       end
     end
@@ -562,11 +566,10 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Size.PlatformDefault = False
       TabOrder = 14
       object loLastTest: TLabel
-        Align = Left
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 4.000000000000000000
-        Position.X = 4.000000000000000000
-        Size.Width = 125.000000000000000000
+        Size.Width = 306.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Trimming = None
@@ -609,6 +612,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Width = 157.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = 'comboboxstyle'
         TabOrder = 1
       end
       object cboLastTestYear: TComboBox
@@ -674,6 +678,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Width = 137.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = 'comboboxstyle'
         TabOrder = 0
       end
     end
@@ -689,11 +694,10 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Size.PlatformDefault = False
       TabOrder = 13
       object lbUbicazione: TLabel
-        Align = Left
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 4.000000000000000000
-        Position.X = 4.000000000000000000
-        Size.Width = 125.000000000000000000
+        Size.Width = 306.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Trimming = None
@@ -711,11 +715,12 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Position.X = 4.000000000000000000
       Position.Y = 389.000000000000000000
       Size.Width = 310.000000000000000000
-      Size.Height = 36.000000000000000000
+      Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
+      StyleLookup = 'memostyle'
       TabOrder = 19
       Viewport.Width = 306.000000000000000000
-      Viewport.Height = 32.000000000000000000
+      Viewport.Height = 36.000000000000000000
     end
     object layState: TLayout
       Align = Top
@@ -723,17 +728,16 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
-      Position.Y = 429.000000000000000000
+      Position.Y = 433.000000000000000000
       Size.Width = 310.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 12
       object lbState: TLabel
-        Align = Left
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 4.000000000000000000
-        Position.X = 4.000000000000000000
-        Size.Width = 125.000000000000000000
+        Size.Width = 306.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Trimming = None
@@ -747,7 +751,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
-      Position.Y = 457.000000000000000000
+      Position.Y = 461.000000000000000000
       Size.Width = 310.000000000000000000
       Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
@@ -764,6 +768,7 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
         Size.Width = 302.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = 'comboboxstyle'
         TabOrder = 0
       end
     end
@@ -773,17 +778,16 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
-      Position.Y = 489.000000000000000000
+      Position.Y = 493.000000000000000000
       Size.Width = 310.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 11
       object lbNoteTecnico: TLabel
-        Align = Left
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 4.000000000000000000
-        Position.X = 4.000000000000000000
-        Size.Width = 125.000000000000000000
+        Size.Width = 306.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Trimming = None
@@ -799,13 +803,14 @@ object frameFMXPhoenixMobileEstinguisherSetting: TframeFMXPhoenixMobileEstinguis
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Position.X = 4.000000000000000000
-      Position.Y = 517.000000000000000000
+      Position.Y = 521.000000000000000000
       Size.Width = 310.000000000000000000
-      Size.Height = 36.000000000000000000
+      Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
+      StyleLookup = 'memostyle'
       TabOrder = 18
       Viewport.Width = 306.000000000000000000
-      Viewport.Height = 32.000000000000000000
+      Viewport.Height = 36.000000000000000000
     end
   end
 end

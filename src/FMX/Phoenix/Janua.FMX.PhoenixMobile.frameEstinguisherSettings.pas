@@ -188,11 +188,14 @@ begin
       else
         lYear := YearOf(Now);
 
+      cboYear.Items.Clear;
+
       for var I := lYear to FEstintore.ANNOCOSTRUZIONE.ToInteger() + 40 do
         cboYear.Items.Add(I.ToString);
       cboYear.ItemIndex := 0;
 
       // cboType
+      cboType.Items.Clear;
       for var lListItem in dm.Conf.CatEstintori do
       begin
         cboType.Items.AddObject(lListItem.Descrizione, lListItem);
@@ -201,6 +204,7 @@ begin
       end;
 
       // cboBrand
+      cboBrand.Items.Clear;
       for var lListItem in dm.Conf.MARCHEESTINTORI do
       begin
         cboBrand.Items.AddObject(lListItem.Descrizione, lListItem);
@@ -224,6 +228,7 @@ begin
       Day := DayOf(lRevisione); // Giorno del mese (1-31)
 
       // cboRevisionMonth
+      cboRevisionMonth.Items.Clear;
       for var lMonth in dm.Months do
         cboRevisionMonth.Items.Add(lMonth);
 
@@ -231,7 +236,7 @@ begin
 
       // cboRevisionYear
       lYear := YearOf(lRevisione);
-
+      cboRevisionYear.Items.Clear;
       for var I := lYear to lYear + 40 do
         cboRevisionYear.Items.Add(I.ToString);
       cboRevisionYear.ItemIndex := 0;
@@ -249,6 +254,7 @@ begin
       Day := DayOf(lCollaudo); // Giorno del mese (1-31)
 
       // cboLastTestMonth
+      cboLastTestMonth.Items.Clear;
       for var lMonth in dm.Months do
         cboLastTestMonth.Items.Add(lMonth);
 
@@ -256,7 +262,7 @@ begin
 
       // cboRevisionYear
       lYear := YearOf(lCollaudo);
-
+      cboLastTestYear.Items.Clear;
       for var I := lYear to lYear + 40 do
         cboLastTestYear.Items.Add(I.ToString);
       cboLastTestYear.ItemIndex := 0;

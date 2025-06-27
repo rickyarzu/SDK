@@ -198,13 +198,11 @@ end;
 procedure TframeFMXMobileEstinguisher.TMSFMXSpeedButton1Click(Sender: TObject);
 begin
   // Janua.FMX.PhoenixMobile.frmEstinguisherSettings
-  var lForm := TfrmFMXEstinguisherSettings.Create(nil);
-  try
-    lForm.frameFMXPhoenixMobileEstinguisherSetting1.Estintore := self.FEstintore;
-    lForm.ShowModal;
-  finally
-    lForm.Free;
-  end;
+  // TfrmFMXEstinguisherSettings
+  if not Assigned(frmFMXEstinguisherSettings) then
+    Application.CreateForm(TfrmFMXEstinguisherSettings, frmFMXEstinguisherSettings);
+  frmFMXEstinguisherSettings.frameFMXPhoenixMobileEstinguisherSetting1.Estintore := Estintore;
+  frmFMXEstinguisherSettings.Show;
 end;
 
 end.

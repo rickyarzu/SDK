@@ -84,7 +84,9 @@ object frameFMXPhoenixMobileFireHoseSetting: TframeFMXPhoenixMobileFireHoseSetti
       object edProgr: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = Left
+        StyleLookup = 'editstyle'
         TabOrder = 0
+        Text = 'editstyle'
         Position.Y = 2.000000000000000000
         Margins.Top = 2.000000000000000000
         Margins.Bottom = 2.000000000000000000
@@ -155,6 +157,7 @@ object frameFMXPhoenixMobileFireHoseSetting: TframeFMXPhoenixMobileFireHoseSetti
         Size.Width = 240.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = 'comboboxstyle'
         TabOrder = 1
       end
     end
@@ -256,6 +259,7 @@ object frameFMXPhoenixMobileFireHoseSetting: TframeFMXPhoenixMobileFireHoseSetti
         Size.Width = 325.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = 'comboboxstyle'
         TabOrder = 0
       end
     end
@@ -368,6 +372,7 @@ object frameFMXPhoenixMobileFireHoseSetting: TframeFMXPhoenixMobileFireHoseSetti
         Size.Width = 192.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = 'comboboxstyle'
         TabOrder = 1
       end
       object edLength: TEdit
@@ -395,11 +400,10 @@ object frameFMXPhoenixMobileFireHoseSetting: TframeFMXPhoenixMobileFireHoseSetti
       Size.PlatformDefault = False
       TabOrder = 11
       object loLastTest: TLabel
-        Align = Left
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 4.000000000000000000
-        Position.X = 4.000000000000000000
-        Size.Width = 125.000000000000000000
+        Size.Width = 329.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Trimming = None
@@ -442,6 +446,7 @@ object frameFMXPhoenixMobileFireHoseSetting: TframeFMXPhoenixMobileFireHoseSetti
         Size.Width = 157.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = 'comboboxstyle'
         TabOrder = 1
       end
       object cboLastTestYear: TComboBox
@@ -507,6 +512,7 @@ object frameFMXPhoenixMobileFireHoseSetting: TframeFMXPhoenixMobileFireHoseSetti
         Size.Width = 160.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = 'comboboxstyle'
         TabOrder = 0
       end
     end
@@ -522,11 +528,10 @@ object frameFMXPhoenixMobileFireHoseSetting: TframeFMXPhoenixMobileFireHoseSetti
       Size.PlatformDefault = False
       TabOrder = 10
       object lbUbicazione: TLabel
-        Align = Left
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 4.000000000000000000
-        Position.X = 4.000000000000000000
-        Size.Width = 125.000000000000000000
+        Size.Width = 329.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Trimming = None
@@ -546,6 +551,7 @@ object frameFMXPhoenixMobileFireHoseSetting: TframeFMXPhoenixMobileFireHoseSetti
       Size.Width = 333.000000000000000000
       Size.Height = 36.000000000000000000
       Size.PlatformDefault = False
+      StyleLookup = 'memostyle'
       TabOrder = 16
       Viewport.Width = 329.000000000000000000
       Viewport.Height = 32.000000000000000000
@@ -562,11 +568,10 @@ object frameFMXPhoenixMobileFireHoseSetting: TframeFMXPhoenixMobileFireHoseSetti
       Size.PlatformDefault = False
       TabOrder = 9
       object lbState: TLabel
-        Align = Left
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 4.000000000000000000
-        Position.X = 4.000000000000000000
-        Size.Width = 125.000000000000000000
+        Size.Width = 329.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Trimming = None
@@ -598,6 +603,7 @@ object frameFMXPhoenixMobileFireHoseSetting: TframeFMXPhoenixMobileFireHoseSetti
         Size.Width = 325.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
+        StyleLookup = 'comboboxstyle'
         TabOrder = 0
       end
     end
@@ -613,11 +619,10 @@ object frameFMXPhoenixMobileFireHoseSetting: TframeFMXPhoenixMobileFireHoseSetti
       Size.PlatformDefault = False
       TabOrder = 8
       object lbNoteTecnico: TLabel
-        Align = Left
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 4.000000000000000000
-        Position.X = 4.000000000000000000
-        Size.Width = 125.000000000000000000
+        Size.Width = 329.000000000000000000
         Size.Height = 24.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Trimming = None
@@ -637,6 +642,7 @@ object frameFMXPhoenixMobileFireHoseSetting: TframeFMXPhoenixMobileFireHoseSetti
       Size.Width = 333.000000000000000000
       Size.Height = 36.000000000000000000
       Size.PlatformDefault = False
+      StyleLookup = 'memostyle'
       TabOrder = 15
       Viewport.Width = 329.000000000000000000
       Viewport.Height = 32.000000000000000000
