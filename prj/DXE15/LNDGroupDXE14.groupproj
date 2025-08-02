@@ -21,6 +21,9 @@
         <Projects Include="..\..\Samples\FMx\Mobile\LNDLiguriaAppTest.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="FMX\LNDLiguriaUrgenze.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -83,14 +86,23 @@
     <Target Name="LNDLiguriaAppTest:Make">
         <MSBuild Projects="..\..\Samples\FMx\Mobile\LNDLiguriaAppTest.dproj" Targets="Make"/>
     </Target>
+    <Target Name="LNDLiguriaUrgenze">
+        <MSBuild Projects="FMX\LNDLiguriaUrgenze.dproj"/>
+    </Target>
+    <Target Name="LNDLiguriaUrgenze:Clean">
+        <MSBuild Projects="FMX\LNDLiguriaUrgenze.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LNDLiguriaUrgenze:Make">
+        <MSBuild Projects="FMX\LNDLiguriaUrgenze.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="LndCms;LNDWebBrokerVCLRESTServer;LNDWebBrokerConsoleRestServer;LNDWebBrokerRESTService;LNDLiguriaApp;LNDLiguriaAppTest"/>
+        <CallTarget Targets="LndCms;LNDWebBrokerVCLRESTServer;LNDWebBrokerConsoleRestServer;LNDWebBrokerRESTService;LNDLiguriaApp;LNDLiguriaAppTest;LNDLiguriaUrgenze"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="LndCms:Clean;LNDWebBrokerVCLRESTServer:Clean;LNDWebBrokerConsoleRestServer:Clean;LNDWebBrokerRESTService:Clean;LNDLiguriaApp:Clean;LNDLiguriaAppTest:Clean"/>
+        <CallTarget Targets="LndCms:Clean;LNDWebBrokerVCLRESTServer:Clean;LNDWebBrokerConsoleRestServer:Clean;LNDWebBrokerRESTService:Clean;LNDLiguriaApp:Clean;LNDLiguriaAppTest:Clean;LNDLiguriaUrgenze:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="LndCms:Make;LNDWebBrokerVCLRESTServer:Make;LNDWebBrokerConsoleRestServer:Make;LNDWebBrokerRESTService:Make;LNDLiguriaApp:Make;LNDLiguriaAppTest:Make"/>
+        <CallTarget Targets="LndCms:Make;LNDWebBrokerVCLRESTServer:Make;LNDWebBrokerConsoleRestServer:Make;LNDWebBrokerRESTService:Make;LNDLiguriaApp:Make;LNDLiguriaAppTest:Make;LNDLiguriaUrgenze:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

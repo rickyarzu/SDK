@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B89A39A7-10B9-467E-B42E-845C61D70626}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="VCL\TestWpJson.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TestWpJson">
+        <MSBuild Projects="VCL\TestWpJson.dproj"/>
+    </Target>
+    <Target Name="TestWpJson:Clean">
+        <MSBuild Projects="VCL\TestWpJson.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestWpJson:Make">
+        <MSBuild Projects="VCL\TestWpJson.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TestWpJson"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TestWpJson:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TestWpJson:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
