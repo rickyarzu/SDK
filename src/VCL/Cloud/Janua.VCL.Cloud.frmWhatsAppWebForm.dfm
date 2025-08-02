@@ -15,7 +15,4 @@ inherited frmVCLWebBrokerWhatsApp: TfrmVCLWebBrokerWhatsApp
   inherited Edit1: TEdit
     StyleElements = [seFont, seClient, seBorder]
   end
-  inherited TMSFNCEdgeWebBrowser1: TTMSFNCEdgeWebBrowser
-    DoubleBuffered = True
-  end
 end
