@@ -11,12 +11,12 @@ uses
   // TMS
   AdvMemo, advmjson, JvExDBGrids, JvDBGrid,
   // Phoenix
-  Phoenix.JSON.Config.DTO, Phoenix.JSON.Statini.DTO,
+  Phoenix.JSON.Config.DTO, Phoenix.JSON.Statini.DTO, udmTestPhoenixDMVC,
   // Forms
   uJanuaVclForm, Janua.Controls.Forms.Impl, Janua.VCL.Controls.Forms.Impl, Janua.Controls.Forms.Intf,
   // Janua
   Janua.Core.Classes, Janua.REST.Types, Janua.Core.Types, Janua.Http.Types, Janua.REST.Intf,
-  Janua.Phoenix.dmIBLabSync, CRGrid, Janua.VCL.EnhCRDBGrid;
+  Janua.Phoenix.dmIBLabSync, CRGrid, Janua.VCL.EnhCRDBGrid, VCL.Samples.Spin, JvExMask, JvToolEdit;
 
 type
   TfrmPhoenixVCLRESTLabClient = class(TJanuaVCLFormModel, IJanuaForm)
@@ -136,8 +136,48 @@ type
     dsStatiniNC: TDataSource;
     btnTestNewReport: TButton;
     memReport: TAdvMemo;
-    memReportElaborato: TAdvMemo;
-    memReportFinale: TAdvMemo;
+    memReportTranslated: TAdvMemo;
+    memReportFinal: TAdvMemo;
+    tabFinalTest: TTabSheet;
+    btnFinalTest: TButton;
+    memTestConf: TAdvMemo;
+    memTestUtenti: TAdvMemo;
+    memTestReport: TAdvMemo;
+    memTestProdotti: TAdvMemo;
+    memTestTranslated: TAdvMemo;
+    btnBuildCache: TButton;
+    btnAltreCache: TButton;
+    PageControl5: TPageControl;
+    tabConf: TTabSheet;
+    memJsonConfResponse: TAdvMemo;
+    memJsonConfElaborated: TAdvMemo;
+    tabUsers: TTabSheet;
+    memUtentiREST: TAdvMemo;
+    memUtentiRestObject: TAdvMemo;
+    tabProdotti: TTabSheet;
+    memProdottiREST: TAdvMemo;
+    memProdottiRestObject: TAdvMemo;
+    tabReport: TTabSheet;
+    EnhCRDBGrid19: TEnhCRDBGrid;
+    memStatinoREST: TAdvMemo;
+    memStatinoRESTObject: TAdvMemo;
+    tabRapportiniGiorno: TTabSheet;
+    memReportList: TAdvMemo;
+    memReportListElaborated: TAdvMemo;
+    memLista: TMemo;
+    TabSheet6: TTabSheet;
+    TabSheet1: TTabSheet;
+    pnlRestTop: TPanel;
+    lbGetResult: TLabel;
+    spPort: TSpinEdit;
+    btnStartDMVC: TButton;
+    btnGetRestConf: TButton;
+    btnUtenti: TButton;
+    btnItems: TButton;
+    btnReportREST: TButton;
+    btnReportList: TButton;
+    btnTestList: TButton;
+    edIdranti: TJvComboEdit;
     procedure btnRestCallClick(Sender: TObject);
     procedure btnOpenClick(Sender: TObject);
     procedure btnSaveJsonClick(Sender: TObject);
@@ -162,9 +202,21 @@ type
     procedure btnConfClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure btnTestNewReportClick(Sender: TObject);
+    procedure btnFinalTestClick(Sender: TObject);
+    procedure btnStartDMVCClick(Sender: TObject);
+    procedure btnGetRestConfClick(Sender: TObject);
+    procedure btnUtentiClick(Sender: TObject);
+    procedure btnItemsClick(Sender: TObject);
+    procedure btnReportRESTClick(Sender: TObject);
+    procedure btnBuildCacheClick(Sender: TObject);
+    procedure btnAltreCacheClick(Sender: TObject);
+    procedure btnReportListClick(Sender: TObject);
+    procedure btnTestListClick(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure edIdrantiButtonClick(Sender: TObject);
   private
     FdmFDACPhoenixLab: TdmPhoenixIBLab;
-    { Private declarations }
+    FServer: string;
     procedure StatoLavorazioni;
     procedure Configurazioni;
     procedure ElaborateJson;
@@ -183,18 +235,60 @@ uses
   uQrpPhoenixReport, Janua.Phoenix.VCL.ReportController, Janua.Interbase.dmModel, Janua.Phoenix.FbReport,
   // Phoenix
   DlgShowContratto, DlgNuovoStatino, Globale, ZFIBPlusNodoGenerico2, udmPhoenixFirebirdAppBackend,
+  ufrmPhoenixJsonPreview, udmPhoenixReportsCaches,
   // Janua
-  Phoenix.JSON.Tecnici.DTO, Phoenix.JSON.Prodotti.DTO,
-  Janua.Phoenix.dmIBReportPlanner, Janua.VCL.Functions, Janua.Core.AsyncTask,
+  Phoenix.JSON.Tecnici.DTO, Phoenix.JSON.Prodotti.DTO, Janua.REST.Client, DTO.Phoenix.ReportList,
+  Janua.Phoenix.dmIBReportPlanner, Janua.VCL.Functions,
+
+  Janua.Core.AsyncTask, Janua.Application.Framework, Janua.Core.JSON,
+
   Janua.Phoenix.VCL.dlgEditReportTimetable, Janua.Phoenix.VCL.dlgModificaStatino,
-  Janua.Application.Framework, Janua.REST.Client, Janua.Core.JSON, MainUnit, EsportazioneSuMobile,
-  Janua.Phoenix.FbJsonReport, ufrmPhoenixJsonPreview;
+  MainUnit, EsportazioneSuMobile,
+  Janua.Phoenix.FbJsonReport;
 
 {$R *.dfm}
+
+procedure TfrmPhoenixVCLRESTLabClient.btnAltreCacheClick(Sender: TObject);
+begin
+  var
+  sConf := EsportazioneSuMobile.GetExportConfMobileJson(MAIN_FORM.QRY_GENERIC);
+  dmPhoenixReportsCaches.SetConfCache(sConf);
+  sConf := EsportazioneSuMobile.GetUtentiJson(MAIN_FORM.QRY_GENERIC);
+  dmPhoenixReportsCaches.SetUtentiCache(sConf);
+  sConf := EsportazioneSuMobile.GetMagazzinoJson(MAIN_FORM.QRY_GENERIC);
+  dmPhoenixReportsCaches.SetProdottiCache(sConf);
+end;
 
 procedure TfrmPhoenixVCLRESTLabClient.btnApriTuttiClick(Sender: TObject);
 begin
   dmFbPhoenixJsonReport.ApriTuttiIUniQuery
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.btnBuildCacheClick(Sender: TObject);
+begin
+  dmFbPhoenixJsonReport.qryStatiniNonCompilati.First;
+  ExportToJsonString := True;
+  While not dmFbPhoenixJsonReport.qryStatiniNonCompilati.Eof do
+  begin
+    var
+    sConf := '';
+    var
+    lParam := dmFbPhoenixJsonReport.qryStatiniNonCompilatiCHIAVE.AsInteger;
+    MAIN_FORM.QRY_GENERIC.Close;
+    MAIN_FORM.QRY_GENERIC.SQL.Text := 'SELECT * FROM STATINI WHERE CHIAVE = ' + lParam.ToString;
+    MAIN_FORM.QRY_GENERIC.ExecQuery;
+    var
+    vTest := MAIN_FORM.QRY_GENERIC.Open;
+    if (MAIN_FORM.QRY_GENERIC.RecordCount > 0) then
+    begin
+      MOBExportStatino(MAIN_FORM.QRY_GENERIC, False, sConf);
+      var
+      lID := MAIN_FORM.QRY_GENERIC.FieldByName('CHIAVE').AsInteger;
+      dmPhoenixReportsCaches.SetStatinoCache(lID, sConf);
+    end;
+    dmFbPhoenixJsonReport.qryStatiniNonCompilati.Next;
+  end;
+  ExportToJsonString := False;
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.btnConfClick(Sender: TObject);
@@ -236,9 +330,78 @@ begin
   dmFbPhoenixJsonReport.UpdateAllEstintori
 end;
 
+procedure TfrmPhoenixVCLRESTLabClient.btnFinalTestClick(Sender: TObject);
+begin
+  var
+  DM := TdmPhoenixAppBackend.Create(nil);
+  try
+    var
+    lConf := '';
+    lConf := DM.GetConf;
+    self.memTestConf.Lines.Text := JsonPretty(lConf);
+
+    lConf := DM.GetUtenti;
+    self.memTestUtenti.Lines.Text := JsonPretty(lConf);
+
+    lConf := DM.GetProdotti;
+    self.memTestProdotti.Lines.Text := JsonPretty(lConf);
+
+    var
+    lParam := dmFbPhoenixJsonReport.qryStatiniNonCompilatiCHIAVE.AsInteger;
+    lConf := DM.GetStatino(lParam);
+    memTestReport.Lines.Text := JsonPretty(lConf);
+
+    var
+    lStatino := TStatino.Create;
+    try
+      try
+        lStatino.AsJson := lConf;
+        lConf := ReplaceJsonToPhoenix(lStatino.AsJson);
+        memTestTranslated.Lines.Text := JsonPretty(lConf);
+      except
+        on e: exception do
+          memTestTranslated.Lines.Text := e.Message;
+      end;
+    finally
+      lStatino.Free;
+    end;
+
+  finally
+    DM.Free;
+  end;
+end;
+
 procedure TfrmPhoenixVCLRESTLabClient.btnFumiClick(Sender: TObject);
 begin
   dmFbPhoenixJsonReport.UpdateAllFumi
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.btnGetRestConfClick(Sender: TObject);
+var
+  lClient: IJanuaRESTClient;
+begin
+  // IJanuaRESTClient
+  lClient := TJanuaRESTClient.Create;
+  lClient.ServerURL := FServer;
+  lClient.ServerPort := spPort.Value;
+  lClient.SetMimeType(jmtTextPlain);
+  lClient.ApiUrl := 'api/conf';
+  lbGetResult.Caption := lClient.GetFullUrl;
+
+  // function Execute(aMethod: TJanuaHttpMethod; aUrlParams: TStringArray = []): Boolean;
+  if lClient.Execute(TJanuaHttpMethod.jhmGet) then
+  begin
+    var
+    sConf := lClient.Content;
+
+    memJsonConfResponse.Lines.Text := sConf;
+
+    var
+    lConf := TConfRoot.Create;
+    lConf.AsJson := sConf;
+    memJsonConfElaborated.Lines.Text := JsonPretty(lConf.AsJson);
+  end;
+
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.btnGruppiClick(Sender: TObject);
@@ -251,20 +414,63 @@ begin
   dmFbPhoenixJsonReport.UpdateAllIdranti;
 end;
 
+procedure TfrmPhoenixVCLRESTLabClient.btnItemsClick(Sender: TObject);
+var
+  lClient: IJanuaRESTClient;
+begin
+  // IJanuaRESTClient
+  lClient := TJanuaRESTClient.Create;
+  lClient.ServerURL := FServer;
+  lClient.ServerPort := spPort.Value;
+  lClient.SetMimeType(jmtTextPlain);
+  lClient.ApiUrl := 'api/items';
+  lbGetResult.Caption := lClient.GetFullUrl;
+
+  // function Execute(aMethod: TJanuaHttpMethod; aUrlParams: TStringArray = []): Boolean;
+  if lClient.Execute(TJanuaHttpMethod.jhmGet) then
+  begin
+    var
+    sConf := lClient.Content;
+
+    memProdottiREST.Lines.Text := sConf;
+
+    var
+    lConf := TProdottiRoot.Create;
+    lConf.AsJson := sConf;
+    memProdottiRestObject.Lines.Text := JsonPretty(lConf.AsJson);
+  end;
+
+end;
+
 procedure TfrmPhoenixVCLRESTLabClient.btnJsonClick(Sender: TObject);
 begin
   var
+  vTest := dsStatino.DataSet.FieldByName('STATINO').AsString;
+
+  var
   lJson := JsonPretty(dsStatino.DataSet.FieldByName('JSON_DA_MOBILE').AsString);
+  frmJsonPreview.memOriginal.Lines.Text := lJson;
   lJson := ReplacePhoenixJson(lJson);
+  // memReplaced
+  frmJsonPreview.memReplaced.Lines.Text := lJson;
   var
   lStatino := TStatino.Create;
-  lStatino.AsJson := lJson;
-  lJson := JsonPretty(lStatino.AsJson);
-  frmJsonPreview.AdvMemo1.Lines.Text := lJson;
+  TRY
+    lStatino.AsJson := lJson;
+    lJson := JsonPretty(lStatino.AsJson);
+    frmJsonPreview.AdvMemo1.Lines.Text := lJson;
+  except
+    on e: exception do
+    begin
+      frmJsonPreview.AdvMemo1.Lines.Text := e.Message;
+    end;
+
+  END;
+
   frmJsonPreview.ShowModal;
   dmFbPhoenixJsonReport.UpdateFromClass(lStatino);
 
-  {
+  { frmJsonPreview
     var
     lJson := tbStatiniJSON_DA_MOBILE.AsString;
     if lJson <> '' then
@@ -320,6 +526,64 @@ begin
 
 end;
 
+procedure TfrmPhoenixVCLRESTLabClient.btnReportListClick(Sender: TObject);
+var
+  lClient: IJanuaRESTClient;
+begin
+  // [MVCPath('/reports/($user_id)')]
+  lClient := TJanuaRESTClient.Create;
+  lClient.ServerURL := FServer;
+  lClient.ServerPort := spPort.Value;
+  lClient.SetMimeType(jmtTextPlain);
+  lClient.ApiUrl := 'api/reports';
+  lbGetResult.Caption := lClient.GetFullUrl;
+
+  // function Execute(aMethod: TJanuaHttpMethod; aUrlParams: TStringArray = []): Boolean;
+  if lClient.Execute(TJanuaHttpMethod.jhmGet, ['-1']) then
+  begin
+    var
+    sConf := lClient.Content;
+
+    memReportList.Lines.Text := sConf;
+
+    var
+    lConf := TLSStatinoRoot.Create;
+    lConf.AsJson := sConf;
+    memReportListElaborated.Lines.Text := JsonPretty(lConf.AsJson);
+    memLista.Lines.Text := lConf.Iterator.Text;
+  end;
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.btnReportRESTClick(Sender: TObject);
+var
+  lClient: IJanuaRESTClient;
+begin
+  var
+  lParam := dmFbPhoenixJsonReport.qryStatiniNonCompilatiCHIAVE.AsInteger;
+
+  lClient := TJanuaRESTClient.Create;
+  lClient.ServerURL := FServer;
+  lClient.ServerPort := spPort.Value;
+  lClient.SetMimeType(jmtTextPlain);
+  lClient.ApiUrl := 'api/report';
+  lbGetResult.Caption := lClient.GetFullUrl;
+
+  // function Execute(aMethod: TJanuaHttpMethod; aUrlParams: TStringArray = []): Boolean;
+  if lClient.Execute(TJanuaHttpMethod.jhmGet, [lParam.ToString]) then
+  begin
+    var
+    sConf := lClient.Content;
+
+    memStatinoREST.Lines.Text := sConf;
+
+    var
+    lConf := TStatino.Create;
+    lConf.AsJson := sConf;
+    memStatinoRESTObject.Lines.Text := JsonPretty(lConf.AsJson);
+  end;
+
+end;
+
 procedure TfrmPhoenixVCLRESTLabClient.btnRestCallClick(Sender: TObject);
 begin
   memLog.Lines.Add(DateTimeToStr(Now()));
@@ -332,6 +596,42 @@ procedure TfrmPhoenixVCLRESTLabClient.btnSaveJsonClick(Sender: TObject);
 begin
   if self.SaveTextFileDialog1.Execute then
     memJsonResponse.Lines.SaveToFile(self.SaveTextFileDialog1.FileName)
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.btnStartDMVCClick(Sender: TObject);
+var
+  lClient: IJanuaRESTClient;
+begin
+  dmTestPhoenixDMVC.RunServer(spPort.Value);
+  // IJanuaRESTClient
+  lClient := TJanuaRESTClient.Create;
+  { function GetFullUrl: string;
+    function GetBaseUrl: string;
+    // Properties
+    property UserParam: string read GetUserParam write SetUserParam;
+    property PasswordParam: string read GetPasswordParam write SetPasswordParam;
+    property Content: string read GetContent write SetContent;
+    property ResponseCode: integer Read GetResponseCode;
+    property ServerURL: string read GetServerURL write SetServerURL;
+    property ServerPort: Word read GetServerPort write SetServerPort;
+    property AfterExecute: TRESTClientEvent read GetAfterExecute write SetAfterExecute;
+    property ApiUrl: string read GetAPIUrl write SetAPIUrl;
+    property AuthenticationType: TAuthenticationType read GetAuthenticationType write SetAuthenticationType;
+  }
+  FServer := 'http://localhost';
+  lClient.ServerURL := FServer;
+  lClient.ServerPort := spPort.Value;
+  lClient.SetMimeType(jmtTextPlain);
+  lClient.ApiUrl := 'api';
+  lbGetResult.Caption := lClient.GetFullUrl;
+
+  // function Execute(aMethod: TJanuaHttpMethod; aUrlParams: TStringArray = []): Boolean;
+  if lClient.Execute(TJanuaHttpMethod.jhmGet) then
+  begin
+
+    lbGetResult.Caption := lbGetResult.Caption + ' - ' + lClient.Content;
+  end;
+  btnStartDMVC.Enabled := False;
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.btnTestAllegatiClick(Sender: TObject);
@@ -367,22 +667,60 @@ begin
   memJsonConfigurazioni.Lines.Text := TMOBExporting.Configurazioni;
 end;
 
+procedure TfrmPhoenixVCLRESTLabClient.btnTestListClick(Sender: TObject);
+var
+  DM: TdmPhoenixReportsCaches;
+begin
+  var
+  lStatino := TLSStatinoRoot.Create;
+
+  JsonPretty(lStatino.AsJson);
+
+  DM := TdmPhoenixReportsCaches.Create(nil);
+  try
+    var
+    lJson := DM.GetStatiniGiorno(-1);
+    memReportList.Lines.Text := JsonPretty(lJson);
+  finally
+    DM.Free;
+  end;
+
+  var
+  aRoot := { TRSRoot } TLSStatinoRoot.Create;
+  aRoot.AsJson := memReportList.Lines.Text;
+
+  // lStatino.AsJson := memReportList.Lines.Text;
+
+  memReportListElaborated.Lines.Text := JsonPretty(aRoot.AsJson);
+
+  // memLista.Lines.Text := lStatino.Iterator.Text;
+
+end;
+
 procedure TfrmPhoenixVCLRESTLabClient.btnTestNewReportClick(Sender: TObject);
 begin
   var
   sConf := '';
   var
   lParam := dmFbPhoenixJsonReport.qryStatiniNonCompilatiCHIAVE.AsInteger;
-  MOBExportStatino(MAIN_FORM.QRY_GENERIC, False, sConf);
-  sConf := EsportazioneSuMobile.GetMagazzinoJson(MAIN_FORM.QRY_GENERIC);
-  sConf := JsonPretty(sConf);
-  memMagazzino.Lines.Text := sConf;
-  sConf := ReplacePhoenixJson(sConf);
-  memMagazzinoTranslated.Lines.Text := sConf;
+  MAIN_FORM.QRY_GENERIC.Close;
+  MAIN_FORM.QRY_GENERIC.SQL.Text := 'SELECT * FROM STATINI WHERE CHIAVE = ' + lParam.ToString;
+  MAIN_FORM.QRY_GENERIC.ExecQuery;
   var
-  lProd := TProdottiRoot.Create;
-  lProd.AsJson := sConf;
-  memMagazzinoFinal.Lines.Text := JsonPretty(lProd.AsJson);
+  vTest := MAIN_FORM.QRY_GENERIC.Open;
+  if (MAIN_FORM.QRY_GENERIC.RecordCount > 0) then
+  begin
+    ExportToJsonString := True;
+    MOBExportStatino(MAIN_FORM.QRY_GENERIC, False, sConf);
+    sConf := JsonPretty(sConf);
+    memReport.Lines.Text := sConf;
+    sConf := ReplacePhoenixJson(sConf);
+    memReportTranslated.Lines.Text := sConf;
+    var
+    lProd := TStatino.Create;
+    lProd.AsJson := sConf;
+    memReportFinal.Lines.Text := JsonPretty(lProd.AsJson);
+  end;
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.btnTestReportClick(Sender: TObject);
@@ -410,6 +748,34 @@ begin
   FdmFDACPhoenixLab.UpdateData;
   memJsonResponse.Lines.Text := FdmFDACPhoenixLab.JsonResponse;
   memLog.Lines.Text := FdmFDACPhoenixLab.Log.Text;
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.btnUtentiClick(Sender: TObject);
+var
+  lClient: IJanuaRESTClient;
+begin
+  // IJanuaRESTClient
+  lClient := TJanuaRESTClient.Create;
+  lClient.ServerURL := FServer;
+  lClient.ServerPort := spPort.Value;
+  lClient.SetMimeType(jmtTextPlain);
+  lClient.ApiUrl := 'api/users';
+  lbGetResult.Caption := lClient.GetFullUrl;
+
+  // function Execute(aMethod: TJanuaHttpMethod; aUrlParams: TStringArray = []): Boolean;
+  if lClient.Execute(TJanuaHttpMethod.jhmGet) then
+  begin
+    var
+    sConf := lClient.Content;
+
+    memUtentiREST.Lines.Text := sConf;
+
+    var
+    lConf := TTecniciRoot.Create;
+    lConf.AsJson := sConf;
+    memUtentiRestObject.Lines.Text := JsonPretty(lConf.AsJson);
+  end;
+
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.Configurazioni;
@@ -450,6 +816,13 @@ begin
   memTmpConfigurazioni.Lines.Text := lJson;
   lJsonObject := Janua.Core.JSON.JsonParse(lJson);
   memConfigurazioni.Lines.Text := JsonPretty(lJsonObject);
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.edIdrantiButtonClick(Sender: TObject);
+begin
+  dmFbPhoenixJsonReport.qryStatiniNonCompilati.Close;
+  dmFbPhoenixJsonReport.qryStatiniNonCompilati.Params[0].AsString := edIdranti.Text;
+  dmFbPhoenixJsonReport.qryStatiniNonCompilati.Open;
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.edListaClick(Sender: TObject);
@@ -516,7 +889,17 @@ begin
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.FormCreate(Sender: TObject);
+var
+  lClient: IJanuaRESTClient;
 begin
+  // IJanuaRESTClient
+  lClient := TJanuaRESTClient.Create;
+  FServer := 'http://localhost';
+  lClient.ServerURL := FServer;
+  lClient.ServerPort := spPort.Value;
+  lClient.ApiUrl := 'api';
+  lbGetResult.Caption := lClient.GetFullUrl;
+
   FdmFDACPhoenixLab := TdmPhoenixIBLab.Create(self);
   Application.CreateForm(TdmFbPhoenixJsonReport, dmFbPhoenixJsonReport);
   dsStatino.DataSet := dmFbPhoenixJsonReport.qryStatiniLuci;
@@ -524,6 +907,15 @@ begin
   Application.CreateForm(TdmPhoenixFbReport, dmPhoenixFbReport);
   Application.CreateForm(TdmVCLPhoenixReportController, dmVCLPhoenixReportController);
   Application.CreateForm(TdmPhoenixAppBackend, dmPhoenixAppBackend);
+  // dmTestPhoenixDMVC
+  Application.CreateForm(TdmTestPhoenixDMVC, dmTestPhoenixDMVC);
+  Application.CreateForm(TdmPhoenixReportsCaches, dmPhoenixReportsCaches);
+
+end;
+
+procedure TfrmPhoenixVCLRESTLabClient.FormDestroy(Sender: TObject);
+begin
+  dmTestPhoenixDMVC.StopServer;
 end;
 
 procedure TfrmPhoenixVCLRESTLabClient.FormShow(Sender: TObject);

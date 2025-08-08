@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="77qyjpimn9a2s3gvr_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::53fs1hxb73dpqnbrl_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,100,119" />
+      <reference referencedUin="design:view:::ef1bxswen4dh7i6go_v" />
+    </reference>
+    <reference referencedUin="design:view:::gqwy70gzy3dvjb0rj_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="129,1,136,151" />
+      <reference referencedUin="delphi:e_class:src:PhoenixCore:PhoenixMocks.TPhoenixMocks" />
+      <reference referencedUin="delphi:e_class:src:PhoenixCore:PhoenixMocks.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::j9j4j2au74dmfle7h_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="20,148,100,119" />
+      <reference referencedUin="design:view:::xfe0g56n5dy0edao_v" />
+    </reference>
+    <reference referencedUin="design:view:::j513as290eeiqvg0g_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="758,129,162,166" />
+      <reference referencedUin="delphi:e_class:src:PhoenixCore:DTO.Phoenix.CatEstintori.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:PhoenixCore:DTO.Phoenix.CatEstintori.TCatEstintoriRoot" />
+      <reference referencedUin="delphi:e_class:src:PhoenixCore:DTO.Phoenix.CatEstintori.Tcatestintori" />
+    </reference>
+  </view>
+</nodeSet>

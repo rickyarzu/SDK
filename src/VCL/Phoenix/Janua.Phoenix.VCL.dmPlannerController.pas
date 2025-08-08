@@ -521,6 +521,7 @@ type
     procedure actWhatsAppMsgExecute(Sender: TObject);
     procedure actUndoMeetingExecute(Sender: TObject);
     procedure qryReportPlannerAfterScroll(DataSet: TDataSet);
+    procedure vtGoogleCalendarsBeforePost(DataSet: TDataSet);
   private
     Stopwatch: TStopwatch;
     FInsertingEvent: Boolean;
@@ -701,39 +702,48 @@ procedure GoogleRestore; stdcall; external 'PhoenixLib32_r10.dll' index 8;
 procedure TestDLL; stdcall; external 'PhoenixLib32_r10.dll' index 9;
 {$ENDIF}
 {$IFDEF WIN64}
-function InitializeDLL: string; //stdcall; external 'PhoenixLib32_r10.64.dll' index 1;
+
+function InitializeDLL: string; // stdcall; external 'PhoenixLib32_r10.64.dll' index 1;
 begin
 
 end;
-function CreateGoogleEventDLL(aEvent: string): string; //stdcall; external 'PhoenixLib32_r10.64.dll' index 2;
+
+function CreateGoogleEventDLL(aEvent: string): string; // stdcall; external 'PhoenixLib32_r10.64.dll' index 2;
 begin
 
 end;
-function UpdateGoogleEventDLL(aJson: string): string; //stdcall; external 'PhoenixLib32_r10.64.dll' index 3;
+
+function UpdateGoogleEventDLL(aJson: string): string; // stdcall; external 'PhoenixLib32_r10.64.dll' index 3;
 begin
 
 end;
-function DeleteGoogleEventDLL(aJson: string): string; //stdcall; external 'PhoenixLib32_r10.64.dll' index 4;
+
+function DeleteGoogleEventDLL(aJson: string): string; // stdcall; external 'PhoenixLib32_r10.64.dll' index 4;
 begin
 
 end;
-function ConfirmGoogleEventDLL(aJson: string): string; //stdcall; external 'PhoenixLib32_r10.64.dll' index 5;
+
+function ConfirmGoogleEventDLL(aJson: string): string; // stdcall; external 'PhoenixLib32_r10.64.dll' index 5;
 begin
 
 end;
-function UpdateGoogleDLL: string; stdcall; //external 'PhoenixLib32_r10.64.dll' index 6;
+
+function UpdateGoogleDLL: string; stdcall; // external 'PhoenixLib32_r10.64.dll' index 6;
 begin
 
 end;
-function WhatsAppSentDLL(aJson: string): string; //stdcall; external 'PhoenixLib32_r10.64.dll' index 7;
+
+function WhatsAppSentDLL(aJson: string): string; // stdcall; external 'PhoenixLib32_r10.64.dll' index 7;
 begin
 
 end;
-procedure GoogleRestore; stdcall; //external 'PhoenixLib32_r10.64.dll' index 8;
+
+procedure GoogleRestore; stdcall; // external 'PhoenixLib32_r10.64.dll' index 8;
 begin
 
 end;
-procedure TestDLL; stdcall; //external 'PhoenixLib32_r10.dll' index 9;
+
+procedure TestDLL; stdcall; // external 'PhoenixLib32_r10.dll' index 9;
 begin
 
 end;
@@ -1706,7 +1716,7 @@ begin
             vtGoogleCalendars.FieldByName('COLOR').Value := tabGoogleCalendarsCOLOR.Value;
             vtGoogleCalendars.FieldByName('FORE_COLOR').AsInteger := tabGoogleCalendarsFORE_COLOR.Value;
             vtGoogleCalendars.FieldByName('BACK_COLOR').AsInteger := tabGoogleCalendarsBACK_COLOR.Value;
-            vtGoogleCalendars.FieldByName('JGUID').Value := tabGoogleCalendarsJGUID.Value;
+            vtGoogleCalendars.FieldByName('JGUID').AsString := tabGoogleCalendarsJGUID.AsString;
             vtGoogleCalendars.Post;
           end;
           tabGoogleCalendars.Next;
@@ -2470,7 +2480,7 @@ begin
     tabGoogleCalendarsCOLOR.Value := vtGoogleCalendars.FieldByName('COLOR').Value;
     tabGoogleCalendarsFORE_COLOR.Value := vtGoogleCalendars.FieldByName('FORE_COLOR').AsInteger;
     tabGoogleCalendarsBACK_COLOR.Value := vtGoogleCalendars.FieldByName('BACK_COLOR').AsInteger;
-    tabGoogleCalendarsJGUID.Value := vtGoogleCalendars.FieldByName('JGUID').Value;
+    tabGoogleCalendarsJGUID.AsString := vtGoogleCalendars.FieldByName('JGUID').AsString;
     tabGoogleCalendars.Post;
   end;
 end;
@@ -3518,7 +3528,8 @@ function TdmVCLPhoenixPlannerController.GoogleSync: string;
 begin
   if FGoogleSyncActive then
     Result := UpdateGoogleDLL
-  else Result := '';
+  else
+    Result := '';
 end;
 
 procedure TdmVCLPhoenixPlannerController.UndoMeeting;
@@ -3549,6 +3560,14 @@ begin
     qryPersonalPlannerEvents.Post;
     end;
   }
+end;
+
+procedure TdmVCLPhoenixPlannerController.vtGoogleCalendarsBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  if vtGoogleCalendarsJGUID.IsNull then
+    vtGoogleCalendarsJGUID.Value := TGUID.NewGuid.ToString;
+
 end;
 
 procedure TdmVCLPhoenixPlannerController.vtGoogleEventsSearchBeforePost(DataSet: TDataSet);

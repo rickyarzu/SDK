@@ -198,8 +198,8 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
       Size.Height = 45.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 8
-      Viewport.Width = 352.000000000000000000
-      Viewport.Height = 45.000000000000000000
+      Viewport.Width = 348.000000000000000000
+      Viewport.Height = 41.000000000000000000
     end
   end
   object rcReportSummary: TRectangle
@@ -890,7 +890,7 @@ object frameFMXPhoenixMobileReportHeader: TframeFMXPhoenixMobileReportHeader
         end
       end
     end
-    object btn: TTMSFMXImage
+    object btnLuci: TTMSFMXImage
       Align = Left
       Position.X = 133.000000000000000000
       Position.Y = 2.000000000000000000

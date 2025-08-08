@@ -8,8 +8,11 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls, FMX.Controls.Presentation,
   FMX.Layouts, FMX.TMSBaseControl, FMX.TMSDateTimeEdit, FMX.Ani, FMX.Objects, FMX.TMSBitmap, FMX.Memo.Types,
   FMX.ScrollBox, FMX.Memo, FMX.TMSHTMLText,
+  // DTO
+  Phoenix.JSON.Tecnici.DTO, Phoenix.JSON.Prodotti.DTO, DTO.Phoenix.ReportList, Phoenix.JSON.Config.DTO,
+  Phoenix.JSON.Statini.DTO,
   // Janua
-  Janua.Core.Classes, Janua.FMX.FormControls, Janua.Core.Commons;
+  Janua.REST.Client, Janua.Core.Classes, Janua.FMX.FormControls, Janua.Core.Commons;
 
 type
   TframeFMXPhoenixMobileReportHeader = class(TFrame)
@@ -120,7 +123,7 @@ type
     BitmapAnimation34: TBitmapAnimation;
     BitmapAnimation35: TBitmapAnimation;
     BitmapAnimation36: TBitmapAnimation;
-    btn: TTMSFMXImage;
+    btnLuci: TTMSFMXImage;
     BitmapAnimation37: TBitmapAnimation;
     BitmapAnimation38: TBitmapAnimation;
     BitmapAnimation39: TBitmapAnimation;
@@ -133,15 +136,66 @@ type
     BitmapAnimation44: TBitmapAnimation;
     BitmapAnimation45: TBitmapAnimation;
   private
+    FStatino: TStatino;
+    procedure SetStatino(const Value: TStatino);
     { Private declarations }
   public
     { Public declarations }
+    property Statino: TStatino read FStatino write SetStatino;
   end;
 
 implementation
 
 {$R *.fmx}
 
-uses Janua.FMX.PhoenixMobile.Resources;
+uses Janua.FMX.PhoenixMobile.Resources, Janua.FMX.PhoenixMobile.dmAppMobileController;
+
+{ TframeFMXPhoenixMobileReportHeader }
+
+procedure TframeFMXPhoenixMobileReportHeader.SetStatino(const Value: TStatino);
+var
+  oContratto: TContratti;
+begin
+  FStatino := Value;
+  if Assigned(FStatino) then
+  begin
+    txtReportSummay.Text := '<b>Intervento N°: </b> ' + FStatino.CHIAVE.ToString +
+      ' <br /><b>Mese Emissione: </b>  <br /><b>Amministratore: </b> ' + FStatino.NOMEAMMINISTRATORE +
+      '<br />' + '<b>Contratto: </b>' + FStatino.DESCRIZIONECONTRATTO + '<br /><b>Filiale: </b>' +
+      FStatino.NOMEFILIALE + '<br />';
+    var
+    dm := dmFMXPhoenixAppMobileController;
+    var
+    vTest := (dm.SelectedRow.ESTINTORIORDINARIO + dm.SelectedRow.ESTINTORISTRAORDINARIO);
+
+    lbEstinguishersN.Text := vTest.ToString;
+    btnFireExtinguishers.Visible := vTest > 0;
+
+    lbIdrantiN.Text := dm.SelectedRow.IDRANTI.ToString;
+    btnFireHydrants.Visible := dm.SelectedRow.IDRANTI > 0;
+
+    lbPorteN.Text := dm.SelectedRow.PORTE.ToString;
+    btnFireDoors.Visible :=  dm.SelectedRow.PORTE > 0;
+
+    lbLuciEMN.Text := dm.SelectedRow.LUCI.ToString;
+    btnLuci.Visible :=  dm.SelectedRow.LUCI > 0;
+
+    lbSprinklerN.Text := dm.SelectedRow.SPRINKLER.ToString;
+    btnSprinklers.Visible :=  dm.SelectedRow.SPRINKLER > 0;
+
+    // lbRilFumoN - btnSmokeDetectors
+    lbRilFumoN.Text := dm.SelectedRow.FUMI.ToString;
+    btnSmokeDetectors.Visible :=  dm.SelectedRow.FUMI > 0;
+
+    // lbGruppiN - btnPressurizationGroup
+    lbGruppiN.Text := dm.SelectedRow.GRUPPIELETTR.ToString;
+    btnPressurizationGroup.Visible :=  dm.SelectedRow.GRUPPIELETTR > 0;
+
+    // lbImpElettriciN - btnElectricalSystems
+    lbImpElettriciN.Text := dm.SelectedRow.GRUPPIELETTR.ToString;
+    btnElectricalSystems.Visible :=  dm.SelectedRow.GRUPPIELETTR > 0;
+
+  end;
+end;
 
 end.

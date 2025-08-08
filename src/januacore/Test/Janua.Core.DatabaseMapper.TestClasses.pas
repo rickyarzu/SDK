@@ -4,7 +4,7 @@ interface
 
 uses System.Classes, System.Generics.Collections, Data.DB,
   // Json
-  Pkg.Json.DTO, REST.Json.Types,
+  Pkg.Json.DTO, REST.Json.Types, Pkg.Json.Settings,
   // Janua
   Janua.Core.Commons, Janua.Core.DatabaseMapper, Janua.Core.Iterator, Janua.Core.Json.DTO;
 
@@ -57,7 +57,7 @@ type
 
   TCustomerManager = class(TJanuaJsonDTO)
   private
-    [JSONName('customers') { , JSONMarshalled(False) } ]
+    [JSONName('customers'), JSONMarshalled(False)]
     FCustomerArray: TArray<TCustomer>;
     [GenericListReflect]
     FCustomers: TObjectList<TCustomer>;
@@ -92,7 +92,7 @@ type
 
   TCustomerManagerIterator = class(TJanuaJsonDTO)
   private
-    [JSONName('customers') { , JSONMarshalled(False) } ]
+    [JSONName('customers'), JSONMarshalled(False)]
     FCustomerArray: TArray<TCustomer>;
     [GenericListReflect]
     FCustomers: TObjectList<TCustomer>;
@@ -146,6 +146,12 @@ end;
 constructor TCustomerManager.Create;
 begin
   inherited;
+  var
+  vTest := TSettings.Instance.UsePascalCase;
+
+  if vTest then
+    TSettings.Instance.UsePascalCase := False;
+
   FCustomerList := TStringList.Create;
 
   FCustomerList.Sorted := True;
@@ -187,21 +193,24 @@ end;
 procedure TCustomerManager.RebuildList;
 begin
   FCustomerList.Clear;
-  for var I := 0 to Length(FCustomerArray) - 1 do
-    FCustomerList.AddObject(FCustomerArray[I].Name, FCustomerArray[I]);
-  FCustomerIndex := 0;
-  FCurrentCustomer.Assign(TCustomer(FCustomerList.Objects[0]));
+  if Length(FCustomerArray) >  0 then
+  begin
+    for var I := 0 to Length(FCustomerArray) - 1 do
+      FCustomerList.AddObject(FCustomerArray[I].Name, FCustomerArray[I]);
+    FCustomerIndex := 0;
+    FCurrentCustomer.Assign(TCustomer(FCustomerList.Objects[0]));
 
-  var
-  Nome := TCustomer(FCustomerList.Objects[FCustomerIndex]).Name;
-  var
-  Id := TCustomer(FCustomerList.Objects[FCustomerIndex]).Id;
+    var
+    Nome := TCustomer(FCustomerList.Objects[FCustomerIndex]).Name;
+    var
+    Id := TCustomer(FCustomerList.Objects[FCustomerIndex]).Id;
 
-  Notify('CustomerText');
-  Notify('CustomerIndex');
+    Notify('CustomerText');
+    Notify('CustomerIndex');
 
-  Nome := TCustomer(FCustomerList.Objects[FCustomerIndex]).Name;
-  Id := TCustomer(FCustomerList.Objects[FCustomerIndex]).Id;
+    Nome := TCustomer(FCustomerList.Objects[FCustomerIndex]).Name;
+    Id := TCustomer(FCustomerList.Objects[FCustomerIndex]).Id;
+  end;
 end;
 
 procedure TCustomerManager.SetAsJson(aJson: string);
@@ -262,6 +271,11 @@ end;
 constructor TCustomerManagerIterator.Create;
 begin
   inherited;
+  var
+  vTest := TSettings.Instance.UsePascalCase;
+  if not vTest then
+    TSettings.Instance.UsePascalCase := True;
+
   FCustIterator := TJanuaBindableIterator<TCustomer>.Create(imCopy);
 end;
 
@@ -272,7 +286,7 @@ end;
 
 function TCustomerManagerIterator.GetCustomers: TObjectList<TCustomer>;
 begin
-
+  Result := ObjectList<TCustomer>(FCustomers, FCustomerArray);
 end;
 
 procedure TCustomerManagerIterator.RebuildList;

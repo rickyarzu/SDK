@@ -153,11 +153,7 @@ var
 begin
   Janua.Core.Json.JsonValue(aObject, 'id', FID);
   Janua.Core.Json.JsonValue(aObject, 'link', FLink);
-  Janua.Core.Json.JsonValue(aObject, 'date', tmp);
-  if tmp <> '' then
-    FDate := System.DateUtils.ISO8601ToDate(tmp)
-  else
-    FDate := 0.0;
+  Janua.Core.Json.JsonValue(aObject, 'date', FDate);
 
   //
   Janua.Core.Json.JsonValue(aObject, 'guid', LTmpJsonObject);
@@ -210,12 +206,16 @@ end;
 function TWPRecord.AsJsonObject: TJsonObject;
 begin
   Result := TJsonObject.Create;
-  Janua.Core.Json.JsonPair(Result, 'title', self.FTitle);
-  Janua.Core.Json.JsonPair(Result, 'content', self.FContent);
-  Janua.Core.Json.JsonPair(Result, 'status', self.FStatus);
-  Janua.Core.Json.JsonPair(Result, 'categories', self.FMainCategory);
-  // 'featured_media'
-  Janua.Core.Json.JsonPair(Result, 'featured_media', self.FFeatureMedia);
+  if FTitle <> '' then
+    Janua.Core.Json.JsonPair(Result, 'title', FTitle);
+  if FContent <> '' then
+    Janua.Core.Json.JsonPair(Result, 'content', self.FContent);
+  if FStatus <> '' then
+    Janua.Core.Json.JsonPair(Result, 'status', self.FStatus);
+  if FMainCategory > 0 then
+    Janua.Core.Json.JsonPair(Result, 'categories', self.FMainCategory);
+  if FFeatureMedia <> '' then
+    Janua.Core.Json.JsonPair(Result, 'featured_media', self.FFeatureMedia);
 end;
 
 function TWPRecord.AsString: string;
@@ -251,7 +251,7 @@ end;
 
 constructor TWPRecord.Create(aJson: string);
 begin
-  self.Create(Janua.Core.Json.JsonParse(aJson));
+  Create(Janua.Core.Json.JsonParse(aJson));
 end;
 
 function TWPRecord.GetStringBuilder: TStringBuilder;

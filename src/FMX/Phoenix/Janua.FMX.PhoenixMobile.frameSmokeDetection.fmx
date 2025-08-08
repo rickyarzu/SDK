@@ -1,4 +1,4 @@
-object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetting
+object frameFMXPhoenixSmokeDetection: TframeFMXPhoenixSmokeDetection
   Size.Width = 382.000000000000000000
   Size.Height = 632.000000000000000000
   Size.PlatformDefault = False
@@ -31,6 +31,7 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
       Size.Width = 239.000000000000000000
       Size.Height = 35.000000000000000000
       Size.PlatformDefault = False
+      StyleLookup = 'comboboxstyle'
       TabOrder = 1
     end
   end
@@ -175,41 +176,18 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
       Size.Height = 22.000000000000000000
       Size.PlatformDefault = False
       object lbBrandStation: TLabel
-        Align = Left
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 2.000000000000000000
-        Position.X = 2.000000000000000000
-        Size.Width = 247.000000000000000000
+        Size.Width = 377.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.StyleExt = {00070000000000000004000000}
         Text = 'MARCA CENTRALE'
-        TabOrder = 2
-      end
-      object Label4: TLabel
-        Align = Left
-        StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 2.000000000000000000
-        Position.X = 251.000000000000000000
-        Size.Width = 20.000000000000000000
-        Size.Height = 22.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
-        TabOrder = 1
-      end
-      object Label6: TLabel
-        Align = Left
-        StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 2.000000000000000000
-        Position.X = 273.000000000000000000
-        Size.Width = 20.000000000000000000
-        Size.Height = 22.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
         TabOrder = 0
       end
     end
-    object ComboBox1: TComboBox
+    object cboMarcaCentrale: TComboBox
       Align = Client
       Margins.Left = 2.000000000000000000
       Margins.Top = 3.000000000000000000
@@ -218,6 +196,7 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
       Size.Width = 375.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
+      StyleLookup = 'comboboxstyle'
       TabOrder = 1
     end
   end
@@ -237,41 +216,18 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
       Size.Height = 22.000000000000000000
       Size.PlatformDefault = False
       object lbKindStation: TLabel
-        Align = Left
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 2.000000000000000000
-        Position.X = 2.000000000000000000
-        Size.Width = 247.000000000000000000
+        Size.Width = 377.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.StyleExt = {00070000000000000004000000}
         Text = 'TIPO CENTRALE'
-        TabOrder = 2
-      end
-      object Label3: TLabel
-        Align = Left
-        StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 2.000000000000000000
-        Position.X = 251.000000000000000000
-        Size.Width = 20.000000000000000000
-        Size.Height = 22.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
-        TabOrder = 1
-      end
-      object Label5: TLabel
-        Align = Left
-        StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 2.000000000000000000
-        Position.X = 273.000000000000000000
-        Size.Width = 20.000000000000000000
-        Size.Height = 22.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
         TabOrder = 0
       end
     end
-    object ComboBox2: TComboBox
+    object cboTipoCentrale: TComboBox
       Align = Client
       Margins.Left = 2.000000000000000000
       Margins.Top = 3.000000000000000000
@@ -280,6 +236,7 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
       Size.Width = 375.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
+      StyleLookup = 'comboboxstyle'
       TabOrder = 1
     end
   end
@@ -299,38 +256,15 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
       Size.Height = 22.000000000000000000
       Size.PlatformDefault = False
       object lbDetectorTypes: TLabel
-        Align = Left
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 2.000000000000000000
-        Position.X = 2.000000000000000000
-        Size.Width = 247.000000000000000000
+        Size.Width = 300.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.StyleExt = {00070000000000000004000000}
         Text = 'TIPO RILEVATORI'
-        TabOrder = 3
-      end
-      object Label7: TLabel
-        Align = Left
-        StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 2.000000000000000000
-        Position.X = 251.000000000000000000
-        Size.Width = 20.000000000000000000
-        Size.Height = 22.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
         TabOrder = 1
-      end
-      object Label8: TLabel
-        Align = Left
-        StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 2.000000000000000000
-        Position.X = 273.000000000000000000
-        Size.Width = 20.000000000000000000
-        Size.Height = 22.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
-        TabOrder = 0
       end
       object lbNumberDetectors: TLabel
         Align = Right
@@ -342,7 +276,7 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
         Size.PlatformDefault = False
         TextSettings.Font.StyleExt = {00070000000000000004000000}
         Text = 'NR. '
-        TabOrder = 2
+        TabOrder = 0
       end
     end
     object ComboBox3: TComboBox
@@ -354,6 +288,7 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
       Size.Width = 296.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
+      StyleLookup = 'comboboxstyle'
       TabOrder = 1
     end
     object TMSFNCSpinEdit1: TTMSFNCSpinEdit
@@ -369,7 +304,6 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
       Size.PlatformDefault = False
       TabOrder = 2
       Appearance.ButtonShape = bsRectangle
-      Appearance.ValueFont.Name = 'Segoe UI'
       EditFieldKeyboardType = Default
     end
   end
@@ -389,38 +323,15 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
       Size.Height = 22.000000000000000000
       Size.PlatformDefault = False
       object lbBarrierTypes: TLabel
-        Align = Left
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 2.000000000000000000
-        Position.X = 2.000000000000000000
-        Size.Width = 247.000000000000000000
+        Size.Width = 300.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.StyleExt = {00070000000000000004000000}
         Text = 'TIPO BARRIERE'
-        TabOrder = 3
-      end
-      object Label9: TLabel
-        Align = Left
-        StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 2.000000000000000000
-        Position.X = 251.000000000000000000
-        Size.Width = 20.000000000000000000
-        Size.Height = 22.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
         TabOrder = 1
-      end
-      object Label10: TLabel
-        Align = Left
-        StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 2.000000000000000000
-        Position.X = 273.000000000000000000
-        Size.Width = 20.000000000000000000
-        Size.Height = 22.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
-        TabOrder = 0
       end
       object Label11: TLabel
         Align = Right
@@ -432,7 +343,7 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
         Size.PlatformDefault = False
         TextSettings.Font.StyleExt = {00070000000000000004000000}
         Text = 'NR. '
-        TabOrder = 2
+        TabOrder = 0
       end
     end
     object ComboBox4: TComboBox
@@ -444,6 +355,7 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
       Size.Width = 296.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
+      StyleLookup = 'comboboxstyle'
       TabOrder = 1
     end
     object TMSFNCSpinEdit2: TTMSFNCSpinEdit
@@ -459,7 +371,6 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
       Size.PlatformDefault = False
       TabOrder = 2
       Appearance.ButtonShape = bsRectangle
-      Appearance.ValueFont.Name = 'Segoe UI'
       EditFieldKeyboardType = Default
     end
   end
@@ -479,37 +390,14 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
       Size.Height = 22.000000000000000000
       Size.PlatformDefault = False
       object lbBarrierBrand: TLabel
-        Align = Left
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 2.000000000000000000
-        Position.X = 2.000000000000000000
-        Size.Width = 247.000000000000000000
+        Size.Width = 377.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.StyleExt = {00070000000000000004000000}
         Text = 'MARCA BARRIERA'
-        TabOrder = 2
-      end
-      object Label15: TLabel
-        Align = Left
-        StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 2.000000000000000000
-        Position.X = 251.000000000000000000
-        Size.Width = 20.000000000000000000
-        Size.Height = 22.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
-        TabOrder = 1
-      end
-      object Label16: TLabel
-        Align = Left
-        StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 2.000000000000000000
-        Position.X = 273.000000000000000000
-        Size.Width = 20.000000000000000000
-        Size.Height = 22.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
         TabOrder = 0
       end
     end
@@ -522,6 +410,7 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
       Size.Width = 375.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
+      StyleLookup = 'comboboxstyle'
       TabOrder = 1
     end
   end
@@ -541,38 +430,15 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
       Size.Height = 22.000000000000000000
       Size.PlatformDefault = False
       object Label2: TLabel
-        Align = Left
+        Align = Client
         StyledSettings = [Family, Size, FontColor]
         Margins.Left = 2.000000000000000000
-        Position.X = 2.000000000000000000
-        Size.Width = 247.000000000000000000
+        Size.Width = 300.000000000000000000
         Size.Height = 22.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.StyleExt = {00070000000000000004000000}
         Text = 'TIPO BATTERIE'
-        TabOrder = 3
-      end
-      object Label12: TLabel
-        Align = Left
-        StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 2.000000000000000000
-        Position.X = 251.000000000000000000
-        Size.Width = 20.000000000000000000
-        Size.Height = 22.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
         TabOrder = 1
-      end
-      object Label13: TLabel
-        Align = Left
-        StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 2.000000000000000000
-        Position.X = 273.000000000000000000
-        Size.Width = 20.000000000000000000
-        Size.Height = 22.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
-        TabOrder = 0
       end
       object Label14: TLabel
         Align = Right
@@ -584,7 +450,7 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
         Size.PlatformDefault = False
         TextSettings.Font.StyleExt = {00070000000000000004000000}
         Text = 'NR. '
-        TabOrder = 2
+        TabOrder = 0
       end
     end
     object ComboBox5: TComboBox
@@ -596,6 +462,7 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
       Size.Width = 296.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
+      StyleLookup = 'comboboxstyle'
       TabOrder = 1
     end
     object TMSFNCSpinEdit3: TTMSFNCSpinEdit
@@ -611,7 +478,6 @@ object frameFMXPhoenixSmokeDetectionSetting: TframeFMXPhoenixSmokeDetectionSetti
       Size.PlatformDefault = False
       TabOrder = 2
       Appearance.ButtonShape = bsRectangle
-      Appearance.ValueFont.Name = 'Segoe UI'
       EditFieldKeyboardType = Default
     end
   end

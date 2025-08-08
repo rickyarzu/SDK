@@ -3,7 +3,7 @@
         <ProjectGuid>{189E71DB-C6D9-434F-B197-42062B388245}</ProjectGuid>
         <MainSource>JanuaCore.dpk</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <TargetedPlatforms>693395</TargetedPlatforms>
         <AppType>Package</AppType>
         <FrameworkType>None</FrameworkType>
@@ -647,7 +647,6 @@
         <DCCReference Include="..\..\src\januacore\orm\JOrm.Cloud.GoogleCalendars.Custom.Impl.pas"/>
         <DCCReference Include="..\..\src\januacore\Datasnap\Janua.WebBroker.ServerConst.pas"/>
         <DCCReference Include="..\..\src\januacore\Janua.Core.Json.DTO.pas"/>
-        <DCCReference Include="..\..\src\januacore\Phoenix.Json.Config.DTO.pas"/>
         <DCCReference Include="..\..\src\januacore\Janua.Core.ContactViewer.pas"/>
         <DCCReference Include="..\..\src\januacore\datamodule\Janua.Cloud.dmOpenAI.pas">
             <Form>dmCloudOpenAI</Form>
@@ -655,8 +654,6 @@
         </DCCReference>
         <DCCReference Include="..\..\src\januacore\Janua.Core.DatabaseMapper.pas"/>
         <DCCReference Include="..\..\src\januacore\Janua.Core.Iterator.pas"/>
-        <DCCReference Include="..\..\src\januacore\Phoenix.Json.Tecnici.DTO.pas"/>
-        <DCCReference Include="..\..\src\januacore\Phoenix.Json.Prodotti.DTO.pas"/>
         <None Include="ModelSupport_JanuaCore\default.txvpck"/>
         <None Include="ModelSupport_JanuaCore\Delphi\default.txvpck"/>
         <None Include="ModelSupport_JanuaCore\Janua\default.txvpck"/>
@@ -800,6 +797,12 @@
                 </DeployFile>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\JanuaCore280.bpl" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\22.0\Bpl\Win64\JanuaCore280.bpl" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaCore290.bpl" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>JanuaCore.bpl</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\JanuaCore290.bpl" Configuration="Release" Class="ProjectOutput"/>
                 <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\23.0\Bpl\Win64\JanuaCore290.bpl" Configuration="Release" Class="ProjectOutput"/>
                 <DeployClass Name="AdditionalDebugSymbols">

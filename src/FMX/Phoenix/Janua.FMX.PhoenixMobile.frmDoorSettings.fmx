@@ -1,0 +1,52 @@
+object frmFMXDoorSettings: TfrmFMXDoorSettings
+  Left = 0
+  Top = 0
+  ClientHeight = 627
+  ClientWidth = 306
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 3
+  object Rectangle9: TRectangle
+    Align = Top
+    Fill.Color = claGreen
+    Size.Width = 306.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    object Layout11: TLayout
+      Align = Client
+      Size.Width = 306.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object lbLuci: TLabel
+        Align = MostRight
+        StyledSettings = [Family, Size]
+        Position.X = -24.000000000000000000
+        Size.Width = 330.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'toollabel'
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claWhite
+        TextSettings.HorzAlign = Center
+        TextSettings.Trimming = None
+        Text = 'SPECIFICA PORTA'
+        TabOrder = 2
+      end
+      object SpeedButton7: TSpeedButton
+        Align = Left
+        StyledSettings = []
+        IconTintColor = claSnow
+        Size.Width = 48.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        Text = '<'
+        TextSettings.Font.Size = 26.000000000000000000
+        TextSettings.FontColor = claIvory
+        TextSettings.Trimming = None
+        OnClick = SpeedButton7Click
+      end
+    end
+  end
+end

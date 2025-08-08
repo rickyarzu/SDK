@@ -461,7 +461,12 @@ begin
         AValue := GetJsonDateTime(LV);
       end;
 {$ENDIF FPC}
-    finally
+    except
+      on e: Exception do
+        if vCheck then
+          raise Exception.Create('Error Json Date Conversion param:' + aParam + sLineBreak + e.Message);
+      else
+        AValue := 0.0;
     end;
 end;
 
@@ -1039,10 +1044,10 @@ begin
     aObject.AddPair(aParam.ToLower, AValue);
 {$ELSE}
     begin
-  if aObject.IndexOfName(aParam) >= 0 then
-    aObject.Delete(aObject.IndexOfName(aParam));
-  aObject.Add(aParam.ToLower, TJSONInt64Number.Create(AValue));
-end;
+      if aObject.IndexOfName(aParam) >= 0 then
+        aObject.Delete(aObject.IndexOfName(aParam));
+      aObject.Add(aParam.ToLower, TJSONInt64Number.Create(AValue));
+    end;
 {$ENDIF FPC}
 end;
 
@@ -1152,7 +1157,6 @@ begin
   else
     Result := sJson;
 {$ENDIF  FPC}
-
   begin
   end;
 end;

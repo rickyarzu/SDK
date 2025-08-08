@@ -1,0 +1,1075 @@
+object frameFMXPhoenixMobileDoorSetting: TframeFMXPhoenixMobileDoorSetting
+  Size.Width = 356.000000000000000000
+  Size.Height = 946.000000000000000000
+  Size.PlatformDefault = False
+  object VertScrollBox1: TVertScrollBox
+    Align = Client
+    Size.Width = 356.000000000000000000
+    Size.Height = 946.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Viewport.Width = 356.000000000000000000
+    Viewport.Height = 946.000000000000000000
+    object Layout1: TLayout
+      Align = Client
+      Size.Width = 356.000000000000000000
+      Size.Height = 946.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Rectangle1: TRectangle
+        Align = Top
+        Fill.Color = claAquamarine
+        Margins.Left = 4.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 4.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        object lbSpecification: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 2.000000000000000000
+          Size.Width = 346.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.HorzAlign = Center
+          TextSettings.Trimming = None
+          Text = 'SPECIFICA PORTA'
+          TabOrder = 0
+          TabStop = False
+        end
+      end
+      object Layout2: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 153.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 30
+        object lbProgr: TLabel
+          Align = Left
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 2.000000000000000000
+          Position.X = 2.000000000000000000
+          Size.Width = 88.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Trimming = None
+          Text = 'Progr.'
+          TabOrder = 2
+        end
+        object lbMatricola: TLabel
+          Align = Left
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 2.000000000000000000
+          Position.X = 92.000000000000000000
+          Size.Width = 93.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Trimming = None
+          Text = 'Matricola'
+          TabOrder = 1
+        end
+        object lbAnno: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 8.000000000000000000
+          Size.Width = 155.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Trimming = None
+          Text = 'Anno'
+          TabOrder = 0
+        end
+      end
+      object Layout03: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 181.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 15
+        object edProgr: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Left
+          StyleLookup = 'editstyle'
+          TabOrder = 1
+          Text = 'editstyle'
+          Position.Y = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 81.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object edMatricola: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Left
+          StyleLookup = 'editstyle'
+          TabOrder = 0
+          Text = 'editstyle'
+          Position.X = 89.000000000000000000
+          Position.Y = 2.000000000000000000
+          Margins.Left = 8.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 96.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object cboYear: TComboBox
+          Align = Client
+          Items.Strings = (
+            '2018'
+            '2019'
+            '2020'
+            '2021'
+            '2022'
+            '2023'
+            '2024'
+            '2025'
+            '2026'
+            '2027'
+            '2028'
+            '2029'
+            '2030'
+            '2031'
+            '2032'
+            '2033'
+            '2034'
+            '2035'
+            '2036'
+            '2037'
+            '2038'
+            '2039'
+            '2040'
+            '2041'
+            '2042'
+            '2043'
+            '2044'
+            '2045'
+            '2046'
+            '2047'
+            '2048'
+            '2049'
+            '2050'
+            '2051'
+            '2052'
+            '2053'
+            '2054'
+            '2055'
+            '2056'
+            '2057'
+            '2058'
+            '2059'
+            '2060'
+            '2061'
+            '2062'
+            '2063'
+            '2064'
+            '2065'
+            '2066'
+            '2067'
+            '2068'
+            '2069'
+            '2070')
+          Margins.Left = 8.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 151.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'comboboxstyle'
+          TabOrder = 2
+        end
+      end
+      object Layout05: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 33.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 29
+        object lbTipo: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 4.000000000000000000
+          Size.Width = 344.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Trimming = None
+          Text = 'Tipologia'
+          TabOrder = 0
+        end
+      end
+      object ly01Type: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 61.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 14
+        object cboType: TComboBox
+          Align = Client
+          Items.Strings = (
+            '2018'
+            '2019'
+            '2020'
+            '2021'
+            '2022'
+            '2023'
+            '2024'
+            '2025'
+            '2026'
+            '2027'
+            '2028'
+            '2029'
+            '2030'
+            '2031'
+            '2032'
+            '2033'
+            '2034'
+            '2035'
+            '2036'
+            '2037'
+            '2038'
+            '2039'
+            '2040'
+            '2041'
+            '2042'
+            '2043'
+            '2044'
+            '2045'
+            '2046'
+            '2047'
+            '2048'
+            '2049'
+            '2050'
+            '2051'
+            '2052'
+            '2053'
+            '2054'
+            '2055'
+            '2056'
+            '2057'
+            '2058'
+            '2059'
+            '2060'
+            '2061'
+            '2062'
+            '2063'
+            '2064'
+            '2065'
+            '2066'
+            '2067'
+            '2068'
+            '2069'
+            '2070')
+          Margins.Left = 4.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 340.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'comboboxstyle'
+          TabOrder = 0
+        end
+      end
+      object Layout07: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 213.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 16
+        object lbMarca: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 8.000000000000000000
+          Size.Width = 340.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Trimming = None
+          Text = 'Marca'
+          TabOrder = 0
+        end
+      end
+      object Layout8: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 273.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 28
+        object lbAnte: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 4.000000000000000000
+          Size.Width = 344.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Trimming = None
+          Text = 'Ante'
+          TabOrder = 0
+        end
+      end
+      object Layout9: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 241.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 13
+        object cboMarca: TComboBox
+          Align = Client
+          Items.Strings = (
+            '2018'
+            '2019'
+            '2020'
+            '2021'
+            '2022'
+            '2023'
+            '2024'
+            '2025'
+            '2026'
+            '2027'
+            '2028'
+            '2029'
+            '2030'
+            '2031'
+            '2032'
+            '2033'
+            '2034'
+            '2035'
+            '2036'
+            '2037'
+            '2038'
+            '2039'
+            '2040'
+            '2041'
+            '2042'
+            '2043'
+            '2044'
+            '2045'
+            '2046'
+            '2047'
+            '2048'
+            '2049'
+            '2050'
+            '2051'
+            '2052'
+            '2053'
+            '2054'
+            '2055'
+            '2056'
+            '2057'
+            '2058'
+            '2059'
+            '2060'
+            '2061'
+            '2062'
+            '2063'
+            '2064'
+            '2065'
+            '2066'
+            '2067'
+            '2068'
+            '2069'
+            '2070')
+          Margins.Left = 4.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 340.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'comboboxstyle'
+          TabOrder = 0
+        end
+      end
+      object Layout10: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 301.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 11
+        object cboAnte: TComboBox
+          Align = Client
+          Items.Strings = (
+            'Gennaio'
+            'Febbraio'
+            'Marzo'
+            'Aprile'
+            'Maggio'
+            'Giugno'
+            'Luglio'
+            'Agosto'
+            'Settembre'
+            'Ottobre'
+            'Novembre'
+            'Dicembre')
+          Margins.Left = 4.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 340.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'comboboxstyle'
+          TabOrder = 0
+        end
+      end
+      object Layout11: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 333.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 27
+        object lbMisuraAnta: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 4.000000000000000000
+          Size.Width = 344.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Trimming = None
+          Text = 'Misura (mm - LxA)'
+          TabOrder = 0
+        end
+      end
+      object Layout12: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 361.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 10
+        object edMisura: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          StyleLookup = 'editstyle'
+          TabOrder = 0
+          Text = 'editstyle'
+          Margins.Left = 4.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 340.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object Layout13: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 813.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 19
+        object lbUbicazione: TLabel
+          Align = Left
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 4.000000000000000000
+          Position.X = 4.000000000000000000
+          Position.Y = 28.000000000000000000
+          Size.Width = 125.000000000000000000
+          Size.Height = 0.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Trimming = None
+          Text = 'Ubicazione'
+          TabOrder = 0
+        end
+        object Layout4: TLayout
+          Align = Top
+          Margins.Left = 4.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Margins.Bottom = 4.000000000000000000
+          Position.X = 4.000000000000000000
+          Size.Width = 340.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 12
+          object Label1: TLabel
+            Align = Client
+            StyledSettings = [Family, Size, FontColor]
+            Margins.Left = 4.000000000000000000
+            Size.Width = 336.000000000000000000
+            Size.Height = 24.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Trimming = None
+            Text = 'Ubicazione'
+            TabOrder = 0
+          end
+        end
+      end
+      object memLocation: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 841.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 36.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'memostyle'
+        TabOrder = 32
+        Viewport.Width = 344.000000000000000000
+        Viewport.Height = 32.000000000000000000
+      end
+      object layState: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 93.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 18
+        object lbState: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 4.000000000000000000
+          Size.Width = 344.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Trimming = None
+          Text = 'Stato'
+          TabOrder = 0
+        end
+      end
+      object Layout14: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 121.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 12
+        object cboStato: TComboBox
+          Align = Client
+          Items.Strings = (
+            'Attiva'
+            'Fuori Servizio')
+          Margins.Left = 4.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 340.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'comboboxstyle'
+          TabOrder = 0
+        end
+      end
+      object Layout15: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 881.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 17
+        object lbNoteTecnico: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 4.000000000000000000
+          Size.Width = 344.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Trimming = None
+          Text = 'Note del Tecnico'
+          TabOrder = 0
+        end
+      end
+      object memNoteTecnico: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 909.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 36.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'memostyle'
+        TabOrder = 31
+        Viewport.Width = 344.000000000000000000
+        Viewport.Height = 32.000000000000000000
+      end
+      object Layout06: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 393.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 26
+        object Label2: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 4.000000000000000000
+          Size.Width = 344.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Trimming = None
+          Text = 'Marca Maniglione'
+          TabOrder = 0
+        end
+      end
+      object Layout16: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 421.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 9
+        object cboMarcaManiglione: TComboBox
+          Align = Client
+          Items.Strings = (
+            'Gennaio'
+            'Febbraio'
+            'Marzo'
+            'Aprile'
+            'Maggio'
+            'Giugno'
+            'Luglio'
+            'Agosto'
+            'Settembre'
+            'Ottobre'
+            'Novembre'
+            'Dicembre')
+          Margins.Left = 4.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 340.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'comboboxstyle'
+          TabOrder = 0
+        end
+      end
+      object Layout17: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 481.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+        object cboTipoManiglione: TComboBox
+          Align = Client
+          Items.Strings = (
+            'Gennaio'
+            'Febbraio'
+            'Marzo'
+            'Aprile'
+            'Maggio'
+            'Giugno'
+            'Luglio'
+            'Agosto'
+            'Settembre'
+            'Ottobre'
+            'Novembre'
+            'Dicembre')
+          Margins.Left = 4.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 340.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'comboboxstyle'
+          TabOrder = 0
+        end
+      end
+      object Layout18: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 453.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 25
+        object lbTipoManiglione: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 4.000000000000000000
+          Size.Width = 344.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Trimming = None
+          Text = 'Tipo Maniglione'
+          TabOrder = 0
+        end
+      end
+      object Layout19: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 541.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        object cboTipoSerraturaAntaPrincipale: TComboBox
+          Align = Client
+          Items.Strings = (
+            'Gennaio'
+            'Febbraio'
+            'Marzo'
+            'Aprile'
+            'Maggio'
+            'Giugno'
+            'Luglio'
+            'Agosto'
+            'Settembre'
+            'Ottobre'
+            'Novembre'
+            'Dicembre')
+          Margins.Left = 4.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 340.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'comboboxstyle'
+          TabOrder = 0
+        end
+      end
+      object Layout20: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 513.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 24
+        object lbTipoSerratura: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 4.000000000000000000
+          Size.Width = 344.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Trimming = None
+          Text = 'Tipo Serratura Anta Principale'
+          TabOrder = 0
+        end
+      end
+      object Layout21: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 601.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        object cboTipoSerraturaAntaSecondaria: TComboBox
+          Align = Client
+          Items.Strings = (
+            'Gennaio'
+            'Febbraio'
+            'Marzo'
+            'Aprile'
+            'Maggio'
+            'Giugno'
+            'Luglio'
+            'Agosto'
+            'Settembre'
+            'Ottobre'
+            'Novembre'
+            'Dicembre')
+          Margins.Left = 4.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 340.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'comboboxstyle'
+          TabOrder = 0
+        end
+      end
+      object Layout22: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 573.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 23
+        object lbTipoSerraturaSecondaria: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 4.000000000000000000
+          Size.Width = 344.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Trimming = None
+          Text = 'Tipo Serratura Anta Secondaria'
+          TabOrder = 0
+        end
+      end
+      object Layout23: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 633.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 22
+        object lbManigliaEsterna: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 4.000000000000000000
+          Size.Width = 344.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Trimming = None
+          Text = 'Maniglia Esterna'
+          TabOrder = 0
+        end
+      end
+      object Layout3: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 661.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        object cboManigliaEsterna: TComboBox
+          Align = Client
+          Items.Strings = (
+            'Gennaio'
+            'Febbraio'
+            'Marzo'
+            'Aprile'
+            'Maggio'
+            'Giugno'
+            'Luglio'
+            'Agosto'
+            'Settembre'
+            'Ottobre'
+            'Novembre'
+            'Dicembre')
+          Margins.Left = 4.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 340.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'comboboxstyle'
+          TabOrder = 0
+        end
+      end
+      object Layout5: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 721.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        object edMMGuarnizione: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Client
+          StyleLookup = 'editstyle'
+          TabOrder = 0
+          Text = 'editstyle'
+          Margins.Left = 4.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 340.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object Layout6: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 693.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 21
+        object lbMMGuarnizione: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 4.000000000000000000
+          Size.Width = 344.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Trimming = None
+          Text = 'mm guarnizione'
+          TabOrder = 0
+        end
+      end
+      object Layout7: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 781.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        object cboTipoInstallazione: TComboBox
+          Align = Client
+          Items.Strings = (
+            'Gennaio'
+            'Febbraio'
+            'Marzo'
+            'Aprile'
+            'Maggio'
+            'Giugno'
+            'Luglio'
+            'Agosto'
+            'Settembre'
+            'Ottobre'
+            'Novembre'
+            'Dicembre')
+          Margins.Left = 4.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 340.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'comboboxstyle'
+          TabOrder = 0
+        end
+      end
+      object Layout24: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 753.000000000000000000
+        Size.Width = 348.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 20
+        object lbTipoInstallazione: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 4.000000000000000000
+          Size.Width = 344.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Trimming = None
+          Text = 'Tipo Installazione'
+          TabOrder = 0
+        end
+      end
+    end
+  end
+end

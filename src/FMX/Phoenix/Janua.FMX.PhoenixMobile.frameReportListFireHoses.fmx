@@ -1,250 +1,213 @@
-object Frame4: TFrame4
-  Size.Width = 381.000000000000000000
-  Size.Height = 582.000000000000000000
-  Size.PlatformDefault = False
-  object Layout1: TLayout
-    Align = Top
-    Size.Width = 381.000000000000000000
-    Size.Height = 41.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 1
-    object Rectangle5: TRectangle
-      Align = Client
-      Fill.Color = claAquamarine
-      Margins.Left = 4.000000000000000000
-      Margins.Top = 2.000000000000000000
-      Margins.Right = 4.000000000000000000
-      Margins.Bottom = 2.000000000000000000
-      Size.Width = 373.000000000000000000
-      Size.Height = 37.000000000000000000
-      Size.PlatformDefault = False
-      object lbAnomali: TLabel
-        Align = Left
-        StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 4.000000000000000000
-        Position.X = 4.000000000000000000
-        Size.Width = 53.000000000000000000
-        Size.Height = 37.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
-        Text = 'FILIALE:'
-        TabOrder = 1
-      end
-      object lbBranch: TLabel
-        Align = Client
-        StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 4.000000000000000000
-        Size.Width = 312.000000000000000000
-        Size.Height = 37.000000000000000000
-        Size.PlatformDefault = False
-        Text = 'SEDE'
-        TabOrder = 0
+inherited frameFMXReportListFireHoses: TframeFMXReportListFireHoses
+  Size.Width = 372.000000000000000000
+  Size.Height = 630.000000000000000000
+  inherited VertScBox: TVertScrollBox
+    Size.Width = 372.000000000000000000
+    Size.Height = 630.000000000000000000
+    Viewport.Width = 372.000000000000000000
+    Viewport.Height = 630.000000000000000000
+    inherited rcReportSummary: TRectangle
+      Size.Width = 372.000000000000000000
+      inherited txtReportSummay: TTMSFMXHTMLText
+        Size.Width = 368.000000000000000000
       end
     end
-  end
-  object laySelectInsertNew: TLayout
-    Align = Top
-    Position.Y = 41.000000000000000000
-    Size.Width = 381.000000000000000000
-    Size.Height = 40.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 3
-    object laySelect: TLayout
-      Align = Left
-      Size.Width = 241.000000000000000000
+    object btnReportTestFirehose: TButton
+      Align = Top
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.X = 4.000000000000000000
+      Position.Y = 317.000000000000000000
+      Size.Width = 364.000000000000000000
+      Size.Height = 36.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Verbale Collaudo Manichette'
+      TextSettings.Trimming = None
+    end
+    object btnSpecificaImpianto: TButton
+      Align = Top
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.X = 4.000000000000000000
+      Position.Y = 148.000000000000000000
+      Size.Width = 364.000000000000000000
+      Size.Height = 36.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      Text = 'Specifica Impianto'
+      TextSettings.Trimming = None
+    end
+    object btnVerbale: TButton
+      Align = Top
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.X = 4.000000000000000000
+      Position.Y = 192.000000000000000000
+      Size.Width = 364.000000000000000000
+      Size.Height = 36.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      Text = 'Verbale Prova Dinamica'
+      TextSettings.Trimming = None
+    end
+    object Layout5: TLayout
+      Align = Top
+      Position.Y = 273.000000000000000000
+      Size.Width = 372.000000000000000000
       Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 1
-      object cboSelect: TComboBox
+      TabOrder = 3
+      object Layout7: TLayout
+        Align = Left
+        Size.Width = 185.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object TMSFMXImage1: TTMSFMXImage
+          Align = Left
+          Position.X = 2.000000000000000000
+          Position.Y = 2.000000000000000000
+          ClipChildren = True
+          Size.Width = 42.000000000000000000
+          Size.Height = 36.000000000000000000
+          Size.PlatformDefault = False
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          StrokeThickness = 1.000000000000000000
+          Version = '1.5.1.1'
+          BitmapName = 'plus'
+          BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
+          object BitmapAnimation1: TBitmapAnimation
+            Duration = 0.200000002980232200
+            PropertyName = 'Fill.Bitmap.Bitmap'
+            object BitmapAnimation2: TBitmapAnimation
+              Duration = 0.200000002980232200
+              PropertyName = 'StartValue'
+              object BitmapAnimation3: TBitmapAnimation
+                Duration = 0.200000002980232200
+                PropertyName = 'StartValue'
+              end
+            end
+          end
+        end
+      end
+    end
+    object Layout6: TLayout
+      Align = Top
+      Position.Y = 232.000000000000000000
+      Size.Width = 372.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Rectangle1: TRectangle
         Align = Client
+        Fill.Color = claAquamarine
         Margins.Left = 4.000000000000000000
-        Margins.Top = 4.000000000000000000
+        Margins.Top = 2.000000000000000000
         Margins.Right = 4.000000000000000000
-        Margins.Bottom = 4.000000000000000000
-        Size.Width = 233.000000000000000000
-        Size.Height = 32.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 0
-      end
-    end
-    object layInsertNew: TLayout
-      Align = Client
-      Size.Width = 140.000000000000000000
-      Size.Height = 40.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 0
-      object imgInsertNew: TTMSFMXImage
-        Align = Left
-        Position.X = 2.000000000000000000
-        Position.Y = 2.000000000000000000
-        ClipChildren = True
-        Size.Width = 42.000000000000000000
-        Size.Height = 36.000000000000000000
-        Size.PlatformDefault = False
-        Margins.Left = 2.000000000000000000
-        Margins.Top = 2.000000000000000000
-        Margins.Right = 2.000000000000000000
         Margins.Bottom = 2.000000000000000000
-        StrokeThickness = 1.000000000000000000
-        Version = '1.5.1.1'
-        BitmapName = 'plus'
-        BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
-        object BitmapAnimation13: TBitmapAnimation
-          Duration = 0.200000002980232200
-          PropertyName = 'Fill.Bitmap.Bitmap'
-          object BitmapAnimation14: TBitmapAnimation
-            Duration = 0.200000002980232200
-            PropertyName = 'StartValue'
-            object BitmapAnimation15: TBitmapAnimation
-              Duration = 0.200000002980232200
-              PropertyName = 'StartValue'
-            end
-          end
-        end
-      end
-      object lbInsertNew: TLabel
-        Align = Client
-        Margins.Left = 8.000000000000000000
-        Margins.Top = 4.000000000000000000
-        Margins.Right = 8.000000000000000000
-        Margins.Bottom = 4.000000000000000000
-        Size.Width = 78.000000000000000000
-        Size.Height = 32.000000000000000000
-        Size.PlatformDefault = False
-        Text = 'Inserisci Nuovo'
-        TabOrder = 1
-      end
-    end
-  end
-  object btnSpecificaImpianto: TButton
-    Align = Top
-    Margins.Left = 4.000000000000000000
-    Margins.Top = 4.000000000000000000
-    Margins.Right = 4.000000000000000000
-    Margins.Bottom = 4.000000000000000000
-    Position.X = 4.000000000000000000
-    Position.Y = 85.000000000000000000
-    Size.Width = 373.000000000000000000
-    Size.Height = 36.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 6
-    Text = 'Specifica Impianto'
-  end
-  object btnVerbale: TButton
-    Align = Top
-    Margins.Left = 4.000000000000000000
-    Margins.Top = 4.000000000000000000
-    Margins.Right = 4.000000000000000000
-    Margins.Bottom = 4.000000000000000000
-    Position.X = 4.000000000000000000
-    Position.Y = 129.000000000000000000
-    Size.Width = 373.000000000000000000
-    Size.Height = 36.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 5
-    Text = 'Verbale Prova Dinamica'
-  end
-  object Layout5: TLayout
-    Align = Top
-    Position.Y = 210.000000000000000000
-    Size.Width = 381.000000000000000000
-    Size.Height = 40.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 2
-    object Layout7: TLayout
-      Align = Left
-      Size.Width = 185.000000000000000000
-      Size.Height = 40.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 0
-      object TMSFMXImage1: TTMSFMXImage
-        Align = Left
-        Position.X = 2.000000000000000000
-        Position.Y = 2.000000000000000000
-        ClipChildren = True
-        Size.Width = 42.000000000000000000
-        Size.Height = 36.000000000000000000
-        Size.PlatformDefault = False
-        Margins.Left = 2.000000000000000000
-        Margins.Top = 2.000000000000000000
-        Margins.Right = 2.000000000000000000
-        Margins.Bottom = 2.000000000000000000
-        StrokeThickness = 1.000000000000000000
-        Version = '1.5.1.1'
-        BitmapName = 'plus'
-        BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
-        object BitmapAnimation1: TBitmapAnimation
-          Duration = 0.200000002980232200
-          PropertyName = 'Fill.Bitmap.Bitmap'
-          object BitmapAnimation2: TBitmapAnimation
-            Duration = 0.200000002980232200
-            PropertyName = 'StartValue'
-            object BitmapAnimation3: TBitmapAnimation
-              Duration = 0.200000002980232200
-              PropertyName = 'StartValue'
-            end
-          end
-        end
-      end
-      object Label1: TLabel
-        Align = Left
-        Margins.Left = 8.000000000000000000
-        Margins.Top = 4.000000000000000000
-        Margins.Right = 8.000000000000000000
-        Margins.Bottom = 4.000000000000000000
-        Position.X = 54.000000000000000000
-        Position.Y = 4.000000000000000000
-        Size.Width = 183.000000000000000000
-        Size.Height = 32.000000000000000000
-        Size.PlatformDefault = False
-        Text = 'Inserisci Nuovo'
-        TabOrder = 1
-      end
-    end
-  end
-  object Layout6: TLayout
-    Align = Top
-    Position.Y = 169.000000000000000000
-    Size.Width = 381.000000000000000000
-    Size.Height = 41.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 0
-    object Rectangle1: TRectangle
-      Align = Client
-      Fill.Color = claAquamarine
-      Margins.Left = 4.000000000000000000
-      Margins.Top = 2.000000000000000000
-      Margins.Right = 4.000000000000000000
-      Margins.Bottom = 2.000000000000000000
-      Size.Width = 373.000000000000000000
-      Size.Height = 37.000000000000000000
-      Size.PlatformDefault = False
-      object lbManichette: TLabel
-        Align = Center
-        StyledSettings = [Family, Size, FontColor]
-        Margins.Left = 4.000000000000000000
-        Size.Width = 97.000000000000000000
+        Size.Width = 364.000000000000000000
         Size.Height = 37.000000000000000000
         Size.PlatformDefault = False
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
-        TextSettings.HorzAlign = Center
-        Text = 'MANICHETTE'
-        TabOrder = 0
+        object lbManichette: TLabel
+          Align = Client
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 10.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Size.Width = 344.000000000000000000
+          Size.Height = 37.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.HorzAlign = Center
+          TextSettings.Trimming = None
+          Text = 'MANICHETTE'
+          TabOrder = 0
+        end
       end
     end
-  end
-  object btnReportTestFirehose: TButton
-    Align = Top
-    Margins.Left = 4.000000000000000000
-    Margins.Top = 4.000000000000000000
-    Margins.Right = 4.000000000000000000
-    Margins.Bottom = 4.000000000000000000
-    Position.X = 4.000000000000000000
-    Position.Y = 254.000000000000000000
-    Size.Width = 373.000000000000000000
-    Size.Height = 36.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 4
-    Text = 'Verbale Collaudo Manichette'
+    object laySelectInsertNew: TLayout
+      Align = Top
+      Position.Y = 100.000000000000000000
+      Size.Width = 372.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object laySelect: TLayout
+        Align = Left
+        Size.Width = 241.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object cboSelect: TComboBox
+          Align = Client
+          Margins.Left = 4.000000000000000000
+          Margins.Top = 6.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Margins.Bottom = 6.000000000000000000
+          Size.Width = 233.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+        end
+      end
+      object layInsertNew: TLayout
+        Align = Client
+        Size.Width = 131.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object imgInsertNew: TTMSFMXImage
+          Align = Left
+          Position.X = 2.000000000000000000
+          Position.Y = 2.000000000000000000
+          ClipChildren = True
+          Size.Width = 42.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          StrokeThickness = 1.000000000000000000
+          Version = '1.5.1.1'
+          BitmapName = 'plus'
+          BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
+          object BitmapAnimation13: TBitmapAnimation
+            Duration = 0.200000002980232200
+            PropertyName = 'Fill.Bitmap.Bitmap'
+            object BitmapAnimation14: TBitmapAnimation
+              Duration = 0.200000002980232200
+              PropertyName = 'StartValue'
+              object BitmapAnimation15: TBitmapAnimation
+                Duration = 0.200000002980232200
+                PropertyName = 'StartValue'
+              end
+            end
+          end
+        end
+        object lbInsertNew: TLabel
+          Align = Client
+          Margins.Left = 8.000000000000000000
+          Margins.Top = 4.000000000000000000
+          Margins.Right = 8.000000000000000000
+          Margins.Bottom = 4.000000000000000000
+          Size.Width = 69.000000000000000000
+          Size.Height = 36.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Trimming = None
+          Text = 'Inserisci Nuovo'
+          TabOrder = 1
+        end
+      end
+    end
   end
 end

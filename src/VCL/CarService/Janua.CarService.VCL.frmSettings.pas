@@ -193,7 +193,7 @@ type
     FCSCustomerSMSBuilder: IJanuaCSCustomerSMSBuilder;
 
     // SMSSender
-    FCSDriverSMSSender1: IJanuaSMSTwilio;
+    FCSDriverSMSSender1: IJanuaSMS  Twilio;
     FCSDriverSMSSender2: IJanuaSMSTwilio;
     FCSCustomerSMSSender: IJanuaSMSTwilio;
 

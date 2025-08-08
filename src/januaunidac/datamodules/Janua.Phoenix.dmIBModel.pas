@@ -4,7 +4,7 @@ interface
 
 uses
   System.SysUtils, System.Classes, UniProvider, InterBaseUniProvider, Data.DB,
-  DBAccess, Uni, Janua.Unidac.Connection, Janua.Interbase.dmModel;
+  DBAccess, Uni, Janua.Unidac.Connection, Globale,  Janua.Interbase.dmModel;
 
 type
   TdmPhoenixIBModel = class(TdmJanuaInterbaseModel)
@@ -20,20 +20,16 @@ var
 
 implementation
 
-uses Janua.Application.Framework, Globale;
+uses Janua.Application.Framework;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
-
-
 {$R *.dfm}
 
 procedure TdmPhoenixIBModel.JanuaUniConnection1BeforeConnect(Sender: TObject);
 begin
   inherited;
-  if SystemInformation.DBServer = '' then
-    JanuaUniConnection1.Server := '192.168.1.200'
-  else
-    JanuaUniConnection1.Server := SystemInformation.DBServer;
+  JanuaUniConnection1.Server := '192.168.1.200';
+  JanuaUniConnection1.Server := SystemInformation.DBServer;
   JanuaUniConnection1.Database := SystemInformation.DBDatabase;
   JanuaUniConnection1.Password := SystemInformation.DBPassword;
   JanuaUniConnection1.UserName := SystemInformation.DBAccount;

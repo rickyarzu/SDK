@@ -70,7 +70,8 @@ type
     procedure Initialize(const PropertyName: string; const ObjectArray: TArray<T>); overload;
     procedure Initialize(const PropertyName: string; const ObjectList: TList<T>); overload;
     procedure Initialize(const PropertyName: string; const aDataset: TDataset); overload;
-    procedure Initialize(const PropertyName: string; const aDataset: TDataset; aArray: TArray<T>); overload;
+    procedure Initialize(const PropertyName: string; const aDataset: TDataset;
+      var aArray: TArray<T>); overload;
 
     // Iterator navigation methods
     procedure MoveFirst;
@@ -240,9 +241,9 @@ begin
 end;
 
 procedure TJanuaObjectIterator<T>.Initialize(const PropertyName: string; const aDataset: TDataset;
-  aArray: TArray<T>);
+  var aArray: TArray<T>);
 var
- aResult: T;
+  aResult: T;
 begin
   var
   lIndex := 0;
@@ -316,7 +317,8 @@ begin
   Clear;
 
   if Length(ObjectArray) = 0 then
-    raise EJanuaIteratorException.Create('Object array is empty');
+    Exit;
+  // raise EJanuaIteratorException.Create('Object array is empty');
 
   FPropertyName := PropertyName;
 
@@ -625,3 +627,4 @@ begin
 end;
 
 end.
+

@@ -13,9 +13,17 @@ uses
   Web.WebBroker,
   IdContext,
   IdHTTPWebBrokerBridge,
-  Janua.Phoenix.DMVC in '..\..\..\src\januacore\Janua.Phoenix.DMVC.pas',
-  Janua.DMVC.WebModulePhoenix in '..\..\..\src\januawebrest\Janua.DMVC.WebModulePhoenix.pas' {h: TWebModule},
-  Janua.FDAC.Phoenix.Reports in '..\..\..\src\FireDAC\Janua.FDAC.Phoenix.Reports.pas' {dmFDACPhoenixReports: TDataModule};
+  Janua.Phoenix.DMVC in '..\..\..\src\januacore\dmvc\Janua.Phoenix.DMVC.pas',
+  Janua.DMVC.WebModulePhoenix in '..\..\..\src\januawebrest\Janua.DMVC.WebModulePhoenix.pas' {wmPhoenixDMVC: TWebModule},
+  Janua.FDAC.Phoenix.Reports in '..\..\..\src\FireDAC\Janua.FDAC.Phoenix.Reports.pas' {dmFDACPhoenixReports: TDataModule},
+  udmPhoenixReportsCaches in '..\..\..\..\Phoenix\Phoenix\SW\PhoenixMain\udmPhoenixReportsCaches.pas' {dmPhoenixReportsCaches: TDataModule},
+  Globale in '..\..\..\..\Phoenix\DelphiXE\Globale.pas',
+  Phoenix.Json.Config.DTO in '..\..\..\src\januacore\Phoenix.Json.Config.DTO.pas',
+  Phoenix.Json.Prodotti.DTO in '..\..\..\src\januacore\Phoenix.Json.Prodotti.DTO.pas',
+  Phoenix.Json.Statini.DTO in '..\..\..\src\januacore\Phoenix.Json.Statini.DTO.pas',
+  Phoenix.Json.Tecnici.DTO in '..\..\..\src\januacore\Phoenix.Json.Tecnici.DTO.pas',
+  DTO.Phoenix.ReportList in '..\..\..\src\januacore\orm\DTO.Phoenix.ReportList.pas',
+  DTO.Phoenix.CatEstintori in '..\..\..\src\januacore\orm\DTO.Phoenix.CatEstintori.pas';
 
 {$R *.res}
 

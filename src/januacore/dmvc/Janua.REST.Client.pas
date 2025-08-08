@@ -375,7 +375,7 @@ procedure TJanuaRESTClient.SetAuthentication(aRequest: IRequest);
 var
   sU, sP: string;
 begin
-  Guard.CheckNotNull(aRequest, 'aRequest is niil');
+  Guard.CheckNotNull(aRequest, 'aRequest is nil');
   case FAuthenticationType of
     jatBasic:
       begin

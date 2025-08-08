@@ -92,6 +92,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Width = 38.000000000000000000
       Size.Height = 24.000000000000000000
       Size.PlatformDefault = False
+      OnClick = TMSFMXSpeedButton1Click
       BitmapContainer = dmJanuaFMXPhoenixMobileResources.TMSFMXBitmapContainer1
       BitmapName = 'specification'
       ShowImage = True
@@ -117,11 +118,10 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
     Size.Height = 25.000000000000000000
     Size.PlatformDefault = False
     object lbTipo: TLabel
-      Align = Left
+      Align = Client
       StyledSettings = [Family, Size, FontColor]
       Margins.Left = 2.000000000000000000
-      Position.X = 2.000000000000000000
-      Size.Width = 80.000000000000000000
+      Size.Width = 360.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -155,11 +155,10 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
     Size.Height = 25.000000000000000000
     Size.PlatformDefault = False
     object lbLocation: TLabel
-      Align = Left
+      Align = Client
       StyledSettings = [Family, Size, FontColor]
       Margins.Left = 2.000000000000000000
-      Position.X = 2.000000000000000000
-      Size.Width = 319.000000000000000000
+      Size.Width = 360.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -201,56 +200,57 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 11
+      OnClick = ckbContrClick
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
+      Text = '  '
     end
-    object ckbRitir: TTMSFNCRadioButton
+    object ckbCharging: TTMSFNCRadioButton
       Color = claNull
       Align = Left
-      Margins.Left = 4.000000000000000000
-      Position.X = 65.000000000000000000
-      Size.Width = 50.000000000000000000
+      Margins.Left = 12.000000000000000000
+      Position.X = 73.000000000000000000
+      Size.Width = 72.000000000000000000
       Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 10
+      OnClick = ckbChargingClick
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
+      Text = '  '
     end
-    object ckbSmalt: TTMSFNCRadioButton
+    object ckbTesting: TTMSFNCRadioButton
       Color = claNull
       Align = Left
       Margins.Left = 4.000000000000000000
-      Position.X = 119.000000000000000000
+      Position.X = 149.000000000000000000
       Size.Width = 50.000000000000000000
       Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 9
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
+      Text = '  '
     end
-    object ckbSmaltim: TTMSFNCRadioButton
+    object ckbDisposal: TTMSFNCRadioButton
       Color = claNull
       Align = Left
       Margins.Left = 8.000000000000000000
-      Position.X = 177.000000000000000000
+      Position.X = 207.000000000000000000
       Size.Width = 72.000000000000000000
       Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 8
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
+      Text = '  '
     end
     object ckbNonEseg: TTMSFNCRadioButton
       Color = claNull
-      Align = Left
+      Align = Client
       Margins.Left = 8.000000000000000000
-      Position.X = 257.000000000000000000
-      Size.Width = 44.000000000000000000
+      Size.Width = 75.000000000000000000
       Size.Height = 28.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 7
       GroupName = '1'
-      Text = 'TMSFNCRadioButton'
+      Text = '  '
     end
   end
   object Rectangle4: TRectangle
@@ -275,8 +275,9 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
     object lbPress: TLabel
       Align = Left
       StyledSettings = [Family, Size, FontColor]
-      Position.X = 65.000000000000000000
-      Size.Width = 52.000000000000000000
+      Margins.Left = 3.000000000000000000
+      Position.X = 68.000000000000000000
+      Size.Width = 77.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -287,7 +288,7 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Align = Left
       StyledSettings = [Family, Size, FontColor]
       Margins.Left = 2.000000000000000000
-      Position.X = 119.000000000000000000
+      Position.X = 147.000000000000000000
       Size.Width = 54.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
@@ -296,11 +297,10 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       TabOrder = 2
     end
     object lbNonEseg: TLabel
-      Align = Left
+      Align = Client
       StyledSettings = [Family, Size, FontColor]
       Margins.Left = 2.000000000000000000
-      Position.X = 251.000000000000000000
-      Size.Width = 87.000000000000000000
+      Size.Width = 71.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -311,8 +311,8 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
       Align = Left
       StyledSettings = [Family, Size, FontColor]
       Margins.Left = 2.000000000000000000
-      Position.X = 175.000000000000000000
-      Size.Width = 74.000000000000000000
+      Position.X = 203.000000000000000000
+      Size.Width = 86.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -328,11 +328,10 @@ object frameFMXMobileFireHose: TframeFMXMobileFireHose
     Size.Height = 25.000000000000000000
     Size.PlatformDefault = False
     object lbAnomali: TLabel
-      Align = Left
+      Align = Client
       StyledSettings = [Family, Size, FontColor]
       Margins.Left = 2.000000000000000000
-      Position.X = 2.000000000000000000
-      Size.Width = 319.000000000000000000
+      Size.Width = 360.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.StyleExt = {00070000000000000004000000}
