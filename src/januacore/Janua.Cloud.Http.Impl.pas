@@ -637,7 +637,7 @@ var
 begin
   LClient := THTTPClient.Create;
 
-  if self.FAuthorization.AuthType <> TJanuaAuthType.None then
+  if FAuthorization.AuthType <> TJanuaAuthType.None then
     LClient.CustomHeaders['Authorization'] := FAuthorization.AuthString;
 
   FAccept.Extension := ExtractFileExt(aFileName);

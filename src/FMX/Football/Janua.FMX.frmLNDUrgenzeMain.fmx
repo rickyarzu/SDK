@@ -1,0 +1,174 @@
+object frmLNDUrgenzeMain: TfrmLNDUrgenzeMain
+  Left = 0
+  Top = 0
+  Caption = 'LND Gestione Urgenze'
+  ClientHeight = 567
+  ClientWidth = 384
+  FormFactor.Width = 1440
+  FormFactor.Height = 900
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 2
+  object Header: TToolBar
+    Size.Width = 384.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object HeaderLabel: TLabel
+      Align = Contents
+      ControlType = Platform
+      Size.Width = 384.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'toollabel'
+      TextSettings.HorzAlign = Center
+      Text = 'Invio Urgenze'
+    end
+  end
+  object TabControl1: TTabControl
+    Align = Client
+    Size.Width = 384.000000000000000000
+    Size.Height = 523.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 0
+    TabOrder = 1
+    TabPosition = PlatformDefault
+    OnChange = TabControl1Change
+    Sizes = (
+      384s
+      474s
+      384s
+      474s)
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = True
+      Size.Width = 192.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Pubblica'
+      ExplicitSize.cx = 192.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object btnSendArticle: TButton
+        Align = Top
+        ControlType = Platform
+        Position.Y = 41.000000000000000000
+        Size.Width = 384.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Invia Notifica'
+        TextSettings.Trimming = None
+        OnClick = btnSendArticleClick
+      end
+      object edTitle: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 3
+        ControlType = Platform
+        Position.X = 3.000000000000000000
+        Position.Y = 126.000000000000000000
+        Margins.Left = 3.000000000000000000
+        Margins.Top = 3.000000000000000000
+        Margins.Right = 3.000000000000000000
+        Size.Width = 378.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TextPrompt = 'Scrivere qui il titolo della notifica'
+      end
+      object memContent: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        MaxLength = 2048
+        Align = Client
+        ControlType = Platform
+        Margins.Left = 3.000000000000000000
+        Margins.Top = 3.000000000000000000
+        Margins.Right = 3.000000000000000000
+        Margins.Bottom = 3.000000000000000000
+        Size.Width = 378.000000000000000000
+        Size.Height = 312.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Viewport.Width = 370.000000000000000000
+        Viewport.Height = 304.000000000000000000
+      end
+      object btnUndoArticle: TButton
+        Align = Top
+        ControlType = Platform
+        StyledSettings = [Family, Size, Style]
+        Position.Y = 82.000000000000000000
+        Size.Width = 384.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Annulla Notifica'
+        TextSettings.FontColor = claRed
+        TextSettings.Trimming = None
+        OnClick = btnUndoArticleClick
+      end
+      object btnNewArticle: TButton
+        Align = Top
+        ControlType = Platform
+        StyledSettings = [Family, Size, Style]
+        Size.Width = 384.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Nuova Notifica'
+        TextSettings.FontColor = claGreen
+        TextSettings.Trimming = None
+        OnClick = btnNewArticleClick
+      end
+    end
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 192.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Lista'
+      ExplicitSize.cx = 192.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object ListViewArticles: TListView
+        ItemAppearanceClassName = 'TImageListItemAppearance'
+        ItemEditAppearanceClassName = 'TImageListItemDeleteAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        Align = Client
+        Size.Width = 384.000000000000000000
+        Size.Height = 474.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        ItemAppearanceObjects.ItemObjects.Text.PlaceOffset.X = 40.000000000000000000
+        OnItemClick = ListViewArticlesItemClick
+        ControlType = Platform
+        object txtServerConnection: TText
+          Align = Top
+          Size.Width = 384.000000000000000000
+          Size.Height = 29.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Attenzione connessione con il server attendere ...'
+          TextSettings.FontColor = claRed
+        end
+        object AniIndicator1: TAniIndicator
+          Align = Center
+          Size.Width = 130.000000000000000000
+          Size.Height = 120.000000000000000000
+          Size.PlatformDefault = False
+          Visible = False
+        end
+      end
+    end
+  end
+end
