@@ -36961,9 +36961,6 @@ $function$
 			<fk name="app_form_trans_forms_fk" to_schema="ergomercator.system" to_table="app_forms" >
 				<fk_column name="form_id" pk="form_id" />
 			</fk>
-			<fk name="app_from_trans_languages_fk" to_schema="ergomercator.jpublic" to_table="languages" >
-				<fk_column name="laguage_id" pk="language_id" />
-			</fk>
 		</table>
 		<table name="app_functions" >
 			<column name="id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
@@ -37025,6 +37022,7 @@ $function$
 			<column name="app_id" type="smallint" length="5" decimal="0" jt="5" mandatory="y" />
 			<column name="contest_id" type="smallint" length="5" decimal="0" jt="5" mandatory="y" />
 			<column name="db_schema_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="message_text" type="text" decimal="0" jt="12" mandatory="y" />
 			<index name="app_messages_pkey" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
@@ -37033,6 +37031,19 @@ $function$
 			</index>
 			<fk name="app_messages_apps" to_schema="ergomercator.system" to_table="applications" >
 				<fk_column name="app_id" pk="application_id" />
+			</fk>
+		</table>
+		<table name="app_messages_translations" >
+			<column name="message_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="language_id" type="smallint" length="5" decimal="0" jt="5" mandatory="y" />
+			<column name="db_schema_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="message_text" type="text" decimal="0" jt="12" mandatory="y" />
+			<index name="app_messages_trans_pkey" unique="PRIMARY_KEY" >
+				<column name="message_id" />
+				<column name="language_id" />
+			</index>
+			<fk name="app_messages_trans_msgs" to_schema="ergomercator.system" to_table="app_messages" >
+				<fk_column name="message_id" pk="id" />
 			</fk>
 		</table>
 		<table name="applications" >
@@ -37045,20 +37056,15 @@ $function$
 			<column name="application_key" type="varchar" length="64" decimal="0" jt="12" />
 			<column name="code" type="char" length="2" decimal="0" jt="1" />
 			<column name="db_schema_id" type="integer" length="10" decimal="0" jt="4" />
-			<column name="sppl_jguid" type="varchar" length="40" decimal="0" jt="12" mandatory="y" >
-				<comment><![CDATA[guid unique identifier across DBs]]></comment>
-			</column>
-			<column name="sppl_deleted" type="boolean" length="1" decimal="0" jt="-7" >
+			<column name="deleted" type="boolean" length="1" decimal="0" jt="-7" >
 				<defo><![CDATA[false]]></defo>
 			</column>
+			<column name="jguid" type="uuid" decimal="0" jt="1111" />
 			<index name="ap_applications_pkey" unique="PRIMARY_KEY" >
 				<column name="application_id" />
 			</index>
 			<index name="apapp_application_name_uk" unique="UNIQUE_KEY" >
 				<column name="application_name" />
-			</index>
-			<index name="sppl_jguid_uk" unique="UNIQUE_KEY" >
-				<column name="sppl_jguid" />
 			</index>
 		</table>
 		<table name="db_app_grp_param" >
@@ -37228,9 +37234,6 @@ $function$
 			<index name="pk_db_roles" unique="PRIMARY_KEY" >
 				<column name="role_id" />
 			</index>
-			<fk name="fk_db_roles_groups" to_schema="ergomercator.anagraph" to_table="groups" >
-				<fk_column name="an_group_id" pk="an_group_id" />
-			</fk>
 		</table>
 		<table name="db_schema_config" >
 			<column name="db_schema_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
@@ -37585,9 +37588,6 @@ $function$
 			<fk name="fk_db_user_sessions_db_users" to_schema="ergomercator.system" to_table="db_users" update_action="cascade" >
 				<fk_column name="db_user_id" pk="db_user_id" />
 			</fk>
-			<fk name="fk_db_user_sessions_lang" to_schema="ergomercator.jpublic" to_table="languages" >
-				<fk_column name="language_id" pk="language_id" />
-			</fk>
 		</table>
 		<table name="db_users" >
 			<column name="db_user_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
@@ -37766,23 +37766,8 @@ $function$
 			<fk name="fk_dbprofiles_users" to_schema="ergomercator.system" to_table="db_users" >
 				<fk_column name="db_user_id" pk="db_user_id" />
 			</fk>
-			<fk name="user_profiles_countries_fk" to_schema="ergomercator.jpublic" to_table="countries" >
-				<fk_column name="country_id" pk="country_id" />
-			</fk>
 			<fk name="fk_db_users_profiles_db_schemas" to_schema="ergomercator.system" to_table="db_schemas" >
 				<fk_column name="db_schema_id" pk="db_schema_id" />
-			</fk>
-			<fk name="fk_db_users_profiles_districts" to_schema="ergomercator.jpublic" to_table="districts" >
-				<fk_column name="district_id" pk="district_id" />
-			</fk>
-			<fk name="fk_db_users_profiles_gender" to_schema="ergomercator.jpublic" to_table="gender" >
-				<fk_column name="gender_code" pk="gender_code" />
-			</fk>
-			<fk name="fk_db_users_profiles_regions" to_schema="ergomercator.jpublic" to_table="regions" >
-				<fk_column name="region_id" pk="region_id" />
-			</fk>
-			<fk name="fk_db_users_profiles_towns" to_schema="ergomercator.jpublic" to_table="towns" >
-				<fk_column name="town_id" pk="town_id" />
 			</fk>
 		</table>
 		<table name="db_users_roles" >
@@ -37830,7 +37815,7 @@ $function$
 			<index name="fki_dbusrschemas_dbusers_fk" unique="NORMAL" >
 				<column name="db_user_id" />
 			</index>
-			<index name="idx_db_users_schemas" unique="UNIQUE_KEY" >
+			<index name="idx_db_users_schemas" unique="NORMAL" >
 				<column name="db_schema_id" />
 			</index>
 			<index name="db_user_schemas_jguid" unique="UNIQUE_KEY" >
@@ -39398,25 +39383,6 @@ $function$
 			<input_param name="returnValue" jt="4" type="int4" />
 			<input_param name="v_id" jt="4" type="int4" />
 		</function>
-		<function name="setlog" id="Function_1aff" isSystem="false" params_known="y" >
-			<string><![CDATA[CREATE OR REPLACE FUNCTION system.setlog(log text)
- RETURNS date
- LANGUAGE plpgsql
-AS $function$
-begin
-   insert into system.syslog (logtime, log) values (now(), log);
-   RAISE NOTICE 'log is -- % %', now(), log;
-   return now(); 
-EXCEPTION WHEN OTHERS THEN 
-  RAISE 'Errore system.setlog: %', SQLERRM;
-end; 
-$function$
-;]]></string>
-			<input_param name="returnValue" jt="91" type="date" />
-			<input_param name="log" jt="12" type="text" />
-			<input_param name="returnValue" jt="91" type="date" />
-			<input_param name="log" jt="12" type="text" />
-		</function>
 		<function name="setlog" id="Function_1f2a" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION system.setlog(log text, p_session_id bigint)
  RETURNS date
@@ -39432,6 +39398,23 @@ $function$
 			<input_param name="returnValue" jt="91" type="date" />
 			<input_param name="log" jt="12" type="text" />
 			<input_param name="p_session_id" jt="-5" type="int8" />
+		</function>
+		<function name="setlog" id="Function_ccc" isSystem="false" params_known="y" >
+			<string><![CDATA[CREATE OR REPLACE FUNCTION system.setlog(log text)
+ RETURNS date
+ LANGUAGE plpgsql
+AS $function$
+begin
+   insert into system.syslog (logtime, log) values (now(), log);
+   RAISE NOTICE 'log is -- % %', now(), log;
+   return now(); 
+EXCEPTION WHEN OTHERS THEN 
+  RAISE 'Errore system.setlog: %', SQLERRM;
+end; 
+$function$
+;]]></string>
+			<input_param name="returnValue" jt="91" type="date" />
+			<input_param name="log" jt="12" type="text" />
 		</function>
 		<function name="setuserdefaultschema" id="Function_1619" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION system.setuserdefaultschema(p_session_key character varying, p_user_id integer)
@@ -39721,17 +39704,17 @@ $function$
 ;]]></string>
 			<input_param name="returnValue" jt="1111" type="trigger" />
 		</function>
-		<function name="sppl_trg" id="Function_1d8b" isSystem="false" params_known="y" >
+		<function name="sppl_trg" id="Function_2640" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION system.sppl_trg()
  RETURNS trigger
  LANGUAGE plpgsql
 AS $function$
 begin
-  if New.sppl_jguid is null then
-     New.sppl_jguid:= '{' || public.uuid_generate_v1mc() || '}';
+  if New.jguid is null then
+     New.jguid:=  public.uuid_generate_v1mc();
   end if;
-  if New.sppl_deleted is null then
-     New.sppl_deleted := false;
+  if New.deleted is null then
+     New.deleted := false;
   end if;
   if New.db_schema_id is null then
      New.db_schema_id:=0;
@@ -39847,7 +39830,7 @@ $function$
 ;]]></string>
 			<input_param name="returnValue" jt="1111" type="trigger" />
 		</function>
-		<function name="srls_trg" id="Function_116b" isSystem="false" params_known="y" >
+		<function name="srls_trg" id="Function_1a72" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION system.srls_trg()
  RETURNS trigger
  LANGUAGE plpgsql
@@ -39865,9 +39848,8 @@ end;
 $function$
 ;]]></string>
 			<input_param name="returnValue" jt="1111" type="trigger" />
-			<input_param name="returnValue" jt="1111" type="trigger" />
 		</function>
-		<function name="srr_trg" id="Function_2544" isSystem="false" params_known="y" >
+		<function name="srr_trg" id="Function_1d05" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION system.srr_trg()
  RETURNS trigger
  LANGUAGE plpgsql
@@ -39886,7 +39868,6 @@ begin
 end;
 $function$
 ;]]></string>
-			<input_param name="returnValue" jt="1111" type="trigger" />
 			<input_param name="returnValue" jt="1111" type="trigger" />
 		</function>
 		<function name="ssch_trg" id="Function_16c9" isSystem="false" params_known="y" >
@@ -40075,7 +40056,7 @@ BEGIN
 			<input_param name="p_firstname" jt="12" type="varchar" />
 			<input_param name="p_lastname" jt="12" type="varchar" />
 		</function>
-		<function name="supr_trg" id="Function_243a" isSystem="false" params_known="y" >
+		<function name="supr_trg" id="Function_2077" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION system.supr_trg()
  RETURNS trigger
  LANGUAGE plpgsql
@@ -40097,7 +40078,6 @@ begin
 end;
 $function$
 ;]]></string>
-			<input_param name="returnValue" jt="1111" type="trigger" />
 			<input_param name="returnValue" jt="1111" type="trigger" />
 		</function>
 		<function name="sura_trg" id="Function_21b8" isSystem="false" params_known="y" >
@@ -40184,7 +40164,7 @@ $function$
 ;]]></string>
 			<input_param name="returnValue" jt="1111" type="trigger" />
 		</function>
-		<function name="suse_trg" id="Function_1d1b" isSystem="false" params_known="y" >
+		<function name="suse_trg" id="Function_b" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION system.suse_trg()
  RETURNS trigger
  LANGUAGE plpgsql
@@ -40205,7 +40185,6 @@ begin
 end;
 $function$
 ;]]></string>
-			<input_param name="returnValue" jt="1111" type="trigger" />
 			<input_param name="returnValue" jt="1111" type="trigger" />
 		</function>
 		<function name="susg_trg" id="Function_fd8" isSystem="false" params_known="y" >
@@ -40229,7 +40208,7 @@ $function$
 ;]]></string>
 			<input_param name="returnValue" jt="1111" type="trigger" />
 		</function>
-		<function name="suss_trg" id="Function_394" isSystem="false" params_known="y" >
+		<function name="suss_trg" id="Function_1dd" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION system.suss_trg()
  RETURNS trigger
  LANGUAGE plpgsql
@@ -40248,7 +40227,6 @@ begin
 end;
 $function$
 ;]]></string>
-			<input_param name="returnValue" jt="1111" type="trigger" />
 			<input_param name="returnValue" jt="1111" type="trigger" />
 		</function>
 		<function name="test_new_user" id="Function_a61" isSystem="false" params_known="y" >
@@ -40456,7 +40434,7 @@ $function$
 			<input_param name="p_country_id" jt="4" type="int4" />
 			<input_param name="p_ispublic" jt="-7" type="bool" />
 		</function>
-		<function name="useradd_with_profile" id="Function_2467" isSystem="false" params_known="y" >
+		<function name="useradd_with_profile" id="Function_9ff" isSystem="false" params_known="y" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION system.useradd_with_profile(p_email character varying, p_username character varying, p_firstname character varying, p_lastname character varying, p_address character varying, p_town character varying, p_postal_code character varying, p_password character varying, p_phone character varying DEFAULT NULL::character varying, p_an_group_id integer DEFAULT 27, INOUT p_anagraph_id integer DEFAULT '-1'::integer, INOUT p_default_schema_id integer DEFAULT 0, INOUT p_country_id integer DEFAULT 1, INOUT p_ispublic boolean DEFAULT false, OUT p_guid uuid, OUT p_user_id integer)
  RETURNS record
  LANGUAGE plpgsql
@@ -40548,22 +40526,6 @@ begin
 end; 
 $function$
 ;]]></string>
-			<input_param name="p_email" jt="12" type="varchar" />
-			<input_param name="p_username" jt="12" type="varchar" />
-			<input_param name="p_firstname" jt="12" type="varchar" />
-			<input_param name="p_lastname" jt="12" type="varchar" />
-			<input_param name="p_address" jt="12" type="varchar" />
-			<input_param name="p_town" jt="12" type="varchar" />
-			<input_param name="p_postal_code" jt="12" type="varchar" />
-			<input_param name="p_password" jt="12" type="varchar" />
-			<input_param name="p_phone" jt="12" type="varchar" />
-			<input_param name="p_an_group_id" jt="4" type="int4" />
-			<input_param name="p_anagraph_id" jt="4" type="int4" />
-			<input_param name="p_default_schema_id" jt="4" type="int4" />
-			<input_param name="p_country_id" jt="4" type="int4" />
-			<input_param name="p_ispublic" jt="-7" type="bool" />
-			<input_param name="p_guid" jt="1111" type="uuid" />
-			<input_param name="p_user_id" jt="4" type="int4" />
 			<input_param name="p_email" jt="12" type="varchar" />
 			<input_param name="p_username" jt="12" type="varchar" />
 			<input_param name="p_firstname" jt="12" type="varchar" />
@@ -54659,40 +54621,41 @@ COMMENT ON COLUMN accounting.pcash_accounting_vat_rows.credit IS 'Credit field';
 			<entity schema="ergomercator.jpublic" name="currencies_trans" />
 		</group>
 	</layout>
-	<layout name="system" id="Layout_31680f" hide_fks="db_users_payments_schemas_fk,fk_db_users_schemas_apps_1,fk_db_users_profiles_db_schemas," confirmed="y" show_relation="columns" >
-		<entity schema="ergomercator.system" name="app_forms" color="3986C1" x="48" y="1168" />
-		<entity schema="ergomercator.system" name="app_forms_objects" color="3986C1" x="464" y="1376" />
-		<entity schema="ergomercator.system" name="app_forms_objects_properties" color="3986C1" x="352" y="1584" />
-		<entity schema="ergomercator.system" name="app_forms_objects_translations" color="3986C1" x="64" y="1632" />
-		<entity schema="ergomercator.system" name="app_forms_translations" color="3986C1" x="256" y="1296" />
-		<entity schema="ergomercator.system" name="app_functions" color="3986C1" x="752" y="1472" />
-		<entity schema="ergomercator.system" name="app_grids" color="3986C1" x="336" y="2080" />
-		<entity schema="ergomercator.system" name="app_licenses" color="3986C1" x="48" y="896" >
+	<layout name="system" id="Layout_31680f" hide_fks="db_users_payments_schemas_fk,fk_db_users_profiles_db_schemas,fk_db_users_schemas_apps_1," confirmed="y" show_relation="columns" >
+		<entity schema="ergomercator.system" name="app_forms" color="3986C1" x="80" y="1168" />
+		<entity schema="ergomercator.system" name="app_forms_objects" color="3986C1" x="496" y="1376" />
+		<entity schema="ergomercator.system" name="app_forms_objects_properties" color="3986C1" x="384" y="1584" />
+		<entity schema="ergomercator.system" name="app_forms_objects_translations" color="3986C1" x="96" y="1632" />
+		<entity schema="ergomercator.system" name="app_forms_translations" color="3986C1" x="288" y="1296" />
+		<entity schema="ergomercator.system" name="app_functions" color="3986C1" x="784" y="1472" />
+		<entity schema="ergomercator.system" name="app_grids" color="3986C1" x="368" y="2080" />
+		<entity schema="ergomercator.system" name="app_licenses" color="3986C1" x="80" y="896" >
 			<column name="id" />
 			<column name="app_id" />
 			<column name="code" />
 			<column name="db_schema_id" />
 		</entity>
-		<entity schema="ergomercator.system" name="app_member_forms" color="3986C1" x="48" y="1024" />
-		<entity schema="ergomercator.system" name="app_messages" color="3986C1" x="576" y="848" />
-		<entity schema="ergomercator.system" name="applications" color="3986C1" x="304" y="848" />
-		<entity schema="ergomercator.system" name="db_app_grp_param" color="3986C1" x="224" y="1136" />
-		<entity schema="ergomercator.system" name="db_app_schemas" color="3986C1" x="624" y="1248" />
-		<entity schema="ergomercator.system" name="db_applications_roles" color="3986C1" x="784" y="832" />
-		<entity schema="ergomercator.system" name="db_esr_sch_param" color="3986C1" x="1456" y="2560" />
-		<entity schema="ergomercator.system" name="db_grp_sch_param" color="3986C1" x="1104" y="1504" />
-		<entity schema="ergomercator.system" name="db_packages_schemas" color="3986C1" x="1040" y="1136" />
-		<entity schema="ergomercator.system" name="db_schema_config" color="3986C1" x="1536" y="1216" />
-		<entity schema="ergomercator.system" name="db_schema_params" color="3986C1" x="1376" y="1328" />
-		<entity schema="ergomercator.system" name="db_schemas" color="3986C1" x="1344" y="976" />
-		<entity schema="ergomercator.system" name="db_schemas_roles" color="3986C1" x="1184" y="864" />
-		<entity schema="ergomercator.system" name="db_table_params" color="3986C1" x="1664" y="112" />
-		<entity schema="ergomercator.system" name="db_tables" color="3986C1" x="1504" y="304" />
-		<entity schema="ergomercator.system" name="db_tables_fields" color="3986C1" x="1360" y="112" />
-		<entity schema="ergomercator.system" name="db_user_groups" color="3986C1" x="608" y="608" />
-		<entity schema="ergomercator.system" name="db_user_schema_params" color="3986C1" x="1104" y="336" />
-		<entity schema="ergomercator.system" name="db_user_sessions" color="3986C1" x="832" y="112" />
-		<entity schema="ergomercator.system" name="db_users" color="3986C1" x="576" y="112" >
+		<entity schema="ergomercator.system" name="app_member_forms" color="3986C1" x="80" y="1024" />
+		<entity schema="ergomercator.system" name="app_messages" color="3986C1" x="432" y="832" />
+		<entity schema="ergomercator.system" name="app_messages_translations" color="3986C1" x="592" y="864" />
+		<entity schema="ergomercator.system" name="applications" color="3986C1" x="256" y="816" />
+		<entity schema="ergomercator.system" name="db_app_grp_param" color="3986C1" x="256" y="1136" />
+		<entity schema="ergomercator.system" name="db_app_schemas" color="3986C1" x="624" y="1008" />
+		<entity schema="ergomercator.system" name="db_applications_roles" color="3986C1" x="816" y="816" />
+		<entity schema="ergomercator.system" name="db_esr_sch_param" color="3986C1" x="1488" y="2560" />
+		<entity schema="ergomercator.system" name="db_grp_sch_param" color="3986C1" x="1136" y="1504" />
+		<entity schema="ergomercator.system" name="db_packages_schemas" color="3986C1" x="1072" y="1136" />
+		<entity schema="ergomercator.system" name="db_schema_config" color="3986C1" x="1568" y="1216" />
+		<entity schema="ergomercator.system" name="db_schema_params" color="3986C1" x="1408" y="1328" />
+		<entity schema="ergomercator.system" name="db_schemas" color="3986C1" x="1376" y="976" />
+		<entity schema="ergomercator.system" name="db_schemas_roles" color="3986C1" x="1216" y="864" />
+		<entity schema="ergomercator.system" name="db_table_params" color="3986C1" x="1696" y="112" />
+		<entity schema="ergomercator.system" name="db_tables" color="3986C1" x="1536" y="304" />
+		<entity schema="ergomercator.system" name="db_tables_fields" color="3986C1" x="1392" y="112" />
+		<entity schema="ergomercator.system" name="db_user_groups" color="3986C1" x="640" y="608" />
+		<entity schema="ergomercator.system" name="db_user_schema_params" color="3986C1" x="1136" y="336" />
+		<entity schema="ergomercator.system" name="db_user_sessions" color="3986C1" x="864" y="112" />
+		<entity schema="ergomercator.system" name="db_users" color="3986C1" x="608" y="112" >
 			<column name="db_user_id" />
 			<column name="active" />
 			<column name="email" />
@@ -54716,8 +54679,8 @@ COMMENT ON COLUMN accounting.pcash_accounting_vat_rows.credit IS 'Credit field';
 			<column name="user_family_name" />
 			<column name="db_schema_id" />
 		</entity>
-		<entity schema="ergomercator.system" name="db_users_payments" color="3986C1" x="192" y="80" />
-		<entity schema="ergomercator.system" name="db_users_profiles" color="3986C1" x="160" y="272" >
+		<entity schema="ergomercator.system" name="db_users_payments" color="3986C1" x="48" y="80" />
+		<entity schema="ergomercator.system" name="db_users_profiles" color="3986C1" x="80" y="272" >
 			<column name="db_user_id" />
 			<column name="country_id" />
 			<column name="region_id" />
@@ -54739,22 +54702,22 @@ COMMENT ON COLUMN accounting.pcash_accounting_vat_rows.credit IS 'Credit field';
 			<column name="db_schema_id" />
 			<column name="anagraph_id" />
 		</entity>
-		<entity schema="ergomercator.system" name="db_users_roles" color="3986C1" x="864" y="608" />
-		<entity schema="ergomercator.system" name="db_users_schemas" color="3986C1" x="800" y="368" />
-		<entity schema="ergomercator.system" name="db_users_schemas_apps" color="3986C1" x="384" y="624" />
-		<entity schema="ergomercator.system" name="db_users_schemas_roles" color="3986C1" x="1104" y="528" />
-		<entity schema="ergomercator.system" name="financial_years" color="3986C1" x="1456" y="1520" />
-		<entity schema="ergomercator.system" name="form_models" color="3986C1" x="64" y="1440" />
-		<entity schema="ergomercator.system" name="form_objects_trans" color="3986C1" x="720" y="2000" />
-		<entity schema="ergomercator.system" name="json_objects" color="3986C1" x="1504" y="1776" />
-		<entity schema="ergomercator.system" name="packages" color="3986C1" x="752" y="1008" />
-		<entity schema="ergomercator.system" name="packages_applications" color="3986C1" x="528" y="1040" />
-		<entity schema="ergomercator.system" name="schemalog" color="3986C1" x="1200" y="1632" />
-		<entity schema="ergomercator.system" name="sys_params" color="3986C1" x="1520" y="896" />
-		<entity schema="ergomercator.system" name="sys_roles" color="3986C1" x="1040" y="816" />
-		<entity schema="ergomercator.system" name="syslog" color="3986C1" x="1232" y="2560" />
-		<entity schema="ergomercator.system" name="temp_session" color="3986C1" x="1632" y="1680" />
-		<entity schema="ergomercator.system" name="tmp_grids" color="3986C1" x="1680" y="1440" />
+		<entity schema="ergomercator.system" name="db_users_roles" color="3986C1" x="896" y="608" />
+		<entity schema="ergomercator.system" name="db_users_schemas" color="3986C1" x="832" y="368" />
+		<entity schema="ergomercator.system" name="db_users_schemas_apps" color="3986C1" x="416" y="624" />
+		<entity schema="ergomercator.system" name="db_users_schemas_roles" color="3986C1" x="1136" y="528" />
+		<entity schema="ergomercator.system" name="financial_years" color="3986C1" x="1488" y="1520" />
+		<entity schema="ergomercator.system" name="form_models" color="3986C1" x="96" y="1440" />
+		<entity schema="ergomercator.system" name="form_objects_trans" color="3986C1" x="752" y="2000" />
+		<entity schema="ergomercator.system" name="json_objects" color="3986C1" x="1536" y="1776" />
+		<entity schema="ergomercator.system" name="packages" color="3986C1" x="784" y="1168" />
+		<entity schema="ergomercator.system" name="packages_applications" color="3986C1" x="512" y="1168" />
+		<entity schema="ergomercator.system" name="schemalog" color="3986C1" x="1232" y="1632" />
+		<entity schema="ergomercator.system" name="sys_params" color="3986C1" x="1552" y="896" />
+		<entity schema="ergomercator.system" name="sys_roles" color="3986C1" x="1072" y="816" />
+		<entity schema="ergomercator.system" name="syslog" color="3986C1" x="1264" y="2560" />
+		<entity schema="ergomercator.system" name="temp_session" color="3986C1" x="1664" y="1680" />
+		<entity schema="ergomercator.system" name="tmp_grids" color="3986C1" x="1712" y="1440" />
 		<group name="Users" color="C4E0F9" >
 			<entity schema="ergomercator.system" name="db_users" />
 			<entity schema="ergomercator.system" name="db_user_groups" />
