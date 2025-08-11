@@ -1,4 +1,4 @@
--- Table: system.applications
+-- Table: system.applications  
 
 -- DROP TABLE IF EXISTS system.applications;
 
