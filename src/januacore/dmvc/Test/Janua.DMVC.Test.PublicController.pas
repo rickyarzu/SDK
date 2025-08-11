@@ -11,7 +11,7 @@ type
   public
     [MVCPath]
     [MVCHTTPMethod([httpGET])]
-    procedure Index;
+    procedure Index(const vInput: string = 'Ciccio');
   end;
 
 implementation
@@ -19,14 +19,14 @@ implementation
 uses
   System.SysUtils;
 
-procedure TPublicController.Index;
+procedure TPublicController.Index(const vInput: string );
 begin
   { we are going to produce simple text.
     let's inform the client about the format
     of the body response format }
   ContentType := TMVCMediaType.TEXT_PLAIN;
   { Render a simple string }
-  Render('Hello World! It''s ' + TimeToStr(Time) + ' in DMVCFrameworkland');
+  Render('Hello ' + vInput + ' It''s ' + TimeToStr(Time) + ' in DMVCFrameworkland');
 end;
 
 end.

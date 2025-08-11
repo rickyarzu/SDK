@@ -10,6 +10,7 @@ type
     // TMessageLogProc = TProc<string { aProcName } , string { aLogMessage } , TObject { aObject } >;
     procedure OutputLog(aProcName: string; aLogMessage: string; aObject: TObject); overload;
     procedure OutputLog(const aLog: string); overload;
+    procedure OutputLog(const aLog: TJanuaLogRecord); overload;
   end;
 
   TJanuaMockLogOutput = class(TInterfacedObject, IJanuaApplicationLogOutput)
@@ -17,6 +18,7 @@ type
     // TMessageLogProc = TProc<string { aProcName } , string { aLogMessage } , TObject { aObject } >;
     procedure OutputLog(aProcName: string; aLogMessage: string; aObject: TObject); overload;
     procedure OutputLog(const aLog: string); overload;
+    procedure OutputLog(const aLog: TJanuaLogRecord); overload;
   end;
 
 implementation
@@ -49,6 +51,16 @@ begin
 end;
 
 procedure TJanuaMockLogOutput.OutputLog(aProcName, aLogMessage: string; aObject: TObject);
+begin
+
+end;
+
+procedure TJanuaMockLogOutput.OutputLog(const aLog: TJanuaLogRecord);
+begin
+
+end;
+
+procedure TJanuaConsoleLogOutput.OutputLog(const aLog: TJanuaLogRecord);
 begin
 
 end;

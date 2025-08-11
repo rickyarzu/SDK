@@ -3,10 +3,13 @@ unit Janua.System.DMVC.AuthCriteria;
 interface
 
 uses
-  MVCFramework, System.Generics.Collections, Janua.System.ViewModel.Intf;
+  System.SysUtils, MVCFramework, System.Generics.Collections, Janua.System.ViewModel.Intf;
 
 type
   TJanuaAuthCriteria = class(TInterfacedObject, IMVCAuthenticationHandler)
+  private
+    FCustomRoles: TProc<integer, TList<String>>;
+    FCustomSessionData:  TProc <integer, TDictionary<string, string>>;
   public
     procedure OnRequest(const AContext: TWebContext; const AControllerQualifiedClassName: string;
       const AActionName: string; var AAuthenticationRequired: Boolean);
@@ -14,12 +17,15 @@ type
       AUserRoles: TList<String>; var AIsValid: Boolean; const ASessionData: TDictionary<string, string>);
     procedure OnAuthorization(const AContext: TWebContext; AUserRoles: TList<string>;
       const AControllerQualifiedClassName: string; const AActionName: string; var AIsAuthorized: Boolean);
+    property CustomRoles: TProc < integer, TList < String >> read FCustomRoles write FCustomRoles;
+    property CustomSessionData: TProc < integer, TDictionary < string, string >> read FCustomSessionData
+      write FCustomSessionData;
   end;
 
 implementation
 
 uses
-  System.SysUtils, Janua.Application.Framework, Janua.DMVC.Srv.Framework;
+  Janua.Application.Framework, Janua.DMVC.Srv.Framework;
 
 { TJanuaAuthCriteria }
 
@@ -45,6 +51,9 @@ begin
       ASessionData.Add('user_uid', aSession.User.GUIDString);
       AUserRoles.Add('admin');
       AUserRoles.Add('user');
+      if Assigned(CustomRoles) then
+        CustomRoles(aSession.User.DbUserId.AsInteger, AUserRoles);
+
     end;
   end;
 
