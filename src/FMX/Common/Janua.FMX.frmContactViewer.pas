@@ -67,7 +67,7 @@ end;
 
 procedure TfrmContactViewerFMX.FormCreate(Sender: TObject);
 begin
-  BorderStyle := TFmxFormBorderStyle.Dialog;
+  BorderStyle := TFmxFormBorderStyle.Single;
   Position := TFormPosition.ScreenCenter;
   Caption := 'Visualizzatore Contatto';
 

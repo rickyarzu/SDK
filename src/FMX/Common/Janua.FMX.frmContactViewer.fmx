@@ -1,6 +1,7 @@
 object frmContactViewerFMX: TfrmContactViewerFMX
   Left = 0
   Top = 0
+  BorderStyle = Single
   Caption = 'Visualizzatore Contatto'
   ClientHeight = 460
   ClientWidth = 450

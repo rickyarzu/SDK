@@ -10,7 +10,7 @@ uses
   Janua.ViewModels.Intf, uJanuaVCLForm, Janua.Core.Types, Janua.Core.Classes.Intf, Janua.Orm.Intf,
   Janua.Forms.Types, Janua.Controls.Intf, Janua.Controls.Forms.Intf, Janua.Search.ViewModels.Engines.Intf,
   // Interposers
-  Janua.VCL.Interposers;
+  Janua.VCL.Interposers, Vcl.ComCtrls;
 
 type
   TdlgViewModelSearch = class(TJanuaVCLFormModel, ISearchForm, IJanuaForm, IJanuaContainer, IJanuaBindable)
@@ -107,3 +107,4 @@ begin
 end;
 
 end.
+

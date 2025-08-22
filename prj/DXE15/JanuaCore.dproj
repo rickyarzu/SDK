@@ -599,10 +599,6 @@
         <DCCReference Include="..\..\src\januacore\Janua.Cloud.Sms.Intf.pas"/>
         <DCCReference Include="..\..\src\januacore\custom\Janua.Core.TMLogistic.Types.pas"/>
         <DCCReference Include="..\..\src\januacore\custom\Janua.TMLogistic.Migration.pas"/>
-        <DCCReference Include="..\..\src\januacore\datamodule\Janua.Core.DataModule.pas">
-            <Form>JanuaCoreDataModule</Form>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
         <DCCReference Include="..\..\src\januacore\Janua.Cloud.Mail.Intf.pas"/>
         <DCCReference Include="..\..\src\januacore\Janua.Carservice.Commons.pas"/>
         <DCCReference Include="..\..\src\januacore\Janua.Cloud.Mail.Conf.pas"/>
@@ -654,6 +650,15 @@
         </DCCReference>
         <DCCReference Include="..\..\src\januacore\Janua.Core.DatabaseMapper.pas"/>
         <DCCReference Include="..\..\src\januacore\Janua.Core.Iterator.pas"/>
+        <DCCReference Include="..\..\src\januacore\orm\DTO.Phoenix.CatEstintori.pas"/>
+        <DCCReference Include="..\..\src\januacore\orm\DTO.Phoenix.ReportList.pas"/>
+        <DCCReference Include="..\..\src\januacore\orm\DTO.WpJson.pas"/>
+        <DCCReference Include="..\..\src\januacore\orm\DTO.WpJson.PostList.pas"/>
+        <DCCReference Include="..\..\src\januacore\datamodule\Janua.Core.DataModule.pas">
+            <Form>JanuaCoreDataModule</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <None Include="ModelSupport_JanuaCore\default.txvpck"/>
         <None Include="ModelSupport_JanuaCore\Delphi\default.txvpck"/>
         <None Include="ModelSupport_JanuaCore\Janua\default.txvpck"/>

@@ -13,10 +13,7 @@ uses
   Janua.Search.ViewModels.Intf, Janua.Search.ViewModels.Engines.Impl, Janua.Search.ViewModels.Engines.Intf,
   // View Models
   Janua.System.ViewModel.Intf, Janua.System.Model.Impl, Janua.Orm.Intf, FireDAC.Stan.Intf,
-  FireDAC.Stan.Option,
-  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
-  FireDAC.Stan.StorageBin,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Janua.Unidac.Connection;
+  Janua.Unidac.Connection;
 
 type
   TdmPgSystemStorage = class(TdmPgStorage)

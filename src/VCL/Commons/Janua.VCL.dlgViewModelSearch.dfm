@@ -4,10 +4,15 @@ inherited dlgViewModelSearch: TdlgViewModelSearch
   ClientHeight = 592
   ClientWidth = 685
   Position = poScreenCenter
+  StyleElements = [seFont, seClient, seBorder]
   OnClose = FormClose
   ExplicitWidth = 701
   ExplicitHeight = 631
   TextHeight = 17
+  inherited StatusBar: TStatusBar
+    Top = 517
+    Width = 685
+  end
   object pnlMainSearch: TPanel
     Left = 0
     Top = 0
@@ -43,7 +48,7 @@ inherited dlgViewModelSearch: TdlgViewModelSearch
     Left = 0
     Top = 49
     Width = 685
-    Height = 487
+    Height = 468
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText

@@ -214,7 +214,8 @@ begin
     Janua.Core.Json.JsonPair(Result, 'status', self.FStatus);
   if FMainCategory > 0 then
     Janua.Core.Json.JsonPair(Result, 'categories', self.FMainCategory);
-  if FFeatureMedia <> '' then
+  { TODO -cCore : Check if Featured media in Wordpress is an Integer or a string }
+  if FFeatureMedia > 0 then
     Janua.Core.Json.JsonPair(Result, 'featured_media', self.FFeatureMedia);
 end;
 

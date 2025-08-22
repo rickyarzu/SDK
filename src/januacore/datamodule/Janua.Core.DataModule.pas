@@ -40,7 +40,7 @@ type
       jbcEvaluate]);
     property BindManager: IJanuaBindManager read GetBindManager;
     procedure Notify(const AProperty: string);
-    // ************************************* Bindings Procedures ***********************************    // ************************************* End Bindings Procedures *****************************************
+    // ************************************* End Bindings Procedures *****************************************
 
     // *********************************** Logging Procedures ************************************************
   private
@@ -50,7 +50,6 @@ type
     FHasMessage: Boolean;
     FLastMessage: string;
     FVerbose: Boolean;
-    FPixelsPerInch: Integer;
     procedure SetLogToFile(const Value: Boolean);
     function GetLogText: string;
     procedure ClearLocalLog(const aProcedureName: string);
@@ -79,6 +78,7 @@ type
     property LogText: string read GetLogText;
     // *********************************** end Logging Procedures ********************************************
   strict protected
+    FPixelsPerInch: Integer;
     FParams: IJanuaParams;
     FInitialized: Boolean;
     FAfterActivate: TProc;

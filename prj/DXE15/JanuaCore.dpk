@@ -370,7 +370,6 @@ contains
   Janua.Cloud.Sms.Intf in '..\..\src\januacore\Janua.Cloud.Sms.Intf.pas',
   Janua.Core.TMLogistic.Types in '..\..\src\januacore\custom\Janua.Core.TMLogistic.Types.pas',
   Janua.TMLogistic.Migration in '..\..\src\januacore\custom\Janua.TMLogistic.Migration.pas',
-  Janua.Core.DataModule in '..\..\src\januacore\datamodule\Janua.Core.DataModule.pas' {JanuaCoreDataModule: TDataModule},
   Janua.Cloud.Mail.Intf in '..\..\src\januacore\Janua.Cloud.Mail.Intf.pas',
   Janua.Carservice.Commons in '..\..\src\januacore\Janua.Carservice.Commons.pas',
   Janua.Cloud.Mail.Conf in '..\..\src\januacore\Janua.Cloud.Mail.Conf.pas',
@@ -418,6 +417,11 @@ contains
   Janua.Core.ContactViewer in '..\..\src\januacore\Janua.Core.ContactViewer.pas',
   Janua.Cloud.dmOpenAI in '..\..\src\januacore\datamodule\Janua.Cloud.dmOpenAI.pas' {dmCloudOpenAI: TDataModule},
   Janua.Core.DatabaseMapper in '..\..\src\januacore\Janua.Core.DatabaseMapper.pas',
-  Janua.Core.Iterator in '..\..\src\januacore\Janua.Core.Iterator.pas';
+  Janua.Core.Iterator in '..\..\src\januacore\Janua.Core.Iterator.pas',
+  DTO.Phoenix.CatEstintori in '..\..\src\januacore\orm\DTO.Phoenix.CatEstintori.pas',
+  DTO.Phoenix.ReportList in '..\..\src\januacore\orm\DTO.Phoenix.ReportList.pas',
+  DTO.WpJson in '..\..\src\januacore\orm\DTO.WpJson.pas',
+  DTO.WpJson.PostList in '..\..\src\januacore\orm\DTO.WpJson.PostList.pas',
+  Janua.Core.DataModule in '..\..\src\januacore\datamodule\Janua.Core.DataModule.pas' {JanuaCoreDataModule: TDataModule};
 
 end.
