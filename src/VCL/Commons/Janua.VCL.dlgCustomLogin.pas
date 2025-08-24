@@ -7,10 +7,10 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
   Spring.Collections, System.Json, System.Types, System.UITypes,
   // VCL
-  VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.StdCtrls,
+  VCL.Graphics, VCL.Controls, VCL.Forms, VCL.Dialogs, VCL.StdCtrls, VCL.ExtCtrls,
   // Janua
   Janua.VCL.Interposers, Janua.Core.Types, Janua.Core.Classes.Intf, Janua.Orm.Intf, Janua.Forms.Types,
-  Janua.Controls.Intf, Janua.Controls.Forms.Intf, uJanuaVCLForm, Janua.System.ViewModel.Intf, VCL.ExtCtrls;
+  Janua.Controls.Intf, Janua.Controls.Forms.Intf, uJanuaVCLForm, Janua.System.ViewModel.Intf;
 
 type
   TdlgVCLCustomLogin = class(TJanuaVCLFormModel, IJanuaLoginForm, IJanuaForm, IJanuaControl)

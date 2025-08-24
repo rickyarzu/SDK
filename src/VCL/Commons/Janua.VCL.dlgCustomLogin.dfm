@@ -41,8 +41,8 @@ object dlgVCLCustomLogin: TdlgVCLCustomLogin
   object imgLogo: TImage
     Left = 0
     Top = 8
-    Width = 289
-    Height = 209
+    Width = 254
+    Height = 171
     Stretch = True
   end
   object btnUndo: TButton
@@ -56,7 +56,6 @@ object dlgVCLCustomLogin: TdlgVCLCustomLogin
     ModalResult = 2
     TabOrder = 4
     TabStop = False
-    ExplicitLeft = 256
   end
   object btnLogin: TButton
     Left = 394
@@ -68,7 +67,6 @@ object dlgVCLCustomLogin: TdlgVCLCustomLogin
     ImageIndex = 28
     ModalResult = 1
     TabOrder = 2
-    ExplicitLeft = 390
   end
   object ckbShowPasswordChar: TCheckBox
     Left = 357
@@ -80,7 +78,6 @@ object dlgVCLCustomLogin: TdlgVCLCustomLogin
     Caption = 'Mostra Password'
     TabOrder = 3
     OnClick = ckbShowPasswordCharClick
-    ExplicitLeft = 353
   end
   object edPassword: TEdit
     Left = 258
@@ -95,7 +92,6 @@ object dlgVCLCustomLogin: TdlgVCLCustomLogin
     TextHint = 'nomeutente@keriks.com'
     OnExit = edPasswordExit
     OnKeyPress = edUserNameKeyPress
-    ExplicitLeft = 254
   end
   object edUserName: TEdit
     Left = 259
@@ -108,7 +104,6 @@ object dlgVCLCustomLogin: TdlgVCLCustomLogin
     TabOrder = 0
     TextHint = 'nomeutente@keriks.com'
     OnKeyPress = edUserNameKeyPress
-    ExplicitLeft = 255
   end
   object ckbRemember: TCheckBox
     Left = 259
@@ -120,6 +115,5 @@ object dlgVCLCustomLogin: TdlgVCLCustomLogin
     Caption = 'Ricordami'
     TabOrder = 5
     OnClick = ckbRememberClick
-    ExplicitLeft = 255
   end
 end

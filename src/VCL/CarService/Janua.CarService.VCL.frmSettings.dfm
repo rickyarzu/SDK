@@ -184,7 +184,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
         SelectionTextColor = clHighlightText
         Color = clWindow
         ParentFont = False
-        Version = '1.8.9.15'
+        Version = '1.8.10.2'
         ExplicitHeight = 136
       end
       object AdvMemo1: TAdvMemo
@@ -305,7 +305,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.9.1.2'
+        Version = '3.9.1.7'
         WordWrap = wwClientWidth
       end
       object AdvMemo2: TAdvMemo
@@ -434,7 +434,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
         UrlStyle.BkColor = clWhite
         UrlStyle.Style = [fsUnderline]
         UseStyler = True
-        Version = '3.9.1.2'
+        Version = '3.9.1.7'
         WordWrap = wwClientWidth
       end
     end
@@ -471,91 +471,60 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             inherited Label1: TLabel
               Top = 626
               Width = 1184
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitTop = 626
             end
             inherited pnlCustomerMail: TPanel
               Width = 1184
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitWidth = 1184
-              inherited lblMailCustomerTo: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lblMailFrom: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lblMailFromName: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited lblMaillMailCustomerBCC: TLabel
                 Left = 894
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 922
               end
               inherited lblMailReply: TLabel
                 Left = 667
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 695
-              end
-              inherited lblSubject: TLabel
-                StyleElements = [seFont, seClient, seBorder]
               end
               inherited lblMailImagesURL: TLabel
                 Left = 667
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 695
               end
               inherited lblMaillMailCustomerCC: TLabel
                 Left = 894
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 922
               end
               inherited btnSaveConfig: TButton
                 OnClick = frameCustomerMailMessageConfigbtnSaveConfigClick
               end
-              inherited edtCustomerFrom: TEdit
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited edtCustomerFromMail: TEdit
                 Width = 327
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitWidth = 327
               end
               inherited edtCustomerTestRecipients: TEdit
                 Left = 716
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 716
               end
               inherited edtlMailCC: TEdit
                 Left = 926
                 Width = 318
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 926
                 ExplicitWidth = 318
               end
               inherited edtlMailBCC: TEdit
                 Left = 926
                 Width = 318
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 926
                 ExplicitWidth = 318
               end
-              inherited edtMailCustomerRecipient: TEdit
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited edtMailCustomerTo: TEdit
                 Width = 371
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitWidth = 371
               end
               inherited edtMailSubject: TEdit
                 Width = 592
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitWidth = 592
               end
               inherited edtReplyTo: TEdit
                 Left = 716
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 716
               end
             end
@@ -581,30 +550,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited ToolBar1: TToolBar
                     Width = 991
                     ExplicitWidth = 991
-                    inherited ListStyleCombo: TComboBox
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited HtAddTableCombo1: THtAddTableCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited HtTableBorderCombo1: THtTableBorderCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited ToolSeachEdit: TButtonedEdit
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                   end
                   inherited ToolBar2: TToolBar
                     Width = 991
                     Height = 56
                     ExplicitWidth = 403
                     ExplicitHeight = 56
-                    inherited FontCombo: THtFontCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                     inherited HtFontSizeCombo1: THtFontSizeCombo
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                     end
                     inherited ToolButton9: TToolButton
                       Left = 0
@@ -621,21 +574,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     inherited HtTextColorCombo1: THtTextColorCombo
                       Left = 51
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 51
                       ExplicitTop = 30
                     end
                     inherited HtBgColorCombo1: THtBgColorCombo
                       Left = 117
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 117
                       ExplicitTop = 30
                     end
                     inherited HtBorderCombo1: THtBorderCombo
                       Left = 180
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 180
                       ExplicitTop = 30
                     end
@@ -667,7 +617,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       Left = 607
                       Top = 30
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 607
                       ExplicitTop = 30
                     end
@@ -675,7 +624,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       Left = 721
                       Top = 30
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 721
                       ExplicitTop = 30
                     end
@@ -684,7 +632,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     Top = 112
                     Width = 713
                     Height = 305
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitTop = 254
                     ExplicitWidth = 713
                     ExplicitHeight = 163
@@ -692,7 +639,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited pnlFooter: TPanel
                     Top = 417
                     Width = 991
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitTop = 417
                     ExplicitWidth = 991
                     inherited TrackBar1: TTrackBar
@@ -700,46 +646,17 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       OnChange = nil
                       ExplicitLeft = 627
                     end
-                    inherited HtTagNavigator1: THtTagNavigator
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                   end
                   inherited LeftPages: TPageControl
                     Top = 112
                     Height = 305
                     ExplicitTop = 112
                     ExplicitHeight = 305
-                    inherited TabSheet1: TTabSheet
-                      inherited TreePanel: THtPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
-                    inherited TabSheet2: TTabSheet
-                      inherited Panel2: TPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                        inherited SearchEdit: TEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                      end
-                      inherited SearchPanel: THtPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
                     inherited tabTag: TTabSheet
                       ExplicitHeight = 277
                       inherited pnlLists: TPanel
                         Height = 277
-                        StyleElements = [seFont, seClient, seBorder]
                         ExplicitHeight = 277
-                        inherited lst1: TListBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited lst2: TListBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited edLabelTag: TEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
                       end
                     end
                   end
@@ -747,43 +664,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
               inherited tabCustomerMailPreview: TTabSheet
                 inherited brwModelMessage: TTMSFNCWebBrowser
-                  DoubleBuffered = True
                   ExplicitHeight = 502
                 end
               end
               inherited tabCustomerTestMail: TTabSheet
-                inherited lblMailCustomerCC: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited edtMailTestSubject: TEdit
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited pnlMailTest: TPanel
-                  StyleElements = [seFont, seClient, seBorder]
-                  inherited lblMailFrom1: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lblMailTo: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lblTestMailTo1: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited edtMsgTestFrom: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited edtTestMailTo: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited edtTestMailFromName: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                end
                 inherited pgcTestPreview: TPageControl
                   ExplicitHeight = 432
                   inherited tabPagePreview: TTabSheet
                     inherited brwTestMessage: TTMSFNCWebBrowser
-                      DoubleBuffered = True
                       ExplicitHeight = 402
                     end
                   end
@@ -832,13 +720,9 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             inherited grpURL: TGroupBox
               Width = 1178
               ExplicitWidth = 1178
-              inherited lblMobileCustomerUrl: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited edtCustomerMobileUrl: TEdit
                 Top = 20
                 Width = 216
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitTop = 20
                 ExplicitWidth = 216
               end
@@ -852,7 +736,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 Left = 411
                 Top = 20
                 Width = 277
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 411
                 ExplicitTop = 20
                 ExplicitWidth = 277
@@ -862,7 +745,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 Top = 20
                 Width = 349
                 Anchors = [akLeft, akTop, akRight]
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 619
                 ExplicitTop = 20
                 ExplicitWidth = 349
@@ -870,17 +752,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pnlLists: TPanel
               Height = 469
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitHeight = 72
-              inherited edLabelTag: TEdit
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lst1: TListBox
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lst2: TListBox
-                StyleElements = [seFont, seClient, seBorder]
-              end
             end
             inherited grdMaster: TDBGrid
               Top = 641
@@ -913,88 +785,57 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 inherited Label1: TLabel
                   Top = 596
                   Width = 1176
-                  StyleElements = [seFont, seClient, seBorder]
                   ExplicitTop = 596
                 end
                 inherited pnlCustomerMail: TPanel
                   Width = 1176
-                  StyleElements = [seFont, seClient, seBorder]
                   ExplicitWidth = 1176
-                  inherited lblMailCustomerTo: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lblMailFrom: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lblMailFromName: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
                   inherited lblMaillMailCustomerBCC: TLabel
                     Left = 908
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitLeft = 922
                   end
                   inherited lblMailReply: TLabel
                     Left = 681
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitLeft = 695
-                  end
-                  inherited lblSubject: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
                   end
                   inherited lblMailImagesURL: TLabel
                     Left = 681
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitLeft = 695
                   end
                   inherited lblMaillMailCustomerCC: TLabel
                     Left = 908
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitLeft = 922
-                  end
-                  inherited edtCustomerFrom: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
                   end
                   inherited edtCustomerFromMail: TEdit
                     Width = 341
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitWidth = 341
                   end
                   inherited edtCustomerTestRecipients: TEdit
                     Left = 730
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitLeft = 730
                   end
                   inherited edtlMailCC: TEdit
                     Left = 940
                     Width = 380
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitLeft = 940
                     ExplicitWidth = 380
                   end
                   inherited edtlMailBCC: TEdit
                     Left = 940
                     Width = 380
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitLeft = 940
                     ExplicitWidth = 380
                   end
-                  inherited edtMailCustomerRecipient: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
                   inherited edtMailCustomerTo: TEdit
                     Width = 447
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitWidth = 447
                   end
                   inherited edtMailSubject: TEdit
                     Width = 606
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitWidth = 606
                   end
                   inherited edtReplyTo: TEdit
                     Left = 730
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitLeft = 730
                   end
                 end
@@ -1020,30 +861,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       inherited ToolBar1: TToolBar
                         Width = 983
                         ExplicitWidth = 983
-                        inherited ListStyleCombo: TComboBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited HtAddTableCombo1: THtAddTableCombo
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited HtTableBorderCombo1: THtTableBorderCombo
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited ToolSeachEdit: TButtonedEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
                       end
                       inherited ToolBar2: TToolBar
                         Width = 983
                         Height = 56
                         ExplicitWidth = 395
                         ExplicitHeight = 56
-                        inherited FontCombo: THtFontCombo
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
                         inherited HtFontSizeCombo1: THtFontSizeCombo
                           Height = 22
-                          StyleElements = [seFont, seClient, seBorder]
                         end
                         inherited ToolButton9: TToolButton
                           Left = 0
@@ -1060,21 +885,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                         inherited HtTextColorCombo1: THtTextColorCombo
                           Left = 51
                           Top = 30
-                          StyleElements = [seFont, seClient, seBorder]
                           ExplicitLeft = 51
                           ExplicitTop = 30
                         end
                         inherited HtBgColorCombo1: THtBgColorCombo
                           Left = 117
                           Top = 30
-                          StyleElements = [seFont, seClient, seBorder]
                           ExplicitLeft = 117
                           ExplicitTop = 30
                         end
                         inherited HtBorderCombo1: THtBorderCombo
                           Left = 180
                           Top = 30
-                          StyleElements = [seFont, seClient, seBorder]
                           ExplicitLeft = 180
                           ExplicitTop = 30
                         end
@@ -1106,7 +928,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                           Left = 607
                           Top = 30
                           Height = 22
-                          StyleElements = [seFont, seClient, seBorder]
                           ExplicitLeft = 607
                           ExplicitTop = 30
                         end
@@ -1114,7 +935,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                           Left = 721
                           Top = 30
                           Height = 22
-                          StyleElements = [seFont, seClient, seBorder]
                           ExplicitLeft = 721
                           ExplicitTop = 30
                         end
@@ -1123,7 +943,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                         Top = 112
                         Width = 705
                         Height = 275
-                        StyleElements = [seFont, seClient, seBorder]
                         ExplicitTop = 254
                         ExplicitWidth = 705
                         ExplicitHeight = 133
@@ -1131,7 +950,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       inherited pnlFooter: TPanel
                         Top = 387
                         Width = 983
-                        StyleElements = [seFont, seClient, seBorder]
                         ExplicitTop = 387
                         ExplicitWidth = 983
                         inherited TrackBar1: TTrackBar
@@ -1139,46 +957,17 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                           OnChange = nil
                           ExplicitLeft = 619
                         end
-                        inherited HtTagNavigator1: THtTagNavigator
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
                       end
                       inherited LeftPages: TPageControl
                         Top = 112
                         Height = 275
                         ExplicitTop = 112
                         ExplicitHeight = 275
-                        inherited TabSheet1: TTabSheet
-                          inherited TreePanel: THtPanel
-                            StyleElements = [seFont, seClient, seBorder]
-                          end
-                        end
-                        inherited TabSheet2: TTabSheet
-                          inherited Panel2: TPanel
-                            StyleElements = [seFont, seClient, seBorder]
-                            inherited SearchEdit: TEdit
-                              StyleElements = [seFont, seClient, seBorder]
-                            end
-                          end
-                          inherited SearchPanel: THtPanel
-                            StyleElements = [seFont, seClient, seBorder]
-                          end
-                        end
                         inherited tabTag: TTabSheet
                           ExplicitHeight = 247
                           inherited pnlLists: TPanel
                             Height = 247
-                            StyleElements = [seFont, seClient, seBorder]
                             ExplicitHeight = 247
-                            inherited lst1: TListBox
-                              StyleElements = [seFont, seClient, seBorder]
-                            end
-                            inherited lst2: TListBox
-                              StyleElements = [seFont, seClient, seBorder]
-                            end
-                            inherited edLabelTag: TEdit
-                              StyleElements = [seFont, seClient, seBorder]
-                            end
                           end
                         end
                       end
@@ -1186,37 +975,13 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   end
                   inherited tabCustomerMailPreview: TTabSheet
                     inherited brwModelMessage: TTMSFNCWebBrowser
-                      DoubleBuffered = True
                       ExplicitHeight = 502
                     end
                   end
                   inherited tabCustomerTestMail: TTabSheet
-                    inherited lblMailCustomerCC: TLabel
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited edtMailTestSubject: TEdit
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                     inherited pnlMailTest: TPanel
-                      StyleElements = [seFont, seClient, seBorder]
-                      inherited lblMailFrom1: TLabel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                      inherited lblMailTo: TLabel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                      inherited lblTestMailTo1: TLabel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                      inherited edtMsgTestFrom: TEdit
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                      inherited edtTestMailTo: TEdit
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
                       inherited edtTestMailFromName: TEdit
                         Width = 553
-                        StyleElements = [seFont, seClient, seBorder]
                         ExplicitWidth = 553
                       end
                     end
@@ -1224,7 +989,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       ExplicitHeight = 432
                       inherited tabPagePreview: TTabSheet
                         inherited brwTestMessage: TTMSFNCWebBrowser
-                          DoubleBuffered = True
                           ExplicitHeight = 402
                         end
                       end
@@ -1273,40 +1037,24 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 inherited grpURL: TGroupBox
                   Width = 1170
                   ExplicitWidth = 1170
-                  inherited lblMobileCustomerUrl: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
                   inherited edtCustomerMobileUrl: TEdit
                     Width = 216
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitWidth = 216
                   end
                   inherited edtCustomerMobileUrl1: TEdit
                     Width = 302
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitWidth = 302
                   end
                   inherited edtTestTinyUrl: TEdit
                     Left = 579
                     Width = 269
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitLeft = 579
                     ExplicitWidth = 269
                   end
                 end
                 inherited pnlLists: TPanel
                   Height = 439
-                  StyleElements = [seFont, seClient, seBorder]
                   ExplicitHeight = 42
-                  inherited edLabelTag: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lst1: TListBox
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lst2: TListBox
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
                 end
                 inherited grdMaster: TDBGrid
                   Top = 611
@@ -1329,88 +1077,57 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 inherited Label1: TLabel
                   Top = 596
                   Width = 1176
-                  StyleElements = [seFont, seClient, seBorder]
                   ExplicitTop = 596
                 end
                 inherited pnlCustomerMail: TPanel
                   Width = 1176
-                  StyleElements = [seFont, seClient, seBorder]
                   ExplicitWidth = 1176
-                  inherited lblMailCustomerTo: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lblMailFrom: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lblMailFromName: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
                   inherited lblMaillMailCustomerBCC: TLabel
                     Left = 908
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitLeft = 922
                   end
                   inherited lblMailReply: TLabel
                     Left = 681
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitLeft = 695
-                  end
-                  inherited lblSubject: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
                   end
                   inherited lblMailImagesURL: TLabel
                     Left = 681
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitLeft = 695
                   end
                   inherited lblMaillMailCustomerCC: TLabel
                     Left = 908
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitLeft = 922
-                  end
-                  inherited edtCustomerFrom: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
                   end
                   inherited edtCustomerFromMail: TEdit
                     Width = 341
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitWidth = 341
                   end
                   inherited edtCustomerTestRecipients: TEdit
                     Left = 730
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitLeft = 730
                   end
                   inherited edtlMailCC: TEdit
                     Left = 940
                     Width = 380
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitLeft = 940
                     ExplicitWidth = 380
                   end
                   inherited edtlMailBCC: TEdit
                     Left = 940
                     Width = 380
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitLeft = 940
                     ExplicitWidth = 380
                   end
-                  inherited edtMailCustomerRecipient: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
                   inherited edtMailCustomerTo: TEdit
                     Width = 447
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitWidth = 447
                   end
                   inherited edtMailSubject: TEdit
                     Width = 606
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitWidth = 606
                   end
                   inherited edtReplyTo: TEdit
                     Left = 730
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitLeft = 730
                   end
                 end
@@ -1436,30 +1153,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       inherited ToolBar1: TToolBar
                         Width = 983
                         ExplicitWidth = 983
-                        inherited ListStyleCombo: TComboBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited HtAddTableCombo1: THtAddTableCombo
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited HtTableBorderCombo1: THtTableBorderCombo
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited ToolSeachEdit: TButtonedEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
                       end
                       inherited ToolBar2: TToolBar
                         Width = 983
                         Height = 56
                         ExplicitWidth = 395
                         ExplicitHeight = 56
-                        inherited FontCombo: THtFontCombo
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
                         inherited HtFontSizeCombo1: THtFontSizeCombo
                           Height = 22
-                          StyleElements = [seFont, seClient, seBorder]
                         end
                         inherited ToolButton9: TToolButton
                           Left = 0
@@ -1476,21 +1177,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                         inherited HtTextColorCombo1: THtTextColorCombo
                           Left = 51
                           Top = 30
-                          StyleElements = [seFont, seClient, seBorder]
                           ExplicitLeft = 51
                           ExplicitTop = 30
                         end
                         inherited HtBgColorCombo1: THtBgColorCombo
                           Left = 117
                           Top = 30
-                          StyleElements = [seFont, seClient, seBorder]
                           ExplicitLeft = 117
                           ExplicitTop = 30
                         end
                         inherited HtBorderCombo1: THtBorderCombo
                           Left = 180
                           Top = 30
-                          StyleElements = [seFont, seClient, seBorder]
                           ExplicitLeft = 180
                           ExplicitTop = 30
                         end
@@ -1522,7 +1220,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                           Left = 607
                           Top = 30
                           Height = 22
-                          StyleElements = [seFont, seClient, seBorder]
                           ExplicitLeft = 607
                           ExplicitTop = 30
                         end
@@ -1530,7 +1227,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                           Left = 721
                           Top = 30
                           Height = 22
-                          StyleElements = [seFont, seClient, seBorder]
                           ExplicitLeft = 721
                           ExplicitTop = 30
                         end
@@ -1539,7 +1235,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                         Top = 112
                         Width = 705
                         Height = 275
-                        StyleElements = [seFont, seClient, seBorder]
                         ExplicitTop = 254
                         ExplicitWidth = 705
                         ExplicitHeight = 133
@@ -1547,7 +1242,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       inherited pnlFooter: TPanel
                         Top = 387
                         Width = 983
-                        StyleElements = [seFont, seClient, seBorder]
                         ExplicitTop = 387
                         ExplicitWidth = 983
                         inherited TrackBar1: TTrackBar
@@ -1555,46 +1249,17 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                           OnChange = nil
                           ExplicitLeft = 619
                         end
-                        inherited HtTagNavigator1: THtTagNavigator
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
                       end
                       inherited LeftPages: TPageControl
                         Top = 112
                         Height = 275
                         ExplicitTop = 112
                         ExplicitHeight = 275
-                        inherited TabSheet1: TTabSheet
-                          inherited TreePanel: THtPanel
-                            StyleElements = [seFont, seClient, seBorder]
-                          end
-                        end
-                        inherited TabSheet2: TTabSheet
-                          inherited Panel2: TPanel
-                            StyleElements = [seFont, seClient, seBorder]
-                            inherited SearchEdit: TEdit
-                              StyleElements = [seFont, seClient, seBorder]
-                            end
-                          end
-                          inherited SearchPanel: THtPanel
-                            StyleElements = [seFont, seClient, seBorder]
-                          end
-                        end
                         inherited tabTag: TTabSheet
                           ExplicitHeight = 247
                           inherited pnlLists: TPanel
                             Height = 247
-                            StyleElements = [seFont, seClient, seBorder]
                             ExplicitHeight = 247
-                            inherited lst1: TListBox
-                              StyleElements = [seFont, seClient, seBorder]
-                            end
-                            inherited lst2: TListBox
-                              StyleElements = [seFont, seClient, seBorder]
-                            end
-                            inherited edLabelTag: TEdit
-                              StyleElements = [seFont, seClient, seBorder]
-                            end
                           end
                         end
                       end
@@ -1602,37 +1267,13 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   end
                   inherited tabCustomerMailPreview: TTabSheet
                     inherited brwModelMessage: TTMSFNCWebBrowser
-                      DoubleBuffered = True
                       ExplicitHeight = 502
                     end
                   end
                   inherited tabCustomerTestMail: TTabSheet
-                    inherited lblMailCustomerCC: TLabel
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited edtMailTestSubject: TEdit
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                     inherited pnlMailTest: TPanel
-                      StyleElements = [seFont, seClient, seBorder]
-                      inherited lblMailFrom1: TLabel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                      inherited lblMailTo: TLabel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                      inherited lblTestMailTo1: TLabel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                      inherited edtMsgTestFrom: TEdit
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                      inherited edtTestMailTo: TEdit
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
                       inherited edtTestMailFromName: TEdit
                         Width = 553
-                        StyleElements = [seFont, seClient, seBorder]
                         ExplicitWidth = 553
                       end
                     end
@@ -1640,7 +1281,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       ExplicitHeight = 432
                       inherited tabPagePreview: TTabSheet
                         inherited brwTestMessage: TTMSFNCWebBrowser
-                          DoubleBuffered = True
                           ExplicitHeight = 402
                         end
                       end
@@ -1689,12 +1329,8 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 inherited grpURL: TGroupBox
                   Width = 1170
                   ExplicitWidth = 1170
-                  inherited lblMobileCustomerUrl: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
                   inherited edtCustomerMobileUrl: TEdit
                     Width = 216
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitWidth = 216
                   end
                   inherited btnTestUrl: TButton
@@ -1703,30 +1339,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   end
                   inherited edtCustomerMobileUrl1: TEdit
                     Width = 302
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitWidth = 302
                   end
                   inherited edtTestTinyUrl: TEdit
                     Left = 708
                     Width = 277
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitLeft = 708
                     ExplicitWidth = 277
                   end
                 end
                 inherited pnlLists: TPanel
                   Height = 439
-                  StyleElements = [seFont, seClient, seBorder]
                   ExplicitHeight = 42
-                  inherited edLabelTag: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lst1: TListBox
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lst2: TListBox
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
                 end
                 inherited grdMaster: TDBGrid
                   Top = 611
@@ -1751,88 +1375,57 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             inherited Label1: TLabel
               Top = 626
               Width = 1184
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitTop = 626
             end
             inherited pnlCustomerMail: TPanel
               Width = 1184
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitWidth = 1184
-              inherited lblMailCustomerTo: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lblMailFrom: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lblMailFromName: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited lblMaillMailCustomerBCC: TLabel
                 Left = 908
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 922
               end
               inherited lblMailReply: TLabel
                 Left = 681
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 695
-              end
-              inherited lblSubject: TLabel
-                StyleElements = [seFont, seClient, seBorder]
               end
               inherited lblMailImagesURL: TLabel
                 Left = 681
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 695
               end
               inherited lblMaillMailCustomerCC: TLabel
                 Left = 908
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 922
-              end
-              inherited edtCustomerFrom: TEdit
-                StyleElements = [seFont, seClient, seBorder]
               end
               inherited edtCustomerFromMail: TEdit
                 Width = 341
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitWidth = 341
               end
               inherited edtCustomerTestRecipients: TEdit
                 Left = 730
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 730
               end
               inherited edtlMailCC: TEdit
                 Left = 940
                 Width = 388
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 940
                 ExplicitWidth = 388
               end
               inherited edtlMailBCC: TEdit
                 Left = 940
                 Width = 388
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 940
                 ExplicitWidth = 388
               end
-              inherited edtMailCustomerRecipient: TEdit
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited edtMailCustomerTo: TEdit
                 Width = 455
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitWidth = 455
               end
               inherited edtMailSubject: TEdit
                 Width = 606
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitWidth = 606
               end
               inherited edtReplyTo: TEdit
                 Left = 730
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 730
               end
             end
@@ -1858,30 +1451,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited ToolBar1: TToolBar
                     Width = 991
                     ExplicitWidth = 991
-                    inherited ListStyleCombo: TComboBox
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited HtAddTableCombo1: THtAddTableCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited HtTableBorderCombo1: THtTableBorderCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited ToolSeachEdit: TButtonedEdit
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                   end
                   inherited ToolBar2: TToolBar
                     Width = 991
                     Height = 56
                     ExplicitWidth = 403
                     ExplicitHeight = 56
-                    inherited FontCombo: THtFontCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                     inherited HtFontSizeCombo1: THtFontSizeCombo
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                     end
                     inherited ToolButton9: TToolButton
                       Left = 0
@@ -1898,21 +1475,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     inherited HtTextColorCombo1: THtTextColorCombo
                       Left = 51
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 51
                       ExplicitTop = 30
                     end
                     inherited HtBgColorCombo1: THtBgColorCombo
                       Left = 117
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 117
                       ExplicitTop = 30
                     end
                     inherited HtBorderCombo1: THtBorderCombo
                       Left = 180
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 180
                       ExplicitTop = 30
                     end
@@ -1944,7 +1518,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       Left = 607
                       Top = 30
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 607
                       ExplicitTop = 30
                     end
@@ -1952,7 +1525,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       Left = 721
                       Top = 30
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 721
                       ExplicitTop = 30
                     end
@@ -1961,7 +1533,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     Top = 112
                     Width = 713
                     Height = 305
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitTop = 254
                     ExplicitWidth = 713
                     ExplicitHeight = 163
@@ -1969,7 +1540,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited pnlFooter: TPanel
                     Top = 417
                     Width = 991
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitTop = 417
                     ExplicitWidth = 991
                     inherited TrackBar1: TTrackBar
@@ -1977,46 +1547,17 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       OnChange = nil
                       ExplicitLeft = 627
                     end
-                    inherited HtTagNavigator1: THtTagNavigator
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                   end
                   inherited LeftPages: TPageControl
                     Top = 112
                     Height = 305
                     ExplicitTop = 112
                     ExplicitHeight = 305
-                    inherited TabSheet1: TTabSheet
-                      inherited TreePanel: THtPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
-                    inherited TabSheet2: TTabSheet
-                      inherited Panel2: TPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                        inherited SearchEdit: TEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                      end
-                      inherited SearchPanel: THtPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
                     inherited tabTag: TTabSheet
                       ExplicitHeight = 277
                       inherited pnlLists: TPanel
                         Height = 277
-                        StyleElements = [seFont, seClient, seBorder]
                         ExplicitHeight = 277
-                        inherited lst1: TListBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited lst2: TListBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited edLabelTag: TEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
                       end
                     end
                   end
@@ -2024,37 +1565,13 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
               inherited tabCustomerMailPreview: TTabSheet
                 inherited brwModelMessage: TTMSFNCWebBrowser
-                  DoubleBuffered = True
                   ExplicitHeight = 502
                 end
               end
               inherited tabCustomerTestMail: TTabSheet
-                inherited lblMailCustomerCC: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited edtMailTestSubject: TEdit
-                  StyleElements = [seFont, seClient, seBorder]
-                end
                 inherited pnlMailTest: TPanel
-                  StyleElements = [seFont, seClient, seBorder]
-                  inherited lblMailFrom1: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lblMailTo: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lblTestMailTo1: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited edtMsgTestFrom: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited edtTestMailTo: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
                   inherited edtTestMailFromName: TEdit
                     Width = 545
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitWidth = 545
                   end
                 end
@@ -2062,7 +1579,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   ExplicitHeight = 432
                   inherited tabPagePreview: TTabSheet
                     inherited brwTestMessage: TTMSFNCWebBrowser
-                      DoubleBuffered = True
                       ExplicitHeight = 402
                     end
                   end
@@ -2111,40 +1627,24 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             inherited grpURL: TGroupBox
               Width = 1178
               ExplicitWidth = 1178
-              inherited lblMobileCustomerUrl: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited edtCustomerMobileUrl: TEdit
                 Width = 317
                 Anchors = [akLeft, akTop, akRight]
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitWidth = 317
               end
               inherited edtCustomerMobileUrl1: TEdit
                 Width = 445
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitWidth = 445
               end
               inherited edtTestTinyUrl: TEdit
                 Width = 411
                 Anchors = [akLeft, akTop, akRight]
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitWidth = 411
               end
             end
             inherited pnlLists: TPanel
               Height = 469
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitHeight = 72
-              inherited edLabelTag: TEdit
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lst1: TListBox
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lst2: TListBox
-                StyleElements = [seFont, seClient, seBorder]
-              end
             end
             inherited grdMaster: TDBGrid
               Top = 641
@@ -2167,88 +1667,57 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             inherited Label1: TLabel
               Top = 626
               Width = 1184
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitTop = 626
             end
             inherited pnlCustomerMail: TPanel
               Width = 1184
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitWidth = 1184
-              inherited lblMailCustomerTo: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lblMailFrom: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lblMailFromName: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited lblMaillMailCustomerBCC: TLabel
                 Left = 908
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 922
               end
               inherited lblMailReply: TLabel
                 Left = 681
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 695
-              end
-              inherited lblSubject: TLabel
-                StyleElements = [seFont, seClient, seBorder]
               end
               inherited lblMailImagesURL: TLabel
                 Left = 681
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 695
               end
               inherited lblMaillMailCustomerCC: TLabel
                 Left = 908
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 922
-              end
-              inherited edtCustomerFrom: TEdit
-                StyleElements = [seFont, seClient, seBorder]
               end
               inherited edtCustomerFromMail: TEdit
                 Width = 341
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitWidth = 341
               end
               inherited edtCustomerTestRecipients: TEdit
                 Left = 730
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 730
               end
               inherited edtlMailCC: TEdit
                 Left = 940
                 Width = 388
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 940
                 ExplicitWidth = 388
               end
               inherited edtlMailBCC: TEdit
                 Left = 940
                 Width = 388
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 940
                 ExplicitWidth = 388
               end
-              inherited edtMailCustomerRecipient: TEdit
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited edtMailCustomerTo: TEdit
                 Width = 455
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitWidth = 455
               end
               inherited edtMailSubject: TEdit
                 Width = 606
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitWidth = 606
               end
               inherited edtReplyTo: TEdit
                 Left = 730
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 730
               end
             end
@@ -2274,30 +1743,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited ToolBar1: TToolBar
                     Width = 991
                     ExplicitWidth = 991
-                    inherited ListStyleCombo: TComboBox
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited HtAddTableCombo1: THtAddTableCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited HtTableBorderCombo1: THtTableBorderCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited ToolSeachEdit: TButtonedEdit
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                   end
                   inherited ToolBar2: TToolBar
                     Width = 991
                     Height = 56
                     ExplicitWidth = 403
                     ExplicitHeight = 56
-                    inherited FontCombo: THtFontCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                     inherited HtFontSizeCombo1: THtFontSizeCombo
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                     end
                     inherited ToolButton9: TToolButton
                       Left = 0
@@ -2314,21 +1767,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     inherited HtTextColorCombo1: THtTextColorCombo
                       Left = 51
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 51
                       ExplicitTop = 30
                     end
                     inherited HtBgColorCombo1: THtBgColorCombo
                       Left = 117
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 117
                       ExplicitTop = 30
                     end
                     inherited HtBorderCombo1: THtBorderCombo
                       Left = 180
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 180
                       ExplicitTop = 30
                     end
@@ -2360,7 +1810,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       Left = 607
                       Top = 30
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 607
                       ExplicitTop = 30
                     end
@@ -2368,7 +1817,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       Left = 721
                       Top = 30
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 721
                       ExplicitTop = 30
                     end
@@ -2377,7 +1825,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     Top = 112
                     Width = 713
                     Height = 305
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitTop = 254
                     ExplicitWidth = 713
                     ExplicitHeight = 163
@@ -2385,7 +1832,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited pnlFooter: TPanel
                     Top = 417
                     Width = 991
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitTop = 417
                     ExplicitWidth = 991
                     inherited TrackBar1: TTrackBar
@@ -2393,46 +1839,17 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       OnChange = nil
                       ExplicitLeft = 627
                     end
-                    inherited HtTagNavigator1: THtTagNavigator
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                   end
                   inherited LeftPages: TPageControl
                     Top = 112
                     Height = 305
                     ExplicitTop = 112
                     ExplicitHeight = 305
-                    inherited TabSheet1: TTabSheet
-                      inherited TreePanel: THtPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
-                    inherited TabSheet2: TTabSheet
-                      inherited Panel2: TPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                        inherited SearchEdit: TEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                      end
-                      inherited SearchPanel: THtPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
                     inherited tabTag: TTabSheet
                       ExplicitHeight = 277
                       inherited pnlLists: TPanel
                         Height = 277
-                        StyleElements = [seFont, seClient, seBorder]
                         ExplicitHeight = 277
-                        inherited lst1: TListBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited lst2: TListBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited edLabelTag: TEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
                       end
                     end
                   end
@@ -2440,37 +1857,13 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
               inherited tabCustomerMailPreview: TTabSheet
                 inherited brwModelMessage: TTMSFNCWebBrowser
-                  DoubleBuffered = True
                   ExplicitHeight = 502
                 end
               end
               inherited tabCustomerTestMail: TTabSheet
-                inherited lblMailCustomerCC: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited edtMailTestSubject: TEdit
-                  StyleElements = [seFont, seClient, seBorder]
-                end
                 inherited pnlMailTest: TPanel
-                  StyleElements = [seFont, seClient, seBorder]
-                  inherited lblMailFrom1: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lblMailTo: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lblTestMailTo1: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited edtMsgTestFrom: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited edtTestMailTo: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
                   inherited edtTestMailFromName: TEdit
                     Width = 545
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitWidth = 545
                   end
                 end
@@ -2478,7 +1871,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   ExplicitHeight = 432
                   inherited tabPagePreview: TTabSheet
                     inherited brwTestMessage: TTMSFNCWebBrowser
-                      DoubleBuffered = True
                       ExplicitHeight = 402
                     end
                   end
@@ -2527,40 +1919,24 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             inherited grpURL: TGroupBox
               Width = 1178
               ExplicitWidth = 1178
-              inherited lblMobileCustomerUrl: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited edtCustomerMobileUrl: TEdit
                 Width = 317
                 Anchors = [akLeft, akTop, akRight]
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitWidth = 317
               end
               inherited edtCustomerMobileUrl1: TEdit
                 Width = 445
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitWidth = 445
               end
               inherited edtTestTinyUrl: TEdit
                 Width = 411
                 Anchors = [akLeft, akTop, akRight]
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitWidth = 411
               end
             end
             inherited pnlLists: TPanel
               Height = 469
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitHeight = 72
-              inherited edLabelTag: TEdit
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lst1: TListBox
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lst2: TListBox
-                StyleElements = [seFont, seClient, seBorder]
-              end
             end
             inherited grdMaster: TDBGrid
               Top = 641
@@ -2710,7 +2086,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.2'
+            Version = '3.9.1.7'
             WordWrap = wwNone
             DataField = 'conf'
             DataSource = dsConfiguration
@@ -2872,7 +2248,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.2'
+            Version = '3.9.1.7'
             WordWrap = wwNone
           end
         end
@@ -3056,7 +2432,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = False
-            Version = '3.9.1.2'
+            Version = '3.9.1.7'
             WordWrap = wwNone
           end
           object AdvMemo4: TAdvMemo
@@ -3172,7 +2548,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = False
-            Version = '3.9.1.2'
+            Version = '3.9.1.7'
             WordWrap = wwNone
           end
           object AdvMemo3: TAdvMemo
@@ -3288,7 +2664,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = False
-            Version = '3.9.1.2'
+            Version = '3.9.1.7'
             WordWrap = wwNone
           end
           object btnSerialize1: TButton
@@ -3425,7 +2801,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             CaptionGlowEffect.Offset = 0
             CaptionGlowEffect.Intensive = True
             CaptionGlowEffect.StyleColors = True
-            Color = clBtnFace
             StorePaintBuffer = False
             WordWrap = False
             DataSource = dsConfiguration
@@ -3595,7 +2970,7 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             UrlStyle.BkColor = clWhite
             UrlStyle.Style = [fsUnderline]
             UseStyler = True
-            Version = '3.9.1.2'
+            Version = '3.9.1.7'
             WordWrap = wwNone
             DataField = 'conf'
             DataSource = dsConfiguration
@@ -3627,18 +3002,10 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             ExplicitHeight = 778
             inherited pnlButtons: TPanel
               Width = 1190
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitWidth = 1190
-              inherited lblMailImagesURL: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lbMasterDataset: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited edtLandingUrl: TEdit
                 Left = 151
                 Width = 727
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 151
                 ExplicitWidth = 727
               end
@@ -3648,7 +3015,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
               inherited edtTinyUrl: TEdit
                 Left = 891
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 891
               end
             end
@@ -3674,30 +3040,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited ToolBar1: TToolBar
                     Width = 997
                     ExplicitWidth = 997
-                    inherited ListStyleCombo: TComboBox
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited HtAddTableCombo1: THtAddTableCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited HtTableBorderCombo1: THtTableBorderCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited ToolSeachEdit: TButtonedEdit
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                   end
                   inherited ToolBar2: TToolBar
                     Width = 997
                     Height = 56
                     ExplicitWidth = 409
                     ExplicitHeight = 56
-                    inherited FontCombo: THtFontCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                     inherited HtFontSizeCombo1: THtFontSizeCombo
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                     end
                     inherited ToolButton9: TToolButton
                       Left = 0
@@ -3714,21 +3064,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     inherited HtTextColorCombo1: THtTextColorCombo
                       Left = 51
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 51
                       ExplicitTop = 30
                     end
                     inherited HtBgColorCombo1: THtBgColorCombo
                       Left = 117
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 117
                       ExplicitTop = 30
                     end
                     inherited HtBorderCombo1: THtBorderCombo
                       Left = 180
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 180
                       ExplicitTop = 30
                     end
@@ -3760,7 +3107,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       Left = 607
                       Top = 30
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 607
                       ExplicitTop = 30
                     end
@@ -3768,7 +3114,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       Left = 721
                       Top = 30
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 721
                       ExplicitTop = 30
                     end
@@ -3784,7 +3129,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited pnlFooter: TPanel
                     Top = 573
                     Width = 997
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitTop = 573
                     ExplicitWidth = 997
                     inherited TrackBar1: TTrackBar
@@ -3792,82 +3136,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       OnChange = nil
                       ExplicitLeft = 633
                     end
-                    inherited HtTagNavigator1: THtTagNavigator
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                   end
                   inherited LeftPages: TPageControl
                     Top = 112
                     Height = 461
                     ExplicitTop = 112
                     ExplicitHeight = 64
-                    inherited TabSheet1: TTabSheet
-                      inherited TreePanel: THtPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
-                    inherited TabSheet2: TTabSheet
-                      inherited Panel2: TPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                        inherited SearchEdit: TEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                      end
-                      inherited SearchPanel: THtPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
                     inherited tabTag: TTabSheet
                       ExplicitHeight = 433
                       inherited pnlLists: TPanel
                         Height = 433
-                        StyleElements = [seFont, seClient, seBorder]
                         ExplicitHeight = 36
-                        inherited lst1: TListBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited lst2: TListBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited edLabelTag: TEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
                       end
-                    end
-                  end
-                end
-              end
-              inherited tabCustomerMailPreview: TTabSheet
-                inherited brwModelMessage: TTMSFNCWebBrowser
-                  DoubleBuffered = True
-                end
-              end
-              inherited tabCustomerTestMail: TTabSheet
-                inherited lblMailCustomerCC: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited edtMailTestSubject: TEdit
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited pnlMailTest: TPanel
-                  StyleElements = [seFont, seClient, seBorder]
-                  inherited lblMailFrom1: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lblTestMailTo1: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited edtMsgTestFrom: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited edtTestTinyUrl: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                end
-                inherited pgcTestPreview: TPageControl
-                  inherited tabPagePreview: TTabSheet
-                    inherited brwTestMessage: TTMSFNCWebBrowser
-                      DoubleBuffered = True
                     end
                   end
                 end
@@ -3900,17 +3180,9 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pnlLists: TPanel
               Height = 625
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitHeight = 228
-              inherited edLabelTag: TEdit
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lst1: TListBox
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited lst2: TListBox
                 Height = 103
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitHeight = 103
               end
             end
@@ -3934,18 +3206,10 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             ExplicitHeight = 778
             inherited pnlButtons: TPanel
               Width = 1190
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitWidth = 1190
-              inherited lblMailImagesURL: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lbMasterDataset: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited edtLandingUrl: TEdit
                 Left = 151
                 Width = 727
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 151
                 ExplicitWidth = 727
               end
@@ -3955,7 +3219,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
               inherited edtTinyUrl: TEdit
                 Left = 891
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 891
               end
             end
@@ -3981,30 +3244,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited ToolBar1: TToolBar
                     Width = 997
                     ExplicitWidth = 997
-                    inherited ListStyleCombo: TComboBox
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited HtAddTableCombo1: THtAddTableCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited HtTableBorderCombo1: THtTableBorderCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited ToolSeachEdit: TButtonedEdit
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                   end
                   inherited ToolBar2: TToolBar
                     Width = 997
                     Height = 56
                     ExplicitWidth = 409
                     ExplicitHeight = 56
-                    inherited FontCombo: THtFontCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                     inherited HtFontSizeCombo1: THtFontSizeCombo
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                     end
                     inherited ToolButton9: TToolButton
                       Left = 0
@@ -4021,21 +3268,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     inherited HtTextColorCombo1: THtTextColorCombo
                       Left = 51
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 51
                       ExplicitTop = 30
                     end
                     inherited HtBgColorCombo1: THtBgColorCombo
                       Left = 117
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 117
                       ExplicitTop = 30
                     end
                     inherited HtBorderCombo1: THtBorderCombo
                       Left = 180
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 180
                       ExplicitTop = 30
                     end
@@ -4067,7 +3311,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       Left = 607
                       Top = 30
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 607
                       ExplicitTop = 30
                     end
@@ -4075,7 +3318,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       Left = 721
                       Top = 30
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 721
                       ExplicitTop = 30
                     end
@@ -4091,7 +3333,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited pnlFooter: TPanel
                     Top = 573
                     Width = 997
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitTop = 573
                     ExplicitWidth = 997
                     inherited TrackBar1: TTrackBar
@@ -4099,82 +3340,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       OnChange = nil
                       ExplicitLeft = 633
                     end
-                    inherited HtTagNavigator1: THtTagNavigator
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                   end
                   inherited LeftPages: TPageControl
                     Top = 112
                     Height = 461
                     ExplicitTop = 112
                     ExplicitHeight = 64
-                    inherited TabSheet1: TTabSheet
-                      inherited TreePanel: THtPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
-                    inherited TabSheet2: TTabSheet
-                      inherited Panel2: TPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                        inherited SearchEdit: TEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                      end
-                      inherited SearchPanel: THtPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
                     inherited tabTag: TTabSheet
                       ExplicitHeight = 433
                       inherited pnlLists: TPanel
                         Height = 433
-                        StyleElements = [seFont, seClient, seBorder]
                         ExplicitHeight = 36
-                        inherited lst1: TListBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited lst2: TListBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited edLabelTag: TEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
                       end
-                    end
-                  end
-                end
-              end
-              inherited tabCustomerMailPreview: TTabSheet
-                inherited brwModelMessage: TTMSFNCWebBrowser
-                  DoubleBuffered = True
-                end
-              end
-              inherited tabCustomerTestMail: TTabSheet
-                inherited lblMailCustomerCC: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited edtMailTestSubject: TEdit
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited pnlMailTest: TPanel
-                  StyleElements = [seFont, seClient, seBorder]
-                  inherited lblMailFrom1: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lblTestMailTo1: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited edtMsgTestFrom: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited edtTestTinyUrl: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                end
-                inherited pgcTestPreview: TPageControl
-                  inherited tabPagePreview: TTabSheet
-                    inherited brwTestMessage: TTMSFNCWebBrowser
-                      DoubleBuffered = True
                     end
                   end
                 end
@@ -4207,17 +3384,9 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pnlLists: TPanel
               Height = 625
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitHeight = 228
-              inherited edLabelTag: TEdit
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lst1: TListBox
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited lst2: TListBox
                 Height = 103
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitHeight = 103
               end
             end
@@ -4241,17 +3410,9 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             ExplicitHeight = 778
             inherited pnlButtons: TPanel
               Width = 1190
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitWidth = 1190
-              inherited lblMailImagesURL: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lbMasterDataset: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited edtLandingUrl: TEdit
                 Width = 694
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitWidth = 694
               end
               inherited btnGenerateTinyUrl: TButton
@@ -4260,7 +3421,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
               inherited edtTinyUrl: TEdit
                 Left = 807
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 807
               end
             end
@@ -4287,30 +3447,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited ToolBar1: TToolBar
                     Width = 997
                     ExplicitWidth = 997
-                    inherited ListStyleCombo: TComboBox
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited HtAddTableCombo1: THtAddTableCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited HtTableBorderCombo1: THtTableBorderCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited ToolSeachEdit: TButtonedEdit
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                   end
                   inherited ToolBar2: TToolBar
                     Width = 997
                     Height = 56
                     ExplicitWidth = 997
                     ExplicitHeight = 56
-                    inherited FontCombo: THtFontCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                     inherited HtFontSizeCombo1: THtFontSizeCombo
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                     end
                     inherited ToolButton9: TToolButton
                       Left = 0
@@ -4327,21 +3471,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     inherited HtTextColorCombo1: THtTextColorCombo
                       Left = 51
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 51
                       ExplicitTop = 30
                     end
                     inherited HtBgColorCombo1: THtBgColorCombo
                       Left = 117
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 117
                       ExplicitTop = 30
                     end
                     inherited HtBorderCombo1: THtBorderCombo
                       Left = 180
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 180
                       ExplicitTop = 30
                     end
@@ -4373,7 +3514,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       Left = 607
                       Top = 30
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 607
                       ExplicitTop = 30
                     end
@@ -4381,7 +3521,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       Left = 721
                       Top = 30
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 721
                       ExplicitTop = 30
                     end
@@ -4397,7 +3536,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited pnlFooter: TPanel
                     Top = 573
                     Width = 997
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitTop = 573
                     ExplicitWidth = 997
                     inherited TrackBar1: TTrackBar
@@ -4405,83 +3543,32 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       OnChange = nil
                       ExplicitLeft = 633
                     end
-                    inherited HtTagNavigator1: THtTagNavigator
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                   end
                   inherited LeftPages: TPageControl
                     Top = 112
                     Height = 461
                     ExplicitTop = 112
                     ExplicitHeight = 461
-                    inherited TabSheet1: TTabSheet
-                      inherited TreePanel: THtPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
-                    inherited TabSheet2: TTabSheet
-                      inherited Panel2: TPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                        inherited SearchEdit: TEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                      end
-                      inherited SearchPanel: THtPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
                     inherited tabTag: TTabSheet
                       ExplicitHeight = 433
                       inherited pnlLists: TPanel
                         Height = 433
-                        StyleElements = [seFont, seClient, seBorder]
                         ExplicitHeight = 433
-                        inherited lst1: TListBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited lst2: TListBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited edLabelTag: TEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
                       end
                     end
                   end
-                end
-              end
-              inherited tabCustomerMailPreview: TTabSheet
-                inherited brwModelMessage: TTMSFNCWebBrowser
-                  DoubleBuffered = True
                 end
               end
               inherited tabCustomerTestMail: TTabSheet
                 ExplicitWidth = 997
                 ExplicitHeight = 595
-                inherited lblMailCustomerCC: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
                 inherited edtMailTestSubject: TEdit
                   Width = 991
-                  StyleElements = [seFont, seClient, seBorder]
                   ExplicitWidth = 991
                 end
                 inherited pnlMailTest: TPanel
                   Width = 997
-                  StyleElements = [seFont, seClient, seBorder]
                   ExplicitWidth = 997
-                  inherited lblMailFrom1: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lblTestMailTo1: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited edtMsgTestFrom: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited edtTestTinyUrl: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
                 end
                 inherited pgcTestPreview: TPageControl
                   Width = 997
@@ -4495,7 +3582,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     inherited brwTestMessage: TTMSFNCWebBrowser
                       Width = 989
                       Height = 495
-                      DoubleBuffered = True
                       ExplicitWidth = 989
                       ExplicitHeight = 389
                     end
@@ -4548,17 +3634,9 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pnlLists: TPanel
               Height = 625
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitHeight = 228
-              inherited edLabelTag: TEdit
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lst1: TListBox
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited lst2: TListBox
                 Height = 103
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitHeight = 103
               end
             end
@@ -4594,51 +3672,28 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             ExplicitHeight = 577
             inherited Panel1: TPanel
               Height = 577
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitHeight = 180
               inherited pnlLists: TPanel
                 Height = 575
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitHeight = 178
-                inherited lst1: TListBox
-                  StyleElements = [seFont, seClient, seBorder]
-                end
                 inherited lst2: TListBox
                   Height = 55
-                  StyleElements = [seFont, seClient, seBorder]
                   ExplicitHeight = 55
-                end
-                inherited edLabelTag: TEdit
-                  StyleElements = [seFont, seClient, seBorder]
                 end
               end
             end
             inherited Panel2: TPanel
               Width = 973
               Height = 577
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitWidth = 973
               ExplicitHeight = 577
               inherited lblMsgTo: TLabel
                 Left = 832
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 832
-              end
-              inherited lbKey: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lbContentVariables: TLabel
-                StyleElements = [seFont, seClient, seBorder]
               end
               inherited grpURL: TGroupBox
                 Width = 965
                 ExplicitWidth = 965
-                inherited lblMobileCustomerUrl: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited edtMobileUrl: TEdit
-                  StyleElements = [seFont, seClient, seBorder]
-                end
                 inherited btnTestUrl: TButton
                   Left = 614
                   OnClick = frameSMSCustomerbtnTestUrlClick
@@ -4646,13 +3701,11 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 end
                 inherited edtCustomerMobileUrl1: TEdit
                   Width = 181
-                  StyleElements = [seFont, seClient, seBorder]
                   ExplicitWidth = 181
                 end
                 inherited edtTestTinyUrl: TEdit
                   Left = 686
                   Width = 274
-                  StyleElements = [seClient, seBorder]
                   ExplicitLeft = 686
                   ExplicitWidth = 274
                 end
@@ -4669,7 +3722,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 Left = 880
                 Top = 73
                 Width = 81
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 880
                 ExplicitTop = 73
                 ExplicitWidth = 81
@@ -4682,26 +3734,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
               inherited pnlSmsTestConfig: TPanel
                 Height = 415
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitHeight = 415
                 inherited dbgrdParams: TDBGrid
                   Height = 407
                 end
                 inherited AdvPageControl1: TAdvPageControl
-                  DoubleBuffered = True
                   inherited tabPreview: TAdvTabSheet
                     ExplicitLeft = 4
                     ExplicitTop = 26
                     ExplicitWidth = 578
                     ExplicitHeight = 268
                     inherited lbEdtTemplateSID: TLabeledEdit
-                      EditLabel.ExplicitLeft = 0
-                      EditLabel.ExplicitTop = -18
                       EditLabel.ExplicitWidth = 92
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited edTestSMSTo: TEdit
-                      StyleElements = [seFont, seClient, seBorder]
                     end
                     inherited advmTemplateJson: TAdvMemo
                       BorderColor = clGray
@@ -4722,9 +3766,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                         ExplicitTop = 21
                         ExplicitWidth = 304
                         ExplicitHeight = 103
-                      end
-                      inherited memParamsDestination: TMemo
-                        StyleElements = [seFont, seClient, seBorder]
                       end
                     end
                   end
@@ -4748,9 +3789,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               inherited DBGrid1: TDBGrid
                 Top = 496
                 Width = 971
-              end
-              inherited memTemplateParams: TMemo
-                StyleElements = [seFont, seClient, seBorder]
               end
             end
           end
@@ -4769,64 +3807,39 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             ExplicitHeight = 577
             inherited Panel1: TPanel
               Height = 577
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitHeight = 180
               inherited pnlLists: TPanel
                 Height = 575
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitHeight = 178
-                inherited lst1: TListBox
-                  StyleElements = [seFont, seClient, seBorder]
-                end
                 inherited lst2: TListBox
                   Height = 55
-                  StyleElements = [seFont, seClient, seBorder]
                   ExplicitHeight = 55
-                end
-                inherited edLabelTag: TEdit
-                  StyleElements = [seFont, seClient, seBorder]
                 end
               end
             end
             inherited Panel2: TPanel
               Width = 973
               Height = 577
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitWidth = 973
               ExplicitHeight = 577
               inherited lblMsgTo: TLabel
                 Left = 850
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 850
-              end
-              inherited lbKey: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lbContentVariables: TLabel
-                StyleElements = [seFont, seClient, seBorder]
               end
               inherited grpURL: TGroupBox
                 Width = 965
                 ExplicitWidth = 965
-                inherited lblMobileCustomerUrl: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited edtMobileUrl: TEdit
-                  StyleElements = [seFont, seClient, seBorder]
-                end
                 inherited btnTestUrl: TButton
                   Left = 663
                   ExplicitLeft = 663
                 end
                 inherited edtCustomerMobileUrl1: TEdit
                   Width = 230
-                  StyleElements = [seFont, seClient, seBorder]
                   ExplicitWidth = 230
                 end
                 inherited edtTestTinyUrl: TEdit
                   Left = 735
                   Width = 225
-                  StyleElements = [seClient, seBorder]
                   ExplicitLeft = 735
                   ExplicitWidth = 225
                 end
@@ -4841,7 +3854,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               inherited edPhoneCustomerTo: TEdit
                 Left = 897
                 Width = 60
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 897
                 ExplicitWidth = 60
               end
@@ -4851,26 +3863,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
               inherited pnlSmsTestConfig: TPanel
                 Height = 415
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitHeight = 415
                 inherited dbgrdParams: TDBGrid
                   Height = 407
                 end
                 inherited AdvPageControl1: TAdvPageControl
-                  DoubleBuffered = True
                   inherited tabPreview: TAdvTabSheet
                     ExplicitLeft = 4
                     ExplicitTop = 26
                     ExplicitWidth = 578
                     ExplicitHeight = 268
                     inherited lbEdtTemplateSID: TLabeledEdit
-                      EditLabel.ExplicitLeft = 0
-                      EditLabel.ExplicitTop = -18
                       EditLabel.ExplicitWidth = 92
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited edTestSMSTo: TEdit
-                      StyleElements = [seFont, seClient, seBorder]
                     end
                     inherited advmTemplateJson: TAdvMemo
                       BorderColor = clGray
@@ -4891,9 +3895,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                         ExplicitTop = 21
                         ExplicitWidth = 304
                         ExplicitHeight = 103
-                      end
-                      inherited memParamsDestination: TMemo
-                        StyleElements = [seFont, seClient, seBorder]
                       end
                     end
                   end
@@ -4917,9 +3918,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               inherited DBGrid1: TDBGrid
                 Top = 496
                 Width = 971
-              end
-              inherited memTemplateParams: TMemo
-                StyleElements = [seFont, seClient, seBorder]
               end
             end
           end
@@ -4938,66 +3936,41 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             ExplicitHeight = 577
             inherited Panel1: TPanel
               Height = 577
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitHeight = 180
               inherited pnlLists: TPanel
                 Height = 575
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitHeight = 178
-                inherited lst1: TListBox
-                  StyleElements = [seFont, seClient, seBorder]
-                end
                 inherited lst2: TListBox
                   Height = 55
-                  StyleElements = [seFont, seClient, seBorder]
                   ExplicitHeight = 55
-                end
-                inherited edLabelTag: TEdit
-                  StyleElements = [seFont, seClient, seBorder]
                 end
               end
             end
             inherited Panel2: TPanel
               Width = 973
               Height = 577
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitWidth = 973
               ExplicitHeight = 577
               inherited lblMsgTo: TLabel
                 Left = 856
                 Top = 80
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 856
                 ExplicitTop = 80
-              end
-              inherited lbKey: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lbContentVariables: TLabel
-                StyleElements = [seFont, seClient, seBorder]
               end
               inherited grpURL: TGroupBox
                 Width = 965
                 ExplicitWidth = 965
-                inherited lblMobileCustomerUrl: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited edtMobileUrl: TEdit
-                  StyleElements = [seFont, seClient, seBorder]
-                end
                 inherited btnTestUrl: TButton
                   Left = 678
                   ExplicitLeft = 678
                 end
                 inherited edtCustomerMobileUrl1: TEdit
                   Width = 245
-                  StyleElements = [seFont, seClient, seBorder]
                   ExplicitWidth = 245
                 end
                 inherited edtTestTinyUrl: TEdit
                   Left = 750
                   Width = 210
-                  StyleElements = [seClient, seBorder]
                   ExplicitLeft = 750
                   ExplicitWidth = 210
                 end
@@ -5011,7 +3984,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 Left = 903
                 Top = 77
                 Width = 50
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 903
                 ExplicitTop = 77
                 ExplicitWidth = 50
@@ -5021,22 +3993,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                 ExplicitWidth = 180
               end
               inherited pnlSmsTestConfig: TPanel
-                StyleElements = [seFont, seClient, seBorder]
                 inherited AdvPageControl1: TAdvPageControl
-                  DoubleBuffered = True
                   inherited tabPreview: TAdvTabSheet
                     ExplicitLeft = 4
                     ExplicitTop = 26
                     ExplicitWidth = 578
                     ExplicitHeight = 268
                     inherited lbEdtTemplateSID: TLabeledEdit
-                      EditLabel.ExplicitLeft = 0
-                      EditLabel.ExplicitTop = -18
                       EditLabel.ExplicitWidth = 92
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited edTestSMSTo: TEdit
-                      StyleElements = [seFont, seClient, seBorder]
                     end
                     inherited advmTemplateJson: TAdvMemo
                       BorderColor = clGray
@@ -5057,9 +4021,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                         ExplicitTop = 21
                         ExplicitWidth = 304
                         ExplicitHeight = 103
-                      end
-                      inherited memParamsDestination: TMemo
-                        StyleElements = [seFont, seClient, seBorder]
                       end
                     end
                   end
@@ -5083,9 +4044,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               inherited DBGrid1: TDBGrid
                 Top = 496
                 Width = 971
-              end
-              inherited memTemplateParams: TMemo
-                StyleElements = [seFont, seClient, seBorder]
               end
             end
             inherited fdmParams: TFDMemTable
@@ -5117,15 +4075,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
         inherited grpSettings: TGroupBox
           Height = 195
           ExplicitHeight = 195
-          inherited lbedKey: TLabeledEdit
-            StyleElements = [seFont, seClient, seBorder]
-          end
-          inherited lbedSecret: TLabeledEdit
-            StyleElements = [seFont, seClient, seBorder]
-          end
-          inherited lbedAppName: TLabeledEdit
-            StyleElements = [seFont, seClient, seBorder]
-          end
         end
       end
     end
@@ -5153,17 +4102,9 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             ExplicitHeight = 778
             inherited pnlButtons: TPanel
               Width = 1190
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitWidth = 1190
-              inherited lblMailImagesURL: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lbMasterDataset: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited edtLandingUrl: TEdit
                 Width = 764
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitWidth = 764
               end
               inherited btnGenerateTinyUrl: TButton
@@ -5172,7 +4113,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
               inherited edtTinyUrl: TEdit
                 Left = 877
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 877
               end
             end
@@ -5198,30 +4138,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited ToolBar1: TToolBar
                     Width = 997
                     ExplicitWidth = 997
-                    inherited ListStyleCombo: TComboBox
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited HtAddTableCombo1: THtAddTableCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited HtTableBorderCombo1: THtTableBorderCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited ToolSeachEdit: TButtonedEdit
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                   end
                   inherited ToolBar2: TToolBar
                     Width = 997
                     Height = 56
                     ExplicitWidth = 409
                     ExplicitHeight = 56
-                    inherited FontCombo: THtFontCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                     inherited HtFontSizeCombo1: THtFontSizeCombo
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                     end
                     inherited ToolButton9: TToolButton
                       Left = 0
@@ -5238,21 +4162,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     inherited HtTextColorCombo1: THtTextColorCombo
                       Left = 51
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 51
                       ExplicitTop = 30
                     end
                     inherited HtBgColorCombo1: THtBgColorCombo
                       Left = 117
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 117
                       ExplicitTop = 30
                     end
                     inherited HtBorderCombo1: THtBorderCombo
                       Left = 180
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 180
                       ExplicitTop = 30
                     end
@@ -5284,7 +4205,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       Left = 607
                       Top = 30
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 607
                       ExplicitTop = 30
                     end
@@ -5292,7 +4212,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       Left = 721
                       Top = 30
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 721
                       ExplicitTop = 30
                     end
@@ -5308,7 +4227,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited pnlFooter: TPanel
                     Top = 573
                     Width = 997
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitTop = 573
                     ExplicitWidth = 997
                     inherited TrackBar1: TTrackBar
@@ -5316,82 +4234,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       OnChange = nil
                       ExplicitLeft = 633
                     end
-                    inherited HtTagNavigator1: THtTagNavigator
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                   end
                   inherited LeftPages: TPageControl
                     Top = 112
                     Height = 461
                     ExplicitTop = 112
                     ExplicitHeight = 64
-                    inherited TabSheet1: TTabSheet
-                      inherited TreePanel: THtPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
-                    inherited TabSheet2: TTabSheet
-                      inherited Panel2: TPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                        inherited SearchEdit: TEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                      end
-                      inherited SearchPanel: THtPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
                     inherited tabTag: TTabSheet
                       ExplicitHeight = 433
                       inherited pnlLists: TPanel
                         Height = 433
-                        StyleElements = [seFont, seClient, seBorder]
                         ExplicitHeight = 36
-                        inherited lst1: TListBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited lst2: TListBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited edLabelTag: TEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
                       end
-                    end
-                  end
-                end
-              end
-              inherited tabCustomerMailPreview: TTabSheet
-                inherited brwModelMessage: TTMSFNCWebBrowser
-                  DoubleBuffered = True
-                end
-              end
-              inherited tabCustomerTestMail: TTabSheet
-                inherited lblMailCustomerCC: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited edtMailTestSubject: TEdit
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited pnlMailTest: TPanel
-                  StyleElements = [seFont, seClient, seBorder]
-                  inherited lblMailFrom1: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lblTestMailTo1: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited edtMsgTestFrom: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited edtTestTinyUrl: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                end
-                inherited pgcTestPreview: TPageControl
-                  inherited tabPagePreview: TTabSheet
-                    inherited brwTestMessage: TTMSFNCWebBrowser
-                      DoubleBuffered = True
                     end
                   end
                 end
@@ -5424,17 +4278,9 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pnlLists: TPanel
               Height = 625
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitHeight = 228
-              inherited edLabelTag: TEdit
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lst1: TListBox
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited lst2: TListBox
                 Height = 103
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitHeight = 103
               end
             end
@@ -5459,17 +4305,9 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             ExplicitHeight = 778
             inherited pnlButtons: TPanel
               Width = 1190
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitWidth = 1190
-              inherited lblMailImagesURL: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lbMasterDataset: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited edtLandingUrl: TEdit
                 Width = 778
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitWidth = 778
               end
               inherited btnGenerateTinyUrl: TButton
@@ -5478,7 +4316,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
               inherited edtTinyUrl: TEdit
                 Left = 891
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 891
               end
             end
@@ -5504,30 +4341,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited ToolBar1: TToolBar
                     Width = 997
                     ExplicitWidth = 997
-                    inherited ListStyleCombo: TComboBox
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited HtAddTableCombo1: THtAddTableCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited HtTableBorderCombo1: THtTableBorderCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited ToolSeachEdit: TButtonedEdit
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                   end
                   inherited ToolBar2: TToolBar
                     Width = 997
                     Height = 56
                     ExplicitWidth = 409
                     ExplicitHeight = 56
-                    inherited FontCombo: THtFontCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                     inherited HtFontSizeCombo1: THtFontSizeCombo
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                     end
                     inherited ToolButton9: TToolButton
                       Left = 0
@@ -5544,21 +4365,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     inherited HtTextColorCombo1: THtTextColorCombo
                       Left = 51
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 51
                       ExplicitTop = 30
                     end
                     inherited HtBgColorCombo1: THtBgColorCombo
                       Left = 117
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 117
                       ExplicitTop = 30
                     end
                     inherited HtBorderCombo1: THtBorderCombo
                       Left = 180
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 180
                       ExplicitTop = 30
                     end
@@ -5590,7 +4408,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       Left = 607
                       Top = 30
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 607
                       ExplicitTop = 30
                     end
@@ -5598,7 +4415,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       Left = 721
                       Top = 30
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 721
                       ExplicitTop = 30
                     end
@@ -5614,7 +4430,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited pnlFooter: TPanel
                     Top = 573
                     Width = 997
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitTop = 573
                     ExplicitWidth = 997
                     inherited TrackBar1: TTrackBar
@@ -5622,82 +4437,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       OnChange = nil
                       ExplicitLeft = 633
                     end
-                    inherited HtTagNavigator1: THtTagNavigator
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                   end
                   inherited LeftPages: TPageControl
                     Top = 112
                     Height = 461
                     ExplicitTop = 112
                     ExplicitHeight = 64
-                    inherited TabSheet1: TTabSheet
-                      inherited TreePanel: THtPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
-                    inherited TabSheet2: TTabSheet
-                      inherited Panel2: TPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                        inherited SearchEdit: TEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                      end
-                      inherited SearchPanel: THtPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
                     inherited tabTag: TTabSheet
                       ExplicitHeight = 433
                       inherited pnlLists: TPanel
                         Height = 433
-                        StyleElements = [seFont, seClient, seBorder]
                         ExplicitHeight = 36
-                        inherited lst1: TListBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited lst2: TListBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited edLabelTag: TEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
                       end
-                    end
-                  end
-                end
-              end
-              inherited tabCustomerMailPreview: TTabSheet
-                inherited brwModelMessage: TTMSFNCWebBrowser
-                  DoubleBuffered = True
-                end
-              end
-              inherited tabCustomerTestMail: TTabSheet
-                inherited lblMailCustomerCC: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited edtMailTestSubject: TEdit
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited pnlMailTest: TPanel
-                  StyleElements = [seFont, seClient, seBorder]
-                  inherited lblMailFrom1: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lblTestMailTo1: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited edtMsgTestFrom: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited edtTestTinyUrl: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                end
-                inherited pgcTestPreview: TPageControl
-                  inherited tabPagePreview: TTabSheet
-                    inherited brwTestMessage: TTMSFNCWebBrowser
-                      DoubleBuffered = True
                     end
                   end
                 end
@@ -5730,17 +4481,9 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pnlLists: TPanel
               Height = 625
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitHeight = 228
-              inherited edLabelTag: TEdit
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lst1: TListBox
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited lst2: TListBox
                 Height = 103
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitHeight = 103
               end
             end
@@ -5764,17 +4507,9 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             ExplicitHeight = 778
             inherited pnlButtons: TPanel
               Width = 1190
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitWidth = 1190
-              inherited lblMailImagesURL: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lbMasterDataset: TLabel
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited edtLandingUrl: TEdit
                 Width = 758
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitWidth = 758
               end
               inherited btnGenerateTinyUrl: TButton
@@ -5783,7 +4518,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
               end
               inherited edtTinyUrl: TEdit
                 Left = 871
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitLeft = 871
               end
             end
@@ -5809,30 +4543,14 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited ToolBar1: TToolBar
                     Width = 997
                     ExplicitWidth = 997
-                    inherited ListStyleCombo: TComboBox
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited HtAddTableCombo1: THtAddTableCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited HtTableBorderCombo1: THtTableBorderCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
-                    inherited ToolSeachEdit: TButtonedEdit
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                   end
                   inherited ToolBar2: TToolBar
                     Width = 997
                     Height = 56
                     ExplicitWidth = 409
                     ExplicitHeight = 56
-                    inherited FontCombo: THtFontCombo
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                     inherited HtFontSizeCombo1: THtFontSizeCombo
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                     end
                     inherited ToolButton9: TToolButton
                       Left = 0
@@ -5849,21 +4567,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                     inherited HtTextColorCombo1: THtTextColorCombo
                       Left = 51
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 51
                       ExplicitTop = 30
                     end
                     inherited HtBgColorCombo1: THtBgColorCombo
                       Left = 117
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 117
                       ExplicitTop = 30
                     end
                     inherited HtBorderCombo1: THtBorderCombo
                       Left = 180
                       Top = 30
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 180
                       ExplicitTop = 30
                     end
@@ -5895,7 +4610,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       Left = 607
                       Top = 30
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 607
                       ExplicitTop = 30
                     end
@@ -5903,7 +4617,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       Left = 721
                       Top = 30
                       Height = 22
-                      StyleElements = [seFont, seClient, seBorder]
                       ExplicitLeft = 721
                       ExplicitTop = 30
                     end
@@ -5919,7 +4632,6 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                   inherited pnlFooter: TPanel
                     Top = 573
                     Width = 997
-                    StyleElements = [seFont, seClient, seBorder]
                     ExplicitTop = 573
                     ExplicitWidth = 997
                     inherited TrackBar1: TTrackBar
@@ -5927,82 +4639,18 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
                       OnChange = nil
                       ExplicitLeft = 633
                     end
-                    inherited HtTagNavigator1: THtTagNavigator
-                      StyleElements = [seFont, seClient, seBorder]
-                    end
                   end
                   inherited LeftPages: TPageControl
                     Top = 112
                     Height = 461
                     ExplicitTop = 112
                     ExplicitHeight = 64
-                    inherited TabSheet1: TTabSheet
-                      inherited TreePanel: THtPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
-                    inherited TabSheet2: TTabSheet
-                      inherited Panel2: TPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                        inherited SearchEdit: TEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                      end
-                      inherited SearchPanel: THtPanel
-                        StyleElements = [seFont, seClient, seBorder]
-                      end
-                    end
                     inherited tabTag: TTabSheet
                       ExplicitHeight = 433
                       inherited pnlLists: TPanel
                         Height = 433
-                        StyleElements = [seFont, seClient, seBorder]
                         ExplicitHeight = 36
-                        inherited lst1: TListBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited lst2: TListBox
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
-                        inherited edLabelTag: TEdit
-                          StyleElements = [seFont, seClient, seBorder]
-                        end
                       end
-                    end
-                  end
-                end
-              end
-              inherited tabCustomerMailPreview: TTabSheet
-                inherited brwModelMessage: TTMSFNCWebBrowser
-                  DoubleBuffered = True
-                end
-              end
-              inherited tabCustomerTestMail: TTabSheet
-                inherited lblMailCustomerCC: TLabel
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited edtMailTestSubject: TEdit
-                  StyleElements = [seFont, seClient, seBorder]
-                end
-                inherited pnlMailTest: TPanel
-                  StyleElements = [seFont, seClient, seBorder]
-                  inherited lblMailFrom1: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited lblTestMailTo1: TLabel
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited edtMsgTestFrom: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                  inherited edtTestTinyUrl: TEdit
-                    StyleElements = [seFont, seClient, seBorder]
-                  end
-                end
-                inherited pgcTestPreview: TPageControl
-                  inherited tabPagePreview: TTabSheet
-                    inherited brwTestMessage: TTMSFNCWebBrowser
-                      DoubleBuffered = True
                     end
                   end
                 end
@@ -6035,17 +4683,9 @@ object frmVCLCarServiceSettings: TfrmVCLCarServiceSettings
             end
             inherited pnlLists: TPanel
               Height = 625
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitHeight = 228
-              inherited edLabelTag: TEdit
-                StyleElements = [seFont, seClient, seBorder]
-              end
-              inherited lst1: TListBox
-                StyleElements = [seFont, seClient, seBorder]
-              end
               inherited lst2: TListBox
                 Height = 103
-                StyleElements = [seFont, seClient, seBorder]
                 ExplicitHeight = 103
               end
             end

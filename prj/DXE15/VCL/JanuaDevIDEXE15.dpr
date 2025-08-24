@@ -55,7 +55,10 @@ uses
   Janua.VCL.frameWebServerManager in '..\..\..\src\VCL\Http\Janua.VCL.frameWebServerManager.pas' {JanuaframeWebServerManager: TFrame},
   Janua.VCL.frmMDCCountries in '..\..\..\src\VCL\Commons\Janua.VCL.frmMDCCountries.pas' {frmVCLMDCCountriesLocal},
   Janua.Commons.pgCountriesLocal in '..\..\..\src\januaunidac\datamodules\Janua.Commons.pgCountriesLocal.pas' {dmPgCountriesLocal: TDataModule},
-  Janua.DevIDE.VCL.dmCountriesLocalController in '..\..\..\src\VCL\DevIDE\Janua.DevIDE.VCL.dmCountriesLocalController.pas' {dmVCLCountriesLocalController: TDataModule};
+  Janua.DevIDE.VCL.dmCountriesLocalController in '..\..\..\src\VCL\DevIDE\Janua.DevIDE.VCL.dmCountriesLocalController.pas' {dmVCLCountriesLocalController: TDataModule},
+  Janua.VCL.dlgCommonLogin in '..\..\..\src\VCL\Commons\Janua.VCL.dlgCommonLogin.pas' {dlgVCLCommonLogin},
+  uJanuaVCLCustomLoginDialog in '..\..\..\src\VCL\Forms\uJanuaVCLCustomLoginDialog.pas' {dlgVCLCustomLoginDialog},
+  Janua.VCL.dlgCustomLogin in '..\..\..\src\VCL\Commons\Janua.VCL.dlgCustomLogin.pas' {dlgVCLCustomLogin};
 
 {$R *.res}
 
@@ -92,7 +95,6 @@ begin
   begin
     TCarServiceProjectApplication.LoadMenu;
     Application.CreateForm(TfrmJanuaDEVIDEMainForm, frmJanuaDEVIDEMainForm);
-  Application.CreateForm(TdmVCLCountriesLocalController, dmVCLCountriesLocalController);
   Application.Run;
   end
   else

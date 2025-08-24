@@ -23,6 +23,8 @@ uses System.Types, VCL.Forms, Janua.Core.Functions,
   Janua.TMS.Cloud.Mail.VCL,
   // Janua VCL
   Janua.VCL.MVVM.Framework, Janua.Core.AsyncTask, Janua.VCL.StackTrace,
+  // Default Custom Login
+  Janua.VCL.dlgCommonLogin, Janua.System.ViewModel.Intf,
   // Documents and  Attachments
   Janua.Documents.ViewModel.Intf, Janua.Documents.dlgVCLAttachments, Janua.Documents.dlgVCLDocCharges,
   Janua.Documents.dlgVCLDocRows,
@@ -87,9 +89,9 @@ end;
 class procedure TJanuaVCLCustomApplication.ApplicationSetup(const aAppname: string);
 begin
   inherited;
-//{$IFNDEF WIN32}
+  // {$IFNDEF WIN32}
   InitializeStack;
-//{$ENDIF}
+  // {$ENDIF}
   // These are the basic interfaces for View and Models (all DB and Platform independant)
   TJanuaCoreViewModelFramework.RegisterInterfaces;
 
@@ -112,6 +114,9 @@ end;
 
 class procedure TJanuaVCLCustomApplication.ConnectionSetup;
 begin
+  if TJanuaApplication.ServerAddress = '' then
+    TJanuaApplication.ServerAddress := 'pg.januaservers.com';
+
   TJanuaApplication.ServerAddress := TJanuaCoreOS.ReadRegistry(False, 'address', 'postgres',
     TJanuaApplication.ServerAddress);
   TJanuaApplication.ServerSchema := 'public';
@@ -127,6 +132,8 @@ end;
 
 class procedure TJanuaVCLCustomApplication.RegisterForms;
 begin
+  // if an Application Login Form is not defined the a Custom Login Form will be used
+  TJanuaApplicationFactory.RegisterComponent(IJanuaLoginForm, TdlgVCLCommonLogin);
   TJanuaApplicationFactory.RegisterComponent(IJanuaAnagraphForm, TdlgVCLEditAnagraph);
   { TODO : Create a VCL Test Application to register Test forms }
   { TJanuaApplicationFactory.RegisterComponent(IJanuaTestDetailDialog, TdlgTestViewModelDetail); }

@@ -20,6 +20,9 @@ type
     { Public declarationdmVCLCountriesLocalController }
   end;
 
+var
+  dmVCLCountriesLocalController : TdmVCLCountriesLocalController;
+
 implementation
 
 uses udmSVGImageList;

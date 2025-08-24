@@ -1,35 +1,33 @@
 inherited frmJanuaDEVIDEMainForm: TfrmJanuaDEVIDEMainForm
   Caption = 'Janua Back End Application'
-  ClientHeight = 574
-  ClientWidth = 886
+  ClientHeight = 703
+  ClientWidth = 1037
   WindowState = wsMaximized
-  ExplicitWidth = 902
-  ExplicitHeight = 633
+  ExplicitWidth = 1053
+  ExplicitHeight = 762
   TextHeight = 17
   inherited StatusBar: TStatusBar
-    Top = 555
-    Width = 886
+    Top = 684
+    Width = 1037
     ExplicitTop = 555
     ExplicitWidth = 886
   end
   inherited Panel4: TPanel
-    Width = 886
+    Width = 1037
     ExplicitWidth = 886
     inherited ToolBarTopRight: TToolBar
-      Left = 847
+      Left = 998
       ExplicitLeft = 847
     end
   end
   inherited SplitViewLeft: TSplitView
-    Height = 513
+    Height = 642
     DoubleBuffered = True
-    ExplicitLeft = -6
-    ExplicitTop = 45
     ExplicitHeight = 513
   end
   inherited pgcApplicationArea: TPageControl
-    Width = 686
-    Height = 513
+    Width = 837
+    Height = 642
     ExplicitWidth = 686
     ExplicitHeight = 513
   end

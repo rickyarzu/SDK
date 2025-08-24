@@ -1,13 +1,14 @@
 inherited dlgVCLCustomLoginDialog: TdlgVCLCustomLoginDialog
   Caption = 'dlgVCLCustomLoginDialog'
-  ClientHeight = 299
-  ClientWidth = 553
-  StyleElements = [seFont, seClient, seBorder]
-  ExplicitWidth = 569
-  ExplicitHeight = 338
+  ClientHeight = 386
+  ClientWidth = 616
+  ExplicitWidth = 632
+  ExplicitHeight = 425
   TextHeight = 17
   inherited StatusBar: TStatusBar
-    Top = 280
-    Width = 553
+    Top = 367
+    Width = 616
+    ExplicitTop = 280
+    ExplicitWidth = 553
   end
 end
